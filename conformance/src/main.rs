@@ -32,6 +32,7 @@ fn main() -> ExitCode {
         "init" => cmd_init(&args[2..]),
         "corpus" => cmd_corpus(&args[2..]),
         "capture" => cmd_capture(&args[2..]),
+        "register" => cmd_register(&args[2..]),
         "-h" | "--help" | "help" => {
             usage(&args[0]);
             0
@@ -56,7 +57,13 @@ fn usage(prog: &str) {
          {prog} capture --ds-url <url> [--jwt <secret>] [--public-host <host>]\n  \
                   [--filetype docx] --input <doc> --out <render.json>\n  \
                                           Capture a NormalizedRender from OnlyOffice DS\n\n\
-         A render JSON is either a bare NormalizedRender or a GroundTruthFile wrapper."
+         A render JSON is either a bare NormalizedRender or a GroundTruthFile wrapper.
+  \
+  {prog} register <runDir> [--a-layer <engine.json> <truth.json>] [--out <dir>]
+  \
+                          Join visual-rig manifest.json + legs.json (and optional A-layer
+  \
+                          fidelity) into a divergence-register entry per engine"
     );
 }
 
@@ -379,4 +386,88 @@ fn cmd_capture(args: &[String]) -> i32 {
             1
         }
     }
+}
+
+/// Register — join a visual-rig run (manifest.json + legs.json) and optionally
+/// this crate's A-layer fidelity into one divergence entry per engine.
+///
+/// Usage: `wo-conformance register <runDir> [--a-layer <engine.json> <truth.json>] [--out <dir>]`
+fn cmd_register(args: &[String]) -> i32 {
+    if args.is_empty() {
+        eprintln!("register expects: <runDir> [--a-layer <engine.json> <truth.json>] [--out <dir>]");
+        return 2;
+    }
+    let run_dir = Path::new(&args[0]);
+    if !run_dir.join("manifest.json").exists() {
+        eprintln!("register: {} has no manifest.json (not a wopi-vis run?)", run_dir.display());
+        return 2;
+    }
+    let mut a_layer: Option<(&Path, &Path)> = None;
+    let mut out_dir: Option<&Path> = None;
+    let mut i = 1;
+    while i < args.len() {
+        match args[i].as_str() {
+            "--a-layer" => {
+                if i + 2 >= args.len() + 1 || i + 2 > args.len() - 1 {
+                    eprintln!("register: --a-layer needs <engine.json> <truth.json>");
+                    return 2;
+                }
+                a_layer = Some((Path::new(&args[i + 1]), Path::new(&args[i + 2])));
+                i += 3;
+            }
+            "--out" => {
+                if i + 1 >= args.len() {
+                    eprintln!("register: --out needs <dir>");
+                    return 2;
+                }
+                out_dir = Some(Path::new(&args[i + 1]));
+                i += 2;
+            }
+            other => {
+                eprintln!("register: unknown flag {other}");
+                return 2;
+            }
+        }
+    }
+    let entry = match wo_conformance::diverge::build_entry(run_dir, a_layer) {
+        Ok(e) => e,
+        Err(e) => {
+            eprintln!("register: {e}");
+            return 1;
+        }
+    };
+    let pretty = match serde_json::to_string_pretty(&entry) {
+        Ok(s) => s,
+        Err(e) => {
+            eprintln!("register: serialize: {e}");
+            return 1;
+        }
+    };
+    println!("{pretty}");
+    let entry_path = run_dir.join("register-entry.json");
+    if let Err(e) = std::fs::write(&entry_path, format!("{pretty}\n")) {
+        eprintln!("register: write {}: {e}", entry_path.display());
+        return 1;
+    }
+    eprintln!("register: wrote {}", entry_path.display());
+    if let Some(dir) = out_dir {
+        if let Err(e) = std::fs::create_dir_all(dir) {
+            eprintln!("register: mkdir {}: {e}", dir.display());
+            return 1;
+        }
+        let index_path = dir.join("index.json");
+        let mut entries: Vec<wo_conformance::diverge::RegisterEntry> = Vec::new();
+        if index_path.exists() {
+            if let Ok(bytes) = std::fs::read(&index_path) {
+                entries = serde_json::from_slice(&bytes).unwrap_or_default();
+            }
+        }
+        entries.push(entry);
+        if let Err(e) = std::fs::write(&index_path, format!("{}\n", serde_json::to_string_pretty(&entries).unwrap_or_default())) {
+            eprintln!("register: write {}: {e}", index_path.display());
+            return 1;
+        }
+        eprintln!("register: appended {} entries to {}", entries.len(), index_path.display());
+    }
+    0
 }

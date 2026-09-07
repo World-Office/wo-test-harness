@@ -10,6 +10,7 @@
 
 pub mod adapters;
 pub mod corpus;
+pub mod diverge;
 pub mod engine;
 pub mod ground_truth;
 pub mod model;
