@@ -25,13 +25,13 @@ are queries, not archaeology.
    divergence is *done*, not *gap*.
 4. **CI drift gate**:
    ```sh
-   python3 scripts/harness-graph/seed.py --check   # exit 1 = graph.json stale
+   python3 harness-graph/seed.py --check   # exit 1 = graph.json stale
    ```
 
 ## Status
 
 ```sh
-python3 scripts/harness-graph/seed.py --report
+python3 harness-graph/seed.py --report
 ```
 
 ## Loading into Neo4j (optional query engine)
@@ -74,10 +74,10 @@ to editor + register automatically extends the sweep — no hardcoded lists.
 
 ```sh
 # local: what would this diff affect?
-python3 scripts/harness-graph/select-tests.py --base origin/main --list
+python3 harness-graph/select-tests.py --base origin/main --list
 
 # CI (future e2e workflow): run only what the graph says is affected
-TESTS=$(python3 scripts/harness-graph/select-tests.py --base "$BASE")
+TESTS=$(python3 harness-graph/select-tests.py --base "$BASE")
 [ -z "$TESTS" ] || pytest $TESTS
 ```
 

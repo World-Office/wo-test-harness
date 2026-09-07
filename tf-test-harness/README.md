@@ -7,26 +7,26 @@ Every command is a real gate that CI also runs — no stubs, no fiction.
 
 ```bash
 # validate the harness itself (CI runs this)
-PYTHON=python3 bash scripts/tf-test-harness/test-harness.sh --self-test
+PYTHON=/usr/bin/python3 bash tf-test-harness/test-harness.sh --self-test
 
 # full unit suite (1,500+ pytest tests)
-bash scripts/tf-test-harness/test-harness.sh unit
+bash tf-test-harness/test-harness.sh unit
 
 # quality gates: graph drift + register resolution
-bash scripts/tf-test-harness/test-harness.sh gates
+bash tf-test-harness/test-harness.sh gates
 
 # everything CI checks, in one command
-bash scripts/tf-test-harness/test-harness.sh all
+bash tf-test-harness/test-harness.sh all
 
 # impact analysis: tests affected by the current diff (TH-006)
-bash scripts/tf-test-harness/test-harness.sh select
-bash scripts/tf-test-harness/test-harness.sh select --base origin/main --list
+bash tf-test-harness/test-harness.sh select
+bash tf-test-harness/test-harness.sh select --base origin/main --list
 
 # tests covering one register feature (TH-012)
-bash scripts/tf-test-harness/test-harness.sh feature F-003
+bash tf-test-harness/test-harness.sh feature F-003
 
 # machine-readable run report (TH-011, lite)
-bash scripts/tf-test-harness/test-harness.sh all --json state/results.json
+bash tf-test-harness/test-harness.sh all --json state/results.json
 ```
 
 On hosts where `python3` is shimmed (e.g. a TaskFleet venv wrapper), pin the
@@ -59,9 +59,9 @@ sequential suite; `WO_BROWSER_LANE=0` disables the lane markers.
 ## Inventory (TH-002)
 
 ```bash
-python3 scripts/tf-test-harness/scripts/generate-tests.py            # -> config/tasks.json
-python3 scripts/tf-test-harness/scripts/generate-tests.py --check    # gate
-python3 scripts/tf-test-harness/scripts/generate-tests.py --summary  # counts only
+python3 tf-test-harness/scripts/generate-tests.py            # -> config/tasks.json
+python3 tf-test-harness/scripts/generate-tests.py --check    # gate
+python3 tf-test-harness/scripts/generate-tests.py --summary  # counts only
 ```
 
 The inventory is generated from what exists: `pytest --collect-only` for unit
@@ -70,7 +70,7 @@ plus the two quality gates. Nothing is invented.
 
 ## Where things live
 
-- `scripts/harness-graph/` — the register (features.yaml), graph seeder,
+- `harness-graph/` (repo root sibling) — the register (features.yaml), graph seeder,
   drift gate, coverage gate, impact analysis. **This is the source of truth.**
 - `opencloud-docserver/tests/` — the unit suite (pytest).
 - `opencloud-docserver/e2e/` — Playwright browser tests (need a live stack).

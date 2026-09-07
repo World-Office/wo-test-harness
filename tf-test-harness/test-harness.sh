@@ -29,11 +29,28 @@
 set -uo pipefail
 
 HARNESS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_DIR="$(realpath "$HARNESS_DIR/../..")"
+HARNESS_ROOT="$(dirname "$HARNESS_DIR")"   # wo-test-harness repo root
+REPO_DIR="${WO_SERVER_DIR:-}"               # World-Office/server checkout
+if [[ -z "$REPO_DIR" ]]; then
+  cand="$(realpath "$HARNESS_ROOT/../server" 2>/dev/null || true)"
+  if [[ -d "$cand/opencloud-docserver" ]]; then
+    REPO_DIR="$cand"
+  elif [[ -d "$HARNESS_ROOT/../opencloud-docserver" ]]; then
+    REPO_DIR="$HARNESS_ROOT/.."  # legacy: embedded in the server repo
+  fi
+fi
+GRAPH_DIR="$HARNESS_ROOT/harness-graph"
 DOCSERVER_DIR="$REPO_DIR/opencloud-docserver"
-GRAPH_DIR="$REPO_DIR/scripts/harness-graph"
 STATE_DIR="${TF_STATE_DIR:-$HARNESS_DIR/state}"
-PYTHON="${PYTHON:-python3}"
+# Resolve a working Python 3: allow PYTHON env override, else prefer the
+# system interpreter (the ~/.pi/agent shim can be a stale venv redirect).
+if [[ -n "${PYTHON:-}" ]]; then
+  :
+elif [[ -x /usr/bin/python3 ]]; then
+  PYTHON=/usr/bin/python3
+else
+  PYTHON=python3
+fi
 
 RED='' GREEN='' YELLOW='' BLUE='' NC=''
 if [[ -t 1 ]]; then
@@ -54,7 +71,7 @@ need() { command -v "$1" >/dev/null 2>&1 || die "missing dependency: $1"; }
 
 require_tree() {
   [[ -f "$GRAPH_DIR/seed.py" ]]      || die "harness-graph missing at $GRAPH_DIR"
-  [[ -f "$DOCSERVER_DIR/pyproject.toml" ]] || die "docserver missing at $DOCSERVER_DIR"
+  [[ -f "$DOCSERVER_DIR/pyproject.toml" ]] || die "docserver missing at $DOCSERVER_DIR (set WO_SERVER_DIR=…)"
   need "$PYTHON"; need uv
 }
 
@@ -66,9 +83,9 @@ cmd_affected() {
   local -a sargs=()
   [[ -n "$SEL_BASE" ]] && sargs+=(--base "$SEL_BASE")
   [[ $SEL_LIST -eq 1 ]] && sargs+=(--list)
-  ( cd "$REPO_DIR" && "$PYTHON" scripts/harness-graph/select-tests.py --unit --list ${sargs[@]+"${sargs[@]}"} )
+  ( cd "$REPO_DIR" && "$PYTHON" "$GRAPH_DIR/select-tests.py" --unit --list ${sargs[@]+"${sargs[@]}"} )
   local rc=$?
-  ( cd "$REPO_DIR" && "$PYTHON" scripts/harness-graph/select-tests.py ${sargs[@]+"${sargs[@]}"} )
+  ( cd "$REPO_DIR" && "$PYTHON" "$GRAPH_DIR/select-tests.py" ${sargs[@]+"${sargs[@]}"} )
   return $rc
 }
 
@@ -90,12 +107,12 @@ _register_ids() {
 
 cmd_gates() {
   info "gate 1/2: harness-graph drift"
-  ( cd "$REPO_DIR" && "$PYTHON" scripts/harness-graph/seed.py --check )
+  ( cd "$REPO_DIR" && "$PYTHON" "$GRAPH_DIR/seed.py" --check )
   local rc=$?
   if (( rc == 0 )); then ok "graph.json in sync"; else fail "graph.json is stale"; return 1; fi
 
   info "gate 2/2: register full resolution"
-  ( cd "$REPO_DIR" && "$PYTHON" scripts/harness-graph/check-register.py $(_register_ids) )
+  ( cd "$REPO_DIR" && "$PYTHON" "$GRAPH_DIR/check-register.py" $(_register_ids) )
   local rc2=$?
   RESULT_MAP[gates]=$(( rc2 == 0 ? 1 : 0 ))
   (( rc2 == 0 )) && ok "register gates passed" || fail "register gates failed"
@@ -107,7 +124,7 @@ cmd_select() {
   local args=()
   [[ -n "$SEL_BASE" ]] && args+=(--base "$SEL_BASE")
   [[ $SEL_LIST -eq 1 ]] && args+=(--list)
-  ( cd "$REPO_DIR" && "$PYTHON" scripts/harness-graph/select-tests.py ${args[@]+"${args[@]}"} )
+  ( cd "$REPO_DIR" && "$PYTHON" "$GRAPH_DIR/select-tests.py" ${args[@]+"${args[@]}"} )
 }
 
 cmd_feature() {
@@ -198,7 +215,7 @@ cmd_self_test() {
   ok "tree layout + toolchain"
 
   info "self-test: graph is not stale"
-  ( cd "$REPO_DIR" && "$PYTHON" scripts/harness-graph/seed.py --check >/dev/null ) \
+  ( cd "$REPO_DIR" && "$PYTHON" "$GRAPH_DIR/seed.py" --check >/dev/null ) \
     || die "graph.json stale — run seed.py"
   ok "graph drift gate"
 
@@ -216,12 +233,12 @@ cmd_self_test() {
   ok "coverage + mutation tooling"
 
   info "self-test: register resolves"
-  ( cd "$REPO_DIR" && "$PYTHON" scripts/harness-graph/check-register.py $(_register_ids) >/dev/null ) \
+  ( cd "$REPO_DIR" && "$PYTHON" "$GRAPH_DIR/check-register.py" $(_register_ids) >/dev/null ) \
     || die "register has unresolved features"
   ok "register gate"
 
   info "self-test: select-tests answers"
-  ( cd "$REPO_DIR" && "$PYTHON" scripts/harness-graph/select-tests.py --base HEAD~1 >/dev/null ) \
+  ( cd "$REPO_DIR" && "$PYTHON" "$GRAPH_DIR/select-tests.py" --base HEAD~1 >/dev/null ) \
     || die "select-tests failed"
   ok "impact analysis"
 

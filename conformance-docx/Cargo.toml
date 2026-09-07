@@ -1,0 +1,20 @@
+[package]
+name = "wo-conformance-docx"
+version = "0.1.0"
+edition = "2021"
+license = "AGPL-3.0-or-later"
+description = "wo-docx-renderer adapter for the wo-conformance harness — projects the renderer's layout into NormalizedRender for scoring against captured truth."
+
+[dependencies]
+wo-conformance = { path = "../conformance" }
+wo-docx-renderer = { git = "https://github.com/World-Office/server.git", branch = "main", package = "wo-docx-renderer" }
+wo-ooxml = { git = "https://github.com/World-Office/server.git", branch = "main", package = "wo-ooxml" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+zip = { workspace = true }
+
+[[bin]]
+name = "wo-render-ir"
+path = "src/bin/render_ir.rs"

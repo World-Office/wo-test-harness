@@ -1,0 +1,6 @@
+# wo-test-harness builds conformance-docx against a cargo git-dependency on
+# World-Office/server (wo-docx-renderer + wo-ooxml). That repo carries the
+# scripts/taskfleet submodule; fetching it through the git CLI is more robust
+# than libgit2 (which can fail to authenticate submodule URLs).
+[net]
+git-fetch-with-cli = true

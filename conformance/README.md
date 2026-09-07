@@ -54,7 +54,7 @@ wo-conformance corpus ./corpus
 ```
 
 The `RenderEngine` trait (`engine.rs`) is the single extension point. The
-`DocxConformanceAdapter` (`wo-docx-renderer/conformance.rs`) implements it by
+`DocxConformanceAdapter` (`conformance-docx/src/lib.rs`) implements it by
 projecting the renderer's layout IR into `NormalizedRender` before
 rasterization.
 
@@ -87,7 +87,7 @@ The `--cross-engine` flag in the CLI switches to run-level matching.
 # Or step by step:
 python3 scripts/generate-corpus.py corpus/cases
 python3 scripts/capture-truth.py capture corpus --force
-cargo run -p wo-docx-renderer --bin wo-render-ir -- <docx> <engine.json>
+cargo run -p wo-conformance-docx --bin wo-render-ir -- <docx> <engine.json>
 python3 scripts/capture-truth.py compare corpus
 python3 scripts/capture-truth.py regression corpus --threshold=0.05
 ```

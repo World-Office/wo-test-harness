@@ -38,10 +38,38 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
+import os
+
 import yaml
 
 HERE = Path(__file__).resolve().parent
-SERVER = HERE.parent.parent
+HARNESS_ROOT = HERE.parent  # wo-test-harness repo root
+
+
+def _resolve_server() -> Path:
+    """Locate the World-Office server checkout.
+
+    Priority: WO_SERVER_DIR env var, then a sibling `server/` directory next
+    to this harness repo, then the legacy in-repo layout.
+    """
+    env = os.environ.get("WO_SERVER_DIR")
+    if env:
+        p = Path(env)
+        if (p / "opencloud-docserver").is_dir():
+            return p
+        raise SystemExit(f"WO_SERVER_DIR={env} is not a server checkout (no opencloud-docserver/)")
+    cand = HARNESS_ROOT.parent / "server"
+    if (cand / "opencloud-docserver").is_dir():
+        return cand
+    # legacy: this repo used to live at <server>/scripts/harness-graph
+    if (HARNESS_ROOT.parent / "opencloud-docserver").is_dir():
+        return HARNESS_ROOT.parent
+    raise SystemExit(
+        "Cannot locate server checkout: set WO_SERVER_DIR to the World-Office/server repo root"
+    )
+
+
+SERVER = _resolve_server()
 DEFAULTS = {
     "features": HERE / "features.yaml",
     "editor_js": SERVER / "opencloud-docserver" / "web" / "editor.js",

@@ -28,24 +28,24 @@ for arg in "$@"; do
 done
 
 # Step 1: Build
-# scripts/ → wo-conformance/ → crates/ → core/ → server/ = project root
-PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../../.." && pwd)"
-echo "=== Step 1: Build wo-render-ir ==="
-(cd "$PROJECT_ROOT" && cargo build -p wo-docx-renderer --bin wo-render-ir --quiet)
+# scripts/ → conformance/ → repo root = wo-test-harness
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+echo "=== Step 1: Build wo-render-ir (conformance-docx) ==="
+(cd "$PROJECT_ROOT" && cargo build -p wo-conformance-docx --bin wo-render-ir --quiet)
 
 BIN="$PROJECT_ROOT/target/debug/wo-render-ir"
 
 # Step 2: Generate corpus
 echo "=== Step 2: Generate corpus ==="
 if [ -n "$FORCE" ] || ! ls "$CORPUS_DIR/cases/"*.docx 1>/dev/null 2>&1; then
-    python3 "$SCRIPT_DIR/generate-corpus.py" "$CORPUS_DIR/cases"
+    "${PYTHON:-/usr/bin/python3}" "$SCRIPT_DIR/generate-corpus.py" "$CORPUS_DIR/cases"
 else
     echo "Corpus exists — skip (use --force to regenerate)"
 fi
 
 # Step 3: Capture truth
 echo "=== Step 3: Capture truth from LibreOffice ==="
-python3 "$SCRIPT_DIR/capture-truth.py" capture "$CORPUS_DIR" ${FORCE:+--force}
+"${PYTHON:-/usr/bin/python3}" "$SCRIPT_DIR/capture-truth.py" capture "$CORPUS_DIR" ${FORCE:+--force}
 
 # Step 4: Render through wo-docx-renderer
 echo "=== Step 4: Render through wo-docx-renderer ==="
@@ -57,8 +57,8 @@ for docx in "$CORPUS_DIR"/cases/*.docx; do
         continue  # skip if up-to-date
     fi
     if "$BIN" "$docx" "$out" 2>/dev/null; then
-        pages=$(python3 -c "import json; print(len(json.load(open('$out'))['pages']))")
-        boxes=$(python3 -c "import json; print(sum(len(p['boxes']) for p in json.load(open('$out'))['pages']))")
+        pages=$("${PYTHON:-/usr/bin/python3}" -c "import json; print(len(json.load(open('$out'))['pages']))")
+        boxes=$("${PYTHON:-/usr/bin/python3}" -c "import json; print(sum(len(p['boxes']) for p in json.load(open('$out'))['pages']))")
         echo "  $stem: $pages page(s), $boxes box(es)"
     else
         echo "  $stem: FAILED" >&2
@@ -72,8 +72,8 @@ fi
 # Step 5: Compare
 echo ""
 echo "=== Step 5: Cross-engine comparison ==="
-python3 "$SCRIPT_DIR/capture-truth.py" compare "$CORPUS_DIR"
+"${PYTHON:-/usr/bin/python3}" "$SCRIPT_DIR/capture-truth.py" compare "$CORPUS_DIR"
 
 echo ""
 echo "=== Regression check ==="
-python3 "$SCRIPT_DIR/capture-truth.py" regression "$CORPUS_DIR" --threshold "$THRESHOLD"
+"${PYTHON:-/usr/bin/python3}" "$SCRIPT_DIR/capture-truth.py" regression "$CORPUS_DIR" --threshold "$THRESHOLD"

@@ -29,20 +29,43 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import subprocess
 import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+HARNESS_ROOT = HERE.parent  # wo-test-harness repo root
+
+
+def _resolve_server() -> Path:
+    """Locate the World-Office server checkout (see seed.py for rules)."""
+    env = os.environ.get("WO_SERVER_DIR")
+    if env:
+        p = Path(env)
+        if (p / "opencloud-docserver").is_dir():
+            return p
+        raise SystemExit(f"WO_SERVER_DIR={env} is not a server checkout (no opencloud-docserver/)")
+    cand = HARNESS_ROOT.parent / "server"
+    if (cand / "opencloud-docserver").is_dir():
+        return cand
+    # legacy: this repo used to live at <server>/scripts/harness-graph
+    if (HARNESS_ROOT.parent / "opencloud-docserver").is_dir():
+        return HARNESS_ROOT.parent
+    raise SystemExit("Cannot locate server checkout: set WO_SERVER_DIR to the World-Office/server repo root")
+
+
+SERVER_ROOT = _resolve_server()
 GRAPH = HERE / "graph.json"
-E2E_ROOT = HERE.parent.parent / "opencloud-docserver" / "e2e"
-SERVER_ROOT = E2E_ROOT.parent.parent
+E2E_ROOT = SERVER_ROOT / "opencloud-docserver" / "e2e"
 
 DATA_CMD = re.compile(r'data-cmd="([A-Za-z0-9_-]+)"')
 RUN_CMD = re.compile(r'runCommand\(\s*"([A-Za-z0-9_-]+)"')
 REGISTER_FILES = {"features.yaml", "graph.json", "seed.py"}
 EDITOR_FILES = {"web/editor.js", "web/index.html"}
+# wo-conformance moved to the harness repo: it no longer appears in the server
+# diff; kept for legacy compatibility if the server ever regresses to embedding.
 RUST_PREFIX = "core/crates/wo-conformance"
 
 

@@ -21,15 +21,36 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
 import re
 import subprocess
 import sys
 from pathlib import Path
 
-HARNESS_DIR = Path(__file__).resolve().parent.parent
-REPO_DIR = HARNESS_DIR.parent.parent
+HARNESS_DIR = Path(__file__).resolve().parent.parent  # wo-test-harness/tf-test-harness
+HARNESS_ROOT = HARNESS_DIR.parent                     # wo-test-harness repo root
+
+
+def _resolve_server() -> Path:
+    """Locate the World-Office server checkout (see seed.py for rules)."""
+    env = os.environ.get("WO_SERVER_DIR")
+    if env:
+        p = Path(env)
+        if (p / "opencloud-docserver").is_dir():
+            return p
+        raise SystemExit(f"WO_SERVER_DIR={env} is not a server checkout (no opencloud-docserver/)")
+    cand = HARNESS_ROOT.parent / "server"
+    if (cand / "opencloud-docserver").is_dir():
+        return cand
+    # legacy: this repo used to live at <server>/scripts/tf-test-harness
+    if (HARNESS_ROOT.parent / "opencloud-docserver").is_dir():
+        return HARNESS_ROOT.parent
+    raise SystemExit("Cannot locate server checkout: set WO_SERVER_DIR to the World-Office/server repo root")
+
+
+REPO_DIR = _resolve_server()
 DOCSERVER = REPO_DIR / "opencloud-docserver"
-GRAPH_DIR = REPO_DIR / "scripts" / "harness-graph"
+GRAPH_DIR = HARNESS_ROOT / "harness-graph"
 DEFAULT_OUTPUT = HARNESS_DIR / "config" / "tasks.json"
 
 FID = re.compile(r"^F-\d{3}$")

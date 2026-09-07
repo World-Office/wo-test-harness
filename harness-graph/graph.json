@@ -186,6 +186,51 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_docx_all_xml_parts_well_formed",
+   "to": "F-002",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_docx_output_conforms_to_ecma376",
+   "to": "F-002",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_docx_validator_rejects_package_without_content_types",
+   "to": "F-002",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_odt_all_xml_parts_well_formed",
+   "to": "F-002",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_odt_output_conforms_to_odf12",
+   "to": "F-002",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_odt_validator_rejects_deflated_mimetype",
+   "to": "F-002",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_odt_validator_rejects_wrong_mimetype_content",
+   "to": "F-002",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_parsers_roundtrip_spec_valid_documents",
+   "to": "F-002",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_seed_text_survives_into_spec_valid_output",
+   "to": "F-002",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_export_formats.py::test_download_original_odt_bytes_unchanged",
    "to": "F-003",
    "type": "COVERS"
@@ -232,6 +277,51 @@
   },
   {
    "from": "opencloud-docserver/tests/test_export_formats.py::test_weasyprint_is_a_declared_dependency",
+   "to": "F-003",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_docx_all_xml_parts_well_formed",
+   "to": "F-003",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_docx_output_conforms_to_ecma376",
+   "to": "F-003",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_docx_validator_rejects_package_without_content_types",
+   "to": "F-003",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_odt_all_xml_parts_well_formed",
+   "to": "F-003",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_odt_output_conforms_to_odf12",
+   "to": "F-003",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_odt_validator_rejects_deflated_mimetype",
+   "to": "F-003",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_odt_validator_rejects_wrong_mimetype_content",
+   "to": "F-003",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_parsers_roundtrip_spec_valid_documents",
+   "to": "F-003",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_format_spec_conformance.py::test_seed_text_survives_into_spec_valid_output",
    "to": "F-003",
    "type": "COVERS"
   },
@@ -386,7 +476,7 @@
    "type": "COVERS"
   },
   {
-   "from": "opencloud-docserver/e2e/test_word_editing_gui.py::test_typing_triggers_wopi_autosave",
+   "from": "opencloud-docserver/e2e/test_word_editing_gui.py::test_typing_triggers_save",
    "to": "F-010",
    "type": "COVERS"
   },
@@ -426,7 +516,7 @@
    "type": "COVERS"
   },
   {
-   "from": "opencloud-docserver/e2e/test_word_editing_gui.py::test_typing_triggers_wopi_autosave",
+   "from": "opencloud-docserver/e2e/test_word_editing_gui.py::test_typing_triggers_save",
    "to": "F-011",
    "type": "COVERS"
   },
@@ -466,7 +556,7 @@
    "type": "COVERS"
   },
   {
-   "from": "opencloud-docserver/e2e/test_word_editing_gui.py::test_typing_triggers_wopi_autosave",
+   "from": "opencloud-docserver/e2e/test_word_editing_gui.py::test_typing_triggers_save",
    "to": "F-012",
    "type": "COVERS"
   },
@@ -506,7 +596,7 @@
    "type": "COVERS"
   },
   {
-   "from": "opencloud-docserver/e2e/test_word_editing_gui.py::test_typing_triggers_wopi_autosave",
+   "from": "opencloud-docserver/e2e/test_word_editing_gui.py::test_typing_triggers_save",
    "to": "F-013",
    "type": "COVERS"
   },
@@ -1181,7 +1271,7 @@
    "type": "COVERS"
   },
   {
-   "from": "opencloud-docserver/e2e/test_word_editing_gui.py::test_typing_triggers_wopi_autosave",
+   "from": "opencloud-docserver/e2e/test_word_editing_gui.py::test_typing_triggers_save",
    "to": "F-060",
    "type": "COVERS"
   },
@@ -1221,7 +1311,7 @@
    "type": "COVERS"
   },
   {
-   "from": "opencloud-docserver/e2e/test_word_editing_gui.py::test_typing_triggers_wopi_autosave",
+   "from": "opencloud-docserver/e2e/test_word_editing_gui.py::test_typing_triggers_save",
    "to": "F-061",
    "type": "COVERS"
   },
@@ -1246,7 +1336,7 @@
    "type": "COVERS"
   },
   {
-   "from": "opencloud-docserver/e2e/test_word_editing_gui.py::test_typing_triggers_wopi_autosave",
+   "from": "opencloud-docserver/e2e/test_word_editing_gui.py::test_typing_triggers_save",
    "to": "F-062",
    "type": "COVERS"
   },
@@ -6581,7 +6671,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-05T18:46:52+00:00",
+ "generated_at": "2026-09-07T10:12:35+00:00",
  "nodes": [
   {
    "id": "allCaps",
@@ -6929,13 +7019,13 @@
    "path": "opencloud-docserver/e2e/test_button_sweep_gui.py"
   },
   {
-   "id": "opencloud-docserver/e2e/test_document_edit_depth.py::test_check_file_info_fields_after_open",
+   "id": "opencloud-docserver/e2e/test_document_edit_depth.py::test_check_file_info_fields",
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/e2e/test_document_edit_depth.py"
   },
   {
-   "id": "opencloud-docserver/e2e/test_document_edit_depth.py::test_get_file_serves_the_stored_document",
+   "id": "opencloud-docserver/e2e/test_document_edit_depth.py::test_get_file_serves_stored_bytes",
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/e2e/test_document_edit_depth.py"
@@ -6947,7 +7037,7 @@
    "path": "opencloud-docserver/e2e/test_document_edit_depth.py"
   },
   {
-   "id": "opencloud-docserver/e2e/test_document_edit_depth.py::test_put_file_requires_override_header",
+   "id": "opencloud-docserver/e2e/test_document_edit_depth.py::test_put_file_honours_locks",
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/e2e/test_document_edit_depth.py"
@@ -6977,7 +7067,7 @@
    "path": "opencloud-docserver/e2e/test_editor_depth_gui.py"
   },
   {
-   "id": "opencloud-docserver/e2e/test_editor_depth_gui.py::test_ctrl_s_fires_wopi_save",
+   "id": "opencloud-docserver/e2e/test_editor_depth_gui.py::test_ctrl_s_fires_save",
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/e2e/test_editor_depth_gui.py"
@@ -7019,25 +7109,13 @@
    "path": "opencloud-docserver/e2e/test_editor_menu_gui.py"
   },
   {
-   "id": "opencloud-docserver/e2e/test_editor_menu_gui.py::test_create_new_panel_lists_all_templates",
-   "label": "Test",
-   "layer": "e2e",
-   "path": "opencloud-docserver/e2e/test_editor_menu_gui.py"
-  },
-  {
-   "id": "opencloud-docserver/e2e/test_editor_menu_gui.py::test_invoice_template_loads_real_content",
+   "id": "opencloud-docserver/e2e/test_editor_menu_gui.py::test_new_menu_item_creates_document",
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/e2e/test_editor_menu_gui.py"
   },
   {
    "id": "opencloud-docserver/e2e/test_editor_menu_gui.py::test_version_history_panel_opens",
-   "label": "Test",
-   "layer": "e2e",
-   "path": "opencloud-docserver/e2e/test_editor_menu_gui.py"
-  },
-  {
-   "id": "opencloud-docserver/e2e/test_editor_menu_gui.py::test_close_editor_returns_to_files",
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/e2e/test_editor_menu_gui.py"
@@ -7433,7 +7511,7 @@
    "path": "opencloud-docserver/e2e/test_word_editing_gui.py"
   },
   {
-   "id": "opencloud-docserver/e2e/test_word_editing_gui.py::test_typing_triggers_wopi_autosave",
+   "id": "opencloud-docserver/e2e/test_word_editing_gui.py::test_typing_triggers_save",
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/e2e/test_word_editing_gui.py"
@@ -10755,6 +10833,60 @@
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/tests/test_font_controls.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_format_spec_conformance.py::test_docx_output_conforms_to_ecma376",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_format_spec_conformance.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_format_spec_conformance.py::test_odt_output_conforms_to_odf12",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_format_spec_conformance.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_format_spec_conformance.py::test_docx_all_xml_parts_well_formed",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_format_spec_conformance.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_format_spec_conformance.py::test_odt_all_xml_parts_well_formed",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_format_spec_conformance.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_format_spec_conformance.py::test_seed_text_survives_into_spec_valid_output",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_format_spec_conformance.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_format_spec_conformance.py::test_docx_validator_rejects_package_without_content_types",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_format_spec_conformance.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_format_spec_conformance.py::test_odt_validator_rejects_deflated_mimetype",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_format_spec_conformance.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_format_spec_conformance.py::test_odt_validator_rejects_wrong_mimetype_content",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_format_spec_conformance.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_format_spec_conformance.py::test_parsers_roundtrip_spec_valid_documents",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_format_spec_conformance.py"
   },
   {
    "id": "opencloud-docserver/tests/test_insert_advanced.py::test_f071_image_roundtrip_with_real_png_bytes",
@@ -14991,10 +15123,10 @@
  ],
  "stats": {
   "commands": 21,
-  "edges": 1316,
+  "edges": 1334,
   "features": 82,
   "surfaces": 21,
-  "tests": 1223
+  "tests": 1230
  },
  "version": 1
 }

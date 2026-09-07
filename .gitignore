@@ -1,0 +1,10 @@
+/target
+**/*.rs.bk
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+
+# TaskFleet ephemera (kept only in server checkouts when embedded)
+.tf-worktrees/
