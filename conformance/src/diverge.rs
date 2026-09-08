@@ -74,6 +74,9 @@ pub struct Divergence {
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct ALayer {
     pub engine_render: String,
+    /// Engine that produced the render (from render.metadata), e.g. onlyoffice-documentserver.
+    pub render_engine: String,
+    pub render_engine_version: String,
     pub truth_source: String,
     pub fidelity: f64,
     pub page_count_engine: usize,
@@ -260,8 +263,14 @@ pub fn build_entry(run_dir: &Path, a_layer: Option<(&Path, &Path)>) -> Result<Re
         Some((engine_path, truth_path)) => {
             let bytes = std::fs::read(engine_path).map_err(|e| format!("read {}: {e}", engine_path.display()))?;
             let v: Value = serde_json::from_slice(&bytes).map_err(|e| format!("parse {}: {e}", engine_path.display()))?;
-            let render: NormalizedRender =
-                serde_json::from_value(v).map_err(|e| format!("render {}: {e}", engine_path.display()))?;
+            let render: NormalizedRender = if v.get("render").is_some() {
+                let gt: crate::ground_truth::GroundTruthFile = serde_json::from_value(v.clone())
+                    .map_err(|e| format!("engine wrapper {}: {e}", engine_path.display()))?;
+                gt.render
+            } else {
+                serde_json::from_value(v.clone())
+                    .map_err(|e| format!("bare engine render {}: {e}", engine_path.display()))?
+            };
             let tbytes = std::fs::read(truth_path).map_err(|e| format!("read {}: {e}", truth_path.display()))?;
             let tv: Value = serde_json::from_slice(&tbytes).map_err(|e| format!("parse {}: {e}", truth_path.display()))?;
             let ground_truth: NormalizedRender = if tv.get("render").is_some() {
@@ -276,6 +285,8 @@ pub fn build_entry(run_dir: &Path, a_layer: Option<(&Path, &Path)>) -> Result<Re
                 compute_fidelity_cross_engine("register", &render, &ground_truth);
             Some(ALayer {
                 engine_render: engine_path.file_name().map(|s| s.to_string_lossy().into_owned()).unwrap_or_default(),
+                render_engine: render.metadata.engine.clone(),
+                render_engine_version: render.metadata.engine_version.clone(),
                 truth_source: format!("{}", truth_path.display()),
                 fidelity: report.fidelity,
                 page_count_engine: report.page_count_engine,

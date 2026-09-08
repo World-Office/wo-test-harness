@@ -16,8 +16,8 @@ use serde_json::Value;
 
 use wo_conformance::{
     compute_fidelity, compute_fidelity_cross_engine, discover_corpus, CorpusManifest, DsConfig,
-    GroundTruthFile, NormalizedRender, OnlyOfficePdfEngine, PopplerSource, RenderEngine,
-    TRUTH_SCHEMA_VERSION,
+    GroundTruthFile, NormalizedRender, OnlyOfficePdfEngine, PdfGeometrySource, PopplerSource,
+    RenderEngine, TRUTH_SCHEMA_VERSION,
 };
 
 fn main() -> ExitCode {
@@ -33,6 +33,7 @@ fn main() -> ExitCode {
         "corpus" => cmd_corpus(&args[2..]),
         "capture" => cmd_capture(&args[2..]),
         "register" => cmd_register(&args[2..]),
+        "pdf-render" => cmd_pdf_render(&args[2..]),
         "-h" | "--help" | "help" => {
             usage(&args[0]);
             0
@@ -470,4 +471,59 @@ fn cmd_register(args: &[String]) -> i32 {
         eprintln!("register: appended {} entries to {}", entries.len(), index_path.display());
     }
     0
+}
+
+/// `pdf-render` — project an existing PDF (e.g. from LibreOffice headless) into
+/// a NormalizedRender via the poppler source, wrapped as a GroundTruthFile.
+///
+/// Usage: `wo-conformance pdf-render <in.pdf> <out.json> [--engine <label>] [--version <v>]`
+/// This is the render-side half of the LO truth pipeline without Python.
+fn cmd_pdf_render(args: &[String]) -> i32 {
+    if args.is_empty() || args[0].starts_with("--") {
+        eprintln!("pdf-render expects: <in.pdf> <out.json> [--engine <label>] [--version <v>]");
+        return 2;
+    }
+    let input = Path::new(&args[0]);
+    let out = Path::new(&args[1]);
+    let mut engine = "libreoffice-headless".to_string();
+    let mut version = "unknown".to_string();
+    let mut i = 2;
+    while i < args.len() {
+        match args[i].as_str() {
+            "--engine" => { if i + 1 < args.len() { engine = args[i + 1].clone(); } i += 2; }
+            "--version" => { if i + 1 < args.len() { version = args[i + 1].clone(); } i += 2; }
+            other => { eprintln!("pdf-render: unknown flag {other}"); return 2; }
+        }
+    }
+    let pdf = match std::fs::read(input) {
+        Ok(b) => b,
+        Err(e) => { eprintln!("pdf-render: read {}: {e}", input.display()); return 1; }
+    };
+    let source = match PopplerSource::new() {
+        Ok(s) => s,
+        Err(e) => { eprintln!("pdf-render: {e}"); return 1; }
+    };
+    let render = match source.extract(&pdf) {
+        Ok(r) => r,
+        Err(e) => { eprintln!("pdf-render: project {}: {e}", input.display()); return 1; }
+    };
+    let render = NormalizedRender {
+        metadata: wo_conformance::model::RenderMetadata {
+            engine: engine.clone(),
+            engine_version: version.clone(),
+            captured_at: chrono::Utc::now().to_rfc3339(),
+            environment: format!("pdf projection via PopplerSource {}", input.display()),
+        },
+        ..render
+    };
+    let truth = GroundTruthFile {
+        schema_version: TRUTH_SCHEMA_VERSION,
+        truth_captured_from: format!("{engine} {version} (pdf-render)"),
+        captured_at: render.metadata.captured_at.clone(),
+        render,
+    };
+    match std::fs::write(out, serde_json::to_string_pretty(&truth).unwrap()) {
+        Ok(_) => { println!("projected {} -> {} (engine={engine} {version})", input.display(), out.display()); 0 }
+        Err(e) => { eprintln!("pdf-render: write {}: {e}", out.display()); 1 }
+    }
 }
