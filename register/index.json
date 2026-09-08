@@ -1,188 +1,186 @@
 [
- {
-  "schema_version": 1,
-  "engine": "worldoffice",
-  "host_wopi_url": "http://onlyoffice.test:8080",
-  "launch": {
-   "mode": "direct-launch",
-   "url": "http://worldoffice.test:8080/editor?access_token"
+  {
+    "schema_version": 1,
+    "engine": "worldoffice",
+    "host_wopi_url": "http://onlyoffice.test:8080",
+    "launch": {
+      "mode": "direct-launch",
+      "url": "http://worldoffice.test:8080/editor?access_token=oU09Em4IqNG1fFcMLkmMsBj1HJJPIsVt&WOPISrc=192.168.42.42%3A8891%2Fwopi%2Ffiles%2F244"
+    },
+    "fixture": {
+      "name": "fixture.docx",
+      "sha256": "a717101ee318a08a82cc9fbb18addc828403081c7af0ffbc2b1beeea7ead7b0c",
+      "file_id": 0
+    },
+    "protocol": {
+      "total_legs": 80,
+      "check_file_info": 7,
+      "get_file": 59,
+      "put_file": 0,
+      "lock_ops": 14,
+      "overrides": [
+        "GET_FILE",
+        "GET_LOCK",
+        "LOCK"
+      ],
+      "methods": {
+        "GET": 66,
+        "POST": 14
+      },
+      "proof_style": "signing-shim",
+      "launch_style": "direct-launch"
+    },
+    "divergences": [
+      {
+        "id": "wo-001-proof-key-absent",
+        "layer": "protocol",
+        "severity": "high",
+        "summary": "World-Office discovery carries NO <proof-key>; Nextcloud richdocuments requires a valid X-Wopi-Proof whenever the configured host advertises one (OnlyOffice does), so NC rejects a raw World-Office client with 500 [].",
+        "evidence": "proof_shim=signing-shim; observed 500 [] for unproven legs"
+      },
+      {
+        "id": "wo-004-a-layer-image-dropped",
+        "layer": "a-layer",
+        "severity": "high",
+        "summary": "World-Office docx_to_html has no w:drawing/w:blip read path (it only EMITS drawings on write), so embedded raster/graphics are silently dropped: a drawing-only docx converts to EMPTY html (verified via /api/upload + /api/documents/{id}/html). PIPELINE WOULD LOSE THE IMAGE ON ROUNDTRIP.",
+        "evidence": "image.docx (1477B, embedded PNG): WO html=\"\" vs OnlyOffice/LO render the page"
+      },
+      {
+        "id": "wo-002-launch-handshake",
+        "layer": "protocol",
+        "severity": "medium",
+        "summary": "OnlyOffice launches via query-string urlSrc (richdocuments bootstrap); World-Office uses the OpenCloud form-POST launch (access_token+file_id in body, WOPISrc in query).",
+        "evidence": "direct-launch (form/query) vs richdocuments /hosting/wopi/word/edit"
+      },
+      {
+        "id": "wo-003-wopi-path-shape",
+        "layer": "protocol",
+        "severity": "medium",
+        "summary": "OpenCloud World-Office targets {host}/wopi/files/{doc}[/contents]; Nextcloud serves /index.php/apps/richdocuments/wopi/files/{id}_{instance}[/contents]. WOPISrc netloc must be the host's published URL.",
+        "evidence": "wopi_path_shape recorded in register"
+      },
+      {
+        "id": "rig-001-proof-shim",
+        "layer": "protocol",
+        "severity": "info",
+        "summary": "Harness signs X-Wopi-Proof with the reference DS key so NC accepts the candidate's traffic (an interface shim; the candidate itself sends no proof).",
+        "evidence": "bridge.mjs buildProof()"
+      }
+    ],
+    "a_layer": {
+      "engine_render": "fixture.wo.native.render.json",
+      "render_engine": "worldoffice-docserver",
+      "render_engine_version": "unknown",
+      "truth_source": "/tmp/fixture.truth.json",
+      "fidelity": 1.0,
+      "page_count_engine": 1,
+      "page_count_truth": 1,
+      "boxes_matched": 2,
+      "boxes_total": 2,
+      "scoring_mode": "Run"
+    },
+    "visual": {
+      "verdict": "DIFF",
+      "chrome_similarity": 0.9865675848754896,
+      "canvas_similarity": -1.0,
+      "divergences": [
+        "pixel canvas.png similarity -1.0000 < threshold 0.9",
+        "cross-engine structure/pixel DIFF expected (mirror of B-layer)"
+      ]
+    },
+    "wopi_path_shape": "/index.php/apps/richdocuments/wopi/files/{fileid}_{instance}[/contents]",
+    "captured_at": "2026-09-08T19:46:39.336Z"
   },
-  "fixture": {
-   "name": "fixture.docx",
-   "sha256": "a717101ee318a08a82cc9fbb18addc828403081c7af0ffbc2b1beeea7ead7b0c",
-   "file_id": 0
-  },
-  "protocol": {
-   "total_legs": 80,
-   "check_file_info": 18,
-   "get_file": 15,
-   "put_file": 0,
-   "lock_ops": 47,
-   "overrides": [
-    "GET_FILE",
-    "GET_LOCK",
-    "LOCK",
-    "UNLOCK"
-   ],
-   "methods": {
-    "GET": 33,
-    "POST": 47
-   },
-   "proof_style": "signing-shim",
-   "launch_style": "direct-launch"
-  },
-  "divergences": [
-   {
-    "id": "wo-001-proof-key-absent",
-    "layer": "protocol",
-    "severity": "high",
-    "summary": "World-Office discovery carries NO <proof-key>; Nextcloud richdocuments requires a valid X-Wopi-Proof whenever the configured host advertises one (OnlyOffice does), so NC rejects a raw World-Office client with 500 [].",
-    "evidence": "proof_shim=signing-shim; observed 500 [] for unproven legs"
-   },
-   {
-    "id": "wo-004-a-layer-image-dropped",
-    "layer": "a-layer",
-    "severity": "high",
-    "summary": "World-Office docx_to_html has no w:drawing/w:blip read path (it only EMITS drawings on write), so embedded raster/graphics are silently dropped: a drawing-only docx converts to EMPTY html (verified via /api/upload + /api/documents/{id}/html). PIPELINE WOULD LOSE THE IMAGE ON ROUNDTRIP.",
-    "evidence": "image.docx (1477B, embedded PNG): WO html=\"\" vs OnlyOffice/LO render the page"
-   },
-   {
-    "id": "wo-002-launch-handshake",
-    "layer": "protocol",
-    "severity": "medium",
-    "summary": "OnlyOffice launches via query-string urlSrc (richdocuments bootstrap); World-Office uses the OpenCloud form-POST launch (access_token+file_id in body, WOPISrc in query).",
-    "evidence": "direct-launch (form/query) vs richdocuments /hosting/wopi/word/edit"
-   },
-   {
-    "id": "wo-003-wopi-path-shape",
-    "layer": "protocol",
-    "severity": "medium",
-    "summary": "OpenCloud World-Office targets {host}/wopi/files/{doc}[/contents]; Nextcloud serves /index.php/apps/richdocuments/wopi/files/{id}_{instance}[/contents]. WOPISrc netloc must be the host's published URL.",
-    "evidence": "wopi_path_shape recorded in register"
-   },
-   {
-    "id": "rig-001-proof-shim",
-    "layer": "protocol",
-    "severity": "info",
-    "summary": "Harness signs X-Wopi-Proof with the reference DS key so NC accepts the candidate's traffic (an interface shim; the candidate itself sends no proof).",
-    "evidence": "bridge.mjs buildProof()"
-   }
-  ],
-  "a_layer": {
-   "engine_render": "fixture.wo.native.render.json",
-   "render_engine": "worldoffice-docserver",
-   "render_engine_version": "unknown",
-   "truth_source": "/tmp/fixture.truth.json",
-   "fidelity": 1.0,
-   "page_count_engine": 1,
-   "page_count_truth": 1,
-   "boxes_matched": 2,
-   "boxes_total": 2,
-   "scoring_mode": "Run"
-  },
-  "visual": {
-   "verdict": "DIFF",
-   "chrome_similarity": 0.9816885474373462,
-   "canvas_similarity": -1.0,
-   "divergences": [
-    "pixel canvas.png similarity -1.0000 < threshold 0.9",
-    "cross-engine structure/pixel DIFF expected (mirror of B-layer)"
-   ]
-  },
-  "wopi_path_shape": "/index.php/apps/richdocuments/wopi/files/{fileid}_{instance}[/contents]",
-  "captured_at": "2026-09-08T15:55:39.208Z"
- },
- {
-  "schema_version": 1,
-  "engine": "worldoffice",
-  "host_wopi_url": "http://onlyoffice.test:8080",
-  "launch": {
-   "mode": "direct-launch",
-   "url": "http://worldoffice.test:8080/editor?access_token"
-  },
-  "fixture": {
-   "name": "table.docx",
-   "sha256": "5e9a1f35c08a8797f13a801ab91b1033b7863f632727d88e57a59a7eae86b29f",
-   "file_id": 0
-  },
-  "protocol": {
-   "total_legs": 80,
-   "check_file_info": 17,
-   "get_file": 15,
-   "put_file": 0,
-   "lock_ops": 48,
-   "overrides": [
-    "GET_FILE",
-    "GET_LOCK",
-    "LOCK",
-    "UNLOCK"
-   ],
-   "methods": {
-    "GET": 32,
-    "POST": 48
-   },
-   "proof_style": "signing-shim",
-   "launch_style": "direct-launch"
-  },
-  "divergences": [
-   {
-    "id": "wo-001-proof-key-absent",
-    "layer": "protocol",
-    "severity": "high",
-    "summary": "World-Office discovery carries NO <proof-key>; Nextcloud richdocuments requires a valid X-Wopi-Proof whenever the configured host advertises one (OnlyOffice does), so NC rejects a raw World-Office client with 500 [].",
-    "evidence": "proof_shim=signing-shim; observed 500 [] for unproven legs"
-   },
-   {
-    "id": "wo-004-a-layer-image-dropped",
-    "layer": "a-layer",
-    "severity": "high",
-    "summary": "World-Office docx_to_html has no w:drawing/w:blip read path (it only EMITS drawings on write), so embedded raster/graphics are silently dropped: a drawing-only docx converts to EMPTY html (verified via /api/upload + /api/documents/{id}/html). PIPELINE WOULD LOSE THE IMAGE ON ROUNDTRIP.",
-    "evidence": "image.docx (1477B, embedded PNG): WO html=\"\" vs OnlyOffice/LO render the page"
-   },
-   {
-    "id": "wo-002-launch-handshake",
-    "layer": "protocol",
-    "severity": "medium",
-    "summary": "OnlyOffice launches via query-string urlSrc (richdocuments bootstrap); World-Office uses the OpenCloud form-POST launch (access_token+file_id in body, WOPISrc in query).",
-    "evidence": "direct-launch (form/query) vs richdocuments /hosting/wopi/word/edit"
-   },
-   {
-    "id": "wo-003-wopi-path-shape",
-    "layer": "protocol",
-    "severity": "medium",
-    "summary": "OpenCloud World-Office targets {host}/wopi/files/{doc}[/contents]; Nextcloud serves /index.php/apps/richdocuments/wopi/files/{id}_{instance}[/contents]. WOPISrc netloc must be the host's published URL.",
-    "evidence": "wopi_path_shape recorded in register"
-   },
-   {
-    "id": "rig-001-proof-shim",
-    "layer": "protocol",
-    "severity": "info",
-    "summary": "Harness signs X-Wopi-Proof with the reference DS key so NC accepts the candidate's traffic (an interface shim; the candidate itself sends no proof).",
-    "evidence": "bridge.mjs buildProof()"
-   }
-  ],
-  "a_layer": {
-   "engine_render": "table.wo.native.render.json",
-   "render_engine": "worldoffice-docserver",
-   "render_engine_version": "unknown",
-   "truth_source": "/tmp/table.truth.json",
-   "fidelity": 0.85,
-   "page_count_engine": 1,
-   "page_count_truth": 1,
-   "boxes_matched": 2,
-   "boxes_total": 4,
-   "scoring_mode": "Run"
-  },
-  "visual": {
-   "verdict": "DIFF",
-   "chrome_similarity": 0.9800415767324264,
-   "canvas_similarity": -1.0,
-   "divergences": [
-    "pixel canvas.png similarity -1.0000 < threshold 0.9",
-    "cross-engine structure/pixel DIFF expected (mirror of B-layer)"
-   ]
-  },
-  "wopi_path_shape": "/index.php/apps/richdocuments/wopi/files/{fileid}_{instance}[/contents]",
-  "captured_at": "2026-09-08T15:55:46.043Z"
- }
+  {
+    "schema_version": 1,
+    "engine": "worldoffice",
+    "host_wopi_url": "http://onlyoffice.test:8080",
+    "launch": {
+      "mode": "direct-launch",
+      "url": "http://worldoffice.test:8080/editor?access_token=2PSzJCV5ARIsy02ZlGgRgEKrfKpjTqjO&WOPISrc=192.168.42.42%3A8891%2Fwopi%2Ffiles%2F248"
+    },
+    "fixture": {
+      "name": "table.docx",
+      "sha256": "5e9a1f35c08a8797f13a801ab91b1033b7863f632727d88e57a59a7eae86b29f",
+      "file_id": 0
+    },
+    "protocol": {
+      "total_legs": 80,
+      "check_file_info": 7,
+      "get_file": 59,
+      "put_file": 0,
+      "lock_ops": 14,
+      "overrides": [
+        "GET_FILE",
+        "GET_LOCK",
+        "LOCK"
+      ],
+      "methods": {
+        "GET": 66,
+        "POST": 14
+      },
+      "proof_style": "signing-shim",
+      "launch_style": "direct-launch"
+    },
+    "divergences": [
+      {
+        "id": "wo-001-proof-key-absent",
+        "layer": "protocol",
+        "severity": "high",
+        "summary": "World-Office discovery carries NO <proof-key>; Nextcloud richdocuments requires a valid X-Wopi-Proof whenever the configured host advertises one (OnlyOffice does), so NC rejects a raw World-Office client with 500 [].",
+        "evidence": "proof_shim=signing-shim; observed 500 [] for unproven legs"
+      },
+      {
+        "id": "wo-004-a-layer-image-dropped",
+        "layer": "a-layer",
+        "severity": "high",
+        "summary": "World-Office docx_to_html has no w:drawing/w:blip read path (it only EMITS drawings on write), so embedded raster/graphics are silently dropped: a drawing-only docx converts to EMPTY html (verified via /api/upload + /api/documents/{id}/html). PIPELINE WOULD LOSE THE IMAGE ON ROUNDTRIP.",
+        "evidence": "image.docx (1477B, embedded PNG): WO html=\"\" vs OnlyOffice/LO render the page"
+      },
+      {
+        "id": "wo-002-launch-handshake",
+        "layer": "protocol",
+        "severity": "medium",
+        "summary": "OnlyOffice launches via query-string urlSrc (richdocuments bootstrap); World-Office uses the OpenCloud form-POST launch (access_token+file_id in body, WOPISrc in query).",
+        "evidence": "direct-launch (form/query) vs richdocuments /hosting/wopi/word/edit"
+      },
+      {
+        "id": "wo-003-wopi-path-shape",
+        "layer": "protocol",
+        "severity": "medium",
+        "summary": "OpenCloud World-Office targets {host}/wopi/files/{doc}[/contents]; Nextcloud serves /index.php/apps/richdocuments/wopi/files/{id}_{instance}[/contents]. WOPISrc netloc must be the host's published URL.",
+        "evidence": "wopi_path_shape recorded in register"
+      },
+      {
+        "id": "rig-001-proof-shim",
+        "layer": "protocol",
+        "severity": "info",
+        "summary": "Harness signs X-Wopi-Proof with the reference DS key so NC accepts the candidate's traffic (an interface shim; the candidate itself sends no proof).",
+        "evidence": "bridge.mjs buildProof()"
+      }
+    ],
+    "a_layer": {
+      "engine_render": "table.wo.native.render.json",
+      "render_engine": "worldoffice-docserver",
+      "render_engine_version": "unknown",
+      "truth_source": "/tmp/table.truth.json",
+      "fidelity": 0.85,
+      "page_count_engine": 1,
+      "page_count_truth": 1,
+      "boxes_matched": 2,
+      "boxes_total": 4,
+      "scoring_mode": "Run"
+    },
+    "visual": {
+      "verdict": "DIFF",
+      "chrome_similarity": 0.9849607406175468,
+      "canvas_similarity": -1.0,
+      "divergences": [
+        "pixel canvas.png similarity -1.0000 < threshold 0.9",
+        "cross-engine structure/pixel DIFF expected (mirror of B-layer)"
+      ]
+    },
+    "wopi_path_shape": "/index.php/apps/richdocuments/wopi/files/{fileid}_{instance}[/contents]",
+    "captured_at": "2026-09-08T19:46:47.459Z"
+  }
 ]
