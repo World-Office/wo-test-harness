@@ -70,7 +70,7 @@
       }
     ],
     "a_layer": {
-      "engine_render": "fixture.wo.render.json",
+      "engine_render": "fixture.wo.native.render.json",
       "render_engine": "worldoffice-docserver",
       "render_engine_version": "unknown",
       "truth_source": "/tmp/fixture.truth.json",
@@ -165,7 +165,7 @@
       }
     ],
     "a_layer": {
-      "engine_render": "table.wo.render.json",
+      "engine_render": "table.wo.native.render.json",
       "render_engine": "worldoffice-docserver",
       "render_engine_version": "unknown",
       "truth_source": "/tmp/table.truth.json",

@@ -298,6 +298,7 @@ fn cmd_capture(args: &[String]) -> i32 {
     let mut public_host: Option<String> = None;
     let mut filetype = "docx".to_string();
     let mut engine_kind = "onlyoffice".to_string();
+    let mut wo_export = std::env::var("WO_EXPORT").unwrap_or_else(|_| "native".to_string());
     let mut version = std::env::var("OO_DS_VERSION").unwrap_or_else(|_| "unknown".to_string());
     let mut input: Option<String> = None;
     let mut out: Option<String> = None;
@@ -312,6 +313,9 @@ fn cmd_capture(args: &[String]) -> i32 {
                 if let Some(e) = it.next() {
                     engine_kind = e.clone();
                 }
+            }
+            "--export" => {
+                wo_export = it.next().cloned().unwrap_or_else(|| "native".to_string());
             }
             "--filetype" => {
                 if let Some(ft) = it.next() {
@@ -373,6 +377,7 @@ fn cmd_capture(args: &[String]) -> i32 {
             }
         };
         engine.filetype = filetype;
+        engine.native_pdf = wo_export == "native";
         match engine.render(&doc, &wo_conformance::RenderSpec::default()) {
             Ok(render) => {
                 let truth = GroundTruthFile {

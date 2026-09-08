@@ -56,6 +56,9 @@ pub struct WorldOfficeHtmlEngine {
     pub version: String,
     /// Source format of input documents ("docx", "odt", ...).
     pub filetype: String,
+    /// Use the docserver's native PDF export (docx→html→weasyprint) when
+    /// available; fall back to the chromium projection otherwise.
+    pub native_pdf: bool,
 }
 
 impl WorldOfficeHtmlEngine {
@@ -74,11 +77,12 @@ impl WorldOfficeHtmlEngine {
             source,
             version: version.into(),
             filetype: "docx".into(),
+            native_pdf: true,
         })
     }
 
-    /// Upload docx bytes and return the converted content HTML fragment.
-    fn to_html(&self, doc: &[u8]) -> Result<String, ConformanceError> {
+    /// Upload docx bytes; returns the server-assigned doc id (the filename).
+    fn upload(&self, doc: &[u8]) -> Result<String, ConformanceError> {
         let name = "wo-render.docx";
         let part = reqwest::blocking::multipart::Part::bytes(doc.to_vec())
             .file_name(name)
@@ -96,10 +100,15 @@ impl WorldOfficeHtmlEngine {
         let up_json: serde_json::Value = up
             .json()
             .map_err(|e| ConformanceError::RenderFailed(format!("upload json: {e}")))?;
-        let doc_id = up_json
+        up_json
             .get("id")
             .and_then(serde_json::Value::as_str)
-            .ok_or_else(|| ConformanceError::RenderFailed("upload returned no id".into()))?;
+            .map(str::to_string)
+            .ok_or_else(|| ConformanceError::RenderFailed("upload returned no id".into()))
+    }
+
+    /// Fetch the content HTML for a doc id (their converter's docx→html).
+    fn fetch_html(&self, doc_id: &str) -> Result<String, ConformanceError> {
         let html_resp = self
             .http
             .get(format!(
@@ -119,6 +128,43 @@ impl WorldOfficeHtmlEngine {
             .and_then(serde_json::Value::as_str)
             .unwrap_or("")
             .to_string())
+    }
+
+    /// Native PDF export: POST /api/documents/{id}/export?format=pdf
+    /// (docx→html→weasyprint on the server).
+    fn export_pdf(&self, doc_id: &str) -> Result<Vec<u8>, ConformanceError> {
+        let resp = self
+            .http
+            .post(format!(
+                "{}/api/documents/{}/export?format=pdf",
+                self.cfg.base_url,
+                url_encode(doc_id)
+            ))
+            .send()
+            .map_err(|e| ConformanceError::RenderFailed(format!("export: {e}")))?;
+        let status = resp.status();
+        let engine = resp
+            .headers()
+            .get("x-export-engine")
+            .and_then(|v| v.to_str().ok())
+            .unwrap_or("unknown")
+            .to_string();
+        let bytes = resp
+            .bytes()
+            .map_err(|e| ConformanceError::RenderFailed(format!("export body: {e}")))?;
+        if !status.is_success() {
+            let text = String::from_utf8_lossy(&bytes);
+            return Err(ConformanceError::RenderFailed(format!(
+                "export status {} (engine {engine}): {}",
+                status, text
+            )));
+        }
+        if !bytes.starts_with(b"%PDF") {
+            return Err(ConformanceError::RenderFailed(format!(
+                "export returned non-PDF (engine {engine})"
+            )));
+        }
+        Ok(bytes.to_vec())
     }
 
     /// Print an HTML fragment to PDF via headless Chromium.
@@ -195,7 +241,26 @@ impl RenderEngine for WorldOfficeHtmlEngine {
     }
 
     fn render(&self, doc: &[u8], _spec: &RenderSpec) -> Result<NormalizedRender, ConformanceError> {
-        let html = self.to_html(doc)?;
+        let doc_id = self.upload(doc)?;
+        // 1: native export (docx→html→weasyprint on the server), chromium fallback.
+        if self.native_pdf {
+            match self.export_pdf(&doc_id) {
+                Ok(pdf) => {
+                    let mut render = self.source.extract(&pdf)?;
+                    render.metadata = RenderMetadata {
+                        engine: self.name().to_string(),
+                        engine_version: self.version.clone(),
+                        captured_at: chrono::Utc::now().to_rfc3339(),
+                        environment: "worldoffice native pdf export (docx→html→weasyprint)".into(),
+                    };
+                    return Ok(render);
+                }
+                Err(e) => {
+                    eprintln!("worldoffice: native export unavailable, falling back to chromium: {e}");
+                }
+            }
+        }
+        let html = self.fetch_html(&doc_id)?;
         if html.trim().is_empty() {
             return Err(ConformanceError::RenderFailed(
                 "world-office converter returned empty html".into(),
