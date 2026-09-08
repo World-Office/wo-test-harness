@@ -16,8 +16,8 @@
       "total_legs": 80,
       "check_file_info": 22,
       "get_file": 17,
-      "put_file": 3,
-      "lock_ops": 36,
+      "put_file": 1,
+      "lock_ops": 40,
       "overrides": [
         "GET_FILE",
         "GET_LOCK",
@@ -83,16 +83,16 @@
     },
     "visual": {
       "verdict": "DIFF",
-      "chrome_similarity": 0.6032238348654029,
+      "chrome_similarity": 0.5977021423384168,
       "canvas_similarity": -1,
       "divergences": [
-        "pixel chrome.png similarity 0.6032 < threshold 0.98",
-        "pixel canvas.png similarity -1.0000 < threshold 0.9",
+        "pixel chrome.png similarity 0.5977 < threshold 0.98",
+        "pixel canvas.png dimension mismatch (1327x694 vs 1440x780)",
         "cross-engine structure/pixel DIFF expected (mirror of B-layer)"
       ]
     },
     "wopi_path_shape": "/index.php/apps/richdocuments/wopi/files/{fileid}_{instance}[/contents]",
-    "captured_at": "2026-09-07T20:53:02.497Z"
+    "captured_at": "2026-09-08T09:38:55.614Z"
   },
   {
     "schema_version": 1,
@@ -110,9 +110,9 @@
     "protocol": {
       "total_legs": 80,
       "check_file_info": 22,
-      "get_file": 17,
-      "put_file": 3,
-      "lock_ops": 36,
+      "get_file": 16,
+      "put_file": 1,
+      "lock_ops": 41,
       "overrides": [
         "GET_FILE",
         "GET_LOCK",
@@ -121,8 +121,8 @@
         "UNLOCK"
       ],
       "methods": {
-        "GET": 39,
-        "POST": 41
+        "GET": 38,
+        "POST": 42
       },
       "proof_style": "signing-shim",
       "launch_style": "direct-launch"
@@ -178,15 +178,15 @@
     },
     "visual": {
       "verdict": "DIFF",
-      "chrome_similarity": 0.6024482135727189,
+      "chrome_similarity": 0.5970812898410394,
       "canvas_similarity": -1,
       "divergences": [
-        "pixel chrome.png similarity 0.6024 < threshold 0.98",
-        "pixel canvas.png similarity -1.0000 < threshold 0.9",
+        "pixel chrome.png similarity 0.5971 < threshold 0.98",
+        "pixel canvas.png dimension mismatch (1327x694 vs 1440x780)",
         "cross-engine structure/pixel DIFF expected (mirror of B-layer)"
       ]
     },
     "wopi_path_shape": "/index.php/apps/richdocuments/wopi/files/{fileid}_{instance}[/contents]",
-    "captured_at": "2026-09-08T02:57:27.516Z"
+    "captured_at": "2026-09-08T09:41:41.469Z"
   }
 ]
