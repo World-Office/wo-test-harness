@@ -107,6 +107,13 @@ fn known_divergences(engine: &str, proof_style: &str) -> Vec<Divergence> {
             evidence: format!("proof_shim={proof_style}; observed 500 [] for unproven legs"),
         });
         out.push(Divergence {
+            id: "wo-004-a-layer-image-dropped".into(),
+            layer: "a-layer".into(),
+            severity: "high".into(),
+            summary: "World-Office docx_to_html has no w:drawing/w:blip read path (it only EMITS drawings on write), so embedded raster/graphics are silently dropped: a drawing-only docx converts to EMPTY html (verified via /api/upload + /api/documents/{id}/html). PIPELINE WOULD LOSE THE IMAGE ON ROUNDTRIP.".into(),
+            evidence: "image.docx (1477B, embedded PNG): WO html=\"\" vs OnlyOffice/LO render the page".into(),
+        });
+        out.push(Divergence {
             id: "wo-002-launch-handshake".into(),
             layer: "protocol".into(),
             severity: "medium".into(),

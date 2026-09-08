@@ -16,7 +16,10 @@ pub mod ground_truth;
 pub mod model;
 pub mod scoring;
 
-pub use adapters::{DsConfig, OnlyOfficePdfEngine, PdfGeometrySource, PopplerSource};
+pub use adapters::{
+    DsConfig, OnlyOfficePdfEngine, PdfGeometrySource, PopplerSource, WorldOfficeConfig,
+    WorldOfficeHtmlEngine,
+};
 pub use corpus::{run_case, run_corpus};
 pub use engine::RenderEngine;
 pub use ground_truth::{

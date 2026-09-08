@@ -17,7 +17,7 @@ use serde_json::Value;
 use wo_conformance::{
     compute_fidelity, compute_fidelity_cross_engine, discover_corpus, CorpusManifest, DsConfig,
     GroundTruthFile, NormalizedRender, OnlyOfficePdfEngine, PdfGeometrySource, PopplerSource,
-    RenderEngine, TRUTH_SCHEMA_VERSION,
+    RenderEngine, WorldOfficeConfig, WorldOfficeHtmlEngine, TRUTH_SCHEMA_VERSION,
 };
 
 fn main() -> ExitCode {
@@ -297,6 +297,7 @@ fn cmd_capture(args: &[String]) -> i32 {
     let mut jwt: Option<String> = None;
     let mut public_host: Option<String> = None;
     let mut filetype = "docx".to_string();
+    let mut engine_kind = "onlyoffice".to_string();
     let mut version = std::env::var("OO_DS_VERSION").unwrap_or_else(|_| "unknown".to_string());
     let mut input: Option<String> = None;
     let mut out: Option<String> = None;
@@ -307,6 +308,11 @@ fn cmd_capture(args: &[String]) -> i32 {
             "--ds-url" => ds_url = it.next().cloned(),
             "--jwt" => jwt = it.next().cloned(),
             "--public-host" => public_host = it.next().cloned(),
+            "--engine" => {
+                if let Some(e) = it.next() {
+                    engine_kind = e.clone();
+                }
+            }
             "--filetype" => {
                 if let Some(ft) = it.next() {
                     filetype = ft.clone();
@@ -334,7 +340,7 @@ fn cmd_capture(args: &[String]) -> i32 {
         return 2;
     };
 
-    let mut cfg = DsConfig::new(ds_url);
+    let mut cfg = DsConfig::new(ds_url.clone());
     if let Some(secret) = jwt.or_else(|| std::env::var("OO_DS_JWT").ok()) {
         cfg.jwt_secret = Some(secret);
     }
@@ -357,6 +363,37 @@ fn cmd_capture(args: &[String]) -> i32 {
             return 1;
         }
     };
+    if engine_kind == "worldoffice" {
+        let cfg = WorldOfficeConfig::new(ds_url);
+        let mut engine = match WorldOfficeHtmlEngine::new(cfg, source, &version) {
+            Ok(e) => e,
+            Err(e) => {
+                eprintln!("capture: worldoffice engine init: {e}");
+                return 1;
+            }
+        };
+        engine.filetype = filetype;
+        match engine.render(&doc, &wo_conformance::RenderSpec::default()) {
+            Ok(render) => {
+                let truth = GroundTruthFile {
+                    schema_version: TRUTH_SCHEMA_VERSION,
+                    truth_captured_from: format!("worldoffice-opencloud-docserver {}", engine.version),
+                    captured_at: render.metadata.captured_at.clone(),
+                    render,
+                };
+                if let Err(e) = std::fs::write(&out, serde_json::to_string_pretty(&truth).unwrap()) {
+                    eprintln!("capture: write {}: {e}", out);
+                    return 1;
+                }
+                println!("captured {} [{}] -> {}", input, engine_kind, out);
+                return 0;
+            }
+            Err(e) => {
+                eprintln!("capture: {e}");
+                return 1;
+            }
+        }
+    }
     let engine = match OnlyOfficePdfEngine::new(cfg, source, &version) {
         Ok(e) => e,
         Err(e) => {
