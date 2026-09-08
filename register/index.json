@@ -14,10 +14,10 @@
     },
     "protocol": {
       "total_legs": 80,
-      "check_file_info": 22,
-      "get_file": 17,
+      "check_file_info": 20,
+      "get_file": 16,
       "put_file": 1,
-      "lock_ops": 40,
+      "lock_ops": 43,
       "overrides": [
         "GET_FILE",
         "GET_LOCK",
@@ -26,8 +26,8 @@
         "UNLOCK"
       ],
       "methods": {
-        "GET": 39,
-        "POST": 41
+        "GET": 36,
+        "POST": 44
       },
       "proof_style": "signing-shim",
       "launch_style": "direct-launch"
@@ -74,7 +74,7 @@
       "render_engine": "worldoffice-docserver",
       "render_engine_version": "unknown",
       "truth_source": "/tmp/fixture.truth.json",
-      "fidelity": 1,
+      "fidelity": 1.0,
       "page_count_engine": 1,
       "page_count_truth": 1,
       "boxes_matched": 2,
@@ -83,16 +83,16 @@
     },
     "visual": {
       "verdict": "DIFF",
-      "chrome_similarity": 0.5977021423384168,
-      "canvas_similarity": -1,
+      "chrome_similarity": 0.97485654298429,
+      "canvas_similarity": -1.0,
       "divergences": [
-        "pixel chrome.png similarity 0.5977 < threshold 0.98",
-        "pixel canvas.png dimension mismatch (1327x694 vs 1440x780)",
+        "pixel chrome.png similarity 0.9749 < threshold 0.98",
+        "pixel canvas.png similarity -1.0000 < threshold 0.9",
         "cross-engine structure/pixel DIFF expected (mirror of B-layer)"
       ]
     },
     "wopi_path_shape": "/index.php/apps/richdocuments/wopi/files/{fileid}_{instance}[/contents]",
-    "captured_at": "2026-09-08T09:38:55.614Z"
+    "captured_at": "2026-09-08T13:56:29.383Z"
   },
   {
     "schema_version": 1,
@@ -109,20 +109,19 @@
     },
     "protocol": {
       "total_legs": 80,
-      "check_file_info": 22,
+      "check_file_info": 20,
       "get_file": 16,
-      "put_file": 1,
-      "lock_ops": 41,
+      "put_file": 0,
+      "lock_ops": 44,
       "overrides": [
         "GET_FILE",
         "GET_LOCK",
         "LOCK",
-        "PUT",
         "UNLOCK"
       ],
       "methods": {
-        "GET": 38,
-        "POST": 42
+        "GET": 36,
+        "POST": 44
       },
       "proof_style": "signing-shim",
       "launch_style": "direct-launch"
@@ -178,15 +177,15 @@
     },
     "visual": {
       "verdict": "DIFF",
-      "chrome_similarity": 0.5970812898410394,
-      "canvas_similarity": -1,
+      "chrome_similarity": 0.9730326108252904,
+      "canvas_similarity": -1.0,
       "divergences": [
-        "pixel chrome.png similarity 0.5971 < threshold 0.98",
-        "pixel canvas.png dimension mismatch (1327x694 vs 1440x780)",
+        "pixel chrome.png similarity 0.9730 < threshold 0.98",
+        "pixel canvas.png similarity -1.0000 < threshold 0.9",
         "cross-engine structure/pixel DIFF expected (mirror of B-layer)"
       ]
     },
     "wopi_path_shape": "/index.php/apps/richdocuments/wopi/files/{fileid}_{instance}[/contents]",
-    "captured_at": "2026-09-08T09:41:41.469Z"
+    "captured_at": "2026-09-08T13:56:38.799Z"
   }
 ]
