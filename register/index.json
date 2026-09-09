@@ -331,5 +331,85 @@
     },
     "wopi_path_shape": "/index.php/apps/richdocuments/wopi/files/{fileid}_{instance}[/contents]",
     "captured_at": "2026-09-09T16:42:18.384Z"
+  },
+  {
+    "schema_version": 1,
+    "engine": "worldoffice",
+    "host_wopi_url": "http://onlyoffice.test:8080",
+    "launch": {
+      "mode": "direct-launch",
+      "url": "http://worldoffice.test:8080/editor?access_token=pK3dOnewFZU4Ms29TolztKbSQ6feYIZf&WOPISrc=192.168.42.42%3A8891%2Fwopi%2Ffiles%2F258"
+    },
+    "fixture": {
+      "name": "fixture.docx",
+      "sha256": "b4db26fc35d230bd59205ec4e6ba6ca8546d284f8f64c369cf53bea68c69410f",
+      "file_id": 0
+    },
+    "protocol": {
+      "total_legs": 80,
+      "check_file_info": 5,
+      "get_file": 65,
+      "put_file": 0,
+      "lock_ops": 10,
+      "overrides": [
+        "GET_FILE",
+        "GET_LOCK",
+        "LOCK"
+      ],
+      "methods": {
+        "GET": 70,
+        "POST": 10
+      },
+      "proof_style": "signing-shim",
+      "launch_style": "direct-launch"
+    },
+    "divergences": [
+      {
+        "id": "wo-001-proof-key-absent",
+        "layer": "protocol",
+        "severity": "high",
+        "summary": "World-Office discovery carries NO <proof-key>; Nextcloud richdocuments requires a valid X-Wopi-Proof whenever the configured host advertises one (OnlyOffice does), so NC rejects a raw World-Office client with 500 [].",
+        "evidence": "proof_shim=signing-shim; observed 500 [] for unproven legs"
+      },
+      {
+        "id": "wo-004-a-layer-image-dropped",
+        "layer": "a-layer",
+        "severity": "high",
+        "summary": "World-Office docx_to_html has no w:drawing/w:blip read path (it only EMITS drawings on write), so embedded raster/graphics are silently dropped: a drawing-only docx converts to EMPTY html (verified via /api/upload + /api/documents/{id}/html). PIPELINE WOULD LOSE THE IMAGE ON ROUNDTRIP.",
+        "evidence": "image.docx (1477B, embedded PNG): WO html=\"\" vs OnlyOffice/LO render the page"
+      },
+      {
+        "id": "wo-002-launch-handshake",
+        "layer": "protocol",
+        "severity": "medium",
+        "summary": "OnlyOffice launches via query-string urlSrc (richdocuments bootstrap); World-Office uses the OpenCloud form-POST launch (access_token+file_id in body, WOPISrc in query).",
+        "evidence": "direct-launch (form/query) vs richdocuments /hosting/wopi/word/edit"
+      },
+      {
+        "id": "wo-003-wopi-path-shape",
+        "layer": "protocol",
+        "severity": "medium",
+        "summary": "OpenCloud World-Office targets {host}/wopi/files/{doc}[/contents]; Nextcloud serves /index.php/apps/richdocuments/wopi/files/{id}_{instance}[/contents]. WOPISrc netloc must be the host's published URL.",
+        "evidence": "wopi_path_shape recorded in register"
+      },
+      {
+        "id": "rig-001-proof-shim",
+        "layer": "protocol",
+        "severity": "info",
+        "summary": "Harness signs X-Wopi-Proof with the reference DS key so NC accepts the candidate's traffic (an interface shim; the candidate itself sends no proof).",
+        "evidence": "bridge.mjs buildProof()"
+      }
+    ],
+    "a_layer": null,
+    "visual": {
+      "verdict": "DIFF",
+      "chrome_similarity": 0.9744020875960308,
+      "canvas_similarity": 0.981335868560054,
+      "divergences": [
+        "cross-engine structure/pixel DIFF expected (mirror of B-layer)"
+      ]
+    },
+    "wopi_path_shape": "/index.php/apps/richdocuments/wopi/files/{fileid}_{instance}[/contents]",
+    "captured_at": "2026-09-09T18:31:24.151Z"
   }
 ]
