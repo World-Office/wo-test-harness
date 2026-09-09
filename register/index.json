@@ -5,7 +5,7 @@
     "host_wopi_url": "http://onlyoffice.test:8080",
     "launch": {
       "mode": "direct-launch",
-      "url": "http://worldoffice.test:8080/editor?access_token=oU09Em4IqNG1fFcMLkmMsBj1HJJPIsVt&WOPISrc=192.168.42.42%3A8891%2Fwopi%2Ffiles%2F244"
+      "url": "http://worldoffice.test:8080/editor?access_token=L2z88wx7nfdPPDcOxA7YsLHxYrQnkW14&WOPISrc=192.168.42.42%3A8891%2Fwopi%2Ffiles%2F244"
     },
     "fixture": {
       "name": "fixture.docx",
@@ -14,18 +14,18 @@
     },
     "protocol": {
       "total_legs": 80,
-      "check_file_info": 7,
-      "get_file": 59,
+      "check_file_info": 6,
+      "get_file": 62,
       "put_file": 0,
-      "lock_ops": 14,
+      "lock_ops": 12,
       "overrides": [
         "GET_FILE",
         "GET_LOCK",
         "LOCK"
       ],
       "methods": {
-        "GET": 66,
-        "POST": 14
+        "GET": 68,
+        "POST": 12
       },
       "proof_style": "signing-shim",
       "launch_style": "direct-launch"
@@ -67,21 +67,10 @@
         "evidence": "bridge.mjs buildProof()"
       }
     ],
-    "a_layer": {
-      "engine_render": "fixture.wo.native.render.json",
-      "render_engine": "worldoffice-docserver",
-      "render_engine_version": "unknown",
-      "truth_source": "/tmp/fixture.truth.json",
-      "fidelity": 1.0,
-      "page_count_engine": 1,
-      "page_count_truth": 1,
-      "boxes_matched": 2,
-      "boxes_total": 2,
-      "scoring_mode": "Run"
-    },
+    "a_layer": null,
     "visual": {
       "verdict": "DIFF",
-      "chrome_similarity": 0.9865675848754896,
+      "chrome_similarity": 0.9861153627129816,
       "canvas_similarity": -1.0,
       "divergences": [
         "pixel canvas.png similarity -1.0000 < threshold 0.9",
@@ -89,7 +78,7 @@
       ]
     },
     "wopi_path_shape": "/index.php/apps/richdocuments/wopi/files/{fileid}_{instance}[/contents]",
-    "captured_at": "2026-09-08T19:46:39.336Z"
+    "captured_at": "2026-09-09T06:21:56.821Z"
   },
   {
     "schema_version": 1,
