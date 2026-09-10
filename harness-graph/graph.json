@@ -6186,6 +6186,41 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_docx_default_geometry_emits_no_marker",
+   "to": "F-090",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_docx_emits_page_setup_marker",
+   "to": "F-090",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_docx_marker_applies_to_section_and_is_stripped_from_body",
+   "to": "F-090",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_docx_without_marker_keeps_defaults",
+   "to": "F-090",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_odt_page_setup_roundtrip_exact",
+   "to": "F-090",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_page_setup_coexists_with_header_footer",
+   "to": "F-090",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_page_setup_marker_survives_sanitize",
+   "to": "F-090",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_layout_roundtrip.py::test_docx_to_html_restores_columns",
    "to": "F-091",
    "type": "COVERS"
@@ -6216,6 +6251,41 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_docx_default_geometry_emits_no_marker",
+   "to": "F-091",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_docx_emits_page_setup_marker",
+   "to": "F-091",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_docx_marker_applies_to_section_and_is_stripped_from_body",
+   "to": "F-091",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_docx_without_marker_keeps_defaults",
+   "to": "F-091",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_odt_page_setup_roundtrip_exact",
+   "to": "F-091",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_page_setup_coexists_with_header_footer",
+   "to": "F-091",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_page_setup_marker_survives_sanitize",
+   "to": "F-091",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_layout_roundtrip.py::test_docx_to_html_restores_columns",
    "to": "F-092",
    "type": "COVERS"
@@ -6242,6 +6312,41 @@
   },
   {
    "from": "opencloud-docserver/tests/test_layout_roundtrip.py::test_page_break_roundtrip",
+   "to": "F-092",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_docx_default_geometry_emits_no_marker",
+   "to": "F-092",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_docx_emits_page_setup_marker",
+   "to": "F-092",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_docx_marker_applies_to_section_and_is_stripped_from_body",
+   "to": "F-092",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_docx_without_marker_keeps_defaults",
+   "to": "F-092",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_odt_page_setup_roundtrip_exact",
+   "to": "F-092",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_page_setup_coexists_with_header_footer",
+   "to": "F-092",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_page_setup.py::test_page_setup_marker_survives_sanitize",
    "to": "F-092",
    "type": "COVERS"
   },
@@ -7211,7 +7316,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-10T20:20:40+00:00",
+ "generated_at": "2026-09-10T22:15:29+00:00",
  "nodes": [
   {
    "id": "allCaps",
@@ -12659,6 +12764,48 @@
    "path": "opencloud-docserver/tests/test_page_break_roundtrip.py"
   },
   {
+   "id": "opencloud-docserver/tests/test_page_setup.py::test_docx_emits_page_setup_marker",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_page_setup.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_page_setup.py::test_docx_marker_applies_to_section_and_is_stripped_from_body",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_page_setup.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_page_setup.py::test_docx_without_marker_keeps_defaults",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_page_setup.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_page_setup.py::test_odt_page_setup_roundtrip_exact",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_page_setup.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_page_setup.py::test_page_setup_marker_survives_sanitize",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_page_setup.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_page_setup.py::test_page_setup_coexists_with_header_footer",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_page_setup.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_page_setup.py::test_docx_default_geometry_emits_no_marker",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_page_setup.py"
+  },
+  {
    "id": "opencloud-docserver/tests/test_paragraph_controls.py::test_multilevel_bullet_list_docx_roundtrip",
    "label": "Test",
    "layer": "e2e",
@@ -15529,41 +15676,41 @@
   },
   {
    "area": "layout",
-   "fidelity": "L1",
+   "fidelity": "L2",
    "id": "F-090",
    "label": "Feature",
    "name": "Page size",
    "parity": "full"
   },
   {
-   "id": "F-090:marker-only",
-   "justification": "L1 marker for page breaks proven; actual page size settings are not mapped to editor view. A loud stub surface (data-stub=layout.size) on the Layout tab reports not-implemented.",
+   "id": "F-090:canvas-proportions",
+   "justification": "Page size is real: the page-setup dialog writes a .page-setup marker that round-trips through DOCX w:pgSz and ODT page layout, and maps to the live canvas width. The continuous canvas shows page proportions but does not paginate.",
    "label": "Divergence"
   },
   {
    "area": "layout",
-   "fidelity": "L1",
+   "fidelity": "L2",
    "id": "F-091",
    "label": "Feature",
    "name": "Orientation (portrait/landscape)",
    "parity": "full"
   },
   {
-   "id": "F-091:marker-only",
-   "justification": "L1 marker for page breaks proven; actual orientation settings are not mapped to editor view. A loud stub surface (data-stub=layout.orientation) on the Layout tab reports not-implemented.",
+   "id": "F-091:canvas-proportions",
+   "justification": "Orientation is real: the page-setup dialog swaps page dimensions, round-trips through DOCX w:orient and ODT printorientation, and maps to the live canvas. The continuous canvas does not repaginate.",
    "label": "Divergence"
   },
   {
    "area": "layout",
-   "fidelity": "L1",
+   "fidelity": "L2",
    "id": "F-092",
    "label": "Feature",
    "name": "Margins",
    "parity": "full"
   },
   {
-   "id": "F-092:serialization-only",
-   "justification": "Paragraph margins (left/right/top/bottom) serialize to DOCX and back; document-level page margins are not mapped to editor view. A loud stub surface (data-stub=layout.margins) on the Layout tab reports not-implemented.",
+   "id": "F-092:canvas-proportions",
+   "justification": "Document margins are real: the page-setup dialog writes a .page-setup marker that round-trips through DOCX w:pgMar and ODT page layout, and maps to canvas padding. Paragraph margins serialize as before.",
    "label": "Divergence"
   },
   {
@@ -16059,10 +16206,10 @@
  ],
  "stats": {
   "commands": 27,
-  "edges": 1442,
+  "edges": 1463,
   "features": 102,
   "surfaces": 27,
-  "tests": 1245
+  "tests": 1252
  },
  "version": 1
 }

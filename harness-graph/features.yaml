@@ -107,12 +107,12 @@ features:
   - {id: F-086, area: insert,      name: Equation / formula,             parity: full,    fidelity: L2}
 
   # ── layout ────────────────────────────────────────────────────────────────
-  - {id: F-090, area: layout,      name: Page size,                      parity: full,    fidelity: L1,
-      divergence: [{ref: marker-only, justification: "L1 marker for page breaks proven; actual page size settings are not mapped to editor view. A loud stub surface (data-stub=layout.size) on the Layout tab reports not-implemented."}]}
-  - {id: F-091, area: layout,      name: Orientation (portrait/landscape), parity: full,    fidelity: L1,
-      divergence: [{ref: marker-only, justification: "L1 marker for page breaks proven; actual orientation settings are not mapped to editor view. A loud stub surface (data-stub=layout.orientation) on the Layout tab reports not-implemented."}]}
-  - {id: F-092, area: layout,      name: Margins,                        parity: full,    fidelity: L1,
-      divergence: [{ref: serialization-only, justification: "Paragraph margins (left/right/top/bottom) serialize to DOCX and back; document-level page margins are not mapped to editor view. A loud stub surface (data-stub=layout.margins) on the Layout tab reports not-implemented."}]}
+  - {id: F-090, area: layout,      name: Page size,                      parity: full,    fidelity: L2,
+      divergence: [{ref: canvas-proportions, justification: "Page size is real: the page-setup dialog writes a .page-setup marker that round-trips through DOCX w:pgSz and ODT page layout, and maps to the live canvas width. The continuous canvas shows page proportions but does not paginate."}]}
+  - {id: F-091, area: layout,      name: Orientation (portrait/landscape), parity: full,    fidelity: L2,
+      divergence: [{ref: canvas-proportions, justification: "Orientation is real: the page-setup dialog swaps page dimensions, round-trips through DOCX w:orient and ODT printorientation, and maps to the live canvas. The continuous canvas does not repaginate."}]}
+  - {id: F-092, area: layout,      name: Margins,                        parity: full,    fidelity: L2,
+      divergence: [{ref: canvas-proportions, justification: "Document margins are real: the page-setup dialog writes a .page-setup marker that round-trips through DOCX w:pgMar and ODT page layout, and maps to canvas padding. Paragraph margins serialize as before."}]}
   - {id: F-093, area: layout,      name: Columns,                        parity: full,    fidelity: L1}
   - {id: F-094, area: layout,      name: Section breaks,                 parity: full,    fidelity: L1}
   - {id: F-095, area: layout,      name: Hyphenation,                    parity: missing, fidelity: L2,
