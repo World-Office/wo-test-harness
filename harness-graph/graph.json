@@ -436,6 +436,11 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_header_footer_contextual_tab",
+   "to": "F-005",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_image_resize_fields_wired",
    "to": "F-005",
    "type": "COVERS"
@@ -2906,6 +2911,11 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_header_footer_contextual_tab",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_image_resize_fields_wired",
    "to": "F-073",
    "type": "COVERS"
@@ -3427,6 +3437,11 @@
   },
   {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_file_menu_present_in_html",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_header_footer_contextual_tab",
    "to": "F-074",
    "type": "COVERS"
   },
@@ -4861,6 +4876,11 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_header_footer_contextual_tab",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_image_resize_fields_wired",
    "to": "F-078",
    "type": "COVERS"
@@ -4942,6 +4962,11 @@
   },
   {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_file_menu_present_in_html",
+   "to": "F-079",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_header_footer_contextual_tab",
    "to": "F-079",
    "type": "COVERS"
   },
@@ -5726,6 +5751,11 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_header_footer_contextual_tab",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_image_resize_fields_wired",
    "to": "F-084",
    "type": "COVERS"
@@ -5892,6 +5922,11 @@
   },
   {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_file_menu_present_in_html",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_header_footer_contextual_tab",
    "to": "F-085",
    "type": "COVERS"
   },
@@ -7176,7 +7211,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-10T14:32:45+00:00",
+ "generated_at": "2026-09-10T16:10:27+00:00",
  "nodes": [
   {
    "id": "allCaps",
@@ -11371,6 +11406,12 @@
   },
   {
    "id": "opencloud-docserver/tests/test_file_menu.py::test_view_tab_real_controls_wired",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_file_menu.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_file_menu.py::test_header_footer_contextual_tab",
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/tests/test_file_menu.py"
@@ -15728,10 +15769,10 @@
  ],
  "stats": {
   "commands": 27,
-  "edges": 1435,
+  "edges": 1442,
   "features": 82,
   "surfaces": 27,
-  "tests": 1239
+  "tests": 1240
  },
  "version": 1
 }
