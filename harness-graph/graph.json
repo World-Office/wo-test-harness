@@ -21,6 +21,16 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:fontName",
+   "to": "fontName",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:fontSize",
+   "to": "fontSize",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:formatBlock",
    "to": "formatBlock",
    "type": "TRIGGERS"
@@ -66,6 +76,11 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:listStyle",
+   "to": "listStyle",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:outdent",
    "to": "outdent",
    "type": "TRIGGERS"
@@ -76,8 +91,18 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:removeFormat",
+   "to": "removeFormat",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:smallCaps",
    "to": "smallCaps",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:strikeDouble",
+   "to": "strikeDouble",
    "type": "TRIGGERS"
   },
   {
@@ -98,6 +123,11 @@
   {
    "from": "toolbar:underline",
    "to": "underline",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:underlineDouble",
+   "to": "underlineDouble",
    "type": "TRIGGERS"
   },
   {
@@ -376,6 +406,21 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_css_matches_oo_geometry",
+   "to": "F-005",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_present_in_html",
+   "to": "F-005",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_wired_in_editor_js",
+   "to": "F-005",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_editor_js_wires_file_commands",
    "to": "F-005",
    "type": "COVERS"
@@ -407,6 +452,11 @@
   },
   {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_insert_menu_buttons_present_and_wired",
+   "to": "F-005",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_note_pagefield_headerfooter_authoring_buttons",
    "to": "F-005",
    "type": "COVERS"
   },
@@ -1341,6 +1391,11 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_find_replace.py::test_find_panel_oo_anatomy",
+   "to": "F-062",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_find_replace.py::test_find_replace_ui_presence",
    "to": "F-062",
    "type": "COVERS"
@@ -1356,6 +1411,11 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_find_replace.py::test_find_panel_oo_anatomy",
+   "to": "F-063",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_find_replace.py::test_find_replace_ui_presence",
    "to": "F-063",
    "type": "COVERS"
@@ -1368,6 +1428,11 @@
   {
    "from": "opencloud-docserver/tests/test_find_replace.py::test_shortcuts_hooks_presence",
    "to": "F-063",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_find_replace.py::test_find_panel_oo_anatomy",
+   "to": "F-064",
    "type": "COVERS"
   },
   {
@@ -2791,6 +2856,71 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_css_matches_oo_geometry",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_present_in_html",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_wired_in_editor_js",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_editor_js_wires_file_commands",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_export_submenu_formats_present",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_file_menu_present_in_html",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_image_resize_fields_wired",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_inline_text_format_buttons_present",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_insert_date_button_wired",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_insert_menu_buttons_present_and_wired",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_note_pagefield_headerfooter_authoring_buttons",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_paragraph_format_commands_present",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_version_history_wired",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_bookmark_crossref_survive_save_then_convert",
    "to": "F-074",
    "type": "COVERS"
@@ -3227,6 +3357,71 @@
   },
   {
    "from": "opencloud-docserver/tests/test_converter.py::test_track_changes_markers_survive_save_then_convert",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_css_matches_oo_geometry",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_present_in_html",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_wired_in_editor_js",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_editor_js_wires_file_commands",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_export_submenu_formats_present",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_file_menu_present_in_html",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_image_resize_fields_wired",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_inline_text_format_buttons_present",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_insert_date_button_wired",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_insert_menu_buttons_present_and_wired",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_note_pagefield_headerfooter_authoring_buttons",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_paragraph_format_commands_present",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_version_history_wired",
    "to": "F-074",
    "type": "COVERS"
   },
@@ -4576,6 +4771,21 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_css_matches_oo_geometry",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_present_in_html",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_wired_in_editor_js",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_editor_js_wires_file_commands",
    "to": "F-078",
    "type": "COVERS"
@@ -4607,6 +4817,11 @@
   },
   {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_insert_menu_buttons_present_and_wired",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_note_pagefield_headerfooter_authoring_buttons",
    "to": "F-078",
    "type": "COVERS"
   },
@@ -4621,6 +4836,21 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_css_matches_oo_geometry",
+   "to": "F-079",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_present_in_html",
+   "to": "F-079",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_wired_in_editor_js",
+   "to": "F-079",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_editor_js_wires_file_commands",
    "to": "F-079",
    "type": "COVERS"
@@ -4652,6 +4882,11 @@
   },
   {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_insert_menu_buttons_present_and_wired",
+   "to": "F-079",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_note_pagefield_headerfooter_authoring_buttons",
    "to": "F-079",
    "type": "COVERS"
   },
@@ -5361,6 +5596,71 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_css_matches_oo_geometry",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_present_in_html",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_wired_in_editor_js",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_editor_js_wires_file_commands",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_export_submenu_formats_present",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_file_menu_present_in_html",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_image_resize_fields_wired",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_inline_text_format_buttons_present",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_insert_date_button_wired",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_insert_menu_buttons_present_and_wired",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_note_pagefield_headerfooter_authoring_buttons",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_paragraph_format_commands_present",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_version_history_wired",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_insert_advanced.py::test_f071_image_resize_preserves_aspect",
    "to": "F-084",
    "type": "COVERS"
@@ -5443,6 +5743,71 @@
   {
    "from": "opencloud-docserver/tests/test_insert_advanced.py::test_f086_equation_with_label",
    "to": "F-084",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_css_matches_oo_geometry",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_present_in_html",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_wired_in_editor_js",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_editor_js_wires_file_commands",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_export_submenu_formats_present",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_file_menu_present_in_html",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_image_resize_fields_wired",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_inline_text_format_buttons_present",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_insert_date_button_wired",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_insert_menu_buttons_present_and_wired",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_note_pagefield_headerfooter_authoring_buttons",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_paragraph_format_commands_present",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_version_history_wired",
+   "to": "F-085",
    "type": "COVERS"
   },
   {
@@ -6671,7 +7036,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-07T10:12:35+00:00",
+ "generated_at": "2026-09-10T14:04:53+00:00",
  "nodes": [
   {
    "id": "allCaps",
@@ -6692,6 +7057,16 @@
    "id": "directionRtl",
    "label": "Command",
    "source": "editor.js:runCommand('directionRtl')"
+  },
+  {
+   "id": "fontName",
+   "label": "Command",
+   "source": "editor.js:runCommand('fontName')"
+  },
+  {
+   "id": "fontSize",
+   "label": "Command",
+   "source": "editor.js:runCommand('fontSize')"
   },
   {
    "id": "formatBlock",
@@ -6739,6 +7114,11 @@
    "source": "editor.js:runCommand('justifyRight')"
   },
   {
+   "id": "listStyle",
+   "label": "Command",
+   "source": "editor.js:runCommand('listStyle')"
+  },
+  {
    "id": "outdent",
    "label": "Command",
    "source": "editor.js:runCommand('outdent')"
@@ -6749,9 +7129,19 @@
    "source": "editor.js:runCommand('redo')"
   },
   {
+   "id": "removeFormat",
+   "label": "Command",
+   "source": "editor.js:runCommand('removeFormat')"
+  },
+  {
    "id": "smallCaps",
    "label": "Command",
    "source": "editor.js:runCommand('smallCaps')"
+  },
+  {
+   "id": "strikeDouble",
+   "label": "Command",
+   "source": "editor.js:runCommand('strikeDouble')"
   },
   {
    "id": "strikeThrough",
@@ -6772,6 +7162,11 @@
    "id": "underline",
    "label": "Command",
    "source": "editor.js:runCommand('underline')"
+  },
+  {
+   "id": "underlineDouble",
+   "label": "Command",
+   "source": "editor.js:runCommand('underlineDouble')"
   },
   {
    "id": "undo",
@@ -6798,6 +7193,18 @@
   },
   {
    "id": "toolbar:directionRtl",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:fontName",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:fontSize",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -6857,6 +7264,12 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:listStyle",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:outdent",
    "kind": "toolbar-button",
    "label": "Surface",
@@ -6869,7 +7282,19 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:removeFormat",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:smallCaps",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:strikeDouble",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -6894,6 +7319,12 @@
   },
   {
    "id": "toolbar:underline",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:underlineDouble",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -10757,6 +11188,30 @@
    "path": "opencloud-docserver/tests/test_file_menu.py"
   },
   {
+   "id": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_present_in_html",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_file_menu.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_wired_in_editor_js",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_file_menu.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_file_menu.py::test_context_menu_css_matches_oo_geometry",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_file_menu.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_file_menu.py::test_note_pagefield_headerfooter_authoring_buttons",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_file_menu.py"
+  },
+  {
    "id": "opencloud-docserver/tests/test_file_ops.py::test_export_odt_is_valid_odf",
    "label": "Test",
    "layer": "e2e",
@@ -10788,6 +11243,12 @@
   },
   {
    "id": "opencloud-docserver/tests/test_find_replace.py::test_shortcuts_hooks_presence",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_find_replace.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_find_replace.py::test_find_panel_oo_anatomy",
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/tests/test_find_replace.py"
@@ -14710,12 +15171,7 @@
    "id": "F-073",
    "label": "Feature",
    "name": "Footnote",
-   "parity": "partial"
-  },
-  {
-   "id": "F-073:no-authoring-ui",
-   "justification": "Read + serialization roundtrip (w:footnoteReference <-> sup.footnote-citation) proven; no editor toolbar authoring button yet.",
-   "label": "Divergence"
+   "parity": "full"
   },
   {
    "area": "insert",
@@ -14723,12 +15179,7 @@
    "id": "F-074",
    "label": "Feature",
    "name": "Endnote",
-   "parity": "partial"
-  },
-  {
-   "id": "F-074:no-authoring-ui",
-   "justification": "Read + serialization roundtrip proven; no editor toolbar authoring button yet.",
-   "label": "Divergence"
+   "parity": "full"
   },
   {
    "area": "insert",
@@ -14826,22 +15277,12 @@
    "parity": "full"
   },
   {
-   "id": "F-084:no-authoring-ui",
-   "justification": "Read + serialization roundtrip (header/page-header, footer/page-footer classes) proven; no editor toolbar authoring button yet.",
-   "label": "Divergence"
-  },
-  {
    "area": "insert",
    "fidelity": "L2",
    "id": "F-085",
    "label": "Feature",
    "name": "Page numbers",
    "parity": "full"
-  },
-  {
-   "id": "F-085:no-authoring-ui",
-   "justification": "Read + serialization roundtrip (span.page-number <-> w:fldSimple PAGE) proven; no editor toolbar authoring button yet.",
-   "label": "Divergence"
   },
   {
    "area": "insert",
@@ -15122,11 +15563,11 @@
   }
  ],
  "stats": {
-  "commands": 21,
-  "edges": 1334,
+  "commands": 27,
+  "edges": 1407,
   "features": 82,
-  "surfaces": 21,
-  "tests": 1230
+  "surfaces": 27,
+  "tests": 1235
  },
  "version": 1
 }
