@@ -7211,7 +7211,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-10T18:39:12+00:00",
+ "generated_at": "2026-09-10T20:20:40+00:00",
  "nodes": [
   {
    "id": "allCaps",
@@ -8847,6 +8847,36 @@
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/tests/test_ai_permissions.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ai_propose.py::test_propose_applies_scripted_model_ops_and_returns_ops_json",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ai_propose.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ai_propose.py::test_propose_unknown_model_is_typed_503",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ai_propose.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ai_propose.py::test_propose_requires_instruction",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ai_propose.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ai_propose.py::test_propose_unknown_document_is_404",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ai_propose.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ai_propose.py::test_propose_delete_op_round_trips_through_reject",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ai_propose.py"
   },
   {
    "id": "opencloud-docserver/tests/test_ai_provider_fail.py::test_provider_raises_runtime_error_stops_safely",
@@ -15989,28 +16019,28 @@
   },
   {
    "area": "home",
-   "fidelity": "L1",
+   "fidelity": "L2",
    "id": "F-142",
    "label": "Feature",
    "name": "AI grammar / spelling",
-   "parity": "absent"
+   "parity": "full"
   },
   {
-   "id": "F-142:absent",
-   "justification": "No grammar engine. Loud stub surface (data-stub=ai.grammar) on AI tab reports not-implemented. OO census: AI tab 'Grammar'.",
+   "id": "F-142:propose-dialog",
+   "justification": "Grammar runs via the AI propose panel (btn-ai-grammar -> /ai/propose -> agent ops -> tracked-change spans with per-change accept/reject); w:ins/w:del serialize to DOCX. No offline grammar engine \u2014 proposals come from the deployment's registered model. OO census: AI tab 'Grammar'.",
    "label": "Divergence"
   },
   {
    "area": "home",
-   "fidelity": "L1",
+   "fidelity": "L2",
    "id": "F-143",
    "label": "Feature",
    "name": "AI assistant actions",
-   "parity": "absent"
+   "parity": "full"
   },
   {
-   "id": "F-143:absent",
-   "justification": "OO AI-tab icon cluster (unnamed asc-gen icons) covered by documented stub data-stub=ai.assistant on AI tab. OO census: ai tab asc-gen cluster.",
+   "id": "F-143:propose-dialog",
+   "justification": "AI assistant runs via the same propose panel (btn-ai-assistant -> /ai/propose); OO's asc-gen icon cluster maps to one real propose surface + AI review dialog instead of per-icon actions. OO census: ai tab asc-gen cluster.",
    "label": "Divergence"
   },
   {
@@ -16032,7 +16062,7 @@
   "edges": 1442,
   "features": 102,
   "surfaces": 27,
-  "tests": 1240
+  "tests": 1245
  },
  "version": 1
 }

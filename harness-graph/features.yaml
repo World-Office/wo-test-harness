@@ -187,9 +187,9 @@ features:
       divergence: [{ref: absent, justification: "No OCR. Loud stub surface (data-stub=plugins.ocr) on Plugins tab. OO census: plugins 'OCR'."}]}
   - {id: F-141, area: insert,      name: Photo editor plugin,            parity: absent,  fidelity: L1,
       divergence: [{ref: absent, justification: "No image editing. Loud stub surface (data-stub=plugins.photoeditor) on Plugins tab. OO census: plugins 'Photo Editor'."}]}
-  - {id: F-142, area: home,        name: AI grammar / spelling,          parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "No grammar engine. Loud stub surface (data-stub=ai.grammar) on AI tab reports not-implemented. OO census: AI tab 'Grammar'."}]}
-  - {id: F-143, area: home,        name: AI assistant actions,           parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "OO AI-tab icon cluster (unnamed asc-gen icons) covered by documented stub data-stub=ai.assistant on AI tab. OO census: ai tab asc-gen cluster."}]}
+  - {id: F-142, area: home,        name: AI grammar / spelling,          parity: full,    fidelity: L2,
+      divergence: [{ref: propose-dialog, justification: "Grammar runs via the AI propose panel (btn-ai-grammar -> /ai/propose -> agent ops -> tracked-change spans with per-change accept/reject); w:ins/w:del serialize to DOCX. No offline grammar engine — proposals come from the deployment's registered model. OO census: AI tab 'Grammar'."}]}
+  - {id: F-143, area: home,        name: AI assistant actions,           parity: full,    fidelity: L2,
+      divergence: [{ref: propose-dialog, justification: "AI assistant runs via the same propose panel (btn-ai-assistant -> /ai/propose); OO's asc-gen icon cluster maps to one real propose surface + AI review dialog instead of per-icon actions. OO census: ai tab asc-gen cluster."}]}
   - {id: F-144, area: layout,      name: H&F same-as-previous,           parity: absent,  fidelity: L1,
       divergence: [{ref: absent, justification: "Section-linked header/footer inheritance not implemented. Loud stub surface (data-stub=hf.same-as-prev) on Header & Footer tab. OO census: header-footer 'Same as previous'."}]}
