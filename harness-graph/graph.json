@@ -7211,7 +7211,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-10T16:27:52+00:00",
+ "generated_at": "2026-09-10T18:39:12+00:00",
  "nodes": [
   {
    "id": "allCaps",
@@ -15765,12 +15765,272 @@
    "label": "Feature",
    "name": "WOPI Lock/Unlock conflict handling",
    "parity": "full"
+  },
+  {
+   "area": "home",
+   "fidelity": "L1",
+   "id": "F-125",
+   "label": "Feature",
+   "name": "Highlight color",
+   "parity": "absent"
+  },
+  {
+   "id": "F-125:absent",
+   "justification": "No highlight (character shading) implementation. Loud stub surface (data-stub=home.highlight) in the More-formatting menu on Home reports not-implemented. OO census: home 'Highlight color'.",
+   "label": "Divergence"
+  },
+  {
+   "area": "home",
+   "fidelity": "L1",
+   "id": "F-126",
+   "label": "Feature",
+   "name": "Font color",
+   "parity": "absent"
+  },
+  {
+   "id": "F-126:absent",
+   "justification": "No font-color picker. Loud stub surface (data-stub=home.fontcolor) in the More-formatting menu on Home reports not-implemented. OO census: home 'Font color'.",
+   "label": "Divergence"
+  },
+  {
+   "area": "home",
+   "fidelity": "L1",
+   "id": "F-127",
+   "label": "Feature",
+   "name": "Paragraph shading",
+   "parity": "absent"
+  },
+  {
+   "id": "F-127:absent",
+   "justification": "No paragraph shading. Loud stub surface (data-stub=home.shading) in the More-formatting menu on Home reports not-implemented. OO census: home 'Shading'.",
+   "label": "Divergence"
+  },
+  {
+   "area": "home",
+   "fidelity": "L1",
+   "id": "F-128",
+   "label": "Feature",
+   "name": "Borders",
+   "parity": "absent"
+  },
+  {
+   "id": "F-128:absent",
+   "justification": "No paragraph/table border painter. Loud stub surface (data-stub=home.borders) in the More-formatting menu on Home reports not-implemented. OO census: home 'Borders'.",
+   "label": "Divergence"
+  },
+  {
+   "area": "home",
+   "fidelity": "L1",
+   "id": "F-129",
+   "label": "Feature",
+   "name": "Change case",
+   "parity": "partial"
+  },
+  {
+   "id": "F-129:partial-cmds",
+   "justification": "smallCaps/allCaps are real data-cmd buttons; sentence/title/toggle case are not. Loud stub (data-stub=home.change-case) in the More-formatting menu. OO census: home 'Change case'.",
+   "label": "Divergence"
+  },
+  {
+   "area": "home",
+   "fidelity": "L1",
+   "id": "F-130",
+   "label": "Feature",
+   "name": "Multilevel list",
+   "parity": "absent"
+  },
+  {
+   "id": "F-130:absent",
+   "justification": "Single-level lists only (insertOrdered/UnorderedList real). Loud stub surface (data-stub=home.multilevel). OO census: home 'Multilevel'.",
+   "label": "Divergence"
+  },
+  {
+   "area": "home",
+   "fidelity": "L1",
+   "id": "F-131",
+   "label": "Feature",
+   "name": "Font size step +/-",
+   "parity": "absent"
+  },
+  {
+   "id": "F-131:absent",
+   "justification": "Font size select is real; discrete grow/shrink steps are not. Loud stubs (data-stub=home.font-dec, home.font-inc). OO census: home inc/dec font.",
+   "label": "Divergence"
+  },
+  {
+   "area": "insert",
+   "fidelity": "L1",
+   "id": "F-132",
+   "label": "Feature",
+   "name": "Shape",
+   "parity": "absent"
+  },
+  {
+   "id": "F-132:absent",
+   "justification": "No shape canvas. Loud stub surface (data-stub=insert.shape) on Insert tab reports not-implemented. OO census: insert 'Shape'.",
+   "label": "Divergence"
+  },
+  {
+   "area": "insert",
+   "fidelity": "L1",
+   "id": "F-133",
+   "label": "Feature",
+   "name": "Chart",
+   "parity": "absent"
+  },
+  {
+   "id": "F-133:absent",
+   "justification": "No chart object model. Loud stub surface (data-stub=insert.chart) on Insert tab; chart-design tab controls declared wontfix in census ledger. OO census: insert/chart-design 'Chart'.",
+   "label": "Divergence"
+  },
+  {
+   "area": "insert",
+   "fidelity": "L1",
+   "id": "F-134",
+   "label": "Feature",
+   "name": "Text art",
+   "parity": "absent"
+  },
+  {
+   "id": "F-134:absent",
+   "justification": "No WordArt. Loud stub surface (data-stub=insert.textart) on Insert tab. OO census: insert 'Text Art'.",
+   "label": "Divergence"
+  },
+  {
+   "area": "insert",
+   "fidelity": "L1",
+   "id": "F-135",
+   "label": "Feature",
+   "name": "Drop cap",
+   "parity": "absent"
+  },
+  {
+   "id": "F-135:absent",
+   "justification": "No drop-cap layout. Loud stub surface (data-stub=insert.dropcap) on Insert tab. OO census: insert 'Drop Cap'.",
+   "label": "Divergence"
+  },
+  {
+   "area": "insert",
+   "fidelity": "L1",
+   "id": "F-136",
+   "label": "Feature",
+   "name": "Text box",
+   "parity": "absent"
+  },
+  {
+   "id": "F-136:absent",
+   "justification": "No floating text boxes (float layout unsupported). Loud stub surface (data-stub=insert.textbox) on Insert tab. OO census: insert 'Text Box'.",
+   "label": "Divergence"
+  },
+  {
+   "area": "insert",
+   "fidelity": "L1",
+   "id": "F-137",
+   "label": "Feature",
+   "name": "Hyperlink",
+   "parity": "absent"
+  },
+  {
+   "id": "F-137:absent",
+   "justification": "No hyperlink model/serialization. Loud stub surface (data-stub=insert.hyperlink) on Insert tab. OO census: insert/references 'Hyperlink'.",
+   "label": "Divergence"
+  },
+  {
+   "area": "home",
+   "fidelity": "L1",
+   "id": "F-138",
+   "label": "Feature",
+   "name": "Ink thickness",
+   "parity": "absent"
+  },
+  {
+   "id": "F-138:absent",
+   "justification": "Draw-tab ink color stub exists; thickness control does not. Loud stub surface (data-stub=draw.ink-thickness) on Draw tab. OO census: draw tab ink controls.",
+   "label": "Divergence"
+  },
+  {
+   "area": "insert",
+   "fidelity": "L1",
+   "id": "F-139",
+   "label": "Feature",
+   "name": "Cross-reference",
+   "parity": "absent"
+  },
+  {
+   "id": "F-139:absent",
+   "justification": "No bookmark/cross-ref model. Loud stub surface (data-stub=ref.crossref) on References tab. OO census: references 'Cross-reference'.",
+   "label": "Divergence"
+  },
+  {
+   "area": "insert",
+   "fidelity": "L1",
+   "id": "F-140",
+   "label": "Feature",
+   "name": "OCR plugin",
+   "parity": "absent"
+  },
+  {
+   "id": "F-140:absent",
+   "justification": "No OCR. Loud stub surface (data-stub=plugins.ocr) on Plugins tab. OO census: plugins 'OCR'.",
+   "label": "Divergence"
+  },
+  {
+   "area": "insert",
+   "fidelity": "L1",
+   "id": "F-141",
+   "label": "Feature",
+   "name": "Photo editor plugin",
+   "parity": "absent"
+  },
+  {
+   "id": "F-141:absent",
+   "justification": "No image editing. Loud stub surface (data-stub=plugins.photoeditor) on Plugins tab. OO census: plugins 'Photo Editor'.",
+   "label": "Divergence"
+  },
+  {
+   "area": "home",
+   "fidelity": "L1",
+   "id": "F-142",
+   "label": "Feature",
+   "name": "AI grammar / spelling",
+   "parity": "absent"
+  },
+  {
+   "id": "F-142:absent",
+   "justification": "No grammar engine. Loud stub surface (data-stub=ai.grammar) on AI tab reports not-implemented. OO census: AI tab 'Grammar'.",
+   "label": "Divergence"
+  },
+  {
+   "area": "home",
+   "fidelity": "L1",
+   "id": "F-143",
+   "label": "Feature",
+   "name": "AI assistant actions",
+   "parity": "absent"
+  },
+  {
+   "id": "F-143:absent",
+   "justification": "OO AI-tab icon cluster (unnamed asc-gen icons) covered by documented stub data-stub=ai.assistant on AI tab. OO census: ai tab asc-gen cluster.",
+   "label": "Divergence"
+  },
+  {
+   "area": "layout",
+   "fidelity": "L1",
+   "id": "F-144",
+   "label": "Feature",
+   "name": "H&F same-as-previous",
+   "parity": "absent"
+  },
+  {
+   "id": "F-144:absent",
+   "justification": "Section-linked header/footer inheritance not implemented. Loud stub surface (data-stub=hf.same-as-prev) on Header & Footer tab. OO census: header-footer 'Same as previous'.",
+   "label": "Divergence"
   }
  ],
  "stats": {
   "commands": 27,
   "edges": 1442,
-  "features": 82,
+  "features": 102,
   "surfaces": 27,
   "tests": 1240
  },

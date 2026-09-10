@@ -153,3 +153,43 @@ features:
       divergence: [{ref: chips-not-avatars, justification: "Stable-hue peer chips, remote carets and cursor sync proven (collab hub set_presence + editor peerColor); profile-image avatars (L4) not implemented."}]}
   - {id: F-123, area: collab,      name: Concurrent edit conflict resolution, parity: partial, fidelity: L4}
   - {id: F-124, area: collab,      name: WOPI Lock/Unlock conflict handling,  parity: full,    fidelity: L4}
+  - {id: F-125, area: home,        name: Highlight color,                parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "No highlight (character shading) implementation. Loud stub surface (data-stub=home.highlight) in the More-formatting menu on Home reports not-implemented. OO census: home 'Highlight color'."}]}
+  - {id: F-126, area: home,        name: Font color,                     parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "No font-color picker. Loud stub surface (data-stub=home.fontcolor) in the More-formatting menu on Home reports not-implemented. OO census: home 'Font color'."}]}
+  - {id: F-127, area: home,        name: Paragraph shading,              parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "No paragraph shading. Loud stub surface (data-stub=home.shading) in the More-formatting menu on Home reports not-implemented. OO census: home 'Shading'."}]}
+  - {id: F-128, area: home,        name: Borders,                        parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "No paragraph/table border painter. Loud stub surface (data-stub=home.borders) in the More-formatting menu on Home reports not-implemented. OO census: home 'Borders'."}]}
+  - {id: F-129, area: home,        name: Change case,                    parity: partial, fidelity: L1,
+      divergence: [{ref: partial-cmds, justification: "smallCaps/allCaps are real data-cmd buttons; sentence/title/toggle case are not. Loud stub (data-stub=home.change-case) in the More-formatting menu. OO census: home 'Change case'."}]}
+  - {id: F-130, area: home,        name: Multilevel list,                parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "Single-level lists only (insertOrdered/UnorderedList real). Loud stub surface (data-stub=home.multilevel). OO census: home 'Multilevel'."}]}
+  - {id: F-131, area: home,        name: Font size step +/-,             parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "Font size select is real; discrete grow/shrink steps are not. Loud stubs (data-stub=home.font-dec, home.font-inc). OO census: home inc/dec font."}]}
+  - {id: F-132, area: insert,      name: Shape,                          parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "No shape canvas. Loud stub surface (data-stub=insert.shape) on Insert tab reports not-implemented. OO census: insert 'Shape'."}]}
+  - {id: F-133, area: insert,      name: Chart,                          parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "No chart object model. Loud stub surface (data-stub=insert.chart) on Insert tab; chart-design tab controls declared wontfix in census ledger. OO census: insert/chart-design 'Chart'."}]}
+  - {id: F-134, area: insert,      name: Text art,                       parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "No WordArt. Loud stub surface (data-stub=insert.textart) on Insert tab. OO census: insert 'Text Art'."}]}
+  - {id: F-135, area: insert,      name: Drop cap,                       parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "No drop-cap layout. Loud stub surface (data-stub=insert.dropcap) on Insert tab. OO census: insert 'Drop Cap'."}]}
+  - {id: F-136, area: insert,      name: Text box,                       parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "No floating text boxes (float layout unsupported). Loud stub surface (data-stub=insert.textbox) on Insert tab. OO census: insert 'Text Box'."}]}
+  - {id: F-137, area: insert,      name: Hyperlink,                      parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "No hyperlink model/serialization. Loud stub surface (data-stub=insert.hyperlink) on Insert tab. OO census: insert/references 'Hyperlink'."}]}
+  - {id: F-138, area: home,        name: Ink thickness,                  parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "Draw-tab ink color stub exists; thickness control does not. Loud stub surface (data-stub=draw.ink-thickness) on Draw tab. OO census: draw tab ink controls."}]}
+  - {id: F-139, area: insert,      name: Cross-reference,                parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "No bookmark/cross-ref model. Loud stub surface (data-stub=ref.crossref) on References tab. OO census: references 'Cross-reference'."}]}
+  - {id: F-140, area: insert,      name: OCR plugin,                     parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "No OCR. Loud stub surface (data-stub=plugins.ocr) on Plugins tab. OO census: plugins 'OCR'."}]}
+  - {id: F-141, area: insert,      name: Photo editor plugin,            parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "No image editing. Loud stub surface (data-stub=plugins.photoeditor) on Plugins tab. OO census: plugins 'Photo Editor'."}]}
+  - {id: F-142, area: home,        name: AI grammar / spelling,          parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "No grammar engine. Loud stub surface (data-stub=ai.grammar) on AI tab reports not-implemented. OO census: AI tab 'Grammar'."}]}
+  - {id: F-143, area: home,        name: AI assistant actions,           parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "OO AI-tab icon cluster (unnamed asc-gen icons) covered by documented stub data-stub=ai.assistant on AI tab. OO census: ai tab asc-gen cluster."}]}
+  - {id: F-144, area: layout,      name: H&F same-as-previous,           parity: absent,  fidelity: L1,
+      divergence: [{ref: absent, justification: "Section-linked header/footer inheritance not implemented. Loud stub surface (data-stub=hf.same-as-prev) on Header & Footer tab. OO census: header-footer 'Same as previous'."}]}
