@@ -461,12 +461,32 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_oo_tab_strip_matches_golden",
+   "to": "F-005",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_paragraph_format_commands_present",
    "to": "F-005",
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_real_features_live_on_oo_tabs",
+   "to": "F-005",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_stub_buttons_are_loud_and_documented",
+   "to": "F-005",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_version_history_wired",
+   "to": "F-005",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_view_tab_real_controls_wired",
    "to": "F-005",
    "type": "COVERS"
   },
@@ -2911,12 +2931,32 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_oo_tab_strip_matches_golden",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_paragraph_format_commands_present",
    "to": "F-073",
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_real_features_live_on_oo_tabs",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_stub_buttons_are_loud_and_documented",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_version_history_wired",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_view_tab_real_controls_wired",
    "to": "F-073",
    "type": "COVERS"
   },
@@ -3416,12 +3456,32 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_oo_tab_strip_matches_golden",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_paragraph_format_commands_present",
    "to": "F-074",
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_real_features_live_on_oo_tabs",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_stub_buttons_are_loud_and_documented",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_version_history_wired",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_view_tab_real_controls_wired",
    "to": "F-074",
    "type": "COVERS"
   },
@@ -4826,12 +4886,32 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_oo_tab_strip_matches_golden",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_paragraph_format_commands_present",
    "to": "F-078",
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_real_features_live_on_oo_tabs",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_stub_buttons_are_loud_and_documented",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_version_history_wired",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_view_tab_real_controls_wired",
    "to": "F-078",
    "type": "COVERS"
   },
@@ -4891,12 +4971,32 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_oo_tab_strip_matches_golden",
+   "to": "F-079",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_paragraph_format_commands_present",
    "to": "F-079",
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_real_features_live_on_oo_tabs",
+   "to": "F-079",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_stub_buttons_are_loud_and_documented",
+   "to": "F-079",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_version_history_wired",
+   "to": "F-079",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_view_tab_real_controls_wired",
    "to": "F-079",
    "type": "COVERS"
   },
@@ -5651,12 +5751,32 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_oo_tab_strip_matches_golden",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_paragraph_format_commands_present",
    "to": "F-084",
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_real_features_live_on_oo_tabs",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_stub_buttons_are_loud_and_documented",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_version_history_wired",
+   "to": "F-084",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_view_tab_real_controls_wired",
    "to": "F-084",
    "type": "COVERS"
   },
@@ -5801,12 +5921,32 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_oo_tab_strip_matches_golden",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_paragraph_format_commands_present",
    "to": "F-085",
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_real_features_live_on_oo_tabs",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_stub_buttons_are_loud_and_documented",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_file_menu.py::test_version_history_wired",
+   "to": "F-085",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_file_menu.py::test_view_tab_real_controls_wired",
    "to": "F-085",
    "type": "COVERS"
   },
@@ -7036,7 +7176,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-10T14:04:53+00:00",
+ "generated_at": "2026-09-10T14:32:45+00:00",
  "nodes": [
   {
    "id": "allCaps",
@@ -11212,6 +11352,30 @@
    "path": "opencloud-docserver/tests/test_file_menu.py"
   },
   {
+   "id": "opencloud-docserver/tests/test_file_menu.py::test_oo_tab_strip_matches_golden",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_file_menu.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_file_menu.py::test_real_features_live_on_oo_tabs",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_file_menu.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_file_menu.py::test_stub_buttons_are_loud_and_documented",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_file_menu.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_file_menu.py::test_view_tab_real_controls_wired",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_file_menu.py"
+  },
+  {
    "id": "opencloud-docserver/tests/test_file_ops.py::test_export_odt_is_valid_odf",
    "label": "Test",
    "layer": "e2e",
@@ -15302,7 +15466,7 @@
   },
   {
    "id": "F-090:marker-only",
-   "justification": "L1 marker for page breaks proven; actual page size settings are not mapped to editor view.",
+   "justification": "L1 marker for page breaks proven; actual page size settings are not mapped to editor view. A loud stub surface (data-stub=layout.size) on the Layout tab reports not-implemented.",
    "label": "Divergence"
   },
   {
@@ -15315,7 +15479,7 @@
   },
   {
    "id": "F-091:marker-only",
-   "justification": "L1 marker for page breaks proven; actual orientation settings are not mapped to editor view.",
+   "justification": "L1 marker for page breaks proven; actual orientation settings are not mapped to editor view. A loud stub surface (data-stub=layout.orientation) on the Layout tab reports not-implemented.",
    "label": "Divergence"
   },
   {
@@ -15328,7 +15492,7 @@
   },
   {
    "id": "F-092:serialization-only",
-   "justification": "Paragraph margins (left/right/top/bottom) serialize to DOCX and back; document-level page margins are not mapped to editor view.",
+   "justification": "Paragraph margins (left/right/top/bottom) serialize to DOCX and back; document-level page margins are not mapped to editor view. A loud stub surface (data-stub=layout.margins) on the Layout tab reports not-implemented.",
    "label": "Divergence"
   },
   {
@@ -15357,7 +15521,7 @@
   },
   {
    "id": "F-095:absent",
-   "justification": "No hyphenation surface or autoHyphenation/w:hyphenation handling in editor or converters.",
+   "justification": "No hyphenation surface or autoHyphenation/w:hyphenation handling in editor or converters. A loud stub surface (data-stub=layout.hyphenation) on the Layout tab reports not-implemented.",
    "label": "Divergence"
   },
   {
@@ -15370,7 +15534,7 @@
   },
   {
    "id": "F-096:absent",
-   "justification": "No line-number surface; w:ln/lineNumber numbering not handled by converters.",
+   "justification": "No line-number surface; w:ln/lineNumber numbering not handled by converters. A loud stub surface (data-stub=layout.line-numbers) on the Layout tab reports not-implemented.",
    "label": "Divergence"
   },
   {
@@ -15383,7 +15547,7 @@
   },
   {
    "id": "F-097:absent",
-   "justification": "No watermark surface or header-anchored VML/image watermark projection.",
+   "justification": "No watermark surface or header-anchored VML/image watermark projection. A loud stub surface (data-stub=layout.watermark) on the Layout tab reports not-implemented.",
    "label": "Divergence"
   },
   {
@@ -15435,7 +15599,7 @@
   },
   {
    "id": "F-103:absent",
-   "justification": "No compare surface/endpoint; editor 'compare' hits are DOM compareDocumentPosition only.",
+   "justification": "No compare surface/endpoint; editor 'compare' hits are DOM compareDocumentPosition only. A loud stub surface (data-stub=collab.compare) on the Collaboration tab reports not-implemented.",
    "label": "Divergence"
   },
   {
@@ -15564,10 +15728,10 @@
  ],
  "stats": {
   "commands": 27,
-  "edges": 1407,
+  "edges": 1435,
   "features": 82,
   "surfaces": 27,
-  "tests": 1235
+  "tests": 1239
  },
  "version": 1
 }
