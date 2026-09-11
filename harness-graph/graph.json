@@ -1116,7 +1116,7 @@
    "type": "COVERS"
   },
   {
-   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_paragraph_shading_and_borders_not_serialized_to_html",
+   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_paragraph_shading_not_serialized_and_borders_serialized",
    "to": "F-032",
    "type": "COVERS"
   },
@@ -1276,7 +1276,7 @@
    "type": "COVERS"
   },
   {
-   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_paragraph_shading_and_borders_not_serialized_to_html",
+   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_paragraph_shading_not_serialized_and_borders_serialized",
    "to": "F-039",
    "type": "COVERS"
   },
@@ -7329,9 +7329,79 @@
    "from": "opencloud-docserver/e2e/test_wopi_protocol.py::test_put_file_rejects_bogus_token",
    "to": "F-124",
    "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_line_spacing_docx_roundtrip",
+   "to": "F-127",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_line_spacing_multiple_values_docx_roundtrip",
+   "to": "F-127",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_line_spacing_odt_roundtrip",
+   "to": "F-127",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_line_spacing_odt_writes_percentage",
+   "to": "F-127",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_line_spacing_single_means_default",
+   "to": "F-127",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_line_spacing_survives_sanitizer",
+   "to": "F-127",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_line_spacing_writes_wspacing_line_auto",
+   "to": "F-127",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_multilevel_bullet_list_docx_roundtrip",
+   "to": "F-127",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_multilevel_list_docx_encodes_levels_as_numbered_styles",
+   "to": "F-127",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_multilevel_list_odt_encodes_nested_text_lists",
+   "to": "F-127",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_multilevel_list_odt_roundtrip",
+   "to": "F-127",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_multilevel_numbered_list_docx_roundtrip",
+   "to": "F-127",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_paragraph_shading_and_borders_not_serialized_from_html",
+   "to": "F-127",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_paragraph_controls.py::test_paragraph_shading_not_serialized_and_borders_serialized",
+   "to": "F-127",
+   "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-11T08:07:41+00:00",
+ "generated_at": "2026-09-11T09:04:07+00:00",
  "nodes": [
   {
    "id": "allCaps",
@@ -11996,6 +12066,120 @@
    "path": "opencloud-docserver/tests/test_main_surface.py"
   },
   {
+   "id": "opencloud-docserver/tests/test_markers.py::test_hyphenation_marker_round_trip",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_hyphenation_absent_when_off",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_hyphenation_written_to_settings_xml",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_line_numbers_marker_round_trip",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_line_numbers_absent_when_off",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_line_numbers_written_to_sectpr",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_watermark_marker_round_trip_docx",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_watermark_coexists_with_header",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_watermark_absent_without_marker",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_watermark_round_trip_odt",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_watermark_odt_absent_without_marker",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_dropcap_round_trip_docx",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_dropcap_absent_without_marker",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_dropcap_letters_kept_on_write",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_border_shorthand_round_trip_docx",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_border_sides_round_trip_docx",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_border_absent_without_style",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_border_round_trip_odt",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_markers_never_leak_into_body",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
    "id": "opencloud-docserver/tests/test_new_doc.py::test_new_document_docx",
    "label": "Test",
    "layer": "e2e",
@@ -12932,7 +13116,7 @@
    "path": "opencloud-docserver/tests/test_paragraph_controls.py"
   },
   {
-   "id": "opencloud-docserver/tests/test_paragraph_controls.py::test_paragraph_shading_and_borders_not_serialized_to_html",
+   "id": "opencloud-docserver/tests/test_paragraph_controls.py::test_paragraph_shading_not_serialized_and_borders_serialized",
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/tests/test_paragraph_controls.py"
@@ -16169,8 +16353,8 @@
    "parity": "missing"
   },
   {
-   "id": "F-138:out-of-scope",
-   "justification": "No draw canvas layer in the docserver (documents are HTML+OOXML, not a vector canvas). Ink controls on the Draw tab are declared wontfix in the census ledger (no-canvas-layer); the editor's insert-object dialog is the object path.",
+   "id": "F-138:future-iteration",
+   "justification": "No draw canvas layer yet (documents are HTML+OOXML, not a vector canvas) \u2014 deferred to a future iteration. Census ledger: deferred no-canvas-layer. The insert-object dialog is today's object path.",
    "label": "Divergence"
   },
   {
@@ -16195,8 +16379,8 @@
    "parity": "missing"
   },
   {
-   "id": "F-140:out-of-scope",
-   "justification": "OCR needs an external vision pipeline; the docserver deliberately has no plugin host. Census: wontfix external-service-out-of-scope.",
+   "id": "F-140:future-iteration",
+   "justification": "OCR needs an external vision pipeline; no plugin host yet \u2014 deferred to a future iteration. Census: deferred external-service-future-iteration.",
    "label": "Divergence"
   },
   {
@@ -16208,8 +16392,8 @@
    "parity": "missing"
   },
   {
-   "id": "F-141:out-of-scope",
-   "justification": "Image editing needs a raster editor app; no plugin host (wontfix external-service-out-of-scope). Links/images round-trip; pixels do not get edited.",
+   "id": "F-141:future-iteration",
+   "justification": "Image editing needs a raster editor app; no plugin host yet \u2014 deferred to a future iteration. Census: deferred external-service-future-iteration. Links/images round-trip; pixels do not get edited.",
    "label": "Divergence"
   },
   {
@@ -16254,10 +16438,10 @@
  ],
  "stats": {
   "commands": 30,
-  "edges": 1466,
+  "edges": 1480,
   "features": 102,
   "surfaces": 30,
-  "tests": 1252
+  "tests": 1271
  },
  "version": 1
 }
