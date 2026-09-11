@@ -177,8 +177,8 @@ features:
       divergence: [{ref: first-run, justification: "toggleDropcap wraps the paragraph's first char in span.dropcap -> w:framePr dropCap=drop lines=3 wrap=around (letter kept as paragraph text); read-back re-wraps first inline char. DOCX-only (ODT stripped; registered divergence)."}]}
   - {id: F-136, area: insert,      name: Text box,                       parity: full,    fidelity: L1,
       divergence: [{ref: object-txbx, justification: "insertObject textbox preset inserts div.object[data-type=textbox] with editable text -> wps:wsp w:txbxContent; read-back extracts txbx text. Box is anchored inline (floating text frame layout not implemented — L1)."}]}
-  - {id: F-137, area: insert,      name: Hyperlink,                      parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "No hyperlink model/serialization. Loud stub surface (data-stub=insert.hyperlink) on Insert tab. OO census: insert/references 'Hyperlink'."}]}
+  - {id: F-137, area: insert,      name: Hyperlink,                      parity: full,    fidelity: L1,
+      divergence: [{ref: anchor-links, justification: "Real: the Insert-tab btn-link / References-tab link dialog insert <a href> URLs (insertLink/confirmLinkDialog), round-tripping DOCX w:hyperlink/hyperlink relationship; e2e inserts an example.com link and verifies host round-trip. The insert.hyperlink data-stub button on the Insert tab is a duplicate surface of the same dialog (marked loud until removed/rewired)."}]}
   - {id: F-138, area: home,        name: Ink thickness,                  parity: missing, fidelity: L1,
       divergence: [{ref: future-iteration, justification: "No draw canvas layer yet (documents are HTML+OOXML, not a vector canvas) — deferred to a future iteration. Census ledger: deferred no-canvas-layer. The insert-object dialog is today's object path."}]}
   - {id: F-139, area: insert,      name: Cross-reference,                parity: full,    fidelity: L1,

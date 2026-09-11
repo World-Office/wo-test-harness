@@ -7591,7 +7591,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-11T10:48:44+00:00",
+ "generated_at": "2026-09-11T11:24:20+00:00",
  "nodes": [
   {
    "id": "aiTranslate",
@@ -16687,11 +16687,11 @@
    "id": "F-137",
    "label": "Feature",
    "name": "Hyperlink",
-   "parity": "absent"
+   "parity": "full"
   },
   {
-   "id": "F-137:absent",
-   "justification": "No hyperlink model/serialization. Loud stub surface (data-stub=insert.hyperlink) on Insert tab. OO census: insert/references 'Hyperlink'.",
+   "id": "F-137:anchor-links",
+   "justification": "Real: the Insert-tab btn-link / References-tab link dialog insert <a href> URLs (insertLink/confirmLinkDialog), round-tripping DOCX w:hyperlink/hyperlink relationship; e2e inserts an example.com link and verifies host round-trip. The insert.hyperlink data-stub button on the Insert tab is a duplicate surface of the same dialog (marked loud until removed/rewired).",
    "label": "Divergence"
   },
   {
