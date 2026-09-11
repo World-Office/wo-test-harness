@@ -179,14 +179,14 @@ features:
       divergence: [{ref: absent, justification: "No floating text boxes (float layout unsupported). Loud stub surface (data-stub=insert.textbox) on Insert tab. OO census: insert 'Text Box'."}]}
   - {id: F-137, area: insert,      name: Hyperlink,                      parity: absent,  fidelity: L1,
       divergence: [{ref: absent, justification: "No hyperlink model/serialization. Loud stub surface (data-stub=insert.hyperlink) on Insert tab. OO census: insert/references 'Hyperlink'."}]}
-  - {id: F-138, area: home,        name: Ink thickness,                  parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "Draw-tab ink color stub exists; thickness control does not. Loud stub surface (data-stub=draw.ink-thickness) on Draw tab. OO census: draw tab ink controls."}]}
+  - {id: F-138, area: home,        name: Ink thickness,                  parity: missing, fidelity: L1,
+      divergence: [{ref: out-of-scope, justification: "No draw canvas layer in the docserver (documents are HTML+OOXML, not a vector canvas). Ink controls on the Draw tab are declared wontfix in the census ledger (no-canvas-layer); the editor's insert-object dialog is the object path."}]}
   - {id: F-139, area: insert,      name: Cross-reference,                parity: absent,  fidelity: L1,
       divergence: [{ref: absent, justification: "No bookmark/cross-ref model. Loud stub surface (data-stub=ref.crossref) on References tab. OO census: references 'Cross-reference'."}]}
-  - {id: F-140, area: insert,      name: OCR plugin,                     parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "No OCR. Loud stub surface (data-stub=plugins.ocr) on Plugins tab. OO census: plugins 'OCR'."}]}
-  - {id: F-141, area: insert,      name: Photo editor plugin,            parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "No image editing. Loud stub surface (data-stub=plugins.photoeditor) on Plugins tab. OO census: plugins 'Photo Editor'."}]}
+  - {id: F-140, area: insert,      name: OCR plugin,                     parity: missing, fidelity: L1,
+      divergence: [{ref: out-of-scope, justification: "OCR needs an external vision pipeline; the docserver deliberately has no plugin host. Census: wontfix external-service-out-of-scope."}]}
+  - {id: F-141, area: insert,      name: Photo editor plugin,            parity: missing, fidelity: L1,
+      divergence: [{ref: out-of-scope, justification: "Image editing needs a raster editor app; no plugin host (wontfix external-service-out-of-scope). Links/images round-trip; pixels do not get edited."}]}
   - {id: F-142, area: home,        name: AI grammar / spelling,          parity: full,    fidelity: L2,
       divergence: [{ref: propose-dialog, justification: "Grammar runs via the AI propose panel (btn-ai-grammar -> /ai/propose -> agent ops -> tracked-change spans with per-change accept/reject); w:ins/w:del serialize to DOCX. No offline grammar engine — proposals come from the deployment's registered model. OO census: AI tab 'Grammar'."}]}
   - {id: F-143, area: home,        name: AI assistant actions,           parity: full,    fidelity: L2,

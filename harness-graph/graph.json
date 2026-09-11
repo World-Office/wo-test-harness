@@ -7331,7 +7331,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-11T06:52:21+00:00",
+ "generated_at": "2026-09-11T08:07:41+00:00",
  "nodes": [
   {
    "id": "allCaps",
@@ -16166,11 +16166,11 @@
    "id": "F-138",
    "label": "Feature",
    "name": "Ink thickness",
-   "parity": "absent"
+   "parity": "missing"
   },
   {
-   "id": "F-138:absent",
-   "justification": "Draw-tab ink color stub exists; thickness control does not. Loud stub surface (data-stub=draw.ink-thickness) on Draw tab. OO census: draw tab ink controls.",
+   "id": "F-138:out-of-scope",
+   "justification": "No draw canvas layer in the docserver (documents are HTML+OOXML, not a vector canvas). Ink controls on the Draw tab are declared wontfix in the census ledger (no-canvas-layer); the editor's insert-object dialog is the object path.",
    "label": "Divergence"
   },
   {
@@ -16192,11 +16192,11 @@
    "id": "F-140",
    "label": "Feature",
    "name": "OCR plugin",
-   "parity": "absent"
+   "parity": "missing"
   },
   {
-   "id": "F-140:absent",
-   "justification": "No OCR. Loud stub surface (data-stub=plugins.ocr) on Plugins tab. OO census: plugins 'OCR'.",
+   "id": "F-140:out-of-scope",
+   "justification": "OCR needs an external vision pipeline; the docserver deliberately has no plugin host. Census: wontfix external-service-out-of-scope.",
    "label": "Divergence"
   },
   {
@@ -16205,11 +16205,11 @@
    "id": "F-141",
    "label": "Feature",
    "name": "Photo editor plugin",
-   "parity": "absent"
+   "parity": "missing"
   },
   {
-   "id": "F-141:absent",
-   "justification": "No image editing. Loud stub surface (data-stub=plugins.photoeditor) on Plugins tab. OO census: plugins 'Photo Editor'.",
+   "id": "F-141:out-of-scope",
+   "justification": "Image editing needs a raster editor app; no plugin host (wontfix external-service-out-of-scope). Links/images round-trip; pixels do not get edited.",
    "label": "Divergence"
   },
   {
