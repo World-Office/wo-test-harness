@@ -1,6 +1,11 @@
 {
  "edges": [
   {
+   "from": "toolbar:aiTranslate",
+   "to": "aiTranslate",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:allCaps",
    "to": "allCaps",
    "type": "TRIGGERS"
@@ -21,8 +26,18 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:compareVersion",
+   "to": "compareVersion",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:directionRtl",
    "to": "directionRtl",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:displayMode",
+   "to": "displayMode",
    "type": "TRIGGERS"
   },
   {
@@ -53,6 +68,16 @@
   {
    "from": "toolbar:indent",
    "to": "indent",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:insertCaption",
+   "to": "insertCaption",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:insertObject",
+   "to": "insertObject",
    "type": "TRIGGERS"
   },
   {
@@ -96,6 +121,21 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:multilevel",
+   "to": "multilevel",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:openBorders",
+   "to": "openBorders",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:openCrossref",
+   "to": "openCrossref",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:outdent",
    "to": "outdent",
    "type": "TRIGGERS"
@@ -136,6 +176,31 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:toggleDropcap",
+   "to": "toggleDropcap",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:toggleHyphenation",
+   "to": "toggleHyphenation",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:toggleLineNumbers",
+   "to": "toggleLineNumbers",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:toggleSameAsPrev",
+   "to": "toggleSameAsPrev",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:toggleWatermark",
+   "to": "toggleWatermark",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:underline",
    "to": "underline",
    "type": "TRIGGERS"
@@ -148,6 +213,11 @@
   {
    "from": "toolbar:undo",
    "to": "undo",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:updateToc",
+   "to": "updateToc",
    "type": "TRIGGERS"
   },
   {
@@ -6666,6 +6736,126 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_acquire_lock_empty_query_param_uses_empty_suffix",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_acquire_lock_missing_document_returns_404",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_acquire_lock_overwrites_existing_lock",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_acquire_lock_success_sets_lock_and_returns_token",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_document_html_corrupt_docx_returns_empty_html",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_document_html_empty_document_returns_blank",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_document_html_handles_arbitrary_docx_bytes",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_document_html_invalid_doc_id_returns_400",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_document_html_missing_document_returns_404",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_export_document_conversion_failure_returns_empty_html",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_export_document_not_found_returns_404",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_lock_token_format_contains_timestamp_or_uuid",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_parse_launch_lock_failure_does_not_break_launch",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_parse_launch_missing_wopi_src_returns_none",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_parse_launch_wopi_src_ignores_trailing_slash",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_parse_launch_wopi_src_with_missing_doc_id_parses_doc_from_url",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_put_document_contents_lock_mismatch_returns_409",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_put_document_contents_missing_document_returns_404",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_put_document_contents_with_correct_lock_succeeds",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_save_document_conversion_failure_returns_500",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_save_document_invalid_json_returns_400",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_save_document_not_found_client_mode_forwards_to_remote",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_save_document_read_only_rejected",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_editor_router_edges.py::test_version_content_compare_endpoint",
+   "to": "F-103",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_review_surfaces.py::test_accept_change_semantics_serialize_to_docx",
    "to": "F-104",
    "type": "COVERS"
@@ -7401,8 +7591,13 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-11T09:04:07+00:00",
+ "generated_at": "2026-09-11T10:48:44+00:00",
  "nodes": [
+  {
+   "id": "aiTranslate",
+   "label": "Command",
+   "source": "editor.js:runCommand('aiTranslate')"
+  },
   {
    "id": "allCaps",
    "label": "Command",
@@ -7424,9 +7619,19 @@
    "source": "editor.js:runCommand('code')"
   },
   {
+   "id": "compareVersion",
+   "label": "Command",
+   "source": "editor.js:runCommand('compareVersion')"
+  },
+  {
    "id": "directionRtl",
    "label": "Command",
    "source": "editor.js:runCommand('directionRtl')"
+  },
+  {
+   "id": "displayMode",
+   "label": "Command",
+   "source": "editor.js:runCommand('displayMode')"
   },
   {
    "id": "fontName",
@@ -7457,6 +7662,16 @@
    "id": "indent",
    "label": "Command",
    "source": "editor.js:runCommand('indent')"
+  },
+  {
+   "id": "insertCaption",
+   "label": "Command",
+   "source": "editor.js:runCommand('insertCaption')"
+  },
+  {
+   "id": "insertObject",
+   "label": "Command",
+   "source": "editor.js:runCommand('insertObject')"
   },
   {
    "id": "insertOrderedList",
@@ -7499,6 +7714,21 @@
    "source": "editor.js:runCommand('listStyle')"
   },
   {
+   "id": "multilevel",
+   "label": "Command",
+   "source": "editor.js:runCommand('multilevel')"
+  },
+  {
+   "id": "openBorders",
+   "label": "Command",
+   "source": "editor.js:runCommand('openBorders')"
+  },
+  {
+   "id": "openCrossref",
+   "label": "Command",
+   "source": "editor.js:runCommand('openCrossref')"
+  },
+  {
    "id": "outdent",
    "label": "Command",
    "source": "editor.js:runCommand('outdent')"
@@ -7539,6 +7769,31 @@
    "source": "editor.js:runCommand('superscript')"
   },
   {
+   "id": "toggleDropcap",
+   "label": "Command",
+   "source": "editor.js:runCommand('toggleDropcap')"
+  },
+  {
+   "id": "toggleHyphenation",
+   "label": "Command",
+   "source": "editor.js:runCommand('toggleHyphenation')"
+  },
+  {
+   "id": "toggleLineNumbers",
+   "label": "Command",
+   "source": "editor.js:runCommand('toggleLineNumbers')"
+  },
+  {
+   "id": "toggleSameAsPrev",
+   "label": "Command",
+   "source": "editor.js:runCommand('toggleSameAsPrev')"
+  },
+  {
+   "id": "toggleWatermark",
+   "label": "Command",
+   "source": "editor.js:runCommand('toggleWatermark')"
+  },
+  {
    "id": "underline",
    "label": "Command",
    "source": "editor.js:runCommand('underline')"
@@ -7552,6 +7807,17 @@
    "id": "undo",
    "label": "Command",
    "source": "editor.js:runCommand('undo')"
+  },
+  {
+   "id": "updateToc",
+   "label": "Command",
+   "source": "editor.js:runCommand('updateToc')"
+  },
+  {
+   "id": "toolbar:aiTranslate",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
   },
   {
    "id": "toolbar:allCaps",
@@ -7578,7 +7844,19 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:compareVersion",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:directionRtl",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:displayMode",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -7615,6 +7893,18 @@
   },
   {
    "id": "toolbar:indent",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:insertCaption",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:insertObject",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -7668,6 +7958,24 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:multilevel",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:openBorders",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:openCrossref",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:outdent",
    "kind": "toolbar-button",
    "label": "Surface",
@@ -7716,6 +8024,36 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:toggleDropcap",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:toggleHyphenation",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:toggleLineNumbers",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:toggleSameAsPrev",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:toggleWatermark",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:underline",
    "kind": "toolbar-button",
    "label": "Surface",
@@ -7729,6 +8067,12 @@
   },
   {
    "id": "toolbar:undo",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:updateToc",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -11473,6 +11817,12 @@
   },
   {
    "id": "opencloud-docserver/tests/test_editor_router_edges.py::test_lock_token_format_contains_timestamp_or_uuid",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_editor_router_edges.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_editor_router_edges.py::test_version_content_compare_endpoint",
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/tests/test_editor_router_edges.py"
@@ -15963,41 +16313,41 @@
   },
   {
    "area": "layout",
-   "fidelity": "L2",
+   "fidelity": "L1",
    "id": "F-095",
    "label": "Feature",
    "name": "Hyphenation",
-   "parity": "missing"
+   "parity": "full"
   },
   {
-   "id": "F-095:absent",
-   "justification": "No hyphenation surface or autoHyphenation/w:hyphenation handling in editor or converters. A loud stub surface (data-stub=layout.hyphenation) on the Layout tab reports not-implemented.",
+   "id": "F-095:marker",
+   "justification": "toggleHyphenation places .hyphenation(data-auto) at body start -> settings.xml w:autoHyphenation; read-back re-emits the marker. DOCX-only (ODT strips the marker; registered WS-A divergence).",
    "label": "Divergence"
   },
   {
    "area": "layout",
-   "fidelity": "L2",
+   "fidelity": "L1",
    "id": "F-096",
    "label": "Feature",
    "name": "Line numbers",
-   "parity": "missing"
+   "parity": "full"
   },
   {
-   "id": "F-096:absent",
-   "justification": "No line-number surface; w:ln/lineNumber numbering not handled by converters. A loud stub surface (data-stub=layout.line-numbers) on the Layout tab reports not-implemented.",
+   "id": "F-096:marker",
+   "justification": "toggleLineNumbers places .line-numbers(data-restart,data-distance) at body start -> sectPr w:lnNumType (anchored before docGrid/cols/pgNumType); read-back re-emits. DOCX-only (ODT stripped; registered divergence).",
    "label": "Divergence"
   },
   {
    "area": "layout",
-   "fidelity": "L3",
+   "fidelity": "L1",
    "id": "F-097",
    "label": "Feature",
    "name": "Watermark",
-   "parity": "missing"
+   "parity": "full"
   },
   {
-   "id": "F-097:absent",
-   "justification": "No watermark surface or header-anchored VML/image watermark projection. A loud stub surface (data-stub=layout.watermark) on the Layout tab reports not-implemented.",
+   "id": "F-097:header-ghost",
+   "justification": "toggleWatermark places .watermark(data-text,data-color) at body start -> centered 32pt bold gray header paragraph (what LO/Word render as watermark); read-back via run signature -> marker re-emitted. No VML w:pict washout (deferred); color normalizes lowercase hex.",
    "label": "Divergence"
   },
   {
@@ -16041,15 +16391,15 @@
   },
   {
    "area": "review",
-   "fidelity": "L4",
+   "fidelity": "L2",
    "id": "F-103",
    "label": "Feature",
    "name": "Compare documents",
-   "parity": "missing"
+   "parity": "full"
   },
   {
-   "id": "F-103:absent",
-   "justification": "No compare surface/endpoint; editor 'compare' hits are DOM compareDocumentPosition only. A loud stub surface (data-stub=collab.compare) on the Collaboration tab reports not-implemented.",
+   "id": "F-103:tracked-diff",
+   "justification": "compareVersion opens version history; per-row Compare fetches GET versions/{ts}/content (text+html) and applyTrackedDiff renders the delta as ins.track-insert/del.track-delete reviewable like human tracked changes. Server-mode stores; client-mode history stays host-managed (same guard as restore).",
    "label": "Divergence"
   },
   {
@@ -16220,11 +16570,11 @@
    "id": "F-128",
    "label": "Feature",
    "name": "Borders",
-   "parity": "absent"
+   "parity": "full"
   },
   {
-   "id": "F-128:absent",
-   "justification": "No paragraph/table border painter. Loud stub surface (data-stub=home.borders) in the More-formatting menu on Home reports not-implemented. OO census: home 'Borders'.",
+   "id": "F-128:painter",
+   "justification": "openBorders dialog paints per-side paragraph borders (border-{top,right,bottom,left}:{w}pt solid #hex) -> w:pBdr (8ths pt) and ODT fo:border-*; unchecked sides removed. Table borders remain item borders via tcBorders (not a painter).",
    "label": "Divergence"
   },
   {
@@ -16246,11 +16596,11 @@
    "id": "F-130",
    "label": "Feature",
    "name": "Multilevel list",
-   "parity": "absent"
+   "parity": "full"
   },
   {
-   "id": "F-130:absent",
-   "justification": "Single-level lists only (insertOrdered/UnorderedList real). Loud stub surface (data-stub=home.multilevel). OO census: home 'Multilevel'.",
+   "id": "F-130:nesting",
+   "justification": "multilevel nests the current item under its previous sibling (in-page <li><ol> subtree, explicitly built \u2014 Chromium indent can emit content-dropping <ol><ol>); nested lists round-trip DOCX list levels. No OO number-style gallery beyond disc/decimal.",
    "label": "Divergence"
   },
   {
@@ -16272,11 +16622,11 @@
    "id": "F-132",
    "label": "Feature",
    "name": "Shape",
-   "parity": "absent"
+   "parity": "full"
   },
   {
-   "id": "F-132:absent",
-   "justification": "No shape canvas. Loud stub surface (data-stub=insert.shape) on Insert tab reports not-implemented. OO census: insert 'Shape'.",
+   "id": "F-132:object-div",
+   "justification": "insertObject preset dialog (shape/textbox/chart/equation/textart) inserts div.object(data-type,data-label,content) -> wps:wsp drawing with wp:descr 'object:TYPE:LABEL'; read-back generic. Shape = styled box placeholder, not vector geometry (L1).",
    "label": "Divergence"
   },
   {
@@ -16285,11 +16635,11 @@
    "id": "F-133",
    "label": "Feature",
    "name": "Chart",
-   "parity": "absent"
+   "parity": "full"
   },
   {
-   "id": "F-133:absent",
-   "justification": "No chart object model. Loud stub surface (data-stub=insert.chart) on Insert tab; chart-design tab controls declared wontfix in census ledger. OO census: insert/chart-design 'Chart'.",
+   "id": "F-133:object-cdata",
+   "justification": "insertObject chart preset = div.object[data-type=chart] -> c:chart drawing with embedded chart XML (data preserved in wps:wsp + descr). Chart-design tab (data editing) still deferred/no-canvas.",
    "label": "Divergence"
   },
   {
@@ -16298,11 +16648,11 @@
    "id": "F-134",
    "label": "Feature",
    "name": "Text art",
-   "parity": "absent"
+   "parity": "full"
   },
   {
-   "id": "F-134:absent",
-   "justification": "No WordArt. Loud stub surface (data-stub=insert.textart) on Insert tab. OO census: insert 'Text Art'.",
+   "id": "F-134:textart-glyph",
+   "justification": "insertObject textart preset inserts div.object[data-type=textart] -> wsp drawing (descr object:textart) round-tripping; renders as a styled text object (glyph/WordArt geometry transforms not implemented \u2014 L1).",
    "label": "Divergence"
   },
   {
@@ -16311,11 +16661,11 @@
    "id": "F-135",
    "label": "Feature",
    "name": "Drop cap",
-   "parity": "absent"
+   "parity": "full"
   },
   {
-   "id": "F-135:absent",
-   "justification": "No drop-cap layout. Loud stub surface (data-stub=insert.dropcap) on Insert tab. OO census: insert 'Drop Cap'.",
+   "id": "F-135:first-run",
+   "justification": "toggleDropcap wraps the paragraph's first char in span.dropcap -> w:framePr dropCap=drop lines=3 wrap=around (letter kept as paragraph text); read-back re-wraps first inline char. DOCX-only (ODT stripped; registered divergence).",
    "label": "Divergence"
   },
   {
@@ -16324,11 +16674,11 @@
    "id": "F-136",
    "label": "Feature",
    "name": "Text box",
-   "parity": "absent"
+   "parity": "full"
   },
   {
-   "id": "F-136:absent",
-   "justification": "No floating text boxes (float layout unsupported). Loud stub surface (data-stub=insert.textbox) on Insert tab. OO census: insert 'Text Box'.",
+   "id": "F-136:object-txbx",
+   "justification": "insertObject textbox preset inserts div.object[data-type=textbox] with editable text -> wps:wsp w:txbxContent; read-back extracts txbx text. Box is anchored inline (floating text frame layout not implemented \u2014 L1).",
    "label": "Divergence"
   },
   {
@@ -16363,11 +16713,11 @@
    "id": "F-139",
    "label": "Feature",
    "name": "Cross-reference",
-   "parity": "absent"
+   "parity": "full"
   },
   {
-   "id": "F-139:absent",
-   "justification": "No bookmark/cross-ref model. Loud stub surface (data-stub=ref.crossref) on References tab. OO census: references 'Cross-reference'.",
+   "id": "F-139:anchor-links",
+   "justification": "openCrossref lists span.bookmark data-name targets; inserts <a href='#name'>label</a> (bookmark/crossref gridlines real). References-tab button; Insert-tab btn-crossref same dialog. OO's live-updating field codes not implemented (L1 static link).",
    "label": "Divergence"
   },
   {
@@ -16428,20 +16778,20 @@
    "id": "F-144",
    "label": "Feature",
    "name": "H&F same-as-previous",
-   "parity": "absent"
+   "parity": "full"
   },
   {
-   "id": "F-144:absent",
-   "justification": "Section-linked header/footer inheritance not implemented. Loud stub surface (data-stub=hf.same-as-prev) on Header & Footer tab. OO census: header-footer 'Same as previous'.",
+   "id": "F-144:live-affordance",
+   "justification": "toggleSameAsPrev flips data-same-prev on the live <header> (documented single-section affordance). A single-section document has no previous section to inherit, so serialization is a no-op: per-section header linkage (omitted w:headerReference) is a future iteration with the multi-section header model.",
    "label": "Divergence"
   }
  ],
  "stats": {
-  "commands": 30,
-  "edges": 1480,
+  "commands": 44,
+  "edges": 1518,
   "features": 102,
-  "surfaces": 30,
-  "tests": 1271
+  "surfaces": 44,
+  "tests": 1272
  },
  "version": 1
 }

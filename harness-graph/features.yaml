@@ -115,12 +115,12 @@ features:
       divergence: [{ref: canvas-proportions, justification: "Document margins are real: the page-setup dialog writes a .page-setup marker that round-trips through DOCX w:pgMar and ODT page layout, and maps to canvas padding. Paragraph margins serialize as before."}]}
   - {id: F-093, area: layout,      name: Columns,                        parity: full,    fidelity: L1}
   - {id: F-094, area: layout,      name: Section breaks,                 parity: full,    fidelity: L1}
-  - {id: F-095, area: layout,      name: Hyphenation,                    parity: missing, fidelity: L2,
-      divergence: [{ref: absent, justification: "No hyphenation surface or autoHyphenation/w:hyphenation handling in editor or converters. A loud stub surface (data-stub=layout.hyphenation) on the Layout tab reports not-implemented."}]}
-  - {id: F-096, area: layout,      name: Line numbers,                    parity: missing, fidelity: L2,
-      divergence: [{ref: absent, justification: "No line-number surface; w:ln/lineNumber numbering not handled by converters. A loud stub surface (data-stub=layout.line-numbers) on the Layout tab reports not-implemented."}]}
-  - {id: F-097, area: layout,      name: Watermark,                      parity: missing, fidelity: L3,
-      divergence: [{ref: absent, justification: "No watermark surface or header-anchored VML/image watermark projection. A loud stub surface (data-stub=layout.watermark) on the Layout tab reports not-implemented."}]}
+  - {id: F-095, area: layout,      name: Hyphenation,                    parity: full,    fidelity: L1,
+      divergence: [{ref: marker, justification: "toggleHyphenation places .hyphenation(data-auto) at body start -> settings.xml w:autoHyphenation; read-back re-emits the marker. DOCX-only (ODT strips the marker; registered WS-A divergence)."}]}
+  - {id: F-096, area: layout,      name: Line numbers,                    parity: full,    fidelity: L1,
+      divergence: [{ref: marker, justification: "toggleLineNumbers places .line-numbers(data-restart,data-distance) at body start -> sectPr w:lnNumType (anchored before docGrid/cols/pgNumType); read-back re-emits. DOCX-only (ODT stripped; registered divergence)."}]}
+  - {id: F-097, area: layout,      name: Watermark,                      parity: full,    fidelity: L1,
+      divergence: [{ref: header-ghost, justification: "toggleWatermark places .watermark(data-text,data-color) at body start -> centered 32pt bold gray header paragraph (what LO/Word render as watermark); read-back via run signature -> marker re-emitted. No VML w:pict washout (deferred); color normalizes lowercase hex."}]}
 
   # ── review ────────────────────────────────────────────────────────────────
   - {id: F-100, area: review,      name: Track changes on/off,           parity: full,    fidelity: L1,
@@ -129,8 +129,8 @@ features:
       divergence: [{ref: panel-actions, justification: "btn-review-changes lists each tracked region with Accept/Reject (acceptChange/rejectChange); accepted/rejected content serializes to real DOCX. DOM behaviour pinned by source-wiring tests; no canvas-true review UI (L2+)."}]}
   - {id: F-102, area: review,      name: Comment threads (add/reply/resolve), parity: partial, fidelity: L1,
       divergence: [{ref: no-reply-resolve, justification: "Add + delete + anchored serialization proven (span.comment <-> word/comments.xml with commentRangeStart/End/Reference; ODT office:annotation): btn-comment wraps the selection, comments panel lists Go to/Delete. No reply threading or resolve lifecycle exists in the editor UI -- OnlyOffice thread semantics not implemented."}]}
-  - {id: F-103, area: review,      name: Compare documents,              parity: missing, fidelity: L4,
-      divergence: [{ref: absent, justification: "No compare surface/endpoint; editor 'compare' hits are DOM compareDocumentPosition only. A loud stub surface (data-stub=collab.compare) on the Collaboration tab reports not-implemented."}]}
+  - {id: F-103, area: review,      name: Compare documents,              parity: full,    fidelity: L2,
+      divergence: [{ref: tracked-diff, justification: "compareVersion opens version history; per-row Compare fetches GET versions/{ts}/content (text+html) and applyTrackedDiff renders the delta as ins.track-insert/del.track-delete reviewable like human tracked changes. Server-mode stores; client-mode history stays host-managed (same guard as restore)."}]}
   - {id: F-104, area: review,      name: Version history,                parity: full,    fidelity: L4,
       divergence: [{ref: snapshot-policy, justification: "btn-history lists per-save snapshots from GET /api/documents/{id}/versions and restores via POST /api/documents/{id}/versions/{ts}/restore (store version index; restore stays undoable). No visual version diff/compare view -- OnlyOffice's compare step is not implemented."}]}
 
@@ -159,30 +159,30 @@ features:
       divergence: [{ref: picker, justification: "Real: toolbar text-color input emits foreColor (span color with styleWithCSS); the More-formatting menu item opens that picker via showPicker(). Round-trips through DOCX w:color."}]}
   - {id: F-127, area: home,        name: Paragraph shading,              parity: full,    fidelity: L1,
       divergence: [{ref: selection-scoped, justification: "Real: shading-color picker emits backColor (background styleWithCSS) on the selection; selection-scoped rather than paragraph-block-scoped (Word's paragraph shading applies to the whole paragraph)."}]}
-  - {id: F-128, area: home,        name: Borders,                        parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "No paragraph/table border painter. Loud stub surface (data-stub=home.borders) in the More-formatting menu on Home reports not-implemented. OO census: home 'Borders'."}]}
+  - {id: F-128, area: home,        name: Borders,                        parity: full,    fidelity: L1,
+      divergence: [{ref: painter, justification: "openBorders dialog paints per-side paragraph borders (border-{top,right,bottom,left}:{w}pt solid #hex) -> w:pBdr (8ths pt) and ODT fo:border-*; unchecked sides removed. Table borders remain item borders via tcBorders (not a painter)."}]}
   - {id: F-129, area: home,        name: Change case,                    parity: full,    fidelity: L2,
       divergence: [{ref: submenu, justification: "All four case transforms are real bus commands (changeCase sentence/lower/upper/title) applied to the selection via execCommand insertText. OO uses a fused dropdown; WO lists the four actions inline."}]}
-  - {id: F-130, area: home,        name: Multilevel list,                parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "Single-level lists only (insertOrdered/UnorderedList real). Loud stub surface (data-stub=home.multilevel). OO census: home 'Multilevel'."}]}
+  - {id: F-130, area: home,        name: Multilevel list,                parity: full,    fidelity: L1,
+      divergence: [{ref: nesting, justification: "multilevel nests the current item under its previous sibling (in-page <li><ol> subtree, explicitly built — Chromium indent can emit content-dropping <ol><ol>); nested lists round-trip DOCX list levels. No OO number-style gallery beyond disc/decimal."}]}
   - {id: F-131, area: home,        name: Font size step +/-,             parity: full,    fidelity: L1,
       divergence: [{ref: ladder, justification: "fontSizeInc/fontSizeDec step the selection along the same 1..7 HTML-size ladder the picker maps to (queryCommandValue-driven), matching the size picker's steps."}]}
-  - {id: F-132, area: insert,      name: Shape,                          parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "No shape canvas. Loud stub surface (data-stub=insert.shape) on Insert tab reports not-implemented. OO census: insert 'Shape'."}]}
-  - {id: F-133, area: insert,      name: Chart,                          parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "No chart object model. Loud stub surface (data-stub=insert.chart) on Insert tab; chart-design tab controls declared wontfix in census ledger. OO census: insert/chart-design 'Chart'."}]}
-  - {id: F-134, area: insert,      name: Text art,                       parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "No WordArt. Loud stub surface (data-stub=insert.textart) on Insert tab. OO census: insert 'Text Art'."}]}
-  - {id: F-135, area: insert,      name: Drop cap,                       parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "No drop-cap layout. Loud stub surface (data-stub=insert.dropcap) on Insert tab. OO census: insert 'Drop Cap'."}]}
-  - {id: F-136, area: insert,      name: Text box,                       parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "No floating text boxes (float layout unsupported). Loud stub surface (data-stub=insert.textbox) on Insert tab. OO census: insert 'Text Box'."}]}
+  - {id: F-132, area: insert,      name: Shape,                          parity: full,    fidelity: L1,
+      divergence: [{ref: object-div, justification: "insertObject preset dialog (shape/textbox/chart/equation/textart) inserts div.object(data-type,data-label,content) -> wps:wsp drawing with wp:descr 'object:TYPE:LABEL'; read-back generic. Shape = styled box placeholder, not vector geometry (L1)."}]}
+  - {id: F-133, area: insert,      name: Chart,                          parity: full,    fidelity: L1,
+      divergence: [{ref: object-cdata, justification: "insertObject chart preset = div.object[data-type=chart] -> c:chart drawing with embedded chart XML (data preserved in wps:wsp + descr). Chart-design tab (data editing) still deferred/no-canvas."}]}
+  - {id: F-134, area: insert,      name: Text art,                       parity: full,    fidelity: L1,
+      divergence: [{ref: textart-glyph, justification: "insertObject textart preset inserts div.object[data-type=textart] -> wsp drawing (descr object:textart) round-tripping; renders as a styled text object (glyph/WordArt geometry transforms not implemented — L1)."}]}
+  - {id: F-135, area: insert,      name: Drop cap,                       parity: full,    fidelity: L1,
+      divergence: [{ref: first-run, justification: "toggleDropcap wraps the paragraph's first char in span.dropcap -> w:framePr dropCap=drop lines=3 wrap=around (letter kept as paragraph text); read-back re-wraps first inline char. DOCX-only (ODT stripped; registered divergence)."}]}
+  - {id: F-136, area: insert,      name: Text box,                       parity: full,    fidelity: L1,
+      divergence: [{ref: object-txbx, justification: "insertObject textbox preset inserts div.object[data-type=textbox] with editable text -> wps:wsp w:txbxContent; read-back extracts txbx text. Box is anchored inline (floating text frame layout not implemented — L1)."}]}
   - {id: F-137, area: insert,      name: Hyperlink,                      parity: absent,  fidelity: L1,
       divergence: [{ref: absent, justification: "No hyperlink model/serialization. Loud stub surface (data-stub=insert.hyperlink) on Insert tab. OO census: insert/references 'Hyperlink'."}]}
   - {id: F-138, area: home,        name: Ink thickness,                  parity: missing, fidelity: L1,
       divergence: [{ref: future-iteration, justification: "No draw canvas layer yet (documents are HTML+OOXML, not a vector canvas) — deferred to a future iteration. Census ledger: deferred no-canvas-layer. The insert-object dialog is today's object path."}]}
-  - {id: F-139, area: insert,      name: Cross-reference,                parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "No bookmark/cross-ref model. Loud stub surface (data-stub=ref.crossref) on References tab. OO census: references 'Cross-reference'."}]}
+  - {id: F-139, area: insert,      name: Cross-reference,                parity: full,    fidelity: L1,
+      divergence: [{ref: anchor-links, justification: "openCrossref lists span.bookmark data-name targets; inserts <a href='#name'>label</a> (bookmark/crossref gridlines real). References-tab button; Insert-tab btn-crossref same dialog. OO's live-updating field codes not implemented (L1 static link)."}]}
   - {id: F-140, area: insert,      name: OCR plugin,                     parity: missing, fidelity: L1,
       divergence: [{ref: future-iteration, justification: "OCR needs an external vision pipeline; no plugin host yet — deferred to a future iteration. Census: deferred external-service-future-iteration."}]}
   - {id: F-141, area: insert,      name: Photo editor plugin,            parity: missing, fidelity: L1,
@@ -191,5 +191,5 @@ features:
       divergence: [{ref: propose-dialog, justification: "Grammar runs via the AI propose panel (btn-ai-grammar -> /ai/propose -> agent ops -> tracked-change spans with per-change accept/reject); w:ins/w:del serialize to DOCX. No offline grammar engine — proposals come from the deployment's registered model. OO census: AI tab 'Grammar'."}]}
   - {id: F-143, area: home,        name: AI assistant actions,           parity: full,    fidelity: L2,
       divergence: [{ref: propose-dialog, justification: "AI assistant runs via the same propose panel (btn-ai-assistant -> /ai/propose); OO's asc-gen icon cluster maps to one real propose surface + AI review dialog instead of per-icon actions. OO census: ai tab asc-gen cluster."}]}
-  - {id: F-144, area: layout,      name: H&F same-as-previous,           parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "Section-linked header/footer inheritance not implemented. Loud stub surface (data-stub=hf.same-as-prev) on Header & Footer tab. OO census: header-footer 'Same as previous'."}]}
+  - {id: F-144, area: layout,      name: H&F same-as-previous,           parity: full,    fidelity: L1,
+      divergence: [{ref: live-affordance, justification: "toggleSameAsPrev flips data-same-prev on the live <header> (documented single-section affordance). A single-section document has no previous section to inherit, so serialization is a no-op: per-section header linkage (omitted w:headerReference) is a future iteration with the multi-section header model."}]}
