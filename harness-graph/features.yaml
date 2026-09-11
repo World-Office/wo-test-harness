@@ -161,12 +161,12 @@ features:
       divergence: [{ref: absent, justification: "No paragraph shading. Loud stub surface (data-stub=home.shading) in the More-formatting menu on Home reports not-implemented. OO census: home 'Shading'."}]}
   - {id: F-128, area: home,        name: Borders,                        parity: absent,  fidelity: L1,
       divergence: [{ref: absent, justification: "No paragraph/table border painter. Loud stub surface (data-stub=home.borders) in the More-formatting menu on Home reports not-implemented. OO census: home 'Borders'."}]}
-  - {id: F-129, area: home,        name: Change case,                    parity: partial, fidelity: L1,
-      divergence: [{ref: partial-cmds, justification: "smallCaps/allCaps are real data-cmd buttons; sentence/title/toggle case are not. Loud stub (data-stub=home.change-case) in the More-formatting menu. OO census: home 'Change case'."}]}
+  - {id: F-129, area: home,        name: Change case,                    parity: full,    fidelity: L2,
+      divergence: [{ref: submenu, justification: "All four case transforms are real bus commands (changeCase sentence/lower/upper/title) applied to the selection via execCommand insertText. OO uses a fused dropdown; WO lists the four actions inline."}]}
   - {id: F-130, area: home,        name: Multilevel list,                parity: absent,  fidelity: L1,
       divergence: [{ref: absent, justification: "Single-level lists only (insertOrdered/UnorderedList real). Loud stub surface (data-stub=home.multilevel). OO census: home 'Multilevel'."}]}
-  - {id: F-131, area: home,        name: Font size step +/-,             parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "Font size select is real; discrete grow/shrink steps are not. Loud stubs (data-stub=home.font-dec, home.font-inc). OO census: home inc/dec font."}]}
+  - {id: F-131, area: home,        name: Font size step +/-,             parity: full,    fidelity: L1,
+      divergence: [{ref: ladder, justification: "fontSizeInc/fontSizeDec step the selection along the same 1..7 HTML-size ladder the picker maps to (queryCommandValue-driven), matching the size picker's steps."}]}
   - {id: F-132, area: insert,      name: Shape,                          parity: absent,  fidelity: L1,
       divergence: [{ref: absent, justification: "No shape canvas. Loud stub surface (data-stub=insert.shape) on Insert tab reports not-implemented. OO census: insert 'Shape'."}]}
   - {id: F-133, area: insert,      name: Chart,                          parity: absent,  fidelity: L1,

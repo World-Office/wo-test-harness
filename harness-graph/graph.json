@@ -11,6 +11,11 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:changeCase",
+   "to": "changeCase",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:code",
    "to": "code",
    "type": "TRIGGERS"
@@ -28,6 +33,16 @@
   {
    "from": "toolbar:fontSize",
    "to": "fontSize",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:fontSizeDec",
+   "to": "fontSizeDec",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:fontSizeInc",
+   "to": "fontSizeInc",
    "type": "TRIGGERS"
   },
   {
@@ -7316,7 +7331,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-10T22:15:29+00:00",
+ "generated_at": "2026-09-11T05:08:15+00:00",
  "nodes": [
   {
    "id": "allCaps",
@@ -7327,6 +7342,11 @@
    "id": "bold",
    "label": "Command",
    "source": "editor.js:runCommand('bold')"
+  },
+  {
+   "id": "changeCase",
+   "label": "Command",
+   "source": "editor.js:runCommand('changeCase')"
   },
   {
    "id": "code",
@@ -7347,6 +7367,16 @@
    "id": "fontSize",
    "label": "Command",
    "source": "editor.js:runCommand('fontSize')"
+  },
+  {
+   "id": "fontSizeDec",
+   "label": "Command",
+   "source": "editor.js:runCommand('fontSizeDec')"
+  },
+  {
+   "id": "fontSizeInc",
+   "label": "Command",
+   "source": "editor.js:runCommand('fontSizeInc')"
   },
   {
    "id": "formatBlock",
@@ -7466,6 +7496,12 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:changeCase",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:code",
    "kind": "toolbar-button",
    "label": "Surface",
@@ -7485,6 +7521,18 @@
   },
   {
    "id": "toolbar:fontSize",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:fontSizeDec",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:fontSizeInc",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -15997,15 +16045,15 @@
   },
   {
    "area": "home",
-   "fidelity": "L1",
+   "fidelity": "L2",
    "id": "F-129",
    "label": "Feature",
    "name": "Change case",
-   "parity": "partial"
+   "parity": "full"
   },
   {
-   "id": "F-129:partial-cmds",
-   "justification": "smallCaps/allCaps are real data-cmd buttons; sentence/title/toggle case are not. Loud stub (data-stub=home.change-case) in the More-formatting menu. OO census: home 'Change case'.",
+   "id": "F-129:submenu",
+   "justification": "All four case transforms are real bus commands (changeCase sentence/lower/upper/title) applied to the selection via execCommand insertText. OO uses a fused dropdown; WO lists the four actions inline.",
    "label": "Divergence"
   },
   {
@@ -16027,11 +16075,11 @@
    "id": "F-131",
    "label": "Feature",
    "name": "Font size step +/-",
-   "parity": "absent"
+   "parity": "full"
   },
   {
-   "id": "F-131:absent",
-   "justification": "Font size select is real; discrete grow/shrink steps are not. Loud stubs (data-stub=home.font-dec, home.font-inc). OO census: home inc/dec font.",
+   "id": "F-131:ladder",
+   "justification": "fontSizeInc/fontSizeDec step the selection along the same 1..7 HTML-size ladder the picker maps to (queryCommandValue-driven), matching the size picker's steps.",
    "label": "Divergence"
   },
   {
@@ -16205,10 +16253,10 @@
   }
  ],
  "stats": {
-  "commands": 27,
-  "edges": 1463,
+  "commands": 30,
+  "edges": 1466,
   "features": 102,
-  "surfaces": 27,
+  "surfaces": 30,
   "tests": 1252
  },
  "version": 1
