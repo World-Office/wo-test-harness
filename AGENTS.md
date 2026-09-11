@@ -28,6 +28,14 @@ wo-test-harness/
 - **`wo-render-ir`** — built from `conformance-docx` (`cargo build -p
   wo-conformance-docx --bin wo-render-ir`), git-depends on the server repo
   (`wo-docx-renderer` + `wo-ooxml`, branch `main`).
+- **Parity census (rig)** — the OnlyOffice↔World-Office census pipeline,
+  ledger, and MAP live in `~/workspace/nextcloud/compose/visual/` (rig
+  repo, local-only). The one-run ledger-clear command there is
+  `WO_SERVER_DIR=/path/to/server /usr/bin/python3 reconcile.py
+  --seed-check`: spawns a local docserver (no docker), recaptures
+  census-wo, auto-flips MAP `stub→real` rows for promoted buttons,
+  gates on zero stub/UNMATCHED/MISSING-STUB, and runs this repo's
+  `seed.py --check`. Register parity rows sync via `--apply-register`.
 - **Docx fidelity** — `DocxConformanceAdapter` projects `wo-docx-renderer`
   layout into `NormalizedRender` for scoring against captured truth.
 
