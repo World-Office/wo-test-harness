@@ -1,6 +1,16 @@
 {
  "edges": [
   {
+   "from": "toolbar:aiRewrite",
+   "to": "aiRewrite",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:aiSummarize",
+   "to": "aiSummarize",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:aiTranslate",
    "to": "aiTranslate",
    "type": "TRIGGERS"
@@ -116,6 +126,11 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:link",
+   "to": "link",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:listStyle",
    "to": "listStyle",
    "type": "TRIGGERS"
@@ -188,6 +203,11 @@
   {
    "from": "toolbar:toggleLineNumbers",
    "to": "toggleLineNumbers",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:toggleNavigation",
+   "to": "toggleNavigation",
    "type": "TRIGGERS"
   },
   {
@@ -7591,8 +7611,18 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-11T11:24:20+00:00",
+ "generated_at": "2026-09-11T12:46:26+00:00",
  "nodes": [
+  {
+   "id": "aiRewrite",
+   "label": "Command",
+   "source": "editor.js:runCommand('aiRewrite')"
+  },
+  {
+   "id": "aiSummarize",
+   "label": "Command",
+   "source": "editor.js:runCommand('aiSummarize')"
+  },
   {
    "id": "aiTranslate",
    "label": "Command",
@@ -7709,6 +7739,11 @@
    "source": "editor.js:runCommand('justifyRight')"
   },
   {
+   "id": "link",
+   "label": "Command",
+   "source": "editor.js:runCommand('link')"
+  },
+  {
    "id": "listStyle",
    "label": "Command",
    "source": "editor.js:runCommand('listStyle')"
@@ -7784,6 +7819,11 @@
    "source": "editor.js:runCommand('toggleLineNumbers')"
   },
   {
+   "id": "toggleNavigation",
+   "label": "Command",
+   "source": "editor.js:runCommand('toggleNavigation')"
+  },
+  {
    "id": "toggleSameAsPrev",
    "label": "Command",
    "source": "editor.js:runCommand('toggleSameAsPrev')"
@@ -7812,6 +7852,18 @@
    "id": "updateToc",
    "label": "Command",
    "source": "editor.js:runCommand('updateToc')"
+  },
+  {
+   "id": "toolbar:aiRewrite",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:aiSummarize",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
   },
   {
    "id": "toolbar:aiTranslate",
@@ -7952,6 +8004,12 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:link",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:listStyle",
    "kind": "toolbar-button",
    "label": "Surface",
@@ -8037,6 +8095,12 @@
   },
   {
    "id": "toolbar:toggleLineNumbers",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:toggleNavigation",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -16787,10 +16851,10 @@
   }
  ],
  "stats": {
-  "commands": 44,
-  "edges": 1518,
+  "commands": 48,
+  "edges": 1522,
   "features": 102,
-  "surfaces": 44,
+  "surfaces": 48,
   "tests": 1272
  },
  "version": 1

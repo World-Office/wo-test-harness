@@ -99,11 +99,11 @@ MAP = {
     "zoom-towidth": {"covered": "zoom-slider"},
     "status-btn-multiple-pages": {"deferred": "single-page-view"},
     "blankpage": {"deferred": "decorative-page-insert"},
-    "inserthyperlink": {"stub": "insert.hyperlink"},
+    "inserthyperlink": {"real": "link"},   # AUTO by reconcile (was data-stub=insert.hyperlink)
     "addcomment": {"real": "collab:btn-comment"},
     "insertdatetime": {"real": "insert:btn-datetime"},
     "insertfield": {"deferred": "field-codes-unsupported"},
-    "inserthyperlink-text": {"stub": "insert.hyperlink"},
+    "inserthyperlink-text": {"real": "link"},   # AUTO by reconcile (was data-stub=insert.hyperlink)
     "copy": {"covered": "native-clipboard"},
     "asc-gen987": {"covered": "zoom-slider"},
     "asc-gen989": {"covered": "zoom-slider"},
@@ -181,9 +181,9 @@ MAP = {
     "decfont": {"real": "home:fontSizeDec"},
     "incfont": {"real": "home:fontSizeInc"},
     "insert-pagenum": {"real": "insert:btn-pagenumber"},
-    "insert-hyperlink": {"stub": "insert.hyperlink"},
-    "big-inserthyperlink": {"stub": "insert.hyperlink"},
-    "hyperlink": {"stub": "insert.hyperlink"},
+    "insert-hyperlink": {"real": "link"},   # AUTO by reconcile (was data-stub=insert.hyperlink)
+    "big-inserthyperlink": {"real": "link"},   # AUTO by reconcile (was data-stub=insert.hyperlink)
+    "hyperlink": {"real": "link"},   # AUTO by reconcile (was data-stub=insert.hyperlink)
     # ── residue triage round 1 ──
     "addcomment": {"covered": "collab:btn-comment"},
     "accept": {"covered": "collab:btn-review-changes"},
@@ -338,3 +338,4 @@ for r in un: by_tab.setdefault(r["tab"], []).append(r.get("token") or r.get("ico
 for t, toks in sorted(by_tab.items()):
     print(f"\n== {t} ({len(toks)}) ==")
     print("  " + ", ".join(sorted(toks)))
+

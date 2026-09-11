@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-09-11T11:24:13.573Z",
+ "capturedAt": "2026-09-11T12:46:20.078Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
@@ -1126,7 +1126,7 @@
     },
     {
      "id": null,
-     "stub": "insert.hyperlink",
+     "cmd": "link",
      "label": "Hyperlink",
      "enabled": true,
      "x": 819,
@@ -1577,7 +1577,7 @@
    "buttons": [
     {
      "id": null,
-     "stub": "view.mode",
+     "cmd": "displayMode",
      "label": "Document view",
      "enabled": true,
      "x": 12,
@@ -1595,8 +1595,7 @@
      "h": 32
     },
     {
-     "id": null,
-     "stub": "view.gridlines",
+     "id": "btn-gridlines",
      "label": "Gridlines",
      "enabled": true,
      "x": 181,
@@ -1605,8 +1604,8 @@
      "h": 32
     },
     {
-     "id": null,
-     "stub": "view.navigation",
+     "id": "btn-nav-toggle",
+     "cmd": "toggleNavigation",
      "label": "Navigation",
      "enabled": true,
      "x": 256,
@@ -1736,7 +1735,7 @@
     },
     {
      "id": null,
-     "stub": "ai.summarize",
+     "cmd": "aiSummarize",
      "label": "Summarize",
      "enabled": true,
      "x": 102,
@@ -1756,7 +1755,7 @@
     },
     {
      "id": null,
-     "stub": "ai.rewrite",
+     "cmd": "aiRewrite",
      "label": "Rewrite",
      "enabled": true,
      "x": 271,
