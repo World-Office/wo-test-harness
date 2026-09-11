@@ -26,6 +26,11 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:browsePlugins",
+   "to": "browsePlugins",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:changeCase",
    "to": "changeCase",
    "type": "TRIGGERS"
@@ -81,8 +86,38 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:inkColor",
+   "to": "inkColor",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:inkMode",
+   "to": "inkMode",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:inkSelect",
+   "to": "inkSelect",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:inkThickness",
+   "to": "inkThickness",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:insertCaption",
    "to": "insertCaption",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:insertCitation",
+   "to": "insertCitation",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:insertIndexEntry",
+   "to": "insertIndexEntry",
    "type": "TRIGGERS"
   },
   {
@@ -136,8 +171,23 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:managePlugins",
+   "to": "managePlugins",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:multilevel",
    "to": "multilevel",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:nextTrackedChange",
+   "to": "nextTrackedChange",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:ocrRun",
+   "to": "ocrRun",
    "type": "TRIGGERS"
   },
   {
@@ -156,6 +206,21 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:photoEditor",
+   "to": "photoEditor",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:prevTrackedChange",
+   "to": "prevTrackedChange",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:protectDialog",
+   "to": "protectDialog",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:redo",
    "to": "redo",
    "type": "TRIGGERS"
@@ -163,6 +228,11 @@
   {
    "from": "toolbar:removeFormat",
    "to": "removeFormat",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:restrictEditing",
+   "to": "restrictEditing",
    "type": "TRIGGERS"
   },
   {
@@ -191,6 +261,11 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:toggleChat",
+   "to": "toggleChat",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:toggleDifferentFirst",
    "to": "toggleDifferentFirst",
    "type": "TRIGGERS"
@@ -213,6 +288,11 @@
   {
    "from": "toolbar:toggleHyphenation",
    "to": "toggleHyphenation",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:toggleInk",
+   "to": "toggleInk",
    "type": "TRIGGERS"
   },
   {
@@ -7631,7 +7711,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-11T13:19:42+00:00",
+ "generated_at": "2026-09-11T23:09:03+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -7657,6 +7737,11 @@
    "id": "bold",
    "label": "Command",
    "source": "editor.js:runCommand('bold')"
+  },
+  {
+   "id": "browsePlugins",
+   "label": "Command",
+   "source": "editor.js:runCommand('browsePlugins')"
   },
   {
    "id": "changeCase",
@@ -7714,9 +7799,39 @@
    "source": "editor.js:runCommand('indent')"
   },
   {
+   "id": "inkColor",
+   "label": "Command",
+   "source": "editor.js:runCommand('inkColor')"
+  },
+  {
+   "id": "inkMode",
+   "label": "Command",
+   "source": "editor.js:runCommand('inkMode')"
+  },
+  {
+   "id": "inkSelect",
+   "label": "Command",
+   "source": "editor.js:runCommand('inkSelect')"
+  },
+  {
+   "id": "inkThickness",
+   "label": "Command",
+   "source": "editor.js:runCommand('inkThickness')"
+  },
+  {
    "id": "insertCaption",
    "label": "Command",
    "source": "editor.js:runCommand('insertCaption')"
+  },
+  {
+   "id": "insertCitation",
+   "label": "Command",
+   "source": "editor.js:runCommand('insertCitation')"
+  },
+  {
+   "id": "insertIndexEntry",
+   "label": "Command",
+   "source": "editor.js:runCommand('insertIndexEntry')"
   },
   {
    "id": "insertObject",
@@ -7769,9 +7884,24 @@
    "source": "editor.js:runCommand('listStyle')"
   },
   {
+   "id": "managePlugins",
+   "label": "Command",
+   "source": "editor.js:runCommand('managePlugins')"
+  },
+  {
    "id": "multilevel",
    "label": "Command",
    "source": "editor.js:runCommand('multilevel')"
+  },
+  {
+   "id": "nextTrackedChange",
+   "label": "Command",
+   "source": "editor.js:runCommand('nextTrackedChange')"
+  },
+  {
+   "id": "ocrRun",
+   "label": "Command",
+   "source": "editor.js:runCommand('ocrRun')"
   },
   {
    "id": "openBorders",
@@ -7789,6 +7919,21 @@
    "source": "editor.js:runCommand('outdent')"
   },
   {
+   "id": "photoEditor",
+   "label": "Command",
+   "source": "editor.js:runCommand('photoEditor')"
+  },
+  {
+   "id": "prevTrackedChange",
+   "label": "Command",
+   "source": "editor.js:runCommand('prevTrackedChange')"
+  },
+  {
+   "id": "protectDialog",
+   "label": "Command",
+   "source": "editor.js:runCommand('protectDialog')"
+  },
+  {
    "id": "redo",
    "label": "Command",
    "source": "editor.js:runCommand('redo')"
@@ -7797,6 +7942,11 @@
    "id": "removeFormat",
    "label": "Command",
    "source": "editor.js:runCommand('removeFormat')"
+  },
+  {
+   "id": "restrictEditing",
+   "label": "Command",
+   "source": "editor.js:runCommand('restrictEditing')"
   },
   {
    "id": "smallCaps",
@@ -7824,6 +7974,11 @@
    "source": "editor.js:runCommand('superscript')"
   },
   {
+   "id": "toggleChat",
+   "label": "Command",
+   "source": "editor.js:runCommand('toggleChat')"
+  },
+  {
    "id": "toggleDifferentFirst",
    "label": "Command",
    "source": "editor.js:runCommand('toggleDifferentFirst')"
@@ -7847,6 +8002,11 @@
    "id": "toggleHyphenation",
    "label": "Command",
    "source": "editor.js:runCommand('toggleHyphenation')"
+  },
+  {
+   "id": "toggleInk",
+   "label": "Command",
+   "source": "editor.js:runCommand('toggleInk')"
   },
   {
    "id": "toggleLineNumbers",
@@ -7924,6 +8084,12 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:browsePlugins",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:changeCase",
    "kind": "toolbar-button",
    "label": "Surface",
@@ -7990,7 +8156,43 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:inkColor",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:inkMode",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:inkSelect",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:inkThickness",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:insertCaption",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:insertCitation",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:insertIndexEntry",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -8056,7 +8258,25 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:managePlugins",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:multilevel",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:nextTrackedChange",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:ocrRun",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -8080,6 +8300,24 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:photoEditor",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:prevTrackedChange",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:protectDialog",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:redo",
    "kind": "toolbar-button",
    "label": "Surface",
@@ -8087,6 +8325,12 @@
   },
   {
    "id": "toolbar:removeFormat",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:restrictEditing",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -8122,6 +8366,12 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:toggleChat",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:toggleDifferentFirst",
    "kind": "toolbar-button",
    "label": "Surface",
@@ -8147,6 +8397,12 @@
   },
   {
    "id": "toolbar:toggleHyphenation",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:toggleInk",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -10288,6 +10544,60 @@
    "path": "opencloud-docserver/tests/test_api_fuzz.py"
   },
   {
+   "id": "opencloud-docserver/tests/test_chat_panel.py::test_chat_button_present_in_html",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_chat_panel.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_chat_panel.py::test_chat_button_no_stub",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_chat_panel.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_chat_panel.py::test_chat_panel_present_in_html",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_chat_panel.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_chat_panel.py::test_chat_panel_structure",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_chat_panel.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_chat_panel.py::test_editor_js_wires_chat_commands",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_chat_panel.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_chat_panel.py::test_chat_panel_css_exists",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_chat_panel.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_chat_panel.py::test_chat_i18n_keys_exist",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_chat_panel.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_chat_panel.py::test_runCommand_handles_toggleChat",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_chat_panel.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_chat_panel.py::test_chat_panel_setStatus",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_chat_panel.py"
+  },
+  {
    "id": "opencloud-docserver/tests/test_cli.py::test_main_dispatches_list_to_cmd_list",
    "label": "Test",
    "layer": "e2e",
@@ -11644,6 +11954,210 @@
    "path": "opencloud-docserver/tests/test_document_info.py"
   },
   {
+   "id": "opencloud-docserver/tests/test_document_protection.py::test_protection_buttons_are_real_commands",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_document_protection.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_document_protection.py::test_protect_dialog_present_in_html",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_document_protection.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_document_protection.py::test_editor_js_wires_protection",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_document_protection.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_document_protection.py::test_protection_i18n_and_css",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_document_protection.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_document_protection.py::test_unprotected_document_defaults",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_document_protection.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_document_protection.py::test_protect_with_password_is_hashed_and_stored_in_file",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_document_protection.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_document_protection.py::test_same_password_hashes_differ_per_document",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_document_protection.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_document_protection.py::test_save_and_put_blocked_while_restricted",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_document_protection.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_document_protection.py::test_restrict_without_password_is_freely_unrestrictable",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_document_protection.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_document_protection.py::test_unrestrict_requires_current_password",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_document_protection.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_document_protection.py::test_remove_password_keeps_restriction_but_needs_current",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_document_protection.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_document_protection.py::test_change_password_requires_current_password",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_document_protection.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_document_protection.py::test_protect_requires_bool_restrict_and_rejects_bad_json",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_document_protection.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_document_protection.py::test_odt_protection_is_refused_loudly",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_document_protection.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_document_protection.py::test_protection_survives_format_error_paths",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_document_protection.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_select.py::test_select_button_is_a_real_ink_command",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_select.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_select.py::test_ink_select_handler_wired_in_js",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_select.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_select.py::test_stroke_registry_supports_select_delete_move",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_select.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_select.py::test_delete_move_keyboard_wiring",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_select.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_select.py::test_select_draw_i18n_keys_present",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_select.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_select.py::test_other_ink_tools_still_wired",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_select.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_tools.py::test_ink_mode_command_present_in_html",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_tools.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_tools.py::test_set_ink_mode_function_in_js",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_tools.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_tools.py::test_draw_buttons_are_real_commands",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_tools.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_tools.py::test_draw_tab_tool_commands_wired",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_tools.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_tools.py::test_draw_tab_handlers_in_js",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_tools.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_tools.py::test_ink_mode_wired_in_run_command",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_tools.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_tools.py::test_set_ink_mode_delegates_canvas_state",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_tools.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_tools.py::test_toggle_ink_delegates_to_set_ink_mode",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_tools.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_tools.py::test_draw_tab_i18n_keys_present",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_tools.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_tools.py::test_ink_canvas_element_present",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_tools.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_tools.py::test_ink_canvas_styles_present",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_tools.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_tools.py::test_ink_buttons_have_aria_pressed",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_tools.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_draw_tools.py::test_update_active_states_handles_ink",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_draw_tools.py"
+  },
+  {
    "id": "opencloud-docserver/tests/test_editor_api_lifecycle.py::test_new_document_creates_blank_docx",
    "label": "Test",
    "layer": "e2e",
@@ -12284,6 +12798,42 @@
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/tests/test_format_spec_conformance.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ink_canvas.py::test_draw_buttons_are_real_commands",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ink_canvas.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ink_canvas.py::test_draw_tab_ink_commands_wired",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ink_canvas.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ink_canvas.py::test_draw_tab_ink_handlers_in_js",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ink_canvas.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ink_canvas.py::test_draw_tab_i18n_keys_present",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ink_canvas.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ink_canvas.py::test_ink_canvas_element_present",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ink_canvas.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ink_canvas.py::test_ink_canvas_styles_present",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ink_canvas.py"
   },
   {
    "id": "opencloud-docserver/tests/test_insert_advanced.py::test_f071_image_roundtrip_with_real_png_bytes",
@@ -13744,6 +14294,168 @@
    "path": "opencloud-docserver/tests/test_persistence.py"
   },
   {
+   "id": "opencloud-docserver/tests/test_plugin_host.py::test_plugins_tab_buttons_have_real_commands",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_host.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_plugin_host.py::test_plugins_i18n_keys_present",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_host.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_plugin_host.py::test_editor_js_wires_plugin_commands",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_host.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_plugin_host.py::test_router_exposes_plugins_registry",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_host.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_plugin_host.py::test_plugins_handlers_call_setStatus",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_host.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_plugin_ocr.py::test_ocr_button_present_in_html",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_ocr.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_plugin_ocr.py::test_ocr_button_i18n",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_ocr.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_plugin_ocr.py::test_editor_js_wires_ocr_command",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_ocr.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_plugin_ocr.py::test_ocr_i18n_keys",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_ocr.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_plugin_ocr.py::test_ocr_router_endpoint",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_ocr.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_plugin_ocr.py::test_ocr_uses_model_registry_pattern",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_ocr.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_plugin_photoeditor.py::test_photo_editor_button_is_a_real_command",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_photoeditor.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_plugin_photoeditor.py::test_photo_editor_dialog_present_in_html",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_photoeditor.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_plugin_photoeditor.py::test_photo_editor_wired_in_editor_js",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_photoeditor.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_plugin_photoeditor.py::test_photo_editor_filters_are_real",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_photoeditor.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_plugin_photoeditor.py::test_photo_editor_i18n_keys",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_photoeditor.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_plugin_photoeditor.py::test_photo_editor_dialog_styled",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_plugin_photoeditor.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ref_fields.py::test_ref_citation_marker_round_trip_docx",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ref_fields.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ref_fields.py::test_ref_citation_absent_when_not_used",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ref_fields.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ref_fields.py::test_ref_citation_with_custom_text",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ref_fields.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ref_fields.py::test_ref_citation_odt_round_trip",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ref_fields.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ref_fields.py::test_ref_index_marker_round_trip_docx",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ref_fields.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ref_fields.py::test_ref_index_absent_when_not_used",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ref_fields.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ref_fields.py::test_ref_index_with_data_entry",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ref_fields.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ref_fields.py::test_ref_index_odt_round_trip",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ref_fields.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ref_fields.py::test_citation_and_index_together",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ref_fields.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_ref_fields.py::test_ref_markers_dont_leak_content",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_ref_fields.py"
+  },
+  {
    "id": "opencloud-docserver/tests/test_resilience.py::test_docx_reader_never_raises_on_arbitrary_bytes",
    "label": "Test",
    "layer": "e2e",
@@ -14558,6 +15270,36 @@
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/tests/test_store_multi_instance.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_tracked_navigation.py::test_buttons_promoted_from_stub_to_real_cmd",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_tracked_navigation.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_tracked_navigation.py::test_handlers_declared_and_dispatched",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_tracked_navigation.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_tracked_navigation.py::test_navigation_walks_track_change_spans",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_tracked_navigation.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_tracked_navigation.py::test_navigation_is_loud_not_silent",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_tracked_navigation.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_tracked_navigation.py::test_i18n_keys_present",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_tracked_navigation.py"
   },
   {
    "id": "opencloud-docserver/tests/test_version_restore_semantics.py::test_versions_list_is_strictly_newest_first",
@@ -16900,11 +17642,11 @@
    "id": "F-138",
    "label": "Feature",
    "name": "Ink thickness",
-   "parity": "missing"
+   "parity": "full"
   },
   {
-   "id": "F-138:future-iteration",
-   "justification": "No draw canvas layer yet (documents are HTML+OOXML, not a vector canvas) \u2014 deferred to a future iteration. Census ledger: deferred no-canvas-layer. The insert-object dialog is today's object path.",
+   "id": "F-138:canvas-overlay",
+   "justification": "Draw tab is real (WO-FEA fleet): a canvas overlay with setInkMode master Draw toggle + pen/highlighter/eraser tools, inkColor + inkThickness pickers, stroke select/move/delete. Strokes are ephemeral view-only overlay (like the nav sidebar) \u2014 NOT serialized to DOCX \u2014 so fidelity is L1 (matching UI, no document ink).",
    "label": "Divergence"
   },
   {
@@ -16926,11 +17668,11 @@
    "id": "F-140",
    "label": "Feature",
    "name": "OCR plugin",
-   "parity": "missing"
+   "parity": "full"
   },
   {
-   "id": "F-140:future-iteration",
-   "justification": "OCR needs an external vision pipeline; no plugin host yet \u2014 deferred to a future iteration. Census: deferred external-service-future-iteration.",
+   "id": "F-140:model-registry",
+   "justification": "plugins.ocr is real (WO-FEA fleet): POST /api/documents/{id}/ai/ocr routes the document through ai_propose_run (the MODEL_REGISTRY pattern) \u2014 unregistered vision model returns a loud 503, never a silent stub. The OCR button also offers a one-line propose preset. Output quality depends on the deployment's registered model, like AI grammar (F-142).",
    "label": "Divergence"
   },
   {
@@ -16939,11 +17681,11 @@
    "id": "F-141",
    "label": "Feature",
    "name": "Photo editor plugin",
-   "parity": "missing"
+   "parity": "full"
   },
   {
-   "id": "F-141:future-iteration",
-   "justification": "Image editing needs a raster editor app; no plugin host yet \u2014 deferred to a future iteration. Census: deferred external-service-future-iteration. Links/images round-trip; pixels do not get edited.",
+   "id": "F-141:canvas-2d",
+   "justification": "plugins.photoeditor is real (WO-FEA fleet): the photoEditor dialog renders the image to a 2D canvas with brightness/contrast/rotate/crop controls; Save replaces the editor img src with the edited image (data URL). L1 canvas-2D filters, not pixel-perfect raster-parity with OO's dedicated editor.",
    "label": "Divergence"
   },
   {
@@ -16987,11 +17729,11 @@
   }
  ],
  "stats": {
-  "commands": 52,
-  "edges": 1526,
+  "commands": 68,
+  "edges": 1542,
   "features": 102,
-  "surfaces": 52,
-  "tests": 1284
+  "surfaces": 68,
+  "tests": 1365
  },
  "version": 1
 }

@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-09-11T13:19:35.237Z",
+ "capturedAt": "2026-09-11T23:06:06.238Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
@@ -1157,61 +1157,71 @@
    "label": "Draw",
    "buttons": [
     {
-     "id": null,
-     "stub": "draw.select",
-     "label": "Select",
+     "id": "btn-ink-draw",
+     "cmd": "inkMode",
+     "label": "Draw",
      "enabled": true,
      "x": 12,
+     "y": 82,
+     "w": 51,
+     "h": 32
+    },
+    {
+     "id": "btn-ink-select",
+     "cmd": "inkSelect",
+     "label": "Select",
+     "enabled": true,
+     "x": 65,
      "y": 82,
      "w": 57,
      "h": 32
     },
     {
-     "id": null,
-     "stub": "draw.pen",
+     "id": "btn-ink-pen",
+     "cmd": "toggleInk",
      "label": "Pen",
      "enabled": true,
-     "x": 71,
+     "x": 124,
      "y": 82,
      "w": 43,
      "h": 32
     },
     {
-     "id": null,
-     "stub": "draw.highlighter",
+     "id": "btn-ink-highlighter",
+     "cmd": "toggleInk",
      "label": "Highlighter",
      "enabled": true,
-     "x": 116,
+     "x": 169,
      "y": 82,
      "w": 85,
      "h": 32
     },
     {
-     "id": null,
-     "stub": "draw.eraser",
+     "id": "btn-ink-eraser",
+     "cmd": "toggleInk",
      "label": "Eraser",
      "enabled": true,
-     "x": 203,
+     "x": 255,
      "y": 82,
      "w": 59,
      "h": 32
     },
     {
-     "id": null,
-     "stub": "draw.ink",
+     "id": "btn-ink-color",
+     "cmd": "inkColor",
      "label": "Ink color",
      "enabled": true,
-     "x": 264,
+     "x": 317,
      "y": 82,
      "w": 71,
      "h": 32
     },
     {
-     "id": null,
-     "stub": "draw.ink-thickness",
+     "id": "btn-ink-thickness",
+     "cmd": "inkThickness",
      "label": "Ink thickness",
      "enabled": true,
-     "x": 337,
+     "x": 390,
      "y": 82,
      "w": 99,
      "h": 32
@@ -1365,7 +1375,7 @@
     },
     {
      "id": null,
-     "stub": "ref.citation",
+     "cmd": "insertCitation",
      "label": "Citation",
      "enabled": true,
      "x": 188,
@@ -1375,7 +1385,7 @@
     },
     {
      "id": null,
-     "stub": "ref.index",
+     "cmd": "insertIndexEntry",
      "label": "Index",
      "enabled": true,
      "x": 256,
@@ -1462,8 +1472,8 @@
      "h": 32
     },
     {
-     "id": null,
-     "stub": "collab.chat",
+     "id": "btn-chat-toggle",
+     "cmd": "toggleChat",
      "label": "Chat",
      "enabled": true,
      "x": 156,
@@ -1493,7 +1503,7 @@
     },
     {
      "id": null,
-     "stub": "collab.prev-change",
+     "cmd": "prevTrackedChange",
      "label": "Previous change",
      "enabled": true,
      "x": 388,
@@ -1503,7 +1513,7 @@
     },
     {
      "id": null,
-     "stub": "collab.next-change",
+     "cmd": "nextTrackedChange",
      "label": "Next change",
      "enabled": true,
      "x": 512,
@@ -1535,7 +1545,7 @@
    "buttons": [
     {
      "id": null,
-     "stub": "protect.password",
+     "cmd": "protectDialog",
      "label": "Protect with password",
      "enabled": true,
      "x": 12,
@@ -1545,7 +1555,7 @@
     },
     {
      "id": null,
-     "stub": "protect.restrict",
+     "cmd": "restrictEditing",
      "label": "Restrict editing",
      "enabled": true,
      "x": 169,
@@ -1664,7 +1674,7 @@
    "buttons": [
     {
      "id": null,
-     "stub": "plugins.browse",
+     "cmd": "browsePlugins",
      "label": "Browse plugins",
      "enabled": true,
      "x": 12,
@@ -1674,7 +1684,7 @@
     },
     {
      "id": null,
-     "stub": "plugins.manage",
+     "cmd": "managePlugins",
      "label": "Manage plugins",
      "enabled": true,
      "x": 127,
@@ -1683,8 +1693,8 @@
      "h": 32
     },
     {
-     "id": null,
-     "stub": "plugins.ocr",
+     "id": "btn-ocr",
+     "cmd": "ocrRun",
      "label": "OCR",
      "enabled": true,
      "x": 246,
@@ -1694,7 +1704,7 @@
     },
     {
      "id": null,
-     "stub": "plugins.photoeditor",
+     "cmd": "photoEditor",
      "label": "Photo editor",
      "enabled": true,
      "x": 297,
