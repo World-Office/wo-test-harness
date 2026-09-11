@@ -7331,7 +7331,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-11T05:08:15+00:00",
+ "generated_at": "2026-09-11T06:52:21+00:00",
  "nodes": [
   {
    "id": "allCaps",
@@ -15993,28 +15993,28 @@
   },
   {
    "area": "home",
-   "fidelity": "L1",
+   "fidelity": "L2",
    "id": "F-125",
    "label": "Feature",
    "name": "Highlight color",
-   "parity": "absent"
+   "parity": "full"
   },
   {
-   "id": "F-125:absent",
-   "justification": "No highlight (character shading) implementation. Loud stub surface (data-stub=home.highlight) in the More-formatting menu on Home reports not-implemented. OO census: home 'Highlight color'.",
+   "id": "F-125:picker",
+   "justification": "Real: toolbar highlight-color input emits hiliteColor (span background with styleWithCSS); the More-formatting menu item opens that picker via showPicker(). Round-trips through DOCX w:highlight.",
    "label": "Divergence"
   },
   {
    "area": "home",
-   "fidelity": "L1",
+   "fidelity": "L2",
    "id": "F-126",
    "label": "Feature",
    "name": "Font color",
-   "parity": "absent"
+   "parity": "full"
   },
   {
-   "id": "F-126:absent",
-   "justification": "No font-color picker. Loud stub surface (data-stub=home.fontcolor) in the More-formatting menu on Home reports not-implemented. OO census: home 'Font color'.",
+   "id": "F-126:picker",
+   "justification": "Real: toolbar text-color input emits foreColor (span color with styleWithCSS); the More-formatting menu item opens that picker via showPicker(). Round-trips through DOCX w:color.",
    "label": "Divergence"
   },
   {
@@ -16023,11 +16023,11 @@
    "id": "F-127",
    "label": "Feature",
    "name": "Paragraph shading",
-   "parity": "absent"
+   "parity": "full"
   },
   {
-   "id": "F-127:absent",
-   "justification": "No paragraph shading. Loud stub surface (data-stub=home.shading) in the More-formatting menu on Home reports not-implemented. OO census: home 'Shading'.",
+   "id": "F-127:selection-scoped",
+   "justification": "Real: shading-color picker emits backColor (background styleWithCSS) on the selection; selection-scoped rather than paragraph-block-scoped (Word's paragraph shading applies to the whole paragraph).",
    "label": "Divergence"
   },
   {

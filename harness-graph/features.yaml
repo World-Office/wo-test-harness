@@ -153,12 +153,12 @@ features:
       divergence: [{ref: chips-not-avatars, justification: "Stable-hue peer chips, remote carets and cursor sync proven (collab hub set_presence + editor peerColor); profile-image avatars (L4) not implemented."}]}
   - {id: F-123, area: collab,      name: Concurrent edit conflict resolution, parity: partial, fidelity: L4}
   - {id: F-124, area: collab,      name: WOPI Lock/Unlock conflict handling,  parity: full,    fidelity: L4}
-  - {id: F-125, area: home,        name: Highlight color,                parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "No highlight (character shading) implementation. Loud stub surface (data-stub=home.highlight) in the More-formatting menu on Home reports not-implemented. OO census: home 'Highlight color'."}]}
-  - {id: F-126, area: home,        name: Font color,                     parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "No font-color picker. Loud stub surface (data-stub=home.fontcolor) in the More-formatting menu on Home reports not-implemented. OO census: home 'Font color'."}]}
-  - {id: F-127, area: home,        name: Paragraph shading,              parity: absent,  fidelity: L1,
-      divergence: [{ref: absent, justification: "No paragraph shading. Loud stub surface (data-stub=home.shading) in the More-formatting menu on Home reports not-implemented. OO census: home 'Shading'."}]}
+  - {id: F-125, area: home,        name: Highlight color,                parity: full,    fidelity: L2,
+      divergence: [{ref: picker, justification: "Real: toolbar highlight-color input emits hiliteColor (span background with styleWithCSS); the More-formatting menu item opens that picker via showPicker(). Round-trips through DOCX w:highlight."}]}
+  - {id: F-126, area: home,        name: Font color,                     parity: full,    fidelity: L2,
+      divergence: [{ref: picker, justification: "Real: toolbar text-color input emits foreColor (span color with styleWithCSS); the More-formatting menu item opens that picker via showPicker(). Round-trips through DOCX w:color."}]}
+  - {id: F-127, area: home,        name: Paragraph shading,              parity: full,    fidelity: L1,
+      divergence: [{ref: selection-scoped, justification: "Real: shading-color picker emits backColor (background styleWithCSS) on the selection; selection-scoped rather than paragraph-block-scoped (Word's paragraph shading applies to the whole paragraph)."}]}
   - {id: F-128, area: home,        name: Borders,                        parity: absent,  fidelity: L1,
       divergence: [{ref: absent, justification: "No paragraph/table border painter. Loud stub surface (data-stub=home.borders) in the More-formatting menu on Home reports not-implemented. OO census: home 'Borders'."}]}
   - {id: F-129, area: home,        name: Change case,                    parity: full,    fidelity: L2,
