@@ -1,0 +1,3555 @@
+{
+ "engine": "onlyoffice",
+ "capturedAt": "2026-09-10T18:18:54.146Z",
+ "viewport": "1440x900",
+ "tabs": {
+  "home": {
+   "label": "Home",
+   "contextual": false,
+   "buttons": [
+    {
+     "id": "id-toolbar-btn-copy",
+     "icon": "btn-copy",
+     "label": "Copy (Ctrl+Insert)",
+     "enabled": false,
+     "x": 20,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-paste",
+     "icon": "btn-paste",
+     "label": "Paste (Ctrl+V)",
+     "enabled": true,
+     "x": 20,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-cut",
+     "icon": "btn-cut",
+     "label": "Cut (Ctrl+X)",
+     "enabled": false,
+     "x": 54,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-copystyle",
+     "icon": "btn-copystyle",
+     "label": "Copy style (Ctrl+Alt+C)",
+     "enabled": true,
+     "x": 54,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-incfont",
+     "icon": "btn-incfont",
+     "label": "Increment font size (Ctrl+])",
+     "enabled": true,
+     "x": 277,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-decfont",
+     "icon": "btn-decfont",
+     "label": "Decrement font size (Ctrl+[)",
+     "enabled": true,
+     "x": 305,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-change-case",
+     "label": "Change case",
+     "enabled": true,
+     "x": 335,
+     "y": 68,
+     "w": 40,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-bold",
+     "icon": "btn-bold",
+     "label": "Bold (Ctrl+B)",
+     "enabled": true,
+     "x": 99,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-italic",
+     "icon": "btn-italic",
+     "label": "Italic (Ctrl+I)",
+     "enabled": true,
+     "x": 127,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-underline",
+     "icon": "btn-underline",
+     "label": "Underline (Ctrl+U)",
+     "enabled": true,
+     "x": 155,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-strikeout",
+     "icon": "btn-strikeout",
+     "label": "Strikethrough (Ctrl+5)",
+     "enabled": true,
+     "x": 183,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-superscript",
+     "icon": "btn-superscript",
+     "label": "Superscript (Ctrl+,)",
+     "enabled": true,
+     "x": 211,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-subscript",
+     "icon": "btn-subscript",
+     "label": "Subscript (Ctrl+.)",
+     "enabled": true,
+     "x": 239,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-highlight",
+     "label": "Highlight color",
+     "enabled": true,
+     "x": 267,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Highlight color",
+     "enabled": true,
+     "x": 291,
+     "y": 104,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-fontcolor",
+     "label": "Font color",
+     "enabled": true,
+     "x": 309,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Font color",
+     "enabled": true,
+     "x": 333,
+     "y": 104,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-clearstyle",
+     "icon": "btn-clearstyle",
+     "label": "Clear style",
+     "enabled": true,
+     "x": 351,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-setmarkers",
+     "label": "Bullets",
+     "enabled": true,
+     "x": 396,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Bullets",
+     "enabled": true,
+     "x": 420,
+     "y": 68,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-numbering",
+     "label": "Numbering",
+     "enabled": true,
+     "x": 436,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Numbering",
+     "enabled": true,
+     "x": 460,
+     "y": 68,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-multilevels",
+     "label": "Multilevel list",
+     "enabled": true,
+     "x": 476,
+     "y": 68,
+     "w": 40,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-decoffset",
+     "icon": "btn-decoffset",
+     "label": "Decrease indent (Ctrl+Shift+M)",
+     "enabled": true,
+     "x": 516,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-incoffset",
+     "icon": "btn-incoffset",
+     "label": "Increase indent (Ctrl+M)",
+     "enabled": true,
+     "x": 556,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-linespace",
+     "label": "Paragraph line spacing",
+     "enabled": true,
+     "x": 596,
+     "y": 68,
+     "w": 40,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-ltr",
+     "label": "Text direction",
+     "enabled": true,
+     "x": 636,
+     "y": 68,
+     "w": 40,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-align-left",
+     "icon": "btn-align-left",
+     "label": "Align left (Ctrl+L)",
+     "enabled": true,
+     "x": 396,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-align-center",
+     "icon": "btn-align-center",
+     "label": "Align center (Ctrl+E)",
+     "enabled": true,
+     "x": 436,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-align-right",
+     "icon": "btn-align-right",
+     "label": "Align right (Ctrl+R)",
+     "enabled": true,
+     "x": 476,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-align-just",
+     "icon": "btn-align-just",
+     "label": "Justified (Ctrl+J)",
+     "enabled": true,
+     "x": 516,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-paragraph",
+     "label": "Nonprinting characters (Ctrl+Shift+8)",
+     "enabled": true,
+     "x": 556,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Nonprinting characters (Ctrl+Shift+8)",
+     "enabled": true,
+     "x": 580,
+     "y": 104,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-paracolor",
+     "label": "Shading",
+     "enabled": true,
+     "x": 596,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Shading",
+     "enabled": true,
+     "x": 620,
+     "y": 104,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-border-out",
+     "label": "Borders",
+     "enabled": true,
+     "x": 636,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Borders",
+     "enabled": true,
+     "x": 660,
+     "y": 104,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-replace",
+     "icon": "btn-replace",
+     "label": "Replace (Ctrl+H)",
+     "enabled": true,
+     "x": 1380,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-select-all",
+     "icon": "btn-select-all",
+     "label": "Select all (Ctrl+A)",
+     "enabled": true,
+     "x": 1380,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-word-count",
+     "label": "Word count",
+     "enabled": true,
+     "x": 84,
+     "y": 872,
+     "w": 93,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "English – United States",
+     "enabled": true,
+     "x": 939,
+     "y": 872,
+     "w": 149,
+     "h": 24
+    },
+    {
+     "id": "asc-gen989",
+     "icon": "btn-ic-doclang",
+     "label": "Set document language",
+     "enabled": true,
+     "x": 1088,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen987",
+     "icon": "btn-ic-docspell",
+     "label": "Spell checking",
+     "enabled": true,
+     "x": 1116,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-ic-review",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1153,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1177,
+     "y": 872,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": "status-btn-multiple-pages",
+     "icon": "btn-multiple-pages",
+     "label": "Multiple pages",
+     "enabled": true,
+     "x": 1206,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-topage",
+     "icon": "btn-ic-zoomtopage",
+     "label": "Fit to page",
+     "enabled": true,
+     "x": 1238,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-towidth",
+     "icon": "btn-ic-zoomtowidth",
+     "label": "Fit to width",
+     "enabled": true,
+     "x": 1270,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-down",
+     "icon": "btn-zoomdown",
+     "label": "Zoom out (Ctrl+-)",
+     "enabled": true,
+     "x": 1302,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-up",
+     "icon": "btn-zoomup",
+     "label": "Zoom in (Ctrl+Num +)",
+     "enabled": true,
+     "x": 1406,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    }
+   ],
+   "combos": [
+    {
+     "id": "asc-gen476",
+     "w": 684,
+     "h": 46
+    }
+   ]
+  },
+  "insert": {
+   "label": "Insert",
+   "contextual": false,
+   "buttons": [
+    {
+     "id": "id-toolbar-btn-copy",
+     "icon": "btn-copy",
+     "label": "Copy (Ctrl+Insert)",
+     "enabled": false,
+     "x": 20,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-paste",
+     "icon": "btn-paste",
+     "label": "Paste (Ctrl+V)",
+     "enabled": true,
+     "x": 20,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-cut",
+     "icon": "btn-cut",
+     "label": "Cut (Ctrl+X)",
+     "enabled": false,
+     "x": 54,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-copystyle",
+     "icon": "btn-copystyle",
+     "label": "Copy style (Ctrl+Alt+C)",
+     "enabled": true,
+     "x": 54,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-blankpage",
+     "icon": "btn-blankpage",
+     "label": "BlankPage",
+     "enabled": true,
+     "x": 95,
+     "y": 68,
+     "w": 40,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 135,
+     "y": 68,
+     "w": 47,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "Breaks",
+     "enabled": true,
+     "x": 135,
+     "y": 100,
+     "w": 47,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-inserttable",
+     "label": "Table",
+     "enabled": true,
+     "x": 195,
+     "y": 68,
+     "w": 39,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-insertimage",
+     "label": "Image",
+     "enabled": true,
+     "x": 247,
+     "y": 68,
+     "w": 43,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-insertshape",
+     "label": "Shape",
+     "enabled": true,
+     "x": 290,
+     "y": 68,
+     "w": 45,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-smart-art",
+     "label": "SmartArt",
+     "enabled": true,
+     "x": 335,
+     "y": 68,
+     "w": 57,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-insertchart",
+     "label": "Chart",
+     "enabled": true,
+     "x": 392,
+     "y": 68,
+     "w": 39,
+     "h": 60
+    },
+    {
+     "id": "tlbtn-addcomment-0",
+     "icon": "btn-big-add-comment",
+     "label": "Comment",
+     "enabled": true,
+     "x": 445,
+     "y": 68,
+     "w": 62,
+     "h": 60
+    },
+    {
+     "id": "id-toolbar-toolbar__icon btn-big-inserthyperlink0",
+     "icon": "btn-big-inserthyperlink",
+     "label": "Link",
+     "enabled": true,
+     "x": 507,
+     "y": 68,
+     "w": 35,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-editheader",
+     "label": "Header &Footer",
+     "enabled": true,
+     "x": 555,
+     "y": 68,
+     "w": 61,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-pagenum",
+     "label": "PageNumber",
+     "enabled": true,
+     "x": 616,
+     "y": 68,
+     "w": 65,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 693,
+     "y": 68,
+     "w": 43,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "TextBox",
+     "enabled": true,
+     "x": 693,
+     "y": 100,
+     "w": 43,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-textart",
+     "label": "TextArt",
+     "enabled": true,
+     "x": 736,
+     "y": 68,
+     "w": 37,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-dropcap",
+     "label": "DropCap",
+     "enabled": true,
+     "x": 773,
+     "y": 68,
+     "w": 44,
+     "h": 60
+    },
+    {
+     "id": "tlbtn-insertdatetime-0",
+     "icon": "btn-datetime",
+     "label": "Date &Time",
+     "enabled": true,
+     "x": 817,
+     "y": 68,
+     "w": 47,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-text-from-file",
+     "label": "Text fromFile",
+     "enabled": true,
+     "x": 864,
+     "y": 68,
+     "w": 59,
+     "h": 60
+    },
+    {
+     "id": "tlbtn-insertfield-0",
+     "icon": "btn-quick-field",
+     "label": "Field",
+     "enabled": true,
+     "x": 923,
+     "y": 68,
+     "w": 36,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 972,
+     "y": 68,
+     "w": 57,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "Equation",
+     "enabled": true,
+     "x": 972,
+     "y": 100,
+     "w": 57,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-symbol",
+     "label": "Symbol",
+     "enabled": true,
+     "x": 1030,
+     "y": 68,
+     "w": 50,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-controls",
+     "label": "ContentControls",
+     "enabled": true,
+     "x": 1093,
+     "y": 68,
+     "w": 67,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-word-count",
+     "label": "Word count",
+     "enabled": true,
+     "x": 84,
+     "y": 872,
+     "w": 93,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "English – United States",
+     "enabled": true,
+     "x": 939,
+     "y": 872,
+     "w": 149,
+     "h": 24
+    },
+    {
+     "id": "asc-gen989",
+     "icon": "btn-ic-doclang",
+     "label": "Set document language",
+     "enabled": true,
+     "x": 1088,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen987",
+     "icon": "btn-ic-docspell",
+     "label": "Spell checking",
+     "enabled": true,
+     "x": 1116,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-ic-review",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1153,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1177,
+     "y": 872,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": "status-btn-multiple-pages",
+     "icon": "btn-multiple-pages",
+     "label": "Multiple pages",
+     "enabled": true,
+     "x": 1206,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-topage",
+     "icon": "btn-ic-zoomtopage",
+     "label": "Fit to page",
+     "enabled": true,
+     "x": 1238,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-towidth",
+     "icon": "btn-ic-zoomtowidth",
+     "label": "Fit to width",
+     "enabled": true,
+     "x": 1270,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-down",
+     "icon": "btn-zoomdown",
+     "label": "Zoom out (Ctrl+-)",
+     "enabled": true,
+     "x": 1302,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-up",
+     "icon": "btn-zoomup",
+     "label": "Zoom in (Ctrl+Num +)",
+     "enabled": true,
+     "x": 1406,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    }
+   ],
+   "combos": []
+  },
+  "draw": {
+   "label": "Draw",
+   "contextual": false,
+   "buttons": [
+    {
+     "id": "id-toolbar-btn-copy",
+     "icon": "btn-copy",
+     "label": "Copy (Ctrl+Insert)",
+     "enabled": false,
+     "x": 20,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-paste",
+     "icon": "btn-paste",
+     "label": "Paste (Ctrl+V)",
+     "enabled": true,
+     "x": 20,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-cut",
+     "icon": "btn-cut",
+     "label": "Cut (Ctrl+X)",
+     "enabled": false,
+     "x": 54,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-copystyle",
+     "icon": "btn-copystyle",
+     "label": "Copy style (Ctrl+Alt+C)",
+     "enabled": true,
+     "x": 54,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen670",
+     "icon": "btn-select",
+     "label": "Select",
+     "enabled": true,
+     "x": 95,
+     "y": 68,
+     "w": 43,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 138,
+     "y": 68,
+     "w": 43,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "enabled": true,
+     "x": 138,
+     "y": 100,
+     "w": 43,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 181,
+     "y": 68,
+     "w": 43,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "enabled": true,
+     "x": 181,
+     "y": 100,
+     "w": 43,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 224,
+     "y": 68,
+     "w": 43,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "enabled": true,
+     "x": 224,
+     "y": 100,
+     "w": 43,
+     "h": 28
+    },
+    {
+     "id": "asc-gen668",
+     "icon": "btn-eraser",
+     "label": "Eraser",
+     "enabled": true,
+     "x": 267,
+     "y": 68,
+     "w": 45,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-word-count",
+     "label": "Word count",
+     "enabled": true,
+     "x": 84,
+     "y": 872,
+     "w": 93,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "English – United States",
+     "enabled": true,
+     "x": 939,
+     "y": 872,
+     "w": 149,
+     "h": 24
+    },
+    {
+     "id": "asc-gen989",
+     "icon": "btn-ic-doclang",
+     "label": "Set document language",
+     "enabled": true,
+     "x": 1088,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen987",
+     "icon": "btn-ic-docspell",
+     "label": "Spell checking",
+     "enabled": true,
+     "x": 1116,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-ic-review",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1153,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1177,
+     "y": 872,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": "status-btn-multiple-pages",
+     "icon": "btn-multiple-pages",
+     "label": "Multiple pages",
+     "enabled": true,
+     "x": 1206,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-topage",
+     "icon": "btn-ic-zoomtopage",
+     "label": "Fit to page",
+     "enabled": true,
+     "x": 1238,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-towidth",
+     "icon": "btn-ic-zoomtowidth",
+     "label": "Fit to width",
+     "enabled": true,
+     "x": 1270,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-down",
+     "icon": "btn-zoomdown",
+     "label": "Zoom out (Ctrl+-)",
+     "enabled": true,
+     "x": 1302,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-up",
+     "icon": "btn-zoomup",
+     "label": "Zoom in (Ctrl+Num +)",
+     "enabled": true,
+     "x": 1406,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    }
+   ],
+   "combos": []
+  },
+  "layout": {
+   "label": "Layout",
+   "contextual": false,
+   "buttons": [
+    {
+     "id": "id-toolbar-btn-copy",
+     "icon": "btn-copy",
+     "label": "Copy (Ctrl+Insert)",
+     "enabled": false,
+     "x": 20,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-paste",
+     "icon": "btn-paste",
+     "label": "Paste (Ctrl+V)",
+     "enabled": true,
+     "x": 20,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-cut",
+     "icon": "btn-cut",
+     "label": "Cut (Ctrl+X)",
+     "enabled": false,
+     "x": 54,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-copystyle",
+     "icon": "btn-copystyle",
+     "label": "Copy style (Ctrl+Alt+C)",
+     "enabled": true,
+     "x": 54,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-pagemargins",
+     "label": "Margins",
+     "enabled": true,
+     "x": 95,
+     "y": 68,
+     "w": 53,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-pageorient",
+     "label": "Orientation",
+     "enabled": true,
+     "x": 148,
+     "y": 68,
+     "w": 69,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-pagesize",
+     "label": "Size",
+     "enabled": true,
+     "x": 216,
+     "y": 68,
+     "w": 35,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-columns",
+     "label": "Columns",
+     "enabled": true,
+     "x": 251,
+     "y": 68,
+     "w": 57,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 309,
+     "y": 68,
+     "w": 47,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "Breaks",
+     "enabled": true,
+     "x": 309,
+     "y": 100,
+     "w": 47,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-line-numbering",
+     "label": "LineNumbers",
+     "enabled": true,
+     "x": 356,
+     "y": 68,
+     "w": 71,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-hyphenation",
+     "label": "Hyphenation",
+     "enabled": true,
+     "x": 427,
+     "y": 68,
+     "w": 77,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-img-wrap",
+     "label": "Wrapping",
+     "enabled": false,
+     "x": 842,
+     "y": 68,
+     "w": 61,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": false,
+     "x": 903,
+     "y": 68,
+     "w": 66,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "BringForward",
+     "enabled": false,
+     "x": 903,
+     "y": 100,
+     "w": 66,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": false,
+     "x": 969,
+     "y": 68,
+     "w": 75,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "SendBackward",
+     "enabled": false,
+     "x": 969,
+     "y": 100,
+     "w": 75,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-img-align",
+     "label": "Align",
+     "enabled": false,
+     "x": 1043,
+     "y": 68,
+     "w": 37,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-img-group",
+     "label": "Group",
+     "enabled": false,
+     "x": 1080,
+     "y": 68,
+     "w": 43,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-merge-shapes",
+     "label": "MergeShapes",
+     "enabled": false,
+     "x": 1124,
+     "y": 68,
+     "w": 63,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-watermark",
+     "label": "Watermark",
+     "enabled": true,
+     "x": 1199,
+     "y": 68,
+     "w": 68,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-page-color",
+     "label": "PageColor",
+     "enabled": true,
+     "x": 1267,
+     "y": 68,
+     "w": 51,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-big-colorschemas",
+     "label": "Colors",
+     "enabled": true,
+     "x": 1331,
+     "y": 68,
+     "w": 45,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-word-count",
+     "label": "Word count",
+     "enabled": true,
+     "x": 84,
+     "y": 872,
+     "w": 93,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "English – United States",
+     "enabled": true,
+     "x": 939,
+     "y": 872,
+     "w": 149,
+     "h": 24
+    },
+    {
+     "id": "asc-gen989",
+     "icon": "btn-ic-doclang",
+     "label": "Set document language",
+     "enabled": true,
+     "x": 1088,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen987",
+     "icon": "btn-ic-docspell",
+     "label": "Spell checking",
+     "enabled": true,
+     "x": 1116,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-ic-review",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1153,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1177,
+     "y": 872,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": "status-btn-multiple-pages",
+     "icon": "btn-multiple-pages",
+     "label": "Multiple pages",
+     "enabled": true,
+     "x": 1206,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-topage",
+     "icon": "btn-ic-zoomtopage",
+     "label": "Fit to page",
+     "enabled": true,
+     "x": 1238,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-towidth",
+     "icon": "btn-ic-zoomtowidth",
+     "label": "Fit to width",
+     "enabled": true,
+     "x": 1270,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-down",
+     "icon": "btn-zoomdown",
+     "label": "Zoom out (Ctrl+-)",
+     "enabled": true,
+     "x": 1302,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-up",
+     "icon": "btn-zoomup",
+     "label": "Zoom in (Ctrl+Num +)",
+     "enabled": true,
+     "x": 1406,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    }
+   ],
+   "combos": []
+  },
+  "references": {
+   "label": "References",
+   "contextual": false,
+   "buttons": [
+    {
+     "id": "id-toolbar-btn-copy",
+     "icon": "btn-copy",
+     "label": "Copy (Ctrl+Insert)",
+     "enabled": false,
+     "x": 20,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-paste",
+     "icon": "btn-paste",
+     "label": "Paste (Ctrl+V)",
+     "enabled": true,
+     "x": 20,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-cut",
+     "icon": "btn-cut",
+     "label": "Cut (Ctrl+X)",
+     "enabled": false,
+     "x": 54,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-copystyle",
+     "icon": "btn-copystyle",
+     "label": "Copy style (Ctrl+Alt+C)",
+     "enabled": true,
+     "x": 54,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 95,
+     "y": 68,
+     "w": 70,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "Table ofContents",
+     "enabled": true,
+     "x": 95,
+     "y": 100,
+     "w": 70,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-add-text",
+     "label": "Add Text",
+     "enabled": true,
+     "x": 175,
+     "y": 68,
+     "w": 94,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-update",
+     "label": "Update Table",
+     "enabled": true,
+     "x": 175,
+     "y": 104,
+     "w": 103,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "enabled": true,
+     "x": 278,
+     "y": 104,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 311,
+     "y": 68,
+     "w": 57,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "Footnote",
+     "enabled": true,
+     "x": 311,
+     "y": 100,
+     "w": 57,
+     "h": 28
+    },
+    {
+     "id": "id-toolbar-toolbar__icon btn-big-inserthyperlink1",
+     "icon": "btn-big-inserthyperlink",
+     "label": "Link",
+     "enabled": true,
+     "x": 381,
+     "y": 68,
+     "w": 35,
+     "h": 60
+    },
+    {
+     "id": "asc-gen885",
+     "icon": "btn-bookmarks",
+     "label": "Bookmark",
+     "enabled": true,
+     "x": 416,
+     "y": 68,
+     "w": 64,
+     "h": 60
+    },
+    {
+     "id": "asc-gen887",
+     "icon": "btn-caption",
+     "label": "Caption",
+     "enabled": true,
+     "x": 493,
+     "y": 68,
+     "w": 51,
+     "h": 60
+    },
+    {
+     "id": "asc-gen889",
+     "icon": "btn-cross-reference",
+     "label": "Cross-reference",
+     "enabled": true,
+     "x": 544,
+     "y": 68,
+     "w": 96,
+     "h": 60
+    },
+    {
+     "id": "asc-gen891",
+     "icon": "btn-contents",
+     "label": "Table of Figures",
+     "enabled": true,
+     "x": 650,
+     "y": 68,
+     "w": 117,
+     "h": 24
+    },
+    {
+     "id": "asc-gen893",
+     "icon": "btn-update",
+     "label": "Update Table",
+     "enabled": false,
+     "x": 650,
+     "y": 104,
+     "w": 103,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-word-count",
+     "label": "Word count",
+     "enabled": true,
+     "x": 84,
+     "y": 872,
+     "w": 93,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "English – United States",
+     "enabled": true,
+     "x": 939,
+     "y": 872,
+     "w": 149,
+     "h": 24
+    },
+    {
+     "id": "asc-gen989",
+     "icon": "btn-ic-doclang",
+     "label": "Set document language",
+     "enabled": true,
+     "x": 1088,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen987",
+     "icon": "btn-ic-docspell",
+     "label": "Spell checking",
+     "enabled": true,
+     "x": 1116,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-ic-review",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1153,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1177,
+     "y": 872,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": "status-btn-multiple-pages",
+     "icon": "btn-multiple-pages",
+     "label": "Multiple pages",
+     "enabled": true,
+     "x": 1206,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-topage",
+     "icon": "btn-ic-zoomtopage",
+     "label": "Fit to page",
+     "enabled": true,
+     "x": 1238,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-towidth",
+     "icon": "btn-ic-zoomtowidth",
+     "label": "Fit to width",
+     "enabled": true,
+     "x": 1270,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-down",
+     "icon": "btn-zoomdown",
+     "label": "Zoom out (Ctrl+-)",
+     "enabled": true,
+     "x": 1302,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-up",
+     "icon": "btn-zoomup",
+     "label": "Zoom in (Ctrl+Num +)",
+     "enabled": true,
+     "x": 1406,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    }
+   ],
+   "combos": []
+  },
+  "collaboration": {
+   "label": "Collaboration",
+   "contextual": false,
+   "buttons": [
+    {
+     "id": "id-toolbar-btn-copy",
+     "icon": "btn-copy",
+     "label": "Copy (Ctrl+Insert)",
+     "enabled": false,
+     "x": 20,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-paste",
+     "icon": "btn-paste",
+     "label": "Paste (Ctrl+V)",
+     "enabled": true,
+     "x": 20,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-cut",
+     "icon": "btn-cut",
+     "label": "Cut (Ctrl+X)",
+     "enabled": false,
+     "x": 54,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-copystyle",
+     "icon": "btn-copystyle",
+     "label": "Copy style (Ctrl+Alt+C)",
+     "enabled": true,
+     "x": 54,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "tlbtn-addcomment-1",
+     "icon": "btn-big-add-comment",
+     "label": "AddComment",
+     "enabled": true,
+     "x": 95,
+     "y": 68,
+     "w": 62,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 157,
+     "y": 68,
+     "w": 45,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "Delete",
+     "enabled": true,
+     "x": 157,
+     "y": 100,
+     "w": 45,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 202,
+     "y": 68,
+     "w": 53,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "Resolve",
+     "enabled": true,
+     "x": 202,
+     "y": 100,
+     "w": 53,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 268,
+     "y": 68,
+     "w": 70,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "TrackChanges",
+     "enabled": true,
+     "x": 268,
+     "y": 100,
+     "w": 70,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-ic-reviewview",
+     "label": "DisplayMode",
+     "enabled": true,
+     "x": 338,
+     "y": 68,
+     "w": 52,
+     "h": 60
+    },
+    {
+     "id": "asc-gen509",
+     "icon": "btn-review-prev",
+     "label": "Previous",
+     "enabled": true,
+     "x": 390,
+     "y": 68,
+     "w": 57,
+     "h": 60
+    },
+    {
+     "id": "asc-gen511",
+     "icon": "btn-review-next",
+     "label": "Next",
+     "enabled": true,
+     "x": 447,
+     "y": 68,
+     "w": 35,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 482,
+     "y": 68,
+     "w": 47,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "Accept",
+     "enabled": true,
+     "x": 482,
+     "y": 100,
+     "w": 47,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 529,
+     "y": 68,
+     "w": 44,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "Reject",
+     "enabled": true,
+     "x": 529,
+     "y": 100,
+     "w": 44,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 586,
+     "y": 68,
+     "w": 59,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "Compare",
+     "enabled": true,
+     "x": 586,
+     "y": 100,
+     "w": 59,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 645,
+     "y": 68,
+     "w": 58,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "Combine",
+     "enabled": true,
+     "x": 645,
+     "y": 100,
+     "w": 58,
+     "h": 28
+    },
+    {
+     "id": "asc-gen525",
+     "icon": "btn-ic-chat",
+     "label": "Chat",
+     "enabled": true,
+     "x": 716,
+     "y": 68,
+     "w": 35,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-mailmerge",
+     "label": "MailMerge",
+     "enabled": true,
+     "x": 764,
+     "y": 68,
+     "w": 56,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-word-count",
+     "label": "Word count",
+     "enabled": true,
+     "x": 84,
+     "y": 872,
+     "w": 93,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "English – United States",
+     "enabled": true,
+     "x": 939,
+     "y": 872,
+     "w": 149,
+     "h": 24
+    },
+    {
+     "id": "asc-gen989",
+     "icon": "btn-ic-doclang",
+     "label": "Set document language",
+     "enabled": true,
+     "x": 1088,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen987",
+     "icon": "btn-ic-docspell",
+     "label": "Spell checking",
+     "enabled": true,
+     "x": 1116,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-ic-review",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1153,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1177,
+     "y": 872,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": "status-btn-multiple-pages",
+     "icon": "btn-multiple-pages",
+     "label": "Multiple pages",
+     "enabled": true,
+     "x": 1206,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-topage",
+     "icon": "btn-ic-zoomtopage",
+     "label": "Fit to page",
+     "enabled": true,
+     "x": 1238,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-towidth",
+     "icon": "btn-ic-zoomtowidth",
+     "label": "Fit to width",
+     "enabled": true,
+     "x": 1270,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-down",
+     "icon": "btn-zoomdown",
+     "label": "Zoom out (Ctrl+-)",
+     "enabled": true,
+     "x": 1302,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-up",
+     "icon": "btn-zoomup",
+     "label": "Zoom in (Ctrl+Num +)",
+     "enabled": true,
+     "x": 1406,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    }
+   ],
+   "combos": []
+  },
+  "protection": {
+   "label": "Protection",
+   "contextual": false,
+   "buttons": [
+    {
+     "id": "id-toolbar-btn-copy",
+     "icon": "btn-copy",
+     "label": "Copy (Ctrl+Insert)",
+     "enabled": false,
+     "x": 20,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-paste",
+     "icon": "btn-paste",
+     "label": "Paste (Ctrl+V)",
+     "enabled": true,
+     "x": 20,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-cut",
+     "icon": "btn-cut",
+     "label": "Cut (Ctrl+X)",
+     "enabled": false,
+     "x": 54,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-copystyle",
+     "icon": "btn-copystyle",
+     "label": "Copy style (Ctrl+Alt+C)",
+     "enabled": true,
+     "x": 54,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen541",
+     "icon": "btn-ic-protect",
+     "label": "Encrypt",
+     "enabled": true,
+     "x": 95,
+     "y": 68,
+     "w": 51,
+     "h": 60
+    },
+    {
+     "id": "asc-gen546",
+     "icon": "btn-restrict-editing",
+     "label": "ProtectDocument",
+     "enabled": true,
+     "x": 165,
+     "y": 68,
+     "w": 65,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-word-count",
+     "label": "Word count",
+     "enabled": true,
+     "x": 84,
+     "y": 872,
+     "w": 93,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "English – United States",
+     "enabled": true,
+     "x": 939,
+     "y": 872,
+     "w": 149,
+     "h": 24
+    },
+    {
+     "id": "asc-gen989",
+     "icon": "btn-ic-doclang",
+     "label": "Set document language",
+     "enabled": true,
+     "x": 1088,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen987",
+     "icon": "btn-ic-docspell",
+     "label": "Spell checking",
+     "enabled": true,
+     "x": 1116,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-ic-review",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1153,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1177,
+     "y": 872,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": "status-btn-multiple-pages",
+     "icon": "btn-multiple-pages",
+     "label": "Multiple pages",
+     "enabled": true,
+     "x": 1206,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-topage",
+     "icon": "btn-ic-zoomtopage",
+     "label": "Fit to page",
+     "enabled": true,
+     "x": 1238,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-towidth",
+     "icon": "btn-ic-zoomtowidth",
+     "label": "Fit to width",
+     "enabled": true,
+     "x": 1270,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-down",
+     "icon": "btn-zoomdown",
+     "label": "Zoom out (Ctrl+-)",
+     "enabled": true,
+     "x": 1302,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-up",
+     "icon": "btn-zoomup",
+     "label": "Zoom in (Ctrl+Num +)",
+     "enabled": true,
+     "x": 1406,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    }
+   ],
+   "combos": []
+  },
+  "view": {
+   "label": "View",
+   "contextual": false,
+   "buttons": [
+    {
+     "id": "id-toolbar-btn-copy",
+     "icon": "btn-copy",
+     "label": "Copy (Ctrl+Insert)",
+     "enabled": false,
+     "x": 20,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-paste",
+     "icon": "btn-paste",
+     "label": "Paste (Ctrl+V)",
+     "enabled": true,
+     "x": 20,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-cut",
+     "icon": "btn-cut",
+     "label": "Cut (Ctrl+X)",
+     "enabled": false,
+     "x": 54,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-copystyle",
+     "icon": "btn-copystyle",
+     "label": "Copy style (Ctrl+Alt+C)",
+     "enabled": true,
+     "x": 54,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen896",
+     "icon": "btn-big-menu-navigation",
+     "label": "Headings",
+     "enabled": true,
+     "x": 95,
+     "y": 68,
+     "w": 61,
+     "h": 60
+    },
+    {
+     "id": "asc-gen920",
+     "icon": "btn-ic-zoomtopage",
+     "label": "Fit To Page",
+     "enabled": true,
+     "x": 233,
+     "y": 68,
+     "w": 92,
+     "h": 24
+    },
+    {
+     "id": "asc-gen922",
+     "icon": "btn-ic-zoomtowidth",
+     "label": "Fit To Width",
+     "enabled": true,
+     "x": 233,
+     "y": 104,
+     "w": 95,
+     "h": 24
+    },
+    {
+     "id": "asc-gen935",
+     "icon": "btn-zoom-100",
+     "label": "Zoom to 100%",
+     "enabled": true,
+     "x": 338,
+     "y": 68,
+     "w": 110,
+     "h": 24
+    },
+    {
+     "id": "asc-gen933",
+     "icon": "btn-multiple-pages",
+     "label": "Multiple Pages",
+     "enabled": true,
+     "x": 338,
+     "y": 104,
+     "w": 111,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-day",
+     "label": "InterfaceTheme",
+     "enabled": true,
+     "x": 466,
+     "y": 68,
+     "w": 59,
+     "h": 60
+    },
+    {
+     "id": "asc-gen926",
+     "icon": "btn-dark-mode",
+     "label": "DarkDocument",
+     "enabled": false,
+     "x": 525,
+     "y": 68,
+     "w": 65,
+     "h": 60
+    },
+    {
+     "id": "asc-gen937",
+     "icon": "btn-macros",
+     "label": "Macros",
+     "enabled": true,
+     "x": 931,
+     "y": 68,
+     "w": 49,
+     "h": 60
+    },
+    {
+     "id": "asc-gen939",
+     "icon": "btn-macros-record",
+     "label": "Record macro",
+     "enabled": true,
+     "x": 991,
+     "y": 68,
+     "w": 107,
+     "h": 24
+    },
+    {
+     "id": "asc-gen941",
+     "icon": "btn-macros-pause",
+     "label": "Pause recording",
+     "enabled": false,
+     "x": 991,
+     "y": 104,
+     "w": 119,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-word-count",
+     "label": "Word count",
+     "enabled": true,
+     "x": 84,
+     "y": 872,
+     "w": 93,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "English – United States",
+     "enabled": true,
+     "x": 939,
+     "y": 872,
+     "w": 149,
+     "h": 24
+    },
+    {
+     "id": "asc-gen989",
+     "icon": "btn-ic-doclang",
+     "label": "Set document language",
+     "enabled": true,
+     "x": 1088,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen987",
+     "icon": "btn-ic-docspell",
+     "label": "Spell checking",
+     "enabled": true,
+     "x": 1116,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-ic-review",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1153,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1177,
+     "y": 872,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": "status-btn-multiple-pages",
+     "icon": "btn-multiple-pages",
+     "label": "Multiple pages",
+     "enabled": true,
+     "x": 1206,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-topage",
+     "icon": "btn-ic-zoomtopage",
+     "label": "Fit to page",
+     "enabled": true,
+     "x": 1238,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-towidth",
+     "icon": "btn-ic-zoomtowidth",
+     "label": "Fit to width",
+     "enabled": true,
+     "x": 1270,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-down",
+     "icon": "btn-zoomdown",
+     "label": "Zoom out (Ctrl+-)",
+     "enabled": true,
+     "x": 1302,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-up",
+     "icon": "btn-zoomup",
+     "label": "Zoom in (Ctrl+Num +)",
+     "enabled": true,
+     "x": 1406,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    }
+   ],
+   "combos": []
+  },
+  "plugins": {
+   "label": "Plugins",
+   "contextual": false,
+   "buttons": [
+    {
+     "id": "id-toolbar-btn-copy",
+     "icon": "btn-copy",
+     "label": "Copy (Ctrl+Insert)",
+     "enabled": false,
+     "x": 20,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-paste",
+     "icon": "btn-paste",
+     "label": "Paste (Ctrl+V)",
+     "enabled": true,
+     "x": 20,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-cut",
+     "icon": "btn-cut",
+     "label": "Cut (Ctrl+X)",
+     "enabled": false,
+     "x": 54,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-copystyle",
+     "icon": "btn-copystyle",
+     "label": "Copy style (Ctrl+Alt+C)",
+     "enabled": true,
+     "x": 54,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen4556",
+     "icon": "btn-toolbar",
+     "label": "PluginManager",
+     "enabled": true,
+     "x": 95,
+     "y": 68,
+     "w": 57,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-background-plugins",
+     "label": "Backgroundplugins",
+     "enabled": true,
+     "x": 152,
+     "y": 68,
+     "w": 74,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 239,
+     "y": 68,
+     "w": 53,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "PhotoEditor",
+     "enabled": true,
+     "x": 239,
+     "y": 100,
+     "w": 53,
+     "h": 28
+    },
+    {
+     "id": "asc-gen4572",
+     "icon": "btn-toolbar",
+     "label": "YouTube",
+     "enabled": true,
+     "x": 293,
+     "y": 68,
+     "w": 57,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 350,
+     "y": 68,
+     "w": 37,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "OCR",
+     "enabled": true,
+     "x": 350,
+     "y": 100,
+     "w": 37,
+     "h": 28
+    },
+    {
+     "id": "asc-gen4582",
+     "icon": "btn-toolbar",
+     "label": "Translator",
+     "enabled": true,
+     "x": 387,
+     "y": 68,
+     "w": 64,
+     "h": 60
+    },
+    {
+     "id": "asc-gen4584",
+     "icon": "btn-toolbar",
+     "label": "Mendeley",
+     "enabled": true,
+     "x": 450,
+     "y": 68,
+     "w": 62,
+     "h": 60
+    },
+    {
+     "id": "asc-gen4586",
+     "icon": "btn-toolbar",
+     "label": "Thesaurus",
+     "enabled": true,
+     "x": 512,
+     "y": 68,
+     "w": 67,
+     "h": 60
+    },
+    {
+     "id": "asc-gen4588",
+     "icon": "btn-toolbar",
+     "label": "Highlightcode",
+     "enabled": true,
+     "x": 579,
+     "y": 68,
+     "w": 57,
+     "h": 60
+    },
+    {
+     "id": "asc-gen4590",
+     "icon": "btn-toolbar",
+     "label": "Zotero",
+     "enabled": true,
+     "x": 636,
+     "y": 68,
+     "w": 45,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 680,
+     "y": 68,
+     "w": 51,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "Speech",
+     "enabled": true,
+     "x": 680,
+     "y": 100,
+     "w": 51,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 731,
+     "y": 68,
+     "w": 51,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "Speechinput",
+     "enabled": true,
+     "x": 731,
+     "y": 100,
+     "w": 51,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-word-count",
+     "label": "Word count",
+     "enabled": true,
+     "x": 84,
+     "y": 872,
+     "w": 93,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "English – United States",
+     "enabled": true,
+     "x": 939,
+     "y": 872,
+     "w": 149,
+     "h": 24
+    },
+    {
+     "id": "asc-gen989",
+     "icon": "btn-ic-doclang",
+     "label": "Set document language",
+     "enabled": true,
+     "x": 1088,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen987",
+     "icon": "btn-ic-docspell",
+     "label": "Spell checking",
+     "enabled": true,
+     "x": 1116,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-ic-review",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1153,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1177,
+     "y": 872,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": "status-btn-multiple-pages",
+     "icon": "btn-multiple-pages",
+     "label": "Multiple pages",
+     "enabled": true,
+     "x": 1206,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-topage",
+     "icon": "btn-ic-zoomtopage",
+     "label": "Fit to page",
+     "enabled": true,
+     "x": 1238,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-towidth",
+     "icon": "btn-ic-zoomtowidth",
+     "label": "Fit to width",
+     "enabled": true,
+     "x": 1270,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-down",
+     "icon": "btn-zoomdown",
+     "label": "Zoom out (Ctrl+-)",
+     "enabled": true,
+     "x": 1302,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-up",
+     "icon": "btn-zoomup",
+     "label": "Zoom in (Ctrl+Num +)",
+     "enabled": true,
+     "x": 1406,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    }
+   ],
+   "combos": []
+  },
+  "header-footer": {
+   "label": "Header & Footer",
+   "contextual": true,
+   "buttons": [
+    {
+     "id": "id-toolbar-btn-copy",
+     "icon": "btn-copy",
+     "label": "Copy (Ctrl+Insert)",
+     "enabled": false,
+     "x": 20,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-paste",
+     "icon": "btn-paste",
+     "label": "Paste (Ctrl+V)",
+     "enabled": true,
+     "x": 20,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-cut",
+     "icon": "btn-cut",
+     "label": "Cut (Ctrl+X)",
+     "enabled": false,
+     "x": 54,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-copystyle",
+     "icon": "btn-copystyle",
+     "label": "Copy style (Ctrl+Alt+C)",
+     "enabled": true,
+     "x": 54,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-editheader",
+     "label": "Header &Footer",
+     "enabled": true,
+     "x": 95,
+     "y": 68,
+     "w": 61,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-pagenum",
+     "label": "PageNumber",
+     "enabled": true,
+     "x": 169,
+     "y": 68,
+     "w": 65,
+     "h": 60
+    },
+    {
+     "id": "tlbtn-insertdatetime-1",
+     "icon": "btn-datetime",
+     "label": "Date &Time",
+     "enabled": true,
+     "x": 233,
+     "y": 68,
+     "w": 47,
+     "h": 60
+    },
+    {
+     "id": "tlbtn-insertfield-1",
+     "icon": "btn-quick-field",
+     "label": "Field",
+     "enabled": true,
+     "x": 280,
+     "y": 68,
+     "w": 36,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-insertimage",
+     "label": "Image",
+     "enabled": true,
+     "x": 316,
+     "y": 68,
+     "w": 43,
+     "h": 60
+    },
+    {
+     "id": "asc-gen673",
+     "icon": "btn-close-tab",
+     "label": "Close",
+     "enabled": true,
+     "x": 903,
+     "y": 68,
+     "w": 41,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-word-count",
+     "label": "Word count",
+     "enabled": true,
+     "x": 84,
+     "y": 872,
+     "w": 93,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "English – United States",
+     "enabled": true,
+     "x": 939,
+     "y": 872,
+     "w": 149,
+     "h": 24
+    },
+    {
+     "id": "asc-gen989",
+     "icon": "btn-ic-doclang",
+     "label": "Set document language",
+     "enabled": true,
+     "x": 1088,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen987",
+     "icon": "btn-ic-docspell",
+     "label": "Spell checking",
+     "enabled": true,
+     "x": 1116,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-ic-review",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1153,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1177,
+     "y": 872,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": "status-btn-multiple-pages",
+     "icon": "btn-multiple-pages",
+     "label": "Multiple pages",
+     "enabled": true,
+     "x": 1206,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-topage",
+     "icon": "btn-ic-zoomtopage",
+     "label": "Fit to page",
+     "enabled": true,
+     "x": 1238,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-towidth",
+     "icon": "btn-ic-zoomtowidth",
+     "label": "Fit to width",
+     "enabled": true,
+     "x": 1270,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-down",
+     "icon": "btn-zoomdown",
+     "label": "Zoom out (Ctrl+-)",
+     "enabled": true,
+     "x": 1302,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-up",
+     "icon": "btn-zoomup",
+     "label": "Zoom in (Ctrl+Num +)",
+     "enabled": true,
+     "x": 1406,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    }
+   ],
+   "combos": []
+  },
+  "ai": {
+   "label": "AI",
+   "contextual": false,
+   "buttons": [
+    {
+     "id": "id-toolbar-btn-copy",
+     "icon": "btn-copy",
+     "label": "Copy (Ctrl+Insert)",
+     "enabled": false,
+     "x": 20,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-paste",
+     "icon": "btn-paste",
+     "label": "Paste (Ctrl+V)",
+     "enabled": true,
+     "x": 20,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-cut",
+     "icon": "btn-cut",
+     "label": "Cut (Ctrl+X)",
+     "enabled": false,
+     "x": 54,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-copystyle",
+     "icon": "btn-copystyle",
+     "label": "Copy style (Ctrl+Alt+C)",
+     "enabled": true,
+     "x": 54,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen4608",
+     "icon": "btn-toolbar",
+     "label": "Settings",
+     "enabled": true,
+     "x": 95,
+     "y": 68,
+     "w": 53,
+     "h": 60
+    },
+    {
+     "id": "asc-gen4610",
+     "icon": "btn-toolbar",
+     "label": "Chatbot",
+     "enabled": true,
+     "x": 161,
+     "y": 68,
+     "w": 52,
+     "h": 60
+    },
+    {
+     "id": "asc-gen4612",
+     "icon": "btn-toolbar",
+     "label": "Summarization",
+     "enabled": true,
+     "x": 213,
+     "y": 68,
+     "w": 90,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 303,
+     "y": 68,
+     "w": 69,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "Translation",
+     "enabled": true,
+     "x": 303,
+     "y": 100,
+     "w": 69,
+     "h": 28
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-hcenter",
+     "enabled": true,
+     "x": 372,
+     "y": 68,
+     "w": 72,
+     "h": 32
+    },
+    {
+     "id": null,
+     "icon": "btn-fixflex-vcenter",
+     "label": "Grammar &Spelling",
+     "enabled": true,
+     "x": 372,
+     "y": 100,
+     "w": 72,
+     "h": 28
+    },
+    {
+     "id": "asc-gen4628",
+     "icon": "btn-toolbar",
+     "label": "Create AIassistant",
+     "enabled": true,
+     "x": 457,
+     "y": 68,
+     "w": 60,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-word-count",
+     "label": "Word count",
+     "enabled": true,
+     "x": 84,
+     "y": 872,
+     "w": 93,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "English – United States",
+     "enabled": true,
+     "x": 939,
+     "y": 872,
+     "w": 149,
+     "h": 24
+    },
+    {
+     "id": "asc-gen989",
+     "icon": "btn-ic-doclang",
+     "label": "Set document language",
+     "enabled": true,
+     "x": 1088,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen987",
+     "icon": "btn-ic-docspell",
+     "label": "Spell checking",
+     "enabled": true,
+     "x": 1116,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-ic-review",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1153,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1177,
+     "y": 872,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": "status-btn-multiple-pages",
+     "icon": "btn-multiple-pages",
+     "label": "Multiple pages",
+     "enabled": true,
+     "x": 1206,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-topage",
+     "icon": "btn-ic-zoomtopage",
+     "label": "Fit to page",
+     "enabled": true,
+     "x": 1238,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-towidth",
+     "icon": "btn-ic-zoomtowidth",
+     "label": "Fit to width",
+     "enabled": true,
+     "x": 1270,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-down",
+     "icon": "btn-zoomdown",
+     "label": "Zoom out (Ctrl+-)",
+     "enabled": true,
+     "x": 1302,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-up",
+     "icon": "btn-zoomup",
+     "label": "Zoom in (Ctrl+Num +)",
+     "enabled": true,
+     "x": 1406,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    }
+   ],
+   "combos": []
+  },
+  "chart-design": {
+   "label": "Chart design",
+   "contextual": false,
+   "buttons": [
+    {
+     "id": "id-toolbar-btn-copy",
+     "icon": "btn-copy",
+     "label": "Copy (Ctrl+Insert)",
+     "enabled": false,
+     "x": 20,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-paste",
+     "icon": "btn-paste",
+     "label": "Paste (Ctrl+V)",
+     "enabled": true,
+     "x": 20,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-cut",
+     "icon": "btn-cut",
+     "label": "Cut (Ctrl+X)",
+     "enabled": false,
+     "x": 54,
+     "y": 68,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "id-toolbar-btn-copystyle",
+     "icon": "btn-copystyle",
+     "label": "Copy style (Ctrl+Alt+C)",
+     "enabled": true,
+     "x": 54,
+     "y": 104,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-big-chart-elements",
+     "label": "ChartElements",
+     "enabled": true,
+     "x": 95,
+     "y": 68,
+     "w": 72,
+     "h": 60
+    },
+    {
+     "id": "asc-gen830",
+     "icon": "btn-allow-edit-ranges",
+     "label": "EditData",
+     "enabled": true,
+     "x": 180,
+     "y": 68,
+     "w": 35,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-allow-edit-ranges",
+     "label": "EditData",
+     "enabled": true,
+     "x": 221,
+     "y": 68,
+     "w": 47,
+     "h": 60
+    },
+    {
+     "id": "asc-gen842",
+     "icon": "btn-update",
+     "label": "UpdateData",
+     "enabled": true,
+     "x": 269,
+     "y": 68,
+     "w": 49,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-menu-chart",
+     "label": "Chart type",
+     "enabled": true,
+     "x": 793,
+     "y": 68,
+     "w": 103,
+     "h": 24
+    },
+    {
+     "id": "asc-gen856",
+     "icon": "btn-settings",
+     "label": "Advanced settings",
+     "enabled": true,
+     "x": 793,
+     "y": 104,
+     "w": 130,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-img-wrap",
+     "label": "Wrapping",
+     "enabled": false,
+     "x": 941,
+     "y": 68,
+     "w": 61,
+     "h": 60
+    },
+    {
+     "id": "asc-gen865",
+     "icon": "btn-3d-rotation",
+     "label": "3Drotation",
+     "enabled": true,
+     "x": 1281,
+     "y": 68,
+     "w": 50,
+     "h": 60
+    },
+    {
+     "id": null,
+     "icon": "btn-word-count",
+     "label": "Word count",
+     "enabled": true,
+     "x": 84,
+     "y": 872,
+     "w": 93,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "English – United States",
+     "enabled": true,
+     "x": 939,
+     "y": 872,
+     "w": 149,
+     "h": 24
+    },
+    {
+     "id": "asc-gen989",
+     "icon": "btn-ic-doclang",
+     "label": "Set document language",
+     "enabled": true,
+     "x": 1088,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "asc-gen987",
+     "icon": "btn-ic-docspell",
+     "label": "Spell checking",
+     "enabled": true,
+     "x": 1116,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-ic-review",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1153,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "icon": "btn-toolbar",
+     "label": "Track changes",
+     "enabled": true,
+     "x": 1177,
+     "y": 872,
+     "w": 16,
+     "h": 24
+    },
+    {
+     "id": "status-btn-multiple-pages",
+     "icon": "btn-multiple-pages",
+     "label": "Multiple pages",
+     "enabled": true,
+     "x": 1206,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-topage",
+     "icon": "btn-ic-zoomtopage",
+     "label": "Fit to page",
+     "enabled": true,
+     "x": 1238,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-towidth",
+     "icon": "btn-ic-zoomtowidth",
+     "label": "Fit to width",
+     "enabled": true,
+     "x": 1270,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-down",
+     "icon": "btn-zoomdown",
+     "label": "Zoom out (Ctrl+-)",
+     "enabled": true,
+     "x": 1302,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-zoom-up",
+     "icon": "btn-zoomup",
+     "label": "Zoom in (Ctrl+Num +)",
+     "enabled": true,
+     "x": 1406,
+     "y": 872,
+     "w": 24,
+     "h": 24
+    }
+   ],
+   "combos": [
+    {
+     "id": "asc-gen844",
+     "w": 438,
+     "h": 62
+    }
+   ]
+  }
+ }
+}

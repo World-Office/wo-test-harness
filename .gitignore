@@ -8,3 +8,6 @@ __pycache__/
 
 # TaskFleet ephemera (kept only in server checkouts when embedded)
 .tf-worktrees/
+
+# census node deps
+census/node_modules/

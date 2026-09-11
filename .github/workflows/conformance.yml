@@ -20,6 +20,7 @@ on:
       - "conformance-docx/**"
       - "harness-graph/**"
       - "tf-test-harness/**"
+      - "census/**"
 
 concurrency:
   group: conformance-${{ github.ref }}
@@ -68,6 +69,47 @@ jobs:
         env:
           WO_SERVER_DIR: ${{ github.workspace }}/server
         run: python3 harness-graph/seed.py --check
+
+  census-ledger:
+    name: Parity ledger gate (census-wo ↔ MAP, reconcile --check)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out World-Office/server (spawned by reconcile.py)
+        uses: actions/checkout@v4
+        with:
+          repository: World-Office/server
+          path: server
+
+      - name: Install docserver dependencies (no docker — reconcile spawns uvicorn locally)
+        run: python3 -m pip install --break-system-packages \
+          fastapi 'uvicorn[standard]>=0.30' 'python-docx>=1.1' \
+          'python-jose[cryptography]>=3.3' 'PyJWT>=2.8' python-multipart \
+          'lxml>=5.0' 'jinja2>=3.1.6' 'odfpy>=1.4' pyyaml
+
+      - name: Install Node + Playwright
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: census/package-lock.json
+
+      - name: npm ci (skip the playwright postinstall browser download)
+        working-directory: census
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+        run: npm ci --ignore-scripts
+
+      - name: Playwright Chromium
+        working-directory: census
+        run: npx playwright install --with-deps chromium
+
+      - name: One-run ledger gate (fresh capture + diff + gate + seed)
+        env:
+          WO_SERVER_DIR: ${{ github.workspace }}/server
+        run: python3 census/reconcile.py --check --seed-check
+
 
   cross-engine-fidelity:
     name: Cross-engine fidelity (wo-docx-renderer vs LibreOffice)

@@ -1,0 +1,9 @@
+{
+  "name": "world-office-census",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OnlyOffice <-> World-Office surface census capture (census-wo.cjs) run by reconcile.py. Census-oo capture and the OnlyOffice reference remain rig-side; census-oo.json is committed here.",
+  "dependencies": {
+    "playwright": "1.61.1"
+  }
+}
