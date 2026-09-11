@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-09-11T12:46:20.078Z",
+ "capturedAt": "2026-09-11T13:19:35.237Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
@@ -1833,7 +1833,7 @@
     },
     {
      "id": null,
-     "stub": "hf.different-first",
+     "cmd": "toggleDifferentFirst",
      "label": "Different First Page",
      "enabled": true,
      "x": 372,
@@ -1843,7 +1843,7 @@
     },
     {
      "id": null,
-     "stub": "hf.odd-even",
+     "cmd": "toggleOddEven",
      "label": "Different Odd & Even",
      "enabled": true,
      "x": 513,
@@ -1853,7 +1853,7 @@
     },
     {
      "id": null,
-     "stub": "hf.header-from-top",
+     "cmd": "toggleHeaderFromTop",
      "label": "Header from Top",
      "enabled": true,
      "x": 665,
@@ -1863,7 +1863,7 @@
     },
     {
      "id": null,
-     "stub": "hf.footer-from-bottom",
+     "cmd": "toggleFooterFromBottom",
      "label": "Footer from Bottom",
      "enabled": true,
      "x": 789,

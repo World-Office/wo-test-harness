@@ -191,8 +191,23 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:toggleDifferentFirst",
+   "to": "toggleDifferentFirst",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:toggleDropcap",
    "to": "toggleDropcap",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:toggleFooterFromBottom",
+   "to": "toggleFooterFromBottom",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:toggleHeaderFromTop",
+   "to": "toggleHeaderFromTop",
    "type": "TRIGGERS"
   },
   {
@@ -208,6 +223,11 @@
   {
    "from": "toolbar:toggleNavigation",
    "to": "toggleNavigation",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:toggleOddEven",
+   "to": "toggleOddEven",
    "type": "TRIGGERS"
   },
   {
@@ -7611,7 +7631,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-11T12:46:26+00:00",
+ "generated_at": "2026-09-11T13:19:42+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -7804,9 +7824,24 @@
    "source": "editor.js:runCommand('superscript')"
   },
   {
+   "id": "toggleDifferentFirst",
+   "label": "Command",
+   "source": "editor.js:runCommand('toggleDifferentFirst')"
+  },
+  {
    "id": "toggleDropcap",
    "label": "Command",
    "source": "editor.js:runCommand('toggleDropcap')"
+  },
+  {
+   "id": "toggleFooterFromBottom",
+   "label": "Command",
+   "source": "editor.js:runCommand('toggleFooterFromBottom')"
+  },
+  {
+   "id": "toggleHeaderFromTop",
+   "label": "Command",
+   "source": "editor.js:runCommand('toggleHeaderFromTop')"
   },
   {
    "id": "toggleHyphenation",
@@ -7822,6 +7857,11 @@
    "id": "toggleNavigation",
    "label": "Command",
    "source": "editor.js:runCommand('toggleNavigation')"
+  },
+  {
+   "id": "toggleOddEven",
+   "label": "Command",
+   "source": "editor.js:runCommand('toggleOddEven')"
   },
   {
    "id": "toggleSameAsPrev",
@@ -8082,7 +8122,25 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:toggleDifferentFirst",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:toggleDropcap",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:toggleFooterFromBottom",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:toggleHeaderFromTop",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -8101,6 +8159,12 @@
   },
   {
    "id": "toolbar:toggleNavigation",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:toggleOddEven",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -12594,6 +12658,78 @@
    "path": "opencloud-docserver/tests/test_markers.py"
   },
   {
+   "id": "opencloud-docserver/tests/test_markers.py::test_different_first_marker_round_trip",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_different_first_absent_when_off",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_different_first_written_to_titlepg",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_odd_even_marker_round_trip",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_odd_even_absent_when_off",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_odd_even_written_to_settings",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_header_from_top_marker_round_trip",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_footer_from_bottom_marker_round_trip",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_hf_distance_written_to_pgmar",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_hf_markers_absent_when_off",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_default_header_distance_reads_marker_free",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_markers.py::test_hf_markers_round_trip_with_existing_flags",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_markers.py"
+  },
+  {
    "id": "opencloud-docserver/tests/test_new_doc.py::test_new_document_docx",
    "label": "Test",
    "layer": "e2e",
@@ -16851,11 +16987,11 @@
   }
  ],
  "stats": {
-  "commands": 48,
-  "edges": 1522,
+  "commands": 52,
+  "edges": 1526,
   "features": 102,
-  "surfaces": 48,
-  "tests": 1272
+  "surfaces": 52,
+  "tests": 1284
  },
  "version": 1
 }
