@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-09-12T08:03:24.397Z",
+ "capturedAt": "2026-09-12T14:15:04.152Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
@@ -30,10 +30,10 @@
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 212,
-     "y": 74,
-     "w": 7,
-     "h": 9
+     "x": 204,
+     "y": 59,
+     "w": 22,
+     "h": 32
     },
     {
      "id": null,
@@ -105,10 +105,10 @@
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 261,
-     "y": 74,
-     "w": 7,
-     "h": 9
+     "x": 253,
+     "y": 59,
+     "w": 22,
+     "h": 32
     },
     {
      "id": null,
@@ -221,10 +221,10 @@
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 364,
-     "y": 74,
-     "w": 7,
-     "h": 9
+     "x": 356,
+     "y": 59,
+     "w": 22,
+     "h": 32
     },
     {
      "id": null,
@@ -262,10 +262,10 @@
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 425,
-     "y": 74,
-     "w": 7,
-     "h": 9
+     "x": 417,
+     "y": 59,
+     "w": 22,
+     "h": 32
     },
     {
      "id": null,
@@ -294,19 +294,19 @@
      "cmd": "smallCaps",
      "label": "SC",
      "enabled": true,
-     "x": 429,
+     "x": 430,
      "y": 59,
-     "w": 37,
+     "w": 35,
      "h": 32
     },
     {
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 465,
-     "y": 74,
-     "w": 7,
-     "h": 9
+     "x": 457,
+     "y": 59,
+     "w": 22,
+     "h": 32
     },
     {
      "id": null,
@@ -334,10 +334,10 @@
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 545,
-     "y": 74,
-     "w": 7,
-     "h": 9
+     "x": 537,
+     "y": 59,
+     "w": 22,
+     "h": 32
     },
     {
      "id": null,
@@ -471,10 +471,10 @@
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 505,
-     "y": 74,
-     "w": 7,
-     "h": 9
+     "x": 497,
+     "y": 59,
+     "w": 22,
+     "h": 32
     },
     {
      "id": null,
@@ -503,19 +503,19 @@
      "cmd": "code",
      "label": "</>",
      "enabled": true,
-     "x": 592,
+     "x": 591,
      "y": 59,
-     "w": 34,
+     "w": 36,
      "h": 32
     },
     {
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 625,
-     "y": 74,
-     "w": 7,
-     "h": 9
+     "x": 617,
+     "y": 59,
+     "w": 22,
+     "h": 32
     },
     {
      "id": null,
@@ -563,10 +563,10 @@
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 665,
-     "y": 74,
-     "w": 7,
-     "h": 9
+     "x": 657,
+     "y": 59,
+     "w": 22,
+     "h": 32
     },
     {
      "id": null,
@@ -646,26 +646,6 @@
      "y": 87,
      "w": 66,
      "h": 22
-    },
-    {
-     "id": null,
-     "cmd": "bold",
-     "label": "S",
-     "enabled": true,
-     "x": 1200,
-     "y": 87,
-     "w": 28,
-     "h": 22
-    },
-    {
-     "id": null,
-     "cmd": "directionRtl",
-     "label": "Toolbar.DirectionRtl",
-     "enabled": true,
-     "x": 1297,
-     "y": 89,
-     "w": 16,
-     "h": 18
     },
     {
      "id": "btn-ribbon-collapse",
@@ -769,7 +749,7 @@
     {
      "id": null,
      "cmd": "insertUnorderedList",
-     "label": "•≡",
+     "label": "Bullet list",
      "enabled": true,
      "x": 262,
      "y": 104,
@@ -780,10 +760,10 @@
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 296,
-     "y": 118,
-     "w": 7,
-     "h": 9
+     "x": 288,
+     "y": 104,
+     "w": 22,
+     "h": 32
     },
     {
      "id": null,
@@ -821,7 +801,7 @@
     {
      "id": null,
      "cmd": "insertOrderedList",
-     "label": "1≡",
+     "label": "Numbered list",
      "enabled": true,
      "x": 304,
      "y": 104,
@@ -832,10 +812,10 @@
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 338,
-     "y": 118,
-     "w": 7,
-     "h": 9
+     "x": 330,
+     "y": 104,
+     "w": 22,
+     "h": 32
     },
     {
      "id": null,
@@ -883,7 +863,7 @@
     },
     {
      "id": null,
-     "cmd": "insertUnorderedList",
+     "cmd": "multilevel",
      "label": "Multilevel list",
      "enabled": true,
      "x": 351,
