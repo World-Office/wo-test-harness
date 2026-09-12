@@ -7711,7 +7711,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-11T23:09:03+00:00",
+ "generated_at": "2026-09-12T04:57:07+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -14318,7 +14318,7 @@
    "path": "opencloud-docserver/tests/test_plugin_host.py"
   },
   {
-   "id": "opencloud-docserver/tests/test_plugin_host.py::test_plugins_handlers_call_setStatus",
+   "id": "opencloud-docserver/tests/test_plugin_host.py::test_plugins_handlers_open_real_dialog",
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/tests/test_plugin_host.py"
