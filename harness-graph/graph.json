@@ -7711,7 +7711,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-12T04:57:07+00:00",
+ "generated_at": "2026-09-12T05:21:19+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -14882,6 +14882,12 @@
    "path": "opencloud-docserver/tests/test_sanitizer_agent_html.py"
   },
   {
+   "id": "opencloud-docserver/tests/test_sanitizer_agent_html.py::test_valueless_attr_fragment_never_wipes_document",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_sanitizer_agent_html.py"
+  },
+  {
    "id": "opencloud-docserver/tests/test_session_lock_adoption.py::test_acquire_lock_on_unlocked_file_wins",
    "label": "Test",
    "layer": "e2e",
@@ -17733,7 +17739,7 @@
   "edges": 1542,
   "features": 102,
   "surfaces": 68,
-  "tests": 1365
+  "tests": 1366
  },
  "version": 1
 }
