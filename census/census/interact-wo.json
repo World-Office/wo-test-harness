@@ -1,68 +1,50 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-09-12T08:00:17.887Z",
+ "capturedAt": "2026-09-12T17:27:35.978Z",
  "viewport": "1440x900",
  "interactions": [
   {
    "tab": "home",
    "id": null,
-   "cmd": "bold",
-   "label": "B",
-   "x": 272,
+   "cmd": "insertUnorderedList",
+   "label": "Bullet list",
+   "x": 379,
    "y": 59,
    "opens": "none"
   },
   {
    "tab": "home",
    "id": null,
-   "cmd": "italic",
-   "label": "I",
-   "x": 301,
+   "cmd": "insertOrderedList",
+   "label": "Numbered list",
+   "x": 419,
    "y": 59,
    "opens": "none"
   },
   {
    "tab": "home",
    "id": null,
-   "cmd": "underline",
-   "label": "U",
-   "x": 330,
+   "cmd": "multilevel",
+   "label": "Multilevel list",
+   "x": 465,
+   "y": 65,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "outdent",
+   "label": "Decrease indent",
+   "x": 499,
    "y": 59,
    "opens": "none"
   },
   {
    "tab": "home",
    "id": null,
-   "cmd": "strikeThrough",
-   "label": "S",
-   "x": 391,
-   "y": 59,
-   "opens": "none"
-  },
-  {
-   "tab": "home",
-   "id": null,
-   "cmd": "smallCaps",
-   "label": "SC",
-   "x": 429,
-   "y": 59,
-   "opens": "none"
-  },
-  {
-   "tab": "home",
-   "id": null,
-   "cmd": "superscript",
-   "label": "x²x₂",
-   "x": 471,
-   "y": 59,
-   "opens": "none"
-  },
-  {
-   "tab": "home",
-   "id": null,
-   "cmd": "code",
-   "label": "</>",
-   "x": 592,
+   "cmd": "indent",
+   "label": "Increase indent",
+   "x": 539,
    "y": 59,
    "opens": "none"
   },
@@ -71,38 +53,18 @@
    "id": null,
    "cmd": "directionRtl",
    "label": "Toolbar.DirectionRtl",
-   "x": 632,
+   "x": 627,
    "y": 59,
    "opens": "none"
   },
   {
    "tab": "home",
-   "id": null,
-   "cmd": "allCaps",
-   "label": "AA",
-   "x": 571,
-   "y": 59,
-   "opens": "none"
-  },
-  {
-   "tab": "home",
-   "id": "btn-find",
+   "id": "btn-ribbon-collapse",
    "cmd": null,
-   "label": "⌕",
-   "x": 672,
-   "y": 59,
-   "opens": "modal",
-   "surface_id": "find-dialog",
-   "box": {
-    "x": 976,
-    "y": 150,
-    "w": 260,
-    "h": 127
-   },
-   "inside_vp": true,
-   "clipped_x": false,
-   "clipped_y": false,
-   "controls": 8
+   "label": "Show fewer toolbar buttons",
+   "x": 1339,
+   "y": 64,
+   "opens": "none"
   },
   {
    "tab": "home",
@@ -116,19 +78,46 @@
   {
    "tab": "home",
    "id": null,
-   "cmd": "formatBlock",
-   "label": "Normal",
-   "x": 685,
-   "y": 76,
+   "cmd": "bold",
+   "label": "B",
+   "x": 82,
+   "y": 104,
    "opens": "none"
   },
   {
    "tab": "home",
-   "id": "btn-ribbon-collapse",
-   "cmd": null,
-   "label": "Show fewer toolbar buttons",
-   "x": 1339,
-   "y": 87,
+   "id": null,
+   "cmd": "italic",
+   "label": "I",
+   "x": 110,
+   "y": 104,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "underline",
+   "label": "U",
+   "x": 138,
+   "y": 104,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "strikeThrough",
+   "label": "S",
+   "x": 166,
+   "y": 104,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "superscript",
+   "label": "x²x₂",
+   "x": 194,
+   "y": 104,
    "opens": "none"
   },
   {
@@ -136,8 +125,8 @@
    "id": null,
    "cmd": "removeFormat",
    "label": "〈〉",
-   "x": 1252,
-   "y": 82,
+   "x": 334,
+   "y": 104,
    "opens": "none"
   },
   {
@@ -145,7 +134,7 @@
    "id": null,
    "cmd": "justifyLeft",
    "label": "Align left",
-   "x": 150,
+   "x": 379,
    "y": 104,
    "opens": "none"
   },
@@ -154,7 +143,7 @@
    "id": null,
    "cmd": "justifyCenter",
    "label": "Center",
-   "x": 178,
+   "x": 419,
    "y": 104,
    "opens": "none"
   },
@@ -163,7 +152,7 @@
    "id": null,
    "cmd": "justifyRight",
    "label": "Align right",
-   "x": 206,
+   "x": 459,
    "y": 104,
    "opens": "none"
   },
@@ -172,45 +161,65 @@
    "id": null,
    "cmd": "justifyFull",
    "label": "Justify",
-   "x": 234,
+   "x": 499,
    "y": 104,
    "opens": "none"
   },
   {
    "tab": "home",
    "id": null,
-   "cmd": "insertUnorderedList",
-   "label": "•≡",
-   "x": 262,
+   "cmd": "formatBlock",
+   "label": "¶",
+   "x": 539,
    "y": 104,
    "opens": "none"
   },
   {
    "tab": "home",
    "id": null,
-   "cmd": "insertOrderedList",
-   "label": "1≡",
-   "x": 304,
+   "cmd": "smallCaps",
+   "label": "SC",
+   "x": 578,
    "y": 104,
    "opens": "none"
   },
   {
    "tab": "home",
    "id": null,
-   "cmd": "indent",
-   "label": "Increase indent",
-   "x": 551,
+   "cmd": "code",
+   "label": "</>",
+   "x": 614,
    "y": 104,
    "opens": "none"
   },
   {
    "tab": "home",
    "id": null,
-   "cmd": "outdent",
-   "label": "Decrease indent",
-   "x": 591,
+   "cmd": "allCaps",
+   "label": "AA",
+   "x": 650,
    "y": 104,
    "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "btn-find",
+   "cmd": null,
+   "label": "⌕",
+   "x": 1323,
+   "y": 104,
+   "opens": "modal",
+   "surface_id": "find-dialog",
+   "box": {
+    "x": 976,
+    "y": 150,
+    "w": 260,
+    "h": 127
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 8
   },
   {
    "tab": "home",

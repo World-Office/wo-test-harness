@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-09-12T14:15:04.152Z",
+ "capturedAt": "2026-09-12T17:26:59.318Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
@@ -30,7 +30,7 @@
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 204,
+     "x": 175,
      "y": 59,
      "w": 22,
      "h": 32
@@ -105,7 +105,7 @@
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 253,
+     "x": 273,
      "y": 59,
      "w": 22,
      "h": 32
@@ -189,30 +189,10 @@
     },
     {
      "id": null,
-     "cmd": "bold",
-     "label": "B",
+     "cmd": "insertUnorderedList",
+     "label": "Bullet list",
      "enabled": true,
-     "x": 272,
-     "y": 59,
-     "w": 34,
-     "h": 32
-    },
-    {
-     "id": null,
-     "cmd": "italic",
-     "label": "I",
-     "enabled": true,
-     "x": 301,
-     "y": 59,
-     "w": 34,
-     "h": 32
-    },
-    {
-     "id": null,
-     "cmd": "underline",
-     "label": "U",
-     "enabled": true,
-     "x": 330,
+     "x": 379,
      "y": 59,
      "w": 34,
      "h": 32
@@ -221,16 +201,16 @@
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 356,
+     "x": 409,
      "y": 59,
      "w": 22,
      "h": 32
     },
     {
      "id": null,
-     "cmd": "underline",
+     "cmd": "listStyle",
      "hidden": true,
-     "label": "Underline",
+     "label": "Disc",
      "enabled": true,
      "x": 0,
      "y": 0,
@@ -239,9 +219,9 @@
     },
     {
      "id": null,
-     "cmd": "underlineDouble",
+     "cmd": "listStyle",
      "hidden": true,
-     "label": "Double underline",
+     "label": "Circle",
      "enabled": true,
      "x": 0,
      "y": 0,
@@ -250,10 +230,21 @@
     },
     {
      "id": null,
-     "cmd": "strikeThrough",
-     "label": "S",
+     "cmd": "listStyle",
+     "hidden": true,
+     "label": "Square",
      "enabled": true,
-     "x": 391,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "insertOrderedList",
+     "label": "Numbered list",
+     "enabled": true,
+     "x": 419,
      "y": 59,
      "w": 34,
      "h": 32
@@ -262,16 +253,16 @@
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 417,
+     "x": 449,
      "y": 59,
      "w": 22,
      "h": 32
     },
     {
      "id": null,
-     "cmd": "strikeThrough",
+     "cmd": "listStyle",
      "hidden": true,
-     "label": "Strikethrough",
+     "label": "1. 2. 3.",
      "enabled": true,
      "x": 0,
      "y": 0,
@@ -280,9 +271,9 @@
     },
     {
      "id": null,
-     "cmd": "strikeDouble",
+     "cmd": "listStyle",
      "hidden": true,
-     "label": "Double strikethrough",
+     "label": "a. b. c.",
      "enabled": true,
      "x": 0,
      "y": 0,
@@ -291,39 +282,80 @@
     },
     {
      "id": null,
-     "cmd": "smallCaps",
-     "label": "SC",
+     "cmd": "listStyle",
+     "hidden": true,
+     "label": "i. ii. iii.",
      "enabled": true,
-     "x": 430,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "listStyle",
+     "hidden": true,
+     "label": "A. B. C.",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "multilevel",
+     "label": "Multilevel list",
+     "enabled": true,
+     "x": 465,
+     "y": 65,
+     "w": 23,
+     "h": 21
+    },
+    {
+     "id": null,
+     "cmd": "outdent",
+     "label": "Decrease indent",
+     "enabled": true,
+     "x": 499,
      "y": 59,
-     "w": 35,
+     "w": 34,
+     "h": 32
+    },
+    {
+     "id": null,
+     "cmd": "indent",
+     "label": "Increase indent",
+     "enabled": true,
+     "x": 539,
+     "y": 59,
+     "w": 34,
+     "h": 32
+    },
+    {
+     "id": null,
+     "cmd": "directionRtl",
+     "label": "Toolbar.DirectionRtl",
+     "enabled": true,
+     "x": 627,
+     "y": 59,
+     "w": 34,
      "h": 32
     },
     {
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 457,
+     "x": 665,
      "y": 59,
      "w": 22,
      "h": 32
     },
     {
      "id": null,
-     "cmd": "smallCaps",
+     "cmd": "directionRtl",
      "hidden": true,
-     "label": "Toolbar.SmallCaps",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "cmd": "allCaps",
-     "hidden": true,
-     "label": "All caps",
+     "label": "Toggle paragraph direction",
      "enabled": true,
      "x": 0,
      "y": 0,
@@ -334,7 +366,7 @@
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 537,
+     "x": 689,
      "y": 59,
      "w": 22,
      "h": 32
@@ -374,6 +406,28 @@
      "cmd": "openBorders",
      "hidden": true,
      "label": "Borders",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "underlineDouble",
+     "hidden": true,
+     "label": "Double underline",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "strikeDouble",
+     "hidden": true,
+     "label": "Double strikethrough",
      "enabled": true,
      "x": 0,
      "y": 0,
@@ -459,11 +513,133 @@
     },
     {
      "id": null,
+     "label": "Styles",
+     "enabled": true,
+     "x": 724,
+     "y": 59,
+     "w": 73,
+     "h": 32
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "hidden": true,
+     "label": "Normal text",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "hidden": true,
+     "label": "Title",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "hidden": true,
+     "label": "Heading 1",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "hidden": true,
+     "label": "Heading 2",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "hidden": true,
+     "label": "Heading 3",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": "btn-ribbon-collapse",
+     "label": "Show fewer toolbar buttons",
+     "enabled": true,
+     "x": 1339,
+     "y": 64,
+     "w": 32,
+     "h": 22
+    },
+    {
+     "id": "btn-theme",
+     "label": "☾",
+     "enabled": true,
+     "x": 1375,
+     "y": 59,
+     "w": 34,
+     "h": 32
+    },
+    {
+     "id": null,
+     "cmd": "bold",
+     "label": "B",
+     "enabled": true,
+     "x": 82,
+     "y": 104,
+     "w": 34,
+     "h": 32
+    },
+    {
+     "id": null,
+     "cmd": "italic",
+     "label": "I",
+     "enabled": true,
+     "x": 110,
+     "y": 104,
+     "w": 34,
+     "h": 32
+    },
+    {
+     "id": null,
+     "cmd": "underline",
+     "label": "U",
+     "enabled": true,
+     "x": 138,
+     "y": 104,
+     "w": 34,
+     "h": 32
+    },
+    {
+     "id": null,
+     "cmd": "strikeThrough",
+     "label": "S",
+     "enabled": true,
+     "x": 166,
+     "y": 104,
+     "w": 34,
+     "h": 32
+    },
+    {
+     "id": null,
      "cmd": "superscript",
      "label": "x²x₂",
      "enabled": true,
-     "x": 471,
-     "y": 59,
+     "x": 194,
+     "y": 104,
      "w": 34,
      "h": 32
     },
@@ -471,8 +647,8 @@
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 497,
-     "y": 59,
+     "x": 228,
+     "y": 104,
      "w": 22,
      "h": 32
     },
@@ -500,208 +676,10 @@
     },
     {
      "id": null,
-     "cmd": "code",
-     "label": "</>",
-     "enabled": true,
-     "x": 591,
-     "y": 59,
-     "w": 36,
-     "h": 32
-    },
-    {
-     "id": null,
-     "label": "▾",
-     "enabled": true,
-     "x": 617,
-     "y": 59,
-     "w": 22,
-     "h": 32
-    },
-    {
-     "id": null,
-     "cmd": "code",
-     "hidden": true,
-     "label": "Toolbar.Code",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "cmd": "formatBlock",
-     "hidden": true,
-     "label": "Code block",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "cmd": "directionRtl",
-     "label": "Toolbar.DirectionRtl",
-     "enabled": true,
-     "x": 632,
-     "y": 59,
-     "w": 34,
-     "h": 32
-    },
-    {
-     "id": null,
-     "cmd": "allCaps",
-     "label": "AA",
-     "enabled": true,
-     "x": 571,
-     "y": 59,
-     "w": 37,
-     "h": 32
-    },
-    {
-     "id": null,
-     "label": "▾",
-     "enabled": true,
-     "x": 657,
-     "y": 59,
-     "w": 22,
-     "h": 32
-    },
-    {
-     "id": null,
-     "cmd": "directionRtl",
-     "hidden": true,
-     "label": "Toggle paragraph direction",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": "btn-find",
-     "label": "⌕",
-     "enabled": true,
-     "x": 672,
-     "y": 59,
-     "w": 34,
-     "h": 32
-    },
-    {
-     "id": "btn-theme",
-     "label": "☾",
-     "enabled": true,
-     "x": 1375,
-     "y": 59,
-     "w": 34,
-     "h": 32
-    },
-    {
-     "id": null,
-     "cmd": "formatBlock",
-     "label": "Normal",
-     "enabled": true,
-     "x": 685,
-     "y": 76,
-     "w": 112,
-     "h": 44
-    },
-    {
-     "id": null,
-     "cmd": "formatBlock",
-     "label": "Title",
-     "enabled": true,
-     "x": 820,
-     "y": 87,
-     "w": 36,
-     "h": 22
-    },
-    {
-     "id": null,
-     "cmd": "formatBlock",
-     "label": "Heading 1",
-     "enabled": true,
-     "x": 919,
-     "y": 87,
-     "w": 88,
-     "h": 22
-    },
-    {
-     "id": null,
-     "cmd": "formatBlock",
-     "label": "Heading 2",
-     "enabled": true,
-     "x": 1029,
-     "y": 87,
-     "w": 75,
-     "h": 22
-    },
-    {
-     "id": null,
-     "cmd": "formatBlock",
-     "label": "Heading 3",
-     "enabled": true,
-     "x": 1137,
-     "y": 87,
-     "w": 66,
-     "h": 22
-    },
-    {
-     "id": "btn-ribbon-collapse",
-     "label": "Show fewer toolbar buttons",
-     "enabled": true,
-     "x": 1339,
-     "y": 87,
-     "w": 32,
-     "h": 22
-    },
-    {
-     "id": null,
      "cmd": "removeFormat",
      "label": "〈〉",
      "enabled": true,
-     "x": 1252,
-     "y": 82,
-     "w": 34,
-     "h": 32
-    },
-    {
-     "id": null,
-     "cmd": "formatBlock",
-     "label": "H1",
-     "enabled": true,
-     "x": 14,
-     "y": 104,
-     "w": 36,
-     "h": 32
-    },
-    {
-     "id": null,
-     "cmd": "formatBlock",
-     "label": "H2",
-     "enabled": true,
-     "x": 48,
-     "y": 104,
-     "w": 36,
-     "h": 32
-    },
-    {
-     "id": null,
-     "cmd": "formatBlock",
-     "label": "H3",
-     "enabled": true,
-     "x": 93,
-     "y": 104,
-     "w": 36,
-     "h": 32
-    },
-    {
-     "id": null,
-     "cmd": "formatBlock",
-     "label": "¶",
-     "enabled": true,
-     "x": 122,
+     "x": 334,
      "y": 104,
      "w": 34,
      "h": 32
@@ -711,7 +689,7 @@
      "cmd": "justifyLeft",
      "label": "Align left",
      "enabled": true,
-     "x": 150,
+     "x": 379,
      "y": 104,
      "w": 34,
      "h": 32
@@ -721,7 +699,7 @@
      "cmd": "justifyCenter",
      "label": "Center",
      "enabled": true,
-     "x": 178,
+     "x": 419,
      "y": 104,
      "w": 34,
      "h": 32
@@ -731,7 +709,7 @@
      "cmd": "justifyRight",
      "label": "Align right",
      "enabled": true,
-     "x": 206,
+     "x": 459,
      "y": 104,
      "w": 34,
      "h": 32
@@ -741,152 +719,56 @@
      "cmd": "justifyFull",
      "label": "Justify",
      "enabled": true,
-     "x": 234,
+     "x": 499,
      "y": 104,
      "w": 34,
      "h": 32
     },
     {
      "id": null,
-     "cmd": "insertUnorderedList",
-     "label": "Bullet list",
+     "cmd": "formatBlock",
+     "label": "¶",
      "enabled": true,
-     "x": 262,
+     "x": 539,
      "y": 104,
      "w": 34,
      "h": 32
     },
     {
      "id": null,
-     "label": "▾",
+     "cmd": "smallCaps",
+     "label": "SC",
      "enabled": true,
-     "x": 288,
+     "x": 578,
      "y": 104,
-     "w": 22,
+     "w": 35,
      "h": 32
     },
     {
      "id": null,
-     "cmd": "listStyle",
-     "hidden": true,
-     "label": "Disc",
+     "cmd": "code",
+     "label": "</>",
      "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "cmd": "listStyle",
-     "hidden": true,
-     "label": "Circle",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "cmd": "listStyle",
-     "hidden": true,
-     "label": "Square",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "cmd": "insertOrderedList",
-     "label": "Numbered list",
-     "enabled": true,
-     "x": 304,
+     "x": 614,
      "y": 104,
-     "w": 34,
+     "w": 36,
      "h": 32
     },
     {
      "id": null,
-     "label": "▾",
+     "cmd": "allCaps",
+     "label": "AA",
      "enabled": true,
-     "x": 330,
+     "x": 650,
      "y": 104,
-     "w": 22,
+     "w": 36,
      "h": 32
     },
     {
-     "id": null,
-     "cmd": "listStyle",
-     "hidden": true,
-     "label": "1. 2. 3.",
+     "id": "btn-find",
+     "label": "⌕",
      "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "cmd": "listStyle",
-     "hidden": true,
-     "label": "a. b. c.",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "cmd": "listStyle",
-     "hidden": true,
-     "label": "i. ii. iii.",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "cmd": "listStyle",
-     "hidden": true,
-     "label": "A. B. C.",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "cmd": "multilevel",
-     "label": "Multilevel list",
-     "enabled": true,
-     "x": 351,
-     "y": 109,
-     "w": 23,
-     "h": 21
-    },
-    {
-     "id": null,
-     "cmd": "indent",
-     "label": "Increase indent",
-     "enabled": true,
-     "x": 551,
-     "y": 104,
-     "w": 34,
-     "h": 32
-    },
-    {
-     "id": null,
-     "cmd": "outdent",
-     "label": "Decrease indent",
-     "enabled": true,
-     "x": 591,
+     "x": 1323,
      "y": 104,
      "w": 34,
      "h": 32
@@ -915,16 +797,16 @@
     {
      "id": "line-spacing",
      "label": "Line spacing",
-     "w": 44
-    },
-    {
-     "id": "text-color",
-     "label": "Text color",
-     "w": 22
+     "w": 56
     },
     {
      "id": "highlight-color",
      "label": "Highlight color",
+     "w": 22
+    },
+    {
+     "id": "text-color",
+     "label": "Text color",
      "w": 22
     },
     {
@@ -1117,13 +999,13 @@
    ],
    "combos": [
     {
-     "id": "text-color",
-     "label": "Text color",
+     "id": "highlight-color",
+     "label": "Highlight color",
      "w": 0
     },
     {
-     "id": "highlight-color",
-     "label": "Highlight color",
+     "id": "text-color",
+     "label": "Text color",
      "w": 0
     },
     {
@@ -1209,13 +1091,13 @@
    ],
    "combos": [
     {
-     "id": "text-color",
-     "label": "Text color",
+     "id": "highlight-color",
+     "label": "Highlight color",
      "w": 0
     },
     {
-     "id": "highlight-color",
-     "label": "Highlight color",
+     "id": "text-color",
+     "label": "Text color",
      "w": 0
     },
     {
@@ -1297,13 +1179,13 @@
    ],
    "combos": [
     {
-     "id": "text-color",
-     "label": "Text color",
+     "id": "highlight-color",
+     "label": "Highlight color",
      "w": 0
     },
     {
-     "id": "highlight-color",
-     "label": "Highlight color",
+     "id": "text-color",
+     "label": "Text color",
      "w": 0
     },
     {
@@ -1396,13 +1278,13 @@
    ],
    "combos": [
     {
-     "id": "text-color",
-     "label": "Text color",
+     "id": "highlight-color",
+     "label": "Highlight color",
      "w": 0
     },
     {
-     "id": "highlight-color",
-     "label": "Highlight color",
+     "id": "text-color",
+     "label": "Text color",
      "w": 0
     },
     {
@@ -1504,13 +1386,13 @@
    ],
    "combos": [
     {
-     "id": "text-color",
-     "label": "Text color",
+     "id": "highlight-color",
+     "label": "Highlight color",
      "w": 0
     },
     {
-     "id": "highlight-color",
-     "label": "Highlight color",
+     "id": "text-color",
+     "label": "Text color",
      "w": 0
     },
     {
@@ -1546,13 +1428,13 @@
    ],
    "combos": [
     {
-     "id": "text-color",
-     "label": "Text color",
+     "id": "highlight-color",
+     "label": "Highlight color",
      "w": 0
     },
     {
-     "id": "highlight-color",
-     "label": "Highlight color",
+     "id": "text-color",
+     "label": "Text color",
      "w": 0
     },
     {
@@ -1633,13 +1515,13 @@
    ],
    "combos": [
     {
-     "id": "text-color",
-     "label": "Text color",
+     "id": "highlight-color",
+     "label": "Highlight color",
      "w": 0
     },
     {
-     "id": "highlight-color",
-     "label": "Highlight color",
+     "id": "text-color",
+     "label": "Text color",
      "w": 0
     },
     {
@@ -1695,13 +1577,13 @@
    ],
    "combos": [
     {
-     "id": "text-color",
-     "label": "Text color",
+     "id": "highlight-color",
+     "label": "Highlight color",
      "w": 0
     },
     {
-     "id": "highlight-color",
-     "label": "Highlight color",
+     "id": "text-color",
+     "label": "Text color",
      "w": 0
     },
     {
@@ -1774,13 +1656,13 @@
    ],
    "combos": [
     {
-     "id": "text-color",
-     "label": "Text color",
+     "id": "highlight-color",
+     "label": "Highlight color",
      "w": 0
     },
     {
-     "id": "highlight-color",
-     "label": "Highlight color",
+     "id": "text-color",
+     "label": "Text color",
      "w": 0
     },
     {
@@ -1874,13 +1756,13 @@
    ],
    "combos": [
     {
-     "id": "text-color",
-     "label": "Text color",
+     "id": "highlight-color",
+     "label": "Highlight color",
      "w": 0
     },
     {
-     "id": "highlight-color",
-     "label": "Highlight color",
+     "id": "text-color",
+     "label": "Text color",
      "w": 0
     },
     {
