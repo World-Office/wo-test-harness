@@ -40,6 +40,25 @@ wo-test-harness/
   --seed-check`; CI gate: `census/reconcile.py --check --seed-check`
   (conformance.yml `census-ledger` job). Register parity rows sync via
   `--apply-register`.
+- **Interaction dimension** — the structural census proves buttons EXIST
+  but never clicks one, so "weird overlays / missing dialogs" were invisible
+  to it. `interact-wo.cjs` (WO click-through: click every ribbon button,
+  classify modal/menu/panel/none + geometry), `interact-oo.cjs` (rig-side,
+  same schema vs live OO → committed `census/census/census-oo-interactions.json`,
+  334 rows, refreshed deliberately), `interact-diff.py` (joins via the
+  audited structural ledger's `wo` mapping — never re-derives the pairing —
+  and classifies ok/missing/type/geometry/organic/divergence). Declared
+  intentional divergences live loudly in `interact-divergences.json`.
+  Gate: `reconcile.py --check --interactions` (wired into conformance.yml).
+  Playwright pitfall: page-side logic must be REAL functions passed to
+  `page.evaluate`, never strings-as-expressions (evaluates to a function
+  value → clicks nothing). Command-wired buttons dispatch via the bus;
+  id-wired buttons (most of Insert: btn-table, btn-image, ...) need a REAL
+  click. Preserve the button id (a surface id clobbers it); a surface
+  identical to the previous row is a sticky leftover, not a fresh open.
+  CI-exact fresh-clone proof: the gate FAILED against the pre-fix server
+  commit (table/image full-screen modals) and PASSED after the
+  anchored-popover fix landed — it catches the overlay-regression class.
 - **Docx fidelity** — `DocxConformanceAdapter` projects `wo-docx-renderer`
   layout into `NormalizedRender` for scoring against captured truth.
 
