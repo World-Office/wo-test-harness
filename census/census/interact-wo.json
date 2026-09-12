@@ -1,0 +1,1214 @@
+{
+ "engine": "worldoffice",
+ "capturedAt": "2026-09-12T08:00:17.887Z",
+ "viewport": "1440x900",
+ "interactions": [
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "bold",
+   "label": "B",
+   "x": 272,
+   "y": 59,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "italic",
+   "label": "I",
+   "x": 301,
+   "y": 59,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "underline",
+   "label": "U",
+   "x": 330,
+   "y": 59,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "strikeThrough",
+   "label": "S",
+   "x": 391,
+   "y": 59,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "smallCaps",
+   "label": "SC",
+   "x": 429,
+   "y": 59,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "superscript",
+   "label": "x²x₂",
+   "x": 471,
+   "y": 59,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "code",
+   "label": "</>",
+   "x": 592,
+   "y": 59,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "directionRtl",
+   "label": "Toolbar.DirectionRtl",
+   "x": 632,
+   "y": 59,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "allCaps",
+   "label": "AA",
+   "x": 571,
+   "y": 59,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "btn-find",
+   "cmd": null,
+   "label": "⌕",
+   "x": 672,
+   "y": 59,
+   "opens": "modal",
+   "surface_id": "find-dialog",
+   "box": {
+    "x": 976,
+    "y": 150,
+    "w": 260,
+    "h": 127
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 8
+  },
+  {
+   "tab": "home",
+   "id": "btn-theme",
+   "cmd": null,
+   "label": "☾",
+   "x": 1375,
+   "y": 59,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "formatBlock",
+   "label": "Normal",
+   "x": 685,
+   "y": 76,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "btn-ribbon-collapse",
+   "cmd": null,
+   "label": "Show fewer toolbar buttons",
+   "x": 1339,
+   "y": 87,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "removeFormat",
+   "label": "〈〉",
+   "x": 1252,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "justifyLeft",
+   "label": "Align left",
+   "x": 150,
+   "y": 104,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "justifyCenter",
+   "label": "Center",
+   "x": 178,
+   "y": 104,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "justifyRight",
+   "label": "Align right",
+   "x": 206,
+   "y": 104,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "justifyFull",
+   "label": "Justify",
+   "x": 234,
+   "y": 104,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "insertUnorderedList",
+   "label": "•≡",
+   "x": 262,
+   "y": 104,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "insertOrderedList",
+   "label": "1≡",
+   "x": 304,
+   "y": 104,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "indent",
+   "label": "Increase indent",
+   "x": 551,
+   "y": 104,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "cmd": "outdent",
+   "label": "Decrease indent",
+   "x": 591,
+   "y": 104,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "btn-fullscreen",
+   "cmd": null,
+   "label": "Toggle fullscreen",
+   "x": 1380,
+   "y": 108,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": "btn-table",
+   "cmd": null,
+   "label": "▦",
+   "x": 12,
+   "y": 82,
+   "opens": "menu",
+   "surface_id": "table-dialog",
+   "box": {
+    "x": 12,
+    "y": 120,
+    "w": 236,
+    "h": 170
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 4
+  },
+  {
+   "tab": "insert",
+   "id": "btn-table-ops",
+   "cmd": null,
+   "label": "▦✎",
+   "x": 48,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "table-ops-dialog",
+   "box": {
+    "x": 572,
+    "y": 308,
+    "w": 296,
+    "h": 284
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 9
+  },
+  {
+   "tab": "insert",
+   "id": "btn-image",
+   "cmd": null,
+   "label": "Insert image",
+   "x": 93,
+   "y": 82,
+   "opens": "menu",
+   "surface_id": "image-dialog",
+   "box": {
+    "x": 93,
+    "y": 120,
+    "w": 300,
+    "h": 196
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 5
+  },
+  {
+   "tab": "insert",
+   "id": "btn-link",
+   "cmd": null,
+   "label": "Insert link",
+   "x": 129,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "link-dialog",
+   "box": {
+    "x": 590,
+    "y": 374,
+    "w": 260,
+    "h": 152
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 3
+  },
+  {
+   "tab": "insert",
+   "id": "btn-hr",
+   "cmd": null,
+   "label": "─",
+   "x": 165,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": "btn-object",
+   "cmd": null,
+   "label": "▢",
+   "x": 201,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "object-dialog",
+   "box": {
+    "x": 572,
+    "y": 329,
+    "w": 296,
+    "h": 242
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 4
+  },
+  {
+   "tab": "insert",
+   "id": "btn-bookmark",
+   "cmd": null,
+   "label": "Insert bookmark",
+   "x": 237,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "bookmark-dialog",
+   "box": {
+    "x": 590,
+    "y": 374,
+    "w": 260,
+    "h": 152
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 3
+  },
+  {
+   "tab": "insert",
+   "id": "btn-crossref",
+   "cmd": null,
+   "label": "Insert cross-reference",
+   "x": 273,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "crossref-dialog",
+   "box": {
+    "x": 566,
+    "y": 360,
+    "w": 309,
+    "h": 181
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 4
+  },
+  {
+   "tab": "insert",
+   "id": "btn-symbol",
+   "cmd": null,
+   "label": "Ω",
+   "x": 309,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "symbol-dialog",
+   "box": {
+    "x": 581,
+    "y": 273,
+    "w": 278,
+    "h": 353
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 47
+  },
+  {
+   "tab": "insert",
+   "id": "btn-datetime",
+   "cmd": null,
+   "label": "Insert date",
+   "x": 345,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": "btn-pagenumber",
+   "cmd": null,
+   "label": "#",
+   "x": 381,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": "btn-header",
+   "cmd": null,
+   "label": "▔",
+   "x": 417,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": "btn-footer",
+   "cmd": null,
+   "label": "▁",
+   "x": 453,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "cmd": "insertObject",
+   "label": "Shape",
+   "x": 489,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "object-dialog",
+   "box": {
+    "x": 572,
+    "y": 329,
+    "w": 296,
+    "h": 242
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 4
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "cmd": "toggleDropcap",
+   "label": "Drop cap",
+   "x": 670,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "cmd": "link",
+   "label": "Hyperlink",
+   "x": 819,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "link-dialog",
+   "box": {
+    "x": 590,
+    "y": 374,
+    "w": 260,
+    "h": 152
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 3
+  },
+  {
+   "tab": "draw",
+   "id": "btn-ink-draw",
+   "cmd": "inkMode",
+   "label": "Draw",
+   "x": 12,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": "btn-ink-select",
+   "cmd": "inkSelect",
+   "label": "Select",
+   "x": 65,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": "btn-ink-pen",
+   "cmd": "toggleInk",
+   "label": "Pen",
+   "x": 124,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": "btn-ink-color",
+   "cmd": "inkColor",
+   "label": "Ink color",
+   "x": 317,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": "btn-ink-thickness",
+   "cmd": "inkThickness",
+   "label": "Ink thickness",
+   "x": 390,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": "btn-page-break",
+   "cmd": null,
+   "label": "⏎",
+   "x": 12,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": "btn-section-break",
+   "cmd": null,
+   "label": "⇘",
+   "x": 48,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": "btn-columns",
+   "cmd": null,
+   "label": "▥",
+   "x": 84,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "columns-dialog",
+   "box": {
+    "x": 590,
+    "y": 354,
+    "w": 260,
+    "h": 192
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 4
+  },
+  {
+   "tab": "layout",
+   "id": "btn-page-setup",
+   "cmd": null,
+   "label": "Page setup",
+   "x": 120,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "page-setup-dialog",
+   "box": {
+    "x": 479,
+    "y": 304,
+    "w": 481,
+    "h": 292
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 9
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "cmd": "toggleHyphenation",
+   "label": "Hyphenation",
+   "x": 211,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "cmd": "toggleLineNumbers",
+   "label": "Line numbers",
+   "x": 309,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "cmd": "toggleWatermark",
+   "label": "Watermark",
+   "x": 414,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": "btn-toc",
+   "cmd": null,
+   "label": "☰",
+   "x": 12,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "toc-dialog",
+   "box": {
+    "x": 590,
+    "y": 374,
+    "w": 260,
+    "h": 152
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 3
+  },
+  {
+   "tab": "references",
+   "id": "btn-footnote",
+   "cmd": null,
+   "label": "¹",
+   "x": 48,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": "btn-endnote",
+   "cmd": null,
+   "label": "ⁿ",
+   "x": 84,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": null,
+   "cmd": "insertCaption",
+   "label": "Caption",
+   "x": 120,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": null,
+   "cmd": "insertCitation",
+   "label": "Citation",
+   "x": 188,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": null,
+   "cmd": "insertIndexEntry",
+   "label": "Index",
+   "x": 256,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": null,
+   "cmd": "updateToc",
+   "label": "Update TOC",
+   "x": 310,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": null,
+   "cmd": "openCrossref",
+   "label": "Cross-reference",
+   "x": 408,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "crossref-dialog",
+   "box": {
+    "x": 566,
+    "y": 360,
+    "w": 309,
+    "h": 181
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 4
+  },
+  {
+   "tab": "collaboration",
+   "id": "btn-track-changes",
+   "cmd": null,
+   "label": "✎",
+   "x": 12,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": "btn-review-changes",
+   "cmd": null,
+   "label": "✓",
+   "x": 48,
+   "y": 82,
+   "opens": "panel",
+   "surface_id": "review-panel",
+   "box": {
+    "x": 1120,
+    "y": 140,
+    "w": 320,
+    "h": 728
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 1
+  },
+  {
+   "tab": "collaboration",
+   "id": "btn-comment",
+   "cmd": null,
+   "label": "Add comment",
+   "x": 84,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "comment-dialog",
+   "box": {
+    "x": 566,
+    "y": 364,
+    "w": 308,
+    "h": 173
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 2
+  },
+  {
+   "tab": "collaboration",
+   "id": "btn-comments",
+   "cmd": null,
+   "label": "◫",
+   "x": 120,
+   "y": 82,
+   "opens": "panel",
+   "surface_id": "comments-panel",
+   "box": {
+    "x": 1120,
+    "y": 140,
+    "w": 320,
+    "h": 728
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 1
+  },
+  {
+   "tab": "collaboration",
+   "id": "btn-chat-toggle",
+   "cmd": "toggleChat",
+   "label": "Chat",
+   "x": 156,
+   "y": 82,
+   "opens": "panel",
+   "surface_id": "chat-panel",
+   "box": {
+    "x": 1220,
+    "y": 0,
+    "w": 220,
+    "h": 900
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 0
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "cmd": "compareVersion",
+   "label": "Compare",
+   "x": 206,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "version-history-dialog",
+   "box": {
+    "x": 548,
+    "y": 374,
+    "w": 344,
+    "h": 153
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 2
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "cmd": "displayMode",
+   "label": "Display mode",
+   "x": 283,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "cmd": "prevTrackedChange",
+   "label": "Previous change",
+   "x": 388,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "cmd": "nextTrackedChange",
+   "label": "Next change",
+   "x": 512,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "protection",
+   "id": null,
+   "cmd": "protectDialog",
+   "label": "Protect with password",
+   "x": 12,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "protect-dialog",
+   "box": {
+    "x": 541,
+    "y": 265,
+    "w": 358,
+    "h": 371
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 6
+  },
+  {
+   "tab": "protection",
+   "id": null,
+   "cmd": "restrictEditing",
+   "label": "Restrict editing",
+   "x": 169,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": null,
+   "cmd": "displayMode",
+   "label": "Document view",
+   "x": 12,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "btn-ruler-toggle",
+   "cmd": null,
+   "label": "Ruler",
+   "x": 128,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "btn-gridlines",
+   "cmd": null,
+   "label": "Gridlines",
+   "x": 181,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "btn-nav-toggle",
+   "cmd": "toggleNavigation",
+   "label": "Navigation",
+   "x": 256,
+   "y": 82,
+   "opens": "panel",
+   "surface_id": "nav-panel",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 900
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 0
+  },
+  {
+   "tab": "view",
+   "id": "btn-view-fullscreen",
+   "cmd": null,
+   "label": "Fullscreen",
+   "x": 343,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "btn-view-theme",
+   "cmd": null,
+   "label": "Theme",
+   "x": 427,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "btn-view-fit",
+   "cmd": null,
+   "label": "Fit page",
+   "x": 491,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "cmd": "browsePlugins",
+   "label": "Browse plugins",
+   "x": 12,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "plugins-dialog",
+   "box": {
+    "x": 480,
+    "y": 315,
+    "w": 480,
+    "h": 271
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 3
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "cmd": "managePlugins",
+   "label": "Manage plugins",
+   "x": 127,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "plugins-dialog",
+   "box": {
+    "x": 480,
+    "y": 289,
+    "w": 480,
+    "h": 323
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 5
+  },
+  {
+   "tab": "plugins",
+   "id": "btn-ocr",
+   "cmd": "ocrRun",
+   "label": "OCR",
+   "x": 246,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "ai-propose-dialog",
+   "box": {
+    "x": 563,
+    "y": 364,
+    "w": 314,
+    "h": 173
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 2
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "cmd": "photoEditor",
+   "label": "Photo editor",
+   "x": 297,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "photo-editor-dialog",
+   "box": {
+    "x": 380,
+    "y": 124,
+    "w": 680,
+    "h": 652
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 11
+  },
+  {
+   "tab": "ai",
+   "id": "btn-ai-review-tab",
+   "cmd": null,
+   "label": "AI changes",
+   "x": 12,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "ai-review-dialog",
+   "box": {
+    "x": 590,
+    "y": 376,
+    "w": 261,
+    "h": 149
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 2
+  },
+  {
+   "tab": "ai",
+   "id": null,
+   "cmd": "aiSummarize",
+   "label": "Summarize",
+   "x": 102,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "ai-propose-dialog",
+   "box": {
+    "x": 563,
+    "y": 364,
+    "w": 314,
+    "h": 173
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 2
+  },
+  {
+   "tab": "ai",
+   "id": null,
+   "cmd": "aiTranslate",
+   "label": "Translate",
+   "x": 193,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "ai-propose-dialog",
+   "box": {
+    "x": 563,
+    "y": 364,
+    "w": 314,
+    "h": 173
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 2
+  },
+  {
+   "tab": "ai",
+   "id": null,
+   "cmd": "aiRewrite",
+   "label": "Rewrite",
+   "x": 271,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "ai-propose-dialog",
+   "box": {
+    "x": 563,
+    "y": 364,
+    "w": 314,
+    "h": 173
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 2
+  },
+  {
+   "tab": "ai",
+   "id": "btn-ai-grammar",
+   "cmd": null,
+   "label": "Grammar",
+   "x": 338,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "ai-propose-dialog",
+   "box": {
+    "x": 563,
+    "y": 364,
+    "w": 314,
+    "h": 173
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 2
+  },
+  {
+   "tab": "ai",
+   "id": "btn-ai-assistant",
+   "cmd": null,
+   "label": "AI assistant",
+   "x": 417,
+   "y": 82,
+   "opens": "modal",
+   "surface_id": "ai-propose-dialog",
+   "box": {
+    "x": 563,
+    "y": 364,
+    "w": 314,
+    "h": 173
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 2
+  },
+  {
+   "tab": "header-footer",
+   "id": "btn-hf-close",
+   "cmd": null,
+   "label": "Close Header & Footer",
+   "x": 12,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": "btn-hf-pagenumber",
+   "cmd": null,
+   "label": "Page number",
+   "x": 175,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": "btn-hf-datetime",
+   "cmd": null,
+   "label": "Date & time",
+   "x": 279,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": null,
+   "cmd": "toggleDifferentFirst",
+   "label": "Different First Page",
+   "x": 372,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": null,
+   "cmd": "toggleOddEven",
+   "label": "Different Odd & Even",
+   "x": 513,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": null,
+   "cmd": "toggleHeaderFromTop",
+   "label": "Header from Top",
+   "x": 665,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": null,
+   "cmd": "toggleFooterFromBottom",
+   "label": "Footer from Bottom",
+   "x": 789,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": null,
+   "cmd": "toggleSameAsPrev",
+   "label": "Same as previous",
+   "x": 929,
+   "y": 82,
+   "opens": "none"
+  }
+ ]
+}

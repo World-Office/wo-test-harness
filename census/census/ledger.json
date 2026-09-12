@@ -1782,8 +1782,8 @@
    "enabled": true,
    "token": "asc-gen885",
    "status": "real",
-   "wo": "insertCaption",
-   "wo_tab": "references"
+   "wo": "btn-bookmark",
+   "wo_tab": "insert"
   },
   {
    "tab": "references",
@@ -3224,7 +3224,7 @@
    "enabled": true,
    "token": "asc-gen673",
    "status": "real",
-   "wo": "toggleSameAsPrev",
+   "wo": "btn-hf-close",
    "wo_tab": "header-footer"
   },
   {

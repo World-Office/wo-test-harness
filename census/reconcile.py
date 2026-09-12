@@ -124,9 +124,10 @@ def spawn_docserver(server: Path, workdir: Path):
     return port, proc
 
 
-def capture(server: Path, out: Path) -> str:
-    """Spawn a local docserver, run census-wo.cjs against it, kill server.
-    The census JSON lands in out/census-wo.json."""
+def capture(server: Path, out: Path, script: str = "census-wo.cjs") -> str:
+    """Spawn a local docserver, run <script> (a census .cjs) against it, kill the
+    server. The census JSON lands in out/ (census-wo.json for the structural
+    census, interact-wo.json for the --interactions click-through)."""
     with tempfile.TemporaryDirectory(prefix="reconcile-") as td:
         port, proc = spawn_docserver(server, Path(td))
         try:
@@ -149,7 +150,7 @@ def capture(server: Path, out: Path) -> str:
             if npm_root:
                 env["NODE_PATH"] = npm_root
             node = shutil.which("node") or "node"
-            subprocess.run([node, "census-wo.cjs"], cwd=HERE, env=env, check=True)
+            subprocess.run([node, script], cwd=HERE, env=env, check=True)
             return str(url)
         finally:
             proc.terminate()
@@ -338,12 +339,25 @@ def self_test() -> None:
     print("self-test OK: promotions delta detected, silent disappearances ignored")
 
 
+def run_interactions(server: Path, out: Path) -> int:
+    """Click-through census (interact-wo.cjs) + join vs the committed OO
+    reference. Returns 0 iff no missing/type/geometry interaction gaps."""
+    capture(server, out, script="interact-wo.cjs")
+    return subprocess.run(
+        [sys.executable, "interact-diff.py", "--wo", str(out / "interact-wo.json"),
+         "--out", str(out)],
+        cwd=HERE,
+    ).returncode
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--skip-capture", action="store_true", help="reuse existing census-wo.json")
     ap.add_argument("--apply-register", action="store_true", help="flip features.yaml parity for flipped refs")
     ap.add_argument("--seed-check", action="store_true", help="regenerate graph.json + drift gate")
     ap.add_argument("--check", action="store_true", help="CI gate: no writes; fail on any pending promotion/residue")
+    ap.add_argument("--interactions", action="store_true",
+                    help="capture the click-through interaction census + gate on missing/type/geometry gaps")
     ap.add_argument("--self-test", action="store_true", help="run the delta-logic self-test and exit")
     args = ap.parse_args()
 
@@ -377,6 +391,10 @@ def main() -> int:
             ok = gate(ledger)
             print("[4/4] gate:", "PASS — ledger clear" if ok else "FAIL — decisions above remain")
             rc = 0 if ok else 1
+            if args.interactions:
+                print("      interactions: click-through census vs OO reference")
+                if run_interactions(server, tmp) != 0:
+                    rc = 1
             if args.seed_check:
                 print("      seed: drift gate (graph.json vs committed)")
                 if run_seed(check_only=True) != 0:
@@ -414,6 +432,11 @@ def main() -> int:
     ok = gate(ledger)
     print("[4/4] gate:", "PASS — ledger clear" if ok else "FAIL — decisions above remain")
 
+    interact_rc = 0
+    if args.interactions:
+        print("      interactions: click-through census (interact-wo.cjs)")
+        interact_rc = run_interactions(server, CENSUS)
+
     seed_rc = 0
     if args.seed_check:
         print("      seed: regenerate graph + drift gate")
@@ -421,7 +444,7 @@ def main() -> int:
         if seed_rc != 0:
             print("      seed --check FAILED (commit the regenerated graph.json)")
 
-    return 0 if (ok and seed_rc == 0) else 1
+    return 0 if (ok and seed_rc == 0 and interact_rc == 0) else 1
 
 
 if __name__ == "__main__":

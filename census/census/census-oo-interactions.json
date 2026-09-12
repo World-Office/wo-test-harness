@@ -1,0 +1,3251 @@
+{
+ "engine": "onlyoffice",
+ "capturedAt": "2026-09-12T07:49:45.730Z",
+ "viewport": "1440x900",
+ "interactions": [
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-paste",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-copystyle",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-incfont",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-decfont",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-bold",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-italic",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-underline",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-strikeout",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-superscript",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-subscript",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-clearstyle",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-decoffset",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-incoffset",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-align-left",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-align-center",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-align-right",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-align-just",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-replace",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "id-toolbar-btn-select-all",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": "Word count",
+   "opens": "menu",
+   "surface_id": null,
+   "cls": "dropdown-menu ",
+   "box": {
+    "x": 84,
+    "y": 725,
+    "w": 209,
+    "h": 142
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": "English – United States",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "dropdown-menu lang-menu shifted-right ps-container oo",
+   "box": {
+    "x": 940,
+    "y": 582,
+    "w": 462,
+    "h": 285
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "home",
+   "id": "asc-gen989",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "asc-gen987",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "status-btn-multiple-pages",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "btn-zoom-topage",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "btn-zoom-towidth",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "btn-zoom-down",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "id": "btn-zoom-up",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": "id-toolbar-btn-paste",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": "id-toolbar-btn-copystyle",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": "id-toolbar-btn-blankpage",
+   "label": "BlankPage",
+   "opens": "menu",
+   "surface_id": "view-left-menu",
+   "cls": "tool-menu left",
+   "box": {
+    "x": 0,
+    "y": 148,
+    "w": 40,
+    "h": 720
+   },
+   "inside_vp": true,
+   "controls": 65
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "Breaks",
+   "opens": "menu",
+   "surface_id": "view-left-menu",
+   "cls": "tool-menu left",
+   "box": {
+    "x": 0,
+    "y": 148,
+    "w": 40,
+    "h": 720
+   },
+   "inside_vp": true,
+   "controls": 65
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "Table",
+   "opens": "menu",
+   "surface_id": null,
+   "cls": "dropdown-menu ",
+   "box": {
+    "x": 195,
+    "y": 130,
+    "w": 222,
+    "h": 332
+   },
+   "inside_vp": true,
+   "controls": 5
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "Image",
+   "opens": "menu",
+   "surface_id": "view-left-menu",
+   "cls": "tool-menu left",
+   "box": {
+    "x": 0,
+    "y": 148,
+    "w": 40,
+    "h": 720
+   },
+   "inside_vp": true,
+   "controls": 65
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "Shape",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "dropdown-menu menu-shapes menu-insert-shape",
+   "box": {
+    "x": 290,
+    "y": 130,
+    "w": 362,
+    "h": 696
+   },
+   "inside_vp": true,
+   "controls": 378
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "SmartArt",
+   "opens": "menu",
+   "surface_id": null,
+   "cls": "dropdown-menu shifted-right",
+   "box": {
+    "x": 335,
+    "y": 130,
+    "w": 160,
+    "h": 246
+   },
+   "inside_vp": true,
+   "controls": 459
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "Chart",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "dropdown-menu ",
+   "box": {
+    "x": 392,
+    "y": 130,
+    "w": 364,
+    "h": 581
+   },
+   "inside_vp": true,
+   "controls": 87
+  },
+  {
+   "tab": "insert",
+   "id": "tlbtn-addcomment-0",
+   "label": "Comment",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "dropdown-menu ",
+   "box": {
+    "x": 392,
+    "y": 130,
+    "w": 364,
+    "h": 581
+   },
+   "inside_vp": true,
+   "controls": 87
+  },
+  {
+   "tab": "insert",
+   "id": "id-toolbar-toolbar__icon btn-big-inserthyperlink0",
+   "label": "Link",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "Header &Footer",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "PageNumber",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "TextBox",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "TextArt",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "DropCap",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "insert",
+   "id": "tlbtn-insertdatetime-0",
+   "label": "Date &Time",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "Text fromFile",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "insert",
+   "id": "tlbtn-insertfield-0",
+   "label": "Field",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "Equation",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "Symbol",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "ContentControls",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "Word count",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": "English – United States",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "insert",
+   "id": "asc-gen989",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": "asc-gen987",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": "status-btn-multiple-pages",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": "btn-zoom-topage",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": "btn-zoom-towidth",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": "btn-zoom-down",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "id": "btn-zoom-up",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": "id-toolbar-btn-paste",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": "id-toolbar-btn-copystyle",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "label": "Margins",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "label": "Orientation",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "label": "Size",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "label": "Columns",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "label": "Breaks",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "label": "LineNumbers",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "label": "Hyphenation",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "label": "Watermark",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "label": "PageColor",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "label": "Colors",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "label": "Word count",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "label": "English – United States",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "layout",
+   "id": "asc-gen989",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": "asc-gen987",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": "status-btn-multiple-pages",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": "btn-zoom-topage",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": "btn-zoom-towidth",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": "btn-zoom-down",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "id": "btn-zoom-up",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": "id-toolbar-btn-paste",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": "id-toolbar-btn-copystyle",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": "asc-gen670",
+   "label": "Select",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "draw",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": "asc-gen668",
+   "label": "Eraser",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "draw",
+   "id": null,
+   "label": "Word count",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "draw",
+   "id": null,
+   "label": "English – United States",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "draw",
+   "id": "asc-gen989",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": "asc-gen987",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": "status-btn-multiple-pages",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": "btn-zoom-topage",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": "btn-zoom-towidth",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": "btn-zoom-down",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": "btn-zoom-up",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": "id-toolbar-btn-paste",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": "id-toolbar-btn-copystyle",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": null,
+   "label": "Table ofContents",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "references",
+   "id": null,
+   "label": "Add Text",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "references",
+   "id": null,
+   "label": "Update Table",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "references",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": null,
+   "label": "Footnote",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "references",
+   "id": "id-toolbar-toolbar__icon btn-big-inserthyperlink1",
+   "label": "Link",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "references",
+   "id": "asc-gen885",
+   "label": "Bookmark",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "references",
+   "id": "asc-gen887",
+   "label": "Caption",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "references",
+   "id": "asc-gen889",
+   "label": "Cross-reference",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "references",
+   "id": "asc-gen891",
+   "label": "Table of Figures",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "references",
+   "id": null,
+   "label": "Word count",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "references",
+   "id": null,
+   "label": "English – United States",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "references",
+   "id": "asc-gen989",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": "asc-gen987",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": "status-btn-multiple-pages",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": "btn-zoom-topage",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": "btn-zoom-towidth",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": "btn-zoom-down",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "references",
+   "id": "btn-zoom-up",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": "id-toolbar-btn-paste",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": "id-toolbar-btn-copystyle",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": "Delete",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": "Resolve",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": "TrackChanges",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": "DisplayMode",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "collaboration",
+   "id": "asc-gen509",
+   "label": "Previous",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "collaboration",
+   "id": "asc-gen511",
+   "label": "Next",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": "Accept",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": "Reject",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": "Compare",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": "Combine",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "collaboration",
+   "id": "asc-gen525",
+   "label": "Chat",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": "MailMerge",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": "Word count",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": "English – United States",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "collaboration",
+   "id": "asc-gen989",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": "asc-gen987",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": "status-btn-multiple-pages",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": "btn-zoom-topage",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": "btn-zoom-towidth",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": "btn-zoom-down",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "collaboration",
+   "id": "btn-zoom-up",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "protection",
+   "id": "id-toolbar-btn-paste",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "protection",
+   "id": "id-toolbar-btn-copystyle",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "protection",
+   "id": "asc-gen541",
+   "label": "Encrypt",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "protection",
+   "id": "asc-gen546",
+   "label": "ProtectDocument",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "protection",
+   "id": "asc-gen1885",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "protection",
+   "id": null,
+   "label": "Word count",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "protection",
+   "id": null,
+   "label": "English – United States",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "protection",
+   "id": "asc-gen989",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "protection",
+   "id": "asc-gen987",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "protection",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "protection",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "protection",
+   "id": "status-btn-multiple-pages",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "protection",
+   "id": "btn-zoom-topage",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "protection",
+   "id": "btn-zoom-towidth",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "protection",
+   "id": "btn-zoom-down",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "protection",
+   "id": "btn-zoom-up",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "id-toolbar-btn-paste",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "id-toolbar-btn-copystyle",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "asc-gen896",
+   "label": "Headings",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "view",
+   "id": "asc-gen920",
+   "label": "Fit To Page",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "view",
+   "id": "asc-gen922",
+   "label": "Fit To Width",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "view",
+   "id": "asc-gen935",
+   "label": "Zoom to 100%",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "view",
+   "id": "asc-gen933",
+   "label": "Multiple Pages",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "view",
+   "id": null,
+   "label": "InterfaceTheme",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "view",
+   "id": "asc-gen937",
+   "label": "Macros",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "view",
+   "id": "asc-gen939",
+   "label": "Record macro",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "view",
+   "id": "asc-gen1885",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": null,
+   "label": "Word count",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "view",
+   "id": null,
+   "label": "English – United States",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "view",
+   "id": "asc-gen989",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "asc-gen987",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "status-btn-multiple-pages",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "btn-zoom-topage",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "btn-zoom-towidth",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "btn-zoom-down",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "btn-zoom-up",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "asc-gen7600",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "asc-gen7611",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": "id-toolbar-btn-paste",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": "id-toolbar-btn-copystyle",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen4375",
+   "label": "PluginManager",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "label": "Backgroundplugins",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "label": "PhotoEditor",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen4391",
+   "label": "YouTube",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "label": "OCR",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen4401",
+   "label": "Translator",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen4403",
+   "label": "Mendeley",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen4405",
+   "label": "Thesaurus",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen4407",
+   "label": "Highlightcode",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen4409",
+   "label": "Zotero",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "label": "Speech",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "label": "Speechinput",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen1887",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "label": "Word count",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "label": "English – United States",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen989",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen987",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": "status-btn-multiple-pages",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": "btn-zoom-topage",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": "btn-zoom-towidth",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": "btn-zoom-down",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": "btn-zoom-up",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen7600",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen7611",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen7656",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen7632",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen7634",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen7636",
+   "label": "Run",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen7638",
+   "label": "Debug",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen7640",
+   "label": "Copy",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen7642",
+   "label": "Rename",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "plugins",
+   "id": "asc-gen7644",
+   "label": "Delete",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "ai",
+   "id": "id-toolbar-btn-paste",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": "id-toolbar-btn-copystyle",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen4632",
+   "label": "Settings",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen4634",
+   "label": "Chatbot",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen4636",
+   "label": "Summarization",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "ai",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": null,
+   "label": "Translation",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "ai",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": null,
+   "label": "Grammar &Spelling",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen4652",
+   "label": "Create AIassistant",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen7707",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen7709",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": null,
+   "label": "Word count",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "ai",
+   "id": null,
+   "label": "English – United States",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen989",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen987",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": "status-btn-multiple-pages",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": "btn-zoom-topage",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": "btn-zoom-towidth",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": "btn-zoom-down",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": "btn-zoom-up",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen7600",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen7611",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen7656",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen7632",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen7634",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen7636",
+   "label": "Run",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen7638",
+   "label": "Debug",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen7640",
+   "label": "Copy",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen7642",
+   "label": "Rename",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "ai",
+   "id": "asc-gen7644",
+   "label": "Delete",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "header-footer",
+   "id": "id-toolbar-btn-paste",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": "id-toolbar-btn-copystyle",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": null,
+   "label": "Header &Footer",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "header-footer",
+   "id": null,
+   "label": "PageNumber",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "header-footer",
+   "id": "tlbtn-insertdatetime-1",
+   "label": "Date &Time",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "header-footer",
+   "id": "tlbtn-insertfield-1",
+   "label": "Field",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "header-footer",
+   "id": null,
+   "label": "Image",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "header-footer",
+   "id": "asc-gen673",
+   "label": "Close",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "header-footer",
+   "id": "asc-gen7707",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": "asc-gen7709",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": null,
+   "label": "Word count",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "header-footer",
+   "id": null,
+   "label": "English – United States",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "header-footer",
+   "id": "asc-gen989",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": "asc-gen987",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": "status-btn-multiple-pages",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": "btn-zoom-topage",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": "btn-zoom-towidth",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": "btn-zoom-down",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": "btn-zoom-up",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": "asc-gen7600",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": "asc-gen7611",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": null,
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": "asc-gen7656",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": "asc-gen7632",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": "asc-gen7634",
+   "label": null,
+   "opens": "none"
+  },
+  {
+   "tab": "header-footer",
+   "id": "asc-gen7636",
+   "label": "Run",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "header-footer",
+   "id": "asc-gen7638",
+   "label": "Debug",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "header-footer",
+   "id": "asc-gen7640",
+   "label": "Copy",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "header-footer",
+   "id": "asc-gen7642",
+   "label": "Rename",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  },
+  {
+   "tab": "header-footer",
+   "id": "asc-gen7644",
+   "label": "Delete",
+   "opens": "modal",
+   "surface_id": null,
+   "cls": "modals-mask",
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "inside_vp": true,
+   "controls": 0
+  }
+ ]
+}

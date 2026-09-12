@@ -119,6 +119,8 @@ MAP = {
     "footnote": {"real": "references:btn-footnote"},
     "insert-footnote": {"real": "references:btn-footnote"},
     "insert-endnote": {"real": "references:btn-endnote"},
+    "bookmark": {"real": "insert:btn-bookmark"},
+    "asc-gen885": {"real": "insert:btn-bookmark"},   # OO Bookmark button id fallback
     "insert-image": {"real": "insert:btn-image"},
     "insert-table": {"real": "insert:btn-table"},
     "insert-shape": {"real": "insertobject"},
@@ -219,7 +221,8 @@ MAP = {
     "translation": {"real": "aitranslate"},
     "interfacetheme": {"covered": "view:btn-view-theme"},
     "insertdatetime": {"covered": "hf:btn-hf-datetime"},
-    "asc-gen673": {"real": "togglesameasprev"},
+    "asc-gen885": {"real": "insert:btn-bookmark"},   # OO Bookmark -> the real bookmark dialog button
+    "asc-gen673": {"real": "header-footer:btn-hf-close"},  # OO header/footer Close -> WO hf close
     "asc-gen668": {"deferred": "no-canvas-layer"},
     "asc-gen670": {"deferred": "no-canvas-layer"},
     "asc-gen541": {"deferred": "host-layer-permissions"},
@@ -235,7 +238,6 @@ MAP = {
     "asc-gen4586": {"covered": "plugins:plugins.browse"},
     "asc-gen4588": {"covered": "plugins:plugins.browse"},
     "asc-gen4590": {"covered": "plugins:plugins.browse"},
-    "asc-gen885": {"real": "insertcaption"},
     # F-089-style decision (2026-09-11): bibliography citation is a field, like
     # ref.index (asc-gen889) — needs the field engine -> future iteration. The
     # WO citation button stays a loud data-stub until then; OO side resolves deferred.
