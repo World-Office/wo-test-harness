@@ -359,6 +359,18 @@ def run_fx(server: Path, out: Path) -> int:
     return 0  # non-zero exit inside capture raises; green run writes fx-wo.json
 
 
+def run_geometry(server: Path, out: Path) -> int:
+    """Geometry census (geom-wo.cjs) + gate vs the committed golden
+    (geom-wo.json) with structural invariants. Returns 0 iff no drift beyond
+    tolerance and no overlap/alignment/ordering violations."""
+    capture(server, out, script="geom-wo.cjs")
+    return subprocess.run(
+        [sys.executable, "geom-diff.py", "--wo", str(out / "geom-wo.json"),
+         "--gold", str(HERE / "geom-wo.json")],
+        cwd=HERE,
+    ).returncode
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--skip-capture", action="store_true", help="reuse existing census-wo.json")
@@ -369,6 +381,8 @@ def main() -> int:
                     help="capture the click-through interaction census + gate on missing/type/geometry gaps")
     ap.add_argument("--fx", action="store_true",
                     help="capture the functional census + gate on silent/unclickable controls (loud-stub gate)")
+    ap.add_argument("--geometry", action="store_true",
+                    help="capture the geometry census + gate on drift/overlaps vs the committed golden")
     ap.add_argument("--self-test", action="store_true", help="run the delta-logic self-test and exit")
     args = ap.parse_args()
 
@@ -410,6 +424,13 @@ def main() -> int:
                 print("      fx: functional census (loud-stub gate)")
                 try:
                     run_fx(server, tmp)
+                except SystemExit:
+                    rc = 1
+            if args.geometry:
+                print("      geometry: drift + structural invariants vs golden")
+                try:
+                    if run_geometry(server, tmp) != 0:
+                        rc = 1
                 except SystemExit:
                     rc = 1
             if args.seed_check:
@@ -462,6 +483,14 @@ def main() -> int:
         except SystemExit:
             fx_rc = 1
 
+    geom_rc = 0
+    if args.geometry:
+        print("      geometry: drift + structural invariants (geom-wo.cjs + geom-diff.py)")
+        try:
+            geom_rc = run_geometry(server, CENSUS)
+        except SystemExit:
+            geom_rc = 1
+
     seed_rc = 0
     if args.seed_check:
         print("      seed: regenerate graph + drift gate")
@@ -469,7 +498,7 @@ def main() -> int:
         if seed_rc != 0:
             print("      seed --check FAILED (commit the regenerated graph.json)")
 
-    return 0 if (ok and seed_rc == 0 and interact_rc == 0 and fx_rc == 0) else 1
+    return 0 if (ok and seed_rc == 0 and interact_rc == 0 and fx_rc == 0 and geom_rc == 0) else 1
 
 
 if __name__ == "__main__":
