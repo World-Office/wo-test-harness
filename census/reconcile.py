@@ -350,6 +350,15 @@ def run_interactions(server: Path, out: Path) -> int:
     ).returncode
 
 
+def run_fx(server: Path, out: Path) -> int:
+    """Functional census (fx-wo.cjs): every ribbon control must produce an
+    observable effect (doc/menu/dialog/panel/status/chrome) when clicked.
+    fx-wo.cjs exits non-zero on silent/unclickable beyond the documented
+    EXPECTED_SILENT precondition no-ops — the loud-stub gate."""
+    capture(server, out, script="fx-wo.cjs")
+    return 0  # non-zero exit inside capture raises; green run writes fx-wo.json
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--skip-capture", action="store_true", help="reuse existing census-wo.json")
@@ -358,6 +367,8 @@ def main() -> int:
     ap.add_argument("--check", action="store_true", help="CI gate: no writes; fail on any pending promotion/residue")
     ap.add_argument("--interactions", action="store_true",
                     help="capture the click-through interaction census + gate on missing/type/geometry gaps")
+    ap.add_argument("--fx", action="store_true",
+                    help="capture the functional census + gate on silent/unclickable controls (loud-stub gate)")
     ap.add_argument("--self-test", action="store_true", help="run the delta-logic self-test and exit")
     args = ap.parse_args()
 
@@ -394,6 +405,12 @@ def main() -> int:
             if args.interactions:
                 print("      interactions: click-through census vs OO reference")
                 if run_interactions(server, tmp) != 0:
+                    rc = 1
+            if args.fx:
+                print("      fx: functional census (loud-stub gate)")
+                try:
+                    run_fx(server, tmp)
+                except SystemExit:
                     rc = 1
             if args.seed_check:
                 print("      seed: drift gate (graph.json vs committed)")
@@ -437,6 +454,14 @@ def main() -> int:
         print("      interactions: click-through census (interact-wo.cjs)")
         interact_rc = run_interactions(server, CENSUS)
 
+    fx_rc = 0
+    if args.fx:
+        print("      fx: functional census (fx-wo.cjs, loud-stub gate)")
+        try:
+            run_fx(server, CENSUS)
+        except SystemExit:
+            fx_rc = 1
+
     seed_rc = 0
     if args.seed_check:
         print("      seed: regenerate graph + drift gate")
@@ -444,7 +469,7 @@ def main() -> int:
         if seed_rc != 0:
             print("      seed --check FAILED (commit the regenerated graph.json)")
 
-    return 0 if (ok and seed_rc == 0 and interact_rc == 0) else 1
+    return 0 if (ok and seed_rc == 0 and interact_rc == 0 and fx_rc == 0) else 1
 
 
 if __name__ == "__main__":

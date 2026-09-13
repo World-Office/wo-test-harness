@@ -1,3 +1,6 @@
 
 # generated interaction report
 interact-ledger.json
+
+# local fx/interact capture runs (goldens live at census/*.json)
+census/

@@ -1,0 +1,732 @@
+{
+ "engine": "world-office",
+ "capturedAt": "2026-09-13T05:29:25.826Z",
+ "viewport": {
+  "width": 1440,
+  "height": 900
+ },
+ "pageErrors": [],
+ "controls": [
+  {
+   "tab": "Home",
+   "key": "btn-undo",
+   "label": "Undo (Ctrl+Z)",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "font-family",
+   "label": "Font family",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "font-size",
+   "label": "Font size",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "insertUnorderedList",
+   "label": "Bullet list",
+   "effect": "doc+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "insertOrderedList",
+   "label": "Numbered list",
+   "effect": "doc+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "multilevel",
+   "label": "Multilevel list",
+   "effect": "doc+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "outdent",
+   "label": "Decrease indent",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "indent",
+   "label": "Increase indent",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "line-spacing",
+   "label": "Line spacing",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "directionRtl",
+   "label": "Right-to-left paragraph",
+   "effect": "doc+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-ribbon-collapse",
+   "label": "Show fewer toolbar buttons",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-theme",
+   "label": "Toggle dark/light theme",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "bold",
+   "label": "Bold (Ctrl+B)",
+   "effect": "doc+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "italic",
+   "label": "Italic (Ctrl+I)",
+   "effect": "doc+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "underline",
+   "label": "Underline (Ctrl+U)",
+   "effect": "doc+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "strikeThrough",
+   "label": "Strikethrough",
+   "effect": "doc+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "superscript",
+   "label": "Toolbar.SuperscriptTitle",
+   "effect": "doc+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "removeFormat",
+   "label": "Clear formatting",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "justifyLeft",
+   "label": "Align left (Ctrl+Shift+L)",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "justifyCenter",
+   "label": "Center (Ctrl+E)",
+   "effect": "doc+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "justifyRight",
+   "label": "Align right (Ctrl+R)",
+   "effect": "doc+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "justifyFull",
+   "label": "Justify (Ctrl+J)",
+   "effect": "doc+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "formatBlock",
+   "label": "Paragraph",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "smallCaps",
+   "label": "Small caps",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "code",
+   "label": "Inline code",
+   "effect": "doc+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "allCaps",
+   "label": "Uppercase",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-find",
+   "label": "Find and replace (Ctrl+F)",
+   "effect": "dialog+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "btn-table",
+   "label": "Insert table",
+   "effect": "menu+dialog",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "btn-table-ops",
+   "label": "Table actions (rows, columns, ",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "btn-image",
+   "label": "Insert image",
+   "effect": "menu+dialog",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "btn-link",
+   "label": "Insert link",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "btn-hr",
+   "label": "Insert horizontal rule",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "btn-object",
+   "label": "Insert object",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "btn-bookmark",
+   "label": "Insert bookmark",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "btn-crossref",
+   "label": "Insert cross-reference",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "btn-symbol",
+   "label": "Insert symbol",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "btn-datetime",
+   "label": "Insert date",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "btn-pagenumber",
+   "label": "Insert page number",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "btn-header",
+   "label": "Insert page header",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "btn-footer",
+   "label": "Insert page footer",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "insertObject",
+   "label": "Shape",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "insertObject",
+   "label": "Chart",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "insertObject",
+   "label": "Text art",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "toggleDropcap",
+   "label": "Drop cap",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "insertObject",
+   "label": "Text box",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "Insert",
+   "key": "link",
+   "label": "Hyperlink",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "Draw",
+   "key": "btn-ink-draw",
+   "label": "Toggle drawing mode",
+   "effect": "status+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Draw",
+   "key": "btn-ink-select",
+   "label": "Select objects",
+   "effect": "status+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Draw",
+   "key": "btn-ink-pen",
+   "label": "Draw with pen",
+   "effect": "status+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Draw",
+   "key": "btn-ink-highlighter",
+   "label": "Highlight text",
+   "effect": "status+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Draw",
+   "key": "btn-ink-eraser",
+   "label": "Erase ink",
+   "effect": "status+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Draw",
+   "key": "btn-ink-color",
+   "label": "Ink color",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "Draw",
+   "key": "btn-ink-thickness",
+   "label": "Ink thickness",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "Layout",
+   "key": "btn-page-break",
+   "label": "Insert page break",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Layout",
+   "key": "btn-section-break",
+   "label": "Insert section break",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Layout",
+   "key": "btn-columns",
+   "label": "Insert columns",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "Layout",
+   "key": "btn-page-setup",
+   "label": "Page setup",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "Layout",
+   "key": "toggleHyphenation",
+   "label": "Hyphenation",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Layout",
+   "key": "toggleLineNumbers",
+   "label": "Line numbers",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Layout",
+   "key": "toggleWatermark",
+   "label": "Watermark",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "References",
+   "key": "btn-toc",
+   "label": "Insert table of contents",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "References",
+   "key": "btn-footnote",
+   "label": "Insert footnote",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "References",
+   "key": "btn-endnote",
+   "label": "Insert endnote",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "References",
+   "key": "insertCaption",
+   "label": "Caption",
+   "effect": "doc+chrome",
+   "why": ""
+  },
+  {
+   "tab": "References",
+   "key": "insertCitation",
+   "label": "Citation",
+   "effect": "doc+chrome",
+   "why": ""
+  },
+  {
+   "tab": "References",
+   "key": "insertIndexEntry",
+   "label": "Index",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "References",
+   "key": "updateToc",
+   "label": "Update TOC",
+   "effect": "doc+status",
+   "why": ""
+  },
+  {
+   "tab": "References",
+   "key": "openCrossref",
+   "label": "Cross-reference",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "Collaboration",
+   "key": "btn-track-changes",
+   "label": "Track changes",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "Collaboration",
+   "key": "btn-review-changes",
+   "label": "Review changes",
+   "effect": "panel",
+   "why": ""
+  },
+  {
+   "tab": "Collaboration",
+   "key": "btn-comment",
+   "label": "Add comment",
+   "effect": "dialog+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Collaboration",
+   "key": "btn-comments",
+   "label": "Show comments",
+   "effect": "panel",
+   "why": ""
+  },
+  {
+   "tab": "Collaboration",
+   "key": "btn-chat-toggle",
+   "label": "Chat",
+   "effect": "panel+status",
+   "why": ""
+  },
+  {
+   "tab": "Collaboration",
+   "key": "compareVersion",
+   "label": "Compare",
+   "effect": "dialog+status",
+   "why": ""
+  },
+  {
+   "tab": "Collaboration",
+   "key": "displayMode",
+   "label": "Display mode",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "Collaboration",
+   "key": "prevTrackedChange",
+   "label": "Previous change",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "Collaboration",
+   "key": "nextTrackedChange",
+   "label": "Next change",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "Protection",
+   "key": "protectDialog",
+   "label": "Protect with password",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "Protection",
+   "key": "restrictEditing",
+   "label": "Restrict editing",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "View",
+   "key": "displayMode",
+   "label": "Document view",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "View",
+   "key": "btn-ruler-toggle",
+   "label": "Ruler",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "View",
+   "key": "btn-gridlines",
+   "label": "Gridlines",
+   "effect": "status+chrome",
+   "why": ""
+  },
+  {
+   "tab": "View",
+   "key": "btn-nav-toggle",
+   "label": "Navigation",
+   "effect": "panel+status",
+   "why": ""
+  },
+  {
+   "tab": "View",
+   "key": "btn-view-theme",
+   "label": "Theme",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "View",
+   "key": "btn-view-fit",
+   "label": "Fit page",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "Plugins",
+   "key": "browsePlugins",
+   "label": "Browse plugins",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "Plugins",
+   "key": "managePlugins",
+   "label": "Manage plugins",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "Plugins",
+   "key": "btn-ocr",
+   "label": "OCR",
+   "effect": "dialog+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Plugins",
+   "key": "photoEditor",
+   "label": "Photo editor",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "AI",
+   "key": "btn-ai-review-tab",
+   "label": "AI changes",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "AI",
+   "key": "aiSummarize",
+   "label": "Summarize",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "AI",
+   "key": "aiTranslate",
+   "label": "Translate",
+   "effect": "dialog+chrome",
+   "why": ""
+  },
+  {
+   "tab": "AI",
+   "key": "aiRewrite",
+   "label": "Rewrite",
+   "effect": "dialog+chrome",
+   "why": ""
+  },
+  {
+   "tab": "AI",
+   "key": "btn-ai-grammar",
+   "label": "Grammar",
+   "effect": "dialog+chrome",
+   "why": ""
+  },
+  {
+   "tab": "AI",
+   "key": "btn-ai-assistant",
+   "label": "AI assistant",
+   "effect": "dialog",
+   "why": ""
+  },
+  {
+   "tab": "Header & Footer",
+   "key": "btn-hf-close",
+   "label": "Close Header & Footer",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "Header & Footer",
+   "key": "btn-hf-pagenumber",
+   "label": "Page number",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Header & Footer",
+   "key": "btn-hf-datetime",
+   "label": "Date & time",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Header & Footer",
+   "key": "toggleDifferentFirst",
+   "label": "Different First Page",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Header & Footer",
+   "key": "toggleOddEven",
+   "label": "Different Odd & Even",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Header & Footer",
+   "key": "toggleHeaderFromTop",
+   "label": "Header from Top",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Header & Footer",
+   "key": "toggleFooterFromBottom",
+   "label": "Footer from Bottom",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Header & Footer",
+   "key": "toggleSameAsPrev",
+   "label": "Same as previous",
+   "effect": "status",
+   "why": ""
+  }
+ ]
+}

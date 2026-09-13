@@ -108,7 +108,7 @@ jobs:
       - name: One-run ledger gate (fresh capture + diff + gate + seed)
         env:
           WO_SERVER_DIR: ${{ github.workspace }}/server
-        run: python3 census/reconcile.py --check --seed-check --interactions
+        run: python3 census/reconcile.py --check --seed-check --interactions --fx
 
 
   cross-engine-fidelity:
