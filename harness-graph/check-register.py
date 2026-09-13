@@ -26,10 +26,10 @@ def main() -> int:
         print("usage: check-register.py F-xxx [F-yyy ...]", file=sys.stderr)
         return 2
 
-    g = json.loads((HERE / "graph.json").read_text())
+    g = json.loads((HERE / "graph.json").read_text(encoding="utf-8"))
     covered = {e["to"] for e in g["edges"] if e["type"] == "COVERS"}
 
-    reg = (HERE / "features.yaml").read_text()
+    reg = (HERE / "features.yaml").read_text(encoding="utf-8")
     # one block per feature: from '  - {id: F-xxx' up to the next feature id
     blocks = re.split(r"(?=^  - \{id: F-)", reg, flags=re.M)
     div = set()

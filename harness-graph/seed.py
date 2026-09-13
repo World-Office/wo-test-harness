@@ -87,7 +87,7 @@ RUN_CMD = re.compile(r'runCommand\(\s*"([A-Za-z0-9_-]+)"')
 
 
 def build_graph(paths: dict[str, Path]) -> dict:
-    features = yaml.safe_load(paths["features"].read_text())["features"]
+    features = yaml.safe_load(paths["features"].read_text(encoding="utf-8"))["features"]
 
     nodes: list[dict] = []
     edges: list[dict] = []
@@ -106,8 +106,8 @@ def build_graph(paths: dict[str, Path]) -> dict:
             edges.append(e)
 
     # ── inventory: commands (editor.js) + surfaces (index.html) ──────────────
-    js = paths["editor_js"].read_text()
-    html = paths["index_html"].read_text()
+    js = paths["editor_js"].read_text(encoding="utf-8")
+    html = paths["index_html"].read_text(encoding="utf-8")
 
     js_cmds = {
         cmd: f"editor.js:runCommand('{cmd}')"
@@ -126,7 +126,7 @@ def build_graph(paths: dict[str, Path]) -> dict:
         if not root.exists():
             continue
         for path in sorted(root.glob("test_*.py")):
-            text = path.read_text()
+            text = path.read_text(encoding="utf-8")
             rel = path.relative_to(SERVER).as_posix()
             for name in re.findall(r"^def (test_[A-Za-z0-9_]+)", text, re.M):
                 tid = f"{rel}::{name}"
@@ -238,7 +238,7 @@ def main() -> int:
         return 0
 
     if args.check:
-        committed = json.loads(DEFAULTS["out"].read_text()) if DEFAULTS["out"].exists() else None
+        committed = json.loads(DEFAULTS["out"].read_text(encoding="utf-8")) if DEFAULTS["out"].exists() else None
         if committed is None:
             print(f"FAIL: {DEFAULTS['out']} missing — commit a fresh graph.json", file=sys.stderr)
             return 1
@@ -250,7 +250,7 @@ def main() -> int:
         print(f"OK: graph.json in sync ({g['stats']})")
         return 0
 
-    DEFAULTS["out"].write_text(canonical(g) + "\n")
+    DEFAULTS["out"].write_text(canonical(g) + "\n", encoding="utf-8")
     print(f"wrote {DEFAULTS['out']} ({g['stats']})")
     if args.report:
         print(report(g))

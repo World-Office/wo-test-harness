@@ -32,11 +32,11 @@ _ap.add_argument("--oo", default=None)
 _ap.add_argument("--ledger", default=None)
 _ap.add_argument("--out", default=None)
 _args, _ = _ap.parse_known_args()
-wo = json.load(open(_args.wo or (CENSUS / "interact-wo.json")))
-oo = json.load(open(_args.oo or (CENSUS / "census-oo-interactions.json")))
-led = json.load(open(_args.ledger or (CENSUS / "ledger.json")))
+wo = json.load(open(_args.wo or (CENSUS / "interact-wo.json"), encoding="utf-8"))
+oo = json.load(open(_args.oo or (CENSUS / "census-oo-interactions.json"), encoding="utf-8"))
+led = json.load(open(_args.ledger or (CENSUS / "ledger.json"), encoding="utf-8"))
 OUT = Path(_args.out) if _args.out else HERE
-DIVERGENCES = json.load(open(HERE / "interact-divergences.json"))
+DIVERGENCES = json.load(open(HERE / "interact-divergences.json", encoding="utf-8"))
 
 
 def main() -> int:

@@ -82,7 +82,7 @@ def load_graph() -> dict:
     if not GRAPH.exists():
         print(f"error: {GRAPH} missing — run seed.py", file=sys.stderr)
         sys.exit(2)
-    g = json.loads(GRAPH.read_text())
+    g = json.loads(GRAPH.read_text(encoding="utf-8"))
     # sanity: the committed projection must not be stale
     rc = subprocess.run(
         [sys.executable, str(HERE / "seed.py"), "--check"],
