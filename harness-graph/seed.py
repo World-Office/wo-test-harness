@@ -127,7 +127,7 @@ def build_graph(paths: dict[str, Path]) -> dict:
             continue
         for path in sorted(root.glob("test_*.py")):
             text = path.read_text()
-            rel = str(path.relative_to(SERVER))
+            rel = path.relative_to(SERVER).as_posix()
             for name in re.findall(r"^def (test_[A-Za-z0-9_]+)", text, re.M):
                 tid = f"{rel}::{name}"
                 node("Test", tid, path=rel, layer="e2e")
