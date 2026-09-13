@@ -71,6 +71,10 @@ WO_SERVER_DIR=/path/to/World-Office/server /usr/bin/python3 harness-graph/seed.p
 # Unified self-test
 WO_SERVER_DIR=/path/to/World-Office/server bash tf-test-harness/test-harness.sh --self-test
 
+# Full CI gate (ledger + interactions + fx functional + geometry)
+WO_SERVER_DIR=/path/to/World-Office/server /usr/bin/python3 census/reconcile.py \
+  --check --seed-check --interactions --fx --geometry
+
 # Cross-engine fidelity (conformance-docx included in workspace)
 cd .
 cargo test -p wo-conformance
