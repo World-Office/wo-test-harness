@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-09-12T17:26:59.318Z",
+ "capturedAt": "2026-09-13T03:22:13.957Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
@@ -1808,18 +1808,6 @@
      "label": "Language options",
      "enabled": true,
      "x": 1077
-    },
-    {
-     "id": null,
-     "label": "Toggle comments panel",
-     "enabled": true,
-     "x": 1368
-    },
-    {
-     "id": null,
-     "label": "Add comment",
-     "enabled": true,
-     "x": 1405
     }
    ],
    "combos": []
