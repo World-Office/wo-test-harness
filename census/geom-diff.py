@@ -66,11 +66,14 @@ def check_invariants(tabs, errors):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--wo", required=True, help="live geom-wo.json")
-    ap.add_argument("--gold", default=str(Path(__file__).parent / "geom-wo.json"), help="committed golden")
+    ap.add_argument("--gold", default=None, help="committed golden (default: geom-wo.<sys.platform>.json, fallback geom-wo.json)")
     args = ap.parse_args()
 
-    live = json.loads(Path(args.wo).read_text())
-    gold = json.loads(Path(args.gold).read_text())
+    default = Path(__file__).parent / f"geom-wo.{sys.platform}.json"
+    gold_path = Path(args.gold) if args.gold else (default if default.exists() else Path(__file__).parent / "geom-wo.json")
+    print(f"geom-gold: {gold_path.name}")
+    live = json.loads(Path(args.wo).read_text(encoding="utf-8"))
+    gold = json.loads(gold_path.read_text(encoding="utf-8"))
     errors = []
 
     # structural invariants on the live capture

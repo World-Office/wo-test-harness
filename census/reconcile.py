@@ -143,9 +143,15 @@ def capture(server: Path, out: Path, script: str = "census-wo.cjs") -> str:
                 doc_id = json.loads(r.read())["doc_id"]
             url = f"http://127.0.0.1:{port}/editor/{doc_id}"
             out.mkdir(parents=True, exist_ok=True)
-            npm_root = subprocess.run(
-                ["npm", "root", "-g"], capture_output=True, text=True, check=False
-            ).stdout.strip()
+            try:
+                npm_root = subprocess.run(
+                    ["npm", "root", "-g"], capture_output=True, text=True, check=False,
+                    timeout=15,
+                ).stdout.strip()
+            except (OSError, subprocess.SubprocessError):
+                # no npm on PATH (Windows can't CreateProcess-search npm.cmd) —
+                # census/node_modules already carries playwright
+                npm_root = ""
             env = {**os.environ, "CENSUS_WO_URL": url, "CENSUS_OUT": str(out)}
             if npm_root:
                 env["NODE_PATH"] = npm_root
@@ -197,7 +203,7 @@ def diff_promotions(prev: dict, curr: dict) -> list[tuple[str, str, str]]:
 def read_map_rows() -> dict[str, str]:
     """MAP key -> stub ref, for keys currently declared as stubs."""
     rows = {}
-    src = DIFF_PY.read_text()
+    src = DIFF_PY.read_text(encoding="utf-8")
     for m in MAP_ROW.finditer(src):
         rows[m.group(2)] = m.group(3)
     return rows
@@ -207,7 +213,7 @@ def apply_map_flips(flips: list[tuple[str, str, str]]) -> list[str]:
     """Rewrite every {"stub": <ref>} row whose ref was promoted, to
     {"real": <cmd>}. Returns human-readable AUTO flip lines."""
     changed = []
-    src = DIFF_PY.read_text()
+    src = DIFF_PY.read_text(encoding="utf-8")
     lines = src.split("\n")
     touched = False
     for i, ln in enumerate(lines):
@@ -236,7 +242,7 @@ def run_join(wo: Path, ledger_out: Path) -> dict:
         cwd=HERE,
         check=True,
     )
-    return json.load(open(ledger_out))
+    return json.load(open(ledger_out, encoding="utf-8"))
 
 
 def gate(ledger: dict) -> bool:
@@ -255,7 +261,7 @@ def apply_register(flips: list[tuple[str, str, str]]) -> list[str]:
     """Flip parity to full on features.yaml rows whose divergence still
     mentions the promoted data-stub ref. Best effort; unknown refs warn."""
     path = HARNESS / "harness-graph" / "features.yaml"
-    text = path.read_text()
+    text = path.read_text(encoding="utf-8")
     refs = {fl[1] for fl in flips}
     changed = []
     for ref in sorted(refs):
@@ -364,9 +370,12 @@ def run_geometry(server: Path, out: Path) -> int:
     (geom-wo.json) with structural invariants. Returns 0 iff no drift beyond
     tolerance and no overlap/alignment/ordering violations."""
     capture(server, out, script="geom-wo.cjs")
+    gold = HERE / f"geom-wo.{sys.platform}.json"
+    if not gold.exists():
+        gold = HERE / "geom-wo.json"
     return subprocess.run(
         [sys.executable, "geom-diff.py", "--wo", str(out / "geom-wo.json"),
-         "--gold", str(HERE / "geom-wo.json")],
+         "--gold", str(gold)],
         cwd=HERE,
     ).returncode
 
@@ -402,8 +411,8 @@ def main() -> int:
                 print(f"[1/4] capture (check): spawning docserver from {server} …")
                 print(f"      captured via {capture(server, tmp)}")
                 wo = tmp / "census-wo.json"
-            prev = json.loads(WO_PREV.read_text()) if WO_PREV.exists() else {"tabs": {}, "surfaces": {}}
-            curr = json.load(open(wo))
+            prev = json.loads(WO_PREV.read_text(encoding="utf-8")) if WO_PREV.exists() else {"tabs": {}, "surfaces": {}}
+            curr = json.load(open(wo, encoding="utf-8"))
             flips = diff_promotions(prev, curr)
             if flips:
                 print("[2/4] diff: FAIL — unregistered promotions (run reconcile.py and commit):")
@@ -447,8 +456,8 @@ def main() -> int:
         print("[1/4] capture: --skip-capture, using existing census-wo.json")
 
     prev_exists = WO_PREV.exists()
-    prev = json.loads(WO_PREV.read_text()) if prev_exists else {"tabs": {}, "surfaces": {}}
-    curr = json.load(open(WO_JSON))
+    prev = json.loads(WO_PREV.read_text(encoding="utf-8")) if prev_exists else {"tabs": {}, "surfaces": {}}
+    curr = json.load(open(WO_JSON, encoding="utf-8"))
 
     print("[2/4] diff: promotions since last reconciled capture")
     flips = diff_promotions(prev, curr) if prev_exists else []

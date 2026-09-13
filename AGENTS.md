@@ -93,21 +93,21 @@ the gate must run inside `opencloud-docserver`'s venv (once: `uv sync --frozen`)
 ```powershell
 cd <server>/opencloud-docserver
 cd <harness>/census; npm install --no-save playwright@1.61.1   # gitignored
-# shim: copy node.exe to %TEMP%\npm-shim\npm.exe, prepend that dir to $env:PATH
-# (reconcile.py calls `npm root -g`; Windows CreateProcess won't PATH-search npm.cmd)
-$env:PATH = "$env:TEMP\npm-shim;" + $env:PATH
-$env:PYTHONUTF8 = '1'        # census JSONs are UTF-8; Windows python defaults cp1252
 $env:WO_SERVER_DIR = 'C:/path/to/server'
 & uv run --frozen python <harness>/census/reconcile.py --check --seed-check --interactions --fx --geometry
 ```
 
 Run the gate via PowerShell, not Git Bash: MSYS2 mangles `;`-separated env vars
-when spawning native python (PATH becomes just `C`). Browser builds come from the
-system Playwright cache (chromium-1228 = pin 1.61.1).
+when spawning native python (PATH becomes just `C`). No npm/PYTHONUTF8 setup
+needed — `npm root -g` is best-effort (census/node_modules carries playwright)
+and all file I/O is explicit UTF-8. Browser builds come from the system Playwright
+cache (chromium-1228 = pin 1.61.1).
 
-Geometry note: the committed golden is captured on the Linux rig, so on other
-hosts text-driven statusbar controls (word-count, collab-badge, status) can show
->4px font-metric drift — environmental, treat the rig as authoritative.
+Geometry note: `geom-wo.json` is the Linux-rig golden; hosts whose fonts differ
+(text metrics) commit their own `geom-wo.<sys.platform>.json` via a deliberate
+recapture — the gate picks it automatically and keeps drift strict (no slack).
+
+## Conventions
 
 ## Conventions
 

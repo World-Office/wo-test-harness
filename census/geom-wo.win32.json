@@ -1,0 +1,1396 @@
+{
+ "engine": "world-office",
+ "capturedAt": "2026-09-13T09:43:40.159Z",
+ "viewport": {
+  "width": 1440,
+  "height": 900
+ },
+ "tabs": {
+  "Home": [
+   {
+    "key": "btn-undo",
+    "label": "Undo (Ctrl+Z)",
+    "top": true,
+    "i": 0,
+    "rect": [
+     15,
+     59.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-redo",
+    "label": "Redo (Ctrl+Y)",
+    "top": true,
+    "i": 1,
+    "rect": [
+     49,
+     59.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "font-family",
+    "label": "Font family",
+    "top": true,
+    "i": 2,
+    "rect": [
+     77.5,
+     65.5,
+     105,
+     20
+    ]
+   },
+   {
+    "key": "font-size",
+    "label": "Font size",
+    "top": true,
+    "i": 10,
+    "rect": [
+     221.5,
+     65.5,
+     17,
+     20
+    ]
+   },
+   {
+    "key": "insertUnorderedList",
+    "label": "Bullet list",
+    "top": true,
+    "i": 19,
+    "rect": [
+     379,
+     59.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "insertOrderedList",
+    "label": "Numbered list",
+    "top": true,
+    "i": 24,
+    "rect": [
+     419,
+     59.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "multilevel#0",
+    "label": "Multilevel list",
+    "top": true,
+    "i": 30,
+    "rect": [
+     464.5,
+     65,
+     23,
+     21
+    ]
+   },
+   {
+    "key": "outdent",
+    "label": "Decrease indent",
+    "top": true,
+    "i": 31,
+    "rect": [
+     499,
+     59.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "indent",
+    "label": "Increase indent",
+    "top": true,
+    "i": 32,
+    "rect": [
+     539,
+     59.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "line-spacing",
+    "label": "Line spacing",
+    "top": true,
+    "i": 33,
+    "rect": [
+     568,
+     65.5,
+     56,
+     20
+    ]
+   },
+   {
+    "key": "directionRtl#0",
+    "label": "Right-to-left paragraph",
+    "top": true,
+    "i": 34,
+    "rect": [
+     627,
+     59.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-ribbon-collapse",
+    "label": "Show fewer toolbar buttons",
+    "top": true,
+    "i": 57,
+    "rect": [
+     1339,
+     64.5,
+     32,
+     22
+    ]
+   },
+   {
+    "key": "btn-theme",
+    "label": "Toggle dark/light theme",
+    "top": true,
+    "i": 58,
+    "rect": [
+     1375,
+     59.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "bold",
+    "label": "Bold (Ctrl+B)",
+    "top": true,
+    "i": 59,
+    "rect": [
+     82,
+     104,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "italic",
+    "label": "Italic (Ctrl+I)",
+    "top": true,
+    "i": 60,
+    "rect": [
+     110,
+     104,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "underline",
+    "label": "Underline (Ctrl+U)",
+    "top": true,
+    "i": 61,
+    "rect": [
+     138,
+     104,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "strikeThrough",
+    "label": "Strikethrough",
+    "top": true,
+    "i": 62,
+    "rect": [
+     166,
+     104,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "superscript#0",
+    "label": "Toolbar.SuperscriptTitle",
+    "top": true,
+    "i": 63,
+    "rect": [
+     194,
+     104,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "removeFormat",
+    "label": "Clear formatting",
+    "top": true,
+    "i": 67,
+    "rect": [
+     334,
+     104,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "justifyLeft",
+    "label": "Align left (Ctrl+Shift+L)",
+    "top": true,
+    "i": 68,
+    "rect": [
+     379,
+     104,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "justifyCenter",
+    "label": "Center (Ctrl+E)",
+    "top": true,
+    "i": 69,
+    "rect": [
+     419,
+     104,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "justifyRight",
+    "label": "Align right (Ctrl+R)",
+    "top": true,
+    "i": 70,
+    "rect": [
+     459,
+     104,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "justifyFull",
+    "label": "Justify (Ctrl+J)",
+    "top": true,
+    "i": 71,
+    "rect": [
+     499,
+     104,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "formatBlock#5",
+    "label": "Paragraph",
+    "top": true,
+    "i": 72,
+    "rect": [
+     539,
+     104,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "smallCaps",
+    "label": "Small caps",
+    "top": true,
+    "i": 73,
+    "rect": [
+     578.5,
+     104,
+     35.5,
+     32
+    ]
+   },
+   {
+    "key": "code",
+    "label": "Inline code",
+    "top": true,
+    "i": 74,
+    "rect": [
+     615,
+     104,
+     34.5,
+     32
+    ]
+   },
+   {
+    "key": "allCaps",
+    "label": "Uppercase",
+    "top": true,
+    "i": 75,
+    "rect": [
+     650,
+     104,
+     36,
+     32
+    ]
+   },
+   {
+    "key": "btn-find",
+    "label": "Find and replace (Ctrl+F)",
+    "top": true,
+    "i": 76,
+    "rect": [
+     1323,
+     104,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-fullscreen",
+    "label": "Toggle fullscreen",
+    "top": true,
+    "i": 77,
+    "rect": [
+     1379.5,
+     108.5,
+     25,
+     23
+    ]
+   }
+  ],
+  "Insert": [
+   {
+    "key": "btn-table",
+    "label": "Insert table",
+    "top": true,
+    "i": 0,
+    "rect": [
+     12,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-table-ops",
+    "label": "Table actions (rows, columns, me",
+    "top": true,
+    "i": 1,
+    "rect": [
+     48,
+     81.5,
+     43.5,
+     32
+    ]
+   },
+   {
+    "key": "btn-image",
+    "label": "Insert image",
+    "top": true,
+    "i": 2,
+    "rect": [
+     93.5,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-link",
+    "label": "Insert link",
+    "top": true,
+    "i": 3,
+    "rect": [
+     129.5,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-hr",
+    "label": "Insert horizontal rule",
+    "top": true,
+    "i": 4,
+    "rect": [
+     165.5,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-object",
+    "label": "Insert object",
+    "top": true,
+    "i": 5,
+    "rect": [
+     201.5,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-bookmark",
+    "label": "Insert bookmark",
+    "top": true,
+    "i": 6,
+    "rect": [
+     237.5,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-crossref",
+    "label": "Insert cross-reference",
+    "top": true,
+    "i": 7,
+    "rect": [
+     273.5,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-symbol",
+    "label": "Insert symbol",
+    "top": true,
+    "i": 8,
+    "rect": [
+     309.5,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-datetime",
+    "label": "Insert date",
+    "top": true,
+    "i": 9,
+    "rect": [
+     345.5,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-pagenumber",
+    "label": "Insert page number",
+    "top": true,
+    "i": 10,
+    "rect": [
+     381.5,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-header",
+    "label": "Insert page header",
+    "top": true,
+    "i": 11,
+    "rect": [
+     417.5,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-footer",
+    "label": "Insert page footer",
+    "top": true,
+    "i": 12,
+    "rect": [
+     453.5,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "insertObject#0",
+    "label": "Shape",
+    "top": true,
+    "i": 13,
+    "rect": [
+     489.5,
+     81.5,
+     58.5,
+     32
+    ]
+   },
+   {
+    "key": "insertObject#1",
+    "label": "Chart",
+    "top": true,
+    "i": 14,
+    "rect": [
+     550,
+     81.5,
+     52,
+     32
+    ]
+   },
+   {
+    "key": "insertObject#2",
+    "label": "Text art",
+    "top": true,
+    "i": 15,
+    "rect": [
+     604.5,
+     81.5,
+     64,
+     32
+    ]
+   },
+   {
+    "key": "toggleDropcap",
+    "label": "Drop cap",
+    "top": true,
+    "i": 16,
+    "rect": [
+     670.5,
+     81.5,
+     75,
+     32
+    ]
+   },
+   {
+    "key": "insertObject#3",
+    "label": "Text box",
+    "top": true,
+    "i": 17,
+    "rect": [
+     747,
+     81.5,
+     70,
+     32
+    ]
+   },
+   {
+    "key": "link",
+    "label": "Hyperlink",
+    "top": true,
+    "i": 18,
+    "rect": [
+     819.5,
+     81.5,
+     76.5,
+     32
+    ]
+   }
+  ],
+  "Draw": [
+   {
+    "key": "btn-ink-draw",
+    "label": "Toggle drawing mode",
+    "top": true,
+    "i": 0,
+    "rect": [
+     12,
+     81.5,
+     50.5,
+     32
+    ]
+   },
+   {
+    "key": "btn-ink-select",
+    "label": "Select objects",
+    "top": true,
+    "i": 1,
+    "rect": [
+     64.5,
+     81.5,
+     57,
+     32
+    ]
+   },
+   {
+    "key": "btn-ink-pen",
+    "label": "Draw with pen",
+    "top": true,
+    "i": 2,
+    "rect": [
+     123.5,
+     81.5,
+     43,
+     32
+    ]
+   },
+   {
+    "key": "btn-ink-highlighter",
+    "label": "Highlight text",
+    "top": true,
+    "i": 3,
+    "rect": [
+     168.5,
+     81.5,
+     85,
+     32
+    ]
+   },
+   {
+    "key": "btn-ink-eraser",
+    "label": "Erase ink",
+    "top": true,
+    "i": 4,
+    "rect": [
+     255.5,
+     81.5,
+     59,
+     32
+    ]
+   },
+   {
+    "key": "btn-ink-color",
+    "label": "Ink color",
+    "top": true,
+    "i": 5,
+    "rect": [
+     316.5,
+     81.5,
+     71,
+     32
+    ]
+   },
+   {
+    "key": "btn-ink-thickness",
+    "label": "Ink thickness",
+    "top": true,
+    "i": 6,
+    "rect": [
+     389.5,
+     81.5,
+     99,
+     32
+    ]
+   }
+  ],
+  "Layout": [
+   {
+    "key": "btn-page-break",
+    "label": "Insert page break",
+    "top": true,
+    "i": 0,
+    "rect": [
+     12,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-section-break",
+    "label": "Insert section break",
+    "top": true,
+    "i": 1,
+    "rect": [
+     48,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-columns",
+    "label": "Insert columns",
+    "top": true,
+    "i": 2,
+    "rect": [
+     84,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-page-setup",
+    "label": "Page setup",
+    "top": true,
+    "i": 3,
+    "rect": [
+     120,
+     81.5,
+     89,
+     32
+    ]
+   },
+   {
+    "key": "toggleHyphenation",
+    "label": "Hyphenation",
+    "top": true,
+    "i": 4,
+    "rect": [
+     211,
+     81.5,
+     96.5,
+     32
+    ]
+   },
+   {
+    "key": "toggleLineNumbers",
+    "label": "Line numbers",
+    "top": true,
+    "i": 5,
+    "rect": [
+     309.5,
+     81.5,
+     103,
+     32
+    ]
+   },
+   {
+    "key": "toggleWatermark",
+    "label": "Watermark",
+    "top": true,
+    "i": 6,
+    "rect": [
+     414.5,
+     81.5,
+     86,
+     32
+    ]
+   }
+  ],
+  "References": [
+   {
+    "key": "btn-toc",
+    "label": "Insert table of contents",
+    "top": true,
+    "i": 0,
+    "rect": [
+     12,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-footnote",
+    "label": "Insert footnote",
+    "top": true,
+    "i": 1,
+    "rect": [
+     48,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-endnote",
+    "label": "Insert endnote",
+    "top": true,
+    "i": 2,
+    "rect": [
+     84,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "insertCaption",
+    "label": "Caption",
+    "top": true,
+    "i": 3,
+    "rect": [
+     120,
+     81.5,
+     66.5,
+     32
+    ]
+   },
+   {
+    "key": "insertCitation",
+    "label": "Citation",
+    "top": true,
+    "i": 4,
+    "rect": [
+     188.5,
+     81.5,
+     65.5,
+     32
+    ]
+   },
+   {
+    "key": "insertIndexEntry",
+    "label": "Index",
+    "top": true,
+    "i": 5,
+    "rect": [
+     255.5,
+     81.5,
+     52.5,
+     32
+    ]
+   },
+   {
+    "key": "updateToc",
+    "label": "Update TOC",
+    "top": true,
+    "i": 6,
+    "rect": [
+     310,
+     81.5,
+     96,
+     32
+    ]
+   },
+   {
+    "key": "openCrossref",
+    "label": "Cross-reference",
+    "top": true,
+    "i": 7,
+    "rect": [
+     408,
+     81.5,
+     118.5,
+     32
+    ]
+   }
+  ],
+  "Collaboration": [
+   {
+    "key": "btn-track-changes",
+    "label": "Track changes",
+    "top": true,
+    "i": 0,
+    "rect": [
+     12,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-review-changes",
+    "label": "Review changes",
+    "top": true,
+    "i": 1,
+    "rect": [
+     48,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-comment",
+    "label": "Add comment",
+    "top": true,
+    "i": 2,
+    "rect": [
+     84,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-comments",
+    "label": "Show comments",
+    "top": true,
+    "i": 3,
+    "rect": [
+     120,
+     81.5,
+     34,
+     32
+    ]
+   },
+   {
+    "key": "btn-chat-toggle",
+    "label": "Chat",
+    "top": true,
+    "i": 4,
+    "rect": [
+     156,
+     81.5,
+     47.5,
+     32
+    ]
+   },
+   {
+    "key": "compareVersion",
+    "label": "Compare",
+    "top": true,
+    "i": 5,
+    "rect": [
+     205.5,
+     81.5,
+     75.5,
+     32
+    ]
+   },
+   {
+    "key": "displayMode",
+    "label": "Display mode",
+    "top": true,
+    "i": 6,
+    "rect": [
+     283,
+     81.5,
+     103,
+     32
+    ]
+   },
+   {
+    "key": "prevTrackedChange",
+    "label": "Previous change",
+    "top": true,
+    "i": 7,
+    "rect": [
+     388,
+     81.5,
+     122.5,
+     32
+    ]
+   },
+   {
+    "key": "nextTrackedChange",
+    "label": "Next change",
+    "top": true,
+    "i": 8,
+    "rect": [
+     512.5,
+     81.5,
+     96.5,
+     32
+    ]
+   }
+  ],
+  "Protection": [
+   {
+    "key": "protectDialog",
+    "label": "Protect with password",
+    "top": true,
+    "i": 0,
+    "rect": [
+     12,
+     81.5,
+     155,
+     32
+    ]
+   },
+   {
+    "key": "restrictEditing",
+    "label": "Restrict editing",
+    "top": true,
+    "i": 1,
+    "rect": [
+     169,
+     81.5,
+     110.5,
+     32
+    ]
+   }
+  ],
+  "View": [
+   {
+    "key": "displayMode",
+    "label": "Document view",
+    "top": true,
+    "i": 0,
+    "rect": [
+     12,
+     81.5,
+     113.5,
+     32
+    ]
+   },
+   {
+    "key": "btn-ruler-toggle",
+    "label": "Ruler",
+    "top": true,
+    "i": 1,
+    "rect": [
+     127.5,
+     81.5,
+     51.5,
+     32
+    ]
+   },
+   {
+    "key": "btn-gridlines",
+    "label": "Gridlines",
+    "top": true,
+    "i": 2,
+    "rect": [
+     181,
+     81.5,
+     73.5,
+     32
+    ]
+   },
+   {
+    "key": "btn-nav-toggle",
+    "label": "Navigation",
+    "top": true,
+    "i": 3,
+    "rect": [
+     256.5,
+     81.5,
+     84,
+     32
+    ]
+   },
+   {
+    "key": "btn-view-fullscreen",
+    "label": "Fullscreen",
+    "top": true,
+    "i": 4,
+    "rect": [
+     342.5,
+     81.5,
+     82.5,
+     32
+    ]
+   },
+   {
+    "key": "btn-view-theme",
+    "label": "Theme",
+    "top": true,
+    "i": 5,
+    "rect": [
+     427,
+     81.5,
+     61.5,
+     32
+    ]
+   },
+   {
+    "key": "btn-view-fit",
+    "label": "Fit page",
+    "top": true,
+    "i": 6,
+    "rect": [
+     491,
+     81.5,
+     68.5,
+     32
+    ]
+   }
+  ],
+  "Plugins": [
+   {
+    "key": "browsePlugins",
+    "label": "Browse plugins",
+    "top": true,
+    "i": 0,
+    "rect": [
+     12,
+     81.5,
+     113,
+     32
+    ]
+   },
+   {
+    "key": "managePlugins",
+    "label": "Manage plugins",
+    "top": true,
+    "i": 1,
+    "rect": [
+     127,
+     81.5,
+     117,
+     32
+    ]
+   },
+   {
+    "key": "btn-ocr",
+    "label": "OCR",
+    "top": true,
+    "i": 2,
+    "rect": [
+     246,
+     81.5,
+     49,
+     32
+    ]
+   },
+   {
+    "key": "photoEditor",
+    "label": "Photo editor",
+    "top": true,
+    "i": 3,
+    "rect": [
+     297,
+     81.5,
+     93.5,
+     32
+    ]
+   }
+  ],
+  "AI": [
+   {
+    "key": "btn-ai-review-tab",
+    "label": "AI changes",
+    "top": true,
+    "i": 0,
+    "rect": [
+     12,
+     81.5,
+     88,
+     32
+    ]
+   },
+   {
+    "key": "aiSummarize",
+    "label": "Summarize",
+    "top": true,
+    "i": 1,
+    "rect": [
+     102,
+     81.5,
+     89,
+     32
+    ]
+   },
+   {
+    "key": "aiTranslate",
+    "label": "Translate",
+    "top": true,
+    "i": 2,
+    "rect": [
+     193,
+     81.5,
+     76,
+     32
+    ]
+   },
+   {
+    "key": "aiRewrite",
+    "label": "Rewrite",
+    "top": true,
+    "i": 3,
+    "rect": [
+     270.5,
+     81.5,
+     65.5,
+     32
+    ]
+   },
+   {
+    "key": "btn-ai-grammar",
+    "label": "Grammar",
+    "top": true,
+    "i": 4,
+    "rect": [
+     338,
+     81.5,
+     77,
+     32
+    ]
+   },
+   {
+    "key": "btn-ai-assistant",
+    "label": "AI assistant",
+    "top": true,
+    "i": 5,
+    "rect": [
+     417.5,
+     81.5,
+     90.5,
+     32
+    ]
+   }
+  ],
+  "Header & Footer": [
+   {
+    "key": "btn-hf-close",
+    "label": "Close Header & Footer",
+    "top": true,
+    "i": 0,
+    "rect": [
+     12,
+     81.5,
+     161,
+     32
+    ]
+   },
+   {
+    "key": "btn-hf-pagenumber",
+    "label": "Page number",
+    "top": true,
+    "i": 1,
+    "rect": [
+     175,
+     81.5,
+     102,
+     32
+    ]
+   },
+   {
+    "key": "btn-hf-datetime",
+    "label": "Date & time",
+    "top": true,
+    "i": 2,
+    "rect": [
+     279.5,
+     81.5,
+     91,
+     32
+    ]
+   },
+   {
+    "key": "toggleDifferentFirst",
+    "label": "Different First Page",
+    "top": true,
+    "i": 3,
+    "rect": [
+     372.5,
+     81.5,
+     138.5,
+     32
+    ]
+   },
+   {
+    "key": "toggleOddEven",
+    "label": "Different Odd & Even",
+    "top": true,
+    "i": 4,
+    "rect": [
+     513,
+     81.5,
+     150,
+     32
+    ]
+   },
+   {
+    "key": "toggleHeaderFromTop",
+    "label": "Header from Top",
+    "top": true,
+    "i": 5,
+    "rect": [
+     665,
+     81.5,
+     122,
+     32
+    ]
+   },
+   {
+    "key": "toggleFooterFromBottom",
+    "label": "Footer from Bottom",
+    "top": true,
+    "i": 6,
+    "rect": [
+     789,
+     81.5,
+     138.5,
+     32
+    ]
+   },
+   {
+    "key": "toggleSameAsPrev",
+    "label": "Same as previous",
+    "top": true,
+    "i": 7,
+    "rect": [
+     929.5,
+     81.5,
+     130,
+     32
+    ]
+   }
+  ]
+ },
+ "statusbar": [
+  {
+   "key": "word-count",
+   "rect": [
+    26.5,
+    876.5,
+    114.5,
+    16
+   ]
+  },
+  {
+   "key": "collab-badge",
+   "rect": [
+    200,
+    876.5,
+    57.5,
+    16
+   ]
+  },
+  {
+   "key": "status",
+   "rect": [
+    310.5,
+    876.5,
+    32,
+    16
+   ]
+  },
+  {
+   "key": "zoom-slider",
+   "rect": [
+    1120,
+    875,
+    70,
+    18
+   ]
+  },
+  {
+   "key": "btn-zoom-out",
+   "rect": [
+    1086,
+    873.5,
+    28,
+    22
+   ]
+  },
+  {
+   "key": "btn-zoom-in",
+   "rect": [
+    1205,
+    872.5,
+    26,
+    24
+   ]
+  },
+  {
+   "key": "btn-zoom-fit",
+   "rect": [
+    1270,
+    873.5,
+    24,
+    22
+   ]
+  },
+  {
+   "key": "btn-zoom-reset",
+   "rect": [
+    1327.5,
+    873.5,
+    42.5,
+    22
+   ]
+  },
+  {
+   "key": "doc-lang",
+   "rect": [
+    944,
+    876.5,
+    124,
+    16
+   ]
+  },
+  {
+   "key": "doc-lang-caret",
+   "rect": [
+    1075,
+    880,
+    9.5,
+    9
+   ]
+  }
+ ]
+}
