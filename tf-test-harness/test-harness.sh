@@ -228,7 +228,7 @@ cmd_self_test() {
   info "self-test: coverage + mutation tooling present"
   ( cd "$DOCSERVER_DIR" && uv run --frozen python -c "import pytest_cov" ) \
     || die "pytest-cov missing (coverage gate would crash)"
-  /usr/bin/python3 -m py_compile "$DOCSERVER_DIR/scripts/mutation-test.py" \
+  "$PYTHON" -m py_compile "$DOCSERVER_DIR/scripts/mutation-test.py" \
     || die "mutation-test.py has a syntax error"
   ok "coverage + mutation tooling"
 
