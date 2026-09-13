@@ -84,6 +84,31 @@ cargo build -p wo-conformance-docx --bin wo-render-ir
 # into the job and runs seed.py --check / check-register.py / test-harness.sh
 ```
 
+## Windows host
+
+`/usr/bin/python3` is just `python`. The docserver deps (python-docx, uvicorn)
+come from the server's uv project, and `reconcile.py` spawns `sys.executable`, so
+the gate must run inside `opencloud-docserver`'s venv (once: `uv sync --frozen`):
+
+```powershell
+cd <server>/opencloud-docserver
+cd <harness>/census; npm install --no-save playwright@1.61.1   # gitignored
+# shim: copy node.exe to %TEMP%\npm-shim\npm.exe, prepend that dir to $env:PATH
+# (reconcile.py calls `npm root -g`; Windows CreateProcess won't PATH-search npm.cmd)
+$env:PATH = "$env:TEMP\npm-shim;" + $env:PATH
+$env:PYTHONUTF8 = '1'        # census JSONs are UTF-8; Windows python defaults cp1252
+$env:WO_SERVER_DIR = 'C:/path/to/server'
+& uv run --frozen python <harness>/census/reconcile.py --check --seed-check --interactions --fx --geometry
+```
+
+Run the gate via PowerShell, not Git Bash: MSYS2 mangles `;`-separated env vars
+when spawning native python (PATH becomes just `C`). Browser builds come from the
+system Playwright cache (chromium-1228 = pin 1.61.1).
+
+Geometry note: the committed golden is captured on the Linux rig, so on other
+hosts text-driven statusbar controls (word-count, collab-badge, status) can show
+>4px font-metric drift — environmental, treat the rig as authoritative.
+
 ## Conventions
 
 - `/usr/bin/python3` — the default `python3` shim on this machine is broken;
