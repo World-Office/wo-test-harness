@@ -95,6 +95,20 @@ wo-test-harness/
   (panel stays none). Note the committed `census-react.json` is captured
   from the locally-built bundle at b2c1c282 (post-fix); it is a WO-side
   golden — parity against OO backstage still needs the rig-side OO capture.
+- **OO backstage reference — rig-side capture spec.** OO's File menu is a
+  full-screen backstage (Create New / Open Recent / Open / Browse Files /
+  Document Info / Save Copy as / Download as / Print / Back…). The public
+  OO endpoints (open.onlyoffice.com, documentserver /example/) do NOT expose
+  a login-free editor (hcaptcha / 404 / dev landing) — capture must run on
+  the rig against docker OO. Extend `census-oo.cjs` with a `backstage` tab:
+  after editor ready (`#header-panel`), click the file trigger (`.menuFile`,
+  `#id-menu-file`, or a header button whose label starts with "File"), wait
+  for the panel (`#editor-menu`, `.backstage`, `.menuFileItems`), enumerate
+  every visible `button, .item, li` as `{id, icon, label, enabled}` and
+  record under `tabs["backstage"]` — same schema as the ribbon tabs. The
+  census-diff join is OO-tab-driven, so a `backstage` tab enters the ledger
+  automatically; wire its tokens into MAP/synonyms (OO "Download as" → WO
+  `menu-file` Export / React "Download as...") the first time it lands.
   Playwright pitfall: page-side logic must be REAL functions passed to
   `page.evaluate`, never strings-as-expressions (evaluates to a function
   value → clicks nothing). Command-wired buttons dispatch via the bus;
