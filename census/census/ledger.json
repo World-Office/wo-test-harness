@@ -2863,8 +2863,9 @@
    "label": "PhotoEditor",
    "enabled": true,
    "token": "photoeditor",
-   "status": "deferred",
-   "deferred": "external-service-future-iteration"
+   "status": "real",
+   "wo": "photoEditor",
+   "wo_tab": "plugins"
   },
   {
    "tab": "plugins",
@@ -2896,8 +2897,9 @@
    "label": "OCR",
    "enabled": true,
    "token": "ocr",
-   "status": "deferred",
-   "deferred": "external-service-future-iteration"
+   "status": "real",
+   "wo": "btn-ocr",
+   "wo_tab": "plugins"
   },
   {
    "tab": "plugins",
@@ -3857,8 +3859,8 @@
  ],
  "counts": {
   "covered": 90,
-  "real": 92,
-  "deferred": 80,
+  "real": 94,
+  "deferred": 78,
   "global-repeat": 88
  }
 }
