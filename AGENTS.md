@@ -73,6 +73,28 @@ wo-test-harness/
   vs OO is not yet JOINED — the rig-side `census-oo.cjs`/`interact-oo.cjs`
   need the same click-`#btn-file`-equivalent open + enumerate for OO's File
   menu before the join can compare it.
+- **React editor (what production ships) — `census-react.cjs`.** The Rust
+  wo-docserver serves the REACT `documenteditor-react` at
+  `/editors/word/` (and sheet/slide/pdf/diagram), NOT the vanilla
+  `web/editor.js` the Python docserver serves. These are two different
+  editors with different file menus: vanilla = 6-item dropdown
+  (btn-new/btn-open/btn-export/btn-print/btn-history/btn-ai-review); React
+  = full-screen FileMenu (Back, Download as…, Save Copy as…, Save as…,
+  Print, Rename…, Share…, Create New, Protect Document…). The vanilla census
+  CANNOT see the React editor — a React surface once silently shipped
+  broken (Viewport read `documentStore.isFileMenuOpen` without a mobx
+  `observer`, so the FileMenu panel never re-rendered — clicking File did
+  nothing). `census-react.cjs` clicks the FileTab (`[data-tab="file"]`),
+  ASSERT the `.de-file-menu-panel` opens (the regression test) and
+  enumerates its buttons into `census-react.json`. Run it with
+  `run-react-census.py` (serves a built dist + /demo/* + /api/conversion
+  stubs the editor auto-loads; needs `pnpm install --filter
+  "@world-office/documenteditor..."` + `npx vite build` + a `word`→`dist`
+  junction — header of census-react.cjs has the recipe). Verified: fixed
+  bundle opens the panel (22 rows); the pre-fix bundle FAILS the census
+  (panel stays none). Note the committed `census-react.json` is captured
+  from the locally-built bundle at b2c1c282 (post-fix); it is a WO-side
+  golden — parity against OO backstage still needs the rig-side OO capture.
   Playwright pitfall: page-side logic must be REAL functions passed to
   `page.evaluate`, never strings-as-expressions (evaluates to a function
   value → clicks nothing). Command-wired buttons dispatch via the bus;
