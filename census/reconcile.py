@@ -248,6 +248,11 @@ def run_join(wo: Path, ledger_out: Path) -> dict:
 def gate(ledger: dict) -> bool:
     counts = ledger["counts"]
     bad = {k: v for k, v in counts.items() if k in ("stub", "UNMATCHED", "MISSING-STUB", "STALE-DEFERRED") and v > 0}
+    # file-menu surface must be captured: 0 rows means the census trigger is
+    # broken (menu toggles on CLICK, not mousedown) and parity is blind to it
+    if counts.get("menu-file", 0) == 0:
+        print("  DECISION: file-menu census empty (0 rows) — census-wo.cjs trigger broken")
+        return False
     if not bad:
         return True
     for row in ledger["ledger"]:

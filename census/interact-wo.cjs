@@ -138,9 +138,9 @@ const clickFileItem = label => {
   }
 
   // file-menu rows (top-left menu): open, enumerate, click each visible item
-  await page.evaluate(() => document.getElementById('btn-file')
-    ?.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true })));
-  await sleep(400);
+  // the editor toggles the menu on CLICK — a dispatched mousedown never opens it
+  const fileTrigger = await page.$('#btn-file');
+  if (fileTrigger) { await fileTrigger.click(); await sleep(400); }
   const items = await page.evaluate(() => [...document.querySelectorAll('#file-menu [role=menuitem], #file-menu .menu-item, #file-menu button')]
     .filter(b => b.offsetParent !== null).map(b => ({ label: ((b.textContent || '').trim() || null) })));
   for (const it of items) {

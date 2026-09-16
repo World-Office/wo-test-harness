@@ -370,8 +370,16 @@ for slug, tab in oo["tabs"].items():
             row["status"] = "UNMATCHED"; ledger.append(row)
 
 counts = Counter(r["status"] for r in ledger)
+# File-menu census invariant: the editor toggles the file menu on CLICK (not
+# mousedown) — a broken trigger silently yields 0 rows and hides the whole
+# surface (New/Open/Export/Print/History/AI) from parity. Carry the row count
+# into the ledger so the reconcile gate can fail on it.
+MENU_FILE = wo.get("surfaces", {}).get("menu-file", {}).get("buttons", [])
+counts["menu-file"] = len(MENU_FILE)
 json.dump({"ledger": ledger, "counts": dict(counts)}, open(_LEDGER, "w", encoding="utf-8"), indent=1)
 print("LEDGER:", json.dumps(dict(counts)))
+if not MENU_FILE:
+    print("FILE-MENU CENSUS EMPTY: menu-file has 0 rows — trigger broken (must CLICK #btn-file, not mousedown)")
 missing = sorted(str(r.get("ref") or r.get("token")) for r in ledger if r["status"] == "MISSING-STUB")
 if missing: print("MISSING STUBS IN WO:", ", ".join(missing))
 un = [r for r in ledger if r["status"] == "UNMATCHED"]

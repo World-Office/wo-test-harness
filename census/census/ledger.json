@@ -3861,6 +3861,7 @@
   "covered": 90,
   "real": 94,
   "deferred": 78,
-  "global-repeat": 88
+  "global-repeat": 88,
+  "menu-file": 6
  }
 }

@@ -58,6 +58,21 @@ wo-test-harness/
   and classifies ok/missing/type/geometry/organic/divergence). Declared
   intentional divergences live loudly in `interact-divergences.json`.
   Gate: `reconcile.py --check --interactions` (wired into conformance.yml).
+- **File-menu surface (`menu-file`)** — the file menu is NOT a ribbon tab;
+  it is `#btn-file` (`.menu-trigger`) toggling `#file-menu`. The editor wires
+  the toggle on **CLICK** — a dispatched `MouseEvent('mousedown')` never
+  opens it, so the census silently reported `menu-file: 0 rows` since
+  inception and the whole surface (New / Open… / Export / Print / History… /
+  AI changes…) was invisible to parity. Both census scripts now use a real
+  `page.click('#btn-file')` and query `#file-menu` (NOT `#menu-file`).
+  `census-diff.py` carries `counts["menu-file"]` into the ledger and
+  `reconcile.py`'s gate FAILS on `menu-file == 0` — the trigger regression
+  is now a gate failure, not a silent zero. Known remaining gap: the OO
+  reference census has no file-menu capture either (OO's full-screen
+  backstage: Back / Create New / Save / Download As…), so file-menu parity
+  vs OO is not yet JOINED — the rig-side `census-oo.cjs`/`interact-oo.cjs`
+  need the same click-`#btn-file`-equivalent open + enumerate for OO's File
+  menu before the join can compare it.
   Playwright pitfall: page-side logic must be REAL functions passed to
   `page.evaluate`, never strings-as-expressions (evaluates to a function
   value → clicks nothing). Command-wired buttons dispatch via the bus;

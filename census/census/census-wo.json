@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-09-13T03:22:13.957Z",
+ "capturedAt": "2026-09-16T16:25:58.685Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
@@ -749,9 +749,9 @@
      "cmd": "code",
      "label": "</>",
      "enabled": true,
-     "x": 614,
+     "x": 615,
      "y": 104,
-     "w": 36,
+     "w": 35,
      "h": 32
     },
     {
@@ -834,14 +834,14 @@
      "enabled": true,
      "x": 48,
      "y": 82,
-     "w": 43,
+     "w": 44,
      "h": 32
     },
     {
      "id": "btn-image",
      "label": "Insert image",
      "enabled": true,
-     "x": 93,
+     "x": 94,
      "y": 82,
      "w": 34,
      "h": 32
@@ -850,7 +850,7 @@
      "id": "btn-link",
      "label": "Insert link",
      "enabled": true,
-     "x": 129,
+     "x": 130,
      "y": 82,
      "w": 34,
      "h": 32
@@ -859,7 +859,7 @@
      "id": "btn-hr",
      "label": "─",
      "enabled": true,
-     "x": 165,
+     "x": 166,
      "y": 82,
      "w": 34,
      "h": 32
@@ -868,7 +868,7 @@
      "id": "btn-object",
      "label": "▢",
      "enabled": true,
-     "x": 201,
+     "x": 202,
      "y": 82,
      "w": 34,
      "h": 32
@@ -877,7 +877,7 @@
      "id": "btn-bookmark",
      "label": "Insert bookmark",
      "enabled": true,
-     "x": 237,
+     "x": 238,
      "y": 82,
      "w": 34,
      "h": 32
@@ -886,7 +886,7 @@
      "id": "btn-crossref",
      "label": "Insert cross-reference",
      "enabled": true,
-     "x": 273,
+     "x": 274,
      "y": 82,
      "w": 34,
      "h": 32
@@ -895,7 +895,7 @@
      "id": "btn-symbol",
      "label": "Ω",
      "enabled": true,
-     "x": 309,
+     "x": 310,
      "y": 82,
      "w": 34,
      "h": 32
@@ -904,7 +904,7 @@
      "id": "btn-datetime",
      "label": "Insert date",
      "enabled": true,
-     "x": 345,
+     "x": 346,
      "y": 82,
      "w": 34,
      "h": 32
@@ -913,7 +913,7 @@
      "id": "btn-pagenumber",
      "label": "#",
      "enabled": true,
-     "x": 381,
+     "x": 382,
      "y": 82,
      "w": 34,
      "h": 32
@@ -922,7 +922,7 @@
      "id": "btn-header",
      "label": "▔",
      "enabled": true,
-     "x": 417,
+     "x": 418,
      "y": 82,
      "w": 34,
      "h": 32
@@ -931,7 +931,7 @@
      "id": "btn-footer",
      "label": "▁",
      "enabled": true,
-     "x": 453,
+     "x": 454,
      "y": 82,
      "w": 34,
      "h": 32
@@ -941,7 +941,7 @@
      "cmd": "insertObject",
      "label": "Shape",
      "enabled": true,
-     "x": 489,
+     "x": 490,
      "y": 82,
      "w": 58,
      "h": 32
@@ -951,7 +951,7 @@
      "cmd": "insertObject",
      "label": "Chart",
      "enabled": true,
-     "x": 549,
+     "x": 550,
      "y": 82,
      "w": 52,
      "h": 32
@@ -981,7 +981,7 @@
      "cmd": "insertObject",
      "label": "Text box",
      "enabled": true,
-     "x": 746,
+     "x": 747,
      "y": 82,
      "w": 70,
      "h": 32
@@ -1775,7 +1775,38 @@
  },
  "surfaces": {
   "menu-file": {
-   "buttons": []
+   "buttons": [
+    {
+     "id": "btn-new",
+     "label": "New",
+     "enabled": true
+    },
+    {
+     "id": "btn-open",
+     "label": "Open…",
+     "enabled": true
+    },
+    {
+     "id": "btn-export",
+     "label": "Export",
+     "enabled": true
+    },
+    {
+     "id": "btn-print",
+     "label": "Print",
+     "enabled": true
+    },
+    {
+     "id": "btn-history",
+     "label": "History…",
+     "enabled": true
+    },
+    {
+     "id": "btn-ai-review",
+     "label": "AI changes…",
+     "enabled": true
+    }
+   ]
   },
   "statusbar": {
    "buttons": [
@@ -1807,7 +1838,7 @@
      "id": "doc-lang-caret",
      "label": "Language options",
      "enabled": true,
-     "x": 1077
+     "x": 1075
     }
    ],
    "combos": []

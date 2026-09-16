@@ -98,11 +98,12 @@ clearLocks();
     await sleep(400);
   }
 
-  // file menu dropdown
-  await page.evaluate(() => document.getElementById('btn-file')?.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true })));
-  await sleep(500);
+  // file menu dropdown — the editor toggles it on CLICK, not mousedown
+  // (a dispatched MouseEvent('mousedown') never opens it -> 0 rows forever)
+  const fileTrigger = await page.$('#btn-file');
+  if (fileTrigger) { await fileTrigger.click(); await sleep(500); }
   census.surfaces['menu-file'] = await page.evaluate(() => ({
-    buttons: [...document.querySelectorAll('#menu-file .menu-item, #menu-file button, #menu-file [role=menuitem]')]
+    buttons: [...document.querySelectorAll('#file-menu .menu-item, #file-menu button, #file-menu [role=menuitem]')]
       .filter(b => b.offsetParent !== null).map(b => ({
         id: b.id || null, label: ((b.textContent || '').trim() || undefined),
         enabled: !b.disabled && !((b.className + '').includes('disabled')),
