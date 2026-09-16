@@ -39,7 +39,15 @@ wo-test-harness/
   `WO_SERVER_DIR=/path/to/server /usr/bin/python3 census/reconcile.py
   --seed-check`; CI gate: `census/reconcile.py --check --seed-check`
   (conformance.yml `census-ledger` job). Register parity rows sync via
-  `--apply-register`.
+  `--apply-register`. Every run prints the `parity debt` block — the
+  OO controls WO deliberately defers (grouped by reason tag) so the
+  green gate never hides the remaining gap.
+  `STALE-DEFERRED` is a hard gate failure: a MAP row declaring
+  `{"deferred": ...}` whose feature the WO census now ships as a real
+  control under-reports parity (e.g. ocr/photoeditor were deferred while
+  the register said parity: full and the inter census proved real modals).
+  When a feature lands, promote its MAP row to `{"real": ...}`; the gate
+  tells you which rows to promote and to what key.
 - **Interaction dimension** — the structural census proves buttons EXIST
   but never clicks one, so "weird overlays / missing dialogs" were invisible
   to it. `interact-wo.cjs` (WO click-through: click every ribbon button,

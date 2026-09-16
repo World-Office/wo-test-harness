@@ -83,6 +83,27 @@ def wo_tokens():
 WO_TOK = wo_tokens()
 WO_STUBS = {b["stub"] for t in {**wo["tabs"], **wo["surfaces"]}.values() for b in t.get("buttons", []) if b.get("stub")}
 
+# A deferred MAP row means the WO control for that OO token is not implemented.
+# If the WO census now ships it as a real control, the deferral is STALE and the
+# MAP must be promoted to {"real": ...} (register parity: full / inter census
+# surface proven). Detected AFTER MAP is parsed below so MAP stays authoritative
+# for the honor of claiming "real" -- but a deferred token that clearly exists in
+# the WO census is reported loudly (reconcile gate fails on it).
+WO_CONTROL_TOKENS = set()
+for t in {**wo["tabs"], **wo["surfaces"]}.values():
+    for b in t.get("buttons", []):
+        if b.get("id"):
+            WO_CONTROL_TOKENS.add(re.sub(r"^btn-", "", b["id"]).lower())
+        if b.get("cmd"):
+            WO_CONTROL_TOKENS.add(b["cmd"].lower())
+        if b.get("stub"):
+            # still a loud stub: not stale -- implementation is explicitly pending
+            WO_CONTROL_TOKENS.add(b["stub"].lower())
+    for c in t.get("combos", []):
+        if c.get("id"):
+            WO_CONTROL_TOKENS.add(re.sub(r"^(sel|cmb)-|^btn-", "", c["id"]).lower())
+WO_CONTROL_TOKENS -= {None, ""}
+
 # hand mapping for residue (filled as triage progresses): token -> directive
 MAP = {
     "copystyle": {"covered": "native-clipboard"},
@@ -212,8 +233,8 @@ MAP = {
     "margins": {"real": "layout:btn-page-setup"},
     "orientation": {"real": "layout:btn-page-setup"},
     "size": {"real": "layout:btn-page-setup"},
-    "ocr": {"deferred": "external-service-future-iteration"},
-    "photoeditor": {"deferred": "external-service-future-iteration"},
+    "ocr": {"real": "ocrrun"},   # AUTO by reconcile (was deferred: external-service-future-iteration)
+    "photoeditor": {"real": "photoeditor"},   # AUTO by reconcile (was deferred: external-service-future-iteration)
     "speech": {"deferred": "tts-future-iteration"},
     "speechinput": {"deferred": "stt-future-iteration"},
     "backgroundplugins": {"deferred": "background-plugins-future-iteration"},
@@ -283,6 +304,16 @@ MAP = {
     "insertfield": {"deferred": "field-codes-unsupported"},
 }
 
+# Stale deferrals: MAP rows declaring {"deferred": ...} whose OO token is now
+# shipped as a REAL (non-stub) WO control. The deferral is moot -- the feature
+# got implemented but the ledger never noticed (deferred rows are not
+# auto-promoted like data-stub rows). reconcile.py fails the gate on these.
+def _is_stale_deferred(tok: str) -> tuple | None:
+    wc = WO_TOK.get(tok) or WO_TOK.get(SYN.get(tok, ""))
+    if wc and not wc[1].get("stub"):
+        return wc
+    return None
+
 ledger = []
 seen_global = set()
 for slug, tab in oo["tabs"].items():
@@ -321,6 +352,15 @@ for slug, tab in oo["tabs"].items():
                 row[key] = val
                 if key == "stub" and val not in WO_STUBS:
                     row["status"] = "MISSING-STUB"  # ledger demands a stub WO does not ship yet
+                if key == "deferred" and _is_stale_deferred(tok):
+                    # feature shipped despite the deferral: the MAP row is stale
+                    # (register parity: full / inter census surface proven). Loudly
+                    # under-report parity until a human promotes it to real.
+                    wc = _is_stale_deferred(tok)
+                    row["status"] = "STALE-DEFERRED"
+                    row["wo"] = wc[1].get("id") or wc[1].get("cmd") or wc[0]
+                    row["wo_tab"] = wc[0]
+                    row["note"] = f"MAP deferred but WO ships it -- promote to real (was: {val})"
                 ledger.append(row); continue
             hit = WO_TOK.get(tok) or WO_TOK.get(SYN.get(tok, ""))
             if hit:

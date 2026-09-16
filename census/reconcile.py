@@ -247,14 +247,40 @@ def run_join(wo: Path, ledger_out: Path) -> dict:
 
 def gate(ledger: dict) -> bool:
     counts = ledger["counts"]
-    bad = {k: v for k, v in counts.items() if k in ("stub", "UNMATCHED", "MISSING-STUB") and v > 0}
+    bad = {k: v for k, v in counts.items() if k in ("stub", "UNMATCHED", "MISSING-STUB", "STALE-DEFERRED") and v > 0}
     if not bad:
         return True
     for row in ledger["ledger"]:
         if row["status"] in ("stub", "UNMATCHED", "MISSING-STUB"):
             note = row.get("ref") or row.get("note") or row.get("token")
             print(f"  DECISION: [{row['status']}] {row['tab']} {note}")
+        if row["status"] == "STALE-DEFERRED":
+            tok = row.get("token")
+            note = row.get("note") or row.get("reason")
+            print(f"  PARITY UNDER-REPORT: [{row['status']}] {row['tab']} token={tok} -> {note}")
+            print(f"      promote census-diff.py MAP['\"{tok}\"'] to {{\"real\": \"{((row.get('wo') or '').split(':')[-1] or '?')}\"}}")
     return False
+
+
+def report_deferred(ledger: dict) -> None:
+    """Print the deferred (declared-future-iteration) rows as visible parity
+    debt. A green gate never fails on deferred -- that is their contract -- but
+    a run that prints NOTHING about them makes the OO-gap invisible. Group by
+    reason tag so the debt is auditable and track-to-zero."""
+    from collections import defaultdict
+    groups = defaultdict(list)
+    for r in ledger["ledger"]:
+        if r.get("status") == "deferred":
+            reason = r.get("reason") or r.get("deferred") or "(no reason tag)"
+            groups[reason].append(r.get("token") or r.get("icon") or r.get("label") or "?")
+    if not groups:
+        return
+    print(f"\n  parity debt: {sum(len(v) for v in groups.values())} OO controls deferred (future-iteration):")
+    for reason in sorted(groups):
+        toks = sorted(set(str(t) for t in groups[reason]))
+        print(f"    [{reason}] {len(toks)}: {', '.join(toks[:12])}")
+        if len(toks) > 12:
+            print(f"      +{len(toks)-12} more")
 
 
 def apply_register(flips: list[tuple[str, str, str]]) -> list[str]:
@@ -344,6 +370,45 @@ def self_test() -> None:
     assert diff_promotions(prev, curr) == flips
     print("self-test OK: promotions delta detected, silent disappearances ignored")
 
+    # stale-deferred: a deferred MAP row whose feature the WO census now ships as
+    # a real control must classify STALE-DEFERRED (parity under-report) and the
+    # gate must fail. Use a fake WO capture that ships `btn-shadow` cmd=`toggleShadow`
+    # for a MAP token that is still `deferred`, plus one still-true deferral.
+    # (MAP's `watermark` is deferred=true deferral; pick a genuinely deferred token
+    # and a control key it would map to: `blankpage` -> WO would output btn-blankpage)
+    import json as _json, pathlib as _pl, subprocess
+    fake = {
+        "tabs": {
+            "insert": {"buttons": [
+                {"id": "btn-blankpage", "cmd": "insertBlankPage"},  # MAP: blankpage deferred
+                {"id": "btn-txt", "cmd": "insertSimple"},
+            ]},
+        },
+        "surfaces": {},
+    }
+    td = _pl.Path(tempfile.mkdtemp())
+    fake_file = td / "census-wo.json"
+    fake_file.write_text(_json.dumps(fake))
+    led_file = td / "l.json"
+    old_cwd = Path.cwd()
+    os.chdir(HERE)
+    try:
+        r = subprocess.run([sys.executable, "census-diff.py", "--wo", str(fake_file),
+                            "--ledger", str(led_file)], capture_output=True, text=True)
+    finally:
+        os.chdir(old_cwd)
+    assert r.returncode == 0, r.stderr
+    led = _json.load(open(led_file, encoding="utf-8"))
+    stale = [x for x in led["ledger"] if x["status"] == "STALE-DEFERRED"]
+    assert any(x.get("token") == "blankpage" for x in stale), \
+        f"expected blankpage STALE-DEFERRED, got {[x.get('token') for x in stale]}"
+    assert led["counts"]["STALE-DEFERRED"] == 1, led["counts"]
+    # gate must flag the under-report as a decision: STALE-DEFERRED counts as bad
+    assert not gate({"counts": {"STALE-DEFERRED": 1}, "ledger": [stale[0]]}), \
+        "gate should FAIL while blankpage is STALE-DEFERRED"
+    assert gate({"counts": {}, "ledger": []}), "clean ledger must pass"
+    print("self-test OK: stale-deferred detected and gated")
+
 
 def run_interactions(server: Path, out: Path) -> int:
     """Click-through census (interact-wo.cjs) + join vs the committed OO
@@ -423,6 +488,7 @@ def main() -> int:
             ledger = run_join(wo, tmp / "ledger.json")
             print("[3/4] join: LEDGER", json.dumps(ledger["counts"]))
             ok = gate(ledger)
+            report_deferred(ledger)
             print("[4/4] gate:", "PASS — ledger clear" if ok else "FAIL — decisions above remain")
             rc = 0 if ok else 1
             if args.interactions:
@@ -471,6 +537,7 @@ def main() -> int:
     ledger = run_join(WO_JSON, CENSUS / "ledger.json")
     counts = ledger["counts"]
     print("      LEDGER:", json.dumps(counts))
+    report_deferred(ledger)
 
     if args.apply_register and flips:
         for line in apply_register(flips):
