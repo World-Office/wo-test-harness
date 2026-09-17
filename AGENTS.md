@@ -215,3 +215,17 @@ recapture — the gate picks it automatically and keeps drift strict (no slack).
 ## License
 
 AGPL-3.0-or-later.
+
+### React ribbon congruence (taskfleet + manual)
+The React editor's ribbon mirrors OO's tab order minus surfaces WO doesn't ship:
+`File Home Insert Layout References Collaboration Protection View Forms Plugins AI`
+(the `review` tab was retitled `collaboration`; OO has no Review tab). All tab
+controls route to REAL actions via `wo-command` → `lib/word-commands.ts`
+(changes/accept-reject/track-changes = RTE ops; Comments/Chat/AI Assistant/
+Manage Plugins open the corresponding right/left panels — `DocumentStore.toggleRightPanel`
+now reveals the right rail when a panel is requested, since the web shell kept
+it permanently hidden). Columns that are surface-only or unbuilt must stay out:
+WO has NO Draw tab (the renderer has no shape-insert node — ShapePanel is
+properties-only) and NO plugin execution (the editor-common loader is dormant;
+PluginsPanel persists toggles to `wo-plugins` localStorage which the loader
+reads when wired). Do not add those as fake chrome.
