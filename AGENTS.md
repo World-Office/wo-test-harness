@@ -225,7 +225,13 @@ controls route to REAL actions via `wo-command` → `lib/word-commands.ts`
 Manage Plugins open the corresponding right/left panels — `DocumentStore.toggleRightPanel`
 now reveals the right rail when a panel is requested, since the web shell kept
 it permanently hidden). Columns that are surface-only or unbuilt must stay out:
-WO has NO Draw tab (the renderer has no shape-insert node — ShapePanel is
-properties-only) and NO plugin execution (the editor-common loader is dormant;
-PluginsPanel persists toggles to `wo-plugins` localStorage which the loader
-reads when wired). Do not add those as fake chrome.
+WO still has NO Draw tab — image blocks parse (wo-ooxml `<w:drawing>`) and
+insert via `image_apply_insert`, but the wasm renderer draws only a placeholder
+(no pixels), and true vector shapes would be new Rust renderer work that cannot
+be built/verified locally (no wasm32 toolchain); do not add a fake Draw surface.
+Plugin EXECUTION is now real: `lib/plugin-runtime.ts` wires the editor-common
+PluginLoader at startup (loads enabled builtins, unloads on disable, reconcile
+on `plugin-config-changed`); a bundled word-count plugin registers a button in
+PluginsPanel's "Apps" section and shows a toast with real counts. Builtin
+plugin ids MUST match the PluginsPanel manage-list ids (word-count, not
+wordcount) or toggles won't unload them.
