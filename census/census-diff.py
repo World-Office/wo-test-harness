@@ -52,7 +52,7 @@ def oo_token(c):
     -> icon class token (unless it's a layout container class)."""
     cid = (c.get("id") or "").strip()
     if cid and " " not in cid:
-        cid = re.sub(r"^(id-toolbar-(btn|combo|simple)-|tlbtn-)", "", cid)
+        cid = re.sub(r"^(id-toolbar-(btn|combo|simple)-|tlbtn-|fm-btn-)", "", cid)
         return re.sub(r"-\d+$", "", cid) or None
     label = (c.get("label") or "").strip()
     if label:
@@ -109,6 +109,14 @@ MAP = {
     "copystyle": {"covered": "native-clipboard"},
     "save": {"covered": "autosave-host"},
     "print": {"covered": "menu-file-print"},
+    "return": {"covered": "backstage-return"},   # OO file backstage Back
+    "download": {"real": "menu-file:btn-export"},   # OO Download As = WO menu Export
+
+    "protect": {"deferred": "react-filemenu-protect"},
+    "info": {"deferred": "react-filemenu-docinfo"},
+    "settings": {"deferred": "react-filemenu-settings"},
+    "help": {"deferred": "react-filemenu-help"},
+    "suggest": {"deferred": "react-filemenu-suggest"},
     "copy": {"covered": "native-clipboard"},
     "cut": {"covered": "native-clipboard"},
     "paste": {"covered": "native-clipboard"},

@@ -3855,12 +3855,112 @@
    "token": "asc-gen844",
    "status": "deferred",
    "deferred": "chart-editing-unsupported"
+  },
+  {
+   "tab": "backstage",
+   "kind": "button",
+   "id": "fm-btn-return",
+   "icon": "btn-previtem",
+   "label": "Back",
+   "enabled": true,
+   "token": "return",
+   "status": "covered",
+   "covered": "backstage-return"
+  },
+  {
+   "tab": "backstage",
+   "kind": "button",
+   "id": "fm-btn-save",
+   "icon": "btn-save",
+   "label": "Save",
+   "enabled": false,
+   "token": "save",
+   "status": "covered",
+   "covered": "autosave-host"
+  },
+  {
+   "tab": "backstage",
+   "kind": "button",
+   "id": "fm-btn-download",
+   "icon": "btn-download",
+   "label": "Download As",
+   "enabled": true,
+   "token": "download",
+   "status": "real",
+   "wo": "btn-export",
+   "wo_tab": "surface:menu-file"
+  },
+  {
+   "tab": "backstage",
+   "kind": "button",
+   "id": "fm-btn-print",
+   "icon": "btn-print",
+   "label": "Print",
+   "enabled": true,
+   "token": "print",
+   "status": "covered",
+   "covered": "menu-file-print"
+  },
+  {
+   "tab": "backstage",
+   "kind": "button",
+   "id": "fm-btn-protect",
+   "icon": "btn-lock",
+   "label": "Protect",
+   "enabled": true,
+   "token": "protect",
+   "status": "deferred",
+   "deferred": "react-filemenu-protect"
+  },
+  {
+   "tab": "backstage",
+   "kind": "button",
+   "id": "fm-btn-info",
+   "icon": "btn-menu-about",
+   "label": "Info",
+   "enabled": true,
+   "token": "info",
+   "status": "deferred",
+   "deferred": "react-filemenu-docinfo"
+  },
+  {
+   "tab": "backstage",
+   "kind": "button",
+   "id": "fm-btn-settings",
+   "icon": "btn-settings",
+   "label": "Advanced Settings",
+   "enabled": true,
+   "token": "settings",
+   "status": "deferred",
+   "deferred": "react-filemenu-settings"
+  },
+  {
+   "tab": "backstage",
+   "kind": "button",
+   "id": "fm-btn-help",
+   "icon": "btn-help",
+   "label": "Help",
+   "enabled": true,
+   "token": "help",
+   "status": "deferred",
+   "deferred": "react-filemenu-help"
+  },
+  {
+   "tab": "backstage",
+   "kind": "button",
+   "id": "fm-btn-suggest",
+   "icon": "btn-suggest-feature",
+   "label": "Suggest a Feature",
+   "enabled": true,
+   "token": "suggest",
+   "status": "deferred",
+   "deferred": "react-filemenu-suggest"
   }
  ],
  "counts": {
-  "covered": 90,
-  "real": 94,
-  "deferred": 78,
+  "covered": 93,
+  "real": 95,
+  "deferred": 83,
   "global-repeat": 88,
   "menu-file": 6
  }

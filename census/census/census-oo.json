@@ -1,7 +1,10 @@
 {
  "engine": "onlyoffice",
- "capturedAt": "2026-09-10T18:18:54.146Z",
- "viewport": "1440x900",
+ "capturedAt": "2026-09-17T15:25:09.989Z",
+ "viewport": {
+  "w": 1600,
+  "h": 1000
+ },
  "tabs": {
   "home": {
    "label": "Home",
@@ -3548,6 +3551,102 @@
      "id": "asc-gen844",
      "w": 438,
      "h": 62
+    }
+   ]
+  },
+  "backstage": {
+   "label": "File",
+   "contextual": false,
+   "buttons": [
+    {
+     "id": "fm-btn-return",
+     "icon": "btn-previtem",
+     "label": "Back",
+     "enabled": true,
+     "x": 12,
+     "y": 75,
+     "w": 231,
+     "h": 20
+    },
+    {
+     "id": "fm-btn-save",
+     "icon": "btn-save",
+     "label": "Save",
+     "enabled": false,
+     "x": 12,
+     "y": 126,
+     "w": 231,
+     "h": 20
+    },
+    {
+     "id": "fm-btn-download",
+     "icon": "btn-download",
+     "label": "Download As",
+     "enabled": true,
+     "x": 12,
+     "y": 158,
+     "w": 231,
+     "h": 20
+    },
+    {
+     "id": "fm-btn-print",
+     "icon": "btn-print",
+     "label": "Print",
+     "enabled": true,
+     "x": 12,
+     "y": 190,
+     "w": 231,
+     "h": 20
+    },
+    {
+     "id": "fm-btn-protect",
+     "icon": "btn-lock",
+     "label": "Protect",
+     "enabled": true,
+     "x": 12,
+     "y": 222,
+     "w": 231,
+     "h": 20
+    },
+    {
+     "id": "fm-btn-info",
+     "icon": "btn-menu-about",
+     "label": "Info",
+     "enabled": true,
+     "x": 12,
+     "y": 279,
+     "w": 231,
+     "h": 20
+    },
+    {
+     "id": "fm-btn-settings",
+     "icon": "btn-settings",
+     "label": "Advanced Settings",
+     "enabled": true,
+     "x": 12,
+     "y": 884,
+     "w": 231,
+     "h": 20
+    },
+    {
+     "id": "fm-btn-help",
+     "icon": "btn-help",
+     "label": "Help",
+     "enabled": true,
+     "x": 12,
+     "y": 916,
+     "w": 231,
+     "h": 20
+    },
+    {
+     "id": "fm-btn-suggest",
+     "icon": "btn-suggest-feature",
+     "label": "Suggest a Feature",
+     "enabled": true,
+     "x": 12,
+     "y": 948,
+     "w": 231,
+     "h": 20
     }
    ]
   }

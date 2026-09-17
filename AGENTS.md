@@ -95,20 +95,55 @@ wo-test-harness/
   (panel stays none). Note the committed `census-react.json` is captured
   from the locally-built bundle at b2c1c282 (post-fix); it is a WO-side
   golden — parity against OO backstage still needs the rig-side OO capture.
-- **OO backstage reference — rig-side capture spec.** OO's File menu is a
-  full-screen backstage (Create New / Open Recent / Open / Browse Files /
-  Document Info / Save Copy as / Download as / Print / Back…). The public
-  OO endpoints (open.onlyoffice.com, documentserver /example/) do NOT expose
-  a login-free editor (hcaptcha / 404 / dev landing) — capture must run on
-  the rig against docker OO. Extend `census-oo.cjs` with a `backstage` tab:
-  after editor ready (`#header-panel`), click the file trigger (`.menuFile`,
-  `#id-menu-file`, or a header button whose label starts with "File"), wait
-  for the panel (`#editor-menu`, `.backstage`, `.menuFileItems`), enumerate
-  every visible `button, .item, li` as `{id, icon, label, enabled}` and
-  record under `tabs["backstage"]` — same schema as the ribbon tabs. The
-  census-diff join is OO-tab-driven, so a `backstage` tab enters the ledger
-  automatically; wire its tokens into MAP/synonyms (OO "Download as" → WO
-  `menu-file` Export / React "Download as...") the first time it lands.
+- **OO backstage reference — IMPLEMENTED, rig-side (`census-oo.cjs`, `census/rig/`).**
+  OO's File menu is a full-screen backstage (Back / Save / Download As / Print
+  / Protect / Info / Advanced Settings / Help / Suggest a Feature). The public
+  OO endpoints (open.onlyoffice.com, documentserver /example/) expose no
+  login-free editor — capture runs against docker OO on the rig:
+
+  ```sh
+  # one-time rig bring-up (docker DS on :8099, host loader/docx server on :8735)
+  docker run -d --name oo-rig -p 8099:80 -e JWT_ENABLED=false \
+    -v <ABS>/census/rig/local.json:/etc/onlyoffice/documentserver/local.json \
+    onlyoffice/documentserver:latest
+  python census/rig/rig-server.py 8735      # host side: rig-editor.html + demo.docx + /cb ACK
+  node census/census-oo.cjs                 # click File, assert #file-menu-panel, enumerate
+  ```
+
+  Confirmed exact selectors on the rig (version 9.4): File trigger =
+  `a#file[data-tab="file"]` in the ribbon (NOT `.menuFile`/`#id-menu-file` —
+  those don't exist in this version); panel = `#file-menu-panel`; items =
+  `li.fm-btn > a.menu-item` (ids `fm-btn-return/-save/-download/-print/...`
+  are stable; the inner `a.menu-item` ids are generated `asc-genNNNN` — use
+  the `li` id, and the tokenizer strips `fm-btn-`). Hidden items
+  (display:none — Create New / Open Recent in a standalone edit session) are
+  excluded: the ledger compares what the user sees. Census FAILS (exit 1) if
+  the backstage never opens — same trigger-regression guard as
+  `census-react.cjs`.
+
+  Rig gotchas (all solved, keep them in the rig): JWT must be off
+  (`JWT_ENABLED=false`) or the DS injects `checkJwt` failures; the DS
+  **blocks private-IP document URLs by default** — fix is `local.json` under
+  `services.CoAuthoring.request-filtering-agent.allowPrivateIPAddress: true`
+  (NOT `server.*` — the config schema uses `request-filtering-agent`); the
+  container's entrypoint regenerates local.json on start (mount the file via
+  `-v`, and re-verify after container restarts); `document.url` + the
+  save-callback must both be reachable by the DS server-side — point them at
+  `http://host.docker.internal:8735/...` (host.docker.internal resolves from
+  the container, enabled by allowPrivateIPAddress) and have rig-server ACK
+  the `/cb` POST with `{"error":0}` or a `could not be saved` modal blocks
+  all subsequent clicks; `autosave:false` avoids spurious saves; dismiss the
+  first-run "Got it" tooltip before clicking File.
+
+  The join: a `backstage` tab enters the ledger automatically (census-diff is
+  OO-tab-driven); MAP is wired — OO `download-as` → WO `menu-file` Export
+  (real), Back/Save/Print covered, Protect/Info/Advanced Settings/Help/
+  Suggest deferred with `react-filemenu-*` reasons (vanilla menu-file doesn't
+  ship them; the React menu does). Ledger gate counts moved covered 90→93,
+  real 94→95, deferred 78→83 with all 9 backstage rows resolved.
+  Remaining (rig follow-up): `interact-oo.cjs` click-through for the
+  backstage, and a portal-mode capture where Create New / Open Recent are
+  visible.
   Playwright pitfall: page-side logic must be REAL functions passed to
   `page.evaluate`, never strings-as-expressions (evaluates to a function
   value → clicks nothing). Command-wired buttons dispatch via the bus;
