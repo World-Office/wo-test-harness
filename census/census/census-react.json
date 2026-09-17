@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice-react",
- "capturedAt": "2026-09-16T21:05:08.546Z",
+ "capturedAt": "2026-09-17T06:14:23.792Z",
  "viewport": {
   "width": 1440,
   "height": 900
@@ -15,91 +15,6 @@
    {
     "id": null,
     "label": "Back",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "Download as...",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "Export Wizard...",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "Save Copy as...",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "Save as...",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "Print",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "Print with Preview",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "Rename...",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "Document Info...",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "Access Rights...",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "Share...",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "Version History...",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "Advanced Settings...",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "Help...",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "Go to Documents",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "Close Editor",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "External Help",
-    "enabled": true
-   },
-   {
-    "id": null,
-    "label": "Suggest Feature",
     "enabled": true
    },
    {
@@ -119,7 +34,97 @@
    },
    {
     "id": null,
+    "label": "Save",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "Save Copy as...",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "Save as...",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "Download as...",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "Export Wizard...",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "Print",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "Print with Preview",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "Document Info...",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "Access Rights...",
+    "enabled": true
+   },
+   {
+    "id": null,
     "label": "Protect Document",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "Share...",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "Version History...",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "Advanced Settings...",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "Rename...",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "Help...",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "External Help",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "Suggest Feature",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "Go to Documents",
+    "enabled": true
+   },
+   {
+    "id": null,
+    "label": "Close Editor",
     "enabled": true
    }
   ]
