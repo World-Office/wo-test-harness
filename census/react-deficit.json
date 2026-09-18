@@ -1,0 +1,154 @@
+{
+ "tabs": {
+  "home": [
+   "Increment font size (Ctrl+])",
+   "Decrement font size (Ctrl+[)",
+   "Change case",
+   "Strikethrough (Ctrl+5)",
+   "Superscript (Ctrl+,)",
+   "Subscript (Ctrl+.)",
+   "Highlight color",
+   "Highlight color",
+   "Font color",
+   "Font color",
+   "Clear style",
+   "Multilevel list",
+   "Decrease indent (Ctrl+Shift+M)",
+   "Increase indent (Ctrl+M)",
+   "Paragraph line spacing",
+   "Text direction",
+   "Align left (Ctrl+L)",
+   "Align center (Ctrl+E)",
+   "Align right (Ctrl+R)",
+   "Justified (Ctrl+J)",
+   "Nonprinting characters (Ctrl+Shift+8)",
+   "Nonprinting characters (Ctrl+Shift+8)",
+   "Shading",
+   "Shading",
+   "Borders",
+   "Borders",
+   "Select all (Ctrl+A)"
+  ],
+  "insert": [
+   "BlankPage",
+   "Shape",
+   "SmartArt",
+   "Chart",
+   "TextBox",
+   "TextArt",
+   "DropCap",
+   "Date &Time",
+   "Text fromFile",
+   "Field",
+   "Equation",
+   "Symbol",
+   "ContentControls"
+  ],
+  "draw": [
+   "Select",
+   "Eraser"
+  ],
+  "layout": [
+   "LineNumbers",
+   "Hyphenation",
+   "Wrapping",
+   "BringForward",
+   "SendBackward",
+   "Align",
+   "Group",
+   "MergeShapes",
+   "Watermark",
+   "PageColor",
+   "Colors"
+  ],
+  "references": [
+   "Add Text",
+   "Update Table",
+   "Bookmark",
+   "Caption",
+   "Cross-reference",
+   "Table of Figures",
+   "Update Table"
+  ],
+  "collaboration": [
+   "AddComment",
+   "Delete",
+   "Resolve",
+   "DisplayMode",
+   "Previous",
+   "Compare",
+   "Combine",
+   "MailMerge"
+  ],
+  "protection": [
+   "Encrypt"
+  ],
+  "view": [
+   "Headings",
+   "Zoom to 100%",
+   "InterfaceTheme",
+   "DarkDocument",
+   "Macros",
+   "Record macro",
+   "Pause recording"
+  ],
+  "plugins": [
+   "PluginManager",
+   "Backgroundplugins",
+   "PhotoEditor",
+   "YouTube",
+   "OCR",
+   "Translator",
+   "Mendeley",
+   "Thesaurus",
+   "Highlightcode",
+   "Zotero",
+   "Speech",
+   "Speechinput"
+  ],
+  "header-footer": [
+   "Date &Time",
+   "Field",
+   "Close"
+  ],
+  "ai": [
+   "Settings",
+   "Chatbot",
+   "Summarization",
+   "Translation",
+   "Grammar &Spelling",
+   "Create AIassistant"
+  ],
+  "chart-design": [
+   "ChartElements",
+   "EditData",
+   "EditData",
+   "UpdateData",
+   "Chart type",
+   "Advanced settings",
+   "Wrapping",
+   "3Drotation"
+  ],
+  "backstage": [
+   "Back",
+   "Save",
+   "Download As",
+   "Print",
+   "Info",
+   "Advanced Settings",
+   "Help",
+   "Suggest a Feature"
+  ]
+ },
+ "globals_missing": [
+  "copystyle",
+  "wordcount",
+  "englishunitedstates",
+  "setdocumentlanguage",
+  "spellchecking",
+  "multiplepages",
+  "fittopage",
+  "fittowidth"
+ ],
+ "total": 113
+}
