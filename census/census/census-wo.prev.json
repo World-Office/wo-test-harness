@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-09-19T16:44:35.067Z",
+ "capturedAt": "2026-09-19T16:57:00.711Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
@@ -1002,76 +1002,93 @@
      "h": 32
     },
     {
+     "id": "btn-insert-more",
+     "label": "Insert tools",
+     "enabled": true,
+     "x": 510,
+     "y": 434,
+     "w": 49,
+     "h": 32
+    },
+    {
      "id": "btn-textfile",
+     "hidden": true,
      "label": "Text from file…",
      "enabled": true,
-     "x": 897,
-     "y": 82,
-     "w": 111,
-     "h": 32
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
     },
     {
      "id": "btn-mailmerge",
+     "hidden": true,
      "label": "Mail merge…",
      "enabled": true,
-     "x": 1010,
-     "y": 82,
-     "w": 101,
-     "h": 32
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
     },
     {
      "id": "btn-addtext",
+     "hidden": true,
      "label": "Add text",
      "enabled": true,
-     "x": 1114,
-     "y": 82,
-     "w": 69,
-     "h": 32
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
     },
     {
      "id": "btn-field",
+     "hidden": true,
      "label": "Field…",
      "enabled": true,
-     "x": 1185,
-     "y": 82,
-     "w": 62,
-     "h": 32
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
     },
     {
      "id": "btn-contentcontrol",
+     "hidden": true,
      "label": "Content control…",
      "enabled": true,
-     "x": 1249,
-     "y": 82,
-     "w": 127,
-     "h": 32
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
     },
     {
      "id": "btn-chart",
+     "hidden": true,
      "label": "Chart editor…",
      "enabled": true,
-     "x": 1378,
-     "y": 82,
-     "w": 105,
-     "h": 32
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
     },
     {
      "id": "btn-equation",
+     "hidden": true,
      "label": "Equation…",
      "enabled": true,
-     "x": 1485,
-     "y": 82,
-     "w": 87,
-     "h": 32
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
     },
     {
      "id": "btn-smartart",
+     "hidden": true,
      "label": "SmartArt…",
      "enabled": true,
-     "x": 1575,
-     "y": 82,
-     "w": 87,
-     "h": 32
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
     }
    ],
    "combos": [
