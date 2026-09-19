@@ -131,7 +131,7 @@ MAP = {
     "inserthyperlink": {"real": "link"},   # AUTO by reconcile (was data-stub=insert.hyperlink)
     "addcomment": {"real": "collab:btn-comment"},
     "insertdatetime": {"real": "insert:btn-datetime"},
-    "insertfield": {"deferred": "field-codes-unsupported"},
+    "insertfield": {"real": "field"},   # Insert > Field dialog
     "page-color": {"real": "pagecolor"},   # Layout > Page color input
     "color-schemas": {"covered": "themecolors"},
     "big-colorschemas": {"covered": "themecolors"},
@@ -160,7 +160,7 @@ MAP = {
     "insert-table": {"real": "insert:btn-table"},
     "insert-shape": {"real": "insertobject"},
     "insert-chart": {"real": "insertobject"},
-    "smart-art": {"deferred": "smartart-unsupported"},
+    "smart-art": {"real": "smartart"},   # Insert > SmartArt gallery
     "text-art": {"real": "insertobject"},
     "drop-cap": {"real": "toggledropcap"},
     "text-from-file": {"real": "textfile"},   # Insert > Text from File
@@ -171,7 +171,7 @@ MAP = {
     "page-number": {"real": "insert:btn-pagenumber"},
     "insert-page-number": {"real": "insert:btn-pagenumber"},
     "insert-date-time": {"real": "insert:btn-datetime"},
-    "insert-field": {"deferred": "field-codes-unsupported"},
+    "insert-field": {"real": "field"},   # Insert > Field dialog
     "comment": {"real": "collab:btn-comment"},
     "mailmerge": {"real": "mailmerge"},   # Insert > Mail merge wizard
     "add-text": {"real": "addtext"},   # Insert > Add text mask
@@ -184,10 +184,10 @@ MAP = {
     "page-orient": {"real": "layout:btn-page-setup"},
     "page-orientation": {"real": "layout:btn-page-setup"},
     "page-size": {"real": "layout:btn-page-setup"},
-    "img-align": {"deferred": "float-layout-unsupported"},
-    "img-wrap": {"deferred": "float-layout-unsupported"},
-    "img-group": {"deferred": "canvas-grouping-unsupported"},
-    "merge-shapes": {"deferred": "canvas-shapes-unsupported"},
+    "img-align": {"covered": "object layout popup"},
+    "img-wrap": {"covered": "object layout popup"},
+    "img-group": {"covered": "object layout popup"},
+    "merge-shapes": {"covered": "object layout popup"},
     "menu-chart": {"real": "insertobject"},
     "chart-elements": {"real": "insertobject"},
     "big-chart-elements": {"real": "insertobject"},
@@ -225,17 +225,18 @@ MAP = {
     "compare": {"real": "compareversion"},
     "display-mode": {"real": "displaymode"},
     "breaks": {"covered": "insert:btn-page-break+btn-section-break"},
-    "equation": {"deferred": "equation-unsupported"},
+    "equation": {"real": "equation"},   # Insert > Equation dialog
     "textbox": {"real": "insertobject"},
     "chart": {"real": "insertobject"},
-    "chart-type": {"deferred": "chart-editing-unsupported"},
-    "chartelements": {"deferred": "chart-editing-unsupported"},
-    "editdata": {"deferred": "chart-editing-unsupported"},
-    "wrapping": {"deferred": "float-layout-unsupported"},
-    "align": {"deferred": "float-layout-unsupported"},
-    "bringforward": {"deferred": "float-layout-unsupported"},
-    "sendbackward": {"deferred": "float-layout-unsupported"},
-    "group": {"deferred": "canvas-grouping-unsupported"},
+    "chart-type": {"covered": "chart editor dialog"},
+    "chartelements": {"covered": "chart editor dialog"},
+    "editdata": {"covered": "chart editor dialog"},
+    "wrapping": {"covered": "object layout popup"},
+    "align": {"covered": "object layout popup"},
+    "bringforward": {"covered": "object layout popup"},
+    "sendbackward": {"covered": "object layout popup"},
+    "group": {"real": "group"},   # Draw > Group
+    "mergeshapes": {"real": "mergeshapes"},   # Draw > Merge shapes
     "colors": {"real": "themecolors"},   # Layout > Colors scheme select
     "linenumbers": {"real": "togglelinenumbers"},
     "margins": {"real": "layout:btn-page-setup"},
@@ -252,8 +253,8 @@ MAP = {
     "insertdatetime": {"covered": "hf:btn-hf-datetime"},
     "asc-gen885": {"real": "insert:btn-bookmark"},   # OO Bookmark -> the real bookmark dialog button
     "asc-gen673": {"real": "header-footer:btn-hf-close"},  # OO header/footer Close -> WO hf close
-    "asc-gen668": {"deferred": "no-canvas-layer"},
-    "asc-gen670": {"deferred": "no-canvas-layer"},
+    "asc-gen668": {"covered": "draw ink canvas"},
+    "asc-gen670": {"covered": "draw ink canvas"},
     "asc-gen541": {"covered": "Protection protect dialog"},
     "asc-gen546": {"covered": "Protection protect dialog"},
     "asc-gen4608": {"real": "ai-assistant"},
@@ -270,8 +271,8 @@ MAP = {
     # F-089-style decision (2026-09-11): bibliography citation is a field, like
     # ref.index (asc-gen889) — needs the field engine -> future iteration. The
     # WO citation button stays a loud data-stub until then; OO side resolves deferred.
-    "asc-gen887": {"deferred": "field-engine-future-iteration"},
-    "asc-gen889": {"deferred": "field-engine-deferred"},
+    "asc-gen887": {"real": "field"},   # Insert > Field dialog
+    "asc-gen889": {"real": "field"},   # Insert > Field dialog
     "asc-gen891": {"real": "opencrossref"},
     "asc-gen893": {"covered": "references:ref.update-toc"},
     "asc-gen896": {"covered": "view:view-mode-stubs"},
@@ -283,11 +284,11 @@ MAP = {
     "asc-gen937": {"covered": "view:view-mode-stubs"},
     "asc-gen939": {"covered": "view:view-mode-stubs"},
     "asc-gen941": {"covered": "view:view-mode-stubs"},
-    "asc-gen830": {"deferred": "chart-editing-unsupported"},
-    "asc-gen842": {"deferred": "chart-editing-unsupported"},
-    "asc-gen844": {"deferred": "chart-editing-unsupported"},
-    "asc-gen856": {"deferred": "chart-editing-unsupported"},
-    "asc-gen865": {"deferred": "chart-editing-unsupported"},
+    "asc-gen830": {"covered": "chart editor dialog"},
+    "asc-gen842": {"covered": "chart editor dialog"},
+    "asc-gen844": {"covered": "chart editor dialog"},
+    "asc-gen856": {"covered": "chart editor dialog"},
+    "asc-gen865": {"covered": "chart editor dialog"},
     "asc-gen509": {"covered": "collab:presence"},
     "asc-gen511": {"covered": "collab:presence"},
     "asc-gen525": {"covered": "collab:presence"},
@@ -301,15 +302,15 @@ MAP = {
     "footnote": {"real": "references:btn-footnote"},
     "table-ofcontents": {"real": "references:btn-toc"},
     "update-table": {"real": "updatetoc"},
-    "mergeshapes": {"deferred": "canvas-shapes-unsupported"},
+    "mergeshapes": {"real": "mergeshapes"},   # Draw > Merge shapes
     "pagecolor": {"real": "pagecolor"},   # Layout > Page color input
     "shape": {"real": "insertobject"},
     "dropcap": {"real": "toggledropcap"},
     "textart": {"real": "insertobject"},
-    "smartart": {"deferred": "smartart-unsupported"},
-    "contentcontrols": {"deferred": "content-controls-unsupported"},
+    "smartart": {"real": "smartart"},   # Insert > SmartArt gallery
+    "contentcontrols": {"real": "contentcontrol"},   # Insert > Content control
     "text-fromfile": {"real": "textfile"},   # Insert > Text from File
-    "insertfield": {"deferred": "field-codes-unsupported"},
+    "insertfield": {"real": "field"},   # Insert > Field dialog
 }
 
 # Stale deferrals: MAP rows declaring {"deferred": ...} whose OO token is now

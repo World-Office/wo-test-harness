@@ -715,8 +715,9 @@
    "label": "SmartArt",
    "enabled": true,
    "token": "smartart",
-   "status": "deferred",
-   "deferred": "smartart-unsupported"
+   "status": "real",
+   "wo": "btn-smartart",
+   "wo_tab": "insert"
   },
   {
    "tab": "insert",
@@ -855,8 +856,9 @@
    "label": "Field",
    "enabled": true,
    "token": "insertfield",
-   "status": "deferred",
-   "deferred": "field-codes-unsupported"
+   "status": "real",
+   "wo": "btn-field",
+   "wo_tab": "insert"
   },
   {
    "tab": "insert",
@@ -877,8 +879,9 @@
    "label": "Equation",
    "enabled": true,
    "token": "equation",
-   "status": "deferred",
-   "deferred": "equation-unsupported"
+   "status": "real",
+   "wo": "btn-equation",
+   "wo_tab": "insert"
   },
   {
    "tab": "insert",
@@ -900,8 +903,9 @@
    "label": "ContentControls",
    "enabled": true,
    "token": "contentcontrols",
-   "status": "deferred",
-   "deferred": "content-controls-unsupported"
+   "status": "real",
+   "wo": "btn-contentcontrol",
+   "wo_tab": "insert"
   },
   {
    "tab": "insert",
@@ -1070,8 +1074,8 @@
    "label": "Select",
    "enabled": true,
    "token": "asc-gen670",
-   "status": "deferred",
-   "deferred": "no-canvas-layer"
+   "status": "covered",
+   "covered": "draw ink canvas"
   },
   {
    "tab": "draw",
@@ -1147,8 +1151,8 @@
    "label": "Eraser",
    "enabled": true,
    "token": "asc-gen668",
-   "status": "deferred",
-   "deferred": "no-canvas-layer"
+   "status": "covered",
+   "covered": "draw ink canvas"
   },
   {
    "tab": "draw",
@@ -1411,8 +1415,8 @@
    "label": "Wrapping",
    "enabled": false,
    "token": "wrapping",
-   "status": "deferred",
-   "deferred": "float-layout-unsupported"
+   "status": "covered",
+   "covered": "object layout popup"
   },
   {
    "tab": "layout",
@@ -1433,8 +1437,8 @@
    "label": "BringForward",
    "enabled": false,
    "token": "bringforward",
-   "status": "deferred",
-   "deferred": "float-layout-unsupported"
+   "status": "covered",
+   "covered": "object layout popup"
   },
   {
    "tab": "layout",
@@ -1455,8 +1459,8 @@
    "label": "SendBackward",
    "enabled": false,
    "token": "sendbackward",
-   "status": "deferred",
-   "deferred": "float-layout-unsupported"
+   "status": "covered",
+   "covered": "object layout popup"
   },
   {
    "tab": "layout",
@@ -1466,8 +1470,8 @@
    "label": "Align",
    "enabled": false,
    "token": "align",
-   "status": "deferred",
-   "deferred": "float-layout-unsupported"
+   "status": "covered",
+   "covered": "object layout popup"
   },
   {
    "tab": "layout",
@@ -1477,8 +1481,9 @@
    "label": "Group",
    "enabled": false,
    "token": "group",
-   "status": "deferred",
-   "deferred": "canvas-grouping-unsupported"
+   "status": "real",
+   "wo": "btn-group",
+   "wo_tab": "draw"
   },
   {
    "tab": "layout",
@@ -1488,8 +1493,9 @@
    "label": "MergeShapes",
    "enabled": false,
    "token": "mergeshapes",
-   "status": "deferred",
-   "deferred": "canvas-shapes-unsupported"
+   "status": "real",
+   "wo": "btn-mergeshapes",
+   "wo_tab": "draw"
   },
   {
    "tab": "layout",
@@ -1799,8 +1805,9 @@
    "label": "Caption",
    "enabled": true,
    "token": "asc-gen887",
-   "status": "deferred",
-   "deferred": "field-engine-future-iteration"
+   "status": "real",
+   "wo": "btn-field",
+   "wo_tab": "insert"
   },
   {
    "tab": "references",
@@ -1810,8 +1817,9 @@
    "label": "Cross-reference",
    "enabled": true,
    "token": "asc-gen889",
-   "status": "deferred",
-   "deferred": "field-engine-deferred"
+   "status": "real",
+   "wo": "btn-field",
+   "wo_tab": "insert"
   },
   {
    "tab": "references",
@@ -3212,8 +3220,9 @@
    "label": "Field",
    "enabled": true,
    "token": "insertfield",
-   "status": "deferred",
-   "deferred": "field-codes-unsupported"
+   "status": "real",
+   "wo": "btn-field",
+   "wo_tab": "insert"
   },
   {
    "tab": "header-footer",
@@ -3659,8 +3668,8 @@
    "label": "ChartElements",
    "enabled": true,
    "token": "chartelements",
-   "status": "deferred",
-   "deferred": "chart-editing-unsupported"
+   "status": "covered",
+   "covered": "chart editor dialog"
   },
   {
    "tab": "chart-design",
@@ -3670,8 +3679,8 @@
    "label": "EditData",
    "enabled": true,
    "token": "asc-gen830",
-   "status": "deferred",
-   "deferred": "chart-editing-unsupported"
+   "status": "covered",
+   "covered": "chart editor dialog"
   },
   {
    "tab": "chart-design",
@@ -3681,8 +3690,8 @@
    "label": "EditData",
    "enabled": true,
    "token": "editdata",
-   "status": "deferred",
-   "deferred": "chart-editing-unsupported"
+   "status": "covered",
+   "covered": "chart editor dialog"
   },
   {
    "tab": "chart-design",
@@ -3692,8 +3701,8 @@
    "label": "UpdateData",
    "enabled": true,
    "token": "asc-gen842",
-   "status": "deferred",
-   "deferred": "chart-editing-unsupported"
+   "status": "covered",
+   "covered": "chart editor dialog"
   },
   {
    "tab": "chart-design",
@@ -3703,8 +3712,8 @@
    "label": "Chart type",
    "enabled": true,
    "token": "chart-type",
-   "status": "deferred",
-   "deferred": "chart-editing-unsupported"
+   "status": "covered",
+   "covered": "chart editor dialog"
   },
   {
    "tab": "chart-design",
@@ -3714,8 +3723,8 @@
    "label": "Advanced settings",
    "enabled": true,
    "token": "asc-gen856",
-   "status": "deferred",
-   "deferred": "chart-editing-unsupported"
+   "status": "covered",
+   "covered": "chart editor dialog"
   },
   {
    "tab": "chart-design",
@@ -3725,8 +3734,8 @@
    "label": "Wrapping",
    "enabled": false,
    "token": "wrapping",
-   "status": "deferred",
-   "deferred": "float-layout-unsupported"
+   "status": "covered",
+   "covered": "object layout popup"
   },
   {
    "tab": "chart-design",
@@ -3736,8 +3745,8 @@
    "label": "3Drotation",
    "enabled": true,
    "token": "asc-gen865",
-   "status": "deferred",
-   "deferred": "chart-editing-unsupported"
+   "status": "covered",
+   "covered": "chart editor dialog"
   },
   {
    "tab": "chart-design",
@@ -3863,8 +3872,8 @@
    "label": null,
    "enabled": true,
    "token": "asc-gen844",
-   "status": "deferred",
-   "deferred": "chart-editing-unsupported"
+   "status": "covered",
+   "covered": "chart editor dialog"
   },
   {
    "tab": "backstage",
@@ -3973,10 +3982,9 @@
   }
  ],
  "counts": {
-  "covered": 137,
-  "real": 110,
+  "covered": 152,
+  "real": 119,
   "global-repeat": 88,
-  "deferred": 24,
   "menu-file": 11
  }
 }

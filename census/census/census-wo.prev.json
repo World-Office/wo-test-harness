@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-09-19T16:28:35.622Z",
+ "capturedAt": "2026-09-19T16:44:35.067Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
@@ -1003,29 +1003,74 @@
     },
     {
      "id": "btn-textfile",
-     "label": "Insert.TextFromFile",
+     "label": "Text from file…",
      "enabled": true,
      "x": 897,
      "y": 82,
-     "w": 138,
+     "w": 111,
      "h": 32
     },
     {
      "id": "btn-mailmerge",
-     "label": "Insert.MailMerge",
+     "label": "Mail merge…",
      "enabled": true,
-     "x": 1037,
+     "x": 1010,
      "y": 82,
-     "w": 122,
+     "w": 101,
      "h": 32
     },
     {
      "id": "btn-addtext",
-     "label": "Insert.AddText",
+     "label": "Add text",
      "enabled": true,
-     "x": 1161,
+     "x": 1114,
      "y": 82,
-     "w": 108,
+     "w": 69,
+     "h": 32
+    },
+    {
+     "id": "btn-field",
+     "label": "Field…",
+     "enabled": true,
+     "x": 1185,
+     "y": 82,
+     "w": 62,
+     "h": 32
+    },
+    {
+     "id": "btn-contentcontrol",
+     "label": "Content control…",
+     "enabled": true,
+     "x": 1249,
+     "y": 82,
+     "w": 127,
+     "h": 32
+    },
+    {
+     "id": "btn-chart",
+     "label": "Chart editor…",
+     "enabled": true,
+     "x": 1378,
+     "y": 82,
+     "w": 105,
+     "h": 32
+    },
+    {
+     "id": "btn-equation",
+     "label": "Equation…",
+     "enabled": true,
+     "x": 1485,
+     "y": 82,
+     "w": 87,
+     "h": 32
+    },
+    {
+     "id": "btn-smartart",
+     "label": "SmartArt…",
+     "enabled": true,
+     "x": 1575,
+     "y": 82,
+     "w": 87,
      "h": 32
     }
    ],
@@ -1123,6 +1168,24 @@
      "x": 390,
      "y": 82,
      "w": 99,
+     "h": 32
+    },
+    {
+     "id": "btn-group",
+     "label": "Group",
+     "enabled": true,
+     "x": 491,
+     "y": 82,
+     "w": 57,
+     "h": 32
+    },
+    {
+     "id": "btn-mergeshapes",
+     "label": "Merge shapes",
+     "enabled": true,
+     "x": 549,
+     "y": 82,
+     "w": 107,
      "h": 32
     }
    ],
@@ -1590,18 +1653,18 @@
     },
     {
      "id": "btn-speech",
-     "label": "View.Speech",
+     "label": "Speech",
      "enabled": true,
-     "x": 861,
+     "x": 873,
      "y": 434,
-     "w": 58,
+     "w": 34,
      "h": 32
     },
     {
      "id": "btn-readaloud",
      "cmd": "readAloud",
      "hidden": true,
-     "label": "View.ReadAloud",
+     "label": "Read aloud",
      "enabled": true,
      "x": 0,
      "y": 0,
@@ -1612,7 +1675,7 @@
      "id": "btn-dictate",
      "cmd": "dictate",
      "hidden": true,
-     "label": "View.Dictate",
+     "label": "Dictate…",
      "enabled": true,
      "x": 0,
      "y": 0,
@@ -1668,11 +1731,11 @@
     },
     {
      "id": "btn-bgplugins",
-     "label": "Plugins.Background",
+     "label": "Background plugins",
      "enabled": true,
      "x": 246,
      "y": 82,
-     "w": 143,
+     "w": 141,
      "h": 32
     },
     {
@@ -1680,7 +1743,7 @@
      "cmd": "ocrRun",
      "label": "OCR",
      "enabled": true,
-     "x": 390,
+     "x": 389,
      "y": 82,
      "w": 49,
      "h": 32
@@ -1690,7 +1753,7 @@
      "cmd": "photoEditor",
      "label": "Photo editor",
      "enabled": true,
-     "x": 441,
+     "x": 440,
      "y": 82,
      "w": 94,
      "h": 32
@@ -1944,27 +2007,27 @@
     },
     {
      "id": "btn-fileinfo",
-     "label": "Menu.Info",
+     "label": "Info…",
      "enabled": true
     },
     {
      "id": "btn-fileprotect",
-     "label": "Menu.Protect",
+     "label": "Protect document…",
      "enabled": true
     },
     {
      "id": "btn-filesettings",
-     "label": "Menu.Settings",
+     "label": "Settings…",
      "enabled": true
     },
     {
      "id": "btn-filehelp",
-     "label": "Menu.Help",
+     "label": "Help &amp; about",
      "enabled": true
     },
     {
      "id": "btn-filesuggest",
-     "label": "Menu.Suggest",
+     "label": "Suggest a feature…",
      "enabled": true
     }
    ]
