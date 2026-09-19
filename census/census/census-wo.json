@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-09-16T16:25:58.685Z",
+ "capturedAt": "2026-09-19T11:55:44.919Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
@@ -749,9 +749,9 @@
      "cmd": "code",
      "label": "</>",
      "enabled": true,
-     "x": 615,
+     "x": 614,
      "y": 104,
-     "w": 35,
+     "w": 36,
      "h": 32
     },
     {
@@ -813,6 +813,11 @@
      "id": "shading-color",
      "label": "Paragraph shading",
      "w": 0
+    },
+    {
+     "id": "pagecolor",
+     "label": "Layout.PageColor",
+     "w": 0
     }
    ]
   },
@@ -834,14 +839,14 @@
      "enabled": true,
      "x": 48,
      "y": 82,
-     "w": 44,
+     "w": 43,
      "h": 32
     },
     {
      "id": "btn-image",
      "label": "Insert image",
      "enabled": true,
-     "x": 94,
+     "x": 93,
      "y": 82,
      "w": 34,
      "h": 32
@@ -850,7 +855,7 @@
      "id": "btn-link",
      "label": "Insert link",
      "enabled": true,
-     "x": 130,
+     "x": 129,
      "y": 82,
      "w": 34,
      "h": 32
@@ -859,7 +864,7 @@
      "id": "btn-hr",
      "label": "─",
      "enabled": true,
-     "x": 166,
+     "x": 165,
      "y": 82,
      "w": 34,
      "h": 32
@@ -868,7 +873,7 @@
      "id": "btn-object",
      "label": "▢",
      "enabled": true,
-     "x": 202,
+     "x": 201,
      "y": 82,
      "w": 34,
      "h": 32
@@ -877,7 +882,7 @@
      "id": "btn-bookmark",
      "label": "Insert bookmark",
      "enabled": true,
-     "x": 238,
+     "x": 237,
      "y": 82,
      "w": 34,
      "h": 32
@@ -886,7 +891,7 @@
      "id": "btn-crossref",
      "label": "Insert cross-reference",
      "enabled": true,
-     "x": 274,
+     "x": 273,
      "y": 82,
      "w": 34,
      "h": 32
@@ -895,7 +900,7 @@
      "id": "btn-symbol",
      "label": "Ω",
      "enabled": true,
-     "x": 310,
+     "x": 309,
      "y": 82,
      "w": 34,
      "h": 32
@@ -904,7 +909,7 @@
      "id": "btn-datetime",
      "label": "Insert date",
      "enabled": true,
-     "x": 346,
+     "x": 345,
      "y": 82,
      "w": 34,
      "h": 32
@@ -913,7 +918,7 @@
      "id": "btn-pagenumber",
      "label": "#",
      "enabled": true,
-     "x": 382,
+     "x": 381,
      "y": 82,
      "w": 34,
      "h": 32
@@ -922,7 +927,7 @@
      "id": "btn-header",
      "label": "▔",
      "enabled": true,
-     "x": 418,
+     "x": 417,
      "y": 82,
      "w": 34,
      "h": 32
@@ -931,7 +936,7 @@
      "id": "btn-footer",
      "label": "▁",
      "enabled": true,
-     "x": 454,
+     "x": 453,
      "y": 82,
      "w": 34,
      "h": 32
@@ -941,7 +946,7 @@
      "cmd": "insertObject",
      "label": "Shape",
      "enabled": true,
-     "x": 490,
+     "x": 489,
      "y": 82,
      "w": 58,
      "h": 32
@@ -951,7 +956,7 @@
      "cmd": "insertObject",
      "label": "Chart",
      "enabled": true,
-     "x": 550,
+     "x": 549,
      "y": 82,
      "w": 52,
      "h": 32
@@ -981,7 +986,7 @@
      "cmd": "insertObject",
      "label": "Text box",
      "enabled": true,
-     "x": 747,
+     "x": 746,
      "y": 82,
      "w": 70,
      "h": 32
@@ -1011,6 +1016,11 @@
     {
      "id": "shading-color",
      "label": "Paragraph shading",
+     "w": 0
+    },
+    {
+     "id": "pagecolor",
+     "label": "Layout.PageColor",
      "w": 0
     }
    ]
@@ -1104,6 +1114,11 @@
      "id": "shading-color",
      "label": "Paragraph shading",
      "w": 0
+    },
+    {
+     "id": "pagecolor",
+     "label": "Layout.PageColor",
+     "w": 0
     }
    ]
   },
@@ -1179,6 +1194,11 @@
    ],
    "combos": [
     {
+     "id": "themecolors",
+     "label": "Layout.Colors",
+     "w": 86
+    },
+    {
      "id": "highlight-color",
      "label": "Highlight color",
      "w": 0
@@ -1192,6 +1212,11 @@
      "id": "shading-color",
      "label": "Paragraph shading",
      "w": 0
+    },
+    {
+     "id": "pagecolor",
+     "label": "Layout.PageColor",
+     "w": 24
     }
    ]
   },
@@ -1290,6 +1315,11 @@
     {
      "id": "shading-color",
      "label": "Paragraph shading",
+     "w": 0
+    },
+    {
+     "id": "pagecolor",
+     "label": "Layout.PageColor",
      "w": 0
     }
    ]
@@ -1399,6 +1429,11 @@
      "id": "shading-color",
      "label": "Paragraph shading",
      "w": 0
+    },
+    {
+     "id": "pagecolor",
+     "label": "Layout.PageColor",
+     "w": 0
     }
    ]
   },
@@ -1441,6 +1476,11 @@
      "id": "shading-color",
      "label": "Paragraph shading",
      "w": 0
+    },
+    {
+     "id": "pagecolor",
+     "label": "Layout.PageColor",
+     "w": 0
     }
    ]
   },
@@ -1476,11 +1516,20 @@
      "h": 32
     },
     {
+     "id": "btn-view-formatmarks",
+     "label": "View.FormattingMarks",
+     "enabled": true,
+     "x": 256,
+     "y": 82,
+     "w": 156,
+     "h": 32
+    },
+    {
      "id": "btn-nav-toggle",
      "cmd": "toggleNavigation",
      "label": "Navigation",
      "enabled": true,
-     "x": 256,
+     "x": 415,
      "y": 82,
      "w": 84,
      "h": 32
@@ -1489,7 +1538,7 @@
      "id": "btn-view-fullscreen",
      "label": "Fullscreen",
      "enabled": true,
-     "x": 343,
+     "x": 501,
      "y": 82,
      "w": 83,
      "h": 32
@@ -1498,7 +1547,7 @@
      "id": "btn-view-theme",
      "label": "Theme",
      "enabled": true,
-     "x": 427,
+     "x": 585,
      "y": 82,
      "w": 62,
      "h": 32
@@ -1507,7 +1556,7 @@
      "id": "btn-view-fit",
      "label": "Fit page",
      "enabled": true,
-     "x": 491,
+     "x": 649,
      "y": 82,
      "w": 69,
      "h": 32
@@ -1527,6 +1576,11 @@
     {
      "id": "shading-color",
      "label": "Paragraph shading",
+     "w": 0
+    },
+    {
+     "id": "pagecolor",
+     "label": "Layout.PageColor",
      "w": 0
     }
    ]
@@ -1589,6 +1643,11 @@
     {
      "id": "shading-color",
      "label": "Paragraph shading",
+     "w": 0
+    },
+    {
+     "id": "pagecolor",
+     "label": "Layout.PageColor",
      "w": 0
     }
    ]
@@ -1668,6 +1727,11 @@
     {
      "id": "shading-color",
      "label": "Paragraph shading",
+     "w": 0
+    },
+    {
+     "id": "pagecolor",
+     "label": "Layout.PageColor",
      "w": 0
     }
    ]
@@ -1769,6 +1833,11 @@
      "id": "shading-color",
      "label": "Paragraph shading",
      "w": 0
+    },
+    {
+     "id": "pagecolor",
+     "label": "Layout.PageColor",
+     "w": 0
     }
    ]
   }
@@ -1838,7 +1907,7 @@
      "id": "doc-lang-caret",
      "label": "Language options",
      "enabled": true,
-     "x": 1075
+     "x": 1077
     }
    ],
    "combos": []

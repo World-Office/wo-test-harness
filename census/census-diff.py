@@ -127,11 +127,17 @@ MAP = {
     "zoom-topage": {"covered": "zoom-slider"},
     "zoom-towidth": {"covered": "zoom-slider"},
     "status-btn-multiple-pages": {"deferred": "single-page-view"},
-    "blankpage": {"deferred": "decorative-page-insert"},
+    "blankpage": {"covered": "insert:btn-page-break"},   # Word Blank Page = page break + empty para
     "inserthyperlink": {"real": "link"},   # AUTO by reconcile (was data-stub=insert.hyperlink)
     "addcomment": {"real": "collab:btn-comment"},
     "insertdatetime": {"real": "insert:btn-datetime"},
     "insertfield": {"deferred": "field-codes-unsupported"},
+    "page-color": {"real": "pagecolor"},   # Layout > Page color input
+    "color-schemas": {"covered": "themecolors"},
+    "big-colorschemas": {"covered": "themecolors"},
+    "blank-page": {"covered": "insert:btn-page-break"},
+    "nonprinting-characters": {"real": "view-formatmarks"},   # View > Formatting marks toggle
+    "set-markers": {"real": "view-formatmarks"},
     "inserthyperlink-text": {"real": "link"},   # AUTO by reconcile (was data-stub=insert.hyperlink)
     "copy": {"covered": "native-clipboard"},
     "asc-gen987": {"covered": "zoom-slider"},
@@ -158,7 +164,6 @@ MAP = {
     "text-art": {"real": "insertobject"},
     "drop-cap": {"real": "toggledropcap"},
     "text-from-file": {"deferred": "io-future-iteration"},
-    "blank-page": {"deferred": "decorative-page-insert"},
     "content-controls": {"deferred": "content-controls-unsupported"},
     "header-footer": {"real": "insert:btn-header"},
     "edit-header-footer": {"real": "insert:btn-header"},
@@ -179,9 +184,6 @@ MAP = {
     "page-orient": {"real": "layout:btn-page-setup"},
     "page-orientation": {"real": "layout:btn-page-setup"},
     "page-size": {"real": "layout:btn-page-setup"},
-    "page-color": {"deferred": "page-color-css-only"},
-    "color-schemas": {"deferred": "theme-schemas-css-only"},
-    "big-colorschemas": {"deferred": "theme-schemas-css-only"},
     "img-align": {"deferred": "float-layout-unsupported"},
     "img-wrap": {"deferred": "float-layout-unsupported"},
     "img-group": {"deferred": "canvas-grouping-unsupported"},
@@ -192,7 +194,6 @@ MAP = {
     "allow-edit-ranges": {"deferred": "protection-range-granularity"},
     "multiple-pages": {"deferred": "single-page-view"},
     "day": {"covered": "system-date"},
-    "nonprinting-characters": {"deferred": "no-format-marks-view"},
     "english-united-states": {"deferred": "spellcheck-language-future-iteration"},
     "language": {"deferred": "spellcheck-language-future-iteration"},
     "highlight-color": {"real": "home:highlight-color"},
@@ -204,7 +205,6 @@ MAP = {
     "line-spacing": {"real": "home:sel-lh"},
     "ltr": {"covered": "directionrtl"},
     "rtl": {"covered": "directionrtl"},
-    "set-markers": {"deferred": "no-format-marks-view"},
     "numbering": {"real": "home:insertorderedlist"},
     "bullets": {"real": "home:insertunorderedlist"},
     "multilevels": {"real": "multilevel"},
@@ -236,7 +236,7 @@ MAP = {
     "bringforward": {"deferred": "float-layout-unsupported"},
     "sendbackward": {"deferred": "float-layout-unsupported"},
     "group": {"deferred": "canvas-grouping-unsupported"},
-    "colors": {"deferred": "theme-schemas-css-only"},
+    "colors": {"real": "themecolors"},   # Layout > Colors scheme select
     "linenumbers": {"real": "togglelinenumbers"},
     "margins": {"real": "layout:btn-page-setup"},
     "orientation": {"real": "layout:btn-page-setup"},
@@ -302,7 +302,7 @@ MAP = {
     "table-ofcontents": {"real": "references:btn-toc"},
     "update-table": {"real": "updatetoc"},
     "mergeshapes": {"deferred": "canvas-shapes-unsupported"},
-    "pagecolor": {"deferred": "page-color-css-only"},
+    "pagecolor": {"real": "pagecolor"},   # Layout > Page color input
     "shape": {"real": "insertobject"},
     "dropcap": {"real": "toggledropcap"},
     "textart": {"real": "insertobject"},
@@ -340,6 +340,13 @@ for slug, tab in oo["tabs"].items():
                 seen_global.add(base)
                 row["tab"] = "_global"
             if not tok:
+                # OO ribbon flex/layout container rows (icon-only, no id/label;
+                # e.g. btn-fixflex-* wrappers, bare btn-toolbar). DOM scaffolding,
+                # not controls — WO deliberately does not clone OO's internal
+                # wrapper classes; its own ribbon auto-layout covers them.
+                if (c.get("icon") or "") in ("btn-toolbar", "btn-fixflex-hcenter", "btn-fixflex-vcenter"):
+                    row["status"] = "covered"; row["covered"] = "ribbon-auto-layout"
+                    ledger.append(row); continue
                 row["status"] = "deferred"; row["reason"] = "no-identity-decoration"
                 ledger.append(row); continue
             m = MAP.get(tok)
