@@ -480,8 +480,8 @@
    "label": "English \u2013 United States",
    "enabled": true,
    "token": "english-united-states",
-   "status": "deferred",
-   "deferred": "spellcheck-language-future-iteration"
+   "status": "covered",
+   "covered": "statusbar doc-lang"
   },
   {
    "tab": "_global",
@@ -537,8 +537,8 @@
    "label": "Multiple pages",
    "enabled": true,
    "token": "status-btn-multiple-pages",
-   "status": "deferred",
-   "deferred": "single-page-view"
+   "status": "covered",
+   "covered": "statusbar multi-page view"
   },
   {
    "tab": "_global",
@@ -843,8 +843,9 @@
    "label": "Text fromFile",
    "enabled": true,
    "token": "text-fromfile",
-   "status": "deferred",
-   "deferred": "io-future-iteration"
+   "status": "real",
+   "wo": "btn-textfile",
+   "wo_tab": "insert"
   },
   {
    "tab": "insert",
@@ -921,8 +922,8 @@
    "label": "English \u2013 United States",
    "enabled": true,
    "token": "english-united-states",
-   "status": "deferred",
-   "deferred": "spellcheck-language-future-iteration"
+   "status": "covered",
+   "covered": "statusbar doc-lang"
   },
   {
    "tab": "insert",
@@ -1168,8 +1169,8 @@
    "label": "English \u2013 United States",
    "enabled": true,
    "token": "english-united-states",
-   "status": "deferred",
-   "deferred": "spellcheck-language-future-iteration"
+   "status": "covered",
+   "covered": "statusbar doc-lang"
   },
   {
    "tab": "draw",
@@ -1545,8 +1546,8 @@
    "label": "English \u2013 United States",
    "enabled": true,
    "token": "english-united-states",
-   "status": "deferred",
-   "deferred": "spellcheck-language-future-iteration"
+   "status": "covered",
+   "covered": "statusbar doc-lang"
   },
   {
    "tab": "layout",
@@ -1716,8 +1717,9 @@
    "label": "Add Text",
    "enabled": true,
    "token": "add-text",
-   "status": "deferred",
-   "deferred": "text-marking-entry"
+   "status": "real",
+   "wo": "btn-addtext",
+   "wo_tab": "insert"
   },
   {
    "tab": "references",
@@ -1853,8 +1855,8 @@
    "label": "English \u2013 United States",
    "enabled": true,
    "token": "english-united-states",
-   "status": "deferred",
-   "deferred": "spellcheck-language-future-iteration"
+   "status": "covered",
+   "covered": "statusbar doc-lang"
   },
   {
    "tab": "references",
@@ -2214,8 +2216,9 @@
    "label": "MailMerge",
    "enabled": true,
    "token": "mailmerge",
-   "status": "deferred",
-   "deferred": "mailmerge-future-iteration"
+   "status": "real",
+   "wo": "btn-mailmerge",
+   "wo_tab": "insert"
   },
   {
    "tab": "collaboration",
@@ -2236,8 +2239,8 @@
    "label": "English \u2013 United States",
    "enabled": true,
    "token": "english-united-states",
-   "status": "deferred",
-   "deferred": "spellcheck-language-future-iteration"
+   "status": "covered",
+   "covered": "statusbar doc-lang"
   },
   {
    "tab": "collaboration",
@@ -2384,8 +2387,8 @@
    "label": "Encrypt",
    "enabled": true,
    "token": "asc-gen541",
-   "status": "deferred",
-   "deferred": "host-layer-permissions"
+   "status": "covered",
+   "covered": "Protection protect dialog"
   },
   {
    "tab": "protection",
@@ -2395,8 +2398,8 @@
    "label": "ProtectDocument",
    "enabled": true,
    "token": "asc-gen546",
-   "status": "deferred",
-   "deferred": "host-layer-permissions"
+   "status": "covered",
+   "covered": "Protection protect dialog"
   },
   {
    "tab": "protection",
@@ -2417,8 +2420,8 @@
    "label": "English \u2013 United States",
    "enabled": true,
    "token": "english-united-states",
-   "status": "deferred",
-   "deferred": "spellcheck-language-future-iteration"
+   "status": "covered",
+   "covered": "statusbar doc-lang"
   },
   {
    "tab": "protection",
@@ -2686,8 +2689,8 @@
    "label": "English \u2013 United States",
    "enabled": true,
    "token": "english-united-states",
-   "status": "deferred",
-   "deferred": "spellcheck-language-future-iteration"
+   "status": "covered",
+   "covered": "statusbar doc-lang"
   },
   {
    "tab": "view",
@@ -2845,8 +2848,9 @@
    "label": "Backgroundplugins",
    "enabled": true,
    "token": "backgroundplugins",
-   "status": "deferred",
-   "deferred": "background-plugins-future-iteration"
+   "status": "real",
+   "wo": "btn-bgplugins",
+   "wo_tab": "plugins"
   },
   {
    "tab": "plugins",
@@ -2979,8 +2983,9 @@
    "label": "Speech",
    "enabled": true,
    "token": "speech",
-   "status": "deferred",
-   "deferred": "tts-future-iteration"
+   "status": "real",
+   "wo": "btn-readaloud",
+   "wo_tab": "view"
   },
   {
    "tab": "plugins",
@@ -3001,8 +3006,9 @@
    "label": "Speechinput",
    "enabled": true,
    "token": "speechinput",
-   "status": "deferred",
-   "deferred": "stt-future-iteration"
+   "status": "real",
+   "wo": "btn-dictate",
+   "wo_tab": "view"
   },
   {
    "tab": "plugins",
@@ -3023,8 +3029,8 @@
    "label": "English \u2013 United States",
    "enabled": true,
    "token": "english-united-states",
-   "status": "deferred",
-   "deferred": "spellcheck-language-future-iteration"
+   "status": "covered",
+   "covered": "statusbar doc-lang"
   },
   {
    "tab": "plugins",
@@ -3252,8 +3258,8 @@
    "label": "English \u2013 United States",
    "enabled": true,
    "token": "english-united-states",
-   "status": "deferred",
-   "deferred": "spellcheck-language-future-iteration"
+   "status": "covered",
+   "covered": "statusbar doc-lang"
   },
   {
    "tab": "header-footer",
@@ -3505,8 +3511,8 @@
    "label": "English \u2013 United States",
    "enabled": true,
    "token": "english-united-states",
-   "status": "deferred",
-   "deferred": "spellcheck-language-future-iteration"
+   "status": "covered",
+   "covered": "statusbar doc-lang"
   },
   {
    "tab": "ai",
@@ -3752,8 +3758,8 @@
    "label": "English \u2013 United States",
    "enabled": true,
    "token": "english-united-states",
-   "status": "deferred",
-   "deferred": "spellcheck-language-future-iteration"
+   "status": "covered",
+   "covered": "statusbar doc-lang"
   },
   {
    "tab": "chart-design",
@@ -3913,8 +3919,9 @@
    "label": "Protect",
    "enabled": true,
    "token": "protect",
-   "status": "deferred",
-   "deferred": "react-filemenu-protect"
+   "status": "real",
+   "wo": "btn-fileprotect",
+   "wo_tab": "surface:menu-file"
   },
   {
    "tab": "backstage",
@@ -3924,8 +3931,9 @@
    "label": "Info",
    "enabled": true,
    "token": "info",
-   "status": "deferred",
-   "deferred": "react-filemenu-docinfo"
+   "status": "real",
+   "wo": "btn-fileinfo",
+   "wo_tab": "surface:menu-file"
   },
   {
    "tab": "backstage",
@@ -3935,8 +3943,9 @@
    "label": "Advanced Settings",
    "enabled": true,
    "token": "settings",
-   "status": "deferred",
-   "deferred": "react-filemenu-settings"
+   "status": "real",
+   "wo": "btn-filesettings",
+   "wo_tab": "surface:menu-file"
   },
   {
    "tab": "backstage",
@@ -3946,8 +3955,9 @@
    "label": "Help",
    "enabled": true,
    "token": "help",
-   "status": "deferred",
-   "deferred": "react-filemenu-help"
+   "status": "real",
+   "wo": "btn-filehelp",
+   "wo_tab": "surface:menu-file"
   },
   {
    "tab": "backstage",
@@ -3957,15 +3967,16 @@
    "label": "Suggest a Feature",
    "enabled": true,
    "token": "suggest",
-   "status": "deferred",
-   "deferred": "react-filemenu-suggest"
+   "status": "real",
+   "wo": "btn-filesuggest",
+   "wo_tab": "surface:menu-file"
   }
  ],
  "counts": {
-  "covered": 122,
-  "real": 99,
-  "deferred": 50,
+  "covered": 137,
+  "real": 110,
   "global-repeat": 88,
-  "menu-file": 6
+  "deferred": 24,
+  "menu-file": 11
  }
 }

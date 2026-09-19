@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-09-19T11:55:44.919Z",
+ "capturedAt": "2026-09-19T16:28:35.622Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
@@ -1000,6 +1000,33 @@
      "y": 82,
      "w": 76,
      "h": 32
+    },
+    {
+     "id": "btn-textfile",
+     "label": "Insert.TextFromFile",
+     "enabled": true,
+     "x": 897,
+     "y": 82,
+     "w": 138,
+     "h": 32
+    },
+    {
+     "id": "btn-mailmerge",
+     "label": "Insert.MailMerge",
+     "enabled": true,
+     "x": 1037,
+     "y": 82,
+     "w": 122,
+     "h": 32
+    },
+    {
+     "id": "btn-addtext",
+     "label": "Insert.AddText",
+     "enabled": true,
+     "x": 1161,
+     "y": 82,
+     "w": 108,
+     "h": 32
     }
    ],
    "combos": [
@@ -1560,6 +1587,37 @@
      "y": 82,
      "w": 69,
      "h": 32
+    },
+    {
+     "id": "btn-speech",
+     "label": "View.Speech",
+     "enabled": true,
+     "x": 861,
+     "y": 434,
+     "w": 58,
+     "h": 32
+    },
+    {
+     "id": "btn-readaloud",
+     "cmd": "readAloud",
+     "hidden": true,
+     "label": "View.ReadAloud",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": "btn-dictate",
+     "cmd": "dictate",
+     "hidden": true,
+     "label": "View.Dictate",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
     }
    ],
    "combos": [
@@ -1609,11 +1667,20 @@
      "h": 32
     },
     {
+     "id": "btn-bgplugins",
+     "label": "Plugins.Background",
+     "enabled": true,
+     "x": 246,
+     "y": 82,
+     "w": 143,
+     "h": 32
+    },
+    {
      "id": "btn-ocr",
      "cmd": "ocrRun",
      "label": "OCR",
      "enabled": true,
-     "x": 246,
+     "x": 390,
      "y": 82,
      "w": 49,
      "h": 32
@@ -1623,7 +1690,7 @@
      "cmd": "photoEditor",
      "label": "Photo editor",
      "enabled": true,
-     "x": 297,
+     "x": 441,
      "y": 82,
      "w": 94,
      "h": 32
@@ -1874,6 +1941,31 @@
      "id": "btn-ai-review",
      "label": "AI changes…",
      "enabled": true
+    },
+    {
+     "id": "btn-fileinfo",
+     "label": "Menu.Info",
+     "enabled": true
+    },
+    {
+     "id": "btn-fileprotect",
+     "label": "Menu.Protect",
+     "enabled": true
+    },
+    {
+     "id": "btn-filesettings",
+     "label": "Menu.Settings",
+     "enabled": true
+    },
+    {
+     "id": "btn-filehelp",
+     "label": "Menu.Help",
+     "enabled": true
+    },
+    {
+     "id": "btn-filesuggest",
+     "label": "Menu.Suggest",
+     "enabled": true
     }
    ]
   },
@@ -1908,6 +2000,12 @@
      "label": "Language options",
      "enabled": true,
      "x": 1077
+    },
+    {
+     "id": "btn-multipage",
+     "label": "Multiple pages view",
+     "enabled": true,
+     "x": 1030
     }
    ],
    "combos": []

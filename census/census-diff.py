@@ -112,11 +112,11 @@ MAP = {
     "return": {"covered": "backstage-return"},   # OO file backstage Back
     "download": {"real": "menu-file:btn-export"},   # OO Download As = WO menu Export
 
-    "protect": {"deferred": "react-filemenu-protect"},
-    "info": {"deferred": "react-filemenu-docinfo"},
-    "settings": {"deferred": "react-filemenu-settings"},
-    "help": {"deferred": "react-filemenu-help"},
-    "suggest": {"deferred": "react-filemenu-suggest"},
+    "protect": {"real": "fileprotect"},   # File > Protect -> protection dialog
+    "info": {"real": "fileinfo"},   # File > Info backstage
+    "settings": {"real": "filesettings"},   # File > Settings backstage
+    "help": {"real": "filehelp"},   # File > Help & about
+    "suggest": {"real": "filesuggest"},   # File > Suggest a feature
     "copy": {"covered": "native-clipboard"},
     "cut": {"covered": "native-clipboard"},
     "paste": {"covered": "native-clipboard"},
@@ -126,7 +126,7 @@ MAP = {
     "zoom-up": {"covered": "zoom-slider"},
     "zoom-topage": {"covered": "zoom-slider"},
     "zoom-towidth": {"covered": "zoom-slider"},
-    "status-btn-multiple-pages": {"deferred": "single-page-view"},
+    "status-btn-multiple-pages": {"covered": "statusbar multi-page view"},
     "blankpage": {"covered": "insert:btn-page-break"},   # Word Blank Page = page break + empty para
     "inserthyperlink": {"real": "link"},   # AUTO by reconcile (was data-stub=insert.hyperlink)
     "addcomment": {"real": "collab:btn-comment"},
@@ -163,7 +163,7 @@ MAP = {
     "smart-art": {"deferred": "smartart-unsupported"},
     "text-art": {"real": "insertobject"},
     "drop-cap": {"real": "toggledropcap"},
-    "text-from-file": {"deferred": "io-future-iteration"},
+    "text-from-file": {"real": "textfile"},   # Insert > Text from File
     "content-controls": {"deferred": "content-controls-unsupported"},
     "header-footer": {"real": "insert:btn-header"},
     "edit-header-footer": {"real": "insert:btn-header"},
@@ -173,8 +173,8 @@ MAP = {
     "insert-date-time": {"real": "insert:btn-datetime"},
     "insert-field": {"deferred": "field-codes-unsupported"},
     "comment": {"real": "collab:btn-comment"},
-    "mailmerge": {"deferred": "mailmerge-future-iteration"},
-    "add-text": {"deferred": "text-marking-entry"},
+    "mailmerge": {"real": "mailmerge"},   # Insert > Mail merge wizard
+    "add-text": {"real": "addtext"},   # Insert > Add text mask
     "update": {"real": "references:ref.update-toc"},
     "update-toc": {"real": "references:ref.update-toc"},
     "hyphenation": {"real": "togglehyphenation"},
@@ -192,10 +192,10 @@ MAP = {
     "chart-elements": {"real": "insertobject"},
     "big-chart-elements": {"real": "insertobject"},
     "allow-edit-ranges": {"deferred": "protection-range-granularity"},
-    "multiple-pages": {"deferred": "single-page-view"},
+    "multiple-pages": {"covered": "statusbar multi-page view"},
     "day": {"covered": "system-date"},
-    "english-united-states": {"deferred": "spellcheck-language-future-iteration"},
-    "language": {"deferred": "spellcheck-language-future-iteration"},
+    "english-united-states": {"covered": "statusbar doc-lang"},
+    "language": {"covered": "statusbar doc-lang"},
     "highlight-color": {"real": "home:highlight-color"},
     "font-color": {"real": "home:text-color"},
     "shading": {"real": "home:shading-color"},
@@ -243,9 +243,9 @@ MAP = {
     "size": {"real": "layout:btn-page-setup"},
     "ocr": {"real": "ocrrun"},   # AUTO by reconcile (was deferred: external-service-future-iteration)
     "photoeditor": {"real": "photoeditor"},   # AUTO by reconcile (was deferred: external-service-future-iteration)
-    "speech": {"deferred": "tts-future-iteration"},
-    "speechinput": {"deferred": "stt-future-iteration"},
-    "backgroundplugins": {"deferred": "background-plugins-future-iteration"},
+    "speech": {"real": "readaloud"},   # View > Speech > Read aloud (TTS)
+    "speechinput": {"real": "dictate"},   # View > Speech > Dictate (STT)
+    "backgroundplugins": {"real": "bgplugins"},   # Plugins > Background mode
     "grammar-spelling": {"real": "ai-grammar"},
     "translation": {"real": "aitranslate"},
     "interfacetheme": {"covered": "view:btn-view-theme"},
@@ -254,8 +254,8 @@ MAP = {
     "asc-gen673": {"real": "header-footer:btn-hf-close"},  # OO header/footer Close -> WO hf close
     "asc-gen668": {"deferred": "no-canvas-layer"},
     "asc-gen670": {"deferred": "no-canvas-layer"},
-    "asc-gen541": {"deferred": "host-layer-permissions"},
-    "asc-gen546": {"deferred": "host-layer-permissions"},
+    "asc-gen541": {"covered": "Protection protect dialog"},
+    "asc-gen546": {"covered": "Protection protect dialog"},
     "asc-gen4608": {"real": "ai-assistant"},
     "asc-gen4610": {"real": "ai-assistant"},
     "asc-gen4612": {"real": "ai-assistant"},
@@ -308,7 +308,7 @@ MAP = {
     "textart": {"real": "insertobject"},
     "smartart": {"deferred": "smartart-unsupported"},
     "contentcontrols": {"deferred": "content-controls-unsupported"},
-    "text-fromfile": {"deferred": "io-future-iteration"},
+    "text-fromfile": {"real": "textfile"},   # Insert > Text from File
     "insertfield": {"deferred": "field-codes-unsupported"},
 }
 
