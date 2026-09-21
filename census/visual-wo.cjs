@@ -21,8 +21,12 @@ const path = require('path');
     process.exit(2);
   }
   const browser = await chromium.launch({ headless: true });
+  // viewport must exceed the sheet height (1123px at default zoom) plus the
+  // toolbar/ruler offset (~221px): if the element is taller than the viewport,
+  // element.screenshot fills the below-viewport region with the page backdrop
+  // instead of the sheet's own paint (grey/misleading captures)
   const ctx = await browser.newContext({
-    viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 1,
+    viewport: { width: 1440, height: 1500 }, deviceScaleFactor: 1,
   });
   if (zoom) {
     // the editor reads wo-zoom from localStorage at init; seed it before the

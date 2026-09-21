@@ -9,12 +9,13 @@ colors) that the geometry census cannot see.
 Honesty notes (read before raising the gate):
 - Cross-engine rendering never equals: fonts, hinting, sub-pixel AA, page
   margins differ slightly. v1 aligns only to (a) common width and (b) content
-  bounding box, and reports the actual diff. The gate default (25%) is a flood
-  line, not a pixel-perfect claim — it catches broken renders, not antialiasing.
+  bounding box, and reports the actual diff. The gate is the recorded cross-
+  engine baseline + slack (BASELINE_SLACK), a flood line — not a
+  pixel-perfect claim — it catches broken renders, not antialiasing.
 - Alignment is intentionally coarse: WO screenshot is center-cropped to the
   golden's aspect ratio, then scaled to the golden's width. If the WO capture
   isn't a plain full-page shot (toolbar/scroll included), diff% rises — capture
-  deterministically (fixed viewport, zoom 100, top of page 1).
+  deterministically (tall viewport > sheet height, top of page 1).
 
 Usage:
   pixel-diff.py --wo <wo.png> --gold <golden/pg-1.png> [--width 900] [--gate 25]
@@ -85,8 +86,16 @@ def main() -> int:
     def ink_fraction(img):
         return img.convert("L").point(lambda v: 1 if v < 245 else 0).histogram()[1] / (img.width * img.height)
     ink_wo, ink_gold = ink_fraction(wo_c), ink_fraction(gold_c)
-    # blank-render flood line: a broken capture has (almost) no ink vs the golden
-    ink_fail = ink_wo < 0.25 * ink_gold
+    # blank-render flood line. Absolute 'x% of golden ink' is useless across
+    # engines (WO text renders lighter than the 110dpi golden: ~3% vs ~12.5%),
+    # so when a per-doc ink baseline is recorded, fail only on collapse to a
+    # fraction of THIS doc's healthy ink (or an absolute near-zero floor).
+    # Without a record, fall back to the legacy 25%-of-golden rule.
+    rec_ink = bl.get(gold_p.name, {}).get("wo_ink")
+    if rec_ink:
+        ink_fail = ink_wo < max(0.5 * rec_ink / 100.0, 0.005)  # record is percent, ink_wo is fraction
+    else:
+        ink_fail = ink_wo < 0.25 * ink_gold
 
     diff = ImageChops.difference(wo_c, gold_c)
     grey = diff.convert("L")

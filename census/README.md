@@ -28,19 +28,32 @@ LibreOffice golden render of the **same committed .docx**.
 soffice --headless --convert-to pdf golden/docs/<doc>.docx --outdir golden/docs
 pdftoppm -png -r 110 golden/docs/<doc>.pdf golden/docs/pg
 
-# 2. WO capture: register the doc in a scratch docserver, then
+# 2. WO capture: register the doc in a scratch docserver, then. The editor
+#    renders body text at 12pt Liberation Serif by default (the same face LO
+#    uses), so a plain capture is already at a fair scale — no overrides
+#    needed. VISUAL_ZOOM / VISUAL_FONT remain available as explicit overrides.
 VISUAL_BASE=http://127.0.0.1:8891 VISUAL_DOC=<doc>.docx \
-  VISUAL_OUT=/tmp/wo-<doc>.png \
-  VISUAL_ZOOM=2 VISUAL_FONT="'Liberation Serif', 'Times New Roman', serif" \
-  node visual-wo.cjs
+  VISUAL_OUT=/tmp/wo-<doc>.png node visual-wo.cjs
 
 # 3. compare (default gate = recorded baseline + 10)
 python3 pixel-diff.py --wo /tmp/wo-<doc>.png --gold golden/docs/pg-1.png
 ```
 
 Adding a doc: add the `.docx` + its `pg-N.png` to `golden/docs/`, do one
-baseline run with `--gate 100`, and record the measured `diff_px` into
-`golden/docs/baselines.json` (`{"pg-1.png": {"diff_px": X, "mean": Y}}`).
+baseline run with `--gate 100`, and record the measured `diff_px` AND WO ink
+into `golden/docs/baselines.json` (`{"pg-1.png": {"diff_px": X, "mean": Y, "wo_ink": Z}}`).
+
+> The editor paginates into fixed A4 sheets (`.wo-page` — LO/OO/Word page
+> model, paginateView/flatHtml in `web/editor.js`), so the gate compares
+> sheet vs sheet. Break points still differ from LO's engine (own font
+> metrics, no reflow-on-mutation yet): the gate stays a regression flood
+> line, not a similarity meter. The ink flood line is baseline-relative:
+> WO 96dpi text weighs ~2.8%% vs the golden's 12.5%% at 110dpi, so a fixed
+> fraction of golden ink false-fails healthy renders — record `wo_ink`
+> (percent) per doc. The capture viewport must be taller than a sheet
+> (~1123px + toolbar): an element taller than the viewport gets its
+> below-viewport pixels filled with the page backdrop instead of its own
+> paint.
 
 > The editor paginates into fixed A4 sheets (`.wo-page` — LO/OO/Word page
 > model, paginateView/flatHtml in `web/editor.js`), so the gate compares
@@ -54,4 +67,4 @@ baseline run with `--gate 100`, and record the measured `diff_px` into
 
 | doc | WO render | LO golden | recorded baseline | gate |
 |-----|-----------|-----------|-------------------|------|
-| visual-gate.docx (headings, mixed inline styling, 3×3 table) | 794×1123 sheet @ zoom2+serif | pg-1.png 935×1210 @110dpi | 7.7% | 17.7% |
+| visual-gate.docx (headings, mixed inline styling, 3×3 table) | 794×1123 sheet @ 12pt serif | pg-1.png 935×1210 @110dpi | 8.6% | 18.6% |
