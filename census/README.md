@@ -30,7 +30,9 @@ pdftoppm -png -r 110 golden/docs/<doc>.pdf golden/docs/pg
 
 # 2. WO capture: register the doc in a scratch docserver, then
 VISUAL_BASE=http://127.0.0.1:8891 VISUAL_DOC=<doc>.docx \
-  VISUAL_OUT=/tmp/wo-<doc>.png node visual-wo.cjs
+  VISUAL_OUT=/tmp/wo-<doc>.png \
+  VISUAL_ZOOM=2 VISUAL_FONT="'Liberation Serif', 'Times New Roman', serif" \
+  node visual-wo.cjs
 
 # 3. compare (default gate = recorded baseline + 10)
 python3 pixel-diff.py --wo /tmp/wo-<doc>.png --gold golden/docs/pg-1.png
@@ -40,8 +42,16 @@ Adding a doc: add the `.docx` + its `pg-N.png` to `golden/docs/`, do one
 baseline run with `--gate 100`, and record the measured `diff_px` into
 `golden/docs/baselines.json` (`{"pg-1.png": {"diff_px": X, "mean": Y}}`).
 
+> The editor paginates into fixed A4 sheets (`.wo-page` — LO/OO/Word page
+> model, paginateView/flatHtml in `web/editor.js`), so the gate compares
+> sheet vs sheet. Break points still differ from LO's engine (own font
+> metrics, no reflow-on-mutation yet): the gate stays a regression flood
+> line, not a similarity meter. Capturing without zoom/font hits the 8px
+> default, which the golden reads as blank (INK-FAIL) — expected; the
+> documented capture args are the gate contract.
+
 ### Current golden
 
 | doc | WO render | LO golden | recorded baseline | gate |
 |-----|-----------|-----------|-------------------|------|
-| visual-gate.docx (headings, mixed inline styling, 3×3 table) | 794×772 | pg-1.png 935×1210 @110dpi | 8.9% | 18.9% |
+| visual-gate.docx (headings, mixed inline styling, 3×3 table) | 794×1123 sheet @ zoom2+serif | pg-1.png 935×1210 @110dpi | 7.7% | 17.7% |
