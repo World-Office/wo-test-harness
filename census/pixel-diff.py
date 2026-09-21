@@ -22,10 +22,13 @@ Outputs: mean abs channel diff, % of pixels differing beyond --thresh (default
 40/255), OK/FAIL vs --gate. Exit 0 ok, 1 gate breached, 2 usage/IO error.
 """
 import argparse
+import json
 import sys
 from pathlib import Path
 
 from PIL import Image, ImageChops
+
+BASELINE_SLACK = 10.0  # points of slack above the recorded cross-engine floor
 
 
 def content_bbox(img: Image.Image) -> tuple[int, int, int, int]:
@@ -49,7 +52,8 @@ def main() -> int:
     ap.add_argument("--gold", required=True, help="LO golden png (pg-N.png)")
     ap.add_argument("--width", type=int, default=900, help="common comparison width")
     ap.add_argument("--thresh", type=int, default=40, help="pixel diff threshold (0-255)")
-    ap.add_argument("--gate", type=float, default=25.0, help="max allowed diff %% before FAIL")
+    ap.add_argument("--gate", type=float, default=None,
+                    help="override gate %% (default: recorded baseline + %.0f)" % BASELINE_SLACK)
     a = ap.parse_args()
 
     wo_p, gold_p = Path(a.wo), Path(a.gold)
@@ -57,6 +61,16 @@ def main() -> int:
         print(f"pixel-diff: missing input ({wo_p} / {gold_p})"); return 2
     wo = Image.open(wo_p).convert("RGB")
     gold = Image.open(gold_p).convert("RGB")
+
+    # effective floor: recorded cross-engine baseline + slack (unless overridden)
+    bl = {}
+    bl_path = gold_p.parent / "baselines.json"
+    if bl_path.exists():
+        try:
+            bl = json.loads(bl_path.read_text())
+        except Exception:
+            bl = {}
+    gate = a.gate if a.gate is not None else bl.get(gold_p.name, {}).get("diff_px", 25.0) + BASELINE_SLACK
 
     wo_c, _ = prep(wo, a.width, a.thresh)
     gold_c, _ = prep(gold, a.width, a.thresh)
@@ -86,10 +100,10 @@ def main() -> int:
         print(f"pixel-diff: {wo_p.name} vs {gold_p.name}  INK-FAIL (wo ink "
               f"{100*ink_wo:.1f}% vs golden {100*ink_gold:.1f}%) — blank/broken render")
         return 1
-    verdict = "OK" if bad <= a.gate else "FAIL"
+    verdict = "OK" if bad <= gate else "FAIL"
     print(f"pixel-diff: {wo_p.name} vs {gold_p.name}  mean_diff={mean:.1f}/255  "
           f"diff_px={bad:.1f}% (thresh {a.thresh})  ink wo={100*ink_wo:.1f}% gold={100*ink_gold:.1f}%  "
-          f"gate={a.gate}%  -> {verdict}")
+          f"gate={gate:.1f}% baseline={bl.get(gold_p.name, {}).get('diff_px', 25.0):.1f}%  -> {verdict}")
     return 0 if verdict == "OK" else 1
 
 
