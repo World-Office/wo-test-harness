@@ -68,3 +68,8 @@ into `golden/docs/baselines.json` (`{"pg-1.png": {"diff_px": X, "mean": Y, "wo_i
 | doc | WO render | LO golden | recorded baseline | gate |
 |-----|-----------|-----------|-------------------|------|
 | visual-gate.docx (headings, mixed inline styling, 3×3 table) | 794×1123 sheet @ 12pt serif | pg-1.png 935×1210 @110dpi | 8.6% | 18.6% |
+| image-gate.docx (heading, intro, embedded 5" picture, caption + tail) | 794×1123 sheet @ 12pt serif | image-gate.png 935×1210 @110dpi | 27.8% | 37.8% |
+
+Image docs gate looser (engine metric/DPI shifts misalign the picture block):
+27.8%% vs the text page's 8.6%% is expected. The ink flood line still catches
+a silently dropped image (it carries most of the page's ink -> INK-FAIL).

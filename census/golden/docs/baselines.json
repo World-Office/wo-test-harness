@@ -1,1 +1,4 @@
-{"pg-1.png": {"diff_px": 8.6, "mean": 13.5, "wo_ink": 2.8, "gold_ink": 12.5}}
+{
+  "pg-1.png": {"diff_px": 8.6, "mean": 13.5, "wo_ink": 2.8, "gold_ink": 12.5},
+  "image-gate.png": {"diff_px": 27.8, "mean": 33.4, "wo_ink": 12.8, "gold_ink": 25.8}
+}
