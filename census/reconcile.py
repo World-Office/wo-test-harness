@@ -450,6 +450,78 @@ def run_geometry(server: Path, out: Path) -> int:
     ).returncode
 
 
+# --- visual (pixel) gate ---------------------------------------------------
+# docx stem -> committed LO golden filename (goldens live in golden/docs/)
+VISUAL_GOLDEN = {"visual-gate": "pg-1.png", "image-gate": "image-gate.png"}
+
+
+def _py_with_pil(server: Path) -> str:
+    """pixel-diff needs PIL; prefer the docserver venv when present."""
+    venv = server / "opencloud-docserver" / ".venv" / "bin" / "python"
+    return str(venv) if venv.exists() else sys.executable
+
+
+def _register_goldens(server: Path, database: Path, content: Path) -> None:
+    """Seed a scratch store with the committed golden .docx files so the
+    editor page can serve them (same registration the scratch rigs use)."""
+    docserver = server / "opencloud-docserver"
+    docs = sorted((HERE / "golden" / "docs").glob("*.docx"))
+    steps = ";".join(
+        f"s.init({json.dumps(d.name)}, {json.dumps(d.name)});"
+        f"open(s.content_path({json.dumps(d.name)}),'wb').write("
+        f"open({json.dumps(str(d))},'rb').read())"
+        for d in docs
+    )
+    code = (
+        "from src.config import Config; from src.lib.store import DocumentStore;"
+        f"cfg = Config(database={str(database)!r}, content_dir={str(content)!r});"
+        f"s = DocumentStore(cfg.database, cfg.content_dir);"
+        + steps
+    )
+    subprocess.run([sys.executable, "-c", code], cwd=docserver, check=True)
+
+
+def run_visual(server: Path, out: Path) -> int:
+    """Pixel gate: render each committed golden doc on a scratch docserver and
+    compare sheet 1 against its LO golden (pixel-diff.py: recorded baseline +
+    slack + the baseline-relative ink flood line). Returns 0 iff every doc
+    passes."""
+    rc = 0
+    with tempfile.TemporaryDirectory(prefix="reconcile-visual-") as td:
+        pd = Path(td)
+        content = pd / "content"
+        content.mkdir(parents=True)
+        _register_goldens(server, pd / "db.sqlite", content)
+        port, proc = spawn_docserver(server, pd)
+        try:
+            for stem, gold_name in sorted(VISUAL_GOLDEN.items()):
+                docx = (HERE / "golden" / "docs") / f"{stem}.docx"
+                gold = (HERE / "golden" / "docs") / gold_name
+                if not docx.exists() or not gold.exists():
+                    print(f"      visual: missing {stem} source/golden — skipping")
+                    rc = 1
+                    continue
+                png = pd / f"{stem}-wo.png"
+                subprocess.run(
+                    ["node", "visual-wo.cjs"], cwd=HERE, check=True,
+                    env={**os.environ,
+                         "VISUAL_BASE": f"http://127.0.0.1:{port}",
+                         "VISUAL_DOC": docx.name,
+                         "VISUAL_OUT": str(png)})
+                r = subprocess.run(
+                    [_py_with_pil(server), "pixel-diff.py",
+                     "--wo", str(png), "--gold", str(gold)], cwd=HERE)
+                if r.returncode != 0:
+                    rc = 1
+        finally:
+            proc.terminate()
+            try:
+                proc.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                proc.kill()
+    return rc
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--skip-capture", action="store_true", help="reuse existing census-wo.json")
@@ -462,6 +534,8 @@ def main() -> int:
                     help="capture the functional census + gate on silent/unclickable controls (loud-stub gate)")
     ap.add_argument("--geometry", action="store_true",
                     help="capture the geometry census + gate on drift/overlaps vs the committed golden")
+    ap.add_argument("--visual", action="store_true",
+                    help="pixel gate: render each golden doc and gate sheet 1 vs its LO golden (visual-wo.cjs + pixel-diff.py)")
     ap.add_argument("--self-test", action="store_true", help="run the delta-logic self-test and exit")
     args = ap.parse_args()
 
@@ -510,6 +584,13 @@ def main() -> int:
                 print("      geometry: drift + structural invariants vs golden")
                 try:
                     if run_geometry(server, tmp) != 0:
+                        rc = 1
+                except SystemExit:
+                    rc = 1
+            if args.visual:
+                print("      visual: pixel gate vs LO goldens (sheet 1)")
+                try:
+                    if run_visual(server, tmp) != 0:
                         rc = 1
                 except SystemExit:
                     rc = 1
@@ -572,6 +653,14 @@ def main() -> int:
         except SystemExit:
             geom_rc = 1
 
+    visual_rc = 0
+    if args.visual:
+        print("      visual: pixel gate vs LO goldens (visual-wo.cjs + pixel-diff.py)")
+        try:
+            visual_rc = run_visual(server, CENSUS)
+        except SystemExit:
+            visual_rc = 1
+
     seed_rc = 0
     if args.seed_check:
         print("      seed: regenerate graph + drift gate")
@@ -579,7 +668,7 @@ def main() -> int:
         if seed_rc != 0:
             print("      seed --check FAILED (commit the regenerated graph.json)")
 
-    return 0 if (ok and seed_rc == 0 and interact_rc == 0 and fx_rc == 0 and geom_rc == 0) else 1
+    return 0 if (ok and seed_rc == 0 and interact_rc == 0 and fx_rc == 0 and geom_rc == 0 and visual_rc == 0) else 1
 
 
 if __name__ == "__main__":

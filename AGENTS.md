@@ -165,9 +165,9 @@ WO_SERVER_DIR=/path/to/World-Office/server /usr/bin/python3 harness-graph/seed.p
 # Unified self-test
 WO_SERVER_DIR=/path/to/World-Office/server bash tf-test-harness/test-harness.sh --self-test
 
-# Full CI gate (ledger + interactions + fx functional + geometry)
+# Full CI gate (ledger + interactions + fx functional + geometry + visual pixel gate)
 WO_SERVER_DIR=/path/to/World-Office/server /usr/bin/python3 census/reconcile.py \
-  --check --seed-check --interactions --fx --geometry
+  --check --seed-check --interactions --fx --geometry --visual
 
 # Cross-engine fidelity (conformance-docx included in workspace)
 cd .
@@ -188,7 +188,7 @@ the gate must run inside `opencloud-docserver`'s venv (once: `uv sync --frozen`)
 cd <server>/opencloud-docserver
 cd <harness>/census; npm install --no-save playwright@1.61.1   # gitignored
 $env:WO_SERVER_DIR = 'C:/path/to/server'
-& uv run --frozen python <harness>/census/reconcile.py --check --seed-check --interactions --fx --geometry
+& uv run --frozen python <harness>/census/reconcile.py --check --seed-check --interactions --fx --geometry --visual
 ```
 
 Run the gate via PowerShell, not Git Bash: MSYS2 mangles `;`-separated env vars
