@@ -1,3 +1,5 @@
+> ⚠️ **DEPRECATED 2026-09-24 — see ../DEPRECATED.md.** Measures the deprecated Python docserver; methodology + goldens remain reusable.
+
 # wo-test-harness
 
 Cross-engine conformance harness and feature-register tooling for

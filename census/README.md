@@ -1,3 +1,5 @@
+> ⚠️ **DEPRECATED 2026-09-24 — see ../DEPRECATED.md.** These rigs boot the deprecated Python docserver.
+
 # Census — WO editor observability + gates
 
 Pure-observation captures of the WO editor, diffs against committed goldens,
