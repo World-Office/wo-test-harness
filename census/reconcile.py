@@ -452,7 +452,8 @@ def run_geometry(server: Path, out: Path) -> int:
 
 # --- visual (pixel) gate ---------------------------------------------------
 # docx stem -> committed LO golden filename (goldens live in golden/docs/)
-VISUAL_GOLDEN = {"visual-gate": "pg-1.png", "image-gate": "image-gate.png"}
+VISUAL_GOLDEN = {"visual-gate": "pg-1.png", "image-gate": "image-gate.png",
+                 "hf-gate": "hf-gate.png"}
 
 
 def _py_with_pil(server: Path) -> str:
