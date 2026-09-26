@@ -153,6 +153,29 @@ wo-test-harness/
   CI-exact fresh-clone proof: the gate FAILED against the pre-fix server
   commit (table/image full-screen modals) and PASSED after the
   anchored-popover fix landed — it catches the overlay-regression class.
+- **Live production editor — functional (loud-stub) census, `fx-prod.cjs`**
+  (the "future Rust harness" the DEPRECATED note deferred — now delivered).
+  `reconcile.py`/`fx-wo.cjs` boot the deprecated Python docserver; `fx-prod.cjs`
+  instead mint a WOPI session against the live collaboration shell: log in to
+  `OC_URL` (default `https://cloud.graphwiz.ai`), open a `.docx`, drive the
+  real `#editor` frame it lands in, then click EVERY visible ribbon control
+  across every tab and classify whether it produces an observable effect
+  (doc mutation / menu / dialog / panel / status / chrome-inline-style).
+  A control with none is `silent`/`unclickable` (exit 1) — the loud-stub gate
+  against the actual deployed editor. Run: `CENSUS_OUT=... node
+  census/fx-prod.cjs` (uses Playwright headless, no Docker, talks to prod).
+  VERIFIED 2026-09-26 against the live deploy: **108 controls across 11 tabs,
+  0 silent, 0 unclickable, 0 "Not available" stub-strings** — every ribbon
+  button in the serving editor does something real (ink modes, TOC update,
+  track-changes/display-mode, themecolors CSS-vars, etc.). The snapshot's
+  `chrome` signal includes the editor's inline `style` (CSS custom properties)
+  so color-scheme controls aren't mis-flagged silent. NOTE: this censuses the
+  editor actually DEPLOYED at `/editors/document/` → `editor_ui_dir/word/`,
+  which as of this date is the **vanilla** `documenteditor-wysiwyg`
+  (grep-confirmed: `/app/editor-ui/word/index.html` has `ribbon-row-2`, no
+  `de-file-menu-panel`) — so the "prod ships the React editor" claim above is
+  stale for word/docx until the React build replaces the vanilla one in the
+  image. `fx-prod.cjs` measures whatever is really serving docx today.
 - **Docx fidelity** — `DocxConformanceAdapter` projects `wo-docx-renderer`
   layout into `NormalizedRender` for scoring against captured truth.
 
