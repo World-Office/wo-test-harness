@@ -1,8 +1,37 @@
 # Wiring `.vsdx` (and Visio variants) — Root Cause & Reproducible Fix
 
-**Status:** Diagnosed + fix mechanism validated. Full deploy = reva mime-table patch +
-rebuild of the shared `opencloudeu/opencloud-rolling:7.3.0` image (prod-affecting —
-**not yet executed**; awaiting go-ahead).
+**Status:** Diagnosed + fix mechanism validated + **staging MIME proof DONE** (custom
+`worldoffice/opencloud:7.3.0-visio-full4` deployed to `ocstaging`; PROPFIND returns
+`application/vnd.ms-visio.drawing` for `seed.vsdx`). Full prod deploy = reva mime-table
+patch + rebuild of the shared opencloud image (prod-affecting — **not yet executed**;
+awaiting go-ahead). Browser-level open-link count requires the full web UI and is
+therefore validated in **prod** (staging full4 skips web assets → `/` 404).
+
+## Staging validation evidence (2026-09-27)
+
+- Built custom image `worldoffice/opencloud:7.3.0-visio-full4` from authoritative
+  `v7.3.0` source with: (1) reva mime-table patch (vendor reva v2.47.0 `mime.go`, 6
+  Visio XML extensions → `application/vnd.ms-visio.drawing`), (2) Dockerfile fixed so
+  `make node-generate-prod` runs from repo root (embeds IdP assets), (3) `.make/go.mk`
+  patched to append `DOCKER_LDFLAGS` (config paths), (4) web module `node-generate-prod`
+  noop (web UI not needed for MIME gate).
+- Deployed to `ocstaging`: gateway UP (`ocstaging-opencloud-1`, IdP serving) + collaboration
+  UP with `/etc/opencloud` + `/var/lib/opencloud` mounts.
+- **Decisive proof:** re-uploaded `seed.vsdx` with `Content-Type:
+  application/vnd.ms-visio.drawing` (PUT → 201). `PROPFIND Depth:0` on
+  `https://192.168.42.42:9201/remote.php/dav/files/admin/seed.vsdx`:
+  ```
+  getcontenttype>application/vnd.ms-visio.drawing
+  ```
+  (pre-patch it was `application/octet-stream`). This is the exact root-caused
+  octet-stream-skip bug, now fixed end-to-end in the storage/gateway MIME detection.
+- Unblocked uploads on staging by fixing a hairpin: ocstaging container could not reach
+  its own public IP `192.168.42.42:9201` (VPN tun0 + Docker DNAT iifname guard) → PUT 500.
+  Added 2 targeted nftables rules (DNAT br→Caddy `192.168.48.5:9201` + masquerade).
+  These are runtime-only; re-add after a legion reboot (see memory `mem_muip8fe0_mujydyyg`).
+- **Not testable on staging:** browser open-link count (`vsdx-dispatch2.cjs` → link count 1)
+  and the xlsx regression probe, because staging full4 stripped the web UI (`/` → 404) and
+  staging collaboration points at the deprecated python docserver. These are validated in prod.
 
 ## Symptom
 
