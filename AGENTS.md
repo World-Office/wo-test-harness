@@ -176,6 +176,30 @@ wo-test-harness/
   `de-file-menu-panel`) — so the "prod ships the React editor" claim above is
   stale for word/docx until the React build replaces the vanilla one in the
   image. `fx-prod.cjs` measures whatever is really serving docx today.
+- **Non-word editors — port status (2026-xx, T-002/T-003/T-007).** Verified via
+  `census/nonword-probe.cjs` (iframe-aware: enters the editor subframe from
+  `editor.cloud.graphwiz.ai`, reads the inner `#root`/canvas/toolbar) and
+  `census/nonword-wopi.cjs` (captures the WOPI call chain); full ledger in
+  `census/nonword-findings.json`. Against prod (cloud.graphwiz.ai +
+  editor.cloud.graphwiz.ai) through the Rust docserver bridge:
+  - **sheet (seed.xlsx)** and **slide (seed.pptx)** — PORTED+VERIFIED. WOPI:
+    `POST /hosting/wopi/{sheet|slide}/edit` → `GET /editors/spreadsheet|presentation/`
+    [access_token] → `CheckFileInfo` → `GetFile(contents)` →
+    `POST /api/conversion/convert`. The React Univer editors mount into the
+    subframe's `#root` (sheet: 3 canvases + `File Home Insert Layout Formula…`
+    toolbar; slide: `…Design Transitions Animation…` toolbar) with 0 pageerrors.
+  - **pdf (seed.pdf)** — NOT a port gap: OpenCloud routes `.pdf` to its native
+    `/pdf-viewer/` (correct; no OOXML edit loop).
+  - **diagram (seed.vsdx)** — Rust port COMPLETE (wo-visio converter,
+    `/editors/diagram/` route, and deployed WOPI discovery advertises
+    `ext="vsdx"` → `/hosting/wopi/diagram/edit` plus vssx/vstx/vsdm variants),
+    but **NOT dispatched end-to-end**: clicking stays on the files page with 0
+    WOPI calls because OpenCloud's static file-type→app registry excludes
+    `.vsdx`. A prod collaboration-service restart did NOT change this, proving
+    it is NOT a discovery-cache issue. Fix would be an OpenCloud-side app-map/
+    companion-app config change (`.vsdx` in the editable-type registry) —
+    outside the Rust docserver; `contentconnector.go` only does WOPI
+    GetFile/PutFile transport and does not govern editability.
 - **Docx fidelity** — `DocxConformanceAdapter` projects `wo-docx-renderer`
   layout into `NormalizedRender` for scoring against captured truth.
 
