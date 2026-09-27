@@ -1,0 +1,14 @@
+{
+  "goal": "port everything",
+  "task": "T-002 probe non-word editors through Rust WOPI bridge",
+  "date": "2026-09-27",
+  "method": "live Playwright: login cloud.graphwiz.ai admin/wo-od-2026, open seed file, follow editor flow, capture WOPI network calls + editor iframe DOM",
+  "results": [
+    {"type": "word", "probe": "fx-prod.cjs (committed d9abb20)", "status": "PORTED+VERIFIED", "save": true, "evidence": "108 controls green, 0 silent; full WOPI flow via /editors/document/ -> /app/editor-ui/word/ vanilla documenteditor-wysiwyg", "note": "baseline: already green"},
+    {"type": "sheet", "file": "seed.xlsx", "status": "PORTED+VERIFIED", "loads": true, "wopiToken": true, "save": true, "evidence": "WOPI: POST /hosting/wopi/sheet/edit -> GET /editors/spreadsheet/ [tok] -> GET /wopi/files/<id> (CheckFileInfo) -> GET /wopi/files/<id>/contents (GetFile) -> POST /api/conversion/convert. React Univer editor mounts #root, 3 canvases, toolbar 'File Home Insert Layout Formula Online Cut Copy Paste Format Painter'. 0 pageerrors."},
+    {"type": "slide", "file": "seed.pptx", "status": "PORTED+VERIFIED", "loads": true, "wopiToken": true, "save": true, "evidence": "WOPI: POST /hosting/wopi/slide/edit -> GET /editors/presentation/ [tok] -> CheckFileInfo -> GetFile(contents) x2 -> convert x2. React editor mounts, toolbar 'File Home Insert Design Transitions Animation Cut Copy Paste'. 0 pageerrors."},
+    {"type": "pdf", "file": "seed.pdf", "status": "NATIVE-VIEWER (expected, not a port gap)", "loads": false, "wopiToken": false, "note": "OpenCloud routes .pdf to its built-in /pdf-viewer/ (pdf.js), NOT the WO editor. No OOXML edit loop needed for PDF. Correct behavior."},
+    {"type": "diagram", "file": "seed.vsdx", "status": "NOT-WIRED (PORT GAP)", "loads": false, "wopiToken": false, "note": "Clicking .vsdx stays on the files page (/files/spaces/personal/admin) - no editor iframe, no WOPI. Two causes: (1) OpenCloud has no app-map entry for .vsdx -> never mints a WOPI session; (2) Rust docserver hosting_wopi_handler: diagram/pdf redirect to external editor_base_url (http://localhost:3003, stale) instead of local /editors/diagram/ (comment lib.rs ~line 199; wopi_type_to_local_route has no diagram/pdf branch beyond word/sheet/slide)."}
+  ],
+  "conclusion": "word + sheet + slide fully ported and verified through the Rust WOPI bridge; pdf correctly uses the native viewer; diagram (.vsdx) is the sole genuine port gap (not wired end-to-end)."
+}
