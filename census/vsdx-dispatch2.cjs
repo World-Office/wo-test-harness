@@ -26,11 +26,9 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 
   await page.goto(OC_URL, { waitUntil: 'domcontentloaded', timeout: 45000 });
   for (let i = 0; i < 40; i++) { if (await page.evaluate(() => !!document.querySelector('#oc-login-password')).catch(() => false)) break; await page.waitForTimeout(500); }
-  await page.evaluate(([u, p]) => {
-    const s = (el, v) => { Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event('input', { bubbles: true })); };
-    s(document.querySelector('#oc-login-username'), u); s(document.querySelector('#oc-login-password'), p);
-    const b = [...document.querySelectorAll('button')].find(x => (x.innerText || '').trim() === 'Log in'); if (b) b.click();
-  }, [OC_USER, OC_PASS]);
+  await page.fill('#oc-login-username', OC_USER);
+  await page.fill('#oc-login-password', OC_PASS);
+  await page.click('button:has-text("Log in")');
   await page.waitForTimeout(9000);
   // go to personal files page for the target path
   await page.goto(OC_URL + '/files/spaces/personal/admin' + PATH, { waitUntil: 'domcontentloaded', timeout: 45000 });
