@@ -1,11 +1,16 @@
 # Wiring `.vsdx` (and Visio variants) — Root Cause & Reproducible Fix
 
-**Status:** Diagnosed + fix mechanism validated + **staging MIME proof DONE** (custom
-`worldoffice/opencloud:7.3.0-visio-full4` deployed to `ocstaging`; PROPFIND returns
-`application/vnd.ms-visio.drawing` for `seed.vsdx`). Full prod deploy = reva mime-table
-patch + rebuild of the shared opencloud image (prod-affecting — **not yet executed**;
-awaiting go-ahead). Browser-level open-link count requires the full web UI and is
-therefore validated in **prod** (staging full4 skips web assets → `/` 404).
+**Status:** DONE — DIAGNOSED + REPRODUCIBLE + DEPLOYED TO PROD (2026-09-28).
+The reva mime-table patch is live in production. Image
+`worldoffice/opencloud:7.3.0-visio-prod` (188MB, web assets embedded) deployed to both
+prod `opencloud` + `collaboration`; opencloud Healthy, `/` → 200 (web UI served), and
+**prod storage PROPFIND on `seed.vsdx` → `application/vnd.ms-visio.drawing`**
+(contentlength 1183; was octet-stream). Decisive storage-gate proof is the same check
+that validated staging. Browser open-link e2e (`vsdx-dispatch2.cjs` → link count 1) +
+xlsx regression require the public edge (cloud.graphwiz.ai), which is currently down
+due to a SEPARATE pre-existing v77986 traefik fleet-migration incident (out of vsdx
+scope; DNS for cloud/editor.cloud/ocis moved to 195.90.216.159, missing router → 404).
+Rollback: `docker-compose.yml.bak-vsdxprod-20260928` + `config.bak-vsdxprod-20260928` on legion.
 
 ## Staging validation evidence (2026-09-27)
 
