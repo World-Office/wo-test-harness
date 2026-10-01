@@ -146,15 +146,13 @@ fn render_odf(bytes: &[u8]) -> Result<NormalizedRender, ConformanceError> {
                 .collect();
             for item in content {
                 match item {
-                    OdfTextContent::Paragraph(p) => {
-                        if cell_texts.contains(p.text.trim()) {
-                            continue;
-                        }
+                    // wo-odf reports table-cell <text:p> both as an OdfTable
+                    // cell and as a standalone Paragraph; skip the duplicates.
+                    OdfTextContent::Paragraph(p) if cell_texts.contains(p.text.trim()) => {
+                        continue;
                     }
-                    OdfTextContent::Heading(h) => {
-                        if cell_texts.contains(h.text.trim()) {
-                            continue;
-                        }
+                    OdfTextContent::Heading(h) if cell_texts.contains(h.text.trim()) => {
+                        continue;
                     }
                     _ => {}
                 }
@@ -221,7 +219,6 @@ fn render_odf(bytes: &[u8]) -> Result<NormalizedRender, ConformanceError> {
 
     let resolved: BTreeMap<String, String> = requested
         .iter()
-        .cloned()
         .map(|f| (f.clone(), ENGINE_DEFAULT_FONT.to_string()))
         .collect();
 
@@ -280,12 +277,13 @@ fn project_text_content(
     y: &mut f64,
     style_ctx: &[wo_odf::model::OdfStyle],
 ) -> Vec<LayoutBox> {
-    fn style_prop2(
-        styles: &[wo_odf::model::OdfStyle],
-        name: &str,
-        key: &str,
-    ) -> Option<String> {
-        fn walk(styles: &[wo_odf::model::OdfStyle], name: &str, key: &str, depth: u8) -> Option<String> {
+    fn style_prop2(styles: &[wo_odf::model::OdfStyle], name: &str, key: &str) -> Option<String> {
+        fn walk(
+            styles: &[wo_odf::model::OdfStyle],
+            name: &str,
+            key: &str,
+            depth: u8,
+        ) -> Option<String> {
             let st = styles.iter().find(|s| s.name == name)?;
             let found = st
                 .properties
@@ -322,7 +320,9 @@ fn project_text_content(
         italic: bool,
         size_pt: f64,
     ) -> (u16, bool, f64) {
-        let Some(name) = name else { return (weight, italic, size_pt) };
+        let Some(name) = name else {
+            return (weight, italic, size_pt);
+        };
         let bold = style_prop2(styles, name, "font-weight")
             .map(|v| v.eq_ignore_ascii_case("bold") || v == "700")
             .unwrap_or(weight == 700);
@@ -391,8 +391,7 @@ fn project_text_content(
                     kind: BoxKind::Paragraph,
                     origin,
                     size: PageSize {
-                        width_pt: (span.text.chars().count() as f64 * size_pt * 0.6)
-                            .max(1.0),
+                        width_pt: (span.text.chars().count() as f64 * size_pt * 0.6).max(1.0),
                         height_pt: size_pt * 1.2,
                     },
                     runs: vec![GlyphRun {
@@ -407,8 +406,13 @@ fn project_text_content(
             }
         }
         OdfTextContent::Heading(h) => {
-            let (weight, italic, size_pt) =
-                style_run(style_ctx, h.style_name.as_ref(), 700, false, LINE_SIZE * 1.4);
+            let (weight, italic, size_pt) = style_run(
+                style_ctx,
+                h.style_name.as_ref(),
+                700,
+                false,
+                LINE_SIZE * 1.4,
+            );
             let origin = Point {
                 x_pt: MARGIN,
                 y_pt: *y,
@@ -449,7 +453,11 @@ fn project_text_content(
                         x_pt: MARGIN + c.col_span as f64 * 0.0,
                         y_pt: ty,
                     };
-                    boxes.push(cell_box("SheetCell" /* reused: table cell */, origin, c.text.clone()));
+                    boxes.push(cell_box(
+                        "SheetCell", /* reused: table cell */
+                        origin,
+                        c.text.clone(),
+                    ));
                 }
                 ty += LINE_SIZE * 1.2;
             }
@@ -709,28 +717,28 @@ mod tests {
         assert!(box0.runs.iter().any(|r| r.text.contains("Hello World")));
     }
 
-    /// NOTE: wo-ooxml's parser currently does not extract `w:rFonts w:ascii`
-    /// or `w:sz w:val` into `DocxRun` fields due to a namespace-handling bug
-    /// (`attribute("val")` doesn't match the namespaced `w:val`). Once fixed,
-    /// `resolved_fonts.requested` will populate and font_coverage will surface
-    /// real substitution findings. For now this test verifies the adapter
-    /// doesn't crash and correctly reports empty-requested → full coverage.
+    /// The parser now extracts `w:rFonts w:ascii` into `DocxRun.font` (see
+    /// wattr() namespace fix in wo-ooxml), so `resolved_fonts.requested`
+    /// populates and the adapter records the san-serif substitution honestly.
     #[test]
     fn font_substitution_recorded_when_parser_supports_it() {
         let adapter = DocxConformanceAdapter::default();
         let docx = make_docx_with_font("Calibri", "Font test");
         let ir = adapter.render(&docx, &RenderSpec::default()).unwrap();
 
-        // Current parser limitation: requested is empty because w:rFonts isn't parsed.
+        // The parser reads the requested font family from w:rFonts.
         assert!(
-            ir.resolved_fonts.requested.is_empty(),
-            "parser does not yet extract font requests"
+            ir.resolved_fonts.requested.iter().any(|f| f == "Calibri"),
+            "parser should extract w:rFonts font requests, got {:?}",
+            ir.resolved_fonts.requested
         );
-        // Empty request → full coverage (correct for "nothing was requested").
-        assert!((ir.resolved_fonts.coverage() - 1.0).abs() < 1e-9);
+        // Substitution is recorded honestly: Calibri is resolved to the engine
+        // default sans-serif, so full coverage is NOT claimed.
+        assert!(ir.resolved_fonts.coverage() < 1.0);
+        assert!(ir.resolved_fonts.substitution_count() >= 1);
 
-        // Architecture check: IF fonts were requested, substitution would
-        // be recorded honestly. Verify the resolved map machinery.
+        // Architecture check: the resolved map machinery records each
+        // resolved face as requested -> resolved entry.
         let mut ir = adapter.render(&docx, &RenderSpec::default()).unwrap();
         ir.resolved_fonts.requested.push("Calibri".into());
         ir.resolved_fonts
@@ -787,13 +795,12 @@ mod tests {
             let mut z = zip::ZipWriter::new(std::io::Cursor::new(&mut buf));
             z.start_file("mimetype", zip::write::SimpleFileOptions::default())
                 .unwrap();
-            std::io::Write::write_all(
-                &mut z,
-                b"application/vnd.oasis.opendocument.text",
+            std::io::Write::write_all(&mut z, b"application/vnd.oasis.opendocument.text").unwrap();
+            z.start_file(
+                "META-INF/manifest.xml",
+                zip::write::SimpleFileOptions::default(),
             )
             .unwrap();
-            z.start_file("META-INF/manifest.xml", zip::write::SimpleFileOptions::default())
-                .unwrap();
             std::io::Write::write_all(&mut z, manifest.as_bytes()).unwrap();
             z.start_file("content.xml", zip::write::SimpleFileOptions::default())
                 .unwrap();
@@ -821,7 +828,10 @@ mod tests {
             "ODT paragraphs should project: {texts:?}"
         );
         // Honest metadata: wo-odf structural projection, no layout engine.
-        assert_eq!(ir.metadata.environment, "wo-odf structural projection (no layout engine)");
+        assert_eq!(
+            ir.metadata.environment,
+            "wo-odf structural projection (no layout engine)"
+        );
     }
 
     #[test]
@@ -836,7 +846,8 @@ mod tests {
             .flat_map(|b| b.runs.iter())
             .collect();
         assert!(
-            runs.iter().any(|r| r.text.contains("Bold line") && r.weight == 700),
+            runs.iter()
+                .any(|r| r.text.contains("Bold line") && r.weight == 700),
             "bold span should project weight 700"
         );
     }
@@ -853,11 +864,8 @@ mod tests {
             let mut z = zip::ZipWriter::new(std::io::Cursor::new(&mut buf));
             z.start_file("mimetype", zip::write::SimpleFileOptions::default())
                 .unwrap();
-            std::io::Write::write_all(
-                &mut z,
-                b"application/vnd.oasis.opendocument.spreadsheet",
-            )
-            .unwrap();
+            std::io::Write::write_all(&mut z, b"application/vnd.oasis.opendocument.spreadsheet")
+                .unwrap();
             z.start_file("content.xml", zip::write::SimpleFileOptions::default())
                 .unwrap();
             std::io::Write::write_all(&mut z, xml.as_bytes()).unwrap();
@@ -875,7 +883,6 @@ mod tests {
             "ODS cells should project: {texts:?}"
         );
     }
-
 
     #[test]
     fn ir_serializes_to_json() {
