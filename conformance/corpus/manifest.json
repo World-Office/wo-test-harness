@@ -2,7 +2,7 @@
   "schema_version": 1,
   "corpus_name": "corpus",
   "truth_source": "libreoffice LibreOffice 26.8.0.3 680(Build:3)",
-  "case_count": 30,
+  "case_count": 39,
   "results": [
     {
       "name": "01-single-paragraph",
@@ -183,8 +183,62 @@
       "pages": 1,
       "boxes": 1,
       "status": "ok"
+    },
+    {
+      "name": "31-odt-alignment",
+      "pages": 1,
+      "boxes": 1,
+      "status": "ok"
+    },
+    {
+      "name": "32-odt-spacing",
+      "pages": 1,
+      "boxes": 1,
+      "status": "ok"
+    },
+    {
+      "name": "33-odt-wrapping",
+      "pages": 1,
+      "boxes": 1,
+      "status": "ok"
+    },
+    {
+      "name": "34-odt-table",
+      "pages": 1,
+      "boxes": 1,
+      "status": "ok"
+    },
+    {
+      "name": "35-ods-basic",
+      "pages": 1,
+      "boxes": 3,
+      "status": "ok"
+    },
+    {
+      "name": "36-odp-basic",
+      "pages": 1,
+      "boxes": 1,
+      "status": "ok"
+    },
+    {
+      "name": "37-odt-right",
+      "pages": 1,
+      "boxes": 1,
+      "status": "ok"
+    },
+    {
+      "name": "38-odt-justified",
+      "pages": 1,
+      "boxes": 1,
+      "status": "ok"
+    },
+    {
+      "name": "39-odt-basic",
+      "pages": 1,
+      "boxes": 1,
+      "status": "ok"
     }
   ],
-  "captured_at": "2026-10-01T03:53:42.160541+00:00",
+  "captured_at": "2026-10-01T06:02:16.651000+00:00",
   "notes": "Truth captured from libreoffice LibreOffice 26.8.0.3 680(Build:3). Refresh by re-running with --force."
 }

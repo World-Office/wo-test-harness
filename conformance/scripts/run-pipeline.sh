@@ -36,9 +36,10 @@ echo "=== Step 1: Build wo-render-ir (conformance-docx) ==="
 BIN="$PROJECT_ROOT/target/debug/wo-render-ir"
 
 # Step 2: Generate corpus
-echo "=== Step 2: Generate corpus ==="
+# (docx + ODF — generate-corpus.py adds docx; generate-odf-corpus.py adds ODF)
 if [ -n "$FORCE" ] || ! ls "$CORPUS_DIR/cases/"*.docx 1>/dev/null 2>&1; then
     "${PYTHON:-/usr/bin/python3}" "$SCRIPT_DIR/generate-corpus.py" "$CORPUS_DIR/cases"
+    "${PYTHON:-/usr/bin/python3}" "$SCRIPT_DIR/generate-odf-corpus.py" "$CORPUS_DIR/cases"
 else
     echo "Corpus exists — skip (use --force to regenerate)"
 fi
@@ -47,16 +48,18 @@ fi
 echo "=== Step 3: Capture truth from LibreOffice ==="
 "${PYTHON:-/usr/bin/python3}" "$SCRIPT_DIR/capture-truth.py" capture "$CORPUS_DIR" ${FORCE:+--force}
 
-# Step 4: Render through wo-docx-renderer
-echo "=== Step 4: Render through wo-docx-renderer ==="
+# Step 4: Render through wo-docx-renderer (docx) / wo-odf (ODF)
+echo "=== Step 4: Render through wo-docx-renderer / wo-odf ==="
 FAILED=0
-for docx in "$CORPUS_DIR"/cases/*.docx; do
-    stem="$(basename "$docx" .docx)"
+for doc in "$CORPUS_DIR"/cases/*.{docx,odt,ods,odp}; do
+    [ -e "$doc" ] || continue
+    stem="$(basename "$doc")"
+    stem="${stem%.*}"
     out="$CORPUS_DIR/cases/${stem}.engine.json"
-    if [ -z "$FORCE" ] && [ -f "$out" ] && [ "$out" -nt "$docx" ]; then
+    if [ -z "$FORCE" ] && [ -f "$out" ] && [ "$out" -nt "$doc" ]; then
         continue  # skip if up-to-date
     fi
-    if "$BIN" "$docx" "$out" 2>/dev/null; then
+    if "$BIN" "$doc" "$out" 2>/dev/null; then
         pages=$("${PYTHON:-/usr/bin/python3}" -c "import json; print(len(json.load(open('$out'))['pages']))")
         boxes=$("${PYTHON:-/usr/bin/python3}" -c "import json; print(sum(len(p['boxes']) for p in json.load(open('$out'))['pages']))")
         echo "  $stem: $pages page(s), $boxes box(es)"
@@ -64,8 +67,7 @@ for docx in "$CORPUS_DIR"/cases/*.docx; do
         echo "  $stem: FAILED" >&2
         FAILED=$((FAILED+1))
     fi
-done
-if [ "$FAILED" -gt 0 ]; then
+doneif [ "$FAILED" -gt 0 ]; then
     echo "WARNING: $FAILED cases failed to render" >&2
 fi
 

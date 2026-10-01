@@ -56,7 +56,7 @@ fn usage(prog: &str) {
          {prog} init <corpus-dir>                 Scaffold an empty corpus\n  \
          {prog} corpus <corpus-dir>               List discovered cases + missing truth\n  \
          {prog} capture --ds-url <url> [--jwt <secret>] [--public-host <host>]\n  \
-                  [--filetype docx] --input <doc> --out <render.json>\n  \
+                  [--endpoint /ConvertService.ashx] [--filetype docx] --input <doc> --out <render.json>\n  \
                                           Capture a NormalizedRender from OnlyOffice DS\n\n\
          A render JSON is either a bare NormalizedRender or a GroundTruthFile wrapper.
   \
@@ -297,6 +297,7 @@ fn cmd_capture(args: &[String]) -> i32 {
     let mut jwt: Option<String> = None;
     let mut public_host: Option<String> = None;
     let mut filetype = "docx".to_string();
+    let mut endpoint: Option<String> = None;
     let mut engine_kind = "onlyoffice".to_string();
     let mut wo_export = std::env::var("WO_EXPORT").unwrap_or_else(|_| "native".to_string());
     let mut version = std::env::var("OO_DS_VERSION").unwrap_or_else(|_| "unknown".to_string());
@@ -309,6 +310,7 @@ fn cmd_capture(args: &[String]) -> i32 {
             "--ds-url" => ds_url = it.next().cloned(),
             "--jwt" => jwt = it.next().cloned(),
             "--public-host" => public_host = it.next().cloned(),
+            "--endpoint" => endpoint = it.next().cloned(),
             "--engine" => {
                 if let Some(e) = it.next() {
                     engine_kind = e.clone();
@@ -345,6 +347,9 @@ fn cmd_capture(args: &[String]) -> i32 {
     };
 
     let mut cfg = DsConfig::new(ds_url.clone());
+    if let Some(ep) = endpoint.or_else(|| std::env::var("OO_DS_ENDPOINT").ok()) {
+        cfg.endpoint_path = ep;
+    }
     if let Some(secret) = jwt.or_else(|| std::env::var("OO_DS_JWT").ok()) {
         cfg.jwt_secret = Some(secret);
     }

@@ -1,0 +1,129 @@
+{
+  "pages": [
+    {
+      "index": 0,
+      "size": {
+        "width_pt": 595.3,
+        "height_pt": 841.89
+      },
+      "boxes": [
+        {
+          "kind": "paragraph",
+          "origin": {
+            "x_pt": 281.8,
+            "y_pt": 58.2
+          },
+          "size": {
+            "width_pt": 31.65,
+            "height_pt": 11.16
+          },
+          "runs": [
+            {
+              "text": "Sheet1",
+              "font": "LiberationSans",
+              "size_pt": 10.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 281.8,
+                "y_pt": 67.25
+              }
+            }
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "origin": {
+            "x_pt": 281.8,
+            "y_pt": 772.5
+          },
+          "size": {
+            "width_pt": 31.66,
+            "height_pt": 11.16
+          },
+          "runs": [
+            {
+              "text": "Page 1",
+              "font": "LiberationSans",
+              "size_pt": 10.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 281.8,
+                "y_pt": 781.55
+              }
+            }
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "origin": {
+            "x_pt": 57.69,
+            "y_pt": 78.56
+          },
+          "size": {
+            "width_pt": 125.96,
+            "height_pt": 23.95
+          },
+          "runs": [
+            {
+              "text": "A1",
+              "font": "LiberationSans",
+              "size_pt": 10.01,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 57.69,
+                "y_pt": 87.62
+              }
+            },
+            {
+              "text": "42",
+              "font": "LiberationSans",
+              "size_pt": 10.01,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 172.52,
+                "y_pt": 87.62
+              }
+            },
+            {
+              "text": "label",
+              "font": "LiberationSans",
+              "size_pt": 10.01,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 57.69,
+                "y_pt": 100.4
+              }
+            },
+            {
+              "text": "7.5",
+              "font": "LiberationSans",
+              "size_pt": 10.01,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 169.74,
+                "y_pt": 100.4
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resolved_fonts": {
+    "requested": [],
+    "resolved": {},
+    "unavailable": []
+  },
+  "metadata": {
+    "engine": "libreoffice",
+    "engine_version": "LibreOffice 26.8.0.3 680(Build:3)",
+    "captured_at": "2026-10-01T06:02:14.548810+00:00",
+    "environment": "PDF\u2192IR extraction via PyMuPDF ('1.28.0', '1.29.0', None)"
+  }
+}

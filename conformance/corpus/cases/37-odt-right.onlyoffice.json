@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "truth_captured_from": "onlyoffice-ds unknown",
+  "captured_at": "2026-10-01T05:57:54.199845342+00:00",
+  "render": {
+    "pages": [
+      {
+        "index": 0,
+        "size": {
+          "width_pt": 595.25,
+          "height_pt": 841.84998
+        },
+        "boxes": [
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 433.26901,
+              "y_pt": 66.1631
+            },
+            "size": {
+              "width_pt": 89.92161299999998,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "Right-aligned",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 433.26901,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "text.",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 502.216607,
+                  "y_pt": 83.59142
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "resolved_fonts": {
+      "requested": [],
+      "resolved": {},
+      "unavailable": []
+    },
+    "metadata": {
+      "engine": "onlyoffice-documentserver",
+      "engine_version": "unknown",
+      "captured_at": "2026-10-01T05:57:54.199836342+00:00",
+      "environment": "onlyoffice-ds pdf-export projection; filetype=odt"
+    }
+  }
+}

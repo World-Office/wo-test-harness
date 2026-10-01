@@ -247,7 +247,7 @@ def get_libreoffice_version() -> str:
 # Corpus discovery + capture
 # ---------------------------------------------------------------------------
 
-DOC_EXTENSIONS = {".docx", ".docm", ".pptx", ".xlsx"}
+DOC_EXTENSIONS = {".docx", ".docm", ".pptx", ".xlsx", ".odt", ".ods", ".odp"}
 
 
 def discover_cases(corpus_dir: str):
@@ -358,6 +358,13 @@ def compare_engines(corpus_dir: str, engine_a: str = "wo-docx-renderer",
             engine_ir = json.load(f)
         with open(truth_path) as f:
             truth_ir = json.load(f)
+        # A render JSON is either a bare NormalizedRender or a GroundTruthFile
+        # wrapper (the Rust capture CLI writes the wrapper; capture-truth.py
+        # writes bare) — the harness contract accepts both.
+        if isinstance(engine_ir, dict) and "render" in engine_ir:
+            engine_ir = engine_ir["render"]
+        if isinstance(truth_ir, dict) and "render" in truth_ir:
+            truth_ir = truth_ir["render"]
         report = fidelity_report(stem, engine_ir, truth_ir)
         reports.append(report)
         _print_report(report)

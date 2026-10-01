@@ -1,0 +1,2502 @@
+{
+  "schema_version": 1,
+  "truth_captured_from": "onlyoffice-ds unknown",
+  "captured_at": "2026-10-01T05:57:52.065606767+00:00",
+  "render": {
+    "pages": [
+      {
+        "index": 0,
+        "size": {
+          "width_pt": 595.25,
+          "height_pt": 841.84998
+        },
+        "boxes": [
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 66.1631
+            },
+            "size": {
+              "width_pt": 412.917703,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "word0",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "word1",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 105.659802,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "word2",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 139.319603,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "word3",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 172.979405,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "word4",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 206.639206,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "word5",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 240.299008,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "word6",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 273.958809,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "word7",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 307.618582,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "word8",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 341.278356,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "word9",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 374.938129,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "word10",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 408.59793,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "word11",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 448.257703,
+                  "y_pt": 83.59142
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 79.96193
+            },
+            "size": {
+              "width_pt": 433.257902,
+              "height_pt": 22.34400000000001
+            },
+            "runs": [
+              {
+                "text": "word12",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "word13",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 111.659773,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "word14",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 151.319546,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "word15",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 190.97932,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "word16",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 230.639093,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "word17",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 270.298894,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "word18",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 309.958696,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "word19",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 349.618497,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "word20",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 389.278299,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "word21",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 428.9381,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "word22",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 468.597902,
+                  "y_pt": 97.39025000000001
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 93.76076
+            },
+            "size": {
+              "width_pt": 433.257902,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "word23",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 111.18908
+                }
+              },
+              {
+                "text": "word24",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 111.659773,
+                  "y_pt": 111.18908
+                }
+              },
+              {
+                "text": "word25",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 151.319546,
+                  "y_pt": 111.18908
+                }
+              },
+              {
+                "text": "word26",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 190.97932,
+                  "y_pt": 111.18908
+                }
+              },
+              {
+                "text": "word27",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 230.639093,
+                  "y_pt": 111.18908
+                }
+              },
+              {
+                "text": "word28",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 270.298894,
+                  "y_pt": 111.18908
+                }
+              },
+              {
+                "text": "word29",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 309.958696,
+                  "y_pt": 111.18908
+                }
+              },
+              {
+                "text": "word30",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 349.618497,
+                  "y_pt": 111.18908
+                }
+              },
+              {
+                "text": "word31",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 389.278299,
+                  "y_pt": 111.18908
+                }
+              },
+              {
+                "text": "word32",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 428.9381,
+                  "y_pt": 111.18908
+                }
+              },
+              {
+                "text": "word33",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 468.597902,
+                  "y_pt": 111.18908
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 107.55959
+            },
+            "size": {
+              "width_pt": 433.257902,
+              "height_pt": 22.34400000000001
+            },
+            "runs": [
+              {
+                "text": "word34",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 124.98791
+                }
+              },
+              {
+                "text": "word35",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 111.659773,
+                  "y_pt": 124.98791
+                }
+              },
+              {
+                "text": "word36",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 151.319546,
+                  "y_pt": 124.98791
+                }
+              },
+              {
+                "text": "word37",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 190.97932,
+                  "y_pt": 124.98791
+                }
+              },
+              {
+                "text": "word38",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 230.639093,
+                  "y_pt": 124.98791
+                }
+              },
+              {
+                "text": "word39",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 270.298894,
+                  "y_pt": 124.98791
+                }
+              },
+              {
+                "text": "word40",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 309.958696,
+                  "y_pt": 124.98791
+                }
+              },
+              {
+                "text": "word41",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 349.618497,
+                  "y_pt": 124.98791
+                }
+              },
+              {
+                "text": "word42",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 389.278299,
+                  "y_pt": 124.98791
+                }
+              },
+              {
+                "text": "word43",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 428.9381,
+                  "y_pt": 124.98791
+                }
+              },
+              {
+                "text": "word44",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 468.597902,
+                  "y_pt": 124.98791
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 121.35842
+            },
+            "size": {
+              "width_pt": 433.257902,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "word45",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 138.78673999999998
+                }
+              },
+              {
+                "text": "word46",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 111.659773,
+                  "y_pt": 138.78673999999998
+                }
+              },
+              {
+                "text": "word47",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 151.319546,
+                  "y_pt": 138.78673999999998
+                }
+              },
+              {
+                "text": "word48",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 190.97932,
+                  "y_pt": 138.78673999999998
+                }
+              },
+              {
+                "text": "word49",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 230.639093,
+                  "y_pt": 138.78673999999998
+                }
+              },
+              {
+                "text": "word50",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 270.298894,
+                  "y_pt": 138.78673999999998
+                }
+              },
+              {
+                "text": "word51",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 309.958696,
+                  "y_pt": 138.78673999999998
+                }
+              },
+              {
+                "text": "word52",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 349.618497,
+                  "y_pt": 138.78673999999998
+                }
+              },
+              {
+                "text": "word53",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 389.278299,
+                  "y_pt": 138.78673999999998
+                }
+              },
+              {
+                "text": "word54",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 428.9381,
+                  "y_pt": 138.78673999999998
+                }
+              },
+              {
+                "text": "word55",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 468.597902,
+                  "y_pt": 138.78673999999998
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 135.15725
+            },
+            "size": {
+              "width_pt": 433.257902,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "word56",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 152.58557
+                }
+              },
+              {
+                "text": "word57",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 111.659773,
+                  "y_pt": 152.58557
+                }
+              },
+              {
+                "text": "word58",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 151.319546,
+                  "y_pt": 152.58557
+                }
+              },
+              {
+                "text": "word59",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 190.97932,
+                  "y_pt": 152.58557
+                }
+              },
+              {
+                "text": "word60",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 230.639093,
+                  "y_pt": 152.58557
+                }
+              },
+              {
+                "text": "word61",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 270.298894,
+                  "y_pt": 152.58557
+                }
+              },
+              {
+                "text": "word62",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 309.958696,
+                  "y_pt": 152.58557
+                }
+              },
+              {
+                "text": "word63",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 349.618497,
+                  "y_pt": 152.58557
+                }
+              },
+              {
+                "text": "word64",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 389.278299,
+                  "y_pt": 152.58557
+                }
+              },
+              {
+                "text": "word65",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 428.9381,
+                  "y_pt": 152.58557
+                }
+              },
+              {
+                "text": "word66",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 468.597902,
+                  "y_pt": 152.58557
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 148.95608
+            },
+            "size": {
+              "width_pt": 433.257902,
+              "height_pt": 22.344000000000023
+            },
+            "runs": [
+              {
+                "text": "word67",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 166.3844
+                }
+              },
+              {
+                "text": "word68",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 111.659773,
+                  "y_pt": 166.3844
+                }
+              },
+              {
+                "text": "word69",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 151.319546,
+                  "y_pt": 166.3844
+                }
+              },
+              {
+                "text": "word70",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 190.97932,
+                  "y_pt": 166.3844
+                }
+              },
+              {
+                "text": "word71",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 230.639093,
+                  "y_pt": 166.3844
+                }
+              },
+              {
+                "text": "word72",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 270.298894,
+                  "y_pt": 166.3844
+                }
+              },
+              {
+                "text": "word73",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 309.958696,
+                  "y_pt": 166.3844
+                }
+              },
+              {
+                "text": "word74",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 349.618497,
+                  "y_pt": 166.3844
+                }
+              },
+              {
+                "text": "word75",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 389.278299,
+                  "y_pt": 166.3844
+                }
+              },
+              {
+                "text": "word76",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 428.9381,
+                  "y_pt": 166.3844
+                }
+              },
+              {
+                "text": "word77",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 468.597902,
+                  "y_pt": 166.3844
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 162.75491
+            },
+            "size": {
+              "width_pt": 433.257902,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "word78",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 180.18322999999998
+                }
+              },
+              {
+                "text": "word79",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 111.659773,
+                  "y_pt": 180.18322999999998
+                }
+              },
+              {
+                "text": "word80",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 151.319546,
+                  "y_pt": 180.18322999999998
+                }
+              },
+              {
+                "text": "word81",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 190.97932,
+                  "y_pt": 180.18322999999998
+                }
+              },
+              {
+                "text": "word82",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 230.639093,
+                  "y_pt": 180.18322999999998
+                }
+              },
+              {
+                "text": "word83",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 270.298894,
+                  "y_pt": 180.18322999999998
+                }
+              },
+              {
+                "text": "word84",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 309.958696,
+                  "y_pt": 180.18322999999998
+                }
+              },
+              {
+                "text": "word85",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 349.618497,
+                  "y_pt": 180.18322999999998
+                }
+              },
+              {
+                "text": "word86",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 389.278299,
+                  "y_pt": 180.18322999999998
+                }
+              },
+              {
+                "text": "word87",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 428.9381,
+                  "y_pt": 180.18322999999998
+                }
+              },
+              {
+                "text": "word88",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 468.597902,
+                  "y_pt": 180.18322999999998
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 176.55374
+            },
+            "size": {
+              "width_pt": 433.257902,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "word89",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 193.98206
+                }
+              },
+              {
+                "text": "word90",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 111.659773,
+                  "y_pt": 193.98206
+                }
+              },
+              {
+                "text": "word91",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 151.319546,
+                  "y_pt": 193.98206
+                }
+              },
+              {
+                "text": "word92",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 190.97932,
+                  "y_pt": 193.98206
+                }
+              },
+              {
+                "text": "word93",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 230.639093,
+                  "y_pt": 193.98206
+                }
+              },
+              {
+                "text": "word94",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 270.298894,
+                  "y_pt": 193.98206
+                }
+              },
+              {
+                "text": "word95",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 309.958696,
+                  "y_pt": 193.98206
+                }
+              },
+              {
+                "text": "word96",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 349.618497,
+                  "y_pt": 193.98206
+                }
+              },
+              {
+                "text": "word97",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 389.278299,
+                  "y_pt": 193.98206
+                }
+              },
+              {
+                "text": "word98",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 428.9381,
+                  "y_pt": 193.98206
+                }
+              },
+              {
+                "text": "word99",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 468.597902,
+                  "y_pt": 193.98206
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 190.35257
+            },
+            "size": {
+              "width_pt": 407.938299,
+              "height_pt": 22.344000000000023
+            },
+            "runs": [
+              {
+                "text": "word100",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 207.78089
+                }
+              },
+              {
+                "text": "word101",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 117.659773,
+                  "y_pt": 207.78089
+                }
+              },
+              {
+                "text": "word102",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 163.319575,
+                  "y_pt": 207.78089
+                }
+              },
+              {
+                "text": "word103",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 208.979376,
+                  "y_pt": 207.78089
+                }
+              },
+              {
+                "text": "word104",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 254.639149,
+                  "y_pt": 207.78089
+                }
+              },
+              {
+                "text": "word105",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 300.298923,
+                  "y_pt": 207.78089
+                }
+              },
+              {
+                "text": "word106",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 345.958724,
+                  "y_pt": 207.78089
+                }
+              },
+              {
+                "text": "word107",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 391.618526,
+                  "y_pt": 207.78089
+                }
+              },
+              {
+                "text": "word108",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 437.278299,
+                  "y_pt": 207.78089
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 204.1514
+            },
+            "size": {
+              "width_pt": 407.938299,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "word109",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 221.57971999999998
+                }
+              },
+              {
+                "text": "word110",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 117.659773,
+                  "y_pt": 221.57971999999998
+                }
+              },
+              {
+                "text": "word111",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 163.319575,
+                  "y_pt": 221.57971999999998
+                }
+              },
+              {
+                "text": "word112",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 208.979376,
+                  "y_pt": 221.57971999999998
+                }
+              },
+              {
+                "text": "word113",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 254.639149,
+                  "y_pt": 221.57971999999998
+                }
+              },
+              {
+                "text": "word114",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 300.298923,
+                  "y_pt": 221.57971999999998
+                }
+              },
+              {
+                "text": "word115",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 345.958724,
+                  "y_pt": 221.57971999999998
+                }
+              },
+              {
+                "text": "word116",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 391.618526,
+                  "y_pt": 221.57971999999998
+                }
+              },
+              {
+                "text": "word117",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 437.278299,
+                  "y_pt": 221.57971999999998
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 217.95023
+            },
+            "size": {
+              "width_pt": 407.938299,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "word118",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 235.37855
+                }
+              },
+              {
+                "text": "word119",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 117.659773,
+                  "y_pt": 235.37855
+                }
+              },
+              {
+                "text": "word120",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 163.319575,
+                  "y_pt": 235.37855
+                }
+              },
+              {
+                "text": "word121",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 208.979376,
+                  "y_pt": 235.37855
+                }
+              },
+              {
+                "text": "word122",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 254.639149,
+                  "y_pt": 235.37855
+                }
+              },
+              {
+                "text": "word123",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 300.298923,
+                  "y_pt": 235.37855
+                }
+              },
+              {
+                "text": "word124",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 345.958724,
+                  "y_pt": 235.37855
+                }
+              },
+              {
+                "text": "word125",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 391.618526,
+                  "y_pt": 235.37855
+                }
+              },
+              {
+                "text": "word126",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 437.278299,
+                  "y_pt": 235.37855
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 231.74906
+            },
+            "size": {
+              "width_pt": 407.938299,
+              "height_pt": 22.344000000000023
+            },
+            "runs": [
+              {
+                "text": "word127",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 249.17738
+                }
+              },
+              {
+                "text": "word128",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 117.659773,
+                  "y_pt": 249.17738
+                }
+              },
+              {
+                "text": "word129",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 163.319575,
+                  "y_pt": 249.17738
+                }
+              },
+              {
+                "text": "word130",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 208.979376,
+                  "y_pt": 249.17738
+                }
+              },
+              {
+                "text": "word131",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 254.639149,
+                  "y_pt": 249.17738
+                }
+              },
+              {
+                "text": "word132",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 300.298923,
+                  "y_pt": 249.17738
+                }
+              },
+              {
+                "text": "word133",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 345.958724,
+                  "y_pt": 249.17738
+                }
+              },
+              {
+                "text": "word134",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 391.618526,
+                  "y_pt": 249.17738
+                }
+              },
+              {
+                "text": "word135",
+                "font": "",
+                "size_pt": 22.344000000000023,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 437.278299,
+                  "y_pt": 249.17738
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 245.54789
+            },
+            "size": {
+              "width_pt": 407.938299,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "word136",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 262.97621
+                }
+              },
+              {
+                "text": "word137",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 117.659773,
+                  "y_pt": 262.97621
+                }
+              },
+              {
+                "text": "word138",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 163.319575,
+                  "y_pt": 262.97621
+                }
+              },
+              {
+                "text": "word139",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 208.979376,
+                  "y_pt": 262.97621
+                }
+              },
+              {
+                "text": "word140",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 254.639149,
+                  "y_pt": 262.97621
+                }
+              },
+              {
+                "text": "word141",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 300.298923,
+                  "y_pt": 262.97621
+                }
+              },
+              {
+                "text": "word142",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 345.958724,
+                  "y_pt": 262.97621
+                }
+              },
+              {
+                "text": "word143",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 391.618526,
+                  "y_pt": 262.97621
+                }
+              },
+              {
+                "text": "word144",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 437.278299,
+                  "y_pt": 262.97621
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 259.34672
+            },
+            "size": {
+              "width_pt": 407.938299,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "word145",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 276.77504
+                }
+              },
+              {
+                "text": "word146",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 117.659773,
+                  "y_pt": 276.77504
+                }
+              },
+              {
+                "text": "word147",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 163.319575,
+                  "y_pt": 276.77504
+                }
+              },
+              {
+                "text": "word148",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 208.979376,
+                  "y_pt": 276.77504
+                }
+              },
+              {
+                "text": "word149",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 254.639149,
+                  "y_pt": 276.77504
+                }
+              },
+              {
+                "text": "word150",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 300.298923,
+                  "y_pt": 276.77504
+                }
+              },
+              {
+                "text": "word151",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 345.958724,
+                  "y_pt": 276.77504
+                }
+              },
+              {
+                "text": "word152",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 391.618526,
+                  "y_pt": 276.77504
+                }
+              },
+              {
+                "text": "word153",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 437.278299,
+                  "y_pt": 276.77504
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 273.14555
+            },
+            "size": {
+              "width_pt": 407.938299,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "word154",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 290.57387
+                }
+              },
+              {
+                "text": "word155",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 117.659773,
+                  "y_pt": 290.57387
+                }
+              },
+              {
+                "text": "word156",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 163.319575,
+                  "y_pt": 290.57387
+                }
+              },
+              {
+                "text": "word157",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 208.979376,
+                  "y_pt": 290.57387
+                }
+              },
+              {
+                "text": "word158",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 254.639149,
+                  "y_pt": 290.57387
+                }
+              },
+              {
+                "text": "word159",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 300.298923,
+                  "y_pt": 290.57387
+                }
+              },
+              {
+                "text": "word160",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 345.958724,
+                  "y_pt": 290.57387
+                }
+              },
+              {
+                "text": "word161",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 391.618526,
+                  "y_pt": 290.57387
+                }
+              },
+              {
+                "text": "word162",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 437.278299,
+                  "y_pt": 290.57387
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 286.94438
+            },
+            "size": {
+              "width_pt": 407.938299,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "word163",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 304.3727
+                }
+              },
+              {
+                "text": "word164",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 117.659773,
+                  "y_pt": 304.3727
+                }
+              },
+              {
+                "text": "word165",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 163.319575,
+                  "y_pt": 304.3727
+                }
+              },
+              {
+                "text": "word166",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 208.979376,
+                  "y_pt": 304.3727
+                }
+              },
+              {
+                "text": "word167",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 254.639149,
+                  "y_pt": 304.3727
+                }
+              },
+              {
+                "text": "word168",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 300.298923,
+                  "y_pt": 304.3727
+                }
+              },
+              {
+                "text": "word169",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 345.958724,
+                  "y_pt": 304.3727
+                }
+              },
+              {
+                "text": "word170",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 391.618526,
+                  "y_pt": 304.3727
+                }
+              },
+              {
+                "text": "word171",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 437.278299,
+                  "y_pt": 304.3727
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 300.74321
+            },
+            "size": {
+              "width_pt": 407.938299,
+              "height_pt": 22.34400000000005
+            },
+            "runs": [
+              {
+                "text": "word172",
+                "font": "",
+                "size_pt": 22.34400000000005,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 318.17153
+                }
+              },
+              {
+                "text": "word173",
+                "font": "",
+                "size_pt": 22.34400000000005,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 117.659773,
+                  "y_pt": 318.17153
+                }
+              },
+              {
+                "text": "word174",
+                "font": "",
+                "size_pt": 22.34400000000005,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 163.319575,
+                  "y_pt": 318.17153
+                }
+              },
+              {
+                "text": "word175",
+                "font": "",
+                "size_pt": 22.34400000000005,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 208.979376,
+                  "y_pt": 318.17153
+                }
+              },
+              {
+                "text": "word176",
+                "font": "",
+                "size_pt": 22.34400000000005,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 254.639149,
+                  "y_pt": 318.17153
+                }
+              },
+              {
+                "text": "word177",
+                "font": "",
+                "size_pt": 22.34400000000005,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 300.298923,
+                  "y_pt": 318.17153
+                }
+              },
+              {
+                "text": "word178",
+                "font": "",
+                "size_pt": 22.34400000000005,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 345.958724,
+                  "y_pt": 318.17153
+                }
+              },
+              {
+                "text": "word179",
+                "font": "",
+                "size_pt": 22.34400000000005,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 391.618526,
+                  "y_pt": 318.17153
+                }
+              },
+              {
+                "text": "word180",
+                "font": "",
+                "size_pt": 22.34400000000005,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 437.278299,
+                  "y_pt": 318.17153
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 314.54204
+            },
+            "size": {
+              "width_pt": 407.938299,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "word181",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 331.97035999999997
+                }
+              },
+              {
+                "text": "word182",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 117.659773,
+                  "y_pt": 331.97035999999997
+                }
+              },
+              {
+                "text": "word183",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 163.319575,
+                  "y_pt": 331.97035999999997
+                }
+              },
+              {
+                "text": "word184",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 208.979376,
+                  "y_pt": 331.97035999999997
+                }
+              },
+              {
+                "text": "word185",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 254.639149,
+                  "y_pt": 331.97035999999997
+                }
+              },
+              {
+                "text": "word186",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 300.298923,
+                  "y_pt": 331.97035999999997
+                }
+              },
+              {
+                "text": "word187",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 345.958724,
+                  "y_pt": 331.97035999999997
+                }
+              },
+              {
+                "text": "word188",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 391.618526,
+                  "y_pt": 331.97035999999997
+                }
+              },
+              {
+                "text": "word189",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 437.278299,
+                  "y_pt": 331.97035999999997
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 328.34087
+            },
+            "size": {
+              "width_pt": 407.938299,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "word190",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 345.76919
+                }
+              },
+              {
+                "text": "word191",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 117.659773,
+                  "y_pt": 345.76919
+                }
+              },
+              {
+                "text": "word192",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 163.319575,
+                  "y_pt": 345.76919
+                }
+              },
+              {
+                "text": "word193",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 208.979376,
+                  "y_pt": 345.76919
+                }
+              },
+              {
+                "text": "word194",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 254.639149,
+                  "y_pt": 345.76919
+                }
+              },
+              {
+                "text": "word195",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 300.298923,
+                  "y_pt": 345.76919
+                }
+              },
+              {
+                "text": "word196",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 345.958724,
+                  "y_pt": 345.76919
+                }
+              },
+              {
+                "text": "word197",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 391.618526,
+                  "y_pt": 345.76919
+                }
+              },
+              {
+                "text": "word198",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 437.278299,
+                  "y_pt": 345.76919
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 342.1397
+            },
+            "size": {
+              "width_pt": 42.66,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "word199",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 359.56802
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "resolved_fonts": {
+      "requested": [],
+      "resolved": {},
+      "unavailable": []
+    },
+    "metadata": {
+      "engine": "onlyoffice-documentserver",
+      "engine_version": "unknown",
+      "captured_at": "2026-10-01T05:57:52.065597260+00:00",
+      "environment": "onlyoffice-ds pdf-export projection; filetype=odt"
+    }
+  }
+}

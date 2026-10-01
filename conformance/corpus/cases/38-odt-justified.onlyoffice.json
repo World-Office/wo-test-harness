@@ -1,0 +1,385 @@
+{
+  "schema_version": 1,
+  "truth_captured_from": "onlyoffice-ds unknown",
+  "captured_at": "2026-10-01T05:57:54.732466887+00:00",
+  "render": {
+    "pages": [
+      {
+        "index": 0,
+        "size": {
+          "width_pt": 595.25,
+          "height_pt": 841.84998
+        },
+        "boxes": [
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 66.1631
+            },
+            "size": {
+              "width_pt": 451.04091100000005,
+              "height_pt": 22.343999999999994
+            },
+            "runs": [
+              {
+                "text": "This",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "is",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 97.557449,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "a",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 109.784872,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "longer",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 119.344545,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "paragraph",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 154.224302,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "that",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 206.427931,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "should",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 228.645572,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "exercise",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 264.871125,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "line",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 308.396901,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "wrapping",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 330.604573,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "with",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 380.148142,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "justified",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 405.693695,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "alignment.",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 449.213292,
+                  "y_pt": 83.59142
+                }
+              },
+              {
+                "text": "The",
+                "font": "",
+                "size_pt": 22.343999999999994,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 504.394857,
+                  "y_pt": 83.59142
+                }
+              }
+            ]
+          },
+          {
+            "kind": "paragraph",
+            "origin": {
+              "x_pt": 72.0,
+              "y_pt": 79.96193
+            },
+            "size": {
+              "width_pt": 401.463505,
+              "height_pt": 22.34400000000001
+            },
+            "runs": [
+              {
+                "text": "quick",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 72.0,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "brown",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 101.649817,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "fox",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 135.309591,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "jumps",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 154.305392,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "over",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 186.623036,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "the",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 210.945014,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "lazy",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 228.594935,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "dog.",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 251.570797,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "Pack",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 275.570523,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "my",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 301.894384,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "box",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 320.218186,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "with",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 341.217987,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "five",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 365.529789,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "dozen",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 387.17571,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "liquor",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 418.827543,
+                  "y_pt": 97.39025000000001
+                }
+              },
+              {
+                "text": "jugs.",
+                "font": "",
+                "size_pt": 22.34400000000001,
+                "weight": 400,
+                "italic": false,
+                "origin": {
+                  "x_pt": 450.471505,
+                  "y_pt": 97.39025000000001
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "resolved_fonts": {
+      "requested": [],
+      "resolved": {},
+      "unavailable": []
+    },
+    "metadata": {
+      "engine": "onlyoffice-documentserver",
+      "engine_version": "unknown",
+      "captured_at": "2026-10-01T05:57:54.732455640+00:00",
+      "environment": "onlyoffice-ds pdf-export projection; filetype=odt"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "pages": [
+    {
+      "index": 0,
+      "size": {
+        "width_pt": 595.3,
+        "height_pt": 841.89
+      },
+      "boxes": [
+        {
+          "kind": "paragraph",
+          "origin": {
+            "x_pt": 72.1,
+            "y_pt": 72.51
+          },
+          "size": {
+            "width_pt": 454.3,
+            "height_pt": 27.08
+          },
+          "runs": [
+            {
+              "text": "This is a longer paragraph that should exercise line wrapping with justified alignment. The",
+              "font": "LiberationSerif",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 72.1,
+                "y_pt": 83.2
+              }
+            },
+            {
+              "text": "quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.",
+              "font": "LiberationSerif",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 72.1,
+                "y_pt": 97.0
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resolved_fonts": {
+    "requested": [],
+    "resolved": {},
+    "unavailable": []
+  },
+  "metadata": {
+    "engine": "libreoffice",
+    "engine_version": "LibreOffice 26.8.0.3 680(Build:3)",
+    "captured_at": "2026-10-01T06:02:16.177398+00:00",
+    "environment": "PDF\u2192IR extraction via PyMuPDF ('1.28.0', '1.29.0', None)"
+  }
+}

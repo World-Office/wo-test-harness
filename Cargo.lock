@@ -436,6 +436,7 @@ checksum = "6e634e2e0ebac1ee034020da1ca582e17ffe4e0f5e985823721e168928136dcb"
 dependencies = [
  "crc32fast",
  "miniz_oxide",
+ "zlib-rs",
 ]
 
 [[package]]
@@ -2335,7 +2336,7 @@ checksum = "589f6da84c646204747d1270a2a5661ea66ed1cced2631d546fdfb155959f9ec"
 [[package]]
 name = "wo-common"
 version = "0.1.0"
-source = "git+https://github.com/World-Office/server.git?branch=main#908ef9a8f6b372506e3ae9c17828a51b04fef30e"
+source = "git+https://github.com/World-Office/server.git?branch=main#e2f0a2e05e67b9da8c5866bfc916330999d8d117"
 dependencies = [
  "anyhow",
  "serde",
@@ -2368,6 +2369,7 @@ dependencies = [
  "serde_json",
  "wo-conformance",
  "wo-docx-renderer",
+ "wo-odf",
  "wo-ooxml",
  "zip",
 ]
@@ -2375,7 +2377,7 @@ dependencies = [
 [[package]]
 name = "wo-docx-renderer"
 version = "0.1.0"
-source = "git+https://github.com/World-Office/server.git?branch=main#908ef9a8f6b372506e3ae9c17828a51b04fef30e"
+source = "git+https://github.com/World-Office/server.git?branch=main#e2f0a2e05e67b9da8c5866bfc916330999d8d117"
 dependencies = [
  "anyhow",
  "pdf-writer",
@@ -2389,9 +2391,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "wo-eval-formula"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "serde_json",
+ "wo-formula",
+]
+
+[[package]]
 name = "wo-fonts"
 version = "0.1.0"
-source = "git+https://github.com/World-Office/server.git?branch=main#908ef9a8f6b372506e3ae9c17828a51b04fef30e"
+source = "git+https://github.com/World-Office/server.git?branch=main#e2f0a2e05e67b9da8c5866bfc916330999d8d117"
 dependencies = [
  "anyhow",
  "serde",
@@ -2400,9 +2411,48 @@ dependencies = [
 ]
 
 [[package]]
+name = "wo-formula"
+version = "0.1.0"
+source = "git+https://github.com/World-Office/server.git?branch=main#e2f0a2e05e67b9da8c5866bfc916330999d8d117"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "serde",
+ "serde_json",
+ "thiserror",
+]
+
+[[package]]
+name = "wo-odf"
+version = "0.1.0"
+source = "git+https://github.com/World-Office/server.git?branch=main#e2f0a2e05e67b9da8c5866bfc916330999d8d117"
+dependencies = [
+ "anyhow",
+ "roxmltree",
+ "serde",
+ "thiserror",
+ "wo-common",
+ "wo-office-utils",
+ "zip",
+]
+
+[[package]]
+name = "wo-office-utils"
+version = "0.1.0"
+source = "git+https://github.com/World-Office/server.git?branch=main#e2f0a2e05e67b9da8c5866bfc916330999d8d117"
+dependencies = [
+ "anyhow",
+ "flate2",
+ "serde",
+ "thiserror",
+ "wo-common",
+ "zip",
+]
+
+[[package]]
 name = "wo-ooxml"
 version = "0.1.0"
-source = "git+https://github.com/World-Office/server.git?branch=main#908ef9a8f6b372506e3ae9c17828a51b04fef30e"
+source = "git+https://github.com/World-Office/server.git?branch=main#e2f0a2e05e67b9da8c5866bfc916330999d8d117"
 dependencies = [
  "anyhow",
  "roxmltree",
@@ -2416,7 +2466,7 @@ dependencies = [
 [[package]]
 name = "wo-renderer"
 version = "0.1.0"
-source = "git+https://github.com/World-Office/server.git?branch=main#908ef9a8f6b372506e3ae9c17828a51b04fef30e"
+source = "git+https://github.com/World-Office/server.git?branch=main#e2f0a2e05e67b9da8c5866bfc916330999d8d117"
 dependencies = [
  "anyhow",
  "fontdb",
@@ -2579,6 +2629,12 @@ dependencies = [
  "time",
  "zopfli",
 ]
+
+[[package]]
+name = "zlib-rs"
+version = "0.6.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b268e58e7c693d7c271f93ffc4ba3b380412554231c85bf61ca7af91042a4112"
 
 [[package]]
 name = "zmij"

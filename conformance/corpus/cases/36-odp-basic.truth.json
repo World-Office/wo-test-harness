@@ -1,0 +1,59 @@
+{
+  "pages": [
+    {
+      "index": 0,
+      "size": {
+        "width_pt": 793.7,
+        "height_pt": 446.46
+      },
+      "boxes": [
+        {
+          "kind": "paragraph",
+          "origin": {
+            "x_pt": 35.43,
+            "y_pt": 31.93
+          },
+          "size": {
+            "width_pt": 211.03,
+            "height_pt": 40.24
+          },
+          "runs": [
+            {
+              "text": "Presentation slide one title",
+              "font": "LiberationSans",
+              "size_pt": 18.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 35.43,
+                "y_pt": 48.22
+              }
+            },
+            {
+              "text": "Second line on slide",
+              "font": "LiberationSans",
+              "size_pt": 18.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 35.43,
+                "y_pt": 68.37
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resolved_fonts": {
+    "requested": [],
+    "resolved": {},
+    "unavailable": []
+  },
+  "metadata": {
+    "engine": "libreoffice",
+    "engine_version": "LibreOffice 26.8.0.3 680(Build:3)",
+    "captured_at": "2026-10-01T06:02:15.175949+00:00",
+    "environment": "PDF\u2192IR extraction via PyMuPDF ('1.28.0', '1.29.0', None)"
+  }
+}

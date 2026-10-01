@@ -26,6 +26,9 @@ use wo_ooxml::model::DocxBody;
 use wo_docx_renderer::layout::{LayoutElement, LayoutEngine, LayoutPage};
 use wo_docx_renderer::pipeline::DocxRenderPipeline;
 
+use wo_odf::model::{OdfContent, OdfTextContent};
+use wo_odf::OdfParser;
+
 /// The family the layout engine actually renders text with. The engine ignores
 /// the document's requested family and renders this default — the adapter
 /// records this honestly so font substitution surfaces in the score.
@@ -67,6 +70,12 @@ impl RenderEngine for DocxConformanceAdapter {
     }
 
     fn render(&self, doc: &[u8], _spec: &RenderSpec) -> Result<NormalizedRender, ConformanceError> {
+        // ODF (ODT/ODS/ODP) is a different package format from OOXML even though
+        // both are ZIPs — sniff the mimetype marker.
+        if wo_odf::is_odf_file(doc) {
+            return render_odf(doc);
+        }
+
         let body = self
             .pipeline
             .parse_body(doc)
@@ -79,6 +88,376 @@ impl RenderEngine for DocxConformanceAdapter {
 
         Ok(project(&pages, requested))
     }
+}
+
+// ---------------------------------------------------------------------------
+// ODF projection (wo-odf → NormalizedRender)
+// ---------------------------------------------------------------------------
+
+/// Project an ODF document through `wo-odf`'s parser into the conformance IR.
+///
+/// Honest-scope note: `wo-odf` is a parser/serializer engine, not a paginated
+/// layout engine — it models paragraphs/spans, table cells, sheet cells and
+/// slides but computes no line breaking or page geometry. This projection maps
+/// that structure into boxes with A4 page size and flowing coordinates:
+/// text/style/font-coverage subscores are meaningful; geometry is structural
+/// (per-element, monotonic y) rather than pixel-accurate.
+const A4_W: f64 = 595.28;
+const A4_H: f64 = 841.89;
+const MARGIN: f64 = 72.0;
+const LINE_SIZE: f64 = 12.0;
+
+fn render_odf(bytes: &[u8]) -> Result<NormalizedRender, ConformanceError> {
+    let doc = OdfParser::new()
+        .parse(bytes)
+        .map_err(|e| ConformanceError::RenderFailed(format!("odf parse failed: {e}")))?;
+
+    // Style lookup lives in project_text_content (style_run / style_prop2) so
+    // the entire projection shares one resolver.
+    let style_ctx = &doc.styles;
+    let mut requested = BTreeSet::new();
+    for f in &doc.fonts {
+        if let Some(fam) = &f.font_family {
+            requested.insert(fam.clone());
+        }
+    }
+
+    let mut pages = Vec::new();
+    let mut boxes = Vec::new();
+    let mut y = MARGIN;
+
+    match &doc.content {
+        OdfContent::Text { content, .. } => {
+            // wo-odf walks descendants, so a table cell's <text:p> is reported
+            // both as an OdfTable cell and as a standalone Paragraph. Collect
+            // table-cell texts and skip those paragraphs to avoid double boxes.
+            let cell_texts: BTreeSet<String> = content
+                .iter()
+                .filter_map(|c| match c {
+                    OdfTextContent::Table(t) => Some(t),
+                    _ => None,
+                })
+                .flat_map(|t| {
+                    t.rows
+                        .iter()
+                        .flat_map(|r| r.cells.iter().map(|c| c.text.trim().to_string()))
+                })
+                .filter(|s| !s.is_empty())
+                .collect();
+            for item in content {
+                match item {
+                    OdfTextContent::Paragraph(p) => {
+                        if cell_texts.contains(p.text.trim()) {
+                            continue;
+                        }
+                    }
+                    OdfTextContent::Heading(h) => {
+                        if cell_texts.contains(h.text.trim()) {
+                            continue;
+                        }
+                    }
+                    _ => {}
+                }
+                boxes.extend(project_text_content(item, &mut y, style_ctx));
+            }
+        }
+        OdfContent::Spreadsheet { sheets } => {
+            for sheet in sheets {
+                for row in &sheet.rows {
+                    for cell in &row.cells {
+                        let text = cell.text.clone();
+                        if text.trim().is_empty() {
+                            continue;
+                        }
+                        let origin = Point {
+                            x_pt: MARGIN + cell.column as f64 * 96.0,
+                            y_pt: y,
+                        };
+                        y += LINE_SIZE * 1.2;
+                        boxes.push(cell_box("SheetCell", origin, text));
+                    }
+                }
+            }
+        }
+        OdfContent::Presentation { slides } => {
+            for slide in slides {
+                if slide.text_content.trim().is_empty() {
+                    continue;
+                }
+                let origin = Point {
+                    x_pt: MARGIN,
+                    y_pt: y,
+                };
+                y += LINE_SIZE * 1.2;
+                boxes.push(cell_box("Paragraph", origin, slide.text_content.clone()));
+            }
+        }
+        OdfContent::Generic => {
+            return Ok(NormalizedRender {
+                pages: vec![empty_page(0)],
+                resolved_fonts: ResolvedFonts {
+                    requested: requested.into_iter().collect(),
+                    resolved: BTreeMap::new(),
+                    unavailable: Vec::new(),
+                },
+                metadata: RenderMetadata {
+                    engine: "wo-odf".to_string(),
+                    engine_version: env!("CARGO_PKG_VERSION").to_string(),
+                    captured_at: String::new(),
+                    environment: "wo-odf structural projection (no layout engine)".to_string(),
+                },
+            });
+        }
+    }
+
+    pages.push(Page {
+        index: 0,
+        size: PageSize {
+            width_pt: A4_W,
+            height_pt: A4_H,
+        },
+        boxes,
+    });
+
+    let resolved: BTreeMap<String, String> = requested
+        .iter()
+        .cloned()
+        .map(|f| (f.clone(), ENGINE_DEFAULT_FONT.to_string()))
+        .collect();
+
+    Ok(NormalizedRender {
+        pages,
+        resolved_fonts: ResolvedFonts {
+            requested: requested.into_iter().collect(),
+            resolved,
+            unavailable: Vec::new(),
+        },
+        metadata: RenderMetadata {
+            engine: "wo-odf".to_string(),
+            engine_version: env!("CARGO_PKG_VERSION").to_string(),
+            captured_at: String::new(),
+            environment: "wo-odf structural projection (no layout engine)".to_string(),
+        },
+    })
+}
+
+fn empty_page(index: usize) -> Page {
+    Page {
+        index,
+        size: PageSize {
+            width_pt: A4_W,
+            height_pt: A4_H,
+        },
+        boxes: Vec::new(),
+    }
+}
+
+fn cell_box(kind: &str, origin: Point, text: String) -> LayoutBox {
+    let kind = match kind {
+        "SheetCell" => BoxKind::TableCell,
+        _ => BoxKind::Paragraph,
+    };
+    LayoutBox {
+        kind,
+        origin,
+        size: PageSize {
+            width_pt: (text.chars().count() as f64 * LINE_SIZE * 0.6).max(1.0),
+            height_pt: LINE_SIZE * 1.2,
+        },
+        runs: vec![GlyphRun {
+            text,
+            font: ENGINE_DEFAULT_FONT.to_string(),
+            size_pt: LINE_SIZE,
+            weight: 400,
+            italic: false,
+            origin,
+        }],
+    }
+}
+
+fn project_text_content(
+    item: &OdfTextContent,
+    y: &mut f64,
+    style_ctx: &[wo_odf::model::OdfStyle],
+) -> Vec<LayoutBox> {
+    fn style_prop2(
+        styles: &[wo_odf::model::OdfStyle],
+        name: &str,
+        key: &str,
+    ) -> Option<String> {
+        fn walk(styles: &[wo_odf::model::OdfStyle], name: &str, key: &str, depth: u8) -> Option<String> {
+            let st = styles.iter().find(|s| s.name == name)?;
+            let found = st
+                .properties
+                .iter()
+                .find(|(k, _)| k.ends_with(&format!(":{key}")))
+                .map(|(_, v)| v.clone());
+            if found.is_some() {
+                return found;
+            }
+            if depth < 8 {
+                if let Some(p) = &st.parent {
+                    if let Some(v) = walk(styles, p, key, depth + 1) {
+                        return Some(v);
+                    }
+                }
+            }
+            if let Some(dn) = &st.display_name {
+                if dn != name && depth < 8 {
+                    if let Some(v) = walk(styles, dn, key, depth + 1) {
+                        return Some(v);
+                    }
+                }
+            }
+            None
+        }
+        walk(styles, name, key, 0)
+    }
+
+    // Resolve a style-name into (bold, italic, size_pt).
+    fn style_run(
+        styles: &[wo_odf::model::OdfStyle],
+        name: Option<&String>,
+        weight: u16,
+        italic: bool,
+        size_pt: f64,
+    ) -> (u16, bool, f64) {
+        let Some(name) = name else { return (weight, italic, size_pt) };
+        let bold = style_prop2(styles, name, "font-weight")
+            .map(|v| v.eq_ignore_ascii_case("bold") || v == "700")
+            .unwrap_or(weight == 700);
+        let ital = style_prop2(styles, name, "font-style")
+            .map(|v| v.eq_ignore_ascii_case("italic"))
+            .unwrap_or(italic);
+        let size = style_prop2(styles, name, "font-size").and_then(|v| {
+            // accept "12pt" / "12" forms
+            v.trim_end_matches(['p', 't', ' ', 'P', 'T'])
+                .parse::<f64>()
+                .ok()
+        });
+        let size_pt = size.unwrap_or(size_pt);
+        (if bold { 700 } else { 400 }, ital, size_pt)
+    }
+
+    let mut boxes = Vec::new();
+    match item {
+        OdfTextContent::Paragraph(p) => {
+            if p.spans.is_empty() {
+                if p.text.trim().is_empty() {
+                    return boxes;
+                }
+                let (weight, italic, size_pt) =
+                    style_run(style_ctx, p.style_name.as_ref(), 400, false, LINE_SIZE);
+                let origin = Point {
+                    x_pt: MARGIN,
+                    y_pt: *y,
+                };
+                *y += size_pt * 1.2;
+                boxes.push(LayoutBox {
+                    kind: BoxKind::Paragraph,
+                    origin,
+                    size: PageSize {
+                        width_pt: (p.text.chars().count() as f64 * size_pt * 0.6).max(1.0),
+                        height_pt: size_pt * 1.2,
+                    },
+                    runs: vec![GlyphRun {
+                        text: p.text.clone(),
+                        font: ENGINE_DEFAULT_FONT.to_string(),
+                        size_pt,
+                        weight,
+                        italic,
+                        origin,
+                    }],
+                });
+                return boxes;
+            }
+            for span in &p.spans {
+                if span.text.trim().is_empty() {
+                    continue;
+                }
+                let (weight, italic, size_pt) = style_run(
+                    style_ctx,
+                    span.style_name.as_ref(),
+                    if span.bold { 700 } else { 400 },
+                    span.italic,
+                    LINE_SIZE,
+                );
+                let origin = Point {
+                    x_pt: MARGIN,
+                    y_pt: *y,
+                };
+                *y += size_pt * 1.2;
+                boxes.push(LayoutBox {
+                    kind: BoxKind::Paragraph,
+                    origin,
+                    size: PageSize {
+                        width_pt: (span.text.chars().count() as f64 * size_pt * 0.6)
+                            .max(1.0),
+                        height_pt: size_pt * 1.2,
+                    },
+                    runs: vec![GlyphRun {
+                        text: span.text.clone(),
+                        font: ENGINE_DEFAULT_FONT.to_string(),
+                        size_pt,
+                        weight,
+                        italic,
+                        origin,
+                    }],
+                });
+            }
+        }
+        OdfTextContent::Heading(h) => {
+            let (weight, italic, size_pt) =
+                style_run(style_ctx, h.style_name.as_ref(), 700, false, LINE_SIZE * 1.4);
+            let origin = Point {
+                x_pt: MARGIN,
+                y_pt: *y,
+            };
+            *y += size_pt * 1.6;
+            boxes.push(LayoutBox {
+                kind: BoxKind::Paragraph,
+                origin,
+                size: PageSize {
+                    width_pt: (h.text.chars().count() as f64 * size_pt * 0.6).max(1.0),
+                    height_pt: size_pt * 1.6,
+                },
+                runs: vec![GlyphRun {
+                    text: h.text.clone(),
+                    font: ENGINE_DEFAULT_FONT.to_string(),
+                    size_pt,
+                    weight,
+                    italic,
+                    origin,
+                }],
+            });
+        }
+        OdfTextContent::List(list) => {
+            for item in &list.items {
+                for sub in &item.content {
+                    boxes.extend(project_text_content(sub, y, style_ctx));
+                }
+            }
+        }
+        OdfTextContent::Table(t) => {
+            let mut ty = *y;
+            for row in &t.rows {
+                for c in &row.cells {
+                    if c.text.trim().is_empty() {
+                        continue;
+                    }
+                    let origin = Point {
+                        x_pt: MARGIN + c.col_span as f64 * 0.0,
+                        y_pt: ty,
+                    };
+                    boxes.push(cell_box("SheetCell" /* reused: table cell */, origin, c.text.clone()));
+                }
+                ty += LINE_SIZE * 1.2;
+            }
+            *y = ty;
+        }
+        OdfTextContent::Image(_) => {}
+    }
+    boxes
 }
 
 // ---------------------------------------------------------------------------
@@ -377,6 +756,126 @@ mod tests {
             "no explicit request → full coverage (1.0)"
         );
     }
+
+    // --- ODF projections ----------------------------------------------------
+
+    /// Build a minimal ODT package (mimetype + manifest + content.xml).
+    fn make_odt(paragraphs: &[&str], bold_first: bool) -> Vec<u8> {
+        let body: String = paragraphs
+            .iter()
+            .map(|p| {
+                if bold_first && p == &paragraphs[0] {
+                    format!(
+                        r##"<text:p><text:span text:style-name="Bold">{p}</text:span></text:p>"##
+                    )
+                } else {
+                    format!(r##"<text:p>{p}</text:p>"##)
+                }
+            })
+            .collect();
+        let xml = format!(
+            r##"<?xml version="1.0" encoding="UTF-8"?>
+<office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" office:version="1.2">
+<office:automatic-styles><style:style style:name="Bold" style:family="text"><style:text-properties fo:font-weight="bold"/></style:style></office:automatic-styles>
+<office:body><office:text>{body}</office:text></office:body>
+</office:document-content>"##
+        );
+        let manifest = r##"<?xml version="1.0" encoding="UTF-8"?>
+<manifest:manifest xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" manifest:version="1.2"><manifest:file-entry manifest:full-path="/" manifest:version="1.2" manifest:media-type="application/vnd.oasis.opendocument.text"/><manifest:file-entry manifest:full-path="content.xml" manifest:media-type="text/xml"/></manifest:manifest>"##;
+        let mut buf = Vec::new();
+        {
+            let mut z = zip::ZipWriter::new(std::io::Cursor::new(&mut buf));
+            z.start_file("mimetype", zip::write::SimpleFileOptions::default())
+                .unwrap();
+            std::io::Write::write_all(
+                &mut z,
+                b"application/vnd.oasis.opendocument.text",
+            )
+            .unwrap();
+            z.start_file("META-INF/manifest.xml", zip::write::SimpleFileOptions::default())
+                .unwrap();
+            std::io::Write::write_all(&mut z, manifest.as_bytes()).unwrap();
+            z.start_file("content.xml", zip::write::SimpleFileOptions::default())
+                .unwrap();
+            std::io::Write::write_all(&mut z, xml.as_bytes()).unwrap();
+            z.finish().unwrap();
+        }
+        buf
+    }
+
+    #[test]
+    fn odf_detected_and_projected() {
+        let adapter = DocxConformanceAdapter::default();
+        let odt = make_odt(&["Hello ODF", "Second line"], false);
+        let ir = adapter.render(&odt, &RenderSpec::default()).unwrap();
+
+        assert!(!ir.pages.is_empty());
+        let texts: Vec<&str> = ir.pages[0]
+            .boxes
+            .iter()
+            .flat_map(|b| b.runs.iter().map(|r| r.text.as_str()))
+            .collect();
+        assert!(
+            texts.iter().any(|t| t.contains("Hello ODF"))
+                && texts.iter().any(|t| t.contains("Second line")),
+            "ODT paragraphs should project: {texts:?}"
+        );
+        // Honest metadata: wo-odf structural projection, no layout engine.
+        assert_eq!(ir.metadata.environment, "wo-odf structural projection (no layout engine)");
+    }
+
+    #[test]
+    fn odf_style_bold_projected_from_span() {
+        let adapter = DocxConformanceAdapter::default();
+        // A span with bold=true: the adapter records weight 700.
+        let odt = make_odt(&["Bold line"], true);
+        let ir = adapter.render(&odt, &RenderSpec::default()).unwrap();
+        let runs: Vec<_> = ir.pages[0]
+            .boxes
+            .iter()
+            .flat_map(|b| b.runs.iter())
+            .collect();
+        assert!(
+            runs.iter().any(|r| r.text.contains("Bold line") && r.weight == 700),
+            "bold span should project weight 700"
+        );
+    }
+
+    #[test]
+    fn ods_sheet_cells_projected() {
+        // Minimal ODS: one sheet, two rows.
+        let xml = r##"<?xml version="1.0" encoding="UTF-8"?>
+<office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" office:version="1.2">
+<office:body><office:spreadsheet><table:table table:name="S"><table:table-row><table:table-cell office:value-type="string"><text:p>A1</text:p></table:table-cell><table:table-cell office:value-type="float" office:value="42"><text:p>42</text:p></table:table-cell></table:table-row></table:table></office:spreadsheet></office:body>
+</office:document-content>"##;
+        let mut buf = Vec::new();
+        {
+            let mut z = zip::ZipWriter::new(std::io::Cursor::new(&mut buf));
+            z.start_file("mimetype", zip::write::SimpleFileOptions::default())
+                .unwrap();
+            std::io::Write::write_all(
+                &mut z,
+                b"application/vnd.oasis.opendocument.spreadsheet",
+            )
+            .unwrap();
+            z.start_file("content.xml", zip::write::SimpleFileOptions::default())
+                .unwrap();
+            std::io::Write::write_all(&mut z, xml.as_bytes()).unwrap();
+            z.finish().unwrap();
+        }
+        let adapter = DocxConformanceAdapter::default();
+        let ir = adapter.render(&buf, &RenderSpec::default()).unwrap();
+        let texts: Vec<&str> = ir.pages[0]
+            .boxes
+            .iter()
+            .flat_map(|b| b.runs.iter().map(|r| r.text.as_str()))
+            .collect();
+        assert!(
+            texts.iter().any(|t| *t == "A1") && texts.iter().any(|t| *t == "42"),
+            "ODS cells should project: {texts:?}"
+        );
+    }
+
 
     #[test]
     fn ir_serializes_to_json() {

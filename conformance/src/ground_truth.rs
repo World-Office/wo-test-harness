@@ -86,7 +86,7 @@ pub fn discover_corpus(corpus_dir: &Path) -> (Vec<ConformanceCase>, Vec<PathBuf>
         Err(_) => return (cases, missing),
     };
 
-    let doc_exts = ["docx", "docm", "pptx", "xlsx"];
+    let doc_exts = ["docx", "docm", "pptx", "xlsx", "odt", "ods", "odp"];
     for ent in entries.flatten() {
         let path = ent.path();
         if !path.is_file() {

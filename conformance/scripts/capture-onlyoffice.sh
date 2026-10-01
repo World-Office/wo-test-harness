@@ -26,7 +26,8 @@ FORCE=false
 
 : "${OO_DS_URL:=http://127.0.0.1:9980}"
 : "${OO_DS_PUBLIC_HOST:=172.17.0.1}"
-export OO_DS_URL OO_DS_JWT OO_DS_PUBLIC_HOST
+: "${OO_DS_ENDPOINT:=/converter}"
+export OO_DS_URL OO_DS_JWT OO_DS_PUBLIC_HOST OO_DS_ENDPOINT
 export OO_DS_VERSION="$(grep OO_DS_IMAGE= "$(dirname "$0")/onlyoffice-image.env" | cut -d= -f2 | cut -c1-40)…"
 
 BIN="$(cd "$(dirname "$0")" && pwd)/../../target/debug/wo-conformance"
@@ -37,14 +38,17 @@ fi
 
 if [ "$MODE" != "--diff-only" ]; then
   n=0
-  for docx in "$CORPUS_DIR"/*.docx; do
-    stem="$(basename "$docx" .docx)"
+  for docx in "$CORPUS_DIR"/*.{docx,odt,ods,odp}; do
+    [ -e "$docx" ] || continue
+    ext="${docx##*.}"
+    stem="$(basename "$docx")"
+    stem="${stem%.*}"
     out="$CORPUS_DIR/$stem.onlyoffice.json"
     if [ "$FORCE" = false ] && [ -f "$out" ]; then
       continue
     fi
     echo "capturing $stem"
-    "$BIN" capture --ds-url "$OO_DS_URL" --input "$docx" --out "$out"
+    "$BIN" capture --ds-url "$OO_DS_URL" --endpoint "$OO_DS_ENDPOINT" --filetype "$ext" --input "$docx" --out "$out"
     n=$((n + 1))
   done
   echo "captured $n goldens"
