@@ -1,0 +1,35 @@
+# Spreadsheet formula conformance cases. Each case: id, formula (no leading =),
+# optional cells (A1.. values the formula may reference). Truth is captured from
+# LibreOffice (oracle.py capture); the WO Rust engine is scored against it.
+# Add cases freely; ids are stable. Cell values: numbers or "strings".
+cases:
+  - {id: math.sum,      formula: "SUM(A1:A4)",            cells: {A1: 1, A2: 2, A3: 3, A4: 4}}
+  - {id: math.round,    formula: "ROUND(2.345,2)"}
+  - {id: math.mod_neg,  formula: "MOD(-3,2)"}
+  - {id: math.power,    formula: "POWER(2,10)"}
+  - {id: math.sqrt_err, formula: "SQRT(-1)"}
+  - {id: math.div0,     formula: "1/0"}
+  - {id: stat.avg,      formula: "AVERAGE(A1:A4)",        cells: {A1: 1, A2: 2, A3: 3, A4: 4}}
+  - {id: stat.median,   formula: "MEDIAN(A1:A4)",         cells: {A1: 1, A2: 9, A3: 3, A4: 4}}
+  - {id: stat.stdev,    formula: "STDEV(A1:A4)",          cells: {A1: 1, A2: 2, A3: 3, A4: 4}}
+  - {id: stat.countif,  formula: "COUNTIF(A1:A4,\">2\")", cells: {A1: 1, A2: 2, A3: 3, A4: 4}}
+  - {id: stat.sumif,    formula: "SUMIF(A1:A4,\">2\")",   cells: {A1: 1, A2: 2, A3: 3, A4: 4}}
+  - {id: logic.if,      formula: "IF(A1>1,\"y\",\"n\")",  cells: {A1: 2}}
+  - {id: logic.iferror, formula: "IFERROR(1/0,\"e\")"}
+  - {id: logic.and,     formula: "AND(TRUE,1,0)"}
+  - {id: text.concat,   formula: "CONCATENATE(\"a\",1,TRUE)"}
+  - {id: text.left,     formula: "LEFT(\"hello\",2)"}
+  - {id: text.substitute, formula: "SUBSTITUTE(\"a-b-c\",\"-\",\"+\",2)"}
+  - {id: text.text_fmt, formula: "TEXT(1234.5,\"#,##0.00\")"}
+  - {id: text.find_err, formula: "FIND(\"z\",\"abc\")"}
+  - {id: lookup.vlookup, formula: "VLOOKUP(2,A1:B3,2,FALSE)", cells: {A1: 1, B1: "one", A2: 2, B2: "two", A3: 3, B3: "three"}}
+  - {id: lookup.match,  formula: "MATCH(3,A1:A3,0)",     cells: {A1: 1, A2: 2, A3: 3}}
+  - {id: lookup.index,  formula: "INDEX(A1:B2,2,2)",     cells: {A1: 1, B1: 2, A2: 3, B2: 4}}
+  - {id: date.date,     formula: "N(DATE(2024,2,29)+1)"}
+  - {id: date.datedif,  formula: "DATEDIF(DATE(2020,1,31),DATE(2021,3,1),\"m\")"}
+  - {id: date.edate,    formula: "EDATE(DATE(2024,1,31),1)"}
+  - {id: fin.pmt,       formula: "PMT(0.05/12,360,200000)"}
+  - {id: fin.npv,       formula: "NPV(0.1,A1:A3)",       cells: {A1: -100, A2: 60, A3: 70}}
+  - {id: coerce.str_num, formula: "\"3\"+4"}
+  - {id: coerce.bool_num, formula: "TRUE+1"}
+  - {id: coerce.empty,  formula: "A1+1"}

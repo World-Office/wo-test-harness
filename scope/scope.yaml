@@ -1,0 +1,24 @@
+# Full-suite rebuild scope: what "all features of ONLYOFFICE in Rust" means,
+# per surface, and HOW each is verified. Complements harness-graph/features.yaml
+# (Word only). `oracle`: the source of truth; `status`: harness readiness
+#   live    = executable oracle + scoring in this repo
+#   partial = some oracle/census exists, coverage incomplete
+#   none    = no executable oracle yet (the backlog)
+# Honest by construction: nothing here claims product parity.
+surfaces:
+  - {id: S-DOCX,  name: "Document editor (docx/odt/rtf/txt)",  oracle: "LibreOffice+OnlyOffice render IR, UI census", status: partial, where: "conformance/, census/, harness-graph/"}
+  - {id: S-XLSX-CALC, name: "Spreadsheet calc engine (formulas / coercion / errors)", oracle: "LibreOffice Calc (OO proxy) / divergences.json", status: live, where: "sheet-oracle/ (30 cases; target ~450 functions)"}
+  - {id: S-XLSX-FMT,  name: "Number/date formats, conditional formats, styles",  oracle: "LibreOffice render + xlsx XML diff", status: none}
+  - {id: S-XLSX-OBJ,  name: "Charts, pivot tables, sparklines, data validation",  oracle: "OO rig render + xlsx XML diff", status: none}
+  - {id: S-XLSX-UI,   name: Spreadsheet editor UI census,                        oracle: "census-oo.cjs on OO sheet editor", status: none}
+  - {id: S-PPTX-RENDER, name: "Slide rendering (shapes / text / masters / themes)",  oracle: "LibreOffice PDF -> NormalizedRender IR", status: none}
+  - {id: S-PPTX-ANIM,   name: Animations / transitions,                           oracle: "OOXML timing XML diff", status: none}
+  - {id: S-PPTX-UI,     name: Presentation editor UI census,                      oracle: "census-oo.cjs on OO slide editor", status: none}
+  - {id: S-PDF,   name: PDF view/annotate/form-fill/redact,                       oracle: "pdfium/mupdf render + annotation XML", status: none}
+  - {id: S-FORMS, name: "Forms (OFORM/docxf fields / fill / PDF export)",             oracle: "OO rig", status: none}
+  - {id: S-DIAGRAM, name: "Diagram (vsdx)",                                         oracle: "LibreOffice vsdx import", status: partial, where: "census/VSDX_FIX.md, nonword-probe.cjs"}
+  - {id: S-CONVERT, name: "Format conversion matrix (OO x2t / ~40 formats)",         oracle: "OO x2t / LibreOffice round-trip", status: none}
+  - {id: S-COLLAB,  name: Co-editing OT/CRDT convergence, locks, presence,        oracle: "property tests + OO rig session replay", status: none}
+  - {id: S-PLUGIN,  name: "Plugin API + macros (Api surface, ~1500 methods)",     oracle: "OO api docs -> method census", status: none}
+  - {id: S-FONT,    name: Font fallback / shaping / metrics,                      oracle: "IR font_coverage score", status: partial, where: "conformance/ scoring"}
+  - {id: S-SEC,     name: Protection, passwords, encrypted OOXML, signatures,     oracle: "msoffcrypto/OO rig", status: none}
