@@ -1,28 +1,23 @@
 {
-  "schema_version": 1,
-  "truth_captured_from": "onlyoffice-ds docker.io/onlyoffice/documentserver@sha2…",
-  "captured_at": "2026-09-05T05:46:07.578769422+00:00",
-  "render": {
-    "pages": [
-      {
-        "index": 0,
-        "size": {
-          "width_pt": 595.29999,
-          "height_pt": 841.90002
-        },
-        "boxes": []
-      }
-    ],
-    "resolved_fonts": {
-      "requested": [],
-      "resolved": {},
-      "unavailable": []
-    },
-    "metadata": {
-      "engine": "onlyoffice-documentserver",
-      "engine_version": "docker.io/onlyoffice/documentserver@sha2…",
-      "captured_at": "2026-09-05T05:46:07.578759101+00:00",
-      "environment": "onlyoffice-ds pdf-export projection; filetype=docx"
+  "pages": [
+    {
+      "index": 0,
+      "size": {
+        "width_pt": 595.3,
+        "height_pt": 841.9
+      },
+      "boxes": []
     }
+  ],
+  "resolved_fonts": {
+    "requested": [],
+    "resolved": {},
+    "unavailable": []
+  },
+  "metadata": {
+    "engine": "onlyoffice",
+    "engine_version": "unknown",
+    "captured_at": "2026-10-01T03:53:57.510905+00:00",
+    "environment": "PDF\u2192IR extraction via PyMuPDF ('1.28.0', '1.29.0', None)"
   }
 }

@@ -11,55 +11,55 @@
           "kind": "paragraph",
           "origin": {
             "x_pt": 72.1,
-            "y_pt": 72.0
+            "y_pt": 72.76
           },
           "size": {
-            "width_pt": 194.58,
-            "height_pt": 20.93
+            "width_pt": 154.3,
+            "height_pt": 19.93
           },
           "runs": [
             {
               "text": "Small",
-              "font": "DejaVuSerif",
+              "font": "LiberationSerif",
               "size_pt": 8.0,
-              "weight": 700,
+              "weight": 400,
               "italic": false,
               "origin": {
                 "x_pt": 72.1,
-                "y_pt": 88.7
+                "y_pt": 88.8
               }
             },
             {
               "text": "Normal",
-              "font": "DejaVuSerif",
+              "font": "LiberationSerif",
               "size_pt": 11.0,
-              "weight": 700,
+              "weight": 400,
               "italic": false,
               "origin": {
-                "x_pt": 95.05,
-                "y_pt": 88.7
+                "x_pt": 90.75,
+                "y_pt": 88.8
               }
             },
             {
               "text": "Large",
-              "font": "DejaVuSerif",
+              "font": "LiberationSerif",
               "size_pt": 18.0,
-              "weight": 700,
+              "weight": 400,
               "italic": false,
               "origin": {
-                "x_pt": 137.05,
-                "y_pt": 88.7
+                "x_pt": 124.35,
+                "y_pt": 88.8
               }
             },
             {
               "text": "Normal again",
-              "font": "DejaVuSerif",
+              "font": "LiberationSerif",
               "size_pt": 11.0,
-              "weight": 700,
+              "weight": 400,
               "italic": false,
               "origin": {
-                "x_pt": 190.5,
-                "y_pt": 88.7
+                "x_pt": 166.3,
+                "y_pt": 88.8
               }
             }
           ]
@@ -75,7 +75,7 @@
   "metadata": {
     "engine": "libreoffice",
     "engine_version": "LibreOffice 26.8.0.3 680(Build:3)",
-    "captured_at": "2026-09-05T05:44:25.459904+00:00",
+    "captured_at": "2026-10-01T03:53:42.160230+00:00",
     "environment": "PDF\u2192IR extraction via PyMuPDF ('1.28.0', '1.29.0', None)"
   }
 }

@@ -1,75 +1,52 @@
 {
-  "schema_version": 1,
-  "truth_captured_from": "onlyoffice-ds docker.io/onlyoffice/documentserver@sha2…",
-  "captured_at": "2026-09-05T05:45:56.443340629+00:00",
-  "render": {
-    "pages": [
-      {
-        "index": 0,
-        "size": {
-          "width_pt": 595.29999,
-          "height_pt": 841.90002
-        },
-        "boxes": [
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 72.0,
-              "y_pt": 66.46989
-            },
-            "size": {
-              "width_pt": 55.536255,
-              "height_pt": 19.22
-            },
-            "runs": [
-              {
-                "text": "Text",
-                "font": "",
-                "size_pt": 19.22,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 72.0,
-                  "y_pt": 81.46149000000001
-                }
-              },
-              {
-                "text": "in",
-                "font": "",
-                "size_pt": 19.22,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 94.216501,
-                  "y_pt": 81.46149000000001
-                }
-              },
-              {
-                "text": "Arial.",
-                "font": "",
-                "size_pt": 19.22,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 104.776255,
-                  "y_pt": 81.46149000000001
-                }
+  "pages": [
+    {
+      "index": 0,
+      "size": {
+        "width_pt": 595.3,
+        "height_pt": 841.9
+      },
+      "boxes": [
+        {
+          "kind": "paragraph",
+          "origin": {
+            "x_pt": 72.0,
+            "y_pt": 65.36
+          },
+          "size": {
+            "width_pt": 66.67,
+            "height_pt": 23.06
+          },
+          "runs": [
+            {
+              "text": "Text in Arial.",
+              "font": "Arial",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 72.0,
+                "y_pt": 83.26
               }
-            ]
-          }
-        ]
-      }
-    ],
-    "resolved_fonts": {
-      "requested": [],
-      "resolved": {},
-      "unavailable": []
-    },
-    "metadata": {
-      "engine": "onlyoffice-documentserver",
-      "engine_version": "docker.io/onlyoffice/documentserver@sha2…",
-      "captured_at": "2026-09-05T05:45:56.443333152+00:00",
-      "environment": "onlyoffice-ds pdf-export projection; filetype=docx"
+            }
+          ]
+        }
+      ]
     }
+  ],
+  "resolved_fonts": {
+    "requested": [
+      "Arial"
+    ],
+    "resolved": {
+      "Arial": "Arial"
+    },
+    "unavailable": []
+  },
+  "metadata": {
+    "engine": "onlyoffice",
+    "engine_version": "unknown",
+    "captured_at": "2026-10-01T03:53:46.436042+00:00",
+    "environment": "PDF\u2192IR extraction via PyMuPDF ('1.28.0', '1.29.0', None)"
   }
 }

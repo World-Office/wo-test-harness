@@ -11,22 +11,22 @@
           "kind": "paragraph",
           "origin": {
             "x_pt": 72.1,
-            "y_pt": 71.99
+            "y_pt": 72.51
           },
           "size": {
-            "width_pt": 107.28,
-            "height_pt": 12.79
+            "width_pt": 90.56,
+            "height_pt": 13.28
           },
           "runs": [
             {
               "text": "Normal paragraph.",
-              "font": "DejaVuSerif",
-              "size_pt": 11.0,
-              "weight": 700,
+              "font": "LiberationSerif",
+              "size_pt": 12.0,
+              "weight": 400,
               "italic": false,
               "origin": {
                 "x_pt": 72.1,
-                "y_pt": 82.2
+                "y_pt": 83.2
               }
             }
           ]
@@ -35,22 +35,22 @@
           "kind": "paragraph",
           "origin": {
             "x_pt": 108.1,
-            "y_pt": 84.79
+            "y_pt": 86.31
           },
           "size": {
-            "width_pt": 115.26,
-            "height_pt": 12.79
+            "width_pt": 95.9,
+            "height_pt": 13.28
           },
           "runs": [
             {
               "text": "Indented paragraph.",
-              "font": "DejaVuSerif",
-              "size_pt": 11.0,
-              "weight": 700,
+              "font": "LiberationSerif",
+              "size_pt": 12.0,
+              "weight": 400,
               "italic": false,
               "origin": {
                 "x_pt": 108.1,
-                "y_pt": 95.0
+                "y_pt": 97.0
               }
             }
           ]
@@ -66,7 +66,7 @@
   "metadata": {
     "engine": "libreoffice",
     "engine_version": "LibreOffice 26.8.0.3 680(Build:3)",
-    "captured_at": "2026-09-05T05:44:18.184048+00:00",
+    "captured_at": "2026-10-01T03:53:35.513314+00:00",
     "environment": "PDF\u2192IR extraction via PyMuPDF ('1.28.0', '1.29.0', None)"
   }
 }

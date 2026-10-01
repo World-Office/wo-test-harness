@@ -11,22 +11,22 @@
           "kind": "paragraph",
           "origin": {
             "x_pt": 72.1,
-            "y_pt": 72.03
+            "y_pt": 72.51
           },
           "size": {
-            "width_pt": 149.86,
-            "height_pt": 12.9
+            "width_pt": 119.2,
+            "height_pt": 13.28
           },
           "runs": [
             {
               "text": "Bold and italic together.",
-              "font": "DejaVuSerif-BoldItalic",
-              "size_pt": 11.0,
+              "font": "LiberationSerif-BoldItal",
+              "size_pt": 12.0,
               "weight": 700,
               "italic": true,
               "origin": {
                 "x_pt": 72.1,
-                "y_pt": 82.35
+                "y_pt": 83.2
               }
             }
           ]
@@ -42,7 +42,7 @@
   "metadata": {
     "engine": "libreoffice",
     "engine_version": "LibreOffice 26.8.0.3 680(Build:3)",
-    "captured_at": "2026-09-05T05:44:13.976144+00:00",
+    "captured_at": "2026-10-01T03:53:31.097270+00:00",
     "environment": "PDF\u2192IR extraction via PyMuPDF ('1.28.0', '1.29.0', None)"
   }
 }

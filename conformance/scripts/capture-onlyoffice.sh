@@ -29,10 +29,10 @@ FORCE=false
 export OO_DS_URL OO_DS_JWT OO_DS_PUBLIC_HOST
 export OO_DS_VERSION="$(grep OO_DS_IMAGE= "$(dirname "$0")/onlyoffice-image.env" | cut -d= -f2 | cut -c1-40)…"
 
-BIN="$(cd "$(dirname "$0")" && pwd)/../../../../target/debug/wo-conformance"
+BIN="$(cd "$(dirname "$0")" && pwd)/../../target/debug/wo-conformance"
 if [ ! -x "$BIN" ]; then
   echo "building wo-conformance CLI..."
-  (cd "$(dirname "$0")/../../../.." && cargo build -p wo-conformance)
+  (cd "$(dirname "$0")/../.." && cargo build -p wo-conformance)
 fi
 
 if [ "$MODE" != "--diff-only" ]; then

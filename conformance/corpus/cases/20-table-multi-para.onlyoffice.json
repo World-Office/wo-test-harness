@@ -1,189 +1,83 @@
 {
-  "schema_version": 1,
-  "truth_captured_from": "onlyoffice-ds docker.io/onlyoffice/documentserver@sha2…",
-  "captured_at": "2026-09-05T05:46:04.389861830+00:00",
-  "render": {
-    "pages": [
-      {
-        "index": 0,
-        "size": {
-          "width_pt": 595.29999,
-          "height_pt": 841.90002
+  "pages": [
+    {
+      "index": 0,
+      "size": {
+        "width_pt": 595.3,
+        "height_pt": 841.9
+      },
+      "boxes": [
+        {
+          "kind": "paragraph",
+          "origin": {
+            "x_pt": 72.0,
+            "y_pt": 66.17
+          },
+          "size": {
+            "width_pt": 93.59,
+            "height_pt": 36.14
+          },
+          "runs": [
+            {
+              "text": "Para 1 in cell.",
+              "font": "Liberation Serif",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 72.0,
+                "y_pt": 83.21
+              }
+            },
+            {
+              "text": "Para 2 in same cell.",
+              "font": "Liberation Serif",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 72.0,
+                "y_pt": 97.0
+              }
+            }
+          ]
         },
-        "boxes": [
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 72.0,
-              "y_pt": 67.13879
-            },
-            "size": {
-              "width_pt": 54.927719999999994,
-              "height_pt": 18.620000000000005
-            },
-            "runs": [
-              {
-                "text": "Para",
-                "font": "",
-                "size_pt": 18.620000000000005,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 72.0,
-                  "y_pt": 81.66239
-                }
-              },
-              {
-                "text": "1",
-                "font": "",
-                "size_pt": 18.620000000000005,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 92.258164,
-                  "y_pt": 81.66239
-                }
-              },
-              {
-                "text": "in",
-                "font": "",
-                "size_pt": 18.620000000000005,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 99.757928,
-                  "y_pt": 81.66239
-                }
-              },
-              {
-                "text": "cell.",
-                "font": "",
-                "size_pt": 18.620000000000005,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 110.02772,
-                  "y_pt": 81.66239
-                }
-              }
-            ]
+        {
+          "kind": "paragraph",
+          "origin": {
+            "x_pt": 337.35,
+            "y_pt": 66.17
           },
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 72.0,
-              "y_pt": 78.63781
-            },
-            "size": {
-              "width_pt": 77.955884,
-              "height_pt": 18.620000000000005
-            },
-            "runs": [
-              {
-                "text": "Para",
-                "font": "",
-                "size_pt": 18.620000000000005,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 72.0,
-                  "y_pt": 93.16141
-                }
-              },
-              {
-                "text": "2",
-                "font": "",
-                "size_pt": 18.620000000000005,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 92.258164,
-                  "y_pt": 93.16141
-                }
-              },
-              {
-                "text": "in",
-                "font": "",
-                "size_pt": 18.620000000000005,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 99.757928,
-                  "y_pt": 93.16141
-                }
-              },
-              {
-                "text": "same",
-                "font": "",
-                "size_pt": 18.620000000000005,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 110.02772,
-                  "y_pt": 93.16141
-                }
-              },
-              {
-                "text": "cell.",
-                "font": "",
-                "size_pt": 18.620000000000005,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 133.055883,
-                  "y_pt": 93.16141
-                }
-              }
-            ]
+          "size": {
+            "width_pt": 66.6,
+            "height_pt": 22.34
           },
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 336.55073,
-              "y_pt": 67.13879
-            },
-            "size": {
-              "width_pt": 55.45811000000003,
-              "height_pt": 18.620000000000005
-            },
-            "runs": [
-              {
-                "text": "Adjacent",
-                "font": "",
-                "size_pt": 18.620000000000005,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 336.55073,
-                  "y_pt": 81.66239
-                }
-              },
-              {
-                "text": "cell.",
-                "font": "",
-                "size_pt": 18.620000000000005,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 375.10884,
-                  "y_pt": 81.66239
-                }
+          "runs": [
+            {
+              "text": "Adjacent cell.",
+              "font": "Liberation Serif",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 337.35,
+                "y_pt": 83.21
               }
-            ]
-          }
-        ]
-      }
-    ],
-    "resolved_fonts": {
-      "requested": [],
-      "resolved": {},
-      "unavailable": []
-    },
-    "metadata": {
-      "engine": "onlyoffice-documentserver",
-      "engine_version": "docker.io/onlyoffice/documentserver@sha2…",
-      "captured_at": "2026-09-05T05:46:04.389853314+00:00",
-      "environment": "onlyoffice-ds pdf-export projection; filetype=docx"
+            }
+          ]
+        }
+      ]
     }
+  ],
+  "resolved_fonts": {
+    "requested": [],
+    "resolved": {},
+    "unavailable": []
+  },
+  "metadata": {
+    "engine": "onlyoffice",
+    "engine_version": "unknown",
+    "captured_at": "2026-10-01T03:53:54.030666+00:00",
+    "environment": "PDF\u2192IR extraction via PyMuPDF ('1.28.0', '1.29.0', None)"
   }
 }

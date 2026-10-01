@@ -1,438 +1,247 @@
 {
-  "schema_version": 1,
-  "truth_captured_from": "onlyoffice-ds docker.io/onlyoffice/documentserver@sha2…",
-  "captured_at": "2026-09-05T05:46:08.648315256+00:00",
-  "render": {
-    "pages": [
-      {
-        "index": 0,
-        "size": {
-          "width_pt": 595.27557,
-          "height_pt": 841.88977
-        },
-        "boxes": [
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 85.03937,
-              "y_pt": 50.85438
-            },
-            "size": {
-              "width_pt": 88.176945,
-              "height_pt": 20.479999999999997
-            },
-            "runs": [
-              {
-                "text": "Page",
-                "font": "",
-                "size_pt": 20.479999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 85.03937,
-                  "y_pt": 66.82878
-                }
-              },
-              {
-                "text": "1:",
-                "font": "",
-                "size_pt": 20.479999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 106.925455,
-                  "y_pt": 66.82878
-                }
-              },
-              {
-                "text": "text",
-                "font": "",
-                "size_pt": 20.479999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 116.921707,
-                  "y_pt": 66.82878
-                }
-              },
-              {
-                "text": "in",
-                "font": "",
-                "size_pt": 20.479999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 135.171839,
-                  "y_pt": 66.82878
-                }
-              },
-              {
-                "text": "Calibri.",
-                "font": "",
-                "size_pt": 20.479999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 144.976315,
-                  "y_pt": 66.82878
-                }
-              }
-            ]
-          }
-        ]
+  "pages": [
+    {
+      "index": 0,
+      "size": {
+        "width_pt": 595.28,
+        "height_pt": 841.89
       },
-      {
-        "index": 1,
-        "size": {
-          "width_pt": 595.27557,
-          "height_pt": 841.88977
-        },
-        "boxes": [
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 85.03937,
-              "y_pt": 62.66181
-            },
-            "size": {
-              "width_pt": 89.44250999999998,
-              "height_pt": 19.22
-            },
-            "runs": [
-              {
-                "text": "Page",
-                "font": "",
-                "size_pt": 19.22,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 85.03937,
-                  "y_pt": 77.65341000000001
-                }
-              },
-              {
-                "text": "2:",
-                "font": "",
-                "size_pt": 19.22,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 111.159124,
-                  "y_pt": 77.65341000000001
-                }
-              },
-              {
-                "text": "text",
-                "font": "",
-                "size_pt": 19.22,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 122.275625,
-                  "y_pt": 77.65341000000001
-                }
-              },
-              {
-                "text": "in",
-                "font": "",
-                "size_pt": 19.22,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 141.162126,
-                  "y_pt": 77.65341000000001
-                }
-              },
-              {
-                "text": "Arial.",
-                "font": "",
-                "size_pt": 19.22,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 151.72188,
-                  "y_pt": 77.65341000000001
-                }
+      "boxes": [
+        {
+          "kind": "paragraph",
+          "origin": {
+            "x_pt": 85.04,
+            "y_pt": 49.69
+          },
+          "size": {
+            "width_pt": 105.82,
+            "height_pt": 24.58
+          },
+          "runs": [
+            {
+              "text": "Page 1: text in Calibri.",
+              "font": "Carlito",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 85.04,
+                "y_pt": 68.12
               }
-            ]
-          }
-        ]
-      },
-      {
-        "index": 2,
-        "size": {
-          "width_pt": 595.27557,
-          "height_pt": 841.88977
-        },
-        "boxes": [
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 85.03937,
-              "y_pt": 63.32788
-            },
-            "size": {
-              "width_pt": 140.14701100000002,
-              "height_pt": 18.619999999999997
-            },
-            "runs": [
-              {
-                "text": "Page",
-                "font": "",
-                "size_pt": 18.619999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 85.03937,
-                  "y_pt": 77.85148
-                }
-              },
-              {
-                "text": "3:",
-                "font": "",
-                "size_pt": 18.619999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 106.967534,
-                  "y_pt": 77.85148
-                }
-              },
-              {
-                "text": "text",
-                "font": "",
-                "size_pt": 18.619999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 117.245644,
-                  "y_pt": 77.85148
-                }
-              },
-              {
-                "text": "in",
-                "font": "",
-                "size_pt": 18.619999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 134.723754,
-                  "y_pt": 77.85148
-                }
-              },
-              {
-                "text": "Times",
-                "font": "",
-                "size_pt": 18.619999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 144.993518,
-                  "y_pt": 77.85148
-                }
-              },
-              {
-                "text": "New",
-                "font": "",
-                "size_pt": 18.619999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 172.454964,
-                  "y_pt": 77.85148
-                }
-              },
-              {
-                "text": "Roman.",
-                "font": "",
-                "size_pt": 18.619999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 193.826381,
-                  "y_pt": 77.85148
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "index": 3,
-        "size": {
-          "width_pt": 595.27557,
-          "height_pt": 841.88977
-        },
-        "boxes": [
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 85.03937,
-              "y_pt": 63.96713
-            },
-            "size": {
-              "width_pt": 168.009591,
-              "height_pt": 16.409999999999997
-            },
-            "runs": [
-              {
-                "text": "Page",
-                "font": "",
-                "size_pt": 16.409999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 85.03937,
-                  "y_pt": 76.76693
-                }
-              },
-              {
-                "text": "4:",
-                "font": "",
-                "size_pt": 16.409999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 115.041288,
-                  "y_pt": 76.76693
-                }
-              },
-              {
-                "text": "text",
-                "font": "",
-                "size_pt": 16.409999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 133.043206,
-                  "y_pt": 76.76693
-                }
-              },
-              {
-                "text": "in",
-                "font": "",
-                "size_pt": 16.409999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 163.045124,
-                  "y_pt": 76.76693
-                }
-              },
-              {
-                "text": "Courier",
-                "font": "",
-                "size_pt": 16.409999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 181.047042,
-                  "y_pt": 76.76693
-                }
-              },
-              {
-                "text": "New.",
-                "font": "",
-                "size_pt": 16.409999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 229.048961,
-                  "y_pt": 76.76693
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "index": 4,
-        "size": {
-          "width_pt": 595.27557,
-          "height_pt": 841.88977
-        },
-        "boxes": [
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 85.03937,
-              "y_pt": 61.87185
-            },
-            "size": {
-              "width_pt": 101.98686299999999,
-              "height_pt": 19.93
-            },
-            "runs": [
-              {
-                "text": "Page",
-                "font": "",
-                "size_pt": 19.93,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 85.03937,
-                  "y_pt": 77.41725
-                }
-              },
-              {
-                "text": "5:",
-                "font": "",
-                "size_pt": 19.93,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 108.495149,
-                  "y_pt": 77.41725
-                }
-              },
-              {
-                "text": "text",
-                "font": "",
-                "size_pt": 19.93,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 119.312091,
-                  "y_pt": 77.41725
-                }
-              },
-              {
-                "text": "in",
-                "font": "",
-                "size_pt": 19.93,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 138.496208,
-                  "y_pt": 77.41725
-                }
-              },
-              {
-                "text": "Georgia.",
-                "font": "",
-                "size_pt": 19.93,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 149.736233,
-                  "y_pt": 77.41725
-                }
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "resolved_fonts": {
-      "requested": [],
-      "resolved": {},
-      "unavailable": []
+            }
+          ]
+        }
+      ]
     },
-    "metadata": {
-      "engine": "onlyoffice-documentserver",
-      "engine_version": "docker.io/onlyoffice/documentserver@sha2…",
-      "captured_at": "2026-09-05T05:46:08.648296854+00:00",
-      "environment": "onlyoffice-ds pdf-export projection; filetype=docx"
+    {
+      "index": 1,
+      "size": {
+        "width_pt": 595.28,
+        "height_pt": 841.89
+      },
+      "boxes": [
+        {
+          "kind": "paragraph",
+          "origin": {
+            "x_pt": 85.04,
+            "y_pt": 63.86
+          },
+          "size": {
+            "width_pt": 107.35,
+            "height_pt": 23.06
+          },
+          "runs": [
+            {
+              "text": "Page 2: text in Arial.",
+              "font": "Arial",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 85.04,
+                "y_pt": 81.75
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "size": {
+        "width_pt": 595.28,
+        "height_pt": 841.89
+      },
+      "boxes": [
+        {
+          "kind": "paragraph",
+          "origin": {
+            "x_pt": 85.04,
+            "y_pt": 64.65
+          },
+          "size": {
+            "width_pt": 168.25,
+            "height_pt": 22.34
+          },
+          "runs": [
+            {
+              "text": "Page 3: text in Times New Roman.",
+              "font": "Times New Roman",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 85.04,
+                "y_pt": 81.69
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "size": {
+        "width_pt": 595.28,
+        "height_pt": 841.89
+      },
+      "boxes": [
+        {
+          "kind": "paragraph",
+          "origin": {
+            "x_pt": 85.04,
+            "y_pt": 65.42
+          },
+          "size": {
+            "width_pt": 201.61,
+            "height_pt": 19.69
+          },
+          "runs": [
+            {
+              "text": "Page",
+              "font": "Courier New",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 85.04,
+                "y_pt": 80.48
+              }
+            },
+            {
+              "text": "4:",
+              "font": "Courier New",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 121.04,
+                "y_pt": 80.48
+              }
+            },
+            {
+              "text": "text",
+              "font": "Courier New",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 142.64,
+                "y_pt": 80.48
+              }
+            },
+            {
+              "text": "in",
+              "font": "Courier New",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 178.65,
+                "y_pt": 80.48
+              }
+            },
+            {
+              "text": "Courier",
+              "font": "Courier New",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 200.25,
+                "y_pt": 80.48
+              }
+            },
+            {
+              "text": "New.",
+              "font": "Courier New",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 257.85,
+                "y_pt": 80.48
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "size": {
+        "width_pt": 595.28,
+        "height_pt": 841.89
+      },
+      "boxes": [
+        {
+          "kind": "paragraph",
+          "origin": {
+            "x_pt": 85.04,
+            "y_pt": 62.91
+          },
+          "size": {
+            "width_pt": 122.45,
+            "height_pt": 23.92
+          },
+          "runs": [
+            {
+              "text": "Page 5: text in Georgia.",
+              "font": "Georgia",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 85.04,
+                "y_pt": 81.5
+              }
+            }
+          ]
+        }
+      ]
     }
+  ],
+  "resolved_fonts": {
+    "requested": [
+      "Arial",
+      "Calibri",
+      "Courier New",
+      "Georgia",
+      "Times New Roman"
+    ],
+    "resolved": {
+      "Arial": "Arial",
+      "Calibri": "(substituted)",
+      "Courier New": "Courier New",
+      "Georgia": "Georgia",
+      "Times New Roman": "Times New Roman"
+    },
+    "unavailable": []
+  },
+  "metadata": {
+    "engine": "onlyoffice",
+    "engine_version": "unknown",
+    "captured_at": "2026-10-01T03:53:58.753548+00:00",
+    "environment": "PDF\u2192IR extraction via PyMuPDF ('1.28.0', '1.29.0', None)"
   }
 }

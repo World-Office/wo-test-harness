@@ -1,173 +1,103 @@
 {
-  "schema_version": 1,
-  "truth_captured_from": "onlyoffice-ds docker.io/onlyoffice/documentserver@sha2…",
-  "captured_at": "2026-09-05T05:46:03.858285518+00:00",
-  "render": {
-    "pages": [
-      {
-        "index": 0,
-        "size": {
-          "width_pt": 595.29999,
-          "height_pt": 841.90002
-        },
-        "boxes": [
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 72.0,
-              "y_pt": 67.46879
-            },
-            "size": {
-              "width_pt": 24.980000000000004,
-              "height_pt": 18.290000000000006
-            },
-            "runs": [
-              {
-                "text": "Name",
-                "font": "",
-                "size_pt": 18.290000000000006,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 72.0,
-                  "y_pt": 81.73499000000001
-                }
-              }
-            ]
+  "pages": [
+    {
+      "index": 0,
+      "size": {
+        "width_pt": 595.3,
+        "height_pt": 841.9
+      },
+      "boxes": [
+        {
+          "kind": "paragraph",
+          "origin": {
+            "x_pt": 72.0,
+            "y_pt": 66.56
           },
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 72.0,
-              "y_pt": 78.63782
-            },
-            "size": {
-              "width_pt": 21.620000000000005,
-              "height_pt": 18.61999999999999
-            },
-            "runs": [
-              {
-                "text": "Alice",
-                "font": "",
-                "size_pt": 18.61999999999999,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 72.0,
-                  "y_pt": 93.16141999999999
-                }
-              }
-            ]
+          "size": {
+            "width_pt": 260.98,
+            "height_pt": 49.55
           },
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 72.0,
-              "y_pt": 90.13684
-            },
-            "size": {
-              "width_pt": 16.659999999999997,
-              "height_pt": 18.61999999999999
-            },
-            "runs": [
-              {
-                "text": "Bob",
-                "font": "",
-                "size_pt": 18.61999999999999,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 72.0,
-                  "y_pt": 104.66044
-                }
+          "runs": [
+            {
+              "text": "Name",
+              "font": "Liberation Serif-Bold",
+              "size_pt": 12.0,
+              "weight": 700,
+              "italic": false,
+              "origin": {
+                "x_pt": 72.0,
+                "y_pt": 83.21
               }
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 303.00452,
-              "y_pt": 67.46879
             },
-            "size": {
-              "width_pt": 24.97999999999996,
-              "height_pt": 18.290000000000006
-            },
-            "runs": [
-              {
-                "text": "Value",
-                "font": "",
-                "size_pt": 18.290000000000006,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 303.00452,
-                  "y_pt": 81.73499000000001
-                }
+            {
+              "text": "Value",
+              "font": "Liberation Serif-Bold",
+              "size_pt": 12.0,
+              "weight": 700,
+              "italic": false,
+              "origin": {
+                "x_pt": 303.0,
+                "y_pt": 83.21
               }
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 303.00452,
-              "y_pt": 78.63782
             },
-            "size": {
-              "width_pt": 10.0,
-              "height_pt": 18.61999999999999
-            },
-            "runs": [
-              {
-                "text": "42",
-                "font": "",
-                "size_pt": 18.61999999999999,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 303.00452,
-                  "y_pt": 93.16141999999999
-                }
+            {
+              "text": "Alice",
+              "font": "Liberation Serif",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 72.0,
+                "y_pt": 97.0
               }
-            ]
-          },
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 303.00452,
-              "y_pt": 90.13684
             },
-            "size": {
-              "width_pt": 10.0,
-              "height_pt": 18.61999999999999
-            },
-            "runs": [
-              {
-                "text": "99",
-                "font": "",
-                "size_pt": 18.61999999999999,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 303.00452,
-                  "y_pt": 104.66044
-                }
+            {
+              "text": "42",
+              "font": "Liberation Serif",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 303.0,
+                "y_pt": 97.0
               }
-            ]
-          }
-        ]
-      }
-    ],
-    "resolved_fonts": {
-      "requested": [],
-      "resolved": {},
-      "unavailable": []
-    },
-    "metadata": {
-      "engine": "onlyoffice-documentserver",
-      "engine_version": "docker.io/onlyoffice/documentserver@sha2…",
-      "captured_at": "2026-09-05T05:46:03.858277178+00:00",
-      "environment": "onlyoffice-ds pdf-export projection; filetype=docx"
+            },
+            {
+              "text": "Bob",
+              "font": "Liberation Serif",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 72.0,
+                "y_pt": 110.8
+              }
+            },
+            {
+              "text": "99",
+              "font": "Liberation Serif",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 303.0,
+                "y_pt": 110.8
+              }
+            }
+          ]
+        }
+      ]
     }
+  ],
+  "resolved_fonts": {
+    "requested": [],
+    "resolved": {},
+    "unavailable": []
+  },
+  "metadata": {
+    "engine": "onlyoffice",
+    "engine_version": "unknown",
+    "captured_at": "2026-10-01T03:53:53.430453+00:00",
+    "environment": "PDF\u2192IR extraction via PyMuPDF ('1.28.0', '1.29.0', None)"
   }
 }

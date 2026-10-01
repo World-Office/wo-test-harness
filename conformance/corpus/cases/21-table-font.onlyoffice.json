@@ -1,99 +1,65 @@
 {
-  "schema_version": 1,
-  "truth_captured_from": "onlyoffice-ds docker.io/onlyoffice/documentserver@sha2…",
-  "captured_at": "2026-09-05T05:46:04.921312059+00:00",
-  "render": {
-    "pages": [
-      {
-        "index": 0,
-        "size": {
-          "width_pt": 595.29999,
-          "height_pt": 841.90002
-        },
-        "boxes": [
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 72.0,
-              "y_pt": 64.26067
-            },
-            "size": {
-              "width_pt": 52.121317000000005,
-              "height_pt": 26.908
-            },
-            "runs": [
-              {
-                "text": "Big",
-                "font": "",
-                "size_pt": 26.908,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 72.0,
-                  "y_pt": 85.24891000000001
-                }
-              },
-              {
-                "text": "Arial",
-                "font": "",
-                "size_pt": 26.908,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 96.121455,
-                  "y_pt": 85.24891000000001
-                }
-              }
-            ]
+  "pages": [
+    {
+      "index": 0,
+      "size": {
+        "width_pt": 595.3,
+        "height_pt": 841.9
+      },
+      "boxes": [
+        {
+          "kind": "paragraph",
+          "origin": {
+            "x_pt": 72.0,
+            "y_pt": 64.26
           },
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 311.87551,
-              "y_pt": 67.11879
-            },
-            "size": {
-              "width_pt": 47.44816399999996,
-              "height_pt": 18.64
-            },
-            "runs": [
-              {
-                "text": "Italic",
-                "font": "",
-                "size_pt": 18.64,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 311.87551,
-                  "y_pt": 81.65799000000001
-                }
-              },
-              {
-                "text": "Times",
-                "font": "",
-                "size_pt": 18.64,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 335.453674,
-                  "y_pt": 81.65799000000001
-                }
+          "size": {
+            "width_pt": 279.39,
+            "height_pt": 26.91
+          },
+          "runs": [
+            {
+              "text": "Big Arial",
+              "font": "Arial",
+              "size_pt": 14.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 72.0,
+                "y_pt": 85.13
               }
-            ]
-          }
-        ]
-      }
-    ],
-    "resolved_fonts": {
-      "requested": [],
-      "resolved": {},
-      "unavailable": []
-    },
-    "metadata": {
-      "engine": "onlyoffice-documentserver",
-      "engine_version": "docker.io/onlyoffice/documentserver@sha2…",
-      "captured_at": "2026-09-05T05:46:04.921304150+00:00",
-      "environment": "onlyoffice-ds pdf-export projection; filetype=docx"
+            },
+            {
+              "text": "Italic Times",
+              "font": "Times New Roman-Italic",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": true,
+              "origin": {
+                "x_pt": 294.44,
+                "y_pt": 83.21
+              }
+            }
+          ]
+        }
+      ]
     }
+  ],
+  "resolved_fonts": {
+    "requested": [
+      "Arial",
+      "Times New Roman"
+    ],
+    "resolved": {
+      "Arial": "Arial",
+      "Times New Roman": "Times New Roman-Italic"
+    },
+    "unavailable": []
+  },
+  "metadata": {
+    "engine": "onlyoffice",
+    "engine_version": "unknown",
+    "captured_at": "2026-10-01T03:53:54.636423+00:00",
+    "environment": "PDF\u2192IR extraction via PyMuPDF ('1.28.0', '1.29.0', None)"
   }
 }

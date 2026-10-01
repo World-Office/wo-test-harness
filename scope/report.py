@@ -6,9 +6,9 @@ from pathlib import Path
 import yaml
 ROOT = Path(__file__).resolve().parent.parent
 s = yaml.safe_load((Path(__file__).parent / "scope.yaml").read_text(encoding="utf-8"))["surfaces"]
-by = {k: [x for x in s if x["status"] == k] for k in ("live", "partial", "none")}
-print(f"OnlyOffice-in-Rust harness readiness: {len(by['live'])} live / {len(by['partial'])} partial / {len(by['none'])} none of {len(s)} surfaces\n")
-for k in ("none", "partial", "live"):
+by = {k: [x for x in s if x["status"] == k] for k in ("live", "partial", "none", "out-of-scope")}
+print(f"OnlyOffice-in-Rust harness readiness: {len(by['live'])} live / {len(by['partial'])} partial / {len(by['none'])} none ({len(by['out-of-scope'])} out of scope)\n")
+for k in ("none", "partial", "live", "out-of-scope"):
     for x in by[k]:
         print(f"  [{k:7}] {x['id']:14} {x['name']}\n            oracle: {x['oracle']}")
 bad = [x["id"] for x in by["live"] if not (ROOT / x.get("where", "").split("/")[0]).exists()]

@@ -11,22 +11,22 @@
           "kind": "paragraph",
           "origin": {
             "x_pt": 72.1,
-            "y_pt": 72.03
+            "y_pt": 73.02
           },
           "size": {
-            "width_pt": 279.17,
-            "height_pt": 27.91
+            "width_pt": 224.45,
+            "height_pt": 26.57
           },
           "runs": [
             {
               "text": "Twenty-four point text.",
-              "font": "DejaVuSerif",
+              "font": "LiberationSerif",
               "size_pt": 24.0,
-              "weight": 700,
+              "weight": 400,
               "italic": false,
               "origin": {
                 "x_pt": 72.1,
-                "y_pt": 94.3
+                "y_pt": 94.4
               }
             }
           ]
@@ -42,7 +42,7 @@
   "metadata": {
     "engine": "libreoffice",
     "engine_version": "LibreOffice 26.8.0.3 680(Build:3)",
-    "captured_at": "2026-09-05T05:44:16.090030+00:00",
+    "captured_at": "2026-10-01T03:53:33.321122+00:00",
     "environment": "PDF\u2192IR extraction via PyMuPDF ('1.28.0', '1.29.0', None)"
   }
 }

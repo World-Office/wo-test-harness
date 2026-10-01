@@ -108,11 +108,13 @@ def map_fonts_requested_to_used(requested: list[str], used: set[str]) -> tuple[d
 # PDF → NormalizedRender projection
 # ---------------------------------------------------------------------------
 
-# PyMuPDF font flags
-FONT_BOLD = 0x4
+# PyMuPDF span flags (bit values per the PyMuPDF docs: superscript=1, italic=2,
+# serifed=4, monospaced=8, bold=16). These were previously bold=4/serif=8, which
+# labelled every serif font bold and zeroed the style score on the whole corpus.
 FONT_ITALIC = 0x2
-FONT_SERIF = 0x8
-FONT_MONO = 0x16  # serif | mono
+FONT_SERIF = 0x4
+FONT_MONO = 0x8
+FONT_BOLD = 0x10
 
 
 def pdf_to_normalized(pdf_path: str, engine: str, engine_version: str,
@@ -334,16 +336,20 @@ def capture_corpus(corpus_dir: str, engine: str = "libreoffice", force: bool = F
 
 
 def compare_engines(corpus_dir: str, engine_a: str = "wo-docx-renderer",
-                    engine_b: str = "libreoffice"):
+                    engine_b: str = "onlyoffice"):
     """Phase 4: load two NormalizedRender JSON sets and produce fidelity reports.
 
-    engine_a is scored against engine_b's truth files.
+    engine_a is scored against engine_b's truth files. The parity target is the
+    OnlyOffice editor, so the default truth is `<stem>.onlyoffice.json`
+    (capture-onlyoffice.sh); pass --engine-b=libreoffice to use the LO oracle.
     """
     cases, _ = discover_cases(corpus_dir)
     print(f"\nComparing {engine_a} vs {engine_b} on {len(cases)} cases ...\n")
 
     reports = []
     for stem, docx_path, truth_path in cases:
+        if engine_b == "onlyoffice":
+            truth_path = os.path.join(corpus_dir, "cases", f"{stem}.onlyoffice.json")
         engine_json = os.path.join(corpus_dir, "cases", f"{stem}.engine.json")
         if not os.path.exists(engine_json) or not os.path.exists(truth_path):
             print(f"  {stem}: missing engine/truth JSON — skip")
@@ -648,9 +654,11 @@ def _score_page(e_page: dict, t_page: dict, tol: float = GEO_TOL):
 
 
 def _style_eq(t_run: dict, e_run: dict) -> bool:
+    # Font family is deliberately NOT compared here: substitution is attributed
+    # separately by the font_coverage metric, so a font mismatch must not also
+    # zero the size/weight/italic style score.
     return (
-        t_run.get("font") == e_run.get("font")
-        and abs(t_run.get("size_pt", 0) - e_run.get("size_pt", 0)) <= 0.5
+        abs(t_run.get("size_pt", 0) - e_run.get("size_pt", 0)) <= 0.5
         and t_run.get("weight", 0) == e_run.get("weight", 0)
         and t_run.get("italic", False) == e_run.get("italic", False)
     )
@@ -682,6 +690,10 @@ def check_regression(corpus_dir: str, threshold: float = 0.05):
     cases, _ = discover_cases(corpus_dir)
 
     for stem, _, truth_path in cases:
+        # Parity target is the OnlyOffice editor: prefer its truth when captured.
+        oo_path = os.path.join(corpus_dir, "cases", f"{stem}.onlyoffice.json")
+        if os.path.exists(oo_path):
+            truth_path = oo_path
         engine_json = os.path.join(corpus_dir, "cases", f"{stem}.engine.json")
         if not os.path.exists(engine_json) or not os.path.exists(truth_path):
             continue
@@ -740,6 +752,50 @@ def _timestamp():
     return datetime.now(timezone.utc).isoformat()
 
 
+def capture_onlyoffice_x2t(corpus_dir: str, force: bool = False):
+    """Capture OnlyOffice truth by running its own x2t converter (docx -> PDF)
+    inside a running DS container -- no HTTP round-trip, so no host<->container
+    networking needed. Projects the PDF with the SAME pdf_to_normalized path as
+    the LibreOffice truth, so the two oracles are directly comparable.
+
+    Env: OO_CONTAINER (default oo-truth).
+    """
+    import subprocess, tempfile
+    ctr = os.environ.get("OO_CONTAINER", "oo-truth")
+    bindir = "/var/www/onlyoffice/documentserver/server/FileConverter/bin"
+    ver = subprocess.run(["docker", "exec", ctr, "bash", "-c",
+                          "grep -o '\"version\": *\"[^\"]*' /var/www/onlyoffice/documentserver/package.json || echo unknown"],
+                         capture_output=True, text=True).stdout.strip().split('"')[-1] or "unknown"
+    cases, _ = discover_cases(corpus_dir)
+    for stem, docx_path, _truth in cases:
+        out_json = os.path.join(corpus_dir, "cases", f"{stem}.onlyoffice.json")
+        if os.path.exists(out_json) and not force:
+            continue
+        params = (
+            '<?xml version="1.0" encoding="utf-8"?><TaskQueueDataConvert>'
+            '<m_sFileFrom>/tmp/in.docx</m_sFileFrom><m_sFileTo>/tmp/out.pdf</m_sFileTo>'
+            '<m_nFormatTo>513</m_nFormatTo><m_sFontDir>/usr/share/fonts</m_sFontDir>'
+            f'<m_sAllFontsPath>{bindir}/AllFonts.js</m_sAllFontsPath>'
+            '<m_sThemeDir>/var/www/onlyoffice/documentserver/sdkjs/slide/themes</m_sThemeDir>'
+            '<m_bIsNoBase64>false</m_bIsNoBase64></TaskQueueDataConvert>')
+        with tempfile.TemporaryDirectory() as td:
+            pxml = os.path.join(td, "p.xml"); open(pxml, "w").write(params)
+            pdf = os.path.join(td, "out.pdf")
+            subprocess.run(["docker", "exec", ctr, "rm", "-f", "/tmp/out.pdf"], check=True)
+            subprocess.run(["docker", "cp", docx_path, f"{ctr}:/tmp/in.docx"], check=True)
+            subprocess.run(["docker", "cp", pxml, f"{ctr}:/tmp/p.xml"], check=True)
+            r = subprocess.run(["docker", "exec", "-w", bindir, "-e", "LD_LIBRARY_PATH=.", ctr,
+                                "./x2t", "/tmp/p.xml"], capture_output=True, text=True)
+            if r.returncode != 0:
+                print(f"  {stem}: x2t failed rc={r.returncode} {r.stdout[-200:]}", file=sys.stderr)
+                sys.exit(1)
+            subprocess.run(["docker", "cp", f"{ctr}:/tmp/out.pdf", pdf], check=True)
+            ir = pdf_to_normalized(pdf, "onlyoffice", ver, docx_path)
+        with open(out_json, "w") as f:
+            json.dump(ir, f, indent=2)
+        print(f"  {stem}: {len(ir['pages'])} page(s)")
+
+
 # ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
@@ -756,9 +812,11 @@ def main():
     if cmd == "capture":
         force = "--force" in args
         capture_corpus(corpus_dir, force=force)
+    elif cmd == "capture-oo":
+        capture_onlyoffice_x2t(corpus_dir, force="--force" in args)
     elif cmd == "compare":
         engine_a = "wo-docx-renderer"
-        engine_b = "libreoffice"
+        engine_b = "onlyoffice"
         for a in args:
             if a.startswith("--engine-a="):
                 engine_a = a.split("=", 1)[1]

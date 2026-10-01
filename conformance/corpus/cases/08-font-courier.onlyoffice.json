@@ -1,86 +1,85 @@
 {
-  "schema_version": 1,
-  "truth_captured_from": "onlyoffice-ds docker.io/onlyoffice/documentserver@sha2…",
-  "captured_at": "2026-09-05T05:45:56.974954484+00:00",
-  "render": {
-    "pages": [
-      {
-        "index": 0,
-        "size": {
-          "width_pt": 595.29999,
-          "height_pt": 841.90002
-        },
-        "boxes": [
-          {
-            "kind": "paragraph",
-            "origin": {
-              "x_pt": 72.0,
-              "y_pt": 67.77521
-            },
-            "size": {
-              "width_pt": 120.005754,
-              "height_pt": 16.409999999999997
-            },
-            "runs": [
-              {
-                "text": "Text",
-                "font": "",
-                "size_pt": 16.409999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 72.0,
-                  "y_pt": 80.57500999999999
-                }
-              },
-              {
-                "text": "in",
-                "font": "",
-                "size_pt": 16.409999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 102.001918,
-                  "y_pt": 80.57500999999999
-                }
-              },
-              {
-                "text": "Courier",
-                "font": "",
-                "size_pt": 16.409999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 120.003836,
-                  "y_pt": 80.57500999999999
-                }
-              },
-              {
-                "text": "New.",
-                "font": "",
-                "size_pt": 16.409999999999997,
-                "weight": 400,
-                "italic": false,
-                "origin": {
-                  "x_pt": 168.005754,
-                  "y_pt": 80.57500999999999
-                }
+  "pages": [
+    {
+      "index": 0,
+      "size": {
+        "width_pt": 595.3,
+        "height_pt": 841.9
+      },
+      "boxes": [
+        {
+          "kind": "paragraph",
+          "origin": {
+            "x_pt": 72.0,
+            "y_pt": 66.93
+          },
+          "size": {
+            "width_pt": 144.01,
+            "height_pt": 19.69
+          },
+          "runs": [
+            {
+              "text": "Text",
+              "font": "Courier New",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 72.0,
+                "y_pt": 81.99
               }
-            ]
-          }
-        ]
-      }
-    ],
-    "resolved_fonts": {
-      "requested": [],
-      "resolved": {},
-      "unavailable": []
-    },
-    "metadata": {
-      "engine": "onlyoffice-documentserver",
-      "engine_version": "docker.io/onlyoffice/documentserver@sha2…",
-      "captured_at": "2026-09-05T05:45:56.974943099+00:00",
-      "environment": "onlyoffice-ds pdf-export projection; filetype=docx"
+            },
+            {
+              "text": "in",
+              "font": "Courier New",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 108.0,
+                "y_pt": 81.99
+              }
+            },
+            {
+              "text": "Courier",
+              "font": "Courier New",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 129.6,
+                "y_pt": 81.99
+              }
+            },
+            {
+              "text": "New.",
+              "font": "Courier New",
+              "size_pt": 12.0,
+              "weight": 400,
+              "italic": false,
+              "origin": {
+                "x_pt": 187.21,
+                "y_pt": 81.99
+              }
+            }
+          ]
+        }
+      ]
     }
+  ],
+  "resolved_fonts": {
+    "requested": [
+      "Courier New"
+    ],
+    "resolved": {
+      "Courier New": "Courier New"
+    },
+    "unavailable": []
+  },
+  "metadata": {
+    "engine": "onlyoffice",
+    "engine_version": "unknown",
+    "captured_at": "2026-10-01T03:53:47.010776+00:00",
+    "environment": "PDF\u2192IR extraction via PyMuPDF ('1.28.0', '1.29.0', None)"
   }
 }
