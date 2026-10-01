@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Pixel gate: honesty check on the rendered document surface, beyond geometry.
 
-Compares a WO editor screenshot against the LibreOffice golden render of the
-SAME committed .docx. Both engines render the same document, so a large visual
-mismatch means a real regression (blank page, collapsed layout, wrong glyphs/
-colors) that the geometry census cannot see.
+Compares a WO editor screenshot against the OnlyOffice reference render of the
+SAME committed .docx (*-oo.png, captured by capture-oo-goldens.py from the DS
+converter — the same engine the OO editor paints). Both engines render the
+same document, so a large visual mismatch means a real regression (blank page,
+collapsed layout, wrong glyphs/colors) that the geometry census cannot see.
+(Previously the reference was a LibreOffice PDF golden; rebased on OnlyOffice.)
 
 Honesty notes (read before raising the gate):
 - Cross-engine rendering never equals: fonts, hinting, sub-pixel AA, page
@@ -18,7 +20,7 @@ Honesty notes (read before raising the gate):
   deterministically (tall viewport > sheet height, top of page 1).
 
 Usage:
-  pixel-diff.py --wo <wo.png> --gold <golden/pg-1.png> [--width 900] [--gate 25]
+  pixel-diff.py --wo <wo.png> --gold <golden/<doc>-oo.png> [--width 900] [--gate 25]
 Outputs: mean abs channel diff, % of pixels differing beyond --thresh (default
 40/255), OK/FAIL vs --gate. Exit 0 ok, 1 gate breached, 2 usage/IO error.
 """

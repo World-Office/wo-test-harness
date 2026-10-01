@@ -1,20 +1,20 @@
 {
-  "pg-1.png": {
-    "diff_px": 8.6,
-    "mean": 13.5,
+  "visual-gate-oo.png": {
+    "mean": 11.0,
+    "diff_px": 7.9,
     "wo_ink": 2.8,
-    "gold_ink": 12.5
+    "gold_ink": 10.8
   },
-  "image-gate.png": {
-    "diff_px": 27.8,
-    "mean": 33.4,
-    "wo_ink": 12.8,
-    "gold_ink": 25.8
+  "image-gate-oo.png": {
+    "mean": 32.9,
+    "diff_px": 27.5,
+    "wo_ink": 12.4,
+    "gold_ink": 26.4
   },
-  "hf-gate.png": {
-    "diff_px": 17.2,
-    "mean": 25.6,
+  "hf-gate-oo.png": {
+    "mean": 23.0,
+    "diff_px": 16.2,
     "wo_ink": 12.0,
-    "gold_ink": 19.3
+    "gold_ink": 16.9
   }
 }

@@ -451,9 +451,9 @@ def run_geometry(server: Path, out: Path) -> int:
 
 
 # --- visual (pixel) gate ---------------------------------------------------
-# docx stem -> committed LO golden filename (goldens live in golden/docs/)
-VISUAL_GOLDEN = {"visual-gate": "pg-1.png", "image-gate": "image-gate.png",
-                 "hf-gate": "hf-gate.png"}
+# docx stem -> committed OnlyOffice golden filename (goldens live in golden/docs/)
+VISUAL_GOLDEN = {"visual-gate": "visual-gate-oo.png", "image-gate": "image-gate-oo.png",
+                 "hf-gate": "hf-gate-oo.png"}
 
 
 def _py_with_pil(server: Path) -> str:
@@ -484,9 +484,11 @@ def _register_goldens(server: Path, database: Path, content: Path) -> None:
 
 def run_visual(server: Path, out: Path) -> int:
     """Pixel gate: render each committed golden doc on a scratch docserver and
-    compare sheet 1 against its LO golden (pixel-diff.py: recorded baseline +
-    slack + the baseline-relative ink flood line). Returns 0 iff every doc
-    passes."""
+    compare sheet 1 against its OnlyOffice reference golden (pixel-diff.py:
+    recorded baseline + slack + the baseline-relative ink flood line). The
+    OO goldens (*-oo.png, captured by capture-oo-goldens.py from the local
+    DS converter — the same engine the OO editor paints) replace the old
+    LibreOffice PDF goldens. Returns 0 iff every doc passes."""
     rc = 0
     with tempfile.TemporaryDirectory(prefix="reconcile-visual-") as td:
         pd = Path(td)
@@ -536,7 +538,7 @@ def main() -> int:
     ap.add_argument("--geometry", action="store_true",
                     help="capture the geometry census + gate on drift/overlaps vs the committed golden")
     ap.add_argument("--visual", action="store_true",
-                    help="pixel gate: render each golden doc and gate sheet 1 vs its LO golden (visual-wo.cjs + pixel-diff.py)")
+                    help="pixel gate: render each golden doc and gate sheet 1 vs its OnlyOffice golden (visual-wo.cjs + pixel-diff.py)")
     ap.add_argument("--self-test", action="store_true", help="run the delta-logic self-test and exit")
     args = ap.parse_args()
 
@@ -589,7 +591,7 @@ def main() -> int:
                 except SystemExit:
                     rc = 1
             if args.visual:
-                print("      visual: pixel gate vs LO goldens (sheet 1)")
+                print("      visual: pixel gate vs OnlyOffice goldens (sheet 1)")
                 try:
                     if run_visual(server, tmp) != 0:
                         rc = 1
@@ -656,7 +658,7 @@ def main() -> int:
 
     visual_rc = 0
     if args.visual:
-        print("      visual: pixel gate vs LO goldens (visual-wo.cjs + pixel-diff.py)")
+        print("      visual: pixel gate vs OnlyOffice goldens (visual-wo.cjs + pixel-diff.py)")
         try:
             visual_rc = run_visual(server, CENSUS)
         except SystemExit:
