@@ -7,7 +7,7 @@
 # Honest by construction: nothing here claims product parity.
 surfaces:
   - {id: S-DOCX,  name: "Document editor (docx/odt/rtf/txt)",  oracle: "LibreOffice+OnlyOffice render IR, UI census", status: partial, where: "conformance/, census/, harness-graph/"}
-  - {id: S-XLSX-CALC, name: "Spreadsheet calc engine (formulas / coercion / errors)", oracle: "LibreOffice Calc (OO proxy) / divergences.json", status: live, where: "sheet-oracle/ (30 cases; target ~450 functions)"}
+  - {id: S-XLSX-CALC, name: "Spreadsheet calc engine (formulas / coercion / errors)", oracle: "LibreOffice Calc (OO proxy) / divergences.json", status: live, where: "sheet-oracle/ (30 cases; wo-formula scores 8/30 -- see baseline.json; target ~450 functions)"}
   - {id: S-XLSX-FMT,  name: "Number/date formats, conditional formats, styles",  oracle: "LibreOffice render + xlsx XML diff", status: none}
   - {id: S-XLSX-OBJ,  name: "Charts, pivot tables, sparklines, data validation",  oracle: "OO rig render + xlsx XML diff", status: none}
   - {id: S-XLSX-UI,   name: Spreadsheet editor UI census,                        oracle: "census-oo.cjs on OO sheet editor", status: none}

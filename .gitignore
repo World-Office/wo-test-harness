@@ -11,3 +11,4 @@ __pycache__/
 
 # census node deps
 census/node_modules/
+sheet-oracle/cases.json

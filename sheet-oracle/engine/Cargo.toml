@@ -1,0 +1,11 @@
+[package]
+name = "wo-eval-formula"
+version = "0.1.0"
+edition = "2021"
+license = "AGPL-3.0-or-later"
+description = "sheet-oracle engine adapter: evaluates cases.json with wo-formula, emits engine.json"
+
+[dependencies]
+wo-formula = { git = "https://github.com/World-Office/server.git", branch = "main", package = "wo-formula" }
+serde_json = "1"
+chrono = "0.4"

@@ -2,7 +2,7 @@
 """sheet-oracle — differential spreadsheet formula conformance.
 
   oracle.py capture            # run cases through LibreOffice -> truth.json
-  oracle.py score <engine.json>  # score an engine's results vs truth.json
+  oracle.py score <engine.json> [--update-baseline]  # score an engine's results vs truth.json
   oracle.py cases              # dump cases.json for an engine to consume
 
 Engine contract (what the Rust side implements): read cases.json
@@ -121,6 +121,16 @@ def main() -> int:
             if cid not in eng: bad.append((cid, t, "<missing>")); continue
             if not equal(t, eng[cid]): bad.append((cid, t, eng[cid]))
         n = len(truth) - len(div)
+        passing = sorted(c for c in truth if c not in div and c in eng and equal(truth[c], eng[c]))
+        # ratchet: anything in baseline.json that passed before must still pass
+        bpath = HERE / "baseline.json"
+        if "--update-baseline" in sys.argv:
+            bpath.write_text(json.dumps(passing, indent=1), encoding="utf-8")
+            print(f"baseline updated: {len(passing)} passing")
+        elif bpath.exists():
+            regress = [c for c in json.loads(bpath.read_text(encoding="utf-8")) if c not in passing]
+            if regress:
+                print("REGRESSION vs baseline:", regress); return 1
         print(f"sheet-oracle: {n - len(bad)}/{n} match ({len(div)} declared divergences)")
         for b in bad: print("  FAIL %s truth=%r engine=%r" % b)
         return 1 if bad else 0

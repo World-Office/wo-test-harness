@@ -1,0 +1,10 @@
+[
+ "logic.and",
+ "logic.if",
+ "logic.iferror",
+ "math.div0",
+ "math.mod_neg",
+ "math.round",
+ "math.sqrt_err",
+ "text.find_err"
+]
