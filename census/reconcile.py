@@ -377,41 +377,55 @@ def self_test() -> None:
 
     # stale-deferred: a deferred MAP row whose feature the WO census now ships as
     # a real control must classify STALE-DEFERRED (parity under-report) and the
-    # gate must fail. Use a fake WO capture that ships `btn-shadow` cmd=`toggleShadow`
-    # for a MAP token that is still `deferred`, plus one still-true deferral.
-    # (MAP's `watermark` is deferred=true deferral; pick a genuinely deferred token
-    # and a control key it would map to: `blankpage` -> WO would output btn-blankpage)
+    # gate must fail. Pass a SYNTHETIC OO census + WO capture so the case is
+    # self-contained (it no longer depends on which MAP token happens to be
+    # deferred in the committed OO census). Use `content-controls`, a MAP row
+    # that is genuinely deferred today (content-controls-unsupported): the fake
+    # WO capture ships it as a real button, which must flip it to STALE-DEFERRED.
     import json as _json, pathlib as _pl, subprocess
-    fake = {
+    fake_oo = {
         "tabs": {
             "insert": {"buttons": [
-                {"id": "btn-blankpage", "cmd": "insertBlankPage"},  # MAP: blankpage deferred
+                {"id": "id-toolbar-btn-content-controls", "label": "Content Controls"},
+                {"id": "id-toolbar-btn-txt", "label": "Text"},
+            ]},
+        },
+    }
+    fake_wo = {
+        "tabs": {
+            "insert": {"buttons": [
+                {"id": "btn-content-controls", "cmd": "insertContentControl"},  # MAP: deferred
                 {"id": "btn-txt", "cmd": "insertSimple"},
             ]},
         },
-        "surfaces": {},
+        # a non-zero menu-file surface so the ledger is a realistic clean capture
+        # (the gate fails menu-file==0 as a broken trigger, not for this test)
+        "surfaces": {"menu-file": {"buttons": [{"id": "btn-new", "cmd": "new"}]}},
     }
     td = _pl.Path(tempfile.mkdtemp())
-    fake_file = td / "census-wo.json"
-    fake_file.write_text(_json.dumps(fake))
+    oo_file = td / "oo.json"
+    wo_file = td / "census-wo.json"
+    oo_file.write_text(_json.dumps(fake_oo))
+    wo_file.write_text(_json.dumps(fake_wo))
     led_file = td / "l.json"
     old_cwd = Path.cwd()
     os.chdir(HERE)
     try:
-        r = subprocess.run([sys.executable, "census-diff.py", "--wo", str(fake_file),
-                            "--ledger", str(led_file)], capture_output=True, text=True)
+        r = subprocess.run([sys.executable, "census-diff.py", "--wo", str(wo_file),
+                            "--oo", str(oo_file), "--ledger", str(led_file)],
+                           capture_output=True, text=True)
     finally:
         os.chdir(old_cwd)
     assert r.returncode == 0, r.stderr
     led = _json.load(open(led_file, encoding="utf-8"))
     stale = [x for x in led["ledger"] if x["status"] == "STALE-DEFERRED"]
-    assert any(x.get("token") == "blankpage" for x in stale), \
-        f"expected blankpage STALE-DEFERRED, got {[x.get('token') for x in stale]}"
+    assert any(x.get("token") == "content-controls" for x in stale), \
+        f"expected content-controls STALE-DEFERRED, got {[x.get('token') for x in stale]}"
     assert led["counts"]["STALE-DEFERRED"] == 1, led["counts"]
     # gate must flag the under-report as a decision: STALE-DEFERRED counts as bad
-    assert not gate({"counts": {"STALE-DEFERRED": 1}, "ledger": [stale[0]]}), \
-        "gate should FAIL while blankpage is STALE-DEFERRED"
-    assert gate({"counts": {}, "ledger": []}), "clean ledger must pass"
+    assert not gate({"counts": {"STALE-DEFERRED": 1, "menu-file": 1}, "ledger": [stale[0]]}), \
+        "gate should FAIL while content-controls is STALE-DEFERRED"
+    assert gate({"counts": {"menu-file": 1}, "ledger": []}), "clean ledger must pass"
     print("self-test OK: stale-deferred detected and gated")
 
 
