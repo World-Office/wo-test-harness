@@ -14,14 +14,19 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
   const ctx = await browser.newContext({ viewport: { width: 1600, height: 1100 } });
   const page = await ctx.newPage();
   const api = [];
-  page.on('response', r => {
-    const ct = (r.headers()['content-type'] || '');
-    const u = r.url();
-    if (/\/api\/|ocs\/|app-provider|appprovider|collab|wopi|graph|\.well-known/i.test(u)) {
-      const short = u.split('?')[0].replace(OC_URL, '');
-      api.push(r.status() + ' ' + r.request().method() + ' ' + short + ' [' + ct.split(';')[0] + ']');
+  const popups = [];
+  const hook = async (t, u) => {
+    const ct = (await t.headers())['content-type'] || '';
+    if (/app\/list|app-provider|appprovider/i.test(u)) {
+      try { const body = await t.text(); console.log('APP_LIST_BODY [' + t.status() + '] ' + (u.split('?')[0].replace(OC_URL,'') + ': ' + body.slice(0, 2000))); } catch (e) {}
     }
-  });
+    if (/\/api\/|ocs\/|app-provider|appprovider|collab|wopi|graph|\.well-known|app\/open|hosting\//i.test(u)) {
+      const short = u.split('?')[0].replace(OC_URL, '').replace('https://editor.cloud.graphwiz.ai', '<editor>');
+      api.push(t.status() + ' ' + t.request().method() + ' ' + short + ' [' + ct.split(';')[0] + ']');
+    }
+  };
+  page.on('response', r => hook(r, r.url()));
+  page.on('popup', async p => { try { popups.push(p.url().slice(0, 120)); p.on('response', r => hook(r, r.url())); } catch (e) {} });
   page.on('pageerror', e => console.log('PAGEERR:', e.message.slice(0, 120)));
 
   await page.goto(OC_URL, { waitUntil: 'domcontentloaded', timeout: 45000 });
@@ -34,17 +39,27 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
   await page.goto(OC_URL + '/files/spaces/personal/admin' + PATH, { waitUntil: 'domcontentloaded', timeout: 45000 });
   await sleep(8000);
   api.length = 0;
-  const link = page.locator(`a[href*="${FILE}"]`).first();
-  console.log('FILE:', FILE, '| file-anchor link count:', await link.count());
-  // also list on-page file names
-  const names = await page.evaluate(() => [...document.querySelectorAll('*')].map(e => e.childElementCount === 0 ? (e.textContent||'').trim() : '').filter(t => t.length > 2 && (/seed/i.test(t))).slice(0, 20));
-  console.log('seed-named nodes:', names);
-  if (await link.count()) {
-    await link.click({ timeout: 20000 });
-    await sleep(16000);
+  // Per memory (ocs 5.x + external-app): the editor-open mechanism is SPA
+  // navigation to /external-worldoffice/.../<file>, NOT the tile click (which
+  // only does preview -> 'no preview available' modal for non-previewable types).
+  // Decisive e2e: navigate directly to the external-app editor route and capture
+  // whether the WOPI editor dispatches to editor.cloud.graphwiz.ai.
+  const EXT_BASE = process.env.EXT_BASE || '/external-worldoffice/personal/admin';
+  const extUrl = OC_URL + EXT_BASE + PATH + FILE;
+  console.log('NAVIGATE (external-app editor route):', extUrl);
+  try {
+    await page.goto(extUrl, { waitUntil: 'domcontentloaded', timeout: 45000 });
+    await sleep(20000);
+    console.log('finalUrl:', page.url().slice(0, 200));
+    // body heuristic: did a WOPI editor / docserver iframe or canvas render?
+    const bodyText = await page.evaluate(() => (document.body ? (document.body.innerText || '').replace(/\s+/g, ' ').slice(0, 200) : '')).catch(() => '');
+    const hasIframe = await page.evaluate(() => !!document.querySelector('iframe')).catch(() => false);
+    console.log('hasIframe:', hasIframe, '| body-text:', JSON.stringify(bodyText));
+  } catch (e) {
+    console.log('NAV error:', e.message.slice(0, 160));
   }
-  console.log('finalUrl:', page.url().slice(0, 180));
-  console.log('\nAPI calls after click:');
+  console.log('popups:', JSON.stringify(popups));
+  console.log('\nAPI calls after external-route navigation:');
   const seen = new Set(); api.forEach(c => { if (!seen.has(c)) { console.log('  ' + c); seen.add(c); } });
   console.log('\ntotal calls:', api.length, '| distinct:', seen.size);
   await browser.close();

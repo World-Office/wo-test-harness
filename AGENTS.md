@@ -192,14 +192,24 @@ wo-test-harness/
     `/pdf-viewer/` (correct; no OOXML edit loop).
   - **diagram (seed.vsdx)** — Rust port COMPLETE (wo-visio converter,
     `/editors/diagram/` route, and deployed WOPI discovery advertises
-    `ext="vsdx"` → `/hosting/wopi/diagram/edit` plus vssx/vstx/vsdm variants),
-    but **NOT dispatched end-to-end**: clicking stays on the files page with 0
-    WOPI calls because OpenCloud's static file-type→app registry excludes
-    `.vsdx`. A prod collaboration-service restart did NOT change this, proving
-    it is NOT a discovery-cache issue. Fix would be an OpenCloud-side app-map/
-    companion-app config change (`.vsdx` in the editable-type registry) —
-    outside the Rust docserver; `contentconnector.go` only does WOPI
-    GetFile/PutFile transport and does not govern editability.
+    `ext="vsdx"` → `/hosting/wopi/diagram/edit` plus vssx/vstx/vsdm variants).
+    **DISPATCHED END-TO-END (2026-09-28, resolved)** — the vsdx open flow is
+    now LIVE and proven against prod: clicking/navigating `seed.vsdx` triggers
+    `GET /app/list` (populated with `application/vnd.ms-visio.drawing` →
+    WorldOffice provider) then `POST /app/open` returns HTTP 200 with
+    `app_url: https://editor.cloud.graphwiz.ai/hosting/wopi/diagram/edit` +
+    a minted WOPI `access_token`, and the editor iframe renders. The earlier
+    "0 WOPI calls / registry excludes .vsdx" blocker had TWO root causes,
+    both fixed: (1) a traefik `editor-cloud-hosting` router (Host
+    `editor.cloud.graphwiz.ai` + PathPrefix `/hosting` → docserver :8082) so
+    the public edge serves real WOPI discovery XML instead of the SPA HTML;
+    (2) the collaboration service CRASH-LOOPED on
+    `mkdir /var/lib/opencloud: permission denied` (restarts=162) so it never
+    ran `RegisterAppProvider` and the reva app-registry `/app/list` stayed
+    `{"mime-types":[]}` — fixed by adding `OC_BASE_DATA_PATH: /tmp/opencloud`
+    to the collaboration service in `/home/weiss/opencloud-compose/docker-compose.yml`
+    and recreating the container. See `census/vsdx-open-body.cjs` (probe) and
+    pi-memory `mem_muip8fe9_mulo0lvd`/`mem_muip8feb_mulobajl`.
 - **Docx fidelity** — `DocxConformanceAdapter` projects `wo-docx-renderer`
   layout into `NormalizedRender` for scoring against captured truth.
 
