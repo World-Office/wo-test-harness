@@ -660,7 +660,7 @@ mod tests {
             let mut zip = zip::ZipWriter::new(std::io::Cursor::new(&mut buf));
             let opts = zip::write::SimpleFileOptions::default();
 
-            zip.start_file("[Content_Types].xml", opts.clone()).unwrap();
+            zip.start_file("[Content_Types].xml", opts).unwrap();
             zip.write_all(br#"<?xml version="1.0"?>
 <Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
   <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
@@ -668,7 +668,7 @@ mod tests {
   <Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
 </Types>"#).unwrap();
 
-            zip.start_file("_rels/.rels", opts.clone()).unwrap();
+            zip.start_file("_rels/.rels", opts).unwrap();
             zip.write_all(br#"<?xml version="1.0"?>
 <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
   <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
@@ -879,7 +879,7 @@ mod tests {
             .flat_map(|b| b.runs.iter().map(|r| r.text.as_str()))
             .collect();
         assert!(
-            texts.iter().any(|t| *t == "A1") && texts.iter().any(|t| *t == "42"),
+            texts.contains(&"A1") && texts.contains(&"42"),
             "ODS cells should project: {texts:?}"
         );
     }
@@ -916,14 +916,14 @@ mod tests {
         {
             let mut zip = zip::ZipWriter::new(std::io::Cursor::new(&mut buf));
             let opts = zip::write::SimpleFileOptions::default();
-            zip.start_file("[Content_Types].xml", opts.clone()).unwrap();
+            zip.start_file("[Content_Types].xml", opts).unwrap();
             zip.write_all(br#"<?xml version="1.0"?>
 <Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
   <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
   <Default Extension="xml" ContentType="application/xml"/>
   <Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
 </Types>"#).unwrap();
-            zip.start_file("_rels/.rels", opts.clone()).unwrap();
+            zip.start_file("_rels/.rels", opts).unwrap();
             zip.write_all(br#"<?xml version="1.0"?>
 <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
   <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
@@ -961,14 +961,14 @@ mod tests {
         {
             let mut zip = zip::ZipWriter::new(std::io::Cursor::new(&mut buf));
             let opts = zip::write::SimpleFileOptions::default();
-            zip.start_file("[Content_Types].xml", opts.clone()).unwrap();
+            zip.start_file("[Content_Types].xml", opts).unwrap();
             zip.write_all(br#"<?xml version="1.0"?>
 <Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
   <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
   <Default Extension="xml" ContentType="application/xml"/>
   <Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
 </Types>"#).unwrap();
-            zip.start_file("_rels/.rels", opts.clone()).unwrap();
+            zip.start_file("_rels/.rels", opts).unwrap();
             zip.write_all(br#"<?xml version="1.0"?>
 <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
   <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>

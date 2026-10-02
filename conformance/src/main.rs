@@ -387,11 +387,15 @@ fn cmd_capture(args: &[String]) -> i32 {
             Ok(render) => {
                 let truth = GroundTruthFile {
                     schema_version: TRUTH_SCHEMA_VERSION,
-                    truth_captured_from: format!("worldoffice-opencloud-docserver {}", engine.version),
+                    truth_captured_from: format!(
+                        "worldoffice-opencloud-docserver {}",
+                        engine.version
+                    ),
                     captured_at: render.metadata.captured_at.clone(),
                     render,
                 };
-                if let Err(e) = std::fs::write(&out, serde_json::to_string_pretty(&truth).unwrap()) {
+                if let Err(e) = std::fs::write(&out, serde_json::to_string_pretty(&truth).unwrap())
+                {
                     eprintln!("capture: write {}: {e}", out);
                     return 1;
                 }
@@ -442,12 +446,17 @@ fn cmd_capture(args: &[String]) -> i32 {
 /// Usage: `wo-conformance register <runDir> [--a-layer <engine.json> <truth.json>] [--out <dir>]`
 fn cmd_register(args: &[String]) -> i32 {
     if args.is_empty() {
-        eprintln!("register expects: <runDir> [--a-layer <engine.json> <truth.json>] [--out <dir>]");
+        eprintln!(
+            "register expects: <runDir> [--a-layer <engine.json> <truth.json>] [--out <dir>]"
+        );
         return 2;
     }
     let run_dir = Path::new(&args[0]);
     if !run_dir.join("manifest.json").exists() {
-        eprintln!("register: {} has no manifest.json (not a wopi-vis run?)", run_dir.display());
+        eprintln!(
+            "register: {} has no manifest.json (not a wopi-vis run?)",
+            run_dir.display()
+        );
         return 2;
     }
     let mut a_layer: Option<(&Path, &Path)> = None;
@@ -456,7 +465,7 @@ fn cmd_register(args: &[String]) -> i32 {
     while i < args.len() {
         match args[i].as_str() {
             "--a-layer" => {
-                if i + 2 >= args.len() + 1 || i + 2 > args.len() - 1 {
+                if i + 2 >= args.len() {
                     eprintln!("register: --a-layer needs <engine.json> <truth.json>");
                     return 2;
                 }
@@ -511,11 +520,21 @@ fn cmd_register(args: &[String]) -> i32 {
             }
         }
         entries.push(entry);
-        if let Err(e) = std::fs::write(&index_path, format!("{}\n", serde_json::to_string_pretty(&entries).unwrap_or_default())) {
+        if let Err(e) = std::fs::write(
+            &index_path,
+            format!(
+                "{}\n",
+                serde_json::to_string_pretty(&entries).unwrap_or_default()
+            ),
+        ) {
             eprintln!("register: write {}: {e}", index_path.display());
             return 1;
         }
-        eprintln!("register: appended {} entries to {}", entries.len(), index_path.display());
+        eprintln!(
+            "register: appended {} entries to {}",
+            entries.len(),
+            index_path.display()
+        );
     }
     0
 }
@@ -537,22 +556,44 @@ fn cmd_pdf_render(args: &[String]) -> i32 {
     let mut i = 2;
     while i < args.len() {
         match args[i].as_str() {
-            "--engine" => { if i + 1 < args.len() { engine = args[i + 1].clone(); } i += 2; }
-            "--version" => { if i + 1 < args.len() { version = args[i + 1].clone(); } i += 2; }
-            other => { eprintln!("pdf-render: unknown flag {other}"); return 2; }
+            "--engine" => {
+                if i + 1 < args.len() {
+                    engine = args[i + 1].clone();
+                }
+                i += 2;
+            }
+            "--version" => {
+                if i + 1 < args.len() {
+                    version = args[i + 1].clone();
+                }
+                i += 2;
+            }
+            other => {
+                eprintln!("pdf-render: unknown flag {other}");
+                return 2;
+            }
         }
     }
     let pdf = match std::fs::read(input) {
         Ok(b) => b,
-        Err(e) => { eprintln!("pdf-render: read {}: {e}", input.display()); return 1; }
+        Err(e) => {
+            eprintln!("pdf-render: read {}: {e}", input.display());
+            return 1;
+        }
     };
     let source = match PopplerSource::new() {
         Ok(s) => s,
-        Err(e) => { eprintln!("pdf-render: {e}"); return 1; }
+        Err(e) => {
+            eprintln!("pdf-render: {e}");
+            return 1;
+        }
     };
     let render = match source.extract(&pdf) {
         Ok(r) => r,
-        Err(e) => { eprintln!("pdf-render: project {}: {e}", input.display()); return 1; }
+        Err(e) => {
+            eprintln!("pdf-render: project {}: {e}", input.display());
+            return 1;
+        }
     };
     let render = NormalizedRender {
         metadata: wo_conformance::model::RenderMetadata {
@@ -570,7 +611,17 @@ fn cmd_pdf_render(args: &[String]) -> i32 {
         render,
     };
     match std::fs::write(out, serde_json::to_string_pretty(&truth).unwrap()) {
-        Ok(_) => { println!("projected {} -> {} (engine={engine} {version})", input.display(), out.display()); 0 }
-        Err(e) => { eprintln!("pdf-render: write {}: {e}", out.display()); 1 }
+        Ok(_) => {
+            println!(
+                "projected {} -> {} (engine={engine} {version})",
+                input.display(),
+                out.display()
+            );
+            0
+        }
+        Err(e) => {
+            eprintln!("pdf-render: write {}: {e}", out.display());
+            1
+        }
     }
 }

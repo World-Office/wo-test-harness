@@ -40,8 +40,12 @@ impl WorldOfficeConfig {
     pub fn new(base_url: impl Into<String>) -> Self {
         Self {
             base_url: base_url.into(),
-            chromium: std::env::var("CHROMIUM").map(PathBuf::from).unwrap_or_else(|_| PathBuf::from("chromium")),
-            pdftotext: std::env::var("PDFTOTEXT").map(PathBuf::from).unwrap_or_else(|_| PathBuf::from("pdftotext")),
+            chromium: std::env::var("CHROMIUM")
+                .map(PathBuf::from)
+                .unwrap_or_else(|_| PathBuf::from("chromium")),
+            pdftotext: std::env::var("PDFTOTEXT")
+                .map(PathBuf::from)
+                .unwrap_or_else(|_| PathBuf::from("pdftotext")),
             request_timeout: Duration::from_secs(90),
         }
     }
@@ -256,7 +260,9 @@ impl RenderEngine for WorldOfficeHtmlEngine {
                     return Ok(render);
                 }
                 Err(e) => {
-                    eprintln!("worldoffice: native export unavailable, falling back to chromium: {e}");
+                    eprintln!(
+                        "worldoffice: native export unavailable, falling back to chromium: {e}"
+                    );
                 }
             }
         }
@@ -266,11 +272,9 @@ impl RenderEngine for WorldOfficeHtmlEngine {
                 "world-office converter returned empty html".into(),
             ));
         }
-        let tmp = std::env::temp_dir()
-            .join(format!("worldoffice-render-{}", std::process::id()));
-        fs::create_dir_all(&tmp).map_err(|e| {
-            ConformanceError::RenderFailed(format!("mkdir {}: {e}", tmp.display()))
-        })?;
+        let tmp = std::env::temp_dir().join(format!("worldoffice-render-{}", std::process::id()));
+        fs::create_dir_all(&tmp)
+            .map_err(|e| ConformanceError::RenderFailed(format!("mkdir {}: {e}", tmp.display())))?;
         let pdf_path = tmp.join("out.pdf");
         self.html_to_pdf(&html, &pdf_path)?;
         let pdf = fs::read(&pdf_path)

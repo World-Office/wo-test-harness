@@ -188,7 +188,10 @@ pub fn analyze_legs(legs: &Value) -> ProtocolStats {
 /// `run_dir` must contain `manifest.json` and `legs.json` (produced by
 /// `compose/wopi-vis.js`). Optional `a_layer` compares an engine render
 /// against ground truth (cross-engine scoring).
-pub fn build_entry(run_dir: &Path, a_layer: Option<(&Path, &Path)>) -> Result<RegisterEntry, String> {
+pub fn build_entry(
+    run_dir: &Path,
+    a_layer: Option<(&Path, &Path)>,
+) -> Result<RegisterEntry, String> {
     let mpath = run_dir.join("manifest.json");
     let lpath = run_dir.join("legs.json");
     let manifest: Value = serde_json::from_slice(
@@ -200,19 +203,46 @@ pub fn build_entry(run_dir: &Path, a_layer: Option<(&Path, &Path)>) -> Result<Re
     )
     .map_err(|e| format!("parse {}: {e}", lpath.display()))?;
 
-    let engine = manifest.get("engine").and_then(Value::as_str).unwrap_or("?").to_string();
-    let host_wopi_url = manifest.get("hostWopiUrl").and_then(Value::as_str).unwrap_or("?").to_string();
-    let captured_at = manifest.get("capturedAt").and_then(Value::as_str).unwrap_or("?").to_string();
+    let engine = manifest
+        .get("engine")
+        .and_then(Value::as_str)
+        .unwrap_or("?")
+        .to_string();
+    let host_wopi_url = manifest
+        .get("hostWopiUrl")
+        .and_then(Value::as_str)
+        .unwrap_or("?")
+        .to_string();
+    let captured_at = manifest
+        .get("capturedAt")
+        .and_then(Value::as_str)
+        .unwrap_or("?")
+        .to_string();
     let fixture = manifest.get("fixture").cloned().unwrap_or(Value::Null);
     let fixture = FixtureInfo {
-        name: fixture.get("name").and_then(Value::as_str).unwrap_or("?").to_string(),
-        sha256: fixture.get("sha256").and_then(Value::as_str).unwrap_or("?").to_string(),
+        name: fixture
+            .get("name")
+            .and_then(Value::as_str)
+            .unwrap_or("?")
+            .to_string(),
+        sha256: fixture
+            .get("sha256")
+            .and_then(Value::as_str)
+            .unwrap_or("?")
+            .to_string(),
         file_id: fixture.get("fileId").and_then(Value::as_u64).unwrap_or(0),
     };
     let launch = manifest.get("launch").cloned().unwrap_or(Value::Null);
     let launch = LaunchInfo {
-        mode: launch.get("mode").and_then(Value::as_str).unwrap_or("nextcloud-files").to_string(),
-        url: launch.get("url").and_then(Value::as_str).map(str::to_string),
+        mode: launch
+            .get("mode")
+            .and_then(Value::as_str)
+            .unwrap_or("nextcloud-files")
+            .to_string(),
+        url: launch
+            .get("url")
+            .and_then(Value::as_str)
+            .map(str::to_string),
     };
 
     let protocol = analyze_legs(&legs);
@@ -230,7 +260,10 @@ pub fn build_entry(run_dir: &Path, a_layer: Option<(&Path, &Path)>) -> Result<Re
 
     let visual = manifest.get("visual").cloned().unwrap_or(Value::Null);
     let mut visual = VisualStats {
-        verdict: visual.get("verdict").and_then(Value::as_str).map(str::to_string),
+        verdict: visual
+            .get("verdict")
+            .and_then(Value::as_str)
+            .map(str::to_string),
         chrome_similarity: visual.get("chromeSimilarity").and_then(Value::as_f64),
         canvas_similarity: visual.get("canvasSimilarity").and_then(Value::as_f64),
         divergences: Vec::new(),
@@ -263,13 +296,17 @@ pub fn build_entry(run_dir: &Path, a_layer: Option<(&Path, &Path)>) -> Result<Re
     }
     // merge any structure/pixel divergence strings recorded in the run
     if engine == "worldoffice" {
-        visual.divergences.push("cross-engine structure/pixel DIFF expected (mirror of B-layer)".into());
+        visual
+            .divergences
+            .push("cross-engine structure/pixel DIFF expected (mirror of B-layer)".into());
     }
 
     let a_layer = match a_layer {
         Some((engine_path, truth_path)) => {
-            let bytes = std::fs::read(engine_path).map_err(|e| format!("read {}: {e}", engine_path.display()))?;
-            let v: Value = serde_json::from_slice(&bytes).map_err(|e| format!("parse {}: {e}", engine_path.display()))?;
+            let bytes = std::fs::read(engine_path)
+                .map_err(|e| format!("read {}: {e}", engine_path.display()))?;
+            let v: Value = serde_json::from_slice(&bytes)
+                .map_err(|e| format!("parse {}: {e}", engine_path.display()))?;
             let render: NormalizedRender = if v.get("render").is_some() {
                 let gt: crate::ground_truth::GroundTruthFile = serde_json::from_value(v.clone())
                     .map_err(|e| format!("engine wrapper {}: {e}", engine_path.display()))?;
@@ -278,8 +315,10 @@ pub fn build_entry(run_dir: &Path, a_layer: Option<(&Path, &Path)>) -> Result<Re
                 serde_json::from_value(v.clone())
                     .map_err(|e| format!("bare engine render {}: {e}", engine_path.display()))?
             };
-            let tbytes = std::fs::read(truth_path).map_err(|e| format!("read {}: {e}", truth_path.display()))?;
-            let tv: Value = serde_json::from_slice(&tbytes).map_err(|e| format!("parse {}: {e}", truth_path.display()))?;
+            let tbytes = std::fs::read(truth_path)
+                .map_err(|e| format!("read {}: {e}", truth_path.display()))?;
+            let tv: Value = serde_json::from_slice(&tbytes)
+                .map_err(|e| format!("parse {}: {e}", truth_path.display()))?;
             let ground_truth: NormalizedRender = if tv.get("render").is_some() {
                 let gt: crate::ground_truth::GroundTruthFile = serde_json::from_value(tv)
                     .map_err(|e| format!("truth wrapper {}: {e}", truth_path.display()))?;
@@ -291,7 +330,10 @@ pub fn build_entry(run_dir: &Path, a_layer: Option<(&Path, &Path)>) -> Result<Re
             let report: CaseReport =
                 compute_fidelity_cross_engine("register", &render, &ground_truth);
             Some(ALayer {
-                engine_render: engine_path.file_name().map(|s| s.to_string_lossy().into_owned()).unwrap_or_default(),
+                engine_render: engine_path
+                    .file_name()
+                    .map(|s| s.to_string_lossy().into_owned())
+                    .unwrap_or_default(),
                 render_engine: render.metadata.engine.clone(),
                 render_engine_version: render.metadata.engine_version.clone(),
                 truth_source: format!("{}", truth_path.display()),
@@ -312,11 +354,16 @@ pub fn build_entry(run_dir: &Path, a_layer: Option<(&Path, &Path)>) -> Result<Re
         host_wopi_url,
         launch: launch.clone(),
         fixture,
-        protocol: ProtocolStats { proof_style: proof_style.to_string(), launch_style: launch.mode.clone(), ..protocol },
+        protocol: ProtocolStats {
+            proof_style: proof_style.to_string(),
+            launch_style: launch.mode.clone(),
+            ..protocol
+        },
         divergences,
         a_layer,
         visual,
-        wopi_path_shape: "/index.php/apps/richdocuments/wopi/files/{fileid}_{instance}[/contents]".into(),
+        wopi_path_shape: "/index.php/apps/richdocuments/wopi/files/{fileid}_{instance}[/contents]"
+            .into(),
         captured_at,
     })
 }

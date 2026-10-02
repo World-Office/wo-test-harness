@@ -176,6 +176,22 @@ wo-test-harness/
   `de-file-menu-panel`) — so the "prod ships the React editor" claim above is
   stale for word/docx until the React build replaces the vanilla one in the
   image. `fx-prod.cjs` measures whatever is really serving docx today.
+- **Editor iframe refused by X-Frame-Options DENY (open-in-OpenCloud blocker).**
+  Opening a doc in the OpenCloud Web UI frames `editor.cloud.graphwiz.ai`, which
+  sent `X-Frame-Options: DENY` + CSP `frame-ancestors 'self'` → browser refuses.
+  Verified 2026-10-02 on VPS `tobias-weiss.org` (192.168.42.1): the direct
+  backend `192.168.42.42:8082/word/` returns 200 with NO XFO/CSP (docserver is
+  clean), but the public (through-traefik) path adds DENY+CSP. The VPS file
+  router `editor-cloud-graphwiz-ai` has NO middlewares and the VPS static
+  traefik.yml does NOT even define `security-headers`, and no docker-label
+  router matches editor.cloud — so the header is injected by something else on
+  the public edge (likely a second proxy or OpenCloud's own frontend on the
+  routed service), NOT the editor router's middlewares. Correct fix (editor
+  host ONLY, never global): `customFrameOptionsValue: "SAMEORIGIN"` + CSP
+  `frame-ancestors 'self' https://cloud.graphwiz.ai` so OpenCloud may frame it
+  while OpenCloud itself stays non-frameable. The other two console errors
+  (TypeError `current_version` in `src-Dj691hj2.mjs`; 404
+  `/graph/v1.0/users/<id>/photo/$value`) are OpenCloud-internal, not WO.
 - **Non-word editors — port status (2026-xx, T-002/T-003/T-007).** Verified via
   `census/nonword-probe.cjs` (iframe-aware: enters the editor subframe from
   `editor.cloud.graphwiz.ai`, reads the inner `#root`/canvas/toolbar) and

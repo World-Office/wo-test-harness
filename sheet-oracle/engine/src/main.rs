@@ -7,19 +7,30 @@ use wo_formula::{a1_to_col, eval, parse, CellValue, Sheet};
 struct Grid(HashMap<(u32, u32), CellValue>);
 
 impl Sheet for Grid {
-    fn cell(&self, r: u32, c: u32) -> Option<&CellValue> { self.0.get(&(r, c)) }
-    fn cell_mut(&mut self, r: u32, c: u32) -> Option<&mut CellValue> { self.0.get_mut(&(r, c)) }
+    fn cell(&self, r: u32, c: u32) -> Option<&CellValue> {
+        self.0.get(&(r, c))
+    }
+    fn cell_mut(&mut self, r: u32, c: u32) -> Option<&mut CellValue> {
+        self.0.get_mut(&(r, c))
+    }
     fn range(&self, r0: u32, c0: u32, r1: u32, c1: u32) -> Vec<&CellValue> {
         static EMPTY: CellValue = CellValue::Empty;
         let mut v = Vec::new();
-        for r in r0..=r1 { for c in c0..=c1 { v.push(self.0.get(&(r, c)).unwrap_or(&EMPTY)); } }
+        for r in r0..=r1 {
+            for c in c0..=c1 {
+                v.push(self.0.get(&(r, c)).unwrap_or(&EMPTY));
+            }
+        }
         v
     }
 }
 
 fn split_a1(s: &str) -> (u32, u32) {
     let i = s.find(|c: char| c.is_ascii_digit()).unwrap();
-    (s[i..].parse::<u32>().unwrap() - 1, a1_to_col(&s[..i]).unwrap())
+    (
+        s[i..].parse::<u32>().unwrap() - 1,
+        a1_to_col(&s[..i]).unwrap(),
+    )
 }
 
 fn out(v: &CellValue) -> serde_json::Value {
@@ -32,7 +43,10 @@ fn out(v: &CellValue) -> serde_json::Value {
         CellValue::Empty => json!(0.0),
         // serial: days since 1899-12-30 (Excel/LO 1900 system)
         CellValue::Date(d) => {
-            let base = chrono::NaiveDate::from_ymd_opt(1899, 12, 30).unwrap().and_hms_opt(0, 0, 0).unwrap();
+            let base = chrono::NaiveDate::from_ymd_opt(1899, 12, 30)
+                .unwrap()
+                .and_hms_opt(0, 0, 0)
+                .unwrap();
             json!((*d - base).num_seconds() as f64 / 86400.0)
         }
     }
@@ -40,7 +54,8 @@ fn out(v: &CellValue) -> serde_json::Value {
 
 fn main() {
     let a: Vec<String> = std::env::args().collect();
-    let cases: Vec<serde_json::Value> = serde_json::from_str(&std::fs::read_to_string(&a[1]).unwrap()).unwrap();
+    let cases: Vec<serde_json::Value> =
+        serde_json::from_str(&std::fs::read_to_string(&a[1]).unwrap()).unwrap();
     let mut res = serde_json::Map::new();
     let mut why = serde_json::Map::new(); // sidecar: engine's own error text per failing case
     for c in cases {
@@ -58,14 +73,30 @@ fn main() {
         let r = match parse(f) {
             // Failures are reported as "#ERR" so the scorer shows the divergence
             // rather than the adapter hiding it; parse failures are tagged distinctly.
-            Err(e) => { why.insert(c["id"].as_str().unwrap().into(), format!("parse: {e}").into()); serde_json::json!("#PARSE") }
+            Err(e) => {
+                why.insert(
+                    c["id"].as_str().unwrap().into(),
+                    format!("parse: {e}").into(),
+                );
+                serde_json::json!("#PARSE")
+            }
             Ok(e) => match eval(&e, &g) {
                 Ok(v) => out(&v),
-                Err(e) => { why.insert(c["id"].as_str().unwrap().into(), format!("eval: {e}").into()); serde_json::json!("#ERR") }
+                Err(e) => {
+                    why.insert(
+                        c["id"].as_str().unwrap().into(),
+                        format!("eval: {e}").into(),
+                    );
+                    serde_json::json!("#ERR")
+                }
             },
         };
         res.insert(c["id"].as_str().unwrap().to_string(), r);
     }
     std::fs::write(&a[2], serde_json::to_string_pretty(&res).unwrap()).unwrap();
-    std::fs::write(format!("{}.why", a[2]), serde_json::to_string_pretty(&why).unwrap()).unwrap();
+    std::fs::write(
+        format!("{}.why", a[2]),
+        serde_json::to_string_pretty(&why).unwrap(),
+    )
+    .unwrap();
 }
