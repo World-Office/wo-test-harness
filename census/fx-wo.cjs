@@ -62,6 +62,7 @@ const EXPECTED_SILENT = new Set([
               (activeTab ? activeTab.dataset.tab : '') + '|' + (document.fullscreenElement ? 'fs' : '') + '|' +
               (document.getElementById('zoom-slider')?.value || '') + '|' +
               (document.querySelector('.ruler') ? vis(document.querySelector('.ruler')) : '') + '|' +
+              (document.getElementById('editor')?.getAttribute('style') || '') + '|' +
               [...document.querySelectorAll('[aria-pressed]')].map(e => e.id + '=' + e.getAttribute('aria-pressed')).join(','),
     };
   })()`;

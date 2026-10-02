@@ -46,6 +46,11 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:dictate",
+   "to": "dictate",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:directionRtl",
    "to": "directionRtl",
    "type": "TRIGGERS"
@@ -218,6 +223,11 @@
   {
    "from": "toolbar:protectDialog",
    "to": "protectDialog",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:readAloud",
+   "to": "readAloud",
    "type": "TRIGGERS"
   },
   {
@@ -1681,12 +1691,32 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_bare_text_header_footer_survives_docx_roundtrip",
+   "to": "F-070",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_bookmark_crossref_survive_save_then_convert",
    "to": "F-070",
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_chart_exports_as_real_drawingml_part",
+   "to": "F-070",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_chart_part_roundtrips_editable_spec",
+   "to": "F-070",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_comment_markers_survive_save_then_convert",
+   "to": "F-070",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_content_control_roundtrips_as_sdt",
    "to": "F-070",
    "type": "COVERS"
   },
@@ -1792,6 +1822,26 @@
   },
   {
    "from": "opencloud-docserver/tests/test_converter.py::test_editor_markers_survive_save_then_convert",
+   "to": "F-070",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_equation_img_exports_as_omml",
+   "to": "F-070",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_equation_object_div_exports_as_omml",
+   "to": "F-070",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_field_span_roundtrips_as_live_field",
+   "to": "F-070",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_floated_image_roundtrips_as_anchored_drawing",
    "to": "F-070",
    "type": "COVERS"
   },
@@ -2066,7 +2116,17 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_linear_to_omml_handles_sup_sub_fraction_sqrt",
+   "to": "F-070",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_list_grouped_in_ul",
+   "to": "F-070",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_omml_roundtrips_to_equation_marker",
    "to": "F-070",
    "type": "COVERS"
   },
@@ -2117,6 +2177,11 @@
   },
   {
    "from": "opencloud-docserver/tests/test_converter.py::test_track_changes_markers_survive_save_then_convert",
+   "to": "F-070",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_unknown_field_instruction_is_dropped",
    "to": "F-070",
    "type": "COVERS"
   },
@@ -2206,12 +2271,32 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_bare_text_header_footer_survives_docx_roundtrip",
+   "to": "F-072",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_bookmark_crossref_survive_save_then_convert",
    "to": "F-072",
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_chart_exports_as_real_drawingml_part",
+   "to": "F-072",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_chart_part_roundtrips_editable_spec",
+   "to": "F-072",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_comment_markers_survive_save_then_convert",
+   "to": "F-072",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_content_control_roundtrips_as_sdt",
    "to": "F-072",
    "type": "COVERS"
   },
@@ -2317,6 +2402,26 @@
   },
   {
    "from": "opencloud-docserver/tests/test_converter.py::test_editor_markers_survive_save_then_convert",
+   "to": "F-072",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_equation_img_exports_as_omml",
+   "to": "F-072",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_equation_object_div_exports_as_omml",
+   "to": "F-072",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_field_span_roundtrips_as_live_field",
+   "to": "F-072",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_floated_image_roundtrips_as_anchored_drawing",
    "to": "F-072",
    "type": "COVERS"
   },
@@ -2591,7 +2696,17 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_linear_to_omml_handles_sup_sub_fraction_sqrt",
+   "to": "F-072",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_list_grouped_in_ul",
+   "to": "F-072",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_omml_roundtrips_to_equation_marker",
    "to": "F-072",
    "type": "COVERS"
   },
@@ -2646,12 +2761,37 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_unknown_field_instruction_is_dropped",
+   "to": "F-072",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_bare_text_header_footer_survives_docx_roundtrip",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_bookmark_crossref_survive_save_then_convert",
    "to": "F-073",
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_chart_exports_as_real_drawingml_part",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_chart_part_roundtrips_editable_spec",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_comment_markers_survive_save_then_convert",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_content_control_roundtrips_as_sdt",
    "to": "F-073",
    "type": "COVERS"
   },
@@ -2757,6 +2897,26 @@
   },
   {
    "from": "opencloud-docserver/tests/test_converter.py::test_editor_markers_survive_save_then_convert",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_equation_img_exports_as_omml",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_equation_object_div_exports_as_omml",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_field_span_roundtrips_as_live_field",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_floated_image_roundtrips_as_anchored_drawing",
    "to": "F-073",
    "type": "COVERS"
   },
@@ -3031,7 +3191,17 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_linear_to_omml_handles_sup_sub_fraction_sqrt",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_list_grouped_in_ul",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_omml_roundtrips_to_equation_marker",
    "to": "F-073",
    "type": "COVERS"
   },
@@ -3082,6 +3252,11 @@
   },
   {
    "from": "opencloud-docserver/tests/test_converter.py::test_track_changes_markers_survive_save_then_convert",
+   "to": "F-073",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_unknown_field_instruction_is_dropped",
    "to": "F-073",
    "type": "COVERS"
   },
@@ -3176,12 +3351,32 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_bare_text_header_footer_survives_docx_roundtrip",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_bookmark_crossref_survive_save_then_convert",
    "to": "F-074",
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_chart_exports_as_real_drawingml_part",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_chart_part_roundtrips_editable_spec",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_comment_markers_survive_save_then_convert",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_content_control_roundtrips_as_sdt",
    "to": "F-074",
    "type": "COVERS"
   },
@@ -3287,6 +3482,26 @@
   },
   {
    "from": "opencloud-docserver/tests/test_converter.py::test_editor_markers_survive_save_then_convert",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_equation_img_exports_as_omml",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_equation_object_div_exports_as_omml",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_field_span_roundtrips_as_live_field",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_floated_image_roundtrips_as_anchored_drawing",
    "to": "F-074",
    "type": "COVERS"
   },
@@ -3561,7 +3776,17 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_linear_to_omml_handles_sup_sub_fraction_sqrt",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_list_grouped_in_ul",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_omml_roundtrips_to_equation_marker",
    "to": "F-074",
    "type": "COVERS"
   },
@@ -3612,6 +3837,11 @@
   },
   {
    "from": "opencloud-docserver/tests/test_converter.py::test_track_changes_markers_survive_save_then_convert",
+   "to": "F-074",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_unknown_field_instruction_is_dropped",
    "to": "F-074",
    "type": "COVERS"
   },
@@ -3706,12 +3936,32 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_bare_text_header_footer_survives_docx_roundtrip",
+   "to": "F-075",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_bookmark_crossref_survive_save_then_convert",
    "to": "F-075",
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_chart_exports_as_real_drawingml_part",
+   "to": "F-075",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_chart_part_roundtrips_editable_spec",
+   "to": "F-075",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_comment_markers_survive_save_then_convert",
+   "to": "F-075",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_content_control_roundtrips_as_sdt",
    "to": "F-075",
    "type": "COVERS"
   },
@@ -3817,6 +4067,26 @@
   },
   {
    "from": "opencloud-docserver/tests/test_converter.py::test_editor_markers_survive_save_then_convert",
+   "to": "F-075",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_equation_img_exports_as_omml",
+   "to": "F-075",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_equation_object_div_exports_as_omml",
+   "to": "F-075",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_field_span_roundtrips_as_live_field",
+   "to": "F-075",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_floated_image_roundtrips_as_anchored_drawing",
    "to": "F-075",
    "type": "COVERS"
   },
@@ -4091,7 +4361,17 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_linear_to_omml_handles_sup_sub_fraction_sqrt",
+   "to": "F-075",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_list_grouped_in_ul",
+   "to": "F-075",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_omml_roundtrips_to_equation_marker",
    "to": "F-075",
    "type": "COVERS"
   },
@@ -4142,6 +4422,11 @@
   },
   {
    "from": "opencloud-docserver/tests/test_converter.py::test_track_changes_markers_survive_save_then_convert",
+   "to": "F-075",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_unknown_field_instruction_is_dropped",
    "to": "F-075",
    "type": "COVERS"
   },
@@ -4171,12 +4456,32 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_bare_text_header_footer_survives_docx_roundtrip",
+   "to": "F-077",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_bookmark_crossref_survive_save_then_convert",
    "to": "F-077",
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_chart_exports_as_real_drawingml_part",
+   "to": "F-077",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_chart_part_roundtrips_editable_spec",
+   "to": "F-077",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_comment_markers_survive_save_then_convert",
+   "to": "F-077",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_content_control_roundtrips_as_sdt",
    "to": "F-077",
    "type": "COVERS"
   },
@@ -4282,6 +4587,26 @@
   },
   {
    "from": "opencloud-docserver/tests/test_converter.py::test_editor_markers_survive_save_then_convert",
+   "to": "F-077",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_equation_img_exports_as_omml",
+   "to": "F-077",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_equation_object_div_exports_as_omml",
+   "to": "F-077",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_field_span_roundtrips_as_live_field",
+   "to": "F-077",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_floated_image_roundtrips_as_anchored_drawing",
    "to": "F-077",
    "type": "COVERS"
   },
@@ -4556,7 +4881,17 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_linear_to_omml_handles_sup_sub_fraction_sqrt",
+   "to": "F-077",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_list_grouped_in_ul",
+   "to": "F-077",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_omml_roundtrips_to_equation_marker",
    "to": "F-077",
    "type": "COVERS"
   },
@@ -4611,12 +4946,37 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_unknown_field_instruction_is_dropped",
+   "to": "F-077",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_bare_text_header_footer_survives_docx_roundtrip",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_bookmark_crossref_survive_save_then_convert",
    "to": "F-078",
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_chart_exports_as_real_drawingml_part",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_chart_part_roundtrips_editable_spec",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_comment_markers_survive_save_then_convert",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_content_control_roundtrips_as_sdt",
    "to": "F-078",
    "type": "COVERS"
   },
@@ -4722,6 +5082,26 @@
   },
   {
    "from": "opencloud-docserver/tests/test_converter.py::test_editor_markers_survive_save_then_convert",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_equation_img_exports_as_omml",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_equation_object_div_exports_as_omml",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_field_span_roundtrips_as_live_field",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_floated_image_roundtrips_as_anchored_drawing",
    "to": "F-078",
    "type": "COVERS"
   },
@@ -4996,7 +5376,17 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_linear_to_omml_handles_sup_sub_fraction_sqrt",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_list_grouped_in_ul",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_omml_roundtrips_to_equation_marker",
    "to": "F-078",
    "type": "COVERS"
   },
@@ -5047,6 +5437,11 @@
   },
   {
    "from": "opencloud-docserver/tests/test_converter.py::test_track_changes_markers_survive_save_then_convert",
+   "to": "F-078",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_unknown_field_instruction_is_dropped",
    "to": "F-078",
    "type": "COVERS"
   },
@@ -5486,12 +5881,32 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_bare_text_header_footer_survives_docx_roundtrip",
+   "to": "F-083",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_bookmark_crossref_survive_save_then_convert",
    "to": "F-083",
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_chart_exports_as_real_drawingml_part",
+   "to": "F-083",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_chart_part_roundtrips_editable_spec",
+   "to": "F-083",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_comment_markers_survive_save_then_convert",
+   "to": "F-083",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_content_control_roundtrips_as_sdt",
    "to": "F-083",
    "type": "COVERS"
   },
@@ -5597,6 +6012,26 @@
   },
   {
    "from": "opencloud-docserver/tests/test_converter.py::test_editor_markers_survive_save_then_convert",
+   "to": "F-083",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_equation_img_exports_as_omml",
+   "to": "F-083",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_equation_object_div_exports_as_omml",
+   "to": "F-083",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_field_span_roundtrips_as_live_field",
+   "to": "F-083",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_floated_image_roundtrips_as_anchored_drawing",
    "to": "F-083",
    "type": "COVERS"
   },
@@ -5871,7 +6306,17 @@
    "type": "COVERS"
   },
   {
+   "from": "opencloud-docserver/tests/test_converter.py::test_linear_to_omml_handles_sup_sub_fraction_sqrt",
+   "to": "F-083",
+   "type": "COVERS"
+  },
+  {
    "from": "opencloud-docserver/tests/test_converter.py::test_list_grouped_in_ul",
+   "to": "F-083",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_omml_roundtrips_to_equation_marker",
    "to": "F-083",
    "type": "COVERS"
   },
@@ -5922,6 +6367,11 @@
   },
   {
    "from": "opencloud-docserver/tests/test_converter.py::test_track_changes_markers_survive_save_then_convert",
+   "to": "F-083",
+   "type": "COVERS"
+  },
+  {
+   "from": "opencloud-docserver/tests/test_converter.py::test_unknown_field_instruction_is_dropped",
    "to": "F-083",
    "type": "COVERS"
   },
@@ -7711,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-09-13T03:22:52+00:00",
+ "generated_at": "2026-10-02T14:22:41+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -7757,6 +8207,11 @@
    "id": "compareVersion",
    "label": "Command",
    "source": "editor.js:runCommand('compareVersion')"
+  },
+  {
+   "id": "dictate",
+   "label": "Command",
+   "source": "editor.js:runCommand('dictate')"
   },
   {
    "id": "directionRtl",
@@ -7934,6 +8389,11 @@
    "source": "editor.js:runCommand('protectDialog')"
   },
   {
+   "id": "readAloud",
+   "label": "Command",
+   "source": "editor.js:runCommand('readAloud')"
+  },
+  {
    "id": "redo",
    "label": "Command",
    "source": "editor.js:runCommand('redo')"
@@ -8103,6 +8563,12 @@
   },
   {
    "id": "toolbar:compareVersion",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:dictate",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -8313,6 +8779,12 @@
   },
   {
    "id": "toolbar:protectDialog",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:readAloud",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -11726,6 +12198,72 @@
    "path": "opencloud-docserver/tests/test_converter.py"
   },
   {
+   "id": "opencloud-docserver/tests/test_converter.py::test_field_span_roundtrips_as_live_field",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_converter.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_converter.py::test_unknown_field_instruction_is_dropped",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_converter.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_converter.py::test_content_control_roundtrips_as_sdt",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_converter.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_converter.py::test_floated_image_roundtrips_as_anchored_drawing",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_converter.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_converter.py::test_chart_exports_as_real_drawingml_part",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_converter.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_converter.py::test_chart_part_roundtrips_editable_spec",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_converter.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_converter.py::test_equation_img_exports_as_omml",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_converter.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_converter.py::test_equation_object_div_exports_as_omml",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_converter.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_converter.py::test_omml_roundtrips_to_equation_marker",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_converter.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_converter.py::test_linear_to_omml_handles_sup_sub_fraction_sqrt",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_converter.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_converter.py::test_bare_text_header_footer_survives_docx_roundtrip",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_converter.py"
+  },
+  {
    "id": "opencloud-docserver/tests/test_converter_differential.py::test_docx_reader_text_agrees_with_libreoffice_on_corpus",
    "label": "Test",
    "layer": "e2e",
@@ -12321,6 +12859,18 @@
   },
   {
    "id": "opencloud-docserver/tests/test_editor_export.py::test_export_unknown_format_rejected",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_editor_export.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_editor_export.py::test_import_docx_endpoint",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_editor_export.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_editor_export.py::test_import_docx_empty_rejected",
    "label": "Test",
    "layer": "e2e",
    "path": "opencloud-docserver/tests/test_editor_export.py"
@@ -15902,6 +16452,30 @@
    "path": "opencloud-docserver/tests/test_wopi.py"
   },
   {
+   "id": "opencloud-docserver/tests/test_wopi.py::test_wopi_auth_gate_denies_anonymous_when_enforced",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_wopi.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_wopi.py::test_wopi_auth_gate_accepts_valid_token",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_wopi.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_wopi.py::test_wopi_auth_gate_rejects_bad_token",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_wopi.py"
+  },
+  {
+   "id": "opencloud-docserver/tests/test_wopi.py::test_wopi_auth_gate_off_by_default",
+   "label": "Test",
+   "layer": "e2e",
+   "path": "opencloud-docserver/tests/test_wopi.py"
+  },
+  {
    "id": "opencloud-docserver/tests/test_wopi_auth.py::test_token_from_query_string",
    "label": "Test",
    "layer": "e2e",
@@ -17735,11 +18309,11 @@
   }
  ],
  "stats": {
-  "commands": 68,
-  "edges": 1542,
+  "commands": 70,
+  "edges": 1632,
   "features": 102,
-  "surfaces": 68,
-  "tests": 1366
+  "surfaces": 70,
+  "tests": 1383
  },
  "version": 1
 }

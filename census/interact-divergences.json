@@ -10,6 +10,8 @@
   "insert-endnote": "same as endnote",
   "track-changes": "track changes is a ribbon toggle (aria-pressed), not a dialog; OO opens the review window",
   "trackchanges": "same as track-changes",
+  "backgroundplugins": "background plugin mode is a quiet ribbon toggle (aria-pressed + status), not a dialog; OO opens a plugin picker",
+  "bgplugins": "same as backgroundplugins",
   "displaymode": "display mode is a ribbon toggle; OO opens a settings window",
   "update-table": "rebuilds the TOC in place with no dialog; OO opens an update window",
   "dropcap": "drops the first character inline; OO opens a dialog",

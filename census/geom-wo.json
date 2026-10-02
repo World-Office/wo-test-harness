@@ -1,6 +1,6 @@
 {
  "engine": "world-office",
- "capturedAt": "2026-09-13T05:48:39.879Z",
+ "capturedAt": "2026-10-02T14:59:32.337Z",
  "viewport": {
   "width": 1440,
   "height": 900
@@ -670,6 +670,30 @@
      99,
      32
     ]
+   },
+   {
+    "key": "btn-group",
+    "label": "Group selected strokes",
+    "top": true,
+    "i": 7,
+    "rect": [
+     490.5,
+     81.5,
+     57,
+     32
+    ]
+   },
+   {
+    "key": "btn-mergeshapes",
+    "label": "Merge selected strokes into one",
+    "top": true,
+    "i": 8,
+    "rect": [
+     549.5,
+     81.5,
+     106.5,
+     32
+    ]
    }
   ],
   "Layout": [
@@ -755,6 +779,18 @@
      81.5,
      86,
      32
+    ]
+   },
+   {
+    "key": "themecolors",
+    "label": "Layout.Colors",
+    "top": true,
+    "i": 7,
+    "rect": [
+     532,
+     91.5,
+     86,
+     14
     ]
    }
   ],
@@ -1030,12 +1066,24 @@
     ]
    },
    {
-    "key": "btn-nav-toggle",
-    "label": "Navigation",
+    "key": "btn-view-formatmarks",
+    "label": "View.FormattingMarks",
     "top": true,
     "i": 3,
     "rect": [
      256.5,
+     81.5,
+     156,
+     32
+    ]
+   },
+   {
+    "key": "btn-nav-toggle",
+    "label": "Navigation",
+    "top": true,
+    "i": 4,
+    "rect": [
+     414.5,
      81.5,
      84,
      32
@@ -1045,9 +1093,9 @@
     "key": "btn-view-fullscreen",
     "label": "Fullscreen",
     "top": true,
-    "i": 4,
+    "i": 5,
     "rect": [
-     342.5,
+     501,
      81.5,
      82.5,
      32
@@ -1057,9 +1105,9 @@
     "key": "btn-view-theme",
     "label": "Theme",
     "top": true,
-    "i": 5,
+    "i": 6,
     "rect": [
-     427,
+     585.5,
      81.5,
      61.5,
      32
@@ -1069,9 +1117,9 @@
     "key": "btn-view-fit",
     "label": "Fit page",
     "top": true,
-    "i": 6,
+    "i": 7,
     "rect": [
-     491,
+     649,
      81.5,
      68.5,
      32
@@ -1104,12 +1152,24 @@
     ]
    },
    {
-    "key": "btn-ocr",
-    "label": "OCR",
+    "key": "btn-bgplugins",
+    "label": "Background plugins",
     "top": true,
     "i": 2,
     "rect": [
      246,
+     81.5,
+     141,
+     32
+    ]
+   },
+   {
+    "key": "btn-ocr",
+    "label": "OCR",
+    "top": true,
+    "i": 3,
+    "rect": [
+     389,
      81.5,
      49,
      32
@@ -1119,9 +1179,9 @@
     "key": "photoEditor",
     "label": "Photo editor",
     "top": true,
-    "i": 3,
+    "i": 4,
     "rect": [
-     297,
+     440,
      81.5,
      93.5,
      32
@@ -1390,6 +1450,15 @@
     880,
     7,
     9
+   ]
+  },
+  {
+   "key": "btn-multipage",
+   "rect": [
+    1398,
+    873.5,
+    24,
+    22
    ]
   }
  ]

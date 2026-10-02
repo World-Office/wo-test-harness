@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-09-19T16:57:00.711Z",
+ "capturedAt": "2026-10-02T14:59:46.980Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
@@ -2085,7 +2085,7 @@
      "id": "btn-multipage",
      "label": "Multiple pages view",
      "enabled": true,
-     "x": 1030
+     "x": 1398
     }
    ],
    "combos": []

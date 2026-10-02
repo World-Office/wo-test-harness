@@ -38,6 +38,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Resolve server rev pinned in Cargo.lock
+        id: rev
+        run: echo "rev=$(grep -o 'server.git?branch=main#[0-9a-f]*' Cargo.lock | head -1 | grep -o '[0-9a-f]\{40\}$')" >> "$GITHUB_OUTPUT"
+
+      - name: Clone server at the Cargo.lock-pinned renderer rev (OUTSIDE the workspace tree)
+        # cargo clones a git dep's SUBMODULES and the public server repo
+        # carries a private submodule (scripts/taskfleet) runners can't fetch;
+        # the cargo jobs clone the public repo instead of cargo's git fetch.
+        # Cloning to $RUNNER_TEMP (not $GITHUB_WORKSPACE) matters too: cargo
+        # ignores a NESTED [workspace] and would inherit `workspace = true`
+        # deps from the harness root, breaking wo-docx-renderer
+        # (pdf-writer not found).
+        env:
+          SERVER_REV: ${{ steps.rev.outputs.rev }}
+        run: |
+          git clone --quiet --depth 1 --branch main \
+            https://github.com/World-Office/server.git "$RUNNER_TEMP/server"
+          git -C "$RUNNER_TEMP/server" checkout --quiet "$SERVER_REV" 2>/dev/null || {
+            git -C "$RUNNER_TEMP/server" fetch --quiet --depth 1 origin "$SERVER_REV"
+            git -C "$RUNNER_TEMP/server" checkout --quiet FETCH_HEAD
+          }
+
+      - name: Point conformance-docx at the cloned crates
+        run: bash scripts/ci-server-path-deps.sh "$RUNNER_TEMP/server"
+
       - name: Install Rust (nightly)
         uses: dtolnay/rust-toolchain@nightly
 
@@ -120,6 +145,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Resolve server rev pinned in Cargo.lock
+        id: rev
+        run: echo "rev=$(grep -o 'server.git?branch=main#[0-9a-f]*' Cargo.lock | head -1 | grep -o '[0-9a-f]\{40\}$')" >> "$GITHUB_OUTPUT"
+
+      - name: Clone server at the Cargo.lock-pinned renderer rev (OUTSIDE the workspace tree)
+        # cargo clones a git dep's SUBMODULES and the public server repo
+        # carries a private submodule (scripts/taskfleet) runners can't fetch;
+        # the cargo jobs clone the public repo instead of cargo's git fetch.
+        # Cloning to $RUNNER_TEMP (not $GITHUB_WORKSPACE) matters too: cargo
+        # ignores a NESTED [workspace] and would inherit `workspace = true`
+        # deps from the harness root, breaking wo-docx-renderer
+        # (pdf-writer not found).
+        env:
+          SERVER_REV: ${{ steps.rev.outputs.rev }}
+        run: |
+          git clone --quiet --depth 1 --branch main \
+            https://github.com/World-Office/server.git "$RUNNER_TEMP/server"
+          git -C "$RUNNER_TEMP/server" checkout --quiet "$SERVER_REV" 2>/dev/null || {
+            git -C "$RUNNER_TEMP/server" fetch --quiet --depth 1 origin "$SERVER_REV"
+            git -C "$RUNNER_TEMP/server" checkout --quiet FETCH_HEAD
+          }
+
+      - name: Point conformance-docx at the cloned crates
+        run: bash scripts/ci-server-path-deps.sh "$RUNNER_TEMP/server"
+
       - name: Install Rust (nightly)
         uses: dtolnay/rust-toolchain@nightly
 
@@ -194,6 +244,25 @@ jobs:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     steps:
       - uses: actions/checkout@v4
+
+      - name: Resolve server rev pinned in Cargo.lock
+        id: rev
+        run: echo "rev=$(grep -o 'server.git?branch=main#[0-9a-f]*' Cargo.lock | head -1 | grep -o '[0-9a-f]\{40\}$')" >> "$GITHUB_OUTPUT"
+
+      - name: Clone server at the Cargo.lock-pinned rev (OUTSIDE the workspace tree)
+        # Same submodule / nested-workspace reasons as unit-tests: cargo
+        # fetches a git dep's SUBMODULES (private scripts/taskfleet), and a
+        # checkout inside the workspace breaks inherited deps.
+        env:
+          SERVER_REV: ${{ steps.rev.outputs.rev }}
+        run: |
+          git clone --quiet --depth 1 --branch main \
+            https://github.com/World-Office/server.git "$RUNNER_TEMP/server"
+          git -C "$RUNNER_TEMP/server" checkout --quiet "$SERVER_REV" 2>/dev/null || {
+            git -C "$RUNNER_TEMP/server" fetch --quiet --depth 1 origin "$SERVER_REV"
+            git -C "$RUNNER_TEMP/server" checkout --quiet FETCH_HEAD
+          }
+          bash scripts/ci-server-path-deps.sh "$RUNNER_TEMP/server"
 
       - name: Install Rust (nightly)
         uses: dtolnay/rust-toolchain@nightly
