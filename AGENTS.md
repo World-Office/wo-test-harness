@@ -176,20 +176,33 @@ wo-test-harness/
   `de-file-menu-panel`) — so the "prod ships the React editor" claim above is
   stale for word/docx until the React build replaces the vanilla one in the
   image. `fx-prod.cjs` measures whatever is really serving docx today.
-- **Editor iframe refused by X-Frame-Options DENY (open-in-OpenCloud blocker).**
-  Opening a doc in the OpenCloud Web UI frames `editor.cloud.graphwiz.ai`, which
-  sent `X-Frame-Options: DENY` + CSP `frame-ancestors 'self'` → browser refuses.
-  Verified 2026-10-02 on VPS `tobias-weiss.org` (192.168.42.1): the direct
-  backend `192.168.42.42:8082/word/` returns 200 with NO XFO/CSP (docserver is
-  clean), but the public (through-traefik) path adds DENY+CSP. The VPS file
-  router `editor-cloud-graphwiz-ai` has NO middlewares and the VPS static
-  traefik.yml does NOT even define `security-headers`, and no docker-label
-  router matches editor.cloud — so the header is injected by something else on
-  the public edge (likely a second proxy or OpenCloud's own frontend on the
-  routed service), NOT the editor router's middlewares. Correct fix (editor
-  host ONLY, never global): `customFrameOptionsValue: "SAMEORIGIN"` + CSP
-  `frame-ancestors 'self' https://cloud.graphwiz.ai` so OpenCloud may frame it
-  while OpenCloud itself stays non-frameable. The other two console errors
+- **Editor iframe refused by X-Frame-Options DENY — RESOLVED 2026-10-03.**
+  Opening a doc in the OpenCloud Web UI refused to frame `editor.cloud.graphwiz.ai`
+  (`X-Frame-Options: DENY` + CSP `frame-ancestors 'self'`) — every office editor
+  (word/sheet/slide/vsdx) was unopenable from the shell, probes silently read
+  `no-editor-iframe`, and this was NOT a port gap. Root cause (confirmed on the
+  live public edge, DNS = 195.90.216.159 / contextual VPS): traefik's
+  `security-headers` middleware (file provider `dynamic/routers.yml`) set
+  `frameDeny: true` on all three `editor-cloud*` routers, AND the `editor-cloud`
+  root router pointed `editor.cloud.graphwiz.ai/editors/*` at service `opencloud`
+  (:9200 OpenCloud web SPA) instead of `docserver-wopi` (:8082) — so the WOPI
+  hosting handler's `window.location.replace('/editors/spreadsheet/')` landed on
+  OpenCloud's own SPA with its own blocking CSP. (The 2026-10-02 "something else
+  on the public edge" attribution was WRONG — the injector WAS the editor
+  router's middleware; that note was written against the old tobias-weiss VPS.)
+  FIX, applied in `/root/git/docker-traefik/dynamic/routers.yml` on 195.90.216.159
+  (backups `routers.yml.bak.iframe-fix-*` / `.bak.editor-route-*`): new
+  `editor-security-headers` middleware (same as `security-headers` minus
+  `frameDeny`, plus `contentSecurityPolicy: frame-ancestors 'self'
+  https://cloud.graphwiz.ai`) wired into `editor-cloud`, `editor-cloud-http` and
+  `editor-cloud-hosting`; the two root routers now target service `docserver-wopi`.
+  Do NOT use `customFrameOptionsValue: SAMEORIGIN` — the framer
+  (cloud.graphwiz.ai) is a DIFFERENT origin; SAMEORIGIN would still refuse it;
+  CSP `frame-ancestors` is the standard. Re-verified all 4 editors inside the
+  shell iframe 2026-10-03 (nonword-probe: sheet/slide/vsdx editorFrame:true,
+  loads:1, 0 pageerrors; pdf native). Note: the OpenCloud web backend (:9200)
+  ALWAYS sends its own CSP/XFO on its SPA responses — only relevant while an
+  editor.cloud route still points at `opencloud`. The other two console errors
   (TypeError `current_version` in `src-Dj691hj2.mjs`; 404
   `/graph/v1.0/users/<id>/photo/$value`) are OpenCloud-internal, not WO.
 - **Non-word editors — port status (2026-xx, T-002/T-003/T-007).** Verified via
