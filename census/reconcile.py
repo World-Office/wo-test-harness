@@ -530,6 +530,12 @@ def run_visual(server: Path, out: Path) -> int:
                      "--wo", str(png), "--gold", str(gold)], cwd=HERE)
                 if r.returncode != 0:
                     rc = 1
+                    # Advisory vision escalation on FAIL (SOTA two-stage pattern):
+                    # classifies real-broken vs cross-engine cosmetics. Never
+                    # gate-changing; loud SKIPPED line when no vision API key.
+                    subprocess.run(
+                        [_py_with_pil(server), "visual-triage.py",
+                         "--wo", str(png), "--gold", str(gold)], cwd=HERE)
         finally:
             proc.terminate()
             try:

@@ -56,7 +56,7 @@ def main() -> int:
     ap.add_argument("--width", type=int, default=900, help="common comparison width")
     ap.add_argument("--thresh", type=int, default=40, help="pixel diff threshold (0-255)")
     ap.add_argument("--gate", type=float, default=None,
-                    help="override gate %% (default: recorded baseline + %.0f)" % BASELINE_SLACK)
+                    help=f"override gate %% (default: recorded baseline + {BASELINE_SLACK:.0f})")
     a = ap.parse_args()
 
     wo_p, gold_p = Path(a.wo), Path(a.gold)

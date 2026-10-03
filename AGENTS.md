@@ -48,6 +48,7 @@ wo-test-harness/
   the register said parity: full and the inter census proved real modals).
   When a feature lands, promote its MAP row to `{"real": ...}`; the gate
   tells you which rows to promote and to what key.
+- **Visual triage (vision-LLM escalation, advisory)** — `census/visual-triage.py`. Adapted from the SOTA two-stage verification pattern in AI software-cloning pipelines (ui-clone-skills Phase E, sdet.qa multimodal rubric): `pixel-diff.py` stays the ONLY gate; on FAIL, `reconcile.py --visual` fires a vision-model triage that classifies the mismatch as a real broken render (blank/garbled/collapsed/clipped/misrender, closed rubric, JSON-only, temperature 0) vs cross-engine cosmetics (AA/fonts/margins — explicitly ignored). Advisory ONLY: never changes exit codes, never approves baselines; no key → loud `SKIPPED` line, CI unchanged. Provider: any OpenAI-compatible endpoint, resolved from `VISION_API_KEY`/`VISION_API_BASE`/`VISION_MODEL` else OPENROUTER/GROQ/GOOGLE keys. Live-verified: black-box-over-text → `broken=true, high, defect located`; blur+1px → `broken=false`. Standalone: `python3 visual-triage.py --wo x.png --gold y.png [--out v.json]`; offline plumbing check: `--self-test`.
 - **Interaction dimension** — the structural census proves buttons EXIST
   but never clicks one, so "weird overlays / missing dialogs" were invisible
   to it. `interact-wo.cjs` (WO click-through: click every ribbon button,
