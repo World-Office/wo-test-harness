@@ -109,6 +109,18 @@ jobs:
           repository: World-Office/server
           path: server
 
+      - name: Install Rust (nightly)
+        uses: dtolnay/rust-toolchain@nightly
+
+      - name: Rust cache
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: server
+
+      - name: Build wo-docserver (rust mode is the reconcile default)
+        run: cargo build -p wo-docserver
+        working-directory: server
+
       - name: Install docserver dependencies (no docker — reconcile spawns uvicorn locally)
         run: python3 -m pip install --break-system-packages \
           fastapi 'uvicorn[standard]>=0.30' 'python-docx>=1.1' \

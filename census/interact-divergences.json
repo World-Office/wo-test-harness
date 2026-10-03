@@ -1,15 +1,5 @@
 {
   "_comment": "Interaction-shape divergences, declared deliberately (loud, not silent — same doctrine as the register's deferred rows). Each token keys an OO control that opens a modal/menu while WO acts directly with no surface. These are intentional: WO's direct action (insert-at-caret, toggle, inline marker) is the chosen UX, not a missing dialog. Verified 2026-09-12 against OO 8-x rig + WO @ebbb4c15a..",
-  "header-footer": "button enters header/footer editing mode directly; OO opens a settings window first",
-  "edit-header-footer": "same as header-footer",
-  "pagenumber": "page-number field inserted at caret directly (Word/Google Docs behaviour); OO opens a dialog",
-  "insert-page-number": "same as pagenumber",
-  "footnote": "footnote marker inserted at caret directly; OO opens an options window",
-  "insert-footnote": "same as footnote",
-  "endnote": "endnote marker inserted at caret directly; OO opens an options window",
-  "insert-endnote": "same as endnote",
-  "track-changes": "track changes is a ribbon toggle (aria-pressed), not a dialog; OO opens the review window",
-  "trackchanges": "same as track-changes",
   "backgroundplugins": "background plugin mode is a quiet ribbon toggle (aria-pressed + status), not a dialog; OO opens a plugin picker",
   "bgplugins": "same as backgroundplugins",
   "displaymode": "display mode is a ribbon toggle; OO opens a settings window",
@@ -23,5 +13,13 @@
   "insert-image": "image insertion is the anchored popover on every tab; OO uses a modal only from header/footer context",
   "image": "same as insert-image",
   "asc-gen673": "OO header/footer 'Close' opens a confirm; WO exits header mode directly",
-  "close": "same as asc-gen673"
+  "close": "same as asc-gen673",
+  "smartart": "WO opens the SmartArt dialog directly; OO first opens a type-picker menu (verified 2026-10-03, interact census dropdown pass)",
+  "text-fromfile": "WO triggers a native file picker (hidden input) then imports (docx via /api/documents import); no DOM modal — verified wired editor.js:6213",
+  "pagecolor": "WO uses native <input type=color>; OO opens a palette modal",
+  "colors": "WO uses a native <select> of themes; OO opens a palette modal",
+  "add-text": "WO toggles the add-text mask on the selection directly (status message); OO opens an options window — verified wired editor.js:6304",
+  "mailmerge": "WO triggers a native CSV file picker then loads headers/rows; no DOM modal — verified wired editor.js:6246",
+  "speech": "WO read-aloud is a direct TTS action with a control surface; OO opens a modal",
+  "speechinput": "WO dictate is a direct STT action (Web Speech API); OO opens a modal"
 }

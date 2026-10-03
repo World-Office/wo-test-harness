@@ -1,0 +1,30 @@
+{
+  "rust": {
+    "mode": "rust",
+    "rss_hwm_mb": 10.9,
+    "endpoint_p50_ms": {
+      "health": 0.2,
+      "editor_html": 0.3,
+      "doc_bytes": 0.4
+    },
+    "conversion_p50_ms": 0.3,
+    "cold_boot_p50_ms": 6
+  },
+  "python": {
+    "mode": "python",
+    "rss_hwm_mb": 90.2,
+    "endpoint_p50_ms": {
+      "health": 0.5,
+      "editor_html": 0.7,
+      "doc_bytes": 0.4
+    },
+    "conversion_p50_ms": 9.1,
+    "cold_boot_p50_ms": 490
+  },
+  "footprint": {
+    "rust_binary_mb": 11.0,
+    "rust_binary_flavor": "release",
+    "python_venv_mb": 416.7,
+    "python_site_packages": 72
+  }
+}

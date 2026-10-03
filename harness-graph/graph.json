@@ -8161,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-02T14:22:41+00:00",
+ "generated_at": "2026-10-03T20:03:12+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -17660,6 +17660,11 @@
    "parity": "full"
   },
   {
+   "id": "F-073:verbatim-roundtrip",
+   "justification": "Insert dialog (type + number format, marker 1/a/i) inserts the citation + note span; wo-ooxml round-trips word/footnotes.xml VERBATIM (DocxBody.footnotes_raw + DocxRun.footnote_rid) so files never corrupt, but footnote body editing/renumbering/multi-note ordering is not modeled - XL structural model.",
+   "label": "Divergence"
+  },
+  {
    "area": "insert",
    "fidelity": "L1",
    "id": "F-074",
@@ -17769,6 +17774,11 @@
    "label": "Feature",
    "name": "Page numbers",
    "parity": "full"
+  },
+  {
+   "id": "F-085:dialog-plus-routing",
+   "justification": "Page-number dialog (position top/at-cursor/bottom, alignment L/C/R) routes the span into the header/footer element or the body with text-align; fldSimple PAGE round-trips verbatim (DocxParagraph.raw_flds). Rendered page-number VALUE still comes from the editor span, not a layout engine - L2.",
+   "label": "Divergence"
   },
   {
    "area": "insert",
@@ -18306,12 +18316,51 @@
    "id": "F-144:live-affordance",
    "justification": "toggleSameAsPrev flips data-same-prev on the live <header> (documented single-section affordance). A single-section document has no previous section to inherit, so serialization is a no-op: per-section header linkage (omitted w:headerReference) is a future iteration with the multi-section header model.",
    "label": "Divergence"
+  },
+  {
+   "area": "insert",
+   "fidelity": "L1",
+   "id": "F-145",
+   "label": "Feature",
+   "name": "Content controls (SDT)",
+   "parity": "full"
+  },
+  {
+   "id": "F-145:marker-box",
+   "justification": "Insert > Content control dialog (plain/rich/dropdown + title) inserts span.content-control[data-cc] with contenteditable=false. Round-trips as a marker box, NOT as OOXML w:sdt structured document tags (date-picker/list-item XML data binding not modeled) - XL SDT model in wo-ooxml.",
+   "label": "Divergence"
+  },
+  {
+   "area": "protection",
+   "fidelity": "L1",
+   "id": "F-146",
+   "label": "Feature",
+   "name": "Allow edit ranges",
+   "parity": "missing"
+  },
+  {
+   "id": "F-146:range-model",
+   "justification": "OO Protection > Allow edit ranges (everyone/groups per named range) has NO WO surface: protection is whole-document (protect-dialog -> w:documentProtection password/restrict). Needs a range model + per-range exemptions - XL, depends on multi-section work (cf F-144 same-as-previous note).",
+   "label": "Divergence"
+  },
+  {
+   "area": "plugins",
+   "fidelity": "L4",
+   "id": "F-147",
+   "label": "Feature",
+   "name": "Background plugins",
+   "parity": "full"
+  },
+  {
+   "id": "F-147:quiet-toggle",
+   "justification": "Plugins > Background plugins is a quiet ribbon toggle (aria-pressed + status count) that lets plugins run without a foreground panel; OO opens a plugin manager dialog first. Mode-level feature (L4): interaction shape declared in interact-divergences.json (backgroundplugins/bgplugins).",
+   "label": "Divergence"
   }
  ],
  "stats": {
   "commands": 70,
   "edges": 1632,
-  "features": 102,
+  "features": 105,
   "surfaces": 70,
   "tests": 1383
  },

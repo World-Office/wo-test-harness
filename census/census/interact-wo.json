@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-09-16T16:23:27.913Z",
+ "capturedAt": "2026-10-03T19:50:08.612Z",
  "viewport": "1440x900",
  "interactions": [
   {
@@ -188,7 +188,7 @@
    "id": null,
    "cmd": "code",
    "label": "</>",
-   "x": 615,
+   "x": 614,
    "y": 104,
    "opens": "none"
   },
@@ -231,6 +231,30 @@
    "opens": "none"
   },
   {
+   "tab": "home",
+   "kind": "select",
+   "id": "font-family",
+   "cmd": null,
+   "label": "font-family",
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "kind": "select",
+   "id": "font-size",
+   "cmd": null,
+   "label": "font-size",
+   "opens": "none"
+  },
+  {
+   "tab": "home",
+   "kind": "select",
+   "id": "line-spacing",
+   "cmd": null,
+   "label": "line-spacing",
+   "opens": "none"
+  },
+  {
    "tab": "insert",
    "id": "btn-table",
    "cmd": null,
@@ -243,7 +267,7 @@
     "x": 12,
     "y": 120,
     "w": 236,
-    "h": 173
+    "h": 170
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -260,10 +284,10 @@
    "opens": "modal",
    "surface_id": "table-ops-dialog",
    "box": {
-    "x": 583,
-    "y": 306,
-    "w": 273,
-    "h": 288
+    "x": 572,
+    "y": 308,
+    "w": 296,
+    "h": 284
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -275,15 +299,15 @@
    "id": "btn-image",
    "cmd": null,
    "label": "Insert image",
-   "x": 94,
+   "x": 93,
    "y": 82,
    "opens": "menu",
    "surface_id": "image-dialog",
    "box": {
-    "x": 94,
+    "x": 93,
     "y": 120,
     "w": 300,
-    "h": 203
+    "h": 196
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -295,15 +319,15 @@
    "id": "btn-link",
    "cmd": null,
    "label": "Insert link",
-   "x": 130,
+   "x": 129,
    "y": 82,
    "opens": "modal",
    "surface_id": "link-dialog",
    "box": {
     "x": 590,
-    "y": 373,
+    "y": 374,
     "w": 260,
-    "h": 154
+    "h": 152
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -315,7 +339,7 @@
    "id": "btn-hr",
    "cmd": null,
    "label": "─",
-   "x": 166,
+   "x": 165,
    "y": 82,
    "opens": "none"
   },
@@ -324,15 +348,15 @@
    "id": "btn-object",
    "cmd": null,
    "label": "▢",
-   "x": 202,
+   "x": 201,
    "y": 82,
    "opens": "modal",
    "surface_id": "object-dialog",
    "box": {
-    "x": 582,
-    "y": 328,
-    "w": 276,
-    "h": 244
+    "x": 572,
+    "y": 329,
+    "w": 296,
+    "h": 242
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -344,15 +368,15 @@
    "id": "btn-bookmark",
    "cmd": null,
    "label": "Insert bookmark",
-   "x": 238,
+   "x": 237,
    "y": 82,
    "opens": "modal",
    "surface_id": "bookmark-dialog",
    "box": {
     "x": 590,
-    "y": 373,
+    "y": 374,
     "w": 260,
-    "h": 154
+    "h": 152
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -364,15 +388,15 @@
    "id": "btn-crossref",
    "cmd": null,
    "label": "Insert cross-reference",
-   "x": 274,
+   "x": 273,
    "y": 82,
    "opens": "modal",
    "surface_id": "crossref-dialog",
    "box": {
-    "x": 572,
-    "y": 359,
-    "w": 296,
-    "h": 183
+    "x": 566,
+    "y": 360,
+    "w": 309,
+    "h": 181
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -384,15 +408,15 @@
    "id": "btn-symbol",
    "cmd": null,
    "label": "Ω",
-   "x": 310,
+   "x": 309,
    "y": 82,
    "opens": "modal",
    "surface_id": "symbol-dialog",
    "box": {
-    "x": 590,
-    "y": 272,
-    "w": 260,
-    "h": 355
+    "x": 581,
+    "y": 273,
+    "w": 278,
+    "h": 353
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -404,7 +428,7 @@
    "id": "btn-datetime",
    "cmd": null,
    "label": "Insert date",
-   "x": 346,
+   "x": 345,
    "y": 82,
    "opens": "none"
   },
@@ -413,42 +437,75 @@
    "id": "btn-pagenumber",
    "cmd": null,
    "label": "#",
-   "x": 382,
+   "x": 381,
    "y": 82,
-   "opens": "none"
+   "opens": "modal",
+   "surface_id": "pagenumber-dialog",
+   "box": {
+    "x": 584,
+    "y": 365,
+    "w": 273,
+    "h": 170
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 4
   },
   {
    "tab": "insert",
    "id": "btn-header",
    "cmd": null,
    "label": "▔",
-   "x": 418,
+   "x": 417,
    "y": 82,
-   "opens": "none"
+   "opens": "modal",
+   "surface_id": "headerfooter-dialog",
+   "box": {
+    "x": 563,
+    "y": 351,
+    "w": 313,
+    "h": 198
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 4
   },
   {
    "tab": "insert",
    "id": "btn-footer",
    "cmd": null,
    "label": "▁",
-   "x": 454,
+   "x": 453,
    "y": 82,
-   "opens": "none"
+   "opens": "modal",
+   "surface_id": "headerfooter-dialog",
+   "box": {
+    "x": 563,
+    "y": 351,
+    "w": 313,
+    "h": 198
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 4
   },
   {
    "tab": "insert",
    "id": null,
    "cmd": "insertObject",
    "label": "Shape",
-   "x": 490,
+   "x": 489,
    "y": 82,
    "opens": "modal",
    "surface_id": "object-dialog",
    "box": {
-    "x": 582,
-    "y": 328,
-    "w": 276,
-    "h": 244
+    "x": 572,
+    "y": 329,
+    "w": 296,
+    "h": 242
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -475,9 +532,164 @@
    "surface_id": "link-dialog",
    "box": {
     "x": 590,
-    "y": 373,
+    "y": 374,
     "w": 260,
-    "h": 154
+    "h": 152
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 3
+  },
+  {
+   "tab": "insert",
+   "id": "btn-insert-more",
+   "cmd": null,
+   "label": "Insert tools",
+   "x": 510,
+   "y": 434,
+   "opens": "menu",
+   "surface_id": null,
+   "box": {
+    "x": 510,
+    "y": 470,
+    "w": 150,
+    "h": 266
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 8
+  },
+  {
+   "tab": "insert",
+   "menu": "btn-insert-more",
+   "id": "btn-textfile",
+   "cmd": null,
+   "label": "Text from file…",
+   "x": 511,
+   "y": 475,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "menu": "btn-insert-more",
+   "id": "btn-mailmerge",
+   "cmd": null,
+   "label": "Mail merge…",
+   "x": 511,
+   "y": 507,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "menu": "btn-insert-more",
+   "id": "btn-addtext",
+   "cmd": null,
+   "label": "Add text",
+   "x": 511,
+   "y": 539,
+   "opens": "none"
+  },
+  {
+   "tab": "insert",
+   "menu": "btn-insert-more",
+   "id": "btn-field",
+   "cmd": null,
+   "label": "Field…",
+   "x": 511,
+   "y": 571,
+   "opens": "modal",
+   "surface_id": "field-dialog",
+   "box": {
+    "x": 534,
+    "y": 368,
+    "w": 372,
+    "h": 165
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 3
+  },
+  {
+   "tab": "insert",
+   "menu": "btn-insert-more",
+   "id": "btn-contentcontrol",
+   "cmd": null,
+   "label": "Content control…",
+   "x": 511,
+   "y": 603,
+   "opens": "modal",
+   "surface_id": "cc-dialog",
+   "box": {
+    "x": 590,
+    "y": 360,
+    "w": 260,
+    "h": 181
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 4
+  },
+  {
+   "tab": "insert",
+   "menu": "btn-insert-more",
+   "id": "btn-chart",
+   "cmd": null,
+   "label": "Chart editor…",
+   "x": 511,
+   "y": 635,
+   "opens": "modal",
+   "surface_id": "chart-dialog",
+   "box": {
+    "x": 396,
+    "y": 168,
+    "w": 649,
+    "h": 564
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 12
+  },
+  {
+   "tab": "insert",
+   "menu": "btn-insert-more",
+   "id": "btn-equation",
+   "cmd": null,
+   "label": "Equation…",
+   "x": 511,
+   "y": 667,
+   "opens": "modal",
+   "surface_id": "equation-dialog",
+   "box": {
+    "x": 422,
+    "y": 320,
+    "w": 596,
+    "h": 261
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 2
+  },
+  {
+   "tab": "insert",
+   "menu": "btn-insert-more",
+   "id": "btn-smartart",
+   "cmd": null,
+   "label": "SmartArt…",
+   "x": 511,
+   "y": 699,
+   "opens": "modal",
+   "surface_id": "smartart-dialog",
+   "box": {
+    "x": 453,
+    "y": 274,
+    "w": 535,
+    "h": 353
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -530,6 +742,24 @@
    "opens": "none"
   },
   {
+   "tab": "draw",
+   "id": "btn-group",
+   "cmd": null,
+   "label": "Group",
+   "x": 491,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "draw",
+   "id": "btn-mergeshapes",
+   "cmd": null,
+   "label": "Merge shapes",
+   "x": 549,
+   "y": 82,
+   "opens": "none"
+  },
+  {
    "tab": "layout",
    "id": "btn-page-break",
    "cmd": null,
@@ -558,9 +788,9 @@
    "surface_id": "columns-dialog",
    "box": {
     "x": 590,
-    "y": 353,
+    "y": 354,
     "w": 260,
-    "h": 194
+    "h": 192
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -577,10 +807,10 @@
    "opens": "modal",
    "surface_id": "page-setup-dialog",
    "box": {
-    "x": 491,
-    "y": 301,
-    "w": 458,
-    "h": 298
+    "x": 479,
+    "y": 304,
+    "w": 481,
+    "h": 292
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -615,6 +845,22 @@
    "opens": "none"
   },
   {
+   "tab": "layout",
+   "kind": "input",
+   "id": "pagecolor",
+   "cmd": null,
+   "label": "pagecolor",
+   "opens": "none"
+  },
+  {
+   "tab": "layout",
+   "kind": "select",
+   "id": "themecolors",
+   "cmd": null,
+   "label": "themecolors",
+   "opens": "none"
+  },
+  {
    "tab": "references",
    "id": "btn-toc",
    "cmd": null,
@@ -625,9 +871,9 @@
    "surface_id": "toc-dialog",
    "box": {
     "x": 590,
-    "y": 373,
+    "y": 374,
     "w": 260,
-    "h": 154
+    "h": 152
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -641,7 +887,18 @@
    "label": "¹",
    "x": 48,
    "y": 82,
-   "opens": "none"
+   "opens": "modal",
+   "surface_id": "notes-dialog",
+   "box": {
+    "x": 590,
+    "y": 365,
+    "w": 260,
+    "h": 170
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 4
   },
   {
    "tab": "references",
@@ -650,7 +907,18 @@
    "label": "ⁿ",
    "x": 84,
    "y": 82,
-   "opens": "none"
+   "opens": "modal",
+   "surface_id": "notes-dialog",
+   "box": {
+    "x": 590,
+    "y": 365,
+    "w": 260,
+    "h": 170
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 4
   },
   {
    "tab": "references",
@@ -698,10 +966,10 @@
    "opens": "modal",
    "surface_id": "crossref-dialog",
    "box": {
-    "x": 572,
-    "y": 359,
-    "w": 296,
-    "h": 183
+    "x": 566,
+    "y": 360,
+    "w": 309,
+    "h": 181
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -715,7 +983,18 @@
    "label": "✎",
    "x": 12,
    "y": 82,
-   "opens": "none"
+   "opens": "modal",
+   "surface_id": "trackchanges-dialog",
+   "box": {
+    "x": 553,
+    "y": 371,
+    "w": 333,
+    "h": 158
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 3
   },
   {
    "tab": "collaboration",
@@ -747,10 +1026,10 @@
    "opens": "modal",
    "surface_id": "comment-dialog",
    "box": {
-    "x": 577,
-    "y": 363,
-    "w": 287,
-    "h": 175
+    "x": 566,
+    "y": 364,
+    "w": 308,
+    "h": 173
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -807,15 +1086,15 @@
    "opens": "modal",
    "surface_id": "version-history-dialog",
    "box": {
-    "x": 563,
-    "y": 372,
-    "w": 315,
-    "h": 157
+    "x": 502,
+    "y": 376,
+    "w": 436,
+    "h": 149
    },
    "inside_vp": true,
    "clipped_x": false,
    "clipped_y": false,
-   "controls": 2
+   "controls": 1
   },
   {
    "tab": "collaboration",
@@ -854,10 +1133,10 @@
    "opens": "modal",
    "surface_id": "protect-dialog",
    "box": {
-    "x": 561,
-    "y": 260,
-    "w": 318,
-    "h": 381
+    "x": 541,
+    "y": 265,
+    "w": 358,
+    "h": 371
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -902,10 +1181,19 @@
   },
   {
    "tab": "view",
+   "id": "btn-view-formatmarks",
+   "cmd": null,
+   "label": "View.FormattingMarks",
+   "x": 256,
+   "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
    "id": "btn-nav-toggle",
    "cmd": "toggleNavigation",
    "label": "Navigation",
-   "x": 256,
+   "x": 415,
    "y": 82,
    "opens": "panel",
    "surface_id": "nav-panel",
@@ -925,7 +1213,7 @@
    "id": "btn-view-fullscreen",
    "cmd": null,
    "label": "Fullscreen",
-   "x": 343,
+   "x": 501,
    "y": 82,
    "opens": "none"
   },
@@ -934,7 +1222,7 @@
    "id": "btn-view-theme",
    "cmd": null,
    "label": "Theme",
-   "x": 427,
+   "x": 585,
    "y": 82,
    "opens": "none"
   },
@@ -943,8 +1231,59 @@
    "id": "btn-view-fit",
    "cmd": null,
    "label": "Fit page",
-   "x": 491,
+   "x": 649,
    "y": 82,
+   "opens": "none"
+  },
+  {
+   "tab": "view",
+   "id": "btn-speech",
+   "cmd": null,
+   "label": "Speech",
+   "x": 873,
+   "y": 434,
+   "opens": "menu",
+   "surface_id": null,
+   "box": {
+    "x": 873,
+    "y": 470,
+    "w": 150,
+    "h": 74
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 2
+  },
+  {
+   "tab": "view",
+   "menu": "btn-speech",
+   "id": "btn-readaloud",
+   "cmd": "readAloud",
+   "label": "Read aloud",
+   "x": 874,
+   "y": 475,
+   "opens": "menu",
+   "surface_id": null,
+   "box": {
+    "x": 873,
+    "y": 470,
+    "w": 150,
+    "h": 74
+   },
+   "inside_vp": true,
+   "clipped_x": false,
+   "clipped_y": false,
+   "controls": 2
+  },
+  {
+   "tab": "view",
+   "menu": "btn-speech",
+   "id": "btn-dictate",
+   "cmd": "dictate",
+   "label": "Dictate…",
+   "x": 874,
+   "y": 507,
    "opens": "none"
   },
   {
@@ -957,15 +1296,15 @@
    "opens": "modal",
    "surface_id": "plugins-dialog",
    "box": {
-    "x": 480,
-    "y": 308,
-    "w": 480,
-    "h": 285
+    "x": 540,
+    "y": 367,
+    "w": 360,
+    "h": 167
    },
    "inside_vp": true,
    "clipped_x": false,
    "clipped_y": false,
-   "controls": 3
+   "controls": 1
   },
   {
    "tab": "plugins",
@@ -977,30 +1316,39 @@
    "opens": "modal",
    "surface_id": "plugins-dialog",
    "box": {
-    "x": 480,
-    "y": 282,
-    "w": 480,
-    "h": 337
+    "x": 540,
+    "y": 367,
+    "w": 360,
+    "h": 167
    },
    "inside_vp": true,
    "clipped_x": false,
    "clipped_y": false,
-   "controls": 5
+   "controls": 1
+  },
+  {
+   "tab": "plugins",
+   "id": "btn-bgplugins",
+   "cmd": null,
+   "label": "Background plugins",
+   "x": 246,
+   "y": 82,
+   "opens": "none"
   },
   {
    "tab": "plugins",
    "id": "btn-ocr",
    "cmd": "ocrRun",
    "label": "OCR",
-   "x": 246,
+   "x": 389,
    "y": 82,
    "opens": "modal",
    "surface_id": "ai-propose-dialog",
    "box": {
-    "x": 574,
-    "y": 363,
-    "w": 291,
-    "h": 175
+    "x": 563,
+    "y": 364,
+    "w": 314,
+    "h": 173
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -1012,15 +1360,15 @@
    "id": null,
    "cmd": "photoEditor",
    "label": "Photo editor",
-   "x": 297,
+   "x": 440,
    "y": 82,
    "opens": "modal",
    "surface_id": "photo-editor-dialog",
    "box": {
     "x": 380,
-    "y": 123,
+    "y": 124,
     "w": 680,
-    "h": 654
+    "h": 652
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -1037,10 +1385,10 @@
    "opens": "modal",
    "surface_id": "ai-review-dialog",
    "box": {
-    "x": 590,
-    "y": 374,
-    "w": 260,
-    "h": 153
+    "x": 462,
+    "y": 377,
+    "w": 517,
+    "h": 147
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -1057,10 +1405,10 @@
    "opens": "modal",
    "surface_id": "ai-propose-dialog",
    "box": {
-    "x": 574,
-    "y": 363,
-    "w": 291,
-    "h": 175
+    "x": 563,
+    "y": 364,
+    "w": 314,
+    "h": 173
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -1077,10 +1425,10 @@
    "opens": "modal",
    "surface_id": "ai-propose-dialog",
    "box": {
-    "x": 574,
-    "y": 363,
-    "w": 291,
-    "h": 175
+    "x": 563,
+    "y": 364,
+    "w": 314,
+    "h": 173
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -1097,10 +1445,10 @@
    "opens": "modal",
    "surface_id": "ai-propose-dialog",
    "box": {
-    "x": 574,
-    "y": 363,
-    "w": 291,
-    "h": 175
+    "x": 563,
+    "y": 364,
+    "w": 314,
+    "h": 173
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -1117,10 +1465,10 @@
    "opens": "modal",
    "surface_id": "ai-propose-dialog",
    "box": {
-    "x": 574,
-    "y": 363,
-    "w": 291,
-    "h": 175
+    "x": 563,
+    "y": 364,
+    "w": 314,
+    "h": 173
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -1137,10 +1485,10 @@
    "opens": "modal",
    "surface_id": "ai-propose-dialog",
    "box": {
-    "x": 574,
-    "y": 363,
-    "w": 291,
-    "h": 175
+    "x": 563,
+    "y": 364,
+    "w": 314,
+    "h": 173
    },
    "inside_vp": true,
    "clipped_x": false,
@@ -1259,6 +1607,41 @@
    "id": null,
    "cmd": null,
    "label": "AI changes…",
+   "opens": "none"
+  },
+  {
+   "tab": "menu-file",
+   "id": null,
+   "cmd": null,
+   "label": "Info…",
+   "opens": "none"
+  },
+  {
+   "tab": "menu-file",
+   "id": null,
+   "cmd": null,
+   "label": "Protect document…",
+   "opens": "none"
+  },
+  {
+   "tab": "menu-file",
+   "id": null,
+   "cmd": null,
+   "label": "Settings…",
+   "opens": "none"
+  },
+  {
+   "tab": "menu-file",
+   "id": null,
+   "cmd": null,
+   "label": "Help &amp; about",
+   "opens": "none"
+  },
+  {
+   "tab": "menu-file",
+   "id": null,
+   "cmd": null,
+   "label": "Suggest a feature…",
    "opens": "none"
   }
  ]

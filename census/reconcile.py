@@ -99,8 +99,63 @@ def _wait_health(base: str, timeout: float = 30.0) -> None:
     raise RuntimeError(f"docserver did not become healthy at {base}")
 
 
-def spawn_docserver(server: Path, workdir: Path):
-    """Start uvicorn(create_app) on a free port; return (port, proc)."""
+def _kill(procs: list) -> None:
+    for p in procs:
+        p.terminate()
+        try:
+            p.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            p.kill()
+
+
+def _rust_binary(server: Path) -> Path:
+    """Locate (or build) the wo-docserver binary in the server checkout."""
+    for profile in ("debug", "release"):
+        p = server / "target" / profile / "wo-docserver"
+        if p.exists():
+            return p
+    print("      cargo build -p wo-docserver (first rust-mode run) …", flush=True)
+    subprocess.run(["cargo", "build", "-p", "wo-docserver"], cwd=server, check=True)
+    return server / "target" / "debug" / "wo-docserver"
+
+
+def _spawn_rust(server: Path, workdir: Path):
+    """Boot wo-docserver + a stub WOPI host (OCIS stand-in); return (base, procs)."""
+    docs = workdir / "docs"
+    (docs).mkdir(parents=True, exist_ok=True)
+    (workdir / "data").mkdir(exist_ok=True)
+    ui = workdir / "editor-ui" / "word"
+    shutil.copytree(server / "apps" / "web" / "apps" / "documenteditor-wysiwyg", ui,
+                    dirs_exist_ok=True)
+    if not (docs / "demo.docx").exists():
+        shutil.copy(HERE / "rig" / "demo.docx", docs / "demo.docx")
+    stub_port = _free_port()
+    stub = subprocess.Popen([sys.executable, str(HERE / "wopi-stub.py"),
+                             str(stub_port), str(docs)])
+    port = _free_port()
+    env = {**os.environ, "JWT_SECRET": "reconcile-secret", "DOCSERVER_PORT": str(port),
+           "DOCSERVER_HOST": "127.0.0.1", "WOPI_TOKEN_MODE": "passthrough",
+           "WOPI_HOST_URL": f"http://127.0.0.1:{stub_port}",
+           "DOCSERVER_PUBLIC_URL": f"http://127.0.0.1:{port}",
+           "EDITOR_UI_DIR": str(workdir / "editor-ui"),
+           "DOCSERVER_DATA_DIR": str(workdir / "data"), "RUST_LOG": "warn"}
+    proc = subprocess.Popen([str(_rust_binary(server))], env=env, cwd=workdir)
+    try:
+        _wait_health(f"http://127.0.0.1:{port}")
+    except Exception:
+        _kill([proc, stub])
+        raise
+    return f"http://127.0.0.1:{port}", [proc, stub]
+
+
+def spawn_docserver(server: Path, workdir: Path, mode: str = "rust"):
+    """Start a docserver on a free port; return (base_url, procs).
+
+    python: uvicorn(create_app) on the opencloud-docserver REST surface.
+    rust:   wo-docserver binary + wopi-stub.py host, vanilla UI copied to a
+            scratch EDITOR_UI_DIR (canonical stack — the deployed editor)."""
+    if mode == "rust":
+        return _spawn_rust(server, workdir)
     docserver = server / "opencloud-docserver"
     port = _free_port()
     cfg = (
@@ -121,27 +176,30 @@ def spawn_docserver(server: Path, workdir: Path):
     except Exception:
         proc.kill()
         raise
-    return port, proc
+    return f"http://127.0.0.1:{port}", [proc]
 
 
-def capture(server: Path, out: Path, script: str = "census-wo.cjs") -> str:
+def capture(server: Path, out: Path, script: str = "census-wo.cjs", mode: str = "rust") -> str:
     """Spawn a local docserver, run <script> (a census .cjs) against it, kill the
     server. The census JSON lands in out/ (census-wo.json for the structural
     census, interact-wo.json for the --interactions click-through)."""
     with tempfile.TemporaryDirectory(prefix="reconcile-") as td:
-        port, proc = spawn_docserver(server, Path(td))
+        base, procs = spawn_docserver(server, Path(td), mode)
         try:
-            with urllib.request.urlopen(
-                urllib.request.Request(
-                    f"http://127.0.0.1:{port}/api/documents/new",
-                    data=b"",
-                    headers={"Content-Type": "application/json"},
-                    method="POST",
-                ),
-                timeout=10,
-            ) as r:
-                doc_id = json.loads(r.read())["doc_id"]
-            url = f"http://127.0.0.1:{port}/editor/{doc_id}"
+            if mode == "python":
+                with urllib.request.urlopen(
+                    urllib.request.Request(
+                        f"{base}/api/documents/new",
+                        data=b"",
+                        headers={"Content-Type": "application/json"},
+                        method="POST",
+                    ),
+                    timeout=10,
+                ) as r:
+                    doc_id = json.loads(r.read())["doc_id"]
+                url = f"{base}/editor/{doc_id}"
+            else:
+                url = f"{base}/word/?access_token=stub&file_id=demo.docx"
             out.mkdir(parents=True, exist_ok=True)
             try:
                 npm_root = subprocess.run(
@@ -159,11 +217,7 @@ def capture(server: Path, out: Path, script: str = "census-wo.cjs") -> str:
             subprocess.run([node, script], cwd=HERE, env=env, check=True)
             return str(url)
         finally:
-            proc.terminate()
-            try:
-                proc.wait(timeout=5)
-            except subprocess.TimeoutExpired:
-                proc.kill()
+            _kill(procs)
 
 
 def census_buttons(census: dict) -> list[dict]:
@@ -429,10 +483,10 @@ def self_test() -> None:
     print("self-test OK: stale-deferred detected and gated")
 
 
-def run_interactions(server: Path, out: Path) -> int:
+def run_interactions(server: Path, out: Path, mode: str = "rust") -> int:
     """Click-through census (interact-wo.cjs) + join vs the committed OO
     reference. Returns 0 iff no missing/type/geometry interaction gaps."""
-    capture(server, out, script="interact-wo.cjs")
+    capture(server, out, script="interact-wo.cjs", mode=mode)
     return subprocess.run(
         [sys.executable, "interact-diff.py", "--wo", str(out / "interact-wo.json"),
          "--out", str(out)],
@@ -440,23 +494,28 @@ def run_interactions(server: Path, out: Path) -> int:
     ).returncode
 
 
-def run_fx(server: Path, out: Path) -> int:
+def run_fx(server: Path, out: Path, mode: str = "rust") -> int:
     """Functional census (fx-wo.cjs): every ribbon control must produce an
     observable effect (doc/menu/dialog/panel/status/chrome) when clicked.
     fx-wo.cjs exits non-zero on silent/unclickable beyond the documented
     EXPECTED_SILENT precondition no-ops — the loud-stub gate."""
-    capture(server, out, script="fx-wo.cjs")
+    capture(server, out, script="fx-wo.cjs", mode=mode)
     return 0  # non-zero exit inside capture raises; green run writes fx-wo.json
 
 
-def run_geometry(server: Path, out: Path) -> int:
+def run_geometry(server: Path, out: Path, mode: str = "rust") -> int:
     """Geometry census (geom-wo.cjs) + gate vs the committed golden
     (geom-wo.json) with structural invariants. Returns 0 iff no drift beyond
     tolerance and no overlap/alignment/ordering violations."""
-    capture(server, out, script="geom-wo.cjs")
-    gold = HERE / f"geom-wo.{sys.platform}.json"
-    if not gold.exists():
-        gold = HERE / "geom-wo.json"
+    capture(server, out, script="geom-wo.cjs", mode=mode)
+    # goldens are per-build: the two stacks serve sibling UIs whose statusbar
+    # geometry differs slightly (collab-badge, word-count). rust gets its own
+    # deliberately-recaptured golden; python keeps the original.
+    for name in (f"geom-wo.{mode}.{sys.platform}.json", f"geom-wo.{mode}.json",
+                 f"geom-wo.{sys.platform}.json", "geom-wo.json"):
+        gold = HERE / name
+        if gold.exists():
+            break
     return subprocess.run(
         [sys.executable, "geom-diff.py", "--wo", str(out / "geom-wo.json"),
          "--gold", str(gold)],
@@ -496,7 +555,7 @@ def _register_goldens(server: Path, database: Path, content: Path) -> None:
     subprocess.run([sys.executable, "-c", code], cwd=docserver, check=True)
 
 
-def run_visual(server: Path, out: Path) -> int:
+def run_visual(server: Path, out: Path, mode: str = "rust") -> int:
     """Pixel gate: render each committed golden doc on a scratch docserver and
     compare sheet 1 against its OnlyOffice reference golden (pixel-diff.py:
     recorded baseline + slack + the baseline-relative ink flood line). The
@@ -506,10 +565,11 @@ def run_visual(server: Path, out: Path) -> int:
     rc = 0
     with tempfile.TemporaryDirectory(prefix="reconcile-visual-") as td:
         pd = Path(td)
-        content = pd / "content"
-        content.mkdir(parents=True)
-        _register_goldens(server, pd / "db.sqlite", content)
-        port, proc = spawn_docserver(server, pd)
+        if mode == "python":
+            content = pd / "content"
+            content.mkdir(parents=True)
+            _register_goldens(server, pd / "db.sqlite", content)
+        base, procs = spawn_docserver(server, pd, mode)
         try:
             for stem, gold_name in sorted(VISUAL_GOLDEN.items()):
                 docx = (HERE / "golden" / "docs") / f"{stem}.docx"
@@ -518,13 +578,15 @@ def run_visual(server: Path, out: Path) -> int:
                     print(f"      visual: missing {stem} source/golden — skipping")
                     rc = 1
                     continue
+                if mode == "rust":
+                    shutil.copy(docx, pd / "docs" / docx.name)  # stub serves it as file_id
                 png = pd / f"{stem}-wo.png"
+                census_env = {"VISUAL_BASE": base, "VISUAL_DOC": docx.name, "VISUAL_OUT": str(png)}
+                if mode == "rust":
+                    census_env["VISUAL_URL"] = f"{base}/word/?access_token=stub&file_id={docx.name}"
                 subprocess.run(
                     ["node", "visual-wo.cjs"], cwd=HERE, check=True,
-                    env={**os.environ,
-                         "VISUAL_BASE": f"http://127.0.0.1:{port}",
-                         "VISUAL_DOC": docx.name,
-                         "VISUAL_OUT": str(png)})
+                    env={**os.environ, **census_env})
                 r = subprocess.run(
                     [_py_with_pil(server), "pixel-diff.py",
                      "--wo", str(png), "--gold", str(gold)], cwd=HERE)
@@ -537,11 +599,7 @@ def run_visual(server: Path, out: Path) -> int:
                         [_py_with_pil(server), "visual-triage.py",
                          "--wo", str(png), "--gold", str(gold)], cwd=HERE)
         finally:
-            proc.terminate()
-            try:
-                proc.wait(timeout=5)
-            except subprocess.TimeoutExpired:
-                proc.kill()
+            _kill(procs)
     return rc
 
 
@@ -559,6 +617,9 @@ def main() -> int:
                     help="capture the geometry census + gate on drift/overlaps vs the committed golden")
     ap.add_argument("--visual", action="store_true",
                     help="pixel gate: render each golden doc and gate sheet 1 vs its OnlyOffice golden (visual-wo.cjs + pixel-diff.py)")
+    ap.add_argument("--docserver", choices=["rust", "python"], default="rust",
+                    help="which docserver stack to spawn (rust = canonical wo-docserver + stub WOPI; "
+                         "python = opencloud-docserver REST surface; gates must pass on BOTH)")
     ap.add_argument("--self-test", action="store_true", help="run the delta-logic self-test and exit")
     args = ap.parse_args()
 
@@ -576,7 +637,7 @@ def main() -> int:
                 wo = WO_JSON
             else:
                 print(f"[1/4] capture (check): spawning docserver from {server} …")
-                print(f"      captured via {capture(server, tmp)}")
+                print(f"      captured via {capture(server, tmp, mode=args.docserver)}")
                 wo = tmp / "census-wo.json"
             prev = json.loads(WO_PREV.read_text(encoding="utf-8")) if WO_PREV.exists() else {"tabs": {}, "surfaces": {}}
             curr = json.load(open(wo, encoding="utf-8"))
@@ -595,25 +656,25 @@ def main() -> int:
             rc = 0 if ok else 1
             if args.interactions:
                 print("      interactions: click-through census vs OO reference")
-                if run_interactions(server, tmp) != 0:
+                if run_interactions(server, tmp, mode=args.docserver) != 0:
                     rc = 1
             if args.fx:
                 print("      fx: functional census (loud-stub gate)")
                 try:
-                    run_fx(server, tmp)
+                    run_fx(server, tmp, mode=args.docserver)
                 except SystemExit:
                     rc = 1
             if args.geometry:
                 print("      geometry: drift + structural invariants vs golden")
                 try:
-                    if run_geometry(server, tmp) != 0:
+                    if run_geometry(server, tmp, mode=args.docserver) != 0:
                         rc = 1
                 except SystemExit:
                     rc = 1
             if args.visual:
                 print("      visual: pixel gate vs OnlyOffice goldens (sheet 1)")
                 try:
-                    if run_visual(server, tmp) != 0:
+                    if run_visual(server, tmp, mode=args.docserver) != 0:
                         rc = 1
                 except SystemExit:
                     rc = 1
@@ -626,7 +687,7 @@ def main() -> int:
     # ── normal: repair + gate ──
     if not args.skip_capture:
         print(f"[1/4] capture: spawning docserver from {server} …")
-        print(f"      census-wo.json refreshed via {capture(server, CENSUS)}")
+        print(f"      census-wo.json refreshed via {capture(server, CENSUS, mode=args.docserver)}")
     else:
         print("[1/4] capture: --skip-capture, using existing census-wo.json")
 
@@ -658,13 +719,13 @@ def main() -> int:
     interact_rc = 0
     if args.interactions:
         print("      interactions: click-through census (interact-wo.cjs)")
-        interact_rc = run_interactions(server, CENSUS)
+        interact_rc = run_interactions(server, CENSUS, mode=args.docserver)
 
     fx_rc = 0
     if args.fx:
         print("      fx: functional census (fx-wo.cjs, loud-stub gate)")
         try:
-            run_fx(server, CENSUS)
+            run_fx(server, CENSUS, mode=args.docserver)
         except SystemExit:
             fx_rc = 1
 
@@ -672,7 +733,7 @@ def main() -> int:
     if args.geometry:
         print("      geometry: drift + structural invariants (geom-wo.cjs + geom-diff.py)")
         try:
-            geom_rc = run_geometry(server, CENSUS)
+            geom_rc = run_geometry(server, CENSUS, mode=args.docserver)
         except SystemExit:
             geom_rc = 1
 
@@ -680,7 +741,7 @@ def main() -> int:
     if args.visual:
         print("      visual: pixel gate vs OnlyOffice goldens (visual-wo.cjs + pixel-diff.py)")
         try:
-            visual_rc = run_visual(server, CENSUS)
+            visual_rc = run_visual(server, CENSUS, mode=args.docserver)
         except SystemExit:
             visual_rc = 1
 

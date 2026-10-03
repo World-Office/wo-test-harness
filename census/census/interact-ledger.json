@@ -1,0 +1,1240 @@
+{
+ "counts": {
+  "ok": 38,
+  "missing": 0,
+  "type": 0,
+  "geometry": 0,
+  "extra": 0,
+  "unmatched": 0,
+  "organic": 69,
+  "divergence": 17
+ },
+ "rows": [
+  {
+   "token": "word-count",
+   "oo": "Word count",
+   "opens_oo": "menu",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "home",
+   "note": "covered"
+  },
+  {
+   "token": "english-united-states",
+   "oo": "English \u2013 United States",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "home",
+   "note": "covered"
+  },
+  {
+   "token": "blankpage",
+   "oo": "BlankPage",
+   "opens_oo": "menu",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "insert",
+   "note": "covered"
+  },
+  {
+   "token": "breaks",
+   "oo": "Breaks",
+   "opens_oo": "menu",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "insert",
+   "note": "covered"
+  },
+  {
+   "token": "table",
+   "oo": "Table",
+   "opens_oo": "menu",
+   "opens_wo": "menu",
+   "status": "ok",
+   "tab": "insert",
+   "wo_id": "btn-table",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "image",
+   "oo": "Image",
+   "opens_oo": "menu",
+   "opens_wo": "menu",
+   "status": "ok",
+   "tab": "insert",
+   "wo_id": "btn-image",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "shape",
+   "oo": "Shape",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "insert",
+   "wo_id": null,
+   "wo_cmd": "insertObject",
+   "clip": null
+  },
+  {
+   "token": "smartart",
+   "oo": "SmartArt",
+   "opens_oo": "menu",
+   "opens_wo": "modal",
+   "status": "divergence",
+   "tab": "insert",
+   "wo_id": "btn-smartart",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "chart",
+   "oo": "Chart",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "insert",
+   "wo_id": null,
+   "wo_cmd": "insertObject",
+   "clip": null
+  },
+  {
+   "token": "addcomment",
+   "oo": "Comment",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "insert",
+   "note": "covered"
+  },
+  {
+   "token": "link",
+   "oo": "Link",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "insert",
+   "wo_id": "btn-link",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "header-footer",
+   "oo": "Header &Footer",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "insert",
+   "wo_id": "btn-header",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "pagenumber",
+   "oo": "PageNumber",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "insert",
+   "wo_id": "btn-pagenumber",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "textbox",
+   "oo": "TextBox",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "insert",
+   "wo_id": null,
+   "wo_cmd": "insertObject",
+   "clip": null
+  },
+  {
+   "token": "textart",
+   "oo": "TextArt",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "insert",
+   "wo_id": null,
+   "wo_cmd": "insertObject",
+   "clip": null
+  },
+  {
+   "token": "dropcap",
+   "oo": "DropCap",
+   "opens_oo": "modal",
+   "opens_wo": "none",
+   "status": "divergence",
+   "tab": "insert",
+   "wo_id": null,
+   "wo_cmd": "toggleDropcap",
+   "clip": null
+  },
+  {
+   "token": "insertdatetime",
+   "oo": "Date &Time",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "insert",
+   "note": "covered"
+  },
+  {
+   "token": "text-fromfile",
+   "oo": "Text fromFile",
+   "opens_oo": "modal",
+   "opens_wo": "none",
+   "status": "divergence",
+   "tab": "insert",
+   "wo_id": "btn-textfile",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "insertfield",
+   "oo": "Field",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "insert",
+   "wo_id": "btn-field",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "equation",
+   "oo": "Equation",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "insert",
+   "wo_id": "btn-equation",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "symbol",
+   "oo": "Symbol",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "insert",
+   "wo_id": "btn-symbol",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "contentcontrols",
+   "oo": "ContentControls",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "insert",
+   "wo_id": "btn-contentcontrol",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "word-count",
+   "oo": "Word count",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "insert",
+   "note": "covered"
+  },
+  {
+   "token": "english-united-states",
+   "oo": "English \u2013 United States",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "insert",
+   "note": "covered"
+  },
+  {
+   "token": "margins",
+   "oo": "Margins",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "layout",
+   "wo_id": "btn-page-setup",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "orientation",
+   "oo": "Orientation",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "layout",
+   "wo_id": "btn-page-setup",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "size",
+   "oo": "Size",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "layout",
+   "wo_id": "btn-page-setup",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "columns",
+   "oo": "Columns",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "layout",
+   "wo_id": "btn-columns",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "breaks",
+   "oo": "Breaks",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "layout",
+   "note": "covered"
+  },
+  {
+   "token": "linenumbers",
+   "oo": "LineNumbers",
+   "opens_oo": "modal",
+   "opens_wo": "none",
+   "status": "divergence",
+   "tab": "layout",
+   "wo_id": null,
+   "wo_cmd": "toggleLineNumbers",
+   "clip": null
+  },
+  {
+   "token": "hyphenation",
+   "oo": "Hyphenation",
+   "opens_oo": "modal",
+   "opens_wo": "none",
+   "status": "divergence",
+   "tab": "layout",
+   "wo_id": null,
+   "wo_cmd": "toggleHyphenation",
+   "clip": null
+  },
+  {
+   "token": "watermark",
+   "oo": "Watermark",
+   "opens_oo": "modal",
+   "opens_wo": "none",
+   "status": "divergence",
+   "tab": "layout",
+   "wo_id": null,
+   "wo_cmd": "toggleWatermark",
+   "clip": null
+  },
+  {
+   "token": "pagecolor",
+   "oo": "PageColor",
+   "opens_oo": "modal",
+   "opens_wo": "none",
+   "status": "divergence",
+   "tab": "layout",
+   "wo_id": "pagecolor",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "colors",
+   "oo": "Colors",
+   "opens_oo": "modal",
+   "opens_wo": "none",
+   "status": "divergence",
+   "tab": "layout",
+   "wo_id": "themecolors",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "word-count",
+   "oo": "Word count",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "layout",
+   "note": "covered"
+  },
+  {
+   "token": "english-united-states",
+   "oo": "English \u2013 United States",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "layout",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen670",
+   "oo": "Select",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "draw",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen668",
+   "oo": "Eraser",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "draw",
+   "note": "covered"
+  },
+  {
+   "token": "word-count",
+   "oo": "Word count",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "draw",
+   "note": "covered"
+  },
+  {
+   "token": "english-united-states",
+   "oo": "English \u2013 United States",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "draw",
+   "note": "covered"
+  },
+  {
+   "token": "table-ofcontents",
+   "oo": "Table ofContents",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "references",
+   "wo_id": "btn-toc",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "add-text",
+   "oo": "Add Text",
+   "opens_oo": "modal",
+   "opens_wo": "none",
+   "status": "divergence",
+   "tab": "references",
+   "wo_id": "btn-addtext",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "update-table",
+   "oo": "Update Table",
+   "opens_oo": "modal",
+   "opens_wo": "none",
+   "status": "divergence",
+   "tab": "references",
+   "wo_id": null,
+   "wo_cmd": "updateToc",
+   "clip": null
+  },
+  {
+   "token": "footnote",
+   "oo": "Footnote",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "references",
+   "wo_id": "btn-footnote",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "link",
+   "oo": "Link",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "references",
+   "wo_id": "btn-link",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "asc-gen885",
+   "oo": "Bookmark",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "references",
+   "wo_id": "btn-bookmark",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "asc-gen887",
+   "oo": "Caption",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "references",
+   "wo_id": "btn-field",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "asc-gen889",
+   "oo": "Cross-reference",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "references",
+   "wo_id": "btn-field",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "asc-gen891",
+   "oo": "Table of Figures",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "references",
+   "wo_id": null,
+   "wo_cmd": "openCrossref",
+   "clip": null
+  },
+  {
+   "token": "word-count",
+   "oo": "Word count",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "references",
+   "note": "covered"
+  },
+  {
+   "token": "english-united-states",
+   "oo": "English \u2013 United States",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "references",
+   "note": "covered"
+  },
+  {
+   "token": "delete",
+   "oo": "Delete",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "collaboration",
+   "note": "covered"
+  },
+  {
+   "token": "resolve",
+   "oo": "Resolve",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "collaboration",
+   "note": "covered"
+  },
+  {
+   "token": "trackchanges",
+   "oo": "TrackChanges",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "collaboration",
+   "wo_id": "btn-track-changes",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "displaymode",
+   "oo": "DisplayMode",
+   "opens_oo": "modal",
+   "opens_wo": "none",
+   "status": "divergence",
+   "tab": "collaboration",
+   "wo_id": null,
+   "wo_cmd": "displayMode",
+   "clip": null
+  },
+  {
+   "token": "asc-gen509",
+   "oo": "Previous",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "collaboration",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen511",
+   "oo": "Next",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "collaboration",
+   "note": "covered"
+  },
+  {
+   "token": "accept",
+   "oo": "Accept",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "collaboration",
+   "note": "covered"
+  },
+  {
+   "token": "reject",
+   "oo": "Reject",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "collaboration",
+   "note": "covered"
+  },
+  {
+   "token": "compare",
+   "oo": "Compare",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "collaboration",
+   "wo_id": null,
+   "wo_cmd": "compareVersion",
+   "clip": null
+  },
+  {
+   "token": "combine",
+   "oo": "Combine",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "collaboration",
+   "wo_id": null,
+   "wo_cmd": "compareVersion",
+   "clip": null
+  },
+  {
+   "token": "asc-gen525",
+   "oo": "Chat",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "collaboration",
+   "note": "covered"
+  },
+  {
+   "token": "mailmerge",
+   "oo": "MailMerge",
+   "opens_oo": "modal",
+   "opens_wo": "none",
+   "status": "divergence",
+   "tab": "collaboration",
+   "wo_id": "btn-mailmerge",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "word-count",
+   "oo": "Word count",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "collaboration",
+   "note": "covered"
+  },
+  {
+   "token": "english-united-states",
+   "oo": "English \u2013 United States",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "collaboration",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen541",
+   "oo": "Encrypt",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "protection",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen546",
+   "oo": "ProtectDocument",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "protection",
+   "note": "covered"
+  },
+  {
+   "token": "word-count",
+   "oo": "Word count",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "protection",
+   "note": "covered"
+  },
+  {
+   "token": "english-united-states",
+   "oo": "English \u2013 United States",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "protection",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen896",
+   "oo": "Headings",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "view",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen920",
+   "oo": "Fit To Page",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "view",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen922",
+   "oo": "Fit To Width",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "view",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen935",
+   "oo": "Zoom to 100%",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "view",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen933",
+   "oo": "Multiple Pages",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "view",
+   "note": "covered"
+  },
+  {
+   "token": "interfacetheme",
+   "oo": "InterfaceTheme",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "view",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen937",
+   "oo": "Macros",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "view",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen939",
+   "oo": "Record macro",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "view",
+   "note": "covered"
+  },
+  {
+   "token": "word-count",
+   "oo": "Word count",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "view",
+   "note": "covered"
+  },
+  {
+   "token": "english-united-states",
+   "oo": "English \u2013 United States",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "view",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen4556",
+   "oo": "PluginManager",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "plugins",
+   "note": "covered"
+  },
+  {
+   "token": "backgroundplugins",
+   "oo": "Backgroundplugins",
+   "opens_oo": "modal",
+   "opens_wo": "none",
+   "status": "divergence",
+   "tab": "plugins",
+   "wo_id": "btn-bgplugins",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "photoeditor",
+   "oo": "PhotoEditor",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "plugins",
+   "wo_id": null,
+   "wo_cmd": "photoEditor",
+   "clip": null
+  },
+  {
+   "token": "asc-gen4572",
+   "oo": "YouTube",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "plugins",
+   "note": "covered"
+  },
+  {
+   "token": "ocr",
+   "oo": "OCR",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "plugins",
+   "wo_id": "btn-ocr",
+   "wo_cmd": "ocrRun",
+   "clip": null
+  },
+  {
+   "token": "asc-gen4582",
+   "oo": "Translator",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "plugins",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen4584",
+   "oo": "Mendeley",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "plugins",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen4586",
+   "oo": "Thesaurus",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "plugins",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen4588",
+   "oo": "Highlightcode",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "plugins",
+   "note": "covered"
+  },
+  {
+   "token": "asc-gen4590",
+   "oo": "Zotero",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "plugins",
+   "note": "covered"
+  },
+  {
+   "token": "speech",
+   "oo": "Speech",
+   "opens_oo": "modal",
+   "opens_wo": "menu",
+   "status": "divergence",
+   "tab": "plugins",
+   "wo_id": "btn-readaloud",
+   "wo_cmd": "readAloud",
+   "clip": null
+  },
+  {
+   "token": "speechinput",
+   "oo": "Speechinput",
+   "opens_oo": "modal",
+   "opens_wo": "none",
+   "status": "divergence",
+   "tab": "plugins",
+   "wo_id": "btn-dictate",
+   "wo_cmd": "dictate",
+   "clip": null
+  },
+  {
+   "token": "word-count",
+   "oo": "Word count",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "plugins",
+   "note": "covered"
+  },
+  {
+   "token": "english-united-states",
+   "oo": "English \u2013 United States",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "plugins",
+   "note": "covered"
+  },
+  {
+   "token": null,
+   "oo": "Run",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "plugins",
+   "note": null
+  },
+  {
+   "token": null,
+   "oo": "Debug",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "plugins",
+   "note": null
+  },
+  {
+   "token": null,
+   "oo": "Copy",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "plugins",
+   "note": null
+  },
+  {
+   "token": null,
+   "oo": "Rename",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "plugins",
+   "note": null
+  },
+  {
+   "token": null,
+   "oo": "Delete",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "plugins",
+   "note": null
+  },
+  {
+   "token": "asc-gen4608",
+   "oo": "Settings",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "ai",
+   "wo_id": "btn-ai-assistant",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "asc-gen4610",
+   "oo": "Chatbot",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "ai",
+   "wo_id": "btn-ai-assistant",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "asc-gen4612",
+   "oo": "Summarization",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "ai",
+   "wo_id": "btn-ai-assistant",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "translation",
+   "oo": "Translation",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "ai",
+   "wo_id": null,
+   "wo_cmd": "aiTranslate",
+   "clip": null
+  },
+  {
+   "token": "grammar-spelling",
+   "oo": "Grammar &Spelling",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "ai",
+   "wo_id": "btn-ai-grammar",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "asc-gen4628",
+   "oo": "Create AIassistant",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "ai",
+   "wo_id": "btn-ai-assistant",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "word-count",
+   "oo": "Word count",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "ai",
+   "note": "covered"
+  },
+  {
+   "token": "english-united-states",
+   "oo": "English \u2013 United States",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "ai",
+   "note": "covered"
+  },
+  {
+   "token": null,
+   "oo": "Run",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "ai",
+   "note": null
+  },
+  {
+   "token": null,
+   "oo": "Debug",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "ai",
+   "note": null
+  },
+  {
+   "token": null,
+   "oo": "Copy",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "ai",
+   "note": null
+  },
+  {
+   "token": null,
+   "oo": "Rename",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "ai",
+   "note": null
+  },
+  {
+   "token": null,
+   "oo": "Delete",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "ai",
+   "note": null
+  },
+  {
+   "token": "header-footer",
+   "oo": "Header &Footer",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "header-footer",
+   "wo_id": "btn-header",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "pagenumber",
+   "oo": "PageNumber",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "header-footer",
+   "wo_id": "btn-pagenumber",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "insertdatetime",
+   "oo": "Date &Time",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "header-footer",
+   "note": "covered"
+  },
+  {
+   "token": "insertfield",
+   "oo": "Field",
+   "opens_oo": "modal",
+   "opens_wo": "modal",
+   "status": "ok",
+   "tab": "header-footer",
+   "wo_id": "btn-field",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "image",
+   "oo": "Image",
+   "opens_oo": "modal",
+   "opens_wo": "menu",
+   "status": "divergence",
+   "tab": "header-footer",
+   "wo_id": "btn-image",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "asc-gen673",
+   "oo": "Close",
+   "opens_oo": "modal",
+   "opens_wo": "none",
+   "status": "divergence",
+   "tab": "header-footer",
+   "wo_id": "btn-hf-close",
+   "wo_cmd": null,
+   "clip": null
+  },
+  {
+   "token": "word-count",
+   "oo": "Word count",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "header-footer",
+   "note": "covered"
+  },
+  {
+   "token": "english-united-states",
+   "oo": "English \u2013 United States",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "header-footer",
+   "note": "covered"
+  },
+  {
+   "token": null,
+   "oo": "Run",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "header-footer",
+   "note": null
+  },
+  {
+   "token": null,
+   "oo": "Debug",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "header-footer",
+   "note": null
+  },
+  {
+   "token": null,
+   "oo": "Copy",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "header-footer",
+   "note": null
+  },
+  {
+   "token": null,
+   "oo": "Rename",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "header-footer",
+   "note": null
+  },
+  {
+   "token": null,
+   "oo": "Delete",
+   "opens_oo": "modal",
+   "opens_wo": "-",
+   "status": "organic",
+   "tab": "header-footer",
+   "note": null
+  }
+ ]
+}

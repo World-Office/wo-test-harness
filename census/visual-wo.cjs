@@ -34,7 +34,8 @@ const path = require('path');
     await ctx.addInitScript((z) => localStorage.setItem('wo-zoom', z), zoom);
   }
   const page = await ctx.newPage();
-  await page.goto(`${base}/editor/${encodeURIComponent(doc)}`, { waitUntil: 'domcontentloaded', timeout: 60000 });
+  const target = process.env.VISUAL_URL || `${base}/editor/${encodeURIComponent(doc)}`;
+  await page.goto(target, { waitUntil: 'domcontentloaded', timeout: 60000 });
   await page.waitForSelector('#editor', { timeout: 30000 });
   if (font) {
     // the editor body currently uses a system-ui sans stack; a Word/LO doc

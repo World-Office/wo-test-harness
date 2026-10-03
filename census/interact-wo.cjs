@@ -134,6 +134,58 @@ const clickFileItem = label => {
       await sleep(60);
       if (interactions.length % 40 === 0) console.log(`  interact ${interactions.length} …`);
     }
+    // dropdown menus: click each visible ribbon caret/trigger, then click its items
+    const seen = new Set();
+    const triggers = await page.evaluate(() => [...document.querySelectorAll('.ribbon-page.active .menu-trigger, .ribbon-page.active [aria-haspopup="true"]')]
+      .filter(b => b.offsetParent !== null && !b.disabled)
+      .map(b => ({ id: b.id || null, label: ((b.textContent || '').trim() || b.getAttribute('aria-label') || null) })));
+    for (const t of triggers) {
+      if (!t.id || seen.has(t.id)) continue;
+      seen.add(t.id);
+      try {
+        await page.evaluate(id => { const e = document.getElementById(id); if (e) e.click(); }, t.id);
+        await sleep(220);
+        const mrows = await page.evaluate(() => [...document.querySelectorAll('.ribbon-page.active [role=menuitem]')]
+          .filter(b => b.offsetParent !== null && !b.disabled)
+          .map(b => { const r = b.getBoundingClientRect();
+            return { id: b.id || null, cmd: b.dataset.cmd || null, label: ((b.textContent || '').trim() || null), x: Math.round(r.x), y: Math.round(r.y) }; })
+          .filter((b, i, arr) => arr.findIndex(x => (x.cmd && x.cmd === b.cmd) || (x.id && x.id === b.id)) === i));
+        for (const b of mrows) {
+          if (!b.cmd && !b.id) continue;
+          let res = null;
+          try {
+            if (b.cmd) await page.evaluate(bus, [b.cmd, undefined]);
+            else await page.evaluate(id => { const e = document.getElementById(id); if (e) e.click(); }, b.id);
+            await sleep(140);
+            res = await page.evaluate(classify);
+          } catch (e) { res = { opens: 'error', msg: String(e.message).slice(0, 60) }; }
+          interactions.push({ tab: slug, menu: t.id, ...b, opens: res.opens, surface_id: res.id, box: res.box,
+            inside_vp: res.inside_vp, clipped_x: res.clipped_x, clipped_y: res.clipped_y, controls: res.controls, msg: res.msg });
+          await page.evaluate(closeAll).catch(() => {});
+          await sleep(60);
+        }
+      } catch (e) {
+        interactions.push({ tab: slug, menu: t.id, id: null, cmd: null, label: t.label, opens: 'error', msg: String(e.message).slice(0, 60) });
+      }
+      await page.evaluate(closeAll).catch(() => {});
+      await sleep(80);
+    }
+    // native controls with ids (color inputs, selects) — visible but never <button>
+    const ctrls = await page.evaluate(() => [...document.querySelectorAll('.ribbon-page.active input[id], .ribbon-page.active select[id]')]
+      .filter(b => b.offsetParent !== null && !b.disabled)
+      .map(b => ({ id: b.id, kind: b.tagName.toLowerCase() })));
+    for (const c of ctrls) {
+      let res = null;
+      try {
+        await page.evaluate(id => { const e = document.getElementById(id); if (e) e.click(); }, c.id);
+        await sleep(140);
+        res = await page.evaluate(classify);
+      } catch (e) { res = { opens: 'error', msg: String(e.message).slice(0, 60) }; }
+      interactions.push({ tab: slug, kind: c.kind, id: c.id, cmd: null, label: c.id,
+        opens: res.opens, surface_id: res.id, box: res.box, msg: res.msg });
+      await page.evaluate(closeAll).catch(() => {});
+      await sleep(60);
+    }
     console.log(`interacted ${slug}: ${rows.length} buttons`);
   }
 

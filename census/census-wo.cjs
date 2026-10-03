@@ -85,8 +85,13 @@ clearLocks();
     console.log(`censused ${t.slug}: ${census.tabs[t.slug].buttons.length} buttons`);
   }
 
-  // contextual H&F: insert header, dblclick it, census the revealed tab
+  // contextual H&F: insert header, dblclick it, census the revealed tab.
+  // btn-header now opens the header/footer options modal (OO parity), so
+  // the census applies it (btn-headerfooter-ok emits insertHeader/Footer)
+  // before dblclicking the created element.
   await page.evaluate(() => document.getElementById('btn-header')?.click());
+  await sleep(400);
+  await page.evaluate(() => document.getElementById('btn-headerfooter-ok')?.click());
   await sleep(700);
   await page.evaluate(() => document.querySelector('.page-header')?.dispatchEvent(new MouseEvent('dblclick', { bubbles: true })));
   await sleep(800);
@@ -97,6 +102,9 @@ clearLocks();
     await page.evaluate(() => document.getElementById('btn-hf-close')?.click());
     await sleep(400);
   }
+  // any option modal left open intercepts real clicks (file menu, dropdowns)
+  await page.evaluate(() => document.querySelectorAll('.dialog-overlay.open').forEach(d => d.classList.remove('open')));
+  await sleep(150);
 
   // file menu dropdown — the editor toggles it on CLICK, not mousedown
   // (a dispatched MouseEvent('mousedown') never opens it -> 0 rows forever)
