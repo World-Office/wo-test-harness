@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-10-03T19:50:08.612Z",
+ "capturedAt": "2026-10-04T10:17:24.017Z",
  "viewport": "1440x900",
  "interactions": [
   {
@@ -1569,80 +1569,136 @@
   },
   {
    "tab": "menu-file",
-   "id": null,
+   "id": "btn-new",
    "cmd": null,
    "label": "New",
    "opens": "none"
   },
   {
    "tab": "menu-file",
-   "id": null,
+   "id": "btn-open",
    "cmd": null,
    "label": "Open…",
    "opens": "none"
   },
   {
    "tab": "menu-file",
-   "id": null,
+   "id": "btn-export",
    "cmd": null,
    "label": "Export",
-   "opens": "none"
+   "opens": "menu",
+   "surface_id": "file-menu",
+   "box": {
+    "x": 12,
+    "y": 57,
+    "w": 184,
+    "h": 270
+   }
   },
   {
    "tab": "menu-file",
-   "id": null,
+   "id": "btn-print",
    "cmd": null,
    "label": "Print",
    "opens": "none"
   },
   {
    "tab": "menu-file",
-   "id": null,
+   "id": "btn-history",
    "cmd": null,
    "label": "History…",
-   "opens": "none"
+   "opens": "modal",
+   "surface_id": "version-history-dialog",
+   "box": {
+    "x": 502,
+    "y": 376,
+    "w": 436,
+    "h": 149
+   }
   },
   {
    "tab": "menu-file",
-   "id": null,
+   "id": "btn-ai-review",
    "cmd": null,
    "label": "AI changes…",
-   "opens": "none"
+   "opens": "modal",
+   "surface_id": "ai-review-dialog",
+   "box": {
+    "x": 462,
+    "y": 377,
+    "w": 517,
+    "h": 147
+   }
   },
   {
    "tab": "menu-file",
-   "id": null,
+   "id": "btn-fileinfo",
    "cmd": null,
    "label": "Info…",
-   "opens": "none"
+   "opens": "modal",
+   "surface_id": "info-dialog",
+   "box": {
+    "x": 569,
+    "y": 332,
+    "w": 302,
+    "h": 237
+   }
   },
   {
    "tab": "menu-file",
-   "id": null,
+   "id": "btn-fileprotect",
    "cmd": null,
    "label": "Protect document…",
-   "opens": "none"
+   "opens": "modal",
+   "surface_id": "protect-dialog",
+   "box": {
+    "x": 541,
+    "y": 265,
+    "w": 358,
+    "h": 371
+   }
   },
   {
    "tab": "menu-file",
-   "id": null,
+   "id": "btn-filesettings",
    "cmd": null,
    "label": "Settings…",
-   "opens": "none"
+   "opens": "modal",
+   "surface_id": "settings-dialog",
+   "box": {
+    "x": 590,
+    "y": 337,
+    "w": 260,
+    "h": 227
+   }
   },
   {
    "tab": "menu-file",
-   "id": null,
+   "id": "btn-filehelp",
    "cmd": null,
    "label": "Help &amp; about",
-   "opens": "none"
+   "opens": "modal",
+   "surface_id": "help-dialog",
+   "box": {
+    "x": 212,
+    "y": 361,
+    "w": 1016,
+    "h": 178
+   }
   },
   {
    "tab": "menu-file",
-   "id": null,
+   "id": "btn-filesuggest",
    "cmd": null,
    "label": "Suggest a feature…",
-   "opens": "none"
+   "opens": "modal",
+   "surface_id": "suggest-dialog",
+   "box": {
+    "x": 567,
+    "y": 336,
+    "w": 306,
+    "h": 228
+   }
   }
  ]
 }

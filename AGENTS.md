@@ -121,12 +121,29 @@ wo-test-harness/
   login-free editor — capture runs against docker OO on the rig:
 
   ```sh
-  # one-time rig bring-up (docker DS on :8099, host loader/docx server on :8735)
-  docker run -d --name oo-rig -p 8099:80 -e JWT_ENABLED=false \
-    -v <ABS>/census/rig/local.json:/etc/onlyoffice/documentserver/local.json \
-    onlyoffice/documentserver:latest
-  python census/rig/rig-server.py 8735      # host side: rig-editor.html + demo.docx + /cb ACK
+  # one-time rig bring-up (docker DS on :8199, host loader/docx server on :8735)
+  # LINUX (plain docker engine) — three fixes vs the old Windows recipe:
+  #   1. --add-host: host.docker.internal does NOT resolve on Linux docker
+  #   2. DO NOT mount local.json: the DS entrypoint regenerates it via a
+  #      rename(), which fails EBUSY on a bind mount → the fresh instance
+  #      secret never lands in the mounted file → docservice/nginx signature
+  #      mismatch → every /cache/files fetch 403s ("Download failed" modal).
+  #      Instead: start UNMOUNTED, docker-exec the request-filtering-agent
+  #      merge into the real local.json, then docker restart (the entrypoint
+  #      merge preserves unknown keys AND the instance secrets).
+  #   3. RIG_BIND=0.0.0.0 + firewall: rig-server binds loopback by default,
+  #      but the container reaches the host via the bridge IP — open the
+  #      port to the bridge (ufw allow from 172.17.0.0/16 to any port 8735)
+  sudo docker run -d --name oo-rig -p 8199:80 --add-host=host.docker.internal:host-gateway \
+    -e JWT_ENABLED=false onlyoffice/documentserver:latest
+  sudo docker exec oo-rig python3 -c "
+    import json; p='/etc/onlyoffice/documentserver/local.json'
+    c=json.load(open(p))
+    c['services']['CoAuthoring']['request-filtering-agent']={'allowPrivateIPAddress':True,'allowMetaIPAddress':True}
+    json.dump(c,open(p,'w'),indent=2)" && sudo docker restart oo-rig
+  RIG_BIND=0.0.0.0 DS_URL=http://127.0.0.1:8199 python census/rig/rig-server.py 8735
   node census/census-oo.cjs                 # click File, assert #file-menu-panel, enumerate
+  node census/interact-oo.cjs               # backstage click-through (merges into census-oo-interactions.json)
   ```
 
   Confirmed exact selectors on the rig (version 9.4): File trigger =
@@ -145,8 +162,11 @@ wo-test-harness/
   **blocks private-IP document URLs by default** — fix is `local.json` under
   `services.CoAuthoring.request-filtering-agent.allowPrivateIPAddress: true`
   (NOT `server.*` — the config schema uses `request-filtering-agent`); the
-  container's entrypoint regenerates local.json on start (mount the file via
-  `-v`, and re-verify after container restarts); `document.url` + the
+  container's entrypoint regenerates local.json on start via rename(), which
+  FAILS EBUSY on a bind mount (Linux) and silently desyncs the instance
+  secrets — never mount it; docker-exec the merge into the real file and
+  docker restart (the restart merge preserves unknown keys + secrets);
+  `document.url` + the
   save-callback must both be reachable by the DS server-side — point them at
   `http://host.docker.internal:8735/...` (host.docker.internal resolves from
   the container, enabled by allowPrivateIPAddress) and have rig-server ACK
@@ -160,9 +180,18 @@ wo-test-harness/
   Suggest deferred with `react-filemenu-*` reasons (vanilla menu-file doesn't
   ship them; the React menu does). Ledger gate counts moved covered 90→93,
   real 94→95, deferred 78→83 with all 9 backstage rows resolved.
-  Remaining (rig follow-up): `interact-oo.cjs` click-through for the
-  backstage, and a portal-mode capture where Create New / Open Recent are
-  visible.
+  Remaining (rig follow-up): a portal-mode capture where Create New /
+  Open Recent are visible. The backstage interaction capture itself landed
+  2026-10-04 (`census/interact-oo.cjs`): clicks every visible backstage item,
+  classifies panel/modal/none (Back=none, Save/Download-As/Protect/Info/
+  Settings/Help=panel, Print/Suggest=none) and merges `tab:"backstage"`
+  rows into the committed `census/census/census-oo-interactions.json`;
+  `interact-diff.py` classifies the panel-vs-modal rows as DECLARED
+  divergences (OO backstage sections vs WO dialogs — intentional, declared
+  in `interact-divergences.json`). OO toggle gotchas: the File tab TOGGLES
+  (idempotent open helper), and the hidden `#fm-btn-return` still takes
+  clicks — never click Back when the panel is already closed, or every
+  subsequent open silently fails.
   Playwright pitfall: page-side logic must be REAL functions passed to
   `page.evaluate`, never strings-as-expressions (evaluates to a function
   value → clicks nothing). Command-wired buttons dispatch via the bus;

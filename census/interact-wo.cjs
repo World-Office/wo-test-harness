@@ -194,15 +194,19 @@ const clickFileItem = label => {
   const fileTrigger = await page.$('#btn-file');
   if (fileTrigger) { await fileTrigger.click(); await sleep(400); }
   const items = await page.evaluate(() => [...document.querySelectorAll('#file-menu [role=menuitem], #file-menu .menu-item, #file-menu button')]
-    .filter(b => b.offsetParent !== null).map(b => ({ label: ((b.textContent || '').trim() || null) })));
+    .filter(b => b.offsetParent !== null).map(b => ({ id: b.id || null, label: ((b.textContent || '').trim() || null) })));
   for (const it of items) {
     let res = null;
     try {
+      // the previous item's click closed the file menu — reopen before clicking
+      // (#btn-file toggles, so only click when hidden)
+      await page.evaluate(() => { const m = document.getElementById('file-menu'); const t = document.getElementById('btn-file'); if (m && m.hidden && t) t.click(); });
+      await sleep(140);
       const ok = await page.evaluate(clickFileItem, it.label);
       await sleep(160);
       res = ok ? await page.evaluate(classify) : { opens: 'none' };
     } catch (e) { res = { opens: 'error', msg: String(e.message).slice(0, 60) }; }
-    interactions.push({ tab: 'menu-file', id: null, cmd: null, label: it.label,
+    interactions.push({ tab: 'menu-file', id: it.id, cmd: null, label: it.label,
       opens: res.opens, surface_id: res.id, box: res.box, msg: res.msg });
     await page.evaluate(closeAll).catch(() => {});
     await sleep(80);

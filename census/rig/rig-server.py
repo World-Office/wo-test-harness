@@ -9,11 +9,14 @@ host.docker.internal — enabled by allowPrivateIPAddress in local.json):
   POST /cb                the DS save/state callback — ACK with {"error":0}
 Use with: python rig-server.py   (serves on 8735)
 """
-import http.server, json, socketserver, sys
+import http.server, json, os, socketserver, sys
 from pathlib import Path
 
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8735
 HERE = Path(__file__).parent
+# DS base URL injected into rig-editor.html (default matches the documented
+# rig recipe; override when :8099 is taken, e.g. DS_URL=http://127.0.0.1:8199)
+DS_URL = os.environ.get("DS_URL", "http://127.0.0.1:8099")
 
 class H(http.server.BaseHTTPRequestHandler):
     def log_message(self, *a): pass
@@ -22,7 +25,8 @@ class H(http.server.BaseHTTPRequestHandler):
         self.send_header("Content-Length", str(len(body))); self.end_headers(); self.wfile.write(body)
     def do_GET(self):
         if self.path.split("?")[0] == "/rig-editor.html":
-            body = (HERE / "rig-editor.html").read_bytes(); self._ok(body); return
+            body = (HERE / "rig-editor.html").read_bytes().replace(b"http://127.0.0.1:8099", DS_URL.encode())
+            self._ok(body); return
         if self.path.split("?")[0] == "/demo.docx":
             # prefer the server repo's valid demo docx; fall back to a tiny valid docx
             cands = [Path("C:/Users/Tobias/git/World-Office/server/assets/demo.docx"), HERE / "demo.docx"]
@@ -40,6 +44,9 @@ class H(http.server.BaseHTTPRequestHandler):
         self.send_response(200); self.end_headers()
 
 if __name__ == "__main__":
-    with socketserver.ThreadingTCPServer(("127.0.0.1", PORT), H) as srv:
-        print(f"rig-server on :{PORT}")
+    # RIG_BIND=0.0.0.0 for Linux rigs (docker host-gateway reaches the host
+    # via the bridge IP, not loopback; Docker Desktop proxies loopback anyway)
+    BIND = os.environ.get("RIG_BIND", "127.0.0.1")
+    with socketserver.ThreadingTCPServer((BIND, PORT), H) as srv:
+        print(f"rig-server on {BIND}:{PORT}")
         srv.serve_forever()

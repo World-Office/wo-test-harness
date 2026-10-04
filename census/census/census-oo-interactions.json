@@ -3246,6 +3246,61 @@
    },
    "inside_vp": true,
    "controls": 0
+  },
+  {
+   "tab": "backstage",
+   "id": "fm-btn-return",
+   "label": "Back",
+   "opens": "none"
+  },
+  {
+   "tab": "backstage",
+   "id": "fm-btn-save",
+   "label": "Save",
+   "opens": "panel"
+  },
+  {
+   "tab": "backstage",
+   "id": "fm-btn-download",
+   "label": "Download As",
+   "opens": "panel"
+  },
+  {
+   "tab": "backstage",
+   "id": "fm-btn-print",
+   "label": "Print",
+   "opens": "none"
+  },
+  {
+   "tab": "backstage",
+   "id": "fm-btn-protect",
+   "label": "Protect",
+   "opens": "panel"
+  },
+  {
+   "tab": "backstage",
+   "id": "fm-btn-info",
+   "label": "Info",
+   "opens": "panel"
+  },
+  {
+   "tab": "backstage",
+   "id": "fm-btn-settings",
+   "label": "Advanced Settings",
+   "opens": "panel"
+  },
+  {
+   "tab": "backstage",
+   "id": "fm-btn-help",
+   "label": "Help",
+   "opens": "panel"
+  },
+  {
+   "tab": "backstage",
+   "id": "fm-btn-suggest",
+   "label": "Suggest a Feature",
+   "opens": "none"
   }
- ]
+ ],
+ "backstageCapturedAt": "2026-10-04T10:03:19.157Z"
 }
