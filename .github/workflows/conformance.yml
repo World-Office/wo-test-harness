@@ -118,7 +118,7 @@ jobs:
           workspaces: server
 
       - name: Build wo-docserver (rust mode is the reconcile default)
-        run: cargo build -p wo-docserver
+        run: cargo build -p wo-docserver -p mcp-server
         working-directory: server
 
       - name: Install docserver dependencies (no docker — reconcile spawns uvicorn locally)
@@ -147,7 +147,7 @@ jobs:
       - name: One-run ledger gate (fresh capture + diff + gate + seed)
         env:
           WO_SERVER_DIR: ${{ github.workspace }}/server
-        run: python3 census/reconcile.py --check --seed-check --interactions --fx --geometry
+        run: python3 census/reconcile.py --check --seed-check --interactions --fx --geometry --ai
 
 
   cross-engine-fidelity:

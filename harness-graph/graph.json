@@ -8161,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-03T20:03:12+00:00",
+ "generated_at": "2026-10-04T07:10:04+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -18355,12 +18355,90 @@
    "id": "F-147:quiet-toggle",
    "justification": "Plugins > Background plugins is a quiet ribbon toggle (aria-pressed + status count) that lets plugins run without a foreground panel; OO opens a plugin manager dialog first. Mode-level feature (L4): interaction shape declared in interact-divergences.json (backgroundplugins/bgplugins).",
    "label": "Divergence"
+  },
+  {
+   "area": "ai",
+   "fidelity": "L2",
+   "id": "F-148",
+   "label": "Feature",
+   "name": "AI provider gateway",
+   "parity": "partial"
+  },
+  {
+   "id": "F-148:rust-port",
+   "justification": "OpenAI-compatible provider config exists only in the deprecated python docserver (MODEL_REGISTRY + /ai/propose + 503-loud-unregistered). The canonical rust docserver has no /ai routes: config surface (base URL/key/model, server+user modes like coolwsd <ai>), OpenAI-compat chat passthrough remain a port. Contract: census/ai-contracts.py probe 148.",
+   "label": "Divergence"
+  },
+  {
+   "area": "ai",
+   "fidelity": "L2",
+   "id": "F-149",
+   "label": "Feature",
+   "name": "AI-attributed tracked changes",
+   "parity": "partial"
+  },
+  {
+   "id": "F-149:propose-panel",
+   "justification": "Editor side real (F-142/F-143): propose panel applies AI ops as tracked-change spans, per-change accept/reject, w:ins/w:del to DOCX. Missing vs 2026 UX law (Claude-for-Word/Gemini/EditBook): revision author attribution 'AI (model)' distinct from human authors, and rust-side /ai/propose (depends F-148). Contract: probe 149.",
+   "label": "Divergence"
+  },
+  {
+   "area": "ai",
+   "fidelity": "L2",
+   "id": "F-150",
+   "label": "Feature",
+   "name": "Command tool registry",
+   "parity": "missing"
+  },
+  {
+   "id": "F-150:agent-tools",
+   "justification": "No surface: wo-command bus -> JSON-schema tool catalog (name/description/parameters/examples; OnlyOffice RegisteredFunction pattern) for an inline agent. The interaction census proves button<->command mapping; exporting it as tools is new work. Contract: probe 150.",
+   "label": "Divergence"
+  },
+  {
+   "area": "ai",
+   "fidelity": "L2",
+   "id": "F-151",
+   "label": "Feature",
+   "name": "MCP endpoint",
+   "parity": "partial"
+  },
+  {
+   "id": "F-151:doc-tools-only",
+   "justification": "services/mcp-server is REAL: rmcp stdio JSON-RPC, initialize + tools (document create/get/update, snapshots, comments with @agent mentions + cross-doc links), backing onto services/storage-service (STORAGE_SERVICE_URL, default :8002). Gap vs Collabora/OnlyOffice 2026: no editor-command tools (format/insert), stdio-only transport, not deployed alongside docserver. Contract: probe 151 pins init+tools/list+schemas green; tools/call round-trip = integration tier (AI_CONTRACTS_MCP_CALL=1).",
+   "label": "Divergence"
+  },
+  {
+   "area": "ai",
+   "fidelity": "L2",
+   "id": "F-152",
+   "label": "Feature",
+   "name": "Text-to-document generation",
+   "parity": "missing"
+  },
+  {
+   "id": "F-152:converter-chain",
+   "justification": "No surface: LLM -> markdown/CSV intermediate -> /api/conversion/convert -> docx/xlsx (Nextcloud richdocuments pattern; the WO converter endpoint is real and contract-probed). Needs F-148. Contract: probe 152.",
+   "label": "Divergence"
+  },
+  {
+   "area": "ai",
+   "fidelity": "L1",
+   "id": "F-153",
+   "label": "Feature",
+   "name": "In-browser LLM",
+   "parity": "missing"
+  },
+  {
+   "id": "F-153:deferred-xl",
+   "justification": "Deferred XL: transformers.js Web Worker (WebGPU->WASM fallback, OPFS model cache) driving the wasm-renderer editor - first OOXML editor whose AI never uploads anything. No server-side contract possible; spec-only until the editor ships a worker (probe 153 reports DEFERRED forever by design).",
+   "label": "Divergence"
   }
  ],
  "stats": {
   "commands": 70,
   "edges": 1632,
-  "features": 105,
+  "features": 111,
   "surfaces": 70,
   "tests": 1383
  },

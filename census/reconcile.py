@@ -617,6 +617,8 @@ def main() -> int:
                     help="capture the geometry census + gate on drift/overlaps vs the committed golden")
     ap.add_argument("--visual", action="store_true",
                     help="pixel gate: render each golden doc and gate sheet 1 vs its OnlyOffice golden (visual-wo.cjs + pixel-diff.py)")
+    ap.add_argument("--ai", action="store_true",
+                    help="also run the AI spec-contract-test pyramid gate (census/ai-contracts.py)")
     ap.add_argument("--docserver", choices=["rust", "python"], default="rust",
                     help="which docserver stack to spawn (rust = canonical wo-docserver + stub WOPI; "
                          "python = opencloud-docserver REST surface; gates must pass on BOTH)")
@@ -677,6 +679,10 @@ def main() -> int:
                     if run_visual(server, tmp, mode=args.docserver) != 0:
                         rc = 1
                 except SystemExit:
+                    rc = 1
+            if args.ai:
+                print("      ai: spec-contract-test pyramid (census/ai-contracts.py)")
+                if subprocess.call([sys.executable, str(HERE / "ai-contracts.py")]) != 0:
                     rc = 1
             if args.seed_check:
                 print("      seed: drift gate (graph.json vs committed)")

@@ -50,6 +50,23 @@ wo-test-harness/
   tells you which rows to promote and to what key.
 - **Ledger gap triage (AI spec layer, advisory)** — `census/ledger-gap.py`. Adapted from the spec-generation phase of AI-cloning pipelines (Morph, ai-site-cloner): the census ledgers are the measured recon; this turns the parity debt into classified, prioritized copy specs. Collects gap rows from ALL measured sources (ledger.json failure statuses, interact-ledger.json missing/unmatched/divergence, MAP `{"deferred": reason}` rows parsed from census-diff.py source) — never re-derives pairings. One rubric'd LLM call (closed classes: missing-feature / divergent-behavior / intentional-divergence / census-artifact; JSON-only, temp 0) → `census/census/ledger-gap.{json,md}` (gitignored: LLM prose stays out of git; humans promote real work into MAP/register). ADVISORY only — edits no gate, no MAP, no register; loud SKIPPED without a key. First live run (gemini-2.5-flash): 28 rows → 3 missing-features (backgroundplugins, content-controls, allow-edit-ranges — all XL), 12 divergent-behaviors (OO opens modal, WO direct-toggles: header-footer, pagenumber, footnote, trackchanges, dropcap, linenumbers…), 13 census-artifacts (wo button exists but not in interact census — fix the census, not the editor). Run: `python3 ledger-gap.py [--out-dir census/census]`; offline check: `--self-test`.
 - **Visual triage (vision-LLM escalation, advisory)** — `census/visual-triage.py`. Adapted from the SOTA two-stage verification pattern in AI software-cloning pipelines (ui-clone-skills Phase E, sdet.qa multimodal rubric): `pixel-diff.py` stays the ONLY gate; on FAIL, `reconcile.py --visual` fires a vision-model triage that classifies the mismatch as a real broken render (blank/garbled/collapsed/clipped/misrender, closed rubric, JSON-only, temperature 0) vs cross-engine cosmetics (AA/fonts/margins — explicitly ignored). Advisory ONLY: never changes exit codes, never approves baselines; no key → loud `SKIPPED` line, CI unchanged. Provider: any OpenAI-compatible endpoint, resolved from `VISION_API_KEY`/`VISION_API_BASE`/`VISION_MODEL` else OPENROUTER/GROQ/GOOGLE keys. Live-verified: black-box-over-text → `broken=true, high, defect located`; blur+1px → `broken=false`. Standalone: `python3 visual-triage.py --wo x.png --gold y.png [--out v.json]`; offline plumbing check: `--self-test`.
+- **AI spec-contract-test pyramid (`census/ai-contracts.py`, F-148..F-153)** — the
+  AI-feature gaps from the 2026 landscape research (provider gateway,
+  AI-attributed tracked changes, command tool registry, MCP endpoint,
+  text-to-document generation, in-browser LLM) each get three layers: SPEC =
+  register rows (honest parity; the truth-table of expectations lives in the
+  script's PROBES dict and flips deliberately WITH the register row,
+  recapture-as-PR spirit); CONTRACT = protocol/shape pins against REAL
+  processes (rust docserver HTTP probes; `services/mcp-server` stdio JSON-RPC
+  — initialize/tools-list/schemas pinned GREEN today, 15 tools, backed by
+  storage-service :8002; `tools/call` round-trip = integration tier behind
+  `AI_CONTRACTS_MCP_CALL=1`); TEST = `reconcile.py --ai` (wired into the CI
+  census-ledger job, which builds `-p mcp-server`) + the standard census/
+  interact/fx surfaces once the editor ships AI controls. Teeth both ways:
+  STALE (register says real, probe fails) and EARLY (impl landed but register
+  + expectation not promoted) are hard failures; converter positive-pin
+  (docx→html via /api/conversion/convert) failing is a hard failure. Debt
+  block prints on every run — a green gate never hides the gap.
 - **Interaction dimension** — the structural census proves buttons EXIST
   but never clicks one, so "weird overlays / missing dialogs" were invisible
   to it. `interact-wo.cjs` (WO click-through: click every ribbon button,
