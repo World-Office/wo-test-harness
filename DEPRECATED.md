@@ -1,4 +1,15 @@
-# wo-test-harness — DEPRECATED (Python-era, kept as reference)
+# wo-test-harness — historical decision record (Python-era deprecation, SUPERSEDED)
+
+> **SUPERSEDED 2026-10-04.** The 2026-09-24 decision below ("mark Python-era,
+> do not retarget") was overtaken by events: the harness now boots the
+> **Rust docserver** as its default mode (`reconcile.py --docserver rust`),
+> censuses the React editor (`census-react.cjs`), and mints real WOPI sessions
+> against the live collaboration shell (`fx-prod.cjs`) — exactly the "future
+> Rust harness" this note called for. The Python mode remains a reconciliation
+> surface until sunset (DUAL-STACK-VERIFIED). Kept as an audit record; the
+> current state is described in `README.md` and `docs/arc42/`.
+
+---
 
 > ⚠️ **DEPRECATED 2026-09-24.** This parity/census/visual-gate harness measures the
 > **Python docserver** (`server/opencloud-docserver/`), which is itself deprecated
