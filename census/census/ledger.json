@@ -3889,6 +3889,30 @@
   {
    "tab": "backstage",
    "kind": "button",
+   "id": "fm-btn-create",
+   "icon": "btn-create-new",
+   "label": "Create New",
+   "enabled": true,
+   "token": "create",
+   "status": "real",
+   "wo": "btn-new",
+   "wo_tab": "surface:menu-file"
+  },
+  {
+   "tab": "backstage",
+   "kind": "button",
+   "id": "fm-btn-recent",
+   "icon": "",
+   "label": "Open Recent",
+   "enabled": true,
+   "token": "recent",
+   "status": "real",
+   "wo": "btn-open",
+   "wo_tab": "surface:menu-file"
+  },
+  {
+   "tab": "backstage",
+   "kind": "button",
    "id": "fm-btn-save",
    "icon": "btn-save",
    "label": "Save",
@@ -3983,7 +4007,7 @@
  ],
  "counts": {
   "covered": 152,
-  "real": 119,
+  "real": 121,
   "global-repeat": 88,
   "menu-file": 11
  }
