@@ -26,6 +26,19 @@ class H(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path.split("?")[0] == "/rig-editor.html":
             body = (HERE / "rig-editor.html").read_bytes().replace(b"http://127.0.0.1:8099", DS_URL.encode())
+            # ?portal=1 — portal-mode editor config: flips the File-backstage
+            # "Create New"/"Open Recent" items visible (standalone sessions hide
+            # them). OO controller: canCreateNew ← canRequestCreateNew|createUrl|
+            # templates.length; canOpenRecent ← recent !== undefined.
+            # (templates list — not canRequestCreateNew — is the knob that makes
+            # the Create New item actually appear; the boolean alone sets
+            # appOptions.canCreateNew but the menu item stays hidden on 9.4.)
+            if "portal=1" in self.path.split("?", 1)[-1]:
+                body = body.replace(
+                    b'lang: "en",',
+                    b'lang: "en", recent: [], '
+                    b'templates: [{ image: "", title: "Blank document", '
+                    b'url: "http://host.docker.internal:8735/demo.docx" }],', 1)
             self._ok(body); return
         if self.path.split("?")[0] == "/demo.docx":
             # prefer the server repo's valid demo docx; fall back to a tiny valid docx
@@ -47,6 +60,7 @@ if __name__ == "__main__":
     # RIG_BIND=0.0.0.0 for Linux rigs (docker host-gateway reaches the host
     # via the bridge IP, not loopback; Docker Desktop proxies loopback anyway)
     BIND = os.environ.get("RIG_BIND", "127.0.0.1")
+    socketserver.ThreadingTCPServer.allow_reuse_address = True  # survive TIME_WAIT on restart
     with socketserver.ThreadingTCPServer((BIND, PORT), H) as srv:
         print(f"rig-server on {BIND}:{PORT}")
         srv.serve_forever()

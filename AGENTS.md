@@ -144,6 +144,10 @@ wo-test-harness/
   RIG_BIND=0.0.0.0 DS_URL=http://127.0.0.1:8199 python census/rig/rig-server.py 8735
   node census/census-oo.cjs                 # click File, assert #file-menu-panel, enumerate
   node census/interact-oo.cjs               # backstage click-through (merges into census-oo-interactions.json)
+  # portal-mode capture (Create New / Open Recent visible) — the committed
+  # backstage references are captured in PORTAL mode (?portal=1):
+  OO_URL=http://127.0.0.1:8735/rig-editor.html?portal=1 node census/census-oo.cjs
+  OO_URL=http://127.0.0.1:8735/rig-editor.html?portal=1 node census/interact-oo.cjs
   ```
 
   Confirmed exact selectors on the rig (version 9.4): File trigger =
@@ -180,9 +184,7 @@ wo-test-harness/
   Suggest deferred with `react-filemenu-*` reasons (vanilla menu-file doesn't
   ship them; the React menu does). Ledger gate counts moved covered 90→93,
   real 94→95, deferred 78→83 with all 9 backstage rows resolved.
-  Remaining (rig follow-up): a portal-mode capture where Create New /
-  Open Recent are visible. The backstage interaction capture itself landed
-  2026-10-04 (`census/interact-oo.cjs`): clicks every visible backstage item,
+  The backstage interaction capture landed 2026-10-04 (`census/interact-oo.cjs`): clicks every visible backstage item,
   classifies panel/modal/none (Back=none, Save/Download-As/Protect/Info/
   Settings/Help=panel, Print/Suggest=none) and merges `tab:"backstage"`
   rows into the committed `census/census/census-oo-interactions.json`;
@@ -192,6 +194,19 @@ wo-test-harness/
   (idempotent open helper), and the hidden `#fm-btn-return` still takes
   clicks — never click Back when the panel is already closed, or every
   subsequent open silently fails.
+
+  Portal mode (DONE 2026-10-04): `rig-server.py` serves
+  `/rig-editor.html?portal=1` — it injects `recent: []` + a `templates`
+  array into the editorConfig, which flips the backstage Create New /
+  Open Recent items visible (OO controller: canOpenRecent ← recent !==
+  undefined; canCreateNew ← templates.length — NOTE `canRequestCreateNew:
+  true` alone does NOT make the item appear on DS 9.4). The committed
+  backstage references (census-oo.json tabs.backstage, 11 rows;
+  census-oo-interactions.json backstage, 11 rows) are captured in portal
+  mode — WO's editor always runs embedded in a portal (OpenCloud), so
+  portal mode is the fair comparison. MAP: create→btn-new (real),
+  recent→btn-open (real); interaction join declares both as divergences
+  (WO acts directly / native picker). No rig follow-ups remain.
   Playwright pitfall: page-side logic must be REAL functions passed to
   `page.evaluate`, never strings-as-expressions (evaluates to a function
   value → clicks nothing). Command-wired buttons dispatch via the bus;

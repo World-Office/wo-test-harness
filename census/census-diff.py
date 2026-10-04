@@ -117,6 +117,8 @@ MAP = {
     "settings": {"real": "filesettings"},   # File > Settings backstage
     "help": {"real": "filehelp"},   # File > Help & about
     "suggest": {"real": "filesuggest"},   # File > Suggest a feature
+    "create": {"real": "new"},   # backstage Create New = WO menu New (portal-mode capture)
+    "recent": {"real": "open"},   # backstage Open Recent = WO menu Open (portal-mode capture)
     "copy": {"covered": "native-clipboard"},
     "cut": {"covered": "native-clipboard"},
     "paste": {"covered": "native-clipboard"},

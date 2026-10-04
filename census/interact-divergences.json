@@ -1,5 +1,5 @@
 {
- "_comment": "Interaction-shape divergences, declared deliberately (loud, not silent — same doctrine as the register's deferred rows). Each token keys an OO control that opens a modal/menu while WO acts directly with no surface. These are intentional: WO's direct action (insert-at-caret, toggle, inline marker) is the chosen UX, not a missing dialog. Verified 2026-09-12 against OO 8-x rig + WO @ebbb4c15a.. Backstage tokens (download/protect/info/settings/help) added 2026-10-04 from the first OO backstage interaction capture (interact-oo.cjs, rig DS 9.4).",
+ "_comment": "Interaction-shape divergences, declared deliberately (loud, not silent — same doctrine as the register's deferred rows). Each token keys an OO control that opens a modal/menu while WO acts directly with no surface. These are intentional: WO's direct action (insert-at-caret, toggle, inline marker) is the chosen UX, not a missing dialog. Verified 2026-09-12 against OO 8-x rig + WO @ebbb4c15a.. Backstage tokens (download/protect/info/settings/help) added 2026-10-04 from the first OO backstage interaction capture (interact-oo.cjs, rig DS 9.4). Portal-mode backstage tokens (create/recent) added 2026-10-04 (portal-mode rig capture).",
  "backgroundplugins": "background plugin mode is a quiet ribbon toggle (aria-pressed + status), not a dialog; OO opens a plugin picker",
  "bgplugins": "same as backgroundplugins",
  "displaymode": "display mode is a ribbon toggle; OO opens a settings window",
@@ -26,5 +26,7 @@
  "protect": "OO Protect is a backstage section; WO opens a modal dialog — intentional surface-kind difference",
  "info": "OO Info is a backstage section; WO opens a modal dialog — intentional surface-kind difference",
  "settings": "OO Advanced Settings is a backstage section; WO opens a modal dialog — intentional surface-kind difference",
- "help": "OO Help is a backstage section; WO opens a modal dialog — intentional surface-kind difference"
+ "help": "OO Help is a backstage section; WO opens a modal dialog — intentional surface-kind difference",
+ "create": "OO Create New opens a backstage template panel; WO btn-new acts directly (replaces the document content, no surface) — intentional",
+ "recent": "OO Open Recent opens a backstage recent-files panel; WO btn-open uses the native file picker (no observable DOM surface in headless) — intentional"
 }

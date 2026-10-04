@@ -3255,6 +3255,18 @@
   },
   {
    "tab": "backstage",
+   "id": "fm-btn-create",
+   "label": "Create New",
+   "opens": "panel"
+  },
+  {
+   "tab": "backstage",
+   "id": "fm-btn-recent",
+   "label": "Open Recent",
+   "opens": "panel"
+  },
+  {
+   "tab": "backstage",
    "id": "fm-btn-save",
    "label": "Save",
    "opens": "panel"
@@ -3302,5 +3314,5 @@
    "opens": "none"
   }
  ],
- "backstageCapturedAt": "2026-10-04T10:03:19.157Z"
+ "backstageCapturedAt": "2026-10-04T10:57:05.496Z"
 }

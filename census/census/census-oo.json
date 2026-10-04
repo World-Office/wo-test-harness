@@ -1,6 +1,6 @@
 {
  "engine": "onlyoffice",
- "capturedAt": "2026-09-17T15:25:09.989Z",
+ "capturedAt": "2026-10-04T10:56:10.382Z",
  "viewport": {
   "w": 1600,
   "h": 1000
@@ -3569,12 +3569,32 @@
      "h": 20
     },
     {
+     "id": "fm-btn-create",
+     "icon": "btn-create-new",
+     "label": "Create New",
+     "enabled": true,
+     "x": 12,
+     "y": 126,
+     "w": 231,
+     "h": 20
+    },
+    {
+     "id": "fm-btn-recent",
+     "icon": "",
+     "label": "Open Recent",
+     "enabled": true,
+     "x": 12,
+     "y": 158,
+     "w": 231,
+     "h": 20
+    },
+    {
      "id": "fm-btn-save",
      "icon": "btn-save",
      "label": "Save",
      "enabled": false,
      "x": 12,
-     "y": 126,
+     "y": 209,
      "w": 231,
      "h": 20
     },
@@ -3584,7 +3604,7 @@
      "label": "Download As",
      "enabled": true,
      "x": 12,
-     "y": 158,
+     "y": 241,
      "w": 231,
      "h": 20
     },
@@ -3594,7 +3614,7 @@
      "label": "Print",
      "enabled": true,
      "x": 12,
-     "y": 190,
+     "y": 273,
      "w": 231,
      "h": 20
     },
@@ -3604,7 +3624,7 @@
      "label": "Protect",
      "enabled": true,
      "x": 12,
-     "y": 222,
+     "y": 305,
      "w": 231,
      "h": 20
     },
@@ -3614,7 +3634,7 @@
      "label": "Info",
      "enabled": true,
      "x": 12,
-     "y": 279,
+     "y": 362,
      "w": 231,
      "h": 20
     },
