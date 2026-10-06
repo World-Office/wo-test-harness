@@ -64,10 +64,15 @@ def check_invariants(tabs, errors):
 
 
 def main():
+    global DRIFT, ROW_TOL, OVERLAP_TOL
     ap = argparse.ArgumentParser()
     ap.add_argument("--wo", required=True, help="live geom-wo.json")
     ap.add_argument("--gold", default=None, help="committed golden (default: geom-wo.<sys.platform>.json, fallback geom-wo.json)")
+    ap.add_argument("--drift", type=float, default=DRIFT, help="max allowed px drift per axis (default 4.0)")
+    ap.add_argument("--row-tol", type=float, default=ROW_TOL, help="same-row y-center tolerance px (default 2.0)")
+    ap.add_argument("--overlap-tol", type=float, default=OVERLAP_TOL, help="tolerated rect overlap px (default 6.0)")
     args = ap.parse_args()
+    DRIFT, ROW_TOL, OVERLAP_TOL = args.drift, args.row_tol, args.overlap_tol
 
     default = Path(__file__).parent / f"geom-wo.{sys.platform}.json"
     gold_path = Path(args.gold) if args.gold else (default if default.exists() else Path(__file__).parent / "geom-wo.json")

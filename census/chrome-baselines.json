@@ -1,0 +1,12 @@
+{
+  "chrome-oo.png": {
+    "diff_px": 8.0,
+    "mean_diff": 16.1,
+    "thresh": 40,
+    "size": "1440x86",
+    "height_wo": 86,
+    "height_oo": 112,
+    "captured": "2026-10-05",
+    "note": "WO #toolbar vs OO rig #toolbar (viewport 1440, dsf 1). Top offender: WO ribbon is 26px shorter than OO; per-band diff 1.5-12%."
+  }
+}

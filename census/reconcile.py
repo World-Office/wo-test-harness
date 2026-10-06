@@ -523,6 +523,36 @@ def run_geometry(server: Path, out: Path, mode: str = "rust") -> int:
     ).returncode
 
 
+def run_chrome(server: Path, out: Path, mode: str = "rust") -> int:
+    """Ribbon-chrome pixel gate: capture the WO #toolbar and the OO rig #toolbar
+    at the same viewport (1440 px) and diff them. The OO capture needs the rig
+    (census/rig/rig-server.py + OO DS; set CHROME_OO_URL to override).
+    Report-only unless CHROME_GATE is set; returns 0 iff the gate passes."""
+    with tempfile.TemporaryDirectory(prefix="reconcile-chrome-") as td:
+        base, procs = spawn_docserver(server, Path(td), mode)
+        try:
+            wo = out / "chrome-wo.png"
+            subprocess.run(
+                ["node", "chrome-wo.cjs"], cwd=HERE, check=True,
+                env={**os.environ,
+                     "CENSUS_WO_URL": f"{base}/word/?access_token=stub&file_id=demo.docx",
+                     "CHROME_WO_OUT": str(wo)},
+            )
+        finally:
+            _kill(procs)
+    oo = out / "chrome-oo.png"
+    subprocess.run(
+        ["node", "chrome-oo.cjs"], cwd=HERE, check=True,
+        env={**os.environ,
+             "CHROME_OO_URL": os.environ.get("CHROME_OO_URL", "http://127.0.0.1:8735/rig-editor.html"),
+             "CHROME_OO_OUT": str(oo)},
+    )
+    cmd = [_py_with_pil(server), "chrome-diff.py", "--wo", str(wo), "--oo", str(oo), "--bands", "6"]
+    if os.environ.get("CHROME_GATE"):
+        cmd += ["--gate", os.environ["CHROME_GATE"]]
+    return subprocess.run(cmd, cwd=HERE).returncode
+
+
 # --- visual (pixel) gate ---------------------------------------------------
 # docx stem -> committed OnlyOffice golden filename (goldens live in golden/docs/)
 VISUAL_GOLDEN = {"visual-gate": "visual-gate-oo.png", "image-gate": "image-gate-oo.png",
@@ -617,6 +647,8 @@ def main() -> int:
                     help="capture the geometry census + gate on drift/overlaps vs the committed golden")
     ap.add_argument("--visual", action="store_true",
                     help="pixel gate: render each golden doc and gate sheet 1 vs its OnlyOffice golden (visual-wo.cjs + pixel-diff.py)")
+    ap.add_argument("--chrome", action="store_true",
+                    help="ribbon-chrome pixel gate: WO #toolbar vs OO rig #toolbar (chrome-wo.cjs + chrome-oo.cjs + chrome-diff.py; needs the OO rig)")
     ap.add_argument("--ai", action="store_true",
                     help="also run the AI spec-contract-test pyramid gate (census/ai-contracts.py)")
     ap.add_argument("--docserver", choices=["rust", "python"], default="rust",
@@ -751,6 +783,14 @@ def main() -> int:
         except SystemExit:
             visual_rc = 1
 
+    chrome_rc = 0
+    if args.chrome:
+        print("      chrome: ribbon pixel gate (chrome-wo.cjs + chrome-oo.cjs + chrome-diff.py)")
+        try:
+            chrome_rc = run_chrome(server, CENSUS, mode=args.docserver)
+        except SystemExit:
+            chrome_rc = 1
+
     seed_rc = 0
     if args.seed_check:
         print("      seed: regenerate graph + drift gate")
@@ -758,7 +798,7 @@ def main() -> int:
         if seed_rc != 0:
             print("      seed --check FAILED (commit the regenerated graph.json)")
 
-    return 0 if (ok and seed_rc == 0 and interact_rc == 0 and fx_rc == 0 and geom_rc == 0 and visual_rc == 0) else 1
+    return 0 if (ok and seed_rc == 0 and interact_rc == 0 and fx_rc == 0 and geom_rc == 0 and visual_rc == 0 and chrome_rc == 0) else 1
 
 
 if __name__ == "__main__":
