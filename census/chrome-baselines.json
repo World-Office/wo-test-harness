@@ -1,12 +1,12 @@
 {
   "chrome-oo.png": {
-    "diff_px": 7.2,
-    "mean_diff": 14.3,
+    "diff_px": 8.3,
+    "mean_diff": 16.0,
     "thresh": 40,
     "size": "1440x112",
     "height_wo": 112,
     "height_oo": 112,
     "captured": "2026-10-06",
-    "note": "After WO-RIBBON-TABS (584902ef4): tabs moved into #toolbar as 28px strip. Tab row (band 1) now 1.4% (was 7.9%); residual ~7% is control icons/typography (bands 2-4 8-10%). Priors: 6.6% (single-row), 8.0% (two-row)."
+    "note": "After WO-RIBBON-ICONS (796665608): icons normalized to uniform 24px, centered (buttons inline-flex), WO designs kept per product decision - WO icons are deliberately NOT OO glyphs, so this baseline includes the intentional icon divergence (bands 2-4 ~10-13%). Tab row band 1 = 1.3%. Priors: 7.2% (tabs moved), 6.6% (single-row), 8.0% (two-row)."
   }
 }
