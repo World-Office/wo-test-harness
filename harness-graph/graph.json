@@ -8161,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-04T07:10:04+00:00",
+ "generated_at": "2026-10-06T13:24:25+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -18366,7 +18366,7 @@
   },
   {
    "id": "F-148:rust-port",
-   "justification": "OpenAI-compatible provider config exists only in the deprecated python docserver (MODEL_REGISTRY + /ai/propose + 503-loud-unregistered). The canonical rust docserver has no /ai routes: config surface (base URL/key/model, server+user modes like coolwsd <ai>), OpenAI-compat chat passthrough remain a port. Contract: census/ai-contracts.py probe 148.",
+   "justification": "OpenAI-compatible provider config exists only in the deprecated python docserver (MODEL_REGISTRY + /ai/propose + 503-loud-unregistered). The canonical rust docserver has no /ai routes: config surface (base URL/key/model, server+user modes like coolwsd <ai>), OpenAI-compat chat passthrough remain a port. Contract: census/ai-contracts.py probe 148. Landed 2026-10-06: rust /ai/config real (base URL/model/key, litellm-backed), probe PASS.",
    "label": "Divergence"
   },
   {
@@ -18379,7 +18379,7 @@
   },
   {
    "id": "F-149:propose-panel",
-   "justification": "Editor side real (F-142/F-143): propose panel applies AI ops as tracked-change spans, per-change accept/reject, w:ins/w:del to DOCX. Missing vs 2026 UX law (Claude-for-Word/Gemini/EditBook): revision author attribution 'AI (model)' distinct from human authors, and rust-side /ai/propose (depends F-148). Contract: probe 149.",
+   "justification": "Editor side real (F-142/F-143): propose panel applies AI ops as tracked-change spans, per-change accept/reject, w:ins/w:del to DOCX. Missing vs 2026 UX law (Claude-for-Word/Gemini/EditBook): revision author attribution 'AI (model)' distinct from human authors, and rust-side /ai/propose (depends F-148). Contract: probe 149. Landed 2026-10-06: rust /api/documents/{id}/ai/propose real, author 'AI (model)' attribution, probe PASS.",
    "label": "Divergence"
   },
   {
@@ -18392,7 +18392,7 @@
   },
   {
    "id": "F-150:agent-tools",
-   "justification": "No surface: wo-command bus -> JSON-schema tool catalog (name/description/parameters/examples; OnlyOffice RegisteredFunction pattern) for an inline agent. The interaction census proves button<->command mapping; exporting it as tools is new work. Contract: probe 150.",
+   "justification": "No surface: wo-command bus -> JSON-schema tool catalog (name/description/parameters/examples; OnlyOffice RegisteredFunction pattern) for an inline agent. The interaction census proves button<->command mapping; exporting it as tools is new work. Contract: probe 150. Landed 2026-10-06: /api/ai/tools serves 16 JSON-schema tools (server-side command-registry mirror), probe PASS.",
    "label": "Divergence"
   },
   {
@@ -18418,7 +18418,7 @@
   },
   {
    "id": "F-152:converter-chain",
-   "justification": "No surface: LLM -> markdown/CSV intermediate -> /api/conversion/convert -> docx/xlsx (Nextcloud richdocuments pattern; the WO converter endpoint is real and contract-probed). Needs F-148. Contract: probe 152.",
+   "justification": "No surface: LLM -> markdown/CSV intermediate -> /api/conversion/convert -> docx/xlsx (Nextcloud richdocuments pattern; the WO converter endpoint is real and contract-probed). Needs F-148. Contract: probe 152. Landed 2026-10-06: /ai/generate real (LLM->markdown via the litellm provider), converter chain pinned by probe 152b, probe PASS.",
    "label": "Divergence"
   },
   {
