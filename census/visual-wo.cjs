@@ -14,7 +14,7 @@ const path = require('path');
   const base = process.env.VISUAL_BASE;
   const doc = process.env.VISUAL_DOC;
   const out = process.env.VISUAL_OUT;
-  const zoom = process.env.VISUAL_ZOOM; // e.g. 2.25: scale the 8px base text up to LO/Word 12pt-ish
+  const zoom = process.env.VISUAL_ZOOM; // calibration knob only; default = editor's own 100% zoom (12pt Liberation Serif face, since 6b9d94d4f)
   const font = process.env.VISUAL_FONT; // e.g. 'Liberation Serif': match LO's serif engine metric
   if (!base || !doc || !out) {
     console.error('visual-wo.cjs: VISUAL_BASE, VISUAL_DOC, VISUAL_OUT required');
@@ -38,9 +38,9 @@ const path = require('path');
   await page.goto(target, { waitUntil: 'domcontentloaded', timeout: 60000 });
   await page.waitForSelector('#editor', { timeout: 30000 });
   if (font) {
-    // the editor body currently uses a system-ui sans stack; a Word/LO doc
-    // is serif. Force serif BEFORE the async html fetch drives pagination,
-    // so sheet metrics are measured on the same face the golden uses.
+    // the editor's document face is Liberation Serif 12pt (style.css #editor,
+    // since 6b9d94d4f); VISUAL_FONT overrides it for calibration experiments
+    // BEFORE the async html fetch drives pagination.
     await page.addStyleTag({ content: `#editor, #editor .wo-page { font-family: ${font} !important; }` });
   }
   // wait until the converted flow is actually populated (table row cell or text)
