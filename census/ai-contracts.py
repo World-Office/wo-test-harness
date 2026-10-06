@@ -49,11 +49,15 @@ from reconcile import _kill, resolve_server, spawn_docserver  # noqa: E402
 # contract truth-table: F-id -> (probe, expectation). Flipping an expectation
 # is a deliberate act that goes in the same PR as the feature + register row.
 PROBES: dict[str, tuple[str, str]] = {
-    "F-148": ("ai_config", "absent"),
-    "F-149": ("ai_propose", "absent"),
-    "F-150": ("ai_tools", "absent"),
+    # 2026-10-06: rust docserver AI gateway landed (wo-docserver src/ai.rs) -
+    # /ai/config, /api/ai/tools, /ai/generate, /api/documents/{id}/ai/propose
+    # all real (LLM-backed via the local litellm provider). Expectations flipped
+    # absent -> pass together with the feature, per the MAP doctrine.
+    "F-148": ("ai_config", "pass"),
+    "F-149": ("ai_propose", "pass"),
+    "F-150": ("ai_tools", "pass"),
     "F-151": ("mcp_stdio", "pass"),
-    "F-152": ("ai_generate", "absent"),
+    "F-152": ("ai_generate", "pass"),
     "F-153": ("deferred", "deferred"),
 }
 
@@ -174,10 +178,16 @@ def run() -> int:
         results["F-149"] = _absent_or_200(base, "POST",
                                           "/api/documents/demo.docx/ai/propose",
                                           {"instruction": "probe"})
-        v, d = _absent_or_200(base, "GET", "/api/ai/tools")
-        if v == "pass" and not _shape_ok_tools(d):
-            v, d = "fail", "200 but tool shapes invalid"
-        results["F-150"] = (v, d)
+        # F-150 needs the BODY (not the detail string): _absent_or_200 returns
+        # a verdict+detail pair, so fetch the tool catalog directly.
+        tcode, tbody = _http("GET", base + "/api/ai/tools")
+        if tcode == 200 and _shape_ok_tools(tbody):
+            n = len((tbody or {}).get("tools", [])) if isinstance(tbody, dict) else 0
+            results["F-150"] = ("pass", f"HTTP 200 ({n} tools, schemas ok)")
+        elif tcode == 200:
+            results["F-150"] = ("fail", "200 but tool shapes invalid")
+        else:
+            results["F-150"] = ("fail", f"HTTP {tcode}")
         results["F-151"] = ("skip", "")
         results["F-152"] = _absent_or_200(base, "POST", "/ai/generate",
                                           {"prompt": "probe", "format": "docx"})
@@ -195,11 +205,19 @@ def run() -> int:
                             "target_format": "html"})
         conv = ("pass" if code == 200 and isinstance(body, dict)
                 and body.get("status") == "Success" else "fail")
-        if conv != "pass":
-            results["F-152"] = ("fail", "generate absent; converter pin FAILED "
-                               "(the chain's real half regressed)")
-        else:
-            results["F-152"] = ("absent", "generate absent; converter pin pass")
+        gen = results.get("F-152", ("", ""))[0]
+        if gen != "pass":
+            # /ai/generate did not answer: report REAL absence/failure, but
+            # never hide a converter regression either way.
+            results["F-152"] = (
+                "absent" if conv == "pass" else "fail",
+                f"generate unavailable; converter pin {'pass' if conv == 'pass' else 'FAILED'}",
+            )
+        elif conv == "fail":
+            results["F-152"] = (
+                "fail",
+                f"generate PASS but converter pin FAILED (HTTP {code}) - chain's real half regressed",
+            )
     finally:
         _kill(procs2)
 
