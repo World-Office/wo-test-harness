@@ -1,12 +1,12 @@
 {
   "chrome-oo.png": {
-    "diff_px": 6.6,
-    "mean_diff": 14.1,
+    "diff_px": 7.2,
+    "mean_diff": 14.3,
     "thresh": 40,
     "size": "1440x112",
     "height_wo": 112,
     "height_oo": 112,
     "captured": "2026-10-06",
-    "note": "After WO-RIBBON-SINGLE-ROW (b306f1dcd): toolbar 86->112px, controls 32->46px, Home single row. Heights now equal; per-band 2.5-10.1%. Prior baseline 8.0% (86px toolbar)."
+    "note": "After WO-RIBBON-TABS (584902ef4): tabs moved into #toolbar as 28px strip. Tab row (band 1) now 1.4% (was 7.9%); residual ~7% is control icons/typography (bands 2-4 8-10%). Priors: 6.6% (single-row), 8.0% (two-row)."
   }
 }
