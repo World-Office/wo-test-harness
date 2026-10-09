@@ -8161,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-09T04:25:22+00:00",
+ "generated_at": "2026-10-09T05:00:49+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -18453,11 +18453,11 @@
    "id": "F-201",
    "label": "Feature",
    "name": "SharedStrings dedup round-trip",
-   "parity": "missing"
+   "parity": "partial"
   },
   {
    "id": "F-201:oo-core",
-   "justification": "t=s index vs inlineStr must round-trip without user-visible change (XlsxFormat/SharedStrings). Probe needed before claiming.",
+   "justification": "t=s index vs inlineStr must round-trip without user-visible change (XlsxFormat/SharedStrings). Probe needed before claiming. PROBED 2026-10-09 census/oo-contracts.py: caught SILENT CORRUPTION (reader pre-resolves t=s at parser.rs:2622, converter re-resolved: 'Beta'.parse::<usize>() -> 0 -> sharedStrings[0], every string cell became string 0). FIXED wo-x2t converters.rs (parser = single resolution authority; regression test test_bridge_xlsx_shared_string_index_one). Now idx>=1 resolves; writer dedups Beta x2 -> 1 <si>.",
    "label": "Divergence"
   },
   {
@@ -18470,7 +18470,7 @@
   },
   {
    "id": "F-202:oo-core",
-   "justification": "wo-formula (lexer/parser/eval) is real and tested; the xlsx <f>+cached-<v> serialization contract (recalc-and-recache on edit) is unprobed.",
+   "justification": "wo-formula (lexer/parser/eval) is real and tested; the xlsx <f>+cached-<v> serialization contract (recalc-and-recache on edit) is unprobed. PROBED: <f>A1*2</f> + cached <v>4</v> survive round-trip. Recalc-on-edit unprobed.",
    "label": "Divergence"
   },
   {
@@ -18496,7 +18496,7 @@
   },
   {
    "id": "F-204:oo-core",
-   "justification": "r=A1 addressing and n/s/b/str/e type incl. empty-cell elision (XlsxFormat worksheets). wo-sheet ops exist; fidelity unprobed.",
+   "justification": "r=A1 addressing and n/s/b/str/e type incl. empty-cell elision (XlsxFormat worksheets). wo-sheet ops exist; fidelity unprobed. PROBED: r-addr + t=s kept; never-set D7 elided.",
    "label": "Divergence"
   },
   {
@@ -18578,11 +18578,11 @@
    "id": "F-300",
    "label": "Feature",
    "name": "PPTX part inventory round-trip",
-   "parity": "missing"
+   "parity": "partial"
   },
   {
    "id": "F-300:oo-core",
-   "justification": "PPTXFormat covers presentation, slides, layouts, masters, notesMaster/notesSlides, handoutMaster, theme, presProps, viewProps, tableStyles, comments, commentAuthors, app. WO has UI-level presentation-slide-management but no format layer.",
+   "justification": "PPTXFormat covers presentation, slides, layouts, masters, notesMaster/notesSlides, handoutMaster, theme, presProps, viewProps, tableStyles, comments, commentAuthors, app. WO has UI-level presentation-slide-management but no format layer. PROBED: 2-slide fixture round-trips, both slide parts + sldIdLst 256,257 preserved. Layout/notes/chart passthrough unprobed (fixture lacked them).",
    "label": "Divergence"
   },
   {
@@ -18604,11 +18604,11 @@
    "id": "F-302",
    "label": "Feature",
    "name": "sldIdLst = slide order",
-   "parity": "missing"
+   "parity": "partial"
   },
   {
    "id": "F-302:oo-core",
-   "justification": "Reorder rewrites only p:sldIdLst (+rels), not slide parts (PPTXFormat/Presentation.cpp).",
+   "justification": "Reorder rewrites only p:sldIdLst (+rels), not slide parts (PPTXFormat/Presentation.cpp). PROBED: sldIdLst order preserved on round-trip. Reorder-only edit unprobed.",
    "label": "Divergence"
   },
   {
@@ -18658,7 +18658,7 @@
   },
   {
    "id": "F-400:oo-core",
-   "justification": "Checker reads [Content_Types].xml and matches wordprocessingml/docxf/spreadsheetml/presentationml main+xml strings (OfficeFileFormatChecker2.cpp:1007-1095). wo-x2t is real; the detection matrix is unprobed.",
+   "justification": "Checker reads [Content_Types].xml and matches wordprocessingml/docxf/spreadsheetml/presentationml main+xml strings (OfficeFileFormatChecker2.cpp:1007-1095). wo-x2t is real; the detection matrix is unprobed. PROBED: labeled docx->txt Success; mislabeled pptx-as-docx -> SILENT EMPTY Success (trusts declared label; neither sniffs [Content_Types] like OO checker:1007-1095 nor fails loudly).",
    "label": "Divergence"
   },
   {
@@ -18671,7 +18671,7 @@
   },
   {
    "id": "F-401:oo-core",
-   "justification": "Extension families (.xls/.xlsx/.xlsb, .doc/.docx/.txt/.xml/.rtf) and xmlns:w/xmlns:ss/progid sniffing (OfficeFileFormatChecker2.cpp:944-976,1673-1701).",
+   "justification": "Extension families (.xls/.xlsx/.xlsb, .doc/.docx/.txt/.xml/.rtf) and xmlns:w/xmlns:ss/progid sniffing (OfficeFileFormatChecker2.cpp:944-976,1673-1701). PROBED: no xml member; Word2003-XML -> loud UnsupportedFormat (correct loudness, capability absent vs OO progid-sniffing :1673-1701).",
    "label": "Divergence"
   },
   {
@@ -18680,11 +18680,11 @@
    "id": "F-402",
    "label": "Feature",
    "name": "Format taxonomy loud-unsupported",
-   "parity": "partial"
+   "parity": "real"
   },
   {
    "id": "F-402:oo-core",
-   "justification": "OO enumerates 117 format constants in families (Common/OfficeFileFormats.h). WO must name every unsupported member loudly (gate-tells-the-truth law).",
+   "justification": "OO enumerates 117 format constants in families (Common/OfficeFileFormats.h). WO must name every unsupported member loudly (gate-tells-the-truth law). PROBED: docx->xlsb -> UnsupportedFormat naming both members exactly. Loud taxonomy satisfied.",
    "label": "Divergence"
   },
   {
@@ -18697,7 +18697,7 @@
   },
   {
    "id": "F-403:oo-core",
-   "justification": "PdfFile/SrcWriter/Document.cpp:62-63. wo-pdf-render is real; header unprobed.",
+   "justification": "PdfFile/SrcWriter/Document.cpp:62-63. wo-pdf-render is real; header unprobed. PROBED: (a) no docx->pdf pair in matrix (OO ships DocxRenderer; WO gap) (b) pdf round-trip always %PDF-1.4; OO 1.7 general / 1.4 PDF-A only (Document.cpp:62-63).",
    "label": "Divergence"
   },
   {
@@ -18732,11 +18732,11 @@
    "id": "F-500",
    "label": "Feature",
    "name": "Unit matrix exact ratios",
-   "parity": "missing"
+   "parity": "partial"
   },
   {
    "id": "F-500:oo-core",
-   "justification": "OOXML/Base/Unit.cpp is the single conversion authority: Pt=72/in, Px=96/in, Twips(Dx/Multi)=1440/in, Emu=360000/cm (=914400/in), Sx=EMU, Emu_To_Pt=/12700, Twips->Emu=x635. WO must route all geometry through one units module with these exact constants.",
+   "justification": "OOXML/Base/Unit.cpp is the single conversion authority: Pt=72/in, Px=96/in, Twips(Dx/Multi)=1440/in, Emu=360000/cm (=914400/in), Sx=EMU, Emu_To_Pt=/12700, Twips->Emu=x635. WO must route all geometry through one units module with these exact constants. PROBED static: 914400 x7 files, 1440 x8, 635 x1, 360000 x1, but 12700 (EMU/pt) x0; scattered constants, no central units module as OO Unit.cpp provides.",
    "label": "Divergence"
   },
   {
