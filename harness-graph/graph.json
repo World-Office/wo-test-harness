@@ -8161,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-06T13:24:25+00:00",
+ "generated_at": "2026-10-09T04:09:45+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -18433,12 +18433,304 @@
    "id": "F-153:deferred-xl",
    "justification": "Deferred XL: transformers.js Web Worker (WebGPU->WASM fallback, OPFS model cache) driving the wasm-renderer editor - first OOXML editor whose AI never uploads anything. No server-side contract possible; spec-only until the editor ships a worker (probe 153 reports DEFERRED forever by design).",
    "label": "Divergence"
+  },
+  {
+   "area": "sheet",
+   "fidelity": "L0",
+   "id": "F-200",
+   "label": "Feature",
+   "name": "XLSX part inventory round-trip",
+   "parity": "partial"
+  },
+  {
+   "id": "F-200:oo-core",
+   "justification": "OO core owns the full part set (CalcChain, Chart, Comments, Controls, Drawing, ExternalLinks, NamedSheetViews, Ole, Pivot, RichData, SharedStrings, Workbook, Worksheets; see OOXML/XlsxFormat dir). WO has a sheet model (wo-sheet) but part-level coverage is unprobed. Source: server/plan/2026-10-09-oo-core-derived-specs.md",
+   "label": "Divergence"
+  },
+  {
+   "area": "sheet",
+   "fidelity": "L1",
+   "id": "F-201",
+   "label": "Feature",
+   "name": "SharedStrings dedup round-trip",
+   "parity": "missing"
+  },
+  {
+   "id": "F-201:oo-core",
+   "justification": "t=s index vs inlineStr must round-trip without user-visible change (XlsxFormat/SharedStrings). Probe needed before claiming.",
+   "label": "Divergence"
+  },
+  {
+   "area": "sheet",
+   "fidelity": "L1",
+   "id": "F-202",
+   "label": "Feature",
+   "name": "Formula + cached value round-trip",
+   "parity": "partial"
+  },
+  {
+   "id": "F-202:oo-core",
+   "justification": "wo-formula (lexer/parser/eval) is real and tested; the xlsx <f>+cached-<v> serialization contract (recalc-and-recache on edit) is unprobed.",
+   "label": "Divergence"
+  },
+  {
+   "area": "sheet",
+   "fidelity": "L1",
+   "id": "F-203",
+   "label": "Feature",
+   "name": "calcChain handling",
+   "parity": "missing"
+  },
+  {
+   "id": "F-203:oo-core",
+   "justification": "OO accepts + lazily rebuilds calcChain.xml (XlsxFormat/CalcChain). WO must pick and document: preserve or omit-on-rewrite.",
+   "label": "Divergence"
+  },
+  {
+   "area": "sheet",
+   "fidelity": "L1",
+   "id": "F-204",
+   "label": "Feature",
+   "name": "Cell address + type model",
+   "parity": "partial"
+  },
+  {
+   "id": "F-204:oo-core",
+   "justification": "r=A1 addressing and n/s/b/str/e type incl. empty-cell elision (XlsxFormat worksheets). wo-sheet ops exist; fidelity unprobed.",
+   "label": "Divergence"
+  },
+  {
+   "area": "sheet",
+   "fidelity": "L1",
+   "id": "F-205",
+   "label": "Feature",
+   "name": "Workbook map + defined names",
+   "parity": "missing"
+  },
+  {
+   "area": "sheet",
+   "fidelity": "L1",
+   "id": "F-206",
+   "label": "Feature",
+   "name": "Chart part preservation",
+   "parity": "missing"
+  },
+  {
+   "id": "F-206:oo-core",
+   "justification": "Charts live under xl/charts via drawings (XlsxFormat/Chart); WO must preserve even when it cannot render.",
+   "label": "Divergence"
+  },
+  {
+   "area": "sheet",
+   "fidelity": "L1",
+   "id": "F-207",
+   "label": "Feature",
+   "name": "Pivot part preservation",
+   "parity": "missing"
+  },
+  {
+   "id": "F-207:oo-core",
+   "justification": "Preservation only, not computation (XlsxFormat/Pivot).",
+   "label": "Divergence"
+  },
+  {
+   "area": "sheet",
+   "fidelity": "L4",
+   "id": "F-208",
+   "label": "Feature",
+   "name": "Legacy XLS read",
+   "parity": "missing"
+  },
+  {
+   "id": "F-208:oo-core",
+   "justification": "MsBinaryFile/XlsFile decodes binary XLS to IR; WO has no .xls reader.",
+   "label": "Divergence"
+  },
+  {
+   "area": "sheet",
+   "fidelity": "L4",
+   "id": "F-209",
+   "label": "Feature",
+   "name": "XLSB read",
+   "parity": "missing"
+  },
+  {
+   "id": "F-209:oo-core",
+   "justification": "OOXML/XlsbFormat exists in core; WO has none.",
+   "label": "Divergence"
+  },
+  {
+   "area": "sheet",
+   "fidelity": "L4",
+   "id": "F-210",
+   "label": "Feature",
+   "name": "ODS write",
+   "parity": "missing"
+  },
+  {
+   "id": "F-210:oo-core",
+   "justification": "OdfFile ships a full Writer engine; WO has ODT-adjacent doc work only.",
+   "label": "Divergence"
+  },
+  {
+   "area": "slide",
+   "fidelity": "L0",
+   "id": "F-300",
+   "label": "Feature",
+   "name": "PPTX part inventory round-trip",
+   "parity": "missing"
+  },
+  {
+   "id": "F-300:oo-core",
+   "justification": "PPTXFormat covers presentation, slides, layouts, masters, notesMaster/notesSlides, handoutMaster, theme, presProps, viewProps, tableStyles, comments, commentAuthors, app. WO has UI-level presentation-slide-management but no format layer.",
+   "label": "Divergence"
+  },
+  {
+   "area": "slide",
+   "fidelity": "L1",
+   "id": "F-301",
+   "label": "Feature",
+   "name": "Slide->layout->master inheritance",
+   "parity": "missing"
+  },
+  {
+   "id": "F-301:oo-core",
+   "justification": "Property resolves only if unset on slide; re-save must NOT flatten inherited props (PPTXFormat Slide/SlideLayout/SlideMaster).",
+   "label": "Divergence"
+  },
+  {
+   "area": "slide",
+   "fidelity": "L1",
+   "id": "F-302",
+   "label": "Feature",
+   "name": "sldIdLst = slide order",
+   "parity": "missing"
+  },
+  {
+   "id": "F-302:oo-core",
+   "justification": "Reorder rewrites only p:sldIdLst (+rels), not slide parts (PPTXFormat/Presentation.cpp).",
+   "label": "Divergence"
+  },
+  {
+   "area": "slide",
+   "fidelity": "L1",
+   "id": "F-303",
+   "label": "Feature",
+   "name": "Notes slides round-trip",
+   "parity": "missing"
+  },
+  {
+   "area": "slide",
+   "fidelity": "L1",
+   "id": "F-304",
+   "label": "Feature",
+   "name": "Theme parts preservation",
+   "parity": "missing"
+  },
+  {
+   "area": "slide",
+   "fidelity": "L4",
+   "id": "F-305",
+   "label": "Feature",
+   "name": "Legacy PPT read",
+   "parity": "missing"
+  },
+  {
+   "id": "F-305:oo-core",
+   "justification": "MsBinaryFile/PptFile; WO has none.",
+   "label": "Divergence"
+  },
+  {
+   "area": "slide",
+   "fidelity": "L4",
+   "id": "F-306",
+   "label": "Feature",
+   "name": "ODP write",
+   "parity": "missing"
+  },
+  {
+   "area": "convert",
+   "fidelity": "L4",
+   "id": "F-400",
+   "label": "Feature",
+   "name": "OPC content-type detection",
+   "parity": "partial"
+  },
+  {
+   "id": "F-400:oo-core",
+   "justification": "Checker reads [Content_Types].xml and matches wordprocessingml/docxf/spreadsheetml/presentationml main+xml strings (OfficeFileFormatChecker2.cpp:1007-1095). wo-x2t is real; the detection matrix is unprobed.",
+   "label": "Divergence"
+  },
+  {
+   "area": "convert",
+   "fidelity": "L4",
+   "id": "F-401",
+   "label": "Feature",
+   "name": "Extension + Word2003XML + MHTML fallbacks",
+   "parity": "missing"
+  },
+  {
+   "id": "F-401:oo-core",
+   "justification": "Extension families (.xls/.xlsx/.xlsb, .doc/.docx/.txt/.xml/.rtf) and xmlns:w/xmlns:ss/progid sniffing (OfficeFileFormatChecker2.cpp:944-976,1673-1701).",
+   "label": "Divergence"
+  },
+  {
+   "area": "convert",
+   "fidelity": "L0",
+   "id": "F-402",
+   "label": "Feature",
+   "name": "Format taxonomy loud-unsupported",
+   "parity": "partial"
+  },
+  {
+   "id": "F-402:oo-core",
+   "justification": "OO enumerates 117 format constants in families (Common/OfficeFileFormats.h). WO must name every unsupported member loudly (gate-tells-the-truth law).",
+   "label": "Divergence"
+  },
+  {
+   "area": "convert",
+   "fidelity": "L0",
+   "id": "F-403",
+   "label": "Feature",
+   "name": "PDF header version (1.7; PDF/A 1.4)",
+   "parity": "partial"
+  },
+  {
+   "id": "F-403:oo-core",
+   "justification": "PdfFile/SrcWriter/Document.cpp:62-63. wo-pdf-render is real; header unprobed.",
+   "label": "Divergence"
+  },
+  {
+   "area": "convert",
+   "fidelity": "L2",
+   "id": "F-404",
+   "label": "Feature",
+   "name": "DOCX->PDF page command stream",
+   "parity": "partial"
+  },
+  {
+   "id": "F-404:oo-core",
+   "justification": "DocxRenderer/src/logic/Page.cpp: per-page BeginCommand/EndCommand model. wo-docx-renderer pagination tests green (37) but PDF-target parity unprobed.",
+   "label": "Divergence"
+  },
+  {
+   "area": "convert",
+   "fidelity": "L4",
+   "id": "F-405",
+   "label": "Feature",
+   "name": "Doc-family readers (RTF/TXT/HTML/FB2/EPUB)",
+   "parity": "partial"
+  },
+  {
+   "id": "F-405:oo-core",
+   "justification": "core/{RtfFile,TxtFile,HtmlFile,Fb2File,EpubFile}. WO: txt/html known; rtf/fb2/epub missing. Stretch: DJVU/XPS/HWP/OFD.",
+   "label": "Divergence"
   }
  ],
  "stats": {
   "commands": 70,
   "edges": 1632,
-  "features": 111,
+  "features": 135,
   "surfaces": 70,
   "tests": 1383
  },
