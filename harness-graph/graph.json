@@ -8161,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-09T04:09:45+00:00",
+ "generated_at": "2026-10-09T04:25:22+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -18725,12 +18725,38 @@
    "id": "F-405:oo-core",
    "justification": "core/{RtfFile,TxtFile,HtmlFile,Fb2File,EpubFile}. WO: txt/html known; rtf/fb2/epub missing. Stretch: DJVU/XPS/HWP/OFD.",
    "label": "Divergence"
+  },
+  {
+   "area": "convert",
+   "fidelity": "L0",
+   "id": "F-500",
+   "label": "Feature",
+   "name": "Unit matrix exact ratios",
+   "parity": "missing"
+  },
+  {
+   "id": "F-500:oo-core",
+   "justification": "OOXML/Base/Unit.cpp is the single conversion authority: Pt=72/in, Px=96/in, Twips(Dx/Multi)=1440/in, Emu=360000/cm (=914400/in), Sx=EMU, Emu_To_Pt=/12700, Twips->Emu=x635. WO must route all geometry through one units module with these exact constants.",
+   "label": "Divergence"
+  },
+  {
+   "area": "file",
+   "fidelity": "L4",
+   "id": "F-501",
+   "label": "Feature",
+   "name": "ECMA-376 decrypt (agile/standard)",
+   "parity": "missing"
+  },
+  {
+   "id": "F-501:oo-core",
+   "justification": "OfficeCryptReader/source/ECMACryptFile.h:33 DecryptOfficeFile + :34 EncryptOfficeFile. WO needs password-protected OOXML read with loud wrong-password error; encrypt-on-save is stretch.",
+   "label": "Divergence"
   }
  ],
  "stats": {
   "commands": 70,
   "edges": 1632,
-  "features": 135,
+  "features": 137,
   "surfaces": 70,
   "tests": 1383
  },

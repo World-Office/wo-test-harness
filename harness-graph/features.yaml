@@ -266,3 +266,9 @@ features:
       divergence: [{ref: oo-core, justification: "DocxRenderer/src/logic/Page.cpp: per-page BeginCommand/EndCommand model. wo-docx-renderer pagination tests green (37) but PDF-target parity unprobed."}]}
   - {id: F-405, area: convert,   name: Doc-family readers (RTF/TXT/HTML/FB2/EPUB), parity: partial, fidelity: L4,
       divergence: [{ref: oo-core, justification: "core/{RtfFile,TxtFile,HtmlFile,Fb2File,EpubFile}. WO: txt/html known; rtf/fb2/epub missing. Stretch: DJVU/XPS/HWP/OFD."}]}
+
+  # ── second C++ pass (2026-10-09): units + encryption ────────────────────────────────────────────────────────
+  - {id: F-500, area: convert,   name: Unit matrix exact ratios,          parity: missing, fidelity: L0,
+      divergence: [{ref: oo-core, justification: "OOXML/Base/Unit.cpp is the single conversion authority: Pt=72/in, Px=96/in, Twips(Dx/Multi)=1440/in, Emu=360000/cm (=914400/in), Sx=EMU, Emu_To_Pt=/12700, Twips->Emu=x635. WO must route all geometry through one units module with these exact constants."}]}
+  - {id: F-501, area: file,      name: ECMA-376 decrypt (agile/standard), parity: missing, fidelity: L4,
+      divergence: [{ref: oo-core, justification: "OfficeCryptReader/source/ECMACryptFile.h:33 DecryptOfficeFile + :34 EncryptOfficeFile. WO needs password-protected OOXML read with loud wrong-password error; encrypt-on-save is stretch."}]}
