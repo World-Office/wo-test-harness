@@ -8161,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-09T06:59:48+00:00",
+ "generated_at": "2026-10-09T08:00:40+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -18667,11 +18667,11 @@
    "id": "F-401",
    "label": "Feature",
    "name": "Extension + Word2003XML + MHTML fallbacks",
-   "parity": "missing"
+   "parity": "real"
   },
   {
    "id": "F-401:oo-core",
-   "justification": "Extension families (.xls/.xlsx/.xlsb, .doc/.docx/.txt/.xml/.rtf) and xmlns:w/xmlns:ss/progid sniffing (OfficeFileFormatChecker2.cpp:944-976,1673-1701). PROBED: no xml member; Word2003-XML -> loud UnsupportedFormat (correct loudness, capability absent vs OO progid-sniffing :1673-1701).",
+   "justification": "Extension families (.xls/.xlsx/.xlsb, .doc/.docx/.txt/.xml/.rtf) and xmlns:w/xmlns:ss/progid sniffing (OfficeFileFormatChecker2.cpp:944-976,1673-1701). PROBED: no xml member; Word2003-XML -> loud UnsupportedFormat (correct loudness, capability absent vs OO progid-sniffing :1673-1701). FIXED 2026-10-09 (af campaign OO-F401-WORD2003XML): Word2003XmlToDocxConverter in wo-x2t \u2014 'xml' member now real; local-name root guard rejects non-Word XML loudly ('not Word 2003 XML: root is ss:Workbook'); reuses OoxmlSerializer; live-probed Success.",
    "label": "Divergence"
   },
   {
@@ -18732,11 +18732,11 @@
    "id": "F-500",
    "label": "Feature",
    "name": "Unit matrix exact ratios",
-   "parity": "partial"
+   "parity": "real"
   },
   {
    "id": "F-500:oo-core",
-   "justification": "OOXML/Base/Unit.cpp is the single conversion authority: Pt=72/in, Px=96/in, Twips(Dx/Multi)=1440/in, Emu=360000/cm (=914400/in), Sx=EMU, Emu_To_Pt=/12700, Twips->Emu=x635. WO must route all geometry through one units module with these exact constants. PROBED static: 914400 x7 files, 1440 x8, 635 x1, 360000 x1, but 12700 (EMU/pt) x0; scattered constants, no central units module as OO Unit.cpp provides.",
+   "justification": "OOXML/Base/Unit.cpp is the single conversion authority: Pt=72/in, Px=96/in, Twips(Dx/Multi)=1440/in, Emu=360000/cm (=914400/in), Sx=EMU, Emu_To_Pt=/12700, Twips->Emu=x635. WO must route all geometry through one units module with these exact constants. PROBED static: 914400 x7 files, 1440 x8, 635 x1, 360000 x1, but 12700 (EMU/pt) x0; scattered constants, no central units module as OO Unit.cpp provides. FIXED 2026-10-09 (af campaign OO-F500-UNITS): wo-common/src/units.rs central matrix (CM_TO_EMU 360000, IN_TO_EMU 914400, EMU_PER_PT 12700, DX_TO_SX 635, TWIPS_PER_IN 1440, PT/PX_PER_IN) + test_units_matrix; scattered constants migrated in wo-ooxml/wo-docx-renderer/wo-slide. wo-x2t migration still pending (parallel-task isolation).",
    "label": "Divergence"
   },
   {
