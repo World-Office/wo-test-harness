@@ -8161,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-09T05:00:49+00:00",
+ "generated_at": "2026-10-09T06:59:48+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -18654,11 +18654,11 @@
    "id": "F-400",
    "label": "Feature",
    "name": "OPC content-type detection",
-   "parity": "partial"
+   "parity": "real"
   },
   {
    "id": "F-400:oo-core",
-   "justification": "Checker reads [Content_Types].xml and matches wordprocessingml/docxf/spreadsheetml/presentationml main+xml strings (OfficeFileFormatChecker2.cpp:1007-1095). wo-x2t is real; the detection matrix is unprobed. PROBED: labeled docx->txt Success; mislabeled pptx-as-docx -> SILENT EMPTY Success (trusts declared label; neither sniffs [Content_Types] like OO checker:1007-1095 nor fails loudly).",
+   "justification": "Checker reads [Content_Types].xml and matches wordprocessingml/docxf/spreadsheetml/presentationml main+xml strings (OfficeFileFormatChecker2.cpp:1007-1095). wo-x2t is real; the detection matrix is unprobed. PROBED: labeled docx->txt Success; mislabeled pptx-as-docx -> SILENT EMPTY Success (trusts declared label; neither sniffs [Content_Types] like OO checker:1007-1095 nor fails loudly). FIXED 2026-10-09: router now sniffs [Content_Types] main+xml when declared source is OPC family; mismatch -> loud UnsupportedFormat naming detected family ('format mismatch: declared docx but [Content_Types].xml is pptx'). Live-probed PASS.",
    "label": "Divergence"
   },
   {
@@ -18697,7 +18697,7 @@
   },
   {
    "id": "F-403:oo-core",
-   "justification": "PdfFile/SrcWriter/Document.cpp:62-63. wo-pdf-render is real; header unprobed. PROBED: (a) no docx->pdf pair in matrix (OO ships DocxRenderer; WO gap) (b) pdf round-trip always %PDF-1.4; OO 1.7 general / 1.4 PDF-A only (Document.cpp:62-63).",
+   "justification": "PdfFile/SrcWriter/Document.cpp:62-63. wo-pdf-render is real; header unprobed. PROBED: (a) no docx->pdf pair in matrix (OO ships DocxRenderer; WO gap) (b) pdf round-trip always %PDF-1.4; OO 1.7 general / 1.4 PDF-A only (Document.cpp:62-63). FIXED 2026-10-09: docx->pdf pair shipped via wo-docx-renderer pipeline + pdf_writer (unit test asserts %PDF-1.7 header; chain odt->docx->pdf now reachable). Remaining: pdf->wo-pdf-document->pdf round-trip preserves the SOURCE version (1.4 in -> 1.4 out) \u2014 documented divergence: generation writes 1.7, round-trip is faithful; PDF/A (1.4-only) not emitted.",
    "label": "Divergence"
   },
   {

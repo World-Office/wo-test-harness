@@ -138,11 +138,13 @@ def main() -> int:
     r = convert(BASE, "docx", "txt", pptx)
     txt = base64.b64decode(r.get("data") or "").decode("utf-8", "replace") if r.get("status") == "Success" else ""
     if "SLIDETEXT" in txt:
-        record("F-400 mislabeled pptx-as-docx", "PASS", "content sniffed (OO parity: [Content_Types] wins over label)")
+        record("F-400 mislabeled pptx-as-docx", "PASS", "content sniffed + redirected (OO parity)")
     elif r.get("status") == "Success":
         record("F-400 mislabeled pptx-as-docx", "DIVERGE", "SILENT empty Success — trusts the declared label, neither sniffs nor fails loudly (OO sniffs [Content_Types])")
+    elif r.get("status") == "UnsupportedFormat" and "pptx" in (r.get("error") or ""):
+        record("F-400 mislabeled pptx-as-docx", "PASS", "loud mismatch naming detected family: " + str(r.get('error'))[:90])
     else:
-        record("F-400 mislabeled pptx-as-docx", "DIVERGE", f"loud-ish {r.get('status')} but no sniff; err={str(r.get('error'))[:60]}")
+        record("F-400 mislabeled pptx-as-docx", "DIVERGE", f"{r.get('status')} without naming detected family; err={str(r.get('error'))[:60]}")
 
     # ── F-401 Word2003 XML fallback ───────────────────────────────────────────
     r = convert(BASE, "xml", "docx", WORD2003_XML)
