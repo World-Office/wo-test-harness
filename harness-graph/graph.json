@@ -8161,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-09T08:00:40+00:00",
+ "generated_at": "2026-10-10T10:43:27+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -18466,11 +18466,11 @@
    "id": "F-202",
    "label": "Feature",
    "name": "Formula + cached value round-trip",
-   "parity": "partial"
+   "parity": "real"
   },
   {
    "id": "F-202:oo-core",
-   "justification": "wo-formula (lexer/parser/eval) is real and tested; the xlsx <f>+cached-<v> serialization contract (recalc-and-recache on edit) is unprobed. PROBED: <f>A1*2</f> + cached <v>4</v> survive round-trip. Recalc-on-edit unprobed.",
+   "justification": "wo-formula (lexer/parser/eval) is real and tested. PROBED + LOCKED 2026-10-10 (server eaf34c584): sheet->xlsx serializer recomputes cached <v> from <f> against live cell values via eval_str + A1 resolution; errors serialize as #DIV/0! etc; broken formulas keep <f> and OMIT stale <v>; test_xlsx_recalc_on_edit + test_xlsx_cached_value_not_stale.",
    "label": "Divergence"
   },
   {
@@ -18479,11 +18479,11 @@
    "id": "F-203",
    "label": "Feature",
    "name": "calcChain handling",
-   "parity": "missing"
+   "parity": "real"
   },
   {
    "id": "F-203:oo-core",
-   "justification": "OO accepts + lazily rebuilds calcChain.xml (XlsxFormat/CalcChain). WO must pick and document: preserve or omit-on-rewrite.",
+   "justification": "DECISION documented 2026-10-10 (server eaf34c584): calcChain.xml is OMITTED on rewrite; spreadsheet apps rebuild it lazily (OO's XlsxFormat accepts this). Comment in wo-x2t sheet->xlsx writer. No generation wired by design.",
    "label": "Divergence"
   },
   {
