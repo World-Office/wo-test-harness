@@ -244,14 +244,19 @@ features:
       divergence: [{ref: oo-core, justification: "OdfFile ships a full Writer engine; WO has ODT-adjacent doc work only."}]}
 
   # ── slides (derived 2026-10-09 from OO core C++: OOXML/PPTXFormat, MsBinaryFile/PptFile, OdfFile) ─────────────
-  - {id: F-300, area: slide,     name: PPTX part inventory round-trip,    parity: partial, fidelity: L0,
-      divergence: [{ref: oo-core, justification: "PPTXFormat covers presentation, slides, layouts, masters, notesMaster/notesSlides, handoutMaster, theme, presProps, viewProps, tableStyles, comments, commentAuthors, app. WO has UI-level presentation-slide-management but no format layer. PROBED: 2-slide fixture round-trips, both slide parts + sldIdLst 256,257 preserved. Layout/notes/chart passthrough unprobed (fixture lacked them)."}]}
+  - {id: F-300, area: slide,     name: PPTX part inventory round-trip,    parity: real, fidelity: L1,
+      divergence: [{ref: oo-core, justification: "PPTXFormat covers presentation, slides, layouts, masters, notesMaster/notesSlides, handoutMaster, theme, presProps, viewProps, tableStyles, comments, commentAuthors, app. WO has UI-level presentation-slide-management but no format layer. PROBED: 2-slide fixture round-trips, both slide parts + sldIdLst 256,257 preserved. Layout/notes/chart passthrough unprobed (fixture lacked them)."},
+          {ref: probe, date: 2026-10-11, server: "2368fe55b", justification: "PROBED + LOCKED: non-core ppt/ parts now round-trip byte-identically via WoPresentation.extra_parts harvest + splice (F-300 part inventory; layouts/notes/media covered by test_pptx_extra_parts_byte_faithful_roundtrip)."}]}
   - {id: F-301, area: slide,     name: Slide->layout->master inheritance,  parity: missing, fidelity: L1,
       divergence: [{ref: oo-core, justification: "Property resolves only if unset on slide; re-save must NOT flatten inherited props (PPTXFormat Slide/SlideLayout/SlideMaster)."}]}
   - {id: F-302, area: slide,     name: sldIdLst = slide order,             parity: partial, fidelity: L1,
       divergence: [{ref: oo-core, justification: "Reorder rewrites only p:sldIdLst (+rels), not slide parts (PPTXFormat/Presentation.cpp). PROBED: sldIdLst order preserved on round-trip. Reorder-only edit unprobed."}]}
-  - {id: F-303, area: slide,     name: Notes slides round-trip,            parity: missing, fidelity: L1}
-  - {id: F-304, area: slide,     name: Theme parts preservation,           parity: missing, fidelity: L1}
+  - {id: F-303, area: slide,     name: Notes slides round-trip,            parity: real, fidelity: L1,
+      divergence: [{ref: oo-core, justification: "Notes slides carry presenter notes; must survive save even if unedited."},
+          {ref: probe, date: 2026-10-11, server: "2368fe55b", justification: "LOCKED: ppt/notesSlides/notesSlideN.xml round-trips byte-identical via extra_parts (test_pptx_extra_parts_byte_faithful_roundtrip)."}]}
+  - {id: F-304, area: slide,     name: Theme parts preservation,           parity: real, fidelity: L1,
+      divergence: [{ref: oo-core, justification: "Theme parts (ppt/theme/themeN.xml) must persist unchanged."},
+          {ref: probe, date: 2026-10-11, server: "2368fe55b", justification: "LOCKED: theme (and other non-core parts incl. layouts) round-trips byte-identical via extra_parts; serialize_pptx already rewrites theme1.xml when set."}]}
   - {id: F-305, area: slide,     name: Legacy PPT read,                    parity: missing, fidelity: L4,
       divergence: [{ref: oo-core, justification: "MsBinaryFile/PptFile; WO has none."}]}
   - {id: F-306, area: slide,     name: ODP write,                          parity: missing, fidelity: L4}

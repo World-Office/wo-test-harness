@@ -8161,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-10T20:33:34+00:00",
+ "generated_at": "2026-10-10T21:27:48+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -18589,15 +18589,20 @@
   },
   {
    "area": "slide",
-   "fidelity": "L0",
+   "fidelity": "L1",
    "id": "F-300",
    "label": "Feature",
    "name": "PPTX part inventory round-trip",
-   "parity": "partial"
+   "parity": "real"
   },
   {
    "id": "F-300:oo-core",
    "justification": "PPTXFormat covers presentation, slides, layouts, masters, notesMaster/notesSlides, handoutMaster, theme, presProps, viewProps, tableStyles, comments, commentAuthors, app. WO has UI-level presentation-slide-management but no format layer. PROBED: 2-slide fixture round-trips, both slide parts + sldIdLst 256,257 preserved. Layout/notes/chart passthrough unprobed (fixture lacked them).",
+   "label": "Divergence"
+  },
+  {
+   "id": "F-300:probe",
+   "justification": "PROBED + LOCKED: non-core ppt/ parts now round-trip byte-identically via WoPresentation.extra_parts harvest + splice (F-300 part inventory; layouts/notes/media covered by test_pptx_extra_parts_byte_faithful_roundtrip).",
    "label": "Divergence"
   },
   {
@@ -18632,7 +18637,17 @@
    "id": "F-303",
    "label": "Feature",
    "name": "Notes slides round-trip",
-   "parity": "missing"
+   "parity": "real"
+  },
+  {
+   "id": "F-303:oo-core",
+   "justification": "Notes slides carry presenter notes; must survive save even if unedited.",
+   "label": "Divergence"
+  },
+  {
+   "id": "F-303:probe",
+   "justification": "LOCKED: ppt/notesSlides/notesSlideN.xml round-trips byte-identical via extra_parts (test_pptx_extra_parts_byte_faithful_roundtrip).",
+   "label": "Divergence"
   },
   {
    "area": "slide",
@@ -18640,7 +18655,17 @@
    "id": "F-304",
    "label": "Feature",
    "name": "Theme parts preservation",
-   "parity": "missing"
+   "parity": "real"
+  },
+  {
+   "id": "F-304:oo-core",
+   "justification": "Theme parts (ppt/theme/themeN.xml) must persist unchanged.",
+   "label": "Divergence"
+  },
+  {
+   "id": "F-304:probe",
+   "justification": "LOCKED: theme (and other non-core parts incl. layouts) round-trips byte-identical via extra_parts; serialize_pptx already rewrites theme1.xml when set.",
+   "label": "Divergence"
   },
   {
    "area": "slide",
