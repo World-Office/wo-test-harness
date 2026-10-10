@@ -218,8 +218,9 @@ features:
       divergence: [{ref: deferred-xl, justification: "Deferred XL: transformers.js Web Worker (WebGPU->WASM fallback, OPFS model cache) driving the wasm-renderer editor - first OOXML editor whose AI never uploads anything. No server-side contract possible; spec-only until the editor ships a worker (probe 153 reports DEFERRED forever by design)."}]}
 
   # ── sheets (derived 2026-10-09 from OO core C++: OOXML/XlsxFormat, XlsbFormat, MsBinaryFile/XlsFile, OdfFile) ─
-  - {id: F-200, area: sheet,     name: XLSX part inventory round-trip,    parity: partial, fidelity: L0,
-      divergence: [{ref: oo-core, justification: "OO core owns the full part set (CalcChain, Chart, Comments, Controls, Drawing, ExternalLinks, NamedSheetViews, Ole, Pivot, RichData, SharedStrings, Workbook, Worksheets; see OOXML/XlsxFormat dir). WO has a sheet model (wo-sheet) but part-level coverage is unprobed. Source: server/plan/2026-10-09-oo-core-derived-specs.md"}]}
+  - {id: F-200, area: sheet,     name: XLSX part inventory round-trip,    parity: real, fidelity: L1,
+      divergence: [{ref: oo-core, justification: "OO core owns the full part set (CalcChain, Chart, Comments, Controls, Drawing, ExternalLinks, NamedSheetViews, Ole, Pivot, RichData, SharedStrings, Workbook, Worksheets; see OOXML/XlsxFormat dir). WO has a sheet model (wo-sheet) but part-level coverage is unprobed. Source: server/plan/2026-10-09-oo-core-derived-specs.md."},
+          {ref: probe, date: 2026-10-11, server: "b4d419c81", justification: "PROBED + LOCKED: every non-core ZIP part now travels byte-faithfully through the WoSpreadsheet JSON extra_parts channel (XlsxToWoSpreadsheetConverter harvest, WoSpreadsheetToXlsxConverter splice-back, Content_Types override merge) — test_xlsx_extra_parts_byte_faithful_roundtrip asserts chart1.xml + pivotTable1.xml + binary image1.png byte-identical in the output. calcChain.xml still omitted by design (F-203)."}]}
   - {id: F-201, area: sheet,     name: SharedStrings dedup round-trip,     parity: partial, fidelity: L1,
       divergence: [{ref: oo-core, justification: "t=s index vs inlineStr must round-trip without user-visible change (XlsxFormat/SharedStrings). Probe needed before claiming. PROBED 2026-10-09 census/oo-contracts.py: caught SILENT CORRUPTION (reader pre-resolves t=s at parser.rs:2622, converter re-resolved: 'Beta'.parse::<usize>() -> 0 -> sharedStrings[0], every string cell became string 0). FIXED wo-x2t converters.rs (parser = single resolution authority; regression test test_bridge_xlsx_shared_string_index_one). Now idx>=1 resolves; writer dedups Beta x2 -> 1 <si>."}]}
   - {id: F-202, area: sheet,     name: Formula + cached value round-trip,  parity: real, fidelity: L1,
@@ -229,10 +230,12 @@ features:
   - {id: F-204, area: sheet,     name: Cell address + type model,          parity: partial, fidelity: L1,
       divergence: [{ref: oo-core, justification: "r=A1 addressing and n/s/b/str/e type incl. empty-cell elision (XlsxFormat worksheets). wo-sheet ops exist; fidelity unprobed. PROBED: r-addr + t=s kept; never-set D7 elided."}]}
   - {id: F-205, area: sheet,     name: Workbook map + defined names,       parity: missing, fidelity: L1}
-  - {id: F-206, area: sheet,     name: Chart part preservation,            parity: missing, fidelity: L1,
-      divergence: [{ref: oo-core, justification: "Charts live under xl/charts via drawings (XlsxFormat/Chart); WO must preserve even when it cannot render."}]}
-  - {id: F-207, area: sheet,     name: Pivot part preservation,            parity: missing, fidelity: L1,
-      divergence: [{ref: oo-core, justification: "Preservation only, not computation (XlsxFormat/Pivot)."}]}
+  - {id: F-206, area: sheet,     name: Chart part preservation,            parity: real, fidelity: L1,
+      divergence: [{ref: oo-core, justification: "Charts live under xl/charts via drawings (XlsxFormat/Chart); WO must preserve even when it cannot render."},
+          {ref: probe, date: 2026-10-11, server: "b4d419c81", justification: "LOCKED: chart1.xml (and its rels under xl/charts/_rels) round-trip byte-identical via extra_parts; covered by test_xlsx_extra_parts_byte_faithful_roundtrip."}]}
+  - {id: F-207, area: sheet,     name: Pivot part preservation,            parity: real, fidelity: L1,
+      divergence: [{ref: oo-core, justification: "Preservation only, not computation (XlsxFormat/Pivot)."},
+          {ref: probe, date: 2026-10-11, server: "b4d419c81", justification: "LOCKED: pivotTable1.xml + pivotCache parts round-trip byte-identical via extra_parts; covered by test_xlsx_extra_parts_byte_faithful_roundtrip."}]}
   - {id: F-208, area: sheet,     name: Legacy XLS read,                    parity: missing, fidelity: L4,
       divergence: [{ref: oo-core, justification: "MsBinaryFile/XlsFile decodes binary XLS to IR; WO has no .xls reader."}]}
   - {id: F-209, area: sheet,     name: XLSB read,                          parity: missing, fidelity: L4,

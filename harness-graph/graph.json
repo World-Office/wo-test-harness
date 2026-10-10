@@ -8161,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-10T10:43:27+00:00",
+ "generated_at": "2026-10-10T20:33:34+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -18436,15 +18436,20 @@
   },
   {
    "area": "sheet",
-   "fidelity": "L0",
+   "fidelity": "L1",
    "id": "F-200",
    "label": "Feature",
    "name": "XLSX part inventory round-trip",
-   "parity": "partial"
+   "parity": "real"
   },
   {
    "id": "F-200:oo-core",
-   "justification": "OO core owns the full part set (CalcChain, Chart, Comments, Controls, Drawing, ExternalLinks, NamedSheetViews, Ole, Pivot, RichData, SharedStrings, Workbook, Worksheets; see OOXML/XlsxFormat dir). WO has a sheet model (wo-sheet) but part-level coverage is unprobed. Source: server/plan/2026-10-09-oo-core-derived-specs.md",
+   "justification": "OO core owns the full part set (CalcChain, Chart, Comments, Controls, Drawing, ExternalLinks, NamedSheetViews, Ole, Pivot, RichData, SharedStrings, Workbook, Worksheets; see OOXML/XlsxFormat dir). WO has a sheet model (wo-sheet) but part-level coverage is unprobed. Source: server/plan/2026-10-09-oo-core-derived-specs.md.",
+   "label": "Divergence"
+  },
+  {
+   "id": "F-200:probe",
+   "justification": "PROBED + LOCKED: every non-core ZIP part now travels byte-faithfully through the WoSpreadsheet JSON extra_parts channel (XlsxToWoSpreadsheetConverter harvest, WoSpreadsheetToXlsxConverter splice-back, Content_Types override merge) \u2014 test_xlsx_extra_parts_byte_faithful_roundtrip asserts chart1.xml + pivotTable1.xml + binary image1.png byte-identical in the output. calcChain.xml still omitted by design (F-203).",
    "label": "Divergence"
   },
   {
@@ -18513,11 +18518,16 @@
    "id": "F-206",
    "label": "Feature",
    "name": "Chart part preservation",
-   "parity": "missing"
+   "parity": "real"
   },
   {
    "id": "F-206:oo-core",
    "justification": "Charts live under xl/charts via drawings (XlsxFormat/Chart); WO must preserve even when it cannot render.",
+   "label": "Divergence"
+  },
+  {
+   "id": "F-206:probe",
+   "justification": "LOCKED: chart1.xml (and its rels under xl/charts/_rels) round-trip byte-identical via extra_parts; covered by test_xlsx_extra_parts_byte_faithful_roundtrip.",
    "label": "Divergence"
   },
   {
@@ -18526,11 +18536,16 @@
    "id": "F-207",
    "label": "Feature",
    "name": "Pivot part preservation",
-   "parity": "missing"
+   "parity": "real"
   },
   {
    "id": "F-207:oo-core",
    "justification": "Preservation only, not computation (XlsxFormat/Pivot).",
+   "label": "Divergence"
+  },
+  {
+   "id": "F-207:probe",
+   "justification": "LOCKED: pivotTable1.xml + pivotCache parts round-trip byte-identical via extra_parts; covered by test_xlsx_extra_parts_byte_faithful_roundtrip.",
    "label": "Divergence"
   },
   {
