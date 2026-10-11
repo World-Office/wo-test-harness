@@ -8161,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-11T09:08:32+00:00",
+ "generated_at": "2026-10-11T09:16:40+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -18740,6 +18740,11 @@
   {
    "id": "F-402:oo-core",
    "justification": "OO enumerates 117 format constants in families (Common/OfficeFileFormats.h). WO must name every unsupported member loudly (gate-tells-the-truth law). PROBED: docx->xlsb -> UnsupportedFormat naming both members exactly. Loud taxonomy satisfied.",
+   "label": "Divergence"
+  },
+  {
+   "id": "F-402:probe",
+   "justification": "FULL ENUMERATION: test_oo_format_taxonomy_loud_unsupported walks the ~106 concrete members of OfficeFileFormats.h against the wo-x2t registry. Reachable (23): docx odt rtf txt html epub fb2 pptx ppt odp xlsx xls ods xlsb pdf djvu xps ofd hwp xml vsdx vsdm ddjvu-families. Remaining 79 (mobi, docm, dotx, hwpml, key, csv, xlsm, tsv, swf, svg, pdfa, all image formats, vsdx-siblings, ms_*crypto/package-in-ole/ooxml containers...) all answer UnsupportedFormat naming both members \u2014 never silent empty Success.",
    "label": "Divergence"
   },
   {
