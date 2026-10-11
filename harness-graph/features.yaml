@@ -272,8 +272,9 @@ features:
       divergence: [{ref: oo-core, justification: "PdfFile/SrcWriter/Document.cpp:62-63. wo-pdf-render is real; header unprobed. PROBED: (a) no docx->pdf pair in matrix (OO ships DocxRenderer; WO gap) (b) pdf round-trip always %PDF-1.4; OO 1.7 general / 1.4 PDF-A only (Document.cpp:62-63). FIXED 2026-10-09: docx->pdf pair shipped via wo-docx-renderer pipeline + pdf_writer (unit test asserts %PDF-1.7 header; chain odt->docx->pdf now reachable). Remaining: pdf->wo-pdf-document->pdf round-trip preserves the SOURCE version (1.4 in -> 1.4 out) — documented divergence: generation writes 1.7, round-trip is faithful; PDF/A (1.4-only) not emitted."}]}
   - {id: F-404, area: convert,   name: DOCX->PDF page command stream,      parity: partial, fidelity: L2,
       divergence: [{ref: oo-core, justification: "DocxRenderer/src/logic/Page.cpp: per-page BeginCommand/EndCommand model. wo-docx-renderer pagination tests green (37) but PDF-target parity unprobed."}]}
-  - {id: F-405, area: convert,   name: Doc-family readers (RTF/TXT/HTML/FB2/EPUB), parity: partial, fidelity: L4,
-      divergence: [{ref: oo-core, justification: "core/{RtfFile,TxtFile,HtmlFile,Fb2File,EpubFile}. WO: txt/html known; rtf/fb2/epub missing. Stretch: DJVU/XPS/HWP/OFD."}]}
+  - {id: F-405, area: convert,   name: Doc-family readers (RTF/TXT/HTML/FB2/EPUB), parity: real, fidelity: L4,
+      divergence: [{ref: oo-core, justification: "core/{RtfFile,TxtFile,HtmlFile,Fb2File,EpubFile}. WO: txt/html known; rtf/fb2/epub missing. Stretch: DJVU/XPS/HWP/OFD."},
+          {ref: probe, date: 2026-10-11, server: "7183af02b", justification: "PROBED + LOCKED: every doc-family path resolves via the router's BFS chain fallback — rtf→html→fb2, rtf→html→epub, fb2→docx→epub all complete (test_rtf_fb2_epub_reachable_via_chains). No direct converters needed; readers exist (RtfParser, Fb2Parser via wo-fb2, EpubParser via wo-epub) and the chain router wires them."}]}
 
   # ── second C++ pass (2026-10-09): units + encryption ────────────────────────────────────────────────────────
   - {id: F-500, area: convert,   name: Unit matrix exact ratios,          parity: real, fidelity: L0,

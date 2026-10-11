@@ -8161,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-10T21:27:48+00:00",
+ "generated_at": "2026-10-11T04:47:28+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -18759,11 +18759,16 @@
    "id": "F-405",
    "label": "Feature",
    "name": "Doc-family readers (RTF/TXT/HTML/FB2/EPUB)",
-   "parity": "partial"
+   "parity": "real"
   },
   {
    "id": "F-405:oo-core",
    "justification": "core/{RtfFile,TxtFile,HtmlFile,Fb2File,EpubFile}. WO: txt/html known; rtf/fb2/epub missing. Stretch: DJVU/XPS/HWP/OFD.",
+   "label": "Divergence"
+  },
+  {
+   "id": "F-405:probe",
+   "justification": "PROBED + LOCKED: every doc-family path resolves via the router's BFS chain fallback \u2014 rtf\u2192html\u2192fb2, rtf\u2192html\u2192epub, fb2\u2192docx\u2192epub all complete (test_rtf_fb2_epub_reachable_via_chains). No direct converters needed; readers exist (RtfParser, Fb2Parser via wo-fb2, EpubParser via wo-epub) and the chain router wires them.",
    "label": "Divergence"
   },
   {
