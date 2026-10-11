@@ -134,6 +134,17 @@ def build_graph(paths: dict[str, Path]) -> dict:
                 for fid in set(F_ID.findall(text)):
                     covers[fid].add(tid)
 
+    # ── census browser probes (probe-*.cjs): F-marker header => PROBED_BY ───
+    census_dir = HARNESS_ROOT / "census"
+    if census_dir.is_dir():
+        for path in sorted(census_dir.glob("probe-*.cjs")):
+            text = path.read_text(encoding="utf-8", errors="replace")
+            rel = path.relative_to(HARNESS_ROOT).as_posix()
+            pid = f"census:{rel}"
+            node("Probe", pid, path=rel, layer="census")
+            for fid in set(F_ID.findall(text)):
+                edge(pid, fid, "PROBES")
+
     # ── features ─────────────────────────────────────────────────────────────
     known_cmds = set(js_cmds)
     missing_impl: list[str] = []

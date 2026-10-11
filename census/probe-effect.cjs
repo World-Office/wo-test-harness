@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// probes (3.2): F-143 F-073 F-074 — AI actions + footnote/endnote buttons trigger their dialogs
 const { chromium } = require('playwright')
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 const CMDS = ['ocrRun','aiSummarize','aiTranslate','aiRewrite','toggleNavigation','browsePlugins','managePlugins','photoEditor','toggleInk','inkMode','toggleDropcap','openBorders','insertCaption','insertCitation','insertObject','link','insertFootnote','insertEndnote']

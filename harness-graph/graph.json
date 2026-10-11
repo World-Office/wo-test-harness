@@ -351,6 +351,56 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "census:census/probe-ai.cjs",
+   "to": "F-143",
+   "type": "PROBES"
+  },
+  {
+   "from": "census:census/probe-effect.cjs",
+   "to": "F-074",
+   "type": "PROBES"
+  },
+  {
+   "from": "census:census/probe-effect.cjs",
+   "to": "F-143",
+   "type": "PROBES"
+  },
+  {
+   "from": "census:census/probe-effect.cjs",
+   "to": "F-073",
+   "type": "PROBES"
+  },
+  {
+   "from": "census:census/probe-merge.cjs",
+   "to": "F-070",
+   "type": "PROBES"
+  },
+  {
+   "from": "census:census/probe-table.cjs",
+   "to": "F-070",
+   "type": "PROBES"
+  },
+  {
+   "from": "census:census/probe-wire.cjs",
+   "to": "F-074",
+   "type": "PROBES"
+  },
+  {
+   "from": "census:census/probe-wire.cjs",
+   "to": "F-084",
+   "type": "PROBES"
+  },
+  {
+   "from": "census:census/probe-wire.cjs",
+   "to": "F-085",
+   "type": "PROBES"
+  },
+  {
+   "from": "census:census/probe-wire.cjs",
+   "to": "F-073",
+   "type": "PROBES"
+  },
+  {
    "from": "opencloud-docserver/e2e/test_wopi_protocol.py::test_check_file_info_rejects_bogus_token",
    "to": "F-001",
    "type": "COVERS"
@@ -8161,7 +8211,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-11T09:16:40+00:00",
+ "generated_at": "2026-10-11T09:41:52+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -17232,6 +17282,48 @@
    "path": "opencloud-docserver/tests/test_wopi_testhost.py"
   },
   {
+   "id": "census:census/probe-ai.cjs",
+   "label": "Probe",
+   "layer": "census",
+   "path": "census/probe-ai.cjs"
+  },
+  {
+   "id": "census:census/probe-effect.cjs",
+   "label": "Probe",
+   "layer": "census",
+   "path": "census/probe-effect.cjs"
+  },
+  {
+   "id": "census:census/probe-home.cjs",
+   "label": "Probe",
+   "layer": "census",
+   "path": "census/probe-home.cjs"
+  },
+  {
+   "id": "census:census/probe-merge.cjs",
+   "label": "Probe",
+   "layer": "census",
+   "path": "census/probe-merge.cjs"
+  },
+  {
+   "id": "census:census/probe-table.cjs",
+   "label": "Probe",
+   "layer": "census",
+   "path": "census/probe-table.cjs"
+  },
+  {
+   "id": "census:census/probe-tabs.cjs",
+   "label": "Probe",
+   "layer": "census",
+   "path": "census/probe-tabs.cjs"
+  },
+  {
+   "id": "census:census/probe-wire.cjs",
+   "label": "Probe",
+   "layer": "census",
+   "path": "census/probe-wire.cjs"
+  },
+  {
    "area": "file",
    "fidelity": "L4",
    "id": "F-001",
@@ -18825,7 +18917,7 @@
  ],
  "stats": {
   "commands": 70,
-  "edges": 1632,
+  "edges": 1642,
   "features": 137,
   "surfaces": 70,
   "tests": 1383

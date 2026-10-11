@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// probes (3.2): F-073 F-074 F-084 F-085 — header/footer + footnote/endnote/page-number wiring
 const { chromium } = require('playwright')
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 async function main() {

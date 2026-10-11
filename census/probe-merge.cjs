@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+// probes (3.2): F-070 — cell merge/split (colspan) exercised against the live editor
 const { chromium } = require('playwright')
 const sleep = ms => new Promise(r => setTimeout(r, ms))
 async function main() {

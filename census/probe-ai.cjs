@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// probes (3.2): F-143 — AI assistant actions (summarize/translate/rewrite) open the propose dialog
 const { chromium } = require('playwright')
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 async function test(page, cmd, expect) {

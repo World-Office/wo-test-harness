@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// probes (3.2): F-070 — table row/col ops + merge/split buttons present and wired
 const { chromium } = require('playwright')
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 async function main() {
