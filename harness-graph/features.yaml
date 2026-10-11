@@ -239,8 +239,9 @@ features:
   - {id: F-208, area: sheet,     name: Legacy XLS read,                    parity: real, fidelity: L4,
       divergence: [{ref: oo-core, justification: "MsBinaryFile/XlsFile decodes binary XLS to IR; WO has no .xls reader."},
           {ref: probe, date: 2026-10-11, server: "3e4996ada", justification: "PROBED + LOCKED: wo-msbinary BIFF8 reader (Workbook OLE stream: BOF/BOUNDSHEET/SST/LABELSST/NUMBER/RK/MULRK/BOOLERR/BLANK/FORMULA-cached; lossless skip of others) + XlsToWoSpreadsheetConverter registered in wo-x2t. Real LibreOffice-generated fixture parses: strings exact via SST, numbers 42.5/700/3 exact (test_xls_legacy_fixture_roundtrip). Read-only: formulas return cached value, formatting/panes/rich-text out of scope (fidelity L4 keeps that ceiling)."}]}
-  - {id: F-209, area: sheet,     name: XLSB read,                          parity: missing, fidelity: L4,
-      divergence: [{ref: oo-core, justification: "OOXML/XlsbFormat exists in core; WO has none."}]}
+  - {id: F-209, area: sheet,     name: XLSB read,                          parity: real, fidelity: L4,
+      divergence: [{ref: oo-core, justification: "OOXML/XlsbFormat exists in core; WO has none."},
+          {ref: probe, date: 2026-10-11, server: "f3eff0282", justification: "PROBED + LOCKED: wo-msbinary BIFF12 reader (record stream: 1-2-byte type + 1-4-byte varint len; workbook.bin BrtBundleSh sheets, sharedStrings.bin BrtSSTItem, sheet BrtRowHdr + BrtCellIsst/Real/Rk/St/Bool/Error/FmlaString-cached; stops at first EndBundleShs/EndSheetData to ignore producer update-copies) + XlsbToWoSpreadsheetConverter registered in wo-x2t (zip parts + workbook.bin.rels). Hand-built fixture cross-validated with independent pyxlsb; real LibreOffice/Euro-Office example .xlsb files match pyxlsb cell-for-cell (1.0, qwerty). Read-only: formatting/pivots/charts out of scope (fidelity L4 keeps that ceiling)."}]}
   - {id: F-210, area: sheet,     name: ODS write,                          parity: missing, fidelity: L4,
       divergence: [{ref: oo-core, justification: "OdfFile ships a full Writer engine; WO has ODT-adjacent doc work only."}]}
 

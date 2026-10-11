@@ -8161,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-11T07:37:51+00:00",
+ "generated_at": "2026-10-11T08:35:08+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -18572,11 +18572,16 @@
    "id": "F-209",
    "label": "Feature",
    "name": "XLSB read",
-   "parity": "missing"
+   "parity": "real"
   },
   {
    "id": "F-209:oo-core",
    "justification": "OOXML/XlsbFormat exists in core; WO has none.",
+   "label": "Divergence"
+  },
+  {
+   "id": "F-209:probe",
+   "justification": "PROBED + LOCKED: wo-msbinary BIFF12 reader (record stream: 1-2-byte type + 1-4-byte varint len; workbook.bin BrtBundleSh sheets, sharedStrings.bin BrtSSTItem, sheet BrtRowHdr + BrtCellIsst/Real/Rk/St/Bool/Error/FmlaString-cached; stops at first EndBundleShs/EndSheetData to ignore producer update-copies) + XlsbToWoSpreadsheetConverter registered in wo-x2t (zip parts + workbook.bin.rels). Hand-built fixture cross-validated with independent pyxlsb; real LibreOffice/Euro-Office example .xlsb files match pyxlsb cell-for-cell (1.0, qwerty). Read-only: formatting/pivots/charts out of scope (fidelity L4 keeps that ceiling).",
    "label": "Divergence"
   },
   {
