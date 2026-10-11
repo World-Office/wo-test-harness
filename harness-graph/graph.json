@@ -8161,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-11T04:47:28+00:00",
+ "generated_at": "2026-10-11T06:19:32+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -18554,11 +18554,16 @@
    "id": "F-208",
    "label": "Feature",
    "name": "Legacy XLS read",
-   "parity": "missing"
+   "parity": "real"
   },
   {
    "id": "F-208:oo-core",
    "justification": "MsBinaryFile/XlsFile decodes binary XLS to IR; WO has no .xls reader.",
+   "label": "Divergence"
+  },
+  {
+   "id": "F-208:probe",
+   "justification": "PROBED + LOCKED: wo-msbinary BIFF8 reader (Workbook OLE stream: BOF/BOUNDSHEET/SST/LABELSST/NUMBER/RK/MULRK/BOOLERR/BLANK/FORMULA-cached; lossless skip of others) + XlsToWoSpreadsheetConverter registered in wo-x2t. Real LibreOffice-generated fixture parses: strings exact via SST, numbers 42.5/700/3 exact (test_xls_legacy_fixture_roundtrip). Read-only: formulas return cached value, formatting/panes/rich-text out of scope (fidelity L4 keeps that ceiling).",
    "label": "Divergence"
   },
   {
