@@ -8161,7 +8161,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-11T08:35:08+00:00",
+ "generated_at": "2026-10-11T09:08:32+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -18805,11 +18805,16 @@
    "id": "F-501",
    "label": "Feature",
    "name": "ECMA-376 decrypt (agile/standard)",
-   "parity": "missing"
+   "parity": "real"
   },
   {
    "id": "F-501:oo-core",
    "justification": "OfficeCryptReader/source/ECMACryptFile.h:33 DecryptOfficeFile + :34 EncryptOfficeFile. WO needs password-protected OOXML read with loud wrong-password error; encrypt-on-save is stretch.",
+   "label": "Divergence"
+  },
+  {
+   "id": "F-501:probe",
+   "justification": "PROBED + LOCKED: wo-msbinary decrypt_ooxml (is_encrypted_ooxml detects CFB EncryptionInfo+EncryptedPackage; decryption via msoffice-crypto wraps agile + standard ECMA-376) + wo-x2t convert_with_password. Real Word-encrypted fixtures (agile + standard, from msoffcrypto-tool corpus) decrypt to a package and convert end-to-end to txt containing 'lorem ipsum'; no-password and wrong-password both fail loudly and by name (never silent garbage). Read-only: encrypt-on-save remains stretch (fidelity L4 keeps that ceiling).",
    "label": "Divergence"
   }
  ],
