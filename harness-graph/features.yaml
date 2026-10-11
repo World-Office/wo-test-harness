@@ -258,8 +258,9 @@ features:
   - {id: F-304, area: slide,     name: Theme parts preservation,           parity: real, fidelity: L1,
       divergence: [{ref: oo-core, justification: "Theme parts (ppt/theme/themeN.xml) must persist unchanged."},
           {ref: probe, date: 2026-10-11, server: "2368fe55b", justification: "LOCKED: theme (and other non-core parts incl. layouts) round-trips byte-identical via extra_parts; serialize_pptx already rewrites theme1.xml when set."}]}
-  - {id: F-305, area: slide,     name: Legacy PPT read,                    parity: missing, fidelity: L4,
-      divergence: [{ref: oo-core, justification: "MsBinaryFile/PptFile; WO has none."}]}
+  - {id: F-305, area: slide,     name: Legacy PPT read,                    parity: real, fidelity: L4,
+      divergence: [{ref: oo-core, justification: "MsBinaryFile/PptFile; WO has none."},
+          {ref: probe, date: 2026-10-11, server: "c879b7243", justification: "PROBED + LOCKED: wo-msbinary parse_ppt_text (record tree walk recVer==0xF, TextCharsAtom UTF-16LE/TextBytesAtom per slide container, layout placeholder filtering) + PptToWoPresentationConverter registered. Validated on real LibreOffice .ppt fixtures (legacy-two-slides.ppt: 2 real slides extracted, ~13 layout containers discarded). Text-only, read-only (fidelity L4 ceiling: no positioning/images/charts/notes)."}]}
   - {id: F-306, area: slide,     name: ODP write,                          parity: missing, fidelity: L4}
 
   # ── cross-family core (derived 2026-10-09 from OO core C++: Common checker + OfficeFileFormats.h, X2tConverter, PdfFile, DocxRenderer) ──
