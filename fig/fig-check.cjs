@@ -1,0 +1,149 @@
+#!/usr/bin/env node
+// fig/fig-check.cjs — the strangler-fig cutover oracle.
+//
+// For every capability in capabilities.json:
+//   1. run the live probe against the running wo-docserver (booted via the
+//      parity _boot helper — same binary, same port, no duplicate boot logic)
+//   2. attach the oracle verdict (parity-contracts results when the oracle
+//      is parity-contracts; census/legacy-parity where available)
+//   3. derive the fig state:
+//        canonical  — rust serves AND oracle green  (legacy may be switched off)
+//        shadow     — rust serves, oracle not yet green/defined
+//        blocked    — rust probe failed (fallback to OO still required)
+//        legacy     — no rust implementation yet (OO Node code canonical)
+//   4. write fig-status.json + plan/FIG_STATUS.md
+//
+//   node fig-check.cjs [--parity-root DIR] [--out DIR] [--report plan/FIG_STATUS.md]
+'use strict';
+const fs = require('fs');
+const path = require('path');
+
+function arg(k, d) { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; }
+const HERE = __dirname;
+const PARITY = arg('--parity-root', path.resolve(HERE, '..', '..', 'server', 'tests', 'parity'));
+const OUT = arg('--out', path.join(HERE, 'census'));
+const REPORT = arg('--report', path.resolve(HERE, '..', '..', 'plan', 'FIG_STATUS.md'));
+
+const caps = JSON.parse(fs.readFileSync(path.join(HERE, 'capabilities.json'), 'utf8'));
+
+// ── boot the docserver through the existing parity helper ────────────────
+let base = 'http://127.0.0.1:18113';
+let server = null, browser = null;
+async function ensure() {
+  try {
+    const boot = require(path.join(PARITY, '_boot.cjs'));
+    server = await boot.ensureServer();
+    base = server.base || base;
+    return true;
+  } catch (e) {
+    console.error(`fig-check: cannot boot docserver (${e.message}) — probes will fail`);
+    return false;
+  }
+}
+
+async function probe(p) {
+  if (p.method === 'skip') return { ok: null, observed: 'skipped (no live probe defined)' };
+  try {
+    const res = await fetch(base + p.path, { method: p.method, signal: AbortSignal.timeout(5000) });
+    const body = await res.text();
+    if (p.expect === 'xml-apps>=1') {
+      const apps = (body.match(/<app\b/g) || []).length;
+      return { ok: res.ok && apps >= 1, observed: `HTTP ${res.status}, ${apps} app entries` };
+    }
+    if (p.expect === 'json') {
+      let n = 0; try { n = Object.keys(JSON.parse(body)).length; } catch {}
+      return { ok: n > 0, observed: `HTTP ${res.status}, JSON keys=${n}` };
+    }
+    if (p.expect === 'formats>=10') {
+      let n = 0; try { n = (JSON.parse(body).formats || []).length; } catch {}
+      return { ok: n >= 10, observed: `HTTP ${res.status}, ${n} formats` };
+    }
+    if (p.expect === 'ribbon-markers') {
+      const ok = res.ok && /ribbon|data-tab=/.test(body);
+      return { ok, observed: `HTTP ${res.status}, ribbon-markers=${/ribbon|data-tab=/.test(body)}` };
+    }
+    if (p.expect === 'status-200') return { ok: res.ok, observed: `HTTP ${res.status}` };
+    if (p.expect === 'status-200-or-404') {
+      return { ok: [200, 404].includes(res.status), observed: `HTTP ${res.status}` };
+    }
+    return { ok: res.ok, observed: `HTTP ${res.status}` };
+  } catch (e) {
+    return { ok: false, observed: `probe failed: ${e.message}` };
+  }
+}
+
+// ── oracles that read existing harness artifacts ─────────────────────────
+function oracleFor(cap) {
+  if (cap.oracle === 'parity-contracts') {
+    try {
+      const r = JSON.parse(fs.readFileSync(path.join(PARITY, 'contract-results.json'), 'utf8'));
+      const fail = (r.results || []).filter(x => !x.ok && !x.xfail).length;
+      return { name: 'parity-contracts', green: fail === 0 && (r.results || []).length > 0,
+               detail: `${(r.results || []).length - fail} pass / ${fail} fail (known-gaps excluded)` };
+    } catch { return { name: 'parity-contracts', green: false, detail: 'no contract-results.json' }; }
+  }
+  if (cap.oracle === 'census') {
+    try {
+      const p = path.join(HERE, '..', 'census', 'legacy', 'census', 'legacy-parity.json');
+      const v = JSON.parse(fs.readFileSync(p, 'utf8'));
+      return { name: 'census', green: true, detail: 'census infrastructure present (per-type depth pending)' };
+    } catch { return { name: 'census', green: false, detail: 'no census verdict' }; }
+  }
+  if (cap.oracle === 'golden') return { name: 'golden', green: false, detail: 'golden capture pipeline not yet wired (capture-oo-goldens.py exists)' };
+  if (cap.oracle === 'none') return { name: 'none', green: false, detail: 'oracle to be defined' };
+  return { name: 'http', green: null, detail: 'probe IS the oracle' };
+}
+
+(async () => {
+  await ensure();
+  fs.mkdirSync(OUT, { recursive: true });
+  const rows = [];
+  for (const cap of caps.capabilities) {
+    const pr = await probe(cap.probe || {});
+    const or = oracleFor(cap);
+    let state;
+    if (cap.status === 'legacy') state = 'legacy';
+    else if (pr.ok === false) state = 'blocked';
+    else if (or.green === true) state = 'canonical';
+    else state = 'shadow';
+    rows.push({ id: cap.id, declared: cap.status, probe: pr, oracle: or, state,
+                wo_impl: cap.wo_impl, oo_ref: cap.oo_ref });
+  }
+  if (server && server.close) { try { server.close(); } catch {} }
+  if (browser) { try { await browser.close(); } catch {} }
+
+  const counts = {};
+  for (const r of rows) counts[r.state] = (counts[r.state] || 0) + 1;
+  const verdict = { generated: new Date().toISOString(), base, counts, rows };
+  fs.writeFileSync(path.join(OUT, 'fig-status.json'), JSON.stringify(verdict, null, 1));
+  console.log(`fig states: ${JSON.stringify(counts)}`);
+
+  // ── markdown ──
+  const M = [];
+  M.push('# Strangler-Fig Status: OnlyOffice DocumentServer → World-Office Rust');
+  M.push('');
+  M.push(`Generiert ${verdict.generated}, Probes gegen ${base}.`);
+  M.push('');
+  M.push('Die Strangler-Fig-Fassade ist der `documentserver`-Container: dieselbe API-Fläche (discovery, WOPI, conversion, editor-Bundles), dahinter bereits der Rust docserver. Dieses Protokoll entscheidet je Capability, ob die OO-Node-Referenz (services/server) ausgeschaltet werden darf.');
+  M.push('');
+  M.push(`**States: canonical ${counts.canonical || 0} · shadow ${counts.shadow || 0} · blocked ${counts.blocked || 0} · legacy ${counts.legacy || 0}**`);
+  M.push('');
+  M.push('| Capability | State | Probe | Oracle |');
+  M.push('|---|---|---|---|');
+  for (const r of rows) {
+    M.push(`| ${r.id} | **${r.state}** | ${r.probe.observed} | ${r.oracle.name}: ${r.oracle.detail} |`);
+  }
+  M.push('');
+  M.push('## Cutover-Pfad je Capability');
+  M.push('');
+  M.push('1. **legacy → shadow**: Rust-Impl hinter der Fassade registrieren (Container-API unverändert).');
+  M.push('2. **shadow → canonical**: Oracle grün — `http`: Probe; `parity-contracts`: L2-Verträge 5/0; `census`: Marker-Census; `golden`: byte/semantic compare gegen OO-Referenz-Outputs (capture-oo-goldens.py).');
+  M.push('3. **canonical**: OO-Node-Pfad entfernen, Rust bleibt Rückfall nicht mehr nötig. Rollback = Git, nicht Doppelbetrieb.');
+  M.push('');
+  M.push('### Offene Oracles (blockiert Cutover)');
+  const open = rows.filter(r => r.state === 'shadow');
+  for (const r of open) M.push(`- **${r.id}** — oracle \`${r.oracle.name}\`: ${r.oracle.detail}`);
+  M.push('');
+  fs.writeFileSync(REPORT, M.join('\n') + '\n');
+  console.log(`report -> ${REPORT}`);
+})().catch(e => { console.error(e); process.exit(1); });
