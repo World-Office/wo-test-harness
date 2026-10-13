@@ -114,6 +114,16 @@ function oracleFor(cap) {
     } catch { return { name: 'census', green: false, detail: 'fig-census.json missing (run fig-census.cjs)' };
     }
   }
+  if (cap.oracle === 'collab') {
+    // fig-collab.cjs: live coauthoring-service — session create, ws join,
+    // bidirectional edit broadcast, late-joiner CRDT replay
+    try {
+      const c = JSON.parse(fs.readFileSync(path.join(HERE, 'census', 'fig-collab.json'), 'utf8'));
+      const k = c.checks || {};
+      return { name: 'collab', green: c.ok === true,
+               detail: `ws broadcast A→B=${k.broadcastAtoB} B→A=${k.broadcastBtoA}, late-joiner replay=${k.lateJoinerReplay}; editor-side integration = stage 2` };
+    } catch { return { name: 'collab', green: false, detail: 'fig-collab.json missing (run fig-collab.cjs)' }; }
+  }
   if (cap.oracle === 'golden') {
     // fig-golden.py: golden docx -> pdf via wo-x2t, compared against the
     // committed OO-DS reference pdfs (page sanity + text-token Jaccard).

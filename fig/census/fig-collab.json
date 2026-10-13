@@ -1,0 +1,13 @@
+{
+ "generated": "2026-10-13T19:08:43.531Z",
+ "base": "http://127.0.0.1:8004",
+ "checks": {
+  "serviceBoots": true,
+  "sessionCreated": true,
+  "participantsJoin": true,
+  "broadcastAtoB": true,
+  "broadcastBtoA": true,
+  "lateJoinerReplay": true
+ },
+ "ok": true
+}
