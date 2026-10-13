@@ -1,0 +1,31 @@
+{
+ "generated": "2026-10-13T20:41:32",
+ "base": "http://127.0.0.1:18113",
+ "stems": {
+  "visual-gate": {
+   "ok": true,
+   "ooPages": 1,
+   "woPages": 1,
+   "reference": "oo-pdf",
+   "textSimilarity": 1.0,
+   "woPdfBytes": 2125
+  },
+  "image-gate": {
+   "ok": true,
+   "ooPages": 1,
+   "woPages": 1,
+   "reference": "oo-pdf",
+   "textSimilarity": 1.0,
+   "woPdfBytes": 1151
+  },
+  "hf-gate": {
+   "ok": true,
+   "ooPages": 1,
+   "woPages": 1,
+   "reference": "oo-pdf",
+   "textSimilarity": 0.75,
+   "woPdfBytes": 4529
+  }
+ },
+ "ok": true
+}
