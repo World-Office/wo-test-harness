@@ -22,7 +22,10 @@ function arg(k, d) { const i = process.argv.indexOf(k); return i > -1 ? process.
 const HERE = __dirname;
 const PARITY = arg('--parity-root', path.resolve(HERE, '..', '..', 'server', 'tests', 'parity'));
 const OUT = arg('--out', path.join(HERE, 'census'));
-const REPORT = arg('--report', path.resolve(HERE, '..', '..', 'plan', 'FIG_STATUS.md'));
+const REPORT = arg('--report',
+  fs.existsSync(path.resolve(HERE, '..', '..', 'plan'))
+    ? path.resolve(HERE, '..', '..', 'plan', 'FIG_STATUS.md')   // dev box: plan submodule
+    : path.join(OUT, 'fig-status.md'));                          // CI: harness census
 
 const caps = JSON.parse(fs.readFileSync(path.join(HERE, 'capabilities.json'), 'utf8'));
 const { ensure } = require(path.join(HERE, 'boot.cjs'));
@@ -231,4 +234,5 @@ function oracleFor(cap) {
   M.push('');
   fs.writeFileSync(REPORT, M.join('\n') + '\n');
   console.log(`report -> ${REPORT}`);
+  process.exit(0); // docserver child + fetch agents would keep the loop alive
 })().catch(e => { console.error(e); process.exit(1); });
