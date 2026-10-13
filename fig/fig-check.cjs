@@ -114,6 +114,17 @@ function oracleFor(cap) {
     } catch { return { name: 'census', green: false, detail: 'fig-census.json missing (run fig-census.cjs)' };
     }
   }
+  if (cap.oracle === 'contract') {
+    // fig-contracts.cjs: response-form contracts for the caps that need no
+    // upstream mock (discovery XML, conversion format pairs, document API)
+    const section = { 'hosting-discovery': 'discovery', 'conversion-formats': 'formats', 'document-api': 'documents' }[cap.id];
+    try {
+      const c = JSON.parse(fs.readFileSync(path.join(HERE, 'census', 'fig-contracts.json'), 'utf8'));
+      const s = section && c[section];
+      if (!s) return { name: 'contract', green: false, detail: `no fig-contracts section for ${cap.id}` };
+      return { name: 'contract', green: s.ok === true, detail: s.detail };
+    } catch { return { name: 'contract', green: false, detail: 'fig-contracts.json missing (run fig-contracts.cjs)' }; }
+  }
   if (cap.oracle === 'auth') {
     // fig-auth.cjs: jwt-auth (HS256 boundary: valid passes to forward,
     // expired/garbage -> 401) and spellchecker (hunspell dict reachability
@@ -146,7 +157,11 @@ function oracleFor(cap) {
                detail: `${pass}/${stems.length} golden conversions pass (sim ${stems.map(([, s]) => s.textSimilarity).join('/')})` };
     } catch { return { name: 'golden', green: false, detail: 'fig-golden.json missing (run fig-golden.py)' }; }
   }
-  if (cap.oracle === 'none') return { name: 'none', green: false, detail: 'oracle to be defined' };
+  if (cap.oracle === 'none') {
+    return cap.status === 'obsolete'
+      ? { name: 'none', green: false, detail: 'not ported — no WO client calls this surface (dies with legacy teardown)' }
+      : { name: 'none', green: false, detail: 'oracle to be defined' };
+  }
   return { name: 'http', green: null, detail: 'probe IS the oracle' };
 }
 
@@ -158,7 +173,12 @@ function oracleFor(cap) {
     const pr = await probe(cap.probe || {});
     const or = oracleFor(cap);
     let state;
-    if (cap.status === 'legacy') state = 'legacy';
+    if (cap.status === 'obsolete') {
+      // no WO client calls this surface — OO-internal coordination, dies
+      // with the legacy teardown (command-service: only DocsCoServer calls
+      // its own /command)
+      state = 'obsolete';
+    } else if (cap.status === 'legacy') state = 'legacy';
     else if (pr.ok === false) state = 'blocked';
     else if (or.green === true) state = 'canonical';
     else state = 'shadow';

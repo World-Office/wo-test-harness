@@ -1,0 +1,30 @@
+{
+ "generated": "2026-10-13T20:44:42.933Z",
+ "base": "http://127.0.0.1:18113",
+ "discovery": {
+  "wopiDiscoveryRoot": true,
+  "netZone": true,
+  "apps": 1,
+  "editAction": true,
+  "ok": true,
+  "detail": "root=true net-zone=true apps=1 edit-docx-action=true"
+ },
+ "formats": {
+  "count": 58,
+  "pairShape": true,
+  "docxToPdf": true,
+  "ok": true,
+  "detail": "58 formats (ref 58), [from,to] shape=true, docx->pdf=true"
+ },
+ "documents": {
+  "newShape": true,
+  "infoShape": true,
+  "htmlExport": true,
+  "metaShape": true,
+  "contentsPut": true,
+  "contentsGet": true,
+  "ok": true,
+  "detail": "new=true info=true put=true get=true html=true meta=true"
+ },
+ "ok": true
+}
