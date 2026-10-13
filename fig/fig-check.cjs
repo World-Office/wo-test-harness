@@ -114,7 +114,17 @@ function oracleFor(cap) {
     } catch { return { name: 'census', green: false, detail: 'fig-census.json missing (run fig-census.cjs)' };
     }
   }
-  if (cap.oracle === 'golden') return { name: 'golden', green: false, detail: 'golden capture pipeline not yet wired (capture-oo-goldens.py exists)' };
+  if (cap.oracle === 'golden') {
+    // fig-golden.py: golden docx -> pdf via wo-x2t, compared against the
+    // committed OO-DS reference pdfs (page sanity + text-token Jaccard).
+    try {
+      const g = JSON.parse(fs.readFileSync(path.join(HERE, 'census', 'fig-golden.json'), 'utf8'));
+      const stems = Object.entries(g.stems || {});
+      const pass = stems.filter(([, s]) => s.ok).length;
+      return { name: 'golden', green: g.ok === true && pass > 0,
+               detail: `${pass}/${stems.length} golden conversions pass (sim ${stems.map(([, s]) => s.textSimilarity).join('/')})` };
+    } catch { return { name: 'golden', green: false, detail: 'fig-golden.json missing (run fig-golden.py)' }; }
+  }
   if (cap.oracle === 'none') return { name: 'none', green: false, detail: 'oracle to be defined' };
   return { name: 'http', green: null, detail: 'probe IS the oracle' };
 }
