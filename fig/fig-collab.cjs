@@ -78,7 +78,13 @@ function waitFor(box, pred, ms = 5000) {
   try { require('child_process').execSync('fuser -k 8004/tcp 2>/dev/null || true', { shell: '/bin/bash' }); } catch {}
   await sleep(300);
   const db = path.join(fs.mkdtempSync('/tmp/wo-fig-collab-'), 'sessions.db');
-  const bin = process.env.COAUTH_BIN || path.resolve(__dirname, '..', '..', 'server', 'target', 'debug', 'coauthoring-service');
+  // candidate chain: dev box nests harness in World-Office/ (../../server/target),
+  // CI checks out the server repo at workspace root (../../target)
+  const bin = process.env.COAUTH_BIN ||
+    [path.resolve(__dirname, '..', '..', 'server', 'target', 'debug', 'coauthoring-service'),
+     path.resolve(__dirname, '..', '..', 'target', 'debug', 'coauthoring-service')]
+      .find(p => fs.existsSync(p)) ||
+    path.resolve(__dirname, '..', '..', 'server', 'target', 'debug', 'coauthoring-service');
   const child = spawn(bin, [], {
     env: { ...process.env, SERVICE_PORT: PORT, SERVICE_HOST: '127.0.0.1', DATABASE_PATH: db },
     stdio: ['ignore', 'pipe', 'pipe'],
