@@ -8,8 +8,17 @@ const fs = require('fs');
 const path = require('path');
 
 const HERE = __dirname;
-const PARITY = process.env.FIG_PARITY_ROOT || path.resolve(HERE, '..', '..', 'server', 'tests', 'parity');
-const WEB = path.resolve(HERE, '..', '..', 'server', 'apps', 'web', 'apps');
+// candidate chains: dev box nests the harness inside World-Office/
+// (../../server/...), CI checks out the server repo at the workspace root
+// (../../tests/... and ../../apps/...)
+const PARITY = process.env.FIG_PARITY_ROOT ||
+  [path.resolve(HERE, '..', '..', 'server', 'tests', 'parity'),
+   path.resolve(HERE, '..', '..', 'tests', 'parity')].find(p => fs.existsSync(p)) ||
+  path.resolve(HERE, '..', '..', 'server', 'tests', 'parity');
+const WEB = [
+  path.resolve(HERE, '..', '..', 'server', 'apps', 'web', 'apps'),
+  path.resolve(HERE, '..', '..', 'apps', 'web', 'apps'),
+].find(p => fs.existsSync(p)) || path.resolve(HERE, '..', '..', 'server', 'apps', 'web', 'apps');
 
 // UI root with ALL five editor types, repo source / built dists
 function ensureFullUiRoot() {
