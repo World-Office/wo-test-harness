@@ -301,7 +301,7 @@ def run_join(wo: Path, ledger_out: Path) -> dict:
 
 def gate(ledger: dict) -> bool:
     counts = ledger["counts"]
-    bad = {k: v for k, v in counts.items() if k in ("stub", "UNMATCHED", "MISSING-STUB", "STALE-DEFERRED") and v > 0}
+    bad = {k: v for k, v in counts.items() if k in ("stub", "UNMATCHED", "MISSING-STUB", "STALE-DEFERRED", "unverified") and v > 0}
     # file-menu surface must be captured: 0 rows means the census trigger is
     # broken (menu toggles on CLICK, not mousedown) and parity is blind to it
     if counts.get("menu-file", 0) == 0:
@@ -310,6 +310,8 @@ def gate(ledger: dict) -> bool:
     if not bad:
         return True
     for row in ledger["ledger"]:
+        if row["status"] == "unverified":
+            print(f"  DECISION: [unverified] {row['tab']} {row.get('token')} — contract FAIL, presence does not count as parity (fix editor or override)")
         if row["status"] in ("stub", "UNMATCHED", "MISSING-STUB"):
             note = row.get("ref") or row.get("note") or row.get("token")
             print(f"  DECISION: [{row['status']}] {row['tab']} {note}")

@@ -88,9 +88,10 @@
    "label": "Bold (Ctrl+B)",
    "enabled": true,
    "token": "bold",
-   "status": "real",
+   "status": "unverified",
    "wo": "bold",
-   "wo_tab": "home"
+   "wo_tab": "home",
+   "contract": "FAIL"
   },
   {
    "tab": "home",
@@ -102,7 +103,8 @@
    "token": "italic",
    "status": "real",
    "wo": "italic",
-   "wo_tab": "home"
+   "wo_tab": "home",
+   "contract": "pass"
   },
   {
    "tab": "home",
@@ -306,7 +308,9 @@
    "token": "paragraph-line-spacing",
    "status": "real",
    "wo": "line-spacing",
-   "wo_tab": "home"
+   "wo_tab": "home",
+   "contract": "known-gap",
+   "note": "known parity gap (xfail in word-parity-overrides.json)"
   },
   {
    "tab": "home",
@@ -681,7 +685,8 @@
    "token": "table",
    "status": "real",
    "wo": "btn-table",
-   "wo_tab": "insert"
+   "wo_tab": "insert",
+   "contract": "pass"
   },
   {
    "tab": "insert",
@@ -3952,9 +3957,10 @@
    "label": "Protect",
    "enabled": true,
    "token": "protect",
-   "status": "real",
+   "status": "unverified",
    "wo": "btn-fileprotect",
-   "wo_tab": "surface:menu-file"
+   "wo_tab": "surface:menu-file",
+   "contract": "FAIL"
   },
   {
    "tab": "backstage",
@@ -4007,7 +4013,8 @@
  ],
  "counts": {
   "covered": 152,
-  "real": 121,
+  "real": 119,
+  "unverified": 2,
   "global-repeat": 88,
   "menu-file": 11
  }

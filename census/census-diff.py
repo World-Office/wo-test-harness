@@ -14,7 +14,7 @@ Run: /usr/bin/python3 census-diff.py
 Path overrides: --oo FILE --wo FILE --ledger FILE (reconcile.py --check passes
 a fresh --wo capture and a throwaway --ledger so committed files stay clean).
 """
-import argparse, json, re, pathlib
+import argparse, json, os, re, pathlib
 from collections import Counter
 
 HERE = pathlib.Path(__file__).parent
@@ -22,6 +22,7 @@ _ap = argparse.ArgumentParser(add_help=False)
 _ap.add_argument("--oo", default=None)
 _ap.add_argument("--wo", default=None)
 _ap.add_argument("--ledger", default=None)
+_ap.add_argument("--contracts", default=None, help="contract-results.json from the word parity contract runner (L2)")
 _args, _ = _ap.parse_known_args()
 oo = json.load(open(_args.oo or (HERE / "census" / "census-oo.json"), encoding="utf-8"))
 wo = json.load(open(_args.wo or (HERE / "census" / "census-wo.json"), encoding="utf-8"))
@@ -388,6 +389,39 @@ for slug, tab in oo["tabs"].items():
             row["status"] = "UNMATCHED"; ledger.append(row)
 
 counts = Counter(r["status"] for r in ledger)
+
+# Parity contracts (L2): presence alone no longer counts as parity. Join the
+# contract runner's results (word-parity-contracts pilots): a `real` row whose
+# contract test is red is downgraded to `unverified`; known-gaps (xfail) are
+# recorded but keep their census status. Rows without a contract result are
+# untouched until the manifest rollout (change: sharpen-word-parity-contracts
+# task 4.1) gives every row a contract.
+_cr_candidates = [
+    HERE.parent.parent / "server" / "tests" / "parity" / "contract-results.json",
+    HERE.parent.parent / "World-Office" / "server" / "tests" / "parity" / "contract-results.json",
+]
+_crpath = pathlib.Path(_args.contracts or os.environ.get("WO_PARITY_RESULTS") or
+    next((str(c) for c in _cr_candidates if c.exists()), _cr_candidates[0]))
+_contract_n = 0
+if _crpath.exists():
+    _cr = {r["token"]: r for r in json.load(open(_crpath, encoding="utf-8"))["results"]}
+    for row in ledger:
+        c = _cr.get(row.get("token"))
+        if not c:
+            continue
+        _contract_n += 1
+        if c["ok"]:
+            row["contract"] = "pass"
+        elif c.get("xfail"):
+            row["contract"] = "known-gap"
+            row["note"] = "known parity gap (xfail in word-parity-overrides.json)"
+        else:
+            row["contract"] = "FAIL"
+            if row["status"] == "real":
+                row["status"] = "unverified"
+    counts = Counter(r["status"] for r in ledger)
+    print(f"CONTRACTS: {_contract_n} joined from {_crpath.name}")
+
 # File-menu census invariant: the editor toggles the file menu on CLICK (not
 # mousedown) — a broken trigger silently yields 0 rows and hides the whole
 # surface (New/Open/Export/Print/History/AI) from parity. Carry the row count
