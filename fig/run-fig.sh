@@ -9,5 +9,6 @@ set -e
 FIG="$(cd "$(dirname "$0")" && pwd)"
 node "$FIG/fig-census.cjs"
 node "$FIG/fig-collab.cjs"
+node "$FIG/fig-auth.cjs"
 "${PYTHON:-/usr/bin/python3}" "$FIG/fig-golden.py"
 node "$FIG/fig-check.cjs" "$@"

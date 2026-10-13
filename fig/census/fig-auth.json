@@ -1,0 +1,29 @@
+{
+ "generated": "2026-10-13T19:34:39.356Z",
+ "base": "http://127.0.0.1:18113",
+ "jwt": {
+  "statuses": {
+   "valid": 502,
+   "expired": 401,
+   "garbage": 401
+  },
+  "passed": true,
+  "rejectedExpired": true,
+  "rejectedGarbage": true,
+  "ok": true,
+  "detail": "valid=502 (forward attempted — auth passed), expired=401, garbage=401"
+ },
+ "spell": {
+  "statuses": {
+   "affFlat": 200,
+   "dicSubdir": 200,
+   "traversal": 404
+  },
+  "flatForm": true,
+  "subdirForm": true,
+  "traversalBlocked": true,
+  "ok": true,
+  "detail": "aff=200 (hunspell header ok), dic-subdir=200, traversal=404"
+ },
+ "ok": true
+}

@@ -25,6 +25,11 @@ function ensureFullUiRoot() {
     if (fs.existsSync(path.join(src, 'index.html'))) fs.symlinkSync(src, path.join(root, t));
   }
   process.env.EDITOR_UI_DIR = root; // must be set BEFORE requiring parity _boot
+  // Hunspell dictionaries live at repo assets on the dev box (default is the
+  // container path /app/assets/dictionaries)
+  if (!process.env.DICTIONARIES_DIR) {
+    process.env.DICTIONARIES_DIR = path.resolve(WEB, '..', '..', '..', 'assets', 'dictionaries');
+  }
   return root;
 }
 

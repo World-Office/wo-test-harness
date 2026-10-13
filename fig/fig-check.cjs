@@ -114,6 +114,17 @@ function oracleFor(cap) {
     } catch { return { name: 'census', green: false, detail: 'fig-census.json missing (run fig-census.cjs)' };
     }
   }
+  if (cap.oracle === 'auth') {
+    // fig-auth.cjs: jwt-auth (HS256 boundary: valid passes to forward,
+    // expired/garbage -> 401) and spellchecker (hunspell dict reachability
+    // + traversal safety) — one boot, two contract oracles
+    try {
+      const a = JSON.parse(fs.readFileSync(path.join(HERE, 'census', 'fig-auth.json'), 'utf8'));
+      const sec = cap.id === 'jwt-auth' ? a.jwt : a.spell;
+      if (!sec) return { name: 'auth', green: false, detail: `no fig-auth section for ${cap.id}` };
+      return { name: 'auth', green: sec.ok === true, detail: sec.detail };
+    } catch { return { name: 'auth', green: false, detail: 'fig-auth.json missing (run fig-auth.cjs)' }; }
+  }
   if (cap.oracle === 'collab') {
     // fig-collab.cjs: live coauthoring-service — session create, ws join,
     // bidirectional edit broadcast, late-joiner CRDT replay
@@ -190,6 +201,13 @@ function oracleFor(cap) {
   M.push('`http`-Probes sind Smokes (Fassade lebt, Formen stimmen grob) — sie allein rechtfertigen keinen Cutover, der echte Kontrakt gegen die OO-Referenz fehlt noch.');
   const open = rows.filter(r => r.state === 'shadow' && r.oracle.name !== 'http');
   for (const r of open) M.push(`- **${r.id}** — oracle \`${r.oracle.name}\`: ${r.oracle.detail}`);
+  const smokes = rows.filter(r => r.state === 'shadow' && r.oracle.name === 'http');
+  if (smokes.length) {
+    M.push('');
+    M.push('### Nur-Smoke (Kontrakt-Hochstufung offen)');
+    M.push('');
+    for (const r of smokes) M.push(`- **${r.id}** — probe: ${r.probe.observed}; Form-Kontrakt (Antwortschema vs. OO-Referenz) als Hochstufung`);
+  }
   M.push('');
   fs.writeFileSync(REPORT, M.join('\n') + '\n');
   console.log(`report -> ${REPORT}`);
