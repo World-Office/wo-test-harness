@@ -26,11 +26,38 @@ const REPORT = arg('--report', path.resolve(HERE, '..', '..', 'plan', 'FIG_STATU
 
 const caps = JSON.parse(fs.readFileSync(path.join(HERE, 'capabilities.json'), 'utf8'));
 
+// ── UI root with ALL five editor types (repo source / built dists) ───────
+// _boot defaults to a word-only root (repo source). The fig needs every
+// editor bundle reachable, so build a symlink tree BEFORE requiring _boot.
+function ensureFullUiRoot() {
+  const web = path.resolve(HERE, '..', '..', 'server', 'apps', 'web', 'apps');
+  const map = {
+    word: path.join(web, 'documenteditor-wysiwyg'),
+    sheet: path.join(web, 'spreadsheeteditor-react', 'dist'),
+    slide: path.join(web, 'presentationeditor-react', 'dist'),
+    pdf: path.join(web, 'pdfeditor-react', 'dist'),
+    diagram: path.join(web, 'visioeditor-react', 'dist'),
+  };
+  const root = fs.mkdtempSync('/tmp/wo-fig-ui-');
+  for (const [t, src] of Object.entries(map)) {
+    if (fs.existsSync(path.join(src, 'index.html'))) fs.symlinkSync(src, path.join(root, t));
+  }
+  process.env.EDITOR_UI_DIR = root;
+  return root;
+}
+ensureFullUiRoot();
+
 // ── boot the docserver through the existing parity helper ────────────────
 let base = 'http://127.0.0.1:18113';
 let server = null, browser = null;
 async function ensure() {
   try {
+    // a previous fig/parity run may have left its docserver on :18113 (the
+    // spawned child survives the parent) — it would serve a stale word-only
+    // UI root and answer every probe 404. Port 18113 is parity-owned, so
+    // anything listening there is ours: kill it before booting.
+    try { require('child_process').execSync('fuser -k 18113/tcp 2>/dev/null || true', { shell: '/bin/bash' }); } catch {}
+    await new Promise(r => setTimeout(r, 300));
     const boot = require(path.join(PARITY, '_boot.cjs'));
     server = await boot.ensureServer();
     base = server.base || base;
@@ -44,6 +71,21 @@ async function ensure() {
 async function probe(p) {
   if (p.method === 'skip') return { ok: null, observed: 'skipped (no live probe defined)' };
   try {
+    if (p.method === 'CONVERT') {
+      // conversion smoke: real golden docx through the wo-x2t router
+      const file = path.resolve(HERE, '..', 'census', 'golden', 'docs', p.file);
+      if (!fs.existsSync(file)) return { ok: false, observed: `golden missing: ${p.file}` };
+      const b64 = fs.readFileSync(file).toString('base64');
+      const res = await fetch(base + '/api/conversion/convert', {
+        method: 'POST', headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ data: b64, source_format: p.from, target_format: p.to }),
+        signal: AbortSignal.timeout(30000),
+      });
+      const j = await res.json().catch(() => ({}));
+      const outLen = j.data ? Buffer.byteLength(j.data, 'base64') : 0;
+      const ok = res.ok && j.status === 'Success' && outLen > 1000;
+      return { ok, observed: `HTTP ${res.status}, status=${j.status}, pdf-bytes=${outLen}` };
+    }
     const res = await fetch(base + p.path, { method: p.method, signal: AbortSignal.timeout(5000) });
     const body = await res.text();
     if (p.expect === 'xml-apps>=1') {
@@ -63,8 +105,11 @@ async function probe(p) {
       return { ok, observed: `HTTP ${res.status}, ribbon-markers=${/ribbon|data-tab=/.test(body)}` };
     }
     if (p.expect === 'status-200') return { ok: res.ok, observed: `HTTP ${res.status}` };
-    if (p.expect === 'status-200-or-404') {
-      return { ok: [200, 404].includes(res.status), observed: `HTTP ${res.status}` };
+    if (p.expect === 'status-4xx') {
+      // WOPI trust boundary: unauthenticated access must fail cleanly (4xx,
+      // never 5xx/crash) — that IS the equivalence behavior at the facade
+      const ok = res.status >= 400 && res.status < 500;
+      return { ok, observed: `HTTP ${res.status} (auth boundary ${ok ? 'clean' : 'BROKEN'})` };
     }
     return { ok: res.ok, observed: `HTTP ${res.status}` };
   } catch (e) {
@@ -83,11 +128,9 @@ function oracleFor(cap) {
     } catch { return { name: 'parity-contracts', green: false, detail: 'no contract-results.json' }; }
   }
   if (cap.oracle === 'census') {
-    try {
-      const p = path.join(HERE, '..', 'census', 'legacy', 'census', 'legacy-parity.json');
-      const v = JSON.parse(fs.readFileSync(p, 'utf8'));
-      return { name: 'census', green: true, detail: 'census infrastructure present (per-type depth pending)' };
-    } catch { return { name: 'census', green: false, detail: 'no census verdict' }; }
+    // census infrastructure exists (census-react.cjs), but no per-type census
+    // run is wired for sheet/slide/pdf/diagram yet — honest: not green.
+    return { name: 'census', green: false, detail: 'census-react present, per-type census run not wired' };
   }
   if (cap.oracle === 'golden') return { name: 'golden', green: false, detail: 'golden capture pipeline not yet wired (capture-oo-goldens.py exists)' };
   if (cap.oracle === 'none') return { name: 'none', green: false, detail: 'oracle to be defined' };
@@ -141,7 +184,9 @@ function oracleFor(cap) {
   M.push('3. **canonical**: OO-Node-Pfad entfernen, Rust bleibt Rückfall nicht mehr nötig. Rollback = Git, nicht Doppelbetrieb.');
   M.push('');
   M.push('### Offene Oracles (blockiert Cutover)');
-  const open = rows.filter(r => r.state === 'shadow');
+  M.push('');
+  M.push('`http`-Probes sind Smokes (Fassade lebt, Formen stimmen grob) — sie allein rechtfertigen keinen Cutover, der echte Kontrakt gegen die OO-Referenz fehlt noch.');
+  const open = rows.filter(r => r.state === 'shadow' && r.oracle.name !== 'http');
   for (const r of open) M.push(`- **${r.id}** — oracle \`${r.oracle.name}\`: ${r.oracle.detail}`);
   M.push('');
   fs.writeFileSync(REPORT, M.join('\n') + '\n');
