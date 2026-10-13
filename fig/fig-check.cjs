@@ -25,42 +25,15 @@ const OUT = arg('--out', path.join(HERE, 'census'));
 const REPORT = arg('--report', path.resolve(HERE, '..', '..', 'plan', 'FIG_STATUS.md'));
 
 const caps = JSON.parse(fs.readFileSync(path.join(HERE, 'capabilities.json'), 'utf8'));
+const { ensure } = require(path.join(HERE, 'boot.cjs'));
 
-// ── UI root with ALL five editor types (repo source / built dists) ───────
-// _boot defaults to a word-only root (repo source). The fig needs every
-// editor bundle reachable, so build a symlink tree BEFORE requiring _boot.
-function ensureFullUiRoot() {
-  const web = path.resolve(HERE, '..', '..', 'server', 'apps', 'web', 'apps');
-  const map = {
-    word: path.join(web, 'documenteditor-wysiwyg'),
-    sheet: path.join(web, 'spreadsheeteditor-react', 'dist'),
-    slide: path.join(web, 'presentationeditor-react', 'dist'),
-    pdf: path.join(web, 'pdfeditor-react', 'dist'),
-    diagram: path.join(web, 'visioeditor-react', 'dist'),
-  };
-  const root = fs.mkdtempSync('/tmp/wo-fig-ui-');
-  for (const [t, src] of Object.entries(map)) {
-    if (fs.existsSync(path.join(src, 'index.html'))) fs.symlinkSync(src, path.join(root, t));
-  }
-  process.env.EDITOR_UI_DIR = root;
-  return root;
-}
-ensureFullUiRoot();
-
-// ── boot the docserver through the existing parity helper ────────────────
+// ── boot the docserver through the shared fig helper ────────────────────
 let base = 'http://127.0.0.1:18113';
 let server = null, browser = null;
-async function ensure() {
+async function run() {
   try {
-    // a previous fig/parity run may have left its docserver on :18113 (the
-    // spawned child survives the parent) — it would serve a stale word-only
-    // UI root and answer every probe 404. Port 18113 is parity-owned, so
-    // anything listening there is ours: kill it before booting.
-    try { require('child_process').execSync('fuser -k 18113/tcp 2>/dev/null || true', { shell: '/bin/bash' }); } catch {}
-    await new Promise(r => setTimeout(r, 300));
-    const boot = require(path.join(PARITY, '_boot.cjs'));
-    server = await boot.ensureServer();
-    base = server.base || base;
+    const s = await ensure();
+    base = s.base;
     return true;
   } catch (e) {
     console.error(`fig-check: cannot boot docserver (${e.message}) — probes will fail`);
@@ -128,9 +101,18 @@ function oracleFor(cap) {
     } catch { return { name: 'parity-contracts', green: false, detail: 'no contract-results.json' }; }
   }
   if (cap.oracle === 'census') {
-    // census infrastructure exists (census-react.cjs), but no per-type census
-    // run is wired for sheet/slide/pdf/diagram yet — honest: not green.
-    return { name: 'census', green: false, detail: 'census-react present, per-type census run not wired' };
+    // per-type presence+interaction census (fig-census.cjs): file tab renders,
+    // file menu opens, ribbon floor + baseline drift guard, no page errors.
+    // Stage 1 oracle — OO feature-depth census remains stage-2 debt.
+    try {
+      const v = JSON.parse(fs.readFileSync(path.join(HERE, 'census', 'fig-census.json'), 'utf8'));
+      const t = (cap.id || '').replace('editor-ui-', '');
+      const r = v.types && v.types[t];
+      if (!r) return { name: 'census', green: false, detail: `no fig-census entry for ${t} (run fig-census.cjs)` };
+      return { name: 'census', green: !!r.ok,
+               detail: `presence census ${r.ok ? 'OK' : 'FAIL'}: buttons=${r.ribbonButtons}${r.baselineButtons ? ` (baseline ${r.baselineButtons})` : ''}, fileMenu=${r.checks && r.checks.fileMenuOpens}, canvas=${r.canvases}; OO-depth pending` };
+    } catch { return { name: 'census', green: false, detail: 'fig-census.json missing (run fig-census.cjs)' };
+    }
   }
   if (cap.oracle === 'golden') return { name: 'golden', green: false, detail: 'golden capture pipeline not yet wired (capture-oo-goldens.py exists)' };
   if (cap.oracle === 'none') return { name: 'none', green: false, detail: 'oracle to be defined' };
@@ -138,7 +120,7 @@ function oracleFor(cap) {
 }
 
 (async () => {
-  await ensure();
+  await run();
   fs.mkdirSync(OUT, { recursive: true });
   const rows = [];
   for (const cap of caps.capabilities) {

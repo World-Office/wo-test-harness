@@ -1,0 +1,21 @@
+{
+ "generated": "2026-10-13T18:25:57.879Z",
+ "types": {
+  "sheet": {
+   "ribbonButtons": 34,
+   "canvases": 3
+  },
+  "slide": {
+   "ribbonButtons": 46,
+   "canvases": 0
+  },
+  "pdf": {
+   "ribbonButtons": 19,
+   "canvases": 3
+  },
+  "diagram": {
+   "ribbonButtons": 15,
+   "canvases": 1
+  }
+ }
+}
