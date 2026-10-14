@@ -12,5 +12,12 @@ node "$FIG/fig-collab.cjs"
 node "$FIG/fig-auth.cjs"
 node "$FIG/fig-contracts.cjs"
 node "$FIG/fig-wopi.cjs"
+# editor-ui-word oracle = parity-contracts (L2 contracts); the CI fig job never
+# ran them, so --check saw 'no contract-results.json'. Run the L2 runner so the
+# oracle evidence exists in the same workspace the check reads.
+for P in "$FIG/../../server/tests/parity" "$FIG/../../tests/parity"; do
+  [ -f "$P/contract-runner.cjs" ] && PARITY="$P" && break
+done
+[ -n "$PARITY" ] && node "$PARITY/contract-runner.cjs" 2>&1 | tail -1
 "${PYTHON:-/usr/bin/python3}" "$FIG/fig-golden.py"
 node "$FIG/fig-check.cjs" "$@"
