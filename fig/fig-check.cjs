@@ -221,6 +221,7 @@ function oracleFor(cap) {
   M.push('| Capability | State | Probe | Oracle |');
   M.push('|---|---|---|---|');
   for (const r of rows) {
+    if (r.state === 'shadow' || r.state === 'blocked') console.log(`fig-check: ${r.id} -> ${r.state} (oracle ${r.oracle.name}: ${r.oracle.detail}; probe ${r.probe.observed})`);
     M.push(`| ${r.id} | **${r.state}** | ${r.probe.observed} | ${r.oracle.name}: ${r.oracle.detail} |`);
   }
   M.push('');
