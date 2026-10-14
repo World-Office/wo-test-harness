@@ -117,6 +117,17 @@ function oracleFor(cap) {
     } catch { return { name: 'census', green: false, detail: 'fig-census.json missing (run fig-census.cjs)' };
     }
   }
+  if (cap.oracle === 'wopi') {
+    // fig-wopi.cjs: WOPI proxy form contracts against an in-process WOPI
+    // host (checkfileinfo shape, byte-exact contents, lock dance)
+    const section = { 'wopi-checkfileinfo': 'checkfileinfo', 'wopi-contents': 'contents', 'wopi-locks': 'locks' }[cap.id];
+    try {
+      const w = JSON.parse(fs.readFileSync(path.join(HERE, 'census', 'fig-wopi.json'), 'utf8'));
+      const s = section && w[section];
+      if (!s) return { name: 'wopi', green: false, detail: `no fig-wopi section for ${cap.id}` };
+      return { name: 'wopi', green: s.ok === true, detail: `status=${s.status}` + (s.error ? ` error=${s.error}` : '') };
+    } catch { return { name: 'wopi', green: false, detail: 'fig-wopi.json missing (run fig-wopi.cjs)' }; }
+  }
   if (cap.oracle === 'contract') {
     // fig-contracts.cjs: response-form contracts for the caps that need no
     // upstream mock (discovery XML, conversion format pairs, document API)

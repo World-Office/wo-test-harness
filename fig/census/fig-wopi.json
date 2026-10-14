@@ -1,0 +1,24 @@
+{
+ "generated": "2026-10-14T05:30:49.607Z",
+ "checkfileinfo": {
+  "status": 200,
+  "form": true,
+  "baseFileName": "fig.docx",
+  "ok": true
+ },
+ "contents": {
+  "status": 200,
+  "byteExact": true,
+  "ok": true
+ },
+ "locks": {
+  "status": 200,
+  "mockHeldLock": false,
+  "ok": true
+ },
+ "auth": {
+  "status": 401,
+  "ok": true
+ },
+ "ok": true
+}
