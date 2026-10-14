@@ -53,3 +53,16 @@ Capability**: Legacy bleibt hinter der Fassade, bis das Orakel grün ist.
 
 (`command-service` wurde 2026-10-14 obsolet erklärt: kein WO-Client ruft die
 Surface — sie stirbt mit dem Legacy-Teardown, kein Port, kein Orakel.)
+
+## Befund: sheet react-UI FileMenu-Tiefe (2026-10-14, af-Kampagne CENSUS-SHEET-DEPTH)
+
+`census/census-react-sheet.cjs` (gebaut von af-Worker, 3 Runden mit
+turn-cap-Eskalation + recover) censust die sheet-UI auf :8086/sheet/ live:
+Editor mounted (59 Controls), FileTab öffnet das Panel, 10 Dialog-Items
+deklariert — aber nur 1 painted: die FileMenu-Entries (Rename..., Document
+Info... etc.) **feuern keine sichtbare Oberfläche** (kein `<dialog>`, kein
+Pane, kein Focus-Wechsel — manuell nachgeprüft). Word hat die volle
+Modal-OK-Wire (modal-ok-check 13/13); sheet nicht. Das ist die nächste
+Parity-Lücke, nicht ein Census-Bug. Artifact:
+`census/census-sheet-depth.json` (gate: file-menu-open + dialogs>=5 enforced
+in-Script).
