@@ -20,7 +20,11 @@ const path = require('path');
 
 function arg(k, d) { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; }
 const HERE = __dirname;
-const PARITY = arg('--parity-root', path.resolve(HERE, '..', '..', 'server', 'tests', 'parity'));
+const PARITY = arg('--parity-root',
+  [path.resolve(HERE, '..', '..', 'server', 'tests', 'parity'),
+   path.resolve(HERE, '..', '..', 'tests', 'parity')]
+    .find(p => fs.existsSync(p)) ||
+  path.resolve(HERE, '..', '..', 'server', 'tests', 'parity'));
 const OUT = arg('--out', path.join(HERE, 'census'));
 const REPORT = arg('--report',
   fs.existsSync(path.resolve(HERE, '..', '..', 'plan'))
