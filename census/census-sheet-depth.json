@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice-react-sheet",
- "capturedAt": "2026-10-14T15:39:15.083Z",
+ "capturedAt": "2026-10-14T16:55:58.874Z",
  "url": "http://192.168.42.42:8086/sheet/",
  "viewport": {
   "width": 1600,
@@ -18,10 +18,12 @@
   "panelPresent": true,
   "panelDisplay": {
    "before": "none",
-   "after": "none"
+   "after": "visible"
   },
-  "panelVisible": false,
-  "opened": false,
+  "panelVisible": true,
+  "opened": true,
+  "openTrigger": "file-tab-click:ok > rerender:keystroke#1",
+  "closedByBackClick": false,
   "items": [
    "←Back",
    "Download as...",
@@ -43,14 +45,897 @@
    "Create New",
    "Open Recent",
    "Protect Document"
-  ]
+  ],
+  "dialogs": [
+   {
+    "item": "Download as...",
+    "picked": "Download as...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Download as...",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": true,
+    "painted": false,
+    "kind": "pane",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": {
+     "where": "pane",
+     "header": "Download as",
+     "display": "block",
+     "painted": false,
+     "w": 0,
+     "h": 0,
+     "controls": 12,
+     "controlLabels": [
+      "XLSX",
+      "CSV",
+      "ODS",
+      "PDF",
+      "XLTX",
+      "OTS",
+      "XLSB",
+      "XLSM",
+      "PDFA",
+      "JPG"
+     ]
+    },
+    "drill": [],
+    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+   },
+   {
+    "item": "Download as...",
+    "picked": "Download as...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Download as...",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": true,
+    "painted": false,
+    "kind": "pane",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": {
+     "where": "pane",
+     "header": "Download as",
+     "display": "block",
+     "painted": false,
+     "w": 0,
+     "h": 0,
+     "controls": 12,
+     "controlLabels": [
+      "XLSX",
+      "CSV",
+      "ODS",
+      "PDF",
+      "XLTX",
+      "OTS",
+      "XLSB",
+      "XLSM",
+      "PDFA",
+      "JPG"
+     ]
+    },
+    "drill": [],
+    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+   },
+   {
+    "item": "Export Wizard...",
+    "picked": "Export Wizard...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Export Wizard...",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": true,
+    "painted": true,
+    "kind": "dialog",
+    "dialogDepth": 1,
+    "paneContainerDisplay": "none",
+    "surface": {
+     "where": "dialog",
+     "title": "Download as",
+     "w": 458,
+     "h": 481,
+     "controls": 5,
+     "controlLabels": [
+      "✕",
+      "XLSXExcel Workbook",
+      "ODSOpenDocument Spreadsh",
+      "PDFPortable Document For",
+      "CSVComma-Separated Value"
+     ]
+    },
+    "drill": [
+     {
+      "control": "✕",
+      "clicked": "real",
+      "dialogDepth": 1,
+      "stillOpen": true,
+      "deepened": null
+     },
+     {
+      "control": "XLSXExcel Workbook",
+      "clicked": "real",
+      "dialogDepth": 1,
+      "stillOpen": true,
+      "deepened": null
+     },
+     {
+      "control": "ODSOpenDocument Spreadsh",
+      "clicked": "real",
+      "dialogDepth": 1,
+      "stillOpen": true,
+      "deepened": null
+     }
+    ],
+    "note": ""
+   },
+   {
+    "item": "Export Wizard...",
+    "picked": "Export Wizard...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Export Wizard...",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": true,
+    "painted": true,
+    "kind": "dialog",
+    "dialogDepth": 1,
+    "paneContainerDisplay": "none",
+    "surface": {
+     "where": "dialog",
+     "title": "Download as",
+     "w": 458,
+     "h": 481,
+     "controls": 5,
+     "controlLabels": [
+      "✕",
+      "XLSXExcel Workbook",
+      "ODSOpenDocument Spreadsh",
+      "PDFPortable Document For",
+      "CSVComma-Separated Value"
+     ]
+    },
+    "drill": [
+     {
+      "control": "✕",
+      "clicked": "real",
+      "dialogDepth": 1,
+      "stillOpen": true,
+      "deepened": null
+     },
+     {
+      "control": "XLSXExcel Workbook",
+      "clicked": "real",
+      "dialogDepth": 1,
+      "stillOpen": true,
+      "deepened": null
+     },
+     {
+      "control": "ODSOpenDocument Spreadsh",
+      "clicked": "real",
+      "dialogDepth": 1,
+      "stillOpen": true,
+      "deepened": null
+     }
+    ],
+    "note": ""
+   },
+   {
+    "item": "Save Copy as...",
+    "picked": "Save Copy as...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Save Copy as...",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": true,
+    "painted": false,
+    "kind": "pane",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": {
+     "where": "pane",
+     "header": "Save Copy as",
+     "display": "block",
+     "painted": false,
+     "w": 0,
+     "h": 0,
+     "controls": 11,
+     "controlLabels": [
+      "XLSX",
+      "ODS",
+      "CSV",
+      "PDF",
+      "XLTX",
+      "OTS",
+      "XLSB",
+      "XLSM",
+      "PDFA",
+      "JPG"
+     ]
+    },
+    "drill": [],
+    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+   },
+   {
+    "item": "Save Copy as...",
+    "picked": "Save Copy as...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Save Copy as...",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": true,
+    "painted": false,
+    "kind": "pane",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": {
+     "where": "pane",
+     "header": "Save Copy as",
+     "display": "block",
+     "painted": false,
+     "w": 0,
+     "h": 0,
+     "controls": 11,
+     "controlLabels": [
+      "XLSX",
+      "ODS",
+      "CSV",
+      "PDF",
+      "XLTX",
+      "OTS",
+      "XLSB",
+      "XLSM",
+      "PDFA",
+      "JPG"
+     ]
+    },
+    "drill": [],
+    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+   },
+   {
+    "item": "Save as...",
+    "picked": "Save as...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Save as...",
+     "rerender:none"
+    ],
+    "fileMenuOpen": false,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": "file-menu-panel:none"
+   },
+   {
+    "item": "Save as...",
+    "picked": "Save as...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Save as...",
+     "rerender:none"
+    ],
+    "fileMenuOpen": false,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": "file-menu-panel:none"
+   },
+   {
+    "item": "Export to PDF",
+    "picked": "Export to PDF",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Export to PDF",
+     "rerender:none"
+    ],
+    "fileMenuOpen": false,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": "file-menu-panel:none"
+   },
+   {
+    "item": "Export to PDF",
+    "picked": "Export to PDF",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Export to PDF",
+     "rerender:none"
+    ],
+    "fileMenuOpen": false,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": "file-menu-panel:none"
+   },
+   {
+    "item": "Print with Preview",
+    "picked": "Print with Preview",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Print with Preview",
+     "rerender:none"
+    ],
+    "fileMenuOpen": false,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": "file-menu-panel:none"
+   },
+   {
+    "item": "Print with Preview",
+    "picked": "Print with Preview",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Print with Preview",
+     "rerender:none"
+    ],
+    "fileMenuOpen": false,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": "file-menu-panel:none"
+   },
+   {
+    "item": "Rename...",
+    "picked": "Rename...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Rename...",
+     "rerender:none"
+    ],
+    "fileMenuOpen": false,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": "file-menu-panel:none"
+   },
+   {
+    "item": "Rename...",
+    "picked": "Rename...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Rename...",
+     "rerender:none"
+    ],
+    "fileMenuOpen": false,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": "file-menu-panel:none"
+   },
+   {
+    "item": "Document Info...",
+    "picked": "Document Info...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Document Info...",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": true,
+    "painted": false,
+    "kind": "pane",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": {
+     "where": "pane",
+     "header": "Document Info",
+     "display": "block",
+     "painted": false,
+     "w": 0,
+     "h": 0,
+     "controls": 0,
+     "controlLabels": []
+    },
+    "drill": [],
+    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+   },
+   {
+    "item": "Document Info...",
+    "picked": "Document Info...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Document Info...",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": true,
+    "painted": false,
+    "kind": "pane",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": {
+     "where": "pane",
+     "header": "Document Info",
+     "display": "block",
+     "painted": false,
+     "w": 0,
+     "h": 0,
+     "controls": 0,
+     "controlLabels": []
+    },
+    "drill": [],
+    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+   },
+   {
+    "item": "Access Rights...",
+    "picked": "Access Rights...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Access Rights...",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": true,
+    "painted": false,
+    "kind": "pane",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": {
+     "where": "pane",
+     "header": "Access Rights",
+     "display": "block",
+     "painted": false,
+     "w": 0,
+     "h": 0,
+     "controls": 2,
+     "controlLabels": [
+      "Owner",
+      "Group"
+     ]
+    },
+    "drill": [],
+    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+   },
+   {
+    "item": "Access Rights...",
+    "picked": "Access Rights...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Access Rights...",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": true,
+    "painted": false,
+    "kind": "pane",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": {
+     "where": "pane",
+     "header": "Access Rights",
+     "display": "block",
+     "painted": false,
+     "w": 0,
+     "h": 0,
+     "controls": 2,
+     "controlLabels": [
+      "Owner",
+      "Group"
+     ]
+    },
+    "drill": [],
+    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+   },
+   {
+    "item": "Version History...",
+    "picked": "Version History...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Version History...",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": ""
+   },
+   {
+    "item": "Version History...",
+    "picked": "Version History...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Version History...",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": ""
+   },
+   {
+    "item": "Advanced Settings...",
+    "picked": "Advanced Settings...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Advanced Settings...",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": true,
+    "painted": false,
+    "kind": "pane",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": {
+     "where": "pane",
+     "header": "Advanced Settings",
+     "display": "block",
+     "painted": false,
+     "w": 0,
+     "h": 0,
+     "controls": 5,
+     "controlLabels": [
+      "EnglishDeutschFrançaisEs",
+      "EnabledDisabled",
+      "ShowHide",
+      "ShowHide",
+      "ShowHide"
+     ]
+    },
+    "drill": [],
+    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+   },
+   {
+    "item": "Advanced Settings...",
+    "picked": "Advanced Settings...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Advanced Settings...",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": true,
+    "painted": false,
+    "kind": "pane",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": {
+     "where": "pane",
+     "header": "Advanced Settings",
+     "display": "block",
+     "painted": false,
+     "w": 0,
+     "h": 0,
+     "controls": 5,
+     "controlLabels": [
+      "EnglishDeutschFrançaisEs",
+      "EnabledDisabled",
+      "ShowHide",
+      "ShowHide",
+      "ShowHide"
+     ]
+    },
+    "drill": [],
+    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+   },
+   {
+    "item": "Help...",
+    "picked": "Help...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Help...",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": true,
+    "painted": false,
+    "kind": "pane",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": {
+     "where": "pane",
+     "header": "Help",
+     "display": "block",
+     "painted": false,
+     "w": 0,
+     "h": 0,
+     "controls": 0,
+     "controlLabels": []
+    },
+    "drill": [],
+    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+   },
+   {
+    "item": "Help...",
+    "picked": "Help...",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Help...",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": true,
+    "painted": false,
+    "kind": "pane",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": {
+     "where": "pane",
+     "header": "Help",
+     "display": "block",
+     "painted": false,
+     "w": 0,
+     "h": 0,
+     "controls": 0,
+     "controlLabels": []
+    },
+    "drill": [],
+    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+   },
+   {
+    "item": "External Help",
+    "picked": "External Help",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:External Help",
+     "rerender:none"
+    ],
+    "fileMenuOpen": false,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": "file-menu-panel:none"
+   },
+   {
+    "item": "External Help",
+    "picked": "External Help",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:External Help",
+     "rerender:none"
+    ],
+    "fileMenuOpen": false,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": "file-menu-panel:none"
+   },
+   {
+    "item": "Suggest Feature",
+    "picked": "Suggest Feature",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Suggest Feature",
+     "rerender:none"
+    ],
+    "fileMenuOpen": false,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": "file-menu-panel:none"
+   },
+   {
+    "item": "Suggest Feature",
+    "picked": "Suggest Feature",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Suggest Feature",
+     "rerender:none"
+    ],
+    "fileMenuOpen": false,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": "file-menu-panel:none"
+   },
+   {
+    "item": "Create New",
+    "picked": "Create New",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Create New",
+     "rerender:none"
+    ],
+    "fileMenuOpen": false,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": "file-menu-panel:none"
+   },
+   {
+    "item": "Create New",
+    "picked": "Create New",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Create New",
+     "rerender:none"
+    ],
+    "fileMenuOpen": false,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": "file-menu-panel:none"
+   },
+   {
+    "item": "Open Recent",
+    "picked": "Open Recent",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Open Recent",
+     "rerender:none"
+    ],
+    "fileMenuOpen": false,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": "file-menu-panel:none"
+   },
+   {
+    "item": "Open Recent",
+    "picked": "Open Recent",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Open Recent",
+     "rerender:none"
+    ],
+    "fileMenuOpen": false,
+    "exercised": false,
+    "painted": false,
+    "kind": "none",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": null,
+    "drill": [],
+    "note": "file-menu-panel:none"
+   },
+   {
+    "item": "Protect Document",
+    "picked": "Protect Document",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Protect Document",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": true,
+    "painted": false,
+    "kind": "pane",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": {
+     "where": "pane",
+     "header": "Protect Workbook",
+     "display": "block",
+     "painted": false,
+     "w": 0,
+     "h": 0,
+     "controls": 3,
+     "controlLabels": [
+      "Protect Sheet",
+      "Protect Workbook",
+      "Protect Structure"
+     ]
+    },
+    "drill": [],
+    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+   },
+   {
+    "item": "Protect Document",
+    "picked": "Protect Document",
+    "steps": [
+     "file-tab-click:ok",
+     "entry-click:Protect Document",
+     "rerender:keystroke#1"
+    ],
+    "fileMenuOpen": true,
+    "exercised": true,
+    "painted": false,
+    "kind": "pane",
+    "dialogDepth": 0,
+    "paneContainerDisplay": "none",
+    "surface": {
+     "where": "pane",
+     "header": "Protect Workbook",
+     "display": "block",
+     "painted": false,
+     "w": 0,
+     "h": 0,
+     "controls": 3,
+     "controlLabels": [
+      "Protect Sheet",
+      "Protect Workbook",
+      "Protect Structure"
+     ]
+    },
+    "drill": [],
+    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+   }
+  ],
+  "dialogsExercised": 16,
+  "dialogsPainted": 2,
+  "minRequired": 5
  },
  "rows": [
   {
    "surface": "toolbar:Home",
    "control": "Cut",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -58,13 +943,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Copy",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -72,13 +957,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Paste",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -86,13 +971,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Format Painter",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -100,13 +985,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Bold",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -114,13 +999,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Italic",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -128,13 +1013,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Underline",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -142,13 +1027,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Strike",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -156,13 +1041,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Increase Size",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -170,13 +1055,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Decrease Size",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -184,17 +1069,17 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Text Color",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": true,
    "kind": "menu",
    "dialogDepth": 0,
-   "overlayDepth": 1,
+   "overlayDepth": 2,
    "toggled": false,
    "chain": [],
    "layer": {
@@ -204,17 +1089,17 @@
     "h": 152,
     "buttons": 0
    },
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Fill Color",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": true,
    "kind": "menu",
    "dialogDepth": 0,
-   "overlayDepth": 1,
+   "overlayDepth": 2,
    "toggled": false,
    "chain": [],
    "layer": {
@@ -224,13 +1109,13 @@
     "h": 152,
     "buttons": 0
    },
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Left",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -238,13 +1123,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Center",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -252,13 +1137,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Right",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -266,13 +1151,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Merge & Center",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -280,13 +1165,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Wrap Text",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -294,13 +1179,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Currency",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -308,13 +1193,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Percent",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -322,13 +1207,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Decimal",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -336,13 +1221,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Cell Styles",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -350,13 +1235,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Conditional",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -364,13 +1249,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Delete",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -378,13 +1263,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Format",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -392,17 +1277,17 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Find",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": true,
    "kind": "widget",
    "dialogDepth": 0,
-   "overlayDepth": 1,
+   "overlayDepth": 2,
    "toggled": false,
    "chain": [],
    "layer": {
@@ -412,33 +1297,13 @@
     "h": 33,
     "buttons": 0
    },
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Replace",
    "tag": "button",
-   "clicked": "real",
-   "opened": true,
-   "kind": "widget",
-   "dialogDepth": 0,
-   "overlayDepth": 1,
-   "toggled": false,
-   "chain": [],
-   "layer": {
-    "kind": "widget",
-    "label": "find-widget",
-    "w": 419,
-    "h": 62,
-    "buttons": 0
-   },
-   "note": ""
-  },
-  {
-   "surface": "toolbar:Home",
-   "control": "Sum",
-   "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -446,13 +1311,27 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
+  },
+  {
+   "surface": "toolbar:Home",
+   "control": "Sum",
+   "tag": "button",
+   "clicked": "dom",
+   "opened": false,
+   "kind": "none",
+   "dialogDepth": 0,
+   "overlayDepth": 0,
+   "toggled": false,
+   "chain": [],
+   "layer": null,
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Sort",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -460,13 +1339,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Home",
    "control": "Filter",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -474,13 +1353,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Formula",
    "control": "Sum",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -488,13 +1367,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Formula",
    "control": "Average",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -502,13 +1381,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Formula",
    "control": "Count",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -516,13 +1395,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Formula",
    "control": "Min",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -530,13 +1409,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Formula",
    "control": "Max",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -544,13 +1423,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Formula",
    "control": "IF",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -558,13 +1437,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Formula",
    "control": "VLOOKUP",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -572,13 +1451,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Formula",
    "control": "Name Manager",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -586,13 +1465,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Formula",
    "control": "Create from Selection",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -600,13 +1479,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Formula",
    "control": "Trace Precedents",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -614,13 +1493,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Formula",
    "control": "Trace Dependents",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -628,13 +1507,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Formula",
    "control": "Automatic",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -642,13 +1521,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "toolbar:Formula",
    "control": "Manual",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -656,13 +1535,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "left-menu",
    "control": "Search",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -670,13 +1549,13 @@
    "toggled": true,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "left-menu",
    "control": "Comments",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -684,13 +1563,13 @@
    "toggled": true,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "left-menu",
    "control": "Chat",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -698,13 +1577,13 @@
    "toggled": true,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "left-menu",
    "control": "Spell Check",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -712,13 +1591,13 @@
    "toggled": true,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "left-menu",
    "control": "Support",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -726,13 +1605,13 @@
    "toggled": true,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "left-menu",
    "control": "About",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -740,7 +1619,7 @@
    "toggled": true,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "sheet-tab-bar",
@@ -760,7 +1639,7 @@
    "surface": "sheet-tab-bar",
    "control": "Active sheet",
    "tag": "select",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -768,13 +1647,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "sheet-tab-bar",
    "control": "Add sheet",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -782,7 +1661,7 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "statusbar",
@@ -802,7 +1681,7 @@
    "surface": "statusbar",
    "control": "Active sheet",
    "tag": "select",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -810,13 +1689,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "statusbar",
    "control": "Add sheet",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -824,7 +1703,7 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "statusbar",
@@ -844,7 +1723,7 @@
    "surface": "statusbar",
    "control": "Fit to page",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -852,13 +1731,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "statusbar",
    "control": "Fit to width",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -866,13 +1745,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "statusbar",
    "control": "Zoom Out",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -880,13 +1759,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   },
   {
    "surface": "statusbar",
    "control": "Zoom In",
    "tag": "button",
-   "clicked": "real",
+   "clicked": "dom",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -894,7 +1773,7 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:dom"
   }
  ],
  "summary": {
@@ -906,28 +1785,35 @@
    "statusbar"
   ],
   "controls": 59,
-  "opened": 4,
+  "opened": 3,
   "toggledOnly": 6,
   "byKind": {
-   "none": 55,
+   "none": 56,
    "menu": 2,
-   "widget": 2
+   "widget": 1
   },
   "dialogs": 0,
   "domDialogElements": 0,
-  "maxDialogDepth": 0,
-  "maxOverlayDepth": 1,
+  "maxDialogDepth": 1,
+  "maxOverlayDepth": 2,
   "deepest": [
    "toolbar:Home/Text Color -> menu",
    "toolbar:Home/Fill Color -> menu",
-   "toolbar:Home/Find -> widget",
-   "toolbar:Home/Replace -> widget"
-  ]
+   "toolbar:Home/Find -> widget"
+  ],
+  "fileMenuItems": 17,
+  "fileMenuOpened": true,
+  "fileMenuDialogsDeclared": 10,
+  "fileMenuDialogsExercised": 16,
+  "fileMenuDialogsPainted": 2,
+  "maxFileMenuDialogDepth": 1
  },
  "findings": [
-  "file-menu-dead: .se-file-menu-panel ships 20 menu items in the DOM (←Back, Download as..., Export Wizard..., Save Copy as..., Save as...…) but a real File-tab click leaves it display:none — Viewport reads spreadsheetStore.isFileMenuOpen without a mobx observer, so the only dialog-bearing surface (ExportWizard + its nested window) is unreachable and its dialog depth cannot be censused",
-  "no-modal-dialogs: dialogDepth is 0 across all 59 censused controls — the sheet React UI exposes no reachable modal <dialog>; deepest overlay is a depth-1 popover menu",
+  "file-menu-render-bug: the File-tab click alone paints NOTHING (.se-file-menu-panel stayed display:none); the panel only renders on the next root re-render, which this census triggers with a real keystroke into the sheet (isModified flips). Viewport reads spreadsheetStore.isFileMenuOpen/activeFileMenuPanel without a mobx observer — the sheet twin of the documented word-editor File-menu bug. Every dialog pane below is censused through that side channel, one fresh page per entry, because no second re-render exists to paint a pane switch",
+  "file-menu-dead-entries: 6 dialog-declaring entries reach no dialog surface (Save as...[file-menu-panel:none], Save as...[file-menu-panel:none], Rename...[file-menu-panel:none], Rename...[file-menu-panel:none], Version History...[no pane], Version History...[no pane]) — they either close the menu (non-pane action) or declare a pane the build never renders",
+  "file-menu-panes-never-paint: 14 dialog panes ACTIVATE but never paint — their container is display:none (contentBoxBase in FileMenuPanel.tsx), so the pane is w=0/h=0 and no real click can reach it: Download as...→Download as, Download as...→Download as, Save Copy as...→Save Copy as, Save Copy as...→Save Copy as, Document Info...→Document Info, Document Info...→Document Info, Access Rights...→Access Rights, Access Rights...→Access Rights, Advanced Settings...→Advanced Settings, Advanced Settings...→Advanced Settings, Help...→Help, Help...→Help, Protect Document→Protect Workbook, Protect Document→Protect Workbook. The census enumerates each pane's shipped controls from the DOM it mounts, but only the portaled ExportWizard <dialog> (2 surfaces painted) is actually clickable — the dialog depth of the hidden panes cannot be measured by interaction",
+  "file-menu-dialog-no-dismiss: Export Wizard..., Export Wizard... — the dialog's own ✕ flips activeFileMenuPanel in the store but the dialog stays open (same missing-observer re-render), so the modal cannot be closed by the user",
   "toggle-without-overlay: 6 controls flip their own active/pressed state but open nothing (left-menu/Search, left-menu/Comments, left-menu/Chat, left-menu/Spell Check, left-menu/Support, left-menu/About) — the left-menu rail has no panels in this build (.se-about-menu-panel is bound in the same non-observer Viewport as the file menu)",
-  "49/59 controls open no overlay and expose no toggle state (direct-action or no-op — not decidable from the DOM): toolbar:Home/Cut, toolbar:Home/Copy, toolbar:Home/Paste, toolbar:Home/Format Painter, toolbar:Home/Bold, toolbar:Home/Italic, toolbar:Home/Underline, toolbar:Home/Strike, toolbar:Home/Increase Size, toolbar:Home/Decrease Size, toolbar:Home/Left, toolbar:Home/Center …"
+  "50/59 controls open no overlay and expose no toggle state (direct-action or no-op — not decidable from the DOM): toolbar:Home/Cut, toolbar:Home/Copy, toolbar:Home/Paste, toolbar:Home/Format Painter, toolbar:Home/Bold, toolbar:Home/Italic, toolbar:Home/Underline, toolbar:Home/Strike, toolbar:Home/Increase Size, toolbar:Home/Decrease Size, toolbar:Home/Left, toolbar:Home/Center …"
  ]
 }
