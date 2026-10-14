@@ -698,11 +698,14 @@ const SKIP_NAV_ITEMS = ['Go to Documents', 'Close Editor'];
           control: label,
           clicked,
           dialogDepth: after.dialogLayers.length,
-          stillOpen: after.panel === 'visible' || after.dialogLayers.length > 0,
+          // Only the dialog itself counts: the file-menu panel behind it stays
+          // open after a successful dismiss, so including `panel === 'visible'`
+          // here misreported every working ✕ as a stuck dialog.
+          stillOpen: after.dialogLayers.length > 0,
           deepened: grew,
         });
         entry.dialogDepth = Math.max(entry.dialogDepth, after.dialogLayers.length);
-        if (after.panel !== 'visible' && after.dialogLayers.length === 0) break; // dismissed
+        if (after.dialogLayers.length === 0) break; // dismissed
       }
     }
 
