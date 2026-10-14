@@ -27,12 +27,13 @@ Capability**: Legacy bleibt hinter der Fassade, bis das Orakel grün ist.
 
 ## Der Cutover-Orakel (dieses Verzeichnis)
 
-- `capabilities.json` — das Port-Inventar: OO-Referenz ↔ Rust-Impl ↔ Oracle je Capability
+- `capabilities.json` — das Port-Inventar: OO-Referenz ↔ Rust-Impl ↔ Oracle je Capability (15 canonical + `command-service` obsolete)
+- `fig-census.cjs` / `fig-collab.cjs` / `fig-auth.cjs` / `fig-contracts.cjs` / `fig-wopi.cjs` / `fig-golden.py` — die einzelnen Oracles; Artifacts in `fig/census/fig-*.json`
 - `fig-check.cjs` — bootet den Rust docserver (über `server/tests/parity/_boot.cjs`), probt jede Capability live, verknüpft die Oracles aus dem bestehenden Harness:
   - `http` — Live-Probe (Schema-Verhalten: discovery-XML mit apps, JSON-Formen, Bundles)
   - `parity-contracts` — L2-Verträge aus `server/tests/parity/contract-results.json` (word-UI: 6 pass / 0 fail)
-  - `census` — UI-Marker-Census (`census/legacy/`)
-  - `golden` — byte/semantic compare gegen OO-Referenz-Outputs (`census/capture-oo-goldens.py`) — **noch anzubinden**
+  - `census` — UI-Marker-Census (`census/legacy/`, react-UIs via `census-react.cjs`)
+  - `golden` — byte/semantic compare gegen gepinnte Referenz-Outputs (`fig-golden.py`, 3 stems: text/image/header-footer)
 - States: `legacy` (OO canonical) → `shadow` (Rust serviert, Oracle offen) → `canonical` (Oracle grün, Legacy abschaltbar). `blocked` = Rust-Probe rot.
 - `run-fig.sh` — einmal pro Nacht/PR; Report: `plan/FIG_STATUS.md`
 
@@ -47,7 +48,8 @@ Capability**: Legacy bleibt hinter der Fassade, bis das Orakel grün ist.
 
 ## Nächste Oracles nach Priorität
 
-1. `conversion-convert` — golden pipeline anbinden (OO x2t-Referenz-Outputs vs. wo-x2t; Normalisierung: Metadaten strippen, Content semantic-diffen)
-2. `collab-ws` — Op-Äquivalenz (gleiche Edit-Sequenz → gleicher finaler Dokumentzustand via coauthoring /sessions)
-3. `editor-ui-sheet/slide/pdf` — Census + Contracts auf die react-UIs erweitern (word-Muster wiederverwenden: `census-react.cjs` existiert)
-4. `command-service` — erst Rust-Impl bauen (klein: forcesave/info), dann Orakel
+1. `collab-ws` — Op-Äquivalenz (gleiche Edit-Sequenz → gleicher finaler Dokumentzustand via coauthoring /sessions)
+2. `editor-ui-sheet/slide/pdf/diagram` — Census + Contracts auf die react-UIs erweitern (word-Muster wiederverwenden: `census-react.cjs` existiert)
+
+(`command-service` wurde 2026-10-14 obsolet erklärt: kein WO-Client ruft die
+Surface — sie stirbt mit dem Legacy-Teardown, kein Port, kein Orakel.)
