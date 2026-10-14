@@ -48,14 +48,20 @@
 //      sheet twin of the census-react.cjs assertion. A File menu that stays
 //      display:none hides the whole dialog-bearing surface;
 //   4. at least 5 File-menu dialogs must be EXERCISED: entry clicked with the
-//      menu open, the entry's dialog surface reached (its pane is the active
-//      pane in the DOM, or a real `<dialog open>` is up) and its controls
-//      enumerated / drilled. Whether the surface PAINTS is measured and
-//      reported separately (this build mounts every pane inside a
+//      menu open, the entry's dialog surface reached (its pane went
+//      display:block — and was NOT active on the no-entry open-check page, so
+//      the click activated it — or a real `<dialog open>` is up) and its
+//      controls enumerated / drilled. Whether the surface PAINTS is measured
+//      and reported separately (this build mounts every pane inside a
 //      display:none container, so only the ExportWizard dialog is clickable)
 //      — the gate fails when the CENSUS is blind, not when the editor is
 //      imperfect, else the artifact could never be committed;
 //   5. the artifact must be written.
+// The verdict is not just the exit code: the artifact carries a TOP-LEVEL
+// `ok` field plus `gate.checks` (one row per check above), so a reader can
+// tell a passing capture from a blind one without re-running the census.
+// `ok === false` MUST never be committed — it means the numbers are a census
+// artifact, not a measurement.
 //
 // Usage (point at an already-running React sheet editor):
 //     CENSUS_REACT_URL=http://192.168.42.42:8086/sheet/ node census/census-react-sheet.cjs
@@ -248,9 +254,14 @@ const FILE_MENU_DIALOGS = () => {
       return vis(p) ? 'visible' : getComputedStyle(p).display;
     })(),
     paneContainerDisplay: container,
+    // visible `<dialog open>` layers …
     dialogLayers: [...document.querySelectorAll('dialog[open]')].filter(vis).map(dlg),
+    // … and every open one regardless of paint (a DOM click in a hidden pane
+    // can still portal a dialog; it must not vanish from the count)
+    dialogElementsOpen: document.querySelectorAll('dialog[open]').length,
     panes,
     activePane: panes.find((x) => x.display !== 'none') || null,
+    activePanes: panes.filter((x) => x.display !== 'none'),
   };
 };
 
@@ -293,6 +304,44 @@ const CLICK_DIALOG_SURFACE_CONTROL = (label) => {
       .find((b) => (b.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 24) === label);
     if (el) {
       el.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      el.click();
+      return true;
+    }
+  }
+  return false;
+};
+
+// captions of the ACTIVE pane's own buttons, visible or not — a pane inside a
+// display:none container still mounts its controls, and the census enumerates
+// them so the shipped surface is on record even when no pointer can reach it
+const PANE_CONTROL_LABELS = () => {
+  const norm = (s) => (s || '').trim().replace(/\s+/g, ' ');
+  const boxes = [...document.querySelectorAll('.se-file-menu-panel .se-file-menu-content-box')].filter(
+    (b) => getComputedStyle(b).display !== 'none',
+  );
+  const out = [];
+  for (const b of boxes) {
+    for (const el of b.querySelectorAll('button')) {
+      const l = norm(el.textContent).slice(0, 24);
+      if (l && !out.includes(l)) out.push(l);
+    }
+  }
+  return out;
+};
+
+// SYNTHETIC DOM click on a control of the active (but unpainted) pane. This is
+// NOT a user path — the pane lives in a display:none container, so no real
+// pointer can reach it — but firing the handler is the only way to learn
+// whether the pane's own controls portal a real `<dialog open>`. Every caller
+// records the click as `dom`, never as `real`.
+const DOM_CLICK_PANE_CONTROL = (label) => {
+  const norm = (s) => (s || '').trim().replace(/\s+/g, ' ');
+  const boxes = [...document.querySelectorAll('.se-file-menu-panel .se-file-menu-content-box')].filter(
+    (b) => getComputedStyle(b).display !== 'none',
+  );
+  for (const b of boxes) {
+    const el = [...b.querySelectorAll('button')].find((x) => norm(x.textContent).slice(0, 24) === label);
+    if (el) {
       el.click();
       return true;
     }
@@ -558,12 +607,18 @@ const SKIP_NAV_ITEMS = ['Go to Documents', 'Close Editor'];
   //    on its own page so the panel cannot cover the census surface above ──
   ({ res: open, after: fileMenuAfter, closed: fileMenuClosed } = await openFileMenuOnFreshPage());
   stamp(`file-menu open check (opened=${open.state.panel === 'visible'})`);
+  // BASELINE: which panes (if any) the panel activates when it opens with NO
+  // entry clicked. An entry only proves it reached its own dialog surface if
+  // it activates a pane that was NOT already active here.
+  const baselinePaneHeaders = ((fileMenuAfter && fileMenuAfter.activePanes) || []).map((x) => x.header);
 
   // ── 3. File-menu dialogs — one FRESH page per entry (the pane only paints
   //       on the re-render that follows the entry click, so each entry needs
   //       its own mount), run through a small pool: the entries are
   //       independent and each needs its own editor instance ────────────────
-  const fileMenuItems = fileMenuBefore.items.filter((i) => i !== '←Back' && !SKIP_NAV_ITEMS.includes(i));
+  const fileMenuItems = [
+    ...new Set(fileMenuBefore.items.filter((i) => i !== '←Back' && !SKIP_NAV_ITEMS.includes(i))),
+  ];
   const dialogs = [];
   const censusFileMenuEntry = async (item) => {
     const p = await browser.newPage({ viewport: VIEWPORT });
@@ -582,17 +637,23 @@ const SKIP_NAV_ITEMS = ['Go to Documents', 'Close Editor'];
     const run = await openFileMenu(p, item);
     const st = run.state;
     const native = st.dialogLayers.length > 0;
-    const pane = st.activePane;
+    // panes THIS ENTRY activated: display:block panes that were not active on
+    // the no-entry open-check page — proof the click mounted the surface, not
+    // the panel's default pane
+    const freshPanes = (st.activePanes || []).filter((x) => !baselinePaneHeaders.includes(x.header));
+    const pane = freshPanes[0] || null;
     // EXERCISED: the census reached the entry's dialog surface — the entry
-    // activated its pane (the pane is the active one in the DOM) or opened a
-    // real portaled <dialog>. PAINTED: that surface is actually visible; this
-    // build keeps every pane inside a display:none container, so only the
-    // ExportWizard dialog ever paints (recorded as a finding, not a gate fail).
+    // activated its own pane, or opened a real portaled <dialog>. PAINTED:
+    // that surface is actually visible; this build keeps every pane inside a
+    // display:none container, so only the ExportWizard dialog ever paints
+    // (recorded as a finding, not a gate fail).
     const entry = {
       item,
       picked: run.picked,
       steps: run.steps,
       fileMenuOpen: st.panel === 'visible',
+      paneHeader: pane ? pane.header : null,
+      paneActivated: !!pane,
       exercised: st.panel === 'visible' && (native || !!pane),
       painted: st.panel === 'visible' && (native || !!(pane && pane.painted)),
       kind: native ? 'dialog' : pane ? 'pane' : 'none',
@@ -604,13 +665,16 @@ const SKIP_NAV_ITEMS = ['Go to Documents', 'Close Editor'];
           ? { where: 'pane', ...pane }
           : null,
       drill: [],
-      note:
-        st.panel !== 'visible'
-          ? `file-menu-panel:${st.panel}` // non-dialog entry: the click closes the menu
-          : pane && !pane.painted
-            ? `pane mounted (display:${pane.display}) but never paints — container is display:${st.paneContainerDisplay}; controls enumerated from the DOM`
-            : '',
+      domDrill: [],
     };
+    if (st.panel !== 'visible') {
+      // non-dialog entry: the click closes the menu again
+      entry.note = `file-menu-panel:${st.panel}`;
+    } else if (!native && !pane) {
+      entry.note = 'menu stayed open but the entry activated no pane and no <dialog> — a dialog-declaring entry whose pane this build never renders';
+    } else if (pane && !pane.painted) {
+      entry.note = `pane mounted (display:${pane.display}) but never paints — container is display:${st.paneContainerDisplay}; controls enumerated from the DOM`;
+    }
 
     // exercise the surface: real-click its own buttons, re-measure the stack.
     // Only a painted surface is clickable — a mounted-but-hidden pane has no
@@ -641,35 +705,100 @@ const SKIP_NAV_ITEMS = ['Go to Documents', 'Close Editor'];
         if (after.panel !== 'visible' && after.dialogLayers.length === 0) break; // dismissed
       }
     }
+
+    // hidden-pane DOM drill (SYNTHETIC, recorded as `domDrill`): the pane is
+    // mounted inside a display:none container, so no real pointer can reach
+    // it — but firing its buttons' handlers is the only way to learn whether
+    // the pane's own controls portal a real `<dialog open>` (dialog depth).
+    // Never counted as a user path, never as a `real` click.
+    if (entry.exercised && !entry.painted && entry.paneHeader) {
+      const labels = await p.evaluate(PANE_CONTROL_LABELS).catch(() => null);
+      for (const label of (labels || []).slice(0, 3)) {
+        const before = await p.evaluate(FILE_MENU_DIALOGS).catch(() => null);
+        if (!before) break;
+        const clicked = await p.evaluate(DOM_CLICK_PANE_CONTROL, label).catch(() => false);
+        await sleep(400);
+        const after = await p.evaluate(FILE_MENU_DIALOGS).catch(() => null);
+        if (!after) break; // the click navigated / killed the page
+        entry.domDrill.push({
+          control: label,
+          clicked: clicked ? 'dom' : 'miss',
+          dialogLayers: after.dialogLayers.length,
+          dialogElementsOpen: after.dialogElementsOpen,
+          deepened: after.dialogElementsOpen > before.dialogElementsOpen,
+        });
+        entry.dialogDepth = Math.max(entry.dialogDepth, after.dialogLayers.length);
+        if (after.dialogElementsOpen > 0) break; // a real dialog is up — stop
+      }
+    }
     await p.close();
     return entry;
   };
 
-  // bounded pool over the entries (order preserved in `dialogs`)
+  // bounded pool over the entries (order preserved: results land at their
+  // queue index, so `dialogs` mirrors the menu's own order)
   const POOL = 4;
-  const queue = [...fileMenuItems];
-  const workers = Array.from({ length: Math.min(POOL, queue.length) }, async () => {
-    for (let item = queue.shift(); item; item = queue.shift()) {
-      try {
-        dialogs.push(await censusFileMenuEntry(item));
-      } catch (e) {
-        dialogs.push({ item, exercised: false, painted: false, kind: 'none', dialogDepth: 0, surface: null, drill: [], note: `census-error:${String(e.message).slice(0, 80)}` });
+  const runPool = async (items) => {
+    const out = new Array(items.length).fill(null);
+    const queue = items.map((_, i) => i);
+    const workers = Array.from({ length: Math.min(POOL, queue.length) }, async () => {
+      for (let i = queue.shift(); i !== undefined; i = queue.shift()) {
+        try {
+          out[i] = await censusFileMenuEntry(items[i]);
+        } catch (e) {
+          out[i] = {
+            item: items[i],
+            exercised: false,
+            painted: false,
+            kind: 'none',
+            dialogDepth: 0,
+            surface: null,
+            drill: [],
+            domDrill: [],
+            note: `census-error:${String(e.message).slice(0, 80)}`,
+          };
+        }
       }
-    }
-  });
-  await Promise.all(workers);
-  dialogs.sort((a, b) => fileMenuItems.indexOf(a.item) - fileMenuItems.indexOf(b.item));
+    });
+    await Promise.all(workers);
+    return out;
+  };
+  dialogs.push(...(await runPool(fileMenuItems)));
   for (const entry of dialogs) {
     console.log(
       `  ${entry.exercised ? (entry.painted ? '+' : '~') : '-'} file-menu/${entry.item}: ${entry.kind}` +
         ` dialogDepth=${entry.dialogDepth}` +
         (entry.surface ? ` surface=${entry.surface.where}:${entry.surface.header || entry.surface.title} controls=${entry.surface.controls}` : '') +
         (entry.drill.length ? ` drill=[${entry.drill.map((d) => `${d.control}:${d.clicked}${d.deepened ? '+' : ''}`).join(', ')}]` : '') +
+        (entry.domDrill.length ? ` domDrill=[${entry.domDrill.map((d) => `${d.control}:${d.clicked}${d.deepened ? '+' : ''}`).join(', ')}]` : '') +
         (entry.note ? ` (${entry.note})` : ''),
     );
   }
 
   stamp(`file-menu dialogs (${dialogs.filter((d) => d.exercised).length}/${fileMenuItems.length} exercised)`);
+
+  // bounded retry, ONLY when the gate would otherwise fail: an entry that
+  // reached no surface because the isModified re-render never fired is flake,
+  // not a property of the build, and the >=5 gate must not fail on it. One
+  // extra pass over the unexercised entries; deterministic misses (entries
+  // that close the menu) simply fail again and are reported as measured.
+  if (dialogs.filter((d) => d.exercised).length < MIN_DIALOGS) {
+    const retryItems = dialogs.filter((d) => !d.exercised).map((d) => d.item);
+    stamp(`retry: ${retryItems.length} entries reached no dialog surface (gate >=${MIN_DIALOGS})`);
+    for (const [i, entry] of (await runPool(retryItems)).entries()) {
+      if (!entry) continue;
+      const at = dialogs.findIndex((d) => d.item === entry.item && !d.exercised);
+      if (at >= 0) {
+        entry.retried = true;
+        dialogs[at] = entry;
+        console.log(
+          `  ${entry.exercised ? (entry.painted ? '+' : '~') : '-'} retry/${entry.item}: ${entry.kind}` +
+            ` dialogDepth=${entry.dialogDepth}` +
+            (entry.note ? ` (${entry.note})` : ''),
+        );
+      }
+    }
+  }
 
   // ── summary + artifact ─────────────────────────────────────────────────
   const byKind = {};
@@ -679,6 +808,7 @@ const SKIP_NAV_ITEMS = ['Go to Documents', 'Close Editor'];
   const dialogsExercised = dialogs.filter((d) => d.exercised).length;
   const dialogsPainted = dialogs.filter((d) => d.painted).length;
   const maxFileMenuDialogDepth = dialogs.reduce((m, d) => Math.max(m, d.dialogDepth), 0);
+  const domDrillDeepened = dialogs.filter((d) => (d.domDrill || []).some((x) => x.deepened));
   const summary = {
     surfaces: [...new Set(rows.map((r) => r.surface))],
     controls: rows.length,
@@ -700,6 +830,7 @@ const SKIP_NAV_ITEMS = ['Go to Documents', 'Close Editor'];
     fileMenuDialogsDeclared: fileMenuItems.filter((i) => i.endsWith('...')).length,
     fileMenuDialogsExercised: dialogsExercised,
     fileMenuDialogsPainted: dialogsPainted,
+    fileMenuDialogsDomDrilled: domDrillDeepened.length,
     maxFileMenuDialogDepth,
   };
 
@@ -736,9 +867,10 @@ const SKIP_NAV_ITEMS = ['Go to Documents', 'Close Editor'];
         `their container is display:${mountedNotPainted[0].paneContainerDisplay} ` +
         `(contentBoxBase in FileMenuPanel.tsx), so the pane is w=0/h=0 and no real click can reach it: ` +
         `${mountedNotPainted.map((d) => `${d.item}→${d.surface ? d.surface.header : '?'}`).join(', ')}. ` +
-        `The census enumerates each pane's shipped controls from the DOM it mounts, but only the portaled ` +
-        `ExportWizard <dialog> (${dialogsPainted} surface${dialogsPainted === 1 ? '' : 's'} painted) is ` +
-        `actually clickable — the dialog depth of the hidden panes cannot be measured by interaction`,
+        `The census enumerates each pane's shipped controls from the DOM it mounts and fires them with ` +
+        `SYNTHETIC domDrill clicks (${domDrillDeepened.length ? `${domDrillDeepened.map((d) => d.item).join(', ')} portal a real <dialog>` : 'none portals a real <dialog>'}), ` +
+        `but only the portaled ExportWizard <dialog> (${dialogsPainted} surface${dialogsPainted === 1 ? '' : 's'} painted) is ` +
+        `actually clickable by a user`,
     );
   }
   const noDismiss = dialogs.filter((d) => d.drill.some((x) => x.control === '✕' && x.stillOpen));
@@ -776,7 +908,56 @@ const SKIP_NAV_ITEMS = ['Go to Documents', 'Close Editor'];
     );
   }
 
+  // ── gate: the checks the artifact itself reports (`ok` + `gate.checks`) ──
+  // Computed BEFORE the artifact is written so the committed JSON carries its
+  // own verdict: a reader can tell a passing capture from a blind one without
+  // re-running the census. `ok: false` must never be committed — it means the
+  // numbers above are a census artifact, not a measurement.
+  const fileMenuOpened = open.state.panel === 'visible';
+  const checks = [
+    {
+      check: 'editor-mounted',
+      ok: !!(mounted && summary.controls >= 1),
+      detail: `.se-viewport mounted + ${summary.controls} toolbar/surface controls censused`,
+      fail: ['FAIL: sheet editor never mounted (no .se-viewport / no controls) — census is blind'],
+    },
+    {
+      check: 'overlay-seen',
+      ok: summary.opened >= 1,
+      detail: `${summary.opened} controls opened an overlay (${JSON.stringify(byKind)})`,
+      fail: ['FAIL: no control opened any overlay — the click-through/classifier measured nothing'],
+    },
+    {
+      check: 'file-menu-open',
+      ok: fileMenuOpened,
+      detail: `panel=${fileMenuAfter.panel} via ${open.steps.join(' > ')}`,
+      fail: [
+        'FAIL: the File menu did not open (.se-file-menu-panel never became visible).',
+        `      trigger=${open.steps.join(' > ')} panel=${fileMenuAfter.panel}`,
+        '      The dialog-bearing surface (ExportWizard + its panes) is invisible to the census.',
+      ],
+    },
+    {
+      check: `file-menu-dialogs>=${MIN_DIALOGS}`,
+      ok: dialogsExercised >= MIN_DIALOGS,
+      detail: `${dialogsExercised}/${fileMenuItems.length} entries reached their dialog surface (${dialogsPainted} painted)`,
+      fail: [
+        `FAIL: only ${dialogsExercised} File-menu dialogs were exercised (gate >=${MIN_DIALOGS}) — `,
+        '      the dialog-depth numbers would be guesswork, not a census',
+      ],
+    },
+  ];
+  const failedChecks = checks.filter((c) => !c.ok);
+  const ok = failedChecks.length === 0;
+
   const artifact = {
+    ok, // top-level verdict of the gate below — never commit ok:false
+    gate: {
+      ok,
+      minDialogs: MIN_DIALOGS,
+      checks: checks.map(({ check, ok: pass, detail }) => ({ check, ok: pass, detail })),
+      failedChecks: failedChecks.map((c) => c.check),
+    },
     engine: 'worldoffice-react-sheet',
     capturedAt: new Date().toISOString(),
     url: URL_BASE,
@@ -789,11 +970,14 @@ const SKIP_NAV_ITEMS = ['Go to Documents', 'Close Editor'];
       panelPresent: fileMenuBefore.present,
       panelDisplay: { before: fileMenuBefore.display, after: fileMenuAfter.panel },
       panelVisible: fileMenuAfter.panel === 'visible',
-      opened: open.state.panel === 'visible',
+      opened: fileMenuOpened,
       // how the census got it open: Viewport has no mobx observer, so the panel
       // paints on the next root re-render, not on the File-tab click itself
       openTrigger: open.steps.join(' > '),
       closedByBackClick: fileMenuClosed ? !fileMenuClosed.visible : null,
+      // panes the panel activates with NO entry clicked — an entry only proves
+      // it reached its own dialog surface if it activates a pane beyond these
+      baselinePanes: baselinePaneHeaders,
       items: fileMenuBefore.items,
       dialogs,
       dialogsExercised,
@@ -816,8 +1000,8 @@ const SKIP_NAV_ITEMS = ['Go to Documents', 'Close Editor'];
   console.log(
     `file-menu: opened=${artifact.fileMenu.opened} trigger=${artifact.fileMenu.openTrigger} ` +
       `items=${artifact.fileMenu.items.length} dialogsExercised=${dialogsExercised}/${fileMenuItems.length} ` +
-      `dialogsPainted=${dialogsPainted} (gate >=${MIN_DIALOGS} exercised) ` +
-      `maxDialogDepth=${maxFileMenuDialogDepth}`,
+      `dialogsPainted=${dialogsPainted} domDrilled=${summary.fileMenuDialogsDomDrilled} ` +
+      `(gate >=${MIN_DIALOGS} exercised) maxDialogDepth=${maxFileMenuDialogDepth}`,
   );
   for (const r of rows.filter((x) => x.opened)) {
     console.log(
@@ -829,28 +1013,23 @@ const SKIP_NAV_ITEMS = ['Go to Documents', 'Close Editor'];
   await browser.close();
 
   let fail = 0;
-  if (!mounted || summary.controls < 1) {
-    console.error('FAIL: sheet editor never mounted (no .se-viewport / no controls) — census is blind');
-    fail = 1;
-  } else if (summary.opened < 1) {
-    console.error('FAIL: no control opened any overlay — the click-through/classifier measured nothing');
-    fail = 1;
-  } else if (!artifact.fileMenu.opened) {
-    console.error('FAIL: the File menu did not open (.se-file-menu-panel never became visible).');
-    console.error(`      trigger=${artifact.fileMenu.openTrigger} panel=${artifact.fileMenu.panelDisplay.after}`);
-    console.error('      The dialog-bearing surface (ExportWizard + its panes) is invisible to the census.');
-    fail = 1;
-  } else if (dialogsExercised < MIN_DIALOGS) {
-    console.error(
-      `FAIL: only ${dialogsExercised} File-menu dialogs were exercised (gate >=${MIN_DIALOGS}) — ` +
-        `the dialog-depth numbers would be guesswork, not a census`,
-    );
-    fail = 1;
-  } else if (!fs.existsSync(OUT)) {
-    console.error('FAIL: artifact not written');
+  for (const c of failedChecks) {
+    for (const line of c.fail) console.error(line);
     fail = 1;
   }
-  console.log(`artifact: ${OUT}`);
+  // the write is the one check that cannot be evaluated before the artifact
+  // exists; it still flips the exit code (and ok:false would never be written)
+  let written = false;
+  try {
+    written = JSON.parse(fs.readFileSync(OUT, 'utf8')).ok === ok;
+  } catch {
+    written = false;
+  }
+  if (!written) {
+    console.error('FAIL: artifact not written / unreadable');
+    fail = 1;
+  }
+  console.log(`artifact: ${OUT} ok=${ok} (${checks.length - failedChecks.length}/${checks.length} gate checks)`);
   process.exit(fail);
 })().catch((e) => {
   console.error('FAIL', e && e.message ? e.message : e);
