@@ -21,6 +21,9 @@ const crypto = require('crypto');
 
 const OUT = path.join(__dirname, 'census');
 const BIN = process.env.WO_DOCSERVER_BIN ||
+  [path.resolve(__dirname, '..', '..', 'server', 'target', 'debug', 'wo-docserver'),
+   path.resolve(__dirname, '..', '..', 'target', 'debug', 'wo-docserver')]
+    .find(p => fs.existsSync(p)) ||
   path.resolve(__dirname, '..', '..', 'server', 'target', 'debug', 'wo-docserver');
 const DS_PORT = 18114;
 const MOCK_PORT = 18115;
@@ -95,8 +98,14 @@ function mkToken(exp) {
 (async () => {
   const mock = await startMock();
   const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'wopi-'));
-  const uiDir = fs.existsSync(process.env.EDITOR_UI_DIR) ? process.env.EDITOR_UI_DIR :
-    (() => { const c = path.resolve(__dirname, '..', '..', 'server', 'apps', 'web', 'apps', 'documenteditor-wysiwyg'); return fs.existsSync(c) ? c : '/tmp'; })();
+  const uiDir = process.env.EDITOR_UI_DIR
+    ? (fs.existsSync(process.env.EDITOR_UI_DIR) ? process.env.EDITOR_UI_DIR : '/tmp')
+    : (() => {
+        const c = [path.resolve(__dirname, '..', '..', 'server', 'apps', 'web', 'apps', 'documenteditor-wysiwyg'),
+                   path.resolve(__dirname, '..', '..', 'apps', 'web', 'apps', 'documenteditor-wysiwyg')]
+          .find(p => fs.existsSync(p));
+        return c || '/tmp';
+      })();
   const child = bootDs(uiDir, dataDir);
   const out = { generated: new Date().toISOString(), checkfileinfo: {}, contents: {}, locks: {}, auth: {} };
   try {
