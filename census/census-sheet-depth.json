@@ -22,14 +22,14 @@
    {
     "check": "file-menu-dialogs>=5",
     "ok": true,
-    "detail": "13/17 entries reached their dialog surface (13 painted)"
+    "detail": "15/17 entries reached their dialog surface (15 painted)"
    }
   ],
   "failedChecks": []
  },
  "engine": "worldoffice-react-sheet",
- "capturedAt": "2026-10-14T21:31:42.854Z",
- "url": "http://192.168.42.42:8086/sheet/",
+ "capturedAt": "2026-10-15T07:41:38.437Z",
+ "url": "http://127.0.0.1:57365/sheet/",
  "viewport": {
   "width": 1600,
   "height": 1000
@@ -219,20 +219,47 @@
     "steps": [
      "file-tab-click:ok",
      "entry-click:Save as...",
-     "rerender:none"
+     "rerender:keystroke#1"
     ],
-    "fileMenuOpen": false,
-    "paneHeader": null,
-    "paneActivated": false,
-    "exercised": false,
-    "painted": false,
-    "kind": "none",
+    "fileMenuOpen": true,
+    "paneHeader": "Download as",
+    "paneActivated": true,
+    "exercised": true,
+    "painted": true,
+    "kind": "pane",
     "dialogDepth": 0,
     "paneContainerDisplay": "block",
-    "surface": null,
-    "drill": [],
-    "domDrill": [],
-    "note": "file-menu-panel:none"
+    "surface": {
+     "where": "pane",
+     "header": "Download as",
+     "display": "block",
+     "painted": true,
+     "w": 1040,
+     "h": 1000,
+     "controls": 12,
+     "controlLabels": [
+      "XLSX",
+      "CSV",
+      "ODS",
+      "PDF",
+      "XLTX",
+      "OTS",
+      "XLSB",
+      "XLSM",
+      "PDFA",
+      "JPG"
+     ]
+    },
+    "drill": [
+     {
+      "control": "XLSX",
+      "clicked": "real",
+      "dialogDepth": 0,
+      "stillOpen": false,
+      "deepened": null
+     }
+    ],
+    "domDrill": []
    },
    {
     "item": "Export to PDF",
@@ -303,20 +330,39 @@
     "steps": [
      "file-tab-click:ok",
      "entry-click:Rename...",
-     "rerender:none"
+     "rerender:keystroke#1"
     ],
-    "fileMenuOpen": false,
-    "paneHeader": null,
-    "paneActivated": false,
-    "exercised": false,
-    "painted": false,
-    "kind": "none",
+    "fileMenuOpen": true,
+    "paneHeader": "Rename",
+    "paneActivated": true,
+    "exercised": true,
+    "painted": true,
+    "kind": "pane",
     "dialogDepth": 0,
     "paneContainerDisplay": "block",
-    "surface": null,
-    "drill": [],
-    "domDrill": [],
-    "note": "file-menu-panel:none"
+    "surface": {
+     "where": "pane",
+     "header": "Rename",
+     "display": "block",
+     "painted": true,
+     "w": 1040,
+     "h": 1000,
+     "controls": 3,
+     "controlLabels": [
+      "Save",
+      "Cancel"
+     ]
+    },
+    "drill": [
+     {
+      "control": "Save",
+      "clicked": "real",
+      "dialogDepth": 0,
+      "stillOpen": false,
+      "deepened": null
+     }
+    ],
+    "domDrill": []
    },
    {
     "item": "Document Info...",
@@ -686,8 +732,8 @@
     "domDrill": []
    }
   ],
-  "dialogsExercised": 13,
-  "dialogsPainted": 13,
+  "dialogsExercised": 15,
+  "dialogsPainted": 15,
   "minRequired": 5
  },
  "rows": [
@@ -1579,14 +1625,13 @@
   "fileMenuItems": 17,
   "fileMenuOpened": true,
   "fileMenuDialogsDeclared": 10,
-  "fileMenuDialogsExercised": 13,
-  "fileMenuDialogsPainted": 13,
+  "fileMenuDialogsExercised": 15,
+  "fileMenuDialogsPainted": 15,
   "fileMenuDialogsDomDrilled": 0,
   "maxFileMenuDialogDepth": 1
  },
  "findings": [
   "file-menu-render-bug: the File-tab click alone paints NOTHING (.se-file-menu-panel stayed display:none); the panel only renders on the next root re-render, which this census triggers with a real keystroke into the sheet (isModified flips). Viewport reads spreadsheetStore.isFileMenuOpen/activeFileMenuPanel without a mobx observer — the sheet twin of the documented word-editor File-menu bug. Every dialog pane below is censused through that side channel, one fresh page per entry, because no second re-render exists to paint a pane switch",
-  "file-menu-dead-entries: 2 dialog-declaring entries reach no dialog surface (Save as...[file-menu-panel:none], Rename...[file-menu-panel:none]) — they either close the menu (non-pane action) or declare a pane the build never renders",
   "toggle-without-overlay: 5 controls flip their own active/pressed state but open nothing (left-menu/Search, left-menu/Comments, left-menu/Chat, left-menu/Spell Check, left-menu/Support) — the left-menu rail has no panels in this build (.se-about-menu-panel is bound in the same non-observer Viewport as the file menu)",
   "49/59 controls open no overlay and expose no toggle state (direct-action or no-op — not decidable from the DOM): toolbar:Home/Cut, toolbar:Home/Copy, toolbar:Home/Paste, toolbar:Home/Format Painter, toolbar:Home/Bold, toolbar:Home/Italic, toolbar:Home/Underline, toolbar:Home/Strike, toolbar:Home/Increase Size, toolbar:Home/Decrease Size, toolbar:Home/Left, toolbar:Home/Center …"
  ]
