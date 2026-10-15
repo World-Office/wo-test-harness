@@ -127,6 +127,12 @@ const PROBE_LAYERS = () => {
   for (const [sel, name] of [
     ['.se-file-menu-panel', 'file-menu'],
     ['.se-about-menu-panel', 'about'],
+    // left-menu rail panels (search/comments/chat/spell/support) share one
+    // container, visible only with [data-panel-open="true"]. KNOWN LIMIT: a
+    // rail switch (search -> comments) keeps kind+label identical, so the
+    // second toggle reads opened:false — panel switching itself is verified
+    // by the live playwright probe (all 5 open and switch cleanly).
+    ['.se-left-panel-side', 'left-panel'],
   ]) {
     const el = document.querySelector(sel);
     if (el && vis(el)) {

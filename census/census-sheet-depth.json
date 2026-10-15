@@ -12,7 +12,7 @@
    {
     "check": "overlay-seen",
     "ok": true,
-    "detail": "5 controls opened an overlay ({\"none\":54,\"menu\":2,\"widget\":2,\"panel\":1})"
+    "detail": "6 controls opened an overlay ({\"none\":53,\"menu\":2,\"widget\":2,\"panel\":2})"
    },
    {
     "check": "file-menu-open",
@@ -28,8 +28,8 @@
   "failedChecks": []
  },
  "engine": "worldoffice-react-sheet",
- "capturedAt": "2026-10-15T07:41:38.437Z",
- "url": "http://127.0.0.1:57365/sheet/",
+ "capturedAt": "2026-10-15T11:36:04.445Z",
+ "url": "http://127.0.0.1:18497/sheet/",
  "viewport": {
   "width": 1600,
   "height": 1000
@@ -1354,13 +1354,19 @@
    "control": "Search",
    "tag": "button",
    "clicked": "real",
-   "opened": false,
-   "kind": "none",
+   "opened": true,
+   "kind": "panel",
    "dialogDepth": 0,
-   "overlayDepth": 0,
-   "toggled": true,
+   "overlayDepth": 1,
+   "toggled": false,
    "chain": [],
-   "layer": null,
+   "layer": {
+    "kind": "panel",
+    "label": "left-panel",
+    "w": 259,
+    "h": 876,
+    "buttons": 3
+   },
    "note": ""
   },
   {
@@ -1434,8 +1440,8 @@
     "kind": "panel",
     "label": "about",
     "w": 1640,
-    "h": 1000,
-    "buttons": 0
+    "h": 876,
+    "buttons": 1
    },
    "note": ""
   },
@@ -1457,7 +1463,7 @@
    "surface": "sheet-tab-bar",
    "control": "Active sheet",
    "tag": "select",
-   "clicked": "dom",
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1465,13 +1471,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:dom"
+   "note": ""
   },
   {
    "surface": "sheet-tab-bar",
    "control": "Add sheet",
    "tag": "button",
-   "clicked": "dom",
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1479,7 +1485,7 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:dom"
+   "note": ""
   },
   {
    "surface": "statusbar",
@@ -1499,7 +1505,7 @@
    "surface": "statusbar",
    "control": "Active sheet",
    "tag": "select",
-   "clicked": "dom",
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1507,13 +1513,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:dom"
+   "note": ""
   },
   {
    "surface": "statusbar",
    "control": "Add sheet",
    "tag": "button",
-   "clicked": "dom",
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1521,7 +1527,7 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:dom"
+   "note": ""
   },
   {
    "surface": "statusbar",
@@ -1541,7 +1547,7 @@
    "surface": "statusbar",
    "control": "Fit to page",
    "tag": "button",
-   "clicked": "dom",
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1549,13 +1555,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:dom"
+   "note": ""
   },
   {
    "surface": "statusbar",
    "control": "Fit to width",
    "tag": "button",
-   "clicked": "dom",
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1563,13 +1569,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:dom"
+   "note": ""
   },
   {
    "surface": "statusbar",
    "control": "Zoom Out",
    "tag": "button",
-   "clicked": "dom",
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1577,13 +1583,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:dom"
+   "note": ""
   },
   {
    "surface": "statusbar",
    "control": "Zoom In",
    "tag": "button",
-   "clicked": "dom",
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1591,7 +1597,7 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:dom"
+   "note": ""
   }
  ],
  "summary": {
@@ -1603,13 +1609,13 @@
    "statusbar"
   ],
   "controls": 59,
-  "opened": 5,
-  "toggledOnly": 5,
+  "opened": 6,
+  "toggledOnly": 4,
   "byKind": {
-   "none": 54,
+   "none": 53,
    "menu": 2,
    "widget": 2,
-   "panel": 1
+   "panel": 2
   },
   "dialogs": 0,
   "domDialogElements": 0,
@@ -1620,6 +1626,7 @@
    "toolbar:Home/Fill Color -> menu",
    "toolbar:Home/Find -> widget",
    "toolbar:Home/Replace -> widget",
+   "left-menu/Search -> panel",
    "left-menu/About -> panel"
   ],
   "fileMenuItems": 17,
@@ -1632,7 +1639,7 @@
  },
  "findings": [
   "file-menu-render-bug: the File-tab click alone paints NOTHING (.se-file-menu-panel stayed display:none); the panel only renders on the next root re-render, which this census triggers with a real keystroke into the sheet (isModified flips). Viewport reads spreadsheetStore.isFileMenuOpen/activeFileMenuPanel without a mobx observer — the sheet twin of the documented word-editor File-menu bug. Every dialog pane below is censused through that side channel, one fresh page per entry, because no second re-render exists to paint a pane switch",
-  "toggle-without-overlay: 5 controls flip their own active/pressed state but open nothing (left-menu/Search, left-menu/Comments, left-menu/Chat, left-menu/Spell Check, left-menu/Support) — the left-menu rail has no panels in this build (.se-about-menu-panel is bound in the same non-observer Viewport as the file menu)",
+  "toggle-without-overlay: 4 controls flip their own active/pressed state but open nothing (left-menu/Comments, left-menu/Chat, left-menu/Spell Check, left-menu/Support) — the left-menu rail has no panels in this build (.se-about-menu-panel is bound in the same non-observer Viewport as the file menu)",
   "49/59 controls open no overlay and expose no toggle state (direct-action or no-op — not decidable from the DOM): toolbar:Home/Cut, toolbar:Home/Copy, toolbar:Home/Paste, toolbar:Home/Format Painter, toolbar:Home/Bold, toolbar:Home/Italic, toolbar:Home/Underline, toolbar:Home/Strike, toolbar:Home/Increase Size, toolbar:Home/Decrease Size, toolbar:Home/Left, toolbar:Home/Center …"
  ]
 }
