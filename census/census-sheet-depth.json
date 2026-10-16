@@ -28,8 +28,8 @@
   "failedChecks": []
  },
  "engine": "worldoffice-react-sheet",
- "capturedAt": "2026-10-15T11:36:04.445Z",
- "url": "http://127.0.0.1:18497/sheet/",
+ "capturedAt": "2026-10-16T09:06:10.961Z",
+ "url": "http://192.168.42.42:8086/sheet/",
  "viewport": {
   "width": 1600,
   "height": 1000
