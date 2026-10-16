@@ -384,6 +384,8 @@ const SKIP_NAV_ITEMS = ['Go to Documents', 'Close Editor'];
   const page = await browser.newPage({ viewport: VIEWPORT });
   const pageerrors = [];
   page.on('pageerror', (e) => pageerrors.push(String(e.message).slice(0, 160)));
+  page.on('crash', () => console.log('!!! PAGE CRASH EVENT (renderer gone)'));
+  browser.on('disconnected', () => console.log('!!! BROWSER DISCONNECTED'));
 
   await page.goto(URL_BASE, { waitUntil: 'domcontentloaded', timeout: 45000 });
   const mounted = await page
