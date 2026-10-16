@@ -423,6 +423,12 @@ const SKIP_NAV_ITEMS = ['Go to Documents'];
   const page = await newPage();
   const pageerrors = [];
   page.on('pageerror', (e) => pageerrors.push(String(e.message).slice(0, 160)));
+  // a renderer crash / browser disconnect mid-census looks exactly like a hang
+  // from the outside — say which one it was instead of dying silently (the
+  // deliberate close() at the end is NOT a disconnect)
+  let closing = false;
+  page.on('crash', () => console.log('!!! PAGE CRASH EVENT (renderer gone)'));
+  browser.on('disconnected', () => { if (!closing) console.log('!!! BROWSER DISCONNECTED'); });
 
   await page.goto(URL_BASE, { waitUntil: 'domcontentloaded', timeout: 45000 });
   const mounted = await page
@@ -1074,6 +1080,7 @@ const SKIP_NAV_ITEMS = ['Go to Documents'];
     );
   }
   for (const f of findings) console.log(`FINDING ${f}`);
+  closing = true;
   await browser.close();
 
   let fail = 0;
