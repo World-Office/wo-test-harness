@@ -490,6 +490,7 @@ const SKIP_NAV_ITEMS = ['Go to Documents', 'Close Editor'];
   // means no re-render will ever paint it away — real Playwright clicks on the
   // toolbar would then time out behind it for the rest of the run.
   const fileMenuBefore = await ev(FILE_MENU);
+  let paintsOnTabClick = false;
   let open = { steps: [], picked: null, rerender: 'not-run', state: { panel: 'absent' } };
   let fileMenuAfter = { panel: 'absent' };
   let fileMenuClosed = null;
@@ -504,6 +505,19 @@ const SKIP_NAV_ITEMS = ['Go to Documents', 'Close Editor'];
       })
       .catch(() => {});
     await sleep(1000);
+    // does a bare File-tab click paint the panel right away? (post-fix the
+    // Viewport observes isFileMenuOpen, so this must be true; census findings
+    // condition on it instead of assuming the old render bug)
+    try {
+      await fp.click('button.prese-toolbar-tab', { timeout: 5000 });
+      await sleep(350);
+      paintsOnTabClick = (await fp.evaluate(FILE_MENU)).visible === true;
+      if (paintsOnTabClick) {
+        // close again so openFileMenu below measures the same path from scratch
+        await fp.locator('.prese-file-menu-panel [role="menuitem"]', { hasText: 'Back' }).first().click({ timeout: 4000 }).catch(() => {});
+        await sleep(300);
+      }
+    } catch { paintsOnTabClick = false; }
     const res = await openFileMenu(fp, null);
     const after = await fp.evaluate(FILE_MENU_DIALOGS);
     let closed = null;
@@ -873,7 +887,7 @@ const SKIP_NAV_ITEMS = ['Go to Documents', 'Close Editor'];
         `presentation-toggle re-render made it visible (panel:${open.state.panel}) — the whole dialog-bearing ` +
         `surface is unreachable and its dialog depth cannot be censused`,
     );
-  } else if (fileMenuBefore.present) {
+  } else if (fileMenuBefore.present && !paintsOnTabClick) {
     findings.push(
       `file-menu-render-bug: the File-tab click alone paints NOTHING (.prese-file-menu-panel stayed ` +
         `display:${fileMenuBefore.display}); the panel only renders on the next App-observer re-render, which ` +

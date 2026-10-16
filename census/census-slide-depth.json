@@ -12,23 +12,23 @@
    {
     "check": "overlay-seen",
     "ok": true,
-    "detail": "3 controls opened an overlay ({\"none\":88,\"menu\":1,\"panel\":2})"
+    "detail": "4 controls opened an overlay ({\"none\":87,\"menu\":1,\"panel\":3})"
    },
    {
     "check": "file-menu-open",
     "ok": true,
-    "detail": "panel=visible via file-tab-click:ok > rerender:present-toggle#1"
+    "detail": "panel=visible via file-tab-click:ok > rerender:none"
    },
    {
     "check": "file-menu-dialogs>=5",
     "ok": true,
-    "detail": "7/16 entries reached their dialog surface (1 painted)"
+    "detail": "15/16 entries reached their dialog surface (15 painted)"
    }
   ],
   "failedChecks": []
  },
  "engine": "worldoffice-react-slide",
- "capturedAt": "2026-10-16T11:20:10.595Z",
+ "capturedAt": "2026-10-16T13:20:46.413Z",
  "url": "http://192.168.42.42:8086/slide/",
  "viewport": {
   "width": 1600,
@@ -51,8 +51,8 @@
   },
   "panelVisible": true,
   "opened": true,
-  "openTrigger": "file-tab-click:ok > rerender:present-toggle#1",
-  "closedByBackClick": false,
+  "openTrigger": "file-tab-click:ok > rerender:none",
+  "closedByBackClick": true,
   "baselinePanes": [],
   "items": [
    "←Back",
@@ -82,23 +82,23 @@
     "steps": [
      "file-tab-click:ok",
      "entry-click:Download as...",
-     "rerender:present-toggle#1"
+     "rerender:none"
     ],
     "fileMenuOpen": true,
     "paneHeader": "Download as",
     "paneActivated": true,
     "exercised": true,
-    "painted": false,
+    "painted": true,
     "kind": "pane",
     "dialogDepth": 0,
-    "paneContainerDisplay": "none",
+    "paneContainerDisplay": "block",
     "surface": {
      "where": "pane",
      "header": "Download as",
      "display": "block",
-     "painted": false,
-     "w": 0,
-     "h": 0,
+     "painted": true,
+     "w": 1040,
+     "h": 1000,
      "controls": 12,
      "controlLabels": [
       "PPTX",
@@ -113,31 +113,16 @@
       "JPG"
      ]
     },
-    "drill": [],
-    "domDrill": [
+    "drill": [
      {
       "control": "PPTX",
-      "clicked": "dom",
-      "dialogLayers": 0,
-      "dialogElementsOpen": 0,
-      "deepened": false
-     },
-     {
-      "control": "ODP",
-      "clicked": "dom",
-      "dialogLayers": 0,
-      "dialogElementsOpen": 0,
-      "deepened": false
-     },
-     {
-      "control": "PPSX",
-      "clicked": "dom",
-      "dialogLayers": 0,
-      "dialogElementsOpen": 0,
+      "clicked": "real",
+      "dialogDepth": 0,
+      "stillOpen": false,
       "deepened": false
      }
     ],
-    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+    "domDrill": []
    },
    {
     "item": "Export Wizard...",
@@ -145,7 +130,7 @@
     "steps": [
      "file-tab-click:ok",
      "entry-click:Export Wizard...",
-     "rerender:present-toggle#1"
+     "rerender:none"
     ],
     "fileMenuOpen": true,
     "paneHeader": null,
@@ -154,7 +139,7 @@
     "painted": true,
     "kind": "dialog",
     "dialogDepth": 1,
-    "paneContainerDisplay": "none",
+    "paneContainerDisplay": "block",
     "surface": {
      "where": "dialog",
      "title": "Download as",
@@ -172,22 +157,8 @@
      {
       "control": "✕",
       "clicked": "real",
-      "dialogDepth": 1,
-      "stillOpen": true,
-      "deepened": null
-     },
-     {
-      "control": "PPTXPowerPoint Presentat",
-      "clicked": "real",
-      "dialogDepth": 1,
-      "stillOpen": true,
-      "deepened": null
-     },
-     {
-      "control": "ODPOpenDocument Presenta",
-      "clicked": "real",
-      "dialogDepth": 1,
-      "stillOpen": true,
+      "dialogDepth": 0,
+      "stillOpen": false,
       "deepened": null
      }
     ],
@@ -199,29 +170,28 @@
     "steps": [
      "file-tab-click:ok",
      "entry-click:Save Copy as...",
-     "rerender:present-toggle#1"
+     "rerender:none"
     ],
     "fileMenuOpen": true,
     "paneHeader": "Save Copy as",
     "paneActivated": true,
     "exercised": true,
-    "painted": false,
+    "painted": true,
     "kind": "pane",
     "dialogDepth": 0,
-    "paneContainerDisplay": "none",
+    "paneContainerDisplay": "block",
     "surface": {
      "where": "pane",
      "header": "Save Copy as",
      "display": "block",
-     "painted": false,
-     "w": 0,
-     "h": 0,
+     "painted": true,
+     "w": 1040,
+     "h": 1000,
      "controls": 0,
      "controlLabels": []
     },
     "drill": [],
-    "domDrill": [],
-    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+    "domDrill": []
    },
    {
     "item": "Save as...",
@@ -231,18 +201,45 @@
      "entry-click:Save as...",
      "rerender:none"
     ],
-    "fileMenuOpen": false,
-    "paneHeader": null,
-    "paneActivated": false,
-    "exercised": false,
-    "painted": false,
-    "kind": "none",
+    "fileMenuOpen": true,
+    "paneHeader": "Download as",
+    "paneActivated": true,
+    "exercised": true,
+    "painted": true,
+    "kind": "pane",
     "dialogDepth": 0,
-    "paneContainerDisplay": "none",
-    "surface": null,
-    "drill": [],
-    "domDrill": [],
-    "note": "file-menu-panel:none"
+    "paneContainerDisplay": "block",
+    "surface": {
+     "where": "pane",
+     "header": "Download as",
+     "display": "block",
+     "painted": true,
+     "w": 1040,
+     "h": 1000,
+     "controls": 12,
+     "controlLabels": [
+      "PPTX",
+      "ODP",
+      "PPSX",
+      "PDF",
+      "POTX",
+      "PPTM",
+      "PDFA",
+      "PDF/A",
+      "OTP",
+      "JPG"
+     ]
+    },
+    "drill": [
+     {
+      "control": "PPTX",
+      "clicked": "real",
+      "dialogDepth": 0,
+      "stillOpen": false,
+      "deepened": false
+     }
+    ],
+    "domDrill": []
    },
    {
     "item": "Print",
@@ -252,18 +249,36 @@
      "entry-click:Print",
      "rerender:none"
     ],
-    "fileMenuOpen": false,
-    "paneHeader": null,
-    "paneActivated": false,
-    "exercised": false,
-    "painted": false,
-    "kind": "none",
+    "fileMenuOpen": true,
+    "paneHeader": "Print Preview",
+    "paneActivated": true,
+    "exercised": true,
+    "painted": true,
+    "kind": "pane",
     "dialogDepth": 0,
-    "paneContainerDisplay": "none",
-    "surface": null,
-    "drill": [],
-    "domDrill": [],
-    "note": "file-menu-panel:none"
+    "paneContainerDisplay": "block",
+    "surface": {
+     "where": "pane",
+     "header": "Print Preview",
+     "display": "block",
+     "painted": true,
+     "w": 1040,
+     "h": 1000,
+     "controls": 1,
+     "controlLabels": [
+      "Close"
+     ]
+    },
+    "drill": [
+     {
+      "control": "Close",
+      "clicked": "dom",
+      "dialogDepth": 0,
+      "stillOpen": false,
+      "deepened": null
+     }
+    ],
+    "domDrill": []
    },
    {
     "item": "Print with Preview",
@@ -273,18 +288,36 @@
      "entry-click:Print with Preview",
      "rerender:none"
     ],
-    "fileMenuOpen": false,
-    "paneHeader": null,
-    "paneActivated": false,
-    "exercised": false,
-    "painted": false,
-    "kind": "none",
+    "fileMenuOpen": true,
+    "paneHeader": "Print Preview",
+    "paneActivated": true,
+    "exercised": true,
+    "painted": true,
+    "kind": "pane",
     "dialogDepth": 0,
-    "paneContainerDisplay": "none",
-    "surface": null,
-    "drill": [],
-    "domDrill": [],
-    "note": "file-menu-panel:none"
+    "paneContainerDisplay": "block",
+    "surface": {
+     "where": "pane",
+     "header": "Print Preview",
+     "display": "block",
+     "painted": true,
+     "w": 1040,
+     "h": 1000,
+     "controls": 1,
+     "controlLabels": [
+      "Close"
+     ]
+    },
+    "drill": [
+     {
+      "control": "Close",
+      "clicked": "dom",
+      "dialogDepth": 0,
+      "stillOpen": false,
+      "deepened": null
+     }
+    ],
+    "domDrill": []
    },
    {
     "item": "Rename...",
@@ -294,18 +327,37 @@
      "entry-click:Rename...",
      "rerender:none"
     ],
-    "fileMenuOpen": false,
-    "paneHeader": null,
-    "paneActivated": false,
-    "exercised": false,
-    "painted": false,
-    "kind": "none",
+    "fileMenuOpen": true,
+    "paneHeader": "Rename",
+    "paneActivated": true,
+    "exercised": true,
+    "painted": true,
+    "kind": "pane",
     "dialogDepth": 0,
-    "paneContainerDisplay": "none",
-    "surface": null,
-    "drill": [],
-    "domDrill": [],
-    "note": "file-menu-panel:none"
+    "paneContainerDisplay": "block",
+    "surface": {
+     "where": "pane",
+     "header": "Rename",
+     "display": "block",
+     "painted": true,
+     "w": 1040,
+     "h": 1000,
+     "controls": 3,
+     "controlLabels": [
+      "Save",
+      "Cancel"
+     ]
+    },
+    "drill": [
+     {
+      "control": "Save",
+      "clicked": "real",
+      "dialogDepth": 0,
+      "stillOpen": false,
+      "deepened": null
+     }
+    ],
+    "domDrill": []
    },
    {
     "item": "Document Info...",
@@ -313,39 +365,38 @@
     "steps": [
      "file-tab-click:ok",
      "entry-click:Document Info...",
-     "rerender:present-toggle#1"
+     "rerender:none"
     ],
     "fileMenuOpen": true,
     "paneHeader": "Document Info",
     "paneActivated": true,
     "exercised": true,
-    "painted": false,
+    "painted": true,
     "kind": "pane",
     "dialogDepth": 0,
-    "paneContainerDisplay": "none",
+    "paneContainerDisplay": "block",
     "surface": {
      "where": "pane",
      "header": "Document Info",
      "display": "block",
-     "painted": false,
-     "w": 0,
-     "h": 0,
+     "painted": true,
+     "w": 1040,
+     "h": 1000,
      "controls": 1,
      "controlLabels": [
       "Close"
      ]
     },
-    "drill": [],
-    "domDrill": [
+    "drill": [
      {
       "control": "Close",
-      "clicked": "dom",
-      "dialogLayers": 0,
-      "dialogElementsOpen": 0,
-      "deepened": false
+      "clicked": "real",
+      "dialogDepth": 0,
+      "stillOpen": false,
+      "deepened": null
      }
     ],
-    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+    "domDrill": []
    },
    {
     "item": "Access Rights...",
@@ -353,39 +404,38 @@
     "steps": [
      "file-tab-click:ok",
      "entry-click:Access Rights...",
-     "rerender:present-toggle#1"
+     "rerender:none"
     ],
     "fileMenuOpen": true,
     "paneHeader": "Access Rights",
     "paneActivated": true,
     "exercised": true,
-    "painted": false,
+    "painted": true,
     "kind": "pane",
     "dialogDepth": 0,
-    "paneContainerDisplay": "none",
+    "paneContainerDisplay": "block",
     "surface": {
      "where": "pane",
      "header": "Access Rights",
      "display": "block",
-     "painted": false,
-     "w": 0,
-     "h": 0,
+     "painted": true,
+     "w": 1040,
+     "h": 1000,
      "controls": 1,
      "controlLabels": [
       "Close"
      ]
     },
-    "drill": [],
-    "domDrill": [
+    "drill": [
      {
       "control": "Close",
       "clicked": "dom",
-      "dialogLayers": 0,
-      "dialogElementsOpen": 0,
-      "deepened": false
+      "dialogDepth": 0,
+      "stillOpen": false,
+      "deepened": null
      }
     ],
-    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+    "domDrill": []
    },
    {
     "item": "Version History...",
@@ -393,20 +443,38 @@
     "steps": [
      "file-tab-click:ok",
      "entry-click:Version History...",
-     "rerender:present-toggle#1"
+     "rerender:none"
     ],
     "fileMenuOpen": true,
-    "paneHeader": null,
-    "paneActivated": false,
-    "exercised": false,
-    "painted": false,
-    "kind": "none",
+    "paneHeader": "Version History",
+    "paneActivated": true,
+    "exercised": true,
+    "painted": true,
+    "kind": "pane",
     "dialogDepth": 0,
-    "paneContainerDisplay": "none",
-    "surface": null,
-    "drill": [],
-    "domDrill": [],
-    "note": "menu stayed open but the entry activated no pane and no <dialog> — a dialog-declaring entry whose pane this build never renders"
+    "paneContainerDisplay": "block",
+    "surface": {
+     "where": "pane",
+     "header": "Version History",
+     "display": "block",
+     "painted": true,
+     "w": 1040,
+     "h": 1000,
+     "controls": 1,
+     "controlLabels": [
+      "Close"
+     ]
+    },
+    "drill": [
+     {
+      "control": "Close",
+      "clicked": "dom",
+      "dialogDepth": 0,
+      "stillOpen": false,
+      "deepened": null
+     }
+    ],
+    "domDrill": []
    },
    {
     "item": "Advanced Settings...",
@@ -414,23 +482,23 @@
     "steps": [
      "file-tab-click:ok",
      "entry-click:Advanced Settings...",
-     "rerender:present-toggle#1"
+     "rerender:none"
     ],
     "fileMenuOpen": true,
     "paneHeader": "Advanced Settings",
     "paneActivated": true,
     "exercised": true,
-    "painted": false,
+    "painted": true,
     "kind": "pane",
     "dialogDepth": 0,
-    "paneContainerDisplay": "none",
+    "paneContainerDisplay": "block",
     "surface": {
      "where": "pane",
      "header": "Advanced Settings",
      "display": "block",
-     "painted": false,
-     "w": 0,
-     "h": 0,
+     "painted": true,
+     "w": 1040,
+     "h": 1000,
      "controls": 7,
      "controlLabels": [
       "EnglishDeutschFrançaisEs",
@@ -439,17 +507,16 @@
       "Close"
      ]
     },
-    "drill": [],
-    "domDrill": [
+    "drill": [
      {
-      "control": "Close",
-      "clicked": "dom",
-      "dialogLayers": 0,
-      "dialogElementsOpen": 0,
+      "control": "EnglishDeutschFrançaisEs",
+      "clicked": "miss",
+      "dialogDepth": 0,
+      "stillOpen": false,
       "deepened": false
      }
     ],
-    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+    "domDrill": []
    },
    {
     "item": "Help...",
@@ -457,29 +524,28 @@
     "steps": [
      "file-tab-click:ok",
      "entry-click:Help...",
-     "rerender:present-toggle#1"
+     "rerender:none"
     ],
     "fileMenuOpen": true,
     "paneHeader": "Help",
     "paneActivated": true,
     "exercised": true,
-    "painted": false,
+    "painted": true,
     "kind": "pane",
     "dialogDepth": 0,
-    "paneContainerDisplay": "none",
+    "paneContainerDisplay": "block",
     "surface": {
      "where": "pane",
      "header": "Help",
      "display": "block",
-     "painted": false,
-     "w": 0,
-     "h": 0,
+     "painted": true,
+     "w": 1040,
+     "h": 1000,
      "controls": 0,
      "controlLabels": []
     },
     "drill": [],
-    "domDrill": [],
-    "note": "pane mounted (display:block) but never paints — container is display:none; controls enumerated from the DOM"
+    "domDrill": []
    },
    {
     "item": "External Help",
@@ -496,7 +562,7 @@
     "painted": false,
     "kind": "none",
     "dialogDepth": 0,
-    "paneContainerDisplay": "none",
+    "paneContainerDisplay": "block",
     "surface": null,
     "drill": [],
     "domDrill": [],
@@ -510,18 +576,38 @@
      "entry-click:Suggest Feature",
      "rerender:none"
     ],
-    "fileMenuOpen": false,
-    "paneHeader": null,
-    "paneActivated": false,
-    "exercised": false,
-    "painted": false,
-    "kind": "none",
+    "fileMenuOpen": true,
+    "paneHeader": "Suggest a Feature",
+    "paneActivated": true,
+    "exercised": true,
+    "painted": true,
+    "kind": "pane",
     "dialogDepth": 0,
-    "paneContainerDisplay": "none",
-    "surface": null,
-    "drill": [],
-    "domDrill": [],
-    "note": "file-menu-panel:none"
+    "paneContainerDisplay": "block",
+    "surface": {
+     "where": "pane",
+     "header": "Suggest a Feature",
+     "display": "block",
+     "painted": true,
+     "w": 1040,
+     "h": 1000,
+     "controls": 3,
+     "controlLabels": [
+      "Submit Feedback",
+      "Report a Bug",
+      "Contact Support"
+     ]
+    },
+    "drill": [
+     {
+      "control": "Submit Feedback",
+      "clicked": "real",
+      "dialogDepth": 0,
+      "stillOpen": false,
+      "deepened": false
+     }
+    ],
+    "domDrill": []
    },
    {
     "item": "Create New",
@@ -531,18 +617,26 @@
      "entry-click:Create New",
      "rerender:none"
     ],
-    "fileMenuOpen": false,
-    "paneHeader": null,
-    "paneActivated": false,
-    "exercised": false,
-    "painted": false,
-    "kind": "none",
+    "fileMenuOpen": true,
+    "paneHeader": "Create New",
+    "paneActivated": true,
+    "exercised": true,
+    "painted": true,
+    "kind": "pane",
     "dialogDepth": 0,
-    "paneContainerDisplay": "none",
-    "surface": null,
+    "paneContainerDisplay": "block",
+    "surface": {
+     "where": "pane",
+     "header": "Create New",
+     "display": "block",
+     "painted": true,
+     "w": 1040,
+     "h": 1000,
+     "controls": 0,
+     "controlLabels": []
+    },
     "drill": [],
-    "domDrill": [],
-    "note": "file-menu-panel:none"
+    "domDrill": []
    },
    {
     "item": "Open Recent",
@@ -552,22 +646,43 @@
      "entry-click:Open Recent",
      "rerender:none"
     ],
-    "fileMenuOpen": false,
-    "paneHeader": null,
-    "paneActivated": false,
-    "exercised": false,
-    "painted": false,
-    "kind": "none",
+    "fileMenuOpen": true,
+    "paneHeader": "Recent Files",
+    "paneActivated": true,
+    "exercised": true,
+    "painted": true,
+    "kind": "pane",
     "dialogDepth": 0,
-    "paneContainerDisplay": "none",
-    "surface": null,
-    "drill": [],
-    "domDrill": [],
-    "note": "file-menu-panel:none"
+    "paneContainerDisplay": "block",
+    "surface": {
+     "where": "pane",
+     "header": "Recent Files",
+     "display": "block",
+     "painted": true,
+     "w": 1040,
+     "h": 1000,
+     "controls": 4,
+     "controlLabels": [
+      "Cancel",
+      "Untitled Document2026-04",
+      "Presentation.pptx2026-04",
+      "Meeting Notes.pptx2026-0"
+     ]
+    },
+    "drill": [
+     {
+      "control": "Cancel",
+      "clicked": "dom",
+      "dialogDepth": 0,
+      "stillOpen": false,
+      "deepened": null
+     }
+    ],
+    "domDrill": []
    }
   ],
-  "dialogsExercised": 7,
-  "dialogsPainted": 1,
+  "dialogsExercised": 15,
+  "dialogsPainted": 15,
   "minRequired": 5
  },
  "rows": [
@@ -1742,20 +1857,26 @@
    "control": "About",
    "tag": "button",
    "clicked": "real",
-   "opened": false,
-   "kind": "none",
+   "opened": true,
+   "kind": "panel",
    "dialogDepth": 0,
-   "overlayDepth": 0,
-   "toggled": true,
+   "overlayDepth": 1,
+   "toggled": false,
    "chain": [],
-   "layer": null,
+   "layer": {
+    "kind": "panel",
+    "label": "about",
+    "w": 1640,
+    "h": 1000,
+    "buttons": 0
+   },
    "note": ""
   },
   {
    "surface": "statusbar",
    "control": "Previous slide",
    "tag": "button",
-   "clicked": "real",
+   "clicked": true,
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1763,7 +1884,7 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:true"
   },
   {
    "surface": "statusbar",
@@ -1783,7 +1904,7 @@
    "surface": "statusbar",
    "control": "Slideshow",
    "tag": "button",
-   "clicked": "real",
+   "clicked": true,
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1791,13 +1912,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:true"
   },
   {
    "surface": "statusbar",
    "control": "Language",
    "tag": "select",
-   "clicked": "real",
+   "clicked": true,
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1805,13 +1926,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:true"
   },
   {
    "surface": "statusbar",
    "control": "Fit to page",
    "tag": "button",
-   "clicked": "real",
+   "clicked": true,
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1819,13 +1940,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:true"
   },
   {
    "surface": "statusbar",
    "control": "Fit to width",
    "tag": "button",
-   "clicked": "real",
+   "clicked": true,
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1833,13 +1954,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:true"
   },
   {
    "surface": "statusbar",
    "control": "Zoom Out",
    "tag": "button",
-   "clicked": "real",
+   "clicked": true,
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1847,13 +1968,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:true"
   },
   {
    "surface": "statusbar",
    "control": "Zoom In",
    "tag": "button",
-   "clicked": "real",
+   "clicked": true,
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1861,7 +1982,7 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": ""
+   "note": "click:true"
   }
  ],
  "summary": {
@@ -1873,12 +1994,12 @@
    "statusbar"
   ],
   "controls": 91,
-  "opened": 3,
-  "toggledOnly": 4,
+  "opened": 4,
+  "toggledOnly": 3,
   "byKind": {
-   "none": 88,
+   "none": 87,
    "menu": 1,
-   "panel": 2
+   "panel": 3
   },
   "dialogs": 0,
   "domDialogElements": 0,
@@ -1887,23 +2008,19 @@
   "deepest": [
    "toolbar:Home/Color -> menu",
    "left-menu/Slides -> panel",
-   "left-menu/Chat -> panel"
+   "left-menu/Chat -> panel",
+   "left-menu/About -> panel"
   ],
   "fileMenuItems": 16,
   "fileMenuOpened": true,
   "fileMenuDialogsDeclared": 10,
-  "fileMenuDialogsExercised": 7,
-  "fileMenuDialogsPainted": 1,
+  "fileMenuDialogsExercised": 15,
+  "fileMenuDialogsPainted": 15,
   "fileMenuDialogsDomDrilled": 0,
   "maxFileMenuDialogDepth": 1
  },
  "findings": [
-  "file-menu-render-bug: the File-tab click alone paints NOTHING (.prese-file-menu-panel stayed display:none); the panel only renders on the next App-observer re-render, which this census triggers with a REAL F5 (start presentation) + Escape (end) — the App root observer reads presentationStore.isPresenting, the Viewport that owns the panel does not observe isFileMenuOpen/activeFileMenuPanel (slide twin of the documented word/sheet File-menu bug; typing into the slide's contentEditable placeholder does NOT mark the doc modified, so the sheet's keystroke trick has no slide equivalent). Every dialog pane below is censused through that side channel, one fresh page per entry, because the pane switch needs its own re-render",
-  "file-menu-no-close: a real click on the now-visible Back entry flips isFileMenuOpen in the store but the panel STAYS painted (block) — the same missing-observer re-render that made the File-tab click paint nothing also makes the menu impossible to close for the user",
-  "file-menu-dead-entries: 3 dialog-declaring entries reach no dialog surface (Save as...[file-menu-panel:none], Rename...[file-menu-panel:none], Version History...[menu stayed open but the entry activated no pane and no <dialog> — a dialog-declaring entry whose pane this build never renders]) — they either close the menu (non-pane action) or declare a pane the build never renders",
-  "file-menu-panes-never-paint: 6 dialog panes ACTIVATE but never paint — their container is display:none (contentBoxBase in the slide FileMenu), so the pane is w=0/h=0 and no real click can reach it: Download as...→Download as, Save Copy as...→Save Copy as, Document Info...→Document Info, Access Rights...→Access Rights, Advanced Settings...→Advanced Settings, Help...→Help. The census enumerates each pane's shipped controls from the DOM it mounts and fires them with SYNTHETIC domDrill clicks (none portals a real <dialog>), but only the portaled ExportWizard <dialog> (1 surface painted) is actually clickable by a user",
-  "file-menu-dialog-no-dismiss: Export Wizard... — the dialog's own ✕ flips activeFileMenuPanel in the store but the dialog stays open (same missing-observer re-render), so the modal cannot be closed by the user",
-  "toggle-without-overlay: 4 controls flip their own active/pressed state but open nothing (left-menu/Search, left-menu/Comments, left-menu/Support, left-menu/About)",
+  "toggle-without-overlay: 3 controls flip their own active/pressed state but open nothing (left-menu/Search, left-menu/Comments, left-menu/Support)",
   "84/91 controls open no overlay and expose no toggle state (direct-action or no-op — not decidable from the DOM): toolbar:Home/Cut, toolbar:Home/Copy, toolbar:Home/Paste, toolbar:Home/Painter, toolbar:Home/New Slide, toolbar:Home/First, toolbar:Home/Previous, toolbar:Home/Next, toolbar:Home/Last, toolbar:Home/Bold, toolbar:Home/Italic, toolbar:Home/Underline …"
  ]
 }
