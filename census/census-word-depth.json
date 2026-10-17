@@ -7,12 +7,12 @@
    {
     "check": "mounted",
     "ok": true,
-    "detail": "#toolbar mounted, 11 ribbon tabs, 170 controls censused"
+    "detail": "#toolbar mounted, 11 ribbon tabs, 169 controls censused"
    },
    {
     "check": "overlay-opened",
     "ok": true,
-    "detail": "52 controls opened an overlay ({\"none\":118,\"menu\":21,\"dialog\":26,\"panel\":5})"
+    "detail": "51 controls opened an overlay ({\"none\":118,\"menu\":20,\"dialog\":26,\"panel\":5})"
    },
    {
     "check": "file-menu-open",
@@ -29,8 +29,8 @@
  },
  "engine": "worldoffice-word",
  "ui": "vanilla-documenteditor-wysiwyg",
- "capturedAt": "2026-10-17T08:39:39.036Z",
- "url": "http://192.168.42.42:8086/word/",
+ "capturedAt": "2026-10-17T13:09:29.925Z",
+ "url": "http://127.0.0.1:18113/word/",
  "viewport": {
   "width": 1600,
   "height": 1000
@@ -174,28 +174,6 @@
       "Restore",
       "Compare",
       "Restore",
-      "Compare",
-      "Restore",
-      "Compare",
-      "Restore",
-      "Compare",
-      "Restore",
-      "Compare",
-      "Restore",
-      "Compare",
-      "Restore",
-      "Compare",
-      "Restore",
-      "Compare",
-      "Restore",
-      "Compare",
-      "Restore",
-      "Compare",
-      "Restore",
-      "Compare",
-      "Restore",
-      "Compare",
-      "Restore",
       "Close"
      ]
     },
@@ -205,7 +183,7 @@
       "clicked": "real",
       "dialogDepth": 1,
       "stillOpen": true,
-      "deepened": true
+      "deepened": false
      },
      {
       "control": "Restore",
@@ -546,7 +524,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": ""
@@ -561,7 +539,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": ""
@@ -576,7 +554,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": ""
@@ -591,7 +569,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": ""
@@ -606,7 +584,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": ""
@@ -657,7 +635,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": ""
@@ -693,7 +671,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": ""
@@ -789,7 +767,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": ""
@@ -825,7 +803,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": ""
@@ -840,7 +818,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": ""
@@ -855,7 +833,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": ""
@@ -870,7 +848,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": ""
@@ -915,7 +893,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": ""
@@ -1168,7 +1146,7 @@
    "control": "Undo",
    "tag": "button",
    "id": "btn-undo",
-   "clicked": true,
+   "clicked": "disabled",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1176,7 +1154,7 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:true"
+   "note": "control is disabled"
   },
   {
    "surface": "toolbar:Insert",
@@ -1275,7 +1253,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": "click:true"
@@ -1290,7 +1268,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": "click:true"
@@ -1305,7 +1283,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": "click:true"
@@ -1320,7 +1298,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": "click:true"
@@ -1335,7 +1313,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": "click:true"
@@ -1386,7 +1364,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": "click:true"
@@ -1422,7 +1400,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": "click:true"
@@ -1518,7 +1496,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": "click:true"
@@ -1554,7 +1532,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": "click:true"
@@ -1569,7 +1547,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": "click:true"
@@ -1584,7 +1562,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": "click:true"
@@ -1599,7 +1577,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": "click:true"
@@ -1644,7 +1622,7 @@
    "kind": "none",
    "dialogDepth": 0,
    "overlayDepth": 0,
-   "toggled": true,
+   "toggled": false,
    "chain": [],
    "layer": null,
    "note": "click:true"
@@ -2447,23 +2425,17 @@
    "opened": true,
    "kind": "dialog",
    "dialogDepth": 1,
-   "overlayDepth": 2,
+   "overlayDepth": 1,
    "toggled": false,
-   "chain": [
-    "Compare"
-   ],
+   "chain": [],
    "layer": {
     "kind": "dialog",
     "label": "version-history-dialog",
     "w": 1600,
     "h": 1000,
-    "buttons": 39
+    "buttons": 11
    },
-   "note": "",
-   "drilledTo": [
-    "dialog:version-history-dialog",
-    "panel:review-panel"
-   ]
+   "note": ""
   },
   {
    "surface": "toolbar:Collaboration",
@@ -3148,27 +3120,6 @@
   },
   {
    "surface": "menu-bar",
-   "control": "File",
-   "tag": "button",
-   "id": "btn-file",
-   "clicked": "real",
-   "opened": true,
-   "kind": "menu",
-   "dialogDepth": 0,
-   "overlayDepth": 1,
-   "toggled": false,
-   "chain": [],
-   "layer": {
-    "kind": "menu",
-    "label": "file-menu",
-    "w": 184,
-    "h": 270,
-    "buttons": 11
-   },
-   "note": ""
-  },
-  {
-   "surface": "menu-bar",
    "control": "Print",
    "tag": "button",
    "id": "btn-print-qa",
@@ -3319,21 +3270,71 @@
    "menu-bar",
    "statusbar"
   ],
-  "controls": 170,
-  "opened": 52,
-  "toggledOnly": 40,
+  "controls": 169,
+  "opened": 51,
+  "toggledOnly": 14,
   "byKind": {
    "none": 118,
-   "menu": 21,
+   "menu": 20,
    "dialog": 26,
    "panel": 5
   },
   "dialogs": 26,
   "domDialogOverlays": 42,
   "maxDialogDepth": 1,
-  "maxOverlayDepth": 2,
+  "maxOverlayDepth": 1,
   "deepest": [
-   "toolbar:Collaboration/Compare -> dialog > Compare"
+   "toolbar:Home/More font families -> menu",
+   "toolbar:Home/More font sizes -> menu",
+   "toolbar:Home/Script options -> menu",
+   "toolbar:Home/Bullet style options -> menu",
+   "toolbar:Home/Numbering style options -> menu",
+   "toolbar:Home/Paragraph direction options -> menu",
+   "toolbar:Home/More formatting -> menu",
+   "toolbar:Home/Paragraph styles -> menu",
+   "toolbar:Home/Find and replace -> dialog",
+   "toolbar:Insert/More font families -> menu",
+   "toolbar:Insert/More font sizes -> menu",
+   "toolbar:Insert/Script options -> menu",
+   "toolbar:Insert/Bullet style options -> menu",
+   "toolbar:Insert/Numbering style options -> menu",
+   "toolbar:Insert/Paragraph direction options -> menu",
+   "toolbar:Insert/More formatting -> menu",
+   "toolbar:Insert/Paragraph styles -> menu",
+   "toolbar:Insert/Find and replace -> dialog",
+   "toolbar:Layout/Insert columns -> dialog",
+   "toolbar:Layout/Page setup -> dialog",
+   "toolbar:Layout/Hyphenation -> dialog",
+   "toolbar:Layout/Line numbers -> dialog",
+   "toolbar:Layout/Watermark -> dialog",
+   "toolbar:Layout/Layout.Colors -> dialog",
+   "toolbar:References/Insert table of contents -> dialog",
+   "toolbar:References/Insert footnote -> dialog",
+   "toolbar:References/Insert endnote -> dialog",
+   "toolbar:References/Update TOC -> dialog",
+   "toolbar:References/Cross-reference -> dialog",
+   "toolbar:Collaboration/Track changes -> dialog",
+   "toolbar:Collaboration/Review changes -> panel",
+   "toolbar:Collaboration/Add comment -> dialog",
+   "toolbar:Collaboration/Show comments -> panel",
+   "toolbar:Collaboration/Chat -> panel",
+   "toolbar:Collaboration/Compare -> dialog",
+   "toolbar:Collaboration/Display mode -> dialog",
+   "toolbar:Protection/Protect with password -> dialog",
+   "toolbar:View/Document view -> dialog",
+   "toolbar:View/Navigation -> panel",
+   "toolbar:View/Speech -> menu",
+   "toolbar:View/Speech -> menu",
+   "toolbar:Plugins/Document view -> dialog",
+   "toolbar:Plugins/Navigation -> panel",
+   "toolbar:Plugins/Speech -> menu",
+   "toolbar:Plugins/Speech -> menu",
+   "toolbar:AI/AI changes -> dialog",
+   "toolbar:AI/Summarize -> dialog",
+   "toolbar:AI/Translate -> dialog",
+   "toolbar:AI/Rewrite -> dialog",
+   "toolbar:AI/Grammar -> dialog",
+   "toolbar:AI/AI assistant -> dialog"
   ],
   "fileMenuItems": 11,
   "fileMenuOpened": true,
@@ -3344,7 +3345,7 @@
  "findings": [
   "file-menu-silent-entries: 3 entries open NO overlay (New, Open…, Print) — New resets the document, Open… parks on a native file chooser (cancelled by the census), Print opens no dialog in headless chromium (measured, not assumed)",
   "file-menu-dead-entries: 1 dialog-declaring entries reach no dialog surface (Open…[entry opens NO overlay — silent in this build (measured, not assumed)])",
-  "toggle-without-overlay: 40 controls flip their own active/pressed state but open nothing (toolbar:Home/Bold, toolbar:Home/Italic, toolbar:Home/Underline, toolbar:Home/Strikethrough, toolbar:Home/Superscript, toolbar:Home/Bullet list, toolbar:Home/Numbered list, toolbar:Home/Toolbar.DirectionRtl…)",
-  "43/170 controls open no overlay and expose no toggle state (direct-action or no-op — not decidable from the DOM; whether the command really mutates the document is fx-wo.cjs's job): toolbar:Home/Font family, toolbar:Home/Font size, toolbar:Home/Clear formatting, toolbar:Home/Multilevel list, toolbar:Home/Decrease indent, toolbar:Home/Increase indent, toolbar:Home/Line spacing, toolbar:Home/Paragraph, toolbar:Home/Toolbar.SmallCaps, toolbar:Home/All caps…"
+  "toggle-without-overlay: 14 controls flip their own active/pressed state but open nothing (toolbar:Home/Toggle theme, toolbar:Insert/Toggle theme, toolbar:Draw/Toggle drawing mode, toolbar:Draw/Select objects, toolbar:Draw/Draw with pen, toolbar:Draw/Highlight text, toolbar:Draw/Erase ink, toolbar:View/Ruler…)",
+  "56/169 controls open no overlay and expose no toggle state (direct-action or no-op — not decidable from the DOM; whether the command really mutates the document is fx-wo.cjs's job): toolbar:Home/Font family, toolbar:Home/Font size, toolbar:Home/Bold, toolbar:Home/Italic, toolbar:Home/Underline, toolbar:Home/Strikethrough, toolbar:Home/Superscript, toolbar:Home/Clear formatting, toolbar:Home/Bullet list, toolbar:Home/Numbered list…"
  ]
 }

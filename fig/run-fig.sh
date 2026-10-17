@@ -7,6 +7,7 @@
 #                  + plan/FIG_STATUS.md
 set -e
 FIG="$(cd "$(dirname "$0")" && pwd)"
+node "$FIG/fig-ui.cjs"
 node "$FIG/fig-census.cjs"
 node "$FIG/fig-collab.cjs"
 node "$FIG/fig-auth.cjs"
