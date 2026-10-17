@@ -242,7 +242,13 @@ def main() -> int:
     print(f"# ds-bench  doc={len(doc_bytes)}B  loadavg={' '.join(load)}  "
           f"N_boot={N_BOOT} N_req={N_REQ} N_conv={N_CONV}")
     results = {}
-    for mode in ("rust", "python"):
+    modes = ["rust", "python"]
+    for mode in modes:
+        # Skip python mode if the python docserver directory doesn't exist
+        # (canonical rust server checkout has removed opencloud-docserver)
+        if mode == "python" and not (server / "opencloud-docserver").is_dir():
+            print(f"  {mode}: skipped (opencloud-docserver not found in {server})")
+            continue
         t0 = time.time()
         boot = bench_boot(spawn_rust if mode == "rust" else spawn_python, server, N_BOOT)
         print(f"  {mode}: cold-boot-to-first-200 median = {boot*1000:.0f} ms "
