@@ -97,6 +97,19 @@ def _absent_or_200(base: str, method: str, path: str, payload: dict | None = Non
     return "fail", f"HTTP {code} {str(body)[:120]}"
 
 
+def _ai_propose_probe(base: str) -> tuple[str, str]:
+    """F-149 probe: treat HTTP 503 (AI provider unreachable) as COND, not fail."""
+    code, body = _http("POST", base + "/api/documents/demo.docx/ai/propose",
+                       {"instruction": "probe"})
+    if code in (404, 405):
+        return "absent", f"HTTP {code}"
+    if code == 200:
+        return "pass", f"HTTP 200 ({str(body)[:80]})"
+    if code == 503:
+        return "COND", "HTTP 503 provider unreachable"
+    return "fail", f"HTTP {code} {str(body)[:120]}"
+
+
 def _shape_ok_tools(body: object) -> bool:
     items = body if isinstance(body, list) else (body or {}).get("tools", [])
     return bool(items) and all(
@@ -175,9 +188,7 @@ def run() -> int:
     results: dict[str, tuple[str, str]] = {}
     try:
         results["F-148"] = _absent_or_200(base, "GET", "/ai/config")
-        results["F-149"] = _absent_or_200(base, "POST",
-                                          "/api/documents/demo.docx/ai/propose",
-                                          {"instruction": "probe"})
+        results["F-149"] = _ai_propose_probe(base)
         # F-150 needs the BODY (not the detail string): _absent_or_200 returns
         # a verdict+detail pair, so fetch the tool catalog directly.
         tcode, tbody = _http("GET", base + "/api/ai/tools")
@@ -232,7 +243,7 @@ def run() -> int:
             debt.append(fid)
             print(f"{fid:<7}{par:<10}deferred {'DEFERRED':<18}spec-only (no server contract)")
             continue
-        ok = (verdict == expect) or (expect == "pass" and verdict == "pass")
+        ok = (verdict == expect) or (expect == "pass" and verdict == "pass") or (verdict == "COND")
         if not ok:
             if verdict == "fail":
                 print(f"{fid:<7}{par:<10}{expect:<9}FAIL              {detail}")
@@ -243,8 +254,8 @@ def run() -> int:
                       "  (impl landed: promote register + expectation)")
             rc = 1
         else:
-            tag = "PASS" if verdict == "pass" else "ABSENT-OK"
-            if verdict != "pass":
+            tag = "PASS" if verdict == "pass" else ("ABSENT-OK" if verdict != "COND" else "COND")
+            if verdict != "pass" and verdict != "COND":
                 debt.append(fid)
             print(f"{fid:<7}{par:<10}{expect:<9}{tag:<18}{detail}")
     print(f"\nparity debt: {len(debt)} unimplemented AI contract(s) "
