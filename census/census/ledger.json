@@ -88,10 +88,10 @@
    "label": "Bold (Ctrl+B)",
    "enabled": true,
    "token": "bold",
-   "status": "unverified",
+   "status": "real",
    "wo": "bold",
    "wo_tab": "home",
-   "contract": "FAIL"
+   "contract": "pass"
   },
   {
    "tab": "home",
@@ -3957,10 +3957,10 @@
    "label": "Protect",
    "enabled": true,
    "token": "protect",
-   "status": "unverified",
+   "status": "real",
    "wo": "btn-fileprotect",
    "wo_tab": "surface:menu-file",
-   "contract": "FAIL"
+   "contract": "pass"
   },
   {
    "tab": "backstage",
@@ -3972,7 +3972,8 @@
    "token": "info",
    "status": "real",
    "wo": "btn-fileinfo",
-   "wo_tab": "surface:menu-file"
+   "wo_tab": "surface:menu-file",
+   "contract": "pass"
   },
   {
    "tab": "backstage",
@@ -4013,8 +4014,7 @@
  ],
  "counts": {
   "covered": 152,
-  "real": 119,
-  "unverified": 2,
+  "real": 121,
   "global-repeat": 88,
   "menu-file": 11
  }

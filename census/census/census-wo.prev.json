@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-10-06T12:51:39.966Z",
+ "capturedAt": "2026-10-17T16:47:00.176Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
@@ -12,7 +12,7 @@
      "label": "Undo",
      "enabled": false,
      "x": 17,
-     "y": 84,
+     "y": 112,
      "w": 30,
      "h": 46
     },
@@ -22,7 +22,7 @@
      "label": "Redo",
      "enabled": false,
      "x": 51,
-     "y": 84,
+     "y": 112,
      "w": 30,
      "h": 46
     },
@@ -31,7 +31,7 @@
      "label": "▾",
      "enabled": true,
      "x": 175,
-     "y": 84,
+     "y": 112,
      "w": 22,
      "h": 46
     },
@@ -106,7 +106,7 @@
      "label": "▾",
      "enabled": true,
      "x": 273,
-     "y": 84,
+     "y": 112,
      "w": 22,
      "h": 46
     },
@@ -193,7 +193,7 @@
      "label": "B",
      "enabled": true,
      "x": 310,
-     "y": 84,
+     "y": 112,
      "w": 24,
      "h": 46
     },
@@ -203,7 +203,7 @@
      "label": "I",
      "enabled": true,
      "x": 342,
-     "y": 84,
+     "y": 112,
      "w": 24,
      "h": 46
     },
@@ -213,7 +213,7 @@
      "label": "U",
      "enabled": true,
      "x": 374,
-     "y": 84,
+     "y": 112,
      "w": 24,
      "h": 46
     },
@@ -223,7 +223,7 @@
      "label": "S",
      "enabled": true,
      "x": 406,
-     "y": 84,
+     "y": 112,
      "w": 24,
      "h": 46
     },
@@ -233,7 +233,7 @@
      "label": "x²x₂",
      "enabled": true,
      "x": 438,
-     "y": 84,
+     "y": 112,
      "w": 24,
      "h": 46
     },
@@ -242,7 +242,7 @@
      "label": "▾",
      "enabled": true,
      "x": 467,
-     "y": 84,
+     "y": 112,
      "w": 22,
      "h": 46
     },
@@ -274,7 +274,7 @@
      "label": "〈〉",
      "enabled": true,
      "x": 578,
-     "y": 84,
+     "y": 112,
      "w": 24,
      "h": 46
     },
@@ -284,7 +284,7 @@
      "label": "Bullet list",
      "enabled": true,
      "x": 603,
-     "y": 84,
+     "y": 112,
      "w": 30,
      "h": 46
     },
@@ -293,7 +293,7 @@
      "label": "▾",
      "enabled": true,
      "x": 633,
-     "y": 84,
+     "y": 112,
      "w": 22,
      "h": 46
     },
@@ -336,7 +336,7 @@
      "label": "Numbered list",
      "enabled": true,
      "x": 657,
-     "y": 84,
+     "y": 112,
      "w": 30,
      "h": 46
     },
@@ -345,7 +345,7 @@
      "label": "▾",
      "enabled": true,
      "x": 687,
-     "y": 84,
+     "y": 112,
      "w": 22,
      "h": 46
     },
@@ -399,7 +399,7 @@
      "label": "Multilevel list",
      "enabled": true,
      "x": 711,
-     "y": 94,
+     "y": 122,
      "w": 30,
      "h": 26
     },
@@ -409,7 +409,7 @@
      "label": "Decrease indent",
      "enabled": true,
      "x": 745,
-     "y": 84,
+     "y": 112,
      "w": 30,
      "h": 46
     },
@@ -419,7 +419,7 @@
      "label": "Increase indent",
      "enabled": true,
      "x": 779,
-     "y": 84,
+     "y": 112,
      "w": 30,
      "h": 46
     },
@@ -429,7 +429,7 @@
      "label": "Toolbar.DirectionRtl",
      "enabled": true,
      "x": 869,
-     "y": 84,
+     "y": 112,
      "w": 30,
      "h": 46
     },
@@ -438,7 +438,7 @@
      "label": "▾",
      "enabled": true,
      "x": 897,
-     "y": 84,
+     "y": 112,
      "w": 22,
      "h": 46
     },
@@ -459,7 +459,7 @@
      "label": "Align left",
      "enabled": true,
      "x": 921,
-     "y": 84,
+     "y": 112,
      "w": 30,
      "h": 46
     },
@@ -469,7 +469,7 @@
      "label": "Center",
      "enabled": true,
      "x": 953,
-     "y": 84,
+     "y": 112,
      "w": 30,
      "h": 46
     },
@@ -479,7 +479,7 @@
      "label": "Align right",
      "enabled": true,
      "x": 985,
-     "y": 84,
+     "y": 112,
      "w": 30,
      "h": 46
     },
@@ -489,7 +489,7 @@
      "label": "Justify",
      "enabled": true,
      "x": 1017,
-     "y": 84,
+     "y": 112,
      "w": 30,
      "h": 46
     },
@@ -499,7 +499,7 @@
      "label": "¶",
      "enabled": true,
      "x": 1052,
-     "y": 84,
+     "y": 112,
      "w": 24,
      "h": 46
     },
@@ -509,7 +509,7 @@
      "label": "SC",
      "enabled": true,
      "x": 1086,
-     "y": 84,
+     "y": 112,
      "w": 24,
      "h": 46
     },
@@ -519,7 +519,7 @@
      "label": "</>",
      "enabled": true,
      "x": 1118,
-     "y": 84,
+     "y": 112,
      "w": 24,
      "h": 46
     },
@@ -529,7 +529,7 @@
      "label": "AA",
      "enabled": true,
      "x": 1150,
-     "y": 84,
+     "y": 112,
      "w": 24,
      "h": 46
     },
@@ -538,7 +538,7 @@
      "label": "▾",
      "enabled": true,
      "x": 1179,
-     "y": 84,
+     "y": 112,
      "w": 22,
      "h": 46
     },
@@ -686,9 +686,9 @@
      "id": null,
      "label": "Styles",
      "enabled": true,
-     "x": 1216,
-     "y": 84,
-     "w": 73,
+     "x": 1202,
+     "y": 112,
+     "w": 65,
      "h": 46
     },
     {
@@ -750,8 +750,8 @@
      "id": "btn-ribbon-collapse",
      "label": "Show fewer toolbar buttons",
      "enabled": true,
-     "x": 1275,
-     "y": 124,
+     "x": 1283,
+     "y": 152,
      "w": 42,
      "h": 38
     },
@@ -759,8 +759,8 @@
      "id": "btn-theme",
      "label": "☾",
      "enabled": true,
-     "x": 1318,
-     "y": 120,
+     "x": 1326,
+     "y": 148,
      "w": 24,
      "h": 46
     },
@@ -768,8 +768,8 @@
      "id": "btn-find",
      "label": "⌕",
      "enabled": true,
-     "x": 1352,
-     "y": 120,
+     "x": 1360,
+     "y": 148,
      "w": 24,
      "h": 46
     },
@@ -777,8 +777,8 @@
      "id": "btn-fullscreen",
      "label": "Toggle fullscreen",
      "enabled": true,
-     "x": 1381,
-     "y": 130,
+     "x": 1389,
+     "y": 158,
      "w": 30,
      "h": 26
     }
@@ -829,7 +829,7 @@
      "label": "▦",
      "enabled": true,
      "x": 12,
-     "y": 88,
+     "y": 116,
      "w": 34,
      "h": 46
     },
@@ -838,7 +838,7 @@
      "label": "▦✎",
      "enabled": true,
      "x": 48,
-     "y": 88,
+     "y": 116,
      "w": 43,
      "h": 46
     },
@@ -847,7 +847,7 @@
      "label": "Insert image",
      "enabled": true,
      "x": 93,
-     "y": 88,
+     "y": 116,
      "w": 42,
      "h": 46
     },
@@ -856,7 +856,7 @@
      "label": "Insert link",
      "enabled": true,
      "x": 137,
-     "y": 88,
+     "y": 116,
      "w": 42,
      "h": 46
     },
@@ -865,7 +865,7 @@
      "label": "─",
      "enabled": true,
      "x": 181,
-     "y": 88,
+     "y": 116,
      "w": 34,
      "h": 46
     },
@@ -874,7 +874,7 @@
      "label": "▢",
      "enabled": true,
      "x": 217,
-     "y": 88,
+     "y": 116,
      "w": 34,
      "h": 46
     },
@@ -883,7 +883,7 @@
      "label": "Insert bookmark",
      "enabled": true,
      "x": 253,
-     "y": 88,
+     "y": 116,
      "w": 42,
      "h": 46
     },
@@ -892,7 +892,7 @@
      "label": "Insert cross-reference",
      "enabled": true,
      "x": 297,
-     "y": 88,
+     "y": 116,
      "w": 42,
      "h": 46
     },
@@ -901,7 +901,7 @@
      "label": "Ω",
      "enabled": true,
      "x": 341,
-     "y": 88,
+     "y": 116,
      "w": 34,
      "h": 46
     },
@@ -910,34 +910,37 @@
      "label": "Insert date",
      "enabled": true,
      "x": 377,
-     "y": 88,
+     "y": 116,
      "w": 42,
      "h": 46
     },
     {
      "id": "btn-pagenumber",
+     "cmd": "insertPageNumber",
      "label": "#",
      "enabled": true,
      "x": 421,
-     "y": 88,
+     "y": 116,
      "w": 34,
      "h": 46
     },
     {
      "id": "btn-header",
+     "cmd": "insertHeader",
      "label": "▔",
      "enabled": true,
      "x": 457,
-     "y": 88,
+     "y": 116,
      "w": 34,
      "h": 46
     },
     {
      "id": "btn-footer",
+     "cmd": "insertFooter",
      "label": "▁",
      "enabled": true,
      "x": 493,
-     "y": 88,
+     "y": 116,
      "w": 34,
      "h": 46
     },
@@ -947,7 +950,7 @@
      "label": "Shape",
      "enabled": true,
      "x": 529,
-     "y": 88,
+     "y": 116,
      "w": 58,
      "h": 46
     },
@@ -957,7 +960,7 @@
      "label": "Chart",
      "enabled": true,
      "x": 589,
-     "y": 88,
+     "y": 116,
      "w": 52,
      "h": 46
     },
@@ -967,7 +970,7 @@
      "label": "Text art",
      "enabled": true,
      "x": 644,
-     "y": 88,
+     "y": 116,
      "w": 64,
      "h": 46
     },
@@ -977,7 +980,7 @@
      "label": "Drop cap",
      "enabled": true,
      "x": 710,
-     "y": 88,
+     "y": 116,
      "w": 75,
      "h": 46
     },
@@ -987,7 +990,7 @@
      "label": "Text box",
      "enabled": true,
      "x": 786,
-     "y": 88,
+     "y": 116,
      "w": 70,
      "h": 46
     },
@@ -997,7 +1000,7 @@
      "label": "Hyperlink",
      "enabled": true,
      "x": 859,
-     "y": 88,
+     "y": 116,
      "w": 76,
      "h": 46
     },
@@ -1123,7 +1126,7 @@
      "label": "Draw",
      "enabled": true,
      "x": 12,
-     "y": 88,
+     "y": 116,
      "w": 51,
      "h": 46
     },
@@ -1133,7 +1136,7 @@
      "label": "Select",
      "enabled": true,
      "x": 65,
-     "y": 88,
+     "y": 116,
      "w": 57,
      "h": 46
     },
@@ -1143,7 +1146,7 @@
      "label": "Pen",
      "enabled": true,
      "x": 124,
-     "y": 88,
+     "y": 116,
      "w": 43,
      "h": 46
     },
@@ -1153,7 +1156,7 @@
      "label": "Highlighter",
      "enabled": true,
      "x": 169,
-     "y": 88,
+     "y": 116,
      "w": 85,
      "h": 46
     },
@@ -1163,7 +1166,7 @@
      "label": "Eraser",
      "enabled": true,
      "x": 255,
-     "y": 88,
+     "y": 116,
      "w": 59,
      "h": 46
     },
@@ -1173,7 +1176,7 @@
      "label": "Ink color",
      "enabled": true,
      "x": 317,
-     "y": 88,
+     "y": 116,
      "w": 71,
      "h": 46
     },
@@ -1183,7 +1186,7 @@
      "label": "Ink thickness",
      "enabled": true,
      "x": 390,
-     "y": 88,
+     "y": 116,
      "w": 99,
      "h": 46
     },
@@ -1192,7 +1195,7 @@
      "label": "Group",
      "enabled": true,
      "x": 491,
-     "y": 88,
+     "y": 116,
      "w": 57,
      "h": 46
     },
@@ -1201,7 +1204,7 @@
      "label": "Merge shapes",
      "enabled": true,
      "x": 549,
-     "y": 88,
+     "y": 116,
      "w": 107,
      "h": 46
     }
@@ -1237,7 +1240,7 @@
      "label": "⏎",
      "enabled": true,
      "x": 12,
-     "y": 88,
+     "y": 116,
      "w": 34,
      "h": 46
     },
@@ -1246,7 +1249,7 @@
      "label": "⇘",
      "enabled": true,
      "x": 48,
-     "y": 88,
+     "y": 116,
      "w": 34,
      "h": 46
     },
@@ -1255,7 +1258,7 @@
      "label": "▥",
      "enabled": true,
      "x": 84,
-     "y": 88,
+     "y": 116,
      "w": 34,
      "h": 46
     },
@@ -1264,7 +1267,7 @@
      "label": "Page setup",
      "enabled": true,
      "x": 120,
-     "y": 88,
+     "y": 116,
      "w": 89,
      "h": 46
     },
@@ -1274,7 +1277,7 @@
      "label": "Hyphenation",
      "enabled": true,
      "x": 211,
-     "y": 88,
+     "y": 116,
      "w": 97,
      "h": 46
     },
@@ -1284,7 +1287,7 @@
      "label": "Line numbers",
      "enabled": true,
      "x": 309,
-     "y": 88,
+     "y": 116,
      "w": 103,
      "h": 46
     },
@@ -1294,7 +1297,7 @@
      "label": "Watermark",
      "enabled": true,
      "x": 414,
-     "y": 88,
+     "y": 116,
      "w": 86,
      "h": 46
     }
@@ -1335,25 +1338,27 @@
      "label": "☰",
      "enabled": true,
      "x": 12,
-     "y": 88,
+     "y": 116,
      "w": 34,
      "h": 46
     },
     {
      "id": "btn-footnote",
+     "cmd": "insertFootnote",
      "label": "¹",
      "enabled": true,
      "x": 48,
-     "y": 88,
+     "y": 116,
      "w": 34,
      "h": 46
     },
     {
      "id": "btn-endnote",
+     "cmd": "insertEndnote",
      "label": "ⁿ",
      "enabled": true,
      "x": 84,
-     "y": 88,
+     "y": 116,
      "w": 34,
      "h": 46
     },
@@ -1363,7 +1368,7 @@
      "label": "Caption",
      "enabled": true,
      "x": 120,
-     "y": 88,
+     "y": 116,
      "w": 66,
      "h": 46
     },
@@ -1373,7 +1378,7 @@
      "label": "Citation",
      "enabled": true,
      "x": 188,
-     "y": 88,
+     "y": 116,
      "w": 65,
      "h": 46
     },
@@ -1383,7 +1388,7 @@
      "label": "Index",
      "enabled": true,
      "x": 256,
-     "y": 88,
+     "y": 116,
      "w": 52,
      "h": 46
     },
@@ -1393,7 +1398,7 @@
      "label": "Update TOC",
      "enabled": true,
      "x": 310,
-     "y": 88,
+     "y": 116,
      "w": 96,
      "h": 46
     },
@@ -1403,7 +1408,7 @@
      "label": "Cross-reference",
      "enabled": true,
      "x": 408,
-     "y": 88,
+     "y": 116,
      "w": 118,
      "h": 46
     }
@@ -1439,7 +1444,7 @@
      "label": "✎",
      "enabled": true,
      "x": 12,
-     "y": 88,
+     "y": 116,
      "w": 34,
      "h": 46
     },
@@ -1448,7 +1453,7 @@
      "label": "✓",
      "enabled": true,
      "x": 48,
-     "y": 88,
+     "y": 116,
      "w": 34,
      "h": 46
     },
@@ -1457,7 +1462,7 @@
      "label": "Add comment",
      "enabled": true,
      "x": 84,
-     "y": 88,
+     "y": 116,
      "w": 42,
      "h": 46
     },
@@ -1466,7 +1471,7 @@
      "label": "◫",
      "enabled": true,
      "x": 128,
-     "y": 88,
+     "y": 116,
      "w": 34,
      "h": 46
     },
@@ -1476,7 +1481,7 @@
      "label": "Chat",
      "enabled": true,
      "x": 164,
-     "y": 88,
+     "y": 116,
      "w": 48,
      "h": 46
     },
@@ -1486,7 +1491,7 @@
      "label": "Compare",
      "enabled": true,
      "x": 214,
-     "y": 88,
+     "y": 116,
      "w": 76,
      "h": 46
     },
@@ -1496,7 +1501,7 @@
      "label": "Display mode",
      "enabled": true,
      "x": 291,
-     "y": 88,
+     "y": 116,
      "w": 103,
      "h": 46
     },
@@ -1506,7 +1511,7 @@
      "label": "Previous change",
      "enabled": true,
      "x": 396,
-     "y": 88,
+     "y": 116,
      "w": 122,
      "h": 46
     },
@@ -1516,7 +1521,7 @@
      "label": "Next change",
      "enabled": true,
      "x": 520,
-     "y": 88,
+     "y": 116,
      "w": 97,
      "h": 46
     }
@@ -1553,7 +1558,7 @@
      "label": "Protect with password",
      "enabled": true,
      "x": 12,
-     "y": 88,
+     "y": 116,
      "w": 155,
      "h": 46
     },
@@ -1563,7 +1568,7 @@
      "label": "Restrict editing",
      "enabled": true,
      "x": 169,
-     "y": 88,
+     "y": 116,
      "w": 111,
      "h": 46
     }
@@ -1600,7 +1605,7 @@
      "label": "Document view",
      "enabled": true,
      "x": 12,
-     "y": 88,
+     "y": 116,
      "w": 114,
      "h": 46
     },
@@ -1609,7 +1614,7 @@
      "label": "Ruler",
      "enabled": true,
      "x": 128,
-     "y": 88,
+     "y": 116,
      "w": 51,
      "h": 46
     },
@@ -1618,7 +1623,7 @@
      "label": "Gridlines",
      "enabled": true,
      "x": 181,
-     "y": 88,
+     "y": 116,
      "w": 73,
      "h": 46
     },
@@ -1627,7 +1632,7 @@
      "label": "View.FormattingMarks",
      "enabled": true,
      "x": 256,
-     "y": 88,
+     "y": 116,
      "w": 156,
      "h": 46
     },
@@ -1637,7 +1642,7 @@
      "label": "Navigation",
      "enabled": true,
      "x": 415,
-     "y": 88,
+     "y": 116,
      "w": 84,
      "h": 46
     },
@@ -1646,7 +1651,7 @@
      "label": "Fullscreen",
      "enabled": true,
      "x": 501,
-     "y": 88,
+     "y": 116,
      "w": 83,
      "h": 46
     },
@@ -1655,7 +1660,7 @@
      "label": "Theme",
      "enabled": true,
      "x": 585,
-     "y": 88,
+     "y": 116,
      "w": 62,
      "h": 46
     },
@@ -1664,7 +1669,7 @@
      "label": "Fit page",
      "enabled": true,
      "x": 649,
-     "y": 88,
+     "y": 116,
      "w": 69,
      "h": 46
     },
@@ -1732,7 +1737,7 @@
      "label": "Browse plugins",
      "enabled": true,
      "x": 12,
-     "y": 88,
+     "y": 116,
      "w": 113,
      "h": 46
     },
@@ -1742,7 +1747,7 @@
      "label": "Manage plugins",
      "enabled": true,
      "x": 127,
-     "y": 88,
+     "y": 116,
      "w": 117,
      "h": 46
     },
@@ -1751,7 +1756,7 @@
      "label": "Background plugins",
      "enabled": true,
      "x": 246,
-     "y": 88,
+     "y": 116,
      "w": 141,
      "h": 46
     },
@@ -1761,7 +1766,7 @@
      "label": "OCR",
      "enabled": true,
      "x": 389,
-     "y": 88,
+     "y": 116,
      "w": 49,
      "h": 46
     },
@@ -1771,7 +1776,7 @@
      "label": "Photo editor",
      "enabled": true,
      "x": 440,
-     "y": 88,
+     "y": 116,
      "w": 94,
      "h": 46
     }
@@ -1807,7 +1812,7 @@
      "label": "AI changes",
      "enabled": true,
      "x": 12,
-     "y": 88,
+     "y": 116,
      "w": 88,
      "h": 46
     },
@@ -1817,7 +1822,7 @@
      "label": "Summarize",
      "enabled": true,
      "x": 102,
-     "y": 88,
+     "y": 116,
      "w": 89,
      "h": 46
     },
@@ -1827,7 +1832,7 @@
      "label": "Translate",
      "enabled": true,
      "x": 193,
-     "y": 88,
+     "y": 116,
      "w": 76,
      "h": 46
     },
@@ -1837,7 +1842,7 @@
      "label": "Rewrite",
      "enabled": true,
      "x": 271,
-     "y": 88,
+     "y": 116,
      "w": 65,
      "h": 46
     },
@@ -1846,7 +1851,7 @@
      "label": "Grammar",
      "enabled": true,
      "x": 338,
-     "y": 88,
+     "y": 116,
      "w": 77,
      "h": 46
     },
@@ -1855,7 +1860,7 @@
      "label": "AI assistant",
      "enabled": true,
      "x": 417,
-     "y": 88,
+     "y": 116,
      "w": 90,
      "h": 46
     }
@@ -1892,7 +1897,7 @@
      "label": "Close Header & Footer",
      "enabled": true,
      "x": 12,
-     "y": 88,
+     "y": 116,
      "w": 161,
      "h": 46
     },
@@ -1901,7 +1906,7 @@
      "label": "Page number",
      "enabled": true,
      "x": 175,
-     "y": 88,
+     "y": 116,
      "w": 102,
      "h": 46
     },
@@ -1910,7 +1915,7 @@
      "label": "Date & time",
      "enabled": true,
      "x": 279,
-     "y": 88,
+     "y": 116,
      "w": 91,
      "h": 46
     },
@@ -1920,7 +1925,7 @@
      "label": "Different First Page",
      "enabled": true,
      "x": 372,
-     "y": 88,
+     "y": 116,
      "w": 138,
      "h": 46
     },
@@ -1930,7 +1935,7 @@
      "label": "Different Odd & Even",
      "enabled": true,
      "x": 513,
-     "y": 88,
+     "y": 116,
      "w": 150,
      "h": 46
     },
@@ -1940,7 +1945,7 @@
      "label": "Header from Top",
      "enabled": true,
      "x": 665,
-     "y": 88,
+     "y": 116,
      "w": 122,
      "h": 46
     },
@@ -1950,7 +1955,7 @@
      "label": "Footer from Bottom",
      "enabled": true,
      "x": 789,
-     "y": 88,
+     "y": 116,
      "w": 139,
      "h": 46
     },
@@ -1960,7 +1965,7 @@
      "label": "Same as previous",
      "enabled": true,
      "x": 929,
-     "y": 88,
+     "y": 116,
      "w": 130,
      "h": 46
     }
@@ -2055,37 +2060,37 @@
      "id": "btn-zoom-out",
      "label": "Zoom out",
      "enabled": true,
-     "x": 1086
+     "x": 1092
     },
     {
      "id": "btn-zoom-in",
      "label": "Zoom in",
      "enabled": true,
-     "x": 1205
+     "x": 1211
     },
     {
      "id": "btn-zoom-fit",
      "label": "Fit page width",
      "enabled": true,
-     "x": 1270
+     "x": 1276
     },
     {
      "id": "btn-zoom-reset",
      "label": "Reset zoom",
      "enabled": true,
-     "x": 1328
+     "x": 1334
     },
     {
      "id": "doc-lang-caret",
      "label": "Language options",
      "enabled": true,
-     "x": 1077
+     "x": 1083
     },
     {
      "id": "btn-multipage",
      "label": "Multiple pages view",
      "enabled": true,
-     "x": 1398
+     "x": 1404
     }
    ],
    "combos": []
