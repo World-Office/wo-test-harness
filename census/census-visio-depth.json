@@ -28,7 +28,7 @@
   "failedChecks": []
  },
  "engine": "worldoffice-react-visio",
- "capturedAt": "2026-10-17T07:37:46.576Z",
+ "capturedAt": "2026-10-17T08:41:18.189Z",
  "url": "http://192.168.42.42:8086/diagram/",
  "viewport": {
   "width": 1600,
@@ -717,7 +717,7 @@
   "maxFileMenuDialogDepth": 1
  },
  "findings": [
-  "file-menu-render-bug: the File-tab click alone paints NOTHING (.visio-file-menu-panel stayed display:none); the panel only renders on the next App-observer re-render, which this census triggers with a REAL mouse drag of a canvas node (the drag runs flowchart.moveNode → markModified() → visioStore.isModified flips, and the App root observer reads isModified in render). The Viewport that owns the panel does not observe isFileMenuOpen/activeFileMenuPanel — the visio twin of the documented word/sheet File-menu bug. Every dialog pane below is censused through that side channel, one fresh page per entry, because no second re-render exists to paint a pane switch",
+  "file-menu-render-bug: the File-tab click alone paints NOTHING (.visio-file-menu-panel stayed display:none); the panel only renders on the next App-observer re-render, which this census triggers with a REAL mouse drag of a diagram node (the drag runs flowchart.moveNode → markModified() → visioStore.isModified flips, and the App root observer reads isModified in render). The Viewport that owns the panel does not observe isFileMenuOpen/activeFileMenuPanel — the visio twin of the documented word/sheet File-menu bug. Every dialog pane below is censused through that side channel, one fresh page per entry, because no second re-render exists to paint a pane switch",
   "file-menu-no-close: a real click on the now-visible Back entry flips isFileMenuOpen in the store but the panel STAYS painted (block) — the same missing-observer re-render that made the File-tab click paint nothing also makes the menu impossible to close for the user",
   "file-menu-dead-entries: 2 dialog-declaring entries reach no dialog surface (Save Copy as...[menu stayed open but the entry activated no pane and no <dialog> — a dialog-declaring entry whose pane this build never renders], Rename...[menu stayed open but the entry activated no pane and no <dialog> — a dialog-declaring entry whose pane this build never renders]) — they either close the menu (non-pane action) or declare a pane the build never renders",
   "file-menu-panes-never-paint: 6 dialog panes ACTIVATE but never paint — their pane box is statically display:none (panelBox in the visio FileMenu), so the pane is w=0/h=0 and no real click can reach it: New→Create New, Download as...→Download as, Print→Print Preview, Document Info...→Document Info, Advanced Settings...→Advanced Settings, Help...→Help. The census enumerates each pane's shipped controls from the DOM it mounts and fires them with SYNTHETIC domDrill clicks (none portals a real <dialog>), but only the portaled ExportWizard <dialog> (1 surface painted) is actually clickable by a user",
