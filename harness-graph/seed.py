@@ -57,9 +57,14 @@ def _resolve_server() -> Path:
         p = Path(env)
         if (p / "opencloud-docserver").is_dir():
             return p
-        raise SystemExit(f"WO_SERVER_DIR={env} is not a server checkout (no opencloud-docserver/)")
+        # Rust canonical server (2026-10-14+): Cargo workspace + core/crates/wo-docserver
+        if (p / "Cargo.toml").is_file() and (p / "core" / "crates" / "wo-docserver").is_dir():
+            return p
+        raise SystemExit(f"WO_SERVER_DIR={env} is not a server checkout (no opencloud-docserver/ nor core/crates/wo-docserver/)")
     cand = HARNESS_ROOT.parent / "server"
     if (cand / "opencloud-docserver").is_dir():
+        return cand
+    if (cand / "Cargo.toml").is_file() and (cand / "core" / "crates" / "wo-docserver").is_dir():
         return cand
     # legacy: this repo used to live at <server>/scripts/harness-graph
     if (HARNESS_ROOT.parent / "opencloud-docserver").is_dir():
@@ -70,13 +75,20 @@ def _resolve_server() -> Path:
 
 
 SERVER = _resolve_server()
+_LEGACY = SERVER / "opencloud-docserver"
+_RUST_UI = SERVER / "apps" / "web" / "apps" / "documenteditor-wysiwyg"
 DEFAULTS = {
     "features": HERE / "features.yaml",
-    "editor_js": SERVER / "opencloud-docserver" / "web" / "editor.js",
-    "index_html": SERVER / "opencloud-docserver" / "web" / "index.html",
+    # Rust canonical sources first; legacy python tree retained only if present.
+    "editor_js": (_RUST_UI / "editor.js" if (_RUST_UI / "editor.js").exists()
+                  else _LEGACY / "web" / "editor.js"),
+    "index_html": (_RUST_UI / "index.html" if (_RUST_UI / "index.html").exists()
+                   else _LEGACY / "web" / "index.html"),
+    # python e2e/unit roots are gone on the canonical rust stack; build_graph
+    # already skips missing roots, so coverage honestly reports what exists.
     "pytest_roots": [
-        SERVER / "opencloud-docserver" / "e2e",
-        SERVER / "opencloud-docserver" / "tests",  # unit tests may claim coverage too
+        _LEGACY / "e2e",
+        _LEGACY / "tests",
     ],
     "out": HERE / "graph.json",
 }

@@ -38,9 +38,15 @@ def _resolve_server() -> Path:
         p = Path(env)
         if (p / "opencloud-docserver").is_dir():
             return p
-        raise SystemExit(f"WO_SERVER_DIR={env} is not a server checkout (no opencloud-docserver/)")
+        # Rust canonical server: has Cargo.toml workspace + core/crates/wo-docserver
+        if (p / "Cargo.toml").is_file() and (p / "core" / "crates" / "wo-docserver").is_dir():
+            return p
+        raise SystemExit(f"WO_SERVER_DIR={env} is not a server checkout (no opencloud-docserver/ nor core/crates/wo-docserver/)")
     cand = HARNESS_ROOT.parent / "server"
     if (cand / "opencloud-docserver").is_dir():
+        return cand
+    # Rust canonical server
+    if (cand / "Cargo.toml").is_file() and (cand / "core" / "crates" / "wo-docserver").is_dir():
         return cand
     # legacy: this repo used to live at <server>/scripts/tf-test-harness
     if (HARNESS_ROOT.parent / "opencloud-docserver").is_dir():

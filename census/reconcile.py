@@ -70,9 +70,15 @@ def resolve_server() -> Path:
         p = Path(env)
         if (p / "opencloud-docserver").is_dir():
             return p
-        raise SystemExit(f"WO_SERVER_DIR={env} is not a server checkout (no opencloud-docserver/)")
+        # Rust canonical server: has Cargo.toml workspace + core/crates/wo-docserver
+        if (p / "Cargo.toml").is_file() and (p / "core" / "crates" / "wo-docserver").is_dir():
+            return p
+        raise SystemExit(f"WO_SERVER_DIR={env} is not a server checkout (no opencloud-docserver/ nor core/crates/wo-docserver/)")
     cand = HARNESS.parent / "server"
     if (cand / "opencloud-docserver").is_dir():
+        return cand
+    # Rust canonical server
+    if (cand / "Cargo.toml").is_file() and (cand / "core" / "crates" / "wo-docserver").is_dir():
         return cand
     raise SystemExit(
         "Cannot locate server checkout: set WO_SERVER_DIR to the World-Office/server repo root"
@@ -396,7 +402,7 @@ def run_seed(check_only: bool = False) -> int:
         cmds.append([sys.executable, str(seed)])
     cmds.append([sys.executable, str(seed), "--check"])
     for c in cmds:
-        rc = subprocess.run(c, cwd=HARNESS).returncode
+        rc = subprocess.run(c, cwd=HARNESS, env=os.environ).returncode
         if rc != 0:
             return rc
     return 0
