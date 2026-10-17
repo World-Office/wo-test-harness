@@ -154,7 +154,7 @@ def build_graph(paths: dict[str, Path]) -> dict:
             rel = path.relative_to(HARNESS_ROOT).as_posix()
             pid = f"census:{rel}"
             node("Probe", pid, path=rel, layer="census")
-            for fid in set(F_ID.findall(text)):
+            for fid in sorted(set(F_ID.findall(text))):
                 edge(pid, fid, "PROBES")
 
     # ── features ─────────────────────────────────────────────────────────────
