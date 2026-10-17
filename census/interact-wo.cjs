@@ -119,8 +119,14 @@ const clickFileItem = label => {
       if (!b.cmd && !b.id) continue;   // nothing to click (separator/structural)
       let res = null;
       try {
-        if (b.cmd) await page.evaluate(bus, [b.cmd, undefined]);   // command-wired: bus dispatch
-        else await page.evaluate(id => { const e = document.getElementById(id); if (e) e.click(); }, b.id); // id-wired: real click
+        // Prefer a real DOM click whenever the button has an id: cmd-wired
+        // buttons can diverge from their data-cmd bus handler (e.g. btn-header
+        // insertHeader INSERTs DOM content via the bus but OPENS the
+        // headerfooter-dialog on click — editor.js 998 vs 5156), and the
+        // census measures click-through UI. Bus dispatch stays the fallback
+        // for id-less cmd buttons only.
+        if (b.id) await page.evaluate(id => { const e = document.getElementById(id); if (e) e.click(); }, b.id);
+        else if (b.cmd) await page.evaluate(bus, [b.cmd, undefined]);
         await sleep(140);
         res = await page.evaluate(classify);
       } catch (e) {
