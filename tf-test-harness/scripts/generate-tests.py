@@ -55,7 +55,13 @@ def _resolve_server() -> Path:
 
 
 REPO_DIR = _resolve_server()
-DOCSERVER = REPO_DIR / "opencloud-docserver"
+
+# Check if this is a Rust server layout (no opencloud-docserver)
+if (REPO_DIR / "Cargo.toml").is_file() and (REPO_DIR / "core" / "crates" / "wo-docserver").is_dir():
+    DOCSERVER = None  # Rust server has no Python docserver
+else:
+    DOCSERVER = REPO_DIR / "opencloud-docserver"
+    
 GRAPH_DIR = HARNESS_ROOT / "harness-graph"
 DEFAULT_OUTPUT = HARNESS_DIR / "config" / "tasks.json"
 
@@ -63,6 +69,8 @@ FID = re.compile(r"^F-\d{3}$")
 
 
 def collect_unit_tests() -> list[str]:
+    if DOCSERVER is None:
+        return []
     out = subprocess.run(
         ["uv", "run", "--frozen", "pytest", "--collect-only", "-q"],
         cwd=DOCSERVER, capture_output=True, text=True, check=True,
@@ -76,6 +84,8 @@ def collect_unit_tests() -> list[str]:
 
 
 def collect_e2e_tests() -> list[str]:
+    if DOCSERVER is None:
+        return []
     e2e = DOCSERVER / "e2e"
     return sorted(
         f"opencloud-docserver/e2e/{p.name}" for p in e2e.glob("test_*.py")
