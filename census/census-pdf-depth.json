@@ -7,12 +7,12 @@
    {
     "check": "editor-mounted",
     "ok": true,
-    "detail": ".pdf-viewport mounted + 42 toolbar/surface controls censused"
+    "detail": ".pdf-viewport mounted + 43 toolbar/surface controls censused"
    },
    {
     "check": "overlay-seen",
     "ok": true,
-    "detail": "6 controls opened an overlay ({\"none\":36,\"widget\":2,\"panel\":4})"
+    "detail": "10 controls opened an overlay ({\"none\":33,\"panel\":9,\"widget\":1})"
    },
    {
     "check": "file-menu-open",
@@ -28,7 +28,7 @@
   "failedChecks": []
  },
  "engine": "worldoffice-react-pdf",
- "capturedAt": "2026-10-17T00:51:49.150Z",
+ "capturedAt": "2026-10-17T02:12:30.972Z",
  "url": "http://192.168.42.42:8086/pdf/",
  "viewport": {
   "width": 1600,
@@ -593,17 +593,17 @@
    "tag": "button",
    "clicked": "real",
    "opened": true,
-   "kind": "widget",
+   "kind": "panel",
    "dialogDepth": 0,
-   "overlayDepth": 1,
+   "overlayDepth": 2,
    "toggled": false,
    "chain": [],
    "layer": {
-    "kind": "widget",
-    "label": "find-widget",
-    "w": 419,
-    "h": 33,
-    "buttons": 0
+    "kind": "panel",
+    "label": "search-panel",
+    "w": 0,
+    "h": 934,
+    "buttons": 3
    },
    "note": ""
   },
@@ -809,7 +809,7 @@
    "layer": {
     "kind": "panel",
     "label": "thumbnails-panel",
-    "w": 265,
+    "w": 16,
     "h": 950,
     "buttons": 0
    },
@@ -820,13 +820,19 @@
    "control": "Search",
    "tag": "button",
    "clicked": "real",
-   "opened": false,
-   "kind": "none",
+   "opened": true,
+   "kind": "panel",
    "dialogDepth": 0,
-   "overlayDepth": 0,
-   "toggled": true,
+   "overlayDepth": 1,
+   "toggled": false,
    "chain": [],
-   "layer": null,
+   "layer": {
+    "kind": "panel",
+    "label": "search-panel",
+    "w": 0,
+    "h": 934,
+    "buttons": 3
+   },
    "note": ""
   },
   {
@@ -834,13 +840,19 @@
    "control": "Comments",
    "tag": "button",
    "clicked": "real",
-   "opened": false,
-   "kind": "none",
+   "opened": true,
+   "kind": "panel",
    "dialogDepth": 0,
-   "overlayDepth": 0,
-   "toggled": true,
+   "overlayDepth": 1,
+   "toggled": false,
    "chain": [],
-   "layer": null,
+   "layer": {
+    "kind": "panel",
+    "label": "comments-panel",
+    "w": 0,
+    "h": 934,
+    "buttons": 1
+   },
    "note": ""
   },
   {
@@ -857,9 +869,9 @@
    "layer": {
     "kind": "panel",
     "label": "chat-panel",
-    "w": 249,
+    "w": 0,
     "h": 934,
-    "buttons": 0
+    "buttons": 1
    },
    "note": ""
   },
@@ -868,13 +880,19 @@
    "control": "Navigation",
    "tag": "button",
    "clicked": "real",
-   "opened": false,
-   "kind": "none",
+   "opened": true,
+   "kind": "panel",
    "dialogDepth": 0,
-   "overlayDepth": 0,
-   "toggled": true,
+   "overlayDepth": 1,
+   "toggled": false,
    "chain": [],
-   "layer": null,
+   "layer": {
+    "kind": "panel",
+    "label": "navigation-panel",
+    "w": 0,
+    "h": 934,
+    "buttons": 5
+   },
    "note": ""
   },
   {
@@ -891,9 +909,29 @@
    "layer": {
     "kind": "panel",
     "label": "thumbnails-panel",
-    "w": 265,
+    "w": 16,
     "h": 950,
     "buttons": 0
+   },
+   "note": ""
+  },
+  {
+   "surface": "left-menu",
+   "control": "Support",
+   "tag": "button",
+   "clicked": "real",
+   "opened": true,
+   "kind": "panel",
+   "dialogDepth": 0,
+   "overlayDepth": 1,
+   "toggled": false,
+   "chain": [],
+   "layer": {
+    "kind": "panel",
+    "label": "support-panel",
+    "w": 0,
+    "h": 934,
+    "buttons": 6
    },
    "note": ""
   },
@@ -912,8 +950,8 @@
     "kind": "panel",
     "label": "about",
     "w": 1640,
-    "h": 1000,
-    "buttons": 0
+    "h": 934,
+    "buttons": 1
    },
    "note": ""
   },
@@ -949,7 +987,7 @@
    "surface": "statusbar",
    "control": "Select Tool",
    "tag": "button",
-   "clicked": true,
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -957,13 +995,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:true"
+   "note": ""
   },
   {
    "surface": "statusbar",
    "control": "Hand Tool",
    "tag": "button",
-   "clicked": true,
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -971,13 +1009,13 @@
    "toggled": true,
    "chain": [],
    "layer": null,
-   "note": "click:true"
+   "note": ""
   },
   {
    "surface": "statusbar",
    "control": "Fit to page",
    "tag": "button",
-   "clicked": true,
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -985,13 +1023,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:true"
+   "note": ""
   },
   {
    "surface": "statusbar",
    "control": "Fit to width",
    "tag": "button",
-   "clicked": true,
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -999,13 +1037,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:true"
+   "note": ""
   },
   {
    "surface": "statusbar",
    "control": "Zoom Out",
    "tag": "button",
-   "clicked": true,
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1013,13 +1051,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:true"
+   "note": ""
   },
   {
    "surface": "statusbar",
    "control": "Zoom In",
    "tag": "button",
-   "clicked": true,
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1027,7 +1065,7 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:true"
+   "note": ""
   }
  ],
  "summary": {
@@ -1038,25 +1076,20 @@
    "left-menu",
    "statusbar"
   ],
-  "controls": 42,
-  "opened": 6,
-  "toggledOnly": 4,
+  "controls": 43,
+  "opened": 10,
+  "toggledOnly": 1,
   "byKind": {
-   "none": 36,
-   "widget": 2,
-   "panel": 4
+   "none": 33,
+   "panel": 9,
+   "widget": 1
   },
   "dialogs": 0,
   "domDialogElements": 0,
   "maxDialogDepth": 1,
-  "maxOverlayDepth": 1,
+  "maxOverlayDepth": 2,
   "deepest": [
-   "toolbar:Home/Find -> widget",
-   "toolbar:Home/Replace -> widget",
-   "toolbar:View/Toggle Minimap -> panel",
-   "left-menu/Chat -> panel",
-   "left-menu/Thumbnails -> panel",
-   "left-menu/About -> panel"
+   "toolbar:Home/Find -> panel"
   ],
   "fileMenuItems": 9,
   "fileMenuOpened": true,
@@ -1067,7 +1100,7 @@
   "maxFileMenuDialogDepth": 1
  },
  "findings": [
-  "toggle-without-overlay: 4 controls flip their own active/pressed state but open nothing (left-menu/Search, left-menu/Comments, left-menu/Navigation, statusbar/Hand Tool)",
-  "32/42 controls open no overlay and expose no toggle state (direct-action or no-op — not decidable from the DOM): toolbar:Home/Go to first page, toolbar:Home/Go to previous page, toolbar:Home/Go to next page, toolbar:Home/Go to last page, toolbar:Home/Zoom level, toolbar:Home/Fit the page to the viewport, toolbar:Home/Fit to the width of the viewport, toolbar:Home/Toggle edit mode, toolbar:Home/Select tool, toolbar:Home/Hand tool for panning, toolbar:Home/Cut, toolbar:Home/Copy …"
+  "toggle-without-overlay: 1 controls flip their own active/pressed state but open nothing (statusbar/Hand Tool)",
+  "32/43 controls open no overlay and expose no toggle state (direct-action or no-op — not decidable from the DOM): toolbar:Home/Go to first page, toolbar:Home/Go to previous page, toolbar:Home/Go to next page, toolbar:Home/Go to last page, toolbar:Home/Zoom level, toolbar:Home/Fit the page to the viewport, toolbar:Home/Fit to the width of the viewport, toolbar:Home/Toggle edit mode, toolbar:Home/Select tool, toolbar:Home/Hand tool for panning, toolbar:Home/Cut, toolbar:Home/Copy …"
  ]
 }

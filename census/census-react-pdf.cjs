@@ -140,12 +140,14 @@ const PROBE_LAYERS = () => {
   for (const [sel, name] of [
     ['.pdf-file-menu-panel', 'file-menu'],
     ['.pdf-about-menu-panel', 'about'],
-    // left-menu rail panels: the thumbnails deck and the chat side panel are
-    // the only rail contents this build mounts inside .pdf-left-panel-side
-    // (search/comments/navigation/about render nothing; the wrapper itself is
-    // an always-present DIV, so only its CONTENT counts as a layer)
+    // left-menu rail panels (WIRED-SLIDE-PDF-LEFTMENU mounts real panels per
+    // toggle: search/comments/navigation/support/chat + thumbnails deck)
     ['.pdf-thumbnail-panel', 'thumbnails-panel'],
-    ['.pdf-left-panel-chat', 'chat-panel'],
+    ['.pdf-search-panel', 'search-panel'],
+    ['.pdf-comments-panel', 'comments-panel'],
+    ['.pdf-navigation-panel', 'navigation-panel'],
+    ['.pdf-chat-panel', 'chat-panel'],
+    ['.pdf-support-panel', 'support-panel'],
   ]) {
     const el = document.querySelector(sel);
     if (el && vis(el)) {

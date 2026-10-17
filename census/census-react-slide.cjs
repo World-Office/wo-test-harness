@@ -142,11 +142,13 @@ const PROBE_LAYERS = () => {
   for (const [sel, name] of [
     ['.prese-file-menu-panel', 'file-menu'],
     ['.prese-about-menu-panel', 'about'],
-    // left-menu rail panels: the slides thumbnail deck and the chat side
-    // panel are the only rail contents this build mounts inside
-    // .prese-left-panel-side (search/comments/support/about render nothing)
+    // left-menu rail panels (WIRED-SLIDE-PDF-LEFTMENU mounts real panels per
+    // toggle: search/comments/support/chat + the slides thumbnail deck)
     ['.prese-slide-thumbnails', 'slides-panel'],
-    ['.prese-left-panel-chat', 'chat-panel'],
+    ['.prese-search-panel', 'search-panel'],
+    ['.prese-comments-panel', 'comments-panel'],
+    ['.prese-chat-panel', 'chat-panel'],
+    ['.prese-support-panel', 'support-panel'],
   ]) {
     const el = document.querySelector(sel);
     if (el && vis(el)) {

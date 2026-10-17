@@ -12,7 +12,7 @@
    {
     "check": "overlay-seen",
     "ok": true,
-    "detail": "4 controls opened an overlay ({\"none\":87,\"menu\":1,\"panel\":3})"
+    "detail": "7 controls opened an overlay ({\"none\":84,\"menu\":1,\"panel\":6})"
    },
    {
     "check": "file-menu-open",
@@ -28,7 +28,7 @@
   "failedChecks": []
  },
  "engine": "worldoffice-react-slide",
- "capturedAt": "2026-10-16T13:20:46.413Z",
+ "capturedAt": "2026-10-17T02:06:27.459Z",
  "url": "http://192.168.42.42:8086/slide/",
  "viewport": {
   "width": 1600,
@@ -1775,13 +1775,19 @@
    "control": "Search",
    "tag": "button",
    "clicked": "real",
-   "opened": false,
-   "kind": "none",
+   "opened": true,
+   "kind": "panel",
    "dialogDepth": 0,
-   "overlayDepth": 0,
-   "toggled": true,
+   "overlayDepth": 1,
+   "toggled": false,
    "chain": [],
-   "layer": null,
+   "layer": {
+    "kind": "panel",
+    "label": "search-panel",
+    "w": 249,
+    "h": 934,
+    "buttons": 3
+   },
    "note": ""
   },
   {
@@ -1798,7 +1804,7 @@
    "layer": {
     "kind": "panel",
     "label": "slides-panel",
-    "w": 0,
+    "w": 249,
     "h": 934,
     "buttons": 7
    },
@@ -1809,13 +1815,19 @@
    "control": "Comments",
    "tag": "button",
    "clicked": "real",
-   "opened": false,
-   "kind": "none",
+   "opened": true,
+   "kind": "panel",
    "dialogDepth": 0,
-   "overlayDepth": 0,
-   "toggled": true,
+   "overlayDepth": 1,
+   "toggled": false,
    "chain": [],
-   "layer": null,
+   "layer": {
+    "kind": "panel",
+    "label": "comments-panel",
+    "w": 249,
+    "h": 934,
+    "buttons": 1
+   },
    "note": ""
   },
   {
@@ -1832,9 +1844,9 @@
    "layer": {
     "kind": "panel",
     "label": "chat-panel",
-    "w": 0,
+    "w": 249,
     "h": 934,
-    "buttons": 0
+    "buttons": 1
    },
    "note": ""
   },
@@ -1843,13 +1855,19 @@
    "control": "Support",
    "tag": "button",
    "clicked": "real",
-   "opened": false,
-   "kind": "none",
+   "opened": true,
+   "kind": "panel",
    "dialogDepth": 0,
-   "overlayDepth": 0,
-   "toggled": true,
+   "overlayDepth": 1,
+   "toggled": false,
    "chain": [],
-   "layer": null,
+   "layer": {
+    "kind": "panel",
+    "label": "support-panel",
+    "w": 249,
+    "h": 934,
+    "buttons": 5
+   },
    "note": ""
   },
   {
@@ -1867,8 +1885,8 @@
     "kind": "panel",
     "label": "about",
     "w": 1640,
-    "h": 1000,
-    "buttons": 0
+    "h": 934,
+    "buttons": 1
    },
    "note": ""
   },
@@ -1904,7 +1922,7 @@
    "surface": "statusbar",
    "control": "Slideshow",
    "tag": "button",
-   "clicked": true,
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1912,13 +1930,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:true"
+   "note": ""
   },
   {
    "surface": "statusbar",
    "control": "Language",
    "tag": "select",
-   "clicked": true,
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1926,13 +1944,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:true"
+   "note": ""
   },
   {
    "surface": "statusbar",
    "control": "Fit to page",
    "tag": "button",
-   "clicked": true,
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1940,13 +1958,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:true"
+   "note": ""
   },
   {
    "surface": "statusbar",
    "control": "Fit to width",
    "tag": "button",
-   "clicked": true,
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1954,13 +1972,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:true"
+   "note": ""
   },
   {
    "surface": "statusbar",
    "control": "Zoom Out",
    "tag": "button",
-   "clicked": true,
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1968,13 +1986,13 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:true"
+   "note": ""
   },
   {
    "surface": "statusbar",
    "control": "Zoom In",
    "tag": "button",
-   "clicked": true,
+   "clicked": "real",
    "opened": false,
    "kind": "none",
    "dialogDepth": 0,
@@ -1982,7 +2000,7 @@
    "toggled": false,
    "chain": [],
    "layer": null,
-   "note": "click:true"
+   "note": ""
   }
  ],
  "summary": {
@@ -1994,12 +2012,12 @@
    "statusbar"
   ],
   "controls": 91,
-  "opened": 4,
-  "toggledOnly": 3,
+  "opened": 7,
+  "toggledOnly": 0,
   "byKind": {
-   "none": 87,
+   "none": 84,
    "menu": 1,
-   "panel": 3
+   "panel": 6
   },
   "dialogs": 0,
   "domDialogElements": 0,
@@ -2007,8 +2025,11 @@
   "maxOverlayDepth": 1,
   "deepest": [
    "toolbar:Home/Color -> menu",
+   "left-menu/Search -> panel",
    "left-menu/Slides -> panel",
+   "left-menu/Comments -> panel",
    "left-menu/Chat -> panel",
+   "left-menu/Support -> panel",
    "left-menu/About -> panel"
   ],
   "fileMenuItems": 16,
@@ -2020,7 +2041,6 @@
   "maxFileMenuDialogDepth": 1
  },
  "findings": [
-  "toggle-without-overlay: 3 controls flip their own active/pressed state but open nothing (left-menu/Search, left-menu/Comments, left-menu/Support)",
   "84/91 controls open no overlay and expose no toggle state (direct-action or no-op — not decidable from the DOM): toolbar:Home/Cut, toolbar:Home/Copy, toolbar:Home/Paste, toolbar:Home/Painter, toolbar:Home/New Slide, toolbar:Home/First, toolbar:Home/Previous, toolbar:Home/Next, toolbar:Home/Last, toolbar:Home/Bold, toolbar:Home/Italic, toolbar:Home/Underline …"
  ]
 }
