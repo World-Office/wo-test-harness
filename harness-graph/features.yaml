@@ -243,8 +243,8 @@ features:
   - {id: F-209, area: sheet,     name: XLSB read,                          parity: real, fidelity: L4,
       divergence: [{ref: oo-core, justification: "OOXML/XlsbFormat exists in core; WO has none."},
           {ref: probe, date: 2026-10-11, server: "f3eff0282", justification: "PROBED + LOCKED: wo-msbinary BIFF12 reader (record stream: 1-2-byte type + 1-4-byte varint len; workbook.bin BrtBundleSh sheets, sharedStrings.bin BrtSSTItem, sheet BrtRowHdr + BrtCellIsst/Real/Rk/St/Bool/Error/FmlaString-cached; stops at first EndBundleShs/EndSheetData to ignore producer update-copies) + XlsbToWoSpreadsheetConverter registered in wo-x2t (zip parts + workbook.bin.rels). Hand-built fixture cross-validated with independent pyxlsb; real LibreOffice/Euro-Office example .xlsb files match pyxlsb cell-for-cell (1.0, qwerty). Read-only: formatting/pivots/charts out of scope (fidelity L4 keeps that ceiling)."}]}
-  - {id: F-210, area: sheet,     name: ODS write,                          parity: missing, fidelity: L4,
-      divergence: [{ref: oo-core, justification: "OdfFile ships a full Writer engine; WO has ODT-adjacent doc work only."}]}
+  - {id: F-210, area: sheet,     name: ODS write,                          parity: partial, fidelity: L4,
+      divergence: [{ref: rust-impl, justification: "Register said missing (OdfFile-only Writer). Landed 2026-10-18: wo-sheet export_ods() converts Workbook -> ODF Spreadsheet via wo-odf (text/number/formula/bool/date cells, container zip + mimetype), round-trip tested (wo-sheet/export.rs, tagged F-210, server 435324458); COVERED in the graph. Stays partial, not full: merged cells, column widths, styles, and ODS *read* remain open."}]}
 
   # ── slides (derived 2026-10-09 from OO core C++: OOXML/PPTXFormat, MsBinaryFile/PptFile, OdfFile) ─────────────
   - {id: F-300, area: slide,     name: PPTX part inventory round-trip,    parity: real, fidelity: L1,
