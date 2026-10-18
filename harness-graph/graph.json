@@ -426,6 +426,21 @@
    "type": "PROBES"
   },
   {
+   "from": "tests/core/crates/wo-docserver/src/wopi.rs::test_jwt_expired_token_rejected",
+   "to": "F-001",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-docserver/src/wopi.rs::test_jwt_invalid_secret_rejected",
+   "to": "F-001",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-docserver/src/wopi.rs::test_jwt_roundtrip",
+   "to": "F-001",
+   "type": "COVERS"
+  },
+  {
    "from": "F-010",
    "to": "bold",
    "type": "IMPLEMENTED_BY"
@@ -576,6 +591,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-docserver/src/ai.rs::provider_config_shapes",
+   "to": "F-142",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-docserver/src/ai.rs::tool_catalog_shapes",
    "to": "F-142",
    "type": "COVERS"
@@ -586,6 +606,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-docserver/src/ai.rs::provider_config_shapes",
+   "to": "F-148",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-docserver/src/ai.rs::tool_catalog_shapes",
    "to": "F-148",
    "type": "COVERS"
@@ -601,6 +626,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-docserver/src/ai.rs::provider_config_shapes",
+   "to": "F-149",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-docserver/src/ai.rs::tool_catalog_shapes",
    "to": "F-149",
    "type": "COVERS"
@@ -611,12 +641,22 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-docserver/src/ai.rs::provider_config_shapes",
+   "to": "F-150",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-docserver/src/ai.rs::tool_catalog_shapes",
    "to": "F-150",
    "type": "COVERS"
   },
   {
    "from": "tests/core/crates/wo-docserver/src/ai.rs::clean_markdown_strips_fences",
+   "to": "F-152",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-docserver/src/ai.rs::provider_config_shapes",
    "to": "F-152",
    "type": "COVERS"
   },
@@ -631,6 +671,211 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_calc_mode_serde",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_serde",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_style_default_serde_compact",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_style_serde",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_value_from_formula",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_with_formula",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_conditional_rule_all_variants_serde",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_conditional_rule_serde",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_date_period_serde",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_defined_name",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_defined_name_serde_optional_fields",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_delete",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_format",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_insert",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_insert_invert_roundtrip",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_invert_insert",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_move_unsupported",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_replace",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_to_ops_since",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_merge_range",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_contains",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_edge_cases",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_cell_operations",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_cell_value_string",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_fields",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_frozen",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_merged_cells",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_all_variants_serde",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_extended_serde",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_serde",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_key_serde",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_order_serde",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_active_sheet",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_creation",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_fields",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_get_sheet_by_index",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_get_sheet_by_name",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_remove_sheet",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_roundtrip",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_block_element_to_xhtml_all_variants",
    "to": "F-200",
    "type": "COVERS"
@@ -2561,6 +2806,211 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_calc_mode_serde",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_serde",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_style_default_serde_compact",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_style_serde",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_value_from_formula",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_with_formula",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_conditional_rule_all_variants_serde",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_conditional_rule_serde",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_date_period_serde",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_defined_name",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_defined_name_serde_optional_fields",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_delete",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_format",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_insert",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_insert_invert_roundtrip",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_invert_insert",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_move_unsupported",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_replace",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_to_ops_since",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_merge_range",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_contains",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_edge_cases",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_cell_operations",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_cell_value_string",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_fields",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_frozen",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_merged_cells",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_all_variants_serde",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_extended_serde",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_serde",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_key_serde",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_order_serde",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_active_sheet",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_creation",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_fields",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_get_sheet_by_index",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_get_sheet_by_name",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_remove_sheet",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_roundtrip",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_block_element_to_xhtml_all_variants",
    "to": "F-201",
    "type": "COVERS"
@@ -4491,6 +4941,211 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_calc_mode_serde",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_serde",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_style_default_serde_compact",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_style_serde",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_value_from_formula",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_with_formula",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_conditional_rule_all_variants_serde",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_conditional_rule_serde",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_date_period_serde",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_defined_name",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_defined_name_serde_optional_fields",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_delete",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_format",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_insert",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_insert_invert_roundtrip",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_invert_insert",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_move_unsupported",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_replace",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_to_ops_since",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_merge_range",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_contains",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_edge_cases",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_cell_operations",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_cell_value_string",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_fields",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_frozen",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_merged_cells",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_all_variants_serde",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_extended_serde",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_serde",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_key_serde",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_order_serde",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_active_sheet",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_creation",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_fields",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_get_sheet_by_index",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_get_sheet_by_name",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_remove_sheet",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_roundtrip",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_block_element_to_xhtml_all_variants",
    "to": "F-203",
    "type": "COVERS"
@@ -6421,6 +7076,211 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_calc_mode_serde",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_serde",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_style_default_serde_compact",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_style_serde",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_value_from_formula",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_with_formula",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_conditional_rule_all_variants_serde",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_conditional_rule_serde",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_date_period_serde",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_defined_name",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_defined_name_serde_optional_fields",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_delete",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_format",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_insert",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_insert_invert_roundtrip",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_invert_insert",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_move_unsupported",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_replace",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_to_ops_since",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_merge_range",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_contains",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_edge_cases",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_cell_operations",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_cell_value_string",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_fields",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_frozen",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_merged_cells",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_all_variants_serde",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_extended_serde",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_serde",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_key_serde",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_order_serde",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_active_sheet",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_creation",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_fields",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_get_sheet_by_index",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_get_sheet_by_name",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_remove_sheet",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_roundtrip",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_block_element_to_xhtml_all_variants",
    "to": "F-204",
    "type": "COVERS"
@@ -8348,6 +9208,271 @@
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xps_to_txt_parse_error",
    "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_calc_mode_serde",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_serde",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_style_default_serde_compact",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_style_serde",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_value_from_formula",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_with_formula",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_conditional_rule_all_variants_serde",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_conditional_rule_serde",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_date_period_serde",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_defined_name",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_defined_name_serde_optional_fields",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_delete",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_format",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_insert",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_insert_invert_roundtrip",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_invert_insert",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_move_unsupported",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_replace",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_to_ops_since",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_merge_range",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_contains",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_edge_cases",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_cell_operations",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_cell_value_string",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_fields",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_frozen",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_merged_cells",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_all_variants_serde",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_extended_serde",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_serde",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_key_serde",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_order_serde",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_active_sheet",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_creation",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_fields",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_get_sheet_by_index",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_get_sheet_by_name",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_remove_sheet",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_roundtrip",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/pivot.rs::test_agg_func_labels",
+   "to": "F-207",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_average_by_region_and_category",
+   "to": "F-207",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_config_serde",
+   "to": "F-207",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_count_by_dept_and_gender",
+   "to": "F-207",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_empty_source",
+   "to": "F-207",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_field_creation",
+   "to": "F-207",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_max_aggregation",
+   "to": "F-207",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_min_aggregation",
+   "to": "F-207",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_multiple_value_fields",
+   "to": "F-207",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_result_serde",
+   "to": "F-207",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_simple_sum_by_region",
+   "to": "F-207",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_with_column_fields",
+   "to": "F-207",
    "type": "COVERS"
   },
   {
@@ -12241,6 +13366,101 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_add_master",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_add_slide",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_auto_shape_serde",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_chart_ref_serde",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_connector_shape_type_display",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_get_slide",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_master_type_alias",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_model_error_display",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_contract_compliance",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_default",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_serde_roundtrip",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_with_background_serde",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_with_masters_serde",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_with_size",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_with_transition_serde",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_set_theme",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_shape_enum_completeness",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_shape_serde_roundtrip",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_slide_size_serde",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_block_element_to_xhtml_all_variants",
    "to": "F-300",
    "type": "COVERS"
@@ -14168,6 +15388,196 @@
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xps_to_txt_parse_error",
    "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_add_master",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_add_slide",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_auto_shape_serde",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_chart_ref_serde",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_connector_shape_type_display",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_get_slide",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_master_type_alias",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_model_error_display",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_contract_compliance",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_default",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_serde_roundtrip",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_with_background_serde",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_with_masters_serde",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_with_size",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_with_transition_serde",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_set_theme",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_shape_enum_completeness",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_shape_serde_roundtrip",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_slide_size_serde",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_add_master",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_add_slide",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_auto_shape_serde",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_chart_ref_serde",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_connector_shape_type_display",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_get_slide",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_master_type_alias",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_model_error_display",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_contract_compliance",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_default",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_serde_roundtrip",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_with_background_serde",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_with_masters_serde",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_with_size",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_presentation_with_transition_serde",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_set_theme",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_shape_enum_completeness",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_shape_serde_roundtrip",
+   "to": "F-304",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/model.rs::test_slide_size_serde",
+   "to": "F-304",
    "type": "COVERS"
   },
   {
@@ -22511,7 +23921,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-18T19:43:55+00:00",
+ "generated_at": "2026-10-18T21:02:05+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -23345,6 +24755,12 @@
    "path": "ore/crates/wo-docserver/src/ai.rs"
   },
   {
+   "id": "tests/core/crates/wo-docserver/src/ai.rs::provider_config_shapes",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-docserver/src/ai.rs"
+  },
+  {
    "id": "tests/core/crates/wo-docserver/src/ai.rs::tool_catalog_shapes",
    "label": "Test",
    "layer": "rust",
@@ -23355,6 +24771,24 @@
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-docserver/src/lib.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-docserver/src/wopi.rs::test_jwt_expired_token_rejected",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-docserver/src/wopi.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-docserver/src/wopi.rs::test_jwt_invalid_secret_rejected",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-docserver/src/wopi.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-docserver/src/wopi.rs::test_jwt_roundtrip",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-docserver/src/wopi.rs"
   },
   {
    "id": "tests/core/crates/wo-msbinary/src/biff8.rs::test_decode_rk_int_vs_float",
@@ -23415,6 +24849,438 @@
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-msbinary/src/xlsb.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_calc_mode_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_cell_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_cell_style_default_serde_compact",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_cell_style_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_cell_value_from_formula",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_cell_with_formula",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_conditional_rule_all_variants_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_conditional_rule_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_date_period_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_defined_name",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_defined_name_serde_optional_fields",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_delete",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_format",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_insert",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_insert_invert_roundtrip",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_invert_insert",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_move_unsupported",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_replace",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_to_ops_since",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_merge_range",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_contains",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_edge_cases",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_cell_operations",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_cell_value_string",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_fields",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_frozen",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_merged_cells",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_all_variants_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_extended_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_sort_key_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_sort_order_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_active_sheet",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_creation",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_fields",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_get_sheet_by_index",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_get_sheet_by_name",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_remove_sheet",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_roundtrip",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/pivot.rs::test_agg_func_labels",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/pivot.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_average_by_region_and_category",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/pivot.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_config_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/pivot.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_count_by_dept_and_gender",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/pivot.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_empty_source",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/pivot.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_field_creation",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/pivot.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_max_aggregation",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/pivot.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_min_aggregation",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/pivot.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_multiple_value_fields",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/pivot.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_result_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/pivot.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_simple_sum_by_region",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/pivot.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/pivot.rs::test_pivot_with_column_fields",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/pivot.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_add_master",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_add_slide",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_auto_shape_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_chart_ref_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_connector_shape_type_display",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_get_slide",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_master_type_alias",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_model_error_display",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_presentation_contract_compliance",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_presentation_default",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_presentation_serde_roundtrip",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_presentation_with_background_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_presentation_with_masters_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_presentation_with_size",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_presentation_with_transition_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_set_theme",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_shape_enum_completeness",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_shape_serde_roundtrip",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/model.rs::test_slide_size_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/model.rs"
   },
   {
    "id": "tests/core/crates/wo-x2t/src/converters.rs::test_block_element_to_xhtml_all_variants",
@@ -27512,10 +29378,10 @@
  ],
  "stats": {
   "commands": 75,
-  "edges": 4502,
+  "edges": 4784,
   "features": 137,
   "surfaces": 75,
-  "tests": 423
+  "tests": 499
  },
  "version": 1
 }
