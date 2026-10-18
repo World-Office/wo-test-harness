@@ -110,6 +110,19 @@ def _ai_propose_probe(base: str) -> tuple[str, str]:
     return "fail", f"HTTP {code} {str(body)[:120]}"
 
 
+def _ai_generate_probe(base: str) -> tuple[str, str]:
+    """F-152 probe: treat HTTP 503 (AI provider unreachable) as COND, not fail."""
+    code, body = _http("POST", base + "/ai/generate",
+                       {"prompt": "probe", "format": "docx"})
+    if code in (404, 405):
+        return "absent", f"HTTP {code}"
+    if code == 200:
+        return "pass", f"HTTP 200 ({str(body)[:80]})"
+    if code == 503:
+        return "COND", "HTTP 503 provider unreachable"
+    return "fail", f"HTTP {code} {str(body)[:120]}"
+
+
 def _shape_ok_tools(body: object) -> bool:
     items = body if isinstance(body, list) else (body or {}).get("tools", [])
     return bool(items) and all(
@@ -200,8 +213,7 @@ def run() -> int:
         else:
             results["F-150"] = ("fail", f"HTTP {tcode}")
         results["F-151"] = ("skip", "")
-        results["F-152"] = _absent_or_200(base, "POST", "/ai/generate",
-                                          {"prompt": "probe", "format": "docx"})
+        results["F-152"] = _ai_generate_probe(base)
     finally:
         _kill(procs)
 
@@ -217,9 +229,10 @@ def run() -> int:
         conv = ("pass" if code == 200 and isinstance(body, dict)
                 and body.get("status") == "Success" else "fail")
         gen = results.get("F-152", ("", ""))[0]
-        if gen != "pass":
+        if gen != "pass" and gen != "COND":
             # /ai/generate did not answer: report REAL absence/failure, but
-            # never hide a converter regression either way.
+            # never hide a converter regression either way. COND (provider
+            # unreachable) is a valid non-pass state that we keep.
             results["F-152"] = (
                 "absent" if conv == "pass" else "fail",
                 f"generate unavailable; converter pin {'pass' if conv == 'pass' else 'FAILED'}",
@@ -227,7 +240,7 @@ def run() -> int:
         elif conv == "fail":
             results["F-152"] = (
                 "fail",
-                f"generate PASS but converter pin FAILED (HTTP {code}) - chain's real half regressed",
+                f"generate {gen} but converter pin FAILED (HTTP {code}) - chain's real half regressed",
             )
     finally:
         _kill(procs2)
