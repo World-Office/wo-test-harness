@@ -229,7 +229,8 @@ features:
       divergence: [{ref: oo-core, justification: "DECISION documented 2026-10-10 (server eaf34c584): calcChain.xml is OMITTED on rewrite; spreadsheet apps rebuild it lazily (OO's XlsxFormat accepts this). Comment in wo-x2t sheet->xlsx writer. No generation wired by design."}]}
   - {id: F-204, area: sheet,     name: Cell address + type model,          parity: partial, fidelity: L1,
       divergence: [{ref: oo-core, justification: "r=A1 addressing and n/s/b/str/e type incl. empty-cell elision (XlsxFormat worksheets). wo-sheet ops exist; fidelity unprobed. PROBED: r-addr + t=s kept; never-set D7 elided."}]}
-  - {id: F-205, area: sheet,     name: Workbook map + defined names,       parity: missing, fidelity: L1}
+  - {id: F-205, area: sheet,     name: Workbook map + defined names,       parity: partial, fidelity: L1,
+      divergence: [{ref: rust-impl, justification: "Register said missing (spec row only). Landed 2026-10-18: wo-sheet implements Workbook map + DefinedName (test_workbook_fields / test_defined_name, tagged in coverage round S1 3ba71448f) and the graph reports COVERED F-205. Upped missing->partial, not full: cross-sheet defined-name evaluation and OO row/col-reference semantics remain open."}]}
   - {id: F-206, area: sheet,     name: Chart part preservation,            parity: real, fidelity: L1,
       divergence: [{ref: oo-core, justification: "Charts live under xl/charts via drawings (XlsxFormat/Chart); WO must preserve even when it cannot render."},
           {ref: probe, date: 2026-10-11, server: "b4d419c81", justification: "LOCKED: chart1.xml (and its rels under xl/charts/_rels) round-trip byte-identical via extra_parts; covered by test_xlsx_extra_parts_byte_faithful_roundtrip."}]}
