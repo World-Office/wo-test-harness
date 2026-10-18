@@ -571,7 +571,7 @@
    "type": "IMPLEMENTED_BY"
   }
  ],
- "generated_at": "2026-10-17T15:56:30+00:00",
+ "generated_at": "2026-10-18T13:35:55+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -2597,7 +2597,7 @@
    "id": "F-150",
    "label": "Feature",
    "name": "Command tool registry",
-   "parity": "missing"
+   "parity": "partial"
   },
   {
    "id": "F-150:agent-tools",
@@ -2623,7 +2623,7 @@
    "id": "F-152",
    "label": "Feature",
    "name": "Text-to-document generation",
-   "parity": "missing"
+   "parity": "partial"
   },
   {
    "id": "F-152:converter-chain",
