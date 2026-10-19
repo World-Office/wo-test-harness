@@ -16111,6 +16111,31 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/export.rs::test_export_cell_bold_f210",
+   "to": "F-210",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/export.rs::test_export_cell_font_size_f210",
+   "to": "F-210",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/export.rs::test_export_cell_italic_f210",
+   "to": "F-210",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/export.rs::test_export_cell_style_dedupe_f210",
+   "to": "F-210",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/export.rs::test_export_cell_style_no_bleed_f210",
+   "to": "F-210",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/export.rs::test_export_column_widths_f210",
    "to": "F-210",
    "type": "COVERS"
@@ -16122,6 +16147,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/export.rs::test_export_merged_cells_f210",
+   "to": "F-210",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/export.rs::test_export_plain_cells_no_style_artifacts_f210",
    "to": "F-210",
    "type": "COVERS"
   },
@@ -30591,7 +30621,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-19T14:53:12+00:00",
+ "generated_at": "2026-10-19T18:10:45+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -31521,6 +31551,36 @@
    "path": "ore/crates/wo-msbinary/src/xlsb.rs"
   },
   {
+   "id": "tests/core/crates/wo-sheet/src/export.rs::test_export_cell_bold_f210",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/export.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/export.rs::test_export_cell_font_size_f210",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/export.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/export.rs::test_export_cell_italic_f210",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/export.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/export.rs::test_export_cell_style_dedupe_f210",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/export.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/export.rs::test_export_cell_style_no_bleed_f210",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/export.rs"
+  },
+  {
    "id": "tests/core/crates/wo-sheet/src/export.rs::test_export_column_widths_f210",
    "label": "Test",
    "layer": "rust",
@@ -31534,6 +31594,12 @@
   },
   {
    "id": "tests/core/crates/wo-sheet/src/export.rs::test_export_merged_cells_f210",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/export.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/export.rs::test_export_plain_cells_no_style_artifacts_f210",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-sheet/src/export.rs"
@@ -36212,7 +36278,7 @@
   },
   {
    "id": "F-210:rust-impl",
-   "justification": "Register said missing (OdfFile-only Writer). Landed 2026-10-18: wo-sheet export_ods() converts Workbook -> ODF Spreadsheet via wo-odf (text/number/formula/bool/date cells, container zip + mimetype), round-trip tested (wo-sheet/export.rs, tagged F-210, server 435324458); COVERED in the graph. Merged cells + column widths landed 2026-10-19 (server 79bd2bc76): col_span/row_span attrs on merge anchors (all cell branches), table:table-column + column-width (pt->cm) automatic styles, parsed back; 3 more F-210 tests (7 total). Stays partial, not full: cell/row styles and full ODS *read* remain open.",
+   "justification": "Register said missing (OdfFile-only Writer). Landed 2026-10-18: wo-sheet export_ods() converts Workbook -> ODF Spreadsheet via wo-odf (text/number/formula/bool/date cells, container zip + mimetype), round-trip tested (wo-sheet/export.rs, tagged F-210, server 435324458); COVERED in the graph. Merged cells + column widths landed 2026-10-19 (server 79bd2bc76): col_span/row_span attrs on merge anchors (all cell branches), table:table-column + column-width (pt->cm) automatic styles, parsed back; 3 more F-210 tests (7 total). Cell styles landed 2026-10-19 (server d63b8fa73): CellStyle (bold/italic/underline/font-size/font-family) -> deduped table-cell automatic styles referenced via table:style-name (ce2+; ce1 stays the reserved undefined plain-Number default so styles never bleed), 6 more F-210 tests (13 total). Stays partial, not full: row styles and full ODS *read* remain open.",
    "label": "Divergence"
   },
   {
@@ -36448,10 +36514,10 @@
  ],
  "stats": {
   "commands": 75,
-  "edges": 6118,
+  "edges": 6124,
   "features": 137,
   "surfaces": 75,
-  "tests": 564
+  "tests": 570
  },
  "version": 1
 }
