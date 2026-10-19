@@ -716,6 +716,21 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_exemption_group",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_exemption_user",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_hash_stability",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_locked_cells_precedence",
    "to": "F-146",
    "type": "COVERS"
@@ -732,6 +747,21 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_no_password",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_unprotect_happy_path",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_wrong_password",
    "to": "F-146",
    "type": "COVERS"
   },
@@ -816,6 +846,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_protection_serde",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
    "to": "F-146",
    "type": "COVERS"
@@ -832,6 +867,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_order_serde",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_verify_password",
    "to": "F-146",
    "type": "COVERS"
   },
@@ -1251,6 +1291,21 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_exemption_group",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_exemption_user",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_hash_stability",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_locked_cells_precedence",
    "to": "F-200",
    "type": "COVERS"
@@ -1267,6 +1322,21 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_no_password",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_unprotect_happy_path",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_wrong_password",
    "to": "F-200",
    "type": "COVERS"
   },
@@ -1351,6 +1421,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_protection_serde",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
    "to": "F-200",
    "type": "COVERS"
@@ -1367,6 +1442,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_order_serde",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_verify_password",
    "to": "F-200",
    "type": "COVERS"
   },
@@ -3456,6 +3536,21 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_exemption_group",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_exemption_user",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_hash_stability",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_locked_cells_precedence",
    "to": "F-201",
    "type": "COVERS"
@@ -3472,6 +3567,21 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_no_password",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_unprotect_happy_path",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_wrong_password",
    "to": "F-201",
    "type": "COVERS"
   },
@@ -3556,6 +3666,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_protection_serde",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
    "to": "F-201",
    "type": "COVERS"
@@ -3572,6 +3687,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_order_serde",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_verify_password",
    "to": "F-201",
    "type": "COVERS"
   },
@@ -5661,6 +5781,21 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_exemption_group",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_exemption_user",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_hash_stability",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_locked_cells_precedence",
    "to": "F-202",
    "type": "COVERS"
@@ -5677,6 +5812,21 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_no_password",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_unprotect_happy_path",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_wrong_password",
    "to": "F-202",
    "type": "COVERS"
   },
@@ -5761,6 +5911,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_protection_serde",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
    "to": "F-202",
    "type": "COVERS"
@@ -5777,6 +5932,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_order_serde",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_verify_password",
    "to": "F-202",
    "type": "COVERS"
   },
@@ -7866,6 +8026,21 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_exemption_group",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_exemption_user",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_hash_stability",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_locked_cells_precedence",
    "to": "F-204",
    "type": "COVERS"
@@ -7882,6 +8057,21 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_no_password",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_unprotect_happy_path",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_wrong_password",
    "to": "F-204",
    "type": "COVERS"
   },
@@ -7966,6 +8156,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_protection_serde",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
    "to": "F-204",
    "type": "COVERS"
@@ -7982,6 +8177,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_order_serde",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_verify_password",
    "to": "F-204",
    "type": "COVERS"
   },
@@ -10071,6 +10271,21 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_exemption_group",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_exemption_user",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_hash_stability",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_locked_cells_precedence",
    "to": "F-205",
    "type": "COVERS"
@@ -10087,6 +10302,21 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_no_password",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_unprotect_happy_path",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protect_wrong_password",
    "to": "F-205",
    "type": "COVERS"
   },
@@ -10171,6 +10401,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_protection_serde",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
    "to": "F-205",
    "type": "COVERS"
@@ -10187,6 +10422,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_order_serde",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_verify_password",
    "to": "F-205",
    "type": "COVERS"
   },
@@ -30671,7 +30911,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-19T21:22:25+00:00",
+ "generated_at": "2026-10-19T21:54:07+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -31877,6 +32117,24 @@
    "path": "ore/crates/wo-sheet/src/model.rs"
   },
   {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_exemption_group",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_exemption_user",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_hash_stability",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
    "id": "tests/core/crates/wo-sheet/src/model.rs::test_locked_cells_precedence",
    "label": "Test",
    "layer": "rust",
@@ -31896,6 +32154,24 @@
   },
   {
    "id": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_protect_no_password",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_protect_unprotect_happy_path",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_protect_wrong_password",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-sheet/src/model.rs"
@@ -31997,6 +32273,12 @@
    "path": "ore/crates/wo-sheet/src/model.rs"
   },
   {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_protection_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
    "id": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
    "label": "Test",
    "layer": "rust",
@@ -32016,6 +32298,12 @@
   },
   {
    "id": "tests/core/crates/wo-sheet/src/model.rs::test_sort_order_serde",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_verify_password",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-sheet/src/model.rs"
@@ -36129,7 +36417,7 @@
   },
   {
    "id": "F-146:rust-impl",
-   "justification": "Register contract honored 2026-10-19: wo-sheet now has the range model + per-range exemptions it said didn't exist \u2014 SheetProtection { enabled, locked_cells } on Sheet, EditRange { name, ranges } per named range on Workbook, and is_edit_allowed / allowed_edit_ranges / range_is_fully_allowed resolvers (protection off -> all allowed; on + empty edit ranges -> fully locked; inside a named edit range -> allowed; locked_cells override). 14 tests tagged (server b7a7ee2e4); COVERED in the graph. Ops enforcement added 2026-10-19 (server 83b5ccbb4): op_touched_region + apply_to_sheet_protected / apply_to_workbook_protected guard every mutating SheetOp (SetCell/SetStyle/Sort/ApplyConditionalFormat/Clear/Copy/Paste reject when any touched cell falls outside allow-edit ranges; structural Insert/Delete row/col pass per the documented decision; plain apply_to_sheet unchanged for backward compat), 12 more tests. Stays partial: no password hashing, no per-user/group exemptions, no protect-dialog UI.",
+   "justification": "Register contract honored 2026-10-19: wo-sheet now has the range model + per-range exemptions it said didn't exist \u2014 SheetProtection { enabled, locked_cells } on Sheet, EditRange { name, ranges } per named range on Workbook, and is_edit_allowed / allowed_edit_ranges / range_is_fully_allowed resolvers (protection off -> all allowed; on + empty edit ranges -> fully locked; inside a named edit range -> allowed; locked_cells override). 14 tests tagged (server b7a7ee2e4); COVERED in the graph. Ops enforcement added 2026-10-19 (server 83b5ccbb4): op_touched_region + apply_to_sheet_protected / apply_to_workbook_protected guard every mutating SheetOp (SetCell/SetStyle/Sort/ApplyConditionalFormat/Clear/Copy/Paste reject when any touched cell falls outside allow-edit ranges; structural Insert/Delete row/col pass per the documented decision; plain apply_to_sheet unchanged for backward compat), 12 more tests. Password hashing + per-user/group exemptions landed 2026-10-19 (server 96ebb664a): SheetProtection += password_hash (hex SHA-256, set_password/verify_password/has_password), exempt_users/exempt_groups + is_edit_allowed_for_user (disabling -> true; exempt user/group -> true regardless of ranges/locked_cells; else delegates to the untouched base resolver), protect_sheet(sheet, Option<&str>) / unprotect_sheet -> Result (wrong password Err, success clears hash); 8 more // F-146 tests (34 total on the row). Stays partial: protect-dialog UI (and per-op/token adoption of the user-aware resolver) remain open.",
    "label": "Divergence"
   },
   {
@@ -36624,10 +36912,10 @@
  ],
  "stats": {
   "commands": 75,
-  "edges": 6134,
+  "edges": 6182,
   "features": 137,
   "surfaces": 75,
-  "tests": 580
+  "tests": 588
  },
  "version": 1
 }
