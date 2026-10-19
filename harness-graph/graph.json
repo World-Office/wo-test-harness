@@ -601,6 +601,281 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_allowed_edit_ranges_function",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_calc_mode_serde",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_serde",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_style_default_serde_compact",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_style_serde",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_value_from_formula",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_cell_with_formula",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_conditional_rule_all_variants_serde",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_conditional_rule_serde",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_date_period_serde",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_defined_name",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_defined_name_serde_optional_fields",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_contains",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_contains_cell",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_methods",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_delete",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_format",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_insert",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_insert_invert_roundtrip",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_invert_insert",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_move_unsupported",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_replace",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_to_ops_since",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_locked_cells_precedence",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_merge_range",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_multi_range_edit_range",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_disabled_any_cell_allowed",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_disabled_workbook_level",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_enabled_no_edit_ranges",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_enabled_with_edit_range",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_contains",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_edge_cases",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range_is_fully_allowed",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_cell_operations",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_cell_value_string",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_fields",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_frozen",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_merged_cells",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_all_variants_serde",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_extended_serde",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_op_serde",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_protection_methods",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_workbook_serde_with_protection_defaults",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_key_serde",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sort_order_serde",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_active_sheet",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_creation",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_fields",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_get_sheet_by_index",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_get_sheet_by_name",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_remove_sheet",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_roundtrip",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_with_protection_and_edit_ranges",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-docserver/src/ai.rs::clean_markdown_strips_fences",
    "to": "F-148",
    "type": "COVERS"
@@ -671,6 +946,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_allowed_edit_ranges_function",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_calc_mode_serde",
    "to": "F-200",
    "type": "COVERS"
@@ -726,6 +1006,21 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_contains",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_contains_cell",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_methods",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_delete",
    "to": "F-200",
    "type": "COVERS"
@@ -766,12 +1061,42 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_locked_cells_precedence",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_merge_range",
    "to": "F-200",
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_multi_range_edit_range",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_disabled_any_cell_allowed",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_disabled_workbook_level",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_enabled_no_edit_ranges",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_enabled_with_edit_range",
    "to": "F-200",
    "type": "COVERS"
   },
@@ -782,6 +1107,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_edge_cases",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range_is_fully_allowed",
    "to": "F-200",
    "type": "COVERS"
   },
@@ -826,7 +1156,17 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_protection_methods",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_workbook_serde_with_protection_defaults",
    "to": "F-200",
    "type": "COVERS"
   },
@@ -872,6 +1212,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_roundtrip",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_with_protection_and_edit_ranges",
    "to": "F-200",
    "type": "COVERS"
   },
@@ -2806,6 +3151,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_allowed_edit_ranges_function",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_calc_mode_serde",
    "to": "F-201",
    "type": "COVERS"
@@ -2861,6 +3211,21 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_contains",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_contains_cell",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_methods",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_delete",
    "to": "F-201",
    "type": "COVERS"
@@ -2901,12 +3266,42 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_locked_cells_precedence",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_merge_range",
    "to": "F-201",
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_multi_range_edit_range",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_disabled_any_cell_allowed",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_disabled_workbook_level",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_enabled_no_edit_ranges",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_enabled_with_edit_range",
    "to": "F-201",
    "type": "COVERS"
   },
@@ -2917,6 +3312,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_edge_cases",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range_is_fully_allowed",
    "to": "F-201",
    "type": "COVERS"
   },
@@ -2961,7 +3361,17 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_protection_methods",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_workbook_serde_with_protection_defaults",
    "to": "F-201",
    "type": "COVERS"
   },
@@ -3007,6 +3417,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_roundtrip",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_with_protection_and_edit_ranges",
    "to": "F-201",
    "type": "COVERS"
   },
@@ -4941,6 +5356,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_allowed_edit_ranges_function",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_calc_mode_serde",
    "to": "F-202",
    "type": "COVERS"
@@ -4996,6 +5416,21 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_contains",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_contains_cell",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_methods",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_delete",
    "to": "F-202",
    "type": "COVERS"
@@ -5036,12 +5471,42 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_locked_cells_precedence",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_merge_range",
    "to": "F-202",
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_multi_range_edit_range",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_disabled_any_cell_allowed",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_disabled_workbook_level",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_enabled_no_edit_ranges",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_enabled_with_edit_range",
    "to": "F-202",
    "type": "COVERS"
   },
@@ -5052,6 +5517,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_edge_cases",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range_is_fully_allowed",
    "to": "F-202",
    "type": "COVERS"
   },
@@ -5096,7 +5566,17 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_protection_methods",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_workbook_serde_with_protection_defaults",
    "to": "F-202",
    "type": "COVERS"
   },
@@ -5142,6 +5622,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_roundtrip",
+   "to": "F-202",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_with_protection_and_edit_ranges",
    "to": "F-202",
    "type": "COVERS"
   },
@@ -7076,6 +7561,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_allowed_edit_ranges_function",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_calc_mode_serde",
    "to": "F-204",
    "type": "COVERS"
@@ -7131,6 +7621,21 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_contains",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_contains_cell",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_methods",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_delete",
    "to": "F-204",
    "type": "COVERS"
@@ -7171,12 +7676,42 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_locked_cells_precedence",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_merge_range",
    "to": "F-204",
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_multi_range_edit_range",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_disabled_any_cell_allowed",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_disabled_workbook_level",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_enabled_no_edit_ranges",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_enabled_with_edit_range",
    "to": "F-204",
    "type": "COVERS"
   },
@@ -7187,6 +7722,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_edge_cases",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range_is_fully_allowed",
    "to": "F-204",
    "type": "COVERS"
   },
@@ -7231,7 +7771,17 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_protection_methods",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_workbook_serde_with_protection_defaults",
    "to": "F-204",
    "type": "COVERS"
   },
@@ -7277,6 +7827,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_roundtrip",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_with_protection_and_edit_ranges",
    "to": "F-204",
    "type": "COVERS"
   },
@@ -9211,6 +9766,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_allowed_edit_ranges_function",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_calc_mode_serde",
    "to": "F-205",
    "type": "COVERS"
@@ -9266,6 +9826,21 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_contains",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_contains_cell",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_methods",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_delete",
    "to": "F-205",
    "type": "COVERS"
@@ -9306,12 +9881,42 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_locked_cells_precedence",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_merge_range",
    "to": "F-205",
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_multi_range_edit_range",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_disabled_any_cell_allowed",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_disabled_workbook_level",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_enabled_no_edit_ranges",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_protection_enabled_with_edit_range",
    "to": "F-205",
    "type": "COVERS"
   },
@@ -9322,6 +9927,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_edge_cases",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_range_is_fully_allowed",
    "to": "F-205",
    "type": "COVERS"
   },
@@ -9366,7 +9976,17 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_protection_methods",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_workbook_serde_with_protection_defaults",
    "to": "F-205",
    "type": "COVERS"
   },
@@ -9412,6 +10032,11 @@
   },
   {
    "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_roundtrip",
+   "to": "F-205",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_with_protection_and_edit_ranges",
    "to": "F-205",
    "type": "COVERS"
   },
@@ -29761,7 +30386,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-19T06:50:50+00:00",
+ "generated_at": "2026-10-19T14:12:15+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -30715,6 +31340,12 @@
    "path": "ore/crates/wo-sheet/src/export.rs"
   },
   {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_allowed_edit_ranges_function",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
    "id": "tests/core/crates/wo-sheet/src/model.rs::test_calc_mode_serde",
    "label": "Test",
    "layer": "rust",
@@ -30781,6 +31412,24 @@
    "path": "ore/crates/wo-sheet/src/model.rs"
   },
   {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_contains",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_contains_cell",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_edit_range_methods",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
    "id": "tests/core/crates/wo-sheet/src/model.rs::test_editable_model_delete",
    "label": "Test",
    "layer": "rust",
@@ -30829,13 +31478,49 @@
    "path": "ore/crates/wo-sheet/src/model.rs"
   },
   {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_locked_cells_precedence",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
    "id": "tests/core/crates/wo-sheet/src/model.rs::test_merge_range",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-sheet/src/model.rs"
   },
   {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_multi_range_edit_range",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
    "id": "tests/core/crates/wo-sheet/src/model.rs::test_path_sheet",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_protection_disabled_any_cell_allowed",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_protection_disabled_workbook_level",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_protection_enabled_no_edit_ranges",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_protection_enabled_with_edit_range",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-sheet/src/model.rs"
@@ -30848,6 +31533,12 @@
   },
   {
    "id": "tests/core/crates/wo-sheet/src/model.rs::test_range2d_edge_cases",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_range_is_fully_allowed",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-sheet/src/model.rs"
@@ -30901,7 +31592,19 @@
    "path": "ore/crates/wo-sheet/src/model.rs"
   },
   {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_protection_methods",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
    "id": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_visibility",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_sheet_workbook_serde_with_protection_defaults",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-sheet/src/model.rs"
@@ -30956,6 +31659,12 @@
   },
   {
    "id": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_roundtrip",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/model.rs::test_workbook_serde_with_protection_and_edit_ranges",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-sheet/src/model.rs"
@@ -34789,11 +35498,11 @@
    "id": "F-146",
    "label": "Feature",
    "name": "Allow edit ranges",
-   "parity": "missing"
+   "parity": "partial"
   },
   {
-   "id": "F-146:range-model",
-   "justification": "OO Protection > Allow edit ranges (everyone/groups per named range) has NO WO surface: protection is whole-document (protect-dialog -> w:documentProtection password/restrict). Needs a range model + per-range exemptions - XL, depends on multi-section work (cf F-144 same-as-previous note).",
+   "id": "F-146:rust-impl",
+   "justification": "Register contract honored 2026-10-19: wo-sheet now has the range model + per-range exemptions it said didn't exist \u2014 SheetProtection { enabled, locked_cells } on Sheet, EditRange { name, ranges } per named range on Workbook, and is_edit_allowed / allowed_edit_ranges / range_is_fully_allowed resolvers (protection off -> all allowed; on + empty edit ranges -> fully locked; inside a named edit range -> allowed; locked_cells override). 14 tests tagged (server b7a7ee2e4); COVERED in the graph. Stays partial: no password hashing, no per-user/group exemptions, no protect-dialog UI, and ops.rs does not yet consult the model on every mutating SheetOp.",
    "label": "Divergence"
   },
   {
@@ -35288,10 +35997,10 @@
  ],
  "stats": {
   "commands": 75,
-  "edges": 5952,
+  "edges": 6077,
   "features": 137,
   "surfaces": 75,
-  "tests": 509
+  "tests": 523
  },
  "version": 1
 }
