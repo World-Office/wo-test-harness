@@ -876,6 +876,196 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_apply_to_workbook_protected",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_clear_apply",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_clear_invert",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_copy_apply",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_delete_col_apply",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_delete_col_invert",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_delete_row_apply",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_delete_row_invert",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_insert_col_apply",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_insert_col_invert",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_insert_row_apply",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_insert_row_invert",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_merge_apply",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_merge_invert",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_clear_disallowed",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_copy_both_allowed",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_copy_dest_outside",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_empty_edit_ranges",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_insert_row_allowed",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_locked_cells_precedence",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_merge_allowed",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_set_cell_allowed",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_set_cell_disallowed",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_set_style_disallowed",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_protection_disabled_ops_through",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_rename_sheet_roundtrip",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_set_cell_apply",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_set_cell_invert",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_set_style_apply",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_set_style_invert",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_sort_apply_descending",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_sort_apply_single_column",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_sort_empty_keys_error",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_sort_invert_returns_sort",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_sort_preserves_column_structure",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_sort_self_inverse",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_unmerge_apply",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_unmerge_invert",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-docserver/src/ai.rs::clean_markdown_strips_fences",
    "to": "F-148",
    "type": "COVERS"
@@ -15921,7 +16111,22 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/export.rs::test_export_column_widths_f210",
+   "to": "F-210",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/export.rs::test_export_empty_workbook",
+   "to": "F-210",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/export.rs::test_export_merged_cells_f210",
+   "to": "F-210",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/export.rs::test_export_plain_sheet_no_merge_artifacts_f210",
    "to": "F-210",
    "type": "COVERS"
   },
@@ -30386,7 +30591,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-19T14:12:15+00:00",
+ "generated_at": "2026-10-19T14:53:12+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -31316,7 +31521,25 @@
    "path": "ore/crates/wo-msbinary/src/xlsb.rs"
   },
   {
+   "id": "tests/core/crates/wo-sheet/src/export.rs::test_export_column_widths_f210",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/export.rs"
+  },
+  {
    "id": "tests/core/crates/wo-sheet/src/export.rs::test_export_empty_workbook",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/export.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/export.rs::test_export_merged_cells_f210",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/export.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/export.rs::test_export_plain_sheet_no_merge_artifacts_f210",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-sheet/src/export.rs"
@@ -31668,6 +31891,234 @@
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_apply_to_workbook_protected",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_clear_apply",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_clear_invert",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_copy_apply",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_delete_col_apply",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_delete_col_invert",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_delete_row_apply",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_delete_row_invert",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_insert_col_apply",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_insert_col_invert",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_insert_row_apply",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_insert_row_invert",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_merge_apply",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_merge_invert",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_clear_disallowed",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_copy_both_allowed",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_copy_dest_outside",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_empty_edit_ranges",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_insert_row_allowed",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_locked_cells_precedence",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_merge_allowed",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_set_cell_allowed",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_set_cell_disallowed",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_protected_set_style_disallowed",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_protection_disabled_ops_through",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_rename_sheet_roundtrip",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_set_cell_apply",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_set_cell_invert",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_set_style_apply",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_set_style_invert",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_sort_apply_descending",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_sort_apply_single_column",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_sort_empty_keys_error",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_sort_invert_returns_sort",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_sort_preserves_column_structure",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_sort_self_inverse",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_unmerge_apply",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_unmerge_invert",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
   },
   {
    "id": "tests/core/crates/wo-sheet/src/pivot.rs::test_agg_func_labels",
@@ -35502,7 +35953,7 @@
   },
   {
    "id": "F-146:rust-impl",
-   "justification": "Register contract honored 2026-10-19: wo-sheet now has the range model + per-range exemptions it said didn't exist \u2014 SheetProtection { enabled, locked_cells } on Sheet, EditRange { name, ranges } per named range on Workbook, and is_edit_allowed / allowed_edit_ranges / range_is_fully_allowed resolvers (protection off -> all allowed; on + empty edit ranges -> fully locked; inside a named edit range -> allowed; locked_cells override). 14 tests tagged (server b7a7ee2e4); COVERED in the graph. Stays partial: no password hashing, no per-user/group exemptions, no protect-dialog UI, and ops.rs does not yet consult the model on every mutating SheetOp.",
+   "justification": "Register contract honored 2026-10-19: wo-sheet now has the range model + per-range exemptions it said didn't exist \u2014 SheetProtection { enabled, locked_cells } on Sheet, EditRange { name, ranges } per named range on Workbook, and is_edit_allowed / allowed_edit_ranges / range_is_fully_allowed resolvers (protection off -> all allowed; on + empty edit ranges -> fully locked; inside a named edit range -> allowed; locked_cells override). 14 tests tagged (server b7a7ee2e4); COVERED in the graph. Ops enforcement added 2026-10-19 (server 83b5ccbb4): op_touched_region + apply_to_sheet_protected / apply_to_workbook_protected guard every mutating SheetOp (SetCell/SetStyle/Sort/ApplyConditionalFormat/Clear/Copy/Paste reject when any touched cell falls outside allow-edit ranges; structural Insert/Delete row/col pass per the documented decision; plain apply_to_sheet unchanged for backward compat), 12 more tests. Stays partial: no password hashing, no per-user/group exemptions, no protect-dialog UI.",
    "label": "Divergence"
   },
   {
@@ -35761,7 +36212,7 @@
   },
   {
    "id": "F-210:rust-impl",
-   "justification": "Register said missing (OdfFile-only Writer). Landed 2026-10-18: wo-sheet export_ods() converts Workbook -> ODF Spreadsheet via wo-odf (text/number/formula/bool/date cells, container zip + mimetype), round-trip tested (wo-sheet/export.rs, tagged F-210, server 435324458); COVERED in the graph. Stays partial, not full: merged cells, column widths, styles, and ODS *read* remain open.",
+   "justification": "Register said missing (OdfFile-only Writer). Landed 2026-10-18: wo-sheet export_ods() converts Workbook -> ODF Spreadsheet via wo-odf (text/number/formula/bool/date cells, container zip + mimetype), round-trip tested (wo-sheet/export.rs, tagged F-210, server 435324458); COVERED in the graph. Merged cells + column widths landed 2026-10-19 (server 79bd2bc76): col_span/row_span attrs on merge anchors (all cell branches), table:table-column + column-width (pt->cm) automatic styles, parsed back; 3 more F-210 tests (7 total). Stays partial, not full: cell/row styles and full ODS *read* remain open.",
    "label": "Divergence"
   },
   {
@@ -35997,10 +36448,10 @@
  ],
  "stats": {
   "commands": 75,
-  "edges": 6077,
+  "edges": 6118,
   "features": 137,
   "surfaces": 75,
-  "tests": 523
+  "tests": 564
  },
  "version": 1
 }
