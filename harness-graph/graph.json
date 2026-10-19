@@ -17341,6 +17341,36 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-slide/src/inheritance.rs::test_get_layout_finds_layout_by_id",
+   "to": "F-301",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/inheritance.rs::test_get_master_with_explicit_master_id",
+   "to": "F-301",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/inheritance.rs::test_slide_explicit_value_beats_inherited_default",
+   "to": "F-301",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/inheritance.rs::test_slide_resolves_through_layout",
+   "to": "F-301",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/inheritance.rs::test_slide_without_master_id_falls_back_to_layouts_master",
+   "to": "F-301",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-slide/src/inheritance.rs::test_source_structs_immutable_through_resolution",
+   "to": "F-301",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-slide/src/model.rs::test_add_master",
    "to": "F-302",
    "type": "COVERS"
@@ -29731,7 +29761,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-19T06:09:59+00:00",
+ "generated_at": "2026-10-19T06:50:50+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -31001,6 +31031,42 @@
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-sheet/src/pivot.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/inheritance.rs::test_get_layout_finds_layout_by_id",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/inheritance.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/inheritance.rs::test_get_master_with_explicit_master_id",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/inheritance.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/inheritance.rs::test_slide_explicit_value_beats_inherited_default",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/inheritance.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/inheritance.rs::test_slide_resolves_through_layout",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/inheritance.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/inheritance.rs::test_slide_without_master_id_falls_back_to_layouts_master",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/inheritance.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-slide/src/inheritance.rs::test_source_structs_immutable_through_resolution",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-slide/src/inheritance.rs"
   },
   {
    "id": "tests/core/crates/wo-slide/src/model.rs::test_add_master",
@@ -35013,11 +35079,11 @@
    "id": "F-301",
    "label": "Feature",
    "name": "Slide->layout->master inheritance",
-   "parity": "missing"
+   "parity": "partial"
   },
   {
-   "id": "F-301:oo-core",
-   "justification": "Property resolves only if unset on slide; re-save must NOT flatten inherited props (PPTXFormat Slide/SlideLayout/SlideMaster).",
+   "id": "F-301:rust-impl",
+   "justification": "Register said missing. Landed 2026-10-18: wo-slide/inheritance.rs resolve_inheritance() is a pure read-only projection \u2014 layout by layout_id (id/name), master from explicit master_id else the layout's owner, placeholder defaults + layout shapes inherited only when unset on the slide (register contract honored verbatim; re-save cannot flatten since inputs are never mutated). 6 tests tagged (server 33d8665cc); COVERED in the graph. Stays partial: geometry/render inheritance and the PPTX write path using the resolver remain open.",
    "label": "Divergence"
   },
   {
@@ -35222,10 +35288,10 @@
  ],
  "stats": {
   "commands": 75,
-  "edges": 5946,
+  "edges": 5952,
   "features": 137,
   "surfaces": 75,
-  "tests": 503
+  "tests": 509
  },
  "version": 1
 }
