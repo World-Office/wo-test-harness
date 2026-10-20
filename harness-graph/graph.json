@@ -3391,6 +3391,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-200",
    "type": "COVERS"
@@ -5646,6 +5651,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-201",
    "type": "COVERS"
@@ -7901,6 +7911,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-203",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-203",
    "type": "COVERS"
@@ -10156,6 +10171,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-204",
    "type": "COVERS"
@@ -12407,6 +12427,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cached_value_not_stale",
+   "to": "F-206",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
    "to": "F-206",
    "type": "COVERS"
   },
@@ -14421,6 +14446,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-208",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-208",
    "type": "COVERS"
@@ -16377,6 +16407,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cached_value_not_stale",
+   "to": "F-209",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
    "to": "F-209",
    "type": "COVERS"
   },
@@ -18531,6 +18566,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-300",
    "type": "COVERS"
@@ -20596,6 +20636,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-303",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-303",
    "type": "COVERS"
@@ -22641,6 +22686,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-305",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-305",
    "type": "COVERS"
@@ -24577,6 +24627,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cached_value_not_stale",
+   "to": "F-306",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
    "to": "F-306",
    "type": "COVERS"
   },
@@ -26881,6 +26936,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-403",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-403",
    "type": "COVERS"
@@ -28941,6 +29001,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-404",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-404",
    "type": "COVERS"
@@ -30877,6 +30942,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cached_value_not_stale",
+   "to": "F-405",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
    "to": "F-405",
    "type": "COVERS"
   },
@@ -31051,7 +31121,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-20T04:49:13+00:00",
+ "generated_at": "2026-10-20T05:12:43+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -35227,6 +35297,12 @@
    "path": "ore/crates/wo-x2t/src/converters.rs"
   },
   {
+   "id": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-x2t/src/converters.rs"
+  },
+  {
    "id": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "label": "Test",
    "layer": "rust",
@@ -36726,11 +36802,11 @@
    "id": "F-204",
    "label": "Feature",
    "name": "Cell address + type model",
-   "parity": "partial"
+   "parity": "full"
   },
   {
    "id": "F-204:oo-core",
-   "justification": "r=A1 addressing and n/s/b/str/e type incl. empty-cell elision (XlsxFormat worksheets). wo-sheet ops exist; fidelity unprobed. PROBED: r-addr + t=s kept; never-set D7 elided.",
+   "justification": "r=A1 addressing and n/s/b/str/e type incl. empty-cell elision (XlsxFormat worksheets). Verified + promoted 2026-10-19 (server 9224ea62e): 1 new // F-204 test drives a 6-type fixture (s/inlineStr/n/b/e/d) through Xlsx->WO; r address kept, all six types + values preserved, never-set D7 elided. Verification caught a REAL data-loss bug, fixed in wo-ooxml parser: inlineStr cells were typed but only <v> was read, so inline strings (content lives in <is><t>) came back empty; parser now reads <is><t>. wo-x2t 428. PROVEN FULL (was partial).",
    "label": "Divergence"
   },
   {
@@ -37064,10 +37140,10 @@
  ],
  "stats": {
   "commands": 75,
-  "edges": 6210,
+  "edges": 6224,
   "features": 137,
   "surfaces": 75,
-  "tests": 590
+  "tests": 591
  },
  "version": 1
 }
