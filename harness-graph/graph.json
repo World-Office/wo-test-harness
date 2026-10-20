@@ -1876,6 +1876,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_multiple_paragraphs",
    "to": "F-200",
    "type": "COVERS"
@@ -4136,6 +4141,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_multiple_paragraphs",
    "to": "F-201",
    "type": "COVERS"
@@ -6396,6 +6406,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
+   "to": "F-203",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_multiple_paragraphs",
    "to": "F-203",
    "type": "COVERS"
@@ -8656,6 +8671,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_multiple_paragraphs",
    "to": "F-204",
    "type": "COVERS"
@@ -10912,6 +10932,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_emits_pdf17_header",
+   "to": "F-206",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
    "to": "F-206",
    "type": "COVERS"
   },
@@ -12931,6 +12956,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
+   "to": "F-208",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_multiple_paragraphs",
    "to": "F-208",
    "type": "COVERS"
@@ -14892,6 +14922,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_emits_pdf17_header",
+   "to": "F-209",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
    "to": "F-209",
    "type": "COVERS"
   },
@@ -17047,6 +17082,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_emits_pdf17_header",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
    "to": "F-300",
    "type": "COVERS"
   },
@@ -19236,6 +19276,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_multiple_paragraphs",
    "to": "F-302",
    "type": "COVERS"
@@ -21177,6 +21222,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_emits_pdf17_header",
+   "to": "F-303",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
    "to": "F-303",
    "type": "COVERS"
   },
@@ -23231,6 +23281,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
+   "to": "F-305",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_multiple_paragraphs",
    "to": "F-305",
    "type": "COVERS"
@@ -25172,6 +25227,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_emits_pdf17_header",
+   "to": "F-306",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
    "to": "F-306",
    "type": "COVERS"
   },
@@ -27491,6 +27551,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
+   "to": "F-403",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_multiple_paragraphs",
    "to": "F-403",
    "type": "COVERS"
@@ -29556,6 +29621,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
+   "to": "F-404",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_multiple_paragraphs",
    "to": "F-404",
    "type": "COVERS"
@@ -31497,6 +31567,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_emits_pdf17_header",
+   "to": "F-405",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
    "to": "F-405",
    "type": "COVERS"
   },
@@ -33191,7 +33266,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-20T18:03:41+00:00",
+ "generated_at": "2026-10-20T18:16:57+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -35694,6 +35769,12 @@
   },
   {
    "id": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_emits_pdf17_header",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-x2t/src/converters.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-x2t/src/converters.rs"
@@ -39301,11 +39382,11 @@
    "id": "F-404",
    "label": "Feature",
    "name": "DOCX->PDF page command stream",
-   "parity": "partial"
+   "parity": "full"
   },
   {
    "id": "F-404:oo-core",
-   "justification": "DocxRenderer/src/logic/Page.cpp: per-page BeginCommand/EndCommand model. wo-docx-renderer pagination tests green (37) but PDF-target parity unprobed.",
+   "justification": "DocxRenderer/src/logic/Page.cpp: per-page BeginCommand/EndCommand model. PROBED+PROVEN 2026-10-19 (server e8b3c53ab): 1 new // F-404 test drives a 2-page DOCX (explicit page break) through DocxToPdfConverter and byte-inspects the raw PDF - 2 page objects each with its OWN /Contents stream (refs distinct), page-1 text isolated in stream 1 and page-2 text in stream 2 (no cross-page bleed), all text wrapped in BT..ET command objects. generate_pdf (pipeline.rs) already implemented the per-page model; the gap was purely evidentiary. PROVEN FULL (was partial).",
    "label": "Divergence"
   },
   {
@@ -39360,10 +39441,10 @@
  ],
  "stats": {
   "commands": 75,
-  "edges": 6638,
+  "edges": 6653,
   "features": 137,
   "surfaces": 75,
-  "tests": 616
+  "tests": 617
  },
  "version": 1
 }
