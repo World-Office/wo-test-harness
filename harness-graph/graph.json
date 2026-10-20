@@ -33266,7 +33266,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-20T18:30:31+00:00",
+ "generated_at": "2026-10-20T18:41:24+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -38147,12 +38147,22 @@
    "parity": "partial"
   },
   {
+   "id": "F-041:audit",
+   "justification": "AUDITED 2026-10-19 (bare-row sweep): editor side REAL - directionRtl routes to toggleBlockDirection (block-level style toggle, editor.js:846) with active-state reflection (editor.js:1300); parity with applyLineHeight pattern. FILE-FORMAT GAP (why still partial): wo-ooxml has NO w:bidi handling at all (grep: zero hits in parser.rs/serializer.rs), so RTL paragraph direction is LOST on DOCX/ODT round-trip - the CSS direction:rtl never reaches the file. Fix = parse/emit w:bidi in wo-ooxml pPr + map style.direction in the editor converter bridge; af/feature target, not verification.",
+   "label": "Divergence"
+  },
+  {
    "area": "home.styles",
    "fidelity": "L1",
    "id": "F-050",
    "label": "Feature",
    "name": "Heading 1-6 / paragraph styles",
-   "parity": "partial"
+   "parity": "full"
+  },
+  {
+   "id": "F-050:audit",
+   "justification": "AUDITED 2026-10-19 (bare-row sweep): full evidence chain exists - editor routes formatBlock H1-6|P through the wo-command event (documenteditor-wysiwyg editor.js:1110, toolbar buttons + Ctrl+Alt+1/2/3/0); DOCX layer round-trips pStyle (parser.rs:1532-1535 parse + test_parse_style_id with Heading1 fixture; serializer.rs:1221 emits w:pStyle from style_id, Heading1 style defined in styles.xml at 1640); heading conversions tested (test_docx_to_html_heading, test_odt_to_txt_heading, test_odt_to_html_heading). Entry was BARE with no evidence row; register-completion promotion, no code change.",
+   "label": "Divergence"
   },
   {
    "area": "home.styles",
@@ -38161,6 +38171,11 @@
    "label": "Feature",
    "name": "Block quote",
    "parity": "partial"
+  },
+  {
+   "id": "F-051:audit",
+   "justification": "AUDITED 2026-10-19 (bare-row sweep): block quote is GENUINELY ABSENT - formatBlock accepts only ^(H[1-6]|P)$ (editor.js:1110), no BLOCKQUOTE command exists anywhere in the editor, and the census has no blockquote surface. No converter path (DOM blockquote -> DOCX style) either. Honest partial: needs formatBlock BLOCKQUOTE support + pStyle Quote mapping + converter round-trip; af/feature target, not verification.",
+   "label": "Divergence"
   },
   {
    "area": "home.styles",
@@ -38627,12 +38642,22 @@
    "parity": "partial"
   },
   {
+   "id": "F-120:audit",
+   "justification": "AUDITED 2026-10-19 (bare-row sweep; entry was BARE): core co-editing proven by the F-122 probe - collab hub set_presence + stable-hue peer chips + remote carets + cursor sync, op-level sync via coauthoring-service CRDT (see F-123). REMAINING (why still partial): profile-image avatars (F-122, L4), paragraph-lock granularity (OO slow-mode locks; WO resolves via CRDT merge without locks), and no harness E2E test drives a real 2-client session end to end.",
+   "label": "Divergence"
+  },
+  {
    "area": "collab",
    "fidelity": "L4",
    "id": "F-121",
    "label": "Feature",
    "name": "Live cursors with names",
-   "parity": "partial"
+   "parity": "full"
+  },
+  {
+   "id": "F-121:audit",
+   "justification": "AUDITED 2026-10-19 (bare-row sweep): named remote carets are real and proven by the same probe as F-122 - renderRemoteCaret (documenteditor-wysiwyg editor.js:6182-6195) renders a .remote-caret-label with the peer's name (client.user || client.client) colored with the stable peer hue, positioned via caretRectForIndex on cursor sync. Entry was BARE; register-completion promotion, no code change.",
+   "label": "Divergence"
   },
   {
    "area": "collab",
