@@ -38111,7 +38111,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-20T19:59:17+00:00",
+ "generated_at": "2026-10-20T20:12:53+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -43882,11 +43882,11 @@
    "id": "F-063",
    "label": "Feature",
    "name": "Clipboard paste (rich text)",
-   "parity": "partial"
+   "parity": "full"
   },
   {
    "id": "F-063:plain-text-only",
-   "justification": "onBeforeInput handles 'insertFromPaste' but only extracts 'text/plain' from dataTransfer.",
+   "justification": "IMPLEMENTED 2026-10-19 (feature slice): native Ctrl+V was already rich (contenteditable default); the two PLAIN-DOWNGRADE paths are fixed - context-menu Paste now prefers text/html via the async clipboard API and inserts it with execCommand insertHTML (plain-text fallback kept), and the track-changes paste path wraps the sanitized HTML fragment in the tracked <ins> (insertTrackedHtml). Trust boundary: client-side sanitizePasteHtml strips scriptable elements (script/style/iframe/object/embed/link/meta/base) + on* attributes + javascript:/data:text/html URLs before the fragment reaches the live DOM; the SERVER sanitizer remains the final gate on save. PROVEN by paste-sanitize.test.mjs (node, brace-extracts the pure predicates isBlockedPasteTag/isUnsafePasteAttr; 25 asserts; PASTE-SANITIZE-PASS) + node --check + zero new biome findings.",
    "label": "Divergence"
   },
   {
