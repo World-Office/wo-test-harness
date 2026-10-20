@@ -541,6 +541,2741 @@
    "type": "IMPLEMENTED_BY"
   },
   {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_fuzz_random_entities_no_panic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_fuzz_random_tags_no_panic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_fuzz_truncated_html_no_panic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_is_html_file",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_paragraph_direction_parse_and_serialize_f041",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_attributes_with_special_chars",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_blockquote",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_code_inline",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_deeply_nested_divs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_deeply_nested_lists",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_default_impl",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_div_with_class",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_empty_body",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_empty_string",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_escaped_html_entities_are_decoded",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_fragment_without_root",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_head_with_style",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_headings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_html_entities",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_html_entities_decoded_by_roxmltree",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_html_with_attributes",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_html_with_link_tags",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_html_without_body",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_html_without_doctype",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_html_without_head",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_html_without_html_tag",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_invalid_utf8_returns_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_links_and_images",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_list",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_malformed_html",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_malformed_unclosed_tags",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_malformed_wrong_nesting",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_meta_charset",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_multiple_headings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_nested_divs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_nested_formatting",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_pagebreak_marker_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_pre_code",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_self_closing_tags",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_semantic_elements_as_div",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_simple_html",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_strikethrough_and_subscript_superscript",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_table",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_table_with_colspan_rowspan",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_table_with_merging",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_to_document",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_totally_invalid_input",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_unicode_content",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_unknown_block_element_as_rawhtml",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_unknown_inline_element_as_text",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_very_long_document",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_void_elements",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_whitespace_only",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_word_count_multiple_blocks",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_roundtrip_heading_and_paragraph",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_roundtrip_simple_paragraph",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_serialize_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_escape_attr_amps_and_quotes",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_escape_attr_empty",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_escape_attr_no_change",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_escape_text_amps_angle_brackets",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_escape_text_no_change",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_blockquote",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_blockquote_plain",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_blockquote_with_paragraph_id",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_bold",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_default_impl",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_div_plain",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_div_with_class",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_does_not_escape_rawhtml",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_escapes_html_attributes",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_escapes_id_attribute",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_escapes_image_src",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_escapes_inline_code",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_escapes_link_href",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_escapes_pre_content",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_escapes_text_content",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_head_link",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_head_meta_charset",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_head_meta_name_content",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_head_style",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_heading_level1",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_heading_with_id",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_heading_without_id",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_horizontal_rule",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_image_bare",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_image_with_title_no_alt",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_italic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_line_break",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_link_bare",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_link_without_title",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_meta_bare",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_multiple_html_attributes",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_nested_inline",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_no_doctype",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_ordered_list_plain",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_ordered_list_with_id_only",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_ordered_list_with_start",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_paragraph_with_id",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_pre_plain",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_pre_with_id",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_strikethrough",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_subscript",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_superscript",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_table_plain",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_table_with_header",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_underline",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_unordered_list",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_unordered_list_plain",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_detect_format",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_format_display",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_is_ooxml_file",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_bidi_f041",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_body_paragraphs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_docx",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_docx_inline_image_extents",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_docx_namespaced_attributes",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_empty_paragraphs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_paragraph_properties",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_pptx",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_pptx_count_slides",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_pptx_slide_size_standard",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_pptx_transition_and_animations",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_pptx_with_theme",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_run_formatting",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_style_id",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_superscript_subscript",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_table",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_to_document",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_xlsx",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_pptx_detect_from_content_types",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_rejects_non_ooxml",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_content_types_present",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_escape_xml",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_rels_present",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_roundtrip_through_zip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_empty_body",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_empty_document",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_formatted_paragraph",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_minimal_document",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_minimal_pptx",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_multiple_paragraphs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_pagebreak_run_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_pptx_content_types",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_pptx_core_properties",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_pptx_empty_slide",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_pptx_formatted_text",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_pptx_multiple_slides",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_pptx_picture",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_pptx_placeholder",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_pptx_slide_size",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_pptx_transition_and_animation",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_pptx_with_theme",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_with_core_properties",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_with_table",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_block_element_to_xhtml_all_variants",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_to_wo_pdf_rejects_garbage",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_presentation_to_html_content",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_presentation_to_html_escapes_markup",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_presentation_to_html_invalid_json",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_registry_dispatch_and_no_converter",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_registry_registers_all_bridge_pairs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_spreadsheet_to_xlsx_emits_valid_zip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_visio_vsdx_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_vsd_identity_empty_input",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_vsdm_to_vsdx_identity_bytes",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_vsdx_to_vsdm_identity_bytes",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_vsdx_to_wo_diagram_rejects_garbage",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_wo_diagram_to_vsdx_invalid_json",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_wo_pdf_to_pdf_invalid_json",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_wo_spreadsheet_to_xlsx_invalid_json",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_xlsx_shared_string_index_one",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_xlsx_to_wo_spreadsheet_parses_handbuilt",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_xlsx_to_wo_spreadsheet_rejects_non_zip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_build_xhtml_content",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_build_xhtml_content_escaped",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bytes_to_data_url",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bytes_to_data_url_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_canvas_height",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_canvas_height_standard",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_canvas_height_unknown",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_canvas_height_widescreen",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_cm_str_to_px_x",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_cm_str_to_px_y",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_converter_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_cross_format_converter_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_data_url_to_bytes",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_data_url_to_bytes_gif_and_webp",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_data_url_to_bytes_invalid",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_data_url_to_bytes_jpeg",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_data_url_to_bytes_png",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_data_url_to_bytes_svg",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_data_url_to_bytes_unknown_mime",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_djvu_to_docx_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_djvu_to_docx_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_djvu_to_docx_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_djvu_to_txt_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_body_to_epub_chapters_no_headings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_body_to_epub_chapters_with_headings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_body_to_text_lines",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_output_valid_zip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_runs_to_html_inlines_bold_italic_order",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_runs_to_html_inlines_image_rid",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_runs_to_html_inlines_strikethrough",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_runs_to_html_inlines_underline",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_empty_body_no_paragraphs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_no_body",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_no_body_direct",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_no_headings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_preserves_content",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_via_converter",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_with_body_and_headings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_with_headings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_html_heading",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_html_preserves_bold",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_html_preserves_italic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_html_simple",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_html_title",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_html_to_txt_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_odf_heading",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_odf_table_and_metadata",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_odt_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_odt_multiple_paragraphs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_odt_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_odt_preserves_heading",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_odt_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_emits_pdf17_header",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_multiple_paragraphs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_simple",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_strips_formatting",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_unicode_content",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_empty_body",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_linebreak_split",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_linebreak_stripped_empty",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_multi_paragraph",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_multiple_pages",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_single_line",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_emu_to_px",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_emu_to_px_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_emu_to_px_zero_slide_dim",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_encode_data_url",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_encode_data_url_bmp",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_encode_data_url_default_png",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_encode_data_url_gif",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_encode_data_url_jpg",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_encode_data_url_webp",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_converter_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_docx_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_docx_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_docx_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_html_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_ooxml_document_no_title",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_ooxml_no_title_no_chapters",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_ooxml_via_converter",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_ooxml_with_title_and_chapter",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_txt_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_escape_xhtml_text",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_escape_xhtml_text_all_chars",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_docx_run_text",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_docx_run_text_form_feed",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_html_text",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_html_text_all_variants",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_inline_text_all_variants",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_inline_text_image_no_alt_skipped",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_inline_text_linebreak_as_space",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_inline_text_nested_multilevel",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_rtf_text_all_variants",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_rtf_text_font_fontsize_color_nested",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_rtf_text_linebreak_pagebreak_tab",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_text_info",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_text_info_empty_text_skipped",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_text_info_font_size_and_color",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_text_info_multi_paragraph",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_text_info_no_text",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_text_info_takes_first_font_size",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_body_to_lines_and_section_to_lines",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_converter_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_formatting_to_docx_runs_all_styles",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_formatting_to_docx_runs_empty_text_skipped",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_section_to_docx_paragraphs_all_elements",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_section_to_docx_paragraphs_empty_line",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_section_to_docx_paragraphs_nested",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_section_to_docx_paragraphs_with_title",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_section_to_lines_empty_title_skipped",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_section_to_lines_image_no_alt",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_section_to_lines_nested_sections",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_to_docx_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_to_docx_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_to_docx_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_to_ooxml_missing_title_info",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_to_ooxml_no_title_no_body",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_to_ooxml_via_converter",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_to_ooxml_with_title_and_body",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_to_txt_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_empty_div_blockquote",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_image_alt_in_text",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_paragraph_with_linebreak",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_raw_html_empty",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_odf_content_all_variants",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_odf_content_empty_paragraph_skipped",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_div_and_blockquote",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_heading_default_level",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_heading_empty_inlines",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_headings_all_levels",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_horizontal_rule",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_ordered_list_with_start",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_paragraph_empty_inlines",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_pre_multiline",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_raw_html_empty_trimmed",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_raw_html_nonempty",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_table",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_unordered_list",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_docx_header_footer_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_blockquote_nested",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_div_nested_paragraphs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_heading_empty_text",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_horizontal_rule",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_list_items",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_mixed",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_paragraph_empty_formatting",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_pre_empty_content",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_pre_with_content",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_raw_html",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_table",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_all_variants",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_bold",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_empty",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_empty_text_skipped",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_italic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_linebreak_appends",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_mixed",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_plain_text",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_skips_empty_bold",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_skips_empty_text",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_odf_spans_all_variants",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_odf_spans_empty_skipped",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_rtf_inlines_all_variants",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_rtf_inlines_empty_skipped",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_rtf_inlines_link_propagates_content",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_docx_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_docx_bold",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_docx_embeds_data_url_image",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_docx_heading",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_epub_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_epub_chapters",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_epub_chapters_heading_without_content",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_epub_chapters_with_headings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_epub_chapters_without_headings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_epub_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_epub_with_headings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_fb2_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_fb2_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_fb2_with_styles",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_odf_empty_paragraph",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_odf_metadata",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_odt_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_odt_heading",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_ooxml_div_and_blockquote",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_ooxml_heading_levels",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_ooxml_lists",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_ooxml_paragraph_empty_inlines",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_ooxml_pre_and_hr",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_ooxml_raw_html",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_ooxml_table",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_rtf_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_rtf_heading",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_txt_heading",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_txt_invalid_utf8_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_txt_list",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_txt_mixed_inline_elements",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_txt_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_txt_simple",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_txt_strips_formatting",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_txt_unicode_content",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_hwp_to_docx_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_hwp_to_docx_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_hwp_to_docx_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_hwp_to_txt_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_image_scaled_dimensions_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_bold_nested",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_code_empty",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_code_nonempty",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_empty_text",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_image_empty_alt",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_image_no_alt",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_image_with_alt",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_italic_nested",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_line_break",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_link_empty_content",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_link_with_content",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_nested_bold_italic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_strikethrough_nested",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_subscript_nested",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_superscript_nested",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_underline_nested",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_new_converter_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_new_cross_format_converter_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_niche_converter_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odf_to_ooxml_table_list_heading",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odf_to_ooxml_text_spans_with_styles",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odf_to_ooxml_unordered_list_and_empty_para",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odp_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ods_roundtrip_preserves_data",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ods_to_wo_spreadsheet_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ods_to_wo_spreadsheet_format_pair",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_output_valid_zip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_docx_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_docx_multiple_paragraphs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_docx_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_docx_preserves_heading",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_docx_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_html_empty_file",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_html_heading",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_html_multiple_paragraphs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_html_simple",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_html_to_txt_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_html_with_table",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_txt_heading",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_txt_multiple_paragraphs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_txt_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_txt_simple",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ofd_to_docx_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ofd_to_docx_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ofd_to_docx_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ofd_to_html_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ofd_to_txt_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ooxml_transition_to_wo",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ooxml_transition_to_wo_all_variants",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_parse_cm",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_parse_data_url",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_parse_data_url_bmp",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_parse_data_url_jpeg",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_parse_data_url_missing_comma",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ppt_legacy_fixture_slides",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_pptx_extra_parts_byte_faithful_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_pptx_slide_order_roundtrip_and_reorder_f302",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_presentation_converter_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_px_to_cm_x",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_px_to_cm_y",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_px_to_emu",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_px_to_emu_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_registry_real_converters_dispatch",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_registry_real_converters_registered_pairs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_registry_reregister_overrides_pair",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_table",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_text_lines_linebreak_splits_paragraph",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_text_lines_paragraph",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_text_lines_table",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_fb2_epub_reachable_via_chains",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_inlines_to_docx_runs_all_variants",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_inlines_to_docx_runs_empty_text_skipped",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_inlines_to_docx_runs_linebreak_no_prior",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_docx_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_docx_multiple_paragraphs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_docx_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_docx_preserves_bold",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_docx_preserves_italic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_docx_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_document_structure",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_inlines_all_variants",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_inlines_empty_formatting_skipped",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_inlines_font_extends_nested",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_invalid_utf8_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_multiple_paragraphs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_preserves_bold",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_preserves_italic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_simple",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_title_from_info",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_to_txt_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_unicode_hex_escapes",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_ooxml_bold_italic_underline",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_ooxml_table",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_hex_escape_unicode",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_line_break",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_multiple_paragraphs",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_simple",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_strips_formatting",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unescapes_braces_and_backslash",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_strip_html_tags",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_strip_html_tags_various",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_to_converter_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_docx_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_docx_docx_to_txt_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_docx_multiple_lines",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_epub_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_epub_chapters",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_epub_chapters_empty",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_epub_chapters_with_headings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_epub_chapters_without_headings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_epub_empty_input",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_epub_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_epub_with_headings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_fb2_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_fb2_empty_input",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_fb2_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_html_empty_input",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_html_invalid_utf8_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_html_multiple_lines",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_html_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_html_simple",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_html_to_txt_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_html_unicode_content",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_html_wraps_each_line_in_paragraph",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_odt_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_odt_multiple_lines",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_rtf_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_rtf_empty",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_rtf_invalid_utf8_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_rtf_multiple_lines",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_rtf_preserves_unicode_content_verbatim",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_rtf_serializes_unicode_verbatim",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_wo_spreadsheet_to_ods_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_wo_spreadsheet_to_ods_format_pair",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_wo_transition_to_ooxml",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_wo_transition_to_ooxml_all_variants",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_rejects_non_word",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xls_legacy_fixture_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsb_legacy_fixture_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsb_real_files_match_pyxlsb",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cached_value_not_stale",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_recalc_on_edit",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xps_ofd_djvu_converter_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xps_to_docx_format_strings",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xps_to_docx_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xps_to_docx_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xps_to_html_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xps_to_txt_parse_error",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
    "from": "F-050",
    "to": "formatBlock",
    "type": "IMPLEMENTED_BY"
@@ -549,6 +3284,1966 @@
    "from": "F-051",
    "to": "formatBlock",
    "type": "IMPLEMENTED_BY"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_block_element_to_xhtml_all_variants",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_to_wo_pdf_rejects_garbage",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_presentation_to_html_content",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_presentation_to_html_escapes_markup",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_presentation_to_html_invalid_json",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_registry_dispatch_and_no_converter",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_registry_registers_all_bridge_pairs",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_spreadsheet_to_xlsx_emits_valid_zip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_visio_vsdx_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_vsd_identity_empty_input",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_vsdm_to_vsdx_identity_bytes",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_vsdx_to_vsdm_identity_bytes",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_vsdx_to_wo_diagram_rejects_garbage",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_wo_diagram_to_vsdx_invalid_json",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_wo_pdf_to_pdf_invalid_json",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_wo_spreadsheet_to_xlsx_invalid_json",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_xlsx_shared_string_index_one",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_xlsx_to_wo_spreadsheet_parses_handbuilt",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_xlsx_to_wo_spreadsheet_rejects_non_zip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_build_xhtml_content",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_build_xhtml_content_escaped",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bytes_to_data_url",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bytes_to_data_url_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_canvas_height",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_canvas_height_standard",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_canvas_height_unknown",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_canvas_height_widescreen",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_cm_str_to_px_x",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_cm_str_to_px_y",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_converter_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_cross_format_converter_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_data_url_to_bytes",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_data_url_to_bytes_gif_and_webp",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_data_url_to_bytes_invalid",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_data_url_to_bytes_jpeg",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_data_url_to_bytes_png",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_data_url_to_bytes_svg",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_data_url_to_bytes_unknown_mime",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_djvu_to_docx_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_djvu_to_docx_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_djvu_to_docx_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_djvu_to_txt_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_body_to_epub_chapters_no_headings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_body_to_epub_chapters_with_headings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_body_to_text_lines",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_output_valid_zip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_runs_to_html_inlines_bold_italic_order",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_runs_to_html_inlines_image_rid",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_runs_to_html_inlines_strikethrough",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_runs_to_html_inlines_underline",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_empty_body_no_paragraphs",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_no_body",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_no_body_direct",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_no_headings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_preserves_content",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_via_converter",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_with_body_and_headings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_epub_with_headings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_html_heading",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_html_preserves_bold",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_html_preserves_italic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_html_simple",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_html_title",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_html_to_txt_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_odf_heading",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_odf_table_and_metadata",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_odt_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_odt_multiple_paragraphs",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_odt_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_odt_preserves_heading",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_odt_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_emits_pdf17_header",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_pdf_per_page_command_streams_f404",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_multiple_paragraphs",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_simple",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_strips_formatting",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_txt_unicode_content",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_empty_body",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_linebreak_split",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_linebreak_stripped_empty",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_multi_paragraph",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_multiple_pages",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_docx_to_xps_single_line",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_emu_to_px",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_emu_to_px_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_emu_to_px_zero_slide_dim",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_encode_data_url",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_encode_data_url_bmp",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_encode_data_url_default_png",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_encode_data_url_gif",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_encode_data_url_jpg",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_encode_data_url_webp",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_converter_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_docx_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_docx_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_docx_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_html_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_ooxml_document_no_title",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_ooxml_no_title_no_chapters",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_ooxml_via_converter",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_ooxml_with_title_and_chapter",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_epub_to_txt_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_escape_xhtml_text",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_escape_xhtml_text_all_chars",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_docx_run_text",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_docx_run_text_form_feed",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_html_text",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_html_text_all_variants",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_inline_text_all_variants",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_inline_text_image_no_alt_skipped",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_inline_text_linebreak_as_space",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_inline_text_nested_multilevel",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_rtf_text_all_variants",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_rtf_text_font_fontsize_color_nested",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_rtf_text_linebreak_pagebreak_tab",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_text_info",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_text_info_empty_text_skipped",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_text_info_font_size_and_color",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_text_info_multi_paragraph",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_text_info_no_text",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_extract_text_info_takes_first_font_size",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_body_to_lines_and_section_to_lines",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_converter_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_formatting_to_docx_runs_all_styles",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_formatting_to_docx_runs_empty_text_skipped",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_section_to_docx_paragraphs_all_elements",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_section_to_docx_paragraphs_empty_line",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_section_to_docx_paragraphs_nested",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_section_to_docx_paragraphs_with_title",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_section_to_lines_empty_title_skipped",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_section_to_lines_image_no_alt",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_section_to_lines_nested_sections",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_to_docx_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_to_docx_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_to_docx_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_to_ooxml_missing_title_info",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_to_ooxml_no_title_no_body",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_to_ooxml_via_converter",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_to_ooxml_with_title_and_body",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_fb2_to_txt_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_empty_div_blockquote",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_image_alt_in_text",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_paragraph_with_linebreak",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_raw_html_empty",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_odf_content_all_variants",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_odf_content_empty_paragraph_skipped",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_div_and_blockquote",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_heading_default_level",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_heading_empty_inlines",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_headings_all_levels",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_horizontal_rule",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_ordered_list_with_start",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_paragraph_empty_inlines",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_pre_multiline",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_raw_html_empty_trimmed",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_raw_html_nonempty",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_table",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_rtf_blocks_unordered_list",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_docx_header_footer_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_blockquote_nested",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_div_nested_paragraphs",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_heading_empty_text",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_horizontal_rule",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_list_items",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_mixed",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_paragraph_empty_formatting",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_pre_empty_content",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_pre_with_content",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_raw_html",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_elements_to_fb2_table",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_all_variants",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_bold",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_empty",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_empty_text_skipped",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_italic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_linebreak_appends",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_mixed",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_plain_text",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_skips_empty_bold",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_docx_runs_skips_empty_text",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_odf_spans_all_variants",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_odf_spans_empty_skipped",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_rtf_inlines_all_variants",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_rtf_inlines_empty_skipped",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_inlines_to_rtf_inlines_link_propagates_content",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_docx_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_docx_bold",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_docx_embeds_data_url_image",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_docx_heading",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_epub_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_epub_chapters",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_epub_chapters_heading_without_content",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_epub_chapters_with_headings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_epub_chapters_without_headings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_epub_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_epub_with_headings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_fb2_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_fb2_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_fb2_with_styles",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_odf_empty_paragraph",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_odf_metadata",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_odt_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_odt_heading",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_ooxml_div_and_blockquote",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_ooxml_heading_levels",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_ooxml_lists",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_ooxml_paragraph_empty_inlines",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_ooxml_pre_and_hr",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_ooxml_raw_html",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_ooxml_table",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_rtf_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_rtf_heading",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_txt_heading",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_txt_invalid_utf8_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_txt_list",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_txt_mixed_inline_elements",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_txt_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_txt_simple",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_txt_strips_formatting",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_to_txt_unicode_content",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_hwp_to_docx_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_hwp_to_docx_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_hwp_to_docx_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_hwp_to_txt_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_image_scaled_dimensions_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_bold_nested",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_code_empty",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_code_nonempty",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_empty_text",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_image_empty_alt",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_image_no_alt",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_image_with_alt",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_italic_nested",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_line_break",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_link_empty_content",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_link_with_content",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_nested_bold_italic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_strikethrough_nested",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_subscript_nested",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_superscript_nested",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_inline_elements_to_formatting_underline_nested",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_new_converter_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_new_cross_format_converter_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_niche_converter_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odf_to_ooxml_table_list_heading",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odf_to_ooxml_text_spans_with_styles",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odf_to_ooxml_unordered_list_and_empty_para",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odp_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ods_roundtrip_preserves_data",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ods_to_wo_spreadsheet_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ods_to_wo_spreadsheet_format_pair",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_output_valid_zip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_docx_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_docx_multiple_paragraphs",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_docx_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_docx_preserves_heading",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_docx_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_html_empty_file",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_html_heading",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_html_multiple_paragraphs",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_html_simple",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_html_to_txt_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_html_with_table",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_txt_heading",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_txt_multiple_paragraphs",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_txt_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_odt_to_txt_simple",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ofd_to_docx_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ofd_to_docx_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ofd_to_docx_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ofd_to_html_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ofd_to_txt_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ooxml_transition_to_wo",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ooxml_transition_to_wo_all_variants",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_parse_cm",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_parse_data_url",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_parse_data_url_bmp",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_parse_data_url_jpeg",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_parse_data_url_missing_comma",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_ppt_legacy_fixture_slides",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_pptx_extra_parts_byte_faithful_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_pptx_slide_order_roundtrip_and_reorder_f302",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_presentation_converter_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_px_to_cm_x",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_px_to_cm_y",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_px_to_emu",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_px_to_emu_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_registry_real_converters_dispatch",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_registry_real_converters_registered_pairs",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_registry_reregister_overrides_pair",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_table",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_text_lines_linebreak_splits_paragraph",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_text_lines_paragraph",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_text_lines_table",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_fb2_epub_reachable_via_chains",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_inlines_to_docx_runs_all_variants",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_inlines_to_docx_runs_empty_text_skipped",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_inlines_to_docx_runs_linebreak_no_prior",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_docx_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_docx_multiple_paragraphs",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_docx_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_docx_preserves_bold",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_docx_preserves_italic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_docx_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_document_structure",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_inlines_all_variants",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_inlines_empty_formatting_skipped",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_inlines_font_extends_nested",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_invalid_utf8_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_multiple_paragraphs",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_preserves_bold",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_preserves_italic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_simple",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_title_from_info",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_to_txt_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_html_unicode_hex_escapes",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_ooxml_bold_italic_underline",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_ooxml_table",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_hex_escape_unicode",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_line_break",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_multiple_paragraphs",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_simple",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_strips_formatting",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unescapes_braces_and_backslash",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_strip_html_tags",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_strip_html_tags_various",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_to_converter_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_docx_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_docx_docx_to_txt_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_docx_multiple_lines",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_epub_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_epub_chapters",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_epub_chapters_empty",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_epub_chapters_with_headings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_epub_chapters_without_headings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_epub_empty_input",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_epub_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_epub_with_headings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_fb2_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_fb2_empty_input",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_fb2_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_html_empty_input",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_html_invalid_utf8_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_html_multiple_lines",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_html_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_html_simple",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_html_to_txt_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_html_unicode_content",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_html_wraps_each_line_in_paragraph",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_odt_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_odt_multiple_lines",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_rtf_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_rtf_empty",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_rtf_invalid_utf8_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_rtf_multiple_lines",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_rtf_preserves_unicode_content_verbatim",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_txt_to_rtf_serializes_unicode_verbatim",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_wo_spreadsheet_to_ods_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_wo_spreadsheet_to_ods_format_pair",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_wo_transition_to_ooxml",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_wo_transition_to_ooxml_all_variants",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_rejects_non_word",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xls_legacy_fixture_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsb_legacy_fixture_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsb_real_files_match_pyxlsb",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cached_value_not_stale",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_recalc_on_edit",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xps_ofd_djvu_converter_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xps_to_docx_format_strings",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xps_to_docx_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xps_to_docx_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xps_to_html_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xps_to_txt_parse_error",
+   "to": "F-051",
+   "type": "COVERS"
   },
   {
    "from": "F-060",
@@ -1496,6 +6191,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
    "to": "F-200",
    "type": "COVERS"
@@ -3177,6 +7877,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
    "to": "F-200",
    "type": "COVERS"
   },
@@ -3761,6 +8466,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
    "to": "F-201",
    "type": "COVERS"
@@ -5442,6 +10152,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
    "to": "F-201",
    "type": "COVERS"
   },
@@ -6026,6 +10741,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-203",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
    "to": "F-203",
    "type": "COVERS"
@@ -7707,6 +12427,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-203",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
    "to": "F-203",
    "type": "COVERS"
   },
@@ -8291,6 +13016,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
    "to": "F-204",
    "type": "COVERS"
@@ -9972,6 +14702,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
    "to": "F-204",
    "type": "COVERS"
   },
@@ -10556,6 +15291,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-206",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
    "to": "F-206",
    "type": "COVERS"
@@ -12237,6 +16977,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-206",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
    "to": "F-206",
    "type": "COVERS"
   },
@@ -12576,6 +17321,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-208",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
    "to": "F-208",
    "type": "COVERS"
@@ -14257,6 +19007,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-208",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
    "to": "F-208",
    "type": "COVERS"
   },
@@ -14546,6 +19301,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-209",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
    "to": "F-209",
    "type": "COVERS"
@@ -16227,6 +20987,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-209",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
    "to": "F-209",
    "type": "COVERS"
   },
@@ -16706,6 +21471,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
    "to": "F-300",
    "type": "COVERS"
@@ -18387,6 +23157,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
    "to": "F-300",
    "type": "COVERS"
   },
@@ -18896,6 +23671,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
    "to": "F-302",
    "type": "COVERS"
@@ -20577,6 +25357,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
    "to": "F-302",
    "type": "COVERS"
   },
@@ -20846,6 +25631,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-303",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
    "to": "F-303",
    "type": "COVERS"
@@ -22527,6 +27317,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-303",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
    "to": "F-303",
    "type": "COVERS"
   },
@@ -22901,6 +27696,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-305",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
    "to": "F-305",
    "type": "COVERS"
@@ -24582,6 +29382,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-305",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
    "to": "F-305",
    "type": "COVERS"
   },
@@ -24851,6 +29656,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-306",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
    "to": "F-306",
    "type": "COVERS"
@@ -26532,6 +31342,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-306",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
    "to": "F-306",
    "type": "COVERS"
   },
@@ -27171,6 +31986,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-403",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
    "to": "F-403",
    "type": "COVERS"
@@ -28852,6 +33672,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-403",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
    "to": "F-403",
    "type": "COVERS"
   },
@@ -29241,6 +34066,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-404",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
    "to": "F-404",
    "type": "COVERS"
@@ -30922,6 +35752,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-404",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
    "to": "F-404",
    "type": "COVERS"
   },
@@ -31191,6 +36026,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
+   "to": "F-405",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip",
    "to": "F-405",
    "type": "COVERS"
@@ -32872,6 +37712,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_to_txt_unicode_char_count",
+   "to": "F-405",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
    "to": "F-405",
    "type": "COVERS"
   },
@@ -33266,7 +38111,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-20T18:41:24+00:00",
+ "generated_at": "2026-10-20T19:59:17+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -34136,6 +38981,660 @@
    "path": "ore/crates/wo-docserver/src/wopi.rs"
   },
   {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_fuzz_random_entities_no_panic",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_fuzz_random_tags_no_panic",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_fuzz_truncated_html_no_panic",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_is_html_file",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_paragraph_direction_parse_and_serialize_f041",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_attributes_with_special_chars",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_blockquote",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_code_inline",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_deeply_nested_divs",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_deeply_nested_lists",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_default_impl",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_div_with_class",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_empty_body",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_empty_string",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_escaped_html_entities_are_decoded",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_fragment_without_root",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_head_with_style",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_headings",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_html_entities",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_html_entities_decoded_by_roxmltree",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_html_with_attributes",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_html_with_link_tags",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_html_without_body",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_html_without_doctype",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_html_without_head",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_html_without_html_tag",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_invalid_utf8_returns_error",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_links_and_images",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_list",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_malformed_html",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_malformed_unclosed_tags",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_malformed_wrong_nesting",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_meta_charset",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_multiple_headings",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_nested_divs",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_nested_formatting",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_pagebreak_marker_roundtrip",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_pre_code",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_self_closing_tags",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_semantic_elements_as_div",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_simple_html",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_strikethrough_and_subscript_superscript",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_table",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_table_with_colspan_rowspan",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_table_with_merging",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_to_document",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_totally_invalid_input",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_unicode_content",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_unknown_block_element_as_rawhtml",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_unknown_inline_element_as_text",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_very_long_document",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_void_elements",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_whitespace_only",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_word_count_multiple_blocks",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_roundtrip_heading_and_paragraph",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_roundtrip_simple_paragraph",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_serialize_roundtrip",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_escape_attr_amps_and_quotes",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_escape_attr_empty",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_escape_attr_no_change",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_escape_text_amps_angle_brackets",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_escape_text_no_change",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_blockquote",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_blockquote_plain",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_blockquote_with_paragraph_id",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_bold",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_default_impl",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_div_plain",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_div_with_class",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_does_not_escape_rawhtml",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_escapes_html_attributes",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_escapes_id_attribute",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_escapes_image_src",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_escapes_inline_code",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_escapes_link_href",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_escapes_pre_content",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_escapes_text_content",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_head_link",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_head_meta_charset",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_head_meta_name_content",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_head_style",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_heading_level1",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_heading_with_id",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_heading_without_id",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_horizontal_rule",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_image_bare",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_image_with_title_no_alt",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_italic",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_line_break",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_link_bare",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_link_without_title",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_meta_bare",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_multiple_html_attributes",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_nested_inline",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_no_doctype",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_ordered_list_plain",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_ordered_list_with_id_only",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_ordered_list_with_start",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_paragraph_with_id",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_pre_plain",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_pre_with_id",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_strikethrough",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_subscript",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_superscript",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_table_plain",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_table_with_header",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_underline",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_unordered_list",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/serializer.rs::test_serialize_unordered_list_plain",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/serializer.rs"
+  },
+  {
    "id": "tests/core/crates/wo-msbinary/src/biff8.rs::test_decode_rk_int_vs_float",
    "label": "Test",
    "layer": "rust",
@@ -34194,6 +39693,144 @@
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-msbinary/src/xlsb.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_detect_format",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_format_display",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_is_ooxml_file",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_bidi_f041",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_body_paragraphs",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_docx",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_docx_inline_image_extents",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_docx_namespaced_attributes",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_empty_paragraphs",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_paragraph_properties",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_pptx",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_pptx_count_slides",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_pptx_slide_size_standard",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_pptx_transition_and_animations",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_pptx_with_theme",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_run_formatting",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_style_id",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_superscript_subscript",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_table",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_to_document",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_parse_xlsx",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_pptx_detect_from_content_types",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_rejects_non_ooxml",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
   },
   {
    "id": "tests/core/crates/wo-ooxml/src/serializer.rs::test_content_types_present",
@@ -35313,6 +40950,12 @@
   },
   {
    "id": "tests/core/crates/wo-x2t/src/converters.rs::test_block_element_to_xhtml_all_variants",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-x2t/src/converters.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-x2t/src/converters.rs::test_blockquote_survives_editor_save_cycle_f051",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-x2t/src/converters.rs"
@@ -37340,6 +42983,12 @@
    "path": "ore/crates/wo-x2t/src/converters.rs"
   },
   {
+   "id": "tests/core/crates/wo-x2t/src/converters.rs::test_rtl_direction_survives_editor_save_cycle_f041",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-x2t/src/converters.rs"
+  },
+  {
    "id": "tests/core/crates/wo-x2t/src/converters.rs::test_strip_html_tags",
    "label": "Test",
    "layer": "rust",
@@ -38144,11 +43793,11 @@
    "id": "F-041",
    "label": "Feature",
    "name": "RTL paragraph direction",
-   "parity": "partial"
+   "parity": "full"
   },
   {
    "id": "F-041:audit",
-   "justification": "AUDITED 2026-10-19 (bare-row sweep): editor side REAL - directionRtl routes to toggleBlockDirection (block-level style toggle, editor.js:846) with active-state reflection (editor.js:1300); parity with applyLineHeight pattern. FILE-FORMAT GAP (why still partial): wo-ooxml has NO w:bidi handling at all (grep: zero hits in parser.rs/serializer.rs), so RTL paragraph direction is LOST on DOCX/ODT round-trip - the CSS direction:rtl never reaches the file. Fix = parse/emit w:bidi in wo-ooxml pPr + map style.direction in the editor converter bridge; af/feature target, not verification.",
+   "justification": "AUDITED+IMPLEMENTED 2026-10-19 (bare-row sweep then feature slice, server 01c17138e): the dead DocxParagraphProperties.bidi field is now wired end to end - wo-ooxml parses <w:bidi/> and emits it (test_parse_bidi_f041); wo-html BlockElement::Paragraph.dir parsed from dir attr / style direction (test_paragraph_direction_parse_and_serialize_f041, serialized back as dir attr); html->docx maps dir=rtl -> w:bidi; docx->html maps w:bidi -> direction: rtl. Editor toggleBlockDirection was already real. PROVEN by test_rtl_direction_survives_editor_save_cycle_f041: <p style=direction: rtl> survives the FULL editor save path (html->docx->html->docx). ODT-side bidi mapping not wired (DOCX is the save path); add if ODS/ODT editor ships.",
    "label": "Divergence"
   },
   {
@@ -38170,11 +43819,11 @@
    "id": "F-051",
    "label": "Feature",
    "name": "Block quote",
-   "parity": "partial"
+   "parity": "full"
   },
   {
    "id": "F-051:audit",
-   "justification": "AUDITED 2026-10-19 (bare-row sweep): block quote is GENUINELY ABSENT - formatBlock accepts only ^(H[1-6]|P)$ (editor.js:1110), no BLOCKQUOTE command exists anywhere in the editor, and the census has no blockquote surface. No converter path (DOM blockquote -> DOCX style) either. Honest partial: needs formatBlock BLOCKQUOTE support + pStyle Quote mapping + converter round-trip; af/feature target, not verification.",
+   "justification": "AUDITED+IMPLEMENTED 2026-10-19 (bare-row sweep then feature slice, server 01c17138e): <blockquote> -> DOCX pStyle Quote (Word convention; previously silently flattened to body text); docx->html re-emits <blockquote> for Quote styles; editor formatBlock now accepts BLOCKQUOTE (regex + currentBlockTag active-state + Styles menu entry + i18n en/de). PROVEN by test_blockquote_survives_editor_save_cycle_f051: <blockquote><p>To be... survives the FULL editor save path (html->docx->html->docx). ODT-side Quote mapping not wired; add if ODT editor ships.",
    "label": "Divergence"
   },
   {
@@ -39471,10 +45120,10 @@
  ],
  "stats": {
   "commands": 75,
-  "edges": 6653,
+  "edges": 7622,
   "features": 137,
   "surfaces": 75,
-  "tests": 617
+  "tests": 751
  },
  "version": 1
 }
