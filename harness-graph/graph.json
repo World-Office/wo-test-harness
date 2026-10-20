@@ -1501,7 +1501,7 @@
    "type": "COVERS"
   },
   {
-   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_normalizes_header_to_pdf17",
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
    "to": "F-200",
    "type": "COVERS"
   },
@@ -3761,7 +3761,7 @@
    "type": "COVERS"
   },
   {
-   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_normalizes_header_to_pdf17",
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
    "to": "F-201",
    "type": "COVERS"
   },
@@ -6021,7 +6021,7 @@
    "type": "COVERS"
   },
   {
-   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_normalizes_header_to_pdf17",
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
    "to": "F-203",
    "type": "COVERS"
   },
@@ -8281,7 +8281,7 @@
    "type": "COVERS"
   },
   {
-   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_normalizes_header_to_pdf17",
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
    "to": "F-204",
    "type": "COVERS"
   },
@@ -10541,7 +10541,7 @@
    "type": "COVERS"
   },
   {
-   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_normalizes_header_to_pdf17",
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
    "to": "F-206",
    "type": "COVERS"
   },
@@ -12556,7 +12556,7 @@
    "type": "COVERS"
   },
   {
-   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_normalizes_header_to_pdf17",
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
    "to": "F-208",
    "type": "COVERS"
   },
@@ -14521,7 +14521,7 @@
    "type": "COVERS"
   },
   {
-   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_normalizes_header_to_pdf17",
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
    "to": "F-209",
    "type": "COVERS"
   },
@@ -16676,7 +16676,7 @@
    "type": "COVERS"
   },
   {
-   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_normalizes_header_to_pdf17",
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
    "to": "F-300",
    "type": "COVERS"
   },
@@ -18746,7 +18746,7 @@
    "type": "COVERS"
   },
   {
-   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_normalizes_header_to_pdf17",
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
    "to": "F-303",
    "type": "COVERS"
   },
@@ -20796,7 +20796,7 @@
    "type": "COVERS"
   },
   {
-   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_normalizes_header_to_pdf17",
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
    "to": "F-305",
    "type": "COVERS"
   },
@@ -22741,7 +22741,7 @@
    "type": "COVERS"
   },
   {
-   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_normalizes_header_to_pdf17",
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
    "to": "F-306",
    "type": "COVERS"
   },
@@ -25036,6 +25036,16 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-pdf/src/serializer.rs::test_generation_emits_1_7_f403",
+   "to": "F-403",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-pdf/src/serializer.rs::test_roundtrip_preserves_source_version_f403",
+   "to": "F-403",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_block_element_to_xhtml_all_variants",
    "to": "F-403",
    "type": "COVERS"
@@ -25046,7 +25056,7 @@
    "type": "COVERS"
   },
   {
-   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_normalizes_header_to_pdf17",
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
    "to": "F-403",
    "type": "COVERS"
   },
@@ -27111,7 +27121,7 @@
    "type": "COVERS"
   },
   {
-   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_normalizes_header_to_pdf17",
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
    "to": "F-404",
    "type": "COVERS"
   },
@@ -29056,7 +29066,7 @@
    "type": "COVERS"
   },
   {
-   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_normalizes_header_to_pdf17",
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
    "to": "F-405",
    "type": "COVERS"
   },
@@ -31121,7 +31131,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-20T05:12:43+00:00",
+ "generated_at": "2026-10-20T05:22:42+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -32049,6 +32059,18 @@
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-msbinary/src/xlsb.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-pdf/src/serializer.rs::test_generation_emits_1_7_f403",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-pdf/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-pdf/src/serializer.rs::test_roundtrip_preserves_source_version_f403",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-pdf/src/serializer.rs"
   },
   {
    "id": "tests/core/crates/wo-sheet/src/export.rs::test_export_cell_bold_f210",
@@ -33029,7 +33051,7 @@
    "path": "ore/crates/wo-x2t/src/converters.rs"
   },
   {
-   "id": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_normalizes_header_to_pdf17",
+   "id": "tests/core/crates/wo-x2t/src/converters.rs::test_bridge_pdf_roundtrip_preserves_source_version_f403",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-x2t/src/converters.rs"
@@ -37068,11 +37090,11 @@
    "id": "F-403",
    "label": "Feature",
    "name": "PDF header version (1.7; PDF/A 1.4)",
-   "parity": "partial"
+   "parity": "full"
   },
   {
    "id": "F-403:oo-core",
-   "justification": "PdfFile/SrcWriter/Document.cpp:62-63. wo-pdf-render is real; header unprobed. PROBED: (a) no docx->pdf pair in matrix (OO ships DocxRenderer; WO gap) (b) pdf round-trip always %PDF-1.4; OO 1.7 general / 1.4 PDF-A only (Document.cpp:62-63). FIXED 2026-10-09: docx->pdf pair shipped via wo-docx-renderer pipeline + pdf_writer (unit test asserts %PDF-1.7 header; chain odt->docx->pdf now reachable). Remaining: pdf->wo-pdf-document->pdf round-trip preserves the SOURCE version (1.4 in -> 1.4 out) \u2014 documented divergence: generation writes 1.7, round-trip is faithful; PDF/A (1.4-only) not emitted.",
+   "justification": "PdfFile/SrcWriter/Document.cpp:62-63. wo-pdf-render is real; header unprobed. PROBED: (a) no docx->pdf pair in matrix (OO ships DocxRenderer; WO gap) (b) pdf round-trip always %PDF-1.4; OO 1.7 general / 1.4 PDF-A only (Document.cpp:62-63). FIXED 2026-10-09: docx->pdf pair shipped via wo-docx-renderer pipeline + pdf_writer (unit test asserts %PDF-1.7 header; chain odt->docx->pdf now reachable). Round-trip slice closed 2026-10-19 (server e011846e3): serializer header now emits doc.version when non-empty (1.4 in -> 1.4 out; the register-declared 'faithful' round-trip was not true before - header was hardcoded 1.7) and falls back to the OO-general 1.7 only for pure generation; 2 new // F-403 tests in wo-pdf (round-trip 1.4 preserved, generation 1.7), superseded wo-x2t bridge test updated+renamed to preservation contract. PROVEN FULL (was partial). PDF/A (1.4-only) export MODE remains a WO generation feature it does not ship (no PDF/A dialog/pipeline) - a mode absence, not a header-mechanism gap.",
    "label": "Divergence"
   },
   {
@@ -37140,10 +37162,10 @@
  ],
  "stats": {
   "commands": 75,
-  "edges": 6224,
+  "edges": 6226,
   "features": 137,
   "surfaces": 75,
-  "tests": 591
+  "tests": 593
  },
  "version": 1
 }
