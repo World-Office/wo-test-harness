@@ -2981,6 +2981,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
    "to": "F-200",
    "type": "COVERS"
@@ -3357,6 +3362,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
    "to": "F-200",
    "type": "COVERS"
   },
@@ -5226,6 +5236,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
    "to": "F-201",
    "type": "COVERS"
@@ -5602,6 +5617,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
    "to": "F-201",
    "type": "COVERS"
   },
@@ -7471,6 +7491,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "to": "F-203",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
    "to": "F-203",
    "type": "COVERS"
@@ -7847,6 +7872,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "to": "F-203",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
    "to": "F-203",
    "type": "COVERS"
   },
@@ -9716,6 +9746,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
    "to": "F-204",
    "type": "COVERS"
@@ -10092,6 +10127,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
    "to": "F-204",
    "type": "COVERS"
   },
@@ -11961,6 +12001,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "to": "F-206",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
    "to": "F-206",
    "type": "COVERS"
@@ -12337,6 +12382,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "to": "F-206",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
    "to": "F-206",
    "type": "COVERS"
   },
@@ -13961,6 +14011,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "to": "F-208",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
    "to": "F-208",
    "type": "COVERS"
@@ -14337,6 +14392,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "to": "F-208",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
    "to": "F-208",
    "type": "COVERS"
   },
@@ -15911,6 +15971,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "to": "F-209",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
    "to": "F-209",
    "type": "COVERS"
@@ -16287,6 +16352,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "to": "F-209",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
    "to": "F-209",
    "type": "COVERS"
   },
@@ -18051,6 +18121,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
    "to": "F-300",
    "type": "COVERS"
@@ -18427,6 +18502,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
    "to": "F-300",
    "type": "COVERS"
   },
@@ -20106,6 +20186,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "to": "F-303",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
    "to": "F-303",
    "type": "COVERS"
@@ -20482,6 +20567,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "to": "F-303",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
    "to": "F-303",
    "type": "COVERS"
   },
@@ -22141,6 +22231,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "to": "F-305",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
    "to": "F-305",
    "type": "COVERS"
@@ -22517,6 +22612,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "to": "F-305",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
    "to": "F-305",
    "type": "COVERS"
   },
@@ -24071,6 +24171,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "to": "F-306",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
    "to": "F-306",
    "type": "COVERS"
@@ -24447,6 +24552,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "to": "F-306",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
    "to": "F-306",
    "type": "COVERS"
   },
@@ -26361,6 +26471,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "to": "F-403",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
    "to": "F-403",
    "type": "COVERS"
@@ -26737,6 +26852,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "to": "F-403",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
    "to": "F-403",
    "type": "COVERS"
   },
@@ -28411,6 +28531,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "to": "F-404",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
    "to": "F-404",
    "type": "COVERS"
@@ -28787,6 +28912,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "to": "F-404",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
    "to": "F-404",
    "type": "COVERS"
   },
@@ -30341,6 +30471,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "to": "F-405",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
    "to": "F-405",
    "type": "COVERS"
@@ -30717,6 +30852,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "to": "F-405",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
    "to": "F-405",
    "type": "COVERS"
   },
@@ -30911,7 +31051,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-19T21:54:07+00:00",
+ "generated_at": "2026-10-20T04:49:13+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -34595,6 +34735,12 @@
    "path": "ore/crates/wo-x2t/src/converters.rs"
   },
   {
+   "id": "tests/core/crates/wo-x2t/src/converters.rs::test_roundtrip_shared_strings_dedup_f201",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-x2t/src/converters.rs"
+  },
+  {
    "id": "tests/core/crates/wo-x2t/src/converters.rs::test_rtf_blocks_to_html_blocks_paragraph",
    "label": "Test",
    "layer": "rust",
@@ -35046,6 +35192,12 @@
   },
   {
    "id": "tests/core/crates/wo-x2t/src/converters.rs::test_word2003_xml_to_docx_basic",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-x2t/src/converters.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-x2t/src/converters.rs::test_writer_dedups_shared_strings_f201",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-x2t/src/converters.rs"
@@ -36535,11 +36687,11 @@
    "id": "F-201",
    "label": "Feature",
    "name": "SharedStrings dedup round-trip",
-   "parity": "partial"
+   "parity": "full"
   },
   {
    "id": "F-201:oo-core",
-   "justification": "t=s index vs inlineStr must round-trip without user-visible change (XlsxFormat/SharedStrings). Probe needed before claiming. PROBED 2026-10-09 census/oo-contracts.py: caught SILENT CORRUPTION (reader pre-resolves t=s at parser.rs:2622, converter re-resolved: 'Beta'.parse::<usize>() -> 0 -> sharedStrings[0], every string cell became string 0). FIXED wo-x2t converters.rs (parser = single resolution authority; regression test test_bridge_xlsx_shared_string_index_one). Now idx>=1 resolves; writer dedups Beta x2 -> 1 <si>.",
+   "justification": "t=s index vs inlineStr must round-trip without user-visible change (XlsxFormat/SharedStrings). PROBE 2026-10-09: caught SILENT CORRUPTION (reader pre-resolves t=s at parser.rs:2622, converter re-resolved 'Beta'.parse::<usize>() -> 0 -> sharedStrings[0]); FIXED (parser = single resolution authority; regression test_bridge_xlsx_shared_string_index_one). Writer-side dedup verified+promoted 2026-10-19 (server 87106c6e2): WoSpreadsheet->Xlsx builds the sst via HashMap dedup + rewrites t=s cell v to the dedup index; 2 new // F-201 tests prove (a) two 'Beta' cells -> exactly one <si> uniqueCount=1 with both cells at <v>0</v>, (b) full XLSX->WO->XLSX round trip preserves the dedup table (both strings once, resolutions intact). PROVEN FULL (was partial); only nuance: writer models count==uniqueCount (Excel occurrence-count not tracked - capture-layer nicety, not a parity gap).",
    "label": "Divergence"
   },
   {
@@ -36912,10 +37064,10 @@
  ],
  "stats": {
   "commands": 75,
-  "edges": 6182,
+  "edges": 6210,
   "features": 137,
   "surfaces": 75,
-  "tests": 588
+  "tests": 590
  },
  "version": 1
 }
