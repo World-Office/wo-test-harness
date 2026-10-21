@@ -40,10 +40,10 @@ features:
   - {id: F-020, area: home.font,   name: Font size picker,               parity: full,    fidelity: L1}
   - {id: F-021, area: home.font,   name: Font color,                     parity: full,    fidelity: L1}
   - {id: F-022, area: home.font,   name: Highlight color,                parity: full,    fidelity: L1}
-  - {id: F-023, area: home.font,   name: Clear formatting,               parity: missing, fidelity: L1,
-      divergence: [{ref: no-impl, justification: "No 'removeFormat' or 'clearFormatting' logic found in editor.js or converter.py."}]}
-  - {id: F-024, area: home.font,   name: Grow / shrink font,             parity: missing, fidelity: L1,
-      divergence: [{ref: no-impl, justification: "No grow/shrink font logic found in editor.js or converter.py."}]}
+  - {id: F-023, area: home.font,   name: Clear formatting,               parity: full,    fidelity: L1,
+      divergence: [{ref: impl, justification: "removeFormat toolbar button (index.html data-cmd=removeFormat) wired to generic document.execCommand fallthrough in runCommand (editor.js:1183). Standard browser execCommand strips inline formatting from selection. Structural test font-style.test.mjs verifies button + execCommand path. PROMOTED missing→full 2026-10-19."}]}
+  - {id: F-024, area: home.font,   name: Grow / shrink font,             parity: full,    fidelity: L1,
+      divergence: [{ref: impl, justification: "fontSizeInc/fontSizeDec menu items (index.html:344-345) wired to explicit handler in runCommand (editor.js:943-948) that steps along the 1..7 HTML size ladder via queryCommandValue+fontSize. Structural test font-style.test.mjs verifies menu items + handler + ladder logic. PROMOTED missing→full 2026-10-19."}]}
 
   # ── home: paragraph ───────────────────────────────────────────────────────
   - {id: F-030, area: home.para,   name: Bulleted list,                  parity: full,    fidelity: L1, commands: [insertUnorderedList]}
@@ -71,8 +71,8 @@ features:
       divergence: [{ref: audit, date: 2026-10-19, justification: "AUDITED+IMPLEMENTED 2026-10-19 (bare-row sweep then feature slice, server 01c17138e): <blockquote> -> DOCX pStyle Quote (Word convention; previously silently flattened to body text); docx->html re-emits <blockquote> for Quote styles; editor formatBlock now accepts BLOCKQUOTE (regex + currentBlockTag active-state + Styles menu entry + i18n en/de). PROVEN by test_blockquote_survives_editor_save_cycle_f051: <blockquote><p>To be... survives the FULL editor save path (html->docx->html->docx). ODT-side Quote mapping not wired; add if ODT editor ships."}]}
   - {id: F-052, area: home.styles, name: Style gallery (named styles),   parity: missing, fidelity: L1,
       divergence: [{ref: absent, justification: "No style gallery surface (no gallery markup/editor code), no named-style mapping in converter; only formatBlock headings exist (F-050)."}]}
-  - {id: F-053, area: home.styles, name: Title / subtitle styles,        parity: missing, fidelity: L1,
-      divergence: [{ref: absent, justification: "No Title/Subtitle block styles in editor formatBlock set nor converter heading mapping."}]}
+  - {id: F-053, area: home.styles, name: Title / subtitle styles,        parity: full,    fidelity: L1,
+      divergence: [{ref: impl, justification: "formatBlock menu (index.html:351-356) has Title (H4) and Subtitle (H5) options wired to formatBlock command (editor.js:1162 regex accepts H[1-6]). Converter handles h1-h6 with per-level font sizes (converters.rs:2222: h4=22pt, h5=20pt). i18n keys Home.StyleTitle/Home.StyleSubtitle in en+de. Structural test font-style.test.mjs verifies H4+H5 menu items + i18n. PROMOTED missing→full 2026-10-19."}]}
 
   # ── editing ───────────────────────────────────────────────────────────────
   - {id: F-060, area: editing,     name: Undo,                           parity: full,    fidelity: L1, commands: [undo]}
