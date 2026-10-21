@@ -41016,7 +41016,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-21T00:04:43+00:00",
+ "generated_at": "2026-10-21T00:33:15+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -47790,11 +47790,11 @@
    "id": "F-205",
    "label": "Feature",
    "name": "Workbook map + defined names",
-   "parity": "partial"
+   "parity": "full"
   },
   {
    "id": "F-205:rust-impl",
-   "justification": "Register said missing (spec row only). Landed 2026-10-18: wo-sheet implements Workbook map + DefinedName (test_workbook_fields / test_defined_name, tagged in coverage round S1 3ba71448f) and the graph reports COVERED F-205. Upped missing->partial, not full: cross-sheet defined-name evaluation and OO row/col-reference semantics remain open.",
+   "justification": "Landed 2026-10-18 (S1 3ba71448f: Workbook map + DefinedName); 2026-10-19 AF4 closed the two named gaps: cross-sheet defined-name evaluation (test_defined_name_cross_sheet_f205) and OO row/col-reference semantics -- $-absolute refs, range refs, whole-column/whole-row refs (test_defined_name_reference_semantics_f205). Both registered f205 tests green.",
    "label": "Divergence"
   },
   {
