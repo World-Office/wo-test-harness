@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-10-17T16:47:00.176Z",
+ "capturedAt": "2026-10-21T00:05:22.327Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
@@ -740,6 +740,17 @@
      "cmd": "formatBlock",
      "hidden": true,
      "label": "Heading 3",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "hidden": true,
+     "label": "Quote",
      "enabled": true,
      "x": 0,
      "y": 0,
