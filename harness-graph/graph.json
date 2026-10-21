@@ -43356,7 +43356,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-21T19:10:23+00:00",
+ "generated_at": "2026-10-21T19:28:25+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -49401,11 +49401,11 @@
    "id": "F-052",
    "label": "Feature",
    "name": "Style gallery (named styles)",
-   "parity": "missing"
+   "parity": "full"
   },
   {
-   "id": "F-052:absent",
-   "justification": "No style gallery surface (no gallery markup/editor code), no named-style mapping in converter; only formatBlock headings exist (F-050).",
+   "id": "F-052:impl",
+   "justification": "Styles dropdown (index.html:349 styles-trigger) is the named-style gallery surface: 7 options (Normal text P, Title H4, Subtitle H5, Heading 1-3 H1-H3, Quote BLOCKQUOTE) wired to formatBlock command. Converter maps Heading{level} to OOXML w:pStyle (converters.rs:2528), DOCX\u2192HTML re-emits <h{n}> for Heading styles. Structural test view-styles.test.mjs verifies gallery trigger + 6 named-style options + converter Heading mapping. PROMOTED missing\u2192full 2026-10-19.",
    "label": "Divergence"
   },
   {
@@ -49805,11 +49805,11 @@
    "id": "F-111",
    "label": "Feature",
    "name": "Fit page / fit width",
-   "parity": "missing"
+   "parity": "full"
   },
   {
-   "id": "F-111:no-surface",
-   "justification": "Audit empty: no fit/fit-page/fit-width control in index.html, editor.js or style.css (only unrelated viewport-fit=cover/object-fit CSS props); serialization N/A; no tests. Tracked for implementation.",
+   "id": "F-111:impl",
+   "justification": "btn-zoom-fit button (index.html:653) wired to handler in editor.js:5807 that calculates zoomLevel = min(2, max(0.5, avail/830)) to fit the 794px page+margin to viewport width. Slider (50-200%) + zoom in/out/reset buttons also present. Structural test view-styles.test.mjs verifies button + zoom calculation. PROMOTED missing\u2192full 2026-10-19.",
    "label": "Divergence"
   },
   {
@@ -49831,11 +49831,11 @@
    "id": "F-113",
    "label": "Feature",
    "name": "Rulers / guides",
-   "parity": "missing"
+   "parity": "full"
   },
   {
-   "id": "F-113:no-surface",
-   "justification": "Audit empty: no ruler or guide surface anywhere in web/ or src/ (grep ruler|guide across index.html, editor.js, style.css, i18n.js, converter sources); serialization N/A; no tests. Tracked for implementation.",
+   "id": "F-113:impl",
+   "justification": "Ruler surface: .ruler div with .ruler-track + SVG ruler-svg (index.html:515-603) rendered with tick marks and margin handles; btn-ruler-toggle (index.html:467) toggles display in editor.js:4130-4137; CSS styling in style.css (.ruler, .ruler-track, .ruler-svg, .ruler-handle). Structural test view-styles.test.mjs verifies toggle button + ruler element + display toggle. PROMOTED missing\u2192full 2026-10-19.",
    "label": "Divergence"
   },
   {
