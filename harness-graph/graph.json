@@ -10886,6 +10886,16 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-docserver/src/ai.rs::markdown_to_html_headings_and_lists",
+   "to": "F-142",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-docserver/src/ai.rs::markdown_to_html_ordered_list",
+   "to": "F-142",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-docserver/src/ai.rs::provider_config_shapes",
    "to": "F-142",
    "type": "COVERS"
@@ -11406,6 +11416,16 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-docserver/src/ai.rs::markdown_to_html_headings_and_lists",
+   "to": "F-148",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-docserver/src/ai.rs::markdown_to_html_ordered_list",
+   "to": "F-148",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-docserver/src/ai.rs::provider_config_shapes",
    "to": "F-148",
    "type": "COVERS"
@@ -11426,6 +11446,16 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-docserver/src/ai.rs::markdown_to_html_headings_and_lists",
+   "to": "F-149",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-docserver/src/ai.rs::markdown_to_html_ordered_list",
+   "to": "F-149",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-docserver/src/ai.rs::provider_config_shapes",
    "to": "F-149",
    "type": "COVERS"
@@ -11441,6 +11471,16 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-docserver/src/ai.rs::markdown_to_html_headings_and_lists",
+   "to": "F-150",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-docserver/src/ai.rs::markdown_to_html_ordered_list",
+   "to": "F-150",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-docserver/src/ai.rs::provider_config_shapes",
    "to": "F-150",
    "type": "COVERS"
@@ -11452,6 +11492,16 @@
   },
   {
    "from": "tests/core/crates/wo-docserver/src/ai.rs::clean_markdown_strips_fences",
+   "to": "F-152",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-docserver/src/ai.rs::markdown_to_html_headings_and_lists",
+   "to": "F-152",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-docserver/src/ai.rs::markdown_to_html_ordered_list",
    "to": "F-152",
    "type": "COVERS"
   },
@@ -46321,7 +46371,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-22T03:57:59+00:00",
+ "generated_at": "2026-10-22T04:18:06+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -47150,6 +47200,18 @@
   },
   {
    "id": "tests/core/crates/wo-docserver/src/ai.rs::clean_markdown_strips_fences",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-docserver/src/ai.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-docserver/src/ai.rs::markdown_to_html_headings_and_lists",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-docserver/src/ai.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-docserver/src/ai.rs::markdown_to_html_ordered_list",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-docserver/src/ai.rs"
@@ -53251,11 +53313,11 @@
    "id": "F-152",
    "label": "Feature",
    "name": "Text-to-document generation",
-   "parity": "partial"
+   "parity": "full"
   },
   {
-   "id": "F-152:converter-chain",
-   "justification": "No surface: LLM -> markdown/CSV intermediate -> /api/conversion/convert -> docx/xlsx (Nextcloud richdocuments pattern; the WO converter endpoint is real and contract-probed). Needs F-148. Contract: probe 152. Landed 2026-10-06: /ai/generate real (LLM->markdown via the litellm provider), converter chain pinned by probe 152b, probe PASS.",
+   "id": "F-152:impl",
+   "justification": "PROMOTED partial\u2192full 2026-10-22. /ai/generate now supports format=docx: LLM generates markdown, markdown_to_html() converts to HTML (headings h1-h3, bold/italic, bullet/ordered lists, paragraphs), conversion_router converts HTML\u2192DOCX, returns base64-encoded DOCX. format=markdown (default) returns raw markdown as before. Full chain: LLM \u2192 markdown \u2192 HTML \u2192 DOCX, verified end-to-end (valid DOCX ZIP with word/document.xml, Heading1 + paragraph). 3 new tests (markdown_to_html_headings_and_lists, markdown_to_html_ordered_list, clean_markdown_strips_fences). 53 wo-docserver tests pass.",
    "label": "Divergence"
   },
   {
@@ -53672,10 +53734,10 @@
  ],
  "stats": {
   "commands": 75,
-  "edges": 9264,
+  "edges": 9274,
   "features": 137,
   "surfaces": 75,
-  "tests": 808
+  "tests": 810
  },
  "version": 1
 }
