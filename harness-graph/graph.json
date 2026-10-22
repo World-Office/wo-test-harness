@@ -11241,6 +11241,26 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_apply_to_sheet_protected_for_user_blocked",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_apply_to_sheet_protected_for_user_disabled",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_apply_to_sheet_protected_for_user_exempt",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-sheet/src/ops.rs::test_apply_to_sheet_protected_for_user_exempt_group",
+   "to": "F-146",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/ops.rs::test_apply_to_workbook_protected",
    "to": "F-146",
    "type": "COVERS"
@@ -46471,7 +46491,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-22T04:36:02+00:00",
+ "generated_at": "2026-10-22T07:21:25+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -49181,6 +49201,30 @@
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-sheet/src/model.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_apply_to_sheet_protected_for_user_blocked",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_apply_to_sheet_protected_for_user_disabled",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_apply_to_sheet_protected_for_user_exempt",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/ops.rs::test_apply_to_sheet_protected_for_user_exempt_group",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/ops.rs"
   },
   {
    "id": "tests/core/crates/wo-sheet/src/ops.rs::test_apply_to_workbook_protected",
@@ -53345,7 +53389,7 @@
   },
   {
    "id": "F-146:rust-impl",
-   "justification": "Register contract honored 2026-10-19: wo-sheet now has the range model + per-range exemptions it said didn't exist \u2014 SheetProtection { enabled, locked_cells } on Sheet, EditRange { name, ranges } per named range on Workbook, and is_edit_allowed / allowed_edit_ranges / range_is_fully_allowed resolvers (protection off -> all allowed; on + empty edit ranges -> fully locked; inside a named edit range -> allowed; locked_cells override). 14 tests tagged (server b7a7ee2e4); COVERED in the graph. Ops enforcement added 2026-10-19 (server 83b5ccbb4): op_touched_region + apply_to_sheet_protected / apply_to_workbook_protected guard every mutating SheetOp (SetCell/SetStyle/Sort/ApplyConditionalFormat/Clear/Copy/Paste reject when any touched cell falls outside allow-edit ranges; structural Insert/Delete row/col pass per the documented decision; plain apply_to_sheet unchanged for backward compat), 12 more tests. Password hashing + per-user/group exemptions landed 2026-10-19 (server 96ebb664a): SheetProtection += password_hash (hex SHA-256, set_password/verify_password/has_password), exempt_users/exempt_groups + is_edit_allowed_for_user (disabling -> true; exempt user/group -> true regardless of ranges/locked_cells; else delegates to the untouched base resolver), protect_sheet(sheet, Option<&str>) / unprotect_sheet -> Result (wrong password Err, success clears hash); 8 more // F-146 tests (34 total on the row). Stays partial: protect-dialog UI (and per-op/token adoption of the user-aware resolver) remain open.",
+   "justification": "Register contract honored 2026-10-19: wo-sheet now has the range model + per-range exemptions \u2014 SheetProtection { enabled, locked_cells } on Sheet, EditRange { name, ranges } per named range on Workbook, and is_edit_allowed / allowed_edit_ranges / range_is_fully_allowed resolvers. 14 tests tagged. Ops enforcement added 2026-10-19: op_touched_region + apply_to_sheet_protected / apply_to_workbook_protected guard every mutating SheetOp, 12 more tests. Password hashing + per-user/group exemptions landed 2026-10-19: SheetProtection += password_hash (hex SHA-256, set_password/verify_password/has_password), exempt_users/exempt_groups + is_edit_allowed_for_user, protect_sheet / unprotect_sheet, 8 more tests (34 total). Per-op/token adoption of user-aware resolver landed 2026-10-22: apply_to_sheet_protected_for_user / apply_to_workbook_protected_for_user / is_op_allowed_for_user / range_is_fully_allowed_for_user \u2014 exempt users/groups bypass edit-range restrictions at the op level, 4 new tests (38 total). Stays partial: protect-dialog UI (React ProtectPanel buttons have empty onClick) remains the only open gap.",
    "label": "Divergence"
   },
   {
@@ -53840,10 +53884,10 @@
  ],
  "stats": {
   "commands": 75,
-  "edges": 9294,
+  "edges": 9298,
   "features": 137,
   "surfaces": 75,
-  "tests": 811
+  "tests": 815
  },
  "version": 1
 }
