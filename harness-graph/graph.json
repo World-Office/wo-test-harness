@@ -46491,7 +46491,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-22T11:31:44+00:00",
+ "generated_at": "2026-10-22T13:05:43+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -53385,11 +53385,11 @@
    "id": "F-146",
    "label": "Feature",
    "name": "Allow edit ranges",
-   "parity": "partial"
+   "parity": "full"
   },
   {
-   "id": "F-146:rust-impl",
-   "justification": "Register contract honored 2026-10-19: wo-sheet now has the range model + per-range exemptions \u2014 SheetProtection { enabled, locked_cells } on Sheet, EditRange { name, ranges } per named range on Workbook, and is_edit_allowed / allowed_edit_ranges / range_is_fully_allowed resolvers. 14 tests tagged. Ops enforcement added 2026-10-19: op_touched_region + apply_to_sheet_protected / apply_to_workbook_protected guard every mutating SheetOp, 12 more tests. Password hashing + per-user/group exemptions landed 2026-10-19: SheetProtection += password_hash (hex SHA-256, set_password/verify_password/has_password), exempt_users/exempt_groups + is_edit_allowed_for_user, protect_sheet / unprotect_sheet, 8 more tests (34 total). Per-op/token adoption of user-aware resolver landed 2026-10-22: apply_to_sheet_protected_for_user / apply_to_workbook_protected_for_user / is_op_allowed_for_user / range_is_fully_allowed_for_user \u2014 exempt users/groups bypass edit-range restrictions at the op level, 4 new tests (38 total). Stays partial: protect-dialog UI (React ProtectPanel buttons have empty onClick) remains the only open gap.",
+   "id": "F-146:impl",
+   "justification": "PROMOTED partial\u2192full 2026-10-22. wo-sheet backend complete (38 tests: SheetProtection, EditRange, per-user/group exemptions, protect_sheet/unprotect_sheet, op-level enforcement with _for_user variants). ProtectPanel UI now wired: SpreadsheetStore.refreshProtectionState + applyProtection call /api/documents/{id}/protect (same endpoint as document editor), ProtectPanel.tsx has restrict-editing checkbox, new/current password fields, clear-password checkbox, Apply/Close buttons, status/error display. 5 new SpreadsheetStore tests (protection state init, refreshProtectionState fetch, applyProtection POST, error handling, protectUrl fallback). 57 spreadsheeteditor-react tests pass.",
    "label": "Divergence"
   },
   {
