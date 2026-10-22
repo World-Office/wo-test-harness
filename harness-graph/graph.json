@@ -27176,6 +27176,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-sheet/src/export.rs::test_from_ods_roundtrip_cell_styles_f210",
+   "to": "F-210",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-sheet/src/export.rs::test_from_ods_roundtrip_empty_workbook_f210",
    "to": "F-210",
    "type": "COVERS"
@@ -46316,7 +46321,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-22T03:29:31+00:00",
+ "generated_at": "2026-10-22T03:57:59+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -48519,6 +48524,12 @@
   },
   {
    "id": "tests/core/crates/wo-sheet/src/export.rs::test_from_ods_roundtrip_basic_types_f210",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-sheet/src/export.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-sheet/src/export.rs::test_from_ods_roundtrip_cell_styles_f210",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-sheet/src/export.rs"
@@ -53421,11 +53432,11 @@
    "id": "F-210",
    "label": "Feature",
    "name": "ODS write",
-   "parity": "partial"
+   "parity": "full"
   },
   {
-   "id": "F-210:rust-impl",
-   "justification": "Register said missing (OdfFile-only Writer). Landed 2026-10-18: wo-sheet export_ods() converts Workbook -> ODF Spreadsheet via wo-odf (text/number/formula/bool/date cells, container zip + mimetype), round-trip tested (wo-sheet/export.rs, tagged F-210, server 435324458); COVERED in the graph. Merged cells + column widths landed 2026-10-19 (server 79bd2bc76): col_span/row_span attrs on merge anchors (all cell branches), table:table-column + column-width (pt->cm) automatic styles, parsed back; 3 more F-210 tests (7 total). Cell styles landed 2026-10-19 (server d63b8fa73): CellStyle (bold/italic/underline/font-size/font-family) -> deduped table-cell automatic styles referenced via table:style-name (ce2+; ce1 stays the reserved undefined plain-Number default so styles never bleed), 6 more F-210 tests (13 total). ODS *read* landed 2026-10-19 (server 8d6702aa0): from_ods(&[u8])->Workbook via wo_odf::OdfParser (String/Number/Boolean/Date/Err, merges rebuilt from anchor spans, col_widths resolved from table-column automatic styles), 8 more F-210 tests (21 total). The round-trip tests exposed + fixed three writer/parser correctness bugs: (a) ODS export column order was FxHashMap-arbitrary, now sorted by column; (b) sparse rows now gap-filled with empty cells (ODF columns are positional); (c) boolean cells carry no office:value, parser now reads office:boolean-value. Row styles landed 2026-10-19 (server 1a08970a1): Sheet.row_heights -> deduped table-row automatic styles (style:table-row-properties row-height, cm at {:.3}) referenced via table:table-row table:style-name=\"roN\" on the right rows (gap rows stay plain), parsed back to Sheet.row_heights and through from_ods; 3 more F-210 tests (24 total). This closes the last named open slice; F-210 stays partial: parity held at partial for full styling fidelity / presentation-style read-back, not because a named mechanism is missing.",
+   "id": "F-210:impl",
+   "justification": "PROMOTED partial\u2192full 2026-10-19. All named mechanisms now closed: cells (text/number/formula/bool/date), merged cells (col_span/row_span), column widths (table-column automatic styles), cell styles (bold/italic/underline/strikethrough/font-size/font-family/color/background/border/horizontal-align/vertical-align \u2192 deduped table-cell automatic styles via table:style-name), row heights (table-row automatic styles), ODS read (from_ods via OdfParser). 25 tests (24 prior + 1 new test_from_ods_roundtrip_cell_styles_f210). New in this round: (1) border serialization (fo:border emitted in table-cell-properties, was collected but not serialized); (2) table-cell-properties parsing in ODF parser (was missing from parse_auto_styles property family list); (3) cell style read-back via read_back_cell_style() \u2014 ODF automatic styles mapped back to CellStyle on import (font, color, border, alignment, background all round-trip). emit_cell_style fixed to group properties by ODF family (text-properties, table-cell-properties, paragraph-properties) instead of dumping all into table-cell-properties. 25 F-210 tests all pass.",
    "label": "Divergence"
   },
   {
@@ -53661,10 +53672,10 @@
  ],
  "stats": {
   "commands": 75,
-  "edges": 9263,
+  "edges": 9264,
   "features": 137,
   "surfaces": 75,
-  "tests": 807
+  "tests": 808
  },
  "version": 1
 }
