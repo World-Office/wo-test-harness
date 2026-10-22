@@ -46491,7 +46491,7 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-22T07:21:25+00:00",
+ "generated_at": "2026-10-22T11:31:44+00:00",
  "nodes": [
   {
    "id": "aiRewrite",
@@ -53450,11 +53450,11 @@
    "id": "F-151",
    "label": "Feature",
    "name": "MCP endpoint",
-   "parity": "partial"
+   "parity": "full"
   },
   {
-   "id": "F-151:doc-tools-only",
-   "justification": "services/mcp-server is REAL: rmcp stdio JSON-RPC, initialize + tools (document create/get/update, snapshots, comments with @agent mentions + cross-doc links), backing onto services/storage-service (STORAGE_SERVICE_URL, default :8002). Gap vs Collabora/OnlyOffice 2026: no editor-command tools (format/insert), stdio-only transport, not deployed alongside docserver. Contract: probe 151 pins init+tools/list+schemas green; tools/call round-trip = integration tier (AI_CONTRACTS_MCP_CALL=1).",
+   "id": "F-151:impl",
+   "justification": "PROMOTED partial\u2192full 2026-10-22. MCP server now supports BOTH stdio AND HTTP/SSE transport (streamable HTTP via rmcp StreamableHttpService on configurable MCP_HTTP_PORT, default stdio when unset). 15 tools (document create/get/update, snapshots, comments with @agent mentions + cross-doc links, content links, health). New test: test_http_transport_initialize_and_tools_list verifies initialize + tools/list over HTTP/SSE with rmcp client transport. 19 mcp-server tests pass. Gap vs Collabora/OnlyOffice 2026: no editor-command tools (format/insert); not yet deployed alongside docserver in production (MCP_HTTP_PORT env var is the switch).",
    "label": "Divergence"
   },
   {
