@@ -26,6 +26,11 @@ class H(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path.split("?")[0] == "/rig-editor.html":
             body = (HERE / "rig-editor.html").read_bytes().replace(b"http://127.0.0.1:8099", DS_URL.encode())
+            # Linux host: container can't resolve host.docker.internal — swap to
+            # the host's LAN IP so the DS can fetch demo.docx + post callbacks.
+            doc_host = os.environ.get("RIG_DOC_HOST")
+            if doc_host:
+                body = body.replace(b"host.docker.internal:8735", doc_host.encode())
             # ?portal=1 — portal-mode editor config: flips the File-backstage
             # "Create New"/"Open Recent" items visible (standalone sessions hide
             # them). OO controller: canCreateNew ← canRequestCreateNew|createUrl|
