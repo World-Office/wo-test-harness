@@ -26,7 +26,16 @@ OUT = HERE / "census" / "oo-deep-gap.md"
 
 
 # OO tab slug -> WO tab slug (OO 9.4 uses short slugs; WO uses full names)
-SLUG_MAP = {"ins": "insert", "file": None, "charttab": "chart-design"}
+SLUG_MAP = {
+    "ins": "insert",
+    "file": None,
+    "charttab": "chart-design",
+    "links": "references",
+    "review": "collaboration",
+    "protect": "protection",
+    "headerfooter": "header-footer",
+    "8713d619-4e06-ab2c-09da-f8ce4a3a70e0": "ai",
+}
 
 
 def norm(s: str) -> str:

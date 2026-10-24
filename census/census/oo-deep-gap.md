@@ -1,6 +1,6 @@
 # OO vs WO deep surface gap
 
-generated: 2026-10-24T13:44:43+00:00
+generated: 2026-10-24T21:01:26+00:00
 oo capture: 2026-10-24T13:42:02.141Z · wo capture: 2026-10-24T13:37:01.318Z
 
 ## Ribbon tabs
@@ -56,32 +56,25 @@ oo capture: 2026-10-24T13:42:02.141Z · wo capture: 2026-10-24T13:37:01.318Z
     - [ ] Merge Shapes
     - [ ] Page Color
     - [ ] Colors
-- **links** (References): OO 13 vs WO 0 controls — deficit 9 · **TAB ABSENT IN WO** (wo slug: links)
+- **links** (References): OO 13 vs WO 8 controls — deficit 7 · —
     - [ ] Table of Contents
     - [ ] Add Text
     - [ ] Update Table
     - [ ] Footnote
     - [ ] Link
     - [ ] Bookmark
-    - [ ] Caption
-    - [ ] Cross-reference
     - [ ] Table of Figures
-- **review** (Collaboration): OO 21 vs WO 0 controls — deficit 14 · **TAB ABSENT IN WO** (wo slug: review)
+- **review** (Collaboration): OO 21 vs WO 9 controls — deficit 9 · —
     - [ ] Co-editing Mode
-    - [ ] Add Comment
     - [ ] Delete
     - [ ] Resolve
-    - [ ] Track Changes
-    - [ ] Display Mode
     - [ ] Previous
     - [ ] Next
     - [ ] Accept
     - [ ] Reject
-    - [ ] Compare
     - [ ] Combine
-    - [ ] Chat
     - [ ] Mail Merge
-- **protect** (Protection): OO 2 vs WO 0 controls — deficit 2 · **TAB ABSENT IN WO** (wo slug: protect)
+- **protect** (Protection): OO 2 vs WO 2 controls — deficit 2 · —
     - [ ] Encrypt
     - [ ] Protect Document
 - **view** (View): OO 12 vs WO 9 controls — deficit 10 · —
@@ -105,14 +98,12 @@ oo capture: 2026-10-24T13:42:02.141Z · wo capture: 2026-10-24T13:37:01.318Z
     - [ ] Zotero
     - [ ] Speech
     - [ ] Speech input
-- **headerfooter** (Header & Footer): OO 12 vs WO 0 controls — deficit 6 · **TAB ABSENT IN WO** (wo slug: headerfooter)
+- **headerfooter** (Header & Footer): OO 12 vs WO 8 controls — deficit 4 · —
     - [ ] Header & Footer
-    - [ ] Page Number
-    - [ ] Date & Time
     - [ ] Field
     - [ ] Image
     - [ ] Close
-- **8713d619-4e06-ab2c-09da-f8ce4a3a70e0** (AI): OO 8 vs WO 0 controls — deficit 6 · **TAB ABSENT IN WO** (wo slug: 8713d619-4e06-ab2c-09da-f8ce4a3a70e0)
+- **8713d619-4e06-ab2c-09da-f8ce4a3a70e0** (AI): OO 8 vs WO 6 controls — deficit 6 · —
     - [ ] Settings
     - [ ] Chatbot
     - [ ] Summarization
@@ -129,11 +120,6 @@ oo capture: 2026-10-24T13:42:02.141Z · wo capture: 2026-10-24T13:37:01.318Z
     - [ ] Width
     - [ ] Height
     - [ ] 3D rotation
-- **references**: WO-only tab (8 controls, no OO counterpart)
-- **collaboration**: WO-only tab (9 controls, no OO counterpart)
-- **protection**: WO-only tab (2 controls, no OO counterpart)
-- **ai**: WO-only tab (6 controls, no OO counterpart)
-- **header-footer**: WO-only tab (8 controls, no OO counterpart)
 
 ## Dropdown menus
 
@@ -310,5 +296,5 @@ OO panel sections: 84 · WO panel: **ABSENT**
 
 ## Totals
 
-- OO surface rows: 269 · WO: 123 · item-level deficit: 152
+- OO surface rows: 269 · WO: 156 · item-level deficit: 143
 
