@@ -45,6 +45,14 @@ def norm(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", s).strip()
 
 
+def oo_clean(s: str) -> str:
+    """OO captures sometimes concatenate a label with its submenu contents
+    ('Equation settingsCurrent - ProfessionalC'). Truncate at the first
+    lowercase->uppercase junction and drop trailing capture junk."""
+    s = re.sub(r"(?<=[a-z])(?=[A-Z]).*$", "", s or "")
+    return re.sub(r"\s+", " ", s).strip()
+
+
 def labels(rows: list[dict]) -> list[str]:
     out, seen = [], set()
     for l in (r.get("label") or "" for r in rows):
@@ -68,18 +76,28 @@ def deficit(oo_rows: list[dict], wo_rows: list[dict]) -> list[str]:
     STOP = {"to", "the", "a", "an", "of", "in", "&", "and", "your", "from"}
     def toks(s: str) -> frozenset:
         return frozenset(w for w in re.findall(r"[a-z0-9]+", s.lower()) if w not in STOP)
+    def tok_eq(a: str, b: str) -> bool:
+        # prefix-stem: "Summarize" ~ "Summarization" (common prefix >= 6)
+        n = min(len(a), len(b))
+        return n >= 6 and a[:n] == b[:n] or a == b
+    def t_subset(a: frozenset, b: frozenset) -> bool:
+        return len(a) > 0 and all(any(tok_eq(x, y) for y in b) for x in a)
     wo_tok = [toks(l) for l in labels(wo_rows) if toks(l)]
     out = []
     for l in labels(oo_rows):
-        n = norm(l)
+        n = norm(oo_clean(l))
         if not n or n in wo_n:
             continue
-        words = re.findall(r"[a-z0-9]+", l.lower())
+        words = re.findall(r"[a-z0-9]+", oo_clean(l).lower())
         pre = norm("".join(words[:2])) if words else ""
         if pre and pre in wo_prefix:
             continue
-        t = toks(l)
-        if t and any(t <= w for w in wo_tok):
+        t = toks(oo_clean(l))
+        # forward: OO tokens all present in one WO label ("Table" <= "Insert table")
+        if t and any(t_subset(t, w) for w in wo_tok):
+            continue
+        # reverse: WO label is OO minus at most one word ("Caption" <= "Insert caption")
+        if t and any(len(w) >= len(t) - 1 and t_subset(w, t) for w in wo_tok):
             continue
         out.append(l)
     return out
