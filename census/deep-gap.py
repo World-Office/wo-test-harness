@@ -47,10 +47,24 @@ def norm(s: str) -> str:
 
 def oo_clean(s: str) -> str:
     """OO captures sometimes concatenate a label with its submenu contents
-    ('Equation settingsCurrent - ProfessionalC'). Truncate at the first
-    lowercase->uppercase junction and drop trailing capture junk."""
-    s = re.sub(r"(?<=[a-z])(?=[A-Z]).*$", "", s or "")
-    return re.sub(r"\s+", " ", s).strip()
+    ('Equation settingsCurrent - ProfessionalC'). Truncate at a lowercase->
+    uppercase junction, but only when the junction is in a NON-FIRST word
+    ('Text alignment|Top...') or the first word's prefix recurs later
+    ('Link|Edit link...') — legit CamelCase like 'SmartArt' is kept."""
+    words = (s or "").split()
+    if not words:
+        return ""
+    def junction(w):
+        m = re.search(r"[a-z][A-Z]", w)
+        return (m.start() + 1) if m else None
+    for i, w in enumerate(words):
+        j = junction(w)
+        if j is None:
+            continue
+        if i > 0 or w[:j].lower() in {x.lower() for x in words[1:]}:
+            words = words[:i] + [w[:j]]
+            break
+    return re.sub(r"\s+", " ", " ".join(words)).strip()
 
 
 def labels(rows: list[dict]) -> list[str]:
@@ -79,7 +93,7 @@ def deficit(oo_rows: list[dict], wo_rows: list[dict]) -> list[str]:
     def tok_eq(a: str, b: str) -> bool:
         # prefix-stem: "Summarize" ~ "Summarization" (common prefix >= 6)
         n = min(len(a), len(b))
-        return n >= 6 and a[:n] == b[:n] or a == b
+        return n >= 5 and a[:n] == b[:n] or a == b
     def t_subset(a: frozenset, b: frozenset) -> bool:
         return len(a) > 0 and all(any(tok_eq(x, y) for y in b) for x in a)
     wo_tok = [toks(l) for l in labels(wo_rows) if toks(l)]
@@ -125,6 +139,13 @@ def main() -> int:
         oo_btns = t.get("buttons", [])
         wo_tab = wo.get("tabs", {}).get(wo_key, {})
         wo_btns = wo_tab.get("buttons", []) if wo_tab else []
+        # WO groups some OO top-level buttons into ribbon menus (Macros) —
+        # menu rows count as tab-level match candidates.
+        wo_btns = wo_btns + [
+            {"label": i["label"]}
+            for m in wo.get("menus", [])
+            for i in m.get("items", [])
+        ]
         gap = deficit(oo_btns, wo_btns)
         total_oo += len(oo_btns)
         total_wo += len(wo_btns)
