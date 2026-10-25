@@ -64,6 +64,11 @@ def deficit(oo_rows: list[dict], wo_rows: list[dict]) -> list[str]:
         words = re.findall(r"[a-z0-9]+", l.lower())
         if words:
             wo_prefix.add(norm("".join(words[:2])))
+    # token-set index: "Table" matches "Insert table", "Fit To Page" ~ "Fit page"
+    STOP = {"to", "the", "a", "an", "of", "in", "&", "and", "your", "from"}
+    def toks(s: str) -> frozenset:
+        return frozenset(w for w in re.findall(r"[a-z0-9]+", s.lower()) if w not in STOP)
+    wo_tok = [toks(l) for l in labels(wo_rows) if toks(l)]
     out = []
     for l in labels(oo_rows):
         n = norm(l)
@@ -72,6 +77,9 @@ def deficit(oo_rows: list[dict], wo_rows: list[dict]) -> list[str]:
         words = re.findall(r"[a-z0-9]+", l.lower())
         pre = norm("".join(words[:2])) if words else ""
         if pre and pre in wo_prefix:
+            continue
+        t = toks(l)
+        if t and any(t <= w for w in wo_tok):
             continue
         out.append(l)
     return out
