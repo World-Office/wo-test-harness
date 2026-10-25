@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-10-24T13:37:01.318Z",
+ "capturedAt": "2026-10-25T21:03:37.436Z",
  "viewport": {
   "w": 1600,
   "h": 1000
@@ -113,7 +113,7 @@
      "id": null,
      "cmd": "fontSizeDec",
      "icon": "",
-     "label": "Decrease font",
+     "label": "Decrement font size",
      "enabled": true,
      "x": 332,
      "y": 114,
@@ -124,7 +124,7 @@
      "id": null,
      "cmd": "fontSizeInc",
      "icon": "",
-     "label": "Increase font",
+     "label": "Increment font size",
      "enabled": true,
      "x": 358,
      "y": 114,
@@ -148,7 +148,7 @@
      "icon": "",
      "label": "Bold",
      "enabled": true,
-     "x": 156,
+     "x": 143,
      "y": 140,
      "w": 24,
      "h": 24
@@ -159,7 +159,7 @@
      "icon": "",
      "label": "Italic",
      "enabled": true,
-     "x": 182,
+     "x": 169,
      "y": 140,
      "w": 24,
      "h": 24
@@ -170,7 +170,7 @@
      "icon": "",
      "label": "Underline",
      "enabled": true,
-     "x": 208,
+     "x": 195,
      "y": 140,
      "w": 24,
      "h": 24
@@ -181,7 +181,7 @@
      "icon": "",
      "label": "Strikethrough",
      "enabled": true,
-     "x": 234,
+     "x": 221,
      "y": 140,
      "w": 24,
      "h": 24
@@ -192,7 +192,7 @@
      "icon": "",
      "label": "Superscript",
      "enabled": true,
-     "x": 260,
+     "x": 247,
      "y": 140,
      "w": 24,
      "h": 24
@@ -203,9 +203,20 @@
      "icon": "",
      "label": "Script options",
      "enabled": true,
-     "x": 286,
+     "x": 273,
      "y": 140,
      "w": 16,
+     "h": 24
+    },
+    {
+     "id": null,
+     "cmd": "subscript",
+     "icon": "",
+     "label": "Subscript",
+     "enabled": true,
+     "x": 291,
+     "y": 140,
+     "w": 24,
      "h": 24
     },
     {
@@ -214,7 +225,7 @@
      "icon": "",
      "label": "Highlight color",
      "enabled": true,
-     "x": 319,
+     "x": 332,
      "y": 141,
      "w": 8,
      "h": 22
@@ -223,9 +234,9 @@
      "id": "text-color",
      "cmd": null,
      "icon": "",
-     "label": "Text color",
+     "label": "Font color",
      "enabled": true,
-     "x": 343,
+     "x": 356,
      "y": 141,
      "w": 10,
      "h": 22
@@ -234,9 +245,9 @@
      "id": null,
      "cmd": "removeFormat",
      "icon": "",
-     "label": "Clear formatting",
+     "label": "Clear style",
      "enabled": true,
-     "x": 356,
+     "x": 369,
      "y": 140,
      "w": 24,
      "h": 24
@@ -333,7 +344,7 @@
      "id": null,
      "cmd": "directionRtl",
      "icon": "",
-     "label": "Toolbar.DirectionRtl",
+     "label": "Text direction",
      "enabled": true,
      "x": 653,
      "y": 114,
@@ -357,7 +368,7 @@
      "icon": "",
      "label": "Align left",
      "enabled": true,
-     "x": 502,
+     "x": 463,
      "y": 140,
      "w": 24,
      "h": 24
@@ -366,9 +377,9 @@
      "id": null,
      "cmd": "justifyCenter",
      "icon": "",
-     "label": "Center",
+     "label": "Align center",
      "enabled": true,
-     "x": 528,
+     "x": 489,
      "y": 140,
      "w": 24,
      "h": 24
@@ -379,7 +390,7 @@
      "icon": "",
      "label": "Align right",
      "enabled": true,
-     "x": 554,
+     "x": 515,
      "y": 140,
      "w": 24,
      "h": 24
@@ -388,9 +399,42 @@
      "id": null,
      "cmd": "justifyFull",
      "icon": "",
-     "label": "Justify",
+     "label": "Justified",
      "enabled": true,
-     "x": 580,
+     "x": 541,
+     "y": 140,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "cmd": "openBorders",
+     "icon": "",
+     "label": "Borders",
+     "enabled": true,
+     "x": 567,
+     "y": 140,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "shading-color",
+     "cmd": null,
+     "icon": "",
+     "label": "Paragraph shading",
+     "enabled": true,
+     "x": 608,
+     "y": 141,
+     "w": 8,
+     "h": 22
+    },
+    {
+     "id": "btn-home-formatmarks",
+     "cmd": null,
+     "icon": "",
+     "label": "Nonprinting characters",
+     "enabled": true,
+     "x": 619,
      "y": 140,
      "w": 24,
      "h": 24
@@ -401,7 +445,7 @@
      "icon": "",
      "label": "More formatting",
      "enabled": true,
-     "x": 606,
+     "x": 645,
      "y": 140,
      "w": 16,
      "h": 24
@@ -489,7 +533,7 @@
      "icon": "",
      "label": "Find and replace",
      "enabled": true,
-     "x": 1532,
+     "x": 1500,
      "y": 110,
      "w": 24,
      "h": 24
@@ -500,7 +544,7 @@
      "icon": "",
      "label": "Show fewer toolbar buttons",
      "enabled": true,
-     "x": 1532,
+     "x": 1500,
      "y": 144,
      "w": 24,
      "h": 24
@@ -511,7 +555,7 @@
      "icon": "",
      "label": "Toggle fullscreen",
      "enabled": true,
-     "x": 1564,
+     "x": 1532,
      "y": 110,
      "w": 24,
      "h": 24
@@ -521,6 +565,28 @@
      "cmd": null,
      "icon": "",
      "label": "Toggle theme",
+     "enabled": true,
+     "x": 1532,
+     "y": 144,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-replace",
+     "cmd": null,
+     "icon": "",
+     "label": "Replace",
+     "enabled": true,
+     "x": 1564,
+     "y": 110,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-select-all",
+     "cmd": "selectAll",
+     "icon": "",
+     "label": "Select all",
      "enabled": true,
      "x": 1564,
      "y": 144,
@@ -540,7 +606,7 @@
      "label": "Insert table",
      "enabled": true,
      "x": 12,
-     "y": 116,
+     "y": 97,
      "w": 34,
      "h": 46
     },
@@ -551,7 +617,7 @@
      "label": "Table actions",
      "enabled": true,
      "x": 48,
-     "y": 116,
+     "y": 97,
      "w": 43,
      "h": 46
     },
@@ -562,7 +628,7 @@
      "label": "Insert image",
      "enabled": true,
      "x": 93,
-     "y": 116,
+     "y": 97,
      "w": 42,
      "h": 46
     },
@@ -573,7 +639,7 @@
      "label": "Insert link",
      "enabled": true,
      "x": 137,
-     "y": 116,
+     "y": 97,
      "w": 42,
      "h": 46
     },
@@ -584,8 +650,19 @@
      "label": "Insert horizontal rule",
      "enabled": true,
      "x": 181,
-     "y": 116,
+     "y": 97,
      "w": 34,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "insertBlankPage",
+     "icon": "",
+     "label": "Insert blank page",
+     "enabled": true,
+     "x": 217,
+     "y": 97,
+     "w": 88,
      "h": 46
     },
     {
@@ -594,8 +671,8 @@
      "icon": "",
      "label": "Insert object",
      "enabled": true,
-     "x": 217,
-     "y": 116,
+     "x": 307,
+     "y": 97,
      "w": 34,
      "h": 46
     },
@@ -605,8 +682,8 @@
      "icon": "",
      "label": "Insert bookmark",
      "enabled": true,
-     "x": 253,
-     "y": 116,
+     "x": 343,
+     "y": 97,
      "w": 42,
      "h": 46
     },
@@ -616,8 +693,8 @@
      "icon": "",
      "label": "Insert cross-reference",
      "enabled": true,
-     "x": 297,
-     "y": 116,
+     "x": 387,
+     "y": 97,
      "w": 42,
      "h": 46
     },
@@ -627,8 +704,8 @@
      "icon": "",
      "label": "Insert symbol",
      "enabled": true,
-     "x": 341,
-     "y": 116,
+     "x": 431,
+     "y": 97,
      "w": 34,
      "h": 46
     },
@@ -636,10 +713,10 @@
      "id": "btn-datetime",
      "cmd": null,
      "icon": "",
-     "label": "Insert date",
+     "label": "Date & Time",
      "enabled": true,
-     "x": 377,
-     "y": 116,
+     "x": 467,
+     "y": 97,
      "w": 42,
      "h": 46
     },
@@ -649,8 +726,8 @@
      "icon": "",
      "label": "Insert page number",
      "enabled": true,
-     "x": 421,
-     "y": 116,
+     "x": 511,
+     "y": 97,
      "w": 34,
      "h": 46
     },
@@ -660,8 +737,8 @@
      "icon": "",
      "label": "Insert page header",
      "enabled": true,
-     "x": 457,
-     "y": 116,
+     "x": 547,
+     "y": 97,
      "w": 34,
      "h": 46
     },
@@ -671,8 +748,8 @@
      "icon": "",
      "label": "Insert page footer",
      "enabled": true,
-     "x": 493,
-     "y": 116,
+     "x": 583,
+     "y": 97,
      "w": 34,
      "h": 46
     },
@@ -682,8 +759,8 @@
      "icon": "",
      "label": "Shape",
      "enabled": true,
-     "x": 529,
-     "y": 116,
+     "x": 619,
+     "y": 97,
      "w": 58,
      "h": 46
     },
@@ -693,20 +770,20 @@
      "icon": "",
      "label": "Chart",
      "enabled": true,
-     "x": 589,
-     "y": 116,
+     "x": 680,
+     "y": 97,
      "w": 52,
      "h": 46
     },
     {
      "id": null,
-     "cmd": "insertObject",
+     "cmd": "insertTextart",
      "icon": "",
-     "label": "Text art",
+     "label": "TextArt",
      "enabled": true,
-     "x": 644,
-     "y": 116,
-     "w": 64,
+     "x": 734,
+     "y": 97,
+     "w": 62,
      "h": 46
     },
     {
@@ -715,19 +792,19 @@
      "icon": "",
      "label": "Drop cap",
      "enabled": true,
-     "x": 710,
-     "y": 116,
+     "x": 797,
+     "y": 97,
      "w": 75,
      "h": 46
     },
     {
      "id": null,
-     "cmd": "insertObject",
+     "cmd": "insertTextbox",
      "icon": "",
      "label": "Text box",
      "enabled": true,
-     "x": 786,
-     "y": 116,
+     "x": 874,
+     "y": 97,
      "w": 70,
      "h": 46
     },
@@ -737,9 +814,108 @@
      "icon": "",
      "label": "Hyperlink",
      "enabled": true,
-     "x": 859,
-     "y": 116,
+     "x": 946,
+     "y": 97,
      "w": 76,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "insertComment",
+     "icon": "",
+     "label": "Insert comment",
+     "enabled": true,
+     "x": 1025,
+     "y": 97,
+     "w": 79,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": null,
+     "icon": "",
+     "label": "Breaks",
+     "enabled": true,
+     "x": 1105,
+     "y": 97,
+     "w": 31,
+     "h": 46
+    },
+    {
+     "id": "btn-textfile",
+     "cmd": null,
+     "icon": "",
+     "label": "Text from File",
+     "enabled": true,
+     "x": 1138,
+     "y": 97,
+     "w": 102,
+     "h": 46
+    },
+    {
+     "id": "btn-addtext",
+     "cmd": null,
+     "icon": "",
+     "label": "Add text",
+     "enabled": true,
+     "x": 1243,
+     "y": 97,
+     "w": 69,
+     "h": 46
+    },
+    {
+     "id": "btn-field",
+     "cmd": null,
+     "icon": "",
+     "label": "Field",
+     "enabled": true,
+     "x": 1314,
+     "y": 97,
+     "w": 48,
+     "h": 46
+    },
+    {
+     "id": "btn-contentcontrol",
+     "cmd": null,
+     "icon": "",
+     "label": "Content Controls",
+     "enabled": true,
+     "x": 1364,
+     "y": 97,
+     "w": 123,
+     "h": 46
+    },
+    {
+     "id": "btn-equation",
+     "cmd": null,
+     "icon": "",
+     "label": "Equation",
+     "enabled": true,
+     "x": 1489,
+     "y": 97,
+     "w": 73,
+     "h": 46
+    },
+    {
+     "id": "btn-headerfooter-combined",
+     "cmd": "insertHeaderFooter",
+     "icon": "",
+     "label": "Header & Footer",
+     "enabled": true,
+     "x": 12,
+     "y": 149,
+     "w": 38,
+     "h": 46
+    },
+    {
+     "id": "btn-smartart",
+     "cmd": null,
+     "icon": "",
+     "label": "SmartArt",
+     "enabled": true,
+     "x": 52,
+     "y": 149,
+     "w": 73,
      "h": 46
     },
     {
@@ -748,8 +924,8 @@
      "icon": "",
      "label": "Insert tools",
      "enabled": true,
-     "x": 937,
-     "y": 116,
+     "x": 127,
+     "y": 149,
      "w": 49,
      "h": 46
     }
@@ -865,36 +1041,124 @@
    "contextual": false,
    "buttons": [
     {
-     "id": "btn-page-break",
+     "id": null,
      "cmd": null,
      "icon": "",
-     "label": "Insert page break",
+     "label": "Margins",
      "enabled": true,
      "x": 12,
      "y": 116,
-     "w": 34,
+     "w": 36,
      "h": 46
     },
     {
-     "id": "btn-section-break",
+     "id": null,
      "cmd": null,
      "icon": "",
-     "label": "Insert section break",
+     "label": "Orientation",
      "enabled": true,
-     "x": 48,
+     "x": 50,
      "y": 116,
-     "w": 34,
+     "w": 49,
      "h": 46
     },
     {
-     "id": "btn-columns",
+     "id": null,
      "cmd": null,
      "icon": "",
-     "label": "Insert columns",
+     "label": "Size",
      "enabled": true,
-     "x": 84,
+     "x": 101,
      "y": 116,
-     "w": 34,
+     "w": 22,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": null,
+     "icon": "",
+     "label": "Columns",
+     "enabled": true,
+     "x": 125,
+     "y": 116,
+     "w": 39,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": null,
+     "icon": "",
+     "label": "Breaks",
+     "enabled": true,
+     "x": 166,
+     "y": 116,
+     "w": 31,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": null,
+     "icon": "",
+     "label": "Wrapping",
+     "enabled": true,
+     "x": 199,
+     "y": 116,
+     "w": 43,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "icon": "",
+     "label": "Bring forward",
+     "enabled": true,
+     "x": 244,
+     "y": 116,
+     "w": 101,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "icon": "",
+     "label": "Send backward",
+     "enabled": true,
+     "x": 347,
+     "y": 116,
+     "w": 115,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": null,
+     "icon": "",
+     "label": "Align",
+     "enabled": true,
+     "x": 464,
+     "y": 116,
+     "w": 22,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "icon": "",
+     "label": "Group",
+     "enabled": true,
+     "x": 488,
+     "y": 116,
+     "w": 57,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": null,
+     "icon": "",
+     "label": "Merge shapes",
+     "enabled": true,
+     "x": 547,
+     "y": 116,
+     "w": 63,
      "h": 46
     },
     {
@@ -903,7 +1167,7 @@
      "icon": "",
      "label": "Page setup",
      "enabled": true,
-     "x": 120,
+     "x": 612,
      "y": 116,
      "w": 89,
      "h": 46
@@ -914,7 +1178,7 @@
      "icon": "",
      "label": "Hyphenation",
      "enabled": true,
-     "x": 211,
+     "x": 703,
      "y": 116,
      "w": 97,
      "h": 46
@@ -925,7 +1189,7 @@
      "icon": "",
      "label": "Line numbers",
      "enabled": true,
-     "x": 309,
+     "x": 802,
      "y": 116,
      "w": 103,
      "h": 46
@@ -936,7 +1200,7 @@
      "icon": "",
      "label": "Watermark",
      "enabled": true,
-     "x": 414,
+     "x": 906,
      "y": 116,
      "w": 86,
      "h": 46
@@ -945,9 +1209,9 @@
      "id": "pagecolor",
      "cmd": null,
      "icon": "",
-     "label": "Layout.PageColor",
+     "label": "Page color",
      "enabled": true,
-     "x": 502,
+     "x": 994,
      "y": 128,
      "w": 24,
      "h": 22
@@ -956,11 +1220,11 @@
      "id": "themecolors",
      "cmd": null,
      "icon": "",
-     "label": "Layout.Colors",
+     "label": "Colors",
      "enabled": true,
-     "x": 532,
+     "x": 1024,
      "y": 133,
-     "w": 86,
+     "w": 80,
      "h": 14
     }
    ]
@@ -1048,13 +1312,68 @@
     },
     {
      "id": null,
+     "cmd": "updateToc",
+     "icon": "",
+     "label": "Update table",
+     "enabled": true,
+     "x": 408,
+     "y": 116,
+     "w": 97,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "insertToF",
+     "icon": "",
+     "label": "Table of figures",
+     "enabled": true,
+     "x": 507,
+     "y": 116,
+     "w": 113,
+     "h": 46
+    },
+    {
+     "id": null,
      "cmd": "openCrossref",
      "icon": "",
      "label": "Cross-reference",
      "enabled": true,
-     "x": 408,
+     "x": 622,
      "y": 116,
      "w": 118,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "link",
+     "icon": "",
+     "label": "Link",
+     "enabled": true,
+     "x": 743,
+     "y": 116,
+     "w": 44,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "bookmark",
+     "icon": "",
+     "label": "Bookmark",
+     "enabled": true,
+     "x": 789,
+     "y": 116,
+     "w": 81,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "addText",
+     "icon": "",
+     "label": "Add Text",
+     "enabled": true,
+     "x": 872,
+     "y": 116,
+     "w": 72,
      "h": 46
     }
    ]
@@ -1108,12 +1427,34 @@
      "h": 46
     },
     {
+     "id": null,
+     "cmd": "resolveComment",
+     "icon": "",
+     "label": "Resolve",
+     "enabled": true,
+     "x": 164,
+     "y": 116,
+     "w": 69,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "deleteComment",
+     "icon": "",
+     "label": "Delete",
+     "enabled": true,
+     "x": 235,
+     "y": 116,
+     "w": 58,
+     "h": 46
+    },
+    {
      "id": "btn-chat-toggle",
      "cmd": "toggleChat",
      "icon": "",
      "label": "Chat",
      "enabled": true,
-     "x": 164,
+     "x": 295,
      "y": 116,
      "w": 48,
      "h": 46
@@ -1124,9 +1465,20 @@
      "icon": "",
      "label": "Compare",
      "enabled": true,
-     "x": 214,
+     "x": 345,
      "y": 116,
      "w": 76,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "combineRevisions",
+     "icon": "",
+     "label": "Combine",
+     "enabled": true,
+     "x": 422,
+     "y": 116,
+     "w": 74,
      "h": 46
     },
     {
@@ -1135,10 +1487,21 @@
      "icon": "",
      "label": "Display mode",
      "enabled": true,
-     "x": 291,
+     "x": 498,
      "y": 116,
      "w": 103,
      "h": 46
+    },
+    {
+     "id": "coedit-mode",
+     "cmd": null,
+     "icon": "",
+     "label": "Co-editing mode",
+     "enabled": true,
+     "x": 738,
+     "y": 129,
+     "w": 53,
+     "h": 19
     },
     {
      "id": null,
@@ -1146,7 +1509,7 @@
      "icon": "",
      "label": "Previous change",
      "enabled": true,
-     "x": 396,
+     "x": 793,
      "y": 116,
      "w": 122,
      "h": 46
@@ -1157,9 +1520,42 @@
      "icon": "",
      "label": "Next change",
      "enabled": true,
-     "x": 520,
+     "x": 917,
      "y": 116,
      "w": 97,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "acceptTrackedChange",
+     "icon": "",
+     "label": "Accept",
+     "enabled": true,
+     "x": 1016,
+     "y": 116,
+     "w": 61,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "rejectTrackedChange",
+     "icon": "",
+     "label": "Reject",
+     "enabled": true,
+     "x": 1079,
+     "y": 116,
+     "w": 58,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "mailMerge",
+     "icon": "",
+     "label": "Mail Merge",
+     "enabled": true,
+     "x": 1138,
+     "y": 116,
+     "w": 87,
      "h": 46
     }
    ]
@@ -1172,22 +1568,22 @@
      "id": null,
      "cmd": "protectDialog",
      "icon": "",
-     "label": "Protect with password",
+     "label": "Encrypt",
      "enabled": true,
      "x": 12,
      "y": 116,
-     "w": 155,
+     "w": 65,
      "h": 46
     },
     {
      "id": null,
      "cmd": "restrictEditing",
      "icon": "",
-     "label": "Restrict editing",
+     "label": "Protect Document",
      "enabled": true,
-     "x": 169,
+     "x": 79,
      "y": 116,
-     "w": 111,
+     "w": 130,
      "h": 46
     }
    ]
@@ -1252,12 +1648,23 @@
      "h": 46
     },
     {
+     "id": "btn-right-panel-toggle",
+     "cmd": "toggleRightPanel",
+     "icon": "",
+     "label": "Settings panel",
+     "enabled": true,
+     "x": 501,
+     "y": 116,
+     "w": 107,
+     "h": 46
+    },
+    {
      "id": "btn-view-fullscreen",
      "cmd": null,
      "icon": "",
      "label": "Fullscreen",
      "enabled": true,
-     "x": 501,
+     "x": 610,
      "y": 116,
      "w": 83,
      "h": 46
@@ -1268,7 +1675,7 @@
      "icon": "",
      "label": "Theme",
      "enabled": true,
-     "x": 585,
+     "x": 694,
      "y": 116,
      "w": 62,
      "h": 46
@@ -1279,9 +1686,86 @@
      "icon": "",
      "label": "Fit page",
      "enabled": true,
-     "x": 649,
+     "x": 758,
      "y": 116,
      "w": 69,
+     "h": 46
+    },
+    {
+     "id": "btn-view-fit-width",
+     "cmd": null,
+     "icon": "",
+     "label": "Fit width",
+     "enabled": true,
+     "x": 828,
+     "y": 116,
+     "w": 70,
+     "h": 46
+    },
+    {
+     "id": "btn-view-zoom100",
+     "cmd": null,
+     "icon": "",
+     "label": "Zoom to 100%",
+     "enabled": true,
+     "x": 900,
+     "y": 116,
+     "w": 109,
+     "h": 46
+    },
+    {
+     "id": "btn-view-headings",
+     "cmd": null,
+     "icon": "",
+     "label": "Headings",
+     "enabled": true,
+     "x": 1012,
+     "y": 116,
+     "w": 77,
+     "h": 46
+    },
+    {
+     "id": "btn-view-multipages",
+     "cmd": null,
+     "icon": "",
+     "label": "Multiple pages",
+     "enabled": true,
+     "x": 1091,
+     "y": 116,
+     "w": 108,
+     "h": 46
+    },
+    {
+     "id": "view-theme-select",
+     "cmd": null,
+     "icon": "",
+     "label": "Interface theme",
+     "enabled": true,
+     "x": 1205,
+     "y": 133,
+     "w": 45,
+     "h": 14
+    },
+    {
+     "id": "btn-view-darkdoc",
+     "cmd": null,
+     "icon": "",
+     "label": "Dark document",
+     "enabled": true,
+     "x": 1256,
+     "y": 116,
+     "w": 113,
+     "h": 46
+    },
+    {
+     "id": "btn-macro-menu",
+     "cmd": null,
+     "icon": "",
+     "label": "Macros",
+     "enabled": true,
+     "x": 1371,
+     "y": 116,
+     "w": 33,
      "h": 46
     },
     {
@@ -1290,7 +1774,7 @@
      "icon": "",
      "label": "Speech",
      "enabled": true,
-     "x": 720,
+     "x": 1406,
      "y": 116,
      "w": 34,
      "h": 46
@@ -1355,6 +1839,94 @@
      "y": 116,
      "w": 94,
      "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "pluginUnavailable",
+     "icon": "",
+     "label": "YouTube",
+     "enabled": true,
+     "x": 535,
+     "y": 116,
+     "w": 73,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "aiTranslate",
+     "icon": "",
+     "label": "Translator",
+     "enabled": true,
+     "x": 614,
+     "y": 116,
+     "w": 81,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "pluginUnavailable",
+     "icon": "",
+     "label": "Mendeley",
+     "enabled": true,
+     "x": 701,
+     "y": 116,
+     "w": 79,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "aiRewrite",
+     "icon": "",
+     "label": "Thesaurus",
+     "enabled": true,
+     "x": 786,
+     "y": 116,
+     "w": 84,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "code",
+     "icon": "",
+     "label": "Highlight code",
+     "enabled": true,
+     "x": 876,
+     "y": 116,
+     "w": 107,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "pluginUnavailable",
+     "icon": "",
+     "label": "Zotero",
+     "enabled": true,
+     "x": 989,
+     "y": 116,
+     "w": 58,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "readAloud",
+     "icon": "",
+     "label": "Speech",
+     "enabled": true,
+     "x": 1053,
+     "y": 116,
+     "w": 65,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "dictate",
+     "icon": "",
+     "label": "Speech input",
+     "enabled": true,
+     "x": 1124,
+     "y": 116,
+     "w": 100,
+     "h": 46
     }
    ]
   },
@@ -1377,22 +1949,22 @@
      "id": null,
      "cmd": "aiSummarize",
      "icon": "",
-     "label": "Summarize",
+     "label": "Summarization",
      "enabled": true,
      "x": 102,
      "y": 116,
-     "w": 89,
+     "w": 111,
      "h": 46
     },
     {
      "id": null,
      "cmd": "aiTranslate",
      "icon": "",
-     "label": "Translate",
+     "label": "Translation",
      "enabled": true,
-     "x": 193,
+     "x": 215,
      "y": 116,
-     "w": 76,
+     "w": 87,
      "h": 46
     },
     {
@@ -1401,7 +1973,7 @@
      "icon": "",
      "label": "Rewrite",
      "enabled": true,
-     "x": 271,
+     "x": 304,
      "y": 116,
      "w": 65,
      "h": 46
@@ -1412,7 +1984,7 @@
      "icon": "",
      "label": "Grammar",
      "enabled": true,
-     "x": 338,
+     "x": 372,
      "y": 116,
      "w": 77,
      "h": 46
@@ -1421,11 +1993,149 @@
      "id": "btn-ai-assistant",
      "cmd": null,
      "icon": "",
-     "label": "AI assistant",
+     "label": "Chatbot",
      "enabled": true,
-     "x": 417,
+     "x": 451,
      "y": 116,
-     "w": 90,
+     "w": 67,
+     "h": 46
+    },
+    {
+     "id": "btn-create-ai-assistant",
+     "cmd": "createAiAssistant",
+     "icon": "",
+     "label": "Create AI assistant",
+     "enabled": true,
+     "x": 520,
+     "y": 116,
+     "w": 136,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "aiSettings",
+     "icon": "",
+     "label": "Settings",
+     "enabled": true,
+     "x": 657,
+     "y": 116,
+     "w": 69,
+     "h": 46
+    }
+   ]
+  },
+  "chart-design": {
+   "label": "chart-design",
+   "contextual": false,
+   "buttons": [
+    {
+     "id": null,
+     "cmd": null,
+     "icon": "",
+     "label": "Chart type ▾",
+     "enabled": true,
+     "x": 12,
+     "y": 116,
+     "w": 54,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "chartEditData",
+     "icon": "",
+     "label": "Edit data",
+     "enabled": true,
+     "x": 81,
+     "y": 116,
+     "w": 73,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "chartUpdateData",
+     "icon": "",
+     "label": "Update data",
+     "enabled": true,
+     "x": 169,
+     "y": 116,
+     "w": 94,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": null,
+     "icon": "",
+     "label": "Chart elements ▾",
+     "enabled": true,
+     "x": 278,
+     "y": 116,
+     "w": 76,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "chartSettings",
+     "icon": "",
+     "label": "Advanced settings",
+     "enabled": true,
+     "x": 369,
+     "y": 116,
+     "w": 132,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": null,
+     "icon": "",
+     "label": "Wrapping ▾",
+     "enabled": true,
+     "x": 516,
+     "y": 116,
+     "w": 50,
+     "h": 46
+    },
+    {
+     "id": "chart-width-input",
+     "cmd": null,
+     "icon": "",
+     "label": "Width",
+     "enabled": false,
+     "x": 630,
+     "y": 128,
+     "w": 77,
+     "h": 21
+    },
+    {
+     "id": "chart-height-input",
+     "cmd": null,
+     "icon": "",
+     "label": "Height",
+     "enabled": false,
+     "x": 764,
+     "y": 128,
+     "w": 77,
+     "h": 21
+    },
+    {
+     "id": null,
+     "cmd": "chartSize",
+     "icon": "",
+     "label": "Apply size",
+     "enabled": true,
+     "x": 843,
+     "y": 116,
+     "w": 82,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "chart3d",
+     "icon": "",
+     "label": "3D rotation",
+     "enabled": true,
+     "x": 940,
+     "y": 116,
+     "w": 86,
      "h": 46
     }
    ]
@@ -1468,12 +2178,34 @@
      "h": 46
     },
     {
+     "id": "btn-hf-field",
+     "cmd": null,
+     "icon": "",
+     "label": "Field",
+     "enabled": true,
+     "x": 372,
+     "y": 116,
+     "w": 48,
+     "h": 46
+    },
+    {
+     "id": "btn-hf-image",
+     "cmd": null,
+     "icon": "",
+     "label": "Image",
+     "enabled": true,
+     "x": 423,
+     "y": 116,
+     "w": 57,
+     "h": 46
+    },
+    {
      "id": null,
      "cmd": "toggleDifferentFirst",
      "icon": "",
      "label": "Different First Page",
      "enabled": true,
-     "x": 372,
+     "x": 482,
      "y": 116,
      "w": 138,
      "h": 46
@@ -1484,7 +2216,7 @@
      "icon": "",
      "label": "Different Odd & Even",
      "enabled": true,
-     "x": 513,
+     "x": 622,
      "y": 116,
      "w": 150,
      "h": 46
@@ -1495,7 +2227,7 @@
      "icon": "",
      "label": "Header from Top",
      "enabled": true,
-     "x": 665,
+     "x": 774,
      "y": 116,
      "w": 122,
      "h": 46
@@ -1506,7 +2238,7 @@
      "icon": "",
      "label": "Footer from Bottom",
      "enabled": true,
-     "x": 789,
+     "x": 898,
      "y": 116,
      "w": 139,
      "h": 46
@@ -1517,7 +2249,7 @@
      "icon": "",
      "label": "Same as previous",
      "enabled": true,
-     "x": 929,
+     "x": 1039,
      "y": 116,
      "w": 130,
      "h": 46
@@ -1526,49 +2258,66 @@
   }
  },
  "rightPanel": {
-  "present": false,
+  "present": true,
   "toggles": [],
   "openedSections": []
  },
  "statusBar": [
   {
+   "label": "Word and character count — opens documen",
+   "id": "sb-word-count",
+   "x": 12,
+   "w": 169
+  },
+  {
    "label": "Language options",
    "id": "doc-lang-caret",
-   "x": 1302,
+   "x": 1155,
    "w": 7
   },
   {
    "label": "Zoom out",
    "id": "btn-zoom-out",
-   "x": 1319,
+   "x": 1172,
    "w": 28
   },
   {
    "label": "Zoom in",
    "id": "btn-zoom-in",
-   "x": 1441,
+   "x": 1294,
    "w": 26
   },
   {
    "label": "Fit page width",
    "id": "btn-zoom-fit",
-   "x": 1477,
+   "x": 1330,
    "w": 24
   },
   {
    "label": "Reset zoom",
    "id": "btn-zoom-reset",
-   "x": 1511,
+   "x": 1364,
    "w": 43
   },
   {
    "label": "Multiple pages view",
    "id": "btn-multipage",
-   "x": 1564,
+   "x": 1461,
    "w": 24
+  },
+  {
+   "label": "Toggle track changes",
+   "id": "sb-track-changes",
+   "x": 1495,
+   "w": 93
   }
  ],
  "backstage": [
+  {
+   "id": "",
+   "label": "Back",
+   "enabled": true
+  },
   {
    "id": "btn-new",
    "label": "New",
@@ -1580,8 +2329,13 @@
    "enabled": true
   },
   {
+   "id": "",
+   "label": "Save",
+   "enabled": true
+  },
+  {
    "id": "btn-export",
-   "label": "Export",
+   "label": "Download As",
    "enabled": true
   },
   {
@@ -2045,6 +2799,126 @@
      "enabled": true
     }
    ]
+  },
+  {
+   "trigger": "",
+   "items": [
+    {
+     "label": "Insert page break",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Insert page break",
+     "cmd": "insertPageBreak",
+     "enabled": true
+    },
+    {
+     "label": "Insert column break",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Insert column break",
+     "cmd": "insertColumnBreak",
+     "enabled": true
+    },
+    {
+     "label": "Insert section break",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Insert section break",
+     "cmd": "insertSectionBreak",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "trigger": "btn-insert-more",
+   "items": [
+    {
+     "label": "Mail merge…",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Mail merge…",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Chart editor…",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Chart editor…",
+     "cmd": null,
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "trigger": "btn-macro-menu",
+   "items": [
+    {
+     "label": "Record macro",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Record macro",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Pause recording",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Pause recording",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Macro manager",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Macro manager",
+     "cmd": null,
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "trigger": "btn-speech",
+   "items": [
+    {
+     "label": "Read aloud",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Read aloud",
+     "cmd": "readAloud",
+     "enabled": true
+    },
+    {
+     "label": "Dictate…",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Dictate…",
+     "cmd": "dictate",
+     "enabled": true
+    }
+   ]
   }
  ],
  "contextMenu": {
@@ -2052,37 +2926,267 @@
   "items": [
    {
     "label": "Cut",
-    "ctx": "cut",
+    "ctx": "Cut",
     "enabled": true
    },
    {
     "label": "Copy",
-    "ctx": "copy",
+    "ctx": "Copy",
     "enabled": true
    },
    {
     "label": "Paste",
-    "ctx": "paste",
+    "ctx": "Paste",
     "enabled": true
    },
    {
-    "label": "Select all",
-    "ctx": "selectall",
+    "label": "Ignore",
+    "ctx": "Ignore",
     "enabled": true
    },
    {
-    "label": "Page break before",
-    "ctx": "pagebreak",
+    "label": "Ignore all",
+    "ctx": "IgnoreAll",
+    "enabled": true
+   },
+   {
+    "label": "Add to dictionary",
+    "ctx": "AddToDictionary",
+    "enabled": true
+   },
+   {
+    "label": "Select language",
+    "ctx": "SelectLanguage",
+    "enabled": true
+   },
+   {
+    "label": "Text alignment",
+    "ctx": "TextAlignment",
+    "enabled": true
+   },
+   {
+    "label": "Text direction",
+    "ctx": "TextDirection",
+    "enabled": true
+   },
+   {
+    "label": "Follow move",
+    "ctx": "FollowMove",
+    "enabled": true
+   },
+   {
+    "label": "AI",
+    "ctx": "AI",
+    "enabled": true
+   },
+   {
+    "label": "Undo",
+    "ctx": "Undo",
+    "enabled": true
+   },
+   {
+    "label": "Redo",
+    "ctx": "Redo",
+    "enabled": true
+   },
+   {
+    "label": "Bold",
+    "ctx": "Bold",
+    "enabled": true
+   },
+   {
+    "label": "Italic",
+    "ctx": "Italic",
+    "enabled": true
+   },
+   {
+    "label": "Underline",
+    "ctx": "Underline",
+    "enabled": true
+   },
+   {
+    "label": "Strikethrough",
+    "ctx": "StrikeThrough",
+    "enabled": true
+   },
+   {
+    "label": "Clear style",
+    "ctx": "RemoveFormat",
+    "enabled": true
+   },
+   {
+    "label": "Keep lines together",
+    "ctx": "KeepLines",
+    "enabled": true
+   },
+   {
+    "label": "Paragraph advanced settings",
+    "ctx": "ParagraphSettings",
+    "enabled": true
+   },
+   {
+    "label": "Formatting as style",
+    "ctx": "FormattingAsStyle",
+    "enabled": true
+   },
+   {
+    "label": "Bullet list",
+    "ctx": "BulletList",
+    "enabled": true
+   },
+   {
+    "label": "Numbered list",
+    "ctx": "NumberedList",
+    "enabled": true
+   },
+   {
+    "label": "Start new list",
+    "ctx": "StartNewList",
+    "enabled": true
+   },
+   {
+    "label": "Continue numbering",
+    "ctx": "ContinueNumbering",
+    "enabled": true
+   },
+   {
+    "label": "Set numbering value",
+    "ctx": "SetNumberingValue",
+    "enabled": true
+   },
+   {
+    "label": "Adjust list indents",
+    "ctx": "AdjustListIndents",
+    "enabled": true
+   },
+   {
+    "label": "Horizontal line",
+    "ctx": "HorizontalRule",
+    "enabled": true
+   },
+   {
+    "label": "Caption",
+    "ctx": "Caption",
+    "enabled": true
+   },
+   {
+    "label": "Footnote",
+    "ctx": "Footnote",
+    "enabled": true
+   },
+   {
+    "label": "Endnote",
+    "ctx": "Endnote",
+    "enabled": true
+   },
+   {
+    "label": "Symbol",
+    "ctx": "Symbol",
+    "enabled": true
+   },
+   {
+    "label": "Date",
+    "ctx": "Date",
+    "enabled": true
+   },
+   {
+    "label": "Page number",
+    "ctx": "PageNumber",
     "enabled": true
    },
    {
     "label": "Add comment",
-    "ctx": "comment",
+    "ctx": "AddComment",
     "enabled": true
    },
    {
     "label": "Link",
-    "ctx": "link",
+    "ctx": "Link",
+    "enabled": true
+   },
+   {
+    "label": "Edit link",
+    "ctx": "EditLink",
+    "enabled": true
+   },
+   {
+    "label": "Remove link",
+    "ctx": "RemoveLink",
+    "enabled": true
+   },
+   {
+    "label": "Update table of contents",
+    "ctx": "UpdateTOC",
+    "enabled": true
+   },
+   {
+    "label": "Table of contents settings",
+    "ctx": "TocSettings",
+    "enabled": true
+   },
+   {
+    "label": "Update field",
+    "ctx": "UpdateField",
+    "enabled": true
+   },
+   {
+    "label": "Edit field",
+    "ctx": "EditField",
+    "enabled": true
+   },
+   {
+    "label": "Toggle field codes",
+    "ctx": "ToggleFieldCodes",
+    "enabled": true
+   },
+   {
+    "label": "Page break before",
+    "ctx": "PageBreakBefore",
+    "enabled": true
+   },
+   {
+    "label": "Accept change",
+    "ctx": "AcceptChange",
+    "enabled": true
+   },
+   {
+    "label": "Reject change",
+    "ctx": "RejectChange",
+    "enabled": true
+   },
+   {
+    "label": "Drop cap settings",
+    "ctx": "DropcapSettings",
+    "enabled": true
+   },
+   {
+    "label": "Frame advanced settings",
+    "ctx": "FrameSettings",
+    "enabled": true
+   },
+   {
+    "label": "Equation settings",
+    "ctx": "EquationSettings",
+    "enabled": true
+   },
+   {
+    "label": "Content control settings",
+    "ctx": "ContentControlSettings",
+    "enabled": true
+   },
+   {
+    "label": "Remove content control",
+    "ctx": "RemoveContentControl",
+    "enabled": true
+   },
+   {
+    "label": "Print selection",
+    "ctx": "PrintSelection",
+    "enabled": true
+   },
+   {
+    "label": "Select all",
+    "ctx": "SelectAll",
     "enabled": true
    }
   ]

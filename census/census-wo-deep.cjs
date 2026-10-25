@@ -149,25 +149,40 @@ async function main() {
 
   // ── menus: every ribbon menu-trigger -> its menu-list rows ──
   await section("menus", async () => {
-    const menus = []
-    // park on the home tab — the tabs section left the last tab active and
-    // its triggers are hidden
-    await page.evaluate(() => document.querySelector('.ribbon-tab')?.click())
-    await sleep(500)
-    const triggers = await page.evaluate(() =>
-      [...document.querySelectorAll("span.menu > .menu-trigger, .menu-trigger")]
-        .filter((t) => t.offsetParent !== null && t.id !== "btn-file")
-        .map((t, i) => ({ label: t.getAttribute("aria-label") || t.id || `trigger-${i}` })),
+    const collected = []
+    // walk EVERY ribbon tab so hidden-tab menu triggers (Macros etc) are
+    // captured too — collect triggers per tab, then open them.
+    const slugs = await page.evaluate(() =>
+      [...document.querySelectorAll(".ribbon-tab")].map((t) => t.getAttribute("data-tab")),
     )
-    for (const t of triggers) {
+    const tabMenus = []
+    for (const tab of slugs) {
+      await page.evaluate((s) => {
+        const el = document.querySelector(`.ribbon-tab[data-tab="${s}"]`)
+        if (el) el.click()
+      }, tab)
+      await sleep(350)
+      const trig = await page.evaluate(
+        (tabSlug) => [...document.querySelectorAll(".menu-trigger")]
+          .filter((t) => t.offsetParent !== null && t.id !== "btn-file")
+          .map((t) => ({ tab: tabSlug, key: t.getAttribute("aria-label") || t.id })),
+      tab)
+      for (const t of trig) {
+        if (!tabMenus.some((m) => m.key === t.key)) tabMenus.push(t)
+      }
+    }
+    const out = []
+    for (const t of tabMenus) {
       await page.keyboard.press("Escape")
       await sleep(200)
-      await page.evaluate((label) => {
+      await page.evaluate((entry) => {
+        const tabEl = document.querySelector(`.ribbon-tab[data-tab="${entry.tab}"]`)
+        if (tabEl) tabEl.click()
         const el = [...document.querySelectorAll(".menu-trigger")].find(
-          (x) => (x.getAttribute("aria-label") || x.id) === label,
+          (x) => (x.getAttribute("aria-label") || x.id) === entry.key,
         )
         if (el) el.click()
-      }, t.label)
+      }, t)
       await sleep(400)
       const items = await page.evaluate(() =>
         [...document.querySelectorAll("ul.menu-list")]
@@ -180,9 +195,9 @@ async function main() {
           }))
           .filter((i) => i.label),
       )
-      if (items.length && !menus.some((m) => m.trigger === t.label)) menus.push({ trigger: t.label, items })
+      if (items.length) out.push({ trigger: t.key, items })
     }
-    return menus
+    return out
   })
 
   // ── context menu: right-click the editor, read #ctx-menu ──
