@@ -70,7 +70,7 @@ async function main() {
         const out = []
         document
           .querySelectorAll(
-            ".ribbon-page.active button, .ribbon-page.active select, .ribbon-page.active input[type=color]",
+            ".ribbon-page.active button, .ribbon-page.active select, .ribbon-page.active input[type=color], .ribbon-page.active input[type=number]",
           )
           .forEach((b) => {
             const r = b.getBoundingClientRect()
