@@ -140,13 +140,13 @@ def main() -> int:
         wo_tab = wo.get("tabs", {}).get(wo_key, {})
         wo_btns = wo_tab.get("buttons", []) if wo_tab else []
         # WO groups some OO top-level buttons into ribbon menus (Macros) —
-        # menu rows count as tab-level match candidates.
-        wo_btns = wo_btns + [
+        # menu rows count as tab-level match candidates (counted once).
+        menu_rows = [
             {"label": i["label"]}
             for m in wo.get("menus", [])
             for i in m.get("items", [])
         ]
-        gap = deficit(oo_btns, wo_btns)
+        gap = deficit(oo_btns, wo_btns + menu_rows)
         total_oo += len(oo_btns)
         total_wo += len(wo_btns)
         total_gap += len(gap)
