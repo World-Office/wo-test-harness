@@ -1,7 +1,7 @@
 # OO vs WO deep surface gap
 
-generated: 2026-10-25T21:03:56+00:00
-oo capture: 2026-10-24T13:42:02.141Z · wo capture: 2026-10-25T21:03:37.436Z
+generated: 2026-10-26T16:49:44+00:00
+oo capture: 2026-10-24T13:42:02.141Z · wo capture: 2026-10-26T16:49:23.989Z
 
 ## Ribbon tabs
 
@@ -111,7 +111,7 @@ elements` [charttab]: 9 rows
 
 ## Context menu
 
-OO 38 vs WO 53 items — deficit 2
+OO 38 vs WO 65 items — deficit 2
 - [ ] Loading variants...
 - [ ] More variants...
 
@@ -160,5 +160,5 @@ OO panel sections: 84 · WO panel: present
 
 ## Totals
 
-- OO surface rows: 269 · WO: 272 · item-level deficit: 3
+- OO surface rows: 269 · WO: 284 · item-level deficit: 3
 

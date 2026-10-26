@@ -99,15 +99,91 @@ async function main() {
     return tabs
   })
 
-  // ── right panel: honest absence check ──
+  // ── right panel: presence + rail sections + per-section controls ──
   await section("rightPanel", async () => {
-    const present = await page.evaluate(() =>
-      ["#right-panel", ".right-panel", "#inspector", ".inspector-panel"].some((s) => {
-        const e = document.querySelector(s)
-        return e && e.getBoundingClientRect().width > 0
-      }),
-    )
-    return { present, toggles: [], openedSections: [] }
+    const present = await page.evaluate(() => {
+      const e = document.querySelector("#right-panel, .right-panel, #inspector, .inspector-panel")
+      return e && e.getBoundingClientRect().width > 0
+    })
+    const toggles = []
+    const openedSections = []
+    // Open the panel via its real toggle if hidden, then walk each rail
+    // section: click it, collect its visible controls (input/select/button
+    // with id or name, label text, value/type where meaningful).
+    const walk = await page
+      .evaluate(() => {
+        const rp = document.querySelector("#right-panel")
+        const toggle = document.getElementById("btn-right-panel-toggle")
+        return { rp: !!rp, toggle: !!toggle, hidden: rp ? rp.hidden : true }
+      })
+      .catch(() => ({ rp: false, toggle: false, hidden: true }))
+    if (walk.rp && walk.hidden && walk.toggle) {
+      await page.evaluate(() => document.getElementById("btn-right-panel-toggle").click())
+      await page
+        .waitForFunction(() => {
+          const rp = document.querySelector("#right-panel")
+          return rp && !rp.hidden && rp.getBoundingClientRect().width > 0
+        }, { timeout: 5000 })
+        .catch(() => {})
+    }
+    if (walk.rp) {
+      const sections = await page.$$eval("#right-rail .rail-btn", (btns) =>
+        btns.map((b) => ({ panel: b.getAttribute("data-panel"), label: b.getAttribute("title") || b.getAttribute("aria-label") })),
+      )
+      for (const s of sections) {
+        try {
+          // Clicking the already-active rail section COLLAPSES the panel
+          // (openRightPanelSection toggles). Skip the click when active,
+          // and re-open defensively if a prior step collapsed it.
+          const state = await page.evaluate(
+            (p) => {
+              const rp = document.querySelector("#right-panel")
+              const btn = document.querySelector(`#right-rail .rail-btn[data-panel="${p}"]`)
+              return {
+                active: btn ? btn.getAttribute("aria-pressed") === "true" : false,
+                panelVisible: rp && !rp.hidden && rp.getBoundingClientRect().width > 0,
+              }
+            },
+            s.panel,
+          )
+          if (!state.panelVisible) {
+            await page.evaluate(() => document.getElementById("btn-right-panel-toggle").click())
+            await page.waitForTimeout(250)
+          }
+          if (!state.active) {
+            await page.evaluate((p) => document.querySelector(`#right-rail .rail-btn[data-panel="${p}"]`).click(), s.panel)
+          }
+          await page.waitForTimeout(250)
+          const controls = await page.$$eval(`.rp-section[data-section="${s.panel}"]`, (secs) => {
+            const out = []
+            for (const sec of secs) {
+              for (const c of sec.querySelectorAll("input, select, button")) {
+                if (c.closest("[hidden]")) continue
+                const r = c.getBoundingClientRect()
+                if (r.width === 0 && r.height === 0) continue
+                const lbl =
+                  (c.id && document.querySelector(`label[for="${c.id}"]`)?.textContent?.trim()) ||
+                  c.getAttribute("title") ||
+                  c.getAttribute("aria-label") ||
+                  ""
+                out.push({
+                  tag: c.tagName.toLowerCase(),
+                  id: c.id || null,
+                  label: lbl.trim(),
+                  kind: c.getAttribute("type") || (c.tagName === "SELECT" ? "select" : "button"),
+                })
+              }
+            }
+            return out
+          })
+          openedSections.push({ section: s.panel, label: s.label, controls })
+        } catch {
+          openedSections.push({ section: s.panel, label: s.label, error: "probe failed" })
+        }
+      }
+      toggles.push(...sections.map((s) => s.panel))
+    }
+    return { present, toggles, openedSections }
   })
 
   // ── status bar ──

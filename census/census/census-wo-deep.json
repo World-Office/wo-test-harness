@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-10-25T21:03:37.436Z",
+ "capturedAt": "2026-10-26T16:49:23.989Z",
  "viewport": {
   "w": 1600,
   "h": 1000
@@ -58,7 +58,7 @@
      "id": "btn-paste",
      "cmd": null,
      "icon": "",
-     "label": "Toolbar.Paste",
+     "label": "Paste",
      "enabled": true,
      "x": 83,
      "y": 127,
@@ -564,7 +564,7 @@
      "id": "btn-theme",
      "cmd": null,
      "icon": "",
-     "label": "Toggle theme",
+     "label": "Toggle dark/light theme",
      "enabled": true,
      "x": 1532,
      "y": 144,
@@ -1386,7 +1386,7 @@
      "id": "btn-track-changes",
      "cmd": null,
      "icon": "",
-     "label": "Track changes",
+     "label": "Track Changes",
      "enabled": true,
      "x": 12,
      "y": 116,
@@ -1629,11 +1629,11 @@
      "id": "btn-view-formatmarks",
      "cmd": null,
      "icon": "",
-     "label": "View.FormattingMarks",
+     "label": "Formatting marks",
      "enabled": true,
      "x": 256,
      "y": 116,
-     "w": 156,
+     "w": 127,
      "h": 46
     },
     {
@@ -1642,7 +1642,7 @@
      "icon": "",
      "label": "Navigation",
      "enabled": true,
-     "x": 415,
+     "x": 385,
      "y": 116,
      "w": 84,
      "h": 46
@@ -1653,7 +1653,7 @@
      "icon": "",
      "label": "Settings panel",
      "enabled": true,
-     "x": 501,
+     "x": 472,
      "y": 116,
      "w": 107,
      "h": 46
@@ -1664,7 +1664,7 @@
      "icon": "",
      "label": "Fullscreen",
      "enabled": true,
-     "x": 610,
+     "x": 580,
      "y": 116,
      "w": 83,
      "h": 46
@@ -1675,7 +1675,7 @@
      "icon": "",
      "label": "Theme",
      "enabled": true,
-     "x": 694,
+     "x": 665,
      "y": 116,
      "w": 62,
      "h": 46
@@ -1686,7 +1686,7 @@
      "icon": "",
      "label": "Fit page",
      "enabled": true,
-     "x": 758,
+     "x": 728,
      "y": 116,
      "w": 69,
      "h": 46
@@ -1697,7 +1697,7 @@
      "icon": "",
      "label": "Fit width",
      "enabled": true,
-     "x": 828,
+     "x": 799,
      "y": 116,
      "w": 70,
      "h": 46
@@ -1708,7 +1708,7 @@
      "icon": "",
      "label": "Zoom to 100%",
      "enabled": true,
-     "x": 900,
+     "x": 871,
      "y": 116,
      "w": 109,
      "h": 46
@@ -1719,7 +1719,7 @@
      "icon": "",
      "label": "Headings",
      "enabled": true,
-     "x": 1012,
+     "x": 982,
      "y": 116,
      "w": 77,
      "h": 46
@@ -1730,7 +1730,7 @@
      "icon": "",
      "label": "Multiple pages",
      "enabled": true,
-     "x": 1091,
+     "x": 1061,
      "y": 116,
      "w": 108,
      "h": 46
@@ -1741,7 +1741,7 @@
      "icon": "",
      "label": "Interface theme",
      "enabled": true,
-     "x": 1205,
+     "x": 1176,
      "y": 133,
      "w": 45,
      "h": 14
@@ -1752,7 +1752,7 @@
      "icon": "",
      "label": "Dark document",
      "enabled": true,
-     "x": 1256,
+     "x": 1227,
      "y": 116,
      "w": 113,
      "h": 46
@@ -1763,7 +1763,7 @@
      "icon": "",
      "label": "Macros",
      "enabled": true,
-     "x": 1371,
+     "x": 1342,
      "y": 116,
      "w": 33,
      "h": 46
@@ -1774,7 +1774,7 @@
      "icon": "",
      "label": "Speech",
      "enabled": true,
-     "x": 1406,
+     "x": 1376,
      "y": 116,
      "w": 34,
      "h": 46
@@ -2259,8 +2259,261 @@
  },
  "rightPanel": {
   "present": true,
-  "toggles": [],
-  "openedSections": []
+  "toggles": [
+   "paragraph",
+   "table",
+   "image",
+   "chart",
+   "mailmerge"
+  ],
+  "openedSections": [
+   {
+    "section": "paragraph",
+    "label": "Paragraph",
+    "controls": [
+     {
+      "tag": "select",
+      "id": "rp-line-spacing",
+      "label": "Line spacing",
+      "kind": "select"
+     },
+     {
+      "tag": "input",
+      "id": "rp-spacing-before",
+      "label": "Spacing before (pt)",
+      "kind": "number"
+     },
+     {
+      "tag": "input",
+      "id": "rp-spacing-after",
+      "label": "Spacing after (pt)",
+      "kind": "number"
+     },
+     {
+      "tag": "input",
+      "id": "rp-indent-left",
+      "label": "Indent left (pt)",
+      "kind": "number"
+     },
+     {
+      "tag": "input",
+      "id": "rp-indent-right",
+      "label": "Indent right (pt)",
+      "kind": "number"
+     },
+     {
+      "tag": "input",
+      "id": "rp-shading",
+      "label": "Background",
+      "kind": "color"
+     },
+     {
+      "tag": "button",
+      "id": "rp-advanced",
+      "label": "",
+      "kind": "button"
+     }
+    ]
+   },
+   {
+    "section": "table",
+    "label": "Table",
+    "controls": [
+     {
+      "tag": "select",
+      "id": "rp-table-border-style",
+      "label": "Border style",
+      "kind": "select"
+     },
+     {
+      "tag": "input",
+      "id": "rp-table-border-color",
+      "label": "Border color",
+      "kind": "color"
+     },
+     {
+      "tag": "input",
+      "id": "rp-table-border-width",
+      "label": "Border width (pt)",
+      "kind": "number"
+     },
+     {
+      "tag": "input",
+      "id": "rp-table-background",
+      "label": "Background",
+      "kind": "color"
+     },
+     {
+      "tag": "input",
+      "id": "rp-table-row-height",
+      "label": "Row height (pt)",
+      "kind": "number"
+     },
+     {
+      "tag": "input",
+      "id": "rp-table-col-width",
+      "label": "Column width (pt)",
+      "kind": "number"
+     },
+     {
+      "tag": "button",
+      "id": "rp-table-advanced",
+      "label": "",
+      "kind": "button"
+     }
+    ]
+   },
+   {
+    "section": "image",
+    "label": "Image",
+    "controls": [
+     {
+      "tag": "input",
+      "id": "rp-image-width",
+      "label": "Width (px)",
+      "kind": "number"
+     },
+     {
+      "tag": "input",
+      "id": "rp-image-height",
+      "label": "Height (px)",
+      "kind": "number"
+     },
+     {
+      "tag": "input",
+      "id": "rp-image-alt",
+      "label": "Alt text",
+      "kind": "text"
+     },
+     {
+      "tag": "input",
+      "id": "rp-image-opacity",
+      "label": "Opacity (%)",
+      "kind": "range"
+     },
+     {
+      "tag": "button",
+      "id": "rp-image-rotate",
+      "label": "",
+      "kind": "button"
+     },
+     {
+      "tag": "button",
+      "id": "rp-image-flip-h",
+      "label": "",
+      "kind": "button"
+     },
+     {
+      "tag": "button",
+      "id": "rp-image-flip-v",
+      "label": "",
+      "kind": "button"
+     },
+     {
+      "tag": "select",
+      "id": "rp-image-wrap",
+      "label": "Wrapping style",
+      "kind": "select"
+     },
+     {
+      "tag": "input",
+      "id": "rp-image-fill",
+      "label": "Fill",
+      "kind": "color"
+     },
+     {
+      "tag": "input",
+      "id": "rp-image-line-color",
+      "label": "Line color",
+      "kind": "color"
+     },
+     {
+      "tag": "input",
+      "id": "rp-image-line-size",
+      "label": "Line size (pt)",
+      "kind": "number"
+     },
+     {
+      "tag": "button",
+      "id": "rp-image-advanced",
+      "label": "",
+      "kind": "button"
+     }
+    ]
+   },
+   {
+    "section": "chart",
+    "label": "Chart",
+    "controls": [
+     {
+      "tag": "select",
+      "id": "rp-chart-type",
+      "label": "Chart type",
+      "kind": "select"
+     },
+     {
+      "tag": "input",
+      "id": "rp-chart-width",
+      "label": "Width (px)",
+      "kind": "number"
+     },
+     {
+      "tag": "input",
+      "id": "rp-chart-height",
+      "label": "Height (px)",
+      "kind": "number"
+     },
+     {
+      "tag": "select",
+      "id": "rp-chart-wrap",
+      "label": "Wrapping style",
+      "kind": "select"
+     },
+     {
+      "tag": "input",
+      "id": "rp-chart-title",
+      "label": "",
+      "kind": "checkbox"
+     },
+     {
+      "tag": "button",
+      "id": "rp-chart-edit-data",
+      "label": "",
+      "kind": "button"
+     },
+     {
+      "tag": "button",
+      "id": "rp-chart-advanced",
+      "label": "",
+      "kind": "button"
+     }
+    ]
+   },
+   {
+    "section": "mailmerge",
+    "label": "Mail merge",
+    "controls": [
+     {
+      "tag": "button",
+      "id": "rp-mm-recipients",
+      "label": "",
+      "kind": "button"
+     },
+     {
+      "tag": "button",
+      "id": "rp-mm-fields",
+      "label": "",
+      "kind": "button"
+     },
+     {
+      "tag": "button",
+      "id": "rp-mm-merge-to",
+      "label": "",
+      "kind": "button"
+     }
+    ]
+   }
+  ]
  },
  "statusBar": [
   {
@@ -2288,7 +2541,7 @@
    "w": 26
   },
   {
-   "label": "Fit page width",
+   "label": "Fit page",
    "id": "btn-zoom-fit",
    "x": 1330,
    "w": 24
@@ -2300,7 +2553,7 @@
    "w": 43
   },
   {
-   "label": "Multiple pages view",
+   "label": "Multiple pages",
    "id": "btn-multipage",
    "x": 1461,
    "w": 24
@@ -2350,7 +2603,7 @@
   },
   {
    "id": "btn-ai-review",
-   "label": "AI changes…",
+   "label": "AI changes",
    "enabled": true
   },
   {
@@ -2370,7 +2623,7 @@
   },
   {
    "id": "btn-filehelp",
-   "label": "Help &amp; about",
+   "label": "Help & about",
    "enabled": true
   },
   {
@@ -2759,12 +3012,12 @@
      "enabled": true
     },
     {
-     "label": "Toolbar.SmallCaps",
+     "label": "Small caps",
      "cmd": null,
      "enabled": true
     },
     {
-     "label": "Toolbar.SmallCaps",
+     "label": "Small caps",
      "cmd": "smallCaps",
      "enabled": true
     },
@@ -2779,12 +3032,12 @@
      "enabled": true
     },
     {
-     "label": "Toolbar.Code",
+     "label": "Code",
      "cmd": null,
      "enabled": true
     },
     {
-     "label": "Toolbar.Code",
+     "label": "Code",
      "cmd": "code",
      "enabled": true
     },
@@ -2965,6 +3218,46 @@
     "enabled": true
    },
    {
+    "label": "Insert row above",
+    "ctx": "TableRowAbove",
+    "enabled": true
+   },
+   {
+    "label": "Insert row below",
+    "ctx": "TableRowBelow",
+    "enabled": true
+   },
+   {
+    "label": "Insert column left",
+    "ctx": "TableColLeft",
+    "enabled": true
+   },
+   {
+    "label": "Insert column right",
+    "ctx": "TableColRight",
+    "enabled": true
+   },
+   {
+    "label": "Delete row",
+    "ctx": "TableDeleteRow",
+    "enabled": true
+   },
+   {
+    "label": "Delete column",
+    "ctx": "TableDeleteCol",
+    "enabled": true
+   },
+   {
+    "label": "Merge cells",
+    "ctx": "TableMergeCells",
+    "enabled": true
+   },
+   {
+    "label": "Split cell",
+    "ctx": "TableSplitCell",
+    "enabled": true
+   },
+   {
     "label": "Text direction",
     "ctx": "TextDirection",
     "enabled": true
@@ -3112,6 +3405,26 @@
    {
     "label": "Remove link",
     "ctx": "RemoveLink",
+    "enabled": true
+   },
+   {
+    "label": "Edit alt text…",
+    "ctx": "EditAltText",
+    "enabled": true
+   },
+   {
+    "label": "Inline",
+    "ctx": "WrapInline",
+    "enabled": true
+   },
+   {
+    "label": "Square",
+    "ctx": "WrapSquare",
+    "enabled": true
+   },
+   {
+    "label": "Behind text",
+    "ctx": "WrapBehind",
     "enabled": true
    },
    {
