@@ -1,7 +1,7 @@
 # OO vs WO deep surface gap
 
-generated: 2026-10-26T16:49:44+00:00
-oo capture: 2026-10-24T13:42:02.141Z · wo capture: 2026-10-26T16:49:23.989Z
+generated: 2026-10-27T07:57:39+00:00
+oo capture: 2026-10-24T13:42:02.141Z · wo capture: 2026-10-27T07:57:18.895Z
 
 ## Ribbon tabs
 
@@ -99,10 +99,10 @@ elements` [charttab]: 9 rows
 - WO menu `More font families`: 12 rows
 - WO menu `More font sizes`: 14 rows
 - WO menu `Change case`: 8 rows
-- WO menu `Script options`: 4 rows
 - WO menu `Bullet style options`: 6 rows
 - WO menu `Numbering style options`: 8 rows
 - WO menu `Paragraph direction options`: 2 rows
+- WO menu `Script options`: 4 rows
 - WO menu `More formatting`: 22 rows
 - WO menu ``: 6 rows
 - WO menu `btn-insert-more`: 4 rows
@@ -117,11 +117,11 @@ OO 38 vs WO 65 items — deficit 2
 
 ## File backstage
 
-OO 9 vs WO 13 items — deficit 0
+OO 9 vs WO 14 items — deficit 0
 
 ## Status bar
 
-OO 19 vs WO 8 items — deficit 1
+OO 19 vs WO 9 items — deficit 1
 - [ ] English – United States
 
 ## Right settings panel
@@ -160,5 +160,5 @@ OO panel sections: 84 · WO panel: present
 
 ## Totals
 
-- OO surface rows: 269 · WO: 284 · item-level deficit: 3
+- OO surface rows: 269 · WO: 286 · item-level deficit: 3
 

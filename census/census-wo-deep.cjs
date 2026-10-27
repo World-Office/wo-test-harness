@@ -204,20 +204,25 @@ async function main() {
     )
   })
 
-  // ── backstage (File menu) ──
+  // ── backstage (File menu: dropdown rows OR CHROME3 full overlay) ──
   await section("backstage", async () => {
     await page.evaluate(() => document.getElementById("btn-file")?.click())
     await sleep(500)
-    const items = await page.evaluate(() =>
-      [...document.querySelectorAll("#file-menu .menu-item, #file-menu button, #file-menu [role=menuitem]")]
+    const items = await page.evaluate(() => {
+      // CHROME3: rows live in the backstage overlay rail; legacy: #file-menu
+      const host = document.getElementById("backstage-overlay")
+      const sel = host && !host.hidden
+        ? "#backstage-overlay .backstage-nav button, #backstage-overlay .backstage-pane button"
+        : "#file-menu .menu-item, #file-menu button, #file-menu [role=menuitem]"
+      return [...document.querySelectorAll(sel)]
         .filter((b) => b.offsetParent !== null)
         .map((b) => ({
           id: b.id || "",
           label: (b.textContent || "").trim(),
           enabled: !b.disabled && !String(b.className).includes("disabled"),
         }))
-        .filter((i) => i.label),
-    )
+        .filter((i) => i.label)
+    })
     await page.keyboard.press("Escape")
     await sleep(300)
     return items
