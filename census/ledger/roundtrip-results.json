@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-27T12:27:10.533Z",
+  "generated": "2026-10-27T12:30:06.015Z",
   "convert_url": "http://192.168.42.42:8086/api/conversion/convert",
   "editor_dir": "/home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg",
   "probed": 13,
@@ -12,7 +12,7 @@
       "detail": "marker /<(b|strong)\\b|font-weight\\s*:\\s*(bold|[6-9]00)/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP <b>sentinel</b> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP <strong>sentinel</strong> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5483,
+      "ms": 5511,
       "features": [
         "formatting.bold-ctrl-b"
       ]
@@ -24,7 +24,7 @@
       "detail": "marker \"2026-10-27\" survived html->docx->html",
       "html1": "<p>ROUNDTRIP 2026-10-27 alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP 2026-10-27 alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5436,
+      "ms": 5468,
       "features": [
         "insert.date-time",
         "headerfooter.date-time",
@@ -39,7 +39,7 @@
       "detail": "marker \"§\" survived html->docx->html",
       "html1": "<p>ROUNDTRIP § alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP § alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5443,
+      "ms": 5471,
       "features": [
         "insert.symbol",
         "insert.more-symbols",
@@ -54,7 +54,7 @@
       "detail": "marker /<table\\b/ survived html->docx->html",
       "html1": "<table><tbody><tr><td><br></td><td><br></td><td><br></td></tr><tr><td><br></td><td><br></td><td><br></td></tr></tbody></table><p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p><table> <tbody><tr> <td> </td> <td> </td> <td> </td> </tr> <tr> <td> </td> <td> </td> <td> </td> </tr> </tbody></table>",
-      "ms": 5729,
+      "ms": 5954,
       "features": [
         "table.table",
         "table.insert-custom-table"
@@ -67,7 +67,7 @@
       "detail": "marker /SENTINEL/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP SENTINEL alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP SENTINEL alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5403,
+      "ms": 5513,
       "features": [
         "formatting.change-case"
       ]
@@ -79,7 +79,7 @@
       "detail": "marker /<table\\b/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><table><tbody><tr><td>alpha</td><td>beta</td><td>gamma</td></tr></tbody></table><p></p>",
       "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><table> <tbody><tr> <td>alpha</td> <td>beta</td> <td>gamma</td> </tr> </tbody></table>",
-      "ms": 5734,
+      "ms": 5964,
       "features": [
         "table.convert-text-to-table"
       ]
@@ -91,7 +91,7 @@
       "detail": "marker /page-header|page-footer|wo-hf/ survived html->docx->html",
       "html1": "<header class=\"page-header\" style=\"padding-top: 12.5mm;\">Header text</header><p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p><footer class=\"page-footer\" style=\"padding-bottom: 12.5mm;\">Footer text</footer>",
       "html3": " <header class=\"page-header\"><p>Header text</p></header><p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p><footer class=\"page-footer\"><p>Footer text</p></footer>",
-      "ms": 5722,
+      "ms": 5782,
       "features": [
         "headerfooter.header-footer"
       ]
@@ -103,7 +103,7 @@
       "detail": "marker /<(i|em)\\b|font-style\\s*:\\s*italic/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP <i>sentinel</i> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP <em>sentinel</em> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5471,
+      "ms": 5504,
       "features": [
         "formatting.italic-ctrl-i"
       ]
@@ -115,7 +115,7 @@
       "detail": "marker /sentinel/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5791,
+      "ms": 5925,
       "features": [
         "formatting.clear-style"
       ]
@@ -127,7 +127,7 @@
       "detail": "marker /<(s|strike|del)\\b|line-through/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP <strike>sentinel</strike> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP <s>sentinel</s> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5409,
+      "ms": 5433,
       "features": [
         "formatting.strikethrough-ctrl-5"
       ]
@@ -139,7 +139,7 @@
       "detail": "marker /w:vertAlign[^>]*subscript/ preserved in docx word/document.xml; production docx->html decoder drops it on re-emission (documented gap): expect /<sub\\b|vertical-align[^>]*\\bsub\\b/ missing after roundtrip",
       "html1": "<p>ROUNDTRIP <sub>sentinel</sub> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5476,
+      "ms": 5511,
       "features": [
         "formatting.subscript-ctrl"
       ]
@@ -151,7 +151,7 @@
       "detail": "marker /w:vertAlign[^>]*superscript/ preserved in docx word/document.xml; production docx->html decoder drops it on re-emission (documented gap): expect /<sup\\b|vertical-align[^>]*super/ missing after roundtrip",
       "html1": "<p>ROUNDTRIP <sup>sentinel</sup> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5447,
+      "ms": 5471,
       "features": [
         "formatting.superscript-ctrl"
       ]
@@ -163,7 +163,7 @@
       "detail": "marker /<u\\b|text-decoration[^>]*underline/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP <u>sentinel</u> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP <u>sentinel</u> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5472,
+      "ms": 5493,
       "features": [
         "formatting.underline-ctrl-u"
       ]
