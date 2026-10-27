@@ -1,547 +1,169 @@
 {
-  "generated": "2026-10-27T11:52:50.172Z",
+  "generated": "2026-10-27T12:27:10.533Z",
   "convert_url": "http://192.168.42.42:8086/api/conversion/convert",
   "editor_dir": "/home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg",
-  "probed": 38,
-  "survived": 5,
+  "probed": 13,
+  "survived": 13,
   "entries": [
     {
       "key": "bold",
-      "cmd": "bold",
-      "value": null,
       "ok": true,
       "phase": "persisted",
       "detail": "marker /<(b|strong)\\b|font-weight\\s*:\\s*(bold|[6-9]00)/ survived html->docx->html",
-      "html1": "<p>ROUNDTRIP <b>sentinel</b> alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP <strong>sentinel</strong> alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5586,
+      "html1": "<p>ROUNDTRIP <b>sentinel</b> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "html3": " <p>ROUNDTRIP <strong>sentinel</strong> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "ms": 5483,
       "features": [
         "formatting.bold-ctrl-b"
       ]
     },
     {
-      "key": "bookmark",
-      "cmd": "bookmark",
-      "value": null,
-      "ok": false,
-      "phase": "apply",
-      "detail": "mutation did not take effect (apply marker missing from flat HTML)",
-      "html1": "<p><span style=\"background-color: rgb(255, 248, 225); font-size: 12pt;\">ROUNDTRIPBM</span>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": null,
-      "ms": 3417,
+      "key": "btn-datetime",
+      "ok": true,
+      "phase": "persisted",
+      "detail": "marker \"2026-10-27\" survived html->docx->html",
+      "html1": "<p>ROUNDTRIP 2026-10-27 alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "html3": " <p>ROUNDTRIP 2026-10-27 alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "ms": 5436,
       "features": [
-        "references.bookmark"
+        "insert.date-time",
+        "headerfooter.date-time",
+        "insert.dlg-date-time",
+        "headerfooter.dlg-date-time"
       ]
     },
     {
-      "key": "code",
-      "cmd": "code",
-      "value": null,
-      "ok": false,
-      "phase": "apply",
-      "detail": "mutation did not take effect (apply marker missing from flat HTML)",
-      "html1": "<p>ROUNDTRIP <span style=\"font-family: Consolas;\">sentinel</span> alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": null,
-      "ms": 3079,
+      "key": "btn-symbol",
+      "ok": true,
+      "phase": "persisted",
+      "detail": "marker \"§\" survived html->docx->html",
+      "html1": "<p>ROUNDTRIP § alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "html3": " <p>ROUNDTRIP § alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "ms": 5443,
       "features": [
-        "plugins.highlight-code"
+        "insert.symbol",
+        "insert.more-symbols",
+        "insert.symbols",
+        "insert.dlg-symbol"
       ]
     },
     {
-      "key": "directionRtl",
-      "cmd": "directionRtl",
-      "value": null,
-      "ok": false,
-      "phase": "survive",
-      "detail": "marker present before conversion but lost after html->docx->html (expected /rtl/)",
-      "html1": "<p dir=\"rtl\" style=\"direction: rtl;\">ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5401,
+      "key": "btn-table",
+      "ok": true,
+      "phase": "persisted",
+      "detail": "marker /<table\\b/ survived html->docx->html",
+      "html1": "<table><tbody><tr><td><br></td><td><br></td><td><br></td></tr><tr><td><br></td><td><br></td><td><br></td></tr></tbody></table><p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p><table> <tbody><tr> <td> </td> <td> </td> <td> </td> </tr> <tr> <td> </td> <td> </td> <td> </td> </tr> </tbody></table>",
+      "ms": 5729,
       "features": [
-        "formatting.text-direction"
+        "table.table",
+        "table.insert-custom-table"
       ]
     },
     {
-      "key": "font-family",
-      "cmd": "font-family",
-      "value": null,
-      "ok": false,
-      "phase": "error",
-      "detail": "command not dispatched (no button, no runCommand)",
-      "html1": null,
-      "html3": null,
-      "ms": 2318,
+      "key": "changeCase",
+      "ok": true,
+      "phase": "persisted",
+      "detail": "marker /SENTINEL/ survived html->docx->html",
+      "html1": "<p>ROUNDTRIP SENTINEL alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "html3": " <p>ROUNDTRIP SENTINEL alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "ms": 5403,
       "features": [
-        "formatting.font"
+        "formatting.change-case"
       ]
     },
     {
-      "key": "font-size",
-      "cmd": "font-size",
-      "value": null,
-      "ok": false,
-      "phase": "survive",
-      "detail": "marker present before conversion but lost after html->docx->html (expected /font-size/)",
-      "html1": "<p>ROUNDTRIP <span style=\"font-size: large;\">sentinel</span> alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5388,
-      "features": [
-        "formatting.font-size",
-        "formatting.increment-font-size-ctrl",
-        "formatting.decrement-font-size-ctrl"
-      ]
-    },
-    {
-      "key": "highlight-color",
-      "cmd": "highlight-color",
-      "value": null,
-      "ok": false,
-      "phase": "error",
-      "detail": "command not dispatched (no button, no runCommand)",
-      "html1": null,
-      "html3": null,
-      "ms": 2309,
-      "features": [
-        "formatting.highlight-color"
-      ]
-    },
-    {
-      "key": "indent",
-      "cmd": "indent",
-      "value": null,
-      "ok": false,
-      "phase": "survive",
-      "detail": "marker present before conversion but lost after html->docx->html (expected /margin-left\\s*:|<blockquote\\b/)",
-      "html1": "<blockquote style=\"margin: 0 0 0 40px; border: none; padding: 0px;\"><p>ROUNDTRIP sentinel alpha text.</p></blockquote><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5447,
-      "features": [
-        "formatting.increase-indent-ctrl-m"
-      ]
-    },
-    {
-      "key": "insertBlankPage",
-      "cmd": "insertBlankPage",
-      "value": null,
-      "ok": false,
-      "phase": "convert",
-      "detail": "html->docx failed: parse error: Parse error in html: Failed to parse HTML: unknown entity reference 'nbsp' at 1:25",
-      "html1": "<p>ROUNDTRIP&nbsp;</p><div class=\"page-break\"><br></div><p><br></p><p>&nbsp;alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": null,
-      "ms": 3078,
-      "features": [
-        "file.insert",
-        "insert.blank-page"
-      ]
-    },
-    {
-      "key": "insertCaption",
-      "cmd": "insertCaption",
-      "value": null,
-      "ok": false,
-      "phase": "convert",
-      "detail": "html->docx failed: parse error: Parse error in html: Failed to parse HTML: unknown entity reference 'nbsp' at 1:25",
-      "html1": "<p>ROUNDTRIP&nbsp;<em style=\"text-align: center; font-size: 12pt;\">Caption</em><span style=\"font-size: 12pt;\">&nbsp;alpha text.</span></p><p>Second paragraph body here.</p>",
-      "html3": null,
-      "ms": 6381,
-      "features": [
-        "references.caption",
-        "references.dlg-insert-caption"
-      ]
-    },
-    {
-      "key": "insertColumnBreak",
-      "cmd": "insertColumnBreak",
-      "value": null,
-      "ok": false,
-      "phase": "convert",
-      "detail": "html->docx failed: parse error: Parse error in html: Failed to parse HTML: unknown entity reference 'nbsp' at 1:25",
-      "html1": "<p>ROUNDTRIP&nbsp;</p><div class=\"column-break\"><br></div><p><br></p><p>&nbsp;alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": null,
-      "ms": 3097,
-      "features": [
-        "insert.insert-column-break"
-      ]
-    },
-    {
-      "key": "insertComment",
-      "cmd": "insertComment",
-      "value": null,
-      "ok": false,
-      "phase": "survive",
-      "detail": "marker present before conversion but lost after html->docx->html (expected /comment/)",
-      "html1": "<p>ROUNDTRIP <span class=\"comment\" data-id=\"61d0bc68-14b1-47da-bc6a-8461462e4f83\" data-author=\"You\" data-comment=\"Roundtrip comment.\">sentinel</span> alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
+      "key": "convertTextToTable",
+      "ok": true,
+      "phase": "persisted",
+      "detail": "marker /<table\\b/ survived html->docx->html",
+      "html1": "<p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><table><tbody><tr><td>alpha</td><td>beta</td><td>gamma</td></tr></tbody></table><p></p>",
+      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><table> <tbody><tr> <td>alpha</td> <td>beta</td> <td>gamma</td> </tr> </tbody></table>",
       "ms": 5734,
       "features": [
-        "review.comment"
-      ]
-    },
-    {
-      "key": "insertFootnote",
-      "cmd": "insertFootnote",
-      "value": null,
-      "ok": false,
-      "phase": "convert",
-      "detail": "html->docx failed: parse error: Parse error in html: Failed to parse HTML: unknown entity reference 'nbsp' at 1:25",
-      "html1": "<p>ROUNDTRIP&nbsp;<sup class=\"footnote-citation\">[1]</sup><span class=\"footnote\">Footnote text</span>&nbsp;alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": null,
-      "ms": 3086,
-      "features": [
-        "references.footnote"
+        "table.convert-text-to-table"
       ]
     },
     {
       "key": "insertHeaderFooter",
-      "cmd": "insertHeaderFooter",
-      "value": null,
       "ok": true,
       "phase": "persisted",
       "detail": "marker /page-header|page-footer|wo-hf/ survived html->docx->html",
-      "html1": "<header class=\"page-header\" style=\"padding-top: 12.5mm;\">Header text</header><p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><footer class=\"page-footer\" style=\"padding-bottom: 12.5mm;\">Footer text</footer>",
-      "html3": " <header class=\"page-header\"><p>Header text</p></header><p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><footer class=\"page-footer\"><p>Footer text</p></footer>",
-      "ms": 5686,
+      "html1": "<header class=\"page-header\" style=\"padding-top: 12.5mm;\">Header text</header><p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p><footer class=\"page-footer\" style=\"padding-bottom: 12.5mm;\">Footer text</footer>",
+      "html3": " <header class=\"page-header\"><p>Header text</p></header><p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p><footer class=\"page-footer\"><p>Footer text</p></footer>",
+      "ms": 5722,
       "features": [
         "headerfooter.header-footer"
       ]
     },
     {
-      "key": "insertObject",
-      "cmd": "insertObject",
-      "value": null,
-      "ok": false,
-      "phase": "apply",
-      "detail": "mutation did not take effect (apply marker missing from flat HTML)",
-      "html1": "<p>ROUNDTRIP&nbsp;</p><div class=\"object\" data-type=\"shape\"></div><p><br></p><p>&nbsp;alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": null,
-      "ms": 3376,
-      "features": [
-        "insert.shape",
-        "chart.chart"
-      ]
-    },
-    {
-      "key": "insertPageBreak",
-      "cmd": "insertPageBreak",
-      "value": null,
-      "ok": false,
-      "phase": "convert",
-      "detail": "html->docx failed: parse error: Parse error in html: Failed to parse HTML: unknown entity reference 'nbsp' at 1:25",
-      "html1": "<p>ROUNDTRIP&nbsp;</p><div class=\"page-break\"><br></div><p><br></p><p>&nbsp;alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": null,
-      "ms": 3098,
-      "features": [
-        "insert.insert-page-break"
-      ]
-    },
-    {
-      "key": "insertSectionBreak",
-      "cmd": "insertSectionBreak",
-      "value": null,
-      "ok": false,
-      "phase": "convert",
-      "detail": "html->docx failed: parse error: Parse error in html: Failed to parse HTML: unknown entity reference 'nbsp' at 1:25",
-      "html1": "<p>ROUNDTRIP&nbsp;</p><hr class=\"section-break\"><p><br></p><p>&nbsp;alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": null,
-      "ms": 3076,
-      "features": [
-        "insert.insert-section-break"
-      ]
-    },
-    {
-      "key": "insertTextart",
-      "cmd": "insertTextart",
-      "value": null,
-      "ok": false,
-      "phase": "apply",
-      "detail": "mutation did not take effect (apply marker missing from flat HTML)",
-      "html1": "<p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": null,
-      "ms": 3074,
-      "features": [
-        "insert.text-art"
-      ]
-    },
-    {
-      "key": "insertTextbox",
-      "cmd": "insertTextbox",
-      "value": null,
-      "ok": false,
-      "phase": "apply",
-      "detail": "mutation did not take effect (apply marker missing from flat HTML)",
-      "html1": "<p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": null,
-      "ms": 3065,
-      "features": [
-        "insert.text-box"
-      ]
-    },
-    {
-      "key": "insertToF",
-      "cmd": "insertToF",
-      "value": null,
-      "ok": false,
-      "phase": "convert",
-      "detail": "html->docx failed: parse error: Parse error in html: Failed to parse HTML: unknown entity reference 'nbsp' at 1:25",
-      "html1": "<p>ROUNDTRIP&nbsp;</p><nav class=\"toc\" data-kind=\"figures\" data-title=\"List of Figures\"></nav><p><br></p><p>&nbsp;alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": null,
-      "ms": 6378,
-      "features": [
-        "table.table-of-figures",
-        "table.dlg-table-of-figures"
-      ]
-    },
-    {
-      "key": "insertUnorderedList",
-      "cmd": "insertUnorderedList",
-      "value": null,
-      "ok": false,
-      "phase": "survive",
-      "detail": "marker present before conversion but lost after html->docx->html (expected /<ul\\b/)",
-      "html1": "<p><ul><li>ROUNDTRIP sentinel alpha text.</li></ul></p><p>Second paragraph body here.</p>",
-      "html3": " <p>Second paragraph body here.</p>",
-      "ms": 5434,
-      "features": [
-        "formatting.bullets"
-      ]
-    },
-    {
       "key": "italic",
-      "cmd": "italic",
-      "value": null,
       "ok": true,
       "phase": "persisted",
       "detail": "marker /<(i|em)\\b|font-style\\s*:\\s*italic/ survived html->docx->html",
-      "html1": "<p>ROUNDTRIP <i>sentinel</i> alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP <em>sentinel</em> alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5593,
+      "html1": "<p>ROUNDTRIP <i>sentinel</i> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "html3": " <p>ROUNDTRIP <em>sentinel</em> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "ms": 5471,
       "features": [
         "formatting.italic-ctrl-i"
       ]
     },
     {
-      "key": "justifyCenter",
-      "cmd": "justifyCenter",
-      "value": null,
-      "ok": false,
-      "phase": "survive",
-      "detail": "marker present before conversion but lost after html->docx->html (expected /text-align[^\">]*center|<center\\b|class=\"[^\"]*center/)",
-      "html1": "<p style=\"text-align: center; \">ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5439,
+      "key": "removeFormat",
+      "ok": true,
+      "phase": "persisted",
+      "detail": "marker /sentinel/ survived html->docx->html",
+      "html1": "<p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "ms": 5791,
       "features": [
-        "formatting.align-center-ctrl-e"
-      ]
-    },
-    {
-      "key": "justifyFull",
-      "cmd": "justifyFull",
-      "value": null,
-      "ok": false,
-      "phase": "survive",
-      "detail": "marker present before conversion but lost after html->docx->html (expected /text-align[^\">]*justify/)",
-      "html1": "<p style=\"text-align: justify; \">ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5402,
-      "features": [
-        "formatting.justified-ctrl-j"
-      ]
-    },
-    {
-      "key": "justifyLeft",
-      "cmd": "justifyLeft",
-      "value": null,
-      "ok": false,
-      "phase": "survive",
-      "detail": "marker present before conversion but lost after html->docx->html (expected /text-align[^\">]*left|align=\"left\"/)",
-      "html1": "<p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5416,
-      "features": [
-        "formatting.align-left-ctrl-l"
-      ]
-    },
-    {
-      "key": "justifyRight",
-      "cmd": "justifyRight",
-      "value": null,
-      "ok": false,
-      "phase": "survive",
-      "detail": "marker present before conversion but lost after html->docx->html (expected /text-align[^\">]*right/)",
-      "html1": "<p style=\"text-align: right; \">ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5402,
-      "features": [
-        "formatting.align-right-ctrl-r"
-      ]
-    },
-    {
-      "key": "line-spacing",
-      "cmd": "line-spacing",
-      "value": null,
-      "ok": false,
-      "phase": "error",
-      "detail": "command not dispatched (no button, no runCommand)",
-      "html1": null,
-      "html3": null,
-      "ms": 2314,
-      "features": [
-        "formatting.paragraph-line-spacing"
-      ]
-    },
-    {
-      "key": "link",
-      "cmd": "link",
-      "value": null,
-      "ok": false,
-      "phase": "survive",
-      "detail": "marker present before conversion but lost after html->docx->html (expected /<a\\b[^>]*href/)",
-      "html1": "<p><a href=\"https://roundtrip.example\" style=\"font-size: 12pt;\">https://roundtrip.example</a>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p><u>https://roundtrip.example (https://roundtrip.example)</u>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5736,
-      "features": [
-        "insert.link",
-        "references.link"
-      ]
-    },
-    {
-      "key": "multilevel",
-      "cmd": "multilevel",
-      "value": null,
-      "ok": false,
-      "phase": "survive",
-      "detail": "marker present before conversion but lost after html->docx->html (expected /<ol\\b|<ul\\b|data-level|list-level/)",
-      "html1": "<p><ol><li>ROUNDTRIP sentinel alpha text.</li></ol></p><p>Second paragraph body here.</p>",
-      "html3": " <p>Second paragraph body here.</p>",
-      "ms": 5385,
-      "features": [
-        "formatting.multilevel-list"
+        "formatting.clear-style"
       ]
     },
     {
       "key": "strikeThrough",
-      "cmd": "strikeThrough",
-      "value": null,
       "ok": true,
       "phase": "persisted",
       "detail": "marker /<(s|strike|del)\\b|line-through/ survived html->docx->html",
-      "html1": "<p>ROUNDTRIP <strike>sentinel</strike> alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP <s>sentinel</s> alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5461,
+      "html1": "<p>ROUNDTRIP <strike>sentinel</strike> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "html3": " <p>ROUNDTRIP <s>sentinel</s> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "ms": 5409,
       "features": [
         "formatting.strikethrough-ctrl-5"
       ]
     },
     {
       "key": "subscript",
-      "cmd": "subscript",
-      "value": null,
-      "ok": false,
-      "phase": "survive",
-      "detail": "marker present before conversion but lost after html->docx->html (expected /<sub\\b|vertical-align[^>]*\\bsub\\b/)",
-      "html1": "<p>ROUNDTRIP <sub>sentinel</sub> alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5490,
+      "ok": true,
+      "phase": "persisted-docx-xml",
+      "detail": "marker /w:vertAlign[^>]*subscript/ preserved in docx word/document.xml; production docx->html decoder drops it on re-emission (documented gap): expect /<sub\\b|vertical-align[^>]*\\bsub\\b/ missing after roundtrip",
+      "html1": "<p>ROUNDTRIP <sub>sentinel</sub> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "ms": 5476,
       "features": [
         "formatting.subscript-ctrl"
       ]
     },
     {
       "key": "superscript",
-      "cmd": "superscript",
-      "value": null,
-      "ok": false,
-      "phase": "survive",
-      "detail": "marker present before conversion but lost after html->docx->html (expected /<sup\\b|vertical-align[^>]*super/)",
-      "html1": "<p>ROUNDTRIP <sup>sentinel</sup> alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5484,
+      "ok": true,
+      "phase": "persisted-docx-xml",
+      "detail": "marker /w:vertAlign[^>]*superscript/ preserved in docx word/document.xml; production docx->html decoder drops it on re-emission (documented gap): expect /<sup\\b|vertical-align[^>]*super/ missing after roundtrip",
+      "html1": "<p>ROUNDTRIP <sup>sentinel</sup> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "ms": 5447,
       "features": [
         "formatting.superscript-ctrl"
       ]
     },
     {
-      "key": "text-color",
-      "cmd": "text-color",
-      "value": null,
-      "ok": false,
-      "phase": "error",
-      "detail": "command not dispatched (no button, no runCommand)",
-      "html1": null,
-      "html3": null,
-      "ms": 2310,
-      "features": [
-        "formatting.font-color"
-      ]
-    },
-    {
-      "key": "toggleDropcap",
-      "cmd": "toggleDropcap",
-      "value": null,
-      "ok": false,
-      "phase": "apply",
-      "detail": "mutation did not take effect (apply marker missing from flat HTML)",
-      "html1": "<p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": null,
-      "ms": 3070,
-      "features": [
-        "insert.drop-cap"
-      ]
-    },
-    {
-      "key": "toggleHyphenation",
-      "cmd": "toggleHyphenation",
-      "value": null,
-      "ok": false,
-      "phase": "survive",
-      "detail": "marker present before conversion but lost after html->docx->html (expected /hyphen/)",
-      "html1": "<div class=\"hyphenation\" data-auto=\"1\"></div><p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5740,
-      "features": [
-        "page.hyphenation",
-        "page.hyphenation-options",
-        "page.dlg-hyphenation"
-      ]
-    },
-    {
-      "key": "toggleLineNumbers",
-      "cmd": "toggleLineNumbers",
-      "value": null,
-      "ok": false,
-      "phase": "survive",
-      "detail": "marker present before conversion but lost after html->docx->html (expected /line-number|linenumber/)",
-      "html1": "<div class=\"line-numbers\" data-restart=\"continuous\"></div><p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5728,
-      "features": [
-        "page.line-numbers"
-      ]
-    },
-    {
-      "key": "toggleWatermark",
-      "cmd": "toggleWatermark",
-      "value": null,
-      "ok": false,
-      "phase": "survive",
-      "detail": "marker present before conversion but lost after html->docx->html (expected /watermark/)",
-      "html1": "<div class=\"watermark\" data-text=\"CONFIDENTIAL\" data-color=\"#C0C0C0\"></div><p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5717,
-      "features": [
-        "page.watermark"
-      ]
-    },
-    {
       "key": "underline",
-      "cmd": "underline",
-      "value": null,
       "ok": true,
       "phase": "persisted",
       "detail": "marker /<u\\b|text-decoration[^>]*underline/ survived html->docx->html",
-      "html1": "<p>ROUNDTRIP <u>sentinel</u> alpha text.</p><p>Second paragraph body here.</p>",
-      "html3": " <p>ROUNDTRIP <u>sentinel</u> alpha text.</p><p>Second paragraph body here.</p>",
-      "ms": 5574,
+      "html1": "<p>ROUNDTRIP <u>sentinel</u> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "html3": " <p>ROUNDTRIP <u>sentinel</u> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "ms": 5472,
       "features": [
         "formatting.underline-ctrl-u"
       ]

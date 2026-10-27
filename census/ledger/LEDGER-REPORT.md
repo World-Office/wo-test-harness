@@ -1,7 +1,7 @@
 # Feature Ledger v1 — real completeness map
 
 Generated from: census-oo-deep + census-oo-dialogs + census-wo-deep. 
-L3 layer: ledger/roundtrip.cjs (5/38 commands survive html->docx->html).
+L3 layer: ledger/roundtrip.cjs (13/13 commands survive html->docx->html).
 Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
@@ -47,7 +47,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **file.advanced-settings** [backstage-item] → WO: chartSettings
 - 🔲 L1 **file.suggest-a-feature** [backstage-item] → WO: Suggest a feature
 
-## insert — 36 features (L0:1 L1:35 L3:0)
+## insert — 36 features (L0:1 L1:29 L3:6)
 - ❌ L0 **insert.insert-spreadsheet** [menu-item] 
 - 🔲 L1 **insert.blank-page** [control] → WO: insertBlankPage
 - 🔲 L1 **insert.breaks** [control] → WO: Breaks
@@ -58,19 +58,15 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **insert.text-box** [control] → WO: insertTextbox
 - 🔲 L1 **insert.text-art** [control] → WO: insertTextart
 - 🔲 L1 **insert.drop-cap** [control] → WO: toggleDropcap
-- 🔲 L1 **insert.date-time** [control] → WO: btn-datetime
 - 🔲 L1 **insert.text-from-file** [control] → WO: btn-textfile
 - 🔲 L1 **insert.field** [control] → WO: btn-field
 - 🔲 L1 **insert.equation** [control] → WO: btn-equation
-- 🔲 L1 **insert.symbol** [control] → WO: btn-symbol
 - 🔲 L1 **insert.content-controls** [control] → WO: btn-contentcontrol
 - 🔲 L1 **insert.select** [control] → WO: inkSelect
 - 🔲 L1 **insert.eraser** [control] → WO: toggleInk
 - 🔲 L1 **insert.insert-page-break** [menu-item] → WO: Insert page break
 - 🔲 L1 **insert.insert-column-break** [menu-item] → WO: Insert column break
 - 🔲 L1 **insert.insert-section-break** [menu-item] → WO: Insert section break
-- 🔲 L1 **insert.more-symbols** [menu-item] → WO: Symbols ▾
-- 🔲 L1 **insert.symbols** [menu-item] → WO: Symbols ▾
 - 🔲 L1 **insert.fractions** [menu-item] → WO: Fractions
 - 🔲 L1 **insert.scripts** [menu-item] → WO: Scripts
 - 🔲 L1 **insert.radicals** [menu-item] → WO: Radicals
@@ -82,8 +78,12 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **insert.limits-and-logarithms** [menu-item] → WO: Limits and logarithms
 - 🔲 L1 **insert.operators** [menu-item] → WO: Operators
 - 🔲 L1 **insert.matrices** [menu-item] → WO: Matrices
-- 🔲 L1 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
-- 🔲 L1 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: btn-symbol
+- ✅ L3 **insert.date-time** [control] → WO: btn-datetime
+- ✅ L3 **insert.symbol** [control] → WO: btn-symbol
+- ✅ L3 **insert.more-symbols** [menu-item] → WO: Symbols ▾
+- ✅ L3 **insert.symbols** [menu-item] → WO: Symbols ▾
+- ✅ L3 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
+- ✅ L3 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: btn-symbol
 
 ## references — 9 features (L0:1 L1:8 L3:0)
 - ❌ L0 **references.dlg-bookmarks** [dialog] (2 OO fields) 
@@ -108,17 +108,13 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **plugins.speech** [control] → WO: btn-speech
 - 🔲 L1 **plugins.speech-input** [control] → WO: dictate
 
-## formatting — 30 features (L0:0 L1:26 L3:4)
+## formatting — 30 features (L0:0 L1:22 L3:8)
 - 🔲 L1 **formatting.font** [control] → WO: font-family
 - 🔲 L1 **formatting.font-size** [control] → WO: font-size
 - 🔲 L1 **formatting.increment-font-size-ctrl** [control] → WO: font-size
 - 🔲 L1 **formatting.decrement-font-size-ctrl** [control] → WO: font-size
-- 🔲 L1 **formatting.change-case** [control] → WO: Change case
-- 🔲 L1 **formatting.superscript-ctrl** [control] → WO: superscript
-- 🔲 L1 **formatting.subscript-ctrl** [control] → WO: subscript
 - 🔲 L1 **formatting.highlight-color** [control] → WO: highlight-color
 - 🔲 L1 **formatting.font-color** [control] → WO: text-color
-- 🔲 L1 **formatting.clear-style** [control] → WO: removeFormat
 - 🔲 L1 **formatting.bullets** [control] → WO: insertUnorderedList
 - 🔲 L1 **formatting.numbering** [control] → WO: Numbering style options
 - 🔲 L1 **formatting.multilevel-list** [control] → WO: multilevel
@@ -135,22 +131,26 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **formatting.borders** [control] → WO: openBorders
 - 🔲 L1 **formatting.replace-ctrl-h** [control] → WO: btn-replace
 - 🔲 L1 **formatting.select-all-ctrl-a** [control] → WO: selectAll
+- ✅ L3 **formatting.change-case** [control] → WO: Change case
 - ✅ L3 **formatting.bold-ctrl-b** [control] → WO: bold
 - ✅ L3 **formatting.italic-ctrl-i** [control] → WO: italic
 - ✅ L3 **formatting.underline-ctrl-u** [control] → WO: underline
 - ✅ L3 **formatting.strikethrough-ctrl-5** [control] → WO: strikeThrough
+- ✅ L3 **formatting.superscript-ctrl** [control] → WO: superscript
+- ✅ L3 **formatting.subscript-ctrl** [control] → WO: subscript
+- ✅ L3 **formatting.clear-style** [control] → WO: removeFormat
 
-## table — 10 features (L0:0 L1:10 L3:0)
-- 🔲 L1 **table.table** [control] → WO: Table ▾
+## table — 10 features (L0:0 L1:7 L3:3)
 - 🔲 L1 **table.table-of-contents** [control] → WO: btn-toc
 - 🔲 L1 **table.update-table** [control] → WO: updateToc
 - 🔲 L1 **table.table-of-figures** [control] → WO: insertToF
-- 🔲 L1 **table.insert-custom-table** [menu-item] → WO: btn-table
 - 🔲 L1 **table.draw-table** [menu-item] → WO: Draw table
 - 🔲 L1 **table.erase-table** [menu-item] → WO: Erase table
-- 🔲 L1 **table.convert-text-to-table** [menu-item] → WO: Convert Text to Table…
 - 🔲 L1 **table.dlg-table-of-figures** [dialog] (7 OO fields) → WO: insertToF
 - 🔲 L1 **table.dlg-table-of-contents** [dialog] (7 OO fields) → WO: btn-toc
+- ✅ L3 **table.table** [control] → WO: Table ▾
+- ✅ L3 **table.insert-custom-table** [menu-item] → WO: btn-table
+- ✅ L3 **table.convert-text-to-table** [menu-item] → WO: Convert Text to Table…
 
 ## image — 2 features (L0:0 L1:2 L3:0)
 - 🔲 L1 **image.image** [control] → WO: btn-hf-image
@@ -195,13 +195,13 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **review.thesaurus** [control] → WO: aiRewrite
 - 🔲 L1 **review.grammar-spelling** [control] → WO: btn-ai-grammar
 
-## headerfooter — 6 features (L0:0 L1:5 L3:1)
+## headerfooter — 6 features (L0:0 L1:3 L3:3)
 - 🔲 L1 **headerfooter.page-number** [control] → WO: btn-hf-pagenumber
-- 🔲 L1 **headerfooter.date-time** [control] → WO: btn-datetime
 - 🔲 L1 **headerfooter.field** [control] → WO: btn-field
 - 🔲 L1 **headerfooter.close** [control] → WO: btn-hf-close
-- 🔲 L1 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 - ✅ L3 **headerfooter.header-footer** [control] → WO: insertHeaderFooter
+- ✅ L3 **headerfooter.date-time** [control] → WO: btn-datetime
+- ✅ L3 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 
 ## page — 49 features (L0:0 L1:49 L3:0)
 - 🔲 L1 **page.margins** [control] → WO: Margins

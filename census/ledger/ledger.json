@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-27T13:02:34.330729",
+ "generated": "2026-10-27T13:25:56.184695",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,9 +10,9 @@
  ],
  "totals": {
   "L0": 19,
-  "L1": 218,
+  "L1": 203,
   "L2": 0,
-  "L3": 5,
+  "L3": 20,
   "L4": 0
  },
  "features": [
@@ -394,8 +394,10 @@
     "match": "Change case",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [changeCase]: marker /SENTINEL/ survived html->docx->html"
+   ]
   },
   {
    "feature": "formatting.bold-ctrl-b",
@@ -492,8 +494,10 @@
     "match": "superscript",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [superscript]: marker /w:vertAlign[^>]*superscript/ preserved in docx word/document.xml; production docx->html decoder drops it on re-e"
+   ]
   },
   {
    "feature": "formatting.subscript-ctrl",
@@ -510,8 +514,10 @@
     "match": "subscript",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [subscript]: marker /w:vertAlign[^>]*subscript/ preserved in docx word/document.xml; production docx->html decoder drops it on re-emi"
+   ]
   },
   {
    "feature": "formatting.highlight-color",
@@ -574,8 +580,10 @@
     "match": "removeFormat",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [removeFormat]: marker /sentinel/ survived html->docx->html"
+   ]
   },
   {
    "feature": "formatting.bullets",
@@ -941,8 +949,10 @@
     "match": "Table ▾",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [btn-table]: marker /<table\\b/ survived html->docx->html"
+   ]
   },
   {
    "feature": "image.image",
@@ -1169,8 +1179,10 @@
     "match": "btn-datetime",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [btn-datetime]: marker \"2026-10-27\" survived html->docx->html"
+   ]
   },
   {
    "feature": "insert.text-from-file",
@@ -1241,8 +1253,10 @@
     "match": "btn-symbol",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [btn-symbol]: marker \"§\" survived html->docx->html"
+   ]
   },
   {
    "feature": "insert.content-controls",
@@ -2467,8 +2481,10 @@
     "match": "btn-datetime",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [btn-datetime]: marker \"2026-10-27\" survived html->docx->html"
+   ]
   },
   {
    "feature": "headerfooter.field",
@@ -2850,8 +2866,10 @@
     "match": "btn-table",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [btn-table]: marker /<table\\b/ survived html->docx->html"
+   ]
   },
   {
    "feature": "table.draw-table",
@@ -2904,8 +2922,10 @@
     "match": "Convert Text to Table…",
     "where": "menu:Table ▾"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [convertTextToTable]: marker /<table\\b/ survived html->docx->html"
+   ]
   },
   {
    "feature": "insert.insert-spreadsheet",
@@ -2937,8 +2957,10 @@
     "match": "Symbols ▾",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [btn-symbol]: marker \"§\" survived html->docx->html"
+   ]
   },
   {
    "feature": "insert.symbols",
@@ -2955,8 +2977,10 @@
     "match": "Symbols ▾",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [btn-symbol]: marker \"§\" survived html->docx->html"
+   ]
   },
   {
    "feature": "insert.fractions",
@@ -3863,9 +3887,10 @@
     "match": "btn-datetime",
     "where": "tab:insert"
    },
-   "level": 1,
+   "level": 3,
    "evidence": [
-    "1 OO fields: Update automatically"
+    "1 OO fields: Update automatically",
+    "L3 roundtrip ok [btn-datetime]: marker \"2026-10-27\" survived html->docx->html"
    ]
   },
   {
@@ -3908,10 +3933,11 @@
     "match": "btn-symbol",
     "where": "tab:insert"
    },
-   "level": 1,
+   "level": 3,
    "evidence": [
     "2 OO fields: Font, Range",
-    "2 OO fields: Font, Range"
+    "2 OO fields: Font, Range",
+    "L3 roundtrip ok [btn-symbol]: marker \"§\" survived html->docx->html"
    ]
   },
   {
@@ -4318,9 +4344,10 @@
     "match": "btn-datetime",
     "where": "tab:insert"
    },
-   "level": 1,
+   "level": 3,
    "evidence": [
-    "1 OO fields: Update automatically"
+    "1 OO fields: Update automatically",
+    "L3 roundtrip ok [btn-datetime]: marker \"2026-10-27\" survived html->docx->html"
    ]
   },
   {
