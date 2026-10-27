@@ -295,17 +295,12 @@ async function convertOnce(buf, from, to) {
   return Buffer.from(j.data, 'base64');
 }
 
-/* Two endpoint-parser workarounds (both documented in ROUNDTRIP-GAPS.md):
- * 1. '&nbsp;' breaks the html->docx parser (roxmltree: unknown entity) —
- *    the editor emits it as empty-paragraph placeholder; map to spaces.
- * 2. Raw non-ASCII bytes are mojibake'd by the encoder (it reads UTF-8 as
- *    latin-1: '§' becomes 'Â§' in the docx). Escaping every non-ASCII char
- *    to a numeric character reference keeps the payload ASCII-only; the
- *    parser resolves the entities and the docx carries the correct char. */
+/* LEDGER2 converter fixes landed (named entities, UTF-8, run styling,
+ * sup/sub, alignment, lists, hyperlinks): the old endpoint workarounds are
+ * retired. The payload goes through verbatim — if the converter regresses,
+ * the roundtrip probe should FAIL loudly, not paper over it. */
 function sanitizeForConvert(html) {
-  return html
-    .replace(/&nbsp;/g, ' ')
-    .replace(/[^\x00-\x7F]/gu, (c) => '&#' + c.codePointAt(0) + ';');
+  return html;
 }
 
 function extractDocumentXml(docxBuf) {
@@ -569,27 +564,10 @@ async function main() {
   lines.push('');
   lines.push('## Known endpoint deviations');
   lines.push('');
-  lines.push('Harness-side workarounds applied before every conversion:');
-  lines.push('');
-  lines.push('- `&nbsp;` breaks the endpoint html->docx parser (roxmltree: unknown entity');
-  lines.push('  reference). The editor emits it as empty-paragraph placeholder, so it is');
-  lines.push('  sanitized to a plain space before conversion.');
-  lines.push('- Raw non-ASCII bytes are mojibake\'d by the html->docx encoder (it reads');
-  lines.push('  UTF-8 as latin-1: e.g. `§` U+00A7 is stored in the docx as `Â§` U+00C2');
-  lines.push('  U+00A7). The probe escapes every non-ASCII character to a numeric');
-  lines.push('  character reference (`&#167;`), which the parser resolves correctly —');
-  lines.push('  verified end-to-end. Without this, any symbol/text feature with non-ASCII');
-  lines.push('  content would falsely fail (or worse, falsely pass on a corrupted marker).');
-  lines.push('');
-  lines.push('Converter-side gaps observed (not workable around):');
-  lines.push('');
-  lines.push('- Comments: the unit-level `HtmlToDocxConverter` supports comments (F-102),');
-  lines.push('  but the `/api/conversion/convert` pipeline drops them (no comments.xml, no');
-  lines.push('  commentRangeStart) — endpoint vs unit-test discrepancy.');
-  lines.push('- The production docx->html decoder emits run text with `style: None` only:');
-  lines.push('  run properties (w:vertAlign, w:sz, w:color, w:rFonts, w:highlight),');
-  lines.push('  paragraph w:jc, w:bidi, hyperlinks and numPr are decoded as nothing even');
-  lines.push('  when present in the docx.');
+  lines.push('All harness-side workarounds were RETIRED after the LEDGER2 converter');
+  lines.push('fixes (named entities, UTF-8, run styling, sup/sub, alignment, lists,');
+  lines.push('hyperlinks all round-trip natively now); the probe converts payloads');
+  lines.push('verbatim so any converter regression fails loudly.');
   lines.push('');
   if (failed.length) {
     lines.push('## Non-surviving commands (exact lost attribute)');

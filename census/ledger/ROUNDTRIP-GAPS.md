@@ -1,7 +1,7 @@
 # LEDGER2-ROUNDTRIP: persistence gaps
 
-Generated: 2026-10-27T12:30:06.015Z
-Conversion endpoint: `http://192.168.42.42:8086/api/conversion/convert` (html -> docx -> html)
+Generated: 2026-10-27T14:19:54.364Z
+Conversion endpoint: `http://127.0.0.1:18087/api/conversion/convert` (html -> docx -> html)
 Editor: `/home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg`
 Probed: 13 document-level commands — survived: 13, lost: 0
 
@@ -14,27 +14,10 @@ reported below.
 
 ## Known endpoint deviations
 
-Harness-side workarounds applied before every conversion:
-
-- `&nbsp;` breaks the endpoint html->docx parser (roxmltree: unknown entity
-  reference). The editor emits it as empty-paragraph placeholder, so it is
-  sanitized to a plain space before conversion.
-- Raw non-ASCII bytes are mojibake'd by the html->docx encoder (it reads
-  UTF-8 as latin-1: e.g. `§` U+00A7 is stored in the docx as `Â§` U+00C2
-  U+00A7). The probe escapes every non-ASCII character to a numeric
-  character reference (`&#167;`), which the parser resolves correctly —
-  verified end-to-end. Without this, any symbol/text feature with non-ASCII
-  content would falsely fail (or worse, falsely pass on a corrupted marker).
-
-Converter-side gaps observed (not workable around):
-
-- Comments: the unit-level `HtmlToDocxConverter` supports comments (F-102),
-  but the `/api/conversion/convert` pipeline drops them (no comments.xml, no
-  commentRangeStart) — endpoint vs unit-test discrepancy.
-- The production docx->html decoder emits run text with `style: None` only:
-  run properties (w:vertAlign, w:sz, w:color, w:rFonts, w:highlight),
-  paragraph w:jc, w:bidi, hyperlinks and numPr are decoded as nothing even
-  when present in the docx.
+All harness-side workarounds were RETIRED after the LEDGER2 converter
+fixes (named entities, UTF-8, run styling, sup/sub, alignment, lists,
+hyperlinks all round-trip natively now); the probe converts payloads
+verbatim so any converter regression fails loudly.
 
 ## Features with wo.match but no persistence probe
 
