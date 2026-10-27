@@ -1,100 +1,12 @@
 # Feature Ledger v1 — real completeness map
 
 Generated from: census-oo-deep + census-oo-dialogs + census-wo-deep. 
+L3 layer: ledger/roundtrip.cjs (5/38 commands survive html->docx->html).
 Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
 
-## page — 49 features (L0:21 L1:28)
-- ❌ L0 **page.last-custom** [menu-item] 
-- ❌ L0 **page.narrow** [menu-item] 
-- ❌ L0 **page.moderate** [menu-item] 
-- ❌ L0 **page.wide** [menu-item] 
-- ❌ L0 **page.us-letter** [menu-item] 
-- ❌ L0 **page.us-legal** [menu-item] 
-- ❌ L0 **page.a4** [menu-item] 
-- ❌ L0 **page.a5** [menu-item] 
-- ❌ L0 **page.b5** [menu-item] 
-- ❌ L0 **page.envelope-dl** [menu-item] 
-- ❌ L0 **page.tabloid** [menu-item] 
-- ❌ L0 **page.a3** [menu-item] 
-- ❌ L0 **page.tabloid-oversize** [menu-item] 
-- ❌ L0 **page.roc-16k** [menu-item] 
-- ❌ L0 **page.envelope-choukei-3** [menu-item] 
-- ❌ L0 **page.super-b-a3** [menu-item] 
-- ❌ L0 **page.one** [menu-item] 
-- ❌ L0 **page.two** [menu-item] 
-- ❌ L0 **page.three** [menu-item] 
-- ❌ L0 **page.none** [menu-item] 
-- ❌ L0 **page.automatic** [menu-item] 
-- 🔲 L1 **page.margins** [control] → WO: Margins
-- 🔲 L1 **page.orientation** [control] → WO: Orientation
-- 🔲 L1 **page.size** [control] → WO: Size
-- 🔲 L1 **page.columns** [control] → WO: Columns
-- 🔲 L1 **page.breaks** [control] → WO: Breaks
-- 🔲 L1 **page.line-numbers** [control] → WO: toggleLineNumbers
-- 🔲 L1 **page.hyphenation** [control] → WO: toggleHyphenation
-- 🔲 L1 **page.wrapping** [control] → WO: Wrapping
-- 🔲 L1 **page.bring-forward** [control] → WO: objectOp
-- 🔲 L1 **page.send-backward** [control] → WO: objectOp
-- 🔲 L1 **page.align** [control] → WO: Align
-- 🔲 L1 **page.group** [control] → WO: objectOp
-- 🔲 L1 **page.merge-shapes** [control] → WO: btn-mergeshapes
-- 🔲 L1 **page.watermark** [control] → WO: toggleWatermark
-- 🔲 L1 **page.page-color** [control] → WO: pagecolor
-- 🔲 L1 **page.colors** [control] → WO: themecolors
-- 🔲 L1 **page.normal** [menu-item] → WO: formatBlock
-- 🔲 L1 **page.custom-margins** [menu-item] → WO: Margins
-- 🔲 L1 **page.envelope-10** [menu-item] → WO: 10
-- 🔲 L1 **page.custom-page-size** [menu-item] → WO: Size
-- 🔲 L1 **page.left** [menu-item] → WO: justifyLeft
-- 🔲 L1 **page.right** [menu-item] → WO: justifyRight
-- 🔲 L1 **page.custom-columns** [menu-item] → WO: Columns
-- 🔲 L1 **page.hyphenation-options** [menu-item] → WO: toggleHyphenation
-- 🔲 L1 **page.dlg-margins** [dialog] (8 OO fields) → WO: Margins
-- 🔲 L1 **page.dlg-page-size** [dialog] (3 OO fields) → WO: Size
-- 🔲 L1 **page.dlg-columns** [dialog] (5 OO fields) → WO: Columns
-- 🔲 L1 **page.dlg-hyphenation** [dialog] (2 OO fields) → WO: toggleHyphenation
-
-## insert — 36 features (L0:13 L1:23)
-- ❌ L0 **insert.eraser** [control] 
-- ❌ L0 **insert.insert-spreadsheet** [menu-item] 
-- ❌ L0 **insert.fractions** [menu-item] 
-- ❌ L0 **insert.scripts** [menu-item] 
-- ❌ L0 **insert.radicals** [menu-item] 
-- ❌ L0 **insert.integrals** [menu-item] 
-- ❌ L0 **insert.large-operators** [menu-item] 
-- ❌ L0 **insert.brackets** [menu-item] 
-- ❌ L0 **insert.functions** [menu-item] 
-- ❌ L0 **insert.accents** [menu-item] 
-- ❌ L0 **insert.limits-and-logarithms** [menu-item] 
-- ❌ L0 **insert.operators** [menu-item] 
-- ❌ L0 **insert.matrices** [menu-item] 
-- 🔲 L1 **insert.blank-page** [control] → WO: insertBlankPage
-- 🔲 L1 **insert.breaks** [control] → WO: Breaks
-- 🔲 L1 **insert.shape** [control] → WO: insertObject
-- 🔲 L1 **insert.smartart** [control] → WO: btn-smartart
-- 🔲 L1 **insert.link** [control] → WO: link
-- 🔲 L1 **insert.page-number** [control] → WO: btn-hf-pagenumber
-- 🔲 L1 **insert.text-box** [control] → WO: insertTextbox
-- 🔲 L1 **insert.text-art** [control] → WO: insertTextart
-- 🔲 L1 **insert.drop-cap** [control] → WO: toggleDropcap
-- 🔲 L1 **insert.date-time** [control] → WO: btn-datetime
-- 🔲 L1 **insert.text-from-file** [control] → WO: btn-textfile
-- 🔲 L1 **insert.field** [control] → WO: btn-field
-- 🔲 L1 **insert.equation** [control] → WO: btn-equation
-- 🔲 L1 **insert.symbol** [control] → WO: btn-symbol
-- 🔲 L1 **insert.content-controls** [control] → WO: btn-contentcontrol
-- 🔲 L1 **insert.select** [control] → WO: inkSelect
-- 🔲 L1 **insert.insert-page-break** [menu-item] → WO: Insert page break
-- 🔲 L1 **insert.insert-column-break** [menu-item] → WO: Insert column break
-- 🔲 L1 **insert.insert-section-break** [menu-item] → WO: Insert section break
-- 🔲 L1 **insert.more-symbols** [menu-item] → WO: btn-symbol
-- 🔲 L1 **insert.symbols** [menu-item] → WO: btn-symbol
-- 🔲 L1 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
-- 🔲 L1 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: btn-symbol
-
-## statusbar — 13 features (L0:11 L1:2)
+## statusbar — 13 features (L0:11 L1:2 L3:0)
 - ❌ L0 **statusbar.english-united-states** [statusbar-item] 
 - ❌ L0 **statusbar.btn-doc-lang** [statusbar-item] 
 - ❌ L0 **statusbar.asc-gen991** [statusbar-item] 
@@ -109,28 +21,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **statusbar.word-count** [statusbar-item] → WO: sb-word-count
 - 🔲 L1 **statusbar.status-btn-multiple-pages** [statusbar-item] → WO: btn-multipage
 
-## chart — 19 features (L0:7 L1:12)
-- ❌ L0 **chart.axes** [menu-item] 
-- ❌ L0 **chart.axis-titles** [menu-item] 
-- ❌ L0 **chart.data-labels** [menu-item] 
-- ❌ L0 **chart.error-bars** [menu-item] 
-- ❌ L0 **chart.legend** [menu-item] 
-- ❌ L0 **chart.trendline** [menu-item] 
-- ❌ L0 **chart.up-down-bars** [menu-item] 
-- 🔲 L1 **chart.chart** [control] → WO: insertObject
-- 🔲 L1 **chart.chart-elements** [control] → WO: Chart elements ▾
-- 🔲 L1 **chart.edit-data** [control] → WO: chartEditData
-- 🔲 L1 **chart.update-data** [control] → WO: chartUpdateData
-- 🔲 L1 **chart.chart-type** [control] → WO: Chart type ▾
-- 🔲 L1 **chart.advanced-settings** [control] → WO: chartSettings
-- 🔲 L1 **chart.wrapping** [control] → WO: Wrapping
-- 🔲 L1 **chart.width** [control] → WO: chart-width-input
-- 🔲 L1 **chart.height** [control] → WO: chart-height-input
-- 🔲 L1 **chart.3d-rotation** [control] → WO: chart3d
-- 🔲 L1 **chart.chart-title** [menu-item] → WO: insertObject
-- 🔲 L1 **chart.gridlines** [menu-item] → WO: btn-gridlines
-
-## file — 24 features (L0:5 L1:19)
+## file — 24 features (L0:5 L1:19 L3:0)
 - ❌ L0 **file.home** [control] 
 - ❌ L0 **file.layout** [control] 
 - ❌ L0 **file.references** [control] 
@@ -156,19 +47,45 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **file.advanced-settings** [backstage-item] → WO: chartSettings
 - 🔲 L1 **file.suggest-a-feature** [backstage-item] → WO: Suggest a feature
 
-## table — 10 features (L0:3 L1:7)
-- ❌ L0 **table.draw-table** [menu-item] 
-- ❌ L0 **table.erase-table** [menu-item] 
-- ❌ L0 **table.convert-text-to-table** [menu-item] 
-- 🔲 L1 **table.table** [control] → WO: btn-table
-- 🔲 L1 **table.table-of-contents** [control] → WO: btn-toc
-- 🔲 L1 **table.update-table** [control] → WO: updateToc
-- 🔲 L1 **table.table-of-figures** [control] → WO: insertToF
-- 🔲 L1 **table.insert-custom-table** [menu-item] → WO: btn-table
-- 🔲 L1 **table.dlg-table-of-figures** [dialog] (7 OO fields) → WO: insertToF
-- 🔲 L1 **table.dlg-table-of-contents** [dialog] (7 OO fields) → WO: btn-toc
+## insert — 36 features (L0:1 L1:35 L3:0)
+- ❌ L0 **insert.insert-spreadsheet** [menu-item] 
+- 🔲 L1 **insert.blank-page** [control] → WO: insertBlankPage
+- 🔲 L1 **insert.breaks** [control] → WO: Breaks
+- 🔲 L1 **insert.shape** [control] → WO: insertObject
+- 🔲 L1 **insert.smartart** [control] → WO: btn-smartart
+- 🔲 L1 **insert.link** [control] → WO: link
+- 🔲 L1 **insert.page-number** [control] → WO: btn-hf-pagenumber
+- 🔲 L1 **insert.text-box** [control] → WO: insertTextbox
+- 🔲 L1 **insert.text-art** [control] → WO: insertTextart
+- 🔲 L1 **insert.drop-cap** [control] → WO: toggleDropcap
+- 🔲 L1 **insert.date-time** [control] → WO: btn-datetime
+- 🔲 L1 **insert.text-from-file** [control] → WO: btn-textfile
+- 🔲 L1 **insert.field** [control] → WO: btn-field
+- 🔲 L1 **insert.equation** [control] → WO: btn-equation
+- 🔲 L1 **insert.symbol** [control] → WO: btn-symbol
+- 🔲 L1 **insert.content-controls** [control] → WO: btn-contentcontrol
+- 🔲 L1 **insert.select** [control] → WO: inkSelect
+- 🔲 L1 **insert.eraser** [control] → WO: toggleInk
+- 🔲 L1 **insert.insert-page-break** [menu-item] → WO: Insert page break
+- 🔲 L1 **insert.insert-column-break** [menu-item] → WO: Insert column break
+- 🔲 L1 **insert.insert-section-break** [menu-item] → WO: Insert section break
+- 🔲 L1 **insert.more-symbols** [menu-item] → WO: Symbols ▾
+- 🔲 L1 **insert.symbols** [menu-item] → WO: Symbols ▾
+- 🔲 L1 **insert.fractions** [menu-item] → WO: Fractions
+- 🔲 L1 **insert.scripts** [menu-item] → WO: Scripts
+- 🔲 L1 **insert.radicals** [menu-item] → WO: Radicals
+- 🔲 L1 **insert.integrals** [menu-item] → WO: Integrals
+- 🔲 L1 **insert.large-operators** [menu-item] → WO: Large operators
+- 🔲 L1 **insert.brackets** [menu-item] → WO: Brackets
+- 🔲 L1 **insert.functions** [menu-item] → WO: Functions
+- 🔲 L1 **insert.accents** [menu-item] → WO: Accents
+- 🔲 L1 **insert.limits-and-logarithms** [menu-item] → WO: Limits and logarithms
+- 🔲 L1 **insert.operators** [menu-item] → WO: Operators
+- 🔲 L1 **insert.matrices** [menu-item] → WO: Matrices
+- 🔲 L1 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
+- 🔲 L1 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: btn-symbol
 
-## references — 9 features (L0:1 L1:8)
+## references — 9 features (L0:1 L1:8 L3:0)
 - ❌ L0 **references.dlg-bookmarks** [dialog] (2 OO fields) 
 - 🔲 L1 **references.add-text** [control] → WO: btn-addtext
 - 🔲 L1 **references.footnote** [control] → WO: insertFootnote
@@ -179,7 +96,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **references.dlg-insert-caption** [dialog] (8 OO fields) → WO: insertCaption
 - 🔲 L1 **references.dlg-cross-reference** [dialog] (5 OO fields) → WO: openCrossref
 
-## plugins — 10 features (L0:1 L1:9)
+## plugins — 10 features (L0:1 L1:9 L3:0)
 - ❌ L0 **plugins.plugin-manager** [control] 
 - 🔲 L1 **plugins.background-plugins** [control] → WO: btn-bgplugins
 - 🔲 L1 **plugins.youtube** [control] → WO: pluginUnavailable
@@ -191,16 +108,12 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **plugins.speech** [control] → WO: btn-speech
 - 🔲 L1 **plugins.speech-input** [control] → WO: dictate
 
-## formatting — 30 features (L0:0 L1:30)
+## formatting — 30 features (L0:0 L1:26 L3:4)
 - 🔲 L1 **formatting.font** [control] → WO: font-family
 - 🔲 L1 **formatting.font-size** [control] → WO: font-size
 - 🔲 L1 **formatting.increment-font-size-ctrl** [control] → WO: font-size
 - 🔲 L1 **formatting.decrement-font-size-ctrl** [control] → WO: font-size
 - 🔲 L1 **formatting.change-case** [control] → WO: Change case
-- 🔲 L1 **formatting.bold-ctrl-b** [control] → WO: bold
-- 🔲 L1 **formatting.italic-ctrl-i** [control] → WO: italic
-- 🔲 L1 **formatting.underline-ctrl-u** [control] → WO: underline
-- 🔲 L1 **formatting.strikethrough-ctrl-5** [control] → WO: strikeThrough
 - 🔲 L1 **formatting.superscript-ctrl** [control] → WO: superscript
 - 🔲 L1 **formatting.subscript-ctrl** [control] → WO: subscript
 - 🔲 L1 **formatting.highlight-color** [control] → WO: highlight-color
@@ -222,12 +135,49 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **formatting.borders** [control] → WO: openBorders
 - 🔲 L1 **formatting.replace-ctrl-h** [control] → WO: btn-replace
 - 🔲 L1 **formatting.select-all-ctrl-a** [control] → WO: selectAll
+- ✅ L3 **formatting.bold-ctrl-b** [control] → WO: bold
+- ✅ L3 **formatting.italic-ctrl-i** [control] → WO: italic
+- ✅ L3 **formatting.underline-ctrl-u** [control] → WO: underline
+- ✅ L3 **formatting.strikethrough-ctrl-5** [control] → WO: strikeThrough
 
-## image — 2 features (L0:0 L1:2)
+## table — 10 features (L0:0 L1:10 L3:0)
+- 🔲 L1 **table.table** [control] → WO: Table ▾
+- 🔲 L1 **table.table-of-contents** [control] → WO: btn-toc
+- 🔲 L1 **table.update-table** [control] → WO: updateToc
+- 🔲 L1 **table.table-of-figures** [control] → WO: insertToF
+- 🔲 L1 **table.insert-custom-table** [menu-item] → WO: btn-table
+- 🔲 L1 **table.draw-table** [menu-item] → WO: Draw table
+- 🔲 L1 **table.erase-table** [menu-item] → WO: Erase table
+- 🔲 L1 **table.convert-text-to-table** [menu-item] → WO: Convert Text to Table…
+- 🔲 L1 **table.dlg-table-of-figures** [dialog] (7 OO fields) → WO: insertToF
+- 🔲 L1 **table.dlg-table-of-contents** [dialog] (7 OO fields) → WO: btn-toc
+
+## image — 2 features (L0:0 L1:2 L3:0)
 - 🔲 L1 **image.image** [control] → WO: btn-hf-image
 - 🔲 L1 **image.photo-editor** [control] → WO: photoEditor
 
-## review — 16 features (L0:0 L1:16)
+## chart — 19 features (L0:0 L1:19 L3:0)
+- 🔲 L1 **chart.chart** [control] → WO: insertObject
+- 🔲 L1 **chart.chart-elements** [control] → WO: Chart elements ▾
+- 🔲 L1 **chart.edit-data** [control] → WO: chartEditData
+- 🔲 L1 **chart.update-data** [control] → WO: chartUpdateData
+- 🔲 L1 **chart.chart-type** [control] → WO: Chart type ▾
+- 🔲 L1 **chart.advanced-settings** [control] → WO: chartSettings
+- 🔲 L1 **chart.wrapping** [control] → WO: Wrapping
+- 🔲 L1 **chart.width** [control] → WO: chart-width-input
+- 🔲 L1 **chart.height** [control] → WO: chart-height-input
+- 🔲 L1 **chart.3d-rotation** [control] → WO: chart3d
+- 🔲 L1 **chart.axes** [menu-item] → WO: Axes
+- 🔲 L1 **chart.axis-titles** [menu-item] → WO: Axis Titles
+- 🔲 L1 **chart.chart-title** [menu-item] → WO: Chart title
+- 🔲 L1 **chart.data-labels** [menu-item] → WO: Data labels
+- 🔲 L1 **chart.error-bars** [menu-item] → WO: Error Bars
+- 🔲 L1 **chart.gridlines** [menu-item] → WO: btn-gridlines
+- 🔲 L1 **chart.legend** [menu-item] → WO: Legend
+- 🔲 L1 **chart.trendline** [menu-item] → WO: Trendline
+- 🔲 L1 **chart.up-down-bars** [menu-item] → WO: Up/Down Bars
+
+## review — 16 features (L0:0 L1:16 L3:0)
 - 🔲 L1 **review.comment** [control] → WO: insertComment
 - 🔲 L1 **review.co-editing-mode** [control] → WO: coedit-mode
 - 🔲 L1 **review.add-comment** [control] → WO: btn-comment
@@ -245,19 +195,70 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **review.thesaurus** [control] → WO: aiRewrite
 - 🔲 L1 **review.grammar-spelling** [control] → WO: btn-ai-grammar
 
-## headerfooter — 6 features (L0:0 L1:6)
-- 🔲 L1 **headerfooter.header-footer** [control] → WO: insertHeaderFooter
+## headerfooter — 6 features (L0:0 L1:5 L3:1)
 - 🔲 L1 **headerfooter.page-number** [control] → WO: btn-hf-pagenumber
 - 🔲 L1 **headerfooter.date-time** [control] → WO: btn-datetime
 - 🔲 L1 **headerfooter.field** [control] → WO: btn-field
 - 🔲 L1 **headerfooter.close** [control] → WO: btn-hf-close
 - 🔲 L1 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
+- ✅ L3 **headerfooter.header-footer** [control] → WO: insertHeaderFooter
 
-## protect — 2 features (L0:0 L1:2)
+## page — 49 features (L0:0 L1:49 L3:0)
+- 🔲 L1 **page.margins** [control] → WO: Margins
+- 🔲 L1 **page.orientation** [control] → WO: Orientation
+- 🔲 L1 **page.size** [control] → WO: Size
+- 🔲 L1 **page.columns** [control] → WO: Columns
+- 🔲 L1 **page.breaks** [control] → WO: Breaks
+- 🔲 L1 **page.line-numbers** [control] → WO: toggleLineNumbers
+- 🔲 L1 **page.hyphenation** [control] → WO: Hyphenation
+- 🔲 L1 **page.wrapping** [control] → WO: Wrapping
+- 🔲 L1 **page.bring-forward** [control] → WO: objectOp
+- 🔲 L1 **page.send-backward** [control] → WO: objectOp
+- 🔲 L1 **page.align** [control] → WO: Align
+- 🔲 L1 **page.group** [control] → WO: objectOp
+- 🔲 L1 **page.merge-shapes** [control] → WO: btn-mergeshapes
+- 🔲 L1 **page.watermark** [control] → WO: toggleWatermark
+- 🔲 L1 **page.page-color** [control] → WO: pagecolor
+- 🔲 L1 **page.colors** [control] → WO: themecolors
+- 🔲 L1 **page.last-custom** [menu-item] → WO: Last Custom
+- 🔲 L1 **page.normal** [menu-item] → WO: Normal
+- 🔲 L1 **page.narrow** [menu-item] → WO: Narrow
+- 🔲 L1 **page.moderate** [menu-item] → WO: Moderate
+- 🔲 L1 **page.wide** [menu-item] → WO: Wide
+- 🔲 L1 **page.custom-margins** [menu-item] → WO: Custom margins
+- 🔲 L1 **page.us-letter** [menu-item] → WO: Letter
+- 🔲 L1 **page.us-legal** [menu-item] → WO: Legal
+- 🔲 L1 **page.a4** [menu-item] → WO: A4
+- 🔲 L1 **page.a5** [menu-item] → WO: A5
+- 🔲 L1 **page.b5** [menu-item] → WO: B5
+- 🔲 L1 **page.envelope-10** [menu-item] → WO: Envelope #10
+- 🔲 L1 **page.envelope-dl** [menu-item] → WO: Envelope DL
+- 🔲 L1 **page.tabloid** [menu-item] → WO: Tabloid
+- 🔲 L1 **page.a3** [menu-item] → WO: A3
+- 🔲 L1 **page.tabloid-oversize** [menu-item] → WO: Tabloid Oversize
+- 🔲 L1 **page.roc-16k** [menu-item] → WO: ROC 16K
+- 🔲 L1 **page.envelope-choukei-3** [menu-item] → WO: Envelope Choukei 3
+- 🔲 L1 **page.super-b-a3** [menu-item] → WO: Super B/A3
+- 🔲 L1 **page.custom-page-size** [menu-item] → WO: Custom page size
+- 🔲 L1 **page.one** [menu-item] → WO: One
+- 🔲 L1 **page.two** [menu-item] → WO: Two
+- 🔲 L1 **page.three** [menu-item] → WO: Three
+- 🔲 L1 **page.left** [menu-item] → WO: Left
+- 🔲 L1 **page.right** [menu-item] → WO: Right
+- 🔲 L1 **page.custom-columns** [menu-item] → WO: Custom columns
+- 🔲 L1 **page.none** [menu-item] → WO: None
+- 🔲 L1 **page.automatic** [menu-item] → WO: Automatic
+- 🔲 L1 **page.hyphenation-options** [menu-item] → WO: Hyphenation options
+- 🔲 L1 **page.dlg-margins** [dialog] (8 OO fields) → WO: Margins
+- 🔲 L1 **page.dlg-page-size** [dialog] (3 OO fields) → WO: Size
+- 🔲 L1 **page.dlg-columns** [dialog] (5 OO fields) → WO: Columns
+- 🔲 L1 **page.dlg-hyphenation** [dialog] (2 OO fields) → WO: Hyphenation
+
+## protect — 2 features (L0:0 L1:2 L3:0)
 - 🔲 L1 **protect.encrypt** [control] → WO: protectDialog
 - 🔲 L1 **protect.protect-document** [control] → WO: restrictEditing
 
-## view — 8 features (L0:0 L1:8)
+## view — 8 features (L0:0 L1:8 L3:0)
 - 🔲 L1 **view.headings** [control] → WO: btn-view-headings
 - 🔲 L1 **view.fit-to-page** [control] → WO: btn-view-fit
 - 🔲 L1 **view.fit-to-width** [control] → WO: btn-view-fit-width
@@ -267,12 +268,12 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **view.dark-document** [control] → WO: btn-view-darkdoc
 - 🔲 L1 **view.pause-recording** [control] → WO: Pause recording
 
-## macros — 3 features (L0:0 L1:3)
+## macros — 3 features (L0:0 L1:3 L3:0)
 - 🔲 L1 **macros.macros** [control] → WO: btn-macro-menu
 - 🔲 L1 **macros.record-macro** [control] → WO: Record macro
 - 🔲 L1 **macros.dlg-macros** [dialog] (1 OO fields) → WO: btn-macro-menu
 
-## other — 5 features (L0:0 L1:5)
+## other — 5 features (L0:0 L1:5 L3:0)
 - 🔲 L1 **other.settings** [control] → WO: aiSettings
 - 🔲 L1 **other.chatbot** [control] → WO: btn-ai-assistant
 - 🔲 L1 **other.summarization** [control] → WO: aiSummarize

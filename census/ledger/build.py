@@ -15,9 +15,13 @@ a LEVEL:
   L3 PERSISTS mutation survives editor -> flatHtml -> docx -> reload
   L4 FIDELITY output semantics match OO's own document for the same op
 
-L2+ are filled by ledger/probe.cjs (behavior probes, modal-ok-check.cjs
-pattern) — not by this builder. This builder emits ledger.json + the L0/L1
-baseline report.
+L2 is filled by behavior probes (probe layer); L3 is filled by
+ledger/roundtrip.cjs: it applies each document-level command in the real
+editor, serializes via flatHtml, round-trips html -> docx -> html through the
+docserver conversion endpoint, and reloads a fresh editor to verify the
+mutation marker survived. If ledger/roundtrip-results.json exists, this
+builder merges its surviving commands into the ledger as L3 PERSISTS and
+still emits ledger.json + the report.
 
 Usage: /usr/bin/python3 ledger/build.py   (from the census dir)
 """
@@ -72,6 +76,7 @@ ALIASES = {
     "bullets": "list", "multilevel": "multilevel",
     "bullets and numbering": "bullets",
     "symbols": "symbol", "more symbols": "symbol",
+    "eraser": "erase",
 }
 
 # noise: never ledger-worthy surfaces
@@ -253,6 +258,24 @@ for it in (oo_deep.get("statusBar") or []):
         ledger[fid]["wo"] = {"match": w[0], "where": w[1]}
         ledger[fid]["level"] = 1
 
+# ------------------------------------------------- L3 merge (roundtrip.cjs)
+# Contract: entries with ok=true survived html -> docx -> html; entry.features
+# lists ledger feature ids (matched by wo.match incl. label aliases).
+rt_path = HERE / "roundtrip-results.json"
+rt_merged = False
+if rt_path.exists():
+    rt = json.load(open(rt_path))
+    for entry in rt.get("entries", []):
+        if not entry.get("ok"):
+            continue
+        for fid in entry.get("features", []):
+            row = ledger.get(fid)
+            if row is not None:
+                row["level"] = max(row["level"], 3)
+                row["evidence"].append(
+                    f"L3 roundtrip ok [{entry.get('key')}]: {str(entry.get('detail'))[:120]}")
+    rt_merged = True
+
 # ---------------------------------------------------------------- report
 by_cluster = defaultdict(lambda: {"L0": 0, "L1": 0, "L2": 0, "L3": 0, "L4": 0, "rows": []})
 for row in ledger.values():
@@ -272,11 +295,16 @@ json.dump({"version": 1, "generated": __import__("datetime").datetime.now().isof
 print(f"ledger: {len(ledger)} features across {len(by_cluster)} clusters")
 print(f"  L0 missing : {tot['L0']}")
 print(f"  L1 surface : {tot['L1']}  (the old census ceiling)")
-print(f"  L2/L3/L4   : not yet probed (ledger/probe.cjs fills these)")
+if rt_merged:
+    print(f"  L3 persists: {tot['L3']}  (roundtrip.cjs: {rt.get('survived', 0)}/{rt.get('probed', 0)} commands survived html->docx->html)")
+else:
+    print("  L2/L3/L4   : not yet probed (ledger/roundtrip.cjs fills L3)")
 
 # markdown report
 md = ["# Feature Ledger v1 — real completeness map", ""]
 md.append(f"Generated from: census-oo-deep + census-oo-dialogs + census-wo-deep. ")
+if rt_merged:
+    md.append(f"L3 layer: ledger/roundtrip.cjs ({rt.get('survived', 0)}/{rt.get('probed', 0)} commands survive html->docx->html).")
 md.append("Levels: **L0** missing · **L1** surface exists (visual parity — the old")
 md.append("census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·")
 md.append("**L3** persists (round-trip) · **L4** fidelity vs OO output.")
@@ -284,7 +312,7 @@ md.append("")
 for cl in sorted(by_cluster, key=lambda c: by_cluster[c]["L0"], reverse=True):
     v = by_cluster[cl]
     n = len(v["rows"])
-    md.append(f"## {cl} — {n} features (L0:{v['L0']} L1:{v['L1']})")
+    md.append(f"## {cl} — {n} features (L0:{v['L0']} L1:{v['L1']} L3:{v['L3']})")
     for row in sorted(v["rows"], key=lambda r: r["level"]):
         icon = "❌" if row["level"] == 0 else "🔲" if row["level"] == 1 else "✅"
         wo = f"→ WO: {row['wo']['match']}" if row.get("wo") else ""

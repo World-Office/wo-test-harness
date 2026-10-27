@@ -246,7 +246,12 @@ async function main() {
       const trig = await page.evaluate(
         (tabSlug) => [...document.querySelectorAll(".menu-trigger")]
           .filter((t) => t.offsetParent !== null && t.id !== "btn-file")
-          .map((t) => ({ tab: tabSlug, key: t.getAttribute("aria-label") || t.id })),
+          .map((t) => ({
+            tab: tabSlug,
+            key: t.getAttribute("aria-label") || t.id ||
+              // triggers with only data-i18n (Margins ▾, Size ▾ …) — use text
+              (t.textContent || "").trim().slice(0, 30),
+          })),
       tab)
       for (const t of trig) {
         if (!tabMenus.some((m) => m.key === t.key)) tabMenus.push(t)
@@ -260,7 +265,7 @@ async function main() {
         const tabEl = document.querySelector(`.ribbon-tab[data-tab="${entry.tab}"]`)
         if (tabEl) tabEl.click()
         const el = [...document.querySelectorAll(".menu-trigger")].find(
-          (x) => (x.getAttribute("aria-label") || x.id) === entry.key,
+          (x) => (x.getAttribute("aria-label") || x.id || (x.textContent || "").trim().slice(0, 30)) === entry.key,
         )
         if (el) el.click()
       }, t)

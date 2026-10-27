@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-10-27T07:57:18.895Z",
+ "capturedAt": "2026-10-27T12:02:05.955Z",
  "viewport": {
   "w": 1600,
   "h": 1000
@@ -633,12 +633,23 @@
      "h": 34
     },
     {
+     "id": null,
+     "cmd": null,
+     "icon": "",
+     "label": "Table ▾",
+     "enabled": true,
+     "x": 177,
+     "y": 37,
+     "w": 32,
+     "h": 46
+    },
+    {
      "id": "btn-image",
      "cmd": null,
      "icon": "",
      "label": "Insert image",
      "enabled": true,
-     "x": 192,
+     "x": 224,
      "y": 43,
      "w": 42,
      "h": 34
@@ -649,7 +660,7 @@
      "icon": "",
      "label": "Shape",
      "enabled": true,
-     "x": 236,
+     "x": 268,
      "y": 43,
      "w": 56,
      "h": 34
@@ -660,7 +671,7 @@
      "icon": "",
      "label": "SmartArt",
      "enabled": true,
-     "x": 294,
+     "x": 325,
      "y": 43,
      "w": 69,
      "h": 34
@@ -671,7 +682,7 @@
      "icon": "",
      "label": "Chart",
      "enabled": true,
-     "x": 365,
+     "x": 397,
      "y": 43,
      "w": 50,
      "h": 34
@@ -682,7 +693,7 @@
      "icon": "",
      "label": "Insert comment",
      "enabled": true,
-     "x": 430,
+     "x": 462,
      "y": 43,
      "w": 74,
      "h": 34
@@ -693,7 +704,7 @@
      "icon": "",
      "label": "Insert link",
      "enabled": true,
-     "x": 519,
+     "x": 551,
      "y": 43,
      "w": 42,
      "h": 34
@@ -704,7 +715,7 @@
      "icon": "",
      "label": "Hyperlink",
      "enabled": true,
-     "x": 563,
+     "x": 595,
      "y": 43,
      "w": 72,
      "h": 34
@@ -715,7 +726,7 @@
      "icon": "",
      "label": "Header & Footer",
      "enabled": true,
-     "x": 650,
+     "x": 682,
      "y": 43,
      "w": 36,
      "h": 34
@@ -726,7 +737,7 @@
      "icon": "",
      "label": "Insert page number",
      "enabled": true,
-     "x": 689,
+     "x": 721,
      "y": 43,
      "w": 34,
      "h": 34
@@ -737,7 +748,7 @@
      "icon": "",
      "label": "Text box",
      "enabled": true,
-     "x": 738,
+     "x": 770,
      "y": 43,
      "w": 66,
      "h": 34
@@ -748,7 +759,7 @@
      "icon": "",
      "label": "TextArt",
      "enabled": true,
-     "x": 806,
+     "x": 838,
      "y": 43,
      "w": 58,
      "h": 34
@@ -759,7 +770,7 @@
      "icon": "",
      "label": "Drop cap",
      "enabled": true,
-     "x": 867,
+     "x": 898,
      "y": 43,
      "w": 71,
      "h": 34
@@ -770,7 +781,7 @@
      "icon": "",
      "label": "Date & Time",
      "enabled": true,
-     "x": 939,
+     "x": 971,
      "y": 43,
      "w": 42,
      "h": 34
@@ -781,7 +792,7 @@
      "icon": "",
      "label": "Text from File",
      "enabled": true,
-     "x": 983,
+     "x": 1015,
      "y": 43,
      "w": 96,
      "h": 34
@@ -792,7 +803,7 @@
      "icon": "",
      "label": "Field",
      "enabled": true,
-     "x": 1082,
+     "x": 1113,
      "y": 43,
      "w": 46,
      "h": 34
@@ -803,10 +814,21 @@
      "icon": "",
      "label": "Equation",
      "enabled": true,
-     "x": 1143,
+     "x": 1174,
      "y": 43,
      "w": 69,
      "h": 34
+    },
+    {
+     "id": null,
+     "cmd": null,
+     "icon": "",
+     "label": "Symbols ▾",
+     "enabled": true,
+     "x": 1244,
+     "y": 37,
+     "w": 46,
+     "h": 46
     },
     {
      "id": "btn-symbol",
@@ -814,7 +836,7 @@
      "icon": "",
      "label": "Insert symbol",
      "enabled": true,
-     "x": 1214,
+     "x": 1292,
      "y": 43,
      "w": 34,
      "h": 34
@@ -825,7 +847,7 @@
      "icon": "",
      "label": "Content Controls",
      "enabled": true,
-     "x": 1250,
+     "x": 1328,
      "y": 43,
      "w": 116,
      "h": 34
@@ -1108,14 +1130,14 @@
     },
     {
      "id": null,
-     "cmd": "toggleHyphenation",
+     "cmd": null,
      "icon": "",
      "label": "Hyphenation",
      "enabled": true,
      "x": 298,
-     "y": 49,
-     "w": 91,
-     "h": 34
+     "y": 43,
+     "w": 56,
+     "h": 46
     },
     {
      "id": null,
@@ -1123,7 +1145,7 @@
      "icon": "",
      "label": "Wrapping",
      "enabled": true,
-     "x": 391,
+     "x": 356,
      "y": 43,
      "w": 43,
      "h": 46
@@ -1134,7 +1156,7 @@
      "icon": "",
      "label": "Bring forward",
      "enabled": true,
-     "x": 436,
+     "x": 401,
      "y": 49,
      "w": 95,
      "h": 34
@@ -1145,7 +1167,7 @@
      "icon": "",
      "label": "Send backward",
      "enabled": true,
-     "x": 533,
+     "x": 498,
      "y": 49,
      "w": 108,
      "h": 34
@@ -1156,7 +1178,7 @@
      "icon": "",
      "label": "Align",
      "enabled": true,
-     "x": 642,
+     "x": 608,
      "y": 43,
      "w": 22,
      "h": 46
@@ -1167,7 +1189,7 @@
      "icon": "",
      "label": "Group",
      "enabled": true,
-     "x": 667,
+     "x": 632,
      "y": 49,
      "w": 54,
      "h": 34
@@ -1178,7 +1200,7 @@
      "icon": "",
      "label": "Merge shapes",
      "enabled": true,
-     "x": 723,
+     "x": 688,
      "y": 43,
      "w": 63,
      "h": 46
@@ -1189,7 +1211,7 @@
      "icon": "",
      "label": "Watermark",
      "enabled": true,
-     "x": 788,
+     "x": 753,
      "y": 49,
      "w": 81,
      "h": 34
@@ -1200,7 +1222,7 @@
      "icon": "",
      "label": "Page color",
      "enabled": true,
-     "x": 871,
+     "x": 836,
      "y": 55,
      "w": 24,
      "h": 22
@@ -1211,7 +1233,7 @@
      "icon": "",
      "label": "Colors",
      "enabled": true,
-     "x": 901,
+     "x": 866,
      "y": 60,
      "w": 80,
      "h": 14
@@ -2520,49 +2542,49 @@
    "label": "Word and character count — opens documen",
    "id": "sb-word-count",
    "x": 89,
-   "w": 169
+   "w": 142
   },
   {
    "label": "Document language",
    "id": "sb-lang",
-   "x": 861,
+   "x": 825,
    "w": 135
   },
   {
    "label": "Language options",
    "id": "doc-lang-caret",
-   "x": 1140,
+   "x": 1104,
    "w": 7
   },
   {
    "label": "Multiple pages",
    "id": "btn-multipage",
-   "x": 1157,
+   "x": 1121,
    "w": 24
   },
   {
    "label": "Toggle track changes",
    "id": "sb-track-changes",
-   "x": 1191,
+   "x": 1155,
    "w": 93
   },
   {
    "label": "Zoom out",
    "id": "btn-zoom-out",
-   "x": 1309,
+   "x": 1273,
    "w": 28
   },
   {
    "label": "Zoom in",
    "id": "btn-zoom-in",
-   "x": 1431,
-   "w": 26
+   "x": 1425,
+   "w": 28
   },
   {
    "label": "Fit page",
    "id": "btn-zoom-fit",
-   "x": 1467,
-   "w": 24
+   "x": 1463,
+   "w": 28
   },
   {
    "label": "Reset zoom",
@@ -2638,8 +2660,13 @@
    "enabled": true
   },
   {
-   "id": "btn-fileinfo",
-   "label": "Info…",
+   "id": "",
+   "label": "demo.docx2 KB",
+   "enabled": false
+  },
+  {
+   "id": "btn-open",
+   "label": "Open…",
    "enabled": true
   }
  ],
@@ -3065,7 +3092,7 @@
    ]
   },
   {
-   "trigger": "",
+   "trigger": "Breaks",
    "items": [
     {
      "label": "Insert page break",
@@ -3100,6 +3127,166 @@
    ]
   },
   {
+   "trigger": "Table ▾",
+   "items": [
+    {
+     "label": "Insert table…",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Insert table…",
+     "cmd": "openTableDialog",
+     "enabled": true
+    },
+    {
+     "label": "Draw table",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Draw table",
+     "cmd": "tableDrawMode",
+     "enabled": true
+    },
+    {
+     "label": "Erase table",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Erase table",
+     "cmd": "tableEraseMode",
+     "enabled": true
+    },
+    {
+     "label": "Convert Text to Table…",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Convert Text to Table…",
+     "cmd": "convertTextToTable",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "trigger": "Symbols ▾",
+   "items": [
+    {
+     "label": "Fractions",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Fractions",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "Scripts",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Scripts",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "Radicals",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Radicals",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "Integrals",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Integrals",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "Large operators",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Large operators",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "Brackets",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Brackets",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "Functions",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Functions",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "Accents",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Accents",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "Limits and logarithms",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Limits and logarithms",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "Operators",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Operators",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "Matrices",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Matrices",
+     "cmd": "equationTemplate",
+     "enabled": true
+    }
+   ]
+  },
+  {
    "trigger": "btn-insert-more",
    "items": [
     {
@@ -3120,6 +3307,476 @@
     {
      "label": "Chart editor…",
      "cmd": null,
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "trigger": "Margins",
+   "items": [
+    {
+     "label": "Last Custom",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Last Custom",
+     "cmd": "applyPageMargins",
+     "enabled": true
+    },
+    {
+     "label": "Normal",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Normal",
+     "cmd": "applyPageMargins",
+     "enabled": true
+    },
+    {
+     "label": "Narrow",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Narrow",
+     "cmd": "applyPageMargins",
+     "enabled": true
+    },
+    {
+     "label": "Moderate",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Moderate",
+     "cmd": "applyPageMargins",
+     "enabled": true
+    },
+    {
+     "label": "Wide",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Wide",
+     "cmd": "applyPageMargins",
+     "enabled": true
+    },
+    {
+     "label": "Custom margins",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Custom margins",
+     "cmd": "openPageSetup",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "trigger": "Orientation",
+   "items": [
+    {
+     "label": "Portrait",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Portrait",
+     "cmd": "applyPageOrientation",
+     "enabled": true
+    },
+    {
+     "label": "Landscape",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Landscape",
+     "cmd": "applyPageOrientation",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "trigger": "Size",
+   "items": [
+    {
+     "label": "Letter",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Letter",
+     "cmd": "applyPageSize",
+     "enabled": true
+    },
+    {
+     "label": "Legal",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Legal",
+     "cmd": "applyPageSize",
+     "enabled": true
+    },
+    {
+     "label": "A4",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "A4",
+     "cmd": "applyPageSize",
+     "enabled": true
+    },
+    {
+     "label": "A5",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "A5",
+     "cmd": "applyPageSize",
+     "enabled": true
+    },
+    {
+     "label": "B5",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "B5",
+     "cmd": "applyPageSize",
+     "enabled": true
+    },
+    {
+     "label": "Envelope #10",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Envelope #10",
+     "cmd": "applyPageSize",
+     "enabled": true
+    },
+    {
+     "label": "Envelope DL",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Envelope DL",
+     "cmd": "applyPageSize",
+     "enabled": true
+    },
+    {
+     "label": "Tabloid",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Tabloid",
+     "cmd": "applyPageSize",
+     "enabled": true
+    },
+    {
+     "label": "A3",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "A3",
+     "cmd": "applyPageSize",
+     "enabled": true
+    },
+    {
+     "label": "Tabloid Oversize",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Tabloid Oversize",
+     "cmd": "applyPageSize",
+     "enabled": true
+    },
+    {
+     "label": "ROC 16K",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "ROC 16K",
+     "cmd": "applyPageSize",
+     "enabled": true
+    },
+    {
+     "label": "Envelope Choukei 3",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Envelope Choukei 3",
+     "cmd": "applyPageSize",
+     "enabled": true
+    },
+    {
+     "label": "Super B/A3",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Super B/A3",
+     "cmd": "applyPageSize",
+     "enabled": true
+    },
+    {
+     "label": "Custom page size",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Custom page size",
+     "cmd": "openPageSetup",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "trigger": "Columns",
+   "items": [
+    {
+     "label": "One",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "One",
+     "cmd": "applyColumns",
+     "enabled": true
+    },
+    {
+     "label": "Two",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Two",
+     "cmd": "applyColumns",
+     "enabled": true
+    },
+    {
+     "label": "Three",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Three",
+     "cmd": "applyColumns",
+     "enabled": true
+    },
+    {
+     "label": "Left",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Left",
+     "cmd": "applyColumns",
+     "enabled": true
+    },
+    {
+     "label": "Right",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Right",
+     "cmd": "applyColumns",
+     "enabled": true
+    },
+    {
+     "label": "Custom columns",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Custom columns",
+     "cmd": "openColumnsDialog",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "trigger": "Hyphenation",
+   "items": [
+    {
+     "label": "Automatic",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Automatic",
+     "cmd": "hyphenationSet",
+     "enabled": true
+    },
+    {
+     "label": "None",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "None",
+     "cmd": "hyphenationSet",
+     "enabled": true
+    },
+    {
+     "label": "Hyphenation options",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Hyphenation options",
+     "cmd": "toggleHyphenation",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "trigger": "Wrapping",
+   "items": [
+    {
+     "label": "Inline",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Inline",
+     "cmd": "objectOp",
+     "enabled": true
+    },
+    {
+     "label": "Square",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Square",
+     "cmd": "objectOp",
+     "enabled": true
+    },
+    {
+     "label": "Behind text",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Behind text",
+     "cmd": "objectOp",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "trigger": "Align",
+   "items": [
+    {
+     "label": "Align left",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Align left",
+     "cmd": "objectOp",
+     "enabled": true
+    },
+    {
+     "label": "Align center",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Align center",
+     "cmd": "objectOp",
+     "enabled": true
+    },
+    {
+     "label": "Align right",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Align right",
+     "cmd": "objectOp",
+     "enabled": true
+    },
+    {
+     "label": "Align top",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Align top",
+     "cmd": "objectOp",
+     "enabled": true
+    },
+    {
+     "label": "Align middle",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Align middle",
+     "cmd": "objectOp",
+     "enabled": true
+    },
+    {
+     "label": "Align bottom",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Align bottom",
+     "cmd": "objectOp",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "trigger": "Merge shapes",
+   "items": [
+    {
+     "label": "Union",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Union",
+     "cmd": "objectOp",
+     "enabled": true
+    },
+    {
+     "label": "Subtract",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Subtract",
+     "cmd": "objectOp",
+     "enabled": true
+    },
+    {
+     "label": "Intersect",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Intersect",
+     "cmd": "objectOp",
      "enabled": true
     }
    ]
@@ -3180,6 +3837,181 @@
     {
      "label": "Dictate…",
      "cmd": "dictate",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "trigger": "Chart elements ▾",
+   "items": [
+    {
+     "label": "Chart title",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Chart title",
+     "cmd": "chartElement",
+     "enabled": true
+    },
+    {
+     "label": "Legend",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Legend",
+     "cmd": "chartElement",
+     "enabled": true
+    },
+    {
+     "label": "Gridlines",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Gridlines",
+     "cmd": "chartElement",
+     "enabled": true
+    },
+    {
+     "label": "Data labels",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Data labels",
+     "cmd": "chartElement",
+     "enabled": true
+    },
+    {
+     "label": "Axes",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Axes",
+     "cmd": "chartElement",
+     "enabled": true
+    },
+    {
+     "label": "Axis Titles",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Axis Titles",
+     "cmd": "chartElement",
+     "enabled": true
+    },
+    {
+     "label": "Trendline",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Trendline",
+     "cmd": "chartElement",
+     "enabled": true
+    },
+    {
+     "label": "Error Bars",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Error Bars",
+     "cmd": "chartElement",
+     "enabled": true
+    },
+    {
+     "label": "Up/Down Bars",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Up/Down Bars",
+     "cmd": "chartElement",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "trigger": "Chart type ▾",
+   "items": [
+    {
+     "label": "Bar",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Bar",
+     "cmd": "chartType",
+     "enabled": true
+    },
+    {
+     "label": "Line",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Line",
+     "cmd": "chartType",
+     "enabled": true
+    },
+    {
+     "label": "Pie",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Pie",
+     "cmd": "chartType",
+     "enabled": true
+    },
+    {
+     "label": "Area",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Area",
+     "cmd": "chartType",
+     "enabled": true
+    }
+   ]
+  },
+  {
+   "trigger": "Wrapping ▾",
+   "items": [
+    {
+     "label": "Inline",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Inline",
+     "cmd": "objectOp",
+     "enabled": true
+    },
+    {
+     "label": "Square",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Square",
+     "cmd": "objectOp",
+     "enabled": true
+    },
+    {
+     "label": "Behind text",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Behind text",
+     "cmd": "objectOp",
      "enabled": true
     }
    ]

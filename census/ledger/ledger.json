@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-27T12:35:05.275560",
+ "generated": "2026-10-27T13:02:34.330729",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,10 +9,10 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 62,
-  "L1": 180,
+  "L0": 19,
+  "L1": 218,
   "L2": 0,
-  "L3": 0,
+  "L3": 5,
   "L4": 0
  },
  "features": [
@@ -412,8 +412,10 @@
     "match": "bold",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [bold]: marker /<(b|strong)\\b|font-weight\\s*:\\s*(bold|[6-9]00)/ survived html->docx->html"
+   ]
   },
   {
    "feature": "formatting.italic-ctrl-i",
@@ -430,8 +432,10 @@
     "match": "italic",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [italic]: marker /<(i|em)\\b|font-style\\s*:\\s*italic/ survived html->docx->html"
+   ]
   },
   {
    "feature": "formatting.underline-ctrl-u",
@@ -448,8 +452,10 @@
     "match": "underline",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [underline]: marker /<u\\b|text-decoration[^>]*underline/ survived html->docx->html"
+   ]
   },
   {
    "feature": "formatting.strikethrough-ctrl-5",
@@ -466,8 +472,10 @@
     "match": "strikeThrough",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [strikeThrough]: marker /<(s|strike|del)\\b|line-through/ survived html->docx->html"
+   ]
   },
   {
    "feature": "formatting.superscript-ctrl",
@@ -930,7 +938,7 @@
     }
    ],
    "wo": {
-    "match": "btn-table",
+    "match": "Table ▾",
     "where": "tab:insert"
    },
    "level": 1,
@@ -1069,8 +1077,10 @@
     "match": "insertHeaderFooter",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [insertHeaderFooter]: marker /page-header|page-footer|wo-hf/ survived html->docx->html"
+   ]
   },
   {
    "feature": "insert.page-number",
@@ -1281,8 +1291,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "toggleInk",
+    "where": "tab:draw"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -1405,7 +1418,7 @@
     }
    ],
    "wo": {
-    "match": "toggleHyphenation",
+    "match": "Hyphenation",
     "where": "tab:layout"
    },
    "level": 1,
@@ -2781,7 +2794,7 @@
    ],
    "wo": {
     "match": "Insert page break",
-    "where": "menu:"
+    "where": "menu:Breaks"
    },
    "level": 1,
    "evidence": []
@@ -2799,7 +2812,7 @@
    ],
    "wo": {
     "match": "Insert column break",
-    "where": "menu:"
+    "where": "menu:Breaks"
    },
    "level": 1,
    "evidence": []
@@ -2817,7 +2830,7 @@
    ],
    "wo": {
     "match": "Insert section break",
-    "where": "menu:"
+    "where": "menu:Breaks"
    },
    "level": 1,
    "evidence": []
@@ -2851,8 +2864,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Draw table",
+    "where": "menu:Table ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -2866,8 +2882,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Erase table",
+    "where": "menu:Table ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -2881,8 +2900,11 @@
      "enabled": false
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Convert Text to Table…",
+    "where": "menu:Table ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -2912,7 +2934,7 @@
     }
    ],
    "wo": {
-    "match": "btn-symbol",
+    "match": "Symbols ▾",
     "where": "tab:insert"
    },
    "level": 1,
@@ -2930,7 +2952,7 @@
     }
    ],
    "wo": {
-    "match": "btn-symbol",
+    "match": "Symbols ▾",
     "where": "tab:insert"
    },
    "level": 1,
@@ -2947,8 +2969,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Fractions",
+    "where": "menu:Symbols ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -2962,8 +2987,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Scripts",
+    "where": "menu:Symbols ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -2977,8 +3005,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Radicals",
+    "where": "menu:Symbols ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -2992,8 +3023,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Integrals",
+    "where": "menu:Symbols ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3007,8 +3041,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Large operators",
+    "where": "menu:Symbols ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3022,8 +3059,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Brackets",
+    "where": "menu:Symbols ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3037,8 +3077,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Functions",
+    "where": "menu:Symbols ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3052,8 +3095,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Accents",
+    "where": "menu:Symbols ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3067,8 +3113,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Limits and logarithms",
+    "where": "menu:Symbols ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3082,8 +3131,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Operators",
+    "where": "menu:Symbols ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3097,8 +3149,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Matrices",
+    "where": "menu:Symbols ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3112,8 +3167,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Last Custom",
+    "where": "menu:Margins"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3128,8 +3186,8 @@
     }
    ],
    "wo": {
-    "match": "formatBlock",
-    "where": "tab:home"
+    "match": "Normal",
+    "where": "menu:Margins"
    },
    "level": 1,
    "evidence": []
@@ -3145,8 +3203,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Narrow",
+    "where": "menu:Margins"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3160,8 +3221,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Moderate",
+    "where": "menu:Margins"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3175,8 +3239,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Wide",
+    "where": "menu:Margins"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3191,8 +3258,8 @@
     }
    ],
    "wo": {
-    "match": "Margins",
-    "where": "tab:layout"
+    "match": "Custom margins",
+    "where": "menu:Margins"
    },
    "level": 1,
    "evidence": []
@@ -3208,8 +3275,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Letter",
+    "where": "menu:Size"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3223,8 +3293,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Legal",
+    "where": "menu:Size"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3238,8 +3311,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "A4",
+    "where": "menu:Size"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3253,8 +3329,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "A5",
+    "where": "menu:Size"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3268,8 +3347,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "B5",
+    "where": "menu:Size"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3284,8 +3366,8 @@
     }
    ],
    "wo": {
-    "match": "10",
-    "where": "menu:More font sizes"
+    "match": "Envelope #10",
+    "where": "menu:Size"
    },
    "level": 1,
    "evidence": []
@@ -3301,8 +3383,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Envelope DL",
+    "where": "menu:Size"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3316,8 +3401,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Tabloid",
+    "where": "menu:Size"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3331,8 +3419,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "A3",
+    "where": "menu:Size"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3346,8 +3437,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Tabloid Oversize",
+    "where": "menu:Size"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3361,8 +3455,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "ROC 16K",
+    "where": "menu:Size"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3376,8 +3473,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Envelope Choukei 3",
+    "where": "menu:Size"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3391,8 +3491,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Super B/A3",
+    "where": "menu:Size"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3407,8 +3510,8 @@
     }
    ],
    "wo": {
-    "match": "Size",
-    "where": "tab:layout"
+    "match": "Custom page size",
+    "where": "menu:Size"
    },
    "level": 1,
    "evidence": []
@@ -3424,8 +3527,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "One",
+    "where": "menu:Columns"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3439,8 +3545,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Two",
+    "where": "menu:Columns"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3454,8 +3563,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Three",
+    "where": "menu:Columns"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3470,8 +3582,8 @@
     }
    ],
    "wo": {
-    "match": "justifyLeft",
-    "where": "tab:home"
+    "match": "Left",
+    "where": "menu:Columns"
    },
    "level": 1,
    "evidence": []
@@ -3488,8 +3600,8 @@
     }
    ],
    "wo": {
-    "match": "justifyRight",
-    "where": "tab:home"
+    "match": "Right",
+    "where": "menu:Columns"
    },
    "level": 1,
    "evidence": []
@@ -3506,8 +3618,8 @@
     }
    ],
    "wo": {
-    "match": "Columns",
-    "where": "tab:layout"
+    "match": "Custom columns",
+    "where": "menu:Columns"
    },
    "level": 1,
    "evidence": []
@@ -3523,8 +3635,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "None",
+    "where": "menu:Hyphenation"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3538,8 +3653,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Automatic",
+    "where": "menu:Hyphenation"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3554,8 +3672,8 @@
     }
    ],
    "wo": {
-    "match": "toggleHyphenation",
-    "where": "tab:layout"
+    "match": "Hyphenation options",
+    "where": "menu:Hyphenation"
    },
    "level": 1,
    "evidence": []
@@ -3571,8 +3689,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Axes",
+    "where": "menu:Chart elements ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3586,8 +3707,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Axis Titles",
+    "where": "menu:Chart elements ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3602,8 +3726,8 @@
     }
    ],
    "wo": {
-    "match": "insertObject",
-    "where": "tab:insert"
+    "match": "Chart title",
+    "where": "menu:Chart elements ▾"
    },
    "level": 1,
    "evidence": []
@@ -3619,8 +3743,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Data labels",
+    "where": "menu:Chart elements ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3634,8 +3761,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Error Bars",
+    "where": "menu:Chart elements ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3667,8 +3797,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Legend",
+    "where": "menu:Chart elements ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3682,8 +3815,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Trendline",
+    "where": "menu:Chart elements ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3697,8 +3833,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Up/Down Bars",
+    "where": "menu:Chart elements ▾"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3954,7 +4093,7 @@
     }
    ],
    "wo": {
-    "match": "toggleHyphenation",
+    "match": "Hyphenation",
     "where": "tab:layout"
    },
    "level": 1,
