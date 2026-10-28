@@ -1,34 +1,25 @@
 # 1. Introduction and Goals
 
-## What the system is
+## What is the harness?
 
-wo-test-harness is the verification side of the World-Office project: a
-cross-engine conformance harness, an OnlyOffice↔World-Office parity ledger, and
-a stable feature register (`F-###`), living outside the production repo
-(`World-Office/server`) so product crates never carry test scaffolding and the
-register is versioned independently.
+Everything test/verification-side that lives outside the production repo:
+the feature register, cross-engine docx conformance scoring, the OnlyOffice
+parity census, the feature ledger, and the persistence round-trip gates.
+It is the **measurement instrument** for the World-Office parity program —
+product code (server repo) is judged by gates defined here.
 
-## Top goals
+## Goals
 
 | # | Goal | Motivation |
-|---|------|------------|
-| G1 | **Ground-truth parity** — prove with measurements, not claims, how close World-Office (editors + docserver) is to OnlyOffice per feature. | Parity is the product's selling point; regression here is invisible to unit tests. |
-| G2 | **Honest gates, two-directional** — a gate must fail when a promised feature breaks (STALE) *and* when an unregistered feature appears (EARLY / unregistered promotion). | Silent stubs and silent regressions both erode trust; "loud failure over silent stub" is the house doctrine. |
-| G3 | **One-run orchestration** — `reconcile.py --check …` runs every dimension in one command with a single exit code, both locally and in CI. | The gate must be as cheap to run as it is hard to fool. |
-| G4 | **Deliberate recapture** — committed artifacts (graph.json, ledgers, goldens) change only via explicit recapture, reviewed as PRs. | Measured artifacts are the audit trail; silent regeneration destroys it. |
-| G5 | **Format fidelity scoring** — corpus-driven cross-engine comparison (WO renderer vs LibreOffice/OnlyOffice) with normalized render scoring. | Editor parity is skin; document fidelity is substance. |
+|---|------|-----------|
+| G1 | **One machine-checkable completeness contract** | Parity is a count, not a feeling. The ledger scores every OO feature surface at L0 missing → L4 fidelity. "Done" is L0≈0, not "looks done". |
+| G2 | **Persistence proven, not assumed** | A feature only counts when its document mutation survives editor → docx → reload (round-trip gates, 13/13). |
+| G3 | **Cross-engine truth** | Rendered docx output is scored against LibreOffice (and OO goldens) — not eyeballed. |
+| G4 | **Campaign-drivable** | agentflow/taskfleet workers consume gap reports as task lists; every fix lands with a gate that fails loudly on regression. |
+| G5 | **Honest noise control** | Deferred/loud rows, noise filters, matcher aliases — a green gate must never hide a real gap, and noise must never fake a gap. |
 
 ## Non-goals
 
-- Product code lives in `World-Office/server`; this repo never patches it
-  (findings get filed, server fixes land in the server repo).
-- LLM-assisted triage (ledger-gap, visual-triage) is **advisory only** — it may
-  classify and propose, never gate, never edit the register or MAP.
-
-## Stakeholders
-
-- **World-Office engineers** — consume gates before/after server changes.
-- **CI** (GitHub Actions, 6 jobs) — the authoritative green.
-- **AI coding agents** (wo-agent loop, taskfleet workers) — the register's
-  honest tags are their worklist; the gates are their acceptance criteria.
-- **Auditors/humans** — parity debt must be readable without running anything.
+- Load/performance testing (baseline metrics live in `server/plan/performance.md`).
+- Editor unit tests (those live in the server repo, e.g. static JS gates).
+- Being CI-only: everything runs locally first (prod-probing scripts included).

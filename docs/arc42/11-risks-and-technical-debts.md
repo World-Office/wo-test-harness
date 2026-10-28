@@ -1,34 +1,27 @@
 # 11. Risks and Technical Debts
 
-## Parity debt (deliberate, tracked, loud)
+## Risks
 
-- 83 MAP rows deferred with reason tags (react-filemenu-*, deferred XL, …) —
-  printed as the parity-debt block on every run. Includes Protect/Info/
-  Advanced Settings/Help backstage rows (vanilla menu doesn't ship them; the
-  React menu does).
-- AI gaps (F-148..F-153): 5 unimplemented contracts — provider gateway on the
-  rust docserver, AI author attribution, command tool registry, host-side
-  generation, in-browser LLM (deferred XL). MCP endpoint is real but
-  stdio-only, no editor-command tools, integration tier env-gated.
+| Risk | Impact | Mitigation |
+|------|--------|-----------|
+| **Stale containers lie** | A weeks-old docserver image produced false "true gaps" and burned campaign time | Rule (ADR-18): verify against a freshly built local binary/image; `cargo build -p wo-docserver` + `:18087` probe loop documented in R3 |
+| **OO ground-truth drift** | OO rig upgrades change labels/geometry; matcher aliases rot | OO census JSONs are pinned per rig version; aliases live in code, reviewed in diffs |
+| **Sanitization creep** | Re-adding "harmless" probe workarounds would mask converter regressions | `sanitizeForConvert` must stay identity (ADR-16); ROUNDTRIP-GAPS.md documents the retirement |
+| **Count-pinned gates** | Magic-number accept criteria break on every census refresh | ADR-17: count-agnostic relations only |
+| **Host env quirks** | `python3` on PATH broken, proxy env hijacks localhost fetch, zombie probe ports | `/usr/bin/python3`, `NO_PROXY=…`, `ss -tlnp` + kill — all documented in §2 |
+| **Bus factor** | Campaign-specific knowledge lives in few heads | This arc42 set + ledger/gap reports + AGENTS.md |
 
-## Known risks
+## Debts (deliberate)
 
-| Risk | Exposure | Mitigation |
-|------|----------|------------|
-| **Stale-dispatch CI** (private repo; dispatch runs remote ref) | A green run proving the wrong commit | headSha verification after dispatch (ADR-12); keep local pushed before dispatch |
-| **OO reference freshness** | Committed OO censuses age with OO releases | Deliberate rig refresh; pinned DS digest in the oracle job |
-| **Host font dependence** | Geometry goldens differ per host | Per-platform goldens; strict drift, no slack |
-| **pdfium missing on host** | wo-pdf-render untestable in host gate | Explicit exclusion (documented); wasm policy per AGENTS.md |
-| **WASM host-untestability** | renderer regressions invisible to `cargo test` | Browser census + wasm.yml CI carry it |
-| **Prod drift vs repo claims** | Deployed editor ≠ repo editor (happened: vanilla vs React) | fx-prod measures the deployed truth |
-| **Deprecated python stack** | Dual-stack gates cost run time; python bugs distract | Sunset plan; DUAL-STACK-VERIFIED until then |
-| **Single-machine goldens** | Rig-specific captures (fonts, AA) | Flood-line baselines; advisory vision triage classifies cosmetics |
-| **MCP integration tier not in CI** | tools/call regressions (like the base64 bug) ship again | Enable `AI_CONTRACTS_MCP_CALL=1` + storage-service in CI once stable |
-
-## Housekeeping debts
-
-- OO backstage interaction capture (interact-oo click-through for the
-  backstage) still pending — rig recipe validated, ports reserved.
-- Portal-mode OO capture (Create New / Open Recent visible).
-- Failed-cycle stashes (4 + agent's) left for manual triage.
-- OpenCode key rotation + ACME renewal (ops, ~Nov 2026).
+- **insert-spreadsheet** — the last real L0 gate cluster; open as its own task.
+- **L2 behavior-probe coverage** is thinner than L1/L3 layers; fx covers 108
+  controls, ledger L2 comes from probe layer where available.
+- **L4 fidelity scoring** only where the conformance crate reaches (docx
+  rendering); most ledger rows top out at L3.
+- **Converter ceilings accepted (documented in server docs)**: list `start`
+  value not emitted; `ilvl` flattened; hand-authored numbering numIds ≠1/2
+  degrade in Word — the harness documents rather than gates these.
+- **React-editor censuses** are regression-pinned snapshots; deep/dialog
+  census exists only for word (OO + WO vanilla), not for sheet/slide/pdf/visio.
+- **Point-probe zoo** (30+ `.cjs` scripts): some are one-shot campaign
+  leftovers; candidates for consolidation into the reconcile flow.

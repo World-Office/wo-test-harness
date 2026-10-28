@@ -1,34 +1,36 @@
 # 10. Quality Requirements
 
-Quality here = the gates themselves. Each gate is a scenario; each scenario
-has a stimulus, an observable response, and a hard exit code.
+Quality tree — priority-ordered, with the enforced check for each leaf:
 
-## Gate scenarios (the quality tree)
+```
+Q1 Completeness honesty (the ledger contract)
+ ├─ Q1.1 L0 count ≈ 0: 242 features scored; last real L0 cluster =
+ │       insert-spreadsheet (own task)
+ ├─ Q1.2 Deferred rows stay loud (STALE-DEFERRED = hard failure)
+ └─ Q1.3 Register/graph drift gate: seed.py --check green (111 F-###,
+         1383 tests / 1632 edges)
+Q2 Persistence proof
+ ├─ Q2.1 roundtrip.cjs 13/13 survived, level3=13 — verbatim payloads
+ ├─ Q2.2 Results committed (roundtrip-results.json) and merged into
+ │       the ledger as L3 evidence
+ └─ Q2.3 Converter regression surfaces as a FAIL (no sanitization)
+Q3 Behavioral truth
+ ├─ Q3.1 Loud-stub fx gate: 0 silent / 0 unclickable, local AND live prod
+ │       (108 controls / 11 tabs as of 2026-09-26)
+ └─ Q3.2 Interaction classification for every control (modal/menu/panel/none)
+Q4 Visual/structural parity
+ ├─ Q4.1 Chrome parity gate (ribbon geometry, translation-scroll)
+ ├─ Q4.2 Geometry drift gate vs committed goldens
+ └─ Q4.3 Pixel-diff gate vs OO goldens (PIL flood-line; LLM triage advisory)
+Q5 Cross-engine fidelity
+ ├─ Q5.1 conformance corpus + NormalizedRender scoring vs LibreOffice
+ └─ Q5.2 git-dep pinning on server renderer crates (Cargo.lock regen rule)
+Q6 Process
+ ├─ Q6.1 CI 6 jobs green, dispatched by headSha (ADR-12)
+ ├─ Q6.2 Campaign fixes land with in-repo gates (server: static JS pins,
+ │       cargo converter suites) — harness re-scores afterwards
+ └─ Q6.3 AI contract pyramid pinned (15 tools), STALE/EARLY exit 1
+```
 
-| Scenario | Stimulus | Expected response | Gate |
-|----------|----------|-------------------|------|
-| Register drift | features.yaml edited, graph.json not | `seed.py --check` exit 1 | graph drift |
-| Unregistered promotion | WO ships a real control while MAP says stub | reconcile promotion-diff exit 1 | ledger |
-| Stale deferred | MAP row `deferred`, census shows real control | STALE-DEFERRED exit 1 | ledger |
-| Trigger regression | file menu never opens (0 rows) | `menu-file == 0` ⇒ exit 1 | ledger/interactions |
-| Silent stub | control clicked, nothing observable | `silent`/`unclickable` ⇒ exit 1 | fx |
-| Interaction divergence | OO modal vs WO none (undeclared) | interact-diff missing/type/geometry ⇒ exit 1 | interactions |
-| Geometry drift | layout shifts > 4px or overlaps | geom gate exit 1 (per-platform goldens) | geometry |
-| Pixel regression | render diverges beyond flood-line baseline | pixel-diff exit 1 | visual |
-| AI STALE | register says real, probe fails | exit 1 | ai-contracts |
-| AI EARLY | impl landed, expectation not promoted | exit 1 | ai-contracts |
-| Converter regression | docx→html conversion breaks | positive-pin exit 1 | ai-contracts |
-| MCP protocol regression | initialize/tools-list/schema breaks | pinned probe exit 1 | ai-contracts |
-
-## Non-functional requirements
-
-- **Determinism**: real clicks, pinned browsers, per-platform goldens — a gate
-  run twice on the same tree gives the same verdict (font-dependent geometry
-  isolated per platform).
-- **Honesty over convenience**: partial sums are never greens; runs must
-  complete (rc=0 + all binaries) — the fail-fast/hang undercount lesson.
-- **Speed of truth**: one command, one exit code; CI < ~11 min for 6 jobs.
-- **Readability**: parity debt prints on every run; ledgers are JSON a human
-  can open without running anything.
-- **Reversibility**: throwaway capture dirs; gates never write committed
-  artifacts; server repo untouched by harness fixes (filed, fixed there).
+Not measured here: performance baselines (server/plan/performance.md),
+availability, security scanning (server repo's weekly audit).
