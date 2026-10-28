@@ -87,7 +87,89 @@ maps) vs WO keydown handlers → shortcut gap list.
 **Effective true L0: 6** (1 insert-spreadsheet + 1 spell toggle + 4
 backstage sections) once the ledger joins dialogs.
 
-## Recommended next steps (ordered)
+## Pass 2 (deeper) — layers below the ribbon
+
+Sources: `sdkjs/word/Editor/Shortcuts.js` (147 shortcut types),
+`sdkjs/word/api.js` (283 `asc_*` engine methods), `web-apps` view/DocumentHolder(+Ext).js
+(scenario context menus), `controller/Main.js` (`can*` capability flags),
+`controller/RightMenu.js` (right-panel panes). WO verified by grep.
+
+### P2.1 Keyboard shortcuts — the largest uncensused surface
+
+OO defines **147 document shortcut types** (317 locale descriptions).
+WO implements **~8 custom handlers**: Ctrl+F/H (find), Ctrl+S, Ctrl+Alt+0–3
+(formatBlock), Ctrl+wheel zoom, Ctrl+Enter (comment confirm), Tab-in-list
+indent — plus whatever the browser gives natively (B/I/U, Ctrl+Z/Y in
+contentEditable).
+
+Missing entirely (~135 types, notable): Insert page/column break
+(Ctrl+Enter), non-breaking space/hyphen (Ctrl+Shift+Space/-), special-char
+insert (©/®/™/€), bullet list (Ctrl+Shift+L), paragraph alignment
+(Ctrl+L/E/R/J), font size +/- (Ctrl+Shift+>/<), sub/superscript (Ctrl+=,
+Ctrl+Shift+=), format painter (Ctrl+Shift+C/V), insert page number, update
+fields (F9), spellcheck (F7), object nudge/arrow moves, table navigation,
+speech worker (dictation).
+
+### P2.2 Scenario context menus — census walked only one scenario
+
+Census ctx=65 covers the plain-text scenario. DocumentHolderExt defines
+per-object menus; **zero-hit in WO**:
+- chart suite: primary/secondary axes, axis titles, major/minor gridlines,
+  data table, legend position, **error bars**, **trendlines** (linear /
+  exponential / moving average / std-dev), up/down bars, data labels
+- image crop: crop / crop-fill / crop-fit / reset
+- shape: **edit points** (vertex editing), convert-to-shape, arrange
+  (front/back/forward/backward), shape align (6), distribute rows/cols,
+  edit wrap boundary, save-as-picture
+- list ops: **start numbering from…** (context entry to NumberingValueDialog
+  — confirms the full vertical gap), **join/separate list** (continue ✓)
+- table cells: **insert several** ("Insert N rows/cols")
+- field ops: edit ✓ toggle field codes ✓ — refresh/update-all ✗
+
+### P2.3 Engine API surface (asc_*)
+
+283 methods in `sdkjs/word/api.js`. Feature groups absent in WO:
+- **content-control types**: OO = plain/rich **+ checkbox + date-picker +
+  list + picture** via API; WO cc-dialog = plain/rich/dropdown marker spans
+- **signatures**: addSignatureLine, SetSignatureProps, RemoveSignature(s),
+  request signatures, goto — none
+- **text direction** (`btnTextDir` toolbar, onTextDirection) — 0 hits WO
+- **table styles gallery**: generateTableStylesPreviews — WO has no table
+  style UI
+- **document compare/merge** (CompareDocumentFile/Url, MergeDocumentFile)
+  — WO `compareVersion` compares revisions, not documents
+- footnote/endnote props + **ConvertFootnoteType** + goto — WO notes-dialog
+  covers settings, not conversion
+- mail merge: full cycle (preview, highlight fields, recipients request);
+  WO has CSV recipients + merge preview (depth unverified)
+
+### P2.4 Capability flags (platform scope, not editor gaps)
+
+`can*` in Main.js: chat, suggest mode, live viewer, forms filling,
+comment permissions, cross-document reference data, sharing settings,
+favorites. These are collaborative-platform features (DS/portal level) —
+flag as product-scope decisions, not parity bugs.
+
+### P2.5 Right panel — upstream note
+
+OO right menu registers paragraph/table/image/shape/textart panes; the
+**chart and header-footer panes are commented out upstream** in this
+version — do not chase them.
+
+## Ranked follow-ups after pass 2
+
+1. Shortcut cluster (biggest single surface; static-gateable per key).
+2. List vertical: context ops (start-from/join/separate) + 4 dialogs +
+   converter `start`/`ilvl` — one campaign closes UI+engine.
+3. Context-menu scenario census (cjs: right-click into chart/image/shape/
+   list/table targets on both sides) → scores P2.2 into the ledger.
+4. Chart advanced suite (error bars, trendlines, axes/gridlines/data
+   table) — OO right-panel/ext menus; WO chart-dialog covers type+data
+   only.
+5. cc types (checkbox/date-picker/list/picture), signatures, text
+   direction, table styles — small standalone items.
+6. Image crop + shape edit-points — canvas work, own tasks.
+
 
 1. `census-wo-dialogs.cjs` + dialog join in `ledger/build.py` → retires 2
    false L0s, makes 41 WO dialogs measurable.
