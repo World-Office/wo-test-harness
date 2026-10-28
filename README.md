@@ -75,8 +75,8 @@ See `conformance/README.md` and `conformance/scripts/onlyoffice-image.env`.
 
 This repo is documented with [arc42](https://arc42.org) — one file per section
 under [`docs/arc42/`](docs/arc42/README.md). The product side has its own set:
-`server/docs/arc42/` (Rust cloud+AI, historical record) and
-`server/opencloud-docserver/docs/arc42/` (deprecated Python rewrite).
+`World-Office/docs/arc42/` (workspace-level, current Rust stack; the old
+`server/docs/arc42/` Python-era sections live in that set's `history/`).
 
 ## License
 
