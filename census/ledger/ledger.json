@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-27T13:25:56.184695",
+ "generated": "2026-10-28T07:19:06.104345",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,8 +9,8 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 19,
-  "L1": 203,
+  "L0": 8,
+  "L1": 211,
   "L2": 0,
   "L3": 20,
   "L4": 0
@@ -141,8 +141,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "protectDialog",
+    "where": "tab:protection"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -496,7 +499,7 @@
    },
    "level": 3,
    "evidence": [
-    "L3 roundtrip ok [superscript]: marker /w:vertAlign[^>]*superscript/ preserved in docx word/document.xml; production docx->html decoder drops it on re-e"
+    "L3 roundtrip ok [superscript]: marker /<sup\\b|vertical-align[^>]*super/ survived html->docx->html"
    ]
   },
   {
@@ -516,7 +519,7 @@
    },
    "level": 3,
    "evidence": [
-    "L3 roundtrip ok [subscript]: marker /w:vertAlign[^>]*subscript/ preserved in docx word/document.xml; production docx->html decoder drops it on re-emi"
+    "L3 roundtrip ok [subscript]: marker /<sub\\b|vertical-align[^>]*\\bsub\\b/ survived html->docx->html"
    ]
   },
   {
@@ -910,8 +913,8 @@
     }
    ],
    "wo": {
-    "match": "insertBlankPage",
-    "where": "tab:insert"
+    "match": "btn-multipage",
+    "where": "statusbar"
    },
    "level": 1,
    "evidence": []
@@ -1104,8 +1107,8 @@
     }
    ],
    "wo": {
-    "match": "btn-hf-pagenumber",
-    "where": "tab:header-footer"
+    "match": "insertPageNumber",
+    "where": "tab:insert"
    },
    "level": 1,
    "evidence": []
@@ -1576,8 +1579,8 @@
     }
    ],
    "wo": {
-    "match": "pagecolor",
-    "where": "tab:layout"
+    "match": "btn-multipage",
+    "where": "statusbar"
    },
    "level": 1,
    "evidence": []
@@ -2085,8 +2088,8 @@
     }
    ],
    "wo": {
-    "match": "btn-view-fit",
-    "where": "tab:view"
+    "match": "btn-multipage",
+    "where": "statusbar"
    },
    "level": 1,
    "evidence": []
@@ -2121,8 +2124,8 @@
     }
    ],
    "wo": {
-    "match": "btn-view-zoom100",
-    "where": "tab:view"
+    "match": "btn-zoom-reset",
+    "where": "statusbar"
    },
    "level": 1,
    "evidence": []
@@ -2139,8 +2142,8 @@
     }
    ],
    "wo": {
-    "match": "btn-view-multipages",
-    "where": "tab:view"
+    "match": "btn-multipage",
+    "where": "statusbar"
    },
    "level": 1,
    "evidence": []
@@ -2460,8 +2463,8 @@
     }
    ],
    "wo": {
-    "match": "btn-hf-pagenumber",
-    "where": "tab:header-footer"
+    "match": "insertPageNumber",
+    "where": "tab:insert"
    },
    "level": 1,
    "evidence": []
@@ -2809,8 +2812,8 @@
     }
    ],
    "wo": {
-    "match": "Insert page break",
-    "where": "menu:Breaks"
+    "match": "btn-multipage",
+    "where": "statusbar"
    },
    "level": 1,
    "evidence": []
@@ -3534,8 +3537,8 @@
     }
    ],
    "wo": {
-    "match": "Custom page size",
-    "where": "menu:Size"
+    "match": "btn-multipage",
+    "where": "statusbar"
    },
    "level": 1,
    "evidence": []
@@ -4029,8 +4032,8 @@
     }
    ],
    "wo": {
-    "match": "Size",
-    "where": "tab:layout"
+    "match": "btn-multipage",
+    "where": "statusbar"
    },
    "level": 1,
    "evidence": [
@@ -4503,8 +4506,11 @@
      "label": "English – United States"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "sb-lang",
+    "where": "statusbar"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -4517,22 +4523,11 @@
      "label": "btn-doc-lang"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": []
-  },
-  {
-   "feature": "statusbar.asc-gen991",
-   "cluster": "statusbar",
-   "kind": "statusbar-item",
-   "oo": [
-    {
-     "surface": "statusbar",
-     "label": "asc-gen991"
-    }
-   ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "sb-lang",
+    "where": "statusbar"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -4550,20 +4545,6 @@
    "evidence": []
   },
   {
-   "feature": "statusbar.asc-gen989",
-   "cluster": "statusbar",
-   "kind": "statusbar-item",
-   "oo": [
-    {
-     "surface": "statusbar",
-     "label": "asc-gen989"
-    }
-   ],
-   "wo": null,
-   "level": 0,
-   "evidence": []
-  },
-  {
    "feature": "statusbar.btn-doc-review",
    "cluster": "statusbar",
    "kind": "statusbar-item",
@@ -4573,22 +4554,11 @@
      "label": "btn-doc-review"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": []
-  },
-  {
-   "feature": "statusbar.asc-gen987",
-   "cluster": "statusbar",
-   "kind": "statusbar-item",
-   "oo": [
-    {
-     "surface": "statusbar",
-     "label": "asc-gen987"
-    }
-   ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "sb-track-changes",
+    "where": "statusbar"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -4618,8 +4588,11 @@
      "label": "btn-zoom-topage"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "btn-zoom-fit",
+    "where": "statusbar"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -4632,8 +4605,11 @@
      "label": "btn-zoom-towidth"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "btn-zoom-fit",
+    "where": "statusbar"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -4646,8 +4622,11 @@
      "label": "btn-zoom-down"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "btn-zoom-out",
+    "where": "statusbar"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -4660,8 +4639,11 @@
      "label": "btn-zoom-up"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "btn-zoom-in",
+    "where": "statusbar"
+   },
+   "level": 1,
    "evidence": []
   }
  ]

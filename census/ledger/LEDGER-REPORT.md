@@ -6,30 +6,15 @@ Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
 
-## statusbar — 13 features (L0:11 L1:2 L3:0)
-- ❌ L0 **statusbar.english-united-states** [statusbar-item] 
-- ❌ L0 **statusbar.btn-doc-lang** [statusbar-item] 
-- ❌ L0 **statusbar.asc-gen991** [statusbar-item] 
-- ❌ L0 **statusbar.btn-doc-spell** [statusbar-item] 
-- ❌ L0 **statusbar.asc-gen989** [statusbar-item] 
-- ❌ L0 **statusbar.btn-doc-review** [statusbar-item] 
-- ❌ L0 **statusbar.asc-gen987** [statusbar-item] 
-- ❌ L0 **statusbar.btn-zoom-topage** [statusbar-item] 
-- ❌ L0 **statusbar.btn-zoom-towidth** [statusbar-item] 
-- ❌ L0 **statusbar.btn-zoom-down** [statusbar-item] 
-- ❌ L0 **statusbar.btn-zoom-up** [statusbar-item] 
-- 🔲 L1 **statusbar.word-count** [statusbar-item] → WO: sb-word-count
-- 🔲 L1 **statusbar.status-btn-multiple-pages** [statusbar-item] → WO: btn-multipage
-
-## file — 24 features (L0:5 L1:19 L3:0)
+## file — 24 features (L0:4 L1:20 L3:0)
 - ❌ L0 **file.home** [control] 
 - ❌ L0 **file.layout** [control] 
 - ❌ L0 **file.references** [control] 
 - ❌ L0 **file.collaboration** [control] 
-- ❌ L0 **file.protection** [control] 
 - 🔲 L1 **file.file** [control] → WO: btn-textfile
 - 🔲 L1 **file.insert** [control] → WO: insertBlankPage
 - 🔲 L1 **file.draw** [control] → WO: toggleInk
+- 🔲 L1 **file.protection** [control] → WO: protectDialog
 - 🔲 L1 **file.view** [control] → WO: displayMode
 - 🔲 L1 **file.plugins** [control] → WO: managePlugins
 - 🔲 L1 **file.ai** [control] → WO: AI changes
@@ -49,12 +34,12 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 
 ## insert — 36 features (L0:1 L1:29 L3:6)
 - ❌ L0 **insert.insert-spreadsheet** [menu-item] 
-- 🔲 L1 **insert.blank-page** [control] → WO: insertBlankPage
+- 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
 - 🔲 L1 **insert.breaks** [control] → WO: Breaks
 - 🔲 L1 **insert.shape** [control] → WO: insertObject
 - 🔲 L1 **insert.smartart** [control] → WO: btn-smartart
 - 🔲 L1 **insert.link** [control] → WO: link
-- 🔲 L1 **insert.page-number** [control] → WO: btn-hf-pagenumber
+- 🔲 L1 **insert.page-number** [control] → WO: insertPageNumber
 - 🔲 L1 **insert.text-box** [control] → WO: insertTextbox
 - 🔲 L1 **insert.text-art** [control] → WO: insertTextart
 - 🔲 L1 **insert.drop-cap** [control] → WO: toggleDropcap
@@ -64,7 +49,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **insert.content-controls** [control] → WO: btn-contentcontrol
 - 🔲 L1 **insert.select** [control] → WO: inkSelect
 - 🔲 L1 **insert.eraser** [control] → WO: toggleInk
-- 🔲 L1 **insert.insert-page-break** [menu-item] → WO: Insert page break
+- 🔲 L1 **insert.insert-page-break** [menu-item] → WO: btn-multipage
 - 🔲 L1 **insert.insert-column-break** [menu-item] → WO: Insert column break
 - 🔲 L1 **insert.insert-section-break** [menu-item] → WO: Insert section break
 - 🔲 L1 **insert.fractions** [menu-item] → WO: Fractions
@@ -107,6 +92,18 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **plugins.zotero** [control] → WO: pluginUnavailable
 - 🔲 L1 **plugins.speech** [control] → WO: btn-speech
 - 🔲 L1 **plugins.speech-input** [control] → WO: dictate
+
+## statusbar — 10 features (L0:1 L1:9 L3:0)
+- ❌ L0 **statusbar.btn-doc-spell** [statusbar-item] 
+- 🔲 L1 **statusbar.word-count** [statusbar-item] → WO: sb-word-count
+- 🔲 L1 **statusbar.english-united-states** [statusbar-item] → WO: sb-lang
+- 🔲 L1 **statusbar.btn-doc-lang** [statusbar-item] → WO: sb-lang
+- 🔲 L1 **statusbar.btn-doc-review** [statusbar-item] → WO: sb-track-changes
+- 🔲 L1 **statusbar.status-btn-multiple-pages** [statusbar-item] → WO: btn-multipage
+- 🔲 L1 **statusbar.btn-zoom-topage** [statusbar-item] → WO: btn-zoom-fit
+- 🔲 L1 **statusbar.btn-zoom-towidth** [statusbar-item] → WO: btn-zoom-fit
+- 🔲 L1 **statusbar.btn-zoom-down** [statusbar-item] → WO: btn-zoom-out
+- 🔲 L1 **statusbar.btn-zoom-up** [statusbar-item] → WO: btn-zoom-in
 
 ## formatting — 30 features (L0:0 L1:22 L3:8)
 - 🔲 L1 **formatting.font** [control] → WO: font-family
@@ -196,7 +193,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **review.grammar-spelling** [control] → WO: btn-ai-grammar
 
 ## headerfooter — 6 features (L0:0 L1:3 L3:3)
-- 🔲 L1 **headerfooter.page-number** [control] → WO: btn-hf-pagenumber
+- 🔲 L1 **headerfooter.page-number** [control] → WO: insertPageNumber
 - 🔲 L1 **headerfooter.field** [control] → WO: btn-field
 - 🔲 L1 **headerfooter.close** [control] → WO: btn-hf-close
 - ✅ L3 **headerfooter.header-footer** [control] → WO: insertHeaderFooter
@@ -218,7 +215,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **page.group** [control] → WO: objectOp
 - 🔲 L1 **page.merge-shapes** [control] → WO: btn-mergeshapes
 - 🔲 L1 **page.watermark** [control] → WO: toggleWatermark
-- 🔲 L1 **page.page-color** [control] → WO: pagecolor
+- 🔲 L1 **page.page-color** [control] → WO: btn-multipage
 - 🔲 L1 **page.colors** [control] → WO: themecolors
 - 🔲 L1 **page.last-custom** [menu-item] → WO: Last Custom
 - 🔲 L1 **page.normal** [menu-item] → WO: Normal
@@ -239,7 +236,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **page.roc-16k** [menu-item] → WO: ROC 16K
 - 🔲 L1 **page.envelope-choukei-3** [menu-item] → WO: Envelope Choukei 3
 - 🔲 L1 **page.super-b-a3** [menu-item] → WO: Super B/A3
-- 🔲 L1 **page.custom-page-size** [menu-item] → WO: Custom page size
+- 🔲 L1 **page.custom-page-size** [menu-item] → WO: btn-multipage
 - 🔲 L1 **page.one** [menu-item] → WO: One
 - 🔲 L1 **page.two** [menu-item] → WO: Two
 - 🔲 L1 **page.three** [menu-item] → WO: Three
@@ -250,7 +247,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **page.automatic** [menu-item] → WO: Automatic
 - 🔲 L1 **page.hyphenation-options** [menu-item] → WO: Hyphenation options
 - 🔲 L1 **page.dlg-margins** [dialog] (8 OO fields) → WO: Margins
-- 🔲 L1 **page.dlg-page-size** [dialog] (3 OO fields) → WO: Size
+- 🔲 L1 **page.dlg-page-size** [dialog] (3 OO fields) → WO: btn-multipage
 - 🔲 L1 **page.dlg-columns** [dialog] (5 OO fields) → WO: Columns
 - 🔲 L1 **page.dlg-hyphenation** [dialog] (2 OO fields) → WO: Hyphenation
 
@@ -260,10 +257,10 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 
 ## view — 8 features (L0:0 L1:8 L3:0)
 - 🔲 L1 **view.headings** [control] → WO: btn-view-headings
-- 🔲 L1 **view.fit-to-page** [control] → WO: btn-view-fit
+- 🔲 L1 **view.fit-to-page** [control] → WO: btn-multipage
 - 🔲 L1 **view.fit-to-width** [control] → WO: btn-view-fit-width
-- 🔲 L1 **view.zoom-to-100** [control] → WO: btn-view-zoom100
-- 🔲 L1 **view.multiple-pages** [control] → WO: btn-view-multipages
+- 🔲 L1 **view.zoom-to-100** [control] → WO: btn-zoom-reset
+- 🔲 L1 **view.multiple-pages** [control] → WO: btn-multipage
 - 🔲 L1 **view.interface-theme** [control] → WO: view-theme-select
 - 🔲 L1 **view.dark-document** [control] → WO: btn-view-darkdoc
 - 🔲 L1 **view.pause-recording** [control] → WO: Pause recording

@@ -77,6 +77,20 @@ ALIASES = {
     "bullets and numbering": "bullets",
     "symbols": "symbol", "more symbols": "symbol",
     "eraser": "erase",
+    # statusbar aliases: OO ids/labels -> WO statusbar ids (census-wo-deep).
+    # OO labels arrive as raw ids ("btn-zoom-topage") — alias on id fragments.
+    "btn zoom topage": "btn-zoom-fit", "btn zoom towid": "btn-zoom-fit",
+    "btn zoom down": "btn-zoom-out", "btn zoom up": "btn-zoom-in",
+    "zoom to page": "btn-zoom-fit", "zoom to width": "btn-zoom-fit",
+    "zoom out": "btn-zoom-out", "zoom in": "btn-zoom-in",
+    "zoom": "btn-zoom-reset",
+    "english united states": "sb-lang", "btn doc lang": "sb-lang",
+    "language": "sb-lang",
+    "spell check": "doc-lang", "btn doc review": "sb-track-changes",
+    "review": "sb-track-changes",
+    "multipage": "btn-multipage", "page": "btn-multipage",
+    # backstage: OO File-screen section -> WO backstage row
+    "protection": "protect",
 }
 
 # noise: never ledger-worthy surfaces
@@ -149,8 +163,9 @@ def wo_match(label: str, cluster: str):
     n = norm(label)
     for key, want in ALIASES.items():
         if key in n or n == key:
+            want_n = norm(want)
             for cl, lab, cmd, where in wo_labels:
-                if want in norm(cmd) or want in norm(lab):
+                if want_n in norm(cmd) or want_n in norm(lab):
                     return (cmd or lab, where)
     # exact label
     for cl, lab, cmd, where in wo_labels:
@@ -249,7 +264,7 @@ for it in (oo_deep.get("backstage") or []):
 # 5. statusbar
 for it in (oo_deep.get("statusBar") or []):
     lab = (it or {}).get("label") or (it or {}).get("id") or ""
-    if not lab:
+    if not lab or noisy(lab):
         continue
     fid = "statusbar." + slug(lab)
     add(fid, "statusbar", {"surface": "statusbar", "label": lab}, "statusbar-item")
