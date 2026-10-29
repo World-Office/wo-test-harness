@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-29T15:42:03.765621",
+ "generated": "2026-10-29T20:53:15.114769",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,8 +9,8 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 46,
-  "L1": 320,
+  "L0": 32,
+  "L1": 334,
   "L2": 0,
   "L3": 20,
   "L4": 0
@@ -5280,11 +5280,12 @@
      "label": "InsertColumnBreak"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Shift+Enter: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+Shift+Enter",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.equationaddplaceholder",
@@ -5403,11 +5404,12 @@
      "label": "NonBreakingSpace"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Shift+Space: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+Shift+Space",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.nonbreakinghyphen",
@@ -5585,11 +5587,12 @@
      "label": "InsertHyperlink"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+K: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+K",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.visithyperlink",
@@ -5954,11 +5957,12 @@
      "label": "SmallCaps"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Shift+K: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+Shift+K",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.subscript",
@@ -5991,11 +5995,12 @@
      "label": "Superscript"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Comma: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+,",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.applylistbullet",
@@ -6166,13 +6171,11 @@
     }
    ],
    "wo": {
-    "match": "browser caret/scroll (n/a for web editor)",
+    "match": "Ctrl+Enter",
     "where": "shortcut"
    },
    "level": 1,
-   "evidence": [
-    "browser caret/scroll (n/a for web editor)"
-   ]
+   "evidence": []
   },
   {
    "feature": "shortcut.indent",
@@ -6534,11 +6537,12 @@
      "label": "InsertEndnoteNow"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Alt+D: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+Alt+D",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.movetonextcell",
@@ -6804,11 +6808,12 @@
      "label": "CopyrightSign"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Alt+G: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+Alt+G",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.eurosign",
@@ -6822,11 +6827,12 @@
      "label": "EuroSign"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Alt+E: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+Alt+E",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.registeredsign",
@@ -6840,11 +6846,12 @@
      "label": "RegisteredSign"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Alt+R: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+Alt+R",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.trademarksign",
@@ -6858,11 +6865,12 @@
      "label": "TrademarkSign"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Alt+T: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+Alt+T",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.speechworker",
@@ -6930,11 +6938,12 @@
      "label": "OpenChatPanel"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Alt+Q: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+Alt+Q",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.movetostartpreviouspage",
@@ -7455,11 +7464,12 @@
      "label": "InsertFootnoteNow"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Alt+F: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+Alt+F",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.emdash",
@@ -7473,10 +7483,13 @@
      "label": "EmDash"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation)",
+    "where": "shortcut"
+   },
+   "level": 1,
    "evidence": [
-    "OO bind Ctrl+Alt+Minus: no WO keydown handler"
+    "WO uses different combo: Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation)"
    ]
   },
   {
@@ -7491,10 +7504,13 @@
      "label": "EnDash"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Ctrl+Shift+Minus (OO uses Ctrl+NumpadMinus; Ctrl+Minus is zoom-out in WO)",
+    "where": "shortcut"
+   },
+   "level": 1,
    "evidence": [
-    "OO bind Ctrl+Minus: no WO keydown handler"
+    "WO uses different combo: Ctrl+Shift+Minus (OO uses Ctrl+NumpadMinus; Ctrl+Minus is zoom-out in WO)"
    ]
   },
   {

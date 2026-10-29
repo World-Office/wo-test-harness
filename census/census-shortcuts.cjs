@@ -58,6 +58,24 @@ const WO = {
   ApplyNormalText: { v: "diverged", wb: "Ctrl+Alt+0" },
   InsertComment: { v: "diverged", wb: "Ctrl+Enter confirms comment dialog" },
 
+  // Implemented 2026-10-28 (C1): were missing, now bound. Web adaptation of
+  // the OO combo noted where the browser/zoom conflicts forced a variant.
+  Superscript: { v: "matched", wb: "Ctrl+," },
+  SmallCaps: { v: "matched", wb: "Ctrl+Shift+K" },
+  InsertFootnoteNow: { v: "matched", wb: "Ctrl+Alt+F" },
+  InsertEndnoteNow: { v: "matched", wb: "Ctrl+Alt+D" },
+  InsertColumnBreak: { v: "matched", wb: "Ctrl+Shift+Enter" },
+  InsertPageBreak: { v: "matched", wb: "Ctrl+Enter" },
+  InsertHyperlink: { v: "matched", wb: "Ctrl+K" },
+  OpenChatPanel: { v: "matched", wb: "Ctrl+Alt+Q" },
+  NonBreakingSpace: { v: "matched", wb: "Ctrl+Shift+Space" },
+  EuroSign: { v: "matched", wb: "Ctrl+Alt+E" },
+  CopyrightSign: { v: "matched", wb: "Ctrl+Alt+G" },
+  TrademarkSign: { v: "matched", wb: "Ctrl+Alt+T" },
+  RegisteredSign: { v: "matched", wb: "Ctrl+Alt+R" },
+  EmDash: { v: "diverged", wb: "Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation)" },
+  EnDash: { v: "diverged", wb: "Ctrl+Shift+Minus (OO uses Ctrl+NumpadMinus; Ctrl+Minus is zoom-out in WO)" },
+
   // browser-native: WO relies on the browser for these
   Copy: { v: "browser-native", wb: "Ctrl+C / Cmd+C" },
   Cut: { v: "browser-native", wb: "Ctrl+X / Cmd+X" },

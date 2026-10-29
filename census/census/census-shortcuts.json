@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generated": "2026-10-29T14:41:48.837Z",
+  "generated": "2026-10-29T19:53:08.083Z",
   "source": "sdkjs/word/Editor/Shortcuts.js (147 types) vs WO editor keydown handler",
   "engine": "static-parse",
   "totals": {
-    "matched": 22,
-    "diverged": 1,
+    "matched": 35,
+    "diverged": 3,
     "browser-native": 12,
-    "nav": 72,
-    "missing": 40,
+    "nav": 71,
+    "missing": 26,
     "total": 147
   },
   "shortcuts": [
@@ -201,8 +201,8 @@
     {
       "type": "InsertColumnBreak",
       "combo": "Ctrl+Shift+Enter",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Shift+Enter"
     },
     {
       "type": "EquationAddPlaceholder",
@@ -237,8 +237,8 @@
     {
       "type": "NonBreakingSpace",
       "combo": "Ctrl+Shift+Space",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Shift+Space"
     },
     {
       "type": "NonBreakingHyphen",
@@ -297,8 +297,8 @@
     {
       "type": "InsertHyperlink",
       "combo": "Ctrl+K",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+K"
     },
     {
       "type": "VisitHyperlink",
@@ -405,8 +405,8 @@
     {
       "type": "SmallCaps",
       "combo": "Ctrl+Shift+K",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Shift+K"
     },
     {
       "type": "Subscript",
@@ -417,8 +417,8 @@
     {
       "type": "Superscript",
       "combo": "Ctrl+Comma",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+,"
     },
     {
       "type": "ApplyListBullet",
@@ -471,8 +471,8 @@
     {
       "type": "InsertPageBreak",
       "combo": "Ctrl+Enter",
-      "verdict": "nav",
-      "wo": "browser caret/scroll (n/a for web editor)"
+      "verdict": "matched",
+      "wo": "Ctrl+Enter"
     },
     {
       "type": "Indent",
@@ -579,8 +579,8 @@
     {
       "type": "InsertEndnoteNow",
       "combo": "Ctrl+Alt+D",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Alt+D"
     },
     {
       "type": "MoveToNextCell",
@@ -657,26 +657,26 @@
     {
       "type": "CopyrightSign",
       "combo": "Ctrl+Alt+G",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Alt+G"
     },
     {
       "type": "EuroSign",
       "combo": "Ctrl+Alt+E",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Alt+E"
     },
     {
       "type": "RegisteredSign",
       "combo": "Ctrl+Alt+R",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Alt+R"
     },
     {
       "type": "TrademarkSign",
       "combo": "Ctrl+Alt+T",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Alt+T"
     },
     {
       "type": "SpeechWorker",
@@ -699,8 +699,8 @@
     {
       "type": "OpenChatPanel",
       "combo": "Ctrl+Alt+Q",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Alt+Q"
     },
     {
       "type": "MoveToStartPreviousPage",
@@ -855,20 +855,20 @@
     {
       "type": "InsertFootnoteNow",
       "combo": "Ctrl+Alt+F",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Alt+F"
     },
     {
       "type": "EmDash",
       "combo": "Ctrl+Alt+Minus",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "diverged",
+      "wo": "Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation)"
     },
     {
       "type": "EnDash",
       "combo": "Ctrl+Minus",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "diverged",
+      "wo": "Ctrl+Shift+Minus (OO uses Ctrl+NumpadMinus; Ctrl+Minus is zoom-out in WO)"
     },
     {
       "type": "NextFileTab",

@@ -6,65 +6,7 @@ Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
 
-## insert — 56 features (L0:16 L1:34 L3:6)
-- ❌ L0 **insert.insert-spreadsheet** [menu-item] 
-- ❌ L0 **shortcut.insertlinebreak** [shortcut] 
-- ❌ L0 **shortcut.insertcolumnbreak** [shortcut] 
-- ❌ L0 **shortcut.nonbreakingspace** [shortcut] 
-- ❌ L0 **shortcut.nonbreakinghyphen** [shortcut] 
-- ❌ L0 **shortcut.inserthyperlink** [shortcut] 
-- ❌ L0 **shortcut.insertendnotenow** [shortcut] 
-- ❌ L0 **shortcut.copyrightsign** [shortcut] 
-- ❌ L0 **shortcut.eurosign** [shortcut] 
-- ❌ L0 **shortcut.registeredsign** [shortcut] 
-- ❌ L0 **shortcut.trademarksign** [shortcut] 
-- ❌ L0 **shortcut.insertequation** [shortcut] 
-- ❌ L0 **shortcut.horizontalellipsis** [shortcut] 
-- ❌ L0 **shortcut.insertfootnotenow** [shortcut] 
-- ❌ L0 **shortcut.emdash** [shortcut] 
-- ❌ L0 **shortcut.endash** [shortcut] 
-- 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
-- 🔲 L1 **insert.breaks** [control] → WO: Breaks
-- 🔲 L1 **insert.shape** [control] → WO: insertObject
-- 🔲 L1 **insert.smartart** [control] → WO: btn-smartart
-- 🔲 L1 **insert.link** [control] → WO: link
-- 🔲 L1 **insert.page-number** [control] → WO: insertPageNumber
-- 🔲 L1 **insert.text-box** [control] → WO: insertTextbox
-- 🔲 L1 **insert.text-art** [control] → WO: insertTextart
-- 🔲 L1 **insert.drop-cap** [control] → WO: toggleDropcap
-- 🔲 L1 **insert.text-from-file** [control] → WO: btn-textfile
-- 🔲 L1 **insert.field** [control] → WO: btn-field
-- 🔲 L1 **insert.equation** [control] → WO: btn-equation
-- 🔲 L1 **insert.content-controls** [control] → WO: btn-contentcontrol
-- 🔲 L1 **insert.select** [control] → WO: inkSelect
-- 🔲 L1 **insert.eraser** [control] → WO: toggleInk
-- 🔲 L1 **insert.insert-page-break** [menu-item] → WO: btn-multipage
-- 🔲 L1 **insert.insert-column-break** [menu-item] → WO: Insert column break
-- 🔲 L1 **insert.insert-section-break** [menu-item] → WO: Insert section break
-- 🔲 L1 **insert.fractions** [menu-item] → WO: Fractions
-- 🔲 L1 **insert.scripts** [menu-item] → WO: Scripts
-- 🔲 L1 **insert.radicals** [menu-item] → WO: Radicals
-- 🔲 L1 **insert.integrals** [menu-item] → WO: Integrals
-- 🔲 L1 **insert.large-operators** [menu-item] → WO: Large operators
-- 🔲 L1 **insert.brackets** [menu-item] → WO: Brackets
-- 🔲 L1 **insert.functions** [menu-item] → WO: Functions
-- 🔲 L1 **insert.accents** [menu-item] → WO: Accents
-- 🔲 L1 **insert.limits-and-logarithms** [menu-item] → WO: Limits and logarithms
-- 🔲 L1 **insert.operators** [menu-item] → WO: Operators
-- 🔲 L1 **insert.matrices** [menu-item] → WO: Matrices
-- 🔲 L1 **shortcut.insertpagebreak** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.insertpagenumber** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.inserttab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.inserttablebreak** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.insertlinebreakmultilineform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- ✅ L3 **insert.date-time** [control] → WO: pagenumber-dialog
-- ✅ L3 **insert.symbol** [control] → WO: btn-symbol
-- ✅ L3 **insert.more-symbols** [menu-item] → WO: Symbols ▾
-- ✅ L3 **insert.symbols** [menu-item] → WO: Symbols ▾
-- ✅ L3 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
-- ✅ L3 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: symbol-dialog
-
-## file — 39 features (L0:15 L1:24 L3:0)
+## file — 39 features (L0:14 L1:25 L3:0)
 - ❌ L0 **file.home** [control] 
 - ❌ L0 **file.layout** [control] 
 - ❌ L0 **file.references** [control] 
@@ -77,7 +19,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ❌ L0 **shortcut.updatefields** [shortcut] 
 - ❌ L0 **shortcut.openfilepanel** [shortcut] 
 - ❌ L0 **shortcut.opencommentfield** [shortcut] 
-- ❌ L0 **shortcut.openchatpanel** [shortcut] 
 - ❌ L0 **shortcut.openexistingfile** [shortcut] 
 - ❌ L0 **shortcut.closefile** [shortcut] 
 - 🔲 L1 **file.file** [control] → WO: btn-textfile
@@ -104,12 +45,11 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.openfindandreplacemenu** [shortcut] → WO: Ctrl+H
 - 🔲 L1 **shortcut.save** [shortcut] → WO: Ctrl+S
 - 🔲 L1 **shortcut.closemenu** [shortcut] → WO: Escape
+- 🔲 L1 **shortcut.openchatpanel** [shortcut] → WO: Ctrl+Alt+Q
 
-## formatting — 53 features (L0:8 L1:37 L3:8)
+## formatting — 53 features (L0:6 L1:39 L3:8)
 - ❌ L0 **shortcut.copyformat** [shortcut] 
 - ❌ L0 **shortcut.pasteformat** [shortcut] 
-- ❌ L0 **shortcut.smallcaps** [shortcut] 
-- ❌ L0 **shortcut.superscript** [shortcut] 
 - ❌ L0 **shortcut.indent** [shortcut] 
 - ❌ L0 **shortcut.unindent** [shortcut] 
 - ❌ L0 **shortcut.showall** [shortcut] 
@@ -139,7 +79,9 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.bold** [shortcut] → WO: Ctrl+B
 - 🔲 L1 **shortcut.italic** [shortcut] → WO: Ctrl+I
 - 🔲 L1 **shortcut.underline** [shortcut] → WO: Ctrl+U
+- 🔲 L1 **shortcut.smallcaps** [shortcut] → WO: Ctrl+Shift+K
 - 🔲 L1 **shortcut.subscript** [shortcut] → WO: Ctrl+.
+- 🔲 L1 **shortcut.superscript** [shortcut] → WO: Ctrl+,
 - 🔲 L1 **shortcut.applylistbullet** [shortcut] → WO: Ctrl+Shift+8 (OO uses Ctrl+Shift+L)
 - 🔲 L1 **shortcut.resetchar** [shortcut] → WO: Ctrl+Space (remove formatting)
 - 🔲 L1 **shortcut.increasefontsize** [shortcut] → WO: Ctrl+]
@@ -223,6 +165,64 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.movetopreviouspage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.nextfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.previousfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+
+## insert — 56 features (L0:5 L1:45 L3:6)
+- ❌ L0 **insert.insert-spreadsheet** [menu-item] 
+- ❌ L0 **shortcut.insertlinebreak** [shortcut] 
+- ❌ L0 **shortcut.nonbreakinghyphen** [shortcut] 
+- ❌ L0 **shortcut.insertequation** [shortcut] 
+- ❌ L0 **shortcut.horizontalellipsis** [shortcut] 
+- 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
+- 🔲 L1 **insert.breaks** [control] → WO: Breaks
+- 🔲 L1 **insert.shape** [control] → WO: insertObject
+- 🔲 L1 **insert.smartart** [control] → WO: btn-smartart
+- 🔲 L1 **insert.link** [control] → WO: link
+- 🔲 L1 **insert.page-number** [control] → WO: insertPageNumber
+- 🔲 L1 **insert.text-box** [control] → WO: insertTextbox
+- 🔲 L1 **insert.text-art** [control] → WO: insertTextart
+- 🔲 L1 **insert.drop-cap** [control] → WO: toggleDropcap
+- 🔲 L1 **insert.text-from-file** [control] → WO: btn-textfile
+- 🔲 L1 **insert.field** [control] → WO: btn-field
+- 🔲 L1 **insert.equation** [control] → WO: btn-equation
+- 🔲 L1 **insert.content-controls** [control] → WO: btn-contentcontrol
+- 🔲 L1 **insert.select** [control] → WO: inkSelect
+- 🔲 L1 **insert.eraser** [control] → WO: toggleInk
+- 🔲 L1 **insert.insert-page-break** [menu-item] → WO: btn-multipage
+- 🔲 L1 **insert.insert-column-break** [menu-item] → WO: Insert column break
+- 🔲 L1 **insert.insert-section-break** [menu-item] → WO: Insert section break
+- 🔲 L1 **insert.fractions** [menu-item] → WO: Fractions
+- 🔲 L1 **insert.scripts** [menu-item] → WO: Scripts
+- 🔲 L1 **insert.radicals** [menu-item] → WO: Radicals
+- 🔲 L1 **insert.integrals** [menu-item] → WO: Integrals
+- 🔲 L1 **insert.large-operators** [menu-item] → WO: Large operators
+- 🔲 L1 **insert.brackets** [menu-item] → WO: Brackets
+- 🔲 L1 **insert.functions** [menu-item] → WO: Functions
+- 🔲 L1 **insert.accents** [menu-item] → WO: Accents
+- 🔲 L1 **insert.limits-and-logarithms** [menu-item] → WO: Limits and logarithms
+- 🔲 L1 **insert.operators** [menu-item] → WO: Operators
+- 🔲 L1 **insert.matrices** [menu-item] → WO: Matrices
+- 🔲 L1 **shortcut.insertcolumnbreak** [shortcut] → WO: Ctrl+Shift+Enter
+- 🔲 L1 **shortcut.nonbreakingspace** [shortcut] → WO: Ctrl+Shift+Space
+- 🔲 L1 **shortcut.inserthyperlink** [shortcut] → WO: Ctrl+K
+- 🔲 L1 **shortcut.insertpagebreak** [shortcut] → WO: Ctrl+Enter
+- 🔲 L1 **shortcut.insertpagenumber** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.inserttab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.insertendnotenow** [shortcut] → WO: Ctrl+Alt+D
+- 🔲 L1 **shortcut.inserttablebreak** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.insertlinebreakmultilineform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.copyrightsign** [shortcut] → WO: Ctrl+Alt+G
+- 🔲 L1 **shortcut.eurosign** [shortcut] → WO: Ctrl+Alt+E
+- 🔲 L1 **shortcut.registeredsign** [shortcut] → WO: Ctrl+Alt+R
+- 🔲 L1 **shortcut.trademarksign** [shortcut] → WO: Ctrl+Alt+T
+- 🔲 L1 **shortcut.insertfootnotenow** [shortcut] → WO: Ctrl+Alt+F
+- 🔲 L1 **shortcut.emdash** [shortcut] → WO: Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation)
+- 🔲 L1 **shortcut.endash** [shortcut] → WO: Ctrl+Shift+Minus (OO uses Ctrl+NumpadMinus; Ctrl+Minus is zoom-out in WO)
+- ✅ L3 **insert.date-time** [control] → WO: pagenumber-dialog
+- ✅ L3 **insert.symbol** [control] → WO: btn-symbol
+- ✅ L3 **insert.more-symbols** [menu-item] → WO: Symbols ▾
+- ✅ L3 **insert.symbols** [menu-item] → WO: Symbols ▾
+- ✅ L3 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
+- ✅ L3 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: symbol-dialog
 
 ## statusbar — 10 features (L0:1 L1:9 L3:0)
 - ❌ L0 **statusbar.btn-doc-spell** [statusbar-item] 
