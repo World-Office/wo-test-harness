@@ -6,34 +6,23 @@ Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
 
-## file — 24 features (L0:4 L1:20 L3:0)
-- ❌ L0 **file.home** [control] 
-- ❌ L0 **file.layout** [control] 
-- ❌ L0 **file.references** [control] 
-- ❌ L0 **file.collaboration** [control] 
-- 🔲 L1 **file.file** [control] → WO: btn-textfile
-- 🔲 L1 **file.insert** [control] → WO: insertBlankPage
-- 🔲 L1 **file.draw** [control] → WO: toggleInk
-- 🔲 L1 **file.protection** [control] → WO: protectDialog
-- 🔲 L1 **file.view** [control] → WO: displayMode
-- 🔲 L1 **file.plugins** [control] → WO: plugins-dialog
-- 🔲 L1 **file.ai** [control] → WO: AI changes
-- 🔲 L1 **file.editing** [control] → WO: coedit-mode
-- 🔲 L1 **file.find-ctrl-f** [control] → WO: btn-find
-- 🔲 L1 **file.copy-ctrl-insert** [control] → WO: btn-copy
-- 🔲 L1 **file.paste-ctrl-v** [control] → WO: btn-paste
-- 🔲 L1 **file.cut-ctrl-x** [control] → WO: btn-cut
-- 🔲 L1 **file.copy-style-ctrl-alt-c** [control] → WO: btn-copy
-- 🔲 L1 **file.mail-merge** [control] → WO: mailMerge
-- 🔲 L1 **file.back** [backstage-item] → WO: Back
-- 🔲 L1 **file.save** [backstage-item] → WO: Save
-- 🔲 L1 **file.download-as** [backstage-item] → WO: Download As
-- 🔲 L1 **file.protect** [backstage-item] → WO: Protect
-- 🔲 L1 **file.advanced-settings** [backstage-item] → WO: chartSettings
-- 🔲 L1 **file.suggest-a-feature** [backstage-item] → WO: Suggest a feature
-
-## insert — 36 features (L0:1 L1:29 L3:6)
+## insert — 56 features (L0:16 L1:34 L3:6)
 - ❌ L0 **insert.insert-spreadsheet** [menu-item] 
+- ❌ L0 **shortcut.insertlinebreak** [shortcut] 
+- ❌ L0 **shortcut.insertcolumnbreak** [shortcut] 
+- ❌ L0 **shortcut.nonbreakingspace** [shortcut] 
+- ❌ L0 **shortcut.nonbreakinghyphen** [shortcut] 
+- ❌ L0 **shortcut.inserthyperlink** [shortcut] 
+- ❌ L0 **shortcut.insertendnotenow** [shortcut] 
+- ❌ L0 **shortcut.copyrightsign** [shortcut] 
+- ❌ L0 **shortcut.eurosign** [shortcut] 
+- ❌ L0 **shortcut.registeredsign** [shortcut] 
+- ❌ L0 **shortcut.trademarksign** [shortcut] 
+- ❌ L0 **shortcut.insertequation** [shortcut] 
+- ❌ L0 **shortcut.horizontalellipsis** [shortcut] 
+- ❌ L0 **shortcut.insertfootnotenow** [shortcut] 
+- ❌ L0 **shortcut.emdash** [shortcut] 
+- ❌ L0 **shortcut.endash** [shortcut] 
 - 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
 - 🔲 L1 **insert.breaks** [control] → WO: Breaks
 - 🔲 L1 **insert.shape** [control] → WO: insertObject
@@ -63,6 +52,11 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **insert.limits-and-logarithms** [menu-item] → WO: Limits and logarithms
 - 🔲 L1 **insert.operators** [menu-item] → WO: Operators
 - 🔲 L1 **insert.matrices** [menu-item] → WO: Matrices
+- 🔲 L1 **shortcut.insertpagebreak** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.insertpagenumber** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.inserttab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.inserttablebreak** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.insertlinebreakmultilineform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L3 **insert.date-time** [control] → WO: pagenumber-dialog
 - ✅ L3 **insert.symbol** [control] → WO: btn-symbol
 - ✅ L3 **insert.more-symbols** [menu-item] → WO: Symbols ▾
@@ -70,19 +64,56 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
 - ✅ L3 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: symbol-dialog
 
-## statusbar — 10 features (L0:1 L1:9 L3:0)
-- ❌ L0 **statusbar.btn-doc-spell** [statusbar-item] 
-- 🔲 L1 **statusbar.word-count** [statusbar-item] → WO: sb-word-count
-- 🔲 L1 **statusbar.english-united-states** [statusbar-item] → WO: sb-lang
-- 🔲 L1 **statusbar.btn-doc-lang** [statusbar-item] → WO: sb-lang
-- 🔲 L1 **statusbar.btn-doc-review** [statusbar-item] → WO: sb-track-changes
-- 🔲 L1 **statusbar.status-btn-multiple-pages** [statusbar-item] → WO: btn-multipage
-- 🔲 L1 **statusbar.btn-zoom-topage** [statusbar-item] → WO: btn-zoom-fit
-- 🔲 L1 **statusbar.btn-zoom-towidth** [statusbar-item] → WO: btn-zoom-fit
-- 🔲 L1 **statusbar.btn-zoom-down** [statusbar-item] → WO: btn-zoom-out
-- 🔲 L1 **statusbar.btn-zoom-up** [statusbar-item] → WO: btn-zoom-in
+## file — 39 features (L0:15 L1:24 L3:0)
+- ❌ L0 **file.home** [control] 
+- ❌ L0 **file.layout** [control] 
+- ❌ L0 **file.references** [control] 
+- ❌ L0 **file.collaboration** [control] 
+- ❌ L0 **shortcut.opencommentspanel** [shortcut] 
+- ❌ L0 **shortcut.printpreviewandprint** [shortcut] 
+- ❌ L0 **shortcut.saveas** [shortcut] 
+- ❌ L0 **shortcut.openhelpmenu** [shortcut] 
+- ❌ L0 **shortcut.opencontextmenu** [shortcut] 
+- ❌ L0 **shortcut.updatefields** [shortcut] 
+- ❌ L0 **shortcut.openfilepanel** [shortcut] 
+- ❌ L0 **shortcut.opencommentfield** [shortcut] 
+- ❌ L0 **shortcut.openchatpanel** [shortcut] 
+- ❌ L0 **shortcut.openexistingfile** [shortcut] 
+- ❌ L0 **shortcut.closefile** [shortcut] 
+- 🔲 L1 **file.file** [control] → WO: btn-textfile
+- 🔲 L1 **file.insert** [control] → WO: insertBlankPage
+- 🔲 L1 **file.draw** [control] → WO: toggleInk
+- 🔲 L1 **file.protection** [control] → WO: protectDialog
+- 🔲 L1 **file.view** [control] → WO: displayMode
+- 🔲 L1 **file.plugins** [control] → WO: plugins-dialog
+- 🔲 L1 **file.ai** [control] → WO: AI changes
+- 🔲 L1 **file.editing** [control] → WO: coedit-mode
+- 🔲 L1 **file.find-ctrl-f** [control] → WO: btn-find
+- 🔲 L1 **file.copy-ctrl-insert** [control] → WO: btn-copy
+- 🔲 L1 **file.paste-ctrl-v** [control] → WO: btn-paste
+- 🔲 L1 **file.cut-ctrl-x** [control] → WO: btn-cut
+- 🔲 L1 **file.copy-style-ctrl-alt-c** [control] → WO: btn-copy
+- 🔲 L1 **file.mail-merge** [control] → WO: mailMerge
+- 🔲 L1 **file.back** [backstage-item] → WO: Back
+- 🔲 L1 **file.save** [backstage-item] → WO: Save
+- 🔲 L1 **file.download-as** [backstage-item] → WO: Download As
+- 🔲 L1 **file.protect** [backstage-item] → WO: Protect
+- 🔲 L1 **file.advanced-settings** [backstage-item] → WO: chartSettings
+- 🔲 L1 **file.suggest-a-feature** [backstage-item] → WO: Suggest a feature
+- 🔲 L1 **shortcut.openfinddialog** [shortcut] → WO: Ctrl+F
+- 🔲 L1 **shortcut.openfindandreplacemenu** [shortcut] → WO: Ctrl+H
+- 🔲 L1 **shortcut.save** [shortcut] → WO: Ctrl+S
+- 🔲 L1 **shortcut.closemenu** [shortcut] → WO: Escape
 
-## formatting — 30 features (L0:0 L1:22 L3:8)
+## formatting — 53 features (L0:8 L1:37 L3:8)
+- ❌ L0 **shortcut.copyformat** [shortcut] 
+- ❌ L0 **shortcut.pasteformat** [shortcut] 
+- ❌ L0 **shortcut.smallcaps** [shortcut] 
+- ❌ L0 **shortcut.superscript** [shortcut] 
+- ❌ L0 **shortcut.indent** [shortcut] 
+- ❌ L0 **shortcut.unindent** [shortcut] 
+- ❌ L0 **shortcut.showall** [shortcut] 
+- ❌ L0 **shortcut.strikeout** [shortcut] 
 - 🔲 L1 **formatting.font** [control] → WO: font-family
 - 🔲 L1 **formatting.font-size** [control] → WO: font-size
 - 🔲 L1 **formatting.increment-font-size-ctrl** [control] → WO: font-size
@@ -105,6 +136,21 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **formatting.borders** [control] → WO: openBorders
 - 🔲 L1 **formatting.replace-ctrl-h** [control] → WO: btn-replace
 - 🔲 L1 **formatting.select-all-ctrl-a** [control] → WO: selectAll
+- 🔲 L1 **shortcut.bold** [shortcut] → WO: Ctrl+B
+- 🔲 L1 **shortcut.italic** [shortcut] → WO: Ctrl+I
+- 🔲 L1 **shortcut.underline** [shortcut] → WO: Ctrl+U
+- 🔲 L1 **shortcut.subscript** [shortcut] → WO: Ctrl+.
+- 🔲 L1 **shortcut.applylistbullet** [shortcut] → WO: Ctrl+Shift+8 (OO uses Ctrl+Shift+L)
+- 🔲 L1 **shortcut.resetchar** [shortcut] → WO: Ctrl+Space (remove formatting)
+- 🔲 L1 **shortcut.increasefontsize** [shortcut] → WO: Ctrl+]
+- 🔲 L1 **shortcut.decreasefontsize** [shortcut] → WO: Ctrl+[
+- 🔲 L1 **shortcut.centerpara** [shortcut] → WO: Ctrl+E
+- 🔲 L1 **shortcut.justifypara** [shortcut] → WO: Ctrl+J
+- 🔲 L1 **shortcut.rightpara** [shortcut] → WO: Ctrl+R
+- 🔲 L1 **shortcut.leftpara** [shortcut] → WO: Ctrl+Shift+L
+- 🔲 L1 **shortcut.applyheading1** [shortcut] → WO: Ctrl+Alt+1
+- 🔲 L1 **shortcut.applyheading2** [shortcut] → WO: Ctrl+Alt+2
+- 🔲 L1 **shortcut.applyheading3** [shortcut] → WO: Ctrl+Alt+3
 - ✅ L3 **formatting.change-case** [control] → WO: Change case
 - ✅ L3 **formatting.bold-ctrl-b** [control] → WO: bold
 - ✅ L3 **formatting.italic-ctrl-i** [control] → WO: italic
@@ -113,6 +159,82 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **formatting.superscript-ctrl** [control] → WO: superscript
 - ✅ L3 **formatting.subscript-ctrl** [control] → WO: subscript
 - ✅ L3 **formatting.clear-style** [control] → WO: removeFormat
+
+## shortcuts — 62 features (L0:6 L1:56 L3:0)
+- ❌ L0 **shortcut.specialoptionskeepsourceformat** [shortcut] 
+- ❌ L0 **shortcut.specialoptionskeeptextonly** [shortcut] 
+- ❌ L0 **shortcut.specialoptionsoverwritecells** [shortcut] 
+- ❌ L0 **shortcut.specialoptionsnesttable** [shortcut] 
+- ❌ L0 **shortcut.speechworker** [shortcut] 
+- ❌ L0 **shortcut.replaceunicodetosymbol** [shortcut] 
+- 🔲 L1 **shortcut.zoom100** [shortcut] → WO: Ctrl+0
+- 🔲 L1 **shortcut.movetostartline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetostartdocument** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetoendline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetoenddocument** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.scrolldown** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.scrollup** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.zoomin** [shortcut] → WO: Ctrl+Plus/=
+- 🔲 L1 **shortcut.zoomout** [shortcut] → WO: Ctrl+Minus
+- 🔲 L1 **shortcut.movetorightchar** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetoleftchar** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetoupline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetodownline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.nextmodalcontrol** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.previousmodalcontrol** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetolowerheaderfooter** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetoupperheaderfooter** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetolowerheader** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetoupperheader** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.endparagraph** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.equationaddplaceholder** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.equationchangealignmentleft** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.equationchangealignmentright** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.visithyperlink** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.startindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.startunindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.mixedindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.mixedunindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.bigmoveobjectleft** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.bigmoveobjectright** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.bigmoveobjectup** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.bigmoveobjectdown** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movefocustonextobject** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movefocustopreviousobject** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetonextcell** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetopreviouscell** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetonextrow** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetopreviousrow** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.endparagraphcell** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.addnewrow** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetonextform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetopreviousform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.choosenextcomboboxoption** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.choosepreviouscomboboxoption** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetostartpreviouspage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetostartnextpage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetostartword** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetoendword** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.littlemoveobjectleft** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.littlemoveobjectright** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.littlemoveobjectup** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.littlemoveobjectdown** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetonextpage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetopreviouspage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.nextfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.previousfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+
+## statusbar — 10 features (L0:1 L1:9 L3:0)
+- ❌ L0 **statusbar.btn-doc-spell** [statusbar-item] 
+- 🔲 L1 **statusbar.word-count** [statusbar-item] → WO: sb-word-count
+- 🔲 L1 **statusbar.english-united-states** [statusbar-item] → WO: sb-lang
+- 🔲 L1 **statusbar.btn-doc-lang** [statusbar-item] → WO: sb-lang
+- 🔲 L1 **statusbar.btn-doc-review** [statusbar-item] → WO: sb-track-changes
+- 🔲 L1 **statusbar.status-btn-multiple-pages** [statusbar-item] → WO: btn-multipage
+- 🔲 L1 **statusbar.btn-zoom-topage** [statusbar-item] → WO: btn-zoom-fit
+- 🔲 L1 **statusbar.btn-zoom-towidth** [statusbar-item] → WO: btn-zoom-fit
+- 🔲 L1 **statusbar.btn-zoom-down** [statusbar-item] → WO: btn-zoom-out
+- 🔲 L1 **statusbar.btn-zoom-up** [statusbar-item] → WO: btn-zoom-in
 
 ## table — 10 features (L0:0 L1:7 L3:3)
 - 🔲 L1 **table.table-of-contents** [control] → WO: updatetoc-dialog
@@ -276,3 +398,32 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **other.summarization** [control] → WO: aiSummarize
 - 🔲 L1 **other.translation** [control] → WO: aiTranslate
 - 🔲 L1 **other.create-ai-assistant** [control] → WO: createAiAssistant
+
+## edit — 27 features (L0:0 L1:27 L3:0)
+- 🔲 L1 **shortcut.deleteleftchar** [shortcut] → WO: Backspace
+- 🔲 L1 **shortcut.deleterightchar** [shortcut] → WO: Delete
+- 🔲 L1 **shortcut.editundo** [shortcut] → WO: Ctrl+Z
+- 🔲 L1 **shortcut.editredo** [shortcut] → WO: Ctrl+Y / Ctrl+Shift+Z
+- 🔲 L1 **shortcut.editselectall** [shortcut] → WO: Ctrl+A
+- 🔲 L1 **shortcut.selecttostartline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selecttoendline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selecttostartdocument** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selecttoenddocument** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selectrightchar** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selectleftchar** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selectlineup** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selectlinedown** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selectpageup** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selectpagedown** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selecttobeginpreviouspage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selecttobeginnextpage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.editshape** [shortcut] → WO: Enter edits object
+- 🔲 L1 **shortcut.editchart** [shortcut] → WO: Enter edits object
+- 🔲 L1 **shortcut.deleteleftword** [shortcut] → WO: Alt+Backspace
+- 🔲 L1 **shortcut.deleterightword** [shortcut] → WO: Alt+Delete
+- 🔲 L1 **shortcut.cut** [shortcut] → WO: Ctrl+X / Cmd+X
+- 🔲 L1 **shortcut.copy** [shortcut] → WO: Ctrl+C / Cmd+C
+- 🔲 L1 **shortcut.paste** [shortcut] → WO: Ctrl+V / Cmd+V
+- 🔲 L1 **shortcut.pastetextwithoutformat** [shortcut] → WO: Ctrl+Shift+V
+- 🔲 L1 **shortcut.selectrightword** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selectleftword** [shortcut] → WO: browser caret/scroll (n/a for web editor)

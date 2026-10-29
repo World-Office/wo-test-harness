@@ -1,0 +1,898 @@
+{
+  "version": 1,
+  "generated": "2026-10-29T14:41:48.837Z",
+  "source": "sdkjs/word/Editor/Shortcuts.js (147 types) vs WO editor keydown handler",
+  "engine": "static-parse",
+  "totals": {
+    "matched": 22,
+    "diverged": 1,
+    "browser-native": 12,
+    "nav": 72,
+    "missing": 40,
+    "total": 147
+  },
+  "shortcuts": [
+    {
+      "type": "OpenFindDialog",
+      "combo": "Ctrl+F",
+      "verdict": "matched",
+      "wo": "Ctrl+F"
+    },
+    {
+      "type": "OpenFindAndReplaceMenu",
+      "combo": "Ctrl+H",
+      "verdict": "matched",
+      "wo": "Ctrl+H"
+    },
+    {
+      "type": "OpenCommentsPanel",
+      "combo": "Ctrl+Shift+H",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "Save",
+      "combo": "Ctrl+S",
+      "verdict": "matched",
+      "wo": "Ctrl+S"
+    },
+    {
+      "type": "PrintPreviewAndPrint",
+      "combo": "Ctrl+P",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "SaveAs",
+      "combo": "Ctrl+Shift+S",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "OpenHelpMenu",
+      "combo": "F1",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "OpenContextMenu",
+      "combo": "Shift+F10",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "CloseMenu",
+      "combo": "Ctrl+Escape",
+      "verdict": "matched",
+      "wo": "Escape"
+    },
+    {
+      "type": "Zoom100",
+      "combo": "Ctrl+0",
+      "verdict": "matched",
+      "wo": "Ctrl+0"
+    },
+    {
+      "type": "UpdateFields",
+      "combo": "F9",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "MoveToStartLine",
+      "combo": "Home",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToStartDocument",
+      "combo": "Ctrl+Home",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToEndLine",
+      "combo": "End",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToEndDocument",
+      "combo": "Ctrl+End",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "ScrollDown",
+      "combo": "PageDown",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "ScrollUp",
+      "combo": "PageUp",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "ZoomIn",
+      "combo": "Ctrl+Equal",
+      "verdict": "matched",
+      "wo": "Ctrl+Plus/="
+    },
+    {
+      "type": "ZoomOut",
+      "combo": "Ctrl+Minus",
+      "verdict": "matched",
+      "wo": "Ctrl+Minus"
+    },
+    {
+      "type": "MoveToRightChar",
+      "combo": "ArrowRight",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToLeftChar",
+      "combo": "ArrowLeft",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToUpLine",
+      "combo": "ArrowUp",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToDownLine",
+      "combo": "ArrowDown",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "NextModalControl",
+      "combo": "Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "PreviousModalControl",
+      "combo": "Shift+Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToLowerHeaderFooter",
+      "combo": "PageDown",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToUpperHeaderFooter",
+      "combo": "PageUp",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToLowerHeader",
+      "combo": "Alt+PageDown",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToUpperHeader",
+      "combo": "Alt+PageUp",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "EndParagraph",
+      "combo": "Enter",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "InsertLineBreak",
+      "combo": "Shift+Enter",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "InsertColumnBreak",
+      "combo": "Ctrl+Shift+Enter",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "EquationAddPlaceholder",
+      "combo": "Enter",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "EquationChangeAlignmentLeft",
+      "combo": "Shift+Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "EquationChangeAlignmentRight",
+      "combo": "Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "DeleteLeftChar",
+      "combo": "Backspace",
+      "verdict": "browser-native",
+      "wo": "Backspace"
+    },
+    {
+      "type": "DeleteRightChar",
+      "combo": "Delete",
+      "verdict": "browser-native",
+      "wo": "Delete"
+    },
+    {
+      "type": "NonBreakingSpace",
+      "combo": "Ctrl+Shift+Space",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "NonBreakingHyphen",
+      "combo": "Ctrl+Shift+Minus",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "EditUndo",
+      "combo": "Ctrl+Z",
+      "verdict": "matched",
+      "wo": "Ctrl+Z"
+    },
+    {
+      "type": "EditRedo",
+      "combo": "Ctrl+Y",
+      "verdict": "matched",
+      "wo": "Ctrl+Y / Ctrl+Shift+Z"
+    },
+    {
+      "type": "CopyFormat",
+      "combo": "Ctrl+Alt+C",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "PasteFormat",
+      "combo": "Ctrl+Alt+V",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "SpecialOptionsKeepSourceFormat",
+      "combo": "Ctrl+K",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "SpecialOptionsKeepTextOnly",
+      "combo": "Ctrl+T",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "SpecialOptionsOverwriteCells",
+      "combo": "Ctrl+O",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "SpecialOptionsNestTable",
+      "combo": "Ctrl+N",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "InsertHyperlink",
+      "combo": "Ctrl+K",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "VisitHyperlink",
+      "combo": "Enter",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "EditSelectAll",
+      "combo": "Ctrl+A",
+      "verdict": "browser-native",
+      "wo": "Ctrl+A"
+    },
+    {
+      "type": "SelectToStartLine",
+      "combo": "Shift+Home",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "SelectToEndLine",
+      "combo": "Shift+End",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "SelectToStartDocument",
+      "combo": "Ctrl+Shift+Home",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "SelectToEndDocument",
+      "combo": "Ctrl+Shift+End",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "SelectRightChar",
+      "combo": "Shift+ArrowRight",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "SelectLeftChar",
+      "combo": "Shift+ArrowLeft",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "SelectLineUp",
+      "combo": "Shift+ArrowUp",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "SelectLineDown",
+      "combo": "Shift+ArrowDown",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "SelectPageUp",
+      "combo": "Shift+PageUp",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "SelectPageDown",
+      "combo": "Shift+PageDown",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "SelectToBeginPreviousPage",
+      "combo": "Ctrl+Shift+PageUp",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "SelectToBeginNextPage",
+      "combo": "Ctrl+Shift+PageDown",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "Bold",
+      "combo": "Ctrl+B",
+      "verdict": "matched",
+      "wo": "Ctrl+B"
+    },
+    {
+      "type": "Italic",
+      "combo": "Ctrl+I",
+      "verdict": "matched",
+      "wo": "Ctrl+I"
+    },
+    {
+      "type": "Underline",
+      "combo": "Ctrl+U",
+      "verdict": "matched",
+      "wo": "Ctrl+U"
+    },
+    {
+      "type": "SmallCaps",
+      "combo": "Ctrl+Shift+K",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "Subscript",
+      "combo": "Ctrl+Period",
+      "verdict": "matched",
+      "wo": "Ctrl+."
+    },
+    {
+      "type": "Superscript",
+      "combo": "Ctrl+Comma",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "ApplyListBullet",
+      "combo": "Ctrl+Shift+L",
+      "verdict": "diverged",
+      "wo": "Ctrl+Shift+8 (OO uses Ctrl+Shift+L)"
+    },
+    {
+      "type": "ResetChar",
+      "combo": "Ctrl+Space",
+      "verdict": "browser-native",
+      "wo": "Ctrl+Space (remove formatting)"
+    },
+    {
+      "type": "IncreaseFontSize",
+      "combo": "Ctrl+BracketRight",
+      "verdict": "matched",
+      "wo": "Ctrl+]"
+    },
+    {
+      "type": "DecreaseFontSize",
+      "combo": "Ctrl+BracketLeft",
+      "verdict": "matched",
+      "wo": "Ctrl+["
+    },
+    {
+      "type": "CenterPara",
+      "combo": "Ctrl+E",
+      "verdict": "matched",
+      "wo": "Ctrl+E"
+    },
+    {
+      "type": "JustifyPara",
+      "combo": "Ctrl+J",
+      "verdict": "matched",
+      "wo": "Ctrl+J"
+    },
+    {
+      "type": "RightPara",
+      "combo": "Ctrl+R",
+      "verdict": "matched",
+      "wo": "Ctrl+R"
+    },
+    {
+      "type": "LeftPara",
+      "combo": "Ctrl+L",
+      "verdict": "matched",
+      "wo": "Ctrl+Shift+L"
+    },
+    {
+      "type": "InsertPageBreak",
+      "combo": "Ctrl+Enter",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "Indent",
+      "combo": "Ctrl+M",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "UnIndent",
+      "combo": "Ctrl+Shift+M",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "InsertPageNumber",
+      "combo": "Ctrl+Shift+P",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "ShowAll",
+      "combo": "Ctrl+Shift+8",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "StartIndent",
+      "combo": "Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "StartUnIndent",
+      "combo": "Shift+Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "InsertTab",
+      "combo": "Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MixedIndent",
+      "combo": "Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MixedUnIndent",
+      "combo": "Shift+Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "EditShape",
+      "combo": "Enter",
+      "verdict": "browser-native",
+      "wo": "Enter edits object"
+    },
+    {
+      "type": "EditChart",
+      "combo": "Enter",
+      "verdict": "browser-native",
+      "wo": "Enter edits object"
+    },
+    {
+      "type": "BigMoveObjectLeft",
+      "combo": "ArrowLeft",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "BigMoveObjectRight",
+      "combo": "ArrowRight",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "BigMoveObjectUp",
+      "combo": "ArrowUp",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "BigMoveObjectDown",
+      "combo": "ArrowDown",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveFocusToNextObject",
+      "combo": "Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveFocusToPreviousObject",
+      "combo": "Shift+Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "InsertEndnoteNow",
+      "combo": "Ctrl+Alt+D",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "MoveToNextCell",
+      "combo": "Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToPreviousCell",
+      "combo": "Shift+Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToNextRow",
+      "combo": "ArrowDown",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToPreviousRow",
+      "combo": "ArrowUp",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "EndParagraphCell",
+      "combo": "Enter",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "AddNewRow",
+      "combo": "Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "InsertTableBreak",
+      "combo": "Ctrl+Shift+Enter",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToNextForm",
+      "combo": "Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToPreviousForm",
+      "combo": "Shift+Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "ChooseNextComboBoxOption",
+      "combo": "ArrowDown",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "ChoosePreviousComboBoxOption",
+      "combo": "ArrowUp",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "InsertLineBreakMultilineForm",
+      "combo": "Enter",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "CopyrightSign",
+      "combo": "Ctrl+Alt+G",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "EuroSign",
+      "combo": "Ctrl+Alt+E",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "RegisteredSign",
+      "combo": "Ctrl+Alt+R",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "TrademarkSign",
+      "combo": "Ctrl+Alt+T",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "SpeechWorker",
+      "combo": "Ctrl+Alt+Z",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "OpenFilePanel",
+      "combo": "Ctrl+Alt+F",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "OpenCommentField",
+      "combo": "Alt+Meta+A",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "OpenChatPanel",
+      "combo": "Ctrl+Alt+Q",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "MoveToStartPreviousPage",
+      "combo": "Alt+PageUp",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToStartNextPage",
+      "combo": "Alt+PageDown",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToStartWord",
+      "combo": "Alt+ArrowLeft",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToEndWord",
+      "combo": "Alt+ArrowRight",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "DeleteLeftWord",
+      "combo": "Alt+Backspace",
+      "verdict": "browser-native",
+      "wo": "Alt+Backspace"
+    },
+    {
+      "type": "DeleteRightWord",
+      "combo": "Alt+Delete",
+      "verdict": "browser-native",
+      "wo": "Alt+Delete"
+    },
+    {
+      "type": "Cut",
+      "combo": "Meta+X",
+      "verdict": "browser-native",
+      "wo": "Ctrl+X / Cmd+X"
+    },
+    {
+      "type": "Copy",
+      "combo": "Meta+C",
+      "verdict": "browser-native",
+      "wo": "Ctrl+C / Cmd+C"
+    },
+    {
+      "type": "Paste",
+      "combo": "Meta+V",
+      "verdict": "browser-native",
+      "wo": "Ctrl+V / Cmd+V"
+    },
+    {
+      "type": "PasteTextWithoutFormat",
+      "combo": "Shift+Meta+V",
+      "verdict": "browser-native",
+      "wo": "Ctrl+Shift+V"
+    },
+    {
+      "type": "Strikeout",
+      "combo": "Shift+Meta+X",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "SelectRightWord",
+      "combo": "Shift+Alt+ArrowRight",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "SelectLeftWord",
+      "combo": "Shift+Alt+ArrowLeft",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "ApplyHeading1",
+      "combo": "Ctrl+Alt+1",
+      "verdict": "matched",
+      "wo": "Ctrl+Alt+1"
+    },
+    {
+      "type": "ApplyHeading2",
+      "combo": "Ctrl+Alt+2",
+      "verdict": "matched",
+      "wo": "Ctrl+Alt+2"
+    },
+    {
+      "type": "ApplyHeading3",
+      "combo": "Ctrl+Alt+3",
+      "verdict": "matched",
+      "wo": "Ctrl+Alt+3"
+    },
+    {
+      "type": "LittleMoveObjectLeft",
+      "combo": "Meta+ArrowLeft",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "LittleMoveObjectRight",
+      "combo": "Meta+ArrowRight",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "LittleMoveObjectUp",
+      "combo": "Meta+ArrowUp",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "LittleMoveObjectDown",
+      "combo": "Meta+ArrowDown",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "InsertEquation",
+      "combo": "Ctrl+Alt+Equal",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "HorizontalEllipsis",
+      "combo": "Alt+Semicolon",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "ReplaceUnicodeToSymbol",
+      "combo": "Alt+Meta+X",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "MoveToNextPage",
+      "combo": "Alt+PageDown",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "MoveToPreviousPage",
+      "combo": "Alt+PageUp",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "InsertFootnoteNow",
+      "combo": "Ctrl+Alt+F",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "EmDash",
+      "combo": "Ctrl+Alt+Minus",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "EnDash",
+      "combo": "Ctrl+Minus",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "NextFileTab",
+      "combo": "Ctrl+Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "PreviousFileTab",
+      "combo": "Ctrl+Shift+Tab",
+      "verdict": "nav",
+      "wo": "browser caret/scroll (n/a for web editor)"
+    },
+    {
+      "type": "OpenExistingFile",
+      "combo": "Meta+O",
+      "verdict": "missing",
+      "wo": ""
+    },
+    {
+      "type": "CloseFile",
+      "combo": "Meta+W",
+      "verdict": "missing",
+      "wo": ""
+    }
+  ]
+}

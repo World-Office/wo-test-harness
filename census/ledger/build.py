@@ -312,6 +312,35 @@ for it in (oo_deep.get("statusBar") or []):
         ledger[fid]["wo"] = {"match": w[0], "where": w[1]}
         ledger[fid]["level"] = 1
 
+# 6. shortcuts (census-shortcuts.json — T-003). One row per OO shortcut type.
+#    matched/browser-native/nav  -> L1 (surface exists)
+#    diverged                    -> L1 (feature present, diff combo) + evidence
+#    missing                     -> L0 (real gap)
+sc_path = CEN / "census-shortcuts.json"
+if sc_path.exists():
+    sc = json.load(open(sc_path))
+    for r in sc.get("shortcuts", []):
+        typ = r.get("type", "")
+        if not typ:
+            continue
+        tab = "file" if typ.startswith(("Open", "Save", "Close", "Print", "Update")) else (
+              "formatting" if typ.startswith(("Bold", "Italic", "Underline", "Apply", "Center", "Justify", "Right", "Left", "Increase", "Decrease", "SmallCaps", "CopyFormat", "PasteFormat", "ResetChar", "Superscript", "Subscript", "Indent", "UnIndent", "ShowAll", "Strikeout")) else (
+              "insert" if typ.startswith(("Insert", "NonBreaking", "EmDash", "EnDash", "Euro", "Copyright", "Trademark", "Registered", "Horizontal")) else (
+              "edit" if typ.startswith(("Edit", "Copy", "Cut", "Paste", "SelectAll", "Delete", "Select")) else "shortcuts")))
+        fid = "shortcut." + slug(typ)
+        combo = r.get("combo", "")
+        add(fid, tab, {"surface": "shortcut", "type": typ, "combo": combo, "label": typ}, "shortcut")
+        if r.get("verdict") == "missing":
+            # stays L0 (real gap)
+            ledger[fid]["evidence"].append(f"OO bind {combo}: no WO keydown handler")
+        else:
+            ledger[fid]["level"] = 1
+            ledger[fid]["wo"] = {"match": r.get("wo") or typ, "where": "shortcut"}
+            if r.get("verdict") == "diverged":
+                ledger[fid]["evidence"].append(f"WO uses different combo: {r.get('wo')}")
+            elif r.get("verdict") in ("browser-native", "nav"):
+                ledger[fid]["evidence"].append(r.get("wo", "browser/caret"))
+
 # ------------------------------------------------- L3 merge (roundtrip.cjs)
 # Contract: entries with ok=true survived html -> docx -> html; entry.features
 # lists ledger feature ids (matched by wo.match incl. label aliases).

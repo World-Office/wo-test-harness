@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-29T13:33:52.318843",
+ "generated": "2026-10-29T15:42:03.765621",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,8 +9,8 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 6,
-  "L1": 213,
+  "L0": 46,
+  "L1": 320,
   "L2": 0,
   "L3": 20,
   "L4": 0
@@ -4651,6 +4651,2929 @@
    },
    "level": 1,
    "evidence": []
+  },
+  {
+   "feature": "shortcut.openfinddialog",
+   "cluster": "file",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "OpenFindDialog",
+     "combo": "Ctrl+F",
+     "label": "OpenFindDialog"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+F",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.openfindandreplacemenu",
+   "cluster": "file",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "OpenFindAndReplaceMenu",
+     "combo": "Ctrl+H",
+     "label": "OpenFindAndReplaceMenu"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+H",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.opencommentspanel",
+   "cluster": "file",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "OpenCommentsPanel",
+     "combo": "Ctrl+Shift+H",
+     "label": "OpenCommentsPanel"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Shift+H: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.save",
+   "cluster": "file",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "Save",
+     "combo": "Ctrl+S",
+     "label": "Save"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+S",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.printpreviewandprint",
+   "cluster": "file",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "PrintPreviewAndPrint",
+     "combo": "Ctrl+P",
+     "label": "PrintPreviewAndPrint"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+P: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.saveas",
+   "cluster": "file",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SaveAs",
+     "combo": "Ctrl+Shift+S",
+     "label": "SaveAs"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Shift+S: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.openhelpmenu",
+   "cluster": "file",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "OpenHelpMenu",
+     "combo": "F1",
+     "label": "OpenHelpMenu"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind F1: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.opencontextmenu",
+   "cluster": "file",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "OpenContextMenu",
+     "combo": "Shift+F10",
+     "label": "OpenContextMenu"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Shift+F10: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.closemenu",
+   "cluster": "file",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "CloseMenu",
+     "combo": "Ctrl+Escape",
+     "label": "CloseMenu"
+    }
+   ],
+   "wo": {
+    "match": "Escape",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.zoom100",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "Zoom100",
+     "combo": "Ctrl+0",
+     "label": "Zoom100"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+0",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.updatefields",
+   "cluster": "file",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "UpdateFields",
+     "combo": "F9",
+     "label": "UpdateFields"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind F9: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.movetostartline",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToStartLine",
+     "combo": "Home",
+     "label": "MoveToStartLine"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetostartdocument",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToStartDocument",
+     "combo": "Ctrl+Home",
+     "label": "MoveToStartDocument"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetoendline",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToEndLine",
+     "combo": "End",
+     "label": "MoveToEndLine"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetoenddocument",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToEndDocument",
+     "combo": "Ctrl+End",
+     "label": "MoveToEndDocument"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.scrolldown",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "ScrollDown",
+     "combo": "PageDown",
+     "label": "ScrollDown"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.scrollup",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "ScrollUp",
+     "combo": "PageUp",
+     "label": "ScrollUp"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.zoomin",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "ZoomIn",
+     "combo": "Ctrl+Equal",
+     "label": "ZoomIn"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+Plus/=",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.zoomout",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "ZoomOut",
+     "combo": "Ctrl+Minus",
+     "label": "ZoomOut"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+Minus",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.movetorightchar",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToRightChar",
+     "combo": "ArrowRight",
+     "label": "MoveToRightChar"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetoleftchar",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToLeftChar",
+     "combo": "ArrowLeft",
+     "label": "MoveToLeftChar"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetoupline",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToUpLine",
+     "combo": "ArrowUp",
+     "label": "MoveToUpLine"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetodownline",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToDownLine",
+     "combo": "ArrowDown",
+     "label": "MoveToDownLine"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.nextmodalcontrol",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "NextModalControl",
+     "combo": "Tab",
+     "label": "NextModalControl"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.previousmodalcontrol",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "PreviousModalControl",
+     "combo": "Shift+Tab",
+     "label": "PreviousModalControl"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetolowerheaderfooter",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToLowerHeaderFooter",
+     "combo": "PageDown",
+     "label": "MoveToLowerHeaderFooter"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetoupperheaderfooter",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToUpperHeaderFooter",
+     "combo": "PageUp",
+     "label": "MoveToUpperHeaderFooter"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetolowerheader",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToLowerHeader",
+     "combo": "Alt+PageDown",
+     "label": "MoveToLowerHeader"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetoupperheader",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToUpperHeader",
+     "combo": "Alt+PageUp",
+     "label": "MoveToUpperHeader"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.endparagraph",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "EndParagraph",
+     "combo": "Enter",
+     "label": "EndParagraph"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.insertlinebreak",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "InsertLineBreak",
+     "combo": "Shift+Enter",
+     "label": "InsertLineBreak"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Shift+Enter: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.insertcolumnbreak",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "InsertColumnBreak",
+     "combo": "Ctrl+Shift+Enter",
+     "label": "InsertColumnBreak"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Shift+Enter: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.equationaddplaceholder",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "EquationAddPlaceholder",
+     "combo": "Enter",
+     "label": "EquationAddPlaceholder"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.equationchangealignmentleft",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "EquationChangeAlignmentLeft",
+     "combo": "Shift+Tab",
+     "label": "EquationChangeAlignmentLeft"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.equationchangealignmentright",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "EquationChangeAlignmentRight",
+     "combo": "Tab",
+     "label": "EquationChangeAlignmentRight"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.deleteleftchar",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "DeleteLeftChar",
+     "combo": "Backspace",
+     "label": "DeleteLeftChar"
+    }
+   ],
+   "wo": {
+    "match": "Backspace",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "Backspace"
+   ]
+  },
+  {
+   "feature": "shortcut.deleterightchar",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "DeleteRightChar",
+     "combo": "Delete",
+     "label": "DeleteRightChar"
+    }
+   ],
+   "wo": {
+    "match": "Delete",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "Delete"
+   ]
+  },
+  {
+   "feature": "shortcut.nonbreakingspace",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "NonBreakingSpace",
+     "combo": "Ctrl+Shift+Space",
+     "label": "NonBreakingSpace"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Shift+Space: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.nonbreakinghyphen",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "NonBreakingHyphen",
+     "combo": "Ctrl+Shift+Minus",
+     "label": "NonBreakingHyphen"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Shift+Minus: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.editundo",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "EditUndo",
+     "combo": "Ctrl+Z",
+     "label": "EditUndo"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+Z",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.editredo",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "EditRedo",
+     "combo": "Ctrl+Y",
+     "label": "EditRedo"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+Y / Ctrl+Shift+Z",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.copyformat",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "CopyFormat",
+     "combo": "Ctrl+Alt+C",
+     "label": "CopyFormat"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Alt+C: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.pasteformat",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "PasteFormat",
+     "combo": "Ctrl+Alt+V",
+     "label": "PasteFormat"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Alt+V: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.specialoptionskeepsourceformat",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SpecialOptionsKeepSourceFormat",
+     "combo": "Ctrl+K",
+     "label": "SpecialOptionsKeepSourceFormat"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+K: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.specialoptionskeeptextonly",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SpecialOptionsKeepTextOnly",
+     "combo": "Ctrl+T",
+     "label": "SpecialOptionsKeepTextOnly"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+T: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.specialoptionsoverwritecells",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SpecialOptionsOverwriteCells",
+     "combo": "Ctrl+O",
+     "label": "SpecialOptionsOverwriteCells"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+O: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.specialoptionsnesttable",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SpecialOptionsNestTable",
+     "combo": "Ctrl+N",
+     "label": "SpecialOptionsNestTable"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+N: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.inserthyperlink",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "InsertHyperlink",
+     "combo": "Ctrl+K",
+     "label": "InsertHyperlink"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+K: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.visithyperlink",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "VisitHyperlink",
+     "combo": "Enter",
+     "label": "VisitHyperlink"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.editselectall",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "EditSelectAll",
+     "combo": "Ctrl+A",
+     "label": "EditSelectAll"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+A",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "Ctrl+A"
+   ]
+  },
+  {
+   "feature": "shortcut.selecttostartline",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SelectToStartLine",
+     "combo": "Shift+Home",
+     "label": "SelectToStartLine"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.selecttoendline",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SelectToEndLine",
+     "combo": "Shift+End",
+     "label": "SelectToEndLine"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.selecttostartdocument",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SelectToStartDocument",
+     "combo": "Ctrl+Shift+Home",
+     "label": "SelectToStartDocument"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.selecttoenddocument",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SelectToEndDocument",
+     "combo": "Ctrl+Shift+End",
+     "label": "SelectToEndDocument"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.selectrightchar",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SelectRightChar",
+     "combo": "Shift+ArrowRight",
+     "label": "SelectRightChar"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.selectleftchar",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SelectLeftChar",
+     "combo": "Shift+ArrowLeft",
+     "label": "SelectLeftChar"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.selectlineup",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SelectLineUp",
+     "combo": "Shift+ArrowUp",
+     "label": "SelectLineUp"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.selectlinedown",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SelectLineDown",
+     "combo": "Shift+ArrowDown",
+     "label": "SelectLineDown"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.selectpageup",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SelectPageUp",
+     "combo": "Shift+PageUp",
+     "label": "SelectPageUp"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.selectpagedown",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SelectPageDown",
+     "combo": "Shift+PageDown",
+     "label": "SelectPageDown"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.selecttobeginpreviouspage",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SelectToBeginPreviousPage",
+     "combo": "Ctrl+Shift+PageUp",
+     "label": "SelectToBeginPreviousPage"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.selecttobeginnextpage",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SelectToBeginNextPage",
+     "combo": "Ctrl+Shift+PageDown",
+     "label": "SelectToBeginNextPage"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.bold",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "Bold",
+     "combo": "Ctrl+B",
+     "label": "Bold"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+B",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.italic",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "Italic",
+     "combo": "Ctrl+I",
+     "label": "Italic"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+I",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.underline",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "Underline",
+     "combo": "Ctrl+U",
+     "label": "Underline"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+U",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.smallcaps",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SmallCaps",
+     "combo": "Ctrl+Shift+K",
+     "label": "SmallCaps"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Shift+K: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.subscript",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "Subscript",
+     "combo": "Ctrl+Period",
+     "label": "Subscript"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+.",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.superscript",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "Superscript",
+     "combo": "Ctrl+Comma",
+     "label": "Superscript"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Comma: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.applylistbullet",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "ApplyListBullet",
+     "combo": "Ctrl+Shift+L",
+     "label": "ApplyListBullet"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+Shift+8 (OO uses Ctrl+Shift+L)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "WO uses different combo: Ctrl+Shift+8 (OO uses Ctrl+Shift+L)"
+   ]
+  },
+  {
+   "feature": "shortcut.resetchar",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "ResetChar",
+     "combo": "Ctrl+Space",
+     "label": "ResetChar"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+Space (remove formatting)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "Ctrl+Space (remove formatting)"
+   ]
+  },
+  {
+   "feature": "shortcut.increasefontsize",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "IncreaseFontSize",
+     "combo": "Ctrl+BracketRight",
+     "label": "IncreaseFontSize"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+]",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.decreasefontsize",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "DecreaseFontSize",
+     "combo": "Ctrl+BracketLeft",
+     "label": "DecreaseFontSize"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+[",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.centerpara",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "CenterPara",
+     "combo": "Ctrl+E",
+     "label": "CenterPara"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+E",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.justifypara",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "JustifyPara",
+     "combo": "Ctrl+J",
+     "label": "JustifyPara"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+J",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.rightpara",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "RightPara",
+     "combo": "Ctrl+R",
+     "label": "RightPara"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+R",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.leftpara",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "LeftPara",
+     "combo": "Ctrl+L",
+     "label": "LeftPara"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+Shift+L",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.insertpagebreak",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "InsertPageBreak",
+     "combo": "Ctrl+Enter",
+     "label": "InsertPageBreak"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.indent",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "Indent",
+     "combo": "Ctrl+M",
+     "label": "Indent"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+M: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.unindent",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "UnIndent",
+     "combo": "Ctrl+Shift+M",
+     "label": "UnIndent"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Shift+M: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.insertpagenumber",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "InsertPageNumber",
+     "combo": "Ctrl+Shift+P",
+     "label": "InsertPageNumber"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.showall",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "ShowAll",
+     "combo": "Ctrl+Shift+8",
+     "label": "ShowAll"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Shift+8: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.startindent",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "StartIndent",
+     "combo": "Tab",
+     "label": "StartIndent"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.startunindent",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "StartUnIndent",
+     "combo": "Shift+Tab",
+     "label": "StartUnIndent"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.inserttab",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "InsertTab",
+     "combo": "Tab",
+     "label": "InsertTab"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.mixedindent",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MixedIndent",
+     "combo": "Tab",
+     "label": "MixedIndent"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.mixedunindent",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MixedUnIndent",
+     "combo": "Shift+Tab",
+     "label": "MixedUnIndent"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.editshape",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "EditShape",
+     "combo": "Enter",
+     "label": "EditShape"
+    }
+   ],
+   "wo": {
+    "match": "Enter edits object",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "Enter edits object"
+   ]
+  },
+  {
+   "feature": "shortcut.editchart",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "EditChart",
+     "combo": "Enter",
+     "label": "EditChart"
+    }
+   ],
+   "wo": {
+    "match": "Enter edits object",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "Enter edits object"
+   ]
+  },
+  {
+   "feature": "shortcut.bigmoveobjectleft",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "BigMoveObjectLeft",
+     "combo": "ArrowLeft",
+     "label": "BigMoveObjectLeft"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.bigmoveobjectright",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "BigMoveObjectRight",
+     "combo": "ArrowRight",
+     "label": "BigMoveObjectRight"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.bigmoveobjectup",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "BigMoveObjectUp",
+     "combo": "ArrowUp",
+     "label": "BigMoveObjectUp"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.bigmoveobjectdown",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "BigMoveObjectDown",
+     "combo": "ArrowDown",
+     "label": "BigMoveObjectDown"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movefocustonextobject",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveFocusToNextObject",
+     "combo": "Tab",
+     "label": "MoveFocusToNextObject"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movefocustopreviousobject",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveFocusToPreviousObject",
+     "combo": "Shift+Tab",
+     "label": "MoveFocusToPreviousObject"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.insertendnotenow",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "InsertEndnoteNow",
+     "combo": "Ctrl+Alt+D",
+     "label": "InsertEndnoteNow"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Alt+D: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.movetonextcell",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToNextCell",
+     "combo": "Tab",
+     "label": "MoveToNextCell"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetopreviouscell",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToPreviousCell",
+     "combo": "Shift+Tab",
+     "label": "MoveToPreviousCell"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetonextrow",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToNextRow",
+     "combo": "ArrowDown",
+     "label": "MoveToNextRow"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetopreviousrow",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToPreviousRow",
+     "combo": "ArrowUp",
+     "label": "MoveToPreviousRow"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.endparagraphcell",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "EndParagraphCell",
+     "combo": "Enter",
+     "label": "EndParagraphCell"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.addnewrow",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "AddNewRow",
+     "combo": "Tab",
+     "label": "AddNewRow"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.inserttablebreak",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "InsertTableBreak",
+     "combo": "Ctrl+Shift+Enter",
+     "label": "InsertTableBreak"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetonextform",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToNextForm",
+     "combo": "Tab",
+     "label": "MoveToNextForm"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetopreviousform",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToPreviousForm",
+     "combo": "Shift+Tab",
+     "label": "MoveToPreviousForm"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.choosenextcomboboxoption",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "ChooseNextComboBoxOption",
+     "combo": "ArrowDown",
+     "label": "ChooseNextComboBoxOption"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.choosepreviouscomboboxoption",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "ChoosePreviousComboBoxOption",
+     "combo": "ArrowUp",
+     "label": "ChoosePreviousComboBoxOption"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.insertlinebreakmultilineform",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "InsertLineBreakMultilineForm",
+     "combo": "Enter",
+     "label": "InsertLineBreakMultilineForm"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.copyrightsign",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "CopyrightSign",
+     "combo": "Ctrl+Alt+G",
+     "label": "CopyrightSign"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Alt+G: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.eurosign",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "EuroSign",
+     "combo": "Ctrl+Alt+E",
+     "label": "EuroSign"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Alt+E: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.registeredsign",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "RegisteredSign",
+     "combo": "Ctrl+Alt+R",
+     "label": "RegisteredSign"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Alt+R: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.trademarksign",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "TrademarkSign",
+     "combo": "Ctrl+Alt+T",
+     "label": "TrademarkSign"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Alt+T: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.speechworker",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SpeechWorker",
+     "combo": "Ctrl+Alt+Z",
+     "label": "SpeechWorker"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Alt+Z: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.openfilepanel",
+   "cluster": "file",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "OpenFilePanel",
+     "combo": "Ctrl+Alt+F",
+     "label": "OpenFilePanel"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Alt+F: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.opencommentfield",
+   "cluster": "file",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "OpenCommentField",
+     "combo": "Alt+Meta+A",
+     "label": "OpenCommentField"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Alt+Meta+A: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.openchatpanel",
+   "cluster": "file",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "OpenChatPanel",
+     "combo": "Ctrl+Alt+Q",
+     "label": "OpenChatPanel"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Alt+Q: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.movetostartpreviouspage",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToStartPreviousPage",
+     "combo": "Alt+PageUp",
+     "label": "MoveToStartPreviousPage"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetostartnextpage",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToStartNextPage",
+     "combo": "Alt+PageDown",
+     "label": "MoveToStartNextPage"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetostartword",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToStartWord",
+     "combo": "Alt+ArrowLeft",
+     "label": "MoveToStartWord"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetoendword",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToEndWord",
+     "combo": "Alt+ArrowRight",
+     "label": "MoveToEndWord"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.deleteleftword",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "DeleteLeftWord",
+     "combo": "Alt+Backspace",
+     "label": "DeleteLeftWord"
+    }
+   ],
+   "wo": {
+    "match": "Alt+Backspace",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "Alt+Backspace"
+   ]
+  },
+  {
+   "feature": "shortcut.deleterightword",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "DeleteRightWord",
+     "combo": "Alt+Delete",
+     "label": "DeleteRightWord"
+    }
+   ],
+   "wo": {
+    "match": "Alt+Delete",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "Alt+Delete"
+   ]
+  },
+  {
+   "feature": "shortcut.cut",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "Cut",
+     "combo": "Meta+X",
+     "label": "Cut"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+X / Cmd+X",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "Ctrl+X / Cmd+X"
+   ]
+  },
+  {
+   "feature": "shortcut.copy",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "Copy",
+     "combo": "Meta+C",
+     "label": "Copy"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+C / Cmd+C",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "Ctrl+C / Cmd+C"
+   ]
+  },
+  {
+   "feature": "shortcut.paste",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "Paste",
+     "combo": "Meta+V",
+     "label": "Paste"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+V / Cmd+V",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "Ctrl+V / Cmd+V"
+   ]
+  },
+  {
+   "feature": "shortcut.pastetextwithoutformat",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "PasteTextWithoutFormat",
+     "combo": "Shift+Meta+V",
+     "label": "PasteTextWithoutFormat"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+Shift+V",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "Ctrl+Shift+V"
+   ]
+  },
+  {
+   "feature": "shortcut.strikeout",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "Strikeout",
+     "combo": "Shift+Meta+X",
+     "label": "Strikeout"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Shift+Meta+X: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.selectrightword",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SelectRightWord",
+     "combo": "Shift+Alt+ArrowRight",
+     "label": "SelectRightWord"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.selectleftword",
+   "cluster": "edit",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "SelectLeftWord",
+     "combo": "Shift+Alt+ArrowLeft",
+     "label": "SelectLeftWord"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.applyheading1",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "ApplyHeading1",
+     "combo": "Ctrl+Alt+1",
+     "label": "ApplyHeading1"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+Alt+1",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.applyheading2",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "ApplyHeading2",
+     "combo": "Ctrl+Alt+2",
+     "label": "ApplyHeading2"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+Alt+2",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.applyheading3",
+   "cluster": "formatting",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "ApplyHeading3",
+     "combo": "Ctrl+Alt+3",
+     "label": "ApplyHeading3"
+    }
+   ],
+   "wo": {
+    "match": "Ctrl+Alt+3",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "shortcut.littlemoveobjectleft",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "LittleMoveObjectLeft",
+     "combo": "Meta+ArrowLeft",
+     "label": "LittleMoveObjectLeft"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.littlemoveobjectright",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "LittleMoveObjectRight",
+     "combo": "Meta+ArrowRight",
+     "label": "LittleMoveObjectRight"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.littlemoveobjectup",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "LittleMoveObjectUp",
+     "combo": "Meta+ArrowUp",
+     "label": "LittleMoveObjectUp"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.littlemoveobjectdown",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "LittleMoveObjectDown",
+     "combo": "Meta+ArrowDown",
+     "label": "LittleMoveObjectDown"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.insertequation",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "InsertEquation",
+     "combo": "Ctrl+Alt+Equal",
+     "label": "InsertEquation"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Alt+Equal: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.horizontalellipsis",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "HorizontalEllipsis",
+     "combo": "Alt+Semicolon",
+     "label": "HorizontalEllipsis"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Alt+Semicolon: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.replaceunicodetosymbol",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "ReplaceUnicodeToSymbol",
+     "combo": "Alt+Meta+X",
+     "label": "ReplaceUnicodeToSymbol"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Alt+Meta+X: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.movetonextpage",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToNextPage",
+     "combo": "Alt+PageDown",
+     "label": "MoveToNextPage"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.movetopreviouspage",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "MoveToPreviousPage",
+     "combo": "Alt+PageUp",
+     "label": "MoveToPreviousPage"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.insertfootnotenow",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "InsertFootnoteNow",
+     "combo": "Ctrl+Alt+F",
+     "label": "InsertFootnoteNow"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Alt+F: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.emdash",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "EmDash",
+     "combo": "Ctrl+Alt+Minus",
+     "label": "EmDash"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Alt+Minus: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.endash",
+   "cluster": "insert",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "EnDash",
+     "combo": "Ctrl+Minus",
+     "label": "EnDash"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Ctrl+Minus: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.nextfiletab",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "NextFileTab",
+     "combo": "Ctrl+Tab",
+     "label": "NextFileTab"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.previousfiletab",
+   "cluster": "shortcuts",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "PreviousFileTab",
+     "combo": "Ctrl+Shift+Tab",
+     "label": "PreviousFileTab"
+    }
+   ],
+   "wo": {
+    "match": "browser caret/scroll (n/a for web editor)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": [
+    "browser caret/scroll (n/a for web editor)"
+   ]
+  },
+  {
+   "feature": "shortcut.openexistingfile",
+   "cluster": "file",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "OpenExistingFile",
+     "combo": "Meta+O",
+     "label": "OpenExistingFile"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Meta+O: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "shortcut.closefile",
+   "cluster": "file",
+   "kind": "shortcut",
+   "oo": [
+    {
+     "surface": "shortcut",
+     "type": "CloseFile",
+     "combo": "Meta+W",
+     "label": "CloseFile"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO bind Meta+W: no WO keydown handler"
+   ]
   }
  ]
 }
