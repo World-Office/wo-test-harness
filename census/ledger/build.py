@@ -341,6 +341,38 @@ if sc_path.exists():
             elif r.get("verdict") in ("browser-native", "nav"):
                 ledger[fid]["evidence"].append(r.get("wo", "browser/caret"))
 
+# 7. scenario context menus (census-ctx.json — T-002). One row per OO
+#    ctx-menu caption; chart submenu option-children collapse into their
+#    group's single lead row so C3 reports ~9 chart groups, not ~45 options.
+ctx_path = CEN / "census-ctx.json"
+if ctx_path.exists():
+    cc = json.load(open(ctx_path))
+    for r in cc.get("rows", []):
+        v = r.get("verdict", "n/a")
+        if v == "n/a":
+            continue
+        label = r.get("oo") or r.get("oo_var") or ""
+        grp = r.get("group")
+        if grp:
+            if not r.get("lead"):
+                continue  # option child — covered by the group lead row
+            fid = "ctx." + grp
+            oo_disp = "chart " + grp.split(".", 1)[1].replace("-", " ")
+        else:
+            fid = "ctx." + slug(label)
+            oo_disp = label
+        tab = "chart" if grp else ("table" if label.lower() in ("merge cells", "split cell...", "several rows/columns", "distribute rows", "distribute columns", "delete") else "edit")
+        add(fid, tab, {"surface": "ctx-menu", "oo": oo_disp, "var": r.get("oo_var"), "label": label}, "ctx-menu")
+        if v == "missing":
+            ledger[fid]["evidence"].append("OO ctx-menu " + oo_disp + ": no WO action")
+        else:
+            ledger[fid]["level"] = 1
+            ledger[fid]["wo"] = {"match": r.get("wo") or label, "where": "ctx-menu"}
+            if v == "diverged":
+                ledger[fid]["evidence"].append("WO surface elsewhere: " + (r.get("wo") or ""))
+            elif v == "nav":
+                ledger[fid]["evidence"].append("browser native")
+
 # ------------------------------------------------- L3 merge (roundtrip.cjs)
 # Contract: entries with ok=true survived html -> docx -> html; entry.features
 # lists ledger feature ids (matched by wo.match incl. label aliases).

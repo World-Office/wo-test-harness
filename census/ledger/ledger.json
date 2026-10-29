@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-29T22:02:16.236955",
+ "generated": "2026-10-29T22:15:39.343471",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,8 +9,8 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 17,
-  "L1": 349,
+  "L0": 70,
+  "L1": 412,
   "L2": 0,
   "L3": 20,
   "L4": 0
@@ -7614,6 +7614,2171 @@
    "level": 0,
    "evidence": [
     "OO bind Meta+W: no WO keydown handler"
+   ]
+  },
+  {
+   "feature": "ctx.insert-caption",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Insert caption",
+     "var": "txtInsertCaption",
+     "label": "Insert caption"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Insert caption: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.save-as-picture",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Save as picture",
+     "var": "textSaveAsPicture",
+     "label": "Save as picture"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Save as picture: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.align-left",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Align left",
+     "var": "textShapeAlignLeft",
+     "label": "Align left"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Align left: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.align-center",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Align center",
+     "var": "textShapeAlignCenter",
+     "label": "Align center"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Align center: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.align-right",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Align right",
+     "var": "textShapeAlignRight",
+     "label": "Align right"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Align right: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.align-top",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Align top",
+     "var": "textShapeAlignTop",
+     "label": "Align top"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Align top: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.align-middle",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Align middle",
+     "var": "textShapeAlignMiddle",
+     "label": "Align middle"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Align middle: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.align-bottom",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Align bottom",
+     "var": "textShapeAlignBottom",
+     "label": "Align bottom"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Align bottom: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.distribute-horizontally",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Distribute horizontally",
+     "var": "txtDistribHor",
+     "label": "Distribute horizontally"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Distribute horizontally: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.distribute-vertically",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Distribute vertically",
+     "var": "txtDistribVert",
+     "label": "Distribute vertically"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Distribute vertically: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.merge-shapes",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Merge shapes",
+     "var": "textShapesMerge",
+     "label": "Merge shapes"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Merge shapes: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.chart.axes",
+   "cluster": "chart",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "chart axes",
+     "var": "textAxes",
+     "label": "Axes"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu chart axes: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.chart.title",
+   "cluster": "chart",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "chart title",
+     "var": "textChartTitle",
+     "label": "Chart Title"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu chart title: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.chart.labels",
+   "cluster": "chart",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "chart labels",
+     "var": "textDataLabels",
+     "label": "Data labels"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu chart labels: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.chart.datatable",
+   "cluster": "chart",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "chart datatable",
+     "var": "textDataTable",
+     "label": "Data Table"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu chart datatable: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.chart.errorbars",
+   "cluster": "chart",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "chart errorbars",
+     "var": "textErrorBars",
+     "label": "Error Bars"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu chart errorbars: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.chart.gridlines",
+   "cluster": "chart",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "chart gridlines",
+     "var": "textGridLines",
+     "label": "Gridlines"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu chart gridlines: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.chart.legend",
+   "cluster": "chart",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "chart legend",
+     "var": "textLegendPos",
+     "label": "Legend"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu chart legend: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.chart.trendline",
+   "cluster": "chart",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "chart trendline",
+     "var": "textTrendline",
+     "label": "Trendline"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu chart trendline: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.chart.updown",
+   "cluster": "chart",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "chart updown",
+     "var": "textUpDownBars",
+     "label": " Up/Down Bars"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu chart updown: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.bring-to-foreground",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Bring to foreground",
+     "var": "textArrangeFront",
+     "label": "Bring to foreground"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Bring to foreground: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.send-to-background",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Send to background",
+     "var": "textArrangeBack",
+     "label": "Send to background"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Send to background: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.bring-forward",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Bring forward",
+     "var": "textArrangeForward",
+     "label": "Bring forward"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Bring forward: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.send-backward",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Send backward",
+     "var": "textArrangeBackward",
+     "label": "Send backward"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Send backward: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.edit-wrap-boundary",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Edit wrap boundary",
+     "var": "textEditWrapBoundary",
+     "label": "Edit wrap boundary"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Edit wrap boundary: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.in-line-with-text",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "In line with text",
+     "var": "txtInline",
+     "label": "In line with text"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=WrapInline",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.square",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Square",
+     "var": "txtSquare",
+     "label": "Square"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=WrapSquare",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.tight",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Tight",
+     "var": "txtTight",
+     "label": "Tight"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Tight: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.through",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Through",
+     "var": "txtThrough",
+     "label": "Through"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Through: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.top-and-bottom",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Top and bottom",
+     "var": "txtTopAndBottom",
+     "label": "Top and bottom"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Top and bottom: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.in-front-of-text",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "In front of text",
+     "var": "txtInFront",
+     "label": "In front of text"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu In front of text: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.behind-text",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Behind text",
+     "var": "txtBehind",
+     "label": "Behind text"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=WrapBehind",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.edit-data",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Edit data",
+     "var": "editChartText",
+     "label": "Edit data"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Edit data: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.actual-size",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Actual size",
+     "var": "originalSizeText",
+     "label": "Actual size"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Actual size: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.convert-to-shape",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Convert to shape",
+     "var": "textConvertToShape",
+     "label": "Convert to shape"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Convert to shape: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.replace-image",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Replace image",
+     "var": "textReplace",
+     "label": "Replace image"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Replace image: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.copy",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Copy",
+     "var": "textCopy",
+     "label": "Copy"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=Copy",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.paste",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Paste",
+     "var": "textPaste",
+     "label": "Paste"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=Paste",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.cut",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Cut",
+     "var": "textCut",
+     "label": "Cut"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=Cut",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.accept-change",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Accept change",
+     "var": "textAccept",
+     "label": "Accept change"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=AcceptChange",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.reject-change",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Reject change",
+     "var": "textReject",
+     "label": "Reject change"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=RejectChange",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.print-selection",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Print selection",
+     "var": "txtPrintSelection",
+     "label": "Print selection"
+    }
+   ],
+   "wo": {
+    "match": "Print button / Ctrl+P (browser print; no ctx item)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": [
+    "WO surface elsewhere: Print button / Ctrl+P (browser print; no ctx item)"
+   ]
+  },
+  {
+   "feature": "ctx.rotate",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Rotate",
+     "var": "textRotate",
+     "label": "Rotate"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Rotate: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.crop",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Crop",
+     "var": "textCrop",
+     "label": "Crop"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Crop: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.fill",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Fill",
+     "var": "textCropFill",
+     "label": "Fill"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Fill: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.fit",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Fit",
+     "var": "textCropFit",
+     "label": "Fit"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Fit: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.reset-crop",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Reset crop",
+     "var": "textResetCrop",
+     "label": "Reset crop"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Reset crop: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.remove-content-control",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Remove content control",
+     "var": "textRemoveControl",
+     "label": "Remove content control"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=RemoveContentControl",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.content-control-settings",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Content control settings",
+     "var": "textEditControls",
+     "label": "Content control settings"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=ContentControlSettings",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.edit-points",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Edit points",
+     "var": "textEditPoints",
+     "label": "Edit points"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Edit points: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.edit-object",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Edit object",
+     "var": "textEditObject",
+     "label": "Edit object"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Edit object: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.link",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Link",
+     "var": "hyperlinkText",
+     "label": "Link"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=Link",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.edit-link",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Edit link",
+     "var": "editHyperlinkText",
+     "label": "Edit link"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=EditLink",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.copy-hyperlink-address",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Copy hyperlink address",
+     "var": "copyHyperlinkText",
+     "label": "Copy hyperlink address"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Copy hyperlink address: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.remove-link",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Remove link",
+     "var": "removeHyperlinkText",
+     "label": "Remove link"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=RemoveLink",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.resize-to-cell",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Resize to cell",
+     "var": "textStretchControl",
+     "label": "Resize to cell"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Resize to cell: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.horizontal-line-settings",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Horizontal line settings",
+     "var": "textHorizontalLineSettings",
+     "label": "Horizontal line settings"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Horizontal line settings: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.merge-cells",
+   "cluster": "table",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Merge cells",
+     "var": "mergeCellsText",
+     "label": "Merge cells"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TableMergeCells",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.split-cell",
+   "cluster": "table",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Split cell...",
+     "var": "splitCellsText",
+     "label": "Split cell..."
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TableSplitCell",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.text-alignment",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Text alignment",
+     "var": "AlignText",
+     "label": "Text alignment"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TextAlignment",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.top",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Top",
+     "var": "AlignTop",
+     "label": "Top"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TextAlignTop",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.middle",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Middle",
+     "var": "AlignMiddle",
+     "label": "Middle"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TextAlignMiddle",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.bottom",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Bottom",
+     "var": "AlignBottom",
+     "label": "Bottom"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TextAlignBottom",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.left",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Left",
+     "var": "AlignLeft",
+     "label": "Left"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TextAlignLeft",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.center",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Center",
+     "var": "AlignCenter",
+     "label": "Center"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TextAlignCenter",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.right",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Right",
+     "var": "AlignRight",
+     "label": "Right"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TextAlignRight",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.justify",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Justify",
+     "var": "AlignJust",
+     "label": "Justify"
+    }
+   ],
+   "wo": {
+    "match": "ribbon data-cmd=justifyFull (not in WO ctx)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": [
+    "WO surface elsewhere: ribbon data-cmd=justifyFull (not in WO ctx)"
+   ]
+  },
+  {
+   "feature": "ctx.table-advanced-settings",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Table advanced settings",
+     "var": "advancedTableText",
+     "label": "Table advanced settings"
+    }
+   ],
+   "wo": {
+    "match": "table-ops-dialog (WO table settings surface)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": [
+    "WO surface elsewhere: table-ops-dialog (WO table settings surface)"
+   ]
+  },
+  {
+   "feature": "ctx.paragraph-advanced-settings",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Paragraph advanced settings",
+     "var": "advancedParagraphText",
+     "label": "Paragraph advanced settings"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=ParagraphSettings",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.formatting-as-style",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Formatting as Style",
+     "var": "styleText",
+     "label": "Formatting as Style"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=FormattingAsStyle",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.create-new-style",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Create new style",
+     "var": "saveStyleText",
+     "label": "Create new style"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Create new style: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.update-1-style",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Update %1 style",
+     "var": "updateStyleText",
+     "label": "Update %1 style"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Update %1 style: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.update-entire-table",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Update entire table",
+     "var": "textUpdateAll",
+     "label": "Update entire table"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Update entire table: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.update-page-numbers-only",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Update page numbers only",
+     "var": "textUpdatePages",
+     "label": "Update page numbers only"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Update page numbers only: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.add-comment",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Add comment",
+     "var": "addCommentText",
+     "label": "Add comment"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=AddComment",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.follow-move",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Follow move",
+     "var": "textFollow",
+     "label": "Follow move"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=FollowMove",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.select-language",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Select language",
+     "var": "langText",
+     "label": "Select language"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=SelectLanguage",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.ignore",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Ignore",
+     "var": "ignoreSpellText",
+     "label": "Ignore"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=Ignore",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.ignore-all",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Ignore all",
+     "var": "ignoreAllSpellText",
+     "label": "Ignore all"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=IgnoreAll",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.add-to-dictionary",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Add to dictionary",
+     "var": "toDictionaryText",
+     "label": "Add to dictionary"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=AddToDictionary",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.spellcheck",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Spellcheck",
+     "var": "spellcheckText",
+     "label": "Spellcheck"
+    }
+   ],
+   "wo": {
+    "match": "Review ribbon spellcheck / F7 (not in ctx)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": [
+    "WO surface elsewhere: Review ribbon spellcheck / F7 (not in ctx)"
+   ]
+  },
+  {
+   "feature": "ctx.distribute-rows",
+   "cluster": "table",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Distribute rows",
+     "var": "textDistributeRows",
+     "label": "Distribute rows"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Distribute rows: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.distribute-columns",
+   "cluster": "table",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Distribute columns",
+     "var": "textDistributeCols",
+     "label": "Distribute columns"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Distribute columns: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.text-direction",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Text direction",
+     "var": "directionText",
+     "label": "Text direction"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TextDirection",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.horizontal",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Horizontal",
+     "var": "directHText",
+     "label": "Horizontal"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TextDirHorizontal",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.rotate-text-down",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Rotate text down",
+     "var": "direct90Text",
+     "label": "Rotate text down"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TextDirRotateDown",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.rotate-text-up",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Rotate text up",
+     "var": "direct270Text",
+     "label": "Rotate text up"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TextDirRotateUp",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.start-new-list",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Start new list",
+     "var": "textStartNewList",
+     "label": "Start new list"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=StartNewList",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.set-numbering-value",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Set numbering value",
+     "var": "textStartNumberingFrom",
+     "label": "Set numbering value"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=SetNumberingValue",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.continue-numbering",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Continue numbering",
+     "var": "textContinueNumbering",
+     "label": "Continue numbering"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=ContinueNumbering",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.adjust-list-indents",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Adjust list indents",
+     "var": "textIndents",
+     "label": "Adjust list indents"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=AdjustListIndents",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.bullets-and-numbering",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Bullets and numbering",
+     "var": "bulletsText",
+     "label": "Bullets and numbering"
+    }
+   ],
+   "wo": {
+    "match": "ribbon bullet/numbered buttons (bullets-and-numbering dialog absent)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": [
+    "WO surface elsewhere: ribbon bullet/numbered buttons (bullets-and-numbering dialog absent)"
+   ]
+  },
+  {
+   "feature": "ctx.update-field",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Update field",
+     "var": "textRefreshField",
+     "label": "Update field"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=UpdateField",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.edit-field",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Edit field",
+     "var": "textEditField",
+     "label": "Edit field"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=EditField",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.toggle-field-codes",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Toggle field codes",
+     "var": "textFieldCodes",
+     "label": "Toggle field codes"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=ToggleFieldCodes",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.equation-settings",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Equation settings",
+     "var": "advancedEquationText",
+     "label": "Equation settings"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=EquationSettings",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.select",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Select",
+     "var": "selectText",
+     "label": "Select"
+    }
+   ],
+   "wo": {
+    "match": "browser native selection",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": [
+    "browser native"
+   ]
+  },
+  {
+   "feature": "ctx.row",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Row",
+     "var": "rowText",
+     "label": "Row"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TableDeleteRow",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.column",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Column",
+     "var": "columnText",
+     "label": "Column"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TableDeleteCol",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.cell",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Cell",
+     "var": "cellText",
+     "label": "Cell"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Cell: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.column-left",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Column left",
+     "var": "insertColumnLeftText",
+     "label": "Column left"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TableColLeft",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.column-right",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Column right",
+     "var": "insertColumnRightText",
+     "label": "Column right"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TableColRight",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.row-above",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Row above",
+     "var": "insertRowAboveText",
+     "label": "Row above"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TableRowAbove",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.row-below",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Row below",
+     "var": "insertRowBelowText",
+     "label": "Row below"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TableRowBelow",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.several-rows-columns",
+   "cluster": "table",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Several rows/columns",
+     "var": "textSeveral",
+     "label": "Several rows/columns"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Several rows/columns: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.cells",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Cells",
+     "var": "textCells",
+     "label": "Cells"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Cells: no WO action"
+   ]
+  },
+  {
+   "feature": "ctx.page-break-before",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Page break before",
+     "var": "breakBeforeText",
+     "label": "Page break before"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=PageBreakBefore",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.keep-lines-together",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Keep lines together",
+     "var": "keepLinesText",
+     "label": "Keep lines together"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=KeepLines",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.frame-advanced-settings",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Frame advanced settings",
+     "var": "advancedFrameText",
+     "label": "Frame advanced settings"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=FrameSettings",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.drop-cap-settings",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Drop cap settings",
+     "var": "advancedDropCapText",
+     "label": "Drop cap settings"
+    }
+   ],
+   "wo": {
+    "match": "dropcap-dialog (btn/ctx)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.table-of-contents-settings",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Table of contents settings",
+     "var": "textTOCSettings",
+     "label": "Table of contents settings"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=TocSettings",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.update-table-of-contents",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Update table of contents",
+     "var": "textUpdateTOC",
+     "label": "Update table of contents"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=UpdateTOC",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.edit-header",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Edit header",
+     "var": "editHeaderText",
+     "label": "Edit header"
+    }
+   ],
+   "wo": {
+    "match": "Insert ribbon header/footer + headerfooter-dialog (not in ctx)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": [
+    "WO surface elsewhere: Insert ribbon header/footer + headerfooter-dialog (not in ctx)"
+   ]
+  },
+  {
+   "feature": "ctx.undo",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Undo",
+     "var": "textUndo",
+     "label": "Undo"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=Undo",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.redo",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Redo",
+     "var": "textRedo",
+     "label": "Redo"
+    }
+   ],
+   "wo": {
+    "match": "ctx data-ctx=Redo",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.clear-field",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Clear field",
+     "var": "textClearField",
+     "label": "Clear field"
+    }
+   ],
+   "wo": null,
+   "level": 0,
+   "evidence": [
+    "OO ctx-menu Clear field: no WO action"
    ]
   }
  ]
