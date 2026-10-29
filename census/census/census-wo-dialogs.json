@@ -1,0 +1,1393 @@
+{
+  "capturedAt": "2026-10-29T12:31:14.500Z",
+  "engine": "wo-docserver",
+  "dialogs": [
+    {
+      "id": "find-dialog",
+      "openedBy": "forced:forced (cmd find)",
+      "visible": true,
+      "title": "Toolbar.Find",
+      "fields": [
+        {
+          "label": "Match case",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "▲",
+        "▼",
+        "✕",
+        "Replace",
+        "Replace all"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "link-dialog",
+      "openedBy": "forced:forced (cmd insertLink)",
+      "visible": true,
+      "title": "Insert link",
+      "fields": [
+        {
+          "label": "URL",
+          "tag": "input",
+          "type": "url",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "symbol-dialog",
+      "openedBy": "forced:forced (cmd insertSymbol)",
+      "visible": true,
+      "title": "Insert symbol",
+      "fields": [],
+      "buttons": [
+        "Close"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "table-ops-dialog",
+      "openedBy": "forced:forced (cmd insertTable)",
+      "visible": true,
+      "title": "Table actions",
+      "fields": [
+        {
+          "label": "Border style",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Solid",
+            "Dashed",
+            "Dotted",
+            "Double",
+            "None"
+          ]
+        },
+        {
+          "label": "Border color",
+          "tag": "input",
+          "type": "color",
+          "options": []
+        },
+        {
+          "label": "Border width (pt)",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Background",
+          "tag": "input",
+          "type": "color",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Insert row above",
+        "Insert row below",
+        "Insert col left",
+        "Insert col right",
+        "Delete row",
+        "Delete column",
+        "Merge cells",
+        "Split cell",
+        "Close"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "version-history-dialog",
+      "openedBy": "forced:forced (cmd versionHistory)",
+      "visible": true,
+      "title": "VersionHistory.Title",
+      "fields": [],
+      "buttons": [
+        "Close"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "ai-review-dialog",
+      "openedBy": "forced:forced (cmd aiReview)",
+      "visible": true,
+      "title": "AI changes",
+      "fields": [],
+      "buttons": [
+        "Reject all",
+        "Close"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "ai-propose-dialog",
+      "openedBy": "forced:forced (cmd aiPropose)",
+      "visible": true,
+      "title": "AI propose",
+      "fields": [
+        {
+          "label": "Instruction",
+          "tag": "textarea",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Propose"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "page-setup-dialog",
+      "openedBy": "forced:forced (cmd pageSetup)",
+      "visible": true,
+      "title": "Page setup",
+      "fields": [
+        {
+          "label": "Size",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "A4",
+            "Letter",
+            "Legal",
+            "A5",
+            "B5",
+            "Envelope #10",
+            "Envelope DL",
+            "Tabloid",
+            "A3",
+            "Tabloid Oversize",
+            "ROC 16K",
+            "Envelope Choukei 3",
+            "Super B/A3",
+            "Custom"
+          ]
+        },
+        {
+          "label": "Orientation",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Portrait",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Landscape",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Margins (inches)",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Top",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Bottom",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Left",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Right",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Apply"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "borders-dialog",
+      "openedBy": "forced:forced (cmd openBorders)",
+      "visible": true,
+      "title": "Home.Borders",
+      "fields": [
+        {
+          "label": "Top",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Bottom",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Left",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Right",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Width (pt)",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Color",
+          "tag": "input",
+          "type": "color",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Apply"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "protect-dialog",
+      "openedBy": "forced:forced (cmd protect)",
+      "visible": true,
+      "title": "Prot.Title",
+      "fields": [
+        {
+          "label": "Restrict editing (read only)",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "New password",
+          "tag": "input",
+          "type": "password",
+          "options": []
+        },
+        {
+          "label": "Current password",
+          "tag": "input",
+          "type": "password",
+          "options": []
+        },
+        {
+          "label": "Remove password",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Apply"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "photo-editor-dialog",
+      "openedBy": "forced:forced (cmd photoEditor)",
+      "visible": true,
+      "title": "Plugins.PhotoEditor",
+      "fields": [
+        {
+          "label": "Image file",
+          "tag": "input",
+          "type": "file",
+          "options": []
+        },
+        {
+          "label": "Brightness",
+          "tag": "input",
+          "type": "range",
+          "options": []
+        },
+        {
+          "label": "Contrast",
+          "tag": "input",
+          "type": "range",
+          "options": []
+        },
+        {
+          "label": "Saturation",
+          "tag": "input",
+          "type": "range",
+          "options": []
+        },
+        {
+          "label": "None None",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Grayscale Grayscale",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Sepia Sepia",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Invert Invert",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Blur Blur",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Reset",
+        "Close"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "notes-dialog",
+      "openedBy": "forced:forced (cmd insertFootnote)",
+      "visible": true,
+      "title": "Footnote and Endnote",
+      "fields": [
+        {
+          "label": "Insert",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Footnote",
+            "Endnote"
+          ]
+        },
+        {
+          "label": "Number format",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "1, 2, 3",
+            "a, b, c",
+            "i, ii, iii"
+          ]
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "pagenumber-dialog",
+      "openedBy": "forced:forced (cmd insertPageNumber)",
+      "visible": true,
+      "title": "Page Number",
+      "fields": [
+        {
+          "label": "Position",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Top of page (header)",
+            "At cursor",
+            "Bottom of page (footer)"
+          ]
+        },
+        {
+          "label": "Alignment",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Left",
+            "Center",
+            "Right"
+          ]
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "headerfooter-dialog",
+      "openedBy": "forced:forced (cmd insertHeader)",
+      "visible": true,
+      "title": "Header and Footer",
+      "fields": [
+        {
+          "label": "Different first page",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "Distance from edge (mm)",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "trackchanges-dialog",
+      "openedBy": "forced:forced (cmd trackChanges)",
+      "visible": true,
+      "title": "Track Changes",
+      "fields": [
+        {
+          "label": "Track changes while editing",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "dropcap-dialog",
+      "openedBy": "forced:forced (cmd toggleDropcap)",
+      "visible": true,
+      "title": "Drop Cap",
+      "fields": [
+        {
+          "label": "Position",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "None",
+            "Dropped",
+            "In margin"
+          ]
+        },
+        {
+          "label": "Lines to drop",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Distance from text (pt)",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "linenumbers-dialog",
+      "openedBy": "forced:forced (cmd toggleLineNumbers)",
+      "visible": true,
+      "title": "Line Numbers",
+      "fields": [
+        {
+          "label": "Apply to",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "No line numbers",
+            "Continuous",
+            "Restart each page",
+            "Restart each section"
+          ]
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "hyphenation-dialog",
+      "openedBy": "forced:forced (cmd toggleHyphenation)",
+      "visible": true,
+      "title": "Hyphenation",
+      "fields": [
+        {
+          "label": "Hyphenation",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "None",
+            "Automatic"
+          ]
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "watermark-dialog",
+      "openedBy": "forced:forced (cmd toggleWatermark)",
+      "visible": true,
+      "title": "Watermark",
+      "fields": [
+        {
+          "label": "Watermark",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "No watermark",
+            "DRAFT",
+            "CONFIDENTIAL",
+            "Custom text…"
+          ]
+        },
+        {
+          "label": "Custom text",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Color",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Gray",
+            "Red",
+            "Black"
+          ]
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "pagecolor-dialog",
+      "openedBy": "forced:forced (cmd pageColor)",
+      "visible": true,
+      "title": "Page Color",
+      "fields": [
+        {
+          "label": "Swatches",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Custom color",
+          "tag": "input",
+          "type": "color",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "White",
+        "Cream",
+        "Blue tint",
+        "Green tint",
+        "Red tint",
+        "Slate",
+        "Mint",
+        "Light gray",
+        "Sky",
+        "Steel",
+        "Sand",
+        "No fill",
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "colors-dialog",
+      "openedBy": "forced:forced (cmd colors)",
+      "visible": true,
+      "title": "Color Scheme",
+      "fields": [
+        {
+          "label": "Scheme",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Default",
+            "Gold",
+            "Grayscale",
+            "Blue Warm",
+            "Green Yellow"
+          ]
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "addtext-dialog",
+      "openedBy": "forced:forced (cmd insertTextart)",
+      "visible": true,
+      "title": "Add Text",
+      "fields": [
+        {
+          "label": "Level",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Body text",
+            "Level 1",
+            "Level 2",
+            "Level 3",
+            "Level 4",
+            "Level 5",
+            "Level 6"
+          ]
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "updatetoc-dialog",
+      "openedBy": "forced:forced (cmd updateToc)",
+      "visible": true,
+      "title": "Update Table of Contents",
+      "fields": [
+        {
+          "label": "Update",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Update entire table",
+            "Update page numbers only"
+          ]
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Update"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "displaymode-dialog",
+      "openedBy": "forced:forced (cmd displayMode)",
+      "visible": true,
+      "title": "Display Mode",
+      "fields": [
+        {
+          "label": "View",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Markup",
+            "Original",
+            "Final"
+          ]
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "bookmark-dialog",
+      "openedBy": "forced:forced (cmd bookmark)",
+      "visible": true,
+      "title": "Insert bookmark",
+      "fields": [
+        {
+          "label": "Name",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "cc-dialog",
+      "openedBy": "forced:forced (cmd insertContentControl)",
+      "visible": true,
+      "title": "Backstage.CCTitle",
+      "fields": [
+        {
+          "label": "Type",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Plain text",
+            "Rich text",
+            "Drop-down list"
+          ]
+        },
+        {
+          "label": "Title (optional)",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "chart-dialog",
+      "openedBy": "forced:forced (cmd insertChart)",
+      "visible": true,
+      "title": "Backstage.ChartTitle",
+      "fields": [
+        {
+          "label": "Chart type",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Bar",
+            "Line",
+            "Pie",
+            "Area"
+          ]
+        },
+        {
+          "label": "Title",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Data (label, value per row)",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Preview (updates live)",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert chart"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "columns-dialog",
+      "openedBy": "forced:forced (cmd columns)",
+      "visible": true,
+      "title": "Insert columns",
+      "fields": [
+        {
+          "label": "Columns",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Gap (px)",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "comment-dialog",
+      "openedBy": "forced:forced (cmd insertComment)",
+      "visible": true,
+      "title": "Add comment",
+      "fields": [
+        {
+          "label": "Comment",
+          "tag": "textarea",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Comment"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "crossref-dialog",
+      "openedBy": "forced:forced (cmd openCrossref)",
+      "visible": true,
+      "title": "Insert cross-reference",
+      "fields": [
+        {
+          "label": "Target bookmark",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "(no bookmarks yet)"
+          ]
+        },
+        {
+          "label": "Display text",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "equation-dialog",
+      "openedBy": "forced:forced (cmd insertEquation)",
+      "visible": true,
+      "title": "Backstage.EquationTitle",
+      "fields": [
+        {
+          "label": "Linear notation (^ superscript, _ subscript, sqrt(), a/b)",
+          "tag": "textarea",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Preview",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert equation"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "field-dialog",
+      "openedBy": "forced:forced (cmd insertField)",
+      "visible": true,
+      "title": "Backstage.FieldTitle",
+      "fields": [
+        {
+          "label": "Field type",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Page number",
+            "Date",
+            "Time",
+            "Author",
+            "File name",
+            "Word count"
+          ]
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "help-dialog",
+      "openedBy": "forced:forced (cmd help)",
+      "visible": true,
+      "title": "Backstage.Help",
+      "fields": [],
+      "buttons": [
+        "Close"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "info-dialog",
+      "openedBy": "forced:forced (cmd info)",
+      "visible": true,
+      "title": "Backstage.Info",
+      "fields": [
+        {
+          "label": "Name",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "—",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Location",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "—",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Language",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "—",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Stats",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "—",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "HTML size",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "—",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Close"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "mailmerge-dialog",
+      "openedBy": "forced:forced (cmd mailMerge)",
+      "visible": true,
+      "title": "Backstage.MailMerge",
+      "fields": [
+        {
+          "label": "Merge field",
+          "tag": "select",
+          "type": "select",
+          "options": []
+        },
+        {
+          "label": "Source",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Choose CSV file…",
+        "Close",
+        "Insert field",
+        "Preview merged copies"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "object-dialog",
+      "openedBy": "forced:forced (cmd insertObject)",
+      "visible": true,
+      "title": "Insert object",
+      "fields": [
+        {
+          "label": "Type",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Shape",
+            "Text box",
+            "Chart",
+            "Equation",
+            "Text art"
+          ]
+        },
+        {
+          "label": "Label",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Content",
+          "tag": "textarea",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "plugins-dialog",
+      "openedBy": "forced:forced (cmd plugins)",
+      "visible": true,
+      "title": "Plugins.Manage",
+      "fields": [],
+      "buttons": [
+        "Close"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "settings-dialog",
+      "openedBy": "forced:forced (cmd settings)",
+      "visible": true,
+      "title": "Backstage.Settings",
+      "fields": [
+        {
+          "label": "Interface theme",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Dark",
+            "Light"
+          ]
+        },
+        {
+          "label": "Language",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "English",
+            "Deutsch"
+          ]
+        },
+        {
+          "label": "Spell checking",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Zoom (%)",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Apply"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "smartart-dialog",
+      "openedBy": "forced:forced (cmd insertSmartart)",
+      "visible": true,
+      "title": "Backstage.SmartArtTitle",
+      "fields": [
+        {
+          "label": "Layout",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Process (arrows)",
+            "Cycle",
+            "Hierarchy",
+            "Matrix"
+          ]
+        },
+        {
+          "label": "Preview",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert diagram"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "suggest-dialog",
+      "openedBy": "forced:forced (cmd suggest)",
+      "visible": true,
+      "title": "Backstage.Suggest",
+      "fields": [
+        {
+          "label": "Feedback",
+          "tag": "textarea",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Email (optional)",
+          "tag": "input",
+          "type": "email",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Compose email"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "toc-dialog",
+      "openedBy": "forced:forced (cmd toc)",
+      "visible": true,
+      "title": "Insert table of contents",
+      "fields": [
+        {
+          "label": "Title",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "image-alt-dialog",
+      "openedBy": "forced:forced (cmd imageAlt)",
+      "visible": true,
+      "title": "Dialog.ImagePropsTitle",
+      "fields": [
+        {
+          "label": "Width",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Height",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Alt text",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Apply"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    }
+  ]
+}
