@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-29T20:53:15.114769",
+ "generated": "2026-10-29T21:04:25.756190",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,8 +9,8 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 32,
-  "L1": 334,
+  "L0": 20,
+  "L1": 346,
   "L2": 0,
   "L3": 20,
   "L4": 0
@@ -4702,11 +4702,12 @@
      "label": "OpenCommentsPanel"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Shift+H: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+Shift+H (comments rail)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.save",
@@ -4739,10 +4740,13 @@
      "label": "PrintPreviewAndPrint"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Ctrl+P opens native print dialog (WO window.print)",
+    "where": "shortcut"
+   },
+   "level": 1,
    "evidence": [
-    "OO bind Ctrl+P: no WO keydown handler"
+    "Ctrl+P opens native print dialog (WO window.print)"
    ]
   },
   {
@@ -4757,11 +4761,12 @@
      "label": "SaveAs"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Shift+S: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+Shift+S (export backstage pane)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.openhelpmenu",
@@ -4775,11 +4780,12 @@
      "label": "OpenHelpMenu"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind F1: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "F1 opens Help dialog",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.opencontextmenu",
@@ -4849,11 +4855,12 @@
      "label": "UpdateFields"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind F9: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "F9 (fieldOpAtSelection update)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.movetostartline",
@@ -5262,10 +5269,13 @@
      "label": "InsertLineBreak"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Shift+Enter inserts <br> natively in contentEditable",
+    "where": "shortcut"
+   },
+   "level": 1,
    "evidence": [
-    "OO bind Shift+Enter: no WO keydown handler"
+    "Shift+Enter inserts <br> natively in contentEditable"
    ]
   },
   {
@@ -6189,11 +6199,12 @@
      "label": "Indent"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+M: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+M",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.unindent",
@@ -6207,11 +6218,12 @@
      "label": "UnIndent"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Shift+M: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+Shift+M",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.insertpagenumber",
@@ -6246,10 +6258,13 @@
      "label": "ShowAll"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)",
+    "where": "shortcut"
+   },
+   "level": 1,
    "evidence": [
-    "OO bind Ctrl+Shift+8: no WO keydown handler"
+    "WO uses different combo: ¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)"
    ]
   },
   {
@@ -6884,10 +6899,13 @@
      "label": "SpeechWorker"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Ctrl+Alt+Z read-aloud (OO SpeechWorker panel; WO maps to TTS)",
+    "where": "shortcut"
+   },
+   "level": 1,
    "evidence": [
-    "OO bind Ctrl+Alt+Z: no WO keydown handler"
+    "WO uses different combo: Ctrl+Alt+Z read-aloud (OO SpeechWorker panel; WO maps to TTS)"
    ]
   },
   {
@@ -7368,11 +7386,12 @@
      "label": "InsertEquation"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Alt+Equal: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+Alt+=",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.horizontalellipsis",
@@ -7386,11 +7405,12 @@
      "label": "HorizontalEllipsis"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Alt+Semicolon: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Alt+;",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.replaceunicodetosymbol",

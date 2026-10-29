@@ -6,17 +6,12 @@ Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
 
-## file — 39 features (L0:14 L1:25 L3:0)
+## file — 39 features (L0:9 L1:30 L3:0)
 - ❌ L0 **file.home** [control] 
 - ❌ L0 **file.layout** [control] 
 - ❌ L0 **file.references** [control] 
 - ❌ L0 **file.collaboration** [control] 
-- ❌ L0 **shortcut.opencommentspanel** [shortcut] 
-- ❌ L0 **shortcut.printpreviewandprint** [shortcut] 
-- ❌ L0 **shortcut.saveas** [shortcut] 
-- ❌ L0 **shortcut.openhelpmenu** [shortcut] 
 - ❌ L0 **shortcut.opencontextmenu** [shortcut] 
-- ❌ L0 **shortcut.updatefields** [shortcut] 
 - ❌ L0 **shortcut.openfilepanel** [shortcut] 
 - ❌ L0 **shortcut.opencommentfield** [shortcut] 
 - ❌ L0 **shortcut.openexistingfile** [shortcut] 
@@ -43,71 +38,20 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **file.suggest-a-feature** [backstage-item] → WO: Suggest a feature
 - 🔲 L1 **shortcut.openfinddialog** [shortcut] → WO: Ctrl+F
 - 🔲 L1 **shortcut.openfindandreplacemenu** [shortcut] → WO: Ctrl+H
+- 🔲 L1 **shortcut.opencommentspanel** [shortcut] → WO: Ctrl+Shift+H (comments rail)
 - 🔲 L1 **shortcut.save** [shortcut] → WO: Ctrl+S
+- 🔲 L1 **shortcut.printpreviewandprint** [shortcut] → WO: Ctrl+P opens native print dialog (WO window.print)
+- 🔲 L1 **shortcut.saveas** [shortcut] → WO: Ctrl+Shift+S (export backstage pane)
+- 🔲 L1 **shortcut.openhelpmenu** [shortcut] → WO: F1 opens Help dialog
 - 🔲 L1 **shortcut.closemenu** [shortcut] → WO: Escape
+- 🔲 L1 **shortcut.updatefields** [shortcut] → WO: F9 (fieldOpAtSelection update)
 - 🔲 L1 **shortcut.openchatpanel** [shortcut] → WO: Ctrl+Alt+Q
 
-## formatting — 53 features (L0:6 L1:39 L3:8)
-- ❌ L0 **shortcut.copyformat** [shortcut] 
-- ❌ L0 **shortcut.pasteformat** [shortcut] 
-- ❌ L0 **shortcut.indent** [shortcut] 
-- ❌ L0 **shortcut.unindent** [shortcut] 
-- ❌ L0 **shortcut.showall** [shortcut] 
-- ❌ L0 **shortcut.strikeout** [shortcut] 
-- 🔲 L1 **formatting.font** [control] → WO: font-family
-- 🔲 L1 **formatting.font-size** [control] → WO: font-size
-- 🔲 L1 **formatting.increment-font-size-ctrl** [control] → WO: font-size
-- 🔲 L1 **formatting.decrement-font-size-ctrl** [control] → WO: font-size
-- 🔲 L1 **formatting.highlight-color** [control] → WO: highlight-color
-- 🔲 L1 **formatting.font-color** [control] → WO: text-color
-- 🔲 L1 **formatting.bullets** [control] → WO: insertUnorderedList
-- 🔲 L1 **formatting.numbering** [control] → WO: Numbering style options
-- 🔲 L1 **formatting.multilevel-list** [control] → WO: multilevel
-- 🔲 L1 **formatting.decrease-indent-ctrl-shift-m** [control] → WO: outdent
-- 🔲 L1 **formatting.increase-indent-ctrl-m** [control] → WO: indent
-- 🔲 L1 **formatting.paragraph-line-spacing** [control] → WO: line-spacing
-- 🔲 L1 **formatting.text-direction** [control] → WO: directionRtl
-- 🔲 L1 **formatting.align-left-ctrl-l** [control] → WO: justifyLeft
-- 🔲 L1 **formatting.align-center-ctrl-e** [control] → WO: justifyCenter
-- 🔲 L1 **formatting.align-right-ctrl-r** [control] → WO: justifyRight
-- 🔲 L1 **formatting.justified-ctrl-j** [control] → WO: justifyFull
-- 🔲 L1 **formatting.nonprinting-characters-ctrl-shift-8** [control] → WO: btn-home-formatmarks
-- 🔲 L1 **formatting.shading** [control] → WO: Shading
-- 🔲 L1 **formatting.borders** [control] → WO: openBorders
-- 🔲 L1 **formatting.replace-ctrl-h** [control] → WO: btn-replace
-- 🔲 L1 **formatting.select-all-ctrl-a** [control] → WO: selectAll
-- 🔲 L1 **shortcut.bold** [shortcut] → WO: Ctrl+B
-- 🔲 L1 **shortcut.italic** [shortcut] → WO: Ctrl+I
-- 🔲 L1 **shortcut.underline** [shortcut] → WO: Ctrl+U
-- 🔲 L1 **shortcut.smallcaps** [shortcut] → WO: Ctrl+Shift+K
-- 🔲 L1 **shortcut.subscript** [shortcut] → WO: Ctrl+.
-- 🔲 L1 **shortcut.superscript** [shortcut] → WO: Ctrl+,
-- 🔲 L1 **shortcut.applylistbullet** [shortcut] → WO: Ctrl+Shift+8 (OO uses Ctrl+Shift+L)
-- 🔲 L1 **shortcut.resetchar** [shortcut] → WO: Ctrl+Space (remove formatting)
-- 🔲 L1 **shortcut.increasefontsize** [shortcut] → WO: Ctrl+]
-- 🔲 L1 **shortcut.decreasefontsize** [shortcut] → WO: Ctrl+[
-- 🔲 L1 **shortcut.centerpara** [shortcut] → WO: Ctrl+E
-- 🔲 L1 **shortcut.justifypara** [shortcut] → WO: Ctrl+J
-- 🔲 L1 **shortcut.rightpara** [shortcut] → WO: Ctrl+R
-- 🔲 L1 **shortcut.leftpara** [shortcut] → WO: Ctrl+Shift+L
-- 🔲 L1 **shortcut.applyheading1** [shortcut] → WO: Ctrl+Alt+1
-- 🔲 L1 **shortcut.applyheading2** [shortcut] → WO: Ctrl+Alt+2
-- 🔲 L1 **shortcut.applyheading3** [shortcut] → WO: Ctrl+Alt+3
-- ✅ L3 **formatting.change-case** [control] → WO: Change case
-- ✅ L3 **formatting.bold-ctrl-b** [control] → WO: bold
-- ✅ L3 **formatting.italic-ctrl-i** [control] → WO: italic
-- ✅ L3 **formatting.underline-ctrl-u** [control] → WO: underline
-- ✅ L3 **formatting.strikethrough-ctrl-5** [control] → WO: strikeThrough
-- ✅ L3 **formatting.superscript-ctrl** [control] → WO: superscript
-- ✅ L3 **formatting.subscript-ctrl** [control] → WO: subscript
-- ✅ L3 **formatting.clear-style** [control] → WO: removeFormat
-
-## shortcuts — 62 features (L0:6 L1:56 L3:0)
+## shortcuts — 62 features (L0:5 L1:57 L3:0)
 - ❌ L0 **shortcut.specialoptionskeepsourceformat** [shortcut] 
 - ❌ L0 **shortcut.specialoptionskeeptextonly** [shortcut] 
 - ❌ L0 **shortcut.specialoptionsoverwritecells** [shortcut] 
 - ❌ L0 **shortcut.specialoptionsnesttable** [shortcut] 
-- ❌ L0 **shortcut.speechworker** [shortcut] 
 - ❌ L0 **shortcut.replaceunicodetosymbol** [shortcut] 
 - 🔲 L1 **shortcut.zoom100** [shortcut] → WO: Ctrl+0
 - 🔲 L1 **shortcut.movetostartline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
@@ -153,6 +97,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.movetopreviousform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.choosenextcomboboxoption** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.choosepreviouscomboboxoption** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.speechworker** [shortcut] → WO: Ctrl+Alt+Z read-aloud (OO SpeechWorker panel; WO maps to TTS)
 - 🔲 L1 **shortcut.movetostartpreviouspage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.movetostartnextpage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.movetostartword** [shortcut] → WO: browser caret/scroll (n/a for web editor)
@@ -166,12 +111,64 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.nextfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.previousfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 
-## insert — 56 features (L0:5 L1:45 L3:6)
+## formatting — 53 features (L0:3 L1:42 L3:8)
+- ❌ L0 **shortcut.copyformat** [shortcut] 
+- ❌ L0 **shortcut.pasteformat** [shortcut] 
+- ❌ L0 **shortcut.strikeout** [shortcut] 
+- 🔲 L1 **formatting.font** [control] → WO: font-family
+- 🔲 L1 **formatting.font-size** [control] → WO: font-size
+- 🔲 L1 **formatting.increment-font-size-ctrl** [control] → WO: font-size
+- 🔲 L1 **formatting.decrement-font-size-ctrl** [control] → WO: font-size
+- 🔲 L1 **formatting.highlight-color** [control] → WO: highlight-color
+- 🔲 L1 **formatting.font-color** [control] → WO: text-color
+- 🔲 L1 **formatting.bullets** [control] → WO: insertUnorderedList
+- 🔲 L1 **formatting.numbering** [control] → WO: Numbering style options
+- 🔲 L1 **formatting.multilevel-list** [control] → WO: multilevel
+- 🔲 L1 **formatting.decrease-indent-ctrl-shift-m** [control] → WO: outdent
+- 🔲 L1 **formatting.increase-indent-ctrl-m** [control] → WO: indent
+- 🔲 L1 **formatting.paragraph-line-spacing** [control] → WO: line-spacing
+- 🔲 L1 **formatting.text-direction** [control] → WO: directionRtl
+- 🔲 L1 **formatting.align-left-ctrl-l** [control] → WO: justifyLeft
+- 🔲 L1 **formatting.align-center-ctrl-e** [control] → WO: justifyCenter
+- 🔲 L1 **formatting.align-right-ctrl-r** [control] → WO: justifyRight
+- 🔲 L1 **formatting.justified-ctrl-j** [control] → WO: justifyFull
+- 🔲 L1 **formatting.nonprinting-characters-ctrl-shift-8** [control] → WO: btn-home-formatmarks
+- 🔲 L1 **formatting.shading** [control] → WO: Shading
+- 🔲 L1 **formatting.borders** [control] → WO: openBorders
+- 🔲 L1 **formatting.replace-ctrl-h** [control] → WO: btn-replace
+- 🔲 L1 **formatting.select-all-ctrl-a** [control] → WO: selectAll
+- 🔲 L1 **shortcut.bold** [shortcut] → WO: Ctrl+B
+- 🔲 L1 **shortcut.italic** [shortcut] → WO: Ctrl+I
+- 🔲 L1 **shortcut.underline** [shortcut] → WO: Ctrl+U
+- 🔲 L1 **shortcut.smallcaps** [shortcut] → WO: Ctrl+Shift+K
+- 🔲 L1 **shortcut.subscript** [shortcut] → WO: Ctrl+.
+- 🔲 L1 **shortcut.superscript** [shortcut] → WO: Ctrl+,
+- 🔲 L1 **shortcut.applylistbullet** [shortcut] → WO: Ctrl+Shift+8 (OO uses Ctrl+Shift+L)
+- 🔲 L1 **shortcut.resetchar** [shortcut] → WO: Ctrl+Space (remove formatting)
+- 🔲 L1 **shortcut.increasefontsize** [shortcut] → WO: Ctrl+]
+- 🔲 L1 **shortcut.decreasefontsize** [shortcut] → WO: Ctrl+[
+- 🔲 L1 **shortcut.centerpara** [shortcut] → WO: Ctrl+E
+- 🔲 L1 **shortcut.justifypara** [shortcut] → WO: Ctrl+J
+- 🔲 L1 **shortcut.rightpara** [shortcut] → WO: Ctrl+R
+- 🔲 L1 **shortcut.leftpara** [shortcut] → WO: Ctrl+Shift+L
+- 🔲 L1 **shortcut.indent** [shortcut] → WO: Ctrl+M
+- 🔲 L1 **shortcut.unindent** [shortcut] → WO: Ctrl+Shift+M
+- 🔲 L1 **shortcut.showall** [shortcut] → WO: ¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)
+- 🔲 L1 **shortcut.applyheading1** [shortcut] → WO: Ctrl+Alt+1
+- 🔲 L1 **shortcut.applyheading2** [shortcut] → WO: Ctrl+Alt+2
+- 🔲 L1 **shortcut.applyheading3** [shortcut] → WO: Ctrl+Alt+3
+- ✅ L3 **formatting.change-case** [control] → WO: Change case
+- ✅ L3 **formatting.bold-ctrl-b** [control] → WO: bold
+- ✅ L3 **formatting.italic-ctrl-i** [control] → WO: italic
+- ✅ L3 **formatting.underline-ctrl-u** [control] → WO: underline
+- ✅ L3 **formatting.strikethrough-ctrl-5** [control] → WO: strikeThrough
+- ✅ L3 **formatting.superscript-ctrl** [control] → WO: superscript
+- ✅ L3 **formatting.subscript-ctrl** [control] → WO: subscript
+- ✅ L3 **formatting.clear-style** [control] → WO: removeFormat
+
+## insert — 56 features (L0:2 L1:48 L3:6)
 - ❌ L0 **insert.insert-spreadsheet** [menu-item] 
-- ❌ L0 **shortcut.insertlinebreak** [shortcut] 
 - ❌ L0 **shortcut.nonbreakinghyphen** [shortcut] 
-- ❌ L0 **shortcut.insertequation** [shortcut] 
-- ❌ L0 **shortcut.horizontalellipsis** [shortcut] 
 - 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
 - 🔲 L1 **insert.breaks** [control] → WO: Breaks
 - 🔲 L1 **insert.shape** [control] → WO: insertObject
@@ -201,6 +198,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **insert.limits-and-logarithms** [menu-item] → WO: Limits and logarithms
 - 🔲 L1 **insert.operators** [menu-item] → WO: Operators
 - 🔲 L1 **insert.matrices** [menu-item] → WO: Matrices
+- 🔲 L1 **shortcut.insertlinebreak** [shortcut] → WO: Shift+Enter inserts <br> natively in contentEditable
 - 🔲 L1 **shortcut.insertcolumnbreak** [shortcut] → WO: Ctrl+Shift+Enter
 - 🔲 L1 **shortcut.nonbreakingspace** [shortcut] → WO: Ctrl+Shift+Space
 - 🔲 L1 **shortcut.inserthyperlink** [shortcut] → WO: Ctrl+K
@@ -214,6 +212,8 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.eurosign** [shortcut] → WO: Ctrl+Alt+E
 - 🔲 L1 **shortcut.registeredsign** [shortcut] → WO: Ctrl+Alt+R
 - 🔲 L1 **shortcut.trademarksign** [shortcut] → WO: Ctrl+Alt+T
+- 🔲 L1 **shortcut.insertequation** [shortcut] → WO: Ctrl+Alt+=
+- 🔲 L1 **shortcut.horizontalellipsis** [shortcut] → WO: Alt+;
 - 🔲 L1 **shortcut.insertfootnotenow** [shortcut] → WO: Ctrl+Alt+F
 - 🔲 L1 **shortcut.emdash** [shortcut] → WO: Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation)
 - 🔲 L1 **shortcut.endash** [shortcut] → WO: Ctrl+Shift+Minus (OO uses Ctrl+NumpadMinus; Ctrl+Minus is zoom-out in WO)

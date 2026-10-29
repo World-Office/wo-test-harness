@@ -76,6 +76,20 @@ const WO = {
   EmDash: { v: "diverged", wb: "Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation)" },
   EnDash: { v: "diverged", wb: "Ctrl+Shift+Minus (OO uses Ctrl+NumpadMinus; Ctrl+Minus is zoom-out in WO)" },
 
+  // Second C1 batch (2026-10-28): state-backed bindings to existing flows.
+  UpdateFields: { v: "matched", wb: "F9 (fieldOpAtSelection update)" },
+  InsertEquation: { v: "matched", wb: "Ctrl+Alt+=" },
+  Indent: { v: "matched", wb: "Ctrl+M" },
+  UnIndent: { v: "matched", wb: "Ctrl+Shift+M" },
+  SaveAs: { v: "matched", wb: "Ctrl+Shift+S (export backstage pane)" },
+  OpenCommentsPanel: { v: "matched", wb: "Ctrl+Shift+H (comments rail)" },
+  PrintPreviewAndPrint: { v: "browser-native", wb: "Ctrl+P opens native print dialog (WO window.print)" },
+  InsertLineBreak: { v: "browser-native", wb: "Shift+Enter inserts <br> natively in contentEditable" },
+  OpenHelpMenu: { v: "matched", wb: "F1 opens Help dialog" },
+  SpeechWorker: { v: "diverged", wb: "Ctrl+Alt+Z read-aloud (OO SpeechWorker panel; WO maps to TTS)" },
+  HorizontalEllipsis: { v: "matched", wb: "Alt+;" },
+  ShowAll: { v: "diverged", wb: "¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)" },
+
   // browser-native: WO relies on the browser for these
   Copy: { v: "browser-native", wb: "Ctrl+C / Cmd+C" },
   Cut: { v: "browser-native", wb: "Ctrl+X / Cmd+X" },

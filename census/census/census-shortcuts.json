@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generated": "2026-10-29T19:53:08.083Z",
+  "generated": "2026-10-29T20:04:25.543Z",
   "source": "sdkjs/word/Editor/Shortcuts.js (147 types) vs WO editor keydown handler",
   "engine": "static-parse",
   "totals": {
-    "matched": 35,
-    "diverged": 3,
-    "browser-native": 12,
+    "matched": 43,
+    "diverged": 5,
+    "browser-native": 14,
     "nav": 71,
-    "missing": 26,
+    "missing": 14,
     "total": 147
   },
   "shortcuts": [
@@ -27,8 +27,8 @@
     {
       "type": "OpenCommentsPanel",
       "combo": "Ctrl+Shift+H",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Shift+H (comments rail)"
     },
     {
       "type": "Save",
@@ -39,20 +39,20 @@
     {
       "type": "PrintPreviewAndPrint",
       "combo": "Ctrl+P",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "browser-native",
+      "wo": "Ctrl+P opens native print dialog (WO window.print)"
     },
     {
       "type": "SaveAs",
       "combo": "Ctrl+Shift+S",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Shift+S (export backstage pane)"
     },
     {
       "type": "OpenHelpMenu",
       "combo": "F1",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "F1 opens Help dialog"
     },
     {
       "type": "OpenContextMenu",
@@ -75,8 +75,8 @@
     {
       "type": "UpdateFields",
       "combo": "F9",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "F9 (fieldOpAtSelection update)"
     },
     {
       "type": "MoveToStartLine",
@@ -195,8 +195,8 @@
     {
       "type": "InsertLineBreak",
       "combo": "Shift+Enter",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "browser-native",
+      "wo": "Shift+Enter inserts <br> natively in contentEditable"
     },
     {
       "type": "InsertColumnBreak",
@@ -477,14 +477,14 @@
     {
       "type": "Indent",
       "combo": "Ctrl+M",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+M"
     },
     {
       "type": "UnIndent",
       "combo": "Ctrl+Shift+M",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Shift+M"
     },
     {
       "type": "InsertPageNumber",
@@ -495,8 +495,8 @@
     {
       "type": "ShowAll",
       "combo": "Ctrl+Shift+8",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "diverged",
+      "wo": "¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)"
     },
     {
       "type": "StartIndent",
@@ -681,8 +681,8 @@
     {
       "type": "SpeechWorker",
       "combo": "Ctrl+Alt+Z",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "diverged",
+      "wo": "Ctrl+Alt+Z read-aloud (OO SpeechWorker panel; WO maps to TTS)"
     },
     {
       "type": "OpenFilePanel",
@@ -825,14 +825,14 @@
     {
       "type": "InsertEquation",
       "combo": "Ctrl+Alt+Equal",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Alt+="
     },
     {
       "type": "HorizontalEllipsis",
       "combo": "Alt+Semicolon",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Alt+;"
     },
     {
       "type": "ReplaceUnicodeToSymbol",
