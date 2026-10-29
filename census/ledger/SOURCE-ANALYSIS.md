@@ -161,11 +161,18 @@ version — do not chase them.
 1. Shortcut cluster (biggest single surface; static-gateable per key).
 2. List vertical: context ops (start-from/join/separate) + 4 dialogs +
    converter `start`/`ilvl` — one campaign closes UI+engine.
-3. Context-menu scenario census (cjs: right-click into chart/image/shape/
-   list/table targets on both sides) → scores P2.2 into the ledger.
+3. Context-menu scenario census ✅ DONE (2026-10-28, `census/census-ctx.json` +
+   `census-ctx.cjs`; OO view/DocumentHolderExt.js 5 scenario menus / 302
+   MenuItems → 166 captions vs WO #ctx-menu 75 data-ctx; ledger scores P2.2:
+   **53 new L0** = 9 chart groups (C3) + object ops (arrange/crop/edit
+   points/group-merge/rotate/save-as-picture/replace/wrap-tight-through-top-
+   bottom-infront/shape-align×6/distribute) + table (insert-several,
+   distribute rows/cols, delete-cell) + field (clear/update-all) + styles
+   (create/update). Priority order for the object-ops cluster:
+   arrange + crop are the most-used mouse surfaces of the 53.
 4. Chart advanced suite (error bars, trendlines, axes/gridlines/data
-   table) — OO right-panel/ext menus; WO chart-dialog covers type+data
-   only.
+   table) — 9 grouped L0 rows in the ledger (C3 epic). WO chart-dialog
+   covers type+data only; OO right-panel + ctx both absent in WO.
 5. cc types (checkbox/date-picker/list/picture), signatures, text
    direction, table styles — small standalone items.
 6. Image crop + shape edit-points — canvas work, own tasks.
