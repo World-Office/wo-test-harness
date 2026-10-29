@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generated": "2026-10-29T20:54:57.991Z",
+  "generated": "2026-10-29T21:02:16.032Z",
   "source": "sdkjs/word/Editor/Shortcuts.js (147 types) vs WO editor keydown handler",
   "engine": "static-parse",
   "totals": {
     "matched": 45,
     "diverged": 5,
-    "browser-native": 14,
+    "browser-native": 15,
     "nav": 71,
-    "missing": 12,
+    "missing": 11,
     "total": 147
   },
   "shortcuts": [
@@ -57,8 +57,8 @@
     {
       "type": "OpenContextMenu",
       "combo": "Shift+F10",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "browser-native",
+      "wo": "Shift+F10 fires the contextmenu DOM event; WO handler shows the custom menu"
     },
     {
       "type": "CloseMenu",

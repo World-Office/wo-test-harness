@@ -88,6 +88,7 @@ const WO = {
   PrintPreviewAndPrint: { v: "browser-native", wb: "Ctrl+P opens native print dialog (WO window.print)" },
   InsertLineBreak: { v: "browser-native", wb: "Shift+Enter inserts <br> natively in contentEditable" },
   OpenHelpMenu: { v: "matched", wb: "F1 opens Help dialog" },
+  OpenContextMenu: { v: "browser-native", wb: "Shift+F10 fires the contextmenu DOM event; WO handler shows the custom menu" },
   SpeechWorker: { v: "diverged", wb: "Ctrl+Alt+Z read-aloud (OO SpeechWorker panel; WO maps to TTS)" },
   HorizontalEllipsis: { v: "matched", wb: "Alt+;" },
   ShowAll: { v: "diverged", wb: "¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)" },

@@ -6,12 +6,11 @@ Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
 
-## file — 39 features (L0:9 L1:30 L3:0)
+## file — 39 features (L0:8 L1:31 L3:0)
 - ❌ L0 **file.home** [control] 
 - ❌ L0 **file.layout** [control] 
 - ❌ L0 **file.references** [control] 
 - ❌ L0 **file.collaboration** [control] 
-- ❌ L0 **shortcut.opencontextmenu** [shortcut] 
 - ❌ L0 **shortcut.openfilepanel** [shortcut] 
 - ❌ L0 **shortcut.opencommentfield** [shortcut] 
 - ❌ L0 **shortcut.openexistingfile** [shortcut] 
@@ -43,6 +42,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.printpreviewandprint** [shortcut] → WO: Ctrl+P opens native print dialog (WO window.print)
 - 🔲 L1 **shortcut.saveas** [shortcut] → WO: Ctrl+Shift+S (export backstage pane)
 - 🔲 L1 **shortcut.openhelpmenu** [shortcut] → WO: F1 opens Help dialog
+- 🔲 L1 **shortcut.opencontextmenu** [shortcut] → WO: Shift+F10 fires the contextmenu DOM event; WO handler shows the custom menu
 - 🔲 L1 **shortcut.closemenu** [shortcut] → WO: Escape
 - 🔲 L1 **shortcut.updatefields** [shortcut] → WO: F9 (fieldOpAtSelection update)
 - 🔲 L1 **shortcut.openchatpanel** [shortcut] → WO: Ctrl+Alt+Q

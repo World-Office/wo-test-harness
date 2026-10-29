@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-29T21:54:58.192406",
+ "generated": "2026-10-29T22:02:16.236955",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,8 +9,8 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 18,
-  "L1": 348,
+  "L0": 17,
+  "L1": 349,
   "L2": 0,
   "L3": 20,
   "L4": 0
@@ -4799,10 +4799,13 @@
      "label": "OpenContextMenu"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Shift+F10 fires the contextmenu DOM event; WO handler shows the custom menu",
+    "where": "shortcut"
+   },
+   "level": 1,
    "evidence": [
-    "OO bind Shift+F10: no WO keydown handler"
+    "Shift+F10 fires the contextmenu DOM event; WO handler shows the custom menu"
    ]
   },
   {
