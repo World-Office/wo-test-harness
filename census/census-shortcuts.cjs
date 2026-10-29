@@ -83,6 +83,8 @@ const WO = {
   UnIndent: { v: "matched", wb: "Ctrl+Shift+M" },
   SaveAs: { v: "matched", wb: "Ctrl+Shift+S (export backstage pane)" },
   OpenCommentsPanel: { v: "matched", wb: "Ctrl+Shift+H (comments rail)" },
+  CopyFormat: { v: "matched", wb: "Ctrl+Alt+C (format painter — captures inline + semantic char formatting)" },
+  PasteFormat: { v: "matched", wb: "Ctrl+Alt+V (format painter — applies to next selection as style span)" },
   PrintPreviewAndPrint: { v: "browser-native", wb: "Ctrl+P opens native print dialog (WO window.print)" },
   InsertLineBreak: { v: "browser-native", wb: "Shift+Enter inserts <br> natively in contentEditable" },
   OpenHelpMenu: { v: "matched", wb: "F1 opens Help dialog" },

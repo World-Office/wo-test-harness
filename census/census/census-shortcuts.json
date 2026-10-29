@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generated": "2026-10-29T20:04:25.543Z",
+  "generated": "2026-10-29T20:54:57.991Z",
   "source": "sdkjs/word/Editor/Shortcuts.js (147 types) vs WO editor keydown handler",
   "engine": "static-parse",
   "totals": {
-    "matched": 43,
+    "matched": 45,
     "diverged": 5,
     "browser-native": 14,
     "nav": 71,
-    "missing": 14,
+    "missing": 12,
     "total": 147
   },
   "shortcuts": [
@@ -261,14 +261,14 @@
     {
       "type": "CopyFormat",
       "combo": "Ctrl+Alt+C",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Alt+C (format painter — captures inline + semantic char formatting)"
     },
     {
       "type": "PasteFormat",
       "combo": "Ctrl+Alt+V",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Alt+V (format painter — applies to next selection as style span)"
     },
     {
       "type": "SpecialOptionsKeepSourceFormat",
