@@ -17,15 +17,15 @@ dialogs) + command handlers, all grepped directly.
 
 | | OO dialogs | census captured | WO dialogs | census captured |
 |---|---|---|---|---|
-| Count | 38+ (35 titled + panels) | 12 unique | 41 (DIALOG_IDS) | **0** |
+| Count | 38+ (35 titled + panels) | 12 unique | 41 (DIALOG_IDS) | **42 (T-001, 2026-10-28)** |
 
-Consequences:
-- **2 false L0s**: `references.dlg-bookmarks` (WO `bookmark-dialog` +
-  `openBookmarkDialog()` exist), `plugins.plugin-manager` (WO `plugins-dialog`
-  is a real plugin browser/manager: `/api/plugins` catalog + per-plugin
-  enable persisted per user). The ledger can't see dialogs it never censused.
-- Needed: `census-wo-dialogs.cjs` (mirror of oo-dialogs against WO) +
-  dialog joins in `ledger/build.py`.
+Consequences (as of T-001, 2026-10-28):
+- **2 false L0s RETIRED**: `references.dlg-bookmarks` (WO `bookmark-dialog`),
+  `plugins.plugin-manager` (WO `plugins-dialog`) — now L1 matched.
+  **L0: 8 → 6.**
+- Needed (in progress): dialog joins in `ledger/build.py` (done — WO dialogs
+  folded into `wo_labels` + `wo_dialog_match`); field-level fidelity = L4
+  concern deferred.
 
 ## Finding 2 — real OO dialogs with NO WO counterpart (verified 0-hit)
 

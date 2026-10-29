@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-28T07:19:06.104345",
+ "generated": "2026-10-29T13:33:52.318843",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,8 +9,8 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 8,
-  "L1": 211,
+  "L0": 6,
+  "L1": 213,
   "L2": 0,
   "L3": 20,
   "L4": 0
@@ -178,8 +178,8 @@
     }
    ],
    "wo": {
-    "match": "managePlugins",
-    "where": "tab:plugins"
+    "match": "plugins-dialog",
+    "where": "dialog:plugins-dialog"
    },
    "level": 1,
    "evidence": []
@@ -1179,8 +1179,8 @@
     }
    ],
    "wo": {
-    "match": "btn-datetime",
-    "where": "tab:insert"
+    "match": "pagenumber-dialog",
+    "where": "dialog:pagenumber-dialog"
    },
    "level": 3,
    "evidence": [
@@ -1615,8 +1615,8 @@
     }
    ],
    "wo": {
-    "match": "btn-toc",
-    "where": "tab:references"
+    "match": "updatetoc-dialog",
+    "where": "dialog:updatetoc-dialog"
    },
    "level": 1,
    "evidence": []
@@ -1710,8 +1710,8 @@
     }
    ],
    "wo": {
-    "match": "bookmark",
-    "where": "tab:references"
+    "match": "bookmark-dialog",
+    "where": "dialog:bookmark-dialog"
    },
    "level": 1,
    "evidence": []
@@ -1746,8 +1746,8 @@
     }
    ],
    "wo": {
-    "match": "openCrossref",
-    "where": "tab:references"
+    "match": "crossref-dialog",
+    "where": "dialog:crossref-dialog"
    },
    "level": 1,
    "evidence": []
@@ -2249,8 +2249,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "plugins-dialog",
+    "where": "dialog:plugins-dialog"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -2265,8 +2268,8 @@
     }
    ],
    "wo": {
-    "match": "btn-bgplugins",
-    "where": "tab:plugins"
+    "match": "plugins-dialog",
+    "where": "dialog:plugins-dialog"
    },
    "level": 1,
    "evidence": []
@@ -2481,8 +2484,8 @@
     }
    ],
    "wo": {
-    "match": "btn-datetime",
-    "where": "tab:insert"
+    "match": "pagenumber-dialog",
+    "where": "dialog:pagenumber-dialog"
    },
    "level": 3,
    "evidence": [
@@ -3887,8 +3890,8 @@
     }
    ],
    "wo": {
-    "match": "btn-datetime",
-    "where": "tab:insert"
+    "match": "pagenumber-dialog",
+    "where": "dialog:pagenumber-dialog"
    },
    "level": 3,
    "evidence": [
@@ -3933,8 +3936,8 @@
     }
    ],
    "wo": {
-    "match": "btn-symbol",
-    "where": "tab:insert"
+    "match": "symbol-dialog",
+    "where": "dialog:symbol-dialog"
    },
    "level": 3,
    "evidence": [
@@ -4080,8 +4083,8 @@
     }
    ],
    "wo": {
-    "match": "Columns",
-    "where": "tab:layout"
+    "match": "columns-dialog",
+    "where": "dialog:columns-dialog"
    },
    "level": 1,
    "evidence": [
@@ -4122,8 +4125,8 @@
     }
    ],
    "wo": {
-    "match": "Hyphenation",
-    "where": "tab:layout"
+    "match": "hyphenation-dialog",
+    "where": "dialog:hyphenation-dialog"
    },
    "level": 1,
    "evidence": [
@@ -4153,8 +4156,11 @@
      ]
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "bookmark-dialog",
+    "where": "dialog:bookmark-dialog"
+   },
+   "level": 1,
    "evidence": [
     "2 OO fields: Sort by, Hidden bookmarks"
    ]
@@ -4218,8 +4224,8 @@
     }
    ],
    "wo": {
-    "match": "openCrossref",
-    "where": "tab:references"
+    "match": "crossref-dialog",
+    "where": "dialog:crossref-dialog"
    },
    "level": 1,
    "evidence": [
@@ -4284,8 +4290,8 @@
     }
    ],
    "wo": {
-    "match": "btn-toc",
-    "where": "tab:references"
+    "match": "updatetoc-dialog",
+    "where": "dialog:updatetoc-dialog"
    },
    "level": 1,
    "evidence": [
@@ -4344,8 +4350,8 @@
     }
    ],
    "wo": {
-    "match": "btn-datetime",
-    "where": "tab:insert"
+    "match": "pagenumber-dialog",
+    "where": "dialog:pagenumber-dialog"
    },
    "level": 3,
    "evidence": [

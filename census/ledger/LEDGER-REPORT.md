@@ -16,7 +16,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **file.draw** [control] → WO: toggleInk
 - 🔲 L1 **file.protection** [control] → WO: protectDialog
 - 🔲 L1 **file.view** [control] → WO: displayMode
-- 🔲 L1 **file.plugins** [control] → WO: managePlugins
+- 🔲 L1 **file.plugins** [control] → WO: plugins-dialog
 - 🔲 L1 **file.ai** [control] → WO: AI changes
 - 🔲 L1 **file.editing** [control] → WO: coedit-mode
 - 🔲 L1 **file.find-ctrl-f** [control] → WO: btn-find
@@ -63,35 +63,12 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **insert.limits-and-logarithms** [menu-item] → WO: Limits and logarithms
 - 🔲 L1 **insert.operators** [menu-item] → WO: Operators
 - 🔲 L1 **insert.matrices** [menu-item] → WO: Matrices
-- ✅ L3 **insert.date-time** [control] → WO: btn-datetime
+- ✅ L3 **insert.date-time** [control] → WO: pagenumber-dialog
 - ✅ L3 **insert.symbol** [control] → WO: btn-symbol
 - ✅ L3 **insert.more-symbols** [menu-item] → WO: Symbols ▾
 - ✅ L3 **insert.symbols** [menu-item] → WO: Symbols ▾
-- ✅ L3 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
-- ✅ L3 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: btn-symbol
-
-## references — 9 features (L0:1 L1:8 L3:0)
-- ❌ L0 **references.dlg-bookmarks** [dialog] (2 OO fields) 
-- 🔲 L1 **references.add-text** [control] → WO: btn-addtext
-- 🔲 L1 **references.footnote** [control] → WO: insertFootnote
-- 🔲 L1 **references.link** [control] → WO: link
-- 🔲 L1 **references.bookmark** [control] → WO: bookmark
-- 🔲 L1 **references.caption** [control] → WO: insertCaption
-- 🔲 L1 **references.cross-reference** [control] → WO: openCrossref
-- 🔲 L1 **references.dlg-insert-caption** [dialog] (8 OO fields) → WO: insertCaption
-- 🔲 L1 **references.dlg-cross-reference** [dialog] (5 OO fields) → WO: openCrossref
-
-## plugins — 10 features (L0:1 L1:9 L3:0)
-- ❌ L0 **plugins.plugin-manager** [control] 
-- 🔲 L1 **plugins.background-plugins** [control] → WO: btn-bgplugins
-- 🔲 L1 **plugins.youtube** [control] → WO: pluginUnavailable
-- 🔲 L1 **plugins.ocr** [control] → WO: ocrRun
-- 🔲 L1 **plugins.translator** [control] → WO: aiTranslate
-- 🔲 L1 **plugins.mendeley** [control] → WO: pluginUnavailable
-- 🔲 L1 **plugins.highlight-code** [control] → WO: code
-- 🔲 L1 **plugins.zotero** [control] → WO: pluginUnavailable
-- 🔲 L1 **plugins.speech** [control] → WO: btn-speech
-- 🔲 L1 **plugins.speech-input** [control] → WO: dictate
+- ✅ L3 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
+- ✅ L3 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: symbol-dialog
 
 ## statusbar — 10 features (L0:1 L1:9 L3:0)
 - ❌ L0 **statusbar.btn-doc-spell** [statusbar-item] 
@@ -138,13 +115,13 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **formatting.clear-style** [control] → WO: removeFormat
 
 ## table — 10 features (L0:0 L1:7 L3:3)
-- 🔲 L1 **table.table-of-contents** [control] → WO: btn-toc
+- 🔲 L1 **table.table-of-contents** [control] → WO: updatetoc-dialog
 - 🔲 L1 **table.update-table** [control] → WO: updateToc
 - 🔲 L1 **table.table-of-figures** [control] → WO: insertToF
 - 🔲 L1 **table.draw-table** [menu-item] → WO: Draw table
 - 🔲 L1 **table.erase-table** [menu-item] → WO: Erase table
 - 🔲 L1 **table.dlg-table-of-figures** [dialog] (7 OO fields) → WO: insertToF
-- 🔲 L1 **table.dlg-table-of-contents** [dialog] (7 OO fields) → WO: btn-toc
+- 🔲 L1 **table.dlg-table-of-contents** [dialog] (7 OO fields) → WO: updatetoc-dialog
 - ✅ L3 **table.table** [control] → WO: Table ▾
 - ✅ L3 **table.insert-custom-table** [menu-item] → WO: btn-table
 - ✅ L3 **table.convert-text-to-table** [menu-item] → WO: Convert Text to Table…
@@ -197,8 +174,8 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **headerfooter.field** [control] → WO: btn-field
 - 🔲 L1 **headerfooter.close** [control] → WO: btn-hf-close
 - ✅ L3 **headerfooter.header-footer** [control] → WO: insertHeaderFooter
-- ✅ L3 **headerfooter.date-time** [control] → WO: btn-datetime
-- ✅ L3 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
+- ✅ L3 **headerfooter.date-time** [control] → WO: pagenumber-dialog
+- ✅ L3 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
 
 ## page — 49 features (L0:0 L1:49 L3:0)
 - 🔲 L1 **page.margins** [control] → WO: Margins
@@ -248,8 +225,19 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **page.hyphenation-options** [menu-item] → WO: Hyphenation options
 - 🔲 L1 **page.dlg-margins** [dialog] (8 OO fields) → WO: Margins
 - 🔲 L1 **page.dlg-page-size** [dialog] (3 OO fields) → WO: btn-multipage
-- 🔲 L1 **page.dlg-columns** [dialog] (5 OO fields) → WO: Columns
-- 🔲 L1 **page.dlg-hyphenation** [dialog] (2 OO fields) → WO: Hyphenation
+- 🔲 L1 **page.dlg-columns** [dialog] (5 OO fields) → WO: columns-dialog
+- 🔲 L1 **page.dlg-hyphenation** [dialog] (2 OO fields) → WO: hyphenation-dialog
+
+## references — 9 features (L0:0 L1:9 L3:0)
+- 🔲 L1 **references.add-text** [control] → WO: btn-addtext
+- 🔲 L1 **references.footnote** [control] → WO: insertFootnote
+- 🔲 L1 **references.link** [control] → WO: link
+- 🔲 L1 **references.bookmark** [control] → WO: bookmark-dialog
+- 🔲 L1 **references.caption** [control] → WO: insertCaption
+- 🔲 L1 **references.cross-reference** [control] → WO: crossref-dialog
+- 🔲 L1 **references.dlg-bookmarks** [dialog] (2 OO fields) → WO: bookmark-dialog
+- 🔲 L1 **references.dlg-insert-caption** [dialog] (8 OO fields) → WO: insertCaption
+- 🔲 L1 **references.dlg-cross-reference** [dialog] (5 OO fields) → WO: crossref-dialog
 
 ## protect — 2 features (L0:0 L1:2 L3:0)
 - 🔲 L1 **protect.encrypt** [control] → WO: protectDialog
@@ -269,6 +257,18 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **macros.macros** [control] → WO: btn-macro-menu
 - 🔲 L1 **macros.record-macro** [control] → WO: Record macro
 - 🔲 L1 **macros.dlg-macros** [dialog] (1 OO fields) → WO: btn-macro-menu
+
+## plugins — 10 features (L0:0 L1:10 L3:0)
+- 🔲 L1 **plugins.plugin-manager** [control] → WO: plugins-dialog
+- 🔲 L1 **plugins.background-plugins** [control] → WO: plugins-dialog
+- 🔲 L1 **plugins.youtube** [control] → WO: pluginUnavailable
+- 🔲 L1 **plugins.ocr** [control] → WO: ocrRun
+- 🔲 L1 **plugins.translator** [control] → WO: aiTranslate
+- 🔲 L1 **plugins.mendeley** [control] → WO: pluginUnavailable
+- 🔲 L1 **plugins.highlight-code** [control] → WO: code
+- 🔲 L1 **plugins.zotero** [control] → WO: pluginUnavailable
+- 🔲 L1 **plugins.speech** [control] → WO: btn-speech
+- 🔲 L1 **plugins.speech-input** [control] → WO: dictate
 
 ## other — 5 features (L0:0 L1:5 L3:0)
 - 🔲 L1 **other.settings** [control] → WO: aiSettings

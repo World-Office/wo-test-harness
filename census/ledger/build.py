@@ -91,7 +91,34 @@ ALIASES = {
     "multipage": "btn-multipage", "page": "btn-multipage",
     # backstage: OO File-screen section -> WO backstage row
     "protection": "protect",
+    # --- dialogs: OO dialog title -> WO dialog id (from census-wo-dialogs) ---
+    "bookmarks": "bookmark-dialog", "bookmark": "bookmark-dialog",
+    "plugin manager": "plugins-dialog", "plugins": "plugins-dialog",
+    "manage plugins": "plugins-dialog",
+    "cross reference": "crossref-dialog", "cross-reference": "crossref-dialog",
+    "date time": "pagenumber-dialog", "date & time": "pagenumber-dialog",
+    "table of contents": "toc-dialog", "toc": "toc-dialog",
 }
+
+# WO dialog surface index built after wo_dlg loads (below).
+# function must be defined before use in the dialogs loop.
+def wo_dialog_match(label: str):
+    """Best WO dialog for an OO label, by alias then id+title."""
+    n = norm(label)
+    for key, want in ALIASES.items():
+        if want.endswith("-dialog") and (key in n or n == key):
+            want_n = norm(want.replace("-dialog", ""))
+            for did, idn, dtitle in wo_dlgs:
+                if want_n in idn:
+                    return (did, "dialog:" + did)
+    for did, idn, dtitle in wo_dlgs:
+        if n and (n in idn or idn in n):
+            return (did, "dialog:" + did)
+    # match by readable title too
+    for did, idn, dtitle in wo_dlgs:
+        if n and dtitle and (n == norm(dtitle) or n in norm(dtitle) or norm(dtitle) in n):
+            return (did, "dialog:" + did)
+    return None
 
 # noise: never ledger-worthy surfaces
 NOISE = re.compile(r"^(asc-|0 x |x )|[0-9]+ x [0-9]+", re.I)
@@ -142,6 +169,13 @@ oo_deep = json.load(open(CEN / "census-oo-deep.json"))
 oo_dlg = json.load(open(CEN / "census-oo-dialogs.json"))
 oo_int = json.load(open(CEN / "census-oo-interactions.json"))
 wo_deep = json.load(open(CEN / "census-wo-deep.json"))
+wo_dlg = json.load(open(CEN / "census-wo-dialogs.json")) if (CEN / "census-wo-dialogs.json").exists() else {"dialogs": []}
+
+# WO dialog surface index: (id, title) for every censused WO dialog.
+wo_dlgs = []   # list of (id, titleNorm, title)
+for e in wo_dlg.get("dialogs", []):
+    tid = (e.get("id") or "").replace("-dialog", "")
+    wo_dlgs.append((e.get("id", ""), norm(tid), e.get("title", "")))
 
 # WO surface index: labels + data-cmds, for matching
 wo_labels = []   # (cluster, label, data_cmd, surface)
@@ -157,6 +191,11 @@ for it in (wo_deep.get("backstage") or []):
 for it in (wo_deep.get("statusBar") or []):
     if isinstance(it, dict) and (it.get("label") or it.get("id")):
         wo_labels.append(("statusbar", it.get("label", ""), it.get("id", ""), "statusbar"))
+
+# fold WO dialogs into the general surface index so control/menu rows can
+# match them too (e.g. OO ribbon 'Plugin\nManager' -> 'plugins-dialog').
+for did, idn, dtitle in wo_dlgs:
+    wo_labels.append((cluster_of("", did), did, did, "dialog:" + did))
 
 def wo_match(label: str, cluster: str):
     """Best WO surface for an OO label. Returns (dataCmd/label, where) or None."""
@@ -239,7 +278,7 @@ for e in oo_dlg.get("dialogs", []):
     fields = [f.get("label", "") for f in d.get("fields", []) if f.get("label")]
     add(fid, cl, {"surface": f"dialog:{title}", "trigger": trig, "label": title,
                   "fields": fields, "buttons": d.get("buttons", [])}, "dialog")
-    w = wo_match(title, cl)
+    w = wo_dialog_match(title) or wo_match(title, cl)
     if w:
         ledger[fid]["wo"] = {"match": w[0], "where": w[1]}
         ledger[fid]["level"] = 1
