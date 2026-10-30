@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generated": "2026-10-29T21:02:16.032Z",
+  "generated": "2026-10-30T07:02:02.820Z",
   "source": "sdkjs/word/Editor/Shortcuts.js (147 types) vs WO editor keydown handler",
   "engine": "static-parse",
   "totals": {
-    "matched": 45,
-    "diverged": 5,
-    "browser-native": 15,
+    "matched": 46,
+    "diverged": 6,
+    "browser-native": 17,
     "nav": 71,
-    "missing": 11,
+    "missing": 7,
     "total": 147
   },
   "shortcuts": [
@@ -273,26 +273,26 @@
     {
       "type": "SpecialOptionsKeepSourceFormat",
       "combo": "Ctrl+K",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "diverged",
+      "wo": "Ctrl+V default rich paste; Ctrl+K = hyperlink (OO collision)"
     },
     {
       "type": "SpecialOptionsKeepTextOnly",
       "combo": "Ctrl+T",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+T plain-text paste (clipboard.readText -> insertText)"
     },
     {
       "type": "SpecialOptionsOverwriteCells",
       "combo": "Ctrl+O",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "browser-native",
+      "wo": "Ctrl+O consumed by browser (open file); spreadsheet cell semantics n/a"
     },
     {
       "type": "SpecialOptionsNestTable",
       "combo": "Ctrl+N",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "browser-native",
+      "wo": "Ctrl+N consumed by browser (new window)"
     },
     {
       "type": "InsertHyperlink",

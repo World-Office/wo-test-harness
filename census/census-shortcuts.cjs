@@ -98,6 +98,15 @@ const WO = {
   Cut: { v: "browser-native", wb: "Ctrl+X / Cmd+X" },
   Paste: { v: "browser-native", wb: "Ctrl+V / Cmd+V" },
   PasteTextWithoutFormat: { v: "browser-native", wb: "Ctrl+Shift+V" },
+  // Paste options (2026-10-29): measured — Chromium delivers Ctrl+T/K but
+  // consumes Ctrl+N/O at the browser. Keep-text-only (Ctrl+T) is implemented;
+  // keep-source (Ctrl+K) is the default rich paste but the combo is taken by
+  // the hyperlink binding (OO collision); cell-overwrite/nest-table are
+  // spreadsheet paste semantics (WO is a word editor) AND browser-kept.
+  SpecialOptionsKeepSourceFormat: { v: "diverged", wb: "Ctrl+V default rich paste; Ctrl+K = hyperlink (OO collision)" },
+  SpecialOptionsKeepTextOnly: { v: "matched", wb: "Ctrl+T plain-text paste (clipboard.readText -> insertText)" },
+  SpecialOptionsOverwriteCells: { v: "browser-native", wb: "Ctrl+O consumed by browser (open file); spreadsheet cell semantics n/a" },
+  SpecialOptionsNestTable: { v: "browser-native", wb: "Ctrl+N consumed by browser (new window)" },
   EditSelectAll: { v: "browser-native", wb: "Ctrl+A" },
   EditShape: { v: "browser-native", wb: "Enter edits object" },
   EditChart: { v: "browser-native", wb: "Enter edits object" },

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-30T07:51:34.056014",
+ "generated": "2026-10-30T08:02:12.315658",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,8 +9,8 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 32,
-  "L1": 449,
+  "L0": 28,
+  "L1": 453,
   "L2": 0,
   "L3": 20,
   "L4": 0
@@ -5553,10 +5553,13 @@
      "label": "SpecialOptionsKeepSourceFormat"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Ctrl+V default rich paste; Ctrl+K = hyperlink (OO collision)",
+    "where": "shortcut"
+   },
+   "level": 1,
    "evidence": [
-    "OO bind Ctrl+K: no WO keydown handler"
+    "WO uses different combo: Ctrl+V default rich paste; Ctrl+K = hyperlink (OO collision)"
    ]
   },
   {
@@ -5571,11 +5574,12 @@
      "label": "SpecialOptionsKeepTextOnly"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+T: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+T plain-text paste (clipboard.readText -> insertText)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.specialoptionsoverwritecells",
@@ -5589,10 +5593,13 @@
      "label": "SpecialOptionsOverwriteCells"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Ctrl+O consumed by browser (open file); spreadsheet cell semantics n/a",
+    "where": "shortcut"
+   },
+   "level": 1,
    "evidence": [
-    "OO bind Ctrl+O: no WO keydown handler"
+    "Ctrl+O consumed by browser (open file); spreadsheet cell semantics n/a"
    ]
   },
   {
@@ -5607,10 +5614,13 @@
      "label": "SpecialOptionsNestTable"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Ctrl+N consumed by browser (new window)",
+    "where": "shortcut"
+   },
+   "level": 1,
    "evidence": [
-    "OO bind Ctrl+N: no WO keydown handler"
+    "Ctrl+N consumed by browser (new window)"
    ]
   },
   {
