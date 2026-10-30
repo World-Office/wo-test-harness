@@ -1080,7 +1080,7 @@
    "oo": "Set numbering value",
    "oo_var": "textStartNumberingFrom",
    "verdict": "matched",
-   "wo": "ctx data-ctx=SetNumberingValue",
+   "wo": "ctx data-ctx=SetNumberingValue -> NumberingValueDialog + applyNumberingValue (native ol split, restart at N)",
    "group": null,
    "lead": false
   },
@@ -1088,7 +1088,7 @@
    "oo": "Continue numbering",
    "oo_var": "textContinueNumbering",
    "verdict": "matched",
-   "wo": "ctx data-ctx=ContinueNumbering",
+   "wo": "ctx data-ctx=ContinueNumbering -> continueNumbering (native ol merge)",
    "group": null,
    "lead": false
   },

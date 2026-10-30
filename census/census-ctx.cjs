@@ -92,8 +92,8 @@ const MAP = {
   // ---- lists ----
   bulletsText: ["diverged", "ribbon bullet/numbered buttons (bullets-and-numbering dialog absent)"],
   textStartNewList: ["matched", "ctx data-ctx=StartNewList"],
-  textStartNumberingFrom: ["matched", "ctx data-ctx=SetNumberingValue"],
-  textContinueNumbering: ["matched", "ctx data-ctx=ContinueNumbering"],
+  textStartNumberingFrom: ["matched", "ctx data-ctx=SetNumberingValue -> NumberingValueDialog + applyNumberingValue (native ol split, restart at N)"],
+  textContinueNumbering: ["matched", "ctx data-ctx=ContinueNumbering -> continueNumbering (native ol merge)"],
   textIndents: ["matched", "ctx data-ctx=AdjustListIndents"],
 
   // ---- styles ----
