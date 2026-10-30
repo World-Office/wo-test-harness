@@ -1,0 +1,1344 @@
+{
+ "source": "OO web-apps/.../view/DocumentHolderExt.js (5 scenario menus, 302 MenuItems) vs WO #ctx-menu (75 data-ctx actions)",
+ "totals": {
+  "rows": 166,
+  "matched": 71,
+  "diverged": 32,
+  "browser-native": 0,
+  "nav": 1,
+  "missing": 12,
+  "n_a": 50
+ },
+ "ledger_rows": 116,
+ "chart_groups": [],
+ "rows": [
+  {
+   "oo": "Insert caption",
+   "oo_var": "txtInsertCaption",
+   "verdict": "diverged",
+   "wo": "ctx data-ctx=Caption + Home tab caption (table/text figcaption; object binding differs)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "--",
+   "oo_var": "\", \"literal",
+   "verdict": "n/a",
+   "wo": "uncatalogued spare caption",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Save as picture",
+   "oo_var": "textSaveAsPicture",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=SaveAsPicture -> objectOp save-as-picture",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Align",
+   "oo_var": "textAlign",
+   "verdict": "n/a",
+   "wo": "container (shape align)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Align left",
+   "oo_var": "textShapeAlignLeft",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp align-left",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Align center",
+   "oo_var": "textShapeAlignCenter",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp align-center",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Align right",
+   "oo_var": "textShapeAlignRight",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp align-right",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Align top",
+   "oo_var": "textShapeAlignTop",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp align-top",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Align middle",
+   "oo_var": "textShapeAlignMiddle",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp align-middle",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Align bottom",
+   "oo_var": "textShapeAlignBottom",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp align-bottom",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Distribute horizontally",
+   "oo_var": "txtDistribHor",
+   "verdict": "missing",
+   "wo": "distribute horizontally — no WO action",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Distribute vertically",
+   "oo_var": "txtDistribVert",
+   "verdict": "missing",
+   "wo": "distribute vertically — no WO action",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Merge shapes",
+   "oo_var": "textShapesMerge",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp merge-union/intersect/subtract",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Axes",
+   "oo_var": "textAxes",
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Axes (chartElement axes)",
+   "group": "chart.axes",
+   "lead": false
+  },
+  {
+   "oo": "Horizontal axis",
+   "oo_var": "textHorAxis",
+   "verdict": "n/a",
+   "wo": "chart.axes child",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Vertical axis",
+   "oo_var": "textVertAxis",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Secondary horizontal axis",
+   "oo_var": "textHorAxisSec",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Secondary vertical axis",
+   "oo_var": "textVertAxisSec",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Z axis",
+   "oo_var": "DepthAxis",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Axis Titles",
+   "oo_var": "textAxisTitles",
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Axis Titles (chartElement axisTitles)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Chart Title",
+   "oo_var": "textChartTitle",
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Chart title (chartElement title)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "None",
+   "oo_var": "textNone",
+   "verdict": "n/a",
+   "wo": "option",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "No overlay",
+   "oo_var": "textNoOverlay",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Overlay",
+   "oo_var": "textOverlay",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Data labels",
+   "oo_var": "textDataLabels",
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Data labels (chartElement dataLabels)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Center",
+   "oo_var": "textCenter",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Inner bottom",
+   "oo_var": "textInnerBottom",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Inner top",
+   "oo_var": "textInnerTop",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Outer top",
+   "oo_var": "textOuterTop",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Top",
+   "oo_var": "textTop",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Left",
+   "oo_var": "textLeftPos",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Right",
+   "oo_var": "textRight",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Bottom",
+   "oo_var": "textBottom",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Fit to width",
+   "oo_var": "textFit",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Data Table",
+   "oo_var": "textDataTable",
+   "verdict": "matched",
+   "wo": "chartElement dataTable toggle renders data table in chartSVG",
+   "group": "chart.datatable",
+   "lead": true
+  },
+  {
+   "oo": "Show Data Table",
+   "oo_var": "textShowDataTable",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Show Legend Keys",
+   "oo_var": "textShowLegendKeys",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Error Bars",
+   "oo_var": "textErrorBars",
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Error bars (chartElement errorBars)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Standard Error",
+   "oo_var": "textStandardError",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Percentage",
+   "oo_var": "txtPercentage",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Standard Deviation",
+   "oo_var": "textStandardDeviation",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Gridlines",
+   "oo_var": "textGridLines",
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Gridlines (chartElement gridlines)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Horizontal Major",
+   "oo_var": "textHorizontalMajor",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Vertical Major",
+   "oo_var": "textVerticalMajor",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Horizontal Minor",
+   "oo_var": "textHorizontalMinor",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Vertical Minor",
+   "oo_var": "textVerticalMinor",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Legend",
+   "oo_var": "textLegendPos",
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Legend (chartElement legend)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Left overlay",
+   "oo_var": "textLeftOverlay",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Right overlay",
+   "oo_var": "textRightOverlay",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Trendline",
+   "oo_var": "textTrendline",
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Trendline (chartElement trendline)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Linear",
+   "oo_var": "textLinear",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Exponential",
+   "oo_var": "textExponential",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Linear Forecast",
+   "oo_var": "textLinearForecast",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Moving Average (2)",
+   "oo_var": "textMovingAverage",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": " Up/Down Bars",
+   "oo_var": "textUpDownBars",
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Up/Down bars (chartElement upDownBars)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Show Up/Down Bars",
+   "oo_var": "textShowUpDown",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Arrange",
+   "oo_var": "textArrange",
+   "verdict": "n/a",
+   "wo": "container",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Bring to foreground",
+   "oo_var": "textArrangeFront",
+   "verdict": "matched",
+   "wo": "Layout tab objectOp bring-to-foreground",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Send to background",
+   "oo_var": "textArrangeBack",
+   "verdict": "matched",
+   "wo": "Layout tab objectOp send-to-background",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Bring forward",
+   "oo_var": "textArrangeForward",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp bring-forward",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Send backward",
+   "oo_var": "textArrangeBackward",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp send-backward",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Edit wrap boundary",
+   "oo_var": "textEditWrapBoundary",
+   "verdict": "missing",
+   "wo": "edit wrap boundary — no WO action",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Wrapping style",
+   "oo_var": "textWrap",
+   "verdict": "n/a",
+   "wo": "container",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "In line with text",
+   "oo_var": "txtInline",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=WrapInline",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Square",
+   "oo_var": "txtSquare",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=WrapSquare",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Tight",
+   "oo_var": "txtTight",
+   "verdict": "missing",
+   "wo": "wrap tight — unmodeled text-flow wrap (oo-only)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Through",
+   "oo_var": "txtThrough",
+   "verdict": "missing",
+   "wo": "wrap through — unmodeled text-flow wrap (oo-only)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Top and bottom",
+   "oo_var": "txtTopAndBottom",
+   "verdict": "diverged",
+   "wo": "obj-center block flow (top-and-bottom ≈ own-line block)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "In front of text",
+   "oo_var": "txtInFront",
+   "verdict": "missing",
+   "wo": "wrap in front — unmodeled absolute float (oo-only)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Behind text",
+   "oo_var": "txtBehind",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=WrapBehind",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Advanced settings",
+   "oo_var": "advancedText",
+   "verdict": "n/a",
+   "wo": "container",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Edit data",
+   "oo_var": "editChartText",
+   "verdict": "diverged",
+   "wo": "Chart Design tab chartEditData -> openVectorEditor(chart)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Actual size",
+   "oo_var": "originalSizeText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=ActualSize -> objectOp actual-size",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Convert to shape",
+   "oo_var": "textConvertToShape",
+   "verdict": "missing",
+   "wo": "convert image/curve to shape — no WO action (caption display: Convert to shape)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Replace image",
+   "oo_var": "textReplace",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=ReplaceImage -> objectOp replace-image (image-dialog)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Copy",
+   "oo_var": "textCopy",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=Copy",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Paste",
+   "oo_var": "textPaste",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=Paste",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Cut",
+   "oo_var": "textCut",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=Cut",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Accept change",
+   "oo_var": "textAccept",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=AcceptChange",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Reject change",
+   "oo_var": "textReject",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=RejectChange",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Print selection",
+   "oo_var": "txtPrintSelection",
+   "verdict": "diverged",
+   "wo": "Print button / Ctrl+P (browser print; no ctx item)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Rotate",
+   "oo_var": "textRotate",
+   "verdict": "diverged",
+   "wo": "right panel rp-image-rotate (applyImageRotate90)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Crop",
+   "oo_var": "textCrop",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=Crop -> photo editor crop tool (drag + Apply)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Fill",
+   "oo_var": "textCropFill",
+   "verdict": "n/a",
+   "wo": "crop sub-option, covered by Crop tool",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Fit",
+   "oo_var": "textCropFit",
+   "verdict": "n/a",
+   "wo": "crop sub-option, covered by Crop tool",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Reset crop",
+   "oo_var": "textResetCrop",
+   "verdict": "n/a",
+   "wo": "crop sub-option; photo-editor Reset clears crop",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Remove content control",
+   "oo_var": "textRemoveControl",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=RemoveContentControl",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Content control settings",
+   "oo_var": "textEditControls",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=ContentControlSettings",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Edit points",
+   "oo_var": "textEditPoints",
+   "verdict": "missing",
+   "wo": "vertex editing — no WO action",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Edit object",
+   "oo_var": "textEditObject",
+   "verdict": "missing",
+   "wo": "edit embedded object — no WO action",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Link",
+   "oo_var": "hyperlinkText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=Link",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Edit link",
+   "oo_var": "editHyperlinkText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=EditLink",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Copy hyperlink address",
+   "oo_var": "copyHyperlinkText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=CopyHyperlinkAddress (clipboard)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Remove link",
+   "oo_var": "removeHyperlinkText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=RemoveLink",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Resize to cell",
+   "oo_var": "textStretchControl",
+   "verdict": "missing",
+   "wo": "resize content control to cell — no WO action",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Horizontal line settings",
+   "oo_var": "textHorizontalLineSettings",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=HorizontalLineSettings -> hr-settings-dialog (style insert/edit)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Merge cells",
+   "oo_var": "mergeCellsText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TableMergeCells",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Split cell...",
+   "oo_var": "splitCellsText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TableSplitCell",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Text alignment",
+   "oo_var": "AlignText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TextAlignment",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Top",
+   "oo_var": "AlignTop",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TextAlignTop",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Middle",
+   "oo_var": "AlignMiddle",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TextAlignMiddle",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Bottom",
+   "oo_var": "AlignBottom",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TextAlignBottom",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Left",
+   "oo_var": "AlignLeft",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TextAlignLeft",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Center",
+   "oo_var": "AlignCenter",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TextAlignCenter",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Right",
+   "oo_var": "AlignRight",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TextAlignRight",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Justify",
+   "oo_var": "AlignJust",
+   "verdict": "diverged",
+   "wo": "ribbon data-cmd=justifyFull (not in WO ctx)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Table advanced settings",
+   "oo_var": "advancedTableText",
+   "verdict": "diverged",
+   "wo": "table-ops-dialog (WO table settings surface)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Paragraph advanced settings",
+   "oo_var": "advancedParagraphText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=ParagraphSettings",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Formatting as Style",
+   "oo_var": "styleText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=FormattingAsStyle",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Create new style",
+   "oo_var": "saveStyleText",
+   "verdict": "diverged",
+   "wo": "ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-save owned by host shell)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Update %1 style",
+   "oo_var": "updateStyleText",
+   "verdict": "diverged",
+   "wo": "ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-update owned by host shell)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Remove",
+   "oo_var": "textRemove",
+   "verdict": "n/a",
+   "wo": "uncatalogued spare caption",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Settings",
+   "oo_var": "textSettings",
+   "verdict": "n/a",
+   "wo": "uncatalogued spare caption",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Content control",
+   "oo_var": "textContentControls",
+   "verdict": "n/a",
+   "wo": "uncatalogued spare caption",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Table of contents",
+   "oo_var": "textTOC",
+   "verdict": "n/a",
+   "wo": "container -> TOC dialog (toc-dialog exists)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Update entire table",
+   "oo_var": "textUpdateAll",
+   "verdict": "diverged",
+   "wo": "ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Update page numbers only",
+   "oo_var": "textUpdatePages",
+   "verdict": "diverged",
+   "wo": "UpdateTOC dialog — toc-update select has 'Update page numbers only' option (refreshToc relinks; page numbers are live-preview links)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Add comment",
+   "oo_var": "addCommentText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=AddComment",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Follow move",
+   "oo_var": "textFollow",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=FollowMove",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Loading variants...",
+   "oo_var": "loadSpellText",
+   "verdict": "n/a",
+   "wo": "loading placeholder",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "More variants...",
+   "oo_var": "moreText",
+   "verdict": "n/a",
+   "wo": "container",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Select language",
+   "oo_var": "langText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=SelectLanguage",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Ignore",
+   "oo_var": "ignoreSpellText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=Ignore",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Ignore all",
+   "oo_var": "ignoreAllSpellText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=IgnoreAll",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Add to dictionary",
+   "oo_var": "toDictionaryText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=AddToDictionary",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Spellcheck",
+   "oo_var": "spellcheckText",
+   "verdict": "diverged",
+   "wo": "Review ribbon spellcheck / F7 (not in ctx)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Distribute rows",
+   "oo_var": "textDistributeRows",
+   "verdict": "missing",
+   "wo": "distribute rows evenly — no WO action",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Distribute columns",
+   "oo_var": "textDistributeCols",
+   "verdict": "missing",
+   "wo": "distribute columns evenly — no WO action",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Text direction",
+   "oo_var": "directionText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TextDirection",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Horizontal",
+   "oo_var": "directHText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TextDirHorizontal",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Rotate text down",
+   "oo_var": "direct90Text",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TextDirRotateDown",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Rotate text up",
+   "oo_var": "direct270Text",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TextDirRotateUp",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Start new list",
+   "oo_var": "textStartNewList",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=StartNewList",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Set numbering value",
+   "oo_var": "textStartNumberingFrom",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=SetNumberingValue -> NumberingValueDialog + applyNumberingValue (native ol split, restart at N)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Continue numbering",
+   "oo_var": "textContinueNumbering",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=ContinueNumbering -> continueNumbering (native ol merge)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Adjust list indents",
+   "oo_var": "textIndents",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=AdjustListIndents -> ListIndentsDialog + applyListIndents (margin-left/text-indent, round-trips as w:ind left/hanging)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Bullets and numbering",
+   "oo_var": "bulletsText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=BulletsAndNumbering -> BulletsNumberingDialog (list-style-type + start; round-trips as w:numFmt)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Update field",
+   "oo_var": "textRefreshField",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=UpdateField",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Edit field",
+   "oo_var": "textEditField",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=EditField",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Toggle field codes",
+   "oo_var": "textFieldCodes",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=ToggleFieldCodes",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Equation settings",
+   "oo_var": "advancedEquationText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=EquationSettings",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Select",
+   "oo_var": "selectText",
+   "verdict": "nav",
+   "wo": "browser native selection",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Row",
+   "oo_var": "rowText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TableDeleteRow",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Column",
+   "oo_var": "columnText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TableDeleteCol",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Cell",
+   "oo_var": "cellText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TableDeleteCell -> deleteTableCell (shift left + row cleanup)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Table",
+   "oo_var": "tableText",
+   "verdict": "n/a",
+   "wo": "container",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Insert",
+   "oo_var": "insertText",
+   "verdict": "n/a",
+   "wo": "container",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Column left",
+   "oo_var": "insertColumnLeftText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TableColLeft",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Column right",
+   "oo_var": "insertColumnRightText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TableColRight",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Row above",
+   "oo_var": "insertRowAboveText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TableRowAbove",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Row below",
+   "oo_var": "insertRowBelowText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TableRowBelow",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Several rows/columns",
+   "oo_var": "textSeveral",
+   "verdict": "matched",
+   "wo": "table-ops dialog Insert several rows/cols (op-apply-rows/op-apply-cols; insertTableRow/Col count)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Delete",
+   "oo_var": "deleteText",
+   "verdict": "n/a",
+   "wo": "container",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Cells",
+   "oo_var": "textCells",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TableDeleteCell -> deleteTableCell (single-cell surface; OO multi-cell selection collapses to one)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Page break before",
+   "oo_var": "breakBeforeText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=PageBreakBefore",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Keep lines together",
+   "oo_var": "keepLinesText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=KeepLines",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Frame advanced settings",
+   "oo_var": "advancedFrameText",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=FrameSettings",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Drop cap settings",
+   "oo_var": "advancedDropCapText",
+   "verdict": "matched",
+   "wo": "dropcap-dialog (btn/ctx)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Table of contents settings",
+   "oo_var": "textTOCSettings",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TocSettings",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Update table of contents",
+   "oo_var": "textUpdateTOC",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=UpdateTOC",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Edit header",
+   "oo_var": "editHeaderText",
+   "verdict": "diverged",
+   "wo": "Insert ribbon header/footer + headerfooter-dialog (not in ctx)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Undo",
+   "oo_var": "textUndo",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=Undo",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Redo",
+   "oo_var": "textRedo",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=Redo",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Clear field",
+   "oo_var": "textClearField",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=ClearField (empties page-number/[data-field])",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Group",
+   "oo_var": "txtGroup",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp group (groupSelectedObjects)",
+   "group": null,
+   "lead": false
+  },
+  {
+   "oo": "Ungroup",
+   "oo_var": "txtUngroup",
+   "verdict": "matched",
+   "wo": "Layout tab objectOp ungroup (ungroupSelectedObjects)",
+   "group": null,
+   "lead": false
+  }
+ ]
+}
