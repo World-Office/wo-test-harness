@@ -6,7 +6,7 @@ Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
 
-## edit — 136 features (L0:16 L1:120 L3:0)
+## edit — 136 features (L0:13 L1:123 L3:0)
 - ❌ L0 **ctx.distribute-horizontally** [ctx-menu] 
 - ❌ L0 **ctx.distribute-vertically** [ctx-menu] 
 - ❌ L0 **ctx.edit-wrap-boundary** [ctx-menu] 
@@ -17,9 +17,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ❌ L0 **ctx.edit-points** [ctx-menu] 
 - ❌ L0 **ctx.edit-object** [ctx-menu] 
 - ❌ L0 **ctx.resize-to-cell** [ctx-menu] 
-- ❌ L0 **ctx.horizontal-line-settings** [ctx-menu] 
-- ❌ L0 **ctx.create-new-style** [ctx-menu] 
-- ❌ L0 **ctx.update-1-style** [ctx-menu] 
 - ❌ L0 **ctx.update-page-numbers-only** [ctx-menu] 
 - ❌ L0 **ctx.cell** [ctx-menu] 
 - ❌ L0 **ctx.cells** [ctx-menu] 
@@ -92,6 +89,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.edit-link** [ctx-menu] → WO: ctx data-ctx=EditLink
 - 🔲 L1 **ctx.copy-hyperlink-address** [ctx-menu] → WO: ctx data-ctx=CopyHyperlinkAddress (clipboard)
 - 🔲 L1 **ctx.remove-link** [ctx-menu] → WO: ctx data-ctx=RemoveLink
+- 🔲 L1 **ctx.horizontal-line-settings** [ctx-menu] → WO: ctx data-ctx=HorizontalLineSettings -> hr-settings-dialog (style insert/edit)
 - 🔲 L1 **ctx.text-alignment** [ctx-menu] → WO: ctx data-ctx=TextAlignment
 - 🔲 L1 **ctx.top** [ctx-menu] → WO: ctx data-ctx=TextAlignTop
 - 🔲 L1 **ctx.middle** [ctx-menu] → WO: ctx data-ctx=TextAlignMiddle
@@ -103,6 +101,8 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.table-advanced-settings** [ctx-menu] → WO: table-ops-dialog (WO table settings surface)
 - 🔲 L1 **ctx.paragraph-advanced-settings** [ctx-menu] → WO: ctx data-ctx=ParagraphSettings
 - 🔲 L1 **ctx.formatting-as-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle
+- 🔲 L1 **ctx.create-new-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-save owned by host shell)
+- 🔲 L1 **ctx.update-1-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-update owned by host shell)
 - 🔲 L1 **ctx.update-entire-table** [ctx-menu] → WO: ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)
 - 🔲 L1 **ctx.add-comment** [ctx-menu] → WO: ctx data-ctx=AddComment
 - 🔲 L1 **ctx.follow-move** [ctx-menu] → WO: ctx data-ctx=FollowMove
@@ -185,23 +185,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.updatefields** [shortcut] → WO: F9 (fieldOpAtSelection update)
 - 🔲 L1 **shortcut.openchatpanel** [shortcut] → WO: Ctrl+Alt+Q
 
-## table — 15 features (L0:3 L1:9 L3:3)
-- ❌ L0 **ctx.distribute-rows** [ctx-menu] 
-- ❌ L0 **ctx.distribute-columns** [ctx-menu] 
-- ❌ L0 **ctx.several-rows-columns** [ctx-menu] 
-- 🔲 L1 **table.table-of-contents** [control] → WO: updatetoc-dialog
-- 🔲 L1 **table.update-table** [control] → WO: updateToc
-- 🔲 L1 **table.table-of-figures** [control] → WO: insertToF
-- 🔲 L1 **table.draw-table** [menu-item] → WO: Draw table
-- 🔲 L1 **table.erase-table** [menu-item] → WO: Erase table
-- 🔲 L1 **table.dlg-table-of-figures** [dialog] (7 OO fields) → WO: insertToF
-- 🔲 L1 **table.dlg-table-of-contents** [dialog] (7 OO fields) → WO: updatetoc-dialog
-- 🔲 L1 **ctx.merge-cells** [ctx-menu] → WO: ctx data-ctx=TableMergeCells
-- 🔲 L1 **ctx.split-cell** [ctx-menu] → WO: ctx data-ctx=TableSplitCell
-- ✅ L3 **table.table** [control] → WO: Table ▾
-- ✅ L3 **table.insert-custom-table** [menu-item] → WO: btn-table
-- ✅ L3 **table.convert-text-to-table** [menu-item] → WO: Convert Text to Table…
-
 ## insert — 56 features (L0:2 L1:48 L3:6)
 - ❌ L0 **insert.insert-spreadsheet** [menu-item] 
 - ❌ L0 **shortcut.nonbreakinghyphen** [shortcut] 
@@ -260,6 +243,23 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
 - ✅ L3 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: symbol-dialog
 
+## table — 15 features (L0:2 L1:10 L3:3)
+- ❌ L0 **ctx.distribute-rows** [ctx-menu] 
+- ❌ L0 **ctx.distribute-columns** [ctx-menu] 
+- 🔲 L1 **table.table-of-contents** [control] → WO: updatetoc-dialog
+- 🔲 L1 **table.update-table** [control] → WO: updateToc
+- 🔲 L1 **table.table-of-figures** [control] → WO: insertToF
+- 🔲 L1 **table.draw-table** [menu-item] → WO: Draw table
+- 🔲 L1 **table.erase-table** [menu-item] → WO: Erase table
+- 🔲 L1 **table.dlg-table-of-figures** [dialog] (7 OO fields) → WO: insertToF
+- 🔲 L1 **table.dlg-table-of-contents** [dialog] (7 OO fields) → WO: updatetoc-dialog
+- 🔲 L1 **ctx.merge-cells** [ctx-menu] → WO: ctx data-ctx=TableMergeCells
+- 🔲 L1 **ctx.split-cell** [ctx-menu] → WO: ctx data-ctx=TableSplitCell
+- 🔲 L1 **ctx.several-rows-columns** [ctx-menu] → WO: table-ops dialog Insert several rows/cols (op-apply-rows/op-apply-cols; insertTableRow/Col count)
+- ✅ L3 **table.table** [control] → WO: Table ▾
+- ✅ L3 **table.insert-custom-table** [menu-item] → WO: btn-table
+- ✅ L3 **table.convert-text-to-table** [menu-item] → WO: Convert Text to Table…
+
 ## formatting — 53 features (L0:1 L1:44 L3:8)
 - ❌ L0 **shortcut.strikeout** [shortcut] 
 - 🔲 L1 **formatting.font** [control] → WO: font-family
@@ -314,28 +314,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **formatting.superscript-ctrl** [control] → WO: superscript
 - ✅ L3 **formatting.subscript-ctrl** [control] → WO: subscript
 - ✅ L3 **formatting.clear-style** [control] → WO: removeFormat
-
-## chart — 20 features (L0:1 L1:19 L3:0)
-- ❌ L0 **ctx.chart.datatable** [ctx-menu] 
-- 🔲 L1 **chart.chart** [control] → WO: insertObject
-- 🔲 L1 **chart.chart-elements** [control] → WO: Chart elements ▾
-- 🔲 L1 **chart.edit-data** [control] → WO: chartEditData
-- 🔲 L1 **chart.update-data** [control] → WO: chartUpdateData
-- 🔲 L1 **chart.chart-type** [control] → WO: Chart type ▾
-- 🔲 L1 **chart.advanced-settings** [control] → WO: chartSettings
-- 🔲 L1 **chart.wrapping** [control] → WO: Wrapping
-- 🔲 L1 **chart.width** [control] → WO: chart-width-input
-- 🔲 L1 **chart.height** [control] → WO: chart-height-input
-- 🔲 L1 **chart.3d-rotation** [control] → WO: chart3d
-- 🔲 L1 **chart.axes** [menu-item] → WO: Axes
-- 🔲 L1 **chart.axis-titles** [menu-item] → WO: Axis Titles
-- 🔲 L1 **chart.chart-title** [menu-item] → WO: Chart title
-- 🔲 L1 **chart.data-labels** [menu-item] → WO: Data labels
-- 🔲 L1 **chart.error-bars** [menu-item] → WO: Error Bars
-- 🔲 L1 **chart.gridlines** [menu-item] → WO: btn-gridlines
-- 🔲 L1 **chart.legend** [menu-item] → WO: Legend
-- 🔲 L1 **chart.trendline** [menu-item] → WO: Trendline
-- 🔲 L1 **chart.up-down-bars** [menu-item] → WO: Up/Down Bars
 
 ## shortcuts — 62 features (L0:1 L1:61 L3:0)
 - ❌ L0 **shortcut.replaceunicodetosymbol** [shortcut] 
@@ -404,6 +382,28 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 ## image — 2 features (L0:0 L1:2 L3:0)
 - 🔲 L1 **image.image** [control] → WO: btn-hf-image
 - 🔲 L1 **image.photo-editor** [control] → WO: photoEditor
+
+## chart — 20 features (L0:0 L1:20 L3:0)
+- 🔲 L1 **chart.chart** [control] → WO: insertObject
+- 🔲 L1 **chart.chart-elements** [control] → WO: Chart elements ▾
+- 🔲 L1 **chart.edit-data** [control] → WO: chartEditData
+- 🔲 L1 **chart.update-data** [control] → WO: chartUpdateData
+- 🔲 L1 **chart.chart-type** [control] → WO: Chart type ▾
+- 🔲 L1 **chart.advanced-settings** [control] → WO: chartSettings
+- 🔲 L1 **chart.wrapping** [control] → WO: Wrapping
+- 🔲 L1 **chart.width** [control] → WO: chart-width-input
+- 🔲 L1 **chart.height** [control] → WO: chart-height-input
+- 🔲 L1 **chart.3d-rotation** [control] → WO: chart3d
+- 🔲 L1 **chart.axes** [menu-item] → WO: Axes
+- 🔲 L1 **chart.axis-titles** [menu-item] → WO: Axis Titles
+- 🔲 L1 **chart.chart-title** [menu-item] → WO: Chart title
+- 🔲 L1 **chart.data-labels** [menu-item] → WO: Data labels
+- 🔲 L1 **chart.error-bars** [menu-item] → WO: Error Bars
+- 🔲 L1 **chart.gridlines** [menu-item] → WO: btn-gridlines
+- 🔲 L1 **chart.legend** [menu-item] → WO: Legend
+- 🔲 L1 **chart.trendline** [menu-item] → WO: Trendline
+- 🔲 L1 **chart.up-down-bars** [menu-item] → WO: Up/Down Bars
+- 🔲 L1 **ctx.chart.datatable** [ctx-menu] → WO: chartElement dataTable toggle renders data table in chartSVG
 
 ## review — 16 features (L0:0 L1:16 L3:0)
 - 🔲 L1 **review.comment** [control] → WO: insertComment

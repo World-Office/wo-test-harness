@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-30T08:02:12.315658",
+ "generated": "2026-10-30T08:10:24.882868",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,8 +9,8 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 28,
-  "L1": 453,
+  "L0": 23,
+  "L1": 458,
   "L2": 0,
   "L3": 20,
   "L4": 0
@@ -7947,11 +7947,12 @@
      "label": "Data Table"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu chart datatable: no WO action"
-   ]
+   "wo": {
+    "match": "chartElement dataTable toggle renders data table in chartSVG",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.error-bars",
@@ -8701,11 +8702,12 @@
      "label": "Horizontal line settings"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Horizontal line settings: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=HorizontalLineSettings -> hr-settings-dialog (style insert/edit)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.merge-cells",
@@ -8970,10 +8972,13 @@
      "label": "Create new style"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-save owned by host shell)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Create new style: no WO action"
+    "WO surface elsewhere: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-save owned by host shell)"
    ]
   },
   {
@@ -8988,10 +8993,13 @@
      "label": "Update %1 style"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-update owned by host shell)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Update %1 style: no WO action"
+    "WO surface elsewhere: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-update owned by host shell)"
    ]
   },
   {
@@ -9618,11 +9626,12 @@
      "label": "Several rows/columns"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Several rows/columns: no WO action"
-   ]
+   "wo": {
+    "match": "table-ops dialog Insert several rows/cols (op-apply-rows/op-apply-cols; insertTableRow/Col count)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.cells",

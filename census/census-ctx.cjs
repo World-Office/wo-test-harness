@@ -98,8 +98,8 @@ const MAP = {
 
   // ---- styles ----
   styleText: ["matched", "ctx data-ctx=FormattingAsStyle"],
-  saveStyleText: ["missing", "create new style from selection — no WO action"],
-  updateStyleText: ["missing", "update %1 style — no WO action"],
+  saveStyleText: ["diverged", "ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-save owned by host shell)"],
+  updateStyleText: ["diverged", "ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-update owned by host shell)"],
 
   // ---- table menu ----
   mergeCellsText: ["matched", "ctx data-ctx=TableMergeCells"],
@@ -110,7 +110,7 @@ const MAP = {
   insertColumnRightText: ["matched", "ctx data-ctx=TableColRight"],
   insertRowAboveText: ["matched", "ctx data-ctx=TableRowAbove"],
   insertRowBelowText: ["matched", "ctx data-ctx=TableRowBelow"],
-  textSeveral: ["missing", "insert N rows/cols dialog — no WO action"],
+  textSeveral: ["matched", "table-ops dialog Insert several rows/cols (op-apply-rows/op-apply-cols; insertTableRow/Col count)"],
   deleteText: ["n/a", "container"],
   rowText: ["matched", "ctx data-ctx=TableDeleteRow"],
   columnText: ["matched", "ctx data-ctx=TableDeleteCol"],
@@ -175,7 +175,7 @@ const MAP = {
   textCenter: ["n/a"], textInnerBottom: ["n/a"], textInnerTop: ["n/a"],
   textOuterTop: ["n/a"], textTop: ["n/a"], textLeftPos: ["n/a"],
   textRight: ["n/a"], textBottom: ["n/a"], textFit: ["n/a"],
-  textDataTable: ["missing", "data table element — no WO chartElement toggle", "chart.datatable", true],
+  textDataTable: ["matched", "chartElement dataTable toggle renders data table in chartSVG", "chart.datatable", true],
   textShowDataTable: ["n/a"], textShowLegendKeys: ["n/a"],
   textErrorBars: ["diverged", "Chart Design Chart elements>Error bars (chartElement errorBars)"],
   textStandardError: ["n/a"], txtPercentage: ["n/a"], textStandardDeviation: ["n/a"],
@@ -222,6 +222,7 @@ const DISPLAY = {
   copyHyperlinkText: "Copy hyperlink address",
   textHorizontalLineSettings: "Horizontal line settings",
 };
+MAP.textHorizontalLineSettings = ["matched", "ctx data-ctx=HorizontalLineSettings -> hr-settings-dialog (style insert/edit)"];
 
 const rows = [];
 const ledgerSets = new Set();

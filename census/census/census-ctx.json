@@ -2,17 +2,15 @@
  "source": "OO web-apps/.../view/DocumentHolderExt.js (5 scenario menus, 302 MenuItems) vs WO #ctx-menu (75 data-ctx actions)",
  "totals": {
   "rows": 166,
-  "matched": 65,
-  "diverged": 30,
+  "matched": 68,
+  "diverged": 32,
   "browser-native": 0,
   "nav": 1,
-  "missing": 20,
+  "missing": 15,
   "n_a": 50
  },
  "ledger_rows": 116,
- "chart_groups": [
-  "chart.datatable"
- ],
+ "chart_groups": [],
  "rows": [
   {
    "oo": "Insert caption",
@@ -289,8 +287,8 @@
   {
    "oo": "Data Table",
    "oo_var": "textDataTable",
-   "verdict": "missing",
-   "wo": "data table element — no WO chartElement toggle",
+   "verdict": "matched",
+   "wo": "chartElement dataTable toggle renders data table in chartSVG",
    "group": "chart.datatable",
    "lead": true
   },
@@ -777,8 +775,8 @@
   {
    "oo": "Horizontal line settings",
    "oo_var": "textHorizontalLineSettings",
-   "verdict": "missing",
-   "wo": "unresolved OO caption: textHorizontalLineSettings",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=HorizontalLineSettings -> hr-settings-dialog (style insert/edit)",
    "group": null,
    "lead": false
   },
@@ -889,16 +887,16 @@
   {
    "oo": "Create new style",
    "oo_var": "saveStyleText",
-   "verdict": "missing",
-   "wo": "create new style from selection — no WO action",
+   "verdict": "diverged",
+   "wo": "ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-save owned by host shell)",
    "group": null,
    "lead": false
   },
   {
    "oo": "Update %1 style",
    "oo_var": "updateStyleText",
-   "verdict": "missing",
-   "wo": "update %1 style — no WO action",
+   "verdict": "diverged",
+   "wo": "ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-update owned by host shell)",
    "group": null,
    "lead": false
   },
@@ -1225,8 +1223,8 @@
   {
    "oo": "Several rows/columns",
    "oo_var": "textSeveral",
-   "verdict": "missing",
-   "wo": "insert N rows/cols dialog — no WO action",
+   "verdict": "matched",
+   "wo": "table-ops dialog Insert several rows/cols (op-apply-rows/op-apply-cols; insertTableRow/Col count)",
    "group": null,
    "lead": false
   },
