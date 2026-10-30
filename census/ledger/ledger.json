@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-30T08:10:24.882868",
+ "generated": "2026-10-30T08:41:34.873607",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,8 +9,8 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 23,
-  "L1": 458,
+  "L0": 20,
+  "L1": 461,
   "L2": 0,
   "L3": 20,
   "L4": 0
@@ -9035,10 +9035,13 @@
      "label": "Update page numbers only"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "UpdateTOC dialog — toc-update select has 'Update page numbers only' option (refreshToc relinks; page numbers are live-preview links)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Update page numbers only: no WO action"
+    "WO surface elsewhere: UpdateTOC dialog — toc-update select has 'Update page numbers only' option (refreshToc relinks; page numbers are live-preview links)"
    ]
   },
   {
@@ -9532,11 +9535,12 @@
      "label": "Cell"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Cell: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=TableDeleteCell -> deleteTableCell (shift left + row cleanup)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.column-left",
@@ -9645,11 +9649,12 @@
      "label": "Cells"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Cells: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=TableDeleteCell -> deleteTableCell (single-cell surface; OO multi-cell selection collapses to one)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.page-break-before",

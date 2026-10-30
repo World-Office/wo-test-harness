@@ -6,7 +6,7 @@ Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
 
-## edit — 136 features (L0:13 L1:123 L3:0)
+## edit — 136 features (L0:10 L1:126 L3:0)
 - ❌ L0 **ctx.distribute-horizontally** [ctx-menu] 
 - ❌ L0 **ctx.distribute-vertically** [ctx-menu] 
 - ❌ L0 **ctx.edit-wrap-boundary** [ctx-menu] 
@@ -17,9 +17,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ❌ L0 **ctx.edit-points** [ctx-menu] 
 - ❌ L0 **ctx.edit-object** [ctx-menu] 
 - ❌ L0 **ctx.resize-to-cell** [ctx-menu] 
-- ❌ L0 **ctx.update-page-numbers-only** [ctx-menu] 
-- ❌ L0 **ctx.cell** [ctx-menu] 
-- ❌ L0 **ctx.cells** [ctx-menu] 
 - 🔲 L1 **shortcut.deleteleftchar** [shortcut] → WO: Backspace
 - 🔲 L1 **shortcut.deleterightchar** [shortcut] → WO: Delete
 - 🔲 L1 **shortcut.editundo** [shortcut] → WO: Ctrl+Z
@@ -104,6 +101,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.create-new-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-save owned by host shell)
 - 🔲 L1 **ctx.update-1-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-update owned by host shell)
 - 🔲 L1 **ctx.update-entire-table** [ctx-menu] → WO: ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)
+- 🔲 L1 **ctx.update-page-numbers-only** [ctx-menu] → WO: UpdateTOC dialog — toc-update select has 'Update page numbers only' option (refreshToc relinks; page numbers are live-preview links)
 - 🔲 L1 **ctx.add-comment** [ctx-menu] → WO: ctx data-ctx=AddComment
 - 🔲 L1 **ctx.follow-move** [ctx-menu] → WO: ctx data-ctx=FollowMove
 - 🔲 L1 **ctx.select-language** [ctx-menu] → WO: ctx data-ctx=SelectLanguage
@@ -127,10 +125,12 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.select** [ctx-menu] → WO: browser native selection
 - 🔲 L1 **ctx.row** [ctx-menu] → WO: ctx data-ctx=TableDeleteRow
 - 🔲 L1 **ctx.column** [ctx-menu] → WO: ctx data-ctx=TableDeleteCol
+- 🔲 L1 **ctx.cell** [ctx-menu] → WO: ctx data-ctx=TableDeleteCell -> deleteTableCell (shift left + row cleanup)
 - 🔲 L1 **ctx.column-left** [ctx-menu] → WO: ctx data-ctx=TableColLeft
 - 🔲 L1 **ctx.column-right** [ctx-menu] → WO: ctx data-ctx=TableColRight
 - 🔲 L1 **ctx.row-above** [ctx-menu] → WO: ctx data-ctx=TableRowAbove
 - 🔲 L1 **ctx.row-below** [ctx-menu] → WO: ctx data-ctx=TableRowBelow
+- 🔲 L1 **ctx.cells** [ctx-menu] → WO: ctx data-ctx=TableDeleteCell -> deleteTableCell (single-cell surface; OO multi-cell selection collapses to one)
 - 🔲 L1 **ctx.page-break-before** [ctx-menu] → WO: ctx data-ctx=PageBreakBefore
 - 🔲 L1 **ctx.keep-lines-together** [ctx-menu] → WO: ctx data-ctx=KeepLines
 - 🔲 L1 **ctx.frame-advanced-settings** [ctx-menu] → WO: ctx data-ctx=FrameSettings

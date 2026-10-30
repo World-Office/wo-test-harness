@@ -78,7 +78,7 @@ const MAP = {
   textUpdateTOC: ["matched", "ctx data-ctx=UpdateTOC"],
   textTOCSettings: ["matched", "ctx data-ctx=TocSettings"],
   textUpdateAll: ["diverged", "ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)"],
-  textUpdatePages: ["missing", "update page numbers only — no WO action"],
+  textUpdatePages: ["diverged", "UpdateTOC dialog — toc-update select has 'Update page numbers only' option (refreshToc relinks; page numbers are live-preview links)"],
 
   // ---- spellcheck ----
   spellcheckText: ["diverged", "Review ribbon spellcheck / F7 (not in ctx)"],
@@ -114,8 +114,8 @@ const MAP = {
   deleteText: ["n/a", "container"],
   rowText: ["matched", "ctx data-ctx=TableDeleteRow"],
   columnText: ["matched", "ctx data-ctx=TableDeleteCol"],
-  cellText: ["missing", "delete cell (with shift) — no WO action"],
-  textCells: ["missing", "advanced cell delete/merge options — no WO action"],
+  cellText: ["matched", "ctx data-ctx=TableDeleteCell -> deleteTableCell (shift left + row cleanup)"],
+  textCells: ["matched", "ctx data-ctx=TableDeleteCell -> deleteTableCell (single-cell surface; OO multi-cell selection collapses to one)"],
   textDistributeRows: ["missing", "distribute rows evenly — no WO action"],
   textDistributeCols: ["missing", "distribute columns evenly — no WO action"],
   tableText: ["n/a", "container"],

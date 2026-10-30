@@ -2,11 +2,11 @@
  "source": "OO web-apps/.../view/DocumentHolderExt.js (5 scenario menus, 302 MenuItems) vs WO #ctx-menu (75 data-ctx actions)",
  "totals": {
   "rows": 166,
-  "matched": 68,
-  "diverged": 32,
+  "matched": 70,
+  "diverged": 33,
   "browser-native": 0,
   "nav": 1,
-  "missing": 15,
+  "missing": 12,
   "n_a": 50
  },
  "ledger_rows": 116,
@@ -943,8 +943,8 @@
   {
    "oo": "Update page numbers only",
    "oo_var": "textUpdatePages",
-   "verdict": "missing",
-   "wo": "update page numbers only — no WO action",
+   "verdict": "diverged",
+   "wo": "UpdateTOC dialog — toc-update select has 'Update page numbers only' option (refreshToc relinks; page numbers are live-preview links)",
    "group": null,
    "lead": false
   },
@@ -1167,8 +1167,8 @@
   {
    "oo": "Cell",
    "oo_var": "cellText",
-   "verdict": "missing",
-   "wo": "delete cell (with shift) — no WO action",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TableDeleteCell -> deleteTableCell (shift left + row cleanup)",
    "group": null,
    "lead": false
   },
@@ -1239,8 +1239,8 @@
   {
    "oo": "Cells",
    "oo_var": "textCells",
-   "verdict": "missing",
-   "wo": "advanced cell delete/merge options — no WO action",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=TableDeleteCell -> deleteTableCell (single-cell surface; OO multi-cell selection collapses to one)",
    "group": null,
    "lead": false
   },
