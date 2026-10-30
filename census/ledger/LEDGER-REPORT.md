@@ -114,8 +114,8 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.rotate-text-down** [ctx-menu] → WO: ctx data-ctx=TextDirRotateDown
 - 🔲 L1 **ctx.rotate-text-up** [ctx-menu] → WO: ctx data-ctx=TextDirRotateUp
 - 🔲 L1 **ctx.start-new-list** [ctx-menu] → WO: ctx data-ctx=StartNewList
-- 🔲 L1 **ctx.set-numbering-value** [ctx-menu] → WO: ctx data-ctx=SetNumberingValue
-- 🔲 L1 **ctx.continue-numbering** [ctx-menu] → WO: ctx data-ctx=ContinueNumbering
+- 🔲 L1 **ctx.set-numbering-value** [ctx-menu] → WO: ctx data-ctx=SetNumberingValue -> NumberingValueDialog + applyNumberingValue (native ol split, restart at N)
+- 🔲 L1 **ctx.continue-numbering** [ctx-menu] → WO: ctx data-ctx=ContinueNumbering -> continueNumbering (native ol merge)
 - 🔲 L1 **ctx.adjust-list-indents** [ctx-menu] → WO: ctx data-ctx=AdjustListIndents
 - 🔲 L1 **ctx.bullets-and-numbering** [ctx-menu] → WO: ribbon bullet/numbered buttons (bullets-and-numbering dialog absent)
 - 🔲 L1 **ctx.update-field** [ctx-menu] → WO: ctx data-ctx=UpdateField
@@ -185,7 +185,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.updatefields** [shortcut] → WO: F9 (fieldOpAtSelection update)
 - 🔲 L1 **shortcut.openchatpanel** [shortcut] → WO: Ctrl+Alt+Q
 
-## insert — 56 features (L0:2 L1:48 L3:6)
+## insert — 56 features (L0:2 L1:51 L3:3)
 - ❌ L0 **insert.insert-spreadsheet** [menu-item] 
 - ❌ L0 **shortcut.nonbreakinghyphen** [shortcut] 
 - 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
@@ -197,6 +197,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **insert.text-box** [control] → WO: insertTextbox
 - 🔲 L1 **insert.text-art** [control] → WO: insertTextart
 - 🔲 L1 **insert.drop-cap** [control] → WO: toggleDropcap
+- 🔲 L1 **insert.date-time** [control] → WO: pagenumber-dialog
 - 🔲 L1 **insert.text-from-file** [control] → WO: btn-textfile
 - 🔲 L1 **insert.field** [control] → WO: btn-field
 - 🔲 L1 **insert.equation** [control] → WO: btn-equation
@@ -217,6 +218,8 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **insert.limits-and-logarithms** [menu-item] → WO: Limits and logarithms
 - 🔲 L1 **insert.operators** [menu-item] → WO: Operators
 - 🔲 L1 **insert.matrices** [menu-item] → WO: Matrices
+- 🔲 L1 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
+- 🔲 L1 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: symbol-dialog
 - 🔲 L1 **shortcut.insertlinebreak** [shortcut] → WO: Shift+Enter inserts <br> natively in contentEditable
 - 🔲 L1 **shortcut.insertcolumnbreak** [shortcut] → WO: Ctrl+Shift+Enter
 - 🔲 L1 **shortcut.nonbreakingspace** [shortcut] → WO: Ctrl+Shift+Space
@@ -236,12 +239,9 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.insertfootnotenow** [shortcut] → WO: Ctrl+Alt+F
 - 🔲 L1 **shortcut.emdash** [shortcut] → WO: Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation)
 - 🔲 L1 **shortcut.endash** [shortcut] → WO: Ctrl+Shift+Minus (OO uses Ctrl+NumpadMinus; Ctrl+Minus is zoom-out in WO)
-- ✅ L3 **insert.date-time** [control] → WO: pagenumber-dialog
 - ✅ L3 **insert.symbol** [control] → WO: btn-symbol
 - ✅ L3 **insert.more-symbols** [menu-item] → WO: Symbols ▾
 - ✅ L3 **insert.symbols** [menu-item] → WO: Symbols ▾
-- ✅ L3 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
-- ✅ L3 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: symbol-dialog
 
 ## table — 15 features (L0:2 L1:10 L3:3)
 - ❌ L0 **ctx.distribute-rows** [ctx-menu] 
@@ -423,13 +423,13 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **review.thesaurus** [control] → WO: aiRewrite
 - 🔲 L1 **review.grammar-spelling** [control] → WO: btn-ai-grammar
 
-## headerfooter — 6 features (L0:0 L1:3 L3:3)
+## headerfooter — 6 features (L0:0 L1:5 L3:1)
 - 🔲 L1 **headerfooter.page-number** [control] → WO: insertPageNumber
+- 🔲 L1 **headerfooter.date-time** [control] → WO: pagenumber-dialog
 - 🔲 L1 **headerfooter.field** [control] → WO: btn-field
 - 🔲 L1 **headerfooter.close** [control] → WO: btn-hf-close
+- 🔲 L1 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
 - ✅ L3 **headerfooter.header-footer** [control] → WO: insertHeaderFooter
-- ✅ L3 **headerfooter.date-time** [control] → WO: pagenumber-dialog
-- ✅ L3 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
 
 ## page — 49 features (L0:0 L1:49 L3:0)
 - 🔲 L1 **page.margins** [control] → WO: Margins
