@@ -2,14 +2,14 @@
  "source": "OO web-apps/.../view/DocumentHolderExt.js (5 scenario menus, 302 MenuItems) vs WO #ctx-menu (75 data-ctx actions)",
  "totals": {
   "rows": 166,
-  "matched": 64,
-  "diverged": 28,
+  "matched": 65,
+  "diverged": 30,
   "browser-native": 0,
   "nav": 1,
-  "missing": 26,
-  "n_a": 47
+  "missing": 20,
+  "n_a": 50
  },
- "ledger_rows": 119,
+ "ledger_rows": 116,
  "chart_groups": [
   "chart.datatable"
  ],
@@ -17,8 +17,8 @@
   {
    "oo": "Insert caption",
    "oo_var": "txtInsertCaption",
-   "verdict": "missing",
-   "wo": "insert caption for object — no WO action (Caption ctx is text-level)",
+   "verdict": "diverged",
+   "wo": "ctx data-ctx=Caption + Home tab caption (table/text figcaption; object binding differs)",
    "group": null,
    "lead": false
   },
@@ -673,32 +673,32 @@
   {
    "oo": "Crop",
    "oo_var": "textCrop",
-   "verdict": "missing",
-   "wo": "crop image (photo editor lacks crop) — no WO action",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=Crop -> photo editor crop tool (drag + Apply)",
    "group": null,
    "lead": false
   },
   {
    "oo": "Fill",
    "oo_var": "textCropFill",
-   "verdict": "missing",
-   "wo": "crop-fill",
+   "verdict": "n/a",
+   "wo": "crop sub-option, covered by Crop tool",
    "group": null,
    "lead": false
   },
   {
    "oo": "Fit",
    "oo_var": "textCropFit",
-   "verdict": "missing",
-   "wo": "crop-fit",
+   "verdict": "n/a",
+   "wo": "crop sub-option, covered by Crop tool",
    "group": null,
    "lead": false
   },
   {
    "oo": "Reset crop",
    "oo_var": "textResetCrop",
-   "verdict": "missing",
-   "wo": "reset crop",
+   "verdict": "n/a",
+   "wo": "crop sub-option; photo-editor Reset clears crop",
    "group": null,
    "lead": false
   },
@@ -937,8 +937,8 @@
   {
    "oo": "Update entire table",
    "oo_var": "textUpdateAll",
-   "verdict": "missing",
-   "wo": "field/TOC update-all (F9 is single field)",
+   "verdict": "diverged",
+   "wo": "ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)",
    "group": null,
    "lead": false
   },

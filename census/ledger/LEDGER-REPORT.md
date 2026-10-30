@@ -6,8 +6,7 @@ Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
 
-## edit — 139 features (L0:22 L1:117 L3:0)
-- ❌ L0 **ctx.insert-caption** [ctx-menu] 
+## edit — 136 features (L0:16 L1:120 L3:0)
 - ❌ L0 **ctx.distribute-horizontally** [ctx-menu] 
 - ❌ L0 **ctx.distribute-vertically** [ctx-menu] 
 - ❌ L0 **ctx.edit-wrap-boundary** [ctx-menu] 
@@ -15,17 +14,12 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ❌ L0 **ctx.through** [ctx-menu] 
 - ❌ L0 **ctx.in-front-of-text** [ctx-menu] 
 - ❌ L0 **ctx.convert-to-shape** [ctx-menu] 
-- ❌ L0 **ctx.crop** [ctx-menu] 
-- ❌ L0 **ctx.fill** [ctx-menu] 
-- ❌ L0 **ctx.fit** [ctx-menu] 
-- ❌ L0 **ctx.reset-crop** [ctx-menu] 
 - ❌ L0 **ctx.edit-points** [ctx-menu] 
 - ❌ L0 **ctx.edit-object** [ctx-menu] 
 - ❌ L0 **ctx.resize-to-cell** [ctx-menu] 
 - ❌ L0 **ctx.horizontal-line-settings** [ctx-menu] 
 - ❌ L0 **ctx.create-new-style** [ctx-menu] 
 - ❌ L0 **ctx.update-1-style** [ctx-menu] 
-- ❌ L0 **ctx.update-entire-table** [ctx-menu] 
 - ❌ L0 **ctx.update-page-numbers-only** [ctx-menu] 
 - ❌ L0 **ctx.cell** [ctx-menu] 
 - ❌ L0 **ctx.cells** [ctx-menu] 
@@ -56,6 +50,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.pastetextwithoutformat** [shortcut] → WO: Ctrl+Shift+V
 - 🔲 L1 **shortcut.selectrightword** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.selectleftword** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **ctx.insert-caption** [ctx-menu] → WO: ctx data-ctx=Caption + Home tab caption (table/text figcaption; object binding differs)
 - 🔲 L1 **ctx.save-as-picture** [ctx-menu] → WO: ctx data-ctx=SaveAsPicture -> objectOp save-as-picture
 - 🔲 L1 **ctx.align-left** [ctx-menu] → WO: Layout tab objectOp align-left
 - 🔲 L1 **ctx.align-center** [ctx-menu] → WO: Layout tab objectOp align-center
@@ -90,6 +85,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.reject-change** [ctx-menu] → WO: ctx data-ctx=RejectChange
 - 🔲 L1 **ctx.print-selection** [ctx-menu] → WO: Print button / Ctrl+P (browser print; no ctx item)
 - 🔲 L1 **ctx.rotate** [ctx-menu] → WO: right panel rp-image-rotate (applyImageRotate90)
+- 🔲 L1 **ctx.crop** [ctx-menu] → WO: ctx data-ctx=Crop -> photo editor crop tool (drag + Apply)
 - 🔲 L1 **ctx.remove-content-control** [ctx-menu] → WO: ctx data-ctx=RemoveContentControl
 - 🔲 L1 **ctx.content-control-settings** [ctx-menu] → WO: ctx data-ctx=ContentControlSettings
 - 🔲 L1 **ctx.link** [ctx-menu] → WO: ctx data-ctx=Link
@@ -107,6 +103,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.table-advanced-settings** [ctx-menu] → WO: table-ops-dialog (WO table settings surface)
 - 🔲 L1 **ctx.paragraph-advanced-settings** [ctx-menu] → WO: ctx data-ctx=ParagraphSettings
 - 🔲 L1 **ctx.formatting-as-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle
+- 🔲 L1 **ctx.update-entire-table** [ctx-menu] → WO: ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)
 - 🔲 L1 **ctx.add-comment** [ctx-menu] → WO: ctx data-ctx=AddComment
 - 🔲 L1 **ctx.follow-move** [ctx-menu] → WO: ctx data-ctx=FollowMove
 - 🔲 L1 **ctx.select-language** [ctx-menu] → WO: ctx data-ctx=SelectLanguage

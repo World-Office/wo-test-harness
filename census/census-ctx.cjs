@@ -77,7 +77,7 @@ const MAP = {
   textTOC: ["n/a", "container -> TOC dialog (toc-dialog exists)"],
   textUpdateTOC: ["matched", "ctx data-ctx=UpdateTOC"],
   textTOCSettings: ["matched", "ctx data-ctx=TocSettings"],
-  textUpdateAll: ["missing", "field/TOC update-all (F9 is single field)"],
+  textUpdateAll: ["diverged", "ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)"],
   textUpdatePages: ["missing", "update page numbers only — no WO action"],
 
   // ---- spellcheck ----
@@ -126,12 +126,13 @@ const MAP = {
   textRemoveControl: ["matched", "ctx data-ctx=RemoveContentControl"],
   textEditControls: ["matched", "ctx data-ctx=ContentControlSettings"],
   textStretchControl: ["missing", "resize content control to cell — no WO action"],
-  txtInsertCaption: ["missing", "insert caption for object — no WO action (Caption ctx is text-level)"],
+  txtInsertCaption: ["diverged", "ctx data-ctx=Caption + Home tab caption (table/text figcaption; object binding differs)"],
   textRotate: ["diverged", "right panel rp-image-rotate (applyImageRotate90)"],
-  textCrop: ["missing", "crop image (photo editor lacks crop) — no WO action"],
-  textCropFill: ["missing", "crop-fill"],
-  textCropFit: ["missing", "crop-fit"],
-  textResetCrop: ["missing", "reset crop"],
+  textCrop: ["matched", "ctx data-ctx=Crop -> photo editor crop tool (drag + Apply)"],
+  // OO sub-options of the crop tool; WO crop covers them as one tool.
+  textCropFill: ["n/a", "crop sub-option, covered by Crop tool"],
+  textCropFit: ["n/a", "crop sub-option, covered by Crop tool"],
+  textResetCrop: ["n/a", "crop sub-option; photo-editor Reset clears crop"],
   textEditPoints: ["missing", "vertex editing — no WO action"],
   textConvertToShape: ["missing", "convert image/curve to shape — no WO action (caption display: Convert to shape)"],
   textShapesMerge: ["diverged", "Layout tab objectOp merge-union/intersect/subtract"],

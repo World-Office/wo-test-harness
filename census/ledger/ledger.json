@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-30T07:38:20.109588",
+ "generated": "2026-10-30T07:51:34.056014",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,8 +9,8 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 38,
-  "L1": 446,
+  "L0": 32,
+  "L1": 449,
   "L2": 0,
   "L3": 20,
   "L4": 0
@@ -7651,10 +7651,13 @@
      "label": "Insert caption"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "ctx data-ctx=Caption + Home tab caption (table/text figcaption; object binding differs)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Insert caption: no WO action"
+    "WO surface elsewhere: ctx data-ctx=Caption + Home tab caption (table/text figcaption; object binding differs)"
    ]
   },
   {
@@ -8501,65 +8504,12 @@
      "label": "Crop"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Crop: no WO action"
-   ]
-  },
-  {
-   "feature": "ctx.fill",
-   "cluster": "edit",
-   "kind": "ctx-menu",
-   "oo": [
-    {
-     "surface": "ctx-menu",
-     "oo": "Fill",
-     "var": "textCropFill",
-     "label": "Fill"
-    }
-   ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Fill: no WO action"
-   ]
-  },
-  {
-   "feature": "ctx.fit",
-   "cluster": "edit",
-   "kind": "ctx-menu",
-   "oo": [
-    {
-     "surface": "ctx-menu",
-     "oo": "Fit",
-     "var": "textCropFit",
-     "label": "Fit"
-    }
-   ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Fit: no WO action"
-   ]
-  },
-  {
-   "feature": "ctx.reset-crop",
-   "cluster": "edit",
-   "kind": "ctx-menu",
-   "oo": [
-    {
-     "surface": "ctx-menu",
-     "oo": "Reset crop",
-     "var": "textResetCrop",
-     "label": "Reset crop"
-    }
-   ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Reset crop: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=Crop -> photo editor crop tool (drag + Apply)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.remove-content-control",
@@ -9046,10 +8996,13 @@
      "label": "Update entire table"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Update entire table: no WO action"
+    "WO surface elsewhere: ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)"
    ]
   },
   {
