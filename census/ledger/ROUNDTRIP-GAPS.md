@@ -1,6 +1,6 @@
 # LEDGER2-ROUNDTRIP: persistence gaps
 
-Generated: 2026-10-30T12:02:26.080Z
+Generated: 2026-10-30T16:27:10.168Z
 Conversion endpoint: `http://192.168.42.42:8082/api/conversion/convert` (html -> docx -> html)
 Editor: `/home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg`
 Probed: 13 document-level commands — survived: 13, lost: 0
@@ -460,8 +460,8 @@ dialog-only, or state toggles with no serialized marker).
 - `ctx.rotate-text-down` (wo.match `ctx data-ctx=TextDirRotateDown`) — lost attribute: none serialized (no marker contract)
 - `ctx.rotate-text-up` (wo.match `ctx data-ctx=TextDirRotateUp`) — lost attribute: none serialized (no marker contract)
 - `ctx.start-new-list` (wo.match `ctx data-ctx=StartNewList`) — lost attribute: none serialized (no marker contract)
-- `ctx.set-numbering-value` (wo.match `ctx data-ctx=SetNumberingValue`) — lost attribute: none serialized (no marker contract)
-- `ctx.continue-numbering` (wo.match `ctx data-ctx=ContinueNumbering`) — lost attribute: none serialized (no marker contract)
+- `ctx.set-numbering-value` (wo.match `ctx data-ctx=SetNumberingValue -> NumberingValueDialog + applyNumberingValue (native ol split, restart at N)`) — lost attribute: none serialized (no marker contract)
+- `ctx.continue-numbering` (wo.match `ctx data-ctx=ContinueNumbering -> continueNumbering (native ol merge)`) — lost attribute: none serialized (no marker contract)
 - `ctx.adjust-list-indents` (wo.match `ctx data-ctx=AdjustListIndents`) — lost attribute: none serialized (no marker contract)
 - `ctx.bullets-and-numbering` (wo.match `ribbon bullet/numbered buttons (bullets-and-numbering dialog absent)`) — lost attribute: none serialized (no marker contract)
 - `ctx.update-field` (wo.match `ctx data-ctx=UpdateField`) — lost attribute: none serialized (no marker contract)
