@@ -90,7 +90,7 @@ const MAP = {
   moreText: ["n/a", "container"],
 
   // ---- lists ----
-  bulletsText: ["diverged", "ribbon bullet/numbered buttons (bullets-and-numbering dialog absent)"],
+  bulletsText: ["matched", "ctx data-ctx=BulletsAndNumbering -> BulletsNumberingDialog (list-style-type + start; round-trips as w:numFmt)"],
   textStartNewList: ["matched", "ctx data-ctx=StartNewList"],
   textStartNumberingFrom: ["matched", "ctx data-ctx=SetNumberingValue -> NumberingValueDialog + applyNumberingValue (native ol split, restart at N)"],
   textContinueNumbering: ["matched", "ctx data-ctx=ContinueNumbering -> continueNumbering (native ol merge)"],
