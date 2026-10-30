@@ -529,6 +529,31 @@ async function main() {
   }
   await Promise.all(Array.from({ length: POOL }, worker));
 
+  // C2-3: <ol start="N"> survives both converter directions (API-level,
+  // no browser needed). w:startValue emission itself is pinned by the Rust
+  // tests (wo-x2t converter_gaps::c2_3_*).
+  results.push(await (async () => {
+    const key = 'c2-3-ol-start';
+    const t0 = Date.now();
+    const out = { key, ok: false, phase: 'error', detail: '', ms: 0 };
+    try {
+      const html = '<html><body><ol start="5"><li>alpha</li><li>beta</li><li>gamma</li></ol></body></html>';
+      const docx = await convertOnce(Buffer.from(html, 'utf8'), 'html', 'docx');
+      out.phase = 'convert';
+      if (!docx.length) throw new Error('empty docx');
+      const backHtml = (await convertOnce(docx, 'docx', 'html')).toString('utf8');
+      out.phase = 'roundtrip';
+      if (!backHtml.includes('<ol start="5">')) throw new Error(`ol start lost: ${backHtml.slice(0, 200)}`);
+      if (!['alpha', 'beta', 'gamma'].every((w) => backHtml.includes(w))) throw new Error('items lost');
+      out.ok = true;
+      out.detail = 'ol start=5 -> w:startValue -> <ol start="5">';
+    } catch (e) {
+      out.detail = String(e.message || e).slice(0, 300);
+    }
+    out.ms = Date.now() - t0;
+    return out;
+  })());
+
   await browser.close();
   server.kill('SIGTERM');
 
