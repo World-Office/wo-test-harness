@@ -94,7 +94,7 @@ const MAP = {
   textStartNewList: ["matched", "ctx data-ctx=StartNewList"],
   textStartNumberingFrom: ["matched", "ctx data-ctx=SetNumberingValue -> NumberingValueDialog + applyNumberingValue (native ol split, restart at N)"],
   textContinueNumbering: ["matched", "ctx data-ctx=ContinueNumbering -> continueNumbering (native ol merge)"],
-  textIndents: ["matched", "ctx data-ctx=AdjustListIndents"],
+  textIndents: ["matched", "ctx data-ctx=AdjustListIndents -> ListIndentsDialog + applyListIndents (margin-left/text-indent, round-trips as w:ind left/hanging)"],
 
   // ---- styles ----
   styleText: ["matched", "ctx data-ctx=FormattingAsStyle"],
