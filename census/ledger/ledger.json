@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-29T22:15:39.343471",
+ "generated": "2026-10-30T07:38:20.109588",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,8 +9,8 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 70,
-  "L1": 412,
+  "L0": 38,
+  "L1": 446,
   "L2": 0,
   "L3": 20,
   "L4": 0
@@ -45,9 +45,14 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": []
+   "wo": {
+    "match": "tab:home",
+    "where": "backstage/tab"
+   },
+   "level": 1,
+   "evidence": [
+    "WO backstage open/new/history panes cover recents"
+   ]
   },
   {
    "feature": "file.insert",
@@ -96,9 +101,14 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": []
+   "wo": {
+    "match": "tab:layout",
+    "where": "backstage/tab"
+   },
+   "level": 1,
+   "evidence": [
+    "WO Layout tab (margins/orientation/size/columns) + page-setup-dialog"
+   ]
   },
   {
    "feature": "file.references",
@@ -111,9 +121,14 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": []
+   "wo": {
+    "match": "tab:references",
+    "where": "backstage/tab"
+   },
+   "level": 1,
+   "evidence": [
+    "WO References tab (TOC/footnotes/endnotes/captions/crossrefs)"
+   ]
   },
   {
    "feature": "file.collaboration",
@@ -126,9 +141,14 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": []
+   "wo": {
+    "match": "tab:collaboration",
+    "where": "backstage/tab"
+   },
+   "level": 1,
+   "evidence": [
+    "WO Collaboration tab (co-editing/track-changes/chat/compare)"
+   ]
   },
   {
    "feature": "file.protection",
@@ -4546,8 +4566,11 @@
      "label": "btn-doc-spell"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "sb-doc-spell",
+    "where": "statusbar"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -7646,11 +7669,12 @@
      "label": "Save as picture"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Save as picture: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=SaveAsPicture -> objectOp save-as-picture",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.align-left",
@@ -7664,10 +7688,13 @@
      "label": "Align left"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Layout tab objectOp align-left",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Align left: no WO action"
+    "WO surface elsewhere: Layout tab objectOp align-left"
    ]
   },
   {
@@ -7682,10 +7709,13 @@
      "label": "Align center"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Layout tab objectOp align-center",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Align center: no WO action"
+    "WO surface elsewhere: Layout tab objectOp align-center"
    ]
   },
   {
@@ -7700,10 +7730,13 @@
      "label": "Align right"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Layout tab objectOp align-right",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Align right: no WO action"
+    "WO surface elsewhere: Layout tab objectOp align-right"
    ]
   },
   {
@@ -7718,10 +7751,13 @@
      "label": "Align top"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Layout tab objectOp align-top",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Align top: no WO action"
+    "WO surface elsewhere: Layout tab objectOp align-top"
    ]
   },
   {
@@ -7736,10 +7772,13 @@
      "label": "Align middle"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Layout tab objectOp align-middle",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Align middle: no WO action"
+    "WO surface elsewhere: Layout tab objectOp align-middle"
    ]
   },
   {
@@ -7754,10 +7793,13 @@
      "label": "Align bottom"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Layout tab objectOp align-bottom",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Align bottom: no WO action"
+    "WO surface elsewhere: Layout tab objectOp align-bottom"
    ]
   },
   {
@@ -7808,64 +7850,76 @@
      "label": "Merge shapes"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Layout tab objectOp merge-union/intersect/subtract",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Merge shapes: no WO action"
+    "WO surface elsewhere: Layout tab objectOp merge-union/intersect/subtract"
    ]
   },
   {
-   "feature": "ctx.chart.axes",
-   "cluster": "chart",
+   "feature": "ctx.axis-titles",
+   "cluster": "edit",
    "kind": "ctx-menu",
    "oo": [
     {
      "surface": "ctx-menu",
-     "oo": "chart axes",
-     "var": "textAxes",
-     "label": "Axes"
+     "oo": "Axis Titles",
+     "var": "textAxisTitles",
+     "label": "Axis Titles"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Chart Design Chart elements>Axis Titles (chartElement axisTitles)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu chart axes: no WO action"
+    "WO surface elsewhere: Chart Design Chart elements>Axis Titles (chartElement axisTitles)"
    ]
   },
   {
-   "feature": "ctx.chart.title",
-   "cluster": "chart",
+   "feature": "ctx.chart-title",
+   "cluster": "edit",
    "kind": "ctx-menu",
    "oo": [
     {
      "surface": "ctx-menu",
-     "oo": "chart title",
+     "oo": "Chart Title",
      "var": "textChartTitle",
      "label": "Chart Title"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Chart Design Chart elements>Chart title (chartElement title)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu chart title: no WO action"
+    "WO surface elsewhere: Chart Design Chart elements>Chart title (chartElement title)"
    ]
   },
   {
-   "feature": "ctx.chart.labels",
-   "cluster": "chart",
+   "feature": "ctx.data-labels",
+   "cluster": "edit",
    "kind": "ctx-menu",
    "oo": [
     {
      "surface": "ctx-menu",
-     "oo": "chart labels",
+     "oo": "Data labels",
      "var": "textDataLabels",
      "label": "Data labels"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Chart Design Chart elements>Data labels (chartElement dataLabels)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu chart labels: no WO action"
+    "WO surface elsewhere: Chart Design Chart elements>Data labels (chartElement dataLabels)"
    ]
   },
   {
@@ -7887,93 +7941,108 @@
    ]
   },
   {
-   "feature": "ctx.chart.errorbars",
-   "cluster": "chart",
+   "feature": "ctx.error-bars",
+   "cluster": "edit",
    "kind": "ctx-menu",
    "oo": [
     {
      "surface": "ctx-menu",
-     "oo": "chart errorbars",
+     "oo": "Error Bars",
      "var": "textErrorBars",
      "label": "Error Bars"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Chart Design Chart elements>Error bars (chartElement errorBars)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu chart errorbars: no WO action"
+    "WO surface elsewhere: Chart Design Chart elements>Error bars (chartElement errorBars)"
    ]
   },
   {
-   "feature": "ctx.chart.gridlines",
-   "cluster": "chart",
+   "feature": "ctx.gridlines",
+   "cluster": "edit",
    "kind": "ctx-menu",
    "oo": [
     {
      "surface": "ctx-menu",
-     "oo": "chart gridlines",
+     "oo": "Gridlines",
      "var": "textGridLines",
      "label": "Gridlines"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Chart Design Chart elements>Gridlines (chartElement gridlines)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu chart gridlines: no WO action"
+    "WO surface elsewhere: Chart Design Chart elements>Gridlines (chartElement gridlines)"
    ]
   },
   {
-   "feature": "ctx.chart.legend",
-   "cluster": "chart",
+   "feature": "ctx.legend",
+   "cluster": "edit",
    "kind": "ctx-menu",
    "oo": [
     {
      "surface": "ctx-menu",
-     "oo": "chart legend",
+     "oo": "Legend",
      "var": "textLegendPos",
      "label": "Legend"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Chart Design Chart elements>Legend (chartElement legend)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu chart legend: no WO action"
+    "WO surface elsewhere: Chart Design Chart elements>Legend (chartElement legend)"
    ]
   },
   {
-   "feature": "ctx.chart.trendline",
-   "cluster": "chart",
+   "feature": "ctx.trendline",
+   "cluster": "edit",
    "kind": "ctx-menu",
    "oo": [
     {
      "surface": "ctx-menu",
-     "oo": "chart trendline",
+     "oo": "Trendline",
      "var": "textTrendline",
      "label": "Trendline"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Chart Design Chart elements>Trendline (chartElement trendline)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu chart trendline: no WO action"
+    "WO surface elsewhere: Chart Design Chart elements>Trendline (chartElement trendline)"
    ]
   },
   {
-   "feature": "ctx.chart.updown",
-   "cluster": "chart",
+   "feature": "ctx.up-down-bars",
+   "cluster": "edit",
    "kind": "ctx-menu",
    "oo": [
     {
      "surface": "ctx-menu",
-     "oo": "chart updown",
+     "oo": " Up/Down Bars",
      "var": "textUpDownBars",
      "label": " Up/Down Bars"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Chart Design Chart elements>Up/Down bars (chartElement upDownBars)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu chart updown: no WO action"
+    "WO surface elsewhere: Chart Design Chart elements>Up/Down bars (chartElement upDownBars)"
    ]
   },
   {
@@ -7988,11 +8057,12 @@
      "label": "Bring to foreground"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Bring to foreground: no WO action"
-   ]
+   "wo": {
+    "match": "Layout tab objectOp bring-to-foreground",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.send-to-background",
@@ -8006,11 +8076,12 @@
      "label": "Send to background"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Send to background: no WO action"
-   ]
+   "wo": {
+    "match": "Layout tab objectOp send-to-background",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.bring-forward",
@@ -8024,10 +8095,13 @@
      "label": "Bring forward"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Layout tab objectOp bring-forward",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Bring forward: no WO action"
+    "WO surface elsewhere: Layout tab objectOp bring-forward"
    ]
   },
   {
@@ -8042,10 +8116,13 @@
      "label": "Send backward"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Layout tab objectOp send-backward",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Send backward: no WO action"
+    "WO surface elsewhere: Layout tab objectOp send-backward"
    ]
   },
   {
@@ -8152,10 +8229,13 @@
      "label": "Top and bottom"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "obj-center block flow (top-and-bottom ≈ own-line block)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Top and bottom: no WO action"
+    "WO surface elsewhere: obj-center block flow (top-and-bottom ≈ own-line block)"
    ]
   },
   {
@@ -8207,10 +8287,13 @@
      "label": "Edit data"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Chart Design tab chartEditData -> openVectorEditor(chart)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Edit data: no WO action"
+    "WO surface elsewhere: Chart Design tab chartEditData -> openVectorEditor(chart)"
    ]
   },
   {
@@ -8225,11 +8308,12 @@
      "label": "Actual size"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Actual size: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=ActualSize -> objectOp actual-size",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.convert-to-shape",
@@ -8261,11 +8345,12 @@
      "label": "Replace image"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Replace image: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=ReplaceImage -> objectOp replace-image (image-dialog)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.copy",
@@ -8395,10 +8480,13 @@
      "label": "Rotate"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "right panel rp-image-rotate (applyImageRotate90)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Rotate: no WO action"
+    "WO surface elsewhere: right panel rp-image-rotate (applyImageRotate90)"
    ]
   },
   {
@@ -8597,11 +8685,12 @@
      "label": "Copy hyperlink address"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Copy hyperlink address: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=CopyHyperlinkAddress (clipboard)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.remove-link",
@@ -9775,11 +9864,52 @@
      "label": "Clear field"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "ctx data-ctx=ClearField (empties page-number/[data-field])",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
+  },
+  {
+   "feature": "ctx.group",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Group",
+     "var": "txtGroup",
+     "label": "Group"
+    }
+   ],
+   "wo": {
+    "match": "Layout tab objectOp group (groupSelectedObjects)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Clear field: no WO action"
+    "WO surface elsewhere: Layout tab objectOp group (groupSelectedObjects)"
    ]
+  },
+  {
+   "feature": "ctx.ungroup",
+   "cluster": "edit",
+   "kind": "ctx-menu",
+   "oo": [
+    {
+     "surface": "ctx-menu",
+     "oo": "Ungroup",
+     "var": "txtUngroup",
+     "label": "Ungroup"
+    }
+   ],
+   "wo": {
+    "match": "Layout tab objectOp ungroup (ungroupSelectedObjects)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   }
  ]
 }

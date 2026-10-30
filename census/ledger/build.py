@@ -88,6 +88,7 @@ ALIASES = {
     "language": "sb-lang",
     "spell check": "doc-lang", "btn doc review": "sb-track-changes",
     "review": "sb-track-changes",
+    "btn doc spell": "sb-doc-spell",
     "multipage": "btn-multipage", "page": "btn-multipage",
     # backstage: OO File-screen section -> WO backstage row
     "protection": "protect",
@@ -238,6 +239,16 @@ def add(fid, cluster, oo_surface, kind, extra=None):
         row["evidence"].extend(extra)
 
 # 1. ribbon controls (OO tabs)
+# OO's File tab opens its backstage via buttons labelled after the target
+# pane; WO keeps the backstage under different pane names (open/new/…) and
+# exposes References/Layout/Collaboration as their own tabs. Those four are
+# renames of the same capability surface, not gaps — mark diverged, never L0.
+FILE_NAV_DIVERGED = {
+    "Home": ("tab:home", "WO backstage open/new/history panes cover recents"),
+    "Layout": ("tab:layout", "WO Layout tab (margins/orientation/size/columns) + page-setup-dialog"),
+    "References": ("tab:references", "WO References tab (TOC/footnotes/endnotes/captions/crossrefs)"),
+    "Collaboration": ("tab:collaboration", "WO Collaboration tab (co-editing/track-changes/chat/compare)"),
+}
 for tab, meta in (oo_deep.get("tabs") or {}).items():
     for b in meta.get("buttons", []):
         lab = b.get("label") or b.get("id") or ""
@@ -251,6 +262,11 @@ for tab, meta in (oo_deep.get("tabs") or {}).items():
         if m:
             ledger[fid]["wo"] = {"match": m[0], "where": m[1]}
             ledger[fid]["level"] = 1
+        elif tab == "file" and lab in FILE_NAV_DIVERGED:
+            dst, why = FILE_NAV_DIVERGED[lab]
+            ledger[fid]["wo"] = {"match": dst, "where": "backstage/tab"}
+            ledger[fid]["level"] = 1
+            ledger[fid]["evidence"].append(why)
 
 # 2. menu items
 for m in oo_deep.get("menus", []) or []:
@@ -308,6 +324,13 @@ for it in (oo_deep.get("statusBar") or []):
     fid = "statusbar." + slug(lab)
     add(fid, "statusbar", {"surface": "statusbar", "label": lab}, "statusbar-item")
     w = wo_match(lab, "statusbar")
+    if not w:
+        # statusbar ids live outside wo_labels; resolve aliases directly
+        n = norm(lab)
+        for key, want in ALIASES.items():
+            if key in n or n == key:
+                w = (want, "statusbar")
+                break
     if w:
         ledger[fid]["wo"] = {"match": w[0], "where": w[1]}
         ledger[fid]["level"] = 1

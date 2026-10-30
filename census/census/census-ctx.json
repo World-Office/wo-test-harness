@@ -2,24 +2,16 @@
  "source": "OO web-apps/.../view/DocumentHolderExt.js (5 scenario menus, 302 MenuItems) vs WO #ctx-menu (75 data-ctx actions)",
  "totals": {
   "rows": 166,
-  "matched": 56,
-  "diverged": 6,
+  "matched": 64,
+  "diverged": 28,
   "browser-native": 0,
   "nav": 1,
-  "missing": 59,
-  "n_a": 44
+  "missing": 26,
+  "n_a": 47
  },
- "ledger_rows": 122,
+ "ledger_rows": 119,
  "chart_groups": [
-  "chart.axes",
-  "chart.title",
-  "chart.labels",
-  "chart.datatable",
-  "chart.errorbars",
-  "chart.gridlines",
-  "chart.legend",
-  "chart.trendline",
-  "chart.updown"
+  "chart.datatable"
  ],
  "rows": [
   {
@@ -41,8 +33,8 @@
   {
    "oo": "Save as picture",
    "oo_var": "textSaveAsPicture",
-   "verdict": "missing",
-   "wo": "export selected object as PNG — no WO action",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=SaveAsPicture -> objectOp save-as-picture",
    "group": null,
    "lead": false
   },
@@ -57,48 +49,48 @@
   {
    "oo": "Align left",
    "oo_var": "textShapeAlignLeft",
-   "verdict": "missing",
-   "wo": "shape align left — no WO action",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp align-left",
    "group": null,
    "lead": false
   },
   {
    "oo": "Align center",
    "oo_var": "textShapeAlignCenter",
-   "verdict": "missing",
-   "wo": "shape align center — no WO action",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp align-center",
    "group": null,
    "lead": false
   },
   {
    "oo": "Align right",
    "oo_var": "textShapeAlignRight",
-   "verdict": "missing",
-   "wo": "shape align right — no WO action",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp align-right",
    "group": null,
    "lead": false
   },
   {
    "oo": "Align top",
    "oo_var": "textShapeAlignTop",
-   "verdict": "missing",
-   "wo": "shape align top — no WO action",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp align-top",
    "group": null,
    "lead": false
   },
   {
    "oo": "Align middle",
    "oo_var": "textShapeAlignMiddle",
-   "verdict": "missing",
-   "wo": "shape align middle — no WO action",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp align-middle",
    "group": null,
    "lead": false
   },
   {
    "oo": "Align bottom",
    "oo_var": "textShapeAlignBottom",
-   "verdict": "missing",
-   "wo": "shape align bottom — no WO action",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp align-bottom",
    "group": null,
    "lead": false
   },
@@ -121,74 +113,74 @@
   {
    "oo": "Merge shapes",
    "oo_var": "textShapesMerge",
-   "verdict": "missing",
-   "wo": "merge shapes — no WO action",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp merge-union/intersect/subtract",
    "group": null,
    "lead": false
   },
   {
    "oo": "Axes",
    "oo_var": "textAxes",
-   "verdict": "missing",
-   "wo": "axes show/hide (C3)",
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Axes (chartElement axes)",
    "group": "chart.axes",
-   "lead": true
+   "lead": false
   },
   {
    "oo": "Horizontal axis",
    "oo_var": "textHorAxis",
-   "verdict": "missing",
-   "wo": "chart.axes",
-   "group": "chart.child",
+   "verdict": "n/a",
+   "wo": "chart.axes child",
+   "group": null,
    "lead": false
   },
   {
    "oo": "Vertical axis",
    "oo_var": "textVertAxis",
-   "verdict": "missing",
-   "wo": "chart.axes",
-   "group": "chart.child",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
    "lead": false
   },
   {
    "oo": "Secondary horizontal axis",
    "oo_var": "textHorAxisSec",
-   "verdict": "missing",
-   "wo": "chart.axes",
-   "group": "chart.child",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
    "lead": false
   },
   {
    "oo": "Secondary vertical axis",
    "oo_var": "textVertAxisSec",
-   "verdict": "missing",
-   "wo": "chart.axes",
-   "group": "chart.child",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
    "lead": false
   },
   {
    "oo": "Z axis",
    "oo_var": "DepthAxis",
-   "verdict": "missing",
-   "wo": "chart.axes",
-   "group": "chart.child",
+   "verdict": "n/a",
+   "wo": "",
+   "group": null,
    "lead": false
   },
   {
    "oo": "Axis Titles",
    "oo_var": "textAxisTitles",
-   "verdict": "missing",
-   "wo": "axis titles (C3)",
-   "group": "chart.axes",
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Axis Titles (chartElement axisTitles)",
+   "group": null,
    "lead": false
   },
   {
    "oo": "Chart Title",
    "oo_var": "textChartTitle",
-   "verdict": "missing",
-   "wo": "chart title show/layout (C3)",
-   "group": "chart.title",
-   "lead": true
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Chart title (chartElement title)",
+   "group": null,
+   "lead": false
   },
   {
    "oo": "None",
@@ -217,10 +209,10 @@
   {
    "oo": "Data labels",
    "oo_var": "textDataLabels",
-   "verdict": "missing",
-   "wo": "data labels (C3)",
-   "group": "chart.labels",
-   "lead": true
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Data labels (chartElement dataLabels)",
+   "group": null,
+   "lead": false
   },
   {
    "oo": "Center",
@@ -298,7 +290,7 @@
    "oo": "Data Table",
    "oo_var": "textDataTable",
    "verdict": "missing",
-   "wo": "data table show (C3)",
+   "wo": "data table element — no WO chartElement toggle",
    "group": "chart.datatable",
    "lead": true
   },
@@ -321,10 +313,10 @@
   {
    "oo": "Error Bars",
    "oo_var": "textErrorBars",
-   "verdict": "missing",
-   "wo": "error bars (C3)",
-   "group": "chart.errorbars",
-   "lead": true
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Error bars (chartElement errorBars)",
+   "group": null,
+   "lead": false
   },
   {
    "oo": "Standard Error",
@@ -353,10 +345,10 @@
   {
    "oo": "Gridlines",
    "oo_var": "textGridLines",
-   "verdict": "missing",
-   "wo": "gridlines show (C3)",
-   "group": "chart.gridlines",
-   "lead": true
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Gridlines (chartElement gridlines)",
+   "group": null,
+   "lead": false
   },
   {
    "oo": "Horizontal Major",
@@ -393,10 +385,10 @@
   {
    "oo": "Legend",
    "oo_var": "textLegendPos",
-   "verdict": "missing",
-   "wo": "legend position/overlay (C3)",
-   "group": "chart.legend",
-   "lead": true
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Legend (chartElement legend)",
+   "group": null,
+   "lead": false
   },
   {
    "oo": "Left overlay",
@@ -417,10 +409,10 @@
   {
    "oo": "Trendline",
    "oo_var": "textTrendline",
-   "verdict": "missing",
-   "wo": "trendlines (C3)",
-   "group": "chart.trendline",
-   "lead": true
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Trendline (chartElement trendline)",
+   "group": null,
+   "lead": false
   },
   {
    "oo": "Linear",
@@ -457,10 +449,10 @@
   {
    "oo": " Up/Down Bars",
    "oo_var": "textUpDownBars",
-   "verdict": "missing",
-   "wo": "up/down bars (C3)",
-   "group": "chart.updown",
-   "lead": true
+   "verdict": "diverged",
+   "wo": "Chart Design Chart elements>Up/Down bars (chartElement upDownBars)",
+   "group": null,
+   "lead": false
   },
   {
    "oo": "Show Up/Down Bars",
@@ -481,32 +473,32 @@
   {
    "oo": "Bring to foreground",
    "oo_var": "textArrangeFront",
-   "verdict": "missing",
-   "wo": "bring to foreground — no WO action",
+   "verdict": "matched",
+   "wo": "Layout tab objectOp bring-to-foreground",
    "group": null,
    "lead": false
   },
   {
    "oo": "Send to background",
    "oo_var": "textArrangeBack",
-   "verdict": "missing",
-   "wo": "send to background — no WO action",
+   "verdict": "matched",
+   "wo": "Layout tab objectOp send-to-background",
    "group": null,
    "lead": false
   },
   {
    "oo": "Bring forward",
    "oo_var": "textArrangeForward",
-   "verdict": "missing",
-   "wo": "bring forward — no WO action",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp bring-forward",
    "group": null,
    "lead": false
   },
   {
    "oo": "Send backward",
    "oo_var": "textArrangeBackward",
-   "verdict": "missing",
-   "wo": "send backward — no WO action",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp send-backward",
    "group": null,
    "lead": false
   },
@@ -546,7 +538,7 @@
    "oo": "Tight",
    "oo_var": "txtTight",
    "verdict": "missing",
-   "wo": "wrap tight — no WO action",
+   "wo": "wrap tight — unmodeled text-flow wrap (oo-only)",
    "group": null,
    "lead": false
   },
@@ -554,15 +546,15 @@
    "oo": "Through",
    "oo_var": "txtThrough",
    "verdict": "missing",
-   "wo": "wrap through — no WO action",
+   "wo": "wrap through — unmodeled text-flow wrap (oo-only)",
    "group": null,
    "lead": false
   },
   {
    "oo": "Top and bottom",
    "oo_var": "txtTopAndBottom",
-   "verdict": "missing",
-   "wo": "wrap top-and-bottom — no WO action",
+   "verdict": "diverged",
+   "wo": "obj-center block flow (top-and-bottom ≈ own-line block)",
    "group": null,
    "lead": false
   },
@@ -570,7 +562,7 @@
    "oo": "In front of text",
    "oo_var": "txtInFront",
    "verdict": "missing",
-   "wo": "wrap in front — no WO action",
+   "wo": "wrap in front — unmodeled absolute float (oo-only)",
    "group": null,
    "lead": false
   },
@@ -593,16 +585,16 @@
   {
    "oo": "Edit data",
    "oo_var": "editChartText",
-   "verdict": "missing",
-   "wo": "edit chart data (open table) — no WO action",
+   "verdict": "diverged",
+   "wo": "Chart Design tab chartEditData -> openVectorEditor(chart)",
    "group": null,
    "lead": false
   },
   {
    "oo": "Actual size",
    "oo_var": "originalSizeText",
-   "verdict": "missing",
-   "wo": "reset image to actual size — no WO action",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=ActualSize -> objectOp actual-size",
    "group": null,
    "lead": false
   },
@@ -617,8 +609,8 @@
   {
    "oo": "Replace image",
    "oo_var": "textReplace",
-   "verdict": "missing",
-   "wo": "replace image dialog — no WO action",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=ReplaceImage -> objectOp replace-image (image-dialog)",
    "group": null,
    "lead": false
   },
@@ -673,8 +665,8 @@
   {
    "oo": "Rotate",
    "oo_var": "textRotate",
-   "verdict": "missing",
-   "wo": "object rotate (left/right) — no WO action",
+   "verdict": "diverged",
+   "wo": "right panel rp-image-rotate (applyImageRotate90)",
    "group": null,
    "lead": false
   },
@@ -761,8 +753,8 @@
   {
    "oo": "Copy hyperlink address",
    "oo_var": "copyHyperlinkText",
-   "verdict": "missing",
-   "wo": "copy link address — no WO action",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=CopyHyperlinkAddress (clipboard)",
    "group": null,
    "lead": false
   },
@@ -1329,24 +1321,24 @@
   {
    "oo": "Clear field",
    "oo_var": "textClearField",
-   "verdict": "missing",
-   "wo": "clear field value — no WO action",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=ClearField (empties page-number/[data-field])",
    "group": null,
    "lead": false
   },
   {
    "oo": "Group",
    "oo_var": "txtGroup",
-   "verdict": "n/a",
-   "wo": "uncatalogued spare caption",
+   "verdict": "diverged",
+   "wo": "Layout tab objectOp group (groupSelectedObjects)",
    "group": null,
    "lead": false
   },
   {
    "oo": "Ungroup",
    "oo_var": "txtUngroup",
-   "verdict": "n/a",
-   "wo": "uncatalogued spare caption",
+   "verdict": "matched",
+   "wo": "Layout tab objectOp ungroup (ungroupSelectedObjects)",
    "group": null,
    "lead": false
   }

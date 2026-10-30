@@ -6,39 +6,21 @@ Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
 
-## edit — 129 features (L0:41 L1:88 L3:0)
+## edit — 139 features (L0:22 L1:117 L3:0)
 - ❌ L0 **ctx.insert-caption** [ctx-menu] 
-- ❌ L0 **ctx.save-as-picture** [ctx-menu] 
-- ❌ L0 **ctx.align-left** [ctx-menu] 
-- ❌ L0 **ctx.align-center** [ctx-menu] 
-- ❌ L0 **ctx.align-right** [ctx-menu] 
-- ❌ L0 **ctx.align-top** [ctx-menu] 
-- ❌ L0 **ctx.align-middle** [ctx-menu] 
-- ❌ L0 **ctx.align-bottom** [ctx-menu] 
 - ❌ L0 **ctx.distribute-horizontally** [ctx-menu] 
 - ❌ L0 **ctx.distribute-vertically** [ctx-menu] 
-- ❌ L0 **ctx.merge-shapes** [ctx-menu] 
-- ❌ L0 **ctx.bring-to-foreground** [ctx-menu] 
-- ❌ L0 **ctx.send-to-background** [ctx-menu] 
-- ❌ L0 **ctx.bring-forward** [ctx-menu] 
-- ❌ L0 **ctx.send-backward** [ctx-menu] 
 - ❌ L0 **ctx.edit-wrap-boundary** [ctx-menu] 
 - ❌ L0 **ctx.tight** [ctx-menu] 
 - ❌ L0 **ctx.through** [ctx-menu] 
-- ❌ L0 **ctx.top-and-bottom** [ctx-menu] 
 - ❌ L0 **ctx.in-front-of-text** [ctx-menu] 
-- ❌ L0 **ctx.edit-data** [ctx-menu] 
-- ❌ L0 **ctx.actual-size** [ctx-menu] 
 - ❌ L0 **ctx.convert-to-shape** [ctx-menu] 
-- ❌ L0 **ctx.replace-image** [ctx-menu] 
-- ❌ L0 **ctx.rotate** [ctx-menu] 
 - ❌ L0 **ctx.crop** [ctx-menu] 
 - ❌ L0 **ctx.fill** [ctx-menu] 
 - ❌ L0 **ctx.fit** [ctx-menu] 
 - ❌ L0 **ctx.reset-crop** [ctx-menu] 
 - ❌ L0 **ctx.edit-points** [ctx-menu] 
 - ❌ L0 **ctx.edit-object** [ctx-menu] 
-- ❌ L0 **ctx.copy-hyperlink-address** [ctx-menu] 
 - ❌ L0 **ctx.resize-to-cell** [ctx-menu] 
 - ❌ L0 **ctx.horizontal-line-settings** [ctx-menu] 
 - ❌ L0 **ctx.create-new-style** [ctx-menu] 
@@ -47,7 +29,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ❌ L0 **ctx.update-page-numbers-only** [ctx-menu] 
 - ❌ L0 **ctx.cell** [ctx-menu] 
 - ❌ L0 **ctx.cells** [ctx-menu] 
-- ❌ L0 **ctx.clear-field** [ctx-menu] 
 - 🔲 L1 **shortcut.deleteleftchar** [shortcut] → WO: Backspace
 - 🔲 L1 **shortcut.deleterightchar** [shortcut] → WO: Delete
 - 🔲 L1 **shortcut.editundo** [shortcut] → WO: Ctrl+Z
@@ -75,19 +56,45 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.pastetextwithoutformat** [shortcut] → WO: Ctrl+Shift+V
 - 🔲 L1 **shortcut.selectrightword** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.selectleftword** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **ctx.save-as-picture** [ctx-menu] → WO: ctx data-ctx=SaveAsPicture -> objectOp save-as-picture
+- 🔲 L1 **ctx.align-left** [ctx-menu] → WO: Layout tab objectOp align-left
+- 🔲 L1 **ctx.align-center** [ctx-menu] → WO: Layout tab objectOp align-center
+- 🔲 L1 **ctx.align-right** [ctx-menu] → WO: Layout tab objectOp align-right
+- 🔲 L1 **ctx.align-top** [ctx-menu] → WO: Layout tab objectOp align-top
+- 🔲 L1 **ctx.align-middle** [ctx-menu] → WO: Layout tab objectOp align-middle
+- 🔲 L1 **ctx.align-bottom** [ctx-menu] → WO: Layout tab objectOp align-bottom
+- 🔲 L1 **ctx.merge-shapes** [ctx-menu] → WO: Layout tab objectOp merge-union/intersect/subtract
+- 🔲 L1 **ctx.axis-titles** [ctx-menu] → WO: Chart Design Chart elements>Axis Titles (chartElement axisTitles)
+- 🔲 L1 **ctx.chart-title** [ctx-menu] → WO: Chart Design Chart elements>Chart title (chartElement title)
+- 🔲 L1 **ctx.data-labels** [ctx-menu] → WO: Chart Design Chart elements>Data labels (chartElement dataLabels)
+- 🔲 L1 **ctx.error-bars** [ctx-menu] → WO: Chart Design Chart elements>Error bars (chartElement errorBars)
+- 🔲 L1 **ctx.gridlines** [ctx-menu] → WO: Chart Design Chart elements>Gridlines (chartElement gridlines)
+- 🔲 L1 **ctx.legend** [ctx-menu] → WO: Chart Design Chart elements>Legend (chartElement legend)
+- 🔲 L1 **ctx.trendline** [ctx-menu] → WO: Chart Design Chart elements>Trendline (chartElement trendline)
+- 🔲 L1 **ctx.up-down-bars** [ctx-menu] → WO: Chart Design Chart elements>Up/Down bars (chartElement upDownBars)
+- 🔲 L1 **ctx.bring-to-foreground** [ctx-menu] → WO: Layout tab objectOp bring-to-foreground
+- 🔲 L1 **ctx.send-to-background** [ctx-menu] → WO: Layout tab objectOp send-to-background
+- 🔲 L1 **ctx.bring-forward** [ctx-menu] → WO: Layout tab objectOp bring-forward
+- 🔲 L1 **ctx.send-backward** [ctx-menu] → WO: Layout tab objectOp send-backward
 - 🔲 L1 **ctx.in-line-with-text** [ctx-menu] → WO: ctx data-ctx=WrapInline
 - 🔲 L1 **ctx.square** [ctx-menu] → WO: ctx data-ctx=WrapSquare
+- 🔲 L1 **ctx.top-and-bottom** [ctx-menu] → WO: obj-center block flow (top-and-bottom ≈ own-line block)
 - 🔲 L1 **ctx.behind-text** [ctx-menu] → WO: ctx data-ctx=WrapBehind
+- 🔲 L1 **ctx.edit-data** [ctx-menu] → WO: Chart Design tab chartEditData -> openVectorEditor(chart)
+- 🔲 L1 **ctx.actual-size** [ctx-menu] → WO: ctx data-ctx=ActualSize -> objectOp actual-size
+- 🔲 L1 **ctx.replace-image** [ctx-menu] → WO: ctx data-ctx=ReplaceImage -> objectOp replace-image (image-dialog)
 - 🔲 L1 **ctx.copy** [ctx-menu] → WO: ctx data-ctx=Copy
 - 🔲 L1 **ctx.paste** [ctx-menu] → WO: ctx data-ctx=Paste
 - 🔲 L1 **ctx.cut** [ctx-menu] → WO: ctx data-ctx=Cut
 - 🔲 L1 **ctx.accept-change** [ctx-menu] → WO: ctx data-ctx=AcceptChange
 - 🔲 L1 **ctx.reject-change** [ctx-menu] → WO: ctx data-ctx=RejectChange
 - 🔲 L1 **ctx.print-selection** [ctx-menu] → WO: Print button / Ctrl+P (browser print; no ctx item)
+- 🔲 L1 **ctx.rotate** [ctx-menu] → WO: right panel rp-image-rotate (applyImageRotate90)
 - 🔲 L1 **ctx.remove-content-control** [ctx-menu] → WO: ctx data-ctx=RemoveContentControl
 - 🔲 L1 **ctx.content-control-settings** [ctx-menu] → WO: ctx data-ctx=ContentControlSettings
 - 🔲 L1 **ctx.link** [ctx-menu] → WO: ctx data-ctx=Link
 - 🔲 L1 **ctx.edit-link** [ctx-menu] → WO: ctx data-ctx=EditLink
+- 🔲 L1 **ctx.copy-hyperlink-address** [ctx-menu] → WO: ctx data-ctx=CopyHyperlinkAddress (clipboard)
 - 🔲 L1 **ctx.remove-link** [ctx-menu] → WO: ctx data-ctx=RemoveLink
 - 🔲 L1 **ctx.text-alignment** [ctx-menu] → WO: ctx data-ctx=TextAlignment
 - 🔲 L1 **ctx.top** [ctx-menu] → WO: ctx data-ctx=TextAlignTop
@@ -136,77 +143,9 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.edit-header** [ctx-menu] → WO: Insert ribbon header/footer + headerfooter-dialog (not in ctx)
 - 🔲 L1 **ctx.undo** [ctx-menu] → WO: ctx data-ctx=Undo
 - 🔲 L1 **ctx.redo** [ctx-menu] → WO: ctx data-ctx=Redo
-
-## chart — 28 features (L0:9 L1:19 L3:0)
-- ❌ L0 **ctx.chart.axes** [ctx-menu] 
-- ❌ L0 **ctx.chart.title** [ctx-menu] 
-- ❌ L0 **ctx.chart.labels** [ctx-menu] 
-- ❌ L0 **ctx.chart.datatable** [ctx-menu] 
-- ❌ L0 **ctx.chart.errorbars** [ctx-menu] 
-- ❌ L0 **ctx.chart.gridlines** [ctx-menu] 
-- ❌ L0 **ctx.chart.legend** [ctx-menu] 
-- ❌ L0 **ctx.chart.trendline** [ctx-menu] 
-- ❌ L0 **ctx.chart.updown** [ctx-menu] 
-- 🔲 L1 **chart.chart** [control] → WO: insertObject
-- 🔲 L1 **chart.chart-elements** [control] → WO: Chart elements ▾
-- 🔲 L1 **chart.edit-data** [control] → WO: chartEditData
-- 🔲 L1 **chart.update-data** [control] → WO: chartUpdateData
-- 🔲 L1 **chart.chart-type** [control] → WO: Chart type ▾
-- 🔲 L1 **chart.advanced-settings** [control] → WO: chartSettings
-- 🔲 L1 **chart.wrapping** [control] → WO: Wrapping
-- 🔲 L1 **chart.width** [control] → WO: chart-width-input
-- 🔲 L1 **chart.height** [control] → WO: chart-height-input
-- 🔲 L1 **chart.3d-rotation** [control] → WO: chart3d
-- 🔲 L1 **chart.axes** [menu-item] → WO: Axes
-- 🔲 L1 **chart.axis-titles** [menu-item] → WO: Axis Titles
-- 🔲 L1 **chart.chart-title** [menu-item] → WO: Chart title
-- 🔲 L1 **chart.data-labels** [menu-item] → WO: Data labels
-- 🔲 L1 **chart.error-bars** [menu-item] → WO: Error Bars
-- 🔲 L1 **chart.gridlines** [menu-item] → WO: btn-gridlines
-- 🔲 L1 **chart.legend** [menu-item] → WO: Legend
-- 🔲 L1 **chart.trendline** [menu-item] → WO: Trendline
-- 🔲 L1 **chart.up-down-bars** [menu-item] → WO: Up/Down Bars
-
-## file — 39 features (L0:8 L1:31 L3:0)
-- ❌ L0 **file.home** [control] 
-- ❌ L0 **file.layout** [control] 
-- ❌ L0 **file.references** [control] 
-- ❌ L0 **file.collaboration** [control] 
-- ❌ L0 **shortcut.openfilepanel** [shortcut] 
-- ❌ L0 **shortcut.opencommentfield** [shortcut] 
-- ❌ L0 **shortcut.openexistingfile** [shortcut] 
-- ❌ L0 **shortcut.closefile** [shortcut] 
-- 🔲 L1 **file.file** [control] → WO: btn-textfile
-- 🔲 L1 **file.insert** [control] → WO: insertBlankPage
-- 🔲 L1 **file.draw** [control] → WO: toggleInk
-- 🔲 L1 **file.protection** [control] → WO: protectDialog
-- 🔲 L1 **file.view** [control] → WO: displayMode
-- 🔲 L1 **file.plugins** [control] → WO: plugins-dialog
-- 🔲 L1 **file.ai** [control] → WO: AI changes
-- 🔲 L1 **file.editing** [control] → WO: coedit-mode
-- 🔲 L1 **file.find-ctrl-f** [control] → WO: btn-find
-- 🔲 L1 **file.copy-ctrl-insert** [control] → WO: btn-copy
-- 🔲 L1 **file.paste-ctrl-v** [control] → WO: btn-paste
-- 🔲 L1 **file.cut-ctrl-x** [control] → WO: btn-cut
-- 🔲 L1 **file.copy-style-ctrl-alt-c** [control] → WO: btn-copy
-- 🔲 L1 **file.mail-merge** [control] → WO: mailMerge
-- 🔲 L1 **file.back** [backstage-item] → WO: Back
-- 🔲 L1 **file.save** [backstage-item] → WO: Save
-- 🔲 L1 **file.download-as** [backstage-item] → WO: Download As
-- 🔲 L1 **file.protect** [backstage-item] → WO: Protect
-- 🔲 L1 **file.advanced-settings** [backstage-item] → WO: chartSettings
-- 🔲 L1 **file.suggest-a-feature** [backstage-item] → WO: Suggest a feature
-- 🔲 L1 **shortcut.openfinddialog** [shortcut] → WO: Ctrl+F
-- 🔲 L1 **shortcut.openfindandreplacemenu** [shortcut] → WO: Ctrl+H
-- 🔲 L1 **shortcut.opencommentspanel** [shortcut] → WO: Ctrl+Shift+H (comments rail)
-- 🔲 L1 **shortcut.save** [shortcut] → WO: Ctrl+S
-- 🔲 L1 **shortcut.printpreviewandprint** [shortcut] → WO: Ctrl+P opens native print dialog (WO window.print)
-- 🔲 L1 **shortcut.saveas** [shortcut] → WO: Ctrl+Shift+S (export backstage pane)
-- 🔲 L1 **shortcut.openhelpmenu** [shortcut] → WO: F1 opens Help dialog
-- 🔲 L1 **shortcut.opencontextmenu** [shortcut] → WO: Shift+F10 fires the contextmenu DOM event; WO handler shows the custom menu
-- 🔲 L1 **shortcut.closemenu** [shortcut] → WO: Escape
-- 🔲 L1 **shortcut.updatefields** [shortcut] → WO: F9 (fieldOpAtSelection update)
-- 🔲 L1 **shortcut.openchatpanel** [shortcut] → WO: Ctrl+Alt+Q
+- 🔲 L1 **ctx.clear-field** [ctx-menu] → WO: ctx data-ctx=ClearField (empties page-number/[data-field])
+- 🔲 L1 **ctx.group** [ctx-menu] → WO: Layout tab objectOp group (groupSelectedObjects)
+- 🔲 L1 **ctx.ungroup** [ctx-menu] → WO: Layout tab objectOp ungroup (ungroupSelectedObjects)
 
 ## shortcuts — 62 features (L0:5 L1:57 L3:0)
 - ❌ L0 **shortcut.specialoptionskeepsourceformat** [shortcut] 
@@ -271,6 +210,47 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.movetopreviouspage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.nextfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.previousfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+
+## file — 39 features (L0:4 L1:35 L3:0)
+- ❌ L0 **shortcut.openfilepanel** [shortcut] 
+- ❌ L0 **shortcut.opencommentfield** [shortcut] 
+- ❌ L0 **shortcut.openexistingfile** [shortcut] 
+- ❌ L0 **shortcut.closefile** [shortcut] 
+- 🔲 L1 **file.file** [control] → WO: btn-textfile
+- 🔲 L1 **file.home** [control] → WO: tab:home
+- 🔲 L1 **file.insert** [control] → WO: insertBlankPage
+- 🔲 L1 **file.draw** [control] → WO: toggleInk
+- 🔲 L1 **file.layout** [control] → WO: tab:layout
+- 🔲 L1 **file.references** [control] → WO: tab:references
+- 🔲 L1 **file.collaboration** [control] → WO: tab:collaboration
+- 🔲 L1 **file.protection** [control] → WO: protectDialog
+- 🔲 L1 **file.view** [control] → WO: displayMode
+- 🔲 L1 **file.plugins** [control] → WO: plugins-dialog
+- 🔲 L1 **file.ai** [control] → WO: AI changes
+- 🔲 L1 **file.editing** [control] → WO: coedit-mode
+- 🔲 L1 **file.find-ctrl-f** [control] → WO: btn-find
+- 🔲 L1 **file.copy-ctrl-insert** [control] → WO: btn-copy
+- 🔲 L1 **file.paste-ctrl-v** [control] → WO: btn-paste
+- 🔲 L1 **file.cut-ctrl-x** [control] → WO: btn-cut
+- 🔲 L1 **file.copy-style-ctrl-alt-c** [control] → WO: btn-copy
+- 🔲 L1 **file.mail-merge** [control] → WO: mailMerge
+- 🔲 L1 **file.back** [backstage-item] → WO: Back
+- 🔲 L1 **file.save** [backstage-item] → WO: Save
+- 🔲 L1 **file.download-as** [backstage-item] → WO: Download As
+- 🔲 L1 **file.protect** [backstage-item] → WO: Protect
+- 🔲 L1 **file.advanced-settings** [backstage-item] → WO: chartSettings
+- 🔲 L1 **file.suggest-a-feature** [backstage-item] → WO: Suggest a feature
+- 🔲 L1 **shortcut.openfinddialog** [shortcut] → WO: Ctrl+F
+- 🔲 L1 **shortcut.openfindandreplacemenu** [shortcut] → WO: Ctrl+H
+- 🔲 L1 **shortcut.opencommentspanel** [shortcut] → WO: Ctrl+Shift+H (comments rail)
+- 🔲 L1 **shortcut.save** [shortcut] → WO: Ctrl+S
+- 🔲 L1 **shortcut.printpreviewandprint** [shortcut] → WO: Ctrl+P opens native print dialog (WO window.print)
+- 🔲 L1 **shortcut.saveas** [shortcut] → WO: Ctrl+Shift+S (export backstage pane)
+- 🔲 L1 **shortcut.openhelpmenu** [shortcut] → WO: F1 opens Help dialog
+- 🔲 L1 **shortcut.opencontextmenu** [shortcut] → WO: Shift+F10 fires the contextmenu DOM event; WO handler shows the custom menu
+- 🔲 L1 **shortcut.closemenu** [shortcut] → WO: Escape
+- 🔲 L1 **shortcut.updatefields** [shortcut] → WO: F9 (fieldOpAtSelection update)
+- 🔲 L1 **shortcut.openchatpanel** [shortcut] → WO: Ctrl+Alt+Q
 
 ## table — 15 features (L0:3 L1:9 L3:3)
 - ❌ L0 **ctx.distribute-rows** [ctx-menu] 
@@ -402,17 +382,27 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **formatting.subscript-ctrl** [control] → WO: subscript
 - ✅ L3 **formatting.clear-style** [control] → WO: removeFormat
 
-## statusbar — 10 features (L0:1 L1:9 L3:0)
-- ❌ L0 **statusbar.btn-doc-spell** [statusbar-item] 
-- 🔲 L1 **statusbar.word-count** [statusbar-item] → WO: sb-word-count
-- 🔲 L1 **statusbar.english-united-states** [statusbar-item] → WO: sb-lang
-- 🔲 L1 **statusbar.btn-doc-lang** [statusbar-item] → WO: sb-lang
-- 🔲 L1 **statusbar.btn-doc-review** [statusbar-item] → WO: sb-track-changes
-- 🔲 L1 **statusbar.status-btn-multiple-pages** [statusbar-item] → WO: btn-multipage
-- 🔲 L1 **statusbar.btn-zoom-topage** [statusbar-item] → WO: btn-zoom-fit
-- 🔲 L1 **statusbar.btn-zoom-towidth** [statusbar-item] → WO: btn-zoom-fit
-- 🔲 L1 **statusbar.btn-zoom-down** [statusbar-item] → WO: btn-zoom-out
-- 🔲 L1 **statusbar.btn-zoom-up** [statusbar-item] → WO: btn-zoom-in
+## chart — 20 features (L0:1 L1:19 L3:0)
+- ❌ L0 **ctx.chart.datatable** [ctx-menu] 
+- 🔲 L1 **chart.chart** [control] → WO: insertObject
+- 🔲 L1 **chart.chart-elements** [control] → WO: Chart elements ▾
+- 🔲 L1 **chart.edit-data** [control] → WO: chartEditData
+- 🔲 L1 **chart.update-data** [control] → WO: chartUpdateData
+- 🔲 L1 **chart.chart-type** [control] → WO: Chart type ▾
+- 🔲 L1 **chart.advanced-settings** [control] → WO: chartSettings
+- 🔲 L1 **chart.wrapping** [control] → WO: Wrapping
+- 🔲 L1 **chart.width** [control] → WO: chart-width-input
+- 🔲 L1 **chart.height** [control] → WO: chart-height-input
+- 🔲 L1 **chart.3d-rotation** [control] → WO: chart3d
+- 🔲 L1 **chart.axes** [menu-item] → WO: Axes
+- 🔲 L1 **chart.axis-titles** [menu-item] → WO: Axis Titles
+- 🔲 L1 **chart.chart-title** [menu-item] → WO: Chart title
+- 🔲 L1 **chart.data-labels** [menu-item] → WO: Data labels
+- 🔲 L1 **chart.error-bars** [menu-item] → WO: Error Bars
+- 🔲 L1 **chart.gridlines** [menu-item] → WO: btn-gridlines
+- 🔲 L1 **chart.legend** [menu-item] → WO: Legend
+- 🔲 L1 **chart.trendline** [menu-item] → WO: Trendline
+- 🔲 L1 **chart.up-down-bars** [menu-item] → WO: Up/Down Bars
 
 ## image — 2 features (L0:0 L1:2 L3:0)
 - 🔲 L1 **image.image** [control] → WO: btn-hf-image
@@ -543,3 +533,15 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **other.summarization** [control] → WO: aiSummarize
 - 🔲 L1 **other.translation** [control] → WO: aiTranslate
 - 🔲 L1 **other.create-ai-assistant** [control] → WO: createAiAssistant
+
+## statusbar — 10 features (L0:0 L1:10 L3:0)
+- 🔲 L1 **statusbar.word-count** [statusbar-item] → WO: sb-word-count
+- 🔲 L1 **statusbar.english-united-states** [statusbar-item] → WO: sb-lang
+- 🔲 L1 **statusbar.btn-doc-lang** [statusbar-item] → WO: sb-lang
+- 🔲 L1 **statusbar.btn-doc-spell** [statusbar-item] → WO: sb-doc-spell
+- 🔲 L1 **statusbar.btn-doc-review** [statusbar-item] → WO: sb-track-changes
+- 🔲 L1 **statusbar.status-btn-multiple-pages** [statusbar-item] → WO: btn-multipage
+- 🔲 L1 **statusbar.btn-zoom-topage** [statusbar-item] → WO: btn-zoom-fit
+- 🔲 L1 **statusbar.btn-zoom-towidth** [statusbar-item] → WO: btn-zoom-fit
+- 🔲 L1 **statusbar.btn-zoom-down** [statusbar-item] → WO: btn-zoom-out
+- 🔲 L1 **statusbar.btn-zoom-up** [statusbar-item] → WO: btn-zoom-in
