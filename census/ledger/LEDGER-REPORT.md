@@ -260,6 +260,57 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **table.insert-custom-table** [menu-item] → WO: btn-table
 - ✅ L3 **table.convert-text-to-table** [menu-item] → WO: Convert Text to Table…
 
+## page — 49 features (L0:2 L1:47 L3:0)
+- ❌ L0 **page.none** [menu-item] 
+- ❌ L0 **page.automatic** [menu-item] 
+- 🔲 L1 **page.margins** [control] → WO: Margins
+- 🔲 L1 **page.orientation** [control] → WO: Orientation
+- 🔲 L1 **page.size** [control] → WO: Size
+- 🔲 L1 **page.columns** [control] → WO: Columns
+- 🔲 L1 **page.breaks** [control] → WO: Breaks
+- 🔲 L1 **page.line-numbers** [control] → WO: toggleLineNumbers
+- 🔲 L1 **page.hyphenation** [control] → WO: toggleHyphenation
+- 🔲 L1 **page.wrapping** [control] → WO: Wrapping
+- 🔲 L1 **page.bring-forward** [control] → WO: objectOp
+- 🔲 L1 **page.send-backward** [control] → WO: objectOp
+- 🔲 L1 **page.align** [control] → WO: Align
+- 🔲 L1 **page.group** [control] → WO: objectOp
+- 🔲 L1 **page.merge-shapes** [control] → WO: btn-mergeshapes
+- 🔲 L1 **page.watermark** [control] → WO: toggleWatermark
+- 🔲 L1 **page.page-color** [control] → WO: btn-multipage
+- 🔲 L1 **page.colors** [control] → WO: themecolors
+- 🔲 L1 **page.last-custom** [menu-item] → WO: Last Custom
+- 🔲 L1 **page.normal** [menu-item] → WO: Normal
+- 🔲 L1 **page.narrow** [menu-item] → WO: Narrow
+- 🔲 L1 **page.moderate** [menu-item] → WO: Moderate
+- 🔲 L1 **page.wide** [menu-item] → WO: Wide
+- 🔲 L1 **page.custom-margins** [menu-item] → WO: Custom margins
+- 🔲 L1 **page.us-letter** [menu-item] → WO: Letter
+- 🔲 L1 **page.us-legal** [menu-item] → WO: Legal
+- 🔲 L1 **page.a4** [menu-item] → WO: A4
+- 🔲 L1 **page.a5** [menu-item] → WO: A5
+- 🔲 L1 **page.b5** [menu-item] → WO: B5
+- 🔲 L1 **page.envelope-10** [menu-item] → WO: Envelope #10
+- 🔲 L1 **page.envelope-dl** [menu-item] → WO: Envelope DL
+- 🔲 L1 **page.tabloid** [menu-item] → WO: Tabloid
+- 🔲 L1 **page.a3** [menu-item] → WO: A3
+- 🔲 L1 **page.tabloid-oversize** [menu-item] → WO: Tabloid Oversize
+- 🔲 L1 **page.roc-16k** [menu-item] → WO: ROC 16K
+- 🔲 L1 **page.envelope-choukei-3** [menu-item] → WO: Envelope Choukei 3
+- 🔲 L1 **page.super-b-a3** [menu-item] → WO: Super B/A3
+- 🔲 L1 **page.custom-page-size** [menu-item] → WO: btn-multipage
+- 🔲 L1 **page.one** [menu-item] → WO: One
+- 🔲 L1 **page.two** [menu-item] → WO: Two
+- 🔲 L1 **page.three** [menu-item] → WO: Three
+- 🔲 L1 **page.left** [menu-item] → WO: Left
+- 🔲 L1 **page.right** [menu-item] → WO: Right
+- 🔲 L1 **page.custom-columns** [menu-item] → WO: Custom columns
+- 🔲 L1 **page.hyphenation-options** [menu-item] → WO: toggleHyphenation
+- 🔲 L1 **page.dlg-margins** [dialog] (8 OO fields) → WO: Margins
+- 🔲 L1 **page.dlg-page-size** [dialog] (3 OO fields) → WO: btn-multipage
+- 🔲 L1 **page.dlg-columns** [dialog] (5 OO fields) → WO: columns-dialog
+- 🔲 L1 **page.dlg-hyphenation** [dialog] (2 OO fields) → WO: hyphenation-dialog
+
 ## formatting — 53 features (L0:1 L1:44 L3:8)
 - ❌ L0 **shortcut.strikeout** [shortcut] 
 - 🔲 L1 **formatting.font** [control] → WO: font-family
@@ -430,57 +481,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **headerfooter.close** [control] → WO: btn-hf-close
 - 🔲 L1 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
 - ✅ L3 **headerfooter.header-footer** [control] → WO: insertHeaderFooter
-
-## page — 49 features (L0:0 L1:49 L3:0)
-- 🔲 L1 **page.margins** [control] → WO: Margins
-- 🔲 L1 **page.orientation** [control] → WO: Orientation
-- 🔲 L1 **page.size** [control] → WO: Size
-- 🔲 L1 **page.columns** [control] → WO: Columns
-- 🔲 L1 **page.breaks** [control] → WO: Breaks
-- 🔲 L1 **page.line-numbers** [control] → WO: toggleLineNumbers
-- 🔲 L1 **page.hyphenation** [control] → WO: Hyphenation
-- 🔲 L1 **page.wrapping** [control] → WO: Wrapping
-- 🔲 L1 **page.bring-forward** [control] → WO: objectOp
-- 🔲 L1 **page.send-backward** [control] → WO: objectOp
-- 🔲 L1 **page.align** [control] → WO: Align
-- 🔲 L1 **page.group** [control] → WO: objectOp
-- 🔲 L1 **page.merge-shapes** [control] → WO: btn-mergeshapes
-- 🔲 L1 **page.watermark** [control] → WO: toggleWatermark
-- 🔲 L1 **page.page-color** [control] → WO: btn-multipage
-- 🔲 L1 **page.colors** [control] → WO: themecolors
-- 🔲 L1 **page.last-custom** [menu-item] → WO: Last Custom
-- 🔲 L1 **page.normal** [menu-item] → WO: Normal
-- 🔲 L1 **page.narrow** [menu-item] → WO: Narrow
-- 🔲 L1 **page.moderate** [menu-item] → WO: Moderate
-- 🔲 L1 **page.wide** [menu-item] → WO: Wide
-- 🔲 L1 **page.custom-margins** [menu-item] → WO: Custom margins
-- 🔲 L1 **page.us-letter** [menu-item] → WO: Letter
-- 🔲 L1 **page.us-legal** [menu-item] → WO: Legal
-- 🔲 L1 **page.a4** [menu-item] → WO: A4
-- 🔲 L1 **page.a5** [menu-item] → WO: A5
-- 🔲 L1 **page.b5** [menu-item] → WO: B5
-- 🔲 L1 **page.envelope-10** [menu-item] → WO: Envelope #10
-- 🔲 L1 **page.envelope-dl** [menu-item] → WO: Envelope DL
-- 🔲 L1 **page.tabloid** [menu-item] → WO: Tabloid
-- 🔲 L1 **page.a3** [menu-item] → WO: A3
-- 🔲 L1 **page.tabloid-oversize** [menu-item] → WO: Tabloid Oversize
-- 🔲 L1 **page.roc-16k** [menu-item] → WO: ROC 16K
-- 🔲 L1 **page.envelope-choukei-3** [menu-item] → WO: Envelope Choukei 3
-- 🔲 L1 **page.super-b-a3** [menu-item] → WO: Super B/A3
-- 🔲 L1 **page.custom-page-size** [menu-item] → WO: btn-multipage
-- 🔲 L1 **page.one** [menu-item] → WO: One
-- 🔲 L1 **page.two** [menu-item] → WO: Two
-- 🔲 L1 **page.three** [menu-item] → WO: Three
-- 🔲 L1 **page.left** [menu-item] → WO: Left
-- 🔲 L1 **page.right** [menu-item] → WO: Right
-- 🔲 L1 **page.custom-columns** [menu-item] → WO: Custom columns
-- 🔲 L1 **page.none** [menu-item] → WO: None
-- 🔲 L1 **page.automatic** [menu-item] → WO: Automatic
-- 🔲 L1 **page.hyphenation-options** [menu-item] → WO: Hyphenation options
-- 🔲 L1 **page.dlg-margins** [dialog] (8 OO fields) → WO: Margins
-- 🔲 L1 **page.dlg-page-size** [dialog] (3 OO fields) → WO: btn-multipage
-- 🔲 L1 **page.dlg-columns** [dialog] (5 OO fields) → WO: columns-dialog
-- 🔲 L1 **page.dlg-hyphenation** [dialog] (2 OO fields) → WO: hyphenation-dialog
 
 ## references — 9 features (L0:0 L1:9 L3:0)
 - 🔲 L1 **references.add-text** [control] → WO: btn-addtext

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-30T18:05:29.027521",
+ "generated": "2026-10-31T03:11:16.987550",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,8 +9,8 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 20,
-  "L1": 466,
+  "L0": 22,
+  "L1": 464,
   "L2": 0,
   "L3": 15,
   "L4": 0
@@ -1453,7 +1453,7 @@
     }
    ],
    "wo": {
-    "match": "Hyphenation",
+    "match": "toggleHyphenation",
     "where": "tab:layout"
    },
    "level": 1,
@@ -3681,11 +3681,8 @@
      "enabled": true
     }
    ],
-   "wo": {
-    "match": "None",
-    "where": "menu:Hyphenation"
-   },
-   "level": 1,
+   "wo": null,
+   "level": 0,
    "evidence": []
   },
   {
@@ -3699,11 +3696,8 @@
      "enabled": true
     }
    ],
-   "wo": {
-    "match": "Automatic",
-    "where": "menu:Hyphenation"
-   },
-   "level": 1,
+   "wo": null,
+   "level": 0,
    "evidence": []
   },
   {
@@ -3718,8 +3712,8 @@
     }
    ],
    "wo": {
-    "match": "Hyphenation options",
-    "where": "menu:Hyphenation"
+    "match": "toggleHyphenation",
+    "where": "tab:layout"
    },
    "level": 1,
    "evidence": []

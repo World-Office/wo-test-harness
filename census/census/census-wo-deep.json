@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-10-28T06:15:38.313Z",
+ "capturedAt": "2026-10-31T02:10:34.349Z",
  "viewport": {
   "w": 1600,
   "h": 1000
@@ -1130,14 +1130,14 @@
     },
     {
      "id": null,
-     "cmd": null,
+     "cmd": "toggleHyphenation",
      "icon": "",
      "label": "Hyphenation",
      "enabled": true,
      "x": 298,
-     "y": 43,
-     "w": 56,
-     "h": 46
+     "y": 49,
+     "w": 91,
+     "h": 34
     },
     {
      "id": null,
@@ -1145,7 +1145,7 @@
      "icon": "",
      "label": "Wrapping",
      "enabled": true,
-     "x": 356,
+     "x": 391,
      "y": 43,
      "w": 43,
      "h": 46
@@ -1156,7 +1156,7 @@
      "icon": "",
      "label": "Bring forward",
      "enabled": true,
-     "x": 401,
+     "x": 436,
      "y": 49,
      "w": 95,
      "h": 34
@@ -1165,11 +1165,33 @@
      "id": null,
      "cmd": "objectOp",
      "icon": "",
+     "label": "Bring to foreground",
+     "enabled": true,
+     "x": 533,
+     "y": 49,
+     "w": 129,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "icon": "",
      "label": "Send backward",
      "enabled": true,
-     "x": 498,
+     "x": 664,
      "y": 49,
      "w": 108,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "icon": "",
+     "label": "Send to background",
+     "enabled": true,
+     "x": 774,
+     "y": 49,
+     "w": 134,
      "h": 34
     },
     {
@@ -1178,7 +1200,7 @@
      "icon": "",
      "label": "Align",
      "enabled": true,
-     "x": 608,
+     "x": 910,
      "y": 43,
      "w": 22,
      "h": 46
@@ -1189,9 +1211,20 @@
      "icon": "",
      "label": "Group",
      "enabled": true,
-     "x": 632,
+     "x": 934,
      "y": 49,
      "w": 54,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "icon": "",
+     "label": "Ungroup",
+     "enabled": true,
+     "x": 991,
+     "y": 49,
+     "w": 68,
      "h": 34
     },
     {
@@ -1200,7 +1233,7 @@
      "icon": "",
      "label": "Merge shapes",
      "enabled": true,
-     "x": 688,
+     "x": 1060,
      "y": 43,
      "w": 63,
      "h": 46
@@ -1211,7 +1244,7 @@
      "icon": "",
      "label": "Watermark",
      "enabled": true,
-     "x": 753,
+     "x": 1126,
      "y": 49,
      "w": 81,
      "h": 34
@@ -1222,7 +1255,7 @@
      "icon": "",
      "label": "Page color",
      "enabled": true,
-     "x": 836,
+     "x": 1209,
      "y": 55,
      "w": 24,
      "h": 22
@@ -1233,7 +1266,7 @@
      "icon": "",
      "label": "Colors",
      "enabled": true,
-     "x": 866,
+     "x": 1239,
      "y": 60,
      "w": 80,
      "h": 14
@@ -2542,7 +2575,13 @@
    "label": "Word and character count — opens documen",
    "id": "sb-word-count",
    "x": 89,
-   "w": 142
+   "w": 149
+  },
+  {
+   "label": "Check spelling",
+   "id": "sb-doc-spell",
+   "x": 248,
+   "w": 55
   },
   {
    "label": "Document language",
@@ -2658,11 +2697,6 @@
    "id": "",
    "label": "Suggest a feature",
    "enabled": true
-  },
-  {
-   "id": "",
-   "label": "demo.docx2 KB",
-   "enabled": false
   },
   {
    "id": "btn-open",
@@ -3168,6 +3202,16 @@
      "label": "Convert Text to Table…",
      "cmd": "convertTextToTable",
      "enabled": true
+    },
+    {
+     "label": "Convert Table to Text…",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Convert Table to Text…",
+     "cmd": "convertTableToText",
+     "enabled": true
     }
    ]
   },
@@ -3185,12 +3229,72 @@
      "enabled": true
     },
     {
+     "label": "a/b",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "a/b",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "(x+1)/2",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "(x+1)/2",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "1/n",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "1/n",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
      "label": "Scripts",
      "cmd": null,
      "enabled": true
     },
     {
      "label": "Scripts",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "x²+x₁",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "x²+x₁",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "eˣ",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "eˣ",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "xᵃᵦ",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "xᵃᵦ",
      "cmd": "equationTemplate",
      "enabled": true
     },
@@ -3205,12 +3309,72 @@
      "enabled": true
     },
     {
+     "label": "√x",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "√x",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "√(a+b)",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "√(a+b)",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "√2",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "√2",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
      "label": "Integrals",
      "cmd": null,
      "enabled": true
     },
     {
      "label": "Integrals",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "∫f(x)dx",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "∫f(x)dx",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "∫ₐᵇf(x)dx",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "∫ₐᵇf(x)dx",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "∫₀¹x dx",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "∫₀¹x dx",
      "cmd": "equationTemplate",
      "enabled": true
     },
@@ -3225,12 +3389,72 @@
      "enabled": true
     },
     {
+     "label": "Σᵢ₌₁ⁿi",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Σᵢ₌₁ⁿi",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "Σₖ₌₀ᵐk²",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Σₖ₌₀ᵐk²",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "Σaᵢ",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Σaᵢ",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
      "label": "Brackets",
      "cmd": null,
      "enabled": true
     },
     {
      "label": "Brackets",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "(a+b)·[c−d]",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "(a+b)·[c−d]",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "(x, y, z)",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "(x, y, z)",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "[0, 1]",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "[0, 1]",
      "cmd": "equationTemplate",
      "enabled": true
     },
@@ -3245,12 +3469,72 @@
      "enabled": true
     },
     {
+     "label": "sin x + cos x",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "sin x + cos x",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "log₂x",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "log₂x",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "tan x",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "tan x",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
      "label": "Accents",
      "cmd": null,
      "enabled": true
     },
     {
      "label": "Accents",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "x̂",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "x̂",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "â²",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "â²",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "f̂(x)",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "f̂(x)",
      "cmd": "equationTemplate",
      "enabled": true
     },
@@ -3265,6 +3549,36 @@
      "enabled": true
     },
     {
+     "label": "lim f(x)",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "lim f(x)",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "lim aₙ",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "lim aₙ",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "log₁₀x",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "log₁₀x",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
      "label": "Operators",
      "cmd": null,
      "enabled": true
@@ -3275,12 +3589,72 @@
      "enabled": true
     },
     {
+     "label": "a+b=c",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "a+b=c",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "x≤y",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "x≤y",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "p±q",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "p±q",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
      "label": "Matrices",
      "cmd": null,
      "enabled": true
     },
     {
      "label": "Matrices",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "(a b; c d)",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "(a b; c d)",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "I₂",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "I₂",
+     "cmd": "equationTemplate",
+     "enabled": true
+    },
+    {
+     "label": "(x y; z w)",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "(x y; z w)",
      "cmd": "equationTemplate",
      "enabled": true
     }
@@ -3404,6 +3778,16 @@
   {
    "trigger": "Size",
    "items": [
+    {
+     "label": "Last Custom",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Last Custom",
+     "cmd": "applyPageSize",
+     "enabled": true
+    },
     {
      "label": "Letter",
      "cmd": null,
@@ -3607,41 +3991,6 @@
     {
      "label": "Custom columns",
      "cmd": "openColumnsDialog",
-     "enabled": true
-    }
-   ]
-  },
-  {
-   "trigger": "Hyphenation",
-   "items": [
-    {
-     "label": "Automatic",
-     "cmd": null,
-     "enabled": true
-    },
-    {
-     "label": "Automatic",
-     "cmd": "hyphenationSet",
-     "enabled": true
-    },
-    {
-     "label": "None",
-     "cmd": null,
-     "enabled": true
-    },
-    {
-     "label": "None",
-     "cmd": "hyphenationSet",
-     "enabled": true
-    },
-    {
-     "label": "Hyphenation options",
-     "cmd": null,
-     "enabled": true
-    },
-    {
-     "label": "Hyphenation options",
-     "cmd": "toggleHyphenation",
      "enabled": true
     }
    ]
@@ -4091,6 +4440,11 @@
     "enabled": true
    },
    {
+    "label": "Delete cell",
+    "ctx": "TableDeleteCell",
+    "enabled": true
+   },
+   {
     "label": "Merge cells",
     "ctx": "TableMergeCells",
     "enabled": true
@@ -4196,8 +4550,18 @@
     "enabled": true
    },
    {
+    "label": "Bullets and numbering…",
+    "ctx": "BulletsAndNumbering",
+    "enabled": true
+   },
+   {
     "label": "Horizontal line",
     "ctx": "HorizontalRule",
+    "enabled": true
+   },
+   {
+    "label": "Horizontal line settings…",
+    "ctx": "HorizontalLineSettings",
     "enabled": true
    },
    {
@@ -4268,6 +4632,36 @@
    {
     "label": "Behind text",
     "ctx": "WrapBehind",
+    "enabled": true
+   },
+   {
+    "label": "Replace image…",
+    "ctx": "ReplaceImage",
+    "enabled": true
+   },
+   {
+    "label": "Crop…",
+    "ctx": "Crop",
+    "enabled": true
+   },
+   {
+    "label": "Actual size",
+    "ctx": "ActualSize",
+    "enabled": true
+   },
+   {
+    "label": "Save as picture…",
+    "ctx": "SaveAsPicture",
+    "enabled": true
+   },
+   {
+    "label": "Copy hyperlink address",
+    "ctx": "CopyHyperlinkAddress",
+    "enabled": true
+   },
+   {
+    "label": "Clear field",
+    "ctx": "ClearField",
     "enabled": true
    },
    {
