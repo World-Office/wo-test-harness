@@ -1,12 +1,12 @@
 # Feature Ledger v1 — real completeness map
 
 Generated from: census-oo-deep + census-oo-dialogs + census-wo-deep. 
-L3 layer: ledger/roundtrip.cjs (13/13 commands survive html->docx->html).
+L3 layer: ledger/roundtrip.cjs (21/21 commands survive html->docx->html).
 Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
 
-## edit — 136 features (L0:10 L1:126 L3:0)
+## edit — 136 features (L0:10 L1:125 L3:1)
 - ❌ L0 **ctx.distribute-horizontally** [ctx-menu] 
 - ❌ L0 **ctx.distribute-vertically** [ctx-menu] 
 - ❌ L0 **ctx.edit-wrap-boundary** [ctx-menu] 
@@ -86,7 +86,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.edit-link** [ctx-menu] → WO: ctx data-ctx=EditLink
 - 🔲 L1 **ctx.copy-hyperlink-address** [ctx-menu] → WO: ctx data-ctx=CopyHyperlinkAddress (clipboard)
 - 🔲 L1 **ctx.remove-link** [ctx-menu] → WO: ctx data-ctx=RemoveLink
-- 🔲 L1 **ctx.horizontal-line-settings** [ctx-menu] → WO: ctx data-ctx=HorizontalLineSettings -> hr-settings-dialog (style insert/edit)
 - 🔲 L1 **ctx.text-alignment** [ctx-menu] → WO: ctx data-ctx=TextAlignment
 - 🔲 L1 **ctx.top** [ctx-menu] → WO: ctx data-ctx=TextAlignTop
 - 🔲 L1 **ctx.middle** [ctx-menu] → WO: ctx data-ctx=TextAlignMiddle
@@ -143,6 +142,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.clear-field** [ctx-menu] → WO: ctx data-ctx=ClearField (empties page-number/[data-field])
 - 🔲 L1 **ctx.group** [ctx-menu] → WO: Layout tab objectOp group (groupSelectedObjects)
 - 🔲 L1 **ctx.ungroup** [ctx-menu] → WO: Layout tab objectOp ungroup (ungroupSelectedObjects)
+- ✅ L3 **ctx.horizontal-line-settings** [ctx-menu] → WO: ctx data-ctx=HorizontalLineSettings -> hr-settings-dialog (style insert/edit)
 
 ## file — 39 features (L0:4 L1:35 L3:0)
 - ❌ L0 **shortcut.openfilepanel** [shortcut] 
@@ -185,14 +185,13 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.updatefields** [shortcut] → WO: F9 (fieldOpAtSelection update)
 - 🔲 L1 **shortcut.openchatpanel** [shortcut] → WO: Ctrl+Alt+Q
 
-## insert — 56 features (L0:2 L1:51 L3:3)
+## insert — 56 features (L0:2 L1:50 L3:4)
 - ❌ L0 **insert.insert-spreadsheet** [menu-item] 
 - ❌ L0 **shortcut.nonbreakinghyphen** [shortcut] 
 - 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
 - 🔲 L1 **insert.breaks** [control] → WO: Breaks
 - 🔲 L1 **insert.shape** [control] → WO: insertObject
 - 🔲 L1 **insert.smartart** [control] → WO: btn-smartart
-- 🔲 L1 **insert.link** [control] → WO: link
 - 🔲 L1 **insert.page-number** [control] → WO: insertPageNumber
 - 🔲 L1 **insert.text-box** [control] → WO: insertTextbox
 - 🔲 L1 **insert.text-art** [control] → WO: insertTextart
@@ -239,6 +238,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.insertfootnotenow** [shortcut] → WO: Ctrl+Alt+F
 - 🔲 L1 **shortcut.emdash** [shortcut] → WO: Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation)
 - 🔲 L1 **shortcut.endash** [shortcut] → WO: Ctrl+Shift+Minus (OO uses Ctrl+NumpadMinus; Ctrl+Minus is zoom-out in WO)
+- ✅ L3 **insert.link** [control] → WO: link
 - ✅ L3 **insert.symbol** [control] → WO: btn-symbol
 - ✅ L3 **insert.more-symbols** [menu-item] → WO: Symbols ▾
 - ✅ L3 **insert.symbols** [menu-item] → WO: Symbols ▾
@@ -260,7 +260,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **table.insert-custom-table** [menu-item] → WO: btn-table
 - ✅ L3 **table.convert-text-to-table** [menu-item] → WO: Convert Text to Table…
 
-## formatting — 53 features (L0:1 L1:44 L3:8)
+## formatting — 53 features (L0:1 L1:38 L3:14)
 - ❌ L0 **shortcut.strikeout** [shortcut] 
 - 🔲 L1 **formatting.font** [control] → WO: font-family
 - 🔲 L1 **formatting.font-size** [control] → WO: font-size
@@ -268,17 +268,11 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **formatting.decrement-font-size-ctrl** [control] → WO: font-size
 - 🔲 L1 **formatting.highlight-color** [control] → WO: highlight-color
 - 🔲 L1 **formatting.font-color** [control] → WO: text-color
-- 🔲 L1 **formatting.bullets** [control] → WO: insertUnorderedList
-- 🔲 L1 **formatting.numbering** [control] → WO: Numbering style options
 - 🔲 L1 **formatting.multilevel-list** [control] → WO: multilevel
 - 🔲 L1 **formatting.decrease-indent-ctrl-shift-m** [control] → WO: outdent
 - 🔲 L1 **formatting.increase-indent-ctrl-m** [control] → WO: indent
 - 🔲 L1 **formatting.paragraph-line-spacing** [control] → WO: line-spacing
 - 🔲 L1 **formatting.text-direction** [control] → WO: directionRtl
-- 🔲 L1 **formatting.align-left-ctrl-l** [control] → WO: justifyLeft
-- 🔲 L1 **formatting.align-center-ctrl-e** [control] → WO: justifyCenter
-- 🔲 L1 **formatting.align-right-ctrl-r** [control] → WO: justifyRight
-- 🔲 L1 **formatting.justified-ctrl-j** [control] → WO: justifyFull
 - 🔲 L1 **formatting.nonprinting-characters-ctrl-shift-8** [control] → WO: btn-home-formatmarks
 - 🔲 L1 **formatting.shading** [control] → WO: Shading
 - 🔲 L1 **formatting.borders** [control] → WO: openBorders
@@ -314,6 +308,12 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **formatting.superscript-ctrl** [control] → WO: superscript
 - ✅ L3 **formatting.subscript-ctrl** [control] → WO: subscript
 - ✅ L3 **formatting.clear-style** [control] → WO: removeFormat
+- ✅ L3 **formatting.bullets** [control] → WO: insertUnorderedList
+- ✅ L3 **formatting.numbering** [control] → WO: Numbering style options
+- ✅ L3 **formatting.align-left-ctrl-l** [control] → WO: justifyLeft
+- ✅ L3 **formatting.align-center-ctrl-e** [control] → WO: justifyCenter
+- ✅ L3 **formatting.align-right-ctrl-r** [control] → WO: justifyRight
+- ✅ L3 **formatting.justified-ctrl-j** [control] → WO: justifyFull
 
 ## shortcuts — 62 features (L0:1 L1:61 L3:0)
 - ❌ L0 **shortcut.replaceunicodetosymbol** [shortcut] 
@@ -482,16 +482,16 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **page.dlg-columns** [dialog] (5 OO fields) → WO: columns-dialog
 - 🔲 L1 **page.dlg-hyphenation** [dialog] (2 OO fields) → WO: hyphenation-dialog
 
-## references — 9 features (L0:0 L1:9 L3:0)
+## references — 9 features (L0:0 L1:8 L3:1)
 - 🔲 L1 **references.add-text** [control] → WO: btn-addtext
 - 🔲 L1 **references.footnote** [control] → WO: insertFootnote
-- 🔲 L1 **references.link** [control] → WO: link
 - 🔲 L1 **references.bookmark** [control] → WO: bookmark-dialog
 - 🔲 L1 **references.caption** [control] → WO: insertCaption
 - 🔲 L1 **references.cross-reference** [control] → WO: crossref-dialog
 - 🔲 L1 **references.dlg-bookmarks** [dialog] (2 OO fields) → WO: bookmark-dialog
 - 🔲 L1 **references.dlg-insert-caption** [dialog] (8 OO fields) → WO: insertCaption
 - 🔲 L1 **references.dlg-cross-reference** [dialog] (5 OO fields) → WO: crossref-dialog
+- ✅ L3 **references.link** [control] → WO: link
 
 ## protect — 2 features (L0:0 L1:2 L3:0)
 - 🔲 L1 **protect.encrypt** [control] → WO: protectDialog

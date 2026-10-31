@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-31T19:45:32.277183",
+ "generated": "2026-10-31T23:29:12.240214",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,9 +10,9 @@
  ],
  "totals": {
   "L0": 20,
-  "L1": 466,
+  "L1": 457,
   "L2": 0,
-  "L3": 15,
+  "L3": 24,
   "L4": 0
  },
  "features": [
@@ -628,8 +628,10 @@
     "match": "insertUnorderedList",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [insertUnorderedList]: marker /<ul\\b/ survived html->docx->html"
+   ]
   },
   {
    "feature": "formatting.numbering",
@@ -651,8 +653,10 @@
     "match": "Numbering style options",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [insertOrderedList]: marker /<ol\\b/ survived html->docx->html"
+   ]
   },
   {
    "feature": "formatting.multilevel-list",
@@ -759,8 +763,10 @@
     "match": "justifyLeft",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [justifyLeft]: marker /sentinel/ survived html->docx->html"
+   ]
   },
   {
    "feature": "formatting.align-center-ctrl-e",
@@ -777,8 +783,10 @@
     "match": "justifyCenter",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [justifyCenter]: marker /text-align\\s*:\\s*center/ survived html->docx->html"
+   ]
   },
   {
    "feature": "formatting.align-right-ctrl-r",
@@ -795,8 +803,10 @@
     "match": "justifyRight",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [justifyRight]: marker /text-align\\s*:\\s*right/ survived html->docx->html"
+   ]
   },
   {
    "feature": "formatting.justified-ctrl-j",
@@ -813,8 +823,10 @@
     "match": "justifyFull",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [justifyFull]: marker /text-align\\s*:\\s*justify/ survived html->docx->html"
+   ]
   },
   {
    "feature": "formatting.nonprinting-characters-ctrl-shift-8",
@@ -1087,8 +1099,10 @@
     "match": "link",
     "where": "tab:references"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [link]: marker /<a\\b/ survived html->docx->html"
+   ]
   },
   {
    "feature": "headerfooter.header-footer",
@@ -1713,8 +1727,10 @@
     "match": "link",
     "where": "tab:references"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [link]: marker /<a\\b/ survived html->docx->html"
+   ]
   },
   {
    "feature": "references.bookmark",
@@ -8699,8 +8715,10 @@
     "match": "ctx data-ctx=HorizontalLineSettings -> hr-settings-dialog (style insert/edit)",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 3,
+   "evidence": [
+    "L3 roundtrip ok [insertHR]: marker /<hr\\b/ survived html->docx->html"
+   ]
   },
   {
    "feature": "ctx.merge-cells",
