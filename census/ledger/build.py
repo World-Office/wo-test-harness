@@ -421,6 +421,27 @@ if rt_path.exists():
                     f"L3 roundtrip ok [{entry.get('key')}]: {str(entry.get('detail'))[:120]}")
     rt_merged = True
 
+# --------------------------- T-008 registered capability parks (build-time)
+# Parked own-project capability planes (plan C12 macros / C13 capability /
+# forms-as-own-epic). The WO surface exercised here is a market-compatible
+# event-marker stub, NOT coverage: register as loud divergence so re-scoring
+# never turns them into L0 gaps nor counts them as full coverage silently.
+# The persistent declaration source of truth is interact-divergences.json
+# (consumed by interact-diff.py + ledger-gap.py); this keeps the level ledger
+# evidence honest on every regeneration.
+REGISTERED_PARKS = {
+    "macros.macros": "registered park (plan C12): btn-macro-menu emits wo:macro event markers only — no macro engine",
+    "macros.record-macro": "registered park (plan C12): btn-macro-record is a wo:macro marker stub",
+    "macros.dlg-macros": "registered park (plan C12): OO Macros modal is not implemented (marker stub only)",
+    "plugins.plugin-manager": "registered park (plan C13): plugins-dialog is a stub surface (capability plane)",
+}
+for _fid, _reason in REGISTERED_PARKS.items():
+    _row = ledger.get(_fid)
+    if _row is not None:
+        _row["divergence"] = "registered"
+        if _reason not in _row.get("evidence", []):
+            _row.setdefault("evidence", []).append(_reason)
+
 # ---------------------------------------------------------------- report
 by_cluster = defaultdict(lambda: {"L0": 0, "L1": 0, "L2": 0, "L3": 0, "L4": 0, "rows": []})
 for row in ledger.values():

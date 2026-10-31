@@ -6,8 +6,8 @@
   "geometry": 0,
   "extra": 0,
   "unmatched": 62,
-  "organic": 70,
-  "divergence": 0
+  "organic": 67,
+  "divergence": 3
  },
  "rows": [
   {
@@ -21,7 +21,7 @@
   },
   {
    "token": "english-united-states",
-   "oo": "English \u2013 United States",
+   "oo": "English – United States",
    "opens_oo": "modal",
    "opens_wo": "-",
    "status": "organic",
@@ -219,7 +219,7 @@
   },
   {
    "token": "english-united-states",
-   "oo": "English \u2013 United States",
+   "oo": "English – United States",
    "opens_oo": "modal",
    "opens_wo": "-",
    "status": "organic",
@@ -327,7 +327,7 @@
   },
   {
    "token": "english-united-states",
-   "oo": "English \u2013 United States",
+   "oo": "English – United States",
    "opens_oo": "modal",
    "opens_wo": "-",
    "status": "organic",
@@ -363,7 +363,7 @@
   },
   {
    "token": "english-united-states",
-   "oo": "English \u2013 United States",
+   "oo": "English – United States",
    "opens_oo": "modal",
    "opens_wo": "-",
    "status": "organic",
@@ -462,7 +462,7 @@
   },
   {
    "token": "english-united-states",
-   "oo": "English \u2013 United States",
+   "oo": "English – United States",
    "opens_oo": "modal",
    "opens_wo": "-",
    "status": "organic",
@@ -588,7 +588,7 @@
   },
   {
    "token": "english-united-states",
-   "oo": "English \u2013 United States",
+   "oo": "English – United States",
    "opens_oo": "modal",
    "opens_wo": "-",
    "status": "organic",
@@ -624,7 +624,7 @@
   },
   {
    "token": "english-united-states",
-   "oo": "English \u2013 United States",
+   "oo": "English – United States",
    "opens_oo": "modal",
    "opens_wo": "-",
    "status": "organic",
@@ -690,18 +690,18 @@
    "oo": "Macros",
    "opens_oo": "modal",
    "opens_wo": "-",
-   "status": "organic",
+   "status": "divergence",
    "tab": "view",
-   "note": "covered"
+   "note": "registered park (plan C12 macros / C13 capability): WO event-marker stub only, no engine — declared in interact-divergences.json (T-008)"
   },
   {
    "token": "asc-gen939",
    "oo": "Record macro",
    "opens_oo": "modal",
    "opens_wo": "-",
-   "status": "organic",
+   "status": "divergence",
    "tab": "view",
-   "note": "covered"
+   "note": "registered park (plan C12 macros / C13 capability): WO event-marker stub only, no engine — declared in interact-divergences.json (T-008)"
   },
   {
    "token": "word-count",
@@ -714,7 +714,7 @@
   },
   {
    "token": "english-united-states",
-   "oo": "English \u2013 United States",
+   "oo": "English – United States",
    "opens_oo": "modal",
    "opens_wo": "-",
    "status": "organic",
@@ -726,9 +726,9 @@
    "oo": "PluginManager",
    "opens_oo": "modal",
    "opens_wo": "-",
-   "status": "organic",
+   "status": "divergence",
    "tab": "plugins",
-   "note": "covered"
+   "note": "registered park (plan C12 macros / C13 capability): WO event-marker stub only, no engine — declared in interact-divergences.json (T-008)"
   },
   {
    "token": "backgroundplugins",
@@ -840,7 +840,7 @@
   },
   {
    "token": "english-united-states",
-   "oo": "English \u2013 United States",
+   "oo": "English – United States",
    "opens_oo": "modal",
    "opens_wo": "-",
    "status": "organic",
@@ -957,7 +957,7 @@
   },
   {
    "token": "english-united-states",
-   "oo": "English \u2013 United States",
+   "oo": "English – United States",
    "opens_oo": "modal",
    "opens_wo": "-",
    "status": "organic",
@@ -1074,7 +1074,7 @@
   },
   {
    "token": "english-united-states",
-   "oo": "English \u2013 United States",
+   "oo": "English – United States",
    "opens_oo": "modal",
    "opens_wo": "-",
    "status": "organic",

@@ -77,6 +77,16 @@ def main() -> int:
             srow = led_lookup.get(str(o["label"]) + "|" + tab)
         name = o.get("label") or o.get("id") or "?"
         if not srow or srow.get("status") != "real" or not srow.get("wo"):
+            # T-008: a declared organic row (stub/covered surface like the
+            # parked macros/plugin capability plane) is a LOUD divergence, not
+            # a silent "organic" — the register (interact-divergences.json)
+            # is the declaration; keep it surfacing as intentional divergence.
+            if (srow or {}).get("token") in DIVERGENCES:
+                counts["divergence"] += 1
+                rows.append({"token": (srow or {}).get("token"), "oo": name,
+                             "opens_oo": oo_kind, "opens_wo": "-", "status": "divergence",
+                             "tab": tab, "note": "declared organic->divergence (parked capability)"})
+                continue
             counts["organic"] += 1
             rows.append({"token": (srow or {}).get("token"), "oo": name, "opens_oo": oo_kind,
                          "opens_wo": "-", "status": "organic", "tab": tab, "note": (srow or {}).get("status")})

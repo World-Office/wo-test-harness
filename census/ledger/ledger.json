@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-31T23:29:12.240214",
+ "generated": "2026-11-01T00:53:45.805904",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -2234,7 +2234,10 @@
     "where": "tab:view"
    },
    "level": 1,
-   "evidence": []
+   "evidence": [
+    "registered park (plan C12): btn-macro-menu emits wo:macro event markers only — no macro engine"
+   ],
+   "divergence": "registered"
   },
   {
    "feature": "macros.record-macro",
@@ -2252,7 +2255,10 @@
     "where": "menu:btn-macro-menu"
    },
    "level": 1,
-   "evidence": []
+   "evidence": [
+    "registered park (plan C12): btn-macro-record is a wo:macro marker stub"
+   ],
+   "divergence": "registered"
   },
   {
    "feature": "view.pause-recording",
@@ -2288,7 +2294,10 @@
     "where": "dialog:plugins-dialog"
    },
    "level": 1,
-   "evidence": []
+   "evidence": [
+    "registered park (plan C13): plugins-dialog is a stub surface (capability plane)"
+   ],
+   "divergence": "registered"
   },
   {
    "feature": "plugins.background-plugins",
@@ -4357,8 +4366,10 @@
    },
    "level": 1,
    "evidence": [
-    "1 OO fields: Autostart"
-   ]
+    "1 OO fields: Autostart",
+    "registered park (plan C12): OO Macros modal is not implemented (marker stub only)"
+   ],
+   "divergence": "registered"
   },
   {
    "feature": "headerfooter.dlg-date-time",
