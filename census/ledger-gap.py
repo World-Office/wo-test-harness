@@ -129,22 +129,50 @@ def collect_gaps() -> list[dict]:
 
 
 def call_model(base, key, model, prompt):
-    body = json.dumps({"model": model, "temperature": 0, "max_tokens": 4000,
+    body = json.dumps({"model": model, "temperature": 0, "max_tokens": 8000,
                        "messages": [{"role": "user", "content": prompt}]}).encode()
     req = urllib.request.Request(f"{base.rstrip('/')}/chat/completions", data=body,
                                  headers={"Authorization": f"Bearer {key}",
                                           "Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=180) as r:
-        return json.load(r)["choices"][0]["message"]["content"]
+    with urllib.request.urlopen(req, timeout=600) as r:
+        msg = json.load(r)["choices"][0]["message"]
+    # reasoning models (deepseek-style, e.g. local/deepseek-v4-flash) may
+    # spend the budget on reasoning_content and leave content empty
+    return msg.get("content") or msg.get("reasoning_content")
 
 
 def parse_verdict(raw: str) -> dict:
+    """Tolerant JSON extraction: strict parse first, else salvage valid
+    objects with raw_decode, else empty. Local reasoning models are flaky."""
+    if not raw:
+        return {"gaps": []}
     txt = raw.strip()
     if txt.startswith("```"):
         txt = txt.strip("`").lstrip("json").strip()
-    v = json.loads(txt[txt.find("{"):txt.rfind("}") + 1])
-    v.setdefault("gaps", [])
-    return v
+    out = []
+    try:
+        v = json.loads(txt[txt.find("{"):txt.rfind("}") + 1])
+        return v if isinstance(v, dict) else {"gaps": []}
+    except Exception:
+        dec = json.JSONDecoder()
+        i = 0
+        while i < len(txt):
+            if txt[i] in " \t\r\n":
+                i += 1
+                continue
+            try:
+                obj, end = dec.raw_decode(txt, i)
+            except Exception:
+                i += 1
+                continue
+            if isinstance(obj, dict):
+                out.append(obj)
+            i = end
+    gaps = []
+    for o in out:
+        g = o.get("gaps", [])
+        gaps.extend(g if isinstance(g, list) else [])
+    return {"gaps": gaps}
 
 
 def chunked(seq, n):
@@ -166,14 +194,20 @@ def run(out_dir: Path, chunk: int) -> int:
         return 0
     base, key, model = prov
     verdicts = []
-    try:
-        for part in chunked(gaps, chunk):
-            prompt = (RUBRIC + "\n\nGap rows (JSON lines):\n" +
-                      "\n".join(json.dumps(g) for g in part))
-            verdicts.extend(parse_verdict(call_model(base, key, model, prompt))["gaps"])
-    except Exception as e:
-        print(f"ledger-gap: ERROR (advisory only): {e}")
-        return 0
+    for part in chunked(gaps, chunk):
+        prompt = (RUBRIC + "\n\nGap rows (JSON lines):\n" +
+                  "\n".join(json.dumps(g) for g in part))
+        try:
+            out = call_model(base, key, model, prompt)
+            if not out:
+                print(f"ledger-gap: empty model output on {len(part)}-row chunk — SKIPPED")
+                continue
+            got = parse_verdict(out)["gaps"]
+        except Exception as e:
+            print(f"ledger-gap: chunk {len(part)} rows ERROR (advisory only): {e} — SKIPPED")
+            continue
+        verdicts.extend(got)
+        print(f"ledger-gap: chunk {len(part)} rows -> {len(got)} verdicts")
     by_tok = {v.get("token"): v for v in verdicts}
     merged = [{**g, **by_tok.get(g["token"], {})} for g in gaps]
     merged.sort(key=lambda m: int(m.get("priority", 5)))
