@@ -1,37 +1,64 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-10-21T00:33:20.483Z",
+ "capturedAt": "2026-10-31T18:27:35.845Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
    "label": "Home",
    "buttons": [
     {
+     "id": "btn-copy",
+     "label": "Copy",
+     "enabled": true,
+     "x": 16,
+     "y": 46,
+     "w": 24,
+     "h": 24
+    },
+    {
      "id": "btn-undo",
      "cmd": "undo",
      "label": "Undo",
      "enabled": false,
-     "x": 17,
-     "y": 112,
-     "w": 30,
-     "h": 46
+     "x": 42,
+     "y": 46,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-cut",
+     "label": "Cut",
+     "enabled": true,
+     "x": 68,
+     "y": 46,
+     "w": 24,
+     "h": 24
     },
     {
      "id": "btn-redo",
      "cmd": "redo",
      "label": "Redo",
      "enabled": false,
-     "x": 51,
-     "y": 112,
-     "w": 30,
-     "h": 46
+     "x": 94,
+     "y": 46,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-paste",
+     "label": "Paste",
+     "enabled": true,
+     "x": 141,
+     "y": 46,
+     "w": 24,
+     "h": 24
     },
     {
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 175,
-     "y": 112,
+     "x": 295,
+     "y": 35,
      "w": 22,
      "h": 46
     },
@@ -105,8 +132,8 @@
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 273,
-     "y": 112,
+     "x": 371,
+     "y": 35,
      "w": 22,
      "h": 46
     },
@@ -189,68 +216,38 @@
     },
     {
      "id": null,
-     "cmd": "bold",
-     "label": "B",
+     "cmd": "fontSizeInc",
+     "label": "Increment font size",
      "enabled": true,
-     "x": 310,
-     "y": 112,
+     "x": 395,
+     "y": 46,
      "w": 24,
-     "h": 46
+     "h": 24
     },
     {
      "id": null,
-     "cmd": "italic",
-     "label": "I",
+     "cmd": "fontSizeDec",
+     "label": "Decrement font size",
      "enabled": true,
-     "x": 342,
-     "y": 112,
+     "x": 421,
+     "y": 46,
      "w": 24,
-     "h": 46
+     "h": 24
     },
     {
      "id": null,
-     "cmd": "underline",
-     "label": "U",
+     "label": "Aa▾",
      "enabled": true,
-     "x": 374,
-     "y": 112,
-     "w": 24,
-     "h": 46
-    },
-    {
-     "id": null,
-     "cmd": "strikeThrough",
-     "label": "S",
-     "enabled": true,
-     "x": 406,
-     "y": 112,
-     "w": 24,
-     "h": 46
-    },
-    {
-     "id": null,
-     "cmd": "superscript",
-     "label": "x²x₂",
-     "enabled": true,
-     "x": 438,
-     "y": 112,
-     "w": 24,
-     "h": 46
-    },
-    {
-     "id": null,
-     "label": "▾",
-     "enabled": true,
-     "x": 467,
-     "y": 112,
+     "x": 447,
+     "y": 35,
      "w": 22,
      "h": 46
     },
     {
      "id": null,
-     "cmd": "superscript",
+     "cmd": "changeCase",
      "hidden": true,
-     "label": "Superscript",
+     "label": "Sentence case",
      "enabled": true,
      "x": 0,
      "y": 0,
@@ -259,9 +256,9 @@
     },
     {
      "id": null,
-     "cmd": "subscript",
+     "cmd": "changeCase",
      "hidden": true,
-     "label": "Subscript",
+     "label": "lowercase",
      "enabled": true,
      "x": 0,
      "y": 0,
@@ -270,30 +267,42 @@
     },
     {
      "id": null,
-     "cmd": "removeFormat",
-     "label": "〈〉",
+     "cmd": "changeCase",
+     "hidden": true,
+     "label": "UPPERCASE",
      "enabled": true,
-     "x": 578,
-     "y": 112,
-     "w": 24,
-     "h": 46
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "changeCase",
+     "hidden": true,
+     "label": "Title Case",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
     },
     {
      "id": null,
      "cmd": "insertUnorderedList",
      "label": "Bullet list",
      "enabled": true,
-     "x": 603,
-     "y": 112,
-     "w": 30,
-     "h": 46
+     "x": 492,
+     "y": 46,
+     "w": 24,
+     "h": 24
     },
     {
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 633,
-     "y": 112,
+     "x": 518,
+     "y": 35,
      "w": 22,
      "h": 46
     },
@@ -335,17 +344,17 @@
      "cmd": "insertOrderedList",
      "label": "Numbered list",
      "enabled": true,
-     "x": 657,
-     "y": 112,
-     "w": 30,
-     "h": 46
+     "x": 542,
+     "y": 46,
+     "w": 24,
+     "h": 24
     },
     {
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 687,
-     "y": 112,
+     "x": 568,
+     "y": 35,
      "w": 22,
      "h": 46
     },
@@ -398,47 +407,47 @@
      "cmd": "multilevel",
      "label": "Multilevel list",
      "enabled": true,
-     "x": 711,
-     "y": 122,
-     "w": 30,
-     "h": 26
+     "x": 592,
+     "y": 46,
+     "w": 24,
+     "h": 24
     },
     {
      "id": null,
      "cmd": "outdent",
      "label": "Decrease indent",
      "enabled": true,
-     "x": 745,
-     "y": 112,
-     "w": 30,
-     "h": 46
+     "x": 618,
+     "y": 46,
+     "w": 24,
+     "h": 24
     },
     {
      "id": null,
      "cmd": "indent",
      "label": "Increase indent",
      "enabled": true,
-     "x": 779,
-     "y": 112,
-     "w": 30,
-     "h": 46
+     "x": 644,
+     "y": 46,
+     "w": 24,
+     "h": 24
     },
     {
      "id": null,
      "cmd": "directionRtl",
-     "label": "Toolbar.DirectionRtl",
+     "label": "Text direction",
      "enabled": true,
-     "x": 869,
-     "y": 112,
-     "w": 30,
-     "h": 46
+     "x": 728,
+     "y": 46,
+     "w": 24,
+     "h": 24
     },
     {
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 897,
-     "y": 112,
+     "x": 754,
+     "y": 35,
      "w": 22,
      "h": 46
     },
@@ -455,90 +464,361 @@
     },
     {
      "id": null,
-     "cmd": "justifyLeft",
-     "label": "Align left",
+     "cmd": "formatBlock",
+     "label": "Normal text",
      "enabled": true,
-     "x": 921,
-     "y": 112,
-     "w": 30,
+     "x": 800,
+     "y": 38,
+     "w": 110,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "label": "Title",
+     "enabled": true,
+     "x": 910,
+     "y": 38,
+     "w": 110,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "label": "Subtitle",
+     "enabled": true,
+     "x": 1020,
+     "y": 38,
+     "w": 110,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "label": "Heading 1",
+     "enabled": true,
+     "x": 1130,
+     "y": 38,
+     "w": 110,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "label": "Heading 2",
+     "enabled": true,
+     "x": 1240,
+     "y": 38,
+     "w": 110,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "label": "Heading 3",
+     "enabled": true,
+     "x": 1350,
+     "y": 38,
+     "w": 110,
+     "h": 34
+    },
+    {
+     "id": null,
+     "label": "Styles",
+     "enabled": true,
+     "x": 1239,
+     "y": 35,
+     "w": 34,
      "h": 46
     },
     {
      "id": null,
-     "cmd": "justifyCenter",
-     "label": "Center",
+     "cmd": "formatBlock",
+     "hidden": true,
+     "label": "Normal text",
      "enabled": true,
-     "x": 953,
-     "y": 112,
-     "w": 30,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "hidden": true,
+     "label": "Title",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "hidden": true,
+     "label": "Subtitle",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "hidden": true,
+     "label": "Heading 1",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "hidden": true,
+     "label": "Heading 2",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "hidden": true,
+     "label": "Heading 3",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "formatBlock",
+     "hidden": true,
+     "label": "Quote",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": "btn-find",
+     "label": "⌕",
+     "enabled": true,
+     "x": 1296,
+     "y": 46,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-ribbon-collapse",
+     "label": "Show fewer toolbar buttons",
+     "enabled": true,
+     "x": 1322,
+     "y": 46,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-fullscreen",
+     "label": "Toggle fullscreen",
+     "enabled": true,
+     "x": 1348,
+     "y": 46,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-theme",
+     "label": "☾",
+     "enabled": true,
+     "x": 1374,
+     "y": 46,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": "btn-replace",
+     "label": "Replace",
+     "enabled": true,
+     "x": 1400,
+     "y": 46,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "cmd": "bold",
+     "label": "B",
+     "enabled": true,
+     "x": 16,
+     "y": 98,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "cmd": "italic",
+     "label": "I",
+     "enabled": true,
+     "x": 42,
+     "y": 98,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "cmd": "underline",
+     "label": "U",
+     "enabled": true,
+     "x": 68,
+     "y": 98,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "cmd": "strikeThrough",
+     "label": "S",
+     "enabled": true,
+     "x": 94,
+     "y": 98,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "cmd": "superscript",
+     "label": "x²x₂",
+     "enabled": true,
+     "x": 120,
+     "y": 98,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "label": "▾",
+     "enabled": true,
+     "x": 146,
+     "y": 87,
+     "w": 22,
      "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "superscript",
+     "hidden": true,
+     "label": "Superscript",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "subscript",
+     "hidden": true,
+     "label": "Subscript",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "subscript",
+     "label": "x₂",
+     "enabled": true,
+     "x": 170,
+     "y": 98,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "cmd": "removeFormat",
+     "label": "〈〉",
+     "enabled": true,
+     "x": 248,
+     "y": 98,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "cmd": "justifyLeft",
+     "label": "Align left",
+     "enabled": true,
+     "x": 295,
+     "y": 98,
+     "w": 24,
+     "h": 24
+    },
+    {
+     "id": null,
+     "cmd": "justifyCenter",
+     "label": "Align center",
+     "enabled": true,
+     "x": 321,
+     "y": 98,
+     "w": 24,
+     "h": 24
     },
     {
      "id": null,
      "cmd": "justifyRight",
      "label": "Align right",
      "enabled": true,
-     "x": 985,
-     "y": 112,
-     "w": 30,
-     "h": 46
+     "x": 347,
+     "y": 98,
+     "w": 24,
+     "h": 24
     },
     {
      "id": null,
      "cmd": "justifyFull",
-     "label": "Justify",
+     "label": "Justified",
      "enabled": true,
-     "x": 1017,
-     "y": 112,
-     "w": 30,
-     "h": 46
+     "x": 373,
+     "y": 98,
+     "w": 24,
+     "h": 24
     },
     {
-     "id": null,
-     "cmd": "formatBlock",
+     "id": "btn-home-formatmarks",
      "label": "¶",
      "enabled": true,
-     "x": 1052,
-     "y": 112,
+     "x": 399,
+     "y": 98,
      "w": 24,
-     "h": 46
+     "h": 24
     },
     {
      "id": null,
-     "cmd": "smallCaps",
-     "label": "SC",
+     "cmd": "openBorders",
+     "label": "Borders",
      "enabled": true,
-     "x": 1086,
-     "y": 112,
+     "x": 451,
+     "y": 98,
      "w": 24,
-     "h": 46
-    },
-    {
-     "id": null,
-     "cmd": "code",
-     "label": "</>",
-     "enabled": true,
-     "x": 1118,
-     "y": 112,
-     "w": 24,
-     "h": 46
-    },
-    {
-     "id": null,
-     "cmd": "allCaps",
-     "label": "AA",
-     "enabled": true,
-     "x": 1150,
-     "y": 112,
-     "w": 24,
-     "h": 46
+     "h": 24
     },
     {
      "id": null,
      "label": "▾",
      "enabled": true,
-     "x": 1179,
-     "y": 112,
+     "x": 477,
+     "y": 87,
      "w": 22,
      "h": 46
     },
@@ -607,9 +887,9 @@
     },
     {
      "id": null,
-     "cmd": "changeCase",
+     "cmd": "formatBlock",
      "hidden": true,
-     "label": "Sentence case",
+     "label": "Paragraph",
      "enabled": true,
      "x": 0,
      "y": 0,
@@ -618,9 +898,9 @@
     },
     {
      "id": null,
-     "cmd": "changeCase",
+     "cmd": "smallCaps",
      "hidden": true,
-     "label": "lowercase",
+     "label": "Small caps",
      "enabled": true,
      "x": 0,
      "y": 0,
@@ -629,9 +909,9 @@
     },
     {
      "id": null,
-     "cmd": "changeCase",
+     "cmd": "allCaps",
      "hidden": true,
-     "label": "UPPERCASE",
+     "label": "All caps",
      "enabled": true,
      "x": 0,
      "y": 0,
@@ -640,9 +920,9 @@
     },
     {
      "id": null,
-     "cmd": "changeCase",
+     "cmd": "code",
      "hidden": true,
-     "label": "Title Case",
+     "label": "Code",
      "enabled": true,
      "x": 0,
      "y": 0,
@@ -661,137 +941,14 @@
      "h": 0
     },
     {
-     "id": null,
-     "cmd": "fontSizeDec",
-     "hidden": true,
-     "label": "Decrease font",
+     "id": "btn-select-all",
+     "cmd": "selectAll",
+     "label": "Select all",
      "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "cmd": "fontSizeInc",
-     "hidden": true,
-     "label": "Increase font",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "label": "Styles",
-     "enabled": true,
-     "x": 1202,
-     "y": 112,
-     "w": 65,
-     "h": 46
-    },
-    {
-     "id": null,
-     "cmd": "formatBlock",
-     "hidden": true,
-     "label": "Normal text",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "cmd": "formatBlock",
-     "hidden": true,
-     "label": "Title",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "cmd": "formatBlock",
-     "hidden": true,
-     "label": "Heading 1",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "cmd": "formatBlock",
-     "hidden": true,
-     "label": "Heading 2",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "cmd": "formatBlock",
-     "hidden": true,
-     "label": "Heading 3",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": null,
-     "cmd": "formatBlock",
-     "hidden": true,
-     "label": "Quote",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": "btn-ribbon-collapse",
-     "label": "Show fewer toolbar buttons",
-     "enabled": true,
-     "x": 1283,
-     "y": 152,
-     "w": 42,
-     "h": 38
-    },
-    {
-     "id": "btn-theme",
-     "label": "☾",
-     "enabled": true,
-     "x": 1326,
-     "y": 148,
+     "x": 1400,
+     "y": 98,
      "w": 24,
-     "h": 46
-    },
-    {
-     "id": "btn-find",
-     "label": "⌕",
-     "enabled": true,
-     "x": 1360,
-     "y": 148,
-     "w": 24,
-     "h": 46
-    },
-    {
-     "id": "btn-fullscreen",
-     "label": "Toggle fullscreen",
-     "enabled": true,
-     "x": 1389,
-     "y": 158,
-     "w": 30,
-     "h": 26
+     "h": 24
     }
    ],
    "combos": [
@@ -803,7 +960,7 @@
     {
      "id": "font-size",
      "label": "Font size",
-     "w": 17
+     "w": 50
     },
     {
      "id": "line-spacing",
@@ -813,21 +970,21 @@
     {
      "id": "highlight-color",
      "label": "Highlight color",
-     "w": 22
+     "w": 8
     },
     {
      "id": "text-color",
-     "label": "Text color",
-     "w": 22
+     "label": "Font color",
+     "w": 10
     },
     {
      "id": "shading-color",
      "label": "Paragraph shading",
-     "w": 0
+     "w": 8
     },
     {
      "id": "pagecolor",
-     "label": "Layout.PageColor",
+     "label": "Page color",
      "w": 0
     }
    ]
@@ -836,238 +993,863 @@
    "label": "Insert",
    "buttons": [
     {
-     "id": "btn-table",
-     "label": "▦",
+     "id": null,
+     "cmd": "insertBlankPage",
+     "label": "Blank page",
      "enabled": true,
      "x": 12,
-     "y": 116,
-     "w": 34,
+     "y": 43,
+     "w": 83,
+     "h": 34
+    },
+    {
+     "id": null,
+     "label": "Breaks",
+     "enabled": true,
+     "x": 97,
+     "y": 37,
+     "w": 31,
      "h": 46
     },
     {
-     "id": "btn-table-ops",
-     "label": "▦✎",
+     "id": null,
+     "cmd": "insertPageBreak",
+     "hidden": true,
+     "label": "Insert page break",
      "enabled": true,
-     "x": 48,
-     "y": 116,
-     "w": 43,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "insertColumnBreak",
+     "hidden": true,
+     "label": "Insert column break",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "insertSectionBreak",
+     "hidden": true,
+     "label": "Insert section break",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": "btn-table",
+     "label": "▦",
+     "enabled": true,
+     "x": 143,
+     "y": 43,
+     "w": 34,
+     "h": 34
+    },
+    {
+     "id": null,
+     "label": "Table ▾",
+     "enabled": true,
+     "x": 177,
+     "y": 37,
+     "w": 32,
      "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "openTableDialog",
+     "hidden": true,
+     "label": "Insert table…",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "tableDrawMode",
+     "hidden": true,
+     "label": "Draw table",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "tableEraseMode",
+     "hidden": true,
+     "label": "Erase table",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "convertTextToTable",
+     "hidden": true,
+     "label": "Convert Text to Table…",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "convertTableToText",
+     "hidden": true,
+     "label": "Convert Table to Text…",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
     },
     {
      "id": "btn-image",
      "label": "Insert image",
      "enabled": true,
-     "x": 93,
-     "y": 116,
+     "x": 224,
+     "y": 43,
      "w": 42,
-     "h": 46
-    },
-    {
-     "id": "btn-link",
-     "label": "Insert link",
-     "enabled": true,
-     "x": 137,
-     "y": 116,
-     "w": 42,
-     "h": 46
-    },
-    {
-     "id": "btn-hr",
-     "label": "─",
-     "enabled": true,
-     "x": 181,
-     "y": 116,
-     "w": 34,
-     "h": 46
-    },
-    {
-     "id": "btn-object",
-     "label": "▢",
-     "enabled": true,
-     "x": 217,
-     "y": 116,
-     "w": 34,
-     "h": 46
-    },
-    {
-     "id": "btn-bookmark",
-     "label": "Insert bookmark",
-     "enabled": true,
-     "x": 253,
-     "y": 116,
-     "w": 42,
-     "h": 46
-    },
-    {
-     "id": "btn-crossref",
-     "label": "Insert cross-reference",
-     "enabled": true,
-     "x": 297,
-     "y": 116,
-     "w": 42,
-     "h": 46
-    },
-    {
-     "id": "btn-symbol",
-     "label": "Ω",
-     "enabled": true,
-     "x": 341,
-     "y": 116,
-     "w": 34,
-     "h": 46
-    },
-    {
-     "id": "btn-datetime",
-     "label": "Insert date",
-     "enabled": true,
-     "x": 377,
-     "y": 116,
-     "w": 42,
-     "h": 46
-    },
-    {
-     "id": "btn-pagenumber",
-     "cmd": "insertPageNumber",
-     "label": "#",
-     "enabled": true,
-     "x": 421,
-     "y": 116,
-     "w": 34,
-     "h": 46
-    },
-    {
-     "id": "btn-header",
-     "cmd": "insertHeader",
-     "label": "▔",
-     "enabled": true,
-     "x": 457,
-     "y": 116,
-     "w": 34,
-     "h": 46
-    },
-    {
-     "id": "btn-footer",
-     "cmd": "insertFooter",
-     "label": "▁",
-     "enabled": true,
-     "x": 493,
-     "y": 116,
-     "w": 34,
-     "h": 46
+     "h": 34
     },
     {
      "id": null,
      "cmd": "insertObject",
      "label": "Shape",
      "enabled": true,
-     "x": 529,
-     "y": 116,
-     "w": 58,
-     "h": 46
+     "x": 268,
+     "y": 43,
+     "w": 56,
+     "h": 34
+    },
+    {
+     "id": "btn-smartart",
+     "label": "SmartArt",
+     "enabled": true,
+     "x": 325,
+     "y": 43,
+     "w": 69,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "insertObject",
      "label": "Chart",
      "enabled": true,
-     "x": 589,
-     "y": 116,
-     "w": 52,
-     "h": 46
+     "x": 397,
+     "y": 43,
+     "w": 50,
+     "h": 34
     },
     {
      "id": null,
-     "cmd": "insertObject",
-     "label": "Text art",
+     "cmd": "insertComment",
+     "label": "Comment",
      "enabled": true,
-     "x": 644,
-     "y": 116,
-     "w": 64,
-     "h": 46
+     "x": 462,
+     "y": 43,
+     "w": 74,
+     "h": 34
     },
     {
-     "id": null,
-     "cmd": "toggleDropcap",
-     "label": "Drop cap",
+     "id": "btn-link",
+     "label": "Insert link",
      "enabled": true,
-     "x": 710,
-     "y": 116,
-     "w": 75,
-     "h": 46
-    },
-    {
-     "id": null,
-     "cmd": "insertObject",
-     "label": "Text box",
-     "enabled": true,
-     "x": 786,
-     "y": 116,
-     "w": 70,
-     "h": 46
+     "x": 551,
+     "y": 43,
+     "w": 42,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "link",
      "label": "Hyperlink",
      "enabled": true,
-     "x": 859,
-     "y": 116,
-     "w": 76,
+     "x": 595,
+     "y": 43,
+     "w": 72,
+     "h": 34
+    },
+    {
+     "id": "btn-headerfooter-combined",
+     "cmd": "insertHeaderFooter",
+     "label": "──",
+     "enabled": true,
+     "x": 682,
+     "y": 43,
+     "w": 36,
+     "h": 34
+    },
+    {
+     "id": "btn-pagenumber",
+     "cmd": "insertPageNumber",
+     "label": "#",
+     "enabled": true,
+     "x": 721,
+     "y": 43,
+     "w": 34,
+     "h": 34
+    },
+    {
+     "id": "btn-textbox",
+     "cmd": "insertTextbox",
+     "label": "Text box",
+     "enabled": true,
+     "x": 770,
+     "y": 43,
+     "w": 66,
+     "h": 34
+    },
+    {
+     "id": "btn-textart",
+     "cmd": "insertTextart",
+     "label": "TextArt",
+     "enabled": true,
+     "x": 838,
+     "y": 43,
+     "w": 58,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "toggleDropcap",
+     "label": "Drop cap",
+     "enabled": true,
+     "x": 898,
+     "y": 43,
+     "w": 71,
+     "h": 34
+    },
+    {
+     "id": "btn-datetime",
+     "label": "Date & Time",
+     "enabled": true,
+     "x": 971,
+     "y": 43,
+     "w": 42,
+     "h": 34
+    },
+    {
+     "id": "btn-textfile",
+     "label": "Text from File",
+     "enabled": true,
+     "x": 1015,
+     "y": 43,
+     "w": 96,
+     "h": 34
+    },
+    {
+     "id": "btn-equation",
+     "label": "Equation",
+     "enabled": true,
+     "x": 1126,
+     "y": 43,
+     "w": 69,
+     "h": 34
+    },
+    {
+     "id": null,
+     "label": "Symbols ▾",
+     "enabled": true,
+     "x": 1196,
+     "y": 37,
+     "w": 46,
      "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "Fractions",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "a/b",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "(x+1)/2",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "1/n",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "Scripts",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "x²+x₁",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "eˣ",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "xᵃᵦ",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "Radicals",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "√x",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "√(a+b)",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "√2",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "Integrals",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "∫f(x)dx",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "∫ₐᵇf(x)dx",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "∫₀¹x dx",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "Large operators",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "Σᵢ₌₁ⁿi",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "Σₖ₌₀ᵐk²",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "Σaᵢ",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "Brackets",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "(a+b)·[c−d]",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "(x, y, z)",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "[0, 1]",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "Functions",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "sin x + cos x",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "log₂x",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "tan x",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "Accents",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "x̂",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "â²",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "f̂(x)",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "Limits and logarithms",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "lim f(x)",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "lim aₙ",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "log₁₀x",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "Operators",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "a+b=c",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "x≤y",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "p±q",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "Matrices",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "(a b; c d)",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "I₂",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "equationTemplate",
+     "hidden": true,
+     "label": "(x y; z w)",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": "btn-symbol",
+     "label": "Ω",
+     "enabled": true,
+     "x": 1244,
+     "y": 43,
+     "w": 34,
+     "h": 34
+    },
+    {
+     "id": "btn-contentcontrol",
+     "label": "Content Controls",
+     "enabled": true,
+     "x": 1280,
+     "y": 43,
+     "w": 116,
+     "h": 34
+    },
+    {
+     "id": "btn-table-ops",
+     "label": "▦✎",
+     "enabled": true,
+     "x": 12,
+     "y": 91,
+     "w": 41,
+     "h": 34
+    },
+    {
+     "id": "btn-hr",
+     "label": "─",
+     "enabled": true,
+     "x": 55,
+     "y": 91,
+     "w": 34,
+     "h": 34
+    },
+    {
+     "id": "btn-object",
+     "label": "▢",
+     "enabled": true,
+     "x": 91,
+     "y": 91,
+     "w": 34,
+     "h": 34
+    },
+    {
+     "id": "btn-crossref",
+     "label": "Insert cross-reference",
+     "enabled": true,
+     "x": 127,
+     "y": 91,
+     "w": 42,
+     "h": 34
+    },
+    {
+     "id": "btn-header",
+     "cmd": "insertHeader",
+     "label": "▔",
+     "enabled": true,
+     "x": 171,
+     "y": 91,
+     "w": 34,
+     "h": 34
+    },
+    {
+     "id": "btn-footer",
+     "cmd": "insertFooter",
+     "label": "▁",
+     "enabled": true,
+     "x": 207,
+     "y": 91,
+     "w": 34,
+     "h": 34
+    },
+    {
+     "id": "btn-addtext",
+     "label": "Add text",
+     "enabled": true,
+     "x": 243,
+     "y": 91,
+     "w": 66,
+     "h": 34
     },
     {
      "id": "btn-insert-more",
      "label": "Insert tools",
      "enabled": true,
-     "x": 510,
-     "y": 84,
+     "x": 311,
+     "y": 85,
      "w": 49,
      "h": 46
-    },
-    {
-     "id": "btn-textfile",
-     "hidden": true,
-     "label": "Text from file…",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
     },
     {
      "id": "btn-mailmerge",
      "hidden": true,
      "label": "Mail merge…",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": "btn-addtext",
-     "hidden": true,
-     "label": "Add text",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": "btn-field",
-     "hidden": true,
-     "label": "Field…",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": "btn-contentcontrol",
-     "hidden": true,
-     "label": "Content control…",
      "enabled": true,
      "x": 0,
      "y": 0,
@@ -1083,26 +1865,6 @@
      "y": 0,
      "w": 0,
      "h": 0
-    },
-    {
-     "id": "btn-equation",
-     "hidden": true,
-     "label": "Equation…",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
-    },
-    {
-     "id": "btn-smartart",
-     "hidden": true,
-     "label": "SmartArt…",
-     "enabled": true,
-     "x": 0,
-     "y": 0,
-     "w": 0,
-     "h": 0
     }
    ],
    "combos": [
@@ -1113,7 +1875,7 @@
     },
     {
      "id": "text-color",
-     "label": "Text color",
+     "label": "Font color",
      "w": 0
     },
     {
@@ -1123,7 +1885,7 @@
     },
     {
      "id": "pagecolor",
-     "label": "Layout.PageColor",
+     "label": "Page color",
      "w": 0
     }
    ]
@@ -1132,92 +1894,92 @@
    "label": "Draw",
    "buttons": [
     {
-     "id": "btn-ink-draw",
-     "cmd": "inkMode",
-     "label": "Draw",
-     "enabled": true,
-     "x": 12,
-     "y": 116,
-     "w": 51,
-     "h": 46
-    },
-    {
      "id": "btn-ink-select",
      "cmd": "inkSelect",
      "label": "Select",
      "enabled": true,
-     "x": 65,
-     "y": 116,
-     "w": 57,
-     "h": 46
+     "x": 12,
+     "y": 49,
+     "w": 54,
+     "h": 34
     },
     {
      "id": "btn-ink-pen",
      "cmd": "toggleInk",
      "label": "Pen",
      "enabled": true,
-     "x": 124,
-     "y": 116,
-     "w": 43,
-     "h": 46
+     "x": 68,
+     "y": 49,
+     "w": 41,
+     "h": 34
     },
     {
      "id": "btn-ink-highlighter",
      "cmd": "toggleInk",
      "label": "Highlighter",
      "enabled": true,
-     "x": 169,
-     "y": 116,
-     "w": 85,
-     "h": 46
+     "x": 111,
+     "y": 49,
+     "w": 80,
+     "h": 34
     },
     {
      "id": "btn-ink-eraser",
      "cmd": "toggleInk",
      "label": "Eraser",
      "enabled": true,
-     "x": 255,
-     "y": 116,
-     "w": 59,
-     "h": 46
+     "x": 193,
+     "y": 49,
+     "w": 56,
+     "h": 34
+    },
+    {
+     "id": "btn-ink-draw",
+     "cmd": "inkMode",
+     "label": "Draw",
+     "enabled": true,
+     "x": 12,
+     "y": 85,
+     "w": 48,
+     "h": 34
     },
     {
      "id": "btn-ink-color",
      "cmd": "inkColor",
      "label": "Ink color",
      "enabled": true,
-     "x": 317,
-     "y": 116,
-     "w": 71,
-     "h": 46
+     "x": 62,
+     "y": 85,
+     "w": 67,
+     "h": 34
     },
     {
      "id": "btn-ink-thickness",
      "cmd": "inkThickness",
      "label": "Ink thickness",
      "enabled": true,
-     "x": 390,
-     "y": 116,
-     "w": 99,
-     "h": 46
+     "x": 131,
+     "y": 85,
+     "w": 93,
+     "h": 34
     },
     {
      "id": "btn-group",
      "label": "Group",
      "enabled": true,
-     "x": 491,
-     "y": 116,
-     "w": 57,
-     "h": 46
+     "x": 227,
+     "y": 85,
+     "w": 54,
+     "h": 34
     },
     {
      "id": "btn-mergeshapes",
      "label": "Merge shapes",
      "enabled": true,
-     "x": 549,
-     "y": 116,
-     "w": 107,
-     "h": 46
+     "x": 283,
+     "y": 85,
+     "w": 100,
+     "h": 34
     }
    ],
    "combos": [
@@ -1228,7 +1990,7 @@
     },
     {
      "id": "text-color",
-     "label": "Text color",
+     "label": "Font color",
      "w": 0
     },
     {
@@ -1238,7 +2000,7 @@
     },
     {
      "id": "pagecolor",
-     "label": "Layout.PageColor",
+     "label": "Page color",
      "w": 0
     }
    ]
@@ -1247,77 +2009,675 @@
    "label": "Layout",
    "buttons": [
     {
-     "id": "btn-page-break",
-     "label": "⏎",
+     "id": null,
+     "label": "Margins",
      "enabled": true,
      "x": 12,
-     "y": 116,
-     "w": 34,
-     "h": 46
-    },
-    {
-     "id": "btn-section-break",
-     "label": "⇘",
-     "enabled": true,
-     "x": 48,
-     "y": 116,
-     "w": 34,
-     "h": 46
-    },
-    {
-     "id": "btn-columns",
-     "label": "▥",
-     "enabled": true,
-     "x": 84,
-     "y": 116,
-     "w": 34,
-     "h": 46
-    },
-    {
-     "id": "btn-page-setup",
-     "label": "Page setup",
-     "enabled": true,
-     "x": 120,
-     "y": 116,
-     "w": 89,
+     "y": 43,
+     "w": 36,
      "h": 46
     },
     {
      "id": null,
-     "cmd": "toggleHyphenation",
-     "label": "Hyphenation",
+     "cmd": "applyPageMargins",
+     "hidden": true,
+     "label": "Last Custom",
      "enabled": true,
-     "x": 211,
-     "y": 116,
-     "w": 97,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageMargins",
+     "hidden": true,
+     "label": "Normal",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageMargins",
+     "hidden": true,
+     "label": "Narrow",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageMargins",
+     "hidden": true,
+     "label": "Moderate",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageMargins",
+     "hidden": true,
+     "label": "Wide",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "openPageSetup",
+     "hidden": true,
+     "label": "Custom margins",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "label": "Orientation",
+     "enabled": true,
+     "x": 50,
+     "y": 43,
+     "w": 49,
      "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "applyPageOrientation",
+     "hidden": true,
+     "label": "Portrait",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageOrientation",
+     "hidden": true,
+     "label": "Landscape",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "label": "Size",
+     "enabled": true,
+     "x": 101,
+     "y": 43,
+     "w": 22,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "applyPageSize",
+     "hidden": true,
+     "label": "Last Custom",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageSize",
+     "hidden": true,
+     "label": "Letter",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageSize",
+     "hidden": true,
+     "label": "Legal",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageSize",
+     "hidden": true,
+     "label": "A4",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageSize",
+     "hidden": true,
+     "label": "A5",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageSize",
+     "hidden": true,
+     "label": "B5",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageSize",
+     "hidden": true,
+     "label": "Envelope #10",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageSize",
+     "hidden": true,
+     "label": "Envelope DL",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageSize",
+     "hidden": true,
+     "label": "Tabloid",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageSize",
+     "hidden": true,
+     "label": "A3",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageSize",
+     "hidden": true,
+     "label": "Tabloid Oversize",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageSize",
+     "hidden": true,
+     "label": "ROC 16K",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageSize",
+     "hidden": true,
+     "label": "Envelope Choukei 3",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyPageSize",
+     "hidden": true,
+     "label": "Super B/A3",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "openPageSetup",
+     "hidden": true,
+     "label": "Custom page size",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "label": "Columns",
+     "enabled": true,
+     "x": 125,
+     "y": 43,
+     "w": 39,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "applyColumns",
+     "hidden": true,
+     "label": "One",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyColumns",
+     "hidden": true,
+     "label": "Two",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyColumns",
+     "hidden": true,
+     "label": "Three",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyColumns",
+     "hidden": true,
+     "label": "Left",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "applyColumns",
+     "hidden": true,
+     "label": "Right",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "openColumnsDialog",
+     "hidden": true,
+     "label": "Custom columns",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "label": "Breaks",
+     "enabled": true,
+     "x": 166,
+     "y": 43,
+     "w": 31,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "insertPageBreak",
+     "hidden": true,
+     "label": "Insert page break",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "insertColumnBreak",
+     "hidden": true,
+     "label": "Insert column break",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "insertSectionBreak",
+     "hidden": true,
+     "label": "Insert section break",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
     },
     {
      "id": null,
      "cmd": "toggleLineNumbers",
      "label": "Line numbers",
      "enabled": true,
-     "x": 309,
-     "y": 116,
-     "w": 103,
+     "x": 199,
+     "y": 49,
+     "w": 97,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "toggleHyphenation",
+     "label": "Hyphenation",
+     "enabled": true,
+     "x": 298,
+     "y": 49,
+     "w": 91,
+     "h": 34
+    },
+    {
+     "id": null,
+     "label": "Wrapping",
+     "enabled": true,
+     "x": 391,
+     "y": 43,
+     "w": 43,
      "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "hidden": true,
+     "label": "Inline",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "hidden": true,
+     "label": "Square",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "hidden": true,
+     "label": "Behind text",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "label": "Bring forward",
+     "enabled": true,
+     "x": 436,
+     "y": 49,
+     "w": 95,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "label": "Bring to foreground",
+     "enabled": true,
+     "x": 533,
+     "y": 49,
+     "w": 129,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "label": "Send backward",
+     "enabled": true,
+     "x": 664,
+     "y": 49,
+     "w": 108,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "label": "Send to background",
+     "enabled": true,
+     "x": 774,
+     "y": 49,
+     "w": 134,
+     "h": 34
+    },
+    {
+     "id": null,
+     "label": "Align",
+     "enabled": true,
+     "x": 910,
+     "y": 43,
+     "w": 22,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "hidden": true,
+     "label": "Align left",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "hidden": true,
+     "label": "Align center",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "hidden": true,
+     "label": "Align right",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "hidden": true,
+     "label": "Align top",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "hidden": true,
+     "label": "Align middle",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "hidden": true,
+     "label": "Align bottom",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "label": "Group",
+     "enabled": true,
+     "x": 934,
+     "y": 49,
+     "w": 54,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "label": "Ungroup",
+     "enabled": true,
+     "x": 991,
+     "y": 49,
+     "w": 68,
+     "h": 34
+    },
+    {
+     "id": null,
+     "label": "Merge shapes",
+     "enabled": true,
+     "x": 1060,
+     "y": 43,
+     "w": 63,
+     "h": 46
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "hidden": true,
+     "label": "Union",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "hidden": true,
+     "label": "Subtract",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "hidden": true,
+     "label": "Intersect",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
     },
     {
      "id": null,
      "cmd": "toggleWatermark",
      "label": "Watermark",
      "enabled": true,
-     "x": 414,
-     "y": 116,
-     "w": 86,
-     "h": 46
+     "x": 1126,
+     "y": 49,
+     "w": 81,
+     "h": 34
+    },
+    {
+     "id": "btn-page-setup",
+     "label": "Page setup",
+     "enabled": true,
+     "x": 12,
+     "y": 91,
+     "w": 84,
+     "h": 34
+    },
+    {
+     "id": "btn-columns",
+     "label": "Columns",
+     "enabled": true,
+     "x": 98,
+     "y": 91,
+     "w": 69,
+     "h": 34
     }
    ],
    "combos": [
     {
      "id": "themecolors",
-     "label": "Layout.Colors",
-     "w": 86
+     "label": "Colors",
+     "w": 80
     },
     {
      "id": "highlight-color",
@@ -1326,7 +2686,7 @@
     },
     {
      "id": "text-color",
-     "label": "Text color",
+     "label": "Font color",
      "w": 0
     },
     {
@@ -1336,7 +2696,7 @@
     },
     {
      "id": "pagecolor",
-     "label": "Layout.PageColor",
+     "label": "Page color",
      "w": 24
     }
    ]
@@ -1349,79 +2709,137 @@
      "label": "☰",
      "enabled": true,
      "x": 12,
-     "y": 116,
+     "y": 49,
      "w": 34,
-     "h": 46
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "addText",
+     "label": "Add Text",
+     "enabled": true,
+     "x": 48,
+     "y": 49,
+     "w": 68,
+     "h": 34
     },
     {
      "id": "btn-footnote",
      "cmd": "insertFootnote",
      "label": "¹",
      "enabled": true,
-     "x": 48,
-     "y": 116,
+     "x": 118,
+     "y": 49,
      "w": 34,
-     "h": 46
+     "h": 34
     },
     {
      "id": "btn-endnote",
      "cmd": "insertEndnote",
      "label": "ⁿ",
      "enabled": true,
-     "x": 84,
-     "y": 116,
+     "x": 154,
+     "y": 49,
      "w": 34,
-     "h": 46
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "link",
+     "label": "Link",
+     "enabled": true,
+     "x": 190,
+     "y": 49,
+     "w": 42,
+     "h": 34
+    },
+    {
+     "id": "btn-bookmark",
+     "label": "Insert bookmark",
+     "enabled": true,
+     "x": 234,
+     "y": 49,
+     "w": 42,
+     "h": 34
+    },
+    {
+     "id": "btn-field",
+     "label": "Field",
+     "enabled": true,
+     "x": 278,
+     "y": 49,
+     "w": 46,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "insertCaption",
      "label": "Caption",
      "enabled": true,
-     "x": 120,
-     "y": 116,
-     "w": 66,
-     "h": 46
+     "x": 326,
+     "y": 49,
+     "w": 63,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "insertCitation",
      "label": "Citation",
      "enabled": true,
-     "x": 188,
-     "y": 116,
-     "w": 65,
-     "h": 46
+     "x": 391,
+     "y": 49,
+     "w": 62,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "insertIndexEntry",
      "label": "Index",
      "enabled": true,
-     "x": 256,
-     "y": 116,
-     "w": 52,
-     "h": 46
-    },
-    {
-     "id": null,
-     "cmd": "updateToc",
-     "label": "Update TOC",
-     "enabled": true,
-     "x": 310,
-     "y": 116,
-     "w": 96,
-     "h": 46
+     "x": 455,
+     "y": 49,
+     "w": 50,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "openCrossref",
      "label": "Cross-reference",
      "enabled": true,
-     "x": 408,
-     "y": 116,
-     "w": 118,
-     "h": 46
+     "x": 507,
+     "y": 49,
+     "w": 111,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "insertTableOfFigures",
+     "label": "Table of figures",
+     "enabled": true,
+     "x": 620,
+     "y": 49,
+     "w": 106,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "updateToc",
+     "label": "Update TOC",
+     "enabled": true,
+     "x": 12,
+     "y": 85,
+     "w": 91,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "updateToc",
+     "label": "Update table",
+     "enabled": true,
+     "x": 105,
+     "y": 85,
+     "w": 92,
+     "h": 34
     }
    ],
    "combos": [
@@ -1432,7 +2850,7 @@
     },
     {
      "id": "text-color",
-     "label": "Text color",
+     "label": "Font color",
      "w": 0
     },
     {
@@ -1442,7 +2860,7 @@
     },
     {
      "id": "pagecolor",
-     "label": "Layout.PageColor",
+     "label": "Page color",
      "w": 0
     }
    ]
@@ -1451,93 +2869,158 @@
    "label": "Collaboration",
    "buttons": [
     {
-     "id": "btn-track-changes",
-     "label": "✎",
-     "enabled": true,
-     "x": 12,
-     "y": 116,
-     "w": 34,
-     "h": 46
-    },
-    {
-     "id": "btn-review-changes",
-     "label": "✓",
-     "enabled": true,
-     "x": 48,
-     "y": 116,
-     "w": 34,
-     "h": 46
-    },
-    {
      "id": "btn-comment",
      "label": "Add comment",
      "enabled": true,
-     "x": 84,
-     "y": 116,
+     "x": 202,
+     "y": 49,
      "w": 42,
-     "h": 46
-    },
-    {
-     "id": "btn-comments",
-     "label": "◫",
-     "enabled": true,
-     "x": 128,
-     "y": 116,
-     "w": 34,
-     "h": 46
-    },
-    {
-     "id": "btn-chat-toggle",
-     "cmd": "toggleChat",
-     "label": "Chat",
-     "enabled": true,
-     "x": 164,
-     "y": 116,
-     "w": 48,
-     "h": 46
+     "h": 34
     },
     {
      "id": null,
-     "cmd": "compareVersion",
-     "label": "Compare",
+     "cmd": "deleteComment",
+     "label": "Delete",
      "enabled": true,
-     "x": 214,
-     "y": 116,
-     "w": 76,
-     "h": 46
+     "x": 246,
+     "y": 49,
+     "w": 56,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "resolveComment",
+     "label": "Resolve",
+     "enabled": true,
+     "x": 304,
+     "y": 49,
+     "w": 65,
+     "h": 34
+    },
+    {
+     "id": "btn-track-changes",
+     "label": "✎",
+     "enabled": true,
+     "x": 371,
+     "y": 49,
+     "w": 34,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "displayMode",
      "label": "Display mode",
      "enabled": true,
-     "x": 291,
-     "y": 116,
-     "w": 103,
-     "h": 46
+     "x": 407,
+     "y": 49,
+     "w": 97,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "prevTrackedChange",
      "label": "Previous change",
      "enabled": true,
-     "x": 396,
-     "y": 116,
-     "w": 122,
-     "h": 46
+     "x": 505,
+     "y": 49,
+     "w": 115,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "nextTrackedChange",
      "label": "Next change",
      "enabled": true,
-     "x": 520,
-     "y": 116,
-     "w": 97,
-     "h": 46
+     "x": 622,
+     "y": 49,
+     "w": 91,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "acceptTrackedChange",
+     "label": "Accept",
+     "enabled": true,
+     "x": 715,
+     "y": 49,
+     "w": 58,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "rejectTrackedChange",
+     "label": "Reject",
+     "enabled": true,
+     "x": 775,
+     "y": 49,
+     "w": 55,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "compareVersion",
+     "label": "Compare",
+     "enabled": true,
+     "x": 832,
+     "y": 49,
+     "w": 71,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "combineRevisions",
+     "label": "Combine",
+     "enabled": true,
+     "x": 905,
+     "y": 49,
+     "w": 70,
+     "h": 34
+    },
+    {
+     "id": "btn-chat-toggle",
+     "cmd": "toggleChat",
+     "label": "Chat",
+     "enabled": true,
+     "x": 977,
+     "y": 49,
+     "w": 45,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "mailMerge",
+     "label": "Mail Merge",
+     "enabled": true,
+     "x": 1025,
+     "y": 49,
+     "w": 82,
+     "h": 34
+    },
+    {
+     "id": "btn-review-changes",
+     "label": "✓",
+     "enabled": true,
+     "x": 12,
+     "y": 85,
+     "w": 34,
+     "h": 34
+    },
+    {
+     "id": "btn-comments",
+     "label": "◫",
+     "enabled": true,
+     "x": 48,
+     "y": 85,
+     "w": 34,
+     "h": 34
     }
    ],
    "combos": [
+    {
+     "id": "coedit-mode",
+     "label": "Co-editing mode",
+     "w": 53
+    },
     {
      "id": "highlight-color",
      "label": "Highlight color",
@@ -1545,7 +3028,7 @@
     },
     {
      "id": "text-color",
-     "label": "Text color",
+     "label": "Font color",
      "w": 0
     },
     {
@@ -1555,7 +3038,7 @@
     },
     {
      "id": "pagecolor",
-     "label": "Layout.PageColor",
+     "label": "Page color",
      "w": 0
     }
    ]
@@ -1566,22 +3049,22 @@
     {
      "id": null,
      "cmd": "protectDialog",
-     "label": "Protect with password",
+     "label": "Encrypt",
      "enabled": true,
      "x": 12,
-     "y": 116,
-     "w": 155,
-     "h": 46
+     "y": 49,
+     "w": 62,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "restrictEditing",
-     "label": "Restrict editing",
+     "label": "Protect Document",
      "enabled": true,
-     "x": 169,
-     "y": 116,
-     "w": 111,
-     "h": 46
+     "x": 12,
+     "y": 85,
+     "w": 122,
+     "h": 34
     }
    ],
    "combos": [
@@ -1592,7 +3075,7 @@
     },
     {
      "id": "text-color",
-     "label": "Text color",
+     "label": "Font color",
      "w": 0
     },
     {
@@ -1602,7 +3085,7 @@
     },
     {
      "id": "pagecolor",
-     "label": "Layout.PageColor",
+     "label": "Page color",
      "w": 0
     }
    ]
@@ -1616,80 +3099,156 @@
      "label": "Document view",
      "enabled": true,
      "x": 12,
-     "y": 116,
-     "w": 114,
-     "h": 46
+     "y": 49,
+     "w": 107,
+     "h": 34
     },
     {
      "id": "btn-ruler-toggle",
      "label": "Ruler",
      "enabled": true,
-     "x": 128,
-     "y": 116,
-     "w": 51,
-     "h": 46
+     "x": 121,
+     "y": 49,
+     "w": 49,
+     "h": 34
     },
     {
      "id": "btn-gridlines",
      "label": "Gridlines",
      "enabled": true,
-     "x": 181,
-     "y": 116,
-     "w": 73,
-     "h": 46
+     "x": 172,
+     "y": 49,
+     "w": 69,
+     "h": 34
     },
     {
      "id": "btn-view-formatmarks",
-     "label": "View.FormattingMarks",
+     "label": "Formatting marks",
      "enabled": true,
-     "x": 256,
-     "y": 116,
-     "w": 156,
-     "h": 46
+     "x": 243,
+     "y": 49,
+     "w": 119,
+     "h": 34
     },
     {
      "id": "btn-nav-toggle",
      "cmd": "toggleNavigation",
      "label": "Navigation",
      "enabled": true,
-     "x": 415,
-     "y": 116,
-     "w": 84,
-     "h": 46
+     "x": 364,
+     "y": 49,
+     "w": 79,
+     "h": 34
+    },
+    {
+     "id": "btn-right-panel-toggle",
+     "cmd": "toggleRightPanel",
+     "label": "Settings panel",
+     "enabled": true,
+     "x": 446,
+     "y": 49,
+     "w": 100,
+     "h": 34
     },
     {
      "id": "btn-view-fullscreen",
      "label": "Fullscreen",
      "enabled": true,
-     "x": 501,
-     "y": 116,
-     "w": 83,
-     "h": 46
+     "x": 548,
+     "y": 49,
+     "w": 78,
+     "h": 34
     },
     {
      "id": "btn-view-theme",
      "label": "Theme",
      "enabled": true,
-     "x": 585,
-     "y": 116,
-     "w": 62,
-     "h": 46
+     "x": 628,
+     "y": 49,
+     "w": 58,
+     "h": 34
+    },
+    {
+     "id": "btn-view-headings",
+     "label": "Headings",
+     "enabled": true,
+     "x": 689,
+     "y": 49,
+     "w": 73,
+     "h": 34
     },
     {
      "id": "btn-view-fit",
      "label": "Fit page",
      "enabled": true,
-     "x": 649,
-     "y": 116,
-     "w": 69,
+     "x": 764,
+     "y": 49,
+     "w": 65,
+     "h": 34
+    },
+    {
+     "id": "btn-view-zoom100",
+     "label": "Zoom to 100%",
+     "enabled": true,
+     "x": 831,
+     "y": 49,
+     "w": 103,
+     "h": 34
+    },
+    {
+     "id": "btn-view-darkdoc",
+     "label": "Dark document",
+     "enabled": true,
+     "x": 990,
+     "y": 49,
+     "w": 106,
+     "h": 34
+    },
+    {
+     "id": "btn-macro-menu",
+     "label": "Macros",
+     "enabled": true,
+     "x": 1098,
+     "y": 43,
+     "w": 33,
      "h": 46
+    },
+    {
+     "id": "btn-macro-record",
+     "hidden": true,
+     "label": "Record macro",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": "btn-macro-pause",
+     "hidden": true,
+     "label": "Pause recording",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": "btn-macro-manager",
+     "hidden": true,
+     "label": "Macro manager",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
     },
     {
      "id": "btn-speech",
      "label": "Speech",
      "enabled": true,
-     "x": 873,
-     "y": 84,
+     "x": 1133,
+     "y": 43,
      "w": 34,
      "h": 46
     },
@@ -1714,9 +3273,32 @@
      "y": 0,
      "w": 0,
      "h": 0
+    },
+    {
+     "id": "btn-view-fit-width",
+     "label": "Fit width",
+     "enabled": true,
+     "x": 12,
+     "y": 91,
+     "w": 66,
+     "h": 34
+    },
+    {
+     "id": "btn-view-multipages",
+     "label": "Multiple pages",
+     "enabled": true,
+     "x": 80,
+     "y": 91,
+     "w": 102,
+     "h": 34
     }
    ],
    "combos": [
+    {
+     "id": "view-theme-select",
+     "label": "Interface theme",
+     "w": 45
+    },
     {
      "id": "highlight-color",
      "label": "Highlight color",
@@ -1724,7 +3306,7 @@
     },
     {
      "id": "text-color",
-     "label": "Text color",
+     "label": "Font color",
      "w": 0
     },
     {
@@ -1734,7 +3316,7 @@
     },
     {
      "id": "pagecolor",
-     "label": "Layout.PageColor",
+     "label": "Page color",
      "w": 0
     }
    ]
@@ -1744,52 +3326,132 @@
    "buttons": [
     {
      "id": null,
-     "cmd": "browsePlugins",
-     "label": "Browse plugins",
-     "enabled": true,
-     "x": 12,
-     "y": 116,
-     "w": 113,
-     "h": 46
-    },
-    {
-     "id": null,
      "cmd": "managePlugins",
      "label": "Manage plugins",
      "enabled": true,
-     "x": 127,
-     "y": 116,
-     "w": 117,
-     "h": 46
+     "x": 12,
+     "y": 49,
+     "w": 110,
+     "h": 34
     },
     {
      "id": "btn-bgplugins",
      "label": "Background plugins",
      "enabled": true,
-     "x": 246,
-     "y": 116,
-     "w": 141,
-     "h": 46
-    },
-    {
-     "id": "btn-ocr",
-     "cmd": "ocrRun",
-     "label": "OCR",
-     "enabled": true,
-     "x": 389,
-     "y": 116,
-     "w": 49,
-     "h": 46
+     "x": 124,
+     "y": 49,
+     "w": 132,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "photoEditor",
      "label": "Photo editor",
      "enabled": true,
-     "x": 440,
-     "y": 116,
+     "x": 258,
+     "y": 49,
+     "w": 88,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "pluginUnavailable",
+     "label": "YouTube",
+     "enabled": true,
+     "x": 348,
+     "y": 49,
+     "w": 69,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "aiTranslate",
+     "label": "Translator",
+     "enabled": true,
+     "x": 423,
+     "y": 49,
+     "w": 76,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "pluginUnavailable",
+     "label": "Mendeley",
+     "enabled": true,
+     "x": 505,
+     "y": 49,
+     "w": 74,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "aiRewrite",
+     "label": "Thesaurus",
+     "enabled": true,
+     "x": 586,
+     "y": 49,
+     "w": 79,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "code",
+     "label": "Highlight code",
+     "enabled": true,
+     "x": 671,
+     "y": 49,
+     "w": 100,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "pluginUnavailable",
+     "label": "Zotero",
+     "enabled": true,
+     "x": 777,
+     "y": 49,
+     "w": 56,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "readAloud",
+     "label": "Speech",
+     "enabled": true,
+     "x": 839,
+     "y": 49,
+     "w": 62,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "dictate",
+     "label": "Speech input",
+     "enabled": true,
+     "x": 907,
+     "y": 49,
      "w": 94,
-     "h": 46
+     "h": 34
+    },
+    {
+     "id": "btn-ocr",
+     "cmd": "ocrRun",
+     "label": "OCR",
+     "enabled": true,
+     "x": 1003,
+     "y": 49,
+     "w": 47,
+     "h": 34
+    },
+    {
+     "id": null,
+     "cmd": "browsePlugins",
+     "label": "Browse plugins",
+     "enabled": true,
+     "x": 12,
+     "y": 85,
+     "w": 106,
+     "h": 34
     }
    ],
    "combos": [
@@ -1800,7 +3462,7 @@
     },
     {
      "id": "text-color",
-     "label": "Text color",
+     "label": "Font color",
      "w": 0
     },
     {
@@ -1810,7 +3472,7 @@
     },
     {
      "id": "pagecolor",
-     "label": "Layout.PageColor",
+     "label": "Page color",
      "w": 0
     }
    ]
@@ -1819,61 +3481,81 @@
    "label": "AI",
    "buttons": [
     {
-     "id": "btn-ai-review-tab",
-     "label": "AI changes",
+     "id": null,
+     "cmd": "aiSettings",
+     "label": "Settings",
      "enabled": true,
      "x": 12,
-     "y": 116,
-     "w": 88,
-     "h": 46
+     "y": 49,
+     "w": 65,
+     "h": 34
+    },
+    {
+     "id": "btn-ai-assistant",
+     "label": "Chatbot",
+     "enabled": true,
+     "x": 79,
+     "y": 49,
+     "w": 64,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "aiSummarize",
-     "label": "Summarize",
+     "label": "Summarization",
      "enabled": true,
-     "x": 102,
-     "y": 116,
-     "w": 89,
-     "h": 46
+     "x": 145,
+     "y": 49,
+     "w": 105,
+     "h": 34
     },
     {
-     "id": null,
-     "cmd": "aiTranslate",
-     "label": "Translate",
+     "id": "btn-ai-review-tab",
+     "label": "AI changes",
      "enabled": true,
-     "x": 193,
-     "y": 116,
-     "w": 76,
-     "h": 46
+     "x": 12,
+     "y": 85,
+     "w": 83,
+     "h": 34
+    },
+    {
+     "id": "btn-ai-translate",
+     "cmd": "aiTranslate",
+     "label": "Translation",
+     "enabled": true,
+     "x": 97,
+     "y": 85,
+     "w": 82,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "aiRewrite",
      "label": "Rewrite",
      "enabled": true,
-     "x": 271,
-     "y": 116,
-     "w": 65,
-     "h": 46
+     "x": 181,
+     "y": 85,
+     "w": 62,
+     "h": 34
     },
     {
      "id": "btn-ai-grammar",
      "label": "Grammar",
      "enabled": true,
-     "x": 338,
-     "y": 116,
-     "w": 77,
-     "h": 46
+     "x": 245,
+     "y": 85,
+     "w": 73,
+     "h": 34
     },
     {
-     "id": "btn-ai-assistant",
-     "label": "AI assistant",
+     "id": "btn-create-ai-assistant",
+     "cmd": "createAiAssistant",
+     "label": "Create AI assistant",
      "enabled": true,
-     "x": 417,
-     "y": 116,
-     "w": 90,
-     "h": 46
+     "x": 320,
+     "y": 85,
+     "w": 127,
+     "h": 34
     }
    ],
    "combos": [
@@ -1884,7 +3566,7 @@
     },
     {
      "id": "text-color",
-     "label": "Text color",
+     "label": "Font color",
      "w": 0
     },
     {
@@ -1894,7 +3576,7 @@
     },
     {
      "id": "pagecolor",
-     "label": "Layout.PageColor",
+     "label": "Page color",
      "w": 0
     }
    ]
@@ -1904,81 +3586,99 @@
    "contextual": true,
    "buttons": [
     {
-     "id": "btn-hf-close",
-     "label": "Close Header & Footer",
-     "enabled": true,
-     "x": 12,
-     "y": 116,
-     "w": 161,
-     "h": 46
-    },
-    {
      "id": "btn-hf-pagenumber",
      "label": "Page number",
      "enabled": true,
-     "x": 175,
-     "y": 116,
-     "w": 102,
-     "h": 46
+     "x": 12,
+     "y": 49,
+     "w": 96,
+     "h": 34
     },
     {
      "id": "btn-hf-datetime",
      "label": "Date & time",
      "enabled": true,
-     "x": 279,
-     "y": 116,
-     "w": 91,
-     "h": 46
+     "x": 110,
+     "y": 49,
+     "w": 86,
+     "h": 34
+    },
+    {
+     "id": "btn-hf-field",
+     "label": "Field",
+     "enabled": true,
+     "x": 198,
+     "y": 49,
+     "w": 46,
+     "h": 34
+    },
+    {
+     "id": "btn-hf-image",
+     "label": "Image",
+     "enabled": true,
+     "x": 246,
+     "y": 49,
+     "w": 54,
+     "h": 34
+    },
+    {
+     "id": "btn-hf-close",
+     "label": "Close Header & Footer",
+     "enabled": true,
+     "x": 302,
+     "y": 49,
+     "w": 151,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "toggleDifferentFirst",
      "label": "Different First Page",
      "enabled": true,
-     "x": 372,
-     "y": 116,
-     "w": 138,
-     "h": 46
+     "x": 12,
+     "y": 85,
+     "w": 130,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "toggleOddEven",
      "label": "Different Odd & Even",
      "enabled": true,
-     "x": 513,
-     "y": 116,
-     "w": 150,
-     "h": 46
+     "x": 144,
+     "y": 85,
+     "w": 141,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "toggleHeaderFromTop",
      "label": "Header from Top",
      "enabled": true,
-     "x": 665,
-     "y": 116,
-     "w": 122,
-     "h": 46
+     "x": 286,
+     "y": 85,
+     "w": 115,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "toggleFooterFromBottom",
      "label": "Footer from Bottom",
      "enabled": true,
-     "x": 789,
-     "y": 116,
-     "w": 139,
-     "h": 46
+     "x": 403,
+     "y": 85,
+     "w": 130,
+     "h": 34
     },
     {
      "id": null,
      "cmd": "toggleSameAsPrev",
      "label": "Same as previous",
      "enabled": true,
-     "x": 929,
-     "y": 116,
-     "w": 130,
-     "h": 46
+     "x": 535,
+     "y": 85,
+     "w": 122,
+     "h": 34
     }
    ],
    "combos": [
@@ -1989,7 +3689,7 @@
     },
     {
      "id": "text-color",
-     "label": "Text color",
+     "label": "Font color",
      "w": 0
     },
     {
@@ -1999,7 +3699,7 @@
     },
     {
      "id": "pagecolor",
-     "label": "Layout.PageColor",
+     "label": "Page color",
      "w": 0
     }
    ]
@@ -2007,101 +3707,69 @@
  },
  "surfaces": {
   "menu-file": {
-   "buttons": [
-    {
-     "id": "btn-new",
-     "label": "New",
-     "enabled": true
-    },
-    {
-     "id": "btn-open",
-     "label": "Open…",
-     "enabled": true
-    },
-    {
-     "id": "btn-export",
-     "label": "Export",
-     "enabled": true
-    },
-    {
-     "id": "btn-print",
-     "label": "Print",
-     "enabled": true
-    },
-    {
-     "id": "btn-history",
-     "label": "History…",
-     "enabled": true
-    },
-    {
-     "id": "btn-ai-review",
-     "label": "AI changes…",
-     "enabled": true
-    },
-    {
-     "id": "btn-fileinfo",
-     "label": "Info…",
-     "enabled": true
-    },
-    {
-     "id": "btn-fileprotect",
-     "label": "Protect document…",
-     "enabled": true
-    },
-    {
-     "id": "btn-filesettings",
-     "label": "Settings…",
-     "enabled": true
-    },
-    {
-     "id": "btn-filehelp",
-     "label": "Help &amp; about",
-     "enabled": true
-    },
-    {
-     "id": "btn-filesuggest",
-     "label": "Suggest a feature…",
-     "enabled": true
-    }
-   ]
+   "buttons": []
   },
   "statusbar": {
    "buttons": [
     {
-     "id": "btn-zoom-out",
-     "label": "Zoom out",
+     "id": "sb-word-count",
+     "label": "Word and character count — opens document info",
      "enabled": true,
-     "x": 1092
+     "x": 89
     },
     {
-     "id": "btn-zoom-in",
-     "label": "Zoom in",
+     "id": "sb-doc-spell",
+     "label": "Check spelling",
      "enabled": true,
-     "x": 1211
+     "x": 241
     },
     {
-     "id": "btn-zoom-fit",
-     "label": "Fit page width",
+     "id": "sb-lang",
+     "label": "Document language",
      "enabled": true,
-     "x": 1276
-    },
-    {
-     "id": "btn-zoom-reset",
-     "label": "Reset zoom",
-     "enabled": true,
-     "x": 1334
+     "x": 665
     },
     {
      "id": "doc-lang-caret",
      "label": "Language options",
      "enabled": true,
-     "x": 1083
+     "x": 944
     },
     {
      "id": "btn-multipage",
-     "label": "Multiple pages view",
+     "label": "Multiple pages",
      "enabled": true,
-     "x": 1404
+     "x": 961
+    },
+    {
+     "id": "sb-track-changes",
+     "label": "Toggle track changes",
+     "enabled": true,
+     "x": 995
+    },
+    {
+     "id": "btn-zoom-out",
+     "label": "Zoom out",
+     "enabled": true,
+     "x": 1113
+    },
+    {
+     "id": "btn-zoom-in",
+     "label": "Zoom in",
+     "enabled": true,
+     "x": 1265
+    },
+    {
+     "id": "btn-zoom-fit",
+     "label": "Fit page",
+     "enabled": true,
+     "x": 1303
+    },
+    {
+     "id": "btn-zoom-reset",
+     "label": "Reset zoom",
+     "enabled": true,
+     "x": 1341
     }
    ],
    "combos": []

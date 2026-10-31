@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-31T03:11:16.987550",
+ "generated": "2026-10-31T19:45:32.277183",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,8 +9,8 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 22,
-  "L1": 464,
+  "L0": 20,
+  "L1": 466,
   "L2": 0,
   "L3": 15,
   "L4": 0
@@ -1236,7 +1236,7 @@
    ],
    "wo": {
     "match": "btn-field",
-    "where": "tab:insert"
+    "where": "tab:references"
    },
    "level": 1,
    "evidence": []
@@ -1782,7 +1782,7 @@
     }
    ],
    "wo": {
-    "match": "insertToF",
+    "match": "insertTableOfFigures",
     "where": "tab:references"
    },
    "level": 1,
@@ -2521,7 +2521,7 @@
    ],
    "wo": {
     "match": "btn-field",
-    "where": "tab:insert"
+    "where": "tab:references"
    },
    "level": 1,
    "evidence": []
@@ -3681,8 +3681,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "toggleHyphenation",
+    "where": "tab:layout (hy-mode options)"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -3696,8 +3699,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "toggleHyphenation",
+    "where": "tab:layout (hy-mode options)"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -4265,7 +4271,7 @@
     }
    ],
    "wo": {
-    "match": "insertToF",
+    "match": "insertTableOfFigures",
     "where": "tab:references"
    },
    "level": 1,
@@ -9348,7 +9354,7 @@
     }
    ],
    "wo": {
-    "match": "ctx data-ctx=AdjustListIndents",
+    "match": "ctx data-ctx=AdjustListIndents -> ListIndentsDialog + applyListIndents (margin-left/text-indent, round-trips as w:ind left/hanging)",
     "where": "ctx-menu"
    },
    "level": 1,
@@ -9367,13 +9373,11 @@
     }
    ],
    "wo": {
-    "match": "ribbon bullet/numbered buttons (bullets-and-numbering dialog absent)",
+    "match": "ctx data-ctx=BulletsAndNumbering -> BulletsNumberingDialog (list-style-type + start; round-trips as w:numFmt)",
     "where": "ctx-menu"
    },
    "level": 1,
-   "evidence": [
-    "WO surface elsewhere: ribbon bullet/numbered buttons (bullets-and-numbering dialog absent)"
-   ]
+   "evidence": []
   },
   {
    "feature": "ctx.update-field",

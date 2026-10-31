@@ -116,8 +116,8 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.start-new-list** [ctx-menu] → WO: ctx data-ctx=StartNewList
 - 🔲 L1 **ctx.set-numbering-value** [ctx-menu] → WO: ctx data-ctx=SetNumberingValue -> NumberingValueDialog + applyNumberingValue (native ol split, restart at N)
 - 🔲 L1 **ctx.continue-numbering** [ctx-menu] → WO: ctx data-ctx=ContinueNumbering -> continueNumbering (native ol merge)
-- 🔲 L1 **ctx.adjust-list-indents** [ctx-menu] → WO: ctx data-ctx=AdjustListIndents
-- 🔲 L1 **ctx.bullets-and-numbering** [ctx-menu] → WO: ribbon bullet/numbered buttons (bullets-and-numbering dialog absent)
+- 🔲 L1 **ctx.adjust-list-indents** [ctx-menu] → WO: ctx data-ctx=AdjustListIndents -> ListIndentsDialog + applyListIndents (margin-left/text-indent, round-trips as w:ind left/hanging)
+- 🔲 L1 **ctx.bullets-and-numbering** [ctx-menu] → WO: ctx data-ctx=BulletsAndNumbering -> BulletsNumberingDialog (list-style-type + start; round-trips as w:numFmt)
 - 🔲 L1 **ctx.update-field** [ctx-menu] → WO: ctx data-ctx=UpdateField
 - 🔲 L1 **ctx.edit-field** [ctx-menu] → WO: ctx data-ctx=EditField
 - 🔲 L1 **ctx.toggle-field-codes** [ctx-menu] → WO: ctx data-ctx=ToggleFieldCodes
@@ -248,10 +248,10 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ❌ L0 **ctx.distribute-columns** [ctx-menu] 
 - 🔲 L1 **table.table-of-contents** [control] → WO: updatetoc-dialog
 - 🔲 L1 **table.update-table** [control] → WO: updateToc
-- 🔲 L1 **table.table-of-figures** [control] → WO: insertToF
+- 🔲 L1 **table.table-of-figures** [control] → WO: insertTableOfFigures
 - 🔲 L1 **table.draw-table** [menu-item] → WO: Draw table
 - 🔲 L1 **table.erase-table** [menu-item] → WO: Erase table
-- 🔲 L1 **table.dlg-table-of-figures** [dialog] (7 OO fields) → WO: insertToF
+- 🔲 L1 **table.dlg-table-of-figures** [dialog] (7 OO fields) → WO: insertTableOfFigures
 - 🔲 L1 **table.dlg-table-of-contents** [dialog] (7 OO fields) → WO: updatetoc-dialog
 - 🔲 L1 **ctx.merge-cells** [ctx-menu] → WO: ctx data-ctx=TableMergeCells
 - 🔲 L1 **ctx.split-cell** [ctx-menu] → WO: ctx data-ctx=TableSplitCell
@@ -259,57 +259,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **table.table** [control] → WO: Table ▾
 - ✅ L3 **table.insert-custom-table** [menu-item] → WO: btn-table
 - ✅ L3 **table.convert-text-to-table** [menu-item] → WO: Convert Text to Table…
-
-## page — 49 features (L0:2 L1:47 L3:0)
-- ❌ L0 **page.none** [menu-item] 
-- ❌ L0 **page.automatic** [menu-item] 
-- 🔲 L1 **page.margins** [control] → WO: Margins
-- 🔲 L1 **page.orientation** [control] → WO: Orientation
-- 🔲 L1 **page.size** [control] → WO: Size
-- 🔲 L1 **page.columns** [control] → WO: Columns
-- 🔲 L1 **page.breaks** [control] → WO: Breaks
-- 🔲 L1 **page.line-numbers** [control] → WO: toggleLineNumbers
-- 🔲 L1 **page.hyphenation** [control] → WO: toggleHyphenation
-- 🔲 L1 **page.wrapping** [control] → WO: Wrapping
-- 🔲 L1 **page.bring-forward** [control] → WO: objectOp
-- 🔲 L1 **page.send-backward** [control] → WO: objectOp
-- 🔲 L1 **page.align** [control] → WO: Align
-- 🔲 L1 **page.group** [control] → WO: objectOp
-- 🔲 L1 **page.merge-shapes** [control] → WO: btn-mergeshapes
-- 🔲 L1 **page.watermark** [control] → WO: toggleWatermark
-- 🔲 L1 **page.page-color** [control] → WO: btn-multipage
-- 🔲 L1 **page.colors** [control] → WO: themecolors
-- 🔲 L1 **page.last-custom** [menu-item] → WO: Last Custom
-- 🔲 L1 **page.normal** [menu-item] → WO: Normal
-- 🔲 L1 **page.narrow** [menu-item] → WO: Narrow
-- 🔲 L1 **page.moderate** [menu-item] → WO: Moderate
-- 🔲 L1 **page.wide** [menu-item] → WO: Wide
-- 🔲 L1 **page.custom-margins** [menu-item] → WO: Custom margins
-- 🔲 L1 **page.us-letter** [menu-item] → WO: Letter
-- 🔲 L1 **page.us-legal** [menu-item] → WO: Legal
-- 🔲 L1 **page.a4** [menu-item] → WO: A4
-- 🔲 L1 **page.a5** [menu-item] → WO: A5
-- 🔲 L1 **page.b5** [menu-item] → WO: B5
-- 🔲 L1 **page.envelope-10** [menu-item] → WO: Envelope #10
-- 🔲 L1 **page.envelope-dl** [menu-item] → WO: Envelope DL
-- 🔲 L1 **page.tabloid** [menu-item] → WO: Tabloid
-- 🔲 L1 **page.a3** [menu-item] → WO: A3
-- 🔲 L1 **page.tabloid-oversize** [menu-item] → WO: Tabloid Oversize
-- 🔲 L1 **page.roc-16k** [menu-item] → WO: ROC 16K
-- 🔲 L1 **page.envelope-choukei-3** [menu-item] → WO: Envelope Choukei 3
-- 🔲 L1 **page.super-b-a3** [menu-item] → WO: Super B/A3
-- 🔲 L1 **page.custom-page-size** [menu-item] → WO: btn-multipage
-- 🔲 L1 **page.one** [menu-item] → WO: One
-- 🔲 L1 **page.two** [menu-item] → WO: Two
-- 🔲 L1 **page.three** [menu-item] → WO: Three
-- 🔲 L1 **page.left** [menu-item] → WO: Left
-- 🔲 L1 **page.right** [menu-item] → WO: Right
-- 🔲 L1 **page.custom-columns** [menu-item] → WO: Custom columns
-- 🔲 L1 **page.hyphenation-options** [menu-item] → WO: toggleHyphenation
-- 🔲 L1 **page.dlg-margins** [dialog] (8 OO fields) → WO: Margins
-- 🔲 L1 **page.dlg-page-size** [dialog] (3 OO fields) → WO: btn-multipage
-- 🔲 L1 **page.dlg-columns** [dialog] (5 OO fields) → WO: columns-dialog
-- 🔲 L1 **page.dlg-hyphenation** [dialog] (2 OO fields) → WO: hyphenation-dialog
 
 ## formatting — 53 features (L0:1 L1:44 L3:8)
 - ❌ L0 **shortcut.strikeout** [shortcut] 
@@ -481,6 +430,57 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **headerfooter.close** [control] → WO: btn-hf-close
 - 🔲 L1 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
 - ✅ L3 **headerfooter.header-footer** [control] → WO: insertHeaderFooter
+
+## page — 49 features (L0:0 L1:49 L3:0)
+- 🔲 L1 **page.margins** [control] → WO: Margins
+- 🔲 L1 **page.orientation** [control] → WO: Orientation
+- 🔲 L1 **page.size** [control] → WO: Size
+- 🔲 L1 **page.columns** [control] → WO: Columns
+- 🔲 L1 **page.breaks** [control] → WO: Breaks
+- 🔲 L1 **page.line-numbers** [control] → WO: toggleLineNumbers
+- 🔲 L1 **page.hyphenation** [control] → WO: toggleHyphenation
+- 🔲 L1 **page.wrapping** [control] → WO: Wrapping
+- 🔲 L1 **page.bring-forward** [control] → WO: objectOp
+- 🔲 L1 **page.send-backward** [control] → WO: objectOp
+- 🔲 L1 **page.align** [control] → WO: Align
+- 🔲 L1 **page.group** [control] → WO: objectOp
+- 🔲 L1 **page.merge-shapes** [control] → WO: btn-mergeshapes
+- 🔲 L1 **page.watermark** [control] → WO: toggleWatermark
+- 🔲 L1 **page.page-color** [control] → WO: btn-multipage
+- 🔲 L1 **page.colors** [control] → WO: themecolors
+- 🔲 L1 **page.last-custom** [menu-item] → WO: Last Custom
+- 🔲 L1 **page.normal** [menu-item] → WO: Normal
+- 🔲 L1 **page.narrow** [menu-item] → WO: Narrow
+- 🔲 L1 **page.moderate** [menu-item] → WO: Moderate
+- 🔲 L1 **page.wide** [menu-item] → WO: Wide
+- 🔲 L1 **page.custom-margins** [menu-item] → WO: Custom margins
+- 🔲 L1 **page.us-letter** [menu-item] → WO: Letter
+- 🔲 L1 **page.us-legal** [menu-item] → WO: Legal
+- 🔲 L1 **page.a4** [menu-item] → WO: A4
+- 🔲 L1 **page.a5** [menu-item] → WO: A5
+- 🔲 L1 **page.b5** [menu-item] → WO: B5
+- 🔲 L1 **page.envelope-10** [menu-item] → WO: Envelope #10
+- 🔲 L1 **page.envelope-dl** [menu-item] → WO: Envelope DL
+- 🔲 L1 **page.tabloid** [menu-item] → WO: Tabloid
+- 🔲 L1 **page.a3** [menu-item] → WO: A3
+- 🔲 L1 **page.tabloid-oversize** [menu-item] → WO: Tabloid Oversize
+- 🔲 L1 **page.roc-16k** [menu-item] → WO: ROC 16K
+- 🔲 L1 **page.envelope-choukei-3** [menu-item] → WO: Envelope Choukei 3
+- 🔲 L1 **page.super-b-a3** [menu-item] → WO: Super B/A3
+- 🔲 L1 **page.custom-page-size** [menu-item] → WO: btn-multipage
+- 🔲 L1 **page.one** [menu-item] → WO: One
+- 🔲 L1 **page.two** [menu-item] → WO: Two
+- 🔲 L1 **page.three** [menu-item] → WO: Three
+- 🔲 L1 **page.left** [menu-item] → WO: Left
+- 🔲 L1 **page.right** [menu-item] → WO: Right
+- 🔲 L1 **page.custom-columns** [menu-item] → WO: Custom columns
+- 🔲 L1 **page.none** [menu-item] → WO: toggleHyphenation
+- 🔲 L1 **page.automatic** [menu-item] → WO: toggleHyphenation
+- 🔲 L1 **page.hyphenation-options** [menu-item] → WO: toggleHyphenation
+- 🔲 L1 **page.dlg-margins** [dialog] (8 OO fields) → WO: Margins
+- 🔲 L1 **page.dlg-page-size** [dialog] (3 OO fields) → WO: btn-multipage
+- 🔲 L1 **page.dlg-columns** [dialog] (5 OO fields) → WO: columns-dialog
+- 🔲 L1 **page.dlg-hyphenation** [dialog] (2 OO fields) → WO: hyphenation-dialog
 
 ## references — 9 features (L0:0 L1:9 L3:0)
 - 🔲 L1 **references.add-text** [control] → WO: btn-addtext

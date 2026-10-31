@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-29T12:31:14.500Z",
+  "capturedAt": "2026-10-31T18:27:31.381Z",
   "engine": "wo-docserver",
   "dialogs": [
     {
@@ -70,6 +70,12 @@
       "title": "Table actions",
       "fields": [
         {
+          "label": "Insert",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
           "label": "Border style",
           "tag": "select",
           "type": "select",
@@ -109,6 +115,8 @@
         "Delete column",
         "Merge cells",
         "Split cell",
+        "rows",
+        "columns",
         "Close"
       ],
       "rect": {
@@ -333,9 +341,29 @@
           "tag": "text",
           "type": "text",
           "options": []
+        },
+        {
+          "label": "Allow edit range",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Start (characters)",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "End (characters)",
+          "tag": "input",
+          "type": "number",
+          "options": []
         }
       ],
       "buttons": [
+        "Remove range",
+        "Allow range",
         "Cancel",
         "Apply"
       ],
@@ -406,7 +434,9 @@
         }
       ],
       "buttons": [
+        "Crop",
         "Reset",
+        "Apply",
         "Close"
       ],
       "rect": {
@@ -453,7 +483,7 @@
       "id": "pagenumber-dialog",
       "openedBy": "forced:forced (cmd insertPageNumber)",
       "visible": true,
-      "title": "Page Number",
+      "title": "Dialog.PageNumberTitle",
       "fields": [
         {
           "label": "Position",
@@ -463,6 +493,19 @@
             "Top of page (header)",
             "At cursor",
             "Bottom of page (footer)"
+          ]
+        },
+        {
+          "label": "Format",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "1, 2, 3",
+            "0, 1, 2",
+            "I, II, III",
+            "i, ii, iii",
+            "A, B, C",
+            "a, b, c"
           ]
         },
         {
@@ -491,6 +534,24 @@
       "visible": true,
       "title": "Header and Footer",
       "fields": [
+        {
+          "label": "Header",
+          "tag": "input",
+          "type": "radio",
+          "options": []
+        },
+        {
+          "label": "Footer",
+          "tag": "input",
+          "type": "radio",
+          "options": []
+        },
+        {
+          "label": "Both",
+          "tag": "input",
+          "type": "radio",
+          "options": []
+        },
         {
           "label": "Different first page",
           "tag": "input",
@@ -685,6 +746,30 @@
           "tag": "input",
           "type": "color",
           "options": []
+        },
+        {
+          "label": "HEX",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "R",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "G",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "B",
+          "tag": "input",
+          "type": "number",
+          "options": []
         }
       ],
       "buttons": [
@@ -701,6 +786,7 @@
         "Sand",
         "No fill",
         "Cancel",
+        "No Color",
         "OK"
       ],
       "rect": {
@@ -725,9 +811,93 @@
             "Blue Warm",
             "Green Yellow"
           ]
+        },
+        {
+          "label": "Paper color (background)",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Custom paper color",
+          "tag": "input",
+          "type": "color",
+          "options": []
+        },
+        {
+          "label": "Paper HEX",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "R",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "G",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "B",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Ink color (text)",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Custom ink color",
+          "tag": "input",
+          "type": "color",
+          "options": []
+        },
+        {
+          "label": "Ink HEX",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "R",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "G",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "B",
+          "tag": "input",
+          "type": "number",
+          "options": []
         }
       ],
       "buttons": [
+        "White",
+        "Cream",
+        "Blue tint",
+        "Green tint",
+        "Red tint",
+        "Slate",
+        "Black",
+        "Dark brown",
+        "Dark blue",
+        "Dark green",
+        "Dark gray",
+        "Maroon",
         "Cancel",
         "OK"
       ],
@@ -795,16 +965,17 @@
       "id": "displaymode-dialog",
       "openedBy": "forced:forced (cmd displayMode)",
       "visible": true,
-      "title": "Display Mode",
+      "title": "DisplayMode.Title",
       "fields": [
         {
-          "label": "View",
+          "label": "Mode",
           "tag": "select",
           "type": "select",
           "options": [
-            "Markup",
-            "Original",
-            "Final"
+            "View",
+            "Comment",
+            "Review",
+            "Edit"
           ]
         }
       ],
@@ -852,7 +1023,11 @@
           "options": [
             "Plain text",
             "Rich text",
-            "Drop-down list"
+            "Drop-down list",
+            "Check box",
+            "Date picker",
+            "Combo box",
+            "Picture"
           ]
         },
         {
@@ -1264,6 +1439,7 @@
         }
       ],
       "buttons": [
+        "Autocorrect options…",
         "Cancel",
         "Apply"
       ],
@@ -1301,8 +1477,8 @@
         "Insert diagram"
       ],
       "rect": {
-        "w": 1600,
-        "h": 1000
+        "w": 290,
+        "h": 192
       }
     },
     {

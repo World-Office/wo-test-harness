@@ -269,6 +269,11 @@ for tab, meta in (oo_deep.get("tabs") or {}).items():
             ledger[fid]["evidence"].append(why)
 
 # 2. menu items
+# OO's Layout-tab hyphenation menu offers None/Automatic/Manual as separate
+# items; WO collapses them into the single toggleHyphenation control (layout
+# tab) + hy-mode options. Scoped fallback so those generic single-word items
+# don't become empty L0 rows.
+HYPHENATION_OPTIONS = {"none", "automatic", "manual"}
 for m in oo_deep.get("menus", []) or []:
     for it in m.get("items", []):
         lab = it.get("label", "")
@@ -278,6 +283,8 @@ for m in oo_deep.get("menus", []) or []:
         fid = cl + "." + slug(lab)
         add(fid, cl, {"surface": f"menu:{m.get('trigger')}", "label": lab, "enabled": it.get("enabled", True)}, "menu-item")
         w = wo_match(lab, cl)
+        if not w and cl == "page" and norm(lab) in HYPHENATION_OPTIONS:
+            w = ("toggleHyphenation", "tab:layout (hy-mode options)")
         if w:
             ledger[fid]["wo"] = {"match": w[0], "where": w[1]}
             ledger[fid]["level"] = 1

@@ -2,8 +2,8 @@
  "source": "OO web-apps/.../view/DocumentHolderExt.js (5 scenario menus, 302 MenuItems) vs WO #ctx-menu (75 data-ctx actions)",
  "totals": {
   "rows": 166,
-  "matched": 70,
-  "diverged": 33,
+  "matched": 71,
+  "diverged": 32,
   "browser-native": 0,
   "nav": 1,
   "missing": 12,
@@ -1096,15 +1096,15 @@
    "oo": "Adjust list indents",
    "oo_var": "textIndents",
    "verdict": "matched",
-   "wo": "ctx data-ctx=AdjustListIndents",
+   "wo": "ctx data-ctx=AdjustListIndents -> ListIndentsDialog + applyListIndents (margin-left/text-indent, round-trips as w:ind left/hanging)",
    "group": null,
    "lead": false
   },
   {
    "oo": "Bullets and numbering",
    "oo_var": "bulletsText",
-   "verdict": "diverged",
-   "wo": "ribbon bullet/numbered buttons (bullets-and-numbering dialog absent)",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=BulletsAndNumbering -> BulletsNumberingDialog (list-style-type + start; round-trips as w:numFmt)",
    "group": null,
    "lead": false
   },
