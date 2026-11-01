@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-10-31T18:27:35.845Z",
+ "capturedAt": "2026-11-01T00:00:47.351Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
@@ -2755,18 +2755,19 @@
     },
     {
      "id": "btn-bookmark",
-     "label": "Insert bookmark",
+     "cmd": "bookmark",
+     "label": "Bookmark",
      "enabled": true,
      "x": 234,
      "y": 49,
-     "w": 42,
+     "w": 77,
      "h": 34
     },
     {
      "id": "btn-field",
      "label": "Field",
      "enabled": true,
-     "x": 278,
+     "x": 313,
      "y": 49,
      "w": 46,
      "h": 34
@@ -2776,7 +2777,7 @@
      "cmd": "insertCaption",
      "label": "Caption",
      "enabled": true,
-     "x": 326,
+     "x": 361,
      "y": 49,
      "w": 63,
      "h": 34
@@ -2786,7 +2787,7 @@
      "cmd": "insertCitation",
      "label": "Citation",
      "enabled": true,
-     "x": 391,
+     "x": 426,
      "y": 49,
      "w": 62,
      "h": 34
@@ -2796,7 +2797,7 @@
      "cmd": "insertIndexEntry",
      "label": "Index",
      "enabled": true,
-     "x": 455,
+     "x": 490,
      "y": 49,
      "w": 50,
      "h": 34
@@ -2806,7 +2807,7 @@
      "cmd": "openCrossref",
      "label": "Cross-reference",
      "enabled": true,
-     "x": 507,
+     "x": 542,
      "y": 49,
      "w": 111,
      "h": 34
@@ -2816,7 +2817,7 @@
      "cmd": "insertTableOfFigures",
      "label": "Table of figures",
      "enabled": true,
-     "x": 620,
+     "x": 655,
      "y": 49,
      "w": 106,
      "h": 34
@@ -3721,7 +3722,7 @@
      "id": "sb-doc-spell",
      "label": "Check spelling",
      "enabled": true,
-     "x": 241
+     "x": 268
     },
     {
      "id": "sb-lang",

@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-31T18:27:31.381Z",
+  "capturedAt": "2026-11-01T00:03:15.435Z",
   "engine": "wo-docserver",
   "dialogs": [
     {
@@ -115,6 +115,7 @@
         "Delete column",
         "Merge cells",
         "Split cell",
+        "Formula…",
         "rows",
         "columns",
         "Close"
@@ -786,6 +787,7 @@
         "Sand",
         "No fill",
         "Cancel",
+        "Automatic",
         "No Color",
         "OK"
       ],

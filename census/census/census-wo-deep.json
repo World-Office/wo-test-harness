@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-10-31T18:26:17.596Z",
+ "capturedAt": "2026-11-01T00:02:06.273Z",
  "viewport": {
   "w": 1600,
   "h": 1000
@@ -1334,13 +1334,13 @@
     },
     {
      "id": "btn-bookmark",
-     "cmd": null,
+     "cmd": "bookmark",
      "icon": "",
      "label": "Insert bookmark",
      "enabled": true,
      "x": 234,
      "y": 49,
-     "w": 42,
+     "w": 77,
      "h": 34
     },
     {
@@ -1349,7 +1349,7 @@
      "icon": "",
      "label": "Field",
      "enabled": true,
-     "x": 278,
+     "x": 313,
      "y": 49,
      "w": 46,
      "h": 34
@@ -1360,7 +1360,7 @@
      "icon": "",
      "label": "Caption",
      "enabled": true,
-     "x": 326,
+     "x": 361,
      "y": 49,
      "w": 63,
      "h": 34
@@ -1371,7 +1371,7 @@
      "icon": "",
      "label": "Citation",
      "enabled": true,
-     "x": 391,
+     "x": 426,
      "y": 49,
      "w": 62,
      "h": 34
@@ -1382,7 +1382,7 @@
      "icon": "",
      "label": "Index",
      "enabled": true,
-     "x": 455,
+     "x": 490,
      "y": 49,
      "w": 50,
      "h": 34
@@ -1393,7 +1393,7 @@
      "icon": "",
      "label": "Cross-reference",
      "enabled": true,
-     "x": 507,
+     "x": 542,
      "y": 49,
      "w": 111,
      "h": 34
@@ -1404,7 +1404,7 @@
      "icon": "",
      "label": "Table of figures",
      "enabled": true,
-     "x": 620,
+     "x": 655,
      "y": 49,
      "w": 106,
      "h": 34
@@ -2575,12 +2575,12 @@
    "label": "Word and character count — opens documen",
    "id": "sb-word-count",
    "x": 89,
-   "w": 142
+   "w": 169
   },
   {
    "label": "Check spelling",
    "id": "sb-doc-spell",
-   "x": 241,
+   "x": 268,
    "w": 55
   },
   {
@@ -4280,6 +4280,16 @@
     },
     {
      "label": "Up/Down Bars",
+     "cmd": "chartElement",
+     "enabled": true
+    },
+    {
+     "label": "Data Table",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Data Table",
      "cmd": "chartElement",
      "enabled": true
     }
