@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-01T01:05:10.969471",
+ "generated": "2026-11-01T09:12:30.249500",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,8 +9,8 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 20,
-  "L1": 457,
+  "L0": 18,
+  "L1": 459,
   "L2": 0,
   "L3": 24,
   "L4": 0
@@ -2985,8 +2985,11 @@
      "enabled": true
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "Spreadsheet",
+    "where": "menu:btn-insert-more"
+   },
+   "level": 1,
    "evidence": []
   },
   {
@@ -5479,11 +5482,12 @@
      "label": "NonBreakingHyphen"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Shift+Minus: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+Shift+Minus",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.editundo",
@@ -7583,13 +7587,11 @@
     }
    ],
    "wo": {
-    "match": "Ctrl+Shift+Minus (OO uses Ctrl+NumpadMinus; Ctrl+Minus is zoom-out in WO)",
+    "match": "Ctrl+Minus (OO true combo; preventDefault blocks browser zoom-out)",
     "where": "shortcut"
    },
    "level": 1,
-   "evidence": [
-    "WO uses different combo: Ctrl+Shift+Minus (OO uses Ctrl+NumpadMinus; Ctrl+Minus is zoom-out in WO)"
-   ]
+   "evidence": []
   },
   {
    "feature": "shortcut.nextfiletab",

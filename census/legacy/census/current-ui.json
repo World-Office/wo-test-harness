@@ -1,0 +1,2594 @@
+{
+ "name": "current",
+ "root": "/home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg",
+ "controls": [
+  {
+   "id": "btn-save",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Toolbar.Save",
+   "label": "Save",
+   "surface": "titlebar"
+  },
+  {
+   "id": "btn-undo-tb",
+   "tag": "button",
+   "cmd": "undo",
+   "i18n": "Toolbar.Undo",
+   "label": "Undo (titlebar)",
+   "surface": "titlebar"
+  },
+  {
+   "id": "btn-file",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Menu.File",
+   "label": null,
+   "surface": "ribbon"
+  },
+  {
+   "id": "btn-new",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Menu.New",
+   "label": null,
+   "surface": "ribbon"
+  },
+  {
+   "id": "btn-open",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Menu.Open",
+   "label": null,
+   "surface": "menu-file"
+  },
+  {
+   "id": "btn-export",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Menu.Export",
+   "label": null,
+   "surface": "menu-file"
+  },
+  {
+   "id": "btn-print",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Menu.Print",
+   "label": null,
+   "surface": "menu-file"
+  },
+  {
+   "id": "btn-history",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Menu.History",
+   "label": null,
+   "surface": "menu-file"
+  },
+  {
+   "id": "btn-ai-review",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "menu-file"
+  },
+  {
+   "id": "btn-fileinfo",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Menu.Info",
+   "label": null,
+   "surface": "menu-file"
+  },
+  {
+   "id": "btn-fileprotect",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Menu.Protect",
+   "label": null,
+   "surface": "menu-file"
+  },
+  {
+   "id": "btn-filesettings",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Menu.Settings",
+   "label": null,
+   "surface": "menu-file"
+  },
+  {
+   "id": "btn-filehelp",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Menu.Help",
+   "label": null,
+   "surface": "other"
+  },
+  {
+   "id": "btn-filesuggest",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Menu.Suggest",
+   "label": null,
+   "surface": "other"
+  },
+  {
+   "id": "btn-print-qa",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Print",
+   "surface": "ribbon"
+  },
+  {
+   "id": "btn-redo-qa",
+   "tag": "button",
+   "cmd": "redo",
+   "i18n": "Toolbar.Redo",
+   "label": "Redo (quick access)",
+   "surface": "ribbon"
+  },
+  {
+   "id": "user-chip-btn",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "other"
+  },
+  {
+   "id": "btn-undo",
+   "tag": "button",
+   "cmd": "undo",
+   "i18n": "Toolbar.Undo",
+   "label": "Undo",
+   "surface": "home"
+  },
+  {
+   "id": "btn-redo",
+   "tag": "button",
+   "cmd": "redo",
+   "i18n": "Toolbar.Redo",
+   "label": "Redo",
+   "surface": "home"
+  },
+  {
+   "id": "font-family",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": "Font family",
+   "surface": "home"
+  },
+  {
+   "id": "font-size",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": "Font size",
+   "surface": "home"
+  },
+  {
+   "id": "highlight-color",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": "Highlight color",
+   "surface": "home"
+  },
+  {
+   "id": "text-color",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": "Text color",
+   "surface": "home"
+  },
+  {
+   "id": "line-spacing",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": "Line spacing",
+   "surface": "home"
+  },
+  {
+   "id": "btn-ribbon-collapse",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Toolbar.CollapseTitle",
+   "label": "Show fewer toolbar buttons",
+   "surface": "home"
+  },
+  {
+   "id": "btn-theme",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Toggle theme",
+   "surface": "home"
+  },
+  {
+   "id": "btn-find",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Toolbar.Find",
+   "label": "Find and replace",
+   "surface": "home"
+  },
+  {
+   "id": "btn-fullscreen",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Toggle fullscreen",
+   "surface": "home"
+  },
+  {
+   "id": "shading-color",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": "Paragraph shading",
+   "surface": "home"
+  },
+  {
+   "id": "btn-table",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Toolbar.InsertTable",
+   "label": "Insert table",
+   "surface": "insert"
+  },
+  {
+   "id": "btn-table-ops",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Table actions",
+   "surface": "insert"
+  },
+  {
+   "id": "btn-image",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Toolbar.InsertImageTitle",
+   "label": "Insert image",
+   "surface": "insert"
+  },
+  {
+   "id": "btn-link",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Insert link",
+   "surface": "insert"
+  },
+  {
+   "id": "btn-hr",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Insert horizontal rule",
+   "surface": "insert"
+  },
+  {
+   "id": "btn-object",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Insert object",
+   "surface": "insert"
+  },
+  {
+   "id": "btn-bookmark",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Insert bookmark",
+   "surface": "insert"
+  },
+  {
+   "id": "btn-crossref",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Insert cross-reference",
+   "surface": "insert"
+  },
+  {
+   "id": "btn-symbol",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Insert symbol",
+   "surface": "insert"
+  },
+  {
+   "id": "btn-datetime",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Insert date",
+   "surface": "insert"
+  },
+  {
+   "id": "btn-pagenumber",
+   "tag": "button",
+   "cmd": "insertPageNumber",
+   "i18n": null,
+   "label": "Insert page number",
+   "surface": "insert"
+  },
+  {
+   "id": "btn-header",
+   "tag": "button",
+   "cmd": "insertHeader",
+   "i18n": null,
+   "label": "Insert page header",
+   "surface": "insert"
+  },
+  {
+   "id": "btn-footer",
+   "tag": "button",
+   "cmd": "insertFooter",
+   "i18n": null,
+   "label": "Insert page footer",
+   "surface": "insert"
+  },
+  {
+   "id": "btn-insert-more",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Insert.More",
+   "label": null,
+   "surface": "insert"
+  },
+  {
+   "id": "btn-textfile",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Insert.TextFromFile",
+   "label": null,
+   "surface": "insert"
+  },
+  {
+   "id": "btn-mailmerge",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Insert.MailMerge",
+   "label": null,
+   "surface": "insert"
+  },
+  {
+   "id": "btn-addtext",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Insert.AddText",
+   "label": null,
+   "surface": "insert"
+  },
+  {
+   "id": "btn-field",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Insert.Field",
+   "label": null,
+   "surface": "insert"
+  },
+  {
+   "id": "btn-contentcontrol",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Insert.ContentControl",
+   "label": null,
+   "surface": "insert"
+  },
+  {
+   "id": "btn-chart",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Insert.ChartEditor",
+   "label": null,
+   "surface": "insert"
+  },
+  {
+   "id": "btn-equation",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Insert.Equation",
+   "label": null,
+   "surface": "insert"
+  },
+  {
+   "id": "btn-smartart",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Insert.SmartArt",
+   "label": null,
+   "surface": "insert"
+  },
+  {
+   "id": "btn-ink-draw",
+   "tag": "button",
+   "cmd": "inkMode",
+   "i18n": "Draw.Mode",
+   "label": "Toggle drawing mode",
+   "surface": "draw"
+  },
+  {
+   "id": "btn-ink-select",
+   "tag": "button",
+   "cmd": "inkSelect",
+   "i18n": "Draw.Select",
+   "label": "Select",
+   "surface": "draw"
+  },
+  {
+   "id": "btn-ink-pen",
+   "tag": "button",
+   "cmd": "toggleInk",
+   "i18n": "Draw.Pen",
+   "label": "Pen",
+   "surface": "draw"
+  },
+  {
+   "id": "btn-ink-highlighter",
+   "tag": "button",
+   "cmd": "toggleInk",
+   "i18n": "Draw.Highlighter",
+   "label": "Highlighter",
+   "surface": "draw"
+  },
+  {
+   "id": "btn-ink-eraser",
+   "tag": "button",
+   "cmd": "toggleInk",
+   "i18n": "Draw.Eraser",
+   "label": "Eraser",
+   "surface": "draw"
+  },
+  {
+   "id": "btn-ink-color",
+   "tag": "button",
+   "cmd": "inkColor",
+   "i18n": "Draw.Ink",
+   "label": "Ink color",
+   "surface": "draw"
+  },
+  {
+   "id": "btn-ink-thickness",
+   "tag": "button",
+   "cmd": "inkThickness",
+   "i18n": "Draw.InkThickness",
+   "label": "Ink thickness",
+   "surface": "draw"
+  },
+  {
+   "id": "btn-group",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Draw.Group",
+   "label": "Group selected strokes",
+   "surface": "draw"
+  },
+  {
+   "id": "btn-mergeshapes",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Draw.Merge",
+   "label": "Merge selected strokes",
+   "surface": "draw"
+  },
+  {
+   "id": "btn-page-break",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Insert page break",
+   "surface": "layout"
+  },
+  {
+   "id": "btn-section-break",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Insert section break",
+   "surface": "layout"
+  },
+  {
+   "id": "btn-columns",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Insert columns",
+   "surface": "layout"
+  },
+  {
+   "id": "btn-page-setup",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Layout.PageSetup",
+   "label": null,
+   "surface": "layout"
+  },
+  {
+   "id": "pagecolor",
+   "tag": "input",
+   "cmd": null,
+   "i18n": "Layout.PageColor",
+   "label": "Page color",
+   "surface": "layout"
+  },
+  {
+   "id": "themecolors",
+   "tag": "select",
+   "cmd": null,
+   "i18n": "Layout.Colors",
+   "label": "Color scheme",
+   "surface": "layout"
+  },
+  {
+   "id": "btn-toc",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Insert table of contents",
+   "surface": "references"
+  },
+  {
+   "id": "btn-footnote",
+   "tag": "button",
+   "cmd": "insertFootnote",
+   "i18n": null,
+   "label": "Insert footnote",
+   "surface": "references"
+  },
+  {
+   "id": "btn-endnote",
+   "tag": "button",
+   "cmd": "insertEndnote",
+   "i18n": null,
+   "label": "Insert endnote",
+   "surface": "references"
+  },
+  {
+   "id": "btn-track-changes",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Track changes",
+   "surface": "collaboration"
+  },
+  {
+   "id": "btn-review-changes",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Review changes",
+   "surface": "collaboration"
+  },
+  {
+   "id": "btn-comment",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Add comment",
+   "surface": "collaboration"
+  },
+  {
+   "id": "btn-comments",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Show comments",
+   "surface": "collaboration"
+  },
+  {
+   "id": "btn-chat-toggle",
+   "tag": "button",
+   "cmd": "toggleChat",
+   "i18n": "Collab.Chat",
+   "label": null,
+   "surface": "collaboration"
+  },
+  {
+   "id": "btn-ruler-toggle",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "View.Ruler",
+   "label": null,
+   "surface": "view"
+  },
+  {
+   "id": "btn-gridlines",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "View.Gridlines",
+   "label": null,
+   "surface": "view"
+  },
+  {
+   "id": "btn-view-formatmarks",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "View.FormattingMarks",
+   "label": null,
+   "surface": "view"
+  },
+  {
+   "id": "btn-nav-toggle",
+   "tag": "button",
+   "cmd": "toggleNavigation",
+   "i18n": "View.Navigation",
+   "label": null,
+   "surface": "view"
+  },
+  {
+   "id": "btn-view-fullscreen",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "View.Fullscreen",
+   "label": null,
+   "surface": "view"
+  },
+  {
+   "id": "btn-view-theme",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "View.Theme",
+   "label": null,
+   "surface": "view"
+  },
+  {
+   "id": "btn-view-fit",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "View.Fit",
+   "label": null,
+   "surface": "view"
+  },
+  {
+   "id": "btn-speech",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "View.Speech",
+   "label": null,
+   "surface": "view"
+  },
+  {
+   "id": "btn-readaloud",
+   "tag": "button",
+   "cmd": "readAloud",
+   "i18n": "View.ReadAloud",
+   "label": null,
+   "surface": "view"
+  },
+  {
+   "id": "btn-dictate",
+   "tag": "button",
+   "cmd": "dictate",
+   "i18n": "View.Dictate",
+   "label": null,
+   "surface": "view"
+  },
+  {
+   "id": "btn-bgplugins",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Plugins.Background",
+   "label": null,
+   "surface": "plugins"
+  },
+  {
+   "id": "btn-ocr",
+   "tag": "button",
+   "cmd": "ocrRun",
+   "i18n": "Plugins.Ocr",
+   "label": null,
+   "surface": "plugins"
+  },
+  {
+   "id": "btn-ai-review-tab",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "AI.ChangesTab",
+   "label": null,
+   "surface": "ai"
+  },
+  {
+   "id": "btn-ai-grammar",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "AI.Grammar",
+   "label": null,
+   "surface": "ai"
+  },
+  {
+   "id": "btn-ai-assistant",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "AI.Assistant",
+   "label": null,
+   "surface": "ai"
+  },
+  {
+   "id": "btn-hf-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "HF.Close",
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-hf-pagenumber",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "HF.PageNumber",
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-hf-datetime",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "HF.DateTime",
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "zoom-slider",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": "Zoom level",
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-zoom-out",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Zoom out",
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-zoom-in",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Zoom in",
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-zoom-fit",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Fit page width",
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-zoom-reset",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Reset zoom",
+   "surface": "header-footer"
+  },
+  {
+   "id": "doc-lang",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": "Document language",
+   "surface": "header-footer"
+  },
+  {
+   "id": "doc-lang-caret",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Language options",
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-multipage",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Multiple pages view",
+   "surface": "header-footer"
+  },
+  {
+   "id": "table-rows",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "table-cols",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-table-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-table-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "op-row-above",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "op-row-below",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "op-col-left",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "op-col-right",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "op-del-row",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "op-del-col",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "op-merge",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "op-split",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-table-ops-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "notes-type",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "notes-format",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-notes-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-notes-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "pagenumber-position",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "pagenumber-align",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-pagenumber-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-pagenumber-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "hf-different-first",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "hf-distance",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-headerfooter-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-headerfooter-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "tc-enabled",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-trackchanges-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-trackchanges-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "dropcap-position",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "dropcap-lines",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "dropcap-distance",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-dropcap-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-dropcap-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "ln-mode",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-linenumbers-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-linenumbers-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "hy-mode",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-hyphenation-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-hyphenation-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "wm-mode",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "wm-text",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "wm-color",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-watermark-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-watermark-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "pagecolor-custom",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-pagecolor-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-pagecolor-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "cs-scheme",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-colors-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-colors-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "addtext-level",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-addtext-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-addtext-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "toc-update",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-updatetoc-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-updatetoc-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "viewmode",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-displaymode-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-displaymode-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "image-file",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "image-width",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": "Image width in pixels",
+   "surface": "header-footer"
+  },
+  {
+   "id": "image-height",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": "Image height in pixels",
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-image-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Image.Cancel",
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-image-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Image.Insert",
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "link-url",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-link-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-link-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "columns-count",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "columns-gap",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-columns-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-columns-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "toc-title",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-toc-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-toc-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "bd-top",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "bd-bottom",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "bd-left",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "bd-right",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "bd-width",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "bd-color",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-borders-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-borders-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "object-type",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "object-label",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-object-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-object-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "bookmark-name",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-bookmark-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-bookmark-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "crossref-target",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "crossref-text",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-crossref-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-crossref-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-version-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "VersionHistory.Close",
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-ai-reject-all",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-ai-review-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-ai-propose-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-ai-propose-run",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "ps-size",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "ps-mt",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "ps-mb",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "ps-ml",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "ps-mr",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-ps-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-ps-apply",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "protect-check-restrict",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "protect-new-password",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "protect-current-password",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "protect-check-clear",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-protect-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Prot.Cancel",
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-protect-apply",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Prot.Apply",
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-symbol-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-plugins-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Plugins.Close",
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "photo-editor-file",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "photo-editor-brightness",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "photo-editor-contrast",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "photo-editor-saturate",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-photo-editor-reset",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "PhotoEditor.Reset",
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-photo-editor-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "PhotoEditor.Close",
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "find-query",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": "Find",
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-find-prev",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Previous match",
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-find-next",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Next match",
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-find-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Close find panel",
+   "surface": "header-footer"
+  },
+  {
+   "id": "find-replace",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": "Replace with",
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-find-replace",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Find.Replace",
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-find-replace-all",
+   "tag": "button",
+   "cmd": null,
+   "i18n": "Find.ReplaceAll",
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "find-match-case",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-review-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Close review panel",
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-comment-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-comment-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-comments-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": "Close comments panel",
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-info-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "settings-theme",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "settings-spellcheck",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "settings-zoom",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-settings-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-settings-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-help-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "suggest-email",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-suggest-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-suggest-send",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "mailmerge-fields",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-mailmerge-csv",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-mailmerge-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-mailmerge-field",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-mailmerge-preview",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "textfile-input",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "mailmerge-csv",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "field-type",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-field-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-field-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "cc-type",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "cc-title",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-cc-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-cc-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "chart-type-select",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "chart-title",
+   "tag": "input",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-chart-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-chart-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-equation-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-equation-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "smartart-type",
+   "tag": "select",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-smartart-cancel",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-smartart-ok",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-wrap-inline",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-wrap-square",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-wrap-behind",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-align-left",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-align-center",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-align-right",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-layer-back",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-layer-front",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  },
+  {
+   "id": "btn-objlayout-close",
+   "tag": "button",
+   "cmd": null,
+   "i18n": null,
+   "label": null,
+   "surface": "header-footer"
+  }
+ ],
+ "dialogs": [
+  {
+   "id": "table-ops-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "notes-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "pagenumber-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "headerfooter-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "trackchanges-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "dropcap-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "linenumbers-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "hyphenation-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "watermark-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "pagecolor-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "colors-dialog",
+   "titleKey": "Layout.Colors.Default"
+  },
+  {
+   "id": "addtext-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "updatetoc-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "displaymode-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "link-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "columns-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "toc-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "borders-dialog",
+   "titleKey": "Home.Borders"
+  },
+  {
+   "id": "object-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "bookmark-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "crossref-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "version-history-dialog",
+   "titleKey": "VersionHistory.Title"
+  },
+  {
+   "id": "ai-review-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "ai-propose-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "page-setup-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "protect-dialog",
+   "titleKey": "Prot.Title"
+  },
+  {
+   "id": "symbol-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "plugins-dialog",
+   "titleKey": "Plugins.Manage"
+  },
+  {
+   "id": "photo-editor-dialog",
+   "titleKey": "Plugins.PhotoEditor"
+  },
+  {
+   "id": "comment-dialog",
+   "titleKey": null
+  },
+  {
+   "id": "info-dialog",
+   "titleKey": "Backstage.Info"
+  },
+  {
+   "id": "settings-dialog",
+   "titleKey": "Backstage.Settings"
+  },
+  {
+   "id": "help-dialog",
+   "titleKey": "Backstage.Help"
+  },
+  {
+   "id": "suggest-dialog",
+   "titleKey": "Backstage.Suggest"
+  },
+  {
+   "id": "mailmerge-dialog",
+   "titleKey": "Backstage.MailMerge"
+  },
+  {
+   "id": "field-dialog",
+   "titleKey": "Backstage.FieldTitle"
+  },
+  {
+   "id": "cc-dialog",
+   "titleKey": "Backstage.CCTitle"
+  },
+  {
+   "id": "chart-dialog",
+   "titleKey": "Backstage.ChartTitle"
+  },
+  {
+   "id": "equation-dialog",
+   "titleKey": "Backstage.EquationTitle"
+  },
+  {
+   "id": "smartart-dialog",
+   "titleKey": "Backstage.SmartArtTitle"
+  }
+ ],
+ "i18nKeys": [
+  "Tab.Home",
+  "Tab.Insert",
+  "Tab.Draw",
+  "Tab.Layout",
+  "Tab.References",
+  "Tab.Collaboration",
+  "Tab.Protection",
+  "Tab.View",
+  "Tab.Plugins",
+  "Tab.AI",
+  "Tab.HeaderFooter",
+  "HF.Close",
+  "HF.PageNumber",
+  "HF.DateTime",
+  "HF.DifferentFirst",
+  "HF.OddEven",
+  "HF.HeaderFromTop",
+  "HF.FooterFromBottom",
+  "Stub.NotImplemented",
+  "VersionHistory.Compare",
+  "VersionHistory.Comparing",
+  "VersionHistory.NoDiff",
+  "Home.Highlight",
+  "Home.FontColor",
+  "Home.Shading",
+  "Home.Borders",
+  "Home.ChangeCase",
+  "Home.Multilevel",
+  "Home.FontDec",
+  "Home.FontInc",
+  "Home.MoreFormatting",
+  "Home.Styles",
+  "Home.StyleNormal",
+  "Home.StyleTitle",
+  "Home.StyleH1",
+  "Home.StyleH2",
+  "Home.StyleH3",
+  "Insert.Shape",
+  "Insert.Chart",
+  "Insert.TextArt",
+  "Insert.DropCap",
+  "Insert.TextBox",
+  "Insert.Hyperlink",
+  "Draw.InkThickness",
+  "Draw.SelectTitle",
+  "Draw.PenTitle",
+  "Draw.HighlighterTitle",
+  "Draw.EraserTitle",
+  "Draw.InkTitle",
+  "Draw.InkThicknessTitle",
+  "Draw.ModeTitle",
+  "Ref.Crossref",
+  "Plugins.Ocr",
+  "Plugins.PhotoEditor",
+  "PhotoEditor.ChooseFile",
+  "PhotoEditor.Empty",
+  "PhotoEditor.Brightness",
+  "PhotoEditor.Contrast",
+  "PhotoEditor.Saturation",
+  "PhotoEditor.PresetNone",
+  "PhotoEditor.PresetGrayscale",
+  "PhotoEditor.PresetSepia",
+  "PhotoEditor.PresetInvert",
+  "PhotoEditor.PresetBlur",
+  "PhotoEditor.Reset",
+  "PhotoEditor.Close",
+  "AI.Grammar",
+  "AI.Assistant",
+  "HF.SameAsPrev",
+  "Draw.Select",
+  "Draw.Pen",
+  "Draw.Highlighter",
+  "Draw.Eraser",
+  "Draw.Ink",
+  "Draw.Mode",
+  "Layout.PageSetup",
+  "Layout.Hyphenation",
+  "Layout.LineNumbers",
+  "Insert.TextFromFile",
+  "Insert.MailMerge",
+  "Insert.AddText",
+  "Insert.Field",
+  "Insert.ContentControl",
+  "Insert.ChartEditor",
+  "Insert.Equation",
+  "Insert.SmartArt",
+  "Insert.More",
+  "View.Speech",
+  "View.ReadAloud",
+  "View.Dictate",
+  "Plugins.Background",
+  "Draw.Group",
+  "Draw.Merge",
+  "Menu.Info",
+  "Menu.Protect",
+  "Menu.Settings",
+  "Menu.Help",
+  "Menu.Suggest",
+  "Backstage.Info",
+  "Backstage.Settings",
+  "Backstage.Help",
+  "Backstage.About",
+  "Backstage.Suggest",
+  "Backstage.MailMerge",
+  "Backstage.FieldTitle",
+  "Backstage.CCTitle",
+  "Backstage.ChartTitle",
+  "Backstage.EquationTitle",
+  "Backstage.SmartArtTitle",
+  "Backstage.ObjLayout",
+  "Layout.Watermark",
+  "Ref.Caption",
+  "Ref.Citation",
+  "Ref.Index",
+  "Ref.UpdateToc",
+  "Collab.Chat",
+  "Collab.Compare",
+  "Collab.Display",
+  "Collab.PrevChange",
+  "Collab.NextChange",
+  "Prot.Password",
+  "Prot.Restrict",
+  "Prot.Title",
+  "Prot.StateNone",
+  "Prot.StateRestricted",
+  "Prot.StatePassword",
+  "Prot.RestrictLabel",
+  "Prot.NewPassword",
+  "Prot.CurrentPassword",
+  "Prot.RemovePassword",
+  "Prot.Apply",
+  "Prot.Cancel",
+  "Prot.Hint",
+  "Prot.StatusRestricted",
+  "Prot.StatusUnrestricted",
+  "Prot.ErrorWrongPassword",
+  "View.Mode",
+  "View.Ruler",
+  "View.Gridlines",
+  "View.Navigation",
+  "ChatPanel.Title",
+  "ChatPanel.Empty",
+  "Status.ChatOpen",
+  "Status.ChatClosed",
+  "View.Fullscreen",
+  "View.Theme",
+  "View.Fit",
+  "Plugins.Browse",
+  "Plugins.Manage",
+  "Plugins.Close",
+  "Plugins.None",
+  "AI.ChangesTab",
+  "AI.Summarize",
+  "AI.Translate",
+  "AI.Rewrite",
+  "Toolbar.Bold",
+  "Toolbar.Italic",
+  "Toolbar.Underline",
+  "Toolbar.UnderlineDouble",
+  "Toolbar.StrikeDouble",
+  "Toolbar.BulletDisc",
+  "Toolbar.BulletCircle",
+  "Toolbar.BulletSquare",
+  "Toolbar.NumberDecimal",
+  "Toolbar.NumberLowerAlpha",
+  "Toolbar.NumberLowerRoman",
+  "Toolbar.NumberUpperAlpha",
+  "Toolbar.CodeBlock",
+  "Toolbar.Subscript",
+  "Toolbar.Superscript",
+  "Toolbar.Heading3",
+  "Toolbar.Heading1",
+  "Toolbar.Heading2",
+  "Toolbar.Paragraph",
+  "Toolbar.BulletList",
+  "Toolbar.NumberedList",
+  "Toolbar.MultilevelTitle",
+  "Toolbar.CollapseTitle",
+  "Ctx.Cut",
+  "Ctx.Copy",
+  "Ctx.Paste",
+  "Ctx.PageBreakBefore",
+  "Toolbar.FootnoteTitle",
+  "Toolbar.EndnoteTitle",
+  "Toolbar.PageNumberTitle",
+  "Toolbar.HeaderTitle",
+  "Toolbar.FooterTitle",
+  "Ctx.AddComment",
+  "Ctx.Link",
+  "Find.ReplacePlaceholder",
+  "User.EditingAs",
+  "User.Document",
+  "Toolbar.Multilevel",
+  "Toolbar.InsertTable",
+  "Toolbar.Undo",
+  "Toolbar.Redo",
+  "Toolbar.Save",
+  "Toolbar.BoldTitle",
+  "Toolbar.ItalicTitle",
+  "Toolbar.UnderlineTitle",
+  "Toolbar.Heading1Title",
+  "Toolbar.Heading2Title",
+  "Toolbar.ParagraphTitle",
+  "Toolbar.BulletListTitle",
+  "Toolbar.NumberedListTitle",
+  "Toolbar.InsertTableTitle",
+  "Toolbar.SmallCapsTitle",
+  "Toolbar.AllCapsTitle",
+  "Toolbar.AllCaps",
+  "Toolbar.DefaultFont",
+  "Toolbar.ToggleDirection",
+  "Toolbar.CodeTitle",
+  "Toolbar.DirectionRtlTitle",
+  "Toolbar.UndoTitle",
+  "Toolbar.RedoTitle",
+  "Toolbar.SaveTitle",
+  "Status.Ready",
+  "Status.Loading",
+  "Status.Saving",
+  "Status.Saved",
+  "Status.NotAvailable",
+  "Status.Unsaved",
+  "Status.LoadFailed",
+  "Status.SaveFailed",
+  "Status.OfflineQueued",
+  "Status.OfflineIndicator",
+  "Status.Synced",
+  "Status.EmptyDocument",
+  "Status.ReadOnly",
+  "Status.NoSelection",
+  "Status.NoTrackedChanges",
+  "Status.NoPrevChange",
+  "Status.NoNextChange",
+  "Table.Columns",
+  "Table.Rows",
+  "Prompt.TableColumns",
+  "Prompt.TableRows",
+  "Image.Width",
+  "Image.Height",
+  "Image.SizeHint"
+ ]
+}

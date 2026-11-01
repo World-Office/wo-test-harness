@@ -1,0 +1,444 @@
+{
+ "current": {
+  "/api/agents/runs": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/agents/runs/{id}": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/agents/summary": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/ai/tools": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/conversion/convert": {
+   "file": "lib.rs",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/conversion/formats": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/new": {
+   "file": "lib.rs",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/ai/ocr": {
+   "file": "lib.rs",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/ai/propose": {
+   "file": "lib.rs",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/ai/review": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/ai/review/reject": {
+   "file": "lib.rs",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/collab/ops": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/collab/presence": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/collab/resync": {
+   "file": "lib.rs",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/collab/state": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/collab/stream": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/collab/sync": {
+   "file": "lib.rs",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/contents": {
+   "file": "lib.rs",
+   "methods": [
+    "GET",
+    "PUT"
+   ]
+  },
+  "/api/documents/{id}/export": {
+   "file": "lib.rs",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/html": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/import-docx": {
+   "file": "lib.rs",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/info": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/lock": {
+   "file": "lib.rs",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/protect": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/save": {
+   "file": "lib.rs",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/unlock": {
+   "file": "lib.rs",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/versions": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/versions/{id}/content": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/versions/{id}/restore": {
+   "file": "lib.rs",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/plugins": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/upload": {
+   "file": "lib.rs",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/hosting/wopi/{*path}": {
+   "file": "lib.rs",
+   "methods": []
+  },
+  "/wopi/files/{id}": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/wopi/files/{id}/contents": {
+   "file": "lib.rs",
+   "methods": [
+    "GET"
+   ]
+  }
+ },
+ "legacy": {
+  "/api/agents/runs": {
+   "file": "router.py",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/agents/runs/{id}": {
+   "file": "router.py",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/agents/summary": {
+   "file": "router.py",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents": {
+   "file": "router.py",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/new": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}": {
+   "file": "router.py",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/ai/ocr": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/ai/propose": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/ai/review": {
+   "file": "router.py",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/ai/review/reject": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/collab/ops": {
+   "file": "router.py",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/collab/presence": {
+   "file": "router.py",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/collab/resync": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/collab/state": {
+   "file": "router.py",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/collab/stream": {
+   "file": "router.py",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/collab/sync": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/contents": {
+   "file": "router.py",
+   "methods": [
+    "GET",
+    "POST",
+    "PUT"
+   ]
+  },
+  "/api/documents/{id}/export": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/html": {
+   "file": "router.py",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/import-docx": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/info": {
+   "file": "router.py",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/lock": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/protect": {
+   "file": "router.py",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/save": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/unlock": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/documents/{id}/versions": {
+   "file": "router.py",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/versions/{id}/content": {
+   "file": "router.py",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/documents/{id}/versions/{id}/restore": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/api/plugins": {
+   "file": "router.py",
+   "methods": [
+    "GET"
+   ]
+  },
+  "/api/upload": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/wopi/files/{id}": {
+   "file": "testhost.py",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  "/wopi/files/{id}/contents": {
+   "file": "testhost.py",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  "/wopi/files/{id}/getlock": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/wopi/files/{id}/lock": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/wopi/files/{id}/refreshlock": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  },
+  "/wopi/files/{id}/unlock": {
+   "file": "router.py",
+   "methods": [
+    "POST"
+   ]
+  }
+ }
+}

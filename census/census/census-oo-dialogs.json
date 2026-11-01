@@ -1,0 +1,807 @@
+{
+ "engine": "oo-rig",
+ "capturedAt": "2026-10-27T11:31:08.539Z",
+ "dialogs": [
+  {
+   "tab": "ins",
+   "trigger": {
+    "id": "",
+    "label": "TextArt",
+    "tip": ""
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Date & time",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Update automatically",
+      "tag": "input",
+      "type": "checkbox"
+     }
+    ],
+    "buttons": [
+     "Set as default",
+     "OK",
+     "Cancel"
+    ],
+    "rect": {
+     "w": 350,
+     "h": 389
+    }
+   }
+  },
+  {
+   "tab": "ins",
+   "trigger": {
+    "id": "",
+    "label": "equation\n\n \n \nsymbol",
+    "tip": "",
+    "via": "menu-item:More symbols"
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Symbol",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Font",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Range",
+      "tag": "input",
+      "type": "text"
+     }
+    ],
+    "buttons": [
+     "Symbols",
+     "Special characters",
+     "Insert",
+     "Close"
+    ],
+    "rect": {
+     "w": 448,
+     "h": 458
+    }
+   }
+  },
+  {
+   "tab": "ins",
+   "trigger": {
+    "id": "",
+    "label": "symbol",
+    "tip": "",
+    "via": "menu-item:More symbols"
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Symbol",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Font",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Range",
+      "tag": "input",
+      "type": "text"
+     }
+    ],
+    "buttons": [
+     "Symbols",
+     "Special characters",
+     "Insert",
+     "Close"
+    ],
+    "rect": {
+     "w": 448,
+     "h": 458
+    }
+   }
+  },
+  {
+   "tab": "layout",
+   "trigger": {
+    "id": "",
+    "label": "margins",
+    "tip": "",
+    "via": "menu-item:Custom margins"
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Margins",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Margins",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Top",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Bottom",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Left",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Right",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Gutter position",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Orientation",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Multiple pages",
+      "tag": "input",
+      "type": "text"
+     }
+    ],
+    "buttons": [
+     "OK",
+     "Cancel"
+    ],
+    "rect": {
+     "w": 404,
+     "h": 369
+    }
+   }
+  },
+  {
+   "tab": "layout",
+   "trigger": {
+    "id": "",
+    "label": "margins",
+    "tip": "",
+    "via": "menu-item:Custom margins"
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Margins",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Margins",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Top",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Bottom",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Left",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Right",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Gutter position",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Orientation",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Multiple pages",
+      "tag": "input",
+      "type": "text"
+     }
+    ],
+    "buttons": [
+     "OK",
+     "Cancel"
+    ],
+    "rect": {
+     "w": 404,
+     "h": 369
+    }
+   }
+  },
+  {
+   "tab": "layout",
+   "trigger": {
+    "id": "",
+    "label": "size",
+    "tip": "",
+    "via": "menu-item:Custom page size"
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Page size",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Preset",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Width",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Height",
+      "tag": "input",
+      "type": "text"
+     }
+    ],
+    "buttons": [
+     "OK",
+     "Cancel"
+    ],
+    "rect": {
+     "w": 215,
+     "h": 199
+    }
+   }
+  },
+  {
+   "tab": "layout",
+   "trigger": {
+    "id": "",
+    "label": "size",
+    "tip": "",
+    "via": "menu-item:Custom page size"
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Page size",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Preset",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Width",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Height",
+      "tag": "input",
+      "type": "text"
+     }
+    ],
+    "buttons": [
+     "OK",
+     "Cancel"
+    ],
+    "rect": {
+     "w": 215,
+     "h": 199
+    }
+   }
+  },
+  {
+   "tab": "layout",
+   "trigger": {
+    "id": "",
+    "label": "columns",
+    "tip": "",
+    "via": "menu-item:Custom columns"
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Columns",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Number of columns",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "1",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "2",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Equal column width",
+      "tag": "input",
+      "type": "checkbox"
+     },
+     {
+      "label": "Column divider",
+      "tag": "input",
+      "type": "checkbox"
+     }
+    ],
+    "buttons": [
+     "OK",
+     "Cancel"
+    ],
+    "rect": {
+     "w": 300,
+     "h": 329
+    }
+   }
+  },
+  {
+   "tab": "layout",
+   "trigger": {
+    "id": "",
+    "label": "columns",
+    "tip": "",
+    "via": "menu-item:Custom columns"
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Columns",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Number of columns",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "1",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "2",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Equal column width",
+      "tag": "input",
+      "type": "checkbox"
+     },
+     {
+      "label": "Column divider",
+      "tag": "input",
+      "type": "checkbox"
+     }
+    ],
+    "buttons": [
+     "OK",
+     "Cancel"
+    ],
+    "rect": {
+     "w": 300,
+     "h": 329
+    }
+   }
+  },
+  {
+   "tab": "layout",
+   "trigger": {
+    "id": "",
+    "label": "hyphenation",
+    "tip": "",
+    "via": "menu-item:Hyphenation options"
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Hyphenation",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Automatically hyphenate document",
+      "tag": "input",
+      "type": "checkbox"
+     },
+     {
+      "label": "Hyphenate words in CAPS",
+      "tag": "input",
+      "type": "checkbox"
+     }
+    ],
+    "buttons": [
+     "OK",
+     "Cancel"
+    ],
+    "rect": {
+     "w": 290,
+     "h": 234
+    }
+   }
+  },
+  {
+   "tab": "layout",
+   "trigger": {
+    "id": "",
+    "label": "hyphenation",
+    "tip": "",
+    "via": "menu-item:Hyphenation options"
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Hyphenation",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Automatically hyphenate document",
+      "tag": "input",
+      "type": "checkbox"
+     },
+     {
+      "label": "Hyphenate words in CAPS",
+      "tag": "input",
+      "type": "checkbox"
+     }
+    ],
+    "buttons": [
+     "OK",
+     "Cancel"
+    ],
+    "rect": {
+     "w": 290,
+     "h": 234
+    }
+   }
+  },
+  {
+   "tab": "links",
+   "trigger": {
+    "id": "id-toolbar-toolbar__icon btn-big-inserthyperlink1",
+    "label": "Link",
+    "tip": ""
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Bookmarks",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Sort by",
+      "tag": "input",
+      "type": "radio"
+     },
+     {
+      "label": "Hidden bookmarks",
+      "tag": "input",
+      "type": "checkbox"
+     }
+    ],
+    "buttons": [
+     "Add",
+     "Go to",
+     "Get link",
+     "Delete",
+     "Close"
+    ],
+    "rect": {
+     "w": 334,
+     "h": 380
+    }
+   }
+  },
+  {
+   "tab": "links",
+   "trigger": {
+    "id": "asc-gen887",
+    "label": "Bookmark",
+    "tip": ""
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Insert caption",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Caption",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Insert",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Label",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Exclude label from caption",
+      "tag": "input",
+      "type": "checkbox"
+     },
+     {
+      "label": "Numbering",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Include chapter number",
+      "tag": "input",
+      "type": "checkbox"
+     },
+     {
+      "label": "Chapter starts with style",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Use separator",
+      "tag": "input",
+      "type": "text"
+     }
+    ],
+    "buttons": [
+     "Add label",
+     "Delete label",
+     "OK",
+     "Cancel"
+    ],
+    "rect": {
+     "w": 365,
+     "h": 381
+    }
+   }
+  },
+  {
+   "tab": "links",
+   "trigger": {
+    "id": "asc-gen889",
+    "label": "Caption",
+    "tip": ""
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Cross-reference",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Reference type",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Insert reference to",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Insert as link",
+      "tag": "input",
+      "type": "checkbox"
+     },
+     {
+      "label": "Include above/below",
+      "tag": "input",
+      "type": "checkbox"
+     },
+     {
+      "label": "Separate numbers with",
+      "tag": "input",
+      "type": "checkbox"
+     }
+    ],
+    "buttons": [
+     "Insert",
+     "Close"
+    ],
+    "rect": {
+     "w": 400,
+     "h": 425
+    }
+   }
+  },
+  {
+   "tab": "links",
+   "trigger": {
+    "id": "asc-gen891",
+    "label": "Cross-reference",
+    "tip": ""
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Table of figures",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Show page numbers",
+      "tag": "input",
+      "type": "checkbox"
+     },
+     {
+      "label": "Right align page numbers",
+      "tag": "input",
+      "type": "checkbox"
+     },
+     {
+      "label": "Leader",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Format table of figures as links",
+      "tag": "input",
+      "type": "checkbox"
+     },
+     {
+      "label": "Build table of figures from",
+      "tag": "input",
+      "type": "radio"
+     },
+     {
+      "label": "Include label and number",
+      "tag": "input",
+      "type": "checkbox"
+     },
+     {
+      "label": "Styles",
+      "tag": "input",
+      "type": "text"
+     }
+    ],
+    "buttons": [
+     "OK",
+     "Cancel"
+    ],
+    "rect": {
+     "w": 524,
+     "h": 390
+    }
+   }
+  },
+  {
+   "tab": "links",
+   "trigger": {
+    "id": "",
+    "label": "table of\ncontents",
+    "tip": "",
+    "via": "menu-item:Settings"
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Table of contents",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Show page numbers",
+      "tag": "input",
+      "type": "checkbox"
+     },
+     {
+      "label": "Right align page numbers",
+      "tag": "input",
+      "type": "checkbox"
+     },
+     {
+      "label": "Leader",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Format table of contents as links",
+      "tag": "input",
+      "type": "checkbox"
+     },
+     {
+      "label": "Build table of contents from",
+      "tag": "input",
+      "type": "radio"
+     },
+     {
+      "label": "Levels",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "Styles",
+      "tag": "input",
+      "type": "text"
+     }
+    ],
+    "buttons": [
+     "OK",
+     "Cancel"
+    ],
+    "rect": {
+     "w": 524,
+     "h": 465
+    }
+   }
+  },
+  {
+   "tab": "view",
+   "trigger": {
+    "id": "asc-gen939",
+    "label": "Macros",
+    "tip": ""
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Macros",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Autostart",
+      "tag": "input",
+      "type": "checkbox"
+     }
+    ],
+    "buttons": [
+     "Run",
+     "Debug",
+     "Copy",
+     "Rename",
+     "Delete",
+     "Save",
+     "Cancel"
+    ],
+    "rect": {
+     "w": 810,
+     "h": 512
+    }
+   }
+  },
+  {
+   "tab": "headerfooter",
+   "trigger": {
+    "id": "tlbtn-insertdatetime-1",
+    "label": "Date &Time",
+    "tip": ""
+   },
+   "dialog": {
+    "frame": "index.html",
+    "title": "Date & time",
+    "tabs": [],
+    "fields": [
+     {
+      "label": "Update automatically",
+      "tag": "input",
+      "type": "checkbox"
+     }
+    ],
+    "buttons": [
+     "Set as default",
+     "OK",
+     "Cancel"
+    ],
+    "rect": {
+     "w": 350,
+     "h": 389
+    }
+   }
+  }
+ ]
+}

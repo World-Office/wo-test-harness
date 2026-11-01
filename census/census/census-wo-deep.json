@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-11-01T00:02:06.273Z",
+ "capturedAt": "2026-11-01T08:10:49.950Z",
  "viewport": {
   "w": 1600,
   "h": 1000
@@ -3681,6 +3681,16 @@
     {
      "label": "Chart editor…",
      "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Spreadsheet",
+     "cmd": null,
+     "enabled": true
+    },
+    {
+     "label": "Spreadsheet",
+     "cmd": "insertObject",
      "enabled": true
     }
    ]

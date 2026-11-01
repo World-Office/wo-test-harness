@@ -1,0 +1,763 @@
+{
+ "generated": "2026-10-13T19:13:00",
+ "ui": {
+  "control-ids": {
+   "legacy": 273,
+   "current": 273,
+   "lost": [],
+   "added": []
+  },
+  "data-cmds": {
+   "legacy": 12,
+   "current": 17,
+   "lost": [],
+   "added": [
+    "insertEndnote",
+    "insertFooter",
+    "insertFootnote",
+    "insertHeader",
+    "insertPageNumber"
+   ]
+  },
+  "i18n-keys": {
+   "legacy": 240,
+   "current": 240,
+   "lost": [],
+   "added": []
+  },
+  "dialog-ids": {
+   "legacy": 40,
+   "current": 40,
+   "lost": [],
+   "added": []
+  }
+ },
+ "api": {
+  "legacy": 36,
+  "current": 36,
+  "lost": [],
+  "covered_by_wildcard": [
+   "/wopi/files/{id}/getlock",
+   "/wopi/files/{id}/lock",
+   "/wopi/files/{id}/refreshlock",
+   "/wopi/files/{id}/unlock"
+  ],
+  "added": [
+   "/api/ai/tools",
+   "/api/conversion/convert",
+   "/api/conversion/formats",
+   "/hosting/wopi/{*path}"
+  ]
+ },
+ "behavior": {
+  "legacy_fns": 315,
+  "current_fns": 327,
+  "legacy_only": [],
+  "current_only": [
+   "clampImagesToPage",
+   "clampImgElement",
+   "contentColumnWidth",
+   "currentPageInfo",
+   "fitToWidth",
+   "fitWithinPage",
+   "hideImageResizeHandle",
+   "imgHandlePos",
+   "imgResizeApply",
+   "imgResizeFinish",
+   "showImageResizeHandle",
+   "updatePageIndicator"
+  ],
+  "keywords": {
+   "legacy": {
+    "pagination": 40,
+    "pageFurniture": 8,
+    "conversion": 110,
+    "collab": 115,
+    "protection": 153
+   },
+   "current": {
+    "pagination": 44,
+    "pageFurniture": 8,
+    "conversion": 110,
+    "collab": 116,
+    "protection": 153
+   }
+  }
+ },
+ "legacy_e2e": {
+  "files": 134,
+  "test_fns": 1627,
+  "items": [
+   {
+    "file": "test_auth_gui.py",
+    "title": "Authentication & shell GUI tests \u2014 the front door of the cloud.",
+    "tests": 4
+   },
+   {
+    "file": "test_button_sweep_gui.py",
+    "title": "Button sweep: every button in the cloud UI shell gets exercised.",
+    "tests": 15
+   },
+   {
+    "file": "test_document_edit_depth.py",
+    "title": "Deep document-editing semantics against the LIVE docserver.",
+    "tests": 7
+   },
+   {
+    "file": "test_editor_depth_gui.py",
+    "title": "Depth tests for the embedded word editor: keyboard, layout, lifecycle.",
+    "tests": 6
+   },
+   {
+    "file": "test_editor_menu_gui.py",
+    "title": "Editor File-menu chrome against the DEPLOYED bundle.",
+    "tests": 4
+   },
+   {
+    "file": "test_editors_gui.py",
+    "title": "Editor-opening tests: every office type must open an editor via the GUI.",
+    "tests": 6
+   },
+   {
+    "file": "test_file_lifecycle.py",
+    "title": "File lifecycle edge cases: odd names, dotfiles, moves, overwrites, sizes.",
+    "tests": 8
+   },
+   {
+    "file": "test_files_depth_gui.py",
+    "title": "Files-app depth: search, details sidebar, view modes, trash, open-with.",
+    "tests": 6
+   },
+   {
+    "file": "test_files_gui.py",
+    "title": "Files-app GUI tests: create / rename / delete / navigate, plus WebDAV parity.",
+    "tests": 6
+   },
+   {
+    "file": "test_multisession_gui.py",
+    "title": "Multi-session GUI tests: the same document opened from two browser contexts.",
+    "tests": 1
+   },
+   {
+    "file": "test_paper_collaboration.py",
+    "title": "The scientist-collaboration scenario, end to end.",
+    "tests": 16
+   },
+   {
+    "file": "test_protocol_depth.py",
+    "title": "Protocol robustness: hard negatives and concurrency for the live docserver.",
+    "tests": 6
+   },
+   {
+    "file": "test_share_lifecycle.py",
+    "title": "Share lifecycle: grants, revocations, link protection, reshare control.",
+    "tests": 7
+   },
+   {
+    "file": "test_toolbar_sweep_graph.py",
+    "title": "Graph-driven toolbar sweep (button sweep 2.0).",
+    "tests": 2
+   },
+   {
+    "file": "test_wopi_protocol.py",
+    "title": "WOPI protocol-level tests against the live docserver (no browser).",
+    "tests": 6
+   },
+   {
+    "file": "test_word_editing_gui.py",
+    "title": "Word-editor interaction tests \u2014 the full editing experience via the GUI.",
+    "tests": 5
+   },
+   {
+    "file": "bench/test_converter_perf.py",
+    "title": "Performance-regression tests for the DOCX <-> HTML converter.",
+    "tests": 4
+   },
+   {
+    "file": "e2e/test_a11y_keyboard.py",
+    "title": "E2E \u2014 Keyboard-Navigation accessibility (test-a11y-keyboard).",
+    "tests": 8
+   },
+   {
+    "file": "e2e/test_cloud_editor_e2e.py",
+    "title": "End-to-end cloud editor test (T5).",
+    "tests": 30
+   },
+   {
+    "file": "e2e/test_collab_sync.py",
+    "title": "E2E \u2014 Realtime-Text-Sync (US-42, contract: docs/testing/test-scenarios.md).",
+    "tests": 6
+   },
+   {
+    "file": "e2e/test_full_workflow.py",
+    "title": "E2E \u2014 Vollst\u00e4ndiger Workflow (complete production workflow).",
+    "tests": 5
+   },
+   {
+    "file": "e2e/test_headings_opencloud.py",
+    "title": "E2E \u2014 heading styles through production OpenCloud (OCIS client mode).",
+    "tests": 6
+   },
+   {
+    "file": "e2e/test_image_upload.py",
+    "title": "E2E \u2014 Bild-Einsetzen via Upload (insert image with upload dialog).",
+    "tests": 7
+   },
+   {
+    "file": "e2e/test_images_opencloud.py",
+    "title": "E2E \u2014 images through production OpenCloud (OCIS client mode).",
+    "tests": 6
+   },
+   {
+    "file": "e2e/test_lists_opencloud.py",
+    "title": "E2E \u2014 lists through production OpenCloud (OCIS client mode).",
+    "tests": 6
+   },
+   {
+    "file": "e2e/test_odt_opencloud.py",
+    "title": "E2E \u2014 ODT document through production OpenCloud (OCIS client mode).",
+    "tests": 5
+   },
+   {
+    "file": "e2e/test_ribbon_geometry.py",
+    "title": "E2E \u2014 ribbon geometry gate (fast drift catcher, no screenshots).",
+    "tests": 1
+   },
+   {
+    "file": "e2e/test_tables_opencloud.py",
+    "title": "E2E \u2014 tables through production OpenCloud (OCIS client mode).",
+    "tests": 7
+   },
+   {
+    "file": "test_agent_collab_interleave.py",
+    "title": "Tests for interleaved human and agent operations in the docserver.",
+    "tests": 4
+   },
+   {
+    "file": "test_agent_loop_integration.py",
+    "title": "Full agent loop integration tests \u2014 scripted model edits converge (INT+PROP).",
+    "tests": 11
+   },
+   {
+    "file": "test_ai_adapters.py",
+    "title": "Provider adapters (E19S1): vendor-agnostic tool-call translation.",
+    "tests": 7
+   },
+   {
+    "file": "test_ai_agent_edits.py",
+    "title": "Agent edits preserve document integrity \u2014 property-based (eval harness).",
+    "tests": 3
+   },
+   {
+    "file": "test_ai_agent_modelbased.py",
+    "title": "Model-based testing of the agent state machine driving apply_ops (TC-E13-05).",
+    "tests": 4
+   },
+   {
+    "file": "test_ai_agent_sanitizer.py",
+    "title": "Agent path under the sanitizer contract (E17S4): agent-authored content",
+    "tests": 3
+   },
+   {
+    "file": "test_ai_anchor_ops.py",
+    "title": "Anchored agent edits (E18S2): set_span + expected CAS \u2014 precision beats rewrite.",
+    "tests": 10
+   },
+   {
+    "file": "test_ai_audit.py",
+    "title": "Agent run audit (E20): every agent turn leaves a queryable row.",
+    "tests": 6
+   },
+   {
+    "file": "test_ai_context_pack.py",
+    "title": "Grounding pack (get_context, E18S1): deterministic, size-bounded, isolated.",
+    "tests": 8
+   },
+   {
+    "file": "test_ai_injection_containment.py",
+    "title": "Prompt-injection containment (E17): document content is DATA, never a",
+    "tests": 4
+   },
+   {
+    "file": "test_ai_lock_parity.py",
+    "title": "Property-based tests for lock-tool / WOPI lock-parity.",
+    "tests": 11
+   },
+   {
+    "file": "test_ai_mcp.py",
+    "title": "MCP stdio server: protocol handling and hostile-input resilience.",
+    "tests": 10
+   },
+   {
+    "file": "test_ai_mcp_catalog.py",
+    "title": "MCP tool catalog discovery and schema completeness.",
+    "tests": 17
+   },
+   {
+    "file": "test_ai_mcp_fuzz.py",
+    "title": "FUZZ: hostile doc-ids and arguments against the MCP tool surface.",
+    "tests": 7
+   },
+   {
+    "file": "test_ai_no_egress.py",
+    "title": "Egress guard (E17S5) + local-model E2E (E19S2).",
+    "tests": 2
+   },
+   {
+    "file": "test_ai_ops_validation.py",
+    "title": "Malformed agent operations are rejected gracefully, hub never crashes.",
+    "tests": 4
+   },
+   {
+    "file": "test_ai_permissions.py",
+    "title": "Agent permission scope, consent fail-closed, and confused-deputy guards.",
+    "tests": 7
+   },
+   {
+    "file": "test_ai_propose.py",
+    "title": "AI propose endpoint: instruction -> applied ops (flagship v3-1).",
+    "tests": 5
+   },
+   {
+    "file": "test_ai_provider_fail.py",
+    "title": "Provider callable failure modes: raises/times out \u2014 typed error, document uncorrupted.",
+    "tests": 8
+   },
+   {
+    "file": "test_ai_review.py",
+    "title": "AI review endpoints: op-stream diff, per-op reject, reject-all.",
+    "tests": 6
+   },
+   {
+    "file": "test_ai_review_control.py",
+    "title": "Tests for reject_agent_ops inverse ops restore pre-agent state (TC-E16).",
+    "tests": 11
+   },
+   {
+    "file": "test_ai_runner.py",
+    "title": "AgentRunner: model-agnostic loop, budgets (runaway protection), attribution.",
+    "tests": 7
+   },
+   {
+    "file": "test_ai_runner_bounds.py",
+    "title": "Agent loop budget enforcement: runaway loop protection (TC-E17-05/06).",
+    "tests": 15
+   },
+   {
+    "file": "test_ai_search_doc.py",
+    "title": "Cited retrieval (search_doc, E18S3): deterministic passage ranking.",
+    "tests": 6
+   },
+   {
+    "file": "test_ai_tools.py",
+    "title": "Agent tool surface: discovery, contracts, and hostile-input hardening.",
+    "tests": 26
+   },
+   {
+    "file": "test_ai_tools_edge.py",
+    "title": "Agent tool surface: edge cases for reads, versions, presence, typed not-found.",
+    "tests": 23
+   },
+   {
+    "file": "test_ai_traces.py",
+    "title": "Structured agent traces (E20S1): redacted by default, retention-bounded.",
+    "tests": 8
+   },
+   {
+    "file": "test_api_error_shapes.py",
+    "title": "API error-shape sweep: structured typed errors across every route family.",
+    "tests": 7
+   },
+   {
+    "file": "test_api_fuzz.py",
+    "title": "Route/API fuzzing \u2014 the whole HTTP surface must never crash.",
+    "tests": 2
+   },
+   {
+    "file": "test_chat_panel.py",
+    "title": "TDD test for chat panel UI (collab.chat feature).",
+    "tests": 9
+   },
+   {
+    "file": "test_cli.py",
+    "title": "Unit tests for docserver CLI \u2014 arg parsing, dispatch, exit codes.",
+    "tests": 12
+   },
+   {
+    "file": "test_client_mode.py",
+    "title": "Tests for OCIS client mode: editor sessions + remote WOPI client.",
+    "tests": 13
+   },
+   {
+    "file": "test_collab.py",
+    "title": "Tests for the real-time collaboration layer (character CRDT + hub + API).",
+    "tests": 36
+   },
+   {
+    "file": "test_collab_concurrency.py",
+    "title": "Tests for Hub concurrency: parallel sites op-flood, revision continuity, and no lost ops.",
+    "tests": 4
+   },
+   {
+    "file": "test_collab_modelbased.py",
+    "title": "Stateful model-based testing of the TextCRDT collaboration core.",
+    "tests": 0
+   },
+   {
+    "file": "test_config_precedence.py",
+    "title": "Tests for configuration precedence: env overrides toml overrides defaults.",
+    "tests": 25
+   },
+   {
+    "file": "test_config_validation.py",
+    "title": "Unit tests for config validation in ``src.config``.",
+    "tests": 6
+   },
+   {
+    "file": "test_conformance_corpus.py",
+    "title": "Borrow the World-Office ``wo-conformance`` corpus as round-trip coverage.",
+    "tests": 1
+   },
+   {
+    "file": "test_converter.py",
+    "title": "Tests for DOCX <-> HTML conversion.",
+    "tests": 99
+   },
+   {
+    "file": "test_converter_differential.py",
+    "title": "Differential testing of the docserver converters against LibreOffice.",
+    "tests": 2
+   },
+   {
+    "file": "test_converter_notes_bookmarks.py",
+    "title": "Tests for converter.py notes/bookmarks/tables coverage.",
+    "tests": 10
+   },
+   {
+    "file": "test_converter_property.py",
+    "title": "State-of-the-art converter testing: property-based + metamorphic + fuzz.",
+    "tests": 6
+   },
+   {
+    "file": "test_converter_roundtrip_text.py",
+    "title": "Property-based tests for text preservation across DOCX and ODT round-trips.",
+    "tests": 4
+   },
+   {
+    "file": "test_converter_run_style_edges.py",
+    "title": "Tests for converter.py run-level HTML edges: _run_to_html/_apply_run_style formatting combos, parse_list_at nesting, _tokenize_body.",
+    "tests": 84
+   },
+   {
+    "file": "test_crdt_concurrent_edges.py",
+    "title": "Tests for TextCRDT concurrency edges: same-position inserts, delete idempotence, and tombstones.",
+    "tests": 4
+   },
+   {
+    "file": "test_crypto.py",
+    "title": "Tests for JWT token helpers.",
+    "tests": 4
+   },
+   {
+    "file": "test_crypto_edges.py",
+    "title": "Tests for token crypto edge cases: TTL, wrong secret, and tampering.",
+    "tests": 4
+   },
+   {
+    "file": "test_document_info.py",
+    "title": "Document info / metadata endpoint (F-006).",
+    "tests": 4
+   },
+   {
+    "file": "test_document_protection.py",
+    "title": "Document protection: protect.password + protect.restrict (engine wo-feature).",
+    "tests": 15
+   },
+   {
+    "file": "test_draw_select.py",
+    "title": "TDD test for Draw tab stroke select + delete/move (WO-FEA-DRAW-2).",
+    "tests": 6
+   },
+   {
+    "file": "test_draw_tools.py",
+    "title": "TDD test for Draw tab tools (WO-FEA-DRAW-1).",
+    "tests": 13
+   },
+   {
+    "file": "test_editor_api_lifecycle.py",
+    "title": "Documents REST lifecycle: new\u2192contents\u2192save\u2192versions\u2192restore + typed 404.",
+    "tests": 20
+   },
+   {
+    "file": "test_editor_export.py",
+    "title": "API tests for the editor export endpoints (html/odt/docx).",
+    "tests": 10
+   },
+   {
+    "file": "test_editor_router_edges.py",
+    "title": "Editor router edge cases and error branches.",
+    "tests": 24
+   },
+   {
+    "file": "test_export.py",
+    "title": "TDD tests for cloud-integration export endpoints (editor-cloud-ui T1-T3).",
+    "tests": 4
+   },
+   {
+    "file": "test_export_formats.py",
+    "title": "Export & download endpoints (F-002 Download as ODT, F-003 Download as DOCX,",
+    "tests": 10
+   },
+   {
+    "file": "test_file_menu.py",
+    "title": "TDD test for File-Menu UI (editor-cloud-ui T6).",
+    "tests": 18
+   },
+   {
+    "file": "test_file_ops.py",
+    "title": "Tests for file operations: export (ODT/HTML) and the new-document route.",
+    "tests": 3
+   },
+   {
+    "file": "test_find_replace.py",
+    "title": "feature register: F-062 F-063 F-064",
+    "tests": 4
+   },
+   {
+    "file": "test_font_controls.py",
+    "title": "Feature Register Coverage: F-018 F-019 F-020 F-021 F-022 F-023 F-024",
+    "tests": 7
+   },
+   {
+    "file": "test_format_spec_conformance.py",
+    "title": "Format-spec conformance for engine-produced DOCX and ODT artifacts",
+    "tests": 9
+   },
+   {
+    "file": "test_ink_canvas.py",
+    "title": "TDD test for Draw tab ink canvas layer (WO-FEA-DRAW-0).",
+    "tests": 6
+   },
+   {
+    "file": "test_insert_advanced.py",
+    "title": "Tests for insert features: image, textbox, shape, chart, header/footer, page numbers, equation.",
+    "tests": 17
+   },
+   {
+    "file": "test_layout_roundtrip.py",
+    "title": "Feature Register Tests:",
+    "tests": 6
+   },
+   {
+    "file": "test_main_bootstrap.py",
+    "title": "Unit tests for app bootstrap \u2014 routers, CORS, and lifespan.",
+    "tests": 4
+   },
+   {
+    "file": "test_main_surface.py",
+    "title": "App shell surface: /health payload, / index HTML, /static mount, traversal 404 shapes.",
+    "tests": 16
+   },
+   {
+    "file": "test_markers.py",
+    "title": "Section-flag + drop cap + borders round-trip tests.",
+    "tests": 31
+   },
+   {
+    "file": "test_new_doc.py",
+    "title": "TDD tests for new-document endpoint (editor-cloud-ui T4-T5).",
+    "tests": 2
+   },
+   {
+    "file": "test_odt_converter.py",
+    "title": "Tests for ODT <-> HTML conversion.",
+    "tests": 82
+   },
+   {
+    "file": "test_odt_media_pipeline.py",
+    "title": "ODT media pipeline internals: MIME sniffing, JPEG SOF parsing, data-URI",
+    "tests": 8
+   },
+   {
+    "file": "test_odt_tables_frames.py",
+    "title": "ODT converter: table spans+borders, draw:frame image/textbox, tracked changes.",
+    "tests": 12
+   },
+   {
+    "file": "test_onlyoffice_conformance.py",
+    "title": "ONLYOFFICE-informed conformance tests for the editor-format features.",
+    "tests": 27
+   },
+   {
+    "file": "test_page_break_roundtrip.py",
+    "title": "Page break roundtrip: editor marker <-> DOCX/ODT serialization (F-076).",
+    "tests": 5
+   },
+   {
+    "file": "test_page_setup.py",
+    "title": "Page setup round-trip tests (F-090 page size / F-091 orientation / F-092 margins).",
+    "tests": 7
+   },
+   {
+    "file": "test_paragraph_controls.py",
+    "title": "Paragraph controls: multilevel lists (F-032) and line spacing (F-039).",
+    "tests": 14
+   },
+   {
+    "file": "test_persistence.py",
+    "title": "Persistence, crash-recovery and exactly-once retry semantics.",
+    "tests": 12
+   },
+   {
+    "file": "test_plugin_host.py",
+    "title": "TDD test for Plugin Host UI (plugins.browse / plugins.manage).",
+    "tests": 5
+   },
+   {
+    "file": "test_plugin_ocr.py",
+    "title": "TDD test for OCR plugin UI (plugins.ocr feature).",
+    "tests": 6
+   },
+   {
+    "file": "test_plugin_photoeditor.py",
+    "title": "TDD test for the Photo Editor plugin \u2014 canvas filter dialog",
+    "tests": 6
+   },
+   {
+    "file": "test_ref_fields.py",
+    "title": "Citation + Index L1 field marker tests (ref.citation / ref.index).",
+    "tests": 10
+   },
+   {
+    "file": "test_resilience.py",
+    "title": "Resilience and fault-injection testing of the docserver.",
+    "tests": 15
+   },
+   {
+    "file": "test_review_surfaces.py",
+    "title": "Review surfaces: track changes, accept/reject, comments, version history.",
+    "tests": 16
+   },
+   {
+    "file": "test_sanitize_review_edges.py",
+    "title": "Edge units across the hostile-input + review + MCP surface.",
+    "tests": 24
+   },
+   {
+    "file": "test_sanitizer_adversarial.py",
+    "title": "Adversarial security tests for the HTML sanitizer.",
+    "tests": 4
+   },
+   {
+    "file": "test_sanitizer_agent_html.py",
+    "title": "Sanitizer tests for agent-authored hostile HTML (SEC+FUZZ).",
+    "tests": 13
+   },
+   {
+    "file": "test_session_lock_adoption.py",
+    "title": "Editor-session lock adoption against the stub WOPI host + SessionRegistry semantics.",
+    "tests": 11
+   },
+   {
+    "file": "test_session_lock_edges.py",
+    "title": "Tests for session/lock adoption branches + collab char_at/set_presence gaps.",
+    "tests": 19
+   },
+   {
+    "file": "test_session_registry.py",
+    "title": "Tests for the ``SessionRegistry`` lifecycle.",
+    "tests": 9
+   },
+   {
+    "file": "test_snapshot_golden.py",
+    "title": "Golden-master (snapshot) tests for the wire contracts.",
+    "tests": 3
+   },
+   {
+    "file": "test_store.py",
+    "title": "Tests for the SQLite document store.",
+    "tests": 7
+   },
+   {
+    "file": "test_store_crash.py",
+    "title": "DocumentStore crash-consistency: reopen mid-lifecycle, torn writes, oversize.",
+    "tests": 8
+   },
+   {
+    "file": "test_store_multi_instance.py",
+    "title": "Multi-instance store: two DocumentStore handles on one dir stay consistent.",
+    "tests": 8
+   },
+   {
+    "file": "test_tracked_navigation.py",
+    "title": "Wiring test for tracked-change prev/next navigation (collab.prev-change /",
+    "tests": 5
+   },
+   {
+    "file": "test_version_restore_semantics.py",
+    "title": "Version-history semantics: monotonic listing, restore-to-old, immutability.",
+    "tests": 8
+   },
+   {
+    "file": "test_versions.py",
+    "title": "Version history: store snapshots + editor API (T30, version-history).",
+    "tests": 7
+   },
+   {
+    "file": "test_view_controls.py",
+    "title": "View-cluster controls: zoom, fullscreen, dark theme (and audit of fit/rulers).",
+    "tests": 9
+   },
+   {
+    "file": "test_web_surface.py",
+    "title": "Web surface: hosting discovery XML, /editor page, /static assets content-types (UNIT).",
+    "tests": 9
+   },
+   {
+    "file": "test_wopi.py",
+    "title": "Tests for WOPI host endpoints and editor API (integration style).",
+    "tests": 142
+   },
+   {
+    "file": "test_wopi_auth.py",
+    "title": "Direct unit tests for the WOPI auth module \u2014 token lifecycle (UNIT).",
+    "tests": 16
+   },
+   {
+    "file": "test_wopi_checkfileinfo.py",
+    "title": "Tests for CheckFileInfo contract: metadata fields, unicode names, read-only enforcement (UNIT).",
+    "tests": 25
+   },
+   {
+    "file": "test_wopi_host_integration.py",
+    "title": "Integration test: docserver acts as WOPI client to a mock OpenCloud/Nextcloud host.",
+    "tests": 2
+   },
+   {
+    "file": "test_wopi_lock_lifecycle.py",
+    "title": "WOPI lock lifecycle matrix: Lock / PutFile / Unlock / RefreshLock / GetLock (UNIT).",
+    "tests": 10
+   },
+   {
+    "file": "test_wopi_protocol_edge.py",
+    "title": "WOPI protocol edge cases: malformed headers, unicode names, CheckInOut (UNIT).",
+    "tests": 24
+   },
+   {
+    "file": "test_wopi_protocol_property.py",
+    "title": "Model-based and adversarial tests for the WOPI protocol boundary.",
+    "tests": 8
+   },
+   {
+    "file": "test_wopi_router_edges.py",
+    "title": "WOPI router edge cases: MAX_FILE_SIZE, foreign lock ops, GetLock (UNIT).",
+    "tests": 21
+   },
+   {
+    "file": "test_wopi_testhost.py",
+    "title": "Unit tests for the mock WOPI host (src/wopi/testhost.py) protocol surface.",
+    "tests": 20
+   }
+  ]
+ }
+}

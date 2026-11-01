@@ -185,64 +185,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.updatefields** [shortcut] → WO: F9 (fieldOpAtSelection update)
 - 🔲 L1 **shortcut.openchatpanel** [shortcut] → WO: Ctrl+Alt+Q
 
-## insert — 56 features (L0:2 L1:50 L3:4)
-- ❌ L0 **insert.insert-spreadsheet** [menu-item] 
-- ❌ L0 **shortcut.nonbreakinghyphen** [shortcut] 
-- 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
-- 🔲 L1 **insert.breaks** [control] → WO: Breaks
-- 🔲 L1 **insert.shape** [control] → WO: insertObject
-- 🔲 L1 **insert.smartart** [control] → WO: btn-smartart
-- 🔲 L1 **insert.page-number** [control] → WO: insertPageNumber
-- 🔲 L1 **insert.text-box** [control] → WO: insertTextbox
-- 🔲 L1 **insert.text-art** [control] → WO: insertTextart
-- 🔲 L1 **insert.drop-cap** [control] → WO: toggleDropcap
-- 🔲 L1 **insert.date-time** [control] → WO: pagenumber-dialog
-- 🔲 L1 **insert.text-from-file** [control] → WO: btn-textfile
-- 🔲 L1 **insert.field** [control] → WO: btn-field
-- 🔲 L1 **insert.equation** [control] → WO: btn-equation
-- 🔲 L1 **insert.content-controls** [control] → WO: btn-contentcontrol
-- 🔲 L1 **insert.select** [control] → WO: inkSelect
-- 🔲 L1 **insert.eraser** [control] → WO: toggleInk
-- 🔲 L1 **insert.insert-page-break** [menu-item] → WO: btn-multipage
-- 🔲 L1 **insert.insert-column-break** [menu-item] → WO: Insert column break
-- 🔲 L1 **insert.insert-section-break** [menu-item] → WO: Insert section break
-- 🔲 L1 **insert.fractions** [menu-item] → WO: Fractions
-- 🔲 L1 **insert.scripts** [menu-item] → WO: Scripts
-- 🔲 L1 **insert.radicals** [menu-item] → WO: Radicals
-- 🔲 L1 **insert.integrals** [menu-item] → WO: Integrals
-- 🔲 L1 **insert.large-operators** [menu-item] → WO: Large operators
-- 🔲 L1 **insert.brackets** [menu-item] → WO: Brackets
-- 🔲 L1 **insert.functions** [menu-item] → WO: Functions
-- 🔲 L1 **insert.accents** [menu-item] → WO: Accents
-- 🔲 L1 **insert.limits-and-logarithms** [menu-item] → WO: Limits and logarithms
-- 🔲 L1 **insert.operators** [menu-item] → WO: Operators
-- 🔲 L1 **insert.matrices** [menu-item] → WO: Matrices
-- 🔲 L1 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
-- 🔲 L1 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: symbol-dialog
-- 🔲 L1 **shortcut.insertlinebreak** [shortcut] → WO: Shift+Enter inserts <br> natively in contentEditable
-- 🔲 L1 **shortcut.insertcolumnbreak** [shortcut] → WO: Ctrl+Shift+Enter
-- 🔲 L1 **shortcut.nonbreakingspace** [shortcut] → WO: Ctrl+Shift+Space
-- 🔲 L1 **shortcut.inserthyperlink** [shortcut] → WO: Ctrl+K
-- 🔲 L1 **shortcut.insertpagebreak** [shortcut] → WO: Ctrl+Enter
-- 🔲 L1 **shortcut.insertpagenumber** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.inserttab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.insertendnotenow** [shortcut] → WO: Ctrl+Alt+D
-- 🔲 L1 **shortcut.inserttablebreak** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.insertlinebreakmultilineform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.copyrightsign** [shortcut] → WO: Ctrl+Alt+G
-- 🔲 L1 **shortcut.eurosign** [shortcut] → WO: Ctrl+Alt+E
-- 🔲 L1 **shortcut.registeredsign** [shortcut] → WO: Ctrl+Alt+R
-- 🔲 L1 **shortcut.trademarksign** [shortcut] → WO: Ctrl+Alt+T
-- 🔲 L1 **shortcut.insertequation** [shortcut] → WO: Ctrl+Alt+=
-- 🔲 L1 **shortcut.horizontalellipsis** [shortcut] → WO: Alt+;
-- 🔲 L1 **shortcut.insertfootnotenow** [shortcut] → WO: Ctrl+Alt+F
-- 🔲 L1 **shortcut.emdash** [shortcut] → WO: Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation)
-- 🔲 L1 **shortcut.endash** [shortcut] → WO: Ctrl+Shift+Minus (OO uses Ctrl+NumpadMinus; Ctrl+Minus is zoom-out in WO)
-- ✅ L3 **insert.link** [control] → WO: link
-- ✅ L3 **insert.symbol** [control] → WO: btn-symbol
-- ✅ L3 **insert.more-symbols** [menu-item] → WO: Symbols ▾
-- ✅ L3 **insert.symbols** [menu-item] → WO: Symbols ▾
-
 ## table — 15 features (L0:2 L1:10 L3:3)
 - ❌ L0 **ctx.distribute-rows** [ctx-menu] 
 - ❌ L0 **ctx.distribute-columns** [ctx-menu] 
@@ -378,6 +320,64 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.movetopreviouspage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.nextfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.previousfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+
+## insert — 56 features (L0:0 L1:52 L3:4)
+- 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
+- 🔲 L1 **insert.breaks** [control] → WO: Breaks
+- 🔲 L1 **insert.shape** [control] → WO: insertObject
+- 🔲 L1 **insert.smartart** [control] → WO: btn-smartart
+- 🔲 L1 **insert.page-number** [control] → WO: insertPageNumber
+- 🔲 L1 **insert.text-box** [control] → WO: insertTextbox
+- 🔲 L1 **insert.text-art** [control] → WO: insertTextart
+- 🔲 L1 **insert.drop-cap** [control] → WO: toggleDropcap
+- 🔲 L1 **insert.date-time** [control] → WO: pagenumber-dialog
+- 🔲 L1 **insert.text-from-file** [control] → WO: btn-textfile
+- 🔲 L1 **insert.field** [control] → WO: btn-field
+- 🔲 L1 **insert.equation** [control] → WO: btn-equation
+- 🔲 L1 **insert.content-controls** [control] → WO: btn-contentcontrol
+- 🔲 L1 **insert.select** [control] → WO: inkSelect
+- 🔲 L1 **insert.eraser** [control] → WO: toggleInk
+- 🔲 L1 **insert.insert-page-break** [menu-item] → WO: btn-multipage
+- 🔲 L1 **insert.insert-column-break** [menu-item] → WO: Insert column break
+- 🔲 L1 **insert.insert-section-break** [menu-item] → WO: Insert section break
+- 🔲 L1 **insert.insert-spreadsheet** [menu-item] → WO: Spreadsheet
+- 🔲 L1 **insert.fractions** [menu-item] → WO: Fractions
+- 🔲 L1 **insert.scripts** [menu-item] → WO: Scripts
+- 🔲 L1 **insert.radicals** [menu-item] → WO: Radicals
+- 🔲 L1 **insert.integrals** [menu-item] → WO: Integrals
+- 🔲 L1 **insert.large-operators** [menu-item] → WO: Large operators
+- 🔲 L1 **insert.brackets** [menu-item] → WO: Brackets
+- 🔲 L1 **insert.functions** [menu-item] → WO: Functions
+- 🔲 L1 **insert.accents** [menu-item] → WO: Accents
+- 🔲 L1 **insert.limits-and-logarithms** [menu-item] → WO: Limits and logarithms
+- 🔲 L1 **insert.operators** [menu-item] → WO: Operators
+- 🔲 L1 **insert.matrices** [menu-item] → WO: Matrices
+- 🔲 L1 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
+- 🔲 L1 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: symbol-dialog
+- 🔲 L1 **shortcut.insertlinebreak** [shortcut] → WO: Shift+Enter inserts <br> natively in contentEditable
+- 🔲 L1 **shortcut.insertcolumnbreak** [shortcut] → WO: Ctrl+Shift+Enter
+- 🔲 L1 **shortcut.nonbreakingspace** [shortcut] → WO: Ctrl+Shift+Space
+- 🔲 L1 **shortcut.nonbreakinghyphen** [shortcut] → WO: Ctrl+Shift+Minus
+- 🔲 L1 **shortcut.inserthyperlink** [shortcut] → WO: Ctrl+K
+- 🔲 L1 **shortcut.insertpagebreak** [shortcut] → WO: Ctrl+Enter
+- 🔲 L1 **shortcut.insertpagenumber** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.inserttab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.insertendnotenow** [shortcut] → WO: Ctrl+Alt+D
+- 🔲 L1 **shortcut.inserttablebreak** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.insertlinebreakmultilineform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.copyrightsign** [shortcut] → WO: Ctrl+Alt+G
+- 🔲 L1 **shortcut.eurosign** [shortcut] → WO: Ctrl+Alt+E
+- 🔲 L1 **shortcut.registeredsign** [shortcut] → WO: Ctrl+Alt+R
+- 🔲 L1 **shortcut.trademarksign** [shortcut] → WO: Ctrl+Alt+T
+- 🔲 L1 **shortcut.insertequation** [shortcut] → WO: Ctrl+Alt+=
+- 🔲 L1 **shortcut.horizontalellipsis** [shortcut] → WO: Alt+;
+- 🔲 L1 **shortcut.insertfootnotenow** [shortcut] → WO: Ctrl+Alt+F
+- 🔲 L1 **shortcut.emdash** [shortcut] → WO: Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation)
+- 🔲 L1 **shortcut.endash** [shortcut] → WO: Ctrl+Minus (OO true combo; preventDefault blocks browser zoom-out)
+- ✅ L3 **insert.link** [control] → WO: link
+- ✅ L3 **insert.symbol** [control] → WO: btn-symbol
+- ✅ L3 **insert.more-symbols** [menu-item] → WO: Symbols ▾
+- ✅ L3 **insert.symbols** [menu-item] → WO: Symbols ▾
 
 ## image — 2 features (L0:0 L1:2 L3:0)
 - 🔲 L1 **image.image** [control] → WO: btn-hf-image

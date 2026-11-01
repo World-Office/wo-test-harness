@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generated": "2026-11-01T00:03:28.461Z",
+  "generated": "2026-11-01T08:10:23.324Z",
   "source": "sdkjs/word/Editor/Shortcuts.js (147 types) vs WO editor keydown handler",
   "engine": "static-parse",
   "totals": {
-    "matched": 46,
-    "diverged": 6,
+    "matched": 48,
+    "diverged": 5,
     "browser-native": 17,
     "nav": 71,
-    "missing": 7,
+    "missing": 6,
     "total": 147
   },
   "shortcuts": [
@@ -243,8 +243,8 @@
     {
       "type": "NonBreakingHyphen",
       "combo": "Ctrl+Shift+Minus",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Shift+Minus"
     },
     {
       "type": "EditUndo",
@@ -867,8 +867,8 @@
     {
       "type": "EnDash",
       "combo": "Ctrl+Minus",
-      "verdict": "diverged",
-      "wo": "Ctrl+Shift+Minus (OO uses Ctrl+NumpadMinus; Ctrl+Minus is zoom-out in WO)"
+      "verdict": "matched",
+      "wo": "Ctrl+Minus (OO true combo; preventDefault blocks browser zoom-out)"
     },
     {
       "type": "NextFileTab",

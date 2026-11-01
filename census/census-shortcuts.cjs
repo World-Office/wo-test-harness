@@ -69,12 +69,13 @@ const WO = {
   InsertHyperlink: { v: "matched", wb: "Ctrl+K" },
   OpenChatPanel: { v: "matched", wb: "Ctrl+Alt+Q" },
   NonBreakingSpace: { v: "matched", wb: "Ctrl+Shift+Space" },
+  NonBreakingHyphen: { v: "matched", wb: "Ctrl+Shift+Minus" },
   EuroSign: { v: "matched", wb: "Ctrl+Alt+E" },
   CopyrightSign: { v: "matched", wb: "Ctrl+Alt+G" },
   TrademarkSign: { v: "matched", wb: "Ctrl+Alt+T" },
   RegisteredSign: { v: "matched", wb: "Ctrl+Alt+R" },
   EmDash: { v: "diverged", wb: "Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation)" },
-  EnDash: { v: "diverged", wb: "Ctrl+Shift+Minus (OO uses Ctrl+NumpadMinus; Ctrl+Minus is zoom-out in WO)" },
+  EnDash: { v: "matched", wb: "Ctrl+Minus (OO true combo; preventDefault blocks browser zoom-out)" },
 
   // Second C1 batch (2026-10-28): state-backed bindings to existing flows.
   UpdateFields: { v: "matched", wb: "F9 (fieldOpAtSelection update)" },

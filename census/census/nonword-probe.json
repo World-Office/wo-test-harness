@@ -1,0 +1,50 @@
+[
+  {
+    "type": "sheet",
+    "file": "seed.xlsx",
+    "finalUrl": "/external-worldoffice/personal/admin/seed.xlsx?fileId=1d97e670-f1e9-4e9b-8655-92f0ae5db78e%247a1ec2b4-85fb-4421-8eee-1be260cdfc40%214f8ef156-bf2f-429a-be6e-178f67db7422&contextRouteName=files-spaces-generic&contextRouteParams.driveAliasAndItem=personal%2Fadmin&contextRouteQuery.fileId=1d97e670-f1e9-4e9b-8655-92f0ae5db78e%247a1ec2b4-85fb-4421-8eee-1be260cdfc40%217a1ec2b4-85fb-4421-8eee-1be260cdfc40",
+    "editorFrame": true,
+    "loads": 1,
+    "wopiToken": true,
+    "savePath": "",
+    "domNote": " frames[true] inner{mount#1 canvas#3   \"File Home Insert Layout Formula Online Cut Copy Paste Format Painter C\"}",
+    "pageerrors": 0,
+    "wopiCalls": 4
+  },
+  {
+    "type": "slide",
+    "file": "seed.pptx",
+    "finalUrl": "/external-worldoffice/personal/admin/seed.pptx?fileId=1d97e670-f1e9-4e9b-8655-92f0ae5db78e%247a1ec2b4-85fb-4421-8eee-1be260cdfc40%21cc74a500-ce5c-4da7-a3da-3c408fb19027&contextRouteName=files-spaces-generic&contextRouteParams.driveAliasAndItem=personal%2Fadmin&contextRouteQuery.fileId=1d97e670-f1e9-4e9b-8655-92f0ae5db78e%247a1ec2b4-85fb-4421-8eee-1be260cdfc40%217a1ec2b4-85fb-4421-8eee-1be260cdfc40",
+    "editorFrame": true,
+    "loads": 1,
+    "wopiToken": true,
+    "savePath": "",
+    "domNote": " frames[true] inner{mount#1 canvas#0   \"File Home Insert Design Transitions Animation Online Cut Copy Paste Pa\"}",
+    "pageerrors": 0,
+    "wopiCalls": 4
+  },
+  {
+    "type": "pdf",
+    "file": "seed.pdf",
+    "finalUrl": "/pdf-viewer/personal/admin/seed.pdf?fileId=1d97e670-f1e9-4e9b-8655-92f0ae5db78e%247a1ec2b4-85fb-4421-8eee-1be260cdfc40%218f33c275-9761-49e8-906c-c08bbf6ae10f&contextRouteName=files-spaces-generic&contextRouteParams.driveAliasAndItem=personal%2Fadmin&contextRouteQuery.fileId=1d97e670-f1e9-4e9b-8655-92f0ae5db78e%247a1ec2b4-85fb-4421-8eee-1be260cdfc40%217a1ec2b4-85fb-4421-8eee-1be260cdfc40",
+    "editorFrame": false,
+    "loads": false,
+    "wopiToken": false,
+    "savePath": false,
+    "domNote": " frames[false] inner{mount#0 canvas#0 no-editor-iframe  \"\"}",
+    "pageerrors": 0,
+    "wopiCalls": 0
+  },
+  {
+    "type": "diagram",
+    "file": "seed.vsdx",
+    "finalUrl": "/external-worldoffice/personal/admin/seed.vsdx?fileId=1d97e670-f1e9-4e9b-8655-92f0ae5db78e%247a1ec2b4-85fb-4421-8eee-1be260cdfc40%211c2f1aa3-b1cb-462c-94a3-02f0c7ceb3a6&contextRouteName=files-spaces-generic&contextRouteParams.driveAliasAndItem=personal%2Fadmin&contextRouteQuery.fileId=1d97e670-f1e9-4e9b-8655-92f0ae5db78e%247a1ec2b4-85fb-4421-8eee-1be260cdfc40%217a1ec2b4-85fb-4421-8eee-1be260cdfc40",
+    "editorFrame": true,
+    "loads": 1,
+    "wopiToken": true,
+    "savePath": "save-ui",
+    "domNote": " frames[true] inner{mount#1 canvas#1 save-ui  \"File View Online 50% 75% 100% 125% 150% 200% Fit to Page Fit to Width \"}",
+    "pageerrors": 0,
+    "wopiCalls": 4
+  }
+]
