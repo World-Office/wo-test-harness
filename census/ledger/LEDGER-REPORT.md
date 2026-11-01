@@ -6,16 +6,13 @@ Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
 
-## file — 39 features (L0:0 L1:39 L3:0)
+## file — 39 features (L0:0 L1:36 L3:0)
 - 🔲 L1 **file.file** [control] → WO: btn-textfile
 - 🔲 L1 **file.home** [control] → WO: tab:home
-- 🔲 L1 **file.insert** [control] → WO: insertBlankPage
 - 🔲 L1 **file.draw** [control] → WO: toggleInk
 - 🔲 L1 **file.layout** [control] → WO: tab:layout
 - 🔲 L1 **file.references** [control] → WO: tab:references
 - 🔲 L1 **file.collaboration** [control] → WO: tab:collaboration
-- 🔲 L1 **file.protection** [control] → WO: protectDialog
-- 🔲 L1 **file.view** [control] → WO: displayMode
 - 🔲 L1 **file.plugins** [control] → WO: plugins-dialog
 - 🔲 L1 **file.ai** [control] → WO: AI changes
 - 🔲 L1 **file.editing** [control] → WO: coedit-mode
@@ -46,19 +43,18 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.openchatpanel** [shortcut] → WO: Ctrl+Alt+Q
 - 🔲 L1 **shortcut.openexistingfile** [shortcut] → WO: Cmd+O / Ctrl+O (openBackstage("open"))
 - 🔲 L1 **shortcut.closefile** [shortcut] → WO: Cmd+W / Ctrl+W (prevents browser tab-close: dirty confirm + wo:close-document + notifyHost(close))
+- ✅ L2 **file.insert** [control] → WO: insertBlankPage
+- ✅ L2 **file.protection** [control] → WO: protectDialog
+- ✅ L2 **file.view** [control] → WO: displayMode
 
-## formatting — 53 features (L0:0 L1:39 L3:14)
+## formatting — 53 features (L0:0 L1:35 L3:14)
 - 🔲 L1 **formatting.font** [control] → WO: font-family
 - 🔲 L1 **formatting.font-size** [control] → WO: font-size
 - 🔲 L1 **formatting.increment-font-size-ctrl** [control] → WO: font-size
 - 🔲 L1 **formatting.decrement-font-size-ctrl** [control] → WO: font-size
 - 🔲 L1 **formatting.highlight-color** [control] → WO: highlight-color
 - 🔲 L1 **formatting.font-color** [control] → WO: text-color
-- 🔲 L1 **formatting.multilevel-list** [control] → WO: multilevel
-- 🔲 L1 **formatting.decrease-indent-ctrl-shift-m** [control] → WO: outdent
-- 🔲 L1 **formatting.increase-indent-ctrl-m** [control] → WO: indent
 - 🔲 L1 **formatting.paragraph-line-spacing** [control] → WO: line-spacing
-- 🔲 L1 **formatting.text-direction** [control] → WO: directionRtl
 - 🔲 L1 **formatting.nonprinting-characters-ctrl-shift-8** [control] → WO: btn-home-formatmarks
 - 🔲 L1 **formatting.shading** [control] → WO: Shading
 - 🔲 L1 **formatting.borders** [control] → WO: openBorders
@@ -87,6 +83,10 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.applyheading1** [shortcut] → WO: Ctrl+Alt+1
 - 🔲 L1 **shortcut.applyheading2** [shortcut] → WO: Ctrl+Alt+2
 - 🔲 L1 **shortcut.applyheading3** [shortcut] → WO: Ctrl+Alt+3
+- ✅ L2 **formatting.multilevel-list** [control] → WO: multilevel
+- ✅ L2 **formatting.decrease-indent-ctrl-shift-m** [control] → WO: outdent
+- ✅ L2 **formatting.increase-indent-ctrl-m** [control] → WO: indent
+- ✅ L2 **formatting.text-direction** [control] → WO: directionRtl
 - ✅ L3 **formatting.change-case** [control] → WO: Change case
 - ✅ L3 **formatting.bold-ctrl-b** [control] → WO: bold
 - ✅ L3 **formatting.italic-ctrl-i** [control] → WO: italic
@@ -102,15 +102,11 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **formatting.align-right-ctrl-r** [control] → WO: justifyRight
 - ✅ L3 **formatting.justified-ctrl-j** [control] → WO: justifyFull
 
-## insert — 56 features (L0:0 L1:52 L3:4)
+## insert — 56 features (L0:0 L1:48 L3:4)
 - 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
 - 🔲 L1 **insert.breaks** [control] → WO: Breaks
 - 🔲 L1 **insert.shape** [control] → WO: insertObject
 - 🔲 L1 **insert.smartart** [control] → WO: btn-smartart
-- 🔲 L1 **insert.page-number** [control] → WO: insertPageNumber
-- 🔲 L1 **insert.text-box** [control] → WO: insertTextbox
-- 🔲 L1 **insert.text-art** [control] → WO: insertTextart
-- 🔲 L1 **insert.drop-cap** [control] → WO: toggleDropcap
 - 🔲 L1 **insert.date-time** [control] → WO: pagenumber-dialog
 - 🔲 L1 **insert.text-from-file** [control] → WO: btn-textfile
 - 🔲 L1 **insert.field** [control] → WO: btn-field
@@ -155,15 +151,17 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.insertfootnotenow** [shortcut] → WO: Ctrl+Alt+F
 - 🔲 L1 **shortcut.emdash** [shortcut] → WO: Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation)
 - 🔲 L1 **shortcut.endash** [shortcut] → WO: Ctrl+Minus (OO true combo; preventDefault blocks browser zoom-out)
+- ✅ L2 **insert.page-number** [control] → WO: insertPageNumber
+- ✅ L2 **insert.text-box** [control] → WO: insertTextbox
+- ✅ L2 **insert.text-art** [control] → WO: insertTextart
+- ✅ L2 **insert.drop-cap** [control] → WO: toggleDropcap
 - ✅ L3 **insert.link** [control] → WO: link
 - ✅ L3 **insert.symbol** [control] → WO: btn-symbol
 - ✅ L3 **insert.more-symbols** [menu-item] → WO: Symbols ▾
 - ✅ L3 **insert.symbols** [menu-item] → WO: Symbols ▾
 
-## table — 15 features (L0:0 L1:12 L3:3)
+## table — 15 features (L0:0 L1:10 L3:3)
 - 🔲 L1 **table.table-of-contents** [control] → WO: updatetoc-dialog
-- 🔲 L1 **table.update-table** [control] → WO: updateToc
-- 🔲 L1 **table.table-of-figures** [control] → WO: insertTableOfFigures
 - 🔲 L1 **table.draw-table** [menu-item] → WO: Draw table
 - 🔲 L1 **table.erase-table** [menu-item] → WO: Erase table
 - 🔲 L1 **table.dlg-table-of-figures** [dialog] (7 OO fields) → WO: insertTableOfFigures
@@ -173,6 +171,8 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.distribute-rows** [ctx-menu] → WO: ctx data-ctx=DistributeRows -> distributeTableRows (equalize row heights)
 - 🔲 L1 **ctx.distribute-columns** [ctx-menu] → WO: ctx data-ctx=DistributeColumns -> distributeTableColumns (equalize column widths)
 - 🔲 L1 **ctx.several-rows-columns** [ctx-menu] → WO: table-ops dialog Insert several rows/cols (op-apply-rows/op-apply-cols; insertTableRow/Col count)
+- ✅ L2 **table.update-table** [control] → WO: updateToc
+- ✅ L2 **table.table-of-figures** [control] → WO: insertTableOfFigures
 - ✅ L3 **table.table** [control] → WO: Table ▾
 - ✅ L3 **table.insert-custom-table** [menu-item] → WO: btn-table
 - ✅ L3 **table.convert-text-to-table** [menu-item] → WO: Convert Text to Table…
@@ -203,14 +203,13 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **chart.up-down-bars** [menu-item] → WO: Up/Down Bars
 - 🔲 L1 **ctx.chart.datatable** [ctx-menu] → WO: chartElement dataTable toggle renders data table in chartSVG
 
-## review — 16 features (L0:0 L1:16 L3:0)
+## review — 16 features (L0:0 L1:15 L3:0)
 - 🔲 L1 **review.comment** [control] → WO: insertComment
 - 🔲 L1 **review.co-editing-mode** [control] → WO: coedit-mode
 - 🔲 L1 **review.add-comment** [control] → WO: btn-comment
 - 🔲 L1 **review.delete** [control] → WO: deleteComment
 - 🔲 L1 **review.resolve** [control] → WO: resolveComment
 - 🔲 L1 **review.track-changes** [control] → WO: btn-track-changes
-- 🔲 L1 **review.display-mode** [control] → WO: displayMode
 - 🔲 L1 **review.previous** [control] → WO: prevTrackedChange
 - 🔲 L1 **review.next** [control] → WO: nextTrackedChange
 - 🔲 L1 **review.accept** [control] → WO: acceptTrackedChange
@@ -220,30 +219,28 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **review.chat** [control] → WO: toggleChat
 - 🔲 L1 **review.thesaurus** [control] → WO: aiRewrite
 - 🔲 L1 **review.grammar-spelling** [control] → WO: btn-ai-grammar
+- ✅ L2 **review.display-mode** [control] → WO: displayMode
 
-## headerfooter — 6 features (L0:0 L1:5 L3:1)
-- 🔲 L1 **headerfooter.page-number** [control] → WO: insertPageNumber
+## headerfooter — 6 features (L0:0 L1:4 L3:1)
 - 🔲 L1 **headerfooter.date-time** [control] → WO: pagenumber-dialog
 - 🔲 L1 **headerfooter.field** [control] → WO: btn-field
 - 🔲 L1 **headerfooter.close** [control] → WO: btn-hf-close
 - 🔲 L1 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
+- ✅ L2 **headerfooter.page-number** [control] → WO: insertPageNumber
 - ✅ L3 **headerfooter.header-footer** [control] → WO: insertHeaderFooter
 
-## page — 49 features (L0:0 L1:49 L3:0)
+## page — 49 features (L0:0 L1:43 L3:0)
 - 🔲 L1 **page.margins** [control] → WO: Margins
 - 🔲 L1 **page.orientation** [control] → WO: Orientation
 - 🔲 L1 **page.size** [control] → WO: Size
 - 🔲 L1 **page.columns** [control] → WO: Columns
 - 🔲 L1 **page.breaks** [control] → WO: Breaks
-- 🔲 L1 **page.line-numbers** [control] → WO: toggleLineNumbers
-- 🔲 L1 **page.hyphenation** [control] → WO: toggleHyphenation
 - 🔲 L1 **page.wrapping** [control] → WO: Wrapping
 - 🔲 L1 **page.bring-forward** [control] → WO: objectOp
 - 🔲 L1 **page.send-backward** [control] → WO: objectOp
 - 🔲 L1 **page.align** [control] → WO: Align
 - 🔲 L1 **page.group** [control] → WO: objectOp
 - 🔲 L1 **page.merge-shapes** [control] → WO: btn-mergeshapes
-- 🔲 L1 **page.watermark** [control] → WO: toggleWatermark
 - 🔲 L1 **page.page-color** [control] → WO: btn-multipage
 - 🔲 L1 **page.colors** [control] → WO: themecolors
 - 🔲 L1 **page.last-custom** [menu-item] → WO: Last Custom
@@ -272,28 +269,31 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **page.left** [menu-item] → WO: Left
 - 🔲 L1 **page.right** [menu-item] → WO: Right
 - 🔲 L1 **page.custom-columns** [menu-item] → WO: Custom columns
-- 🔲 L1 **page.none** [menu-item] → WO: toggleHyphenation
-- 🔲 L1 **page.automatic** [menu-item] → WO: toggleHyphenation
-- 🔲 L1 **page.hyphenation-options** [menu-item] → WO: toggleHyphenation
 - 🔲 L1 **page.dlg-margins** [dialog] (8 OO fields) → WO: Margins
 - 🔲 L1 **page.dlg-page-size** [dialog] (3 OO fields) → WO: btn-multipage
 - 🔲 L1 **page.dlg-columns** [dialog] (5 OO fields) → WO: columns-dialog
 - 🔲 L1 **page.dlg-hyphenation** [dialog] (2 OO fields) → WO: hyphenation-dialog
+- ✅ L2 **page.line-numbers** [control] → WO: toggleLineNumbers
+- ✅ L2 **page.hyphenation** [control] → WO: toggleHyphenation
+- ✅ L2 **page.watermark** [control] → WO: toggleWatermark
+- ✅ L2 **page.none** [menu-item] → WO: toggleHyphenation
+- ✅ L2 **page.automatic** [menu-item] → WO: toggleHyphenation
+- ✅ L2 **page.hyphenation-options** [menu-item] → WO: toggleHyphenation
 
-## references — 9 features (L0:0 L1:8 L3:1)
+## references — 9 features (L0:0 L1:6 L3:1)
 - 🔲 L1 **references.add-text** [control] → WO: btn-addtext
-- 🔲 L1 **references.footnote** [control] → WO: insertFootnote
 - 🔲 L1 **references.bookmark** [control] → WO: bookmark-dialog
-- 🔲 L1 **references.caption** [control] → WO: insertCaption
 - 🔲 L1 **references.cross-reference** [control] → WO: crossref-dialog
 - 🔲 L1 **references.dlg-bookmarks** [dialog] (2 OO fields) → WO: bookmark-dialog
 - 🔲 L1 **references.dlg-insert-caption** [dialog] (8 OO fields) → WO: insertCaption
 - 🔲 L1 **references.dlg-cross-reference** [dialog] (5 OO fields) → WO: crossref-dialog
+- ✅ L2 **references.footnote** [control] → WO: insertFootnote
+- ✅ L2 **references.caption** [control] → WO: insertCaption
 - ✅ L3 **references.link** [control] → WO: link
 
-## protect — 2 features (L0:0 L1:2 L3:0)
-- 🔲 L1 **protect.encrypt** [control] → WO: protectDialog
+## protect — 2 features (L0:0 L1:1 L3:0)
 - 🔲 L1 **protect.protect-document** [control] → WO: restrictEditing
+- ✅ L2 **protect.encrypt** [control] → WO: protectDialog
 
 ## view — 8 features (L0:0 L1:8 L3:0)
 - 🔲 L1 **view.headings** [control] → WO: btn-view-headings
@@ -310,24 +310,24 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **macros.record-macro** [control] → WO: Record macro
 - 🔲 L1 **macros.dlg-macros** [dialog] (1 OO fields) → WO: btn-macro-menu
 
-## plugins — 10 features (L0:0 L1:10 L3:0)
+## plugins — 10 features (L0:0 L1:9 L3:0)
 - 🔲 L1 **plugins.plugin-manager** [control] → WO: plugins-dialog
 - 🔲 L1 **plugins.background-plugins** [control] → WO: plugins-dialog
 - 🔲 L1 **plugins.youtube** [control] → WO: pluginUnavailable
 - 🔲 L1 **plugins.ocr** [control] → WO: ocrRun
 - 🔲 L1 **plugins.translator** [control] → WO: aiTranslate
 - 🔲 L1 **plugins.mendeley** [control] → WO: pluginUnavailable
-- 🔲 L1 **plugins.highlight-code** [control] → WO: code
 - 🔲 L1 **plugins.zotero** [control] → WO: pluginUnavailable
 - 🔲 L1 **plugins.speech** [control] → WO: btn-speech
 - 🔲 L1 **plugins.speech-input** [control] → WO: dictate
+- ✅ L2 **plugins.highlight-code** [control] → WO: code
 
-## other — 5 features (L0:0 L1:5 L3:0)
-- 🔲 L1 **other.settings** [control] → WO: aiSettings
+## other — 5 features (L0:0 L1:4 L3:0)
 - 🔲 L1 **other.chatbot** [control] → WO: btn-ai-assistant
 - 🔲 L1 **other.summarization** [control] → WO: aiSummarize
 - 🔲 L1 **other.translation** [control] → WO: aiTranslate
 - 🔲 L1 **other.create-ai-assistant** [control] → WO: createAiAssistant
+- ✅ L2 **other.settings** [control] → WO: aiSettings
 
 ## statusbar — 10 features (L0:0 L1:10 L3:0)
 - 🔲 L1 **statusbar.word-count** [statusbar-item] → WO: sb-word-count
@@ -405,7 +405,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.nextfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.previousfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 
-## edit — 136 features (L0:0 L1:135 L3:1)
+## edit — 136 features (L0:0 L1:114 L3:1)
 - 🔲 L1 **shortcut.deleteleftchar** [shortcut] → WO: Backspace
 - 🔲 L1 **shortcut.deleterightchar** [shortcut] → WO: Delete
 - 🔲 L1 **shortcut.editundo** [shortcut] → WO: Ctrl+Z
@@ -486,12 +486,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.remove-link** [ctx-menu] → WO: ctx data-ctx=RemoveLink
 - 🔲 L1 **ctx.resize-to-cell** [ctx-menu] → WO: ctx data-ctx=ResizeToCell -> resizeSelectedObjectToCell (objects in table cells)
 - 🔲 L1 **ctx.text-alignment** [ctx-menu] → WO: ctx data-ctx=TextAlignment
-- 🔲 L1 **ctx.top** [ctx-menu] → WO: ctx data-ctx=TextAlignTop
-- 🔲 L1 **ctx.middle** [ctx-menu] → WO: ctx data-ctx=TextAlignMiddle
-- 🔲 L1 **ctx.bottom** [ctx-menu] → WO: ctx data-ctx=TextAlignBottom
-- 🔲 L1 **ctx.left** [ctx-menu] → WO: ctx data-ctx=TextAlignLeft
-- 🔲 L1 **ctx.center** [ctx-menu] → WO: ctx data-ctx=TextAlignCenter
-- 🔲 L1 **ctx.right** [ctx-menu] → WO: ctx data-ctx=TextAlignRight
 - 🔲 L1 **ctx.justify** [ctx-menu] → WO: ribbon data-cmd=justifyFull (not in WO ctx)
 - 🔲 L1 **ctx.table-advanced-settings** [ctx-menu] → WO: table-ops-dialog (WO table settings surface)
 - 🔲 L1 **ctx.paragraph-advanced-settings** [ctx-menu] → WO: ctx data-ctx=ParagraphSettings
@@ -509,9 +503,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.spellcheck** [ctx-menu] → WO: Review ribbon spellcheck / F7 (not in ctx)
 - 🔲 L1 **ctx.text-direction** [ctx-menu] → WO: ctx data-ctx=TextDirection
 - 🔲 L1 **ctx.horizontal** [ctx-menu] → WO: ctx data-ctx=TextDirHorizontal
-- 🔲 L1 **ctx.rotate-text-down** [ctx-menu] → WO: ctx data-ctx=TextDirRotateDown
-- 🔲 L1 **ctx.rotate-text-up** [ctx-menu] → WO: ctx data-ctx=TextDirRotateUp
-- 🔲 L1 **ctx.start-new-list** [ctx-menu] → WO: ctx data-ctx=StartNewList
 - 🔲 L1 **ctx.set-numbering-value** [ctx-menu] → WO: ctx data-ctx=SetNumberingValue -> NumberingValueDialog + applyNumberingValue (native ol split, restart at N)
 - 🔲 L1 **ctx.continue-numbering** [ctx-menu] → WO: ctx data-ctx=ContinueNumbering -> continueNumbering (native ol merge)
 - 🔲 L1 **ctx.adjust-list-indents** [ctx-menu] → WO: ctx data-ctx=AdjustListIndents -> ListIndentsDialog + applyListIndents (margin-left/text-indent, round-trips as w:ind left/hanging)
@@ -521,24 +512,33 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.toggle-field-codes** [ctx-menu] → WO: ctx data-ctx=ToggleFieldCodes
 - 🔲 L1 **ctx.equation-settings** [ctx-menu] → WO: ctx data-ctx=EquationSettings
 - 🔲 L1 **ctx.select** [ctx-menu] → WO: browser native selection
-- 🔲 L1 **ctx.row** [ctx-menu] → WO: ctx data-ctx=TableDeleteRow
-- 🔲 L1 **ctx.column** [ctx-menu] → WO: ctx data-ctx=TableDeleteCol
 - 🔲 L1 **ctx.cell** [ctx-menu] → WO: ctx data-ctx=TableDeleteCell -> deleteTableCell (shift left + row cleanup)
-- 🔲 L1 **ctx.column-left** [ctx-menu] → WO: ctx data-ctx=TableColLeft
-- 🔲 L1 **ctx.column-right** [ctx-menu] → WO: ctx data-ctx=TableColRight
-- 🔲 L1 **ctx.row-above** [ctx-menu] → WO: ctx data-ctx=TableRowAbove
-- 🔲 L1 **ctx.row-below** [ctx-menu] → WO: ctx data-ctx=TableRowBelow
 - 🔲 L1 **ctx.cells** [ctx-menu] → WO: ctx data-ctx=TableDeleteCell -> deleteTableCell (single-cell surface; OO multi-cell selection collapses to one)
-- 🔲 L1 **ctx.page-break-before** [ctx-menu] → WO: ctx data-ctx=PageBreakBefore
-- 🔲 L1 **ctx.keep-lines-together** [ctx-menu] → WO: ctx data-ctx=KeepLines
 - 🔲 L1 **ctx.frame-advanced-settings** [ctx-menu] → WO: ctx data-ctx=FrameSettings
 - 🔲 L1 **ctx.drop-cap-settings** [ctx-menu] → WO: dropcap-dialog (btn/ctx)
-- 🔲 L1 **ctx.table-of-contents-settings** [ctx-menu] → WO: ctx data-ctx=TocSettings
-- 🔲 L1 **ctx.update-table-of-contents** [ctx-menu] → WO: ctx data-ctx=UpdateTOC
 - 🔲 L1 **ctx.edit-header** [ctx-menu] → WO: Insert ribbon header/footer + headerfooter-dialog (not in ctx)
-- 🔲 L1 **ctx.undo** [ctx-menu] → WO: ctx data-ctx=Undo
-- 🔲 L1 **ctx.redo** [ctx-menu] → WO: ctx data-ctx=Redo
 - 🔲 L1 **ctx.clear-field** [ctx-menu] → WO: ctx data-ctx=ClearField (empties page-number/[data-field])
 - 🔲 L1 **ctx.group** [ctx-menu] → WO: Layout tab objectOp group (groupSelectedObjects)
 - 🔲 L1 **ctx.ungroup** [ctx-menu] → WO: Layout tab objectOp ungroup (ungroupSelectedObjects)
+- ✅ L2 **ctx.top** [ctx-menu] → WO: ctx data-ctx=TextAlignTop
+- ✅ L2 **ctx.middle** [ctx-menu] → WO: ctx data-ctx=TextAlignMiddle
+- ✅ L2 **ctx.bottom** [ctx-menu] → WO: ctx data-ctx=TextAlignBottom
+- ✅ L2 **ctx.left** [ctx-menu] → WO: ctx data-ctx=TextAlignLeft
+- ✅ L2 **ctx.center** [ctx-menu] → WO: ctx data-ctx=TextAlignCenter
+- ✅ L2 **ctx.right** [ctx-menu] → WO: ctx data-ctx=TextAlignRight
+- ✅ L2 **ctx.rotate-text-down** [ctx-menu] → WO: ctx data-ctx=TextDirRotateDown
+- ✅ L2 **ctx.rotate-text-up** [ctx-menu] → WO: ctx data-ctx=TextDirRotateUp
+- ✅ L2 **ctx.start-new-list** [ctx-menu] → WO: ctx data-ctx=StartNewList
+- ✅ L2 **ctx.row** [ctx-menu] → WO: ctx data-ctx=TableDeleteRow
+- ✅ L2 **ctx.column** [ctx-menu] → WO: ctx data-ctx=TableDeleteCol
+- ✅ L2 **ctx.column-left** [ctx-menu] → WO: ctx data-ctx=TableColLeft
+- ✅ L2 **ctx.column-right** [ctx-menu] → WO: ctx data-ctx=TableColRight
+- ✅ L2 **ctx.row-above** [ctx-menu] → WO: ctx data-ctx=TableRowAbove
+- ✅ L2 **ctx.row-below** [ctx-menu] → WO: ctx data-ctx=TableRowBelow
+- ✅ L2 **ctx.page-break-before** [ctx-menu] → WO: ctx data-ctx=PageBreakBefore
+- ✅ L2 **ctx.keep-lines-together** [ctx-menu] → WO: ctx data-ctx=KeepLines
+- ✅ L2 **ctx.table-of-contents-settings** [ctx-menu] → WO: ctx data-ctx=TocSettings
+- ✅ L2 **ctx.update-table-of-contents** [ctx-menu] → WO: ctx data-ctx=UpdateTOC
+- ✅ L2 **ctx.undo** [ctx-menu] → WO: ctx data-ctx=Undo
+- ✅ L2 **ctx.redo** [ctx-menu] → WO: ctx data-ctx=Redo
 - ✅ L3 **ctx.horizontal-line-settings** [ctx-menu] → WO: ctx data-ctx=HorizontalLineSettings -> hr-settings-dialog (style insert/edit)

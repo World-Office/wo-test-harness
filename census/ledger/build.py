@@ -403,6 +403,49 @@ if ctx_path.exists():
             elif v == "nav":
                 ledger[fid]["evidence"].append("browser native")
 
+# ------------------------------------------------- L2 merge (census-wo-acts.cjs)
+# ACTS contract: the live probe performed a REAL user action (button click or
+# ctx-menu click / wo-command dispatch) in the prod editor and observed a
+# MutationObserver delta on #editor - the control mutates the document DOM
+# (transiently or not; durability is L3's job). Rows whose WO surface was
+# probed-and-mutating are promoted to L2; probed-but-unchanged or unprobed
+# surfaces honestly stay L1. Run census-wo-acts.cjs before building.
+acts_path = HERE / "../census/census-wo-acts.json"
+if acts_path.exists():
+    try:
+        _acts = json.load(open(acts_path))["results"]
+    except Exception:
+        _acts = None
+    if _acts:
+        def _acts_key(match):
+            "map a ledger wo.match to a probe key (cmd:/ctx:/btn:)"
+            m = (match or "").strip()
+            if m.startswith("btn-"):
+                if ("btn:" + m) in _acts:
+                    return "btn:" + m
+                return "cmd:" + m[len("btn-"):]
+            if m.startswith("data-cmd="):
+                return "cmd:" + m[len("data-cmd="):]
+            if m.startswith("ctx data-ctx="):
+                return "ctx:" + m[len("ctx data-ctx="):]
+            if m.startswith("ctx "):
+                return "ctx:" + m[len("ctx "):].split(" ")[0]
+            return "cmd:" + m
+        _l2_promoted = 0
+        for _row in ledger.values():
+            if 1 <= _row.get("level", 0) < 2 and _row.get("kind") in (
+                    "control", "menu-item", "ctx-menu") and _row.get("wo"):
+                _k = _acts_key(_row["wo"].get("match", ""))
+                _hit = _acts.get(_k)
+                if _hit and _hit.get("mutated"):
+                    _row["level"] = 2
+                    _row.setdefault("evidence", []).append(
+                        "L2 acts (live probe %s): %s mutated #editor DOM: %s" % (
+                            _row.get("where", "?"), _k, str(_hit.get("evidence"))[:90]))
+                    _l2_promoted += 1
+        print("  L2 merge: %d rows promoted (acts probe: %d mutated surfaces)" % (
+            _l2_promoted, sum(1 for v in _acts.values() if v.get("mutated"))))
+
 # ------------------------------------------------- L3 merge (roundtrip.cjs)
 # Contract: entries with ok=true survived html -> docx -> html; entry.features
 # lists ledger feature ids (matched by wo.match incl. label aliases).

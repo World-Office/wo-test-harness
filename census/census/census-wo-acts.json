@@ -1,0 +1,1175 @@
+{
+ "capturedAt": "2026-11-01T15:46:46.562Z",
+ "engine": "worldoffice",
+ "url": "http://192.168.42.42:8082/word/",
+ "results": {
+  "cmd:redo": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "btn:btn-redo-qa": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:undo": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+#text"
+  },
+  "btn:btn-undo-tb": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+#text"
+  },
+  "btn:btn-undo": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "btn:btn-redo": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:fontSizeInc": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:fontSizeDec": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:insertUnorderedList": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1:+UL"
+  },
+  "cmd:insertOrderedList": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1:+OL"
+  },
+  "cmd:multilevel": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+BR"
+  },
+  "cmd:outdent": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1:+BR"
+  },
+  "cmd:indent": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+BLOCKQUOTE"
+  },
+  "cmd:directionRtl": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TH"
+  },
+  "cmd:formatBlock": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:bold": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TD:+SPAN"
+  },
+  "cmd:italic": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1:+SPAN"
+  },
+  "cmd:underline": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1:+SPAN"
+  },
+  "cmd:strikeThrough": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "U"
+  },
+  "cmd:superscript": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "STRIKE:+SUP"
+  },
+  "cmd:subscript": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "SUP"
+  },
+  "cmd:removeFormat": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "P"
+  },
+  "cmd:justifyLeft": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "P"
+  },
+  "cmd:justifyCenter": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "cmd:justifyRight": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "cmd:justifyFull": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "cmd:openBorders": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:selectAll": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "btn:btn-select-all": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:showWordCount": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": false,
+   "evidence": "opened modal, no confirm route"
+  },
+  "btn:sb-word-count": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": false,
+   "evidence": "opened modal, no confirm route"
+  },
+  "cmd:insertBlankPage": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+DIV"
+  },
+  "cmd:insertObject": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:insertComment": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:link": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:insertHeaderFooter": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "DIV:+HEADER"
+  },
+  "btn:btn-headerfooter-combined": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "DIV:+HEADER"
+  },
+  "cmd:insertPageNumber": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+SPAN"
+  },
+  "btn:btn-pagenumber": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+SPAN"
+  },
+  "cmd:insertTextbox": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "DIV:+DIV"
+  },
+  "btn:btn-textbox": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "DIV:+DIV"
+  },
+  "cmd:insertTextart": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "P:+DIV"
+  },
+  "btn:btn-textart": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "P:+DIV"
+  },
+  "cmd:toggleDropcap": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "#text:ieses Beispi"
+  },
+  "cmd:insertHeader": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+HEADER"
+  },
+  "btn:btn-header": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+HEADER"
+  },
+  "cmd:insertFooter": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+FOOTER"
+  },
+  "btn:btn-footer": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+FOOTER"
+  },
+  "cmd:inkSelect": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "btn:btn-ink-select": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:toggleInk": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "btn:btn-ink-pen": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "btn:btn-ink-highlighter": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "btn:btn-ink-eraser": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:inkMode": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "btn:btn-ink-draw": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:inkColor": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "btn:btn-ink-color": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:inkThickness": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "btn:btn-ink-thickness": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:toggleLineNumbers": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "DIV:+DIV"
+  },
+  "cmd:toggleHyphenation": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "DIV:+DIV"
+  },
+  "cmd:objectOp": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:toggleWatermark": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "DIV:+DIV"
+  },
+  "cmd:addText": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:insertFootnote": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+SUP"
+  },
+  "btn:btn-footnote": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+SUP"
+  },
+  "cmd:insertEndnote": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+SUP"
+  },
+  "btn:btn-endnote": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+SUP"
+  },
+  "cmd:bookmark": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": false,
+   "evidence": "DIV:+DIV"
+  },
+  "btn:btn-bookmark": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": false,
+   "evidence": "DIV:+DIV"
+  },
+  "cmd:insertCaption": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+P"
+  },
+  "cmd:insertCitation": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+SUP"
+  },
+  "cmd:insertIndexEntry": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+SPAN"
+  },
+  "cmd:openCrossref": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:insertTableOfFigures": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "DIV:+NAV"
+  },
+  "cmd:updateToc": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "TH:+NAV"
+  },
+  "cmd:deleteComment": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:resolveComment": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:displayMode": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "DIV"
+  },
+  "cmd:prevTrackedChange": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:nextTrackedChange": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:acceptTrackedChange": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:rejectTrackedChange": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:compareVersion": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:combineRevisions": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:toggleChat": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "btn:btn-chat-toggle": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:mailMerge": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:protectDialog": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": false,
+   "evidence": "DIV"
+  },
+  "cmd:restrictEditing": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:toggleNavigation": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "btn:btn-nav-toggle": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:toggleRightPanel": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "btn:btn-right-panel-toggle": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:managePlugins": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": false,
+   "evidence": "opened modal, no confirm route"
+  },
+  "cmd:photoEditor": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:pluginUnavailable": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": false,
+   "evidence": "opened modal, no confirm route"
+  },
+  "cmd:aiTranslate": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:aiRewrite": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:code": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1:+SPAN"
+  },
+  "cmd:readAloud": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:dictate": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:ocrRun": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "btn:btn-ocr": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:browsePlugins": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": false,
+   "evidence": "opened modal, no confirm route"
+  },
+  "cmd:aiSettings": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "DIV"
+  },
+  "cmd:aiSummarize": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "btn:btn-ai-translate": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:createAiAssistant": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "btn:btn-create-ai-assistant": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "ctx:Cut": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:Copy": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:Paste": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:Ignore": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:IgnoreAll": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:AddToDictionary": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:SelectLanguage": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:TextAlignment": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:TextAlignTop": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TD"
+  },
+  "ctx:TextAlignMiddle": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TD"
+  },
+  "ctx:TextAlignBottom": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TD"
+  },
+  "ctx:TextAlignLeft": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TD"
+  },
+  "ctx:TextAlignCenter": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TD"
+  },
+  "ctx:TextAlignRight": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TD"
+  },
+  "ctx:TableRowAbove": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TBODY:+TR"
+  },
+  "ctx:TableRowBelow": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TBODY:+TR"
+  },
+  "ctx:TableColLeft": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TR:+TD"
+  },
+  "ctx:TableColRight": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TR:+TD"
+  },
+  "ctx:TableDeleteRow": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TBODY"
+  },
+  "ctx:TableDeleteCol": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TR"
+  },
+  "ctx:TableDeleteCell": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TR"
+  },
+  "ctx:TableMergeCells": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:TableSplitCell": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:DistributeColumns": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TD"
+  },
+  "ctx:DistributeRows": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TR"
+  },
+  "ctx:TextDirection": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:TextDirHorizontal": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:TextDirRotateDown": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TD"
+  },
+  "ctx:TextDirRotateUp": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TD"
+  },
+  "ctx:FollowMove": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:AI": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:AIRewrite": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "ctx:AISummarize": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "ctx:AITranslate": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "ctx:Undo": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+#text"
+  },
+  "ctx:Redo": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+#text"
+  },
+  "ctx:Bold": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:Italic": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:Underline": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:StrikeThrough": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:RemoveFormat": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:KeepLines": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "TD"
+  },
+  "ctx:ParagraphSettings": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "ctx:FormattingAsStyle": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:BulletList": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+UL"
+  },
+  "ctx:NumberedList": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+BR"
+  },
+  "ctx:StartNewList": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+BR"
+  },
+  "ctx:ContinueNumbering": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:SetNumberingValue": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:AdjustListIndents": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:BulletsAndNumbering": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:HorizontalRule": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "LI:+HR"
+  },
+  "ctx:HorizontalLineSettings": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "LI:+HR"
+  },
+  "ctx:Caption": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "LI:+P"
+  },
+  "ctx:Footnote": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "LI:+SUP"
+  },
+  "ctx:Endnote": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "LI:+SUP"
+  },
+  "ctx:Symbol": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": false,
+   "evidence": "opened modal, no confirm route"
+  },
+  "ctx:Date": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+#text"
+  },
+  "ctx:PageNumber": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "DIV:+HEADER"
+  },
+  "ctx:AddComment": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "ctx:Link": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "ctx:EditLink": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:RemoveLink": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:EditAltText": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:WrapInline": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:WrapSquare": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:WrapTight": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:WrapBehind": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:WrapFront": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:WrapThrough": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:EditWrapBoundary": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:EditObject": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:ConvertToShape": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:EditPoints": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:ResizeToCell": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:DistributeHorizontally": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:DistributeVertically": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:ReplaceImage": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:Crop": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:ActualSize": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:SaveAsPicture": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:CopyHyperlinkAddress": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:ClearField": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:UpdateTOC": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "DIV:+NAV"
+  },
+  "ctx:TocSettings": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "NAV"
+  },
+  "ctx:UpdateField": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:EditField": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:ToggleFieldCodes": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:PageBreakBefore": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "P:+DIV"
+  },
+  "ctx:AcceptChange": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:RejectChange": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:DropcapSettings": {
+   "mutated": true,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "#text:ieses Beispi"
+  },
+  "ctx:FrameSettings": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:EquationSettings": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:ContentControlSettings": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:RemoveContentControl": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:PrintSelection": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "ctx:SelectAll": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  }
+ },
+ "totals": {
+  "probed": 209,
+  "mutated": 85,
+  "dialog": 32,
+  "noop": 92
+ }
+}

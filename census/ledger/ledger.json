@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-01T12:37:51.405470",
+ "generated": "2026-11-01T16:48:07.848349",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,8 +10,8 @@
  ],
  "totals": {
   "L0": 0,
-  "L1": 477,
-  "L2": 0,
+  "L1": 430,
+  "L2": 47,
   "L3": 24,
   "L4": 0
  },
@@ -69,8 +69,10 @@
     "match": "insertBlankPage",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:insertBlankPage mutated #editor DOM: DIV:+DIV"
+   ]
   },
   {
    "feature": "file.draw",
@@ -165,8 +167,10 @@
     "match": "protectDialog",
     "where": "tab:protection"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:protectDialog mutated #editor DOM: DIV"
+   ]
   },
   {
    "feature": "file.view",
@@ -183,8 +187,10 @@
     "match": "displayMode",
     "where": "tab:view"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:displayMode mutated #editor DOM: DIV"
+   ]
   },
   {
    "feature": "file.plugins",
@@ -439,6 +445,7 @@
    },
    "level": 3,
    "evidence": [
+    "L2 acts (live probe ?): cmd:bold mutated #editor DOM: TD:+SPAN",
     "L3 roundtrip ok [bold]: marker /<(b|strong)\\b|font-weight\\s*:\\s*(bold|[6-9]00)/ survived html->docx->html"
    ]
   },
@@ -459,6 +466,7 @@
    },
    "level": 3,
    "evidence": [
+    "L2 acts (live probe ?): cmd:italic mutated #editor DOM: H1:+SPAN",
     "L3 roundtrip ok [italic]: marker /<(i|em)\\b|font-style\\s*:\\s*italic/ survived html->docx->html"
    ]
   },
@@ -479,6 +487,7 @@
    },
    "level": 3,
    "evidence": [
+    "L2 acts (live probe ?): cmd:underline mutated #editor DOM: H1:+SPAN",
     "L3 roundtrip ok [underline]: marker /<u\\b|text-decoration[^>]*underline/ survived html->docx->html"
    ]
   },
@@ -499,6 +508,7 @@
    },
    "level": 3,
    "evidence": [
+    "L2 acts (live probe ?): cmd:strikeThrough mutated #editor DOM: U",
     "L3 roundtrip ok [strikeThrough]: marker /<(s|strike|del)\\b|line-through/ survived html->docx->html"
    ]
   },
@@ -519,6 +529,7 @@
    },
    "level": 3,
    "evidence": [
+    "L2 acts (live probe ?): cmd:superscript mutated #editor DOM: STRIKE:+SUP",
     "L3 roundtrip ok [superscript]: marker /<sup\\b|vertical-align[^>]*super/ survived html->docx->html"
    ]
   },
@@ -539,6 +550,7 @@
    },
    "level": 3,
    "evidence": [
+    "L2 acts (live probe ?): cmd:subscript mutated #editor DOM: SUP",
     "L3 roundtrip ok [subscript]: marker /<sub\\b|vertical-align[^>]*\\bsub\\b/ survived html->docx->html"
    ]
   },
@@ -605,6 +617,7 @@
    },
    "level": 3,
    "evidence": [
+    "L2 acts (live probe ?): cmd:removeFormat mutated #editor DOM: P",
     "L3 roundtrip ok [removeFormat]: marker /sentinel/ survived html->docx->html"
    ]
   },
@@ -630,6 +643,7 @@
    },
    "level": 3,
    "evidence": [
+    "L2 acts (live probe ?): cmd:insertUnorderedList mutated #editor DOM: H1:+UL",
     "L3 roundtrip ok [insertUnorderedList]: marker /<ul\\b/ survived html->docx->html"
    ]
   },
@@ -673,8 +687,10 @@
     "match": "multilevel",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:multilevel mutated #editor DOM: DIV:+BR"
+   ]
   },
   {
    "feature": "formatting.decrease-indent-ctrl-shift-m",
@@ -691,8 +707,10 @@
     "match": "outdent",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:outdent mutated #editor DOM: H1:+BR"
+   ]
   },
   {
    "feature": "formatting.increase-indent-ctrl-m",
@@ -709,8 +727,10 @@
     "match": "indent",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:indent mutated #editor DOM: DIV:+BLOCKQUOTE"
+   ]
   },
   {
    "feature": "formatting.paragraph-line-spacing",
@@ -745,8 +765,10 @@
     "match": "directionRtl",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:directionRtl mutated #editor DOM: TH"
+   ]
   },
   {
    "feature": "formatting.align-left-ctrl-l",
@@ -765,6 +787,7 @@
    },
    "level": 3,
    "evidence": [
+    "L2 acts (live probe ?): cmd:justifyLeft mutated #editor DOM: P",
     "L3 roundtrip ok [justifyLeft]: marker /sentinel/ survived html->docx->html"
    ]
   },
@@ -785,6 +808,7 @@
    },
    "level": 3,
    "evidence": [
+    "L2 acts (live probe ?): cmd:justifyCenter mutated #editor DOM: H1",
     "L3 roundtrip ok [justifyCenter]: marker /text-align\\s*:\\s*center/ survived html->docx->html"
    ]
   },
@@ -805,6 +829,7 @@
    },
    "level": 3,
    "evidence": [
+    "L2 acts (live probe ?): cmd:justifyRight mutated #editor DOM: H1",
     "L3 roundtrip ok [justifyRight]: marker /text-align\\s*:\\s*right/ survived html->docx->html"
    ]
   },
@@ -825,6 +850,7 @@
    },
    "level": 3,
    "evidence": [
+    "L2 acts (live probe ?): cmd:justifyFull mutated #editor DOM: H1",
     "L3 roundtrip ok [justifyFull]: marker /text-align\\s*:\\s*justify/ survived html->docx->html"
    ]
   },
@@ -1126,6 +1152,7 @@
    },
    "level": 3,
    "evidence": [
+    "L2 acts (live probe ?): cmd:insertHeaderFooter mutated #editor DOM: DIV:+HEADER",
     "L3 roundtrip ok [insertHeaderFooter]: marker /page-header|page-footer|wo-hf/ survived html->docx->html"
    ]
   },
@@ -1144,8 +1171,10 @@
     "match": "insertPageNumber",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:insertPageNumber mutated #editor DOM: DIV:+SPAN"
+   ]
   },
   {
    "feature": "insert.text-box",
@@ -1162,8 +1191,10 @@
     "match": "insertTextbox",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:insertTextbox mutated #editor DOM: DIV:+DIV"
+   ]
   },
   {
    "feature": "insert.text-art",
@@ -1180,8 +1211,10 @@
     "match": "insertTextart",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:insertTextart mutated #editor DOM: P:+DIV"
+   ]
   },
   {
    "feature": "insert.drop-cap",
@@ -1198,8 +1231,10 @@
     "match": "toggleDropcap",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:toggleDropcap mutated #editor DOM: #text:ieses Beispi"
+   ]
   },
   {
    "feature": "insert.date-time",
@@ -1452,8 +1487,10 @@
     "match": "toggleLineNumbers",
     "where": "tab:layout"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:toggleLineNumbers mutated #editor DOM: DIV:+DIV"
+   ]
   },
   {
    "feature": "page.hyphenation",
@@ -1470,8 +1507,10 @@
     "match": "toggleHyphenation",
     "where": "tab:layout"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:toggleHyphenation mutated #editor DOM: DIV:+DIV"
+   ]
   },
   {
    "feature": "page.wrapping",
@@ -1596,8 +1635,10 @@
     "match": "toggleWatermark",
     "where": "tab:layout"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:toggleWatermark mutated #editor DOM: DIV:+DIV"
+   ]
   },
   {
    "feature": "page.page-color",
@@ -1691,8 +1732,10 @@
     "match": "updateToc",
     "where": "tab:references"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:updateToc mutated #editor DOM: TH:+NAV"
+   ]
   },
   {
    "feature": "references.footnote",
@@ -1709,8 +1752,10 @@
     "match": "insertFootnote",
     "where": "tab:references"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:insertFootnote mutated #editor DOM: DIV:+SUP"
+   ]
   },
   {
    "feature": "references.link",
@@ -1765,8 +1810,10 @@
     "match": "insertCaption",
     "where": "tab:references"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:insertCaption mutated #editor DOM: DIV:+P"
+   ]
   },
   {
    "feature": "references.cross-reference",
@@ -1801,8 +1848,10 @@
     "match": "insertTableOfFigures",
     "where": "tab:references"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:insertTableOfFigures mutated #editor DOM: DIV:+NAV"
+   ]
   },
   {
    "feature": "review.co-editing-mode",
@@ -1909,8 +1958,10 @@
     "match": "displayMode",
     "where": "tab:collaboration"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:displayMode mutated #editor DOM: DIV"
+   ]
   },
   {
    "feature": "review.previous",
@@ -2071,8 +2122,10 @@
     "match": "protectDialog",
     "where": "tab:protection"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:protectDialog mutated #editor DOM: DIV"
+   ]
   },
   {
    "feature": "protect.protect-document",
@@ -2440,8 +2493,10 @@
     "match": "code",
     "where": "tab:plugins"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:code mutated #editor DOM: H1:+SPAN"
+   ]
   },
   {
    "feature": "plugins.zotero",
@@ -2512,8 +2567,10 @@
     "match": "insertPageNumber",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:insertPageNumber mutated #editor DOM: DIV:+SPAN"
+   ]
   },
   {
    "feature": "headerfooter.date-time",
@@ -2584,8 +2641,10 @@
     "match": "aiSettings",
     "where": "tab:ai"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:aiSettings mutated #editor DOM: DIV"
+   ]
   },
   {
    "feature": "other.chatbot",
@@ -3713,8 +3772,10 @@
     "match": "toggleHyphenation",
     "where": "tab:layout (hy-mode options)"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:toggleHyphenation mutated #editor DOM: DIV:+DIV"
+   ]
   },
   {
    "feature": "page.automatic",
@@ -3731,8 +3792,10 @@
     "match": "toggleHyphenation",
     "where": "tab:layout (hy-mode options)"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:toggleHyphenation mutated #editor DOM: DIV:+DIV"
+   ]
   },
   {
    "feature": "page.hyphenation-options",
@@ -3749,8 +3812,10 @@
     "match": "toggleHyphenation",
     "where": "tab:layout"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:toggleHyphenation mutated #editor DOM: DIV:+DIV"
+   ]
   },
   {
    "feature": "chart.axes",
@@ -8830,8 +8895,10 @@
     "match": "ctx data-ctx=TextAlignTop",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:TextAlignTop mutated #editor DOM: TD"
+   ]
   },
   {
    "feature": "ctx.middle",
@@ -8849,8 +8916,10 @@
     "match": "ctx data-ctx=TextAlignMiddle",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:TextAlignMiddle mutated #editor DOM: TD"
+   ]
   },
   {
    "feature": "ctx.bottom",
@@ -8868,8 +8937,10 @@
     "match": "ctx data-ctx=TextAlignBottom",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:TextAlignBottom mutated #editor DOM: TD"
+   ]
   },
   {
    "feature": "ctx.left",
@@ -8887,8 +8958,10 @@
     "match": "ctx data-ctx=TextAlignLeft",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:TextAlignLeft mutated #editor DOM: TD"
+   ]
   },
   {
    "feature": "ctx.center",
@@ -8906,8 +8979,10 @@
     "match": "ctx data-ctx=TextAlignCenter",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:TextAlignCenter mutated #editor DOM: TD"
+   ]
   },
   {
    "feature": "ctx.right",
@@ -8925,8 +9000,10 @@
     "match": "ctx data-ctx=TextAlignRight",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:TextAlignRight mutated #editor DOM: TD"
+   ]
   },
   {
    "feature": "ctx.justify",
@@ -9319,8 +9396,10 @@
     "match": "ctx data-ctx=TextDirRotateDown",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:TextDirRotateDown mutated #editor DOM: TD"
+   ]
   },
   {
    "feature": "ctx.rotate-text-up",
@@ -9338,8 +9417,10 @@
     "match": "ctx data-ctx=TextDirRotateUp",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:TextDirRotateUp mutated #editor DOM: TD"
+   ]
   },
   {
    "feature": "ctx.start-new-list",
@@ -9357,8 +9438,10 @@
     "match": "ctx data-ctx=StartNewList",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:StartNewList mutated #editor DOM: DIV:+BR"
+   ]
   },
   {
    "feature": "ctx.set-numbering-value",
@@ -9549,8 +9632,10 @@
     "match": "ctx data-ctx=TableDeleteRow",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:TableDeleteRow mutated #editor DOM: TBODY"
+   ]
   },
   {
    "feature": "ctx.column",
@@ -9568,8 +9653,10 @@
     "match": "ctx data-ctx=TableDeleteCol",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:TableDeleteCol mutated #editor DOM: TR"
+   ]
   },
   {
    "feature": "ctx.cell",
@@ -9606,8 +9693,10 @@
     "match": "ctx data-ctx=TableColLeft",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:TableColLeft mutated #editor DOM: TR:+TD"
+   ]
   },
   {
    "feature": "ctx.column-right",
@@ -9625,8 +9714,10 @@
     "match": "ctx data-ctx=TableColRight",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:TableColRight mutated #editor DOM: TR:+TD"
+   ]
   },
   {
    "feature": "ctx.row-above",
@@ -9644,8 +9735,10 @@
     "match": "ctx data-ctx=TableRowAbove",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:TableRowAbove mutated #editor DOM: TBODY:+TR"
+   ]
   },
   {
    "feature": "ctx.row-below",
@@ -9663,8 +9756,10 @@
     "match": "ctx data-ctx=TableRowBelow",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:TableRowBelow mutated #editor DOM: TBODY:+TR"
+   ]
   },
   {
    "feature": "ctx.several-rows-columns",
@@ -9720,8 +9815,10 @@
     "match": "ctx data-ctx=PageBreakBefore",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:PageBreakBefore mutated #editor DOM: P:+DIV"
+   ]
   },
   {
    "feature": "ctx.keep-lines-together",
@@ -9739,8 +9836,10 @@
     "match": "ctx data-ctx=KeepLines",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:KeepLines mutated #editor DOM: TD"
+   ]
   },
   {
    "feature": "ctx.frame-advanced-settings",
@@ -9796,8 +9895,10 @@
     "match": "ctx data-ctx=TocSettings",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:TocSettings mutated #editor DOM: NAV"
+   ]
   },
   {
    "feature": "ctx.update-table-of-contents",
@@ -9815,8 +9916,10 @@
     "match": "ctx data-ctx=UpdateTOC",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:UpdateTOC mutated #editor DOM: DIV:+NAV"
+   ]
   },
   {
    "feature": "ctx.edit-header",
@@ -9855,8 +9958,10 @@
     "match": "ctx data-ctx=Undo",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:Undo mutated #editor DOM: DIV:+#text"
+   ]
   },
   {
    "feature": "ctx.redo",
@@ -9874,8 +9979,10 @@
     "match": "ctx data-ctx=Redo",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:Redo mutated #editor DOM: DIV:+#text"
+   ]
   },
   {
    "feature": "ctx.clear-field",
