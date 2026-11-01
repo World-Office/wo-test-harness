@@ -1,16 +1,14 @@
-/target
-**/*.rs.bk
-*.swp
-
-# Python
-__pycache__/
-*.py[cod]
-
-# TaskFleet ephemera (kept only in server checkouts when embedded)
-.tf-worktrees/
 
 # census node deps
 census/node_modules/
-sheet-oracle/cases.json
 fig/census/*
 !fig/census/fig-census-baseline.json
+__pycache__/
+*.py[cod]
+# Python
+**/*.rs.bk
+sheet-oracle/cases.json
+*.swp
+/target
+# TaskFleet ephemera (kept only in server checkouts when embedded)
+.tf-worktrees/
