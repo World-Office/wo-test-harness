@@ -417,8 +417,23 @@ if acts_path.exists():
     except Exception:
         _acts = None
     if _acts:
-        def _acts_key(match):
-            "map a ledger wo.match to a probe key (cmd:/ctx:/btn:)"
+        import re as _re
+        def _canon_combo(c):
+            "extract and canonicalise a shortcut combo (Ctrl/Cmd/Opt/Shift)"
+            m = _re.match(r"^([A-Za-z0-9]+(?:\+[A-Za-z0-9]+)+)", (c or "").strip())
+            if not m:
+                return None
+            _map = {"Control": "Ctrl", "Meta": "Cmd", "Option": "Opt", "Alt": "Alt", "Shift": "Shift"}
+            toks = m.group(1).split("+")
+            if len(toks) == 1:
+                return toks[0]
+            return "+".join([_map.get(x, x) for x in toks[:-1]]) + "+" + toks[-1]
+
+        def _acts_key(match, kind):
+            "map a ledger wo.match to a probe key (cmd:/ctx:/btn:/shortcut:)"
+            if kind == "shortcut":
+                combo = _canon_combo(match)
+                return "shortcut:" + combo if combo else None
             m = (match or "").strip()
             if m.startswith("btn-"):
                 if ("btn:" + m) in _acts:
@@ -434,8 +449,8 @@ if acts_path.exists():
         _l2_promoted = 0
         for _row in ledger.values():
             if 1 <= _row.get("level", 0) < 2 and _row.get("kind") in (
-                    "control", "menu-item", "ctx-menu") and _row.get("wo"):
-                _k = _acts_key(_row["wo"].get("match", ""))
+                    "control", "menu-item", "ctx-menu", "shortcut") and _row.get("wo"):
+                _k = _acts_key(_row["wo"].get("match", ""), _row.get("kind"))
                 _hit = _acts.get(_k)
                 if _hit and _hit.get("mutated"):
                     _row["level"] = 2

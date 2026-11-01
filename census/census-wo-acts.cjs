@@ -109,14 +109,18 @@ const SELECT_CMDS = new Set(["bold", "italic", "underline", "strikeThrough", "fo
     const openedBefore = await dialogOpen();
     let err = null;
     try {
-      await page.evaluate(({ kind: k, name: n }) => {
-        if (k === "ctx") {
-          const b = document.querySelector(`#ctx-menu button[data-ctx="${n}"]`);
-          if (b) b.click(); else throw new Error("no ctx button");
-        } else {
-          window.dispatchEvent(new CustomEvent("wo-command", { detail: { command: n, value: "" } }));
-        }
-      }, { kind, name });
+      if (kind === "key") {
+        await page.keyboard.press(name);
+      } else {
+        await page.evaluate(({ kind: k, name: n }) => {
+          if (k === "ctx") {
+            const b = document.querySelector(`#ctx-menu button[data-ctx="${n}"]`);
+            if (b) b.click(); else throw new Error("no ctx button");
+          } else {
+            window.dispatchEvent(new CustomEvent("wo-command", { detail: { command: n, value: "" } }));
+          }
+        }, { kind, name });
+      }
     } catch (e) { err = String(e).slice(0, 80); }
     await sleep(320);
     const count = await page.evaluate(() => window.__mcount);
@@ -220,6 +224,43 @@ const SELECT_CMDS = new Set(["bold", "italic", "underline", "strikeThrough", "fo
 
   await sweep("text");
   await sweep("table");
+  // ------------------------------------------------------ C: keyboard sweep
+  // Trusted key events (Playwright keyboard.press) — the real user action
+  // for every shortcut in the OO shortcut census. Browser-reserved P/W
+  // (native print / tab-close) and pure-caret nav series are skipped here
+  // because they never mutate the document DOM.
+  const toCanon = (c) => {
+    const map = { Control: "Ctrl", Meta: "Cmd", Option: "Opt", Alt: "Alt", Shift: "Shift" };
+    const t = String(c || "").split("+").map((x) => x.trim()).filter(Boolean);
+    const mods = t.slice(0, t.length - 1).map((m) => map[m] || m);
+    const key = t[t.length - 1] || "";
+    return mods.length ? mods.join("+") + "+" + key : key;
+  };
+  const toPress = (canon) => {
+    const map = { Ctrl: "Control", Cmd: "Meta", Opt: "Alt" };
+    const parts = canon.split("+");
+    const key = parts.pop();
+    // title-case census combos (Ctrl+B) must become the lowercase key
+    // (Control+b); a capital letter alone would imply an extra Shift.
+    const k = /^[A-Za-z]$/.test(key) ? key.toLowerCase() : key;
+    return parts.map((m) => map[m] || m).join("+") + (parts.length ? "+" : "") + k;
+  };
+  const shortcutRows = JSON.parse(
+    fs.readFileSync(process.env.SHORTCUTS_ACTS_IN || path.join(__dirname, "census/census-shortcuts.json"), "utf8")
+  );
+  const combos = (Array.isArray(shortcutRows) ? shortcutRows : shortcutRows.shortcuts || shortcutRows.rows || [])
+    .map((r) => r.combo || r.shortcut || r.type).filter(Boolean);
+  const SKIP_KEYS = new Set(["W", "w", "P", "p", "ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End", "PageUp", "PageDown"]);
+  for (const combo of combos) {
+    const canon = toCanon(combo);
+    const lastKey = canon.split("+").pop();
+    if (lastKey === "W" || lastKey === "P" || SKIP_KEYS.has(lastKey)) continue;
+    if (alreadyActs("shortcut:" + canon)) continue;
+    const press = toPress(canon);
+    await probe("key", press, true);
+    if (results.has("key:" + press)) results.set("shortcut:" + canon, results.get("key:" + press));
+    await maybeReload("text");
+  }
   await closeDialog(true);
   await browser.close();
   let mutated = 0, dialog = 0, noop = 0;

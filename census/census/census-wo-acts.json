@@ -1,29 +1,31 @@
 {
- "capturedAt": "2026-11-01T15:46:46.562Z",
+ "capturedAt": "2026-11-01T17:18:06.750Z",
  "engine": "worldoffice",
  "url": "http://192.168.42.42:8082/word/",
  "results": {
   "cmd:redo": {
-   "mutated": false,
+   "mutated": true,
    "dialog": false,
-   "evidence": "no observable change (mutation delta 0)"
+   "confirmed": false,
+   "evidence": "DIV:+#text"
   },
   "btn:btn-redo-qa": {
-   "mutated": false,
+   "mutated": true,
    "dialog": false,
-   "evidence": "no observable change (mutation delta 0)"
+   "confirmed": false,
+   "evidence": "DIV:+#text"
   },
   "cmd:undo": {
    "mutated": true,
    "dialog": false,
    "confirmed": false,
-   "evidence": "DIV:+#text"
+   "evidence": "DIV:+HEADER"
   },
   "btn:btn-undo-tb": {
    "mutated": true,
    "dialog": false,
    "confirmed": false,
-   "evidence": "DIV:+#text"
+   "evidence": "DIV:+HEADER"
   },
   "btn:btn-undo": {
    "mutated": false,
@@ -58,10 +60,9 @@
    "evidence": "H1:+OL"
   },
   "cmd:multilevel": {
-   "mutated": true,
+   "mutated": false,
    "dialog": false,
-   "confirmed": false,
-   "evidence": "DIV:+BR"
+   "evidence": "no observable change (mutation delta 0)"
   },
   "cmd:outdent": {
    "mutated": true,
@@ -79,7 +80,7 @@
    "mutated": true,
    "dialog": false,
    "confirmed": false,
-   "evidence": "TH"
+   "evidence": "TD"
   },
   "cmd:formatBlock": {
    "mutated": false,
@@ -102,7 +103,7 @@
    "mutated": true,
    "dialog": false,
    "confirmed": false,
-   "evidence": "H1:+SPAN"
+   "evidence": "I:+U"
   },
   "cmd:strikeThrough": {
    "mutated": true,
@@ -129,10 +130,9 @@
    "evidence": "P"
   },
   "cmd:justifyLeft": {
-   "mutated": true,
+   "mutated": false,
    "dialog": false,
-   "confirmed": false,
-   "evidence": "P"
+   "evidence": "no observable change (mutation delta 0)"
   },
   "cmd:justifyCenter": {
    "mutated": true,
@@ -184,7 +184,7 @@
    "mutated": true,
    "dialog": false,
    "confirmed": false,
-   "evidence": "DIV:+DIV"
+   "evidence": "TD:+DIV"
   },
   "cmd:insertObject": {
    "mutated": false,
@@ -220,25 +220,25 @@
    "mutated": true,
    "dialog": false,
    "confirmed": false,
-   "evidence": "DIV:+SPAN"
+   "evidence": "P:+SPAN"
   },
   "btn:btn-pagenumber": {
    "mutated": true,
    "dialog": false,
    "confirmed": false,
-   "evidence": "DIV:+SPAN"
+   "evidence": "P:+SPAN"
   },
   "cmd:insertTextbox": {
    "mutated": true,
    "dialog": true,
    "confirmed": true,
-   "evidence": "DIV:+DIV"
+   "evidence": "P:+DIV"
   },
   "btn:btn-textbox": {
    "mutated": true,
    "dialog": true,
    "confirmed": true,
-   "evidence": "DIV:+DIV"
+   "evidence": "P:+DIV"
   },
   "cmd:insertTextart": {
    "mutated": true,
@@ -375,43 +375,43 @@
    "mutated": true,
    "dialog": false,
    "confirmed": false,
-   "evidence": "DIV:+SUP"
+   "evidence": "TD:+SUP"
   },
   "btn:btn-footnote": {
    "mutated": true,
    "dialog": false,
    "confirmed": false,
-   "evidence": "DIV:+SUP"
+   "evidence": "TD:+SUP"
   },
   "cmd:insertEndnote": {
    "mutated": true,
    "dialog": false,
    "confirmed": false,
-   "evidence": "DIV:+SUP"
+   "evidence": "TD:+SUP"
   },
   "btn:btn-endnote": {
    "mutated": true,
    "dialog": false,
    "confirmed": false,
-   "evidence": "DIV:+SUP"
+   "evidence": "TD:+SUP"
   },
   "cmd:bookmark": {
-   "mutated": true,
+   "mutated": false,
    "dialog": true,
-   "confirmed": false,
-   "evidence": "DIV:+DIV"
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
   },
   "btn:btn-bookmark": {
-   "mutated": true,
+   "mutated": false,
    "dialog": true,
-   "confirmed": false,
-   "evidence": "DIV:+DIV"
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
   },
   "cmd:insertCaption": {
    "mutated": true,
    "dialog": false,
    "confirmed": false,
-   "evidence": "DIV:+P"
+   "evidence": "DIV:+FIGURE"
   },
   "cmd:insertCitation": {
    "mutated": true,
@@ -438,10 +438,10 @@
    "evidence": "DIV:+NAV"
   },
   "cmd:updateToc": {
-   "mutated": true,
+   "mutated": false,
    "dialog": true,
    "confirmed": true,
-   "evidence": "TH:+NAV"
+   "evidence": "dialog confirmed with no doc mutation"
   },
   "cmd:deleteComment": {
    "mutated": false,
@@ -514,9 +514,10 @@
    "evidence": "DIV"
   },
   "cmd:restrictEditing": {
-   "mutated": false,
+   "mutated": true,
    "dialog": false,
-   "evidence": "no observable change (mutation delta 0)"
+   "confirmed": false,
+   "evidence": "DIV"
   },
   "cmd:toggleNavigation": {
    "mutated": false,
@@ -537,6 +538,30 @@
    "mutated": false,
    "dialog": false,
    "evidence": "no observable change (mutation delta 0)"
+  },
+  "cmd:readAloud": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "btn:btn-readaloud": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "cmd:dictate": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "btn:btn-dictate": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
   },
   "cmd:managePlugins": {
    "mutated": false,
@@ -573,18 +598,6 @@
    "dialog": false,
    "confirmed": false,
    "evidence": "H1:+SPAN"
-  },
-  "cmd:readAloud": {
-   "mutated": false,
-   "dialog": true,
-   "confirmed": true,
-   "evidence": "dialog confirmed with no doc mutation"
-  },
-  "cmd:dictate": {
-   "mutated": false,
-   "dialog": true,
-   "confirmed": true,
-   "evidence": "dialog confirmed with no doc mutation"
   },
   "cmd:ocrRun": {
    "mutated": false,
@@ -956,7 +969,7 @@
    "mutated": true,
    "dialog": false,
    "confirmed": false,
-   "evidence": "DIV:+#text"
+   "evidence": "#text:Endnote text"
   },
   "ctx:PageNumber": {
    "mutated": true,
@@ -1164,12 +1177,850 @@
    "mutated": false,
    "dialog": false,
    "evidence": "no observable change (mutation delta 0)"
+  },
+  "btn:btn-spreadsheet": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "key:Control+f": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "shortcut:Ctrl+F": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "key:Control+h": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "shortcut:Ctrl+H": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "key:Control+Shift+h": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+Shift+H": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Control+s": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+S": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Control+Shift+s": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+Shift+S": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:F1": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": false,
+   "evidence": "opened modal, no confirm route"
+  },
+  "shortcut:F1": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": false,
+   "evidence": "opened modal, no confirm route"
+  },
+  "key:Shift+F10": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Shift+F10": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Control+Escape": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+Escape": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Control+0": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+0": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:F9": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:F9": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Control+Equal": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV"
+  },
+  "shortcut:Ctrl+Equal": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV"
+  },
+  "key:Control+Minus": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "shortcut:Ctrl+Minus": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "key:Tab": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "UL:+UL"
+  },
+  "shortcut:Tab": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "UL:+UL"
+  },
+  "key:Shift+Tab": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "UL:+LI"
+  },
+  "shortcut:Shift+Tab": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "UL:+LI"
+  },
+  "key:Enter": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "#text:"
+  },
+  "shortcut:Enter": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "#text:"
+  },
+  "key:Shift+Enter": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "shortcut:Shift+Enter": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "key:Control+Shift+Enter": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "shortcut:Ctrl+Shift+Enter": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "key:Backspace": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "shortcut:Backspace": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "key:Delete": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Delete": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Control+Shift+Space": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1:+#text"
+  },
+  "shortcut:Ctrl+Shift+Space": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1:+#text"
+  },
+  "key:Control+Shift+Minus": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "#text:‑"
+  },
+  "shortcut:Ctrl+Shift+Minus": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "#text:‑"
+  },
+  "key:Control+z": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+#text"
+  },
+  "shortcut:Ctrl+Z": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+#text"
+  },
+  "key:Control+y": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+#text"
+  },
+  "shortcut:Ctrl+Y": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+#text"
+  },
+  "key:Control+Alt+c": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+Alt+C": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Control+Alt+v": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+Alt+V": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Control+k": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "shortcut:Ctrl+K": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "key:Control+t": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+T": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Control+o": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+O": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Control+n": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+N": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Control+a": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+A": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Control+b": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1:+SPAN"
+  },
+  "shortcut:Ctrl+B": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1:+SPAN"
+  },
+  "key:Control+i": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "SPAN:+I"
+  },
+  "shortcut:Ctrl+I": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "SPAN:+I"
+  },
+  "key:Control+u": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "I:+U"
+  },
+  "shortcut:Ctrl+U": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "I:+U"
+  },
+  "key:Control+Shift+k": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "shortcut:Ctrl+Shift+K": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "key:Control+Period": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "SPAN:+SUB"
+  },
+  "shortcut:Ctrl+Period": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "SPAN:+SUB"
+  },
+  "key:Control+Comma": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1:+SPAN"
+  },
+  "shortcut:Ctrl+Comma": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1:+SPAN"
+  },
+  "key:Control+Shift+l": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "P"
+  },
+  "shortcut:Ctrl+Shift+L": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "P"
+  },
+  "key:Control+Space": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+Space": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Control+BracketRight": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "SPAN"
+  },
+  "shortcut:Ctrl+BracketRight": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "SPAN"
+  },
+  "key:Control+BracketLeft": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "SUP"
+  },
+  "shortcut:Ctrl+BracketLeft": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "SUP"
+  },
+  "key:Control+e": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "shortcut:Ctrl+E": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "key:Control+j": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "shortcut:Ctrl+J": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "key:Control+r": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "shortcut:Ctrl+R": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "key:Control+l": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+L": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Control+Enter": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "shortcut:Ctrl+Enter": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1"
+  },
+  "key:Control+m": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+BLOCKQUOTE"
+  },
+  "shortcut:Ctrl+M": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+BLOCKQUOTE"
+  },
+  "key:Control+Shift+m": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "BLOCKQUOTE"
+  },
+  "shortcut:Ctrl+Shift+M": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "BLOCKQUOTE"
+  },
+  "key:Control+Shift+8": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+UL"
+  },
+  "shortcut:Ctrl+Shift+8": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+UL"
+  },
+  "key:Control+Alt+d": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "LI"
+  },
+  "shortcut:Ctrl+Alt+D": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "LI"
+  },
+  "key:Control+Alt+g": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "#text:Endnote text"
+  },
+  "shortcut:Ctrl+Alt+G": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "#text:Endnote text"
+  },
+  "key:Control+Alt+e": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "#text:Endnote text"
+  },
+  "shortcut:Ctrl+Alt+E": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "#text:Endnote text"
+  },
+  "key:Control+Alt+r": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "#text:Endnote text"
+  },
+  "shortcut:Ctrl+Alt+R": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "#text:Endnote text"
+  },
+  "key:Control+Alt+t": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "#text:Endnote text"
+  },
+  "shortcut:Ctrl+Alt+T": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "#text:Endnote text"
+  },
+  "key:Control+Alt+z": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "shortcut:Ctrl+Alt+Z": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "key:Control+Alt+f": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+Alt+F": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Alt+Meta+a": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "shortcut:Alt+Cmd+A": {
+   "mutated": false,
+   "dialog": true,
+   "confirmed": true,
+   "evidence": "dialog confirmed with no doc mutation"
+  },
+  "key:Control+Alt+q": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+Alt+Q": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Alt+Backspace": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Alt+Backspace": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Alt+Delete": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Alt+Delete": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Meta+x": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Cmd+X": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Meta+c": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Cmd+C": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Meta+v": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Cmd+V": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Shift+Meta+v": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Shift+Cmd+V": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Shift+Meta+x": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1:+SPAN"
+  },
+  "shortcut:Shift+Cmd+X": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "H1:+SPAN"
+  },
+  "key:Control+Alt+1": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+H1"
+  },
+  "shortcut:Ctrl+Alt+1": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+H1"
+  },
+  "key:Control+Alt+2": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+H2"
+  },
+  "shortcut:Ctrl+Alt+2": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+H2"
+  },
+  "key:Control+Alt+3": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+H3"
+  },
+  "shortcut:Ctrl+Alt+3": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "DIV:+H3"
+  },
+  "key:Control+Alt+Equal": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "#text:"
+  },
+  "shortcut:Ctrl+Alt+Equal": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "#text:"
+  },
+  "key:Alt+Semicolon": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "LI"
+  },
+  "shortcut:Alt+Semicolon": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "LI"
+  },
+  "key:Alt+Meta+x": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Alt+Cmd+X": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Control+Alt+Minus": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "#text:—"
+  },
+  "shortcut:Ctrl+Alt+Minus": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "#text:—"
+  },
+  "key:Control+Tab": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+Tab": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Control+Shift+Tab": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Ctrl+Shift+Tab": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "key:Meta+o": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
+  },
+  "shortcut:Cmd+O": {
+   "mutated": false,
+   "dialog": false,
+   "evidence": "no observable change (mutation delta 0)"
   }
  },
  "totals": {
-  "probed": 209,
-  "mutated": 85,
-  "dialog": 32,
-  "noop": 92
+  "probed": 360,
+  "mutated": 163,
+  "dialog": 50,
+  "noop": 147
  }
 }
