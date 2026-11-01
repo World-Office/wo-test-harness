@@ -6,149 +6,7 @@ Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
 
-## edit — 136 features (L0:10 L1:125 L3:1)
-- ❌ L0 **ctx.distribute-horizontally** [ctx-menu] 
-- ❌ L0 **ctx.distribute-vertically** [ctx-menu] 
-- ❌ L0 **ctx.edit-wrap-boundary** [ctx-menu] 
-- ❌ L0 **ctx.tight** [ctx-menu] 
-- ❌ L0 **ctx.through** [ctx-menu] 
-- ❌ L0 **ctx.in-front-of-text** [ctx-menu] 
-- ❌ L0 **ctx.convert-to-shape** [ctx-menu] 
-- ❌ L0 **ctx.edit-points** [ctx-menu] 
-- ❌ L0 **ctx.edit-object** [ctx-menu] 
-- ❌ L0 **ctx.resize-to-cell** [ctx-menu] 
-- 🔲 L1 **shortcut.deleteleftchar** [shortcut] → WO: Backspace
-- 🔲 L1 **shortcut.deleterightchar** [shortcut] → WO: Delete
-- 🔲 L1 **shortcut.editundo** [shortcut] → WO: Ctrl+Z
-- 🔲 L1 **shortcut.editredo** [shortcut] → WO: Ctrl+Y / Ctrl+Shift+Z
-- 🔲 L1 **shortcut.editselectall** [shortcut] → WO: Ctrl+A
-- 🔲 L1 **shortcut.selecttostartline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.selecttoendline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.selecttostartdocument** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.selecttoenddocument** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.selectrightchar** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.selectleftchar** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.selectlineup** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.selectlinedown** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.selectpageup** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.selectpagedown** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.selecttobeginpreviouspage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.selecttobeginnextpage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.editshape** [shortcut] → WO: Enter edits object
-- 🔲 L1 **shortcut.editchart** [shortcut] → WO: Enter edits object
-- 🔲 L1 **shortcut.deleteleftword** [shortcut] → WO: Alt+Backspace
-- 🔲 L1 **shortcut.deleterightword** [shortcut] → WO: Alt+Delete
-- 🔲 L1 **shortcut.cut** [shortcut] → WO: Ctrl+X / Cmd+X
-- 🔲 L1 **shortcut.copy** [shortcut] → WO: Ctrl+C / Cmd+C
-- 🔲 L1 **shortcut.paste** [shortcut] → WO: Ctrl+V / Cmd+V
-- 🔲 L1 **shortcut.pastetextwithoutformat** [shortcut] → WO: Ctrl+Shift+V
-- 🔲 L1 **shortcut.selectrightword** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.selectleftword** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **ctx.insert-caption** [ctx-menu] → WO: ctx data-ctx=Caption + Home tab caption (table/text figcaption; object binding differs)
-- 🔲 L1 **ctx.save-as-picture** [ctx-menu] → WO: ctx data-ctx=SaveAsPicture -> objectOp save-as-picture
-- 🔲 L1 **ctx.align-left** [ctx-menu] → WO: Layout tab objectOp align-left
-- 🔲 L1 **ctx.align-center** [ctx-menu] → WO: Layout tab objectOp align-center
-- 🔲 L1 **ctx.align-right** [ctx-menu] → WO: Layout tab objectOp align-right
-- 🔲 L1 **ctx.align-top** [ctx-menu] → WO: Layout tab objectOp align-top
-- 🔲 L1 **ctx.align-middle** [ctx-menu] → WO: Layout tab objectOp align-middle
-- 🔲 L1 **ctx.align-bottom** [ctx-menu] → WO: Layout tab objectOp align-bottom
-- 🔲 L1 **ctx.merge-shapes** [ctx-menu] → WO: Layout tab objectOp merge-union/intersect/subtract
-- 🔲 L1 **ctx.axis-titles** [ctx-menu] → WO: Chart Design Chart elements>Axis Titles (chartElement axisTitles)
-- 🔲 L1 **ctx.chart-title** [ctx-menu] → WO: Chart Design Chart elements>Chart title (chartElement title)
-- 🔲 L1 **ctx.data-labels** [ctx-menu] → WO: Chart Design Chart elements>Data labels (chartElement dataLabels)
-- 🔲 L1 **ctx.error-bars** [ctx-menu] → WO: Chart Design Chart elements>Error bars (chartElement errorBars)
-- 🔲 L1 **ctx.gridlines** [ctx-menu] → WO: Chart Design Chart elements>Gridlines (chartElement gridlines)
-- 🔲 L1 **ctx.legend** [ctx-menu] → WO: Chart Design Chart elements>Legend (chartElement legend)
-- 🔲 L1 **ctx.trendline** [ctx-menu] → WO: Chart Design Chart elements>Trendline (chartElement trendline)
-- 🔲 L1 **ctx.up-down-bars** [ctx-menu] → WO: Chart Design Chart elements>Up/Down bars (chartElement upDownBars)
-- 🔲 L1 **ctx.bring-to-foreground** [ctx-menu] → WO: Layout tab objectOp bring-to-foreground
-- 🔲 L1 **ctx.send-to-background** [ctx-menu] → WO: Layout tab objectOp send-to-background
-- 🔲 L1 **ctx.bring-forward** [ctx-menu] → WO: Layout tab objectOp bring-forward
-- 🔲 L1 **ctx.send-backward** [ctx-menu] → WO: Layout tab objectOp send-backward
-- 🔲 L1 **ctx.in-line-with-text** [ctx-menu] → WO: ctx data-ctx=WrapInline
-- 🔲 L1 **ctx.square** [ctx-menu] → WO: ctx data-ctx=WrapSquare
-- 🔲 L1 **ctx.top-and-bottom** [ctx-menu] → WO: obj-center block flow (top-and-bottom ≈ own-line block)
-- 🔲 L1 **ctx.behind-text** [ctx-menu] → WO: ctx data-ctx=WrapBehind
-- 🔲 L1 **ctx.edit-data** [ctx-menu] → WO: Chart Design tab chartEditData -> openVectorEditor(chart)
-- 🔲 L1 **ctx.actual-size** [ctx-menu] → WO: ctx data-ctx=ActualSize -> objectOp actual-size
-- 🔲 L1 **ctx.replace-image** [ctx-menu] → WO: ctx data-ctx=ReplaceImage -> objectOp replace-image (image-dialog)
-- 🔲 L1 **ctx.copy** [ctx-menu] → WO: ctx data-ctx=Copy
-- 🔲 L1 **ctx.paste** [ctx-menu] → WO: ctx data-ctx=Paste
-- 🔲 L1 **ctx.cut** [ctx-menu] → WO: ctx data-ctx=Cut
-- 🔲 L1 **ctx.accept-change** [ctx-menu] → WO: ctx data-ctx=AcceptChange
-- 🔲 L1 **ctx.reject-change** [ctx-menu] → WO: ctx data-ctx=RejectChange
-- 🔲 L1 **ctx.print-selection** [ctx-menu] → WO: Print button / Ctrl+P (browser print; no ctx item)
-- 🔲 L1 **ctx.rotate** [ctx-menu] → WO: right panel rp-image-rotate (applyImageRotate90)
-- 🔲 L1 **ctx.crop** [ctx-menu] → WO: ctx data-ctx=Crop -> photo editor crop tool (drag + Apply)
-- 🔲 L1 **ctx.remove-content-control** [ctx-menu] → WO: ctx data-ctx=RemoveContentControl
-- 🔲 L1 **ctx.content-control-settings** [ctx-menu] → WO: ctx data-ctx=ContentControlSettings
-- 🔲 L1 **ctx.link** [ctx-menu] → WO: ctx data-ctx=Link
-- 🔲 L1 **ctx.edit-link** [ctx-menu] → WO: ctx data-ctx=EditLink
-- 🔲 L1 **ctx.copy-hyperlink-address** [ctx-menu] → WO: ctx data-ctx=CopyHyperlinkAddress (clipboard)
-- 🔲 L1 **ctx.remove-link** [ctx-menu] → WO: ctx data-ctx=RemoveLink
-- 🔲 L1 **ctx.text-alignment** [ctx-menu] → WO: ctx data-ctx=TextAlignment
-- 🔲 L1 **ctx.top** [ctx-menu] → WO: ctx data-ctx=TextAlignTop
-- 🔲 L1 **ctx.middle** [ctx-menu] → WO: ctx data-ctx=TextAlignMiddle
-- 🔲 L1 **ctx.bottom** [ctx-menu] → WO: ctx data-ctx=TextAlignBottom
-- 🔲 L1 **ctx.left** [ctx-menu] → WO: ctx data-ctx=TextAlignLeft
-- 🔲 L1 **ctx.center** [ctx-menu] → WO: ctx data-ctx=TextAlignCenter
-- 🔲 L1 **ctx.right** [ctx-menu] → WO: ctx data-ctx=TextAlignRight
-- 🔲 L1 **ctx.justify** [ctx-menu] → WO: ribbon data-cmd=justifyFull (not in WO ctx)
-- 🔲 L1 **ctx.table-advanced-settings** [ctx-menu] → WO: table-ops-dialog (WO table settings surface)
-- 🔲 L1 **ctx.paragraph-advanced-settings** [ctx-menu] → WO: ctx data-ctx=ParagraphSettings
-- 🔲 L1 **ctx.formatting-as-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle
-- 🔲 L1 **ctx.create-new-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-save owned by host shell)
-- 🔲 L1 **ctx.update-1-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-update owned by host shell)
-- 🔲 L1 **ctx.update-entire-table** [ctx-menu] → WO: ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)
-- 🔲 L1 **ctx.update-page-numbers-only** [ctx-menu] → WO: UpdateTOC dialog — toc-update select has 'Update page numbers only' option (refreshToc relinks; page numbers are live-preview links)
-- 🔲 L1 **ctx.add-comment** [ctx-menu] → WO: ctx data-ctx=AddComment
-- 🔲 L1 **ctx.follow-move** [ctx-menu] → WO: ctx data-ctx=FollowMove
-- 🔲 L1 **ctx.select-language** [ctx-menu] → WO: ctx data-ctx=SelectLanguage
-- 🔲 L1 **ctx.ignore** [ctx-menu] → WO: ctx data-ctx=Ignore
-- 🔲 L1 **ctx.ignore-all** [ctx-menu] → WO: ctx data-ctx=IgnoreAll
-- 🔲 L1 **ctx.add-to-dictionary** [ctx-menu] → WO: ctx data-ctx=AddToDictionary
-- 🔲 L1 **ctx.spellcheck** [ctx-menu] → WO: Review ribbon spellcheck / F7 (not in ctx)
-- 🔲 L1 **ctx.text-direction** [ctx-menu] → WO: ctx data-ctx=TextDirection
-- 🔲 L1 **ctx.horizontal** [ctx-menu] → WO: ctx data-ctx=TextDirHorizontal
-- 🔲 L1 **ctx.rotate-text-down** [ctx-menu] → WO: ctx data-ctx=TextDirRotateDown
-- 🔲 L1 **ctx.rotate-text-up** [ctx-menu] → WO: ctx data-ctx=TextDirRotateUp
-- 🔲 L1 **ctx.start-new-list** [ctx-menu] → WO: ctx data-ctx=StartNewList
-- 🔲 L1 **ctx.set-numbering-value** [ctx-menu] → WO: ctx data-ctx=SetNumberingValue -> NumberingValueDialog + applyNumberingValue (native ol split, restart at N)
-- 🔲 L1 **ctx.continue-numbering** [ctx-menu] → WO: ctx data-ctx=ContinueNumbering -> continueNumbering (native ol merge)
-- 🔲 L1 **ctx.adjust-list-indents** [ctx-menu] → WO: ctx data-ctx=AdjustListIndents -> ListIndentsDialog + applyListIndents (margin-left/text-indent, round-trips as w:ind left/hanging)
-- 🔲 L1 **ctx.bullets-and-numbering** [ctx-menu] → WO: ctx data-ctx=BulletsAndNumbering -> BulletsNumberingDialog (list-style-type + start; round-trips as w:numFmt)
-- 🔲 L1 **ctx.update-field** [ctx-menu] → WO: ctx data-ctx=UpdateField
-- 🔲 L1 **ctx.edit-field** [ctx-menu] → WO: ctx data-ctx=EditField
-- 🔲 L1 **ctx.toggle-field-codes** [ctx-menu] → WO: ctx data-ctx=ToggleFieldCodes
-- 🔲 L1 **ctx.equation-settings** [ctx-menu] → WO: ctx data-ctx=EquationSettings
-- 🔲 L1 **ctx.select** [ctx-menu] → WO: browser native selection
-- 🔲 L1 **ctx.row** [ctx-menu] → WO: ctx data-ctx=TableDeleteRow
-- 🔲 L1 **ctx.column** [ctx-menu] → WO: ctx data-ctx=TableDeleteCol
-- 🔲 L1 **ctx.cell** [ctx-menu] → WO: ctx data-ctx=TableDeleteCell -> deleteTableCell (shift left + row cleanup)
-- 🔲 L1 **ctx.column-left** [ctx-menu] → WO: ctx data-ctx=TableColLeft
-- 🔲 L1 **ctx.column-right** [ctx-menu] → WO: ctx data-ctx=TableColRight
-- 🔲 L1 **ctx.row-above** [ctx-menu] → WO: ctx data-ctx=TableRowAbove
-- 🔲 L1 **ctx.row-below** [ctx-menu] → WO: ctx data-ctx=TableRowBelow
-- 🔲 L1 **ctx.cells** [ctx-menu] → WO: ctx data-ctx=TableDeleteCell -> deleteTableCell (single-cell surface; OO multi-cell selection collapses to one)
-- 🔲 L1 **ctx.page-break-before** [ctx-menu] → WO: ctx data-ctx=PageBreakBefore
-- 🔲 L1 **ctx.keep-lines-together** [ctx-menu] → WO: ctx data-ctx=KeepLines
-- 🔲 L1 **ctx.frame-advanced-settings** [ctx-menu] → WO: ctx data-ctx=FrameSettings
-- 🔲 L1 **ctx.drop-cap-settings** [ctx-menu] → WO: dropcap-dialog (btn/ctx)
-- 🔲 L1 **ctx.table-of-contents-settings** [ctx-menu] → WO: ctx data-ctx=TocSettings
-- 🔲 L1 **ctx.update-table-of-contents** [ctx-menu] → WO: ctx data-ctx=UpdateTOC
-- 🔲 L1 **ctx.edit-header** [ctx-menu] → WO: Insert ribbon header/footer + headerfooter-dialog (not in ctx)
-- 🔲 L1 **ctx.undo** [ctx-menu] → WO: ctx data-ctx=Undo
-- 🔲 L1 **ctx.redo** [ctx-menu] → WO: ctx data-ctx=Redo
-- 🔲 L1 **ctx.clear-field** [ctx-menu] → WO: ctx data-ctx=ClearField (empties page-number/[data-field])
-- 🔲 L1 **ctx.group** [ctx-menu] → WO: Layout tab objectOp group (groupSelectedObjects)
-- 🔲 L1 **ctx.ungroup** [ctx-menu] → WO: Layout tab objectOp ungroup (ungroupSelectedObjects)
-- ✅ L3 **ctx.horizontal-line-settings** [ctx-menu] → WO: ctx data-ctx=HorizontalLineSettings -> hr-settings-dialog (style insert/edit)
-
-## file — 39 features (L0:4 L1:35 L3:0)
-- ❌ L0 **shortcut.openfilepanel** [shortcut] 
-- ❌ L0 **shortcut.opencommentfield** [shortcut] 
-- ❌ L0 **shortcut.openexistingfile** [shortcut] 
-- ❌ L0 **shortcut.closefile** [shortcut] 
+## file — 39 features (L0:0 L1:39 L3:0)
 - 🔲 L1 **file.file** [control] → WO: btn-textfile
 - 🔲 L1 **file.home** [control] → WO: tab:home
 - 🔲 L1 **file.insert** [control] → WO: insertBlankPage
@@ -183,27 +41,13 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.opencontextmenu** [shortcut] → WO: Shift+F10 fires the contextmenu DOM event; WO handler shows the custom menu
 - 🔲 L1 **shortcut.closemenu** [shortcut] → WO: Escape
 - 🔲 L1 **shortcut.updatefields** [shortcut] → WO: F9 (fieldOpAtSelection update)
+- 🔲 L1 **shortcut.openfilepanel** [shortcut] → WO: Ctrl+Alt+F (openBackstage("open") + focus recent-files rail)
+- 🔲 L1 **shortcut.opencommentfield** [shortcut] → WO: Opt+Cmd+A (Mac; openCommentDialog at caret)
 - 🔲 L1 **shortcut.openchatpanel** [shortcut] → WO: Ctrl+Alt+Q
+- 🔲 L1 **shortcut.openexistingfile** [shortcut] → WO: Cmd+O / Ctrl+O (openBackstage("open"))
+- 🔲 L1 **shortcut.closefile** [shortcut] → WO: Cmd+W / Ctrl+W (prevents browser tab-close: dirty confirm + wo:close-document + notifyHost(close))
 
-## table — 15 features (L0:2 L1:10 L3:3)
-- ❌ L0 **ctx.distribute-rows** [ctx-menu] 
-- ❌ L0 **ctx.distribute-columns** [ctx-menu] 
-- 🔲 L1 **table.table-of-contents** [control] → WO: updatetoc-dialog
-- 🔲 L1 **table.update-table** [control] → WO: updateToc
-- 🔲 L1 **table.table-of-figures** [control] → WO: insertTableOfFigures
-- 🔲 L1 **table.draw-table** [menu-item] → WO: Draw table
-- 🔲 L1 **table.erase-table** [menu-item] → WO: Erase table
-- 🔲 L1 **table.dlg-table-of-figures** [dialog] (7 OO fields) → WO: insertTableOfFigures
-- 🔲 L1 **table.dlg-table-of-contents** [dialog] (7 OO fields) → WO: updatetoc-dialog
-- 🔲 L1 **ctx.merge-cells** [ctx-menu] → WO: ctx data-ctx=TableMergeCells
-- 🔲 L1 **ctx.split-cell** [ctx-menu] → WO: ctx data-ctx=TableSplitCell
-- 🔲 L1 **ctx.several-rows-columns** [ctx-menu] → WO: table-ops dialog Insert several rows/cols (op-apply-rows/op-apply-cols; insertTableRow/Col count)
-- ✅ L3 **table.table** [control] → WO: Table ▾
-- ✅ L3 **table.insert-custom-table** [menu-item] → WO: btn-table
-- ✅ L3 **table.convert-text-to-table** [menu-item] → WO: Convert Text to Table…
-
-## formatting — 53 features (L0:1 L1:38 L3:14)
-- ❌ L0 **shortcut.strikeout** [shortcut] 
+## formatting — 53 features (L0:0 L1:39 L3:14)
 - 🔲 L1 **formatting.font** [control] → WO: font-family
 - 🔲 L1 **formatting.font-size** [control] → WO: font-size
 - 🔲 L1 **formatting.increment-font-size-ctrl** [control] → WO: font-size
@@ -239,6 +83,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.indent** [shortcut] → WO: Ctrl+M
 - 🔲 L1 **shortcut.unindent** [shortcut] → WO: Ctrl+Shift+M
 - 🔲 L1 **shortcut.showall** [shortcut] → WO: ¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)
+- 🔲 L1 **shortcut.strikeout** [shortcut] → WO: Shift+Cmd+X / Ctrl+Shift+X (strikeThrough toggle)
 - 🔲 L1 **shortcut.applyheading1** [shortcut] → WO: Ctrl+Alt+1
 - 🔲 L1 **shortcut.applyheading2** [shortcut] → WO: Ctrl+Alt+2
 - 🔲 L1 **shortcut.applyheading3** [shortcut] → WO: Ctrl+Alt+3
@@ -256,70 +101,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **formatting.align-center-ctrl-e** [control] → WO: justifyCenter
 - ✅ L3 **formatting.align-right-ctrl-r** [control] → WO: justifyRight
 - ✅ L3 **formatting.justified-ctrl-j** [control] → WO: justifyFull
-
-## shortcuts — 62 features (L0:1 L1:61 L3:0)
-- ❌ L0 **shortcut.replaceunicodetosymbol** [shortcut] 
-- 🔲 L1 **shortcut.zoom100** [shortcut] → WO: Ctrl+0
-- 🔲 L1 **shortcut.movetostartline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetostartdocument** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetoendline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetoenddocument** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.scrolldown** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.scrollup** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.zoomin** [shortcut] → WO: Ctrl+Plus/=
-- 🔲 L1 **shortcut.zoomout** [shortcut] → WO: Ctrl+Minus
-- 🔲 L1 **shortcut.movetorightchar** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetoleftchar** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetoupline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetodownline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.nextmodalcontrol** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.previousmodalcontrol** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetolowerheaderfooter** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetoupperheaderfooter** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetolowerheader** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetoupperheader** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.endparagraph** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.equationaddplaceholder** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.equationchangealignmentleft** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.equationchangealignmentright** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.specialoptionskeepsourceformat** [shortcut] → WO: Ctrl+V default rich paste; Ctrl+K = hyperlink (OO collision)
-- 🔲 L1 **shortcut.specialoptionskeeptextonly** [shortcut] → WO: Ctrl+T plain-text paste (clipboard.readText -> insertText)
-- 🔲 L1 **shortcut.specialoptionsoverwritecells** [shortcut] → WO: Ctrl+O consumed by browser (open file); spreadsheet cell semantics n/a
-- 🔲 L1 **shortcut.specialoptionsnesttable** [shortcut] → WO: Ctrl+N consumed by browser (new window)
-- 🔲 L1 **shortcut.visithyperlink** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.startindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.startunindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.mixedindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.mixedunindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.bigmoveobjectleft** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.bigmoveobjectright** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.bigmoveobjectup** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.bigmoveobjectdown** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movefocustonextobject** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movefocustopreviousobject** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetonextcell** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetopreviouscell** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetonextrow** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetopreviousrow** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.endparagraphcell** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.addnewrow** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetonextform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetopreviousform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.choosenextcomboboxoption** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.choosepreviouscomboboxoption** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.speechworker** [shortcut] → WO: Ctrl+Alt+Z read-aloud (OO SpeechWorker panel; WO maps to TTS)
-- 🔲 L1 **shortcut.movetostartpreviouspage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetostartnextpage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetostartword** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetoendword** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.littlemoveobjectleft** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.littlemoveobjectright** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.littlemoveobjectup** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.littlemoveobjectdown** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetonextpage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetopreviouspage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.nextfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.previousfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 
 ## insert — 56 features (L0:0 L1:52 L3:4)
 - 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
@@ -378,6 +159,23 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **insert.symbol** [control] → WO: btn-symbol
 - ✅ L3 **insert.more-symbols** [menu-item] → WO: Symbols ▾
 - ✅ L3 **insert.symbols** [menu-item] → WO: Symbols ▾
+
+## table — 15 features (L0:0 L1:12 L3:3)
+- 🔲 L1 **table.table-of-contents** [control] → WO: updatetoc-dialog
+- 🔲 L1 **table.update-table** [control] → WO: updateToc
+- 🔲 L1 **table.table-of-figures** [control] → WO: insertTableOfFigures
+- 🔲 L1 **table.draw-table** [menu-item] → WO: Draw table
+- 🔲 L1 **table.erase-table** [menu-item] → WO: Erase table
+- 🔲 L1 **table.dlg-table-of-figures** [dialog] (7 OO fields) → WO: insertTableOfFigures
+- 🔲 L1 **table.dlg-table-of-contents** [dialog] (7 OO fields) → WO: updatetoc-dialog
+- 🔲 L1 **ctx.merge-cells** [ctx-menu] → WO: ctx data-ctx=TableMergeCells
+- 🔲 L1 **ctx.split-cell** [ctx-menu] → WO: ctx data-ctx=TableSplitCell
+- 🔲 L1 **ctx.distribute-rows** [ctx-menu] → WO: ctx data-ctx=DistributeRows -> distributeTableRows (equalize row heights)
+- 🔲 L1 **ctx.distribute-columns** [ctx-menu] → WO: ctx data-ctx=DistributeColumns -> distributeTableColumns (equalize column widths)
+- 🔲 L1 **ctx.several-rows-columns** [ctx-menu] → WO: table-ops dialog Insert several rows/cols (op-apply-rows/op-apply-cols; insertTableRow/Col count)
+- ✅ L3 **table.table** [control] → WO: Table ▾
+- ✅ L3 **table.insert-custom-table** [menu-item] → WO: btn-table
+- ✅ L3 **table.convert-text-to-table** [menu-item] → WO: Convert Text to Table…
 
 ## image — 2 features (L0:0 L1:2 L3:0)
 - 🔲 L1 **image.image** [control] → WO: btn-hf-image
@@ -542,3 +340,205 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **statusbar.btn-zoom-towidth** [statusbar-item] → WO: btn-zoom-fit
 - 🔲 L1 **statusbar.btn-zoom-down** [statusbar-item] → WO: btn-zoom-out
 - 🔲 L1 **statusbar.btn-zoom-up** [statusbar-item] → WO: btn-zoom-in
+
+## shortcuts — 62 features (L0:0 L1:62 L3:0)
+- 🔲 L1 **shortcut.zoom100** [shortcut] → WO: Ctrl+0
+- 🔲 L1 **shortcut.movetostartline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetostartdocument** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetoendline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetoenddocument** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.scrolldown** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.scrollup** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.zoomin** [shortcut] → WO: Ctrl+Plus/=
+- 🔲 L1 **shortcut.zoomout** [shortcut] → WO: Ctrl+Minus
+- 🔲 L1 **shortcut.movetorightchar** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetoleftchar** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetoupline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetodownline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.nextmodalcontrol** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.previousmodalcontrol** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetolowerheaderfooter** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetoupperheaderfooter** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetolowerheader** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetoupperheader** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.endparagraph** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.equationaddplaceholder** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.equationchangealignmentleft** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.equationchangealignmentright** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.specialoptionskeepsourceformat** [shortcut] → WO: Ctrl+V default rich paste; Ctrl+K = hyperlink (OO collision)
+- 🔲 L1 **shortcut.specialoptionskeeptextonly** [shortcut] → WO: Ctrl+T plain-text paste (clipboard.readText -> insertText)
+- 🔲 L1 **shortcut.specialoptionsoverwritecells** [shortcut] → WO: Ctrl+O consumed by browser (open file); spreadsheet cell semantics n/a
+- 🔲 L1 **shortcut.specialoptionsnesttable** [shortcut] → WO: Ctrl+N consumed by browser (new window)
+- 🔲 L1 **shortcut.visithyperlink** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.startindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.startunindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.mixedindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.mixedunindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.bigmoveobjectleft** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.bigmoveobjectright** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.bigmoveobjectup** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.bigmoveobjectdown** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movefocustonextobject** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movefocustopreviousobject** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetonextcell** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetopreviouscell** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetonextrow** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetopreviousrow** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.endparagraphcell** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.addnewrow** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetonextform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetopreviousform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.choosenextcomboboxoption** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.choosepreviouscomboboxoption** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.speechworker** [shortcut] → WO: Ctrl+Alt+Z read-aloud (OO SpeechWorker panel; WO maps to TTS)
+- 🔲 L1 **shortcut.movetostartpreviouspage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetostartnextpage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetostartword** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetoendword** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.littlemoveobjectleft** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.littlemoveobjectright** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.littlemoveobjectup** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.littlemoveobjectdown** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.replaceunicodetosymbol** [shortcut] → WO: Opt+Cmd+X / Ctrl+Alt+X (convert \uXXXX / \u{...} under caret)
+- 🔲 L1 **shortcut.movetonextpage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.movetopreviouspage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.nextfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.previousfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+
+## edit — 136 features (L0:0 L1:135 L3:1)
+- 🔲 L1 **shortcut.deleteleftchar** [shortcut] → WO: Backspace
+- 🔲 L1 **shortcut.deleterightchar** [shortcut] → WO: Delete
+- 🔲 L1 **shortcut.editundo** [shortcut] → WO: Ctrl+Z
+- 🔲 L1 **shortcut.editredo** [shortcut] → WO: Ctrl+Y / Ctrl+Shift+Z
+- 🔲 L1 **shortcut.editselectall** [shortcut] → WO: Ctrl+A
+- 🔲 L1 **shortcut.selecttostartline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selecttoendline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selecttostartdocument** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selecttoenddocument** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selectrightchar** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selectleftchar** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selectlineup** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selectlinedown** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selectpageup** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selectpagedown** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selecttobeginpreviouspage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selecttobeginnextpage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.editshape** [shortcut] → WO: Enter edits object
+- 🔲 L1 **shortcut.editchart** [shortcut] → WO: Enter edits object
+- 🔲 L1 **shortcut.deleteleftword** [shortcut] → WO: Alt+Backspace
+- 🔲 L1 **shortcut.deleterightword** [shortcut] → WO: Alt+Delete
+- 🔲 L1 **shortcut.cut** [shortcut] → WO: Ctrl+X / Cmd+X
+- 🔲 L1 **shortcut.copy** [shortcut] → WO: Ctrl+C / Cmd+C
+- 🔲 L1 **shortcut.paste** [shortcut] → WO: Ctrl+V / Cmd+V
+- 🔲 L1 **shortcut.pastetextwithoutformat** [shortcut] → WO: Ctrl+Shift+V
+- 🔲 L1 **shortcut.selectrightword** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **shortcut.selectleftword** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- 🔲 L1 **ctx.insert-caption** [ctx-menu] → WO: ctx data-ctx=Caption + Home tab caption (table/text figcaption; object binding differs)
+- 🔲 L1 **ctx.save-as-picture** [ctx-menu] → WO: ctx data-ctx=SaveAsPicture -> objectOp save-as-picture
+- 🔲 L1 **ctx.align-left** [ctx-menu] → WO: Layout tab objectOp align-left
+- 🔲 L1 **ctx.align-center** [ctx-menu] → WO: Layout tab objectOp align-center
+- 🔲 L1 **ctx.align-right** [ctx-menu] → WO: Layout tab objectOp align-right
+- 🔲 L1 **ctx.align-top** [ctx-menu] → WO: Layout tab objectOp align-top
+- 🔲 L1 **ctx.align-middle** [ctx-menu] → WO: Layout tab objectOp align-middle
+- 🔲 L1 **ctx.align-bottom** [ctx-menu] → WO: Layout tab objectOp align-bottom
+- 🔲 L1 **ctx.distribute-horizontally** [ctx-menu] → WO: ctx data-ctx=DistributeHorizontally -> distributeObjectsHorizontally (shift-click multi-select + equal gaps)
+- 🔲 L1 **ctx.distribute-vertically** [ctx-menu] → WO: ctx data-ctx=DistributeVertically -> distributeObjectsVertically (shift-click multi-select + equal gaps)
+- 🔲 L1 **ctx.merge-shapes** [ctx-menu] → WO: Layout tab objectOp merge-union/intersect/subtract
+- 🔲 L1 **ctx.axis-titles** [ctx-menu] → WO: Chart Design Chart elements>Axis Titles (chartElement axisTitles)
+- 🔲 L1 **ctx.chart-title** [ctx-menu] → WO: Chart Design Chart elements>Chart title (chartElement title)
+- 🔲 L1 **ctx.data-labels** [ctx-menu] → WO: Chart Design Chart elements>Data labels (chartElement dataLabels)
+- 🔲 L1 **ctx.error-bars** [ctx-menu] → WO: Chart Design Chart elements>Error bars (chartElement errorBars)
+- 🔲 L1 **ctx.gridlines** [ctx-menu] → WO: Chart Design Chart elements>Gridlines (chartElement gridlines)
+- 🔲 L1 **ctx.legend** [ctx-menu] → WO: Chart Design Chart elements>Legend (chartElement legend)
+- 🔲 L1 **ctx.trendline** [ctx-menu] → WO: Chart Design Chart elements>Trendline (chartElement trendline)
+- 🔲 L1 **ctx.up-down-bars** [ctx-menu] → WO: Chart Design Chart elements>Up/Down bars (chartElement upDownBars)
+- 🔲 L1 **ctx.bring-to-foreground** [ctx-menu] → WO: Layout tab objectOp bring-to-foreground
+- 🔲 L1 **ctx.send-to-background** [ctx-menu] → WO: Layout tab objectOp send-to-background
+- 🔲 L1 **ctx.bring-forward** [ctx-menu] → WO: Layout tab objectOp bring-forward
+- 🔲 L1 **ctx.send-backward** [ctx-menu] → WO: Layout tab objectOp send-backward
+- 🔲 L1 **ctx.edit-wrap-boundary** [ctx-menu] → WO: ctx data-ctx=EditWrapBoundary — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-wrap-boundary marker + SetStatus NotAvailable
+- 🔲 L1 **ctx.in-line-with-text** [ctx-menu] → WO: ctx data-ctx=WrapInline
+- 🔲 L1 **ctx.square** [ctx-menu] → WO: ctx data-ctx=WrapSquare
+- 🔲 L1 **ctx.tight** [ctx-menu] → WO: ctx data-ctx=WrapTight (rect placeholder: aliases obj-square + data-wrap=tight; documentd divergence until a vector contour exists)
+- 🔲 L1 **ctx.through** [ctx-menu] → WO: ctx data-ctx=WrapThrough -> wrap-through = above-text transparent layer (obj-through)
+- 🔲 L1 **ctx.top-and-bottom** [ctx-menu] → WO: obj-center block flow (top-and-bottom ≈ own-line block)
+- 🔲 L1 **ctx.in-front-of-text** [ctx-menu] → WO: ctx data-ctx=WrapFront -> wrap-front = absolute float above the text (obj-front)
+- 🔲 L1 **ctx.behind-text** [ctx-menu] → WO: ctx data-ctx=WrapBehind
+- 🔲 L1 **ctx.edit-data** [ctx-menu] → WO: Chart Design tab chartEditData -> openVectorEditor(chart)
+- 🔲 L1 **ctx.actual-size** [ctx-menu] → WO: ctx data-ctx=ActualSize -> objectOp actual-size
+- 🔲 L1 **ctx.convert-to-shape** [ctx-menu] → WO: ctx data-ctx=ConvertToShape -> convert object placeholder to a drawing-shape placeholder via the shape picker
+- 🔲 L1 **ctx.replace-image** [ctx-menu] → WO: ctx data-ctx=ReplaceImage -> objectOp replace-image (image-dialog)
+- 🔲 L1 **ctx.copy** [ctx-menu] → WO: ctx data-ctx=Copy
+- 🔲 L1 **ctx.paste** [ctx-menu] → WO: ctx data-ctx=Paste
+- 🔲 L1 **ctx.cut** [ctx-menu] → WO: ctx data-ctx=Cut
+- 🔲 L1 **ctx.accept-change** [ctx-menu] → WO: ctx data-ctx=AcceptChange
+- 🔲 L1 **ctx.reject-change** [ctx-menu] → WO: ctx data-ctx=RejectChange
+- 🔲 L1 **ctx.print-selection** [ctx-menu] → WO: Print button / Ctrl+P (browser print; no ctx item)
+- 🔲 L1 **ctx.rotate** [ctx-menu] → WO: right panel rp-image-rotate (applyImageRotate90)
+- 🔲 L1 **ctx.crop** [ctx-menu] → WO: ctx data-ctx=Crop -> photo editor crop tool (drag + Apply)
+- 🔲 L1 **ctx.remove-content-control** [ctx-menu] → WO: ctx data-ctx=RemoveContentControl
+- 🔲 L1 **ctx.content-control-settings** [ctx-menu] → WO: ctx data-ctx=ContentControlSettings
+- 🔲 L1 **ctx.edit-points** [ctx-menu] → WO: ctx data-ctx=EditPoints — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-points marker + SetStatus NotAvailable
+- 🔲 L1 **ctx.edit-object** [ctx-menu] → WO: ctx data-ctx=EditObject -> editSelectedObject (object-dialog prefilled from the placeholder; updates in place)
+- 🔲 L1 **ctx.link** [ctx-menu] → WO: ctx data-ctx=Link
+- 🔲 L1 **ctx.edit-link** [ctx-menu] → WO: ctx data-ctx=EditLink
+- 🔲 L1 **ctx.copy-hyperlink-address** [ctx-menu] → WO: ctx data-ctx=CopyHyperlinkAddress (clipboard)
+- 🔲 L1 **ctx.remove-link** [ctx-menu] → WO: ctx data-ctx=RemoveLink
+- 🔲 L1 **ctx.resize-to-cell** [ctx-menu] → WO: ctx data-ctx=ResizeToCell -> resizeSelectedObjectToCell (objects in table cells)
+- 🔲 L1 **ctx.text-alignment** [ctx-menu] → WO: ctx data-ctx=TextAlignment
+- 🔲 L1 **ctx.top** [ctx-menu] → WO: ctx data-ctx=TextAlignTop
+- 🔲 L1 **ctx.middle** [ctx-menu] → WO: ctx data-ctx=TextAlignMiddle
+- 🔲 L1 **ctx.bottom** [ctx-menu] → WO: ctx data-ctx=TextAlignBottom
+- 🔲 L1 **ctx.left** [ctx-menu] → WO: ctx data-ctx=TextAlignLeft
+- 🔲 L1 **ctx.center** [ctx-menu] → WO: ctx data-ctx=TextAlignCenter
+- 🔲 L1 **ctx.right** [ctx-menu] → WO: ctx data-ctx=TextAlignRight
+- 🔲 L1 **ctx.justify** [ctx-menu] → WO: ribbon data-cmd=justifyFull (not in WO ctx)
+- 🔲 L1 **ctx.table-advanced-settings** [ctx-menu] → WO: table-ops-dialog (WO table settings surface)
+- 🔲 L1 **ctx.paragraph-advanced-settings** [ctx-menu] → WO: ctx data-ctx=ParagraphSettings
+- 🔲 L1 **ctx.formatting-as-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle
+- 🔲 L1 **ctx.create-new-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-save owned by host shell)
+- 🔲 L1 **ctx.update-1-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-update owned by host shell)
+- 🔲 L1 **ctx.update-entire-table** [ctx-menu] → WO: ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)
+- 🔲 L1 **ctx.update-page-numbers-only** [ctx-menu] → WO: UpdateTOC dialog — toc-update select has 'Update page numbers only' option (refreshToc relinks; page numbers are live-preview links)
+- 🔲 L1 **ctx.add-comment** [ctx-menu] → WO: ctx data-ctx=AddComment
+- 🔲 L1 **ctx.follow-move** [ctx-menu] → WO: ctx data-ctx=FollowMove
+- 🔲 L1 **ctx.select-language** [ctx-menu] → WO: ctx data-ctx=SelectLanguage
+- 🔲 L1 **ctx.ignore** [ctx-menu] → WO: ctx data-ctx=Ignore
+- 🔲 L1 **ctx.ignore-all** [ctx-menu] → WO: ctx data-ctx=IgnoreAll
+- 🔲 L1 **ctx.add-to-dictionary** [ctx-menu] → WO: ctx data-ctx=AddToDictionary
+- 🔲 L1 **ctx.spellcheck** [ctx-menu] → WO: Review ribbon spellcheck / F7 (not in ctx)
+- 🔲 L1 **ctx.text-direction** [ctx-menu] → WO: ctx data-ctx=TextDirection
+- 🔲 L1 **ctx.horizontal** [ctx-menu] → WO: ctx data-ctx=TextDirHorizontal
+- 🔲 L1 **ctx.rotate-text-down** [ctx-menu] → WO: ctx data-ctx=TextDirRotateDown
+- 🔲 L1 **ctx.rotate-text-up** [ctx-menu] → WO: ctx data-ctx=TextDirRotateUp
+- 🔲 L1 **ctx.start-new-list** [ctx-menu] → WO: ctx data-ctx=StartNewList
+- 🔲 L1 **ctx.set-numbering-value** [ctx-menu] → WO: ctx data-ctx=SetNumberingValue -> NumberingValueDialog + applyNumberingValue (native ol split, restart at N)
+- 🔲 L1 **ctx.continue-numbering** [ctx-menu] → WO: ctx data-ctx=ContinueNumbering -> continueNumbering (native ol merge)
+- 🔲 L1 **ctx.adjust-list-indents** [ctx-menu] → WO: ctx data-ctx=AdjustListIndents -> ListIndentsDialog + applyListIndents (margin-left/text-indent, round-trips as w:ind left/hanging)
+- 🔲 L1 **ctx.bullets-and-numbering** [ctx-menu] → WO: ctx data-ctx=BulletsAndNumbering -> BulletsNumberingDialog (list-style-type + start; round-trips as w:numFmt)
+- 🔲 L1 **ctx.update-field** [ctx-menu] → WO: ctx data-ctx=UpdateField
+- 🔲 L1 **ctx.edit-field** [ctx-menu] → WO: ctx data-ctx=EditField
+- 🔲 L1 **ctx.toggle-field-codes** [ctx-menu] → WO: ctx data-ctx=ToggleFieldCodes
+- 🔲 L1 **ctx.equation-settings** [ctx-menu] → WO: ctx data-ctx=EquationSettings
+- 🔲 L1 **ctx.select** [ctx-menu] → WO: browser native selection
+- 🔲 L1 **ctx.row** [ctx-menu] → WO: ctx data-ctx=TableDeleteRow
+- 🔲 L1 **ctx.column** [ctx-menu] → WO: ctx data-ctx=TableDeleteCol
+- 🔲 L1 **ctx.cell** [ctx-menu] → WO: ctx data-ctx=TableDeleteCell -> deleteTableCell (shift left + row cleanup)
+- 🔲 L1 **ctx.column-left** [ctx-menu] → WO: ctx data-ctx=TableColLeft
+- 🔲 L1 **ctx.column-right** [ctx-menu] → WO: ctx data-ctx=TableColRight
+- 🔲 L1 **ctx.row-above** [ctx-menu] → WO: ctx data-ctx=TableRowAbove
+- 🔲 L1 **ctx.row-below** [ctx-menu] → WO: ctx data-ctx=TableRowBelow
+- 🔲 L1 **ctx.cells** [ctx-menu] → WO: ctx data-ctx=TableDeleteCell -> deleteTableCell (single-cell surface; OO multi-cell selection collapses to one)
+- 🔲 L1 **ctx.page-break-before** [ctx-menu] → WO: ctx data-ctx=PageBreakBefore
+- 🔲 L1 **ctx.keep-lines-together** [ctx-menu] → WO: ctx data-ctx=KeepLines
+- 🔲 L1 **ctx.frame-advanced-settings** [ctx-menu] → WO: ctx data-ctx=FrameSettings
+- 🔲 L1 **ctx.drop-cap-settings** [ctx-menu] → WO: dropcap-dialog (btn/ctx)
+- 🔲 L1 **ctx.table-of-contents-settings** [ctx-menu] → WO: ctx data-ctx=TocSettings
+- 🔲 L1 **ctx.update-table-of-contents** [ctx-menu] → WO: ctx data-ctx=UpdateTOC
+- 🔲 L1 **ctx.edit-header** [ctx-menu] → WO: Insert ribbon header/footer + headerfooter-dialog (not in ctx)
+- 🔲 L1 **ctx.undo** [ctx-menu] → WO: ctx data-ctx=Undo
+- 🔲 L1 **ctx.redo** [ctx-menu] → WO: ctx data-ctx=Redo
+- 🔲 L1 **ctx.clear-field** [ctx-menu] → WO: ctx data-ctx=ClearField (empties page-number/[data-field])
+- 🔲 L1 **ctx.group** [ctx-menu] → WO: Layout tab objectOp group (groupSelectedObjects)
+- 🔲 L1 **ctx.ungroup** [ctx-menu] → WO: Layout tab objectOp ungroup (ungroupSelectedObjects)
+- ✅ L3 **ctx.horizontal-line-settings** [ctx-menu] → WO: ctx data-ctx=HorizontalLineSettings -> hr-settings-dialog (style insert/edit)

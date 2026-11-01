@@ -2,11 +2,11 @@
  "source": "OO web-apps/.../view/DocumentHolderExt.js (5 scenario menus, 302 MenuItems) vs WO #ctx-menu (75 data-ctx actions)",
  "totals": {
   "rows": 166,
-  "matched": 71,
-  "diverged": 32,
+  "matched": 81,
+  "diverged": 34,
   "browser-native": 0,
   "nav": 1,
-  "missing": 12,
+  "missing": 0,
   "n_a": 50
  },
  "ledger_rows": 116,
@@ -95,16 +95,16 @@
   {
    "oo": "Distribute horizontally",
    "oo_var": "txtDistribHor",
-   "verdict": "missing",
-   "wo": "distribute horizontally — no WO action",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=DistributeHorizontally -> distributeObjectsHorizontally (shift-click multi-select + equal gaps)",
    "group": null,
    "lead": false
   },
   {
    "oo": "Distribute vertically",
    "oo_var": "txtDistribVert",
-   "verdict": "missing",
-   "wo": "distribute vertically — no WO action",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=DistributeVertically -> distributeObjectsVertically (shift-click multi-select + equal gaps)",
    "group": null,
    "lead": false
   },
@@ -503,8 +503,8 @@
   {
    "oo": "Edit wrap boundary",
    "oo_var": "textEditWrapBoundary",
-   "verdict": "missing",
-   "wo": "edit wrap boundary — no WO action",
+   "verdict": "diverged",
+   "wo": "ctx data-ctx=EditWrapBoundary — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-wrap-boundary marker + SetStatus NotAvailable",
    "group": null,
    "lead": false
   },
@@ -535,16 +535,16 @@
   {
    "oo": "Tight",
    "oo_var": "txtTight",
-   "verdict": "missing",
-   "wo": "wrap tight — unmodeled text-flow wrap (oo-only)",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=WrapTight (rect placeholder: aliases obj-square + data-wrap=tight; documentd divergence until a vector contour exists)",
    "group": null,
    "lead": false
   },
   {
    "oo": "Through",
    "oo_var": "txtThrough",
-   "verdict": "missing",
-   "wo": "wrap through — unmodeled text-flow wrap (oo-only)",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=WrapThrough -> wrap-through = above-text transparent layer (obj-through)",
    "group": null,
    "lead": false
   },
@@ -559,8 +559,8 @@
   {
    "oo": "In front of text",
    "oo_var": "txtInFront",
-   "verdict": "missing",
-   "wo": "wrap in front — unmodeled absolute float (oo-only)",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=WrapFront -> wrap-front = absolute float above the text (obj-front)",
    "group": null,
    "lead": false
   },
@@ -599,8 +599,8 @@
   {
    "oo": "Convert to shape",
    "oo_var": "textConvertToShape",
-   "verdict": "missing",
-   "wo": "convert image/curve to shape — no WO action (caption display: Convert to shape)",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=ConvertToShape -> convert object placeholder to a drawing-shape placeholder via the shape picker",
    "group": null,
    "lead": false
   },
@@ -719,16 +719,16 @@
   {
    "oo": "Edit points",
    "oo_var": "textEditPoints",
-   "verdict": "missing",
-   "wo": "vertex editing — no WO action",
+   "verdict": "diverged",
+   "wo": "ctx data-ctx=EditPoints — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-points marker + SetStatus NotAvailable",
    "group": null,
    "lead": false
   },
   {
    "oo": "Edit object",
    "oo_var": "textEditObject",
-   "verdict": "missing",
-   "wo": "edit embedded object — no WO action",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=EditObject -> editSelectedObject (object-dialog prefilled from the placeholder; updates in place)",
    "group": null,
    "lead": false
   },
@@ -767,8 +767,8 @@
   {
    "oo": "Resize to cell",
    "oo_var": "textStretchControl",
-   "verdict": "missing",
-   "wo": "resize content control to cell — no WO action",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=ResizeToCell -> resizeSelectedObjectToCell (objects in table cells)",
    "group": null,
    "lead": false
   },
@@ -1023,16 +1023,16 @@
   {
    "oo": "Distribute rows",
    "oo_var": "textDistributeRows",
-   "verdict": "missing",
-   "wo": "distribute rows evenly — no WO action",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=DistributeRows -> distributeTableRows (equalize row heights)",
    "group": null,
    "lead": false
   },
   {
    "oo": "Distribute columns",
    "oo_var": "textDistributeCols",
-   "verdict": "missing",
-   "wo": "distribute columns evenly — no WO action",
+   "verdict": "matched",
+   "wo": "ctx data-ctx=DistributeColumns -> distributeTableColumns (equalize column widths)",
    "group": null,
    "lead": false
   },

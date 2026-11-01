@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-01T09:12:30.249500",
+ "generated": "2026-11-01T12:37:51.405470",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,8 +9,8 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 18,
-  "L1": 459,
+  "L0": 0,
+  "L1": 477,
   "L2": 0,
   "L3": 24,
   "L4": 0
@@ -6982,11 +6982,12 @@
      "label": "OpenFilePanel"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Ctrl+Alt+F: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Ctrl+Alt+F (openBackstage(\"open\") + focus recent-files rail)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.opencommentfield",
@@ -7000,11 +7001,12 @@
      "label": "OpenCommentField"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Alt+Meta+A: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Opt+Cmd+A (Mac; openCommentDialog at caret)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.openchatpanel",
@@ -7247,11 +7249,12 @@
      "label": "Strikeout"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Shift+Meta+X: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Shift+Cmd+X / Ctrl+Shift+X (strikeThrough toggle)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.selectrightword",
@@ -7486,11 +7489,12 @@
      "label": "ReplaceUnicodeToSymbol"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Alt+Meta+X: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Opt+Cmd+X / Ctrl+Alt+X (convert \\uXXXX / \\u{...} under caret)",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.movetonextpage",
@@ -7647,11 +7651,12 @@
      "label": "OpenExistingFile"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Meta+O: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Cmd+O / Ctrl+O (openBackstage(\"open\"))",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.closefile",
@@ -7665,11 +7670,12 @@
      "label": "CloseFile"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO bind Meta+W: no WO keydown handler"
-   ]
+   "wo": {
+    "match": "Cmd+W / Ctrl+W (prevents browser tab-close: dirty confirm + wo:close-document + notifyHost(close))",
+    "where": "shortcut"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.insert-caption",
@@ -7849,11 +7855,12 @@
      "label": "Distribute horizontally"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Distribute horizontally: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=DistributeHorizontally -> distributeObjectsHorizontally (shift-click multi-select + equal gaps)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.distribute-vertically",
@@ -7867,11 +7874,12 @@
      "label": "Distribute vertically"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Distribute vertically: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=DistributeVertically -> distributeObjectsVertically (shift-click multi-select + equal gaps)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.merge-shapes",
@@ -8173,11 +8181,16 @@
      "label": "Edit wrap boundary"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "ctx data-ctx=EditWrapBoundary — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-wrap-boundary marker + SetStatus NotAvailable",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Edit wrap boundary: no WO action"
-   ]
+    "WO surface elsewhere: ctx data-ctx=EditWrapBoundary — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-wrap-boundary marker + SetStatus NotAvailable",
+    "registered park (Phase 5 / WO-22): OO 'Edit wrap boundary' edits the wrap-polygon contour — same absent vector model; ctx row is a LOUD divergence (wo:edit-wrap-boundary marker + SetStatus NotAvailable)"
+   ],
+   "divergence": "registered"
   },
   {
    "feature": "ctx.in-line-with-text",
@@ -8229,11 +8242,12 @@
      "label": "Tight"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Tight: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=WrapTight (rect placeholder: aliases obj-square + data-wrap=tight; documentd divergence until a vector contour exists)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.through",
@@ -8247,11 +8261,12 @@
      "label": "Through"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Through: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=WrapThrough -> wrap-through = above-text transparent layer (obj-through)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.top-and-bottom",
@@ -8286,11 +8301,12 @@
      "label": "In front of text"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu In front of text: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=WrapFront -> wrap-front = absolute float above the text (obj-front)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.behind-text",
@@ -8363,11 +8379,12 @@
      "label": "Convert to shape"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Convert to shape: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=ConvertToShape -> convert object placeholder to a drawing-shape placeholder via the shape picker",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.replace-image",
@@ -8594,11 +8611,16 @@
      "label": "Edit points"
     }
    ],
-   "wo": null,
-   "level": 0,
+   "wo": {
+    "match": "ctx data-ctx=EditPoints — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-points marker + SetStatus NotAvailable",
+    "where": "ctx-menu"
+   },
+   "level": 1,
    "evidence": [
-    "OO ctx-menu Edit points: no WO action"
-   ]
+    "WO surface elsewhere: ctx data-ctx=EditPoints — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-points marker + SetStatus NotAvailable",
+    "registered park (Phase 5 / WO-22): OO 'Edit points' is a bezier-point editor — WO has no vector path/contour model (CSS/SVG placeholders); ctx row is a LOUD divergence (wo:edit-points marker + SetStatus NotAvailable)"
+   ],
+   "divergence": "registered"
   },
   {
    "feature": "ctx.edit-object",
@@ -8612,11 +8634,12 @@
      "label": "Edit object"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Edit object: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=EditObject -> editSelectedObject (object-dialog prefilled from the placeholder; updates in place)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.link",
@@ -8706,11 +8729,12 @@
      "label": "Resize to cell"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Resize to cell: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=ResizeToCell -> resizeSelectedObjectToCell (objects in table cells)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.horizontal-line-settings",
@@ -9215,11 +9239,12 @@
      "label": "Distribute rows"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Distribute rows: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=DistributeRows -> distributeTableRows (equalize row heights)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.distribute-columns",
@@ -9233,11 +9258,12 @@
      "label": "Distribute columns"
     }
    ],
-   "wo": null,
-   "level": 0,
-   "evidence": [
-    "OO ctx-menu Distribute columns: no WO action"
-   ]
+   "wo": {
+    "match": "ctx data-ctx=DistributeColumns -> distributeTableColumns (equalize column widths)",
+    "where": "ctx-menu"
+   },
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.text-direction",

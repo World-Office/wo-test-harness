@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generated": "2026-11-01T08:10:23.324Z",
+  "generated": "2026-11-01T11:34:34.651Z",
   "source": "sdkjs/word/Editor/Shortcuts.js (147 types) vs WO editor keydown handler",
   "engine": "static-parse",
   "totals": {
-    "matched": 48,
+    "matched": 54,
     "diverged": 5,
     "browser-native": 17,
     "nav": 71,
-    "missing": 6,
+    "missing": 0,
     "total": 147
   },
   "shortcuts": [
@@ -687,14 +687,14 @@
     {
       "type": "OpenFilePanel",
       "combo": "Ctrl+Alt+F",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Ctrl+Alt+F (openBackstage(\"open\") + focus recent-files rail)"
     },
     {
       "type": "OpenCommentField",
       "combo": "Alt+Meta+A",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Opt+Cmd+A (Mac; openCommentDialog at caret)"
     },
     {
       "type": "OpenChatPanel",
@@ -765,8 +765,8 @@
     {
       "type": "Strikeout",
       "combo": "Shift+Meta+X",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Shift+Cmd+X / Ctrl+Shift+X (strikeThrough toggle)"
     },
     {
       "type": "SelectRightWord",
@@ -837,8 +837,8 @@
     {
       "type": "ReplaceUnicodeToSymbol",
       "combo": "Alt+Meta+X",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Opt+Cmd+X / Ctrl+Alt+X (convert \\uXXXX / \\u{...} under caret)"
     },
     {
       "type": "MoveToNextPage",
@@ -885,14 +885,14 @@
     {
       "type": "OpenExistingFile",
       "combo": "Meta+O",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Cmd+O / Ctrl+O (openBackstage(\"open\"))"
     },
     {
       "type": "CloseFile",
       "combo": "Meta+W",
-      "verdict": "missing",
-      "wo": ""
+      "verdict": "matched",
+      "wo": "Cmd+W / Ctrl+W (prevents browser tab-close: dirty confirm + wo:close-document + notifyHost(close))"
     }
   ]
 }

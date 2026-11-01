@@ -434,6 +434,8 @@ REGISTERED_PARKS = {
     "macros.record-macro": "registered park (plan C12): btn-macro-record is a wo:macro marker stub",
     "macros.dlg-macros": "registered park (plan C12): OO Macros modal is not implemented (marker stub only)",
     "plugins.plugin-manager": "registered park (plan C13): plugins-dialog is a stub surface (capability plane)",
+    "ctx.edit-points": "registered park (Phase 5 / WO-22): OO 'Edit points' is a bezier-point editor — WO has no vector path/contour model (CSS/SVG placeholders); ctx row is a LOUD divergence (wo:edit-points marker + SetStatus NotAvailable)",
+    "ctx.edit-wrap-boundary": "registered park (Phase 5 / WO-22): OO 'Edit wrap boundary' edits the wrap-polygon contour — same absent vector model; ctx row is a LOUD divergence (wo:edit-wrap-boundary marker + SetStatus NotAvailable)",
 }
 for _fid, _reason in REGISTERED_PARKS.items():
     _row = ledger.get(_fid)

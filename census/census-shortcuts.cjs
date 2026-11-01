@@ -77,6 +77,17 @@ const WO = {
   EmDash: { v: "diverged", wb: "Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation)" },
   EnDash: { v: "matched", wb: "Ctrl+Minus (OO true combo; preventDefault blocks browser zoom-out)" },
 
+  // Phase 5 / WO-22 (2026-11-01): the final six L0 shortcuts — Cmd/Ctrl+O,
+  // Cmd/Ctrl+W, Ctrl+Alt+F, Opt+Cmd+A, Opt+Cmd+X, Shift+Cmd+X. All match the
+  // OO combos exactly (OO's shortcut table is Mac-canonical; WO adds the PC
+  // Ctrl variants).
+  CloseFile: { v: "matched", wb: "Cmd+W / Ctrl+W (prevents browser tab-close: dirty confirm + wo:close-document + notifyHost(close))" },
+  OpenExistingFile: { v: "matched", wb: "Cmd+O / Ctrl+O (openBackstage(\"open\"))" },
+  OpenFilePanel: { v: "matched", wb: "Ctrl+Alt+F (openBackstage(\"open\") + focus recent-files rail)" },
+  OpenCommentField: { v: "matched", wb: "Opt+Cmd+A (Mac; openCommentDialog at caret)" },
+  ReplaceUnicodeToSymbol: { v: "matched", wb: "Opt+Cmd+X / Ctrl+Alt+X (convert \\uXXXX / \\u{...} under caret)" },
+  Strikeout: { v: "matched", wb: "Shift+Cmd+X / Ctrl+Shift+X (strikeThrough toggle)" },
+
   // Second C1 batch (2026-10-28): state-backed bindings to existing flows.
   UpdateFields: { v: "matched", wb: "F9 (fieldOpAtSelection update)" },
   InsertEquation: { v: "matched", wb: "Ctrl+Alt+=" },
