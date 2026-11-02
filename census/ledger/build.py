@@ -620,10 +620,12 @@ for row in ledger.values():
 
 tot = {k: sum(v[k] for v in by_cluster.values()) for k in ["L0", "L1", "L2", "L3", "L4"]}
 
-# Loud guard (T-002): the manual-6b heading rows must survive EVERY rebuild.
-# If census-shortcuts/census-wo-deep schema changes or 6b is edited and a row
-# is dropped, fail HERE — never let a regenerate silently lose heading parity
-# (the acceptance gate only catches it later, far from the cause).
+# Loud guard (T-002): the manual-6b heading rows must survive EVERY rebuild,
+# at L3 (roundtrip-proven) — not merely exist. If census-shortcuts/census-wo-deep
+# schema changes, 6b is edited, or a roundtrip recapture drops the applyHeadingN
+# probes, fail HERE — never let a regenerate silently lose heading parity or
+# downgrade it to L1 surface (the acceptance gate only catches it later, far
+# from the cause).
 for _i in (1, 2, 3):
     _fid = f"formatting.heading-{_i}"
     _row = ledger.get(_fid) or {}
@@ -631,6 +633,11 @@ for _i in (1, 2, 3):
         raise SystemExit(
             f"ledger: manual-6b heading row {_fid} lost on rebuild — "
             "fix section 6b (heading parity must not silently regress)")
+    if _row.get("level", 0) < 3:
+        raise SystemExit(
+            f"ledger: heading row {_fid} downgraded to L{_row.get('level')} on "
+            "rebuild — roundtrip-results.json lost its applyHeadingN probe; "
+            "recapture roundtrip.cjs before regenerating the ledger")
 
 out = HERE / "ledger.json"
 new_ledger = {"version": 1, "generated": __import__("datetime").datetime.now().isoformat(),
