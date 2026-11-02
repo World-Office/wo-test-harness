@@ -1,0 +1,39 @@
+{
+  "task": "VIS-002",
+  "title": "Fix right menu not reducible",
+  "summary": "The right settings panel (#right-panel) never collapsed: its author display:flex rule overrode the UA stylesheet's [hidden]{display:none}, so the panel rendered VISIBLE at page load and toggleRightPanel() — which only flips .hidden + main.rp-open — never visually collapsed it. Fix (server repo): #right-panel[hidden]{display:none} author rule (same pattern as .side-panel[hidden] / #ctx-menu[hidden]), pinned in right-panel.test.mjs.",
+  "server_fix_commit": "be3546239b9317a0d97badd39c59b274ed5c96dc",
+  "server_fix_files": [
+    "apps/web/apps/documenteditor-wysiwyg/style.css",
+    "apps/web/apps/documenteditor-wysiwyg/right-panel.test.mjs"
+  ],
+  "probe": {
+    "command": "one-off Playwright live probe (headless Chromium, static http.server :18077, editor booted standalone at 1440x900) against merged server main",
+    "result": "VIS-002-LIVE: ALL GREEN (6/6)",
+    "checks": [
+      "(1) boot: #right-panel hidden + computed display:none (the VIS-002 regression — pre-fix display:flex won)",
+      "(2) View-tab #btn-right-panel-toggle opens: display:flex + main.rp-open",
+      "(3) View-tab toggle collapses again: display:none, rp-open removed",
+      "(4) #right-rail icons visible/clickable while panel open",
+      "(5) clicking the active rail icon collapses the panel (reducible)",
+      "(6) zero pageerrors"
+    ]
+  },
+  "static_pin": {
+    "command": "cd apps/web/apps/documenteditor-wysiwyg && node --test right-panel.test.mjs (server repo)",
+    "result": "1 pass / 0 fail — includes VIS-002 assert: #right-panel[hidden] rule must exist in style.css"
+  },
+  "acceptance_gate": {
+    "command": "cd /home/weiss/git/World-Office/server && grep -c 'right.*menu' apps/web/apps/documenteditor-wysiwyg/editor.js && echo OK || echo FAIL",
+    "output": "2\nOK"
+  },
+  "reverified": {
+    "date": "2026-11-02",
+    "attempt": 2,
+    "reason": "task re-dispatched after attempt-1 recorded '0 commits ahead' — same bookkeeping race as VIS-001: the fix had already landed and merged into server main as be3546239",
+    "server_main": "be3546239 is an ancestor of server main HEAD (76b37a431); fix unchanged since",
+    "probe_rerun": "live collapse probe 6/6 PASS, 'VIS-002-LIVE: ALL GREEN'",
+    "gate_rerun": "2\nOK"
+  },
+  "verified": "2026-11-02"
+}
