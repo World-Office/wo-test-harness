@@ -610,6 +610,44 @@ for _fid, _reason in REGISTERED_PARKS.items():
         if _reason not in _row.get("evidence", []):
             _row.setdefault("evidence", []).append(_reason)
 
+# --------------------------- L4 merge (font-dialog-l4.test.mjs, L4-005)
+# The font "dialog" is a control GROUP, not a modal: OO ships the font
+# contract on its Home ribbon (family/size combos, B/I/U/S, colors) and WO
+# mirrors it as the Home-tab font group — no separate font modal exists in
+# either editor. L4 for this composite surface is EARNED by the live probe
+# font-dialog-l4.test.mjs: it drives every field (select a word, apply
+# family/size/bold/italic/colors) and joins the OO field set (measured from
+# census-oo-deep tabs.home) against the live WO controls. A failing probe
+# keeps the row honest at L1 with the failing fields in the evidence.
+fd_path = HERE / "font-dialog-l4.json"
+if fd_path.exists():
+    try:
+        fd = json.load(open(fd_path))
+    except ValueError:
+        raise SystemExit("ledger: font-dialog-l4.json is not valid JSON — fix the probe artifact")
+    _fd_fields = fd.get("fields", [])
+    _fd_ok = [f for f in _fd_fields if f.get("ok")]
+    _fid = "dialog.font-dialog.l4"
+    add(_fid, "formatting",
+        {"surface": "tab:home (font group)", "label": "Font dialog (field group)",
+         "fields": [f.get("oo") for f in _fd_fields]},
+        "dialog")
+    ledger[_fid]["wo"] = {"match": "font group (font-dialog-l4.test.mjs)",
+                          "where": "tab:home"}
+    if fd.get("parity"):
+        ledger[_fid]["level"] = 4
+        ledger[_fid]["evidence"].append(
+            "L4 font-group field parity: %d/%d OO font fields live-verified "
+            "(%d apply-verified: driving family/size/bold/italic/colors changes flat HTML)"
+            % (len(_fd_ok), len(_fd_fields), fd.get("summary", {}).get("appliedVerified", 0)))
+    else:
+        ledger[_fid]["level"] = 1
+        _fd_bad = [f.get("oo") for f in _fd_fields if not f.get("ok")]
+        ledger[_fid]["evidence"].append(
+            "L4 font-group probe GAP: " + ", ".join(_fd_bad or ["empty artifact"]))
+    print("  L4 merge: font-dialog %s (%d/%d fields)"
+          % ("PARITY" if fd.get("parity") else "GAP", len(_fd_ok), len(_fd_fields)))
+
 # ---------------------------------------------------------------- report
 by_cluster = defaultdict(lambda: {"L0": 0, "L1": 0, "L2": 0, "L3": 0, "L4": 0, "rows": []})
 for row in ledger.values():

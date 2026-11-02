@@ -50,7 +50,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **file.protection** [control] → WO: protectDialog
 - ✅ L2 **file.view** [control] → WO: displayMode
 
-## formatting — 56 features (L0:0 L1:20 L3:22)
+## formatting — 57 features (L0:0 L1:20 L3:22)
 - 🔲 L1 **formatting.font** [control] → WO: font-family
 - 🔲 L1 **formatting.font-size** [control] → WO: font-size
 - 🔲 L1 **formatting.increment-font-size-ctrl** [control] → WO: font-size
@@ -107,6 +107,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L3 **formatting.heading-1** [formatting] → WO: applyHeading1
 - ✅ L3 **formatting.heading-2** [formatting] → WO: applyHeading2
 - ✅ L3 **formatting.heading-3** [formatting] → WO: applyHeading3
+- ✅ L4 **dialog.font-dialog.l4** [dialog] (11 OO fields) → WO: font group (font-dialog-l4.test.mjs)
 
 ## insert — 56 features (L0:0 L1:33 L3:7)
 - 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage

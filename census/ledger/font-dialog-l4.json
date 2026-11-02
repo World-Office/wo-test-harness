@@ -1,0 +1,103 @@
+{
+ "version": 1,
+ "generated": "2026-11-02T17:36:43.036Z",
+ "source": {
+  "oo": "census/census/census-oo-deep.json (tabs.home font group)",
+  "wo": "live editor drive (font-dialog-l4.test.mjs)",
+  "pairing": "declared FIELD_MAP in font-dialog-l4.test.mjs"
+ },
+ "summary": {
+  "probed": 11,
+  "covered": 11,
+  "appliedVerified": 6
+ },
+ "parity": true,
+ "fields": [
+  {
+   "oo": "Font group surface",
+   "sel": ".rb-group[aria-label=\"Font\"]",
+   "present": true,
+   "ok": true
+  },
+  {
+   "oo": "Font",
+   "sel": "#font-family",
+   "kind": "choice",
+   "present": true,
+   "applied": true,
+   "ok": true
+  },
+  {
+   "oo": "Font size",
+   "sel": "#font-size",
+   "kind": "choice",
+   "present": true,
+   "applied": true,
+   "ok": true
+  },
+  {
+   "oo": "Increment font size",
+   "sel": "[data-cmd=\"fontSizeInc\"]",
+   "kind": "button",
+   "present": true,
+   "applied": null,
+   "ok": true
+  },
+  {
+   "oo": "Decrement font size",
+   "sel": "[data-cmd=\"fontSizeDec\"]",
+   "kind": "button",
+   "present": true,
+   "applied": null,
+   "ok": true
+  },
+  {
+   "oo": "Bold",
+   "sel": "[data-cmd=\"bold\"]",
+   "kind": "button",
+   "present": true,
+   "applied": true,
+   "ok": true
+  },
+  {
+   "oo": "Italic",
+   "sel": "[data-cmd=\"italic\"]",
+   "kind": "button",
+   "present": true,
+   "applied": true,
+   "ok": true
+  },
+  {
+   "oo": "Underline",
+   "sel": "[data-cmd=\"underline\"]",
+   "kind": "button",
+   "present": true,
+   "applied": null,
+   "ok": true
+  },
+  {
+   "oo": "Strikethrough",
+   "sel": "[data-cmd=\"strikeThrough\"]",
+   "kind": "button",
+   "present": true,
+   "applied": null,
+   "ok": true
+  },
+  {
+   "oo": "Highlight color",
+   "sel": "#highlight-color",
+   "kind": "color",
+   "present": true,
+   "applied": true,
+   "ok": true
+  },
+  {
+   "oo": "Font color",
+   "sel": "#text-color",
+   "kind": "color",
+   "present": true,
+   "applied": true,
+   "ok": true
+  }
+ ]
+}

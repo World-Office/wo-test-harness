@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T17:20:34.619489",
+ "generated": "2026-11-02T18:36:43.365903",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -13,7 +13,7 @@
   "L1": 385,
   "L2": 80,
   "L3": 38,
-  "L4": 1
+  "L4": 2
  },
  "features": [
   {
@@ -10194,6 +10194,38 @@
    },
    "level": 1,
    "evidence": []
+  },
+  {
+   "feature": "dialog.font-dialog.l4",
+   "cluster": "formatting",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "tab:home (font group)",
+     "label": "Font dialog (field group)",
+     "fields": [
+      "Font group surface",
+      "Font",
+      "Font size",
+      "Increment font size",
+      "Decrement font size",
+      "Bold",
+      "Italic",
+      "Underline",
+      "Strikethrough",
+      "Highlight color",
+      "Font color"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "font group (font-dialog-l4.test.mjs)",
+    "where": "tab:home"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 font-group field parity: 11/11 OO font fields live-verified (6 apply-verified: driving family/size/bold/italic/colors changes flat HTML)"
+   ]
   }
  ]
 }
