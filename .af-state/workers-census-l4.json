@@ -1,0 +1,65 @@
+{
+  "campaign": "World-Office census expansion to L4",
+  "max_parallel": 10,
+  "model_preference": "zai",
+  "time_budget_hours": 1,
+  "repo_root": "/home/weiss/git/World-Office/wo-test-harness",
+  "shared_state_dir": "/home/weiss/git/World-Office/wo-test-harness/.af-state/census-l4",
+  "repos": {
+    "/home/weiss/git/World-Office/wo-test-harness": {
+      "branch": "main",
+      "origin": "origin",
+      "pull": true
+    }
+  },
+  "environment": {
+    "NO_PROXY": "127.0.0.1,localhost",
+    "WO_URL": "http://192.168.42.42:8082/word/",
+    "WO_CONVERT_URL": "http://192.168.42.42:8086/api/conversion/convert",
+    "AF_REPO_DIR": "/home/weiss/git/World-Office/wo-test-harness",
+    "AF_STATE_DIR": "/home/weiss/git/World-Office/wo-test-harness/.af-state/census-l4"
+  },
+  "workers": [
+    {
+      "name": "wo-census-l4-1",
+      "enabled": true,
+      "provider": "litellm",
+      "model": "zai/glm-5.2",
+      "concurrency": 4,
+      "env": {
+        "NO_PROXY": "127.0.0.1,localhost"
+      }
+    },
+    {
+      "name": "wo-census-l4-2",
+      "enabled": true,
+      "provider": "litellm",
+      "model": "zai/glm-5.2",
+      "concurrency": 4,
+      "env": {
+        "NO_PROXY": "127.0.0.1,localhost"
+      }
+    },
+    {
+      "name": "wo-census-l4-3",
+      "enabled": true,
+      "provider": "litellm",
+      "model": "zai/glm-5.2",
+      "concurrency": 2,
+      "env": {
+        "NO_PROXY": "127.0.0.1,localhost"
+      }
+    }
+  ],
+  "task_config": {
+    "T-001": {"timeout": "10m", "retries": 1},
+    "T-002": {"timeout": "10m", "retries": 1},
+    "T-003": {"timeout": "15m", "retries": 1},
+    "T-004": {"timeout": "15m", "retries": 1},
+    "T-005": {"timeout": "10m", "retries": 1}
+  },
+  "network": {
+    "allowed_hosts": ["192.168.42.42"],
+    "NO_PROXY": "127.0.0.1,localhost"
+  }
+}

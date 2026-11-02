@@ -1,0 +1,15 @@
+{
+  "max_parallel": 10,
+  "workers": [
+    {"name": "wo-census-1", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "wo-census-2", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "wo-census-3", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "wo-census-4", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "wo-census-5", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "wo-census-6", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "wo-census-7", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "wo-census-8", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "wo-census-9", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "wo-census-10", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true}
+  ]
+}

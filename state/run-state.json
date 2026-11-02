@@ -1,0 +1,42 @@
+{
+  "T-004": {
+    "state": "failed",
+    "attempts": 3,
+    "last_error": "agent exited NonZero (code 1)",
+    "phase": "spawned",
+    "attempt_started_ts": 1793625761,
+    "attempt_worker": "wo-census-l4-1"
+  },
+  "T-005": {
+    "state": "failed",
+    "attempts": 3,
+    "last_error": "agent exited NonZero (code 1)",
+    "phase": "spawned",
+    "attempt_started_ts": 1793625761,
+    "attempt_worker": "wo-census-l4-3"
+  },
+  "T-002": {
+    "state": "failed",
+    "attempts": 3,
+    "last_error": "previous run interrupted; retry budget exhausted (3/3)",
+    "phase": null,
+    "attempt_started_ts": 1793625685,
+    "attempt_worker": "wo-census-l4-2"
+  },
+  "T-001": {
+    "state": "failed",
+    "attempts": 3,
+    "last_error": "previous run interrupted; retry budget exhausted (3/3)",
+    "phase": null,
+    "attempt_started_ts": 1793625685,
+    "attempt_worker": "wo-census-l4-3"
+  },
+  "T-003": {
+    "state": "failed",
+    "attempts": 3,
+    "last_error": "agent exited NonZero (code 1)",
+    "phase": "spawned",
+    "attempt_started_ts": 1793625758,
+    "attempt_worker": "wo-census-l4-3"
+  }
+}

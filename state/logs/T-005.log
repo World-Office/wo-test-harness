@@ -1,0 +1,15 @@
+== attempt 1 on worker wo-census-l4-1 (zai/glm-5.2) ==
+-- agent --
+
+Error: Unknown provider "local". Use --list-models to see available providers/models.
+
+== attempt 2 on worker wo-census-l4-2 (zai/glm-5.2) ==
+-- agent --
+
+Error: Unknown provider "local". Use --list-models to see available providers/models.
+
+== attempt 3 on worker wo-census-l4-3 (zai/glm-5.2) ==
+-- agent --
+
+Error: Unknown provider "local". Use --list-models to see available providers/models.
+

@@ -1,0 +1,50 @@
+{
+  "campaign": "census-l4",
+  "goal": "Expand census to L4, add heading roundtrip probes, align dialog census",
+  "acceptance": "L4 > 0, dialog count >= 60, roundtrip >= 27/27",
+  "max_parallel": 3,
+  "tasks": [
+    {
+      "id": "T-001",
+      "title": "Dialog census: capture all 61 DIALOG_IDS entries",
+      "description": "WO editor has 61 DIALOG_IDS but census only has 42 dialogs. Run: cd /home/weiss/git/World-Office/wo-test-harness && NO_PROXY=127.0.0.1,localhost WO_URL=http://192.168.42.42:8082/word /usr/bin/node census/census-wo-dialogs.cjs. Verify census/census/census-wo-dialogs.json has >= 60 dialogs.",
+      "repo": "wo-test-harness",
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && /usr/bin/python3 -c 'import json; d=json.load(open(\"census/census/census-wo-dialogs.json\")); dialogs=len(d.get(\"dialogs\",[])); print(\"OK\" if dialogs >= 60 else \"FAIL: \" + str(dialogs))'",
+      "timeout": "15m"
+    },
+    {
+      "id": "T-002",
+      "title": "Heading feature rows in ledger",
+      "description": "Verify or add ledger rows for formatting.heading-1, formatting.heading-2, formatting.heading-3. Match: heading1/2/3, wo.match: applyHeading1/2/3, kind: formatting. Commit changes.",
+      "repo": "wo-test-harness",
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && /usr/bin/python3 -c 'import json; d=json.load(open(\"census/ledger/ledger.json\")); ids=[f.get(\"feature\") for f in d[\"features\"]]; needed=[\"formatting.heading-1\",\"formatting.heading-2\",\"formatting.heading-3\"]; missing=[n for n in needed if n not in ids]; print(\"OK\" if not missing else \"FAIL: \" + str(missing))'",
+      "timeout": "10m"
+    },
+    {
+      "id": "T-003",
+      "title": "Roundtrip: add heading probes, verify 27/27",
+      "description": "In census/ledger/roundtrip.cjs, add probes for applyHeading1, applyHeading2, applyHeading3. Each: key=applyHeadingX, clicks=[{cmd: applyHeadingX}], expect=hX regex, survive=hX regex, also=[formatting.heading-X]. Run: timeout 5400 env NO_PROXY=127.0.0.1,localhost /usr/bin/node census/ledger/roundtrip.cjs. Expect 27/27 survived.",
+      "repo": "wo-test-harness",
+      "depends_on": ["T-002"],
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && timeout 5400 env NO_PROXY=127.0.0.1,localhost /usr/bin/node census/ledger/roundtrip.cjs 2>&1 | tee /tmp/rt-out.txt | tail -1 | grep -qE '27/27|27 survived' && echo OK || echo FAIL",
+      "timeout": "15m"
+    },
+    {
+      "id": "T-004",
+      "title": "L4 fidelity: first L4 probe for dialog field parity",
+      "description": "L4 = per-dialog field/button-level parity. Create an L4 gate test (e.g., census/ledger/link-dialog-l4.test.mjs) that opens link-dialog via cmd:insertLink and asserts field labels match OO (URL, Text to display, buttons). Add ledger row dialog.link-dialog.l4 at level 4. Commit.",
+      "repo": "wo-test-harness",
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && /usr/bin/python3 -c 'import json; d=json.load(open(\"census/ledger/ledger.json\")); l4count=sum(1 for f in d[\"features\"] if f[\"level\"]==4); print(\"OK\" if l4count > 0 else \"FAIL: L4=\" + str(l4count))'",
+      "timeout": "15m"
+    },
+    {
+      "id": "T-005",
+      "title": "Ledger rebuild: run build.py, commit, push",
+      "description": "Run /usr/bin/python3 census/ledger/build.py. Verify totals: L0:0 and L4 > 0. Commit all census changes with message describing expansion. Push to origin/main.",
+      "repo": "wo-test-harness",
+      "depends_on": ["T-001", "T-003", "T-004"],
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && /usr/bin/python3 census/ledger/build.py > /dev/null 2>&1 && /usr/bin/python3 -c 'import json; d=json.load(open(\"census/ledger/ledger.json\")); t=d.get(\"totals\",{}); print(\"OK\" if t.get(\"L0\",999)==0 and t.get(\"L4\",0)>0 else \"FAIL: \" + str(t))'",
+      "timeout": "10m"
+    }
+  ]
+}

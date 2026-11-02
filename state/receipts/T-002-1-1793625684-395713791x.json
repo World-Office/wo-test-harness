@@ -1,0 +1,16 @@
+{
+  "task": "T-002",
+  "attempt": 1,
+  "worker": "wo-census-l4-2",
+  "model": "zai/glm-5.2",
+  "wall_clock_s": 2.118016266,
+  "tokens": null,
+  "turns": null,
+  "prompt_tokens": null,
+  "completion_tokens": null,
+  "ts": 1793625684,
+  "outcome": "failed",
+  "error": "agent exited NonZero (code 1)",
+  "cost_micros": null,
+  "contracts": null
+}
