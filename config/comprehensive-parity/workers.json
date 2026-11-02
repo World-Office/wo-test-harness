@@ -1,0 +1,15 @@
+{
+  "max_parallel": 10,
+  "workers": [
+    {"name": "comp-p-1", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "comp-p-2", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "comp-p-3", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "comp-p-4", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "comp-p-5", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "comp-p-6", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "comp-p-7", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "comp-p-8", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "comp-p-9", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "comp-p-10", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true}
+  ]
+}

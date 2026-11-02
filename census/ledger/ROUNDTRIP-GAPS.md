@@ -1,6 +1,6 @@
 # LEDGER2-ROUNDTRIP: persistence gaps
 
-Generated: 2026-11-02T17:42:26.983Z
+Generated: 2026-11-02T18:55:59.131Z
 Conversion endpoint: `http://192.168.42.42:8086/api/conversion/convert` (html -> docx -> html)
 Editor: `/home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg`
 Probed: 31 document-level commands (30 command probes + 1 direct converter case) — survived: 31, lost: 0
@@ -490,5 +490,27 @@ dialog-only, or state toggles with no serialized marker).
 - `ctx.clear-field` (wo.match `ctx data-ctx=ClearField (empties page-number/[data-field])`) — lost attribute: none serialized (no marker contract)
 - `ctx.group` (wo.match `Layout tab objectOp group (groupSelectedObjects)`) — lost attribute: none serialized (no marker contract)
 - `ctx.ungroup` (wo.match `Layout tab objectOp ungroup (ungroupSelectedObjects)`) — lost attribute: none serialized (no marker contract)
+- `dialog.link-dialog.l4` (wo.match `link-dialog`) — lost attribute: none serialized (no marker contract)
 - `dialog.font-dialog.l4` (wo.match `font group (font-dialog-l4.test.mjs)`) — lost attribute: none serialized (no marker contract)
+- `dialog.table-dialog.l4` (wo.match `table-dialog`) — lost attribute: none serialized (no marker contract)
+- `dialog.symbol-dialog.l4` (wo.match `symbol-dialog (symbol-dialog-l4.test.mjs)`) — lost attribute: none serialized (no marker contract)
+- `dialog.image-dialog.l4` (wo.match `image-dialog (image-dialog-l4.test.mjs)`) — lost attribute: none serialized (no marker contract)
+- `dialog.paragraph-settings-dialog.l4` (wo.match `paragraph-settings-dialog (paragraph-dialog-l4.test.mjs)`) — lost attribute: none serialized (no marker contract)
+- `dialog.equation-dialog.l4` (wo.match `equation-dialog`) — lost attribute: none serialized (no marker contract)
+- `dialog.pagecolor-dialog.l4` (wo.match `pagecolor-dialog`) — lost attribute: none serialized (no marker contract)
+- `dialog.chart-dialog.l4` (wo.match `chart-dialog`) — lost attribute: none serialized (no marker contract)
+- `dialog.comment-dialog.l4` (wo.match `comment-dialog`) — lost attribute: none serialized (no marker contract)
+- `dialog.compare-dialog.l4` (wo.match `compare-dialog`) — lost attribute: none serialized (no marker contract)
+- `dialog.combine-dialog.l4` (wo.match `combine-dialog`) — lost attribute: none serialized (no marker contract)
+- `dialog.textfromfile-dialog.l4` (wo.match `textfromfile-dialog`) — lost attribute: none serialized (no marker contract)
+- `dialog.field-dialog.l4` (wo.match `field-dialog`) — lost attribute: none serialized (no marker contract)
+- `dialog.speech-dialog.l4` (wo.match `speech-dialog`) — lost attribute: none serialized (no marker contract)
+- `dialog.hr-settings-dialog.l4` (wo.match `hr-settings-l4 (hr-settings-dialog-l4.test.mjs)`) — lost attribute: none serialized (no marker contract)
+- `dialog.linenumbers-dialog.l4` (wo.match `linenumbers-l4 (linenumbers-dialog-l4.test.mjs)`) — lost attribute: none serialized (no marker contract)
+- `dialog.find-dialog.l4` (wo.match `find-l4 (find-dialog-l4.test.mjs)`) — lost attribute: none serialized (no marker contract)
+- `dialog.text-to-table-dialog.l4` (wo.match `text-to-table-l4 (texttotable-dialog-l4.test.mjs)`) — lost attribute: none serialized (no marker contract)
+- `dialog.dropcap-dialog.l4` (wo.match `dropcap-l4 (dropcap-dialog-l4.test.mjs)`) — lost attribute: none serialized (no marker contract)
+- `dialog.watermark-dialog.l4` (wo.match `watermark-l4 (watermark-dialog-l4.test.mjs)`) — lost attribute: none serialized (no marker contract)
+- `dialog.pagenumber-dialog.l4` (wo.match `pagenumber-l4 (pagenumber-dialog-l4.test.mjs)`) — lost attribute: none serialized (no marker contract)
+- `dialog.bookmark-dialog.l4` (wo.match `bookmark-l4 (bookmark-dialog-l4.test.mjs)`) — lost attribute: none serialized (no marker contract)
 

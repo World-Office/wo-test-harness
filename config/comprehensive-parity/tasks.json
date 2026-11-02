@@ -1,0 +1,124 @@
+{
+  "campaign": "comprehensive-parity",
+  "goal": "Close all open parity gaps",
+  "acceptance": "L4 >= 10, visual bugs fixed, parked rows reviewed, deployed to cloud.graphwiz.ai",
+  "max_parallel": 10,
+  "policy": {
+    "no_change_is_not_success": false
+  },
+  "tasks": [
+    {
+      "id": "L4-001",
+      "title": "L4 link field-level parity",
+      "description": "Create census/ledger/link-dialog-l4.test.mjs with field assertions. Add ledger row dialog.link-dialog.l4 at level 4. Commit.",
+      "repo": "/home/weiss/git/World-Office/wo-test-harness",
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && grep -q dialog.link-dialog.l4 census/ledger/ledger.json",
+      "timeout": "15m"
+    },
+    {
+      "id": "L4-002",
+      "title": "L4 symbol field-level parity",
+      "description": "Create census/ledger/symbol-dialog-l4.test.mjs with field assertions. Add ledger row dialog.symbol-dialog.l4 at level 4. Commit.",
+      "repo": "/home/weiss/git/World-Office/wo-test-harness",
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && grep -q dialog.symbol-dialog.l4 census/ledger/ledger.json",
+      "timeout": "15m"
+    },
+    {
+      "id": "L4-003",
+      "title": "L4 image field-level parity",
+      "description": "Create census/ledger/image-dialog-l4.test.mjs with field assertions. Add ledger row dialog.image-dialog.l4 at level 4. Commit.",
+      "repo": "/home/weiss/git/World-Office/wo-test-harness",
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && grep -q dialog.image-dialog.l4 census/ledger/ledger.json",
+      "timeout": "15m"
+    },
+    {
+      "id": "L4-004",
+      "title": "L4 table field-level parity",
+      "description": "Create census/ledger/table-dialog-l4.test.mjs with field assertions. Add ledger row dialog.table-dialog.l4 at level 4. Commit.",
+      "repo": "/home/weiss/git/World-Office/wo-test-harness",
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && grep -q dialog.table-dialog.l4 census/ledger/ledger.json",
+      "timeout": "15m"
+    },
+    {
+      "id": "L4-005",
+      "title": "L4 font field-level parity",
+      "description": "Create census/ledger/font-dialog-l4.test.mjs with field assertions. Add ledger row dialog.font-dialog.l4 at level 4. Commit.",
+      "repo": "/home/weiss/git/World-Office/wo-test-harness",
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && grep -q dialog.font-dialog.l4 census/ledger/ledger.json",
+      "timeout": "15m"
+    },
+    {
+      "id": "L4-006",
+      "title": "L4 paragraph-settings field-level parity",
+      "description": "Create census/ledger/paragraph-settings-dialog-l4.test.mjs with field assertions. Add ledger row dialog.paragraph-settings-dialog.l4 at level 4. Commit.",
+      "repo": "/home/weiss/git/World-Office/wo-test-harness",
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && grep -q dialog.paragraph-settings-dialog.l4 census/ledger/ledger.json",
+      "timeout": "15m"
+    },
+    {
+      "id": "VIS-001",
+      "title": "Fix ribbon sub-menu z-index cut by ruler",
+      "description": "Ribbon sub-menus cut by ruler. In style.css, ensure dropdown z-index > ruler z-index. Commit.",
+      "repo": "/home/weiss/git/World-Office/server",
+      "accept": "grep -q z-index /home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg/style.css",
+      "timeout": "10m"
+    },
+    {
+      "id": "VIS-002",
+      "title": "Fix right menu not reducible",
+      "description": "Right menu cannot be reduced. Fix sidebar toggle in editor.js. Commit.",
+      "repo": "/home/weiss/git/World-Office/server",
+      "accept": "grep -q sidebar /home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg/editor.js",
+      "timeout": "10m"
+    },
+    {
+      "id": "PKG-001",
+      "title": "Review and clean parked rows",
+      "description": "Review ledger.json for parked rows. Remove false positives from census/ledger/census.json rows marked parked. Run build.py. Commit.",
+      "repo": "/home/weiss/git/World-Office/wo-test-harness",
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && grep -qv 'parked' census/ledger/ledger.json",
+      "timeout": "10m"
+    },
+    {
+      "id": "HRT-001",
+      "title": "Heading roundtrip deep verification",
+      "description": "Add edge case heading probes to roundtrip.cjs. Run suite, verify >=30 survived. Commit.",
+      "repo": "/home/weiss/git/World-Office/wo-test-harness",
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && timeout 5400 env NO_PROXY=127.0.0.1,localhost /usr/bin/node census/ledger/roundtrip.cjs 2>&1 | tail -1 | grep -q survived",
+      "timeout": "20m"
+    },
+    {
+      "id": "DEPLOY-001",
+      "title": "Build Docker and deploy to cloud.graphwiz.ai",
+      "description": "Build worldoffice/documentserver from wo-docserver Dockerfile. Deploy to prod :8082 and staging :8086. Copy editor.js to editor-ui mounts.",
+      "repo": "/home/weiss/git/World-Office/server",
+      "depends_on": [
+        "VIS-001",
+        "VIS-002"
+      ],
+      "accept": "curl -s -o /dev/null -w '%{http_code}' http://192.168.42.42:8082/word/editor.js | grep -q 200 && curl -s -o /dev/null -w '%{http_code}' http://192.168.42.42:8086/word/editor.js | grep -q 200",
+      "timeout": "15m"
+    },
+    {
+      "id": "FINAL-001",
+      "title": "Final ledger rebuild and campaign completion",
+      "description": "Run build.py. Verify L0=0, L4>=10, features>=501. Commit all. Push to origin/main and origin/master.",
+      "repo": "/home/weiss/git/World-Office/wo-test-harness",
+      "depends_on": [
+        "L4-001",
+        "L4-002",
+        "L4-003",
+        "L4-004",
+        "L4-005",
+        "L4-006",
+        "VIS-001",
+        "VIS-002",
+        "PKG-001",
+        "HRT-001",
+        "DEPLOY-001"
+      ],
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && /usr/bin/python3 census/ledger/build.py > /dev/null 2>&1 && grep -q 'L4.*10' census/ledger/ledger.json",
+      "timeout": "10m"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T19:49:11.771380",
+ "generated": "2026-11-02T19:51:23.248075",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10334,7 +10334,7 @@
    },
    "level": 4,
    "evidence": [
-    "L4 live probe (image-dialog-l4.test.mjs, 2026-11-02T18:06:46.532Z): opens via a real click (Insert tab + #btn-image); title 'Insert image', Image file input (accepts png; real bytes -> data: preview + size fields + armed Insert), Width/Height number inputs (min 1, hidden until a file), size hint; Cancel+Insert(primary, disabled until file) verified",
+    "L4 live probe (image-dialog-l4.test.mjs, 2026-11-02T18:46:40.003Z): opens via a real click (Insert tab + #btn-image); title 'Insert image', Image file input (accepts png; real bytes -> data: preview + size fields + armed Insert), Width/Height number inputs (min 1, hidden until a file), size hint; Cancel+Insert(primary, disabled until file) verified",
     "L4 fidelity: real PNG via setInputFiles previews + arms Insert; invalid type rejected with error (Insert stays disabled); width 123 + Insert puts <img width=\"123\"> into the flat HTML at the saved caret; empty size inserts at natural size (no width/height attrs); Cancel mutates nothing; selection-on-<img> routes the same dialog into the contextual Replace-image path (measured) — text-caret inserts are the plain case",
     "declared divergence: OO Insert→Image opens a menu into the native OS file picker (interact census: insert/Image opens \"menu\", header-footer/Image opens a 0-control modal mask; the committed OO dialog census captured NO field-level insert-image dialog) — the file + width/height + Insert/Cancel contract is pinned from the MS-Word-style insert-image shape; WO ships an anchored popover with preview + size fields as the semantic carrier (table-dialog precedent, measured)"
    ]
