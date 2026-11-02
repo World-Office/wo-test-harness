@@ -633,10 +633,21 @@ for _i in (1, 2, 3):
             "fix section 6b (heading parity must not silently regress)")
 
 out = HERE / "ledger.json"
-json.dump({"version": 1, "generated": __import__("datetime").datetime.now().isoformat(),
-           "levels": ["L0 missing", "L1 surface", "L2 acts", "L3 persists", "L4 fidelity"],
-           "totals": {k: tot[k] for k in ["L0", "L1", "L2", "L3", "L4"]},
-           "features": list(ledger.values())}, open(out, "w"), indent=1, ensure_ascii=False)
+new_ledger = {"version": 1, "generated": __import__("datetime").datetime.now().isoformat(),
+              "levels": ["L0 missing", "L1 surface", "L2 acts", "L3 persists", "L4 fidelity"],
+              "totals": {k: tot[k] for k in ["L0", "L1", "L2", "L3", "L4"]},
+              "features": list(ledger.values())}
+# Idempotent rebuild (T-005): keep the committed `generated` stamp when nothing
+# else changed, so a gate run of build.py never dirties the checkout (that
+# dirt is what broke the tf/T-005 merge into main on attempt 1).
+try:
+    old_ledger = json.loads(out.read_text())
+    strip = lambda d: {k: v for k, v in d.items() if k != "generated"}
+    if strip(old_ledger) == strip(new_ledger):
+        new_ledger["generated"] = old_ledger["generated"]
+except (OSError, ValueError):
+    pass
+json.dump(new_ledger, open(out, "w"), indent=1, ensure_ascii=False)
 
 print(f"ledger: {len(ledger)} features across {len(by_cluster)} clusters")
 print(f"  L0 missing : {tot['L0']}")
