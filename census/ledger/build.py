@@ -839,6 +839,72 @@ if idl4_path.exists():
         _row["evidence"].append("declared divergence: " + _g)
     print("  L4 live probe: dialog.image-dialog.l4 "
           + ("at L4" if idl4.get("ok") else "NOT at L4 (measured defect — see evidence)"))
+# --------------------------- L4 merge (paragraph-dialog-l4.test.mjs, L4-006)
+# OO opens "Paragraph advanced settings" from the ctx-menu row (census-oo-deep
+# contextMenu proves the item enabled) and the right panel's "Show advanced
+# settings" — the committed OO dialog census captured no field-level paragraph
+# modal, so the field contract is pinned from the MS-Word-style Indents &
+# Spacing shape (alignment, left/right/first-line indents, line spacing,
+# keeps, page break, Tabs…, OK/Cancel). WO ships it as #paragraph-settings-dialog
+# opened by a REAL right-click + the ctx ParagraphSettings row. L4 is EARNED by
+# the live probe paragraph-dialog-l4.test.mjs: apply puts real inline styles +
+# semantic classes on the caret block (flat HTML), reopen reads the live block
+# back into every field, the negative path untoggles, Cancel mutates nothing.
+# A failing check pins the row below L4 with the measured defect as loud
+# evidence — never a silent pass.
+pdl4_path = HERE / "paragraph-dialog-l4.json"
+if pdl4_path.exists():
+    try:
+        pdl4 = json.load(open(pdl4_path))
+    except ValueError:
+        raise SystemExit("ledger: paragraph-dialog-l4.json is not valid JSON — fix the probe artifact")
+    _pdl4_ok = [c for c in pdl4.get("checks", []) if c.get("ok")]
+    _fid = pdl4.get("feature") or "dialog.paragraph-settings-dialog.l4"
+    _row = ledger.setdefault(_fid, {
+        "feature": _fid, "cluster": "formatting", "kind": "dialog",
+        "oo": [], "wo": None, "level": 0, "evidence": [],
+    })
+    _row["oo"].append({"surface": "ctx-menu:ParagraphSettings",
+                        "label": "Paragraph advanced settings (field-level)",
+                        "fields": ["Alignment", "Left indent", "Right indent",
+                                   "First line indent", "Line spacing",
+                                   "Keep lines together", "Keep with next",
+                                   "Page break before", "Tabs…", "OK", "Cancel"],
+                        "note": "pinned contract — OO's Paragraph-advanced-settings modal opens via "
+                                "the ctx-menu row (census-oo-deep) / right panel Show-advanced; the OO "
+                                "dialog census captured no field-level paragraph modal (fields pinned "
+                                "from the MS-Word-style Indents & Spacing shape)"})
+    _row["wo"] = {"match": "paragraph-settings-dialog (paragraph-dialog-l4.test.mjs)",
+                   "where": "ctx-menu:ParagraphSettings"}
+    _row["level"] = max(_row["level"], 1)
+    _row["evidence"].append(
+        "L4 live probe (paragraph-dialog-l4.test.mjs, "
+        + (pdl4.get("generated") or "?") + "): opens via a real right-click on the caret "
+        + "paragraph + the ctx-menu ParagraphSettings row; title 'Paragraph advanced settings' "
+        + "(OO's ctx-row label); Alignment select left/center/right/justify, Left/Right indent "
+        + "number 0..500, First line indent number -200..200 (negatives = hanging), Line spacing "
+        + "select 1/1.5/2, Keep lines together / Keep with next / Page break before checkboxes, "
+        + "Tabs… + Cancel + OK(primary) verified")
+    if pdl4.get("ok"):
+        _row["level"] = 4
+        _row["evidence"].append(
+            "L4 fidelity: center + 40/20/32 + 1.5 + keeps via OK puts text-align/margins/"
+            + "text-indent/line-height inline styles + keep-lines-together/keep-with-next classes "
+            + "on the caret <p> (visible in the flat HTML); reopening reads the live block back into "
+            + "every field; the negative path zeroes styles and untoggles (page-break-before on); "
+            + "Cancel mutates nothing")
+    else:
+        for _c in pdl4.get("checks", []):
+            if not _c.get("ok"):
+                _row["evidence"].append(
+                    "L4 DEFECT (measured, probe check '" + _c.get("name", "?")
+                    + "'): " + _c.get("detail", "failed"))
+        _row["evidence"].append(
+            "NOT L4: re-run paragraph-dialog-l4.test.mjs + build.py after the editor fix")
+    for _g in pdl4.get("declaredGaps", []) or []:
+        _row["evidence"].append("declared divergence: " + _g)
+    print("  L4 live probe: dialog.paragraph-settings-dialog.l4 "
+          + ("at L4" if pdl4.get("ok") else "NOT at L4 (measured defect — see evidence)"))
 
 # ---------------------------------------------------------------- report
 by_cluster = defaultdict(lambda: {"L0": 0, "L1": 0, "L2": 0, "L3": 0, "L4": 0, "rows": []})

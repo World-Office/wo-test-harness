@@ -1,0 +1,140 @@
+{
+ "version": 1,
+ "probe": "paragraph-dialog-l4",
+ "feature": "dialog.paragraph-settings-dialog.l4",
+ "generated": "2026-11-02T18:09:01.160Z",
+ "ok": true,
+ "checks": [
+  {
+   "name": "open via real right-click + ctx row ParagraphSettings",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Paragraph advanced settings\" (i18n Ctx.ParagraphSettings — OO ctx-row label)",
+   "ok": true,
+   "detail": "\"Paragraph advanced settings\""
+  },
+  {
+   "name": "field Alignment: label + select left/center/right/justify",
+   "ok": true,
+   "detail": "label=\"Alignment\" opts=[\"left\",\"center\",\"right\",\"justify\"]"
+  },
+  {
+   "name": "fields Left/Right indent: labels + number 0..500",
+   "ok": true,
+   "detail": "l=Left indent/number/0/500 r=Right indent/number/0/500"
+  },
+  {
+   "name": "field First line indent: label + number -200..200 (negatives = hanging)",
+   "ok": true,
+   "detail": "\"First line indent\" number -200..200"
+  },
+  {
+   "name": "field Line spacing: label + select Single/1.5/Double (1, 1.5, 2)",
+   "ok": true,
+   "detail": "label=\"Line spacing\" opts=[\"1\",\"1.5\",\"2\"]"
+  },
+  {
+   "name": "checkboxes Keep lines together / Keep with next / Page break before",
+   "ok": true,
+   "detail": "\"Keep lines together\" | \"Keep with next\" | \"Page break before\""
+  },
+  {
+   "name": "buttons Tabs… + Cancel + OK(primary)",
+   "ok": true,
+   "detail": "tabs=\"Tabs…\" cancel=\"Cancel\" ok=\"OK\" primary=true"
+  },
+  {
+   "name": "apply center/40/20/32/1.5 + keeps -> inline styles + classes on caret <p> (flat HTML)",
+   "ok": true,
+   "detail": "align=center ml=40px mr=20px ti=32px lh=1.5 keeps=true/true pb=false flat=true/true/true"
+  },
+  {
+   "name": "reopen reads the live paragraph back (center/40/20/32/1.5, keeps on)",
+   "ok": true,
+   "detail": "{\"align\":\"center\",\"il\":\"40\",\"ir\":\"20\",\"fl\":\"32\",\"sp\":\"1.5\",\"kl\":true,\"kn\":true,\"pb\":false}"
+  },
+  {
+   "name": "negative path: zero values remove styles, keeps off, page-break-before on",
+   "ok": true,
+   "detail": "keeps=false/false pb=true ml=\"\" mr=\"\" ti=\"\" lh=\"\""
+  },
+  {
+   "name": "cancel mutates nothing",
+   "ok": true,
+   "detail": "align=left ml=\"\" keepLines=false closed=true"
+  }
+ ],
+ "declaredGaps": [
+  "OO opens \"Paragraph advanced settings\" from the ctx menu row (census-oo-deep contextMenu, enabled) and the right panel \"Show advanced settings\"; the committed OO dialog census captured no field-level paragraph modal — the field contract is pinned from the MS-Word-style Indents & Spacing shape (alignment, left/right/first-line indents, line spacing, keeps, page break, Tabs…, OK/Cancel)",
+  "OO additionally carries Before/After paragraph spacing + \"Don't add interval between paragraphs of the same style\" (right-panel census) — WO defers those to the ribbon line-spacing control and right panel; recorded divergence, not gated"
+ ],
+ "contract": {
+  "open": "real right-click on the caret paragraph + ctx-menu row button[data-ctx=\"ParagraphSettings\"] (editor.js: openParagraphSettingsDialog)",
+  "title": "Paragraph advanced settings",
+  "fields": [
+   {
+    "label": "Alignment",
+    "tag": "select",
+    "options": [
+     "left",
+     "center",
+     "right",
+     "justify"
+    ]
+   },
+   {
+    "label": "Left indent",
+    "tag": "input",
+    "type": "number",
+    "min": 0,
+    "max": 500
+   },
+   {
+    "label": "Right indent",
+    "tag": "input",
+    "type": "number",
+    "min": 0,
+    "max": 500
+   },
+   {
+    "label": "First line indent",
+    "tag": "input",
+    "type": "number",
+    "min": -200,
+    "max": 200
+   },
+   {
+    "label": "Line spacing",
+    "tag": "select",
+    "options": [
+     "1",
+     "1.5",
+     "2"
+    ]
+   },
+   {
+    "label": "Keep lines together",
+    "tag": "input",
+    "type": "checkbox"
+   },
+   {
+    "label": "Keep with next",
+    "tag": "input",
+    "type": "checkbox"
+   },
+   {
+    "label": "Page break before",
+    "tag": "input",
+    "type": "checkbox"
+   }
+  ],
+  "buttons": [
+   "Tabs…",
+   "Cancel",
+   "OK"
+  ],
+  "behavior": "OK applies text-align/margins/text-indent/line-height inline styles + keep-lines-together/keep-with-next/page-break-before classes to the caret block (flat HTML); reopen reads the live block back into every field; zero values remove styles; Cancel mutates nothing"
+ }
+}
