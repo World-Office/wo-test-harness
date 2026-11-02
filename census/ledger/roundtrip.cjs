@@ -697,7 +697,8 @@ async function main() {
   lines.push(`Generated: ${payload.generated}`);
   lines.push(`Conversion endpoint: \`${CONVERT_URL}\` (html -> docx -> html)`);
   lines.push(`Editor: \`${EDITOR_DIR}\``);
-  lines.push(`Probed: ${results.length} document-level commands — survived: ${survived}, lost: ${failed.length}`);
+  const cmdProbes = results.filter((r) => r.key !== 'c2-3-ol-start');
+  lines.push(`Probed: ${results.length} document-level commands (${cmdProbes.length} command probes + ${results.length - cmdProbes.length} direct converter case) — survived: ${survived}, lost: ${failed.length}`);
   lines.push('');
   lines.push('A feature reaches **L3 (persists)** only when its mutation marker is present');
   lines.push('in the editor serialization *and* still present after booting a fresh editor');
