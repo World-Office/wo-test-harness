@@ -1,0 +1,93 @@
+{
+  "campaign": "behavioral-hone",
+  "goal": "Add behavioral tests for UI issues, improve ribbon tabs, hone test harness",
+  "acceptance": "Shift+Enter behavioral test passes, ribbon tabs improved, harness optimized",
+  "max_parallel": 10,
+  "policy": {"no_change_is_not_success": false},
+  "tasks": [
+    {
+      "id": "BHV-001",
+      "title": "Behavioral test: Shift+Enter text stays on page",
+      "description": "Create shift-enter-behavior.test.mjs in server/apps/web/apps/documenteditor-wysiwyg/. Test that Shift+Enter inserts line break within paragraph and text stays on page (not in gray background). Run test with: npx jest shift-enter-behavior.test.mjs --testTimeout=30000. Commit test file.",
+      "repo": "/home/weiss/git/World-Office/server",
+      "accept": "test -f /home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg/shift-enter-behavior.test.mjs && echo OK || echo FAIL",
+      "timeout": "15m"
+    },
+    {
+      "id": "BHV-002",
+      "title": "Investigate and fix Shift+Enter gray background issue",
+      "description": "Root cause: Shift+Enter in editor.js. Check how keyDown inserts <br> vs new block. In editor.js search for Enter handling. Check if content ends up outside .page div. Fix by ensuring Shift+Enter line breaks keep content within page boundaries. Commit fix.",
+      "repo": "/home/weiss/git/World-Office/server",
+      "depends_on": ["BHV-001"],
+      "accept": "cd /home/weiss/git/World-Office/server && grep -q Shift /home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg/editor.js && echo OK || echo FAIL",
+      "timeout": "20m"
+    },
+    {
+      "id": "RIB-001",
+      "title": "Improve ribbon tabs visual design",
+      "description": "Ribbon tabs at top need visual refinement. In style.css: improve tab styling (padding, borders, hover effects), ensure active tab is clearly visible, fix any overflow issues. Reference OO ribbon tab styling. Commit CSS changes.",
+      "repo": "/home/weiss/git/World-Office/server",
+      "accept": "grep -q 'ribbon-tab' /home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg/style.css && echo OK || echo FAIL",
+      "timeout": "15m"
+    },
+    {
+      "id": "RIB-002",
+      "title": "Ribbon tab keyboard navigation",
+      "description": "Ensure ribbon tabs can be navigated with arrow keys and activated with Enter/Space. In editor.js, check for keyboard event handlers on .ribbon-tab elements. Add if missing: ArrowLeft/ArrowRight to cycle tabs, Enter to activate. Commit.",
+      "repo": "/home/weiss/git/World-Office/server",
+      "accept": "cd /home/weiss/git/World-Office/server && grep -q keyboard /home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg/editor.js && echo OK || echo FAIL",
+      "timeout": "15m"
+    },
+    {
+      "id": "RIB-003",
+      "title": "Ribbon contextual tabs (chart-design, etc.) auto-show/hide",
+      "description": "Contextual tabs like chart-design should auto-show when relevant object selected, auto-hide when not. In editor.js, check context menu wiring. Ensure chart-design tab hidden by default, shown when chart selected, hidden when selection cleared. Commit.",
+      "repo": "/home/weiss/git/World-Office/server",
+      "accept": "grep -q contextual /home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg/editor.js && echo OK || echo FAIL",
+      "timeout": "15m"
+    },
+    {
+      "id": "HARN-001",
+      "title": "Harness: create inventory of all behavioral test types needed",
+      "description": "Create census/behavioral-inventory.md listing all UI behavioral test categories needed: keyboard shortcuts, dialog interactions, layout/rendering, clipboard, undo/redo, collaboration, etc. Group by priority. Commit.",
+      "repo": "/home/weiss/git/World-Office/wo-test-harness",
+      "accept": "test -f /home/weiss/git/World-Office/wo-test-harness/census/behavioral-inventory.md && echo OK || echo FAIL",
+      "timeout": "10m"
+    },
+    {
+      "id": "HARN-002",
+      "title": "Harness: add Shift+Enter to behavioral inventory",
+      "description": "Document Shift+Enter bug in census/behavioral-inventory.md under Layout/RRendering section. Include expected behavior, actual behavior, severity. Commit.",
+      "repo": "/home/weiss/git/World-Office/wo-test-harness",
+      "depends_on": ["HARN-001"],
+      "accept": "grep -q 'Shift+Enter' /home/weiss/git/World-Office/wo-test-harness/census/behavioral-inventory.md && echo OK || echo FAIL",
+      "timeout": "10m"
+    },
+    {
+      "id": "HARN-003",
+      "title": "Harness: optimize build.py runtime",
+      "description": "Profile census/ledger/build.py for slow operations. Cache intermediate results, parallelize where possible, reduce redundant file I/O. Ensure runtime < 30s for full ledger. Commit optimizations.",
+      "repo": "/home/weiss/git/World-Office/wo-test-harness",
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && timeout 35 /usr/bin/python3 census/ledger/build.py > /dev/null 2>&1 && echo OK || echo FAIL",
+      "timeout": "15m"
+    },
+    {
+      "id": "DEPLOY-001",
+      "title": "Deploy behavioral fixes to cloud.graphwiz.ai",
+      "description": "Build Docker image from wo-docserver Dockerfile with tag worldoffice/documentserver:behavioral-fix. Deploy to prod :8082 and staging :8086. Copy editor.js and style.css to editor-ui mounts. Verify 200.",
+      "repo": "/home/weiss/git/World-Office/server",
+      "depends_on": ["BHV-002", "RIB-001", "RIB-002", "RIB-003"],
+      "accept": "curl -s -o /dev/null -w '%{http_code}' http://192.168.42.42:8082/word/editor.js | grep -q 200 && curl -s -o /dev/null -w '%{http_code}' http://192.168.42.42:8086/word/editor.js | grep -q 200 && echo OK || echo FAIL",
+      "timeout": "15m"
+    },
+    {
+      "id": "FINAL-001",
+      "title": "Final verification: run behavioral test suite",
+      "description": "Run all behavioral tests in server/apps/web/apps/documenteditor-wysiwyg/*.test.mjs. Verify Shift+Enter test passes. Commit test results. Push to origin/main and origin/master.",
+      "repo": "/home/weiss/git/World-Office/server",
+      "depends_on": ["BHV-001", "BHV-002", "RIB-001", "RIB-002", "RIB-003", "HARN-001", "HARN-002", "HARN-003", "DEPLOY-001"],
+      "accept": "cd /home/weiss/git/World-Office/server && npx jest apps/web/apps/documenteditor-wysiwyg/shift-enter-behavior.test.mjs --testTimeout=30000 2>&1 | grep -q PASS && echo OK || echo FAIL",
+      "timeout": "20m"
+    }
+  ]
+}
