@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T18:36:43.365903",
+ "generated": "2026-11-02T18:40:41.274463",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -11,7 +11,7 @@
  "totals": {
   "L0": 0,
   "L1": 385,
-  "L2": 80,
+  "L2": 81,
   "L3": 38,
   "L4": 2
  },
@@ -10194,6 +10194,32 @@
    },
    "level": 1,
    "evidence": []
+  },
+  {
+   "feature": "dialog.link-dialog.l4",
+   "cluster": "references",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:Hyperlink",
+     "trigger": "Link",
+     "label": "Hyperlink",
+     "fields": [
+      "Text to display",
+      "URL"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "link-dialog",
+    "where": "dialog:link-dialog"
+   },
+   "level": 2,
+   "evidence": [
+    "L4 link-dialog field parity: 1/2 OO fields covered {'URL': 'URL'} (missing OO fields: Text to display)",
+    "L2 act: URL field + Insert produced <a href> in #editor (probe)",
+    "opened via real route: click #btn-link (toolbar Insert link)"
+   ]
   },
   {
    "feature": "dialog.font-dialog.l4",

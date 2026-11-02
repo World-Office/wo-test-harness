@@ -287,7 +287,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **page.automatic** [menu-item] → WO: toggleHyphenation
 - ✅ L2 **page.hyphenation-options** [menu-item] → WO: toggleHyphenation
 
-## references — 9 features (L0:0 L1:6 L3:1)
+## references — 10 features (L0:0 L1:6 L3:1)
 - 🔲 L1 **references.add-text** [control] → WO: btn-addtext
 - 🔲 L1 **references.bookmark** [control] → WO: bookmark-dialog
 - 🔲 L1 **references.cross-reference** [control] → WO: crossref-dialog
@@ -296,6 +296,7 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **references.dlg-cross-reference** [dialog] (5 OO fields) → WO: crossref-dialog
 - ✅ L2 **references.footnote** [control] → WO: insertFootnote
 - ✅ L2 **references.caption** [control] → WO: insertCaption
+- ✅ L2 **dialog.link-dialog.l4** [dialog] (2 OO fields) → WO: link-dialog
 - ✅ L3 **references.link** [control] → WO: link
 
 ## protect — 2 features (L0:0 L1:0 L3:0)

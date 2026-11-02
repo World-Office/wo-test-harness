@@ -1,0 +1,36 @@
+{
+ "probe": "ledger/link-dialog-l4.test.mjs",
+ "feature": "dialog.link-dialog.l4",
+ "oo_fields": [
+  "Text to display",
+  "URL"
+ ],
+ "openedBy": "click #btn-link (toolbar Insert link)",
+ "wo": {
+  "id": "link-dialog",
+  "title": "Insert link",
+  "fields": [
+   {
+    "label": "URL",
+    "tag": "input",
+    "type": "url"
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Insert"
+  ]
+ },
+ "covered": 1,
+ "total": 2,
+ "missing": [
+  "Text to display"
+ ],
+ "mapping": {
+  "URL": "URL"
+ },
+ "parity": false,
+ "functional": true,
+ "error": null,
+ "capturedAt": "2026-11-02T17:40:16.769Z"
+}

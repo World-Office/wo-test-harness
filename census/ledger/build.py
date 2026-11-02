@@ -587,6 +587,46 @@ if dp_path.exists():
     dp_merged = True
     print("  L4 merge: %d dialog rows at full field parity (dialog-parity.py)" % _l4)
 
+# --------------------------- L4 probe: link-dialog (link-dialog-l4.test.mjs, L4-001)
+# The link dialog is opened the way a user opens it (#btn-link on the
+# Insert tab), its live field contract joined against the DECLARED OO
+# Hyperlink window fields (the OO rig census cannot open OO's hyperlink
+# window — its "Link" trigger captures Bookmarks — so the OO field list
+# is declared in the probe and pinned by it; it flips deliberately WITH
+# this row, PROBES-dict spirit from ai-contracts.py). L4 only at full
+# field parity; a measured gap keeps the row honest at L2 (the URL field
+# + Insert provably acts on the document) with the missing OO fields as
+# loud evidence.
+ldp_path = HERE / "link-dialog-l4.json"
+if ldp_path.exists():
+    try:
+        ld = json.load(open(ldp_path))
+    except ValueError:
+        raise SystemExit("ledger: link-dialog-l4.json is not valid JSON — fix the probe artifact")
+    _ld_fid = "dialog.link-dialog.l4"
+    add(_ld_fid, "references",
+        {"surface": "dialog:Hyperlink", "trigger": "Link", "label": "Hyperlink",
+         "fields": ld.get("oo_fields", [])},
+        "dialog")
+    ledger[_ld_fid]["wo"] = {"match": "link-dialog", "where": "dialog:link-dialog"}
+    if ld.get("error"):
+        ledger[_ld_fid]["evidence"].append(
+            "L4 probe BROKEN (recapture link-dialog-l4.test.mjs): " + str(ld["error"])[:160])
+    else:
+        ledger[_ld_fid]["level"] = max(ledger[_ld_fid]["level"], 4 if ld.get("parity") else 2)
+        _ld_gap = " (missing OO fields: %s)" % ", ".join(ld.get("missing") or []) if ld.get("missing") else ""
+        ledger[_ld_fid]["evidence"].append(
+            "L4 link-dialog field parity: %d/%d OO fields covered %s%s"
+            % (ld.get("covered", 0), ld.get("total", 0), ld.get("mapping", {}), _ld_gap))
+        if ld.get("functional"):
+            ledger[_ld_fid]["evidence"].append(
+                "L2 act: URL field + Insert produced <a href> in #editor (probe)")
+        ledger[_ld_fid]["evidence"].append(
+            "opened via real route: " + str(ld.get("openedBy") or "?"))
+    print("  L4 probe merge: link-dialog %s (%s/%s OO fields)"
+          % ("PARITY" if ld.get("parity") else "GAP",
+             ld.get("covered", 0), ld.get("total", 0)))
+
 # --------------------------- T-008 registered capability parks (build-time)
 # Parked own-project capability planes (plan C12 macros / C13 capability /
 # forms-as-own-epic). The WO surface exercised here is a market-compatible
