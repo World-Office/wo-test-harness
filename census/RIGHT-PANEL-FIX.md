@@ -36,3 +36,12 @@ rule; `#right-panel` was the only one missing it.
 
 Note: this task's fix lives in the **server** repo (its gate runs there);
 the harness worktree only carries this record.
+
+## Re-verification (re-run 2026-11-02 18:42 UTC, fresh worktree re-dispatch)
+
+- Fix still on server `main` (`be3546239` < `76b37a431`), working tree clean.
+- `node --test right-panel.test.mjs` → 1 pass, 0 fail.
+- Acceptance gate (verbatim, this dispatch): `grep -q sidebar …/editor.js`
+  → exit 0. NOTE: the gate string changed since attempt 2 and matches
+  pre-existing comments in editor.js (lines 6525/7754/7999), not the fix —
+  the fix's real pin is `right-panel.test.mjs`.
