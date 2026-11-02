@@ -5,7 +5,9 @@ L3 layer: ledger/roundtrip.cjs (28/28 commands survive html->docx->html).
 L4 layer: ledger/dialog-parity.py (1/7 dialogs carry the OO field contract).
 Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
-**L3** persists (round-trip) · **L4** fidelity vs OO output.
+**L3** persists (round-trip) · **L4** fidelity vs OO output. ⏸ marks a
+registered park: a deliberately deferred capability plane, declared
+LOUD as a divergence row (never a silent stub).
 
 ## file — 39 features (L0:0 L1:36 L3:0)
 - 🔲 L1 **file.file** [control] → WO: btn-textfile
@@ -310,12 +312,12 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **view.pause-recording** [control] → WO: Pause recording
 
 ## macros — 3 features (L0:0 L1:3 L3:0)
-- 🔲 L1 **macros.macros** [control] → WO: btn-macro-menu
-- 🔲 L1 **macros.record-macro** [control] → WO: Record macro
-- 🔲 L1 **macros.dlg-macros** [dialog] (1 OO fields) → WO: btn-macro-menu
+- 🔲 L1 **macros.macros** [control] → WO: btn-macro-menu ⏸ registered park
+- 🔲 L1 **macros.record-macro** [control] → WO: Record macro ⏸ registered park
+- 🔲 L1 **macros.dlg-macros** [dialog] (1 OO fields) → WO: btn-macro-menu ⏸ registered park
 
 ## plugins — 10 features (L0:0 L1:9 L3:0)
-- 🔲 L1 **plugins.plugin-manager** [control] → WO: plugins-dialog
+- 🔲 L1 **plugins.plugin-manager** [control] → WO: plugins-dialog ⏸ registered park
 - 🔲 L1 **plugins.background-plugins** [control] → WO: plugins-dialog
 - 🔲 L1 **plugins.youtube** [control] → WO: pluginUnavailable
 - 🔲 L1 **plugins.ocr** [control] → WO: ocrRun
@@ -456,7 +458,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.send-to-background** [ctx-menu] → WO: Layout tab objectOp send-to-background
 - 🔲 L1 **ctx.bring-forward** [ctx-menu] → WO: Layout tab objectOp bring-forward
 - 🔲 L1 **ctx.send-backward** [ctx-menu] → WO: Layout tab objectOp send-backward
-- 🔲 L1 **ctx.edit-wrap-boundary** [ctx-menu] → WO: ctx data-ctx=EditWrapBoundary — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-wrap-boundary marker + SetStatus NotAvailable
+- 🔲 L1 **ctx.edit-wrap-boundary** [ctx-menu] → WO: ctx data-ctx=EditWrapBoundary — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-wrap-boundary marker + SetStatus NotAvailable ⏸ registered park
 - 🔲 L1 **ctx.top-and-bottom** [ctx-menu] → WO: obj-center block flow (top-and-bottom ≈ own-line block)
 - 🔲 L1 **ctx.edit-data** [ctx-menu] → WO: Chart Design tab chartEditData -> openVectorEditor(chart)
 - 🔲 L1 **ctx.actual-size** [ctx-menu] → WO: ctx data-ctx=ActualSize -> objectOp actual-size
@@ -472,7 +474,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.crop** [ctx-menu] → WO: ctx data-ctx=Crop -> photo editor crop tool (drag + Apply)
 - 🔲 L1 **ctx.remove-content-control** [ctx-menu] → WO: ctx data-ctx=RemoveContentControl
 - 🔲 L1 **ctx.content-control-settings** [ctx-menu] → WO: ctx data-ctx=ContentControlSettings
-- 🔲 L1 **ctx.edit-points** [ctx-menu] → WO: ctx data-ctx=EditPoints — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-points marker + SetStatus NotAvailable
+- 🔲 L1 **ctx.edit-points** [ctx-menu] → WO: ctx data-ctx=EditPoints — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-points marker + SetStatus NotAvailable ⏸ registered park
 - 🔲 L1 **ctx.link** [ctx-menu] → WO: ctx data-ctx=Link
 - 🔲 L1 **ctx.edit-link** [ctx-menu] → WO: ctx data-ctx=EditLink
 - 🔲 L1 **ctx.copy-hyperlink-address** [ctx-menu] → WO: ctx data-ctx=CopyHyperlinkAddress (clipboard)

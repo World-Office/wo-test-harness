@@ -675,7 +675,9 @@ if dp_merged:
     md.append(f"L4 layer: ledger/dialog-parity.py ({dp.get('summary', {}).get('parity', 0)}/{dp.get('summary', {}).get('probed', 0)} dialogs carry the OO field contract).")
 md.append("Levels: **L0** missing · **L1** surface exists (visual parity — the old")
 md.append("census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·")
-md.append("**L3** persists (round-trip) · **L4** fidelity vs OO output.")
+md.append("**L3** persists (round-trip) · **L4** fidelity vs OO output. ⏸ marks a")
+md.append("registered park: a deliberately deferred capability plane, declared")
+md.append("LOUD as a divergence row (never a silent stub).")
 md.append("")
 for cl in sorted(by_cluster, key=lambda c: by_cluster[c]["L0"], reverse=True):
     v = by_cluster[cl]
@@ -688,7 +690,8 @@ for cl in sorted(by_cluster, key=lambda c: by_cluster[c]["L0"], reverse=True):
         if row["kind"] == "dialog":
             nf = len(next((o.get("fields", []) for o in row["oo"] if o.get("fields")), []))
             flds = f" ({nf} OO fields)"
-        md.append(f"- {icon} L{row['level']} **{row['feature']}** [{row['kind']}]{flds} {wo}")
+        park = " ⏸ registered park" if row.get("divergence") == "registered" else ""
+        md.append(f"- {icon} L{row['level']} **{row['feature']}** [{row['kind']}]{flds} {wo}{park}")
     md.append("")
 (HERE / "LEDGER-REPORT.md").write_text("\n".join(md))
 print("wrote", out)
