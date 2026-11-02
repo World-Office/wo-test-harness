@@ -24,7 +24,7 @@ F-### register rows for promoted features, declared divergences never hidden.
 |----|-----------|-------|-----------------|------------------------|--------|
 | BEH-01 | Plain typing insertion | type text at caret | text inserted, caret advances, doc serialization updates | — | **missing** |
 | BEH-02 | Enter / paragraph break | `Enter` | new block; following text moves to it | — | **missing** |
-| BEH-03 | Soft line break | `Shift+Enter` | `<br>` inserted; text stays on page (no overflow to next page); **no gray background artifact** on the break (BHV-001/BHV-002 regression) | `server/.../documenteditor-wysiwyg/shift-enter-behavior.test.mjs` (BHV-001) | partial — seed case landing with this campaign |
+| BEH-03 | Soft line break | `Shift+Enter` | `<br>` inserted; text stays on page (no overflow to next page); **no gray-background artifact** on the break (BHV-001/BHV-002 regression) | `server/.../documenteditor-wysiwyg/shift-enter-behavior.test.mjs` (BHV-001, merged) | partial — static gate landed; BHV-002 fix in flight; live keypress/pixel tier still missing (see Layout/rendering bugs) |
 | BEH-04 | Deletion keys | `Backspace`, `Delete`, `Ctrl+Backspace` (word), at block boundaries | correct unit removed; no block merge corruption | — | **missing** |
 | BEH-05 | Tab semantics | `Tab` in body vs in dialog/table | body: indent (or declared divergence); table: next cell; dialog: focus move | — | **missing** |
 | BEH-06 | Selection | mouse drag, `Shift+Arrows`, `Ctrl+A`, triple-click | selection ranges correct across inline/block/table boundaries | — | **missing** |
@@ -51,6 +51,40 @@ F-### register rows for promoted features, declared divergences never hidden.
 | BEH-27 | Slide insert/edit | insert slide, textbox, picture | slide count / parts mutate correctly | `census-react-slide.cjs` (structural) | **missing** |
 | BEH-28 | Diagram editor editing | shape insert/connect/move | vsdx parts mutate; reload preserves | `census-react-visio.cjs` (structural) | **missing** |
 | BEH-29 | OO behavioral reference | run identical input script in OO | capture OO's resulting doc state → committed golden; join WO vs OO per type | `census-oo*.cjs` / `interact-oo.cjs` (click-level only) | **missing** — parity verdicts need this |
+
+## Layout / rendering bugs
+
+User-visible rendering defects the behavioral types above must keep caught.
+One entry per bug: expected, actual, severity, covering types, current state.
+Status flips are deliberate PRs — never silent.
+
+### LRB-01 — Shift+Enter drops text into the gray backdrop ("gray void")
+
+- **Covering types:** BEH-03 (soft line break), BEH-18 (reflow on
+  mutation), BEH-19 (post-edit visual regression)
+- **Expected behavior:** `Shift+Enter` inserts a `<br>` **inside the same
+  paragraph** (browser-native `insertLineBreak`, never hijacked by the
+  editor keydown — the only Enter bindings are the Ctrl variants), and the
+  new line lands **on a `.wo-page` sheet**. A paragraph that outgrows its
+  sheet splits at a line boundary with widow/orphan control
+  (`trySplitLines` → `.wo-cont` tail), and serialization folds the splits
+  back so the saved flow keeps ONE paragraph with its `<br>`.
+- **Actual behavior (bug):** Shift+Enter-broken text rendered **outside any
+  page sheet — in the gray editor backdrop** (the gray-void bug class): the
+  break landed off-page and/or carried a gray-background artifact; an
+  emptied document could render zero sheets, so typing went straight into
+  the gray void. Related persistence gap: the round-trip loses the break
+  (`ledger/ROUNDTRIP-GAPS.md` — `shortcut.insertlinebreak`: "no marker
+  contract").
+- **Severity:** **high** — core editing key, user-visible data-placement
+  defect (text visibly "falls off the page"); blocks Shift+Enter use in
+  production docs.
+- **Current state:** static gate merged in the server repo
+  (`shift-enter-behavior.test.mjs`, BHV-001: pins native-insertLineBreak,
+  MutationObserver→`scheduleReflow`→`paginateView`, line-boundary splits,
+  empty-doc one-sheet guard, `flatHtml` `mergeSplits`). BHV-002 (editor
+  fix) in flight; until it merges and a live keypress/pixel tier exists,
+  BEH-03 stays `partial` — no silent promotion.
 
 ## Cross-cutting conventions
 
