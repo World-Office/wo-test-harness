@@ -1,13 +1,13 @@
 {
  "version": 1,
- "generated": "2026-11-02T15:29:15.960329",
+ "generated": "2026-11-02T15:33:57.324244",
  "source": {
   "oo": "census/census-oo-dialogs.json",
   "wo": "census/census/census-wo-dialogs.json",
   "pairing": "ledger/ledger.json dialog rows (audited join)"
  },
  "summary": {
-  "probed": 9,
+  "probed": 7,
   "parity": 1
  },
  "dialogs": [
@@ -206,62 +206,6 @@
      "Get link",
      "Delete",
      "Close"
-    ],
-    "wo": [
-     "Cancel",
-     "Insert"
-    ]
-   },
-   "parity": false
-  },
-  {
-   "feature": "headerfooter.dlg-date-time",
-   "oo_title": "Date & time",
-   "wo_dialog": "pagenumber-dialog",
-   "covered": 0,
-   "total": 1,
-   "missing": [
-    "Update automatically"
-   ],
-   "extra_wo": [
-    "Position",
-    "Format",
-    "Alignment"
-   ],
-   "mapping": {},
-   "buttons": {
-    "oo": [
-     "Set as default",
-     "OK",
-     "Cancel"
-    ],
-    "wo": [
-     "Cancel",
-     "Insert"
-    ]
-   },
-   "parity": false
-  },
-  {
-   "feature": "insert.dlg-date-time",
-   "oo_title": "Date & time",
-   "wo_dialog": "pagenumber-dialog",
-   "covered": 0,
-   "total": 1,
-   "missing": [
-    "Update automatically"
-   ],
-   "extra_wo": [
-    "Position",
-    "Format",
-    "Alignment"
-   ],
-   "mapping": {},
-   "buttons": {
-    "oo": [
-     "Set as default",
-     "OK",
-     "Cancel"
     ],
     "wo": [
      "Cancel",
