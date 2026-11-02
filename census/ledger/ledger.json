@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T15:33:45.487076",
+ "generated": "2026-11-02T17:14:52.387174",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -1327,7 +1327,7 @@
    },
    "level": 3,
    "evidence": [
-    "L3 roundtrip ok [btn-symbol]: marker \"§\" survived html->docx->html"
+    "L3 roundtrip ok [btn-symbol]: marker \"!\" survived html->docx->html"
    ]
   },
   {
@@ -3071,7 +3071,7 @@
    },
    "level": 3,
    "evidence": [
-    "L3 roundtrip ok [btn-symbol]: marker \"§\" survived html->docx->html"
+    "L3 roundtrip ok [btn-symbol]: marker \"!\" survived html->docx->html"
    ]
   },
   {
@@ -3091,7 +3091,7 @@
    },
    "level": 3,
    "evidence": [
-    "L3 roundtrip ok [btn-symbol]: marker \"§\" survived html->docx->html"
+    "L3 roundtrip ok [btn-symbol]: marker \"!\" survived html->docx->html"
    ]
   },
   {
