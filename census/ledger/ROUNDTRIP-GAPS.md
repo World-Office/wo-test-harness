@@ -1,6 +1,6 @@
 # LEDGER2-ROUNDTRIP: persistence gaps
 
-Generated: 2026-11-02T16:16:42.020Z
+Generated: 2026-11-02T16:20:46.261Z
 Conversion endpoint: `http://192.168.42.42:8086/api/conversion/convert` (html -> docx -> html)
 Editor: `/home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg`
 Probed: 28 document-level commands — survived: 28, lost: 0
