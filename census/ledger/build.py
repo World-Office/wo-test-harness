@@ -29,12 +29,17 @@ import json
 import re
 import unicodedata
 from collections import defaultdict
+from functools import lru_cache
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 CEN = HERE.parent / "census"
 
 # ---------------------------------------------------------------- normalize
+# HARN-003: wo_match re-normalizes every WO label/cmd per OO label in its
+# linear scans (121k calls = ~78% of runtime at last profile). norm() is a
+# pure str->str, so memoizing collapses it to one call per unique string.
+@lru_cache(maxsize=None)
 def norm(s: str) -> str:
     s = unicodedata.normalize("NFKD", s or "")
     s = s.lower()
