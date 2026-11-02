@@ -1,0 +1,104 @@
+{
+ "version": 1,
+ "probe": "watermark-dialog-l4",
+ "feature": "dialog.watermark-dialog.l4",
+ "generated": "2026-11-02T18:37:00.543Z",
+ "ok": false,
+ "checks": [
+  {
+   "name": "open via real clicks (Layout tab + toggleWatermark)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Watermark\"",
+   "ok": true,
+   "detail": "\"Watermark\""
+  },
+  {
+   "name": "field Watermark: label + select none/draft/confidential/custom (default draft), custom row hidden",
+   "ok": true,
+   "detail": "label=\"Watermark\" val=draft rowHidden=true opts=[\"none\",\"draft\",\"confidential\",\"custom\"]"
+  },
+  {
+   "name": "field Custom text: label + text input (default CONFIDENTIAL)",
+   "ok": true,
+   "detail": "\"Custom text\" text val=\"CONFIDENTIAL\""
+  },
+  {
+   "name": "field Color: label + select Gray/Red/Black hex values (default #C0C0C0)",
+   "ok": true,
+   "detail": "label=\"Color\" val=#C0C0C0 opts=[\"#C0C0C0\",\"#CC3333\",\"#000000\"]"
+  },
+  {
+   "name": "buttons Cancel + OK(primary)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" ok=\"OK\" primary=true"
+  },
+  {
+   "name": "selecting \"custom\" reveals the Custom text row",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "DRAFT + Red + OK -> div.watermark data-text=\"DRAFT\" data-color=\"#CC3333\" (flat HTML)",
+   "ok": true,
+   "detail": "has=true text=\"DRAFT\" color=\"#CC3333\" flat=true/true/true closed=true"
+  },
+  {
+   "name": "custom text rides the marker with quotes stripped",
+   "ok": false,
+   "detail": "text=\"Internal\" color=\"#000000\""
+  },
+  {
+   "name": "\"No watermark\" removes the marker",
+   "ok": true,
+   "detail": "has=false"
+  },
+  {
+   "name": "cancel plants nothing",
+   "ok": true,
+   "detail": "has=false closed=true"
+  }
+ ],
+ "declaredGaps": [
+  "the committed OO dialog census captured NO field-level Watermark modal (OO opens Watermark from Layout; the OO right-panel census carries the presets) — the field contract is pinned from the MS-Word-style Printed Watermark shape (no watermark / preset text / custom text + color, OK/Cancel)",
+  "MS Word additionally offers picture watermarks, font size/rotation and diagonal layout; WO defers those — recorded divergence, not gated"
+ ],
+ "contract": {
+  "open": "real clicks: Layout tab + ribbon button[data-cmd=\"toggleWatermark\"] (editor.js: openWatermarkDialog)",
+  "title": "Watermark",
+  "fields": [
+   {
+    "label": "Watermark",
+    "tag": "select",
+    "options": [
+     "none",
+     "draft",
+     "confidential",
+     "custom"
+    ]
+   },
+   {
+    "label": "Custom text",
+    "tag": "input",
+    "type": "text",
+    "default": "CONFIDENTIAL"
+   },
+   {
+    "label": "Color",
+    "tag": "select",
+    "options": [
+     "#C0C0C0",
+     "#CC3333",
+     "#000000"
+    ]
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "OK"
+  ],
+  "behavior": "OK plants the document-semantic section marker #editor > div.watermark [data-text][data-color] (custom reveals the text row; quotes stripped from custom text); \"none\" removes the marker; Cancel plants nothing"
+ }
+}

@@ -1,0 +1,105 @@
+{
+ "version": 1,
+ "probe": "pagenumber-dialog-l4",
+ "feature": "dialog.pagenumber-dialog.l4",
+ "generated": "2026-11-02T18:37:07.210Z",
+ "ok": false,
+ "checks": [
+  {
+   "name": "open via real clicks (Insert tab + #btn-pagenumber)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Page Number\"",
+   "ok": true,
+   "detail": "\"Page Number\""
+  },
+  {
+   "name": "field Position: label + select top/body/bottom",
+   "ok": true,
+   "detail": "label=\"Position\" opts=[\"top\",\"body\",\"bottom\"]"
+  },
+  {
+   "name": "field Format: label + select decimal/decimalZero/upperRoman/lowerRoman/upperLetter/lowerLetter",
+   "ok": true,
+   "detail": "label=\"Format\" opts=[\"decimal\",\"decimalZero\",\"upperRoman\",\"lowerRoman\",\"upperLetter\",\"lowerLetter\"]"
+  },
+  {
+   "name": "field Alignment: label + select left/center/right",
+   "ok": true,
+   "detail": "label=\"Alignment\" opts=[\"left\",\"center\",\"right\"]"
+  },
+  {
+   "name": "buttons Cancel + Insert(primary)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" insert=\"Insert\" primary=true"
+  },
+  {
+   "name": "Top + lowerRoman + Right -> header span.page-number[data-format=lowerRoman] text-align:right",
+   "ok": true,
+   "detail": "hdr={\"fmt\":\"lowerRoman\",\"align\":\"right\",\"display\":\"block\"} flat=true/true closed=true"
+  },
+  {
+   "name": "Bottom + decimal + Left -> footer span.page-number[data-format=decimal] text-align:left",
+   "ok": true,
+   "detail": "ftr={\"fmt\":\"decimal\",\"align\":\"left\",\"display\":\"block\"}"
+  },
+  {
+   "name": "At cursor inserts an inline span.page-number[data-format=upperLetter] text-align:left",
+   "ok": false,
+   "detail": "inline=0 span=null"
+  },
+  {
+   "name": "cancel plants nothing",
+   "ok": true,
+   "detail": "hdr={\"fmt\":\"upperLetter\",\"align\":\"left\",\"display\":\"block\"}/{\"fmt\":\"upperLetter\",\"align\":\"left\",\"display\":\"block\"} closed=true"
+  }
+ ],
+ "declaredGaps": [
+  "the committed OO dialog census captured NO field-level page-number modal (OO inserts via the Insert header/footer flow) — the field contract is pinned from the MS-Word-style Page Numbers shape (Position top/bottom, Format, Alignment, Insert/Cancel)",
+  "MS Word additionally offers a \"First page\" checkbox; WO defers that to the header/footer different-first-page marker — recorded divergence, not gated",
+  "declared quirk (measured): the #btn-pagenumber ribbon click carries data-cmd=\"insertPageNumber\" AND the dialog-open intercept, so opening the dialog also plants a bare inline span.page-number at the caret (no data-format) — the OK/Insert flow above is unaffected; recorded, not gated"
+ ],
+ "contract": {
+  "open": "real clicks: Insert tab + ribbon #btn-pagenumber (click-intercepted into the dialog)",
+  "title": "Page Number",
+  "fields": [
+   {
+    "label": "Position",
+    "tag": "select",
+    "options": [
+     "top",
+     "body",
+     "bottom"
+    ]
+   },
+   {
+    "label": "Format",
+    "tag": "select",
+    "options": [
+     "decimal",
+     "decimalZero",
+     "upperRoman",
+     "lowerRoman",
+     "upperLetter",
+     "lowerLetter"
+    ]
+   },
+   {
+    "label": "Alignment",
+    "tag": "select",
+    "options": [
+     "left",
+     "center",
+     "right"
+    ]
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Insert"
+  ],
+  "behavior": "Insert plants span.page-number[data-format] with text-align in header.page-header (top) / footer.page-footer (bottom) / inline at the caret (body); Cancel plants nothing"
+ }
+}

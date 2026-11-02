@@ -50,7 +50,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **file.protection** [control] → WO: protectDialog
 - ✅ L2 **file.view** [control] → WO: displayMode
 
-## formatting — 58 features (L0:0 L1:20 L3:22)
+## formatting — 59 features (L0:0 L1:21 L3:22)
 - 🔲 L1 **formatting.font** [control] → WO: font-family
 - 🔲 L1 **formatting.font-size** [control] → WO: font-size
 - 🔲 L1 **formatting.increment-font-size-ctrl** [control] → WO: font-size
@@ -71,6 +71,7 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **shortcut.increasefontsize** [shortcut] → WO: Ctrl+]
 - 🔲 L1 **shortcut.decreasefontsize** [shortcut] → WO: Ctrl+[
 - 🔲 L1 **shortcut.showall** [shortcut] → WO: ¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)
+- 🔲 L1 **dialog.dropcap-dialog.l4** [dialog] (3 OO fields) → WO: dropcap-l4 (dropcap-dialog-l4.test.mjs)
 - ✅ L2 **formatting.multilevel-list** [control] → WO: multilevel
 - ✅ L2 **formatting.text-direction** [control] → WO: directionRtl
 - ✅ L2 **shortcut.bold** [shortcut] → WO: Ctrl+B
@@ -110,7 +111,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L4 **dialog.font-dialog.l4** [dialog] (11 OO fields) → WO: font group (font-dialog-l4.test.mjs)
 - ✅ L4 **dialog.paragraph-settings-dialog.l4** [dialog] (11 OO fields) → WO: paragraph-settings-dialog (paragraph-dialog-l4.test.mjs)
 
-## insert — 57 features (L0:0 L1:33 L3:7)
+## insert — 59 features (L0:0 L1:34 L3:7)
 - 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
 - 🔲 L1 **insert.breaks** [control] → WO: Breaks
 - 🔲 L1 **insert.shape** [control] → WO: insertObject
@@ -144,6 +145,7 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **shortcut.insertequation** [shortcut] → WO: Ctrl+Alt+=
 - 🔲 L1 **shortcut.horizontalellipsis** [shortcut] → WO: Alt+;
 - 🔲 L1 **shortcut.insertfootnotenow** [shortcut] → WO: Ctrl+Alt+F
+- 🔲 L1 **dialog.pagenumber-dialog.l4** [dialog] (3 OO fields) → WO: pagenumber-l4 (pagenumber-dialog-l4.test.mjs)
 - ✅ L2 **insert.text-box** [control] → WO: insertTextbox
 - ✅ L2 **insert.text-art** [control] → WO: insertTextart
 - ✅ L2 **insert.drop-cap** [control] → WO: toggleDropcap
@@ -168,8 +170,9 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L3 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 - ✅ L4 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: symbol-dialog
 - ✅ L4 **dialog.symbol-dialog.l4** [dialog] (5 OO fields) → WO: symbol-dialog (symbol-dialog-l4.test.mjs)
+- ✅ L4 **dialog.hr-settings-dialog.l4** [dialog] (4 OO fields) → WO: hr-settings-l4 (hr-settings-dialog-l4.test.mjs)
 
-## table — 16 features (L0:0 L1:11 L3:3)
+## table — 17 features (L0:0 L1:11 L3:3)
 - 🔲 L1 **table.table-of-contents** [control] → WO: updatetoc-dialog
 - 🔲 L1 **table.update-table** [control] → WO: updateToc
 - 🔲 L1 **table.draw-table** [menu-item] → WO: Draw table
@@ -186,6 +189,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L3 **table.insert-custom-table** [menu-item] → WO: btn-table
 - ✅ L3 **table.convert-text-to-table** [menu-item] → WO: Convert Text to Table…
 - ✅ L4 **dialog.table-dialog.l4** [dialog] (2 OO fields) → WO: table-dialog
+- ✅ L4 **dialog.text-to-table-dialog.l4** [dialog] (3 OO fields) → WO: text-to-table-l4 (texttotable-dialog-l4.test.mjs)
 
 ## image — 3 features (L0:0 L1:2 L3:0)
 - 🔲 L1 **image.image** [control] → WO: btn-hf-image
@@ -240,7 +244,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L3 **headerfooter.date-time** [control] → WO: btn-datetime
 - ✅ L3 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 
-## page — 49 features (L0:0 L1:43 L3:0)
+## page — 51 features (L0:0 L1:44 L3:0)
 - 🔲 L1 **page.margins** [control] → WO: Margins
 - 🔲 L1 **page.orientation** [control] → WO: Orientation
 - 🔲 L1 **page.size** [control] → WO: Size
@@ -284,20 +288,23 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **page.dlg-page-size** [dialog] (3 OO fields) → WO: btn-multipage
 - 🔲 L1 **page.dlg-columns** [dialog] (5 OO fields) → WO: columns-dialog
 - 🔲 L1 **page.dlg-hyphenation** [dialog] (2 OO fields) → WO: hyphenation-dialog
+- 🔲 L1 **dialog.watermark-dialog.l4** [dialog] (3 OO fields) → WO: watermark-l4 (watermark-dialog-l4.test.mjs)
 - ✅ L2 **page.line-numbers** [control] → WO: toggleLineNumbers
 - ✅ L2 **page.hyphenation** [control] → WO: toggleHyphenation
 - ✅ L2 **page.watermark** [control] → WO: toggleWatermark
 - ✅ L2 **page.none** [menu-item] → WO: toggleHyphenation
 - ✅ L2 **page.automatic** [menu-item] → WO: toggleHyphenation
 - ✅ L2 **page.hyphenation-options** [menu-item] → WO: toggleHyphenation
+- ✅ L4 **dialog.linenumbers-dialog.l4** [dialog] (1 OO fields) → WO: linenumbers-l4 (linenumbers-dialog-l4.test.mjs)
 
-## references — 10 features (L0:0 L1:6 L3:1)
+## references — 11 features (L0:0 L1:7 L3:1)
 - 🔲 L1 **references.add-text** [control] → WO: btn-addtext
 - 🔲 L1 **references.bookmark** [control] → WO: bookmark-dialog
 - 🔲 L1 **references.cross-reference** [control] → WO: crossref-dialog
 - 🔲 L1 **references.dlg-bookmarks** [dialog] (2 OO fields) → WO: bookmark-dialog
 - 🔲 L1 **references.dlg-insert-caption** [dialog] (8 OO fields) → WO: insertCaption
 - 🔲 L1 **references.dlg-cross-reference** [dialog] (5 OO fields) → WO: crossref-dialog
+- 🔲 L1 **dialog.bookmark-dialog.l4** [dialog] (1 OO fields) → WO: bookmark-l4 (bookmark-dialog-l4.test.mjs)
 - ✅ L2 **references.footnote** [control] → WO: insertFootnote
 - ✅ L2 **references.caption** [control] → WO: insertCaption
 - ✅ L2 **dialog.link-dialog.l4** [dialog] (2 OO fields) → WO: link-dialog
@@ -426,7 +433,7 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **shortcut.previousfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.zoomout** [shortcut] → WO: Ctrl+Minus
 
-## edit — 136 features (L0:0 L1:102 L3:1)
+## edit — 137 features (L0:0 L1:102 L3:1)
 - 🔲 L1 **shortcut.deleteleftchar** [shortcut] → WO: Backspace
 - 🔲 L1 **shortcut.deleterightchar** [shortcut] → WO: Delete
 - 🔲 L1 **shortcut.editselectall** [shortcut] → WO: Ctrl+A
@@ -563,3 +570,4 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **ctx.undo** [ctx-menu] → WO: ctx data-ctx=Undo
 - ✅ L2 **ctx.redo** [ctx-menu] → WO: ctx data-ctx=Redo
 - ✅ L3 **ctx.horizontal-line-settings** [ctx-menu] → WO: ctx data-ctx=HorizontalLineSettings -> hr-settings-dialog (style insert/edit)
+- ✅ L4 **dialog.find-dialog.l4** [dialog] (3 OO fields) → WO: find-l4 (find-dialog-l4.test.mjs)

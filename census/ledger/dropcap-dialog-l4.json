@@ -1,0 +1,104 @@
+{
+ "version": 1,
+ "probe": "dropcap-dialog-l4",
+ "feature": "dialog.dropcap-dialog.l4",
+ "generated": "2026-11-02T18:36:53.975Z",
+ "ok": false,
+ "checks": [
+  {
+   "name": "open via real right-click + ctx row DropcapSettings",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Drop Cap\"",
+   "ok": true,
+   "detail": "\"Drop Cap\""
+  },
+  {
+   "name": "field Position: label + select none/dropped/in-margin (default dropped)",
+   "ok": true,
+   "detail": "label=\"Position\" opts=[\"none\",\"dropped\",\"in-margin\"] val=dropped"
+  },
+  {
+   "name": "field Lines to drop: label + number 2..5 (default 3)",
+   "ok": true,
+   "detail": "\"Lines to drop\" number 2..5 val=3"
+  },
+  {
+   "name": "field Distance from text (pt): label + number 0..50 (default 0)",
+   "ok": true,
+   "detail": "\"Distance from text (pt)\" number 0..50 val=0"
+  },
+  {
+   "name": "buttons Cancel + OK(primary)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" ok=\"OK\" primary=true"
+  },
+  {
+   "name": "apply dropped/3/5pt -> span.dropcap wraps first char with --drop-lines:3 --drop-distance:5pt (flat HTML)",
+   "ok": true,
+   "detail": "has=true text=\"D\" lines=3 dist=5pt rest=\"ropcap sentinel charlie text.\" flat=true/true/true closed=true"
+  },
+  {
+   "name": "out-of-range clamps: lines 99 -> 5, distance 99 -> 50pt",
+   "ok": true,
+   "detail": "lines=5 dist=50pt"
+  },
+  {
+   "name": "in-margin adds the .in-margin variant (--drop-lines:4)",
+   "ok": true,
+   "detail": "inMargin=true lines=4 dist=\"\""
+  },
+  {
+   "name": "Position none removes the dropcap wrap (text restored)",
+   "ok": false,
+   "detail": "has=false rest=\"pcap senti\""
+  },
+  {
+   "name": "cancel mutates nothing",
+   "ok": false,
+   "detail": "has=false closed=true"
+  }
+ ],
+ "declaredGaps": [
+  "the committed OO dialog census captured NO field-level Drop cap modal (OO opens Drop cap from Insert / the right panel) — the field contract is pinned from the MS-Word-style Drop Cap shape (Position none/dropped/in-margin, Lines to drop, Distance from text, OK/Cancel)",
+  "MS Word additionally offers a drop-cap Font selector; WO defers that to the caret font — recorded divergence, not gated"
+ ],
+ "contract": {
+  "open": "real right-click on the caret paragraph + ctx-menu row button[data-ctx=\"DropcapSettings\"] (editor.js: openDropcapDialog)",
+  "title": "Drop Cap",
+  "fields": [
+   {
+    "label": "Position",
+    "tag": "select",
+    "options": [
+     "none",
+     "dropped",
+     "in-margin"
+    ]
+   },
+   {
+    "label": "Lines to drop",
+    "tag": "input",
+    "type": "number",
+    "min": 2,
+    "max": 5,
+    "default": 3
+   },
+   {
+    "label": "Distance from text (pt)",
+    "tag": "input",
+    "type": "number",
+    "min": 0,
+    "max": 50,
+    "default": 0
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "OK"
+  ],
+  "behavior": "OK wraps the caret paragraph first char in span.dropcap with parameterized CSS vars (--drop-lines, --drop-distance; .in-margin variant), clamped 2..5 / 0..50; Position none removes the wrap; Cancel mutates nothing"
+ }
+}

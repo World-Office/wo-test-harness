@@ -1,0 +1,87 @@
+{
+ "version": 1,
+ "probe": "find-dialog-l4",
+ "feature": "dialog.find-dialog.l4",
+ "generated": "2026-11-02T18:36:33.340Z",
+ "ok": true,
+ "checks": [
+  {
+   "name": "open via real click on #btn-find",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Find and replace\"",
+   "ok": true,
+   "detail": "\"Find and replace\""
+  },
+  {
+   "name": "fields Find + Replace with (text inputs) + Match case (checkbox)",
+   "ok": true,
+   "detail": "find=text/\"Search in document\" replace=text matchCase=checkbox"
+  },
+  {
+   "name": "buttons Previous/Next/Close + Replace + Replace all (primary)",
+   "ok": true,
+   "detail": "prev=Previous match next=Next match close=Close find panel replace=Replace all=Replace all/true"
+  },
+  {
+   "name": "typing \"golf\" lists 3 matches (case-insensitive, count \"1 / 3\")",
+   "ok": true,
+   "detail": "count=\"1 / 3\""
+  },
+  {
+   "name": "Match case + \"GOLF\" narrows to 1/1 exact-case match",
+   "ok": true,
+   "detail": "count=\"1 / 1\""
+  },
+  {
+   "name": "Replace all golf->tango rewrites all 3 hits in the flat HTML (0 golf left)",
+   "ok": true,
+   "detail": "golf=0 tango=3"
+  },
+  {
+   "name": "Replace (single) rewrites exactly one match (3 tango -> 1 lima + 2 tango)",
+   "ok": true,
+   "detail": "tango=2 lima=1"
+  },
+  {
+   "name": "Close leaves the document untouched",
+   "ok": true,
+   "detail": "tango=2/2 lima=1/1 closed=true"
+  }
+ ],
+ "declaredGaps": [
+  "OO ships Find & replace as a full right panel with more-options (whole words, regex, look up); the committed OO DIALOG census captured no field-level find modal — the field contract is pinned from the MS-Word-style Find & Replace shape (Find, Replace with, Match case, Previous/Next, Replace, Replace All)",
+  "OO/MS extras (whole words only, sounds-like, regex, search-direction scope) are deferred by WO — recorded divergence, not gated"
+ ],
+ "contract": {
+  "open": "real click on toolbar #btn-find (editor.js: openFindDialog)",
+  "title": "Find and replace",
+  "fields": [
+   {
+    "label": "Find",
+    "tag": "input",
+    "type": "text"
+   },
+   {
+    "label": "Replace with",
+    "tag": "input",
+    "type": "text"
+   },
+   {
+    "label": "Match case",
+    "tag": "input",
+    "type": "checkbox"
+   }
+  ],
+  "buttons": [
+   "Previous",
+   "Next",
+   "Close",
+   "Replace",
+   "Replace all"
+  ],
+  "behavior": "live match count (current / total, case-insensitive; Match case narrows); Replace all rewrites every hit into the flat HTML as ONE undoable step; Replace rewrites the current match; Close leaves the document untouched"
+ }
+}

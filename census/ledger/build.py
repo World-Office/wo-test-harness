@@ -963,6 +963,152 @@ if dl4_path.exists():
     print("  L4 merge: dialog-l4.test.mjs %d/%d dialogs at full field parity"
           % (_dl4_parity, len(dl4.get("results", []))))
 
+# --------------------------- L4 live probes (FINAL-001 batch, PROBES dict)
+# Final-ledger task FINAL-001: eight more field-level dialog probes, each
+# a standalone <id>-l4.test.mjs driving the RUNNING vanilla editor (static
+# serve + fetch stub; table-dialog-l4 pattern). PROBES-dict spirit
+# (ai-contracts.py): the pinned OO-side expectation lives HERE and flips
+# deliberately WITH the probe. Each artifact carries its own contract +
+# declaredGaps; ok=true earns L4; failing checks pin the row at L1 with
+# the measured defects as loud evidence (table-dialog precedent — never a
+# silent pass). Evidence cites the probe FILE, not the artifact timestamp,
+# so the T-005 idempotent rebuild stays byte-stable across gate runs.
+L4_FINAL_PROBES = [
+    {"art": "hr-settings-dialog-l4.json", "cluster": "insert",
+     "oo": {"surface": "ctx-menu:HorizontalLineSettings",
+            "label": "Horizontal line settings",
+            "fields": ["Width (% of page)", "Height (px)", "Line color", "Alignment"],
+            "note": "pinned contract — OO inserts an hr directly from the ctx row (no "
+                    "settings modal in the committed OO dialog census; MS-Word-style "
+                    "horizontal-line shape, table-dialog precedent)"},
+     "behavior": "opens prefilled from the right-clicked <hr>; 60/4/#ff0000/left + Insert "
+                 "puts a real <hr style=\"width:60%;height:4px;background-color:#ff0000;...\"> into "
+                 "the doc (flat HTML); out-of-range clamps (200->100%, 99->50px); Close "
+                 "mutates nothing"},
+    {"art": "linenumbers-dialog-l4.json", "cluster": "page",
+     "oo": {"surface": "layout:btn-linenumbers",
+            "label": "Line Numbers",
+            "fields": ["Apply to"],
+            "note": "pinned contract — OO opens Line numbering from Layout->Page setup; the "
+                    "OO dialog census captured no field-level line-numbers modal "
+                    "(MS-Word-style Apply-to/restart shape)"},
+     "behavior": "OK plants the document-semantic section marker div.line-numbers[data-restart] "
+                 "(restart-each-page -> newPage, continuous -> continuous, restart-each-section "
+                 "-> newSection; flat HTML); 'No line numbers' removes it; Cancel plants nothing"},
+    {"art": "find-dialog-l4.json", "cluster": "edit",
+     "oo": {"surface": "toolbar:btn-find",
+            "label": "Find and replace",
+            "fields": ["Find", "Replace with", "Match case"],
+            "note": "pinned contract — OO ships Find & replace as a right panel (no field-level "
+                    "modal in the committed OO dialog census; MS-Word-style Find & Replace "
+                    "shape; OO/MS extras like whole-words/regex deferred)"},
+     "behavior": "live match count (current / total; case-insensitive, Match case narrows); "
+                 "Replace all rewrites every hit into the flat HTML as ONE undoable step; "
+                 "Replace (single) rewrites the current match; Close leaves the doc untouched"},
+    {"art": "texttotable-dialog-l4.json", "cluster": "table",
+     "oo": {"surface": "insert:btn-table (Table menu: Convert)",
+            "label": "Convert Text to Table",
+            "fields": ["Separate text at", "Custom separator", "Number of columns"],
+            "note": "pinned contract — the committed OO dialog census captured no convert "
+                    "modal (MS-Word-style Convert Text to Table shape; MS fixed-width/AutoFit "
+                    "deferred)"},
+     "behavior": "select, then open (openTextToTableDialog saves the selection); Automatic "
+                 "splits on the dominant separator per line -> real 2x2 <table> replacing the "
+                 "selection (flat HTML); explicit Comma overrides; Number of columns pads every "
+                 "row to exactly N <td>; Cancel converts nothing"},
+    {"art": "dropcap-dialog-l4.json", "cluster": "formatting",
+     "oo": {"surface": "ctx-menu:DropcapSettings",
+            "label": "Drop Cap",
+            "fields": ["Position", "Lines to drop", "Distance from text (pt)"],
+            "note": "pinned contract — the committed OO dialog census captured no Drop cap "
+                    "modal (MS-Word-style Drop Cap shape; MS Font selector deferred)"},
+     "behavior": "dropped/3/5pt + OK wraps the caret paragraph's first char in span.dropcap "
+                 "with --drop-lines/--drop-distance CSS vars (flat HTML); clamps 2..5 / 0..50; "
+                 "in-margin variant — MEASURED DEFECT: re-apply and Position-none EAT the "
+                 "wrapped character (applyDropcap/removeDropcapOnly remove() the span without "
+                 "restoring its text node; MS Word restores the char)"},
+    {"art": "watermark-dialog-l4.json", "cluster": "page",
+     "oo": {"surface": "layout:btn-watermark",
+            "label": "Watermark",
+            "fields": ["Watermark", "Custom text", "Color"],
+            "note": "pinned contract — the committed OO dialog census captured no Watermark "
+                    "modal (MS-Word-style Printed Watermark shape; picture watermarks/rotation "
+                    "deferred)"},
+     "behavior": "DRAFT + color + OK plants div.watermark[data-text][data-color] (flat HTML); "
+                 "custom reveals the text row; 'No watermark' removes the marker — MEASURED "
+                 "DEFECT: multi-word custom text is truncated at the first space "
+                 "(setSectionMarker marshals attrs via whitespace split, quotes stripped after)"},
+    {"art": "pagenumber-dialog-l4.json", "cluster": "insert",
+     "oo": {"surface": "insert:btn-pagenumber",
+            "label": "Page Number",
+            "fields": ["Position", "Format", "Alignment"],
+            "note": "pinned contract — OO inserts via the header/footer flow (no field-level "
+                    "page-number modal in the committed OO dialog census; MS-Word-style Page "
+                    "Numbers shape; MS 'First page' checkbox deferred)"},
+     "behavior": "Top/Bottom + format + align + Insert plants span.page-number[data-format] "
+                 "with text-align in header.page-header / footer.page-footer (flat HTML) — "
+                 "MEASURED DEFECT: the At-cursor path silently no-ops without a live editor "
+                 "selection (dialog interaction drops it) and then restyles the LAST existing "
+                 "span.page-number (:last-of-type), mutating an unrelated header/footer field; "
+                 "also the #btn-pagenumber click itself plants a bare inline span via its "
+                 "data-cmd before the dialog opens (declared quirk)"},
+    {"art": "bookmark-dialog-l4.json", "cluster": "references",
+     "oo": {"surface": "references:btn-bookmark",
+            "label": "Insert bookmark",
+            "fields": ["Name"],
+            "note": "pinned contract — the OO 'Bookmarks' modal census carries manage-list "
+                    "controls (Sort by / Hidden bookmarks), not insert fields (MS-Word-style "
+                    "Bookmark name + Add shape; Go To/Delete manager rows deferred)"},
+     "behavior": "with a selection, Insert wraps it in span.bookmark[data-name] (DOC-semantic "
+                 "attr, flat HTML) and the Cross-reference dialog lists it — MEASURED DEFECT: "
+                 "the bare-caret path goes through execCommand insertHTML whose Chromium "
+                 "sanitizer strips the class (bare styled span with the name text instead of "
+                 "span.bookmark; insertCitation documents the same pitfall and the direct-DOM "
+                 "fix pattern exists but was not applied to bookmarks)"},
+]
+for _p in L4_FINAL_PROBES:
+    _path = HERE / _p["art"]
+    if not _path.exists():
+        print("  L4 live probe: %s MISSING (%s)" % (_p["art"], "run the probe"))
+        continue
+    try:
+        _art = json.load(open(_path))
+    except ValueError:
+        raise SystemExit("ledger: %s is not valid JSON — fix the probe artifact" % _p["art"])
+    _fid = _art.get("feature") or _p["art"].replace(".json", ".l4")
+    _row = ledger.setdefault(_fid, {
+        "feature": _fid, "cluster": _p["cluster"], "kind": "dialog",
+        "oo": [], "wo": None, "level": 0, "evidence": [],
+    })
+    _row["oo"].append(_p["oo"])
+    _row["wo"] = {"match": _fid.replace("dialog.", "").replace(".l4", "")
+                   + " (%s)" % _p["art"].replace(".json", ".test.mjs"),
+                   "where": "dialog:" + _fid.replace("dialog.", "").replace(".l4", "")}
+    _row["level"] = max(_row["level"], 1)
+    _row["evidence"].append(
+        "L4 live probe (%s): %s" % (_p["art"].replace(".json", ".test.mjs"),
+                                      _p["behavior"]))
+    if _art.get("ok"):
+        _row["level"] = 4
+        _row["evidence"].append(
+            "L4 fidelity: every probe check passed (%d/%d — field contract + apply "
+            "semantics + negative paths, live-verified against the running editor)"
+            % (len([c for c in _art.get("checks", []) if c.get("ok")]),
+               len(_art.get("checks", []))))
+    else:
+        for _c in _art.get("checks", []):
+            if not _c.get("ok"):
+                _row["evidence"].append(
+                    "L4 DEFECT (measured, probe check '" + _c.get("name", "?")
+                    + "'): " + _c.get("detail", "failed"))
+        _row["evidence"].append(
+            "NOT L4: re-run %s + build.py after the editor fix"
+            % _p["art"].replace(".json", ".test.mjs"))
+    for _g in _art.get("declaredGaps", []) or []:
+        _row["evidence"].append("declared divergence: " + _g)
+    print("  L4 live probe: %s %s" % (_fid, "at L4" if _art.get("ok")
+                                      else "NOT at L4 (measured defect — see evidence)"))
+
 # ---------------------------------------------------------------- report
 by_cluster = defaultdict(lambda: {"L0": 0, "L1": 0, "L2": 0, "L3": 0, "L4": 0, "rows": []})
 for row in ledger.values():

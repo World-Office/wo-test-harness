@@ -1,0 +1,93 @@
+{
+ "version": 1,
+ "probe": "texttotable-dialog-l4",
+ "feature": "dialog.text-to-table-dialog.l4",
+ "generated": "2026-11-02T18:36:46.409Z",
+ "ok": true,
+ "checks": [
+  {
+   "name": "open via real clicks (Insert tab + Table ▾ + Convert Text to Table…)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Convert Text to Table\"",
+   "ok": true,
+   "detail": "\"Convert Text to Table\""
+  },
+  {
+   "name": "field Separate text at: label + select auto/comma/tab/semicolon/custom",
+   "ok": true,
+   "detail": "label=\"Separate text at\" val=auto opts=[\"auto\",\"comma\",\"tab\",\"semicolon\",\"custom\"]"
+  },
+  {
+   "name": "field Custom separator: text input (maxlength 4) + Number of columns: number 1..10",
+   "ok": true,
+   "detail": "custom=text/4 cols=\"Number of columns\"/number/1..10"
+  },
+  {
+   "name": "buttons Cancel + Insert(primary)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" insert=\"Insert\" primary=true"
+  },
+  {
+   "name": "Automatic on \"alpha;beta / gamma;delta\" -> real 2x2 <table> replacing the selection (flat HTML)",
+   "ok": true,
+   "detail": "n=1 rows=[[\"alpha\",\"beta\"],[\"gamma\",\"delta\"]] flat=true/true closed=true"
+  },
+  {
+   "name": "explicit Comma overrides auto: each line becomes one full cell (2x1)",
+   "ok": true,
+   "detail": "n=1 rows=[[\"alpha;beta\"],[\"gamma;delta\"]]"
+  },
+  {
+   "name": "Number of columns 3 pads every row to exactly 3 <td> (empty pad cells)",
+   "ok": true,
+   "detail": "rows=[[\"alpha\",\"beta\",\"\"],[\"gamma\",\"delta\",\"\"]]"
+  },
+  {
+   "name": "cancel converts nothing",
+   "ok": true,
+   "detail": "n=1/1 closed=true"
+  }
+ ],
+ "declaredGaps": [
+  "the committed OO dialog census captured NO convert-text-to-table modal — the field contract is pinned from the MS-Word-style Convert Text to Table shape (Separate text at, Number of columns, OK/Cancel); the popover is the anchored insert-pop surface the ledger already carries for table insert (table-dialog precedent)",
+  "MS Word additionally offers fixed column width / AutoFit formatting; WO defers those — recorded divergence, not gated"
+ ],
+ "contract": {
+  "open": "real clicks: Insert tab + Table ▾ caret menu + \"Convert Text to Table…\" menu item (editor.js: openTextToTableDialog, anchored insert-pop)",
+  "title": "Convert Text to Table",
+  "fields": [
+   {
+    "label": "Separate text at",
+    "tag": "select",
+    "options": [
+     "auto",
+     "comma",
+     "tab",
+     "semicolon",
+     "custom"
+    ]
+   },
+   {
+    "label": "Custom separator",
+    "tag": "input",
+    "type": "text",
+    "maxLength": 4
+   },
+   {
+    "label": "Number of columns",
+    "tag": "input",
+    "type": "number",
+    "min": 1,
+    "max": 10
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Insert"
+  ],
+  "behavior": "Insert replaces the selection with a real <table>: Automatic splits on the dominant separator (semicolon vs comma), explicit separators force their char, and Number of columns pads/truncates every row to exactly N <td>; Cancel converts nothing"
+ }
+}
