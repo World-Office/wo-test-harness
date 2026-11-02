@@ -121,6 +121,29 @@ const DIALOGS = [
   // backstage is an overlay, captured by census-wo-deep; skip here.
 ];
 
+// Registry ids deliberately NOT captured above (declared, not silent):
+const SKIPPED_REGISTRY_IDS = new Set(["backstage-overlay"]); // overlay → census-wo-deep
+
+// Loud drift guard: the hand-maintained DIALOGS list must cover every id in
+// the served editor's DIALOG_IDS registry. If prod ships a new dialog and we
+// never add it, the census silently under-reports the surface — so fail hard,
+// naming the missing entry (same contract as STALE-DEFERRED in reconcile.py).
+async function checkRegistryCoverage() {
+  const jsUrl = new URL("editor.js", WO_URL).href;
+  const src = await (await fetch(jsUrl)).text();
+  const m = src.match(/DIALOG_IDS\s*=\s*\[([^\]]*)\]/);
+  if (!m) { console.error(`census-wo-dialogs: no DIALOG_IDS found in ${jsUrl} — guard cannot verify coverage`); process.exit(1); }
+  const registry = [...m[1].matchAll(/\"([a-z0-9-]+)\"/g)].map((x) => x[1]);
+  const captured = new Set(DIALOGS.map(([id]) => id));
+  const missing = registry.filter((id) => !captured.has(id) && !SKIPPED_REGISTRY_IDS.has(id));
+  console.log(`census-wo-dialogs: registry has ${registry.length} DIALOG_IDS, census captures ${DIALOGS.length}, declared skipped: ${[...SKIPPED_REGISTRY_IDS].join(", ")}`);
+  if (missing.length) {
+    console.error(`REGISTRY DRIFT — live DIALOG_IDS not censused: ${missing.join(", ")}`);
+    console.error(`Add them to DIALOGS in census-wo-dialogs.cjs (and declare skips in SKIPPED_REGISTRY_IDS) so the census stays honest.`);
+    process.exit(1);
+  }
+}
+
 // known emitter: dispatch a CommandEvent that the editor's routeMap handles.
 // editor.js listens for 'wo:command' (or similar) with detail {command}.
 async function emitCommand(page, cmd) {
@@ -198,6 +221,7 @@ async function closeAll(page) {
 }
 
 (async () => {
+  await checkRegistryCoverage();
   const browser = await chromium.launch({ args: ["--no-sandbox"] });
   const page = await browser.newPage({ viewport: { width: 1600, height: 1000 } });
   page.on("pageerror", (e) => process.stderr.write("pageerror: " + e.message.slice(0, 120) + "\n"));
