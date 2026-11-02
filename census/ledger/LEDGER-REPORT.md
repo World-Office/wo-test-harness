@@ -307,8 +307,8 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **dialog.bookmark-dialog.l4** [dialog] (1 OO fields) → WO: bookmark-l4 (bookmark-dialog-l4.test.mjs)
 - ✅ L2 **references.footnote** [control] → WO: insertFootnote
 - ✅ L2 **references.caption** [control] → WO: insertCaption
-- ✅ L2 **dialog.link-dialog.l4** [dialog] (2 OO fields) → WO: link-dialog
 - ✅ L3 **references.link** [control] → WO: link
+- ✅ L4 **dialog.link-dialog.l4** [dialog] (2 OO fields) → WO: link-dialog
 
 ## protect — 2 features (L0:0 L1:0 L3:0)
 - ✅ L2 **protect.encrypt** [control] → WO: protectDialog

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T19:45:12.386781",
+ "generated": "2026-11-02T19:49:11.771380",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -11,9 +11,9 @@
  "totals": {
   "L0": 0,
   "L1": 389,
-  "L2": 81,
+  "L2": 80,
   "L3": 38,
-  "L4": 19
+  "L4": 20
  },
  "features": [
   {
@@ -10220,10 +10220,11 @@
     "match": "link-dialog",
     "where": "dialog:link-dialog"
    },
-   "level": 2,
+   "level": 4,
    "evidence": [
-    "L4 link-dialog field parity: 1/2 OO fields covered {'URL': 'URL'} (missing OO fields: Text to display)",
+    "L4 link-dialog field parity: 2/2 OO fields covered {'Text to display': 'Text to display', 'URL': 'URL'}",
     "L2 act: URL field + Insert produced <a href> in #editor (probe)",
+    "L4 act: Text to display drove the anchor text (probe)",
     "opened via real route: click #btn-link (toolbar Insert link)"
    ]
   },

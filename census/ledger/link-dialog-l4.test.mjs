@@ -112,7 +112,7 @@ const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9 ]+/g, ' ')
     oo_fields: OO_FIELDS,
     openedBy: null, wo: null,
     covered: 0, total: OO_FIELDS.length, missing: [], mapping: {},
-    parity: false, functional: false, error: null,
+    parity: false, functional: false, functional_text: false, error: null,
     capturedAt: new Date().toISOString(),
   };
 
@@ -183,6 +183,20 @@ const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9 ]+/g, ' ')
     out.functional = await page.evaluate(() =>
       !!document.querySelector('#editor a[href*="example.com/l4-probe"]'));
 
+    // 5) functional: "Text to display" must drive the anchor text (OO
+    //    semantics — a field that exists but does nothing is not parity).
+    await page.click('.ribbon-tab[data-tab="insert"]', { timeout: 5000 });
+    await page.click('#btn-link', { timeout: 5000 });
+    await page.waitForTimeout(200);
+    await page.fill('#link-text', 'Example display text');
+    await page.fill('#link-url', 'https://example.com/l4-probe-text');
+    await page.click('#btn-link-ok', { timeout: 3000 });
+    await page.waitForTimeout(300);
+    out.functional_text = await page.evaluate(() => {
+      const a = document.querySelector('#editor a[href*="example.com/l4-probe-text"]');
+      return !!a && (a.textContent || '').trim() === 'Example display text';
+    });
+
     await ctx.close();
     await b.close();
   } catch (e) {
@@ -194,7 +208,7 @@ const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9 ]+/g, ' ')
   fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
   const summary = `link-dialog-l4: parity=${out.parity} covered=${out.covered}/${out.total}`
     + (out.missing.length ? ` missing=[${out.missing.join(', ')}]` : '')
-    + ` functional=${out.functional}`;
+    + ` functional=${out.functional} functional_text=${out.functional_text}`;
   console.log(summary);
   process.exit(out.error || !out.wo ? 1 : 0);
 })();
