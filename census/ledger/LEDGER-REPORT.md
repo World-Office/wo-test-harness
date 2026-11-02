@@ -1,7 +1,7 @@
 # Feature Ledger v1 — real completeness map
 
 Generated from: census-oo-deep + census-oo-dialogs + census-wo-deep. 
-L3 layer: ledger/roundtrip.cjs (27/27 commands survive html->docx->html).
+L3 layer: ledger/roundtrip.cjs (28/28 commands survive html->docx->html).
 L4 layer: ledger/dialog-parity.py (1/7 dialogs carry the OO field contract).
 Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
@@ -106,12 +106,11 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **formatting.heading-2** [formatting] → WO: applyHeading2
 - ✅ L3 **formatting.heading-3** [formatting] → WO: applyHeading3
 
-## insert — 56 features (L0:0 L1:35 L3:5)
+## insert — 56 features (L0:0 L1:33 L3:7)
 - 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
 - 🔲 L1 **insert.breaks** [control] → WO: Breaks
 - 🔲 L1 **insert.shape** [control] → WO: insertObject
 - 🔲 L1 **insert.smartart** [control] → WO: btn-smartart
-- 🔲 L1 **insert.date-time** [control] → WO: btn-datetime
 - 🔲 L1 **insert.text-from-file** [control] → WO: btn-textfile
 - 🔲 L1 **insert.field** [control] → WO: btn-field
 - 🔲 L1 **insert.equation** [control] → WO: btn-equation
@@ -133,7 +132,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **insert.limits-and-logarithms** [menu-item] → WO: Limits and logarithms
 - 🔲 L1 **insert.operators** [menu-item] → WO: Operators
 - 🔲 L1 **insert.matrices** [menu-item] → WO: Matrices
-- 🔲 L1 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 - 🔲 L1 **shortcut.inserthyperlink** [shortcut] → WO: Ctrl+K
 - 🔲 L1 **shortcut.insertpagenumber** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.inserttab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
@@ -159,9 +157,11 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L2 **shortcut.endash** [shortcut] → WO: Ctrl+Minus (OO true combo; preventDefault blocks browser zoom-out)
 - ✅ L3 **insert.link** [control] → WO: link
 - ✅ L3 **insert.page-number** [control] → WO: insertPageNumber
+- ✅ L3 **insert.date-time** [control] → WO: btn-datetime
 - ✅ L3 **insert.symbol** [control] → WO: btn-symbol
 - ✅ L3 **insert.more-symbols** [menu-item] → WO: Symbols ▾
 - ✅ L3 **insert.symbols** [menu-item] → WO: Symbols ▾
+- ✅ L3 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 - ✅ L4 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: symbol-dialog
 
 ## table — 15 features (L0:0 L1:11 L3:3)
@@ -225,13 +225,13 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **review.grammar-spelling** [control] → WO: btn-ai-grammar
 - ✅ L2 **review.display-mode** [control] → WO: displayMode
 
-## headerfooter — 6 features (L0:0 L1:4 L3:2)
-- 🔲 L1 **headerfooter.date-time** [control] → WO: btn-datetime
+## headerfooter — 6 features (L0:0 L1:2 L3:4)
 - 🔲 L1 **headerfooter.field** [control] → WO: btn-field
 - 🔲 L1 **headerfooter.close** [control] → WO: btn-hf-close
-- 🔲 L1 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 - ✅ L3 **headerfooter.header-footer** [control] → WO: insertHeaderFooter
 - ✅ L3 **headerfooter.page-number** [control] → WO: insertPageNumber
+- ✅ L3 **headerfooter.date-time** [control] → WO: btn-datetime
+- ✅ L3 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 
 ## page — 49 features (L0:0 L1:43 L3:0)
 - 🔲 L1 **page.margins** [control] → WO: Margins
