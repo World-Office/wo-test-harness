@@ -1,0 +1,79 @@
+{
+ "version": 1,
+ "probe": "linenumbers-dialog-l4",
+ "feature": "dialog.linenumbers-dialog.l4",
+ "generated": "2026-11-02T18:36:27.055Z",
+ "ok": true,
+ "checks": [
+  {
+   "name": "open via real clicks (Layout tab + toggleLineNumbers)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Line Numbers\"",
+   "ok": true,
+   "detail": "\"Line Numbers\""
+  },
+  {
+   "name": "field Apply to: label + select none/continuous/restart-each-page/restart-each-section (default restart-each-page)",
+   "ok": true,
+   "detail": "label=\"Apply to\" val=restart-each-page opts=[\"none\",\"continuous\",\"restart-each-page\",\"restart-each-section\"]"
+  },
+  {
+   "name": "buttons Cancel + OK(primary)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" ok=\"OK\" primary=true"
+  },
+  {
+   "name": "Restart each page + OK -> div.line-numbers[data-restart=\"newPage\"] (flat HTML)",
+   "ok": true,
+   "detail": "has=true restart=\"newPage\" flat=true/true/true closed=true"
+  },
+  {
+   "name": "Continuous maps to data-restart=\"continuous\"",
+   "ok": true,
+   "detail": "restart=\"continuous\""
+  },
+  {
+   "name": "Restart each section maps to data-restart=\"newSection\"",
+   "ok": true,
+   "detail": "restart=\"newSection\""
+  },
+  {
+   "name": "\"No line numbers\" removes the marker",
+   "ok": true,
+   "detail": "has=false"
+  },
+  {
+   "name": "cancel plants nothing",
+   "ok": true,
+   "detail": "has=false closed=true"
+  }
+ ],
+ "declaredGaps": [
+  "the committed OO dialog census captured NO field-level Line-numbers modal (OO opens Line numbering from Layout->Page setup) — the field contract is pinned from the MS-Word-style Line Numbers shape (Apply-to/restart mode, OK/Cancel)",
+  "MS Word's numeric knobs (Start at, Count by, From text) are deferred by WO's restart-mode carrier — recorded divergence, not gated"
+ ],
+ "contract": {
+  "open": "real clicks: Layout tab + ribbon button[data-cmd=\"toggleLineNumbers\"]",
+  "title": "Line Numbers",
+  "fields": [
+   {
+    "label": "Apply to",
+    "tag": "select",
+    "options": [
+     "none",
+     "continuous",
+     "restart-each-page",
+     "restart-each-section"
+    ]
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "OK"
+  ],
+  "behavior": "OK plants the document-semantic section marker div.line-numbers[data-restart] (restart-each-page -> newPage, continuous -> continuous, restart-each-section -> newSection); \"No line numbers\" removes the marker; Cancel plants nothing"
+ }
+}

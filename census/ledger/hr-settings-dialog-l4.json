@@ -1,0 +1,104 @@
+{
+ "version": 1,
+ "probe": "hr-settings-dialog-l4",
+ "feature": "dialog.hr-settings-dialog.l4",
+ "generated": "2026-11-02T18:36:19.741Z",
+ "ok": true,
+ "checks": [
+  {
+   "name": "open via real clicks (Insert #btn-hr + right-click hr + ctx row HorizontalLineSettings)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Horizontal line settings…\" (i18n Ctx.HorizontalLineSettings)",
+   "ok": true,
+   "detail": "\"Horizontal line settings…\""
+  },
+  {
+   "name": "field Width (% of page): label + number 1..100 prefilled 100 from the clicked hr",
+   "ok": true,
+   "detail": "\"Width (% of page)\" number 1..100 val=100"
+  },
+  {
+   "name": "field Height (px): label + number 1..50 prefilled 2",
+   "ok": true,
+   "detail": "\"Height (px)\" number 1..50 val=2"
+  },
+  {
+   "name": "field Color: label + color input prefilled #000000 (i18n RightPanel.LineColor)",
+   "ok": true,
+   "detail": "\"Line color\" color val=#000000"
+  },
+  {
+   "name": "field Alignment: label + select center/left/right (default center)",
+   "ok": true,
+   "detail": "label=\"Alignment\" val=center opts=[\"center\",\"left\",\"right\"]"
+  },
+  {
+   "name": "buttons Insert(primary) + Close",
+   "ok": true,
+   "detail": "insert=\"Insert\" primary=true close=\"Close\""
+  },
+  {
+   "name": "60/4/#ff0000/left + Insert -> <hr style=\"width:60%;height:4px;background-color:#ff0000;margin-left:0...\"> (flat HTML)",
+   "ok": true,
+   "detail": "n=2 styled=true flat=true/true closed=true"
+  },
+  {
+   "name": "out-of-range clamps: width 200 -> 100%, height 99 -> 50px (right-aligned)",
+   "ok": true,
+   "detail": "n=3 clamped=true hrs=[\"width:100%;height:50px;background-color:#ff0000;margin-left:auto;margin-right:0\",\"width:60%;height:4px;background-colo"
+  },
+  {
+   "name": "Close mutates nothing (no new hr, existing styles intact)",
+   "ok": true,
+   "detail": "n=3 closed=true"
+  }
+ ],
+ "declaredGaps": [
+  "OO inserts a horizontal rule directly from the ctx row (HorizontalRule) with NO settings modal — the committed OO dialog census captured no hr-settings dialog; the width/height/color/align + Insert/Close contract is pinned from the MS-Word-style horizontal-line shape (table-dialog precedent)"
+ ],
+ "contract": {
+  "open": "real clicks: Insert #btn-hr (plants a default <hr>), right-click the <hr>, ctx-menu row button[data-ctx=\"HorizontalLineSettings\"] (editor.js: openHrSettings)",
+  "title": "Horizontal line settings…",
+  "fields": [
+   {
+    "label": "Width (% of page)",
+    "tag": "input",
+    "type": "number",
+    "min": 1,
+    "max": 100,
+    "default": 100
+   },
+   {
+    "label": "Height (px)",
+    "tag": "input",
+    "type": "number",
+    "min": 1,
+    "max": 50,
+    "default": 2
+   },
+   {
+    "label": "Line color",
+    "tag": "input",
+    "type": "color",
+    "default": "#000000"
+   },
+   {
+    "label": "Alignment",
+    "tag": "select",
+    "options": [
+     "center",
+     "left",
+     "right"
+    ]
+   }
+  ],
+  "buttons": [
+   "Insert",
+   "Close"
+  ],
+  "behavior": "dialog opens prefilled from the clicked hr; Insert puts a real <hr> with width%/height px/background-color/margin alignment into the doc (flat HTML); values clamp to 1..100 / 1..50; Close mutates nothing"
+ }
+}

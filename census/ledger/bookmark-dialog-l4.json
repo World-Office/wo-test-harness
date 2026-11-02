@@ -1,0 +1,75 @@
+{
+ "version": 1,
+ "probe": "bookmark-dialog-l4",
+ "feature": "dialog.bookmark-dialog.l4",
+ "generated": "2026-11-02T18:37:14.340Z",
+ "ok": false,
+ "checks": [
+  {
+   "name": "open via real clicks (References tab + #btn-bookmark)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Insert bookmark\"",
+   "ok": true,
+   "detail": "\"Insert bookmark\""
+  },
+  {
+   "name": "field Name: label + text input (placeholder \"e.g. Section1\")",
+   "ok": true,
+   "detail": "\"Name\" text ph=\"e.g. Section1\""
+  },
+  {
+   "name": "buttons Cancel + Insert(primary)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" insert=\"Insert\" primary=true"
+  },
+  {
+   "name": "select \"hotel\" + mark1 + Insert -> span.bookmark[data-name=\"mark1\"] wraps it (flat HTML)",
+   "ok": true,
+   "detail": "has=true name=\"mark1\" text=\"hotel\" flat=true/true/true closed=true"
+  },
+  {
+   "name": "Cross-reference dialog lists the new bookmark by data-name",
+   "ok": true,
+   "detail": "[\"mark1\"]"
+  },
+  {
+   "name": "bare caret + mark2 -> second bookmark whose text is the name",
+   "ok": false,
+   "detail": "n=1"
+  },
+  {
+   "name": "empty name keeps the dialog open and inserts nothing",
+   "ok": false,
+   "detail": "open=true n=1"
+  },
+  {
+   "name": "cancel plants nothing",
+   "ok": false,
+   "detail": "n=1 closed=true"
+  }
+ ],
+ "declaredGaps": [
+  "the committed OO dialog census has a \"Bookmarks\" modal whose fields are manage-list controls (Sort by, Hidden bookmarks) — a manage surface, not an insert field; the Name + Insert/Cancel contract is pinned from the MS-Word-style Bookmark shape (Bookmark name + Add)",
+  "MS Word's bookmark-manager rows (Go To / Delete / locate) map to WO's crossref dialog + a future manage surface — recorded divergence, not gated"
+ ],
+ "contract": {
+  "open": "real clicks: References tab + ribbon #btn-bookmark (editor.js: openBookmarkDialog)",
+  "title": "Insert bookmark",
+  "fields": [
+   {
+    "label": "Name",
+    "tag": "input",
+    "type": "text",
+    "placeholder": "e.g. Section1"
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Insert"
+  ],
+  "behavior": "with a selection, Insert wraps it in span.bookmark[data-name] (DOC-semantic attribute, survives serialization into the flat HTML); with a bare caret the name rides in as the wrapped text; empty name keeps the dialog open and inserts nothing; the Cross-reference dialog lists bookmarks by data-name; Cancel plants nothing"
+ }
+}

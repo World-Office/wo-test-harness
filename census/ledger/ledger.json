@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T19:14:33.459199",
+ "generated": "2026-11-02T19:37:17.433836",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,10 +10,10 @@
  ],
  "totals": {
   "L0": 0,
-  "L1": 385,
+  "L1": 389,
   "L2": 81,
   "L3": 38,
-  "L4": 15
+  "L4": 19
  },
  "features": [
   {
@@ -10607,6 +10607,234 @@
     "L4 dialog field parity: 3/3 OO fields covered {'Voice': 'Voice', 'Speed': 'Speed', 'Pitch': 'Pitch'} — OO modal existence measured [plugins/Speech -> modal (census-oo-interactions.json)]",
     "functional: not provable offline (needs server-side document list)",
     "opened via real route: click #btn-readaloud (tab view, via #btn-speech)"
+   ]
+  },
+  {
+   "feature": "dialog.hr-settings-dialog.l4",
+   "cluster": "insert",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "ctx-menu:HorizontalLineSettings",
+     "label": "Horizontal line settings",
+     "fields": [
+      "Width (% of page)",
+      "Height (px)",
+      "Line color",
+      "Alignment"
+     ],
+     "note": "pinned contract — OO inserts an hr directly from the ctx row (no settings modal in the committed OO dialog census; MS-Word-style horizontal-line shape, table-dialog precedent)"
+    }
+   ],
+   "wo": {
+    "match": "hr-settings-l4 (hr-settings-dialog-l4.test.mjs)",
+    "where": "dialog:hr-settings-l4"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 live probe (hr-settings-dialog-l4.test.mjs): opens prefilled from the right-clicked <hr>; 60/4/#ff0000/left + Insert puts a real <hr style=\"width:60%;height:4px;background-color:#ff0000;...\"> into the doc (flat HTML); out-of-range clamps (200->100%, 99->50px); Close mutates nothing",
+    "L4 fidelity: every probe check passed (10/10 — field contract + apply semantics + negative paths, live-verified against the running editor)",
+    "declared divergence: OO inserts a horizontal rule directly from the ctx row (HorizontalRule) with NO settings modal — the committed OO dialog census captured no hr-settings dialog; the width/height/color/align + Insert/Close contract is pinned from the MS-Word-style horizontal-line shape (table-dialog precedent)"
+   ]
+  },
+  {
+   "feature": "dialog.linenumbers-dialog.l4",
+   "cluster": "page",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "layout:btn-linenumbers",
+     "label": "Line Numbers",
+     "fields": [
+      "Apply to"
+     ],
+     "note": "pinned contract — OO opens Line numbering from Layout->Page setup; the OO dialog census captured no field-level line-numbers modal (MS-Word-style Apply-to/restart shape)"
+    }
+   ],
+   "wo": {
+    "match": "linenumbers-l4 (linenumbers-dialog-l4.test.mjs)",
+    "where": "dialog:linenumbers-l4"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 live probe (linenumbers-dialog-l4.test.mjs): OK plants the document-semantic section marker div.line-numbers[data-restart] (restart-each-page -> newPage, continuous -> continuous, restart-each-section -> newSection; flat HTML); 'No line numbers' removes it; Cancel plants nothing",
+    "L4 fidelity: every probe check passed (9/9 — field contract + apply semantics + negative paths, live-verified against the running editor)",
+    "declared divergence: the committed OO dialog census captured NO field-level Line-numbers modal (OO opens Line numbering from Layout->Page setup) — the field contract is pinned from the MS-Word-style Line Numbers shape (Apply-to/restart mode, OK/Cancel)",
+    "declared divergence: MS Word's numeric knobs (Start at, Count by, From text) are deferred by WO's restart-mode carrier — recorded divergence, not gated"
+   ]
+  },
+  {
+   "feature": "dialog.find-dialog.l4",
+   "cluster": "edit",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "toolbar:btn-find",
+     "label": "Find and replace",
+     "fields": [
+      "Find",
+      "Replace with",
+      "Match case"
+     ],
+     "note": "pinned contract — OO ships Find & replace as a right panel (no field-level modal in the committed OO dialog census; MS-Word-style Find & Replace shape; OO/MS extras like whole-words/regex deferred)"
+    }
+   ],
+   "wo": {
+    "match": "find-l4 (find-dialog-l4.test.mjs)",
+    "where": "dialog:find-l4"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 live probe (find-dialog-l4.test.mjs): live match count (current / total; case-insensitive, Match case narrows); Replace all rewrites every hit into the flat HTML as ONE undoable step; Replace (single) rewrites the current match; Close leaves the doc untouched",
+    "L4 fidelity: every probe check passed (9/9 — field contract + apply semantics + negative paths, live-verified against the running editor)",
+    "declared divergence: OO ships Find & replace as a full right panel with more-options (whole words, regex, look up); the committed OO DIALOG census captured no field-level find modal — the field contract is pinned from the MS-Word-style Find & Replace shape (Find, Replace with, Match case, Previous/Next, Replace, Replace All)",
+    "declared divergence: OO/MS extras (whole words only, sounds-like, regex, search-direction scope) are deferred by WO — recorded divergence, not gated"
+   ]
+  },
+  {
+   "feature": "dialog.text-to-table-dialog.l4",
+   "cluster": "table",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "insert:btn-table (Table menu: Convert)",
+     "label": "Convert Text to Table",
+     "fields": [
+      "Separate text at",
+      "Custom separator",
+      "Number of columns"
+     ],
+     "note": "pinned contract — the committed OO dialog census captured no convert modal (MS-Word-style Convert Text to Table shape; MS fixed-width/AutoFit deferred)"
+    }
+   ],
+   "wo": {
+    "match": "text-to-table-l4 (texttotable-dialog-l4.test.mjs)",
+    "where": "dialog:text-to-table-l4"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 live probe (texttotable-dialog-l4.test.mjs): select, then open (openTextToTableDialog saves the selection); Automatic splits on the dominant separator per line -> real 2x2 <table> replacing the selection (flat HTML); explicit Comma overrides; Number of columns pads every row to exactly N <td>; Cancel converts nothing",
+    "L4 fidelity: every probe check passed (9/9 — field contract + apply semantics + negative paths, live-verified against the running editor)",
+    "declared divergence: the committed OO dialog census captured NO convert-text-to-table modal — the field contract is pinned from the MS-Word-style Convert Text to Table shape (Separate text at, Number of columns, OK/Cancel); the popover is the anchored insert-pop surface the ledger already carries for table insert (table-dialog precedent)",
+    "declared divergence: MS Word additionally offers fixed column width / AutoFit formatting; WO defers those — recorded divergence, not gated"
+   ]
+  },
+  {
+   "feature": "dialog.dropcap-dialog.l4",
+   "cluster": "formatting",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "ctx-menu:DropcapSettings",
+     "label": "Drop Cap",
+     "fields": [
+      "Position",
+      "Lines to drop",
+      "Distance from text (pt)"
+     ],
+     "note": "pinned contract — the committed OO dialog census captured no Drop cap modal (MS-Word-style Drop Cap shape; MS Font selector deferred)"
+    }
+   ],
+   "wo": {
+    "match": "dropcap-l4 (dropcap-dialog-l4.test.mjs)",
+    "where": "dialog:dropcap-l4"
+   },
+   "level": 1,
+   "evidence": [
+    "L4 live probe (dropcap-dialog-l4.test.mjs): dropped/3/5pt + OK wraps the caret paragraph's first char in span.dropcap with --drop-lines/--drop-distance CSS vars (flat HTML); clamps 2..5 / 0..50; in-margin variant — MEASURED DEFECT: re-apply and Position-none EAT the wrapped character (applyDropcap/removeDropcapOnly remove() the span without restoring its text node; MS Word restores the char)",
+    "L4 DEFECT (measured, probe check 'Position none removes the dropcap wrap (text restored)'): has=false rest=\"pcap senti\"",
+    "L4 DEFECT (measured, probe check 'cancel mutates nothing'): has=false closed=true",
+    "NOT L4: re-run dropcap-dialog-l4.test.mjs + build.py after the editor fix",
+    "declared divergence: the committed OO dialog census captured NO field-level Drop cap modal (OO opens Drop cap from Insert / the right panel) — the field contract is pinned from the MS-Word-style Drop Cap shape (Position none/dropped/in-margin, Lines to drop, Distance from text, OK/Cancel)",
+    "declared divergence: MS Word additionally offers a drop-cap Font selector; WO defers that to the caret font — recorded divergence, not gated"
+   ]
+  },
+  {
+   "feature": "dialog.watermark-dialog.l4",
+   "cluster": "page",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "layout:btn-watermark",
+     "label": "Watermark",
+     "fields": [
+      "Watermark",
+      "Custom text",
+      "Color"
+     ],
+     "note": "pinned contract — the committed OO dialog census captured no Watermark modal (MS-Word-style Printed Watermark shape; picture watermarks/rotation deferred)"
+    }
+   ],
+   "wo": {
+    "match": "watermark-l4 (watermark-dialog-l4.test.mjs)",
+    "where": "dialog:watermark-l4"
+   },
+   "level": 1,
+   "evidence": [
+    "L4 live probe (watermark-dialog-l4.test.mjs): DRAFT + color + OK plants div.watermark[data-text][data-color] (flat HTML); custom reveals the text row; 'No watermark' removes the marker — MEASURED DEFECT: multi-word custom text is truncated at the first space (setSectionMarker marshals attrs via whitespace split, quotes stripped after)",
+    "L4 DEFECT (measured, probe check 'custom text rides the marker with quotes stripped'): text=\"Internal\" color=\"#000000\"",
+    "NOT L4: re-run watermark-dialog-l4.test.mjs + build.py after the editor fix",
+    "declared divergence: the committed OO dialog census captured NO field-level Watermark modal (OO opens Watermark from Layout; the OO right-panel census carries the presets) — the field contract is pinned from the MS-Word-style Printed Watermark shape (no watermark / preset text / custom text + color, OK/Cancel)",
+    "declared divergence: MS Word additionally offers picture watermarks, font size/rotation and diagonal layout; WO defers those — recorded divergence, not gated"
+   ]
+  },
+  {
+   "feature": "dialog.pagenumber-dialog.l4",
+   "cluster": "insert",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "insert:btn-pagenumber",
+     "label": "Page Number",
+     "fields": [
+      "Position",
+      "Format",
+      "Alignment"
+     ],
+     "note": "pinned contract — OO inserts via the header/footer flow (no field-level page-number modal in the committed OO dialog census; MS-Word-style Page Numbers shape; MS 'First page' checkbox deferred)"
+    }
+   ],
+   "wo": {
+    "match": "pagenumber-l4 (pagenumber-dialog-l4.test.mjs)",
+    "where": "dialog:pagenumber-l4"
+   },
+   "level": 1,
+   "evidence": [
+    "L4 live probe (pagenumber-dialog-l4.test.mjs): Top/Bottom + format + align + Insert plants span.page-number[data-format] with text-align in header.page-header / footer.page-footer (flat HTML) — MEASURED DEFECT: the At-cursor path silently no-ops without a live editor selection (dialog interaction drops it) and then restyles the LAST existing span.page-number (:last-of-type), mutating an unrelated header/footer field; also the #btn-pagenumber click itself plants a bare inline span via its data-cmd before the dialog opens (declared quirk)",
+    "L4 DEFECT (measured, probe check 'At cursor inserts an inline span.page-number[data-format=upperLetter] text-align:left'): inline=0 span=null",
+    "NOT L4: re-run pagenumber-dialog-l4.test.mjs + build.py after the editor fix",
+    "declared divergence: the committed OO dialog census captured NO field-level page-number modal (OO inserts via the Insert header/footer flow) — the field contract is pinned from the MS-Word-style Page Numbers shape (Position top/bottom, Format, Alignment, Insert/Cancel)",
+    "declared divergence: MS Word additionally offers a \"First page\" checkbox; WO defers that to the header/footer different-first-page marker — recorded divergence, not gated",
+    "declared divergence: declared quirk (measured): the #btn-pagenumber ribbon click carries data-cmd=\"insertPageNumber\" AND the dialog-open intercept, so opening the dialog also plants a bare inline span.page-number at the caret (no data-format) — the OK/Insert flow above is unaffected; recorded, not gated"
+   ]
+  },
+  {
+   "feature": "dialog.bookmark-dialog.l4",
+   "cluster": "references",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "references:btn-bookmark",
+     "label": "Insert bookmark",
+     "fields": [
+      "Name"
+     ],
+     "note": "pinned contract — the OO 'Bookmarks' modal census carries manage-list controls (Sort by / Hidden bookmarks), not insert fields (MS-Word-style Bookmark name + Add shape; Go To/Delete manager rows deferred)"
+    }
+   ],
+   "wo": {
+    "match": "bookmark-l4 (bookmark-dialog-l4.test.mjs)",
+    "where": "dialog:bookmark-l4"
+   },
+   "level": 1,
+   "evidence": [
+    "L4 live probe (bookmark-dialog-l4.test.mjs): with a selection, Insert wraps it in span.bookmark[data-name] (DOC-semantic attr, flat HTML) and the Cross-reference dialog lists it — MEASURED DEFECT: the bare-caret path goes through execCommand insertHTML whose Chromium sanitizer strips the class (bare styled span with the name text instead of span.bookmark; insertCitation documents the same pitfall and the direct-DOM fix pattern exists but was not applied to bookmarks)",
+    "L4 DEFECT (measured, probe check 'bare caret + mark2 -> second bookmark whose text is the name'): n=1",
+    "L4 DEFECT (measured, probe check 'empty name keeps the dialog open and inserts nothing'): open=true n=1",
+    "L4 DEFECT (measured, probe check 'cancel plants nothing'): n=1 closed=true",
+    "NOT L4: re-run bookmark-dialog-l4.test.mjs + build.py after the editor fix",
+    "declared divergence: the committed OO dialog census has a \"Bookmarks\" modal whose fields are manage-list controls (Sort by, Hidden bookmarks) — a manage surface, not an insert field; the Name + Insert/Cancel contract is pinned from the MS-Word-style Bookmark shape (Bookmark name + Add)",
+    "declared divergence: MS Word's bookmark-manager rows (Go To / Delete / locate) map to WO's crossref dialog + a future manage surface — recorded divergence, not gated"
    ]
   }
  ]
