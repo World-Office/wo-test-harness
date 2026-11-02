@@ -111,7 +111,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **insert.breaks** [control] → WO: Breaks
 - 🔲 L1 **insert.shape** [control] → WO: insertObject
 - 🔲 L1 **insert.smartart** [control] → WO: btn-smartart
-- 🔲 L1 **insert.date-time** [control] → WO: pagenumber-dialog
+- 🔲 L1 **insert.date-time** [control] → WO: btn-datetime
 - 🔲 L1 **insert.text-from-file** [control] → WO: btn-textfile
 - 🔲 L1 **insert.field** [control] → WO: btn-field
 - 🔲 L1 **insert.equation** [control] → WO: btn-equation
@@ -133,7 +133,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **insert.limits-and-logarithms** [menu-item] → WO: Limits and logarithms
 - 🔲 L1 **insert.operators** [menu-item] → WO: Operators
 - 🔲 L1 **insert.matrices** [menu-item] → WO: Matrices
-- 🔲 L1 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
+- 🔲 L1 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 - 🔲 L1 **shortcut.inserthyperlink** [shortcut] → WO: Ctrl+K
 - 🔲 L1 **shortcut.insertpagenumber** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.inserttab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
@@ -226,10 +226,10 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L2 **review.display-mode** [control] → WO: displayMode
 
 ## headerfooter — 6 features (L0:0 L1:4 L3:2)
-- 🔲 L1 **headerfooter.date-time** [control] → WO: pagenumber-dialog
+- 🔲 L1 **headerfooter.date-time** [control] → WO: btn-datetime
 - 🔲 L1 **headerfooter.field** [control] → WO: btn-field
 - 🔲 L1 **headerfooter.close** [control] → WO: btn-hf-close
-- 🔲 L1 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
+- 🔲 L1 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 - ✅ L3 **headerfooter.header-footer** [control] → WO: insertHeaderFooter
 - ✅ L3 **headerfooter.page-number** [control] → WO: insertPageNumber
 
