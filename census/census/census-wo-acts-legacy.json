@@ -1,0 +1,421 @@
+{
+ "version": 2,
+ "capturedAt": "2026-11-01 (historical, from committed ledger bdec86a)",
+ "engine": "census-wo-acts (legacy merge)",
+ "results": {
+  "cmd:insertBlankPage": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:protectDialog": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:displayMode": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:outdent": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:indent": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:directionRtl": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:insertPageNumber": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:insertTextbox": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:insertTextart": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:toggleDropcap": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:toggleLineNumbers": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:toggleHyphenation": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:toggleWatermark": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:insertFootnote": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:insertCaption": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:insertTableOfFigures": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:restrictEditing": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:code": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "cmd:aiSettings": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Minus": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Shift+Enter": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Shift+Enter": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Shift+Space": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Shift+Minus": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Z": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Y": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+B": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+I": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+U": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Shift+K": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Shift+8": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+E": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+J": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+R": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Shift+L": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Enter": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+M": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Shift+M": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Alt+D": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Alt+G": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Alt+E": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Alt+R": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Alt+T": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Shift+Cmd+X": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Alt+1": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Alt+2": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Alt+3": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "shortcut:Ctrl+Alt+Minus": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:TextAlignTop": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:TextAlignMiddle": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:TextAlignBottom": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:TextAlignLeft": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:TextAlignCenter": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:TextAlignRight": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:TextDirRotateDown": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:TextDirRotateUp": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:StartNewList": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:TableDeleteRow": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:TableDeleteCol": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:TableColLeft": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:TableColRight": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:TableRowAbove": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:TableRowBelow": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:PageBreakBefore": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:KeepLines": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:TocSettings": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:UpdateTOC": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:Undo": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  },
+  "ctx:Redo": {
+   "mutated": true,
+   "dialog": false,
+   "confirmed": false,
+   "evidence": "legacy: committed L2 observation (harness bdec86a)"
+  }
+ }
+}

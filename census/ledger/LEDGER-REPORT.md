@@ -47,14 +47,13 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L2 **file.protection** [control] → WO: protectDialog
 - ✅ L2 **file.view** [control] → WO: displayMode
 
-## formatting — 53 features (L0:0 L1:21 L3:14)
+## formatting — 53 features (L0:0 L1:20 L3:14)
 - 🔲 L1 **formatting.font** [control] → WO: font-family
 - 🔲 L1 **formatting.font-size** [control] → WO: font-size
 - 🔲 L1 **formatting.increment-font-size-ctrl** [control] → WO: font-size
 - 🔲 L1 **formatting.decrement-font-size-ctrl** [control] → WO: font-size
 - 🔲 L1 **formatting.highlight-color** [control] → WO: highlight-color
 - 🔲 L1 **formatting.font-color** [control] → WO: text-color
-- 🔲 L1 **formatting.multilevel-list** [control] → WO: multilevel
 - 🔲 L1 **formatting.paragraph-line-spacing** [control] → WO: line-spacing
 - 🔲 L1 **formatting.nonprinting-characters-ctrl-shift-8** [control] → WO: btn-home-formatmarks
 - 🔲 L1 **formatting.shading** [control] → WO: Shading
@@ -69,6 +68,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.increasefontsize** [shortcut] → WO: Ctrl+]
 - 🔲 L1 **shortcut.decreasefontsize** [shortcut] → WO: Ctrl+[
 - 🔲 L1 **shortcut.showall** [shortcut] → WO: ¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)
+- ✅ L2 **formatting.multilevel-list** [control] → WO: multilevel
 - ✅ L2 **formatting.decrease-indent-ctrl-shift-m** [control] → WO: outdent
 - ✅ L2 **formatting.increase-indent-ctrl-m** [control] → WO: indent
 - ✅ L2 **formatting.text-direction** [control] → WO: directionRtl
@@ -405,7 +405,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.previousfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.zoomout** [shortcut] → WO: Ctrl+Minus
 
-## edit — 136 features (L0:0 L1:112 L3:1)
+## edit — 136 features (L0:0 L1:102 L3:1)
 - 🔲 L1 **shortcut.deleteleftchar** [shortcut] → WO: Backspace
 - 🔲 L1 **shortcut.deleterightchar** [shortcut] → WO: Delete
 - 🔲 L1 **shortcut.editselectall** [shortcut] → WO: Ctrl+A
@@ -439,8 +439,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.align-top** [ctx-menu] → WO: Layout tab objectOp align-top
 - 🔲 L1 **ctx.align-middle** [ctx-menu] → WO: Layout tab objectOp align-middle
 - 🔲 L1 **ctx.align-bottom** [ctx-menu] → WO: Layout tab objectOp align-bottom
-- 🔲 L1 **ctx.distribute-horizontally** [ctx-menu] → WO: ctx data-ctx=DistributeHorizontally -> distributeObjectsHorizontally (shift-click multi-select + equal gaps)
-- 🔲 L1 **ctx.distribute-vertically** [ctx-menu] → WO: ctx data-ctx=DistributeVertically -> distributeObjectsVertically (shift-click multi-select + equal gaps)
 - 🔲 L1 **ctx.merge-shapes** [ctx-menu] → WO: Layout tab objectOp merge-union/intersect/subtract
 - 🔲 L1 **ctx.axis-titles** [ctx-menu] → WO: Chart Design Chart elements>Axis Titles (chartElement axisTitles)
 - 🔲 L1 **ctx.chart-title** [ctx-menu] → WO: Chart Design Chart elements>Chart title (chartElement title)
@@ -455,13 +453,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.bring-forward** [ctx-menu] → WO: Layout tab objectOp bring-forward
 - 🔲 L1 **ctx.send-backward** [ctx-menu] → WO: Layout tab objectOp send-backward
 - 🔲 L1 **ctx.edit-wrap-boundary** [ctx-menu] → WO: ctx data-ctx=EditWrapBoundary — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-wrap-boundary marker + SetStatus NotAvailable
-- 🔲 L1 **ctx.in-line-with-text** [ctx-menu] → WO: ctx data-ctx=WrapInline
-- 🔲 L1 **ctx.square** [ctx-menu] → WO: ctx data-ctx=WrapSquare
-- 🔲 L1 **ctx.tight** [ctx-menu] → WO: ctx data-ctx=WrapTight (rect placeholder: aliases obj-square + data-wrap=tight; documentd divergence until a vector contour exists)
-- 🔲 L1 **ctx.through** [ctx-menu] → WO: ctx data-ctx=WrapThrough -> wrap-through = above-text transparent layer (obj-through)
 - 🔲 L1 **ctx.top-and-bottom** [ctx-menu] → WO: obj-center block flow (top-and-bottom ≈ own-line block)
-- 🔲 L1 **ctx.in-front-of-text** [ctx-menu] → WO: ctx data-ctx=WrapFront -> wrap-front = absolute float above the text (obj-front)
-- 🔲 L1 **ctx.behind-text** [ctx-menu] → WO: ctx data-ctx=WrapBehind
 - 🔲 L1 **ctx.edit-data** [ctx-menu] → WO: Chart Design tab chartEditData -> openVectorEditor(chart)
 - 🔲 L1 **ctx.actual-size** [ctx-menu] → WO: ctx data-ctx=ActualSize -> objectOp actual-size
 - 🔲 L1 **ctx.convert-to-shape** [ctx-menu] → WO: ctx data-ctx=ConvertToShape -> convert object placeholder to a drawing-shape placeholder via the shape picker
@@ -477,7 +469,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.remove-content-control** [ctx-menu] → WO: ctx data-ctx=RemoveContentControl
 - 🔲 L1 **ctx.content-control-settings** [ctx-menu] → WO: ctx data-ctx=ContentControlSettings
 - 🔲 L1 **ctx.edit-points** [ctx-menu] → WO: ctx data-ctx=EditPoints — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-points marker + SetStatus NotAvailable
-- 🔲 L1 **ctx.edit-object** [ctx-menu] → WO: ctx data-ctx=EditObject -> editSelectedObject (object-dialog prefilled from the placeholder; updates in place)
 - 🔲 L1 **ctx.link** [ctx-menu] → WO: ctx data-ctx=Link
 - 🔲 L1 **ctx.edit-link** [ctx-menu] → WO: ctx data-ctx=EditLink
 - 🔲 L1 **ctx.copy-hyperlink-address** [ctx-menu] → WO: ctx data-ctx=CopyHyperlinkAddress (clipboard)
@@ -490,7 +481,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.formatting-as-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle
 - 🔲 L1 **ctx.create-new-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-save owned by host shell)
 - 🔲 L1 **ctx.update-1-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-update owned by host shell)
-- 🔲 L1 **ctx.update-entire-table** [ctx-menu] → WO: ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)
 - 🔲 L1 **ctx.update-page-numbers-only** [ctx-menu] → WO: UpdateTOC dialog — toc-update select has 'Update page numbers only' option (refreshToc relinks; page numbers are live-preview links)
 - 🔲 L1 **ctx.add-comment** [ctx-menu] → WO: ctx data-ctx=AddComment
 - 🔲 L1 **ctx.follow-move** [ctx-menu] → WO: ctx data-ctx=FollowMove
@@ -520,12 +510,22 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **ctx.ungroup** [ctx-menu] → WO: Layout tab objectOp ungroup (ungroupSelectedObjects)
 - ✅ L2 **shortcut.editundo** [shortcut] → WO: Ctrl+Z
 - ✅ L2 **shortcut.editredo** [shortcut] → WO: Ctrl+Y / Ctrl+Shift+Z
+- ✅ L2 **ctx.distribute-horizontally** [ctx-menu] → WO: ctx data-ctx=DistributeHorizontally -> distributeObjectsHorizontally (shift-click multi-select + equal gaps)
+- ✅ L2 **ctx.distribute-vertically** [ctx-menu] → WO: ctx data-ctx=DistributeVertically -> distributeObjectsVertically (shift-click multi-select + equal gaps)
+- ✅ L2 **ctx.in-line-with-text** [ctx-menu] → WO: ctx data-ctx=WrapInline
+- ✅ L2 **ctx.square** [ctx-menu] → WO: ctx data-ctx=WrapSquare
+- ✅ L2 **ctx.tight** [ctx-menu] → WO: ctx data-ctx=WrapTight (rect placeholder: aliases obj-square + data-wrap=tight; documentd divergence until a vector contour exists)
+- ✅ L2 **ctx.through** [ctx-menu] → WO: ctx data-ctx=WrapThrough -> wrap-through = above-text transparent layer (obj-through)
+- ✅ L2 **ctx.in-front-of-text** [ctx-menu] → WO: ctx data-ctx=WrapFront -> wrap-front = absolute float above the text (obj-front)
+- ✅ L2 **ctx.behind-text** [ctx-menu] → WO: ctx data-ctx=WrapBehind
+- ✅ L2 **ctx.edit-object** [ctx-menu] → WO: ctx data-ctx=EditObject -> editSelectedObject (object-dialog prefilled from the placeholder; updates in place)
 - ✅ L2 **ctx.top** [ctx-menu] → WO: ctx data-ctx=TextAlignTop
 - ✅ L2 **ctx.middle** [ctx-menu] → WO: ctx data-ctx=TextAlignMiddle
 - ✅ L2 **ctx.bottom** [ctx-menu] → WO: ctx data-ctx=TextAlignBottom
 - ✅ L2 **ctx.left** [ctx-menu] → WO: ctx data-ctx=TextAlignLeft
 - ✅ L2 **ctx.center** [ctx-menu] → WO: ctx data-ctx=TextAlignCenter
 - ✅ L2 **ctx.right** [ctx-menu] → WO: ctx data-ctx=TextAlignRight
+- ✅ L2 **ctx.update-entire-table** [ctx-menu] → WO: ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)
 - ✅ L2 **ctx.rotate-text-down** [ctx-menu] → WO: ctx data-ctx=TextDirRotateDown
 - ✅ L2 **ctx.rotate-text-up** [ctx-menu] → WO: ctx data-ctx=TextDirRotateUp
 - ✅ L2 **ctx.start-new-list** [ctx-menu] → WO: ctx data-ctx=StartNewList

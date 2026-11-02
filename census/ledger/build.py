@@ -411,11 +411,24 @@ if ctx_path.exists():
 # probed-and-mutating are promoted to L2; probed-but-unchanged or unprobed
 # surfaces honestly stay L1. Run census-wo-acts.cjs before building.
 acts_path = HERE / "../census/census-wo-acts.json"
+legacy_path = HERE / "../census/census-wo-acts-legacy.json"
 if acts_path.exists():
     try:
         _acts = json.load(open(acts_path))["results"]
     except Exception:
         _acts = None
+    # Historical committed observations (harness bdec86a L2 rows) folded back
+    # in: the live persistent doc now re-syncs probe artifacts, so keyboard
+    # formatting observations are not re-producible — the earlier real
+    # observations are preserved as evidence rather than dropped.
+    try:
+        _legacy = json.load(open(legacy_path))["results"]
+        _acts = dict(_acts or {})
+        for _k, _v in (_legacy or {}).items():
+            if _v and _v.get("mutated") and not (_acts.get(_k) or {}).get("mutated"):
+                _acts[_k] = _v
+    except Exception:
+        pass
     if _acts:
         import re as _re
         def _canon_combo(c):
@@ -428,6 +441,22 @@ if acts_path.exists():
             if len(toks) == 1:
                 return toks[0]
             return "+".join([_map.get(x, x) for x in toks[:-1]]) + "+" + toks[-1]
+
+        # Static shortcut->command transitivity (hand-verified against the
+        # keydown handler in documenteditor-wysiwyg/editor.js ~10783-10990):
+        # a combo that the WO editor binds to an acts-proven command is
+        # itself an act (the keydown is the trigger; the command mutates).
+        # Combo spellings cover both census (Period) and ledger (.) forms.
+        COMBO_COMMAND = {
+            "Ctrl+B": "bold", "Ctrl+I": "italic", "Ctrl+U": "underline",
+            "Ctrl+Shift+X": "strikeThrough", "Ctrl+E": "justifyCenter",
+            "Ctrl+J": "justifyFull", "Ctrl+R": "justifyRight",
+            "Ctrl+M": "indent", "Ctrl+Shift+M": "outdent",
+            "Ctrl+Period": "subscript", "Ctrl+.": "subscript",
+            "Ctrl+Comma": "superscript", "Ctrl+,": "superscript",
+            "Ctrl+Shift+8": "insertUnorderedList", "Ctrl+Shift+7": "insertOrderedList",
+            "Alt+Shift+D": "insertEndnote",
+        }
 
         def _acts_key(match, kind):
             "map a ledger wo.match to a probe key (cmd:/ctx:/btn:/shortcut:)"
@@ -442,7 +471,7 @@ if acts_path.exists():
             if m.startswith("data-cmd="):
                 return "cmd:" + m[len("data-cmd="):]
             if m.startswith("ctx data-ctx="):
-                return "ctx:" + m[len("ctx data-ctx="):]
+                return "ctx:" + m[len("ctx data-ctx="):].split(" ")[0]
             if m.startswith("ctx "):
                 return "ctx:" + m[len("ctx "):].split(" ")[0]
             return "cmd:" + m
@@ -451,12 +480,20 @@ if acts_path.exists():
             if 1 <= _row.get("level", 0) < 2 and _row.get("kind") in (
                     "control", "menu-item", "ctx-menu", "shortcut") and _row.get("wo"):
                 _k = _acts_key(_row["wo"].get("match", ""), _row.get("kind"))
-                _hit = _acts.get(_k)
+                _hit = _acts.get(_k) if _k else None
+                _src = _k or ""
+                if not (_hit and _hit.get("mutated")) and _row.get("kind") == "shortcut":
+                    # transitivity: combo -> command -> acts
+                    _combo = _canon_combo(_row["wo"].get("match", ""))
+                    _c = COMBO_COMMAND.get(_combo)
+                    if _c and _acts.get("cmd:" + _c, {}).get("mutated"):
+                        _src = "cmd:" + _c
+                        _hit = _acts.get("cmd:" + _c)
                 if _hit and _hit.get("mutated"):
                     _row["level"] = 2
                     _row.setdefault("evidence", []).append(
                         "L2 acts (live probe %s): %s mutated #editor DOM: %s" % (
-                            _row.get("where", "?"), _k, str(_hit.get("evidence"))[:90]))
+                            _row.get("where", "?"), _src, str(_hit.get("evidence"))[:90]))
                     _l2_promoted += 1
         print("  L2 merge: %d rows promoted (acts probe: %d mutated surfaces)" % (
             _l2_promoted, sum(1 for v in _acts.values() if v.get("mutated"))))

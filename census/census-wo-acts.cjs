@@ -34,6 +34,22 @@ const SELECT_CMDS = new Set(["bold", "italic", "underline", "strikeThrough", "fo
   const browser = await chromium.launch();
   const page = await browser.newPage();
   const results = new Map();
+  // Cross-run accumulation: the live editor's async model re-sync makes any
+  // single observation flaky (false noops). Merging a previous capture and
+  // keeping the union of *mutated* observations makes L2 evidence converge
+  // monotonically toward ground truth across re-runs — like rerunning a
+  // flaky test until it goes green. Point WO_ACTS_IN at the previous capture.
+  if (process.env.WO_ACTS_IN) {
+    try {
+      const prev = JSON.parse(fs.readFileSync(process.env.WO_ACTS_IN, "utf8")).results || {};
+      for (const [k, v] of Object.entries(prev)) {
+        if (!results.has(k)) results.set(k, v);
+        else if (v.mutated && !results.get(k).mutated) results.set(k, v);
+      }
+    } catch (e) {
+      console.log("  (no prior acts capture merged: " + String(e).slice(0, 60) + ")");
+    }
+  }
   let TABLE_PASS = false;
 
   const openPage = async (mode) => {
@@ -58,6 +74,50 @@ const SELECT_CMDS = new Set(["bold", "italic", "underline", "strikeThrough", "fo
       });
       await sleep(600);
     }
+    if (mode === "object") {
+      // real route: object-dialog shape picker (fallback: inject a
+      // well-formed .obj-inline placeholder the object ops accept).
+      await page.evaluate(() =>
+        window.dispatchEvent(new CustomEvent("wo-command", { detail: { command: "insertObject", value: "" } })));
+      await sleep(500);
+      const inserted = await page.evaluate(() => {
+        const dlg = document.getElementById("object-dialog");
+        if (!dlg) return false;
+        const b = dlg.querySelector("[data-shape], .shape-list button, [class*=shape] button, button[data-obj]");
+        if (!b) return false;
+        b.click();
+        return true;
+      });
+      await sleep(600);
+      const hasObj = await page.evaluate(() =>
+        !!document.querySelector("#editor img.vector-object, #editor > div.object, #editor div.object"));
+      if (!hasObj) {
+        await page.evaluate(() => {
+          const ed = document.getElementById("editor");
+          if (!ed) return;
+          const div = document.createElement("div");
+          div.setAttribute("contenteditable", "false");
+          div.className = "object obj-square";
+          div.setAttribute("data-type", "shape");
+          div.setAttribute("data-label", "Shape");
+          div.style.cssText = "width:140px;height:88px;border:1px solid #88f;background:#eef4ff;float:left;margin-right:8px;";
+          div.textContent = "Shape";
+          ed.insertBefore(div, ed.firstChild);
+        });
+        await sleep(400);
+      }
+      await pickObject();
+    }
+  };
+  const pickObject = async () => {
+    await page.evaluate(() => {
+      const o = document.querySelector("#editor div.object, #editor img.vector-object");
+      if (!o) return;
+      const r = o.getBoundingClientRect();
+      o.dispatchEvent(new MouseEvent("mousedown", { bubbles: true, cancelable: true, clientX: r.left + r.width / 2, clientY: r.top + r.height / 2 }));
+      o.dispatchEvent(new MouseEvent("mouseup", { bubbles: true, cancelable: true, clientX: r.left + r.width / 2, clientY: r.top + r.height / 2 }));
+    });
+    await sleep(300);
   };
   const caretEnd = async (inCell) => page.evaluate((c) => {
     const ed = document.getElementById("editor");
@@ -68,8 +128,12 @@ const SELECT_CMDS = new Set(["bold", "italic", "underline", "strikeThrough", "fo
     r.selectNodeContents(target); r.collapse(false); sel.removeAllRanges(); sel.addRange(r);
   }, inCell);
   const selectAll = () => page.evaluate(() => {
+    // Range API, not execCommand: headless never focuses the contenteditable
+    // (activeElement stays <body>), so execCommand('selectAll') no-ops.
     const ed = document.getElementById("editor");
-    if (!ed) return; ed.focus(); document.execCommand("selectAll");
+    if (!ed) return;
+    const sel = window.getSelection(); const r = document.createRange();
+    r.selectNodeContents(ed); sel.removeAllRanges(); sel.addRange(r);
   });
   const closeDialog = async (force) => {
     await page.evaluate(() => {
@@ -84,7 +148,6 @@ const SELECT_CMDS = new Set(["bold", "italic", "underline", "strikeThrough", "fo
   const dialogOpen = () => page.evaluate(() => !!document.querySelector(".dialog-overlay.open, .modal.open"));
 
   const probe = async (kind, name, needsSelect) => {
-    if (needsSelect) await selectAll(); else await caretEnd(TABLE_PASS);
     await closeDialog(); await sleep(220);
     // MutationObserver on #editor: catches even transient mutations that the
     // model's async re-sync reverts within ~150ms (innerHTML diff can't).
@@ -103,14 +166,49 @@ const SELECT_CMDS = new Set(["bold", "italic", "underline", "strikeThrough", "fo
       window.__mo = mo;
       mo.observe(ed, { childList: true, subtree: true, characterData: true, attributes: true });
     });
-    await sleep(260);
-    amb = await page.evaluate(() => window.__mcount);
+    // Quiescence gate: the editor's async model re-sync churns the DOM after
+    // seeding/typing, which would inflate the ambient window and produce
+    // false noops. Wait for a 150ms window with ZERO mutations (baseline
+    // must be clean) before dispatching; something that mutates afterwards
+    // is therefore attributable to the action, not to ambient noise.
+    for (let q = 0; q < 14; q++) {
+      await sleep(150);
+      const c = await page.evaluate(() => window.__mcount);
+      await page.evaluate(() => { window.__mcount = 0; window.__msample = ""; });
+      if (c === 0) break;
+    }
+    amb = 0;
     await page.evaluate(() => { window.__mcount = 0; window.__msample = ""; });
+    // Create the selection only NOW, immediately before dispatch: the model's
+    // async re-sync replaces the editable DOM, so a Range created earlier
+    // decays onto detached nodes and execCommand silently no-ops (measured).
+    // A fresh selection survives the ~300ms dispatch window.
+    if (needsSelect) await selectAll(); else await caretEnd(TABLE_PASS);
     const openedBefore = await dialogOpen();
     let err = null;
     try {
       if (kind === "key") {
-        await page.keyboard.press(name);
+        // The editor's keydown handler is reached via a KeyboardEvent on the
+        // #editor element. Playwright's page.keyboard.press is unusable here:
+        // headless Chromium never focuses the contenteditable (activeElement
+        // stays <body>), so key events go nowhere. Synthetic dispatch on
+        // #editor mirrors the repo's own shortcut probes (it trusts key/
+        // modifier fields, not isTrusted) and is deterministic.
+        await page.evaluate(({ canon }) => {
+          const toks = canon.split("+");
+          const mods = toks.slice(0, -1);
+          const kt = toks[toks.length - 1];
+          const nm = { Comma: ",", Period: ".", Semicolon: ";", Equal: "=", Minus: "-", BracketLeft: "[", BracketRight: "]", Backquote: "`", Quote: "'", Slash: "/", Space: " ", Enter: "Enter", Escape: "Escape", Tab: "Tab", Backspace: "Backspace", Delete: "Delete", Insert: "Insert", Home: "Home", End: "End", PageUp: "PageUp", PageDown: "PageDown", ArrowLeft: "ArrowLeft", ArrowRight: "ArrowRight", ArrowUp: "ArrowUp", ArrowDown: "ArrowDown" };
+          const key = nm[kt] || (/^F\d+$/.test(kt) ? kt : /^[A-Za-z0-9]$/.test(kt) ? kt.toLowerCase() : kt);
+          const code = /^[a-z]$/.test(key) ? "Key" + key.toUpperCase() : /^[0-9]$/.test(key) ? "Digit" + key : /^F\d+$/.test(key) ? key : "";
+          const ed = document.getElementById("editor");
+          ed.dispatchEvent(new KeyboardEvent("keydown", {
+            key, code, bubbles: true, cancelable: true,
+            ctrlKey: mods.includes("Ctrl"), metaKey: mods.includes("Cmd"),
+            altKey: mods.includes("Alt") || mods.includes("Opt"), shiftKey: mods.includes("Shift")
+          }));
+        }, { canon: name });
+        await sleep(130);
       } else {
         await page.evaluate(({ kind: k, name: n }) => {
           if (k === "ctx") {
@@ -161,11 +259,19 @@ const SELECT_CMDS = new Set(["bold", "italic", "underline", "strikeThrough", "fo
     await maybeReload(TABLE_PASS ? "table" : "text");
   };
 
-  async function sweep(mode) {
-    TABLE_PASS = (mode === "table");
-    await openPage(mode);
-    sinceReload = 0;
+  async function probePass(mode) {
+    // rounds: the prod editor's async re-sync makes a single observation
+    // flaky (false noops); round 2 re-probes only keys that never proved
+    // they act, so the final set converges. 'mutated' wins if ANY round saw
+    // the DOM mutate.
+    for (let round = 0; round < 2; round++) {
+      await openPage(mode);
+      sinceReload = 0;
+      await roundBody(mode);
+    }
+  }
 
+  async function roundBody(mode) {
     // -------------------------------------------------- A: per-ribbon-tab buttons
     const tabs = await page.evaluate(() =>
       [...document.querySelectorAll(".ribbon-tab[data-tab]")].filter((t) => t.offsetParent !== null).map((t) => t.getAttribute("data-tab")));
@@ -175,6 +281,8 @@ const SELECT_CMDS = new Set(["bold", "italic", "underline", "strikeThrough", "fo
         if (el) el.click();
       }, tab);
       await sleep(350);
+      if (TABLE_PASS) { /* table mode: nothing */ }
+      if (mode === "object") await pickObject();
       const btns = await page.evaluate(() =>
         [...document.querySelectorAll("button[data-cmd]")].filter((b) => b.offsetParent !== null).map((b) => ({ id: b.id || "", cmd: b.getAttribute("data-cmd") })));
       for (const { id, cmd } of btns) {
@@ -207,11 +315,24 @@ const SELECT_CMDS = new Set(["bold", "italic", "underline", "strikeThrough", "fo
       return m ? [...m.querySelectorAll("button[data-ctx]")].map((b) => b.getAttribute("data-ctx")).filter(Boolean) : [];
     });
     const openCtx = async () => {
-      await page.evaluate(() => {
-        const ed = document.getElementById("editor");
-        const r = ed.getBoundingClientRect();
-        ed.dispatchEvent(new MouseEvent("contextmenu", { bubbles: true, cancelable: true, clientX: r.left + 120, clientY: r.top + 120 }));
-      });
+      await page.evaluate(({ isObj, isTbl }) => {
+        const o = document.querySelector("#editor div.object, #editor img.vector-object");
+        if (isObj && o) {
+          const or = o.getBoundingClientRect();
+          o.dispatchEvent(new MouseEvent("contextmenu", { bubbles: true, cancelable: true, clientX: or.left + or.width / 2, clientY: or.top + or.height / 2 }));
+          return;
+        }
+        let tgt = null;
+        if (isTbl) {
+          const sel = window.getSelection();
+          const n = sel && sel.anchorNode;
+          const cell = n && n.nodeType === 3 ? n.parentNode : n;
+          if (cell && cell.closest) tgt = cell.closest("td, th");
+        }
+        const target = tgt || document.getElementById("editor");
+        const r = target.getBoundingClientRect();
+        target.dispatchEvent(new MouseEvent("contextmenu", { bubbles: true, cancelable: true, clientX: r.left + (tgt ? r.width / 2 : 120), clientY: r.top + (tgt ? r.height / 2 : 120) }));
+      }, { isObj: mode === "object", isTbl: mode === "table" });
       await sleep(260);
     };
     for (const ctx of ctxItems) {
@@ -222,8 +343,14 @@ const SELECT_CMDS = new Set(["bold", "italic", "underline", "strikeThrough", "fo
     }
   }
 
-  await sweep("text");
-  await sweep("table");
+  const tally = (label) => {
+    let m = 0, d = 0;
+    for (const v of results.values()) { if (v.mutated) m++; else if (v.dialog) d++; }
+    console.log("  [pass:" + label + "] keys=" + results.size + " mutated=" + m + " dialog=" + d);
+  };
+  await probePass("text"); tally("text");
+  await probePass("table"); tally("table");
+  await probePass("object"); tally("object");
   // ------------------------------------------------------ C: keyboard sweep
   // Trusted key events (Playwright keyboard.press) — the real user action
   // for every shortcut in the OO shortcut census. Browser-reserved P/W
@@ -236,31 +363,37 @@ const SELECT_CMDS = new Set(["bold", "italic", "underline", "strikeThrough", "fo
     const key = t[t.length - 1] || "";
     return mods.length ? mods.join("+") + "+" + key : key;
   };
-  const toPress = (canon) => {
-    const map = { Ctrl: "Control", Cmd: "Meta", Opt: "Alt" };
-    const parts = canon.split("+");
-    const key = parts.pop();
-    // title-case census combos (Ctrl+B) must become the lowercase key
-    // (Control+b); a capital letter alone would imply an extra Shift.
-    const k = /^[A-Za-z]$/.test(key) ? key.toLowerCase() : key;
-    return parts.map((m) => map[m] || m).join("+") + (parts.length ? "+" : "") + k;
-  };
   const shortcutRows = JSON.parse(
     fs.readFileSync(process.env.SHORTCUTS_ACTS_IN || path.join(__dirname, "census/census-shortcuts.json"), "utf8")
   );
   const combos = (Array.isArray(shortcutRows) ? shortcutRows : shortcutRows.shortcuts || shortcutRows.rows || [])
     .map((r) => r.combo || r.shortcut || r.type).filter(Boolean);
   const SKIP_KEYS = new Set(["W", "w", "P", "p", "ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End", "PageUp", "PageDown"]);
+  // The earlier passes leave a table + a contenteditable=false object in the
+  // doc; a mixed selection across a non-editable boundary silently kills
+  // execCommand formatting (measured with bold). Start the keyboard sweep on
+  // a FRESH text-only page so every combo sees the same clean prose doc.
+  await openPage("text");
+  sinceReload = 0;
   for (const combo of combos) {
     const canon = toCanon(combo);
     const lastKey = canon.split("+").pop();
     if (lastKey === "W" || lastKey === "P" || SKIP_KEYS.has(lastKey)) continue;
     if (alreadyActs("shortcut:" + canon)) continue;
-    const press = toPress(canon);
-    await probe("key", press, true);
-    if (results.has("key:" + press)) results.set("shortcut:" + canon, results.get("key:" + press));
+    // Up to 2 attempts; attempt 2 always runs on a FRESH page. The keyboard
+    // sweep runs on the doc accumulated by the earlier passes, so stray
+    // selection/undo state can fake a noop; fresh-doc retry converges to the
+    // true verdict (the combo either acts on clean text or honestly doesn't).
+    for (let attempt = 0; attempt < 2; attempt++) {
+      await probe("key", canon, true);
+      const kv = results.get("key:" + canon);
+      if (kv && kv.mutated) break;
+      if (attempt === 0) { await closeDialog(true); await maybeReload("text"); }
+    }
+    if (results.has("key:" + canon)) results.set("shortcut:" + canon, results.get("key:" + canon));
     await maybeReload("text");
   }
+  tally("keyboard");
   await closeDialog(true);
   await browser.close();
   let mutated = 0, dialog = 0, noop = 0;

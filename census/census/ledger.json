@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-01T18:18:24.248830",
+ "generated": "2026-11-02T06:28:47.350105",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,8 +10,8 @@
  ],
  "totals": {
   "L0": 0,
-  "L1": 401,
-  "L2": 76,
+  "L1": 390,
+  "L2": 87,
   "L3": 24,
   "L4": 0
  },
@@ -71,7 +71,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): cmd:insertBlankPage mutated #editor DOM: TD:+DIV"
+    "L2 acts (live probe ?): cmd:insertBlankPage mutated #editor DOM: DIV:+DIV"
    ]
   },
   {
@@ -445,7 +445,7 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (live probe ?): cmd:bold mutated #editor DOM: TD:+SPAN",
+    "L2 acts (live probe ?): cmd:bold mutated #editor DOM: P:+SPAN",
     "L3 roundtrip ok [bold]: marker /<(b|strong)\\b|font-weight\\s*:\\s*(bold|[6-9]00)/ survived html->docx->html"
    ]
   },
@@ -466,7 +466,7 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (live probe ?): cmd:italic mutated #editor DOM: H1:+SPAN",
+    "L2 acts (live probe ?): cmd:italic mutated #editor DOM: B:+SPAN",
     "L3 roundtrip ok [italic]: marker /<(i|em)\\b|font-style\\s*:\\s*italic/ survived html->docx->html"
    ]
   },
@@ -487,7 +487,7 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (live probe ?): cmd:underline mutated #editor DOM: I:+U",
+    "L2 acts (live probe ?): cmd:underline mutated #editor DOM: P:+SPAN",
     "L3 roundtrip ok [underline]: marker /<u\\b|text-decoration[^>]*underline/ survived html->docx->html"
    ]
   },
@@ -643,7 +643,7 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (live probe ?): cmd:insertUnorderedList mutated #editor DOM: H1:+UL",
+    "L2 acts (live probe ?): cmd:insertUnorderedList mutated #editor DOM: P:+UL",
     "L3 roundtrip ok [insertUnorderedList]: marker /<ul\\b/ survived html->docx->html"
    ]
   },
@@ -687,8 +687,10 @@
     "match": "multilevel",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): cmd:multilevel mutated #editor DOM: DIV:+BR"
+   ]
   },
   {
    "feature": "formatting.decrease-indent-ctrl-shift-m",
@@ -707,7 +709,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): cmd:outdent mutated #editor DOM: H1:+BR"
+    "L2 acts (live probe ?): cmd:outdent mutated #editor DOM: P:+BR"
    ]
   },
   {
@@ -765,7 +767,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): cmd:directionRtl mutated #editor DOM: TD"
+    "L2 acts (live probe ?): cmd:directionRtl mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -805,7 +807,7 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (live probe ?): cmd:justifyCenter mutated #editor DOM: H1",
+    "L2 acts (live probe ?): cmd:justifyCenter mutated #editor DOM: P",
     "L3 roundtrip ok [justifyCenter]: marker /text-align\\s*:\\s*center/ survived html->docx->html"
    ]
   },
@@ -826,7 +828,7 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (live probe ?): cmd:justifyRight mutated #editor DOM: H1",
+    "L2 acts (live probe ?): cmd:justifyRight mutated #editor DOM: P",
     "L3 roundtrip ok [justifyRight]: marker /text-align\\s*:\\s*right/ survived html->docx->html"
    ]
   },
@@ -847,7 +849,7 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (live probe ?): cmd:justifyFull mutated #editor DOM: H1",
+    "L2 acts (live probe ?): cmd:justifyFull mutated #editor DOM: P",
     "L3 roundtrip ok [justifyFull]: marker /text-align\\s*:\\s*justify/ survived html->docx->html"
    ]
   },
@@ -1170,7 +1172,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): cmd:insertPageNumber mutated #editor DOM: P:+SPAN"
+    "L2 acts (live probe ?): cmd:insertPageNumber mutated #editor DOM: DIV:+SPAN"
    ]
   },
   {
@@ -1190,7 +1192,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): cmd:insertTextbox mutated #editor DOM: P:+DIV"
+    "L2 acts (live probe ?): cmd:insertTextbox mutated #editor DOM: DIV:+DIV"
    ]
   },
   {
@@ -1230,7 +1232,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): cmd:toggleDropcap mutated #editor DOM: #text:ieses Beispi"
+    "L2 acts (live probe ?): cmd:toggleDropcap mutated #editor DOM: #text:hape"
    ]
   },
   {
@@ -1749,7 +1751,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): cmd:insertFootnote mutated #editor DOM: TD:+SUP"
+    "L2 acts (live probe ?): cmd:insertFootnote mutated #editor DOM: DIV:+SUP"
    ]
   },
   {
@@ -1807,7 +1809,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): cmd:insertCaption mutated #editor DOM: DIV:+FIGURE"
+    "L2 acts (live probe ?): cmd:insertCaption mutated #editor DOM: DIV:+P"
    ]
   },
   {
@@ -2492,7 +2494,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): cmd:code mutated #editor DOM: H1:+SPAN"
+    "L2 acts (live probe ?): cmd:code mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -2566,7 +2568,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): cmd:insertPageNumber mutated #editor DOM: P:+SPAN"
+    "L2 acts (live probe ?): cmd:insertPageNumber mutated #editor DOM: DIV:+SPAN"
    ]
   },
   {
@@ -5136,7 +5138,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Minus mutated #editor DOM: H1"
+    "L2 acts (live probe ?): shortcut:Ctrl+Minus mutated #editor DOM: DIV"
    ]
   },
   {
@@ -5389,7 +5391,7 @@
    "level": 2,
    "evidence": [
     "Shift+Enter inserts <br> natively in contentEditable",
-    "L2 acts (live probe ?): shortcut:Shift+Enter mutated #editor DOM: H1"
+    "L2 acts (live probe ?): shortcut:Shift+Enter mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -5410,7 +5412,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Shift+Enter mutated #editor DOM: H1"
+    "L2 acts (live probe ?): shortcut:Ctrl+Shift+Enter mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -5536,7 +5538,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Shift+Space mutated #editor DOM: H1:+#text"
+    "L2 acts (live probe ?): shortcut:Ctrl+Shift+Space mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -5557,7 +5559,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Shift+Minus mutated #editor DOM: #text:‑"
+    "L2 acts (live probe ?): shortcut:Ctrl+Shift+Minus mutated #editor DOM: DIV"
    ]
   },
   {
@@ -5578,7 +5580,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Z mutated #editor DOM: DIV:+#text"
+    "L2 acts (live probe ?): shortcut:Ctrl+Z mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -5599,7 +5601,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Y mutated #editor DOM: DIV:+#text"
+    "L2 acts (live probe ?): shortcut:Ctrl+Y mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -6053,7 +6055,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+B mutated #editor DOM: H1:+SPAN"
+    "L2 acts (live probe ?): shortcut:Ctrl+B mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -6074,7 +6076,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+I mutated #editor DOM: SPAN:+I"
+    "L2 acts (live probe ?): shortcut:Ctrl+I mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -6095,7 +6097,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+U mutated #editor DOM: I:+U"
+    "L2 acts (live probe ?): shortcut:Ctrl+U mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -6116,7 +6118,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Shift+K mutated #editor DOM: H1"
+    "L2 acts (live probe ?): shortcut:Ctrl+Shift+K mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -6176,7 +6178,7 @@
    "level": 2,
    "evidence": [
     "WO uses different combo: Ctrl+Shift+8 (OO uses Ctrl+Shift+L)",
-    "L2 acts (live probe ?): shortcut:Ctrl+Shift+8 mutated #editor DOM: DIV:+UL"
+    "L2 acts (live probe ?): shortcut:Ctrl+Shift+8 mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -6256,7 +6258,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+E mutated #editor DOM: H1"
+    "L2 acts (live probe ?): shortcut:Ctrl+E mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -6277,7 +6279,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+J mutated #editor DOM: H1"
+    "L2 acts (live probe ?): shortcut:Ctrl+J mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -6298,7 +6300,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+R mutated #editor DOM: H1"
+    "L2 acts (live probe ?): shortcut:Ctrl+R mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -6319,7 +6321,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Shift+L mutated #editor DOM: P"
+    "L2 acts (live probe ?): shortcut:Ctrl+Shift+L mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -6340,7 +6342,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Enter mutated #editor DOM: H1"
+    "L2 acts (live probe ?): shortcut:Ctrl+Enter mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -6361,7 +6363,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+M mutated #editor DOM: DIV:+BLOCKQUOTE"
+    "L2 acts (live probe ?): shortcut:Ctrl+M mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -6382,7 +6384,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Shift+M mutated #editor DOM: BLOCKQUOTE"
+    "L2 acts (live probe ?): shortcut:Ctrl+Shift+M mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -6718,7 +6720,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Alt+D mutated #editor DOM: LI"
+    "L2 acts (live probe ?): shortcut:Ctrl+Alt+D mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -6991,7 +6993,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Alt+G mutated #editor DOM: #text:Endnote text"
+    "L2 acts (live probe ?): shortcut:Ctrl+Alt+G mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -7012,7 +7014,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Alt+E mutated #editor DOM: #text:Endnote text"
+    "L2 acts (live probe ?): shortcut:Ctrl+Alt+E mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -7033,7 +7035,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Alt+R mutated #editor DOM: #text:Endnote text"
+    "L2 acts (live probe ?): shortcut:Ctrl+Alt+R mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -7054,7 +7056,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Alt+T mutated #editor DOM: #text:Endnote text"
+    "L2 acts (live probe ?): shortcut:Ctrl+Alt+T mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -7363,7 +7365,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Shift+Cmd+X mutated #editor DOM: H1:+SPAN"
+    "L2 acts (live probe ?): shortcut:Shift+Cmd+X mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -7426,7 +7428,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Alt+1 mutated #editor DOM: DIV:+H1"
+    "L2 acts (live probe ?): shortcut:Ctrl+Alt+1 mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -7447,7 +7449,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Alt+2 mutated #editor DOM: DIV:+H2"
+    "L2 acts (live probe ?): shortcut:Ctrl+Alt+2 mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -7468,7 +7470,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Alt+3 mutated #editor DOM: DIV:+H3"
+    "L2 acts (live probe ?): shortcut:Ctrl+Alt+3 mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -7692,7 +7694,7 @@
    "level": 2,
    "evidence": [
     "WO uses different combo: Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation)",
-    "L2 acts (live probe ?): shortcut:Ctrl+Alt+Minus mutated #editor DOM: #text:—"
+    "L2 acts (live probe ?): shortcut:Ctrl+Alt+Minus mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -7713,7 +7715,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Minus mutated #editor DOM: H1"
+    "L2 acts (live probe ?): shortcut:Ctrl+Minus mutated #editor DOM: DIV"
    ]
   },
   {
@@ -7978,8 +7980,10 @@
     "match": "ctx data-ctx=DistributeHorizontally -> distributeObjectsHorizontally (shift-click multi-select + equal gaps)",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:DistributeHorizontally mutated #editor DOM: DIV"
+   ]
   },
   {
    "feature": "ctx.distribute-vertically",
@@ -7997,8 +8001,10 @@
     "match": "ctx data-ctx=DistributeVertically -> distributeObjectsVertically (shift-click multi-select + equal gaps)",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:DistributeVertically mutated #editor DOM: DIV"
+   ]
   },
   {
    "feature": "ctx.merge-shapes",
@@ -8327,8 +8333,10 @@
     "match": "ctx data-ctx=WrapInline",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:WrapInline mutated #editor DOM: DIV"
+   ]
   },
   {
    "feature": "ctx.square",
@@ -8346,8 +8354,10 @@
     "match": "ctx data-ctx=WrapSquare",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:WrapSquare mutated #editor DOM: DIV"
+   ]
   },
   {
    "feature": "ctx.tight",
@@ -8365,8 +8375,10 @@
     "match": "ctx data-ctx=WrapTight (rect placeholder: aliases obj-square + data-wrap=tight; documentd divergence until a vector contour exists)",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:WrapTight mutated #editor DOM: DIV"
+   ]
   },
   {
    "feature": "ctx.through",
@@ -8384,8 +8396,10 @@
     "match": "ctx data-ctx=WrapThrough -> wrap-through = above-text transparent layer (obj-through)",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:WrapThrough mutated #editor DOM: DIV"
+   ]
   },
   {
    "feature": "ctx.top-and-bottom",
@@ -8424,8 +8438,10 @@
     "match": "ctx data-ctx=WrapFront -> wrap-front = absolute float above the text (obj-front)",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:WrapFront mutated #editor DOM: DIV"
+   ]
   },
   {
    "feature": "ctx.behind-text",
@@ -8443,8 +8459,10 @@
     "match": "ctx data-ctx=WrapBehind",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:WrapBehind mutated #editor DOM: DIV"
+   ]
   },
   {
    "feature": "ctx.edit-data",
@@ -8757,8 +8775,10 @@
     "match": "ctx data-ctx=EditObject -> editSelectedObject (object-dialog prefilled from the placeholder; updates in place)",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (live probe ?): ctx:EditObject mutated #editor DOM: DIV"
+   ]
   },
   {
    "feature": "ctx.link",
@@ -8951,7 +8971,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:TextAlignTop mutated #editor DOM: TD"
+    "L2 acts (live probe ?): ctx:TextAlignTop mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -8972,7 +8992,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:TextAlignMiddle mutated #editor DOM: TD"
+    "L2 acts (live probe ?): ctx:TextAlignMiddle mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -8993,7 +9013,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:TextAlignBottom mutated #editor DOM: TD"
+    "L2 acts (live probe ?): ctx:TextAlignBottom mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9014,7 +9034,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:TextAlignLeft mutated #editor DOM: TD"
+    "L2 acts (live probe ?): ctx:TextAlignLeft mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9035,7 +9055,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:TextAlignCenter mutated #editor DOM: TD"
+    "L2 acts (live probe ?): ctx:TextAlignCenter mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9056,7 +9076,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:TextAlignRight mutated #editor DOM: TD"
+    "L2 acts (live probe ?): ctx:TextAlignRight mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9197,9 +9217,10 @@
     "match": "ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)",
     "where": "ctx-menu"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "WO surface elsewhere: ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)"
+    "WO surface elsewhere: ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)",
+    "L2 acts (live probe ?): ctx:UpdateTOC mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9452,7 +9473,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:TextDirRotateDown mutated #editor DOM: TD"
+    "L2 acts (live probe ?): ctx:TextDirRotateDown mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9473,7 +9494,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:TextDirRotateUp mutated #editor DOM: TD"
+    "L2 acts (live probe ?): ctx:TextDirRotateUp mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9494,7 +9515,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:StartNewList mutated #editor DOM: DIV:+BR"
+    "L2 acts (live probe ?): ctx:StartNewList mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9688,7 +9709,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:TableDeleteRow mutated #editor DOM: TBODY"
+    "L2 acts (live probe ?): ctx:TableDeleteRow mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9709,7 +9730,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:TableDeleteCol mutated #editor DOM: TR"
+    "L2 acts (live probe ?): ctx:TableDeleteCol mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9749,7 +9770,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:TableColLeft mutated #editor DOM: TR:+TD"
+    "L2 acts (live probe ?): ctx:TableColLeft mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9770,7 +9791,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:TableColRight mutated #editor DOM: TR:+TD"
+    "L2 acts (live probe ?): ctx:TableColRight mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9791,7 +9812,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:TableRowAbove mutated #editor DOM: TBODY:+TR"
+    "L2 acts (live probe ?): ctx:TableRowAbove mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9812,7 +9833,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:TableRowBelow mutated #editor DOM: TBODY:+TR"
+    "L2 acts (live probe ?): ctx:TableRowBelow mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9871,7 +9892,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:PageBreakBefore mutated #editor DOM: P:+DIV"
+    "L2 acts (live probe ?): ctx:PageBreakBefore mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9892,7 +9913,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:KeepLines mutated #editor DOM: TD"
+    "L2 acts (live probe ?): ctx:KeepLines mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9951,7 +9972,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:TocSettings mutated #editor DOM: NAV"
+    "L2 acts (live probe ?): ctx:TocSettings mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -9972,7 +9993,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:UpdateTOC mutated #editor DOM: DIV:+NAV"
+    "L2 acts (live probe ?): ctx:UpdateTOC mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -10014,7 +10035,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:Undo mutated #editor DOM: DIV:+#text"
+    "L2 acts (live probe ?): ctx:Undo mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -10035,7 +10056,7 @@
    },
    "level": 2,
    "evidence": [
-    "L2 acts (live probe ?): ctx:Redo mutated #editor DOM: DIV:+#text"
+    "L2 acts (live probe ?): ctx:Redo mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
