@@ -839,6 +839,62 @@ if idl4_path.exists():
         _row["evidence"].append("declared divergence: " + _g)
     print("  L4 live probe: dialog.image-dialog.l4 "
           + ("at L4" if idl4.get("ok") else "NOT at L4 (measured defect — see evidence)"))
+# --------------------------- L4 merge (dialog-l4.test.mjs, FINAL-001)
+# One probe artifact, one `dialog.<id>.l4` row per dialog. OO modal
+# EXISTENCE is measured (census-oo-interactions.json row cited per probe
+# result); the OO FIELD contract is declared in the probe's PROBES dict
+# (pinned there; flips deliberately WITH the probe, ai-contracts.py
+# spirit). L4 only at full field parity; a measured gap keeps the row
+# honestly at L2 (the dialog opens via the real route and its fields act)
+# with the missing OO fields as loud evidence; a broken probe is loud
+# evidence, never silence.
+dl4_path = HERE / "dialog-l4.json"
+if dl4_path.exists():
+    try:
+        dl4 = json.load(open(dl4_path))
+    except ValueError:
+        raise SystemExit("ledger: dialog-l4.json is not valid JSON — fix the probe artifact")
+    _dl4_parity = 0
+    for e in dl4.get("results", []):
+        fid = e.get("feature") or ""
+        if not fid:
+            continue
+        add(fid, e.get("cluster", "other"),
+            {"surface": "dialog:" + str(e.get("dialog") or ""),
+             "trigger": e.get("oo_modal"), "label": e.get("dialog"),
+             "fields": e.get("oo_fields", [])}, "dialog")
+        ledger[fid]["wo"] = {"match": e.get("dialog"),
+                              "where": "dialog:" + str(e.get("dialog"))}
+        if e.get("error"):
+            ledger[fid]["level"] = max(ledger[fid]["level"], 1)
+            ledger[fid]["evidence"].append(
+                "L4 probe BROKEN (recapture dialog-l4.test.mjs): " + str(e["error"])[:160])
+        else:
+            gap = (" (missing OO fields: %s)" % ", ".join(e.get("missing") or [])
+                   if e.get("missing") else "")
+            ledger[fid]["evidence"].append(
+                "L4 dialog field parity: %d/%d OO fields covered %s%s — OO modal existence measured [%s]"
+                % (e.get("covered", 0), e.get("total", 0), e.get("mapping", {}), gap,
+                   e.get("oo_modal", "?")))
+            if e.get("functional") is True:
+                ledger[fid]["evidence"].append(
+                    "L2 act: probe fields act on the document (%s)" % e.get("functional_detail", ""))
+            elif e.get("functional") is None:
+                ledger[fid]["evidence"].append(
+                    "functional: %s" % (e.get("functional_detail") or "not provable offline"))
+            if e.get("parity"):
+                ledger[fid]["level"] = 4
+                _dl4_parity += 1
+            else:
+                # dialog opens via the real route and its fields act, but the
+                # OO field contract is not fully covered — honest L2, never
+                # L4 on a gap (link-dialog-l4 ladder)
+                ledger[fid]["level"] = max(ledger[fid]["level"],
+                                           2 if e.get("functional") else 1)
+            ledger[fid]["evidence"].append(
+                "opened via real route: " + str(e.get("openedBy") or "?"))
+    print("  L4 merge: dialog-l4.test.mjs %d/%d dialogs at full field parity"
+          % (_dl4_parity, len(dl4.get("results", []))))
 
 # ---------------------------------------------------------------- report
 by_cluster = defaultdict(lambda: {"L0": 0, "L1": 0, "L2": 0, "L3": 0, "L4": 0, "rows": []})

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T19:06:23.208396",
+ "generated": "2026-11-02T18:51:41.046422",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -13,7 +13,7 @@
   "L1": 385,
   "L2": 81,
   "L3": 38,
-  "L4": 5
+  "L4": 11
  },
  "features": [
   {
@@ -10260,82 +10260,238 @@
    ]
   },
   {
-   "feature": "dialog.table-dialog.l4",
-   "cluster": "table",
+   "feature": "dialog.equation-dialog.l4",
+   "cluster": "other",
    "kind": "dialog",
    "oo": [
     {
-     "surface": "insert:btn-inserttable",
-     "label": "Table",
+     "surface": "dialog:equation-dialog",
+     "trigger": "insert/Equation -> modal (census-oo-interactions.json)",
+     "label": "equation-dialog",
      "fields": [
-      "Rows",
-      "Columns"
-     ],
-     "note": "pinned contract — OO Insert->Table is a hover grid picker; the OO dialog census captured no numeric insert-table dialog"
-    }
-   ],
-   "wo": {
-    "match": "table-dialog",
-    "where": "dialog:table-dialog"
-   },
-   "level": 4,
-   "evidence": [
-    "L4 live probe (table-dialog-l4.test.mjs, 2026-11-02T18:05:47.016Z): opens via real clicks (Insert tab + #btn-table); title 'Insert table', Rows/Columns number fields (min/max 1-20/1-10, defaults 2/3), Cancel+Insert(primary) verified",
-    "L4 fidelity: rows x cols + Insert puts a real <table> (3x4 verified) into the doc at the saved selection; out-of-range values clamp (99x0 -> 20x1); Cancel mutates nothing",
-    "declared divergence: OO Insert->Table is a hover GRID picker (census btn-inserttable; the committed OO dialog census captured no numeric insert-table dialog and no OK/Cancel) — the numeric rows/cols contract is pinned from the MS-Word-style insert-table shape; WO ships a rows/cols popover with Insert(=OK)/Cancel as the semantic carrier (measured)"
-   ]
-  },
-  {
-   "feature": "dialog.symbol-dialog.l4",
-   "cluster": "insert",
-   "kind": "dialog",
-   "oo": [
-    {
-     "surface": "dialog:Symbol",
-     "label": "Symbol dialog (field-level)",
-     "fields": [
-      "Font",
-      "Range",
-      "Symbol dialog surface",
-      "Insert (glyph click inserts at caret)",
-      "Close"
+      "Linear notation",
+      "Preview"
      ]
     }
    ],
    "wo": {
-    "match": "symbol-dialog (symbol-dialog-l4.test.mjs)",
-    "where": "dialog:symbol-dialog"
+    "match": "equation-dialog",
+    "where": "dialog:equation-dialog"
    },
    "level": 4,
    "evidence": [
-    "L4 symbol-dialog field parity: 5/5 rows live-verified (5 apply-verified: font/range drive the grid, glyph click inserts Ω into flat HTML, close re-closes; OO Symbols/Special-chars tabs collapse into grid+Range — recorded divergence)"
+    "L4 dialog field parity: 2/2 OO fields covered {'Linear notation': 'Linear notation (^ superscript, _ subscript, sqrt(), a/b)', 'Preview': 'Preview'} — OO modal existence measured [insert/Equation -> modal (census-oo-interactions.json)]",
+    "L2 act: probe fields act on the document (preview=true inserted=true)",
+    "opened via real route: click #btn-equation (tab insert)"
    ]
   },
   {
-   "feature": "dialog.image-dialog.l4",
-   "cluster": "image",
+   "feature": "dialog.pagecolor-dialog.l4",
+   "cluster": "other",
    "kind": "dialog",
    "oo": [
     {
-     "surface": "insert:btn-image",
-     "label": "Image",
+     "surface": "dialog:pagecolor-dialog",
+     "trigger": "layout/PageColor -> modal (census-oo-interactions.json)",
+     "label": "pagecolor-dialog",
      "fields": [
-      "Image file",
-      "Width",
-      "Height"
-     ],
-     "note": "pinned contract — OO Insert->Image is a menu into the native OS file picker; the OO dialog census captured no insert-image dialog (fields pinned from the MS-Word-style shape)"
+      "Swatches",
+      "Custom color",
+      "R",
+      "G",
+      "B",
+      "Hex"
+     ]
     }
    ],
    "wo": {
-    "match": "image-dialog (image-dialog-l4.test.mjs)",
-    "where": "dialog:image-dialog"
+    "match": "pagecolor-dialog",
+    "where": "dialog:pagecolor-dialog"
    },
    "level": 4,
    "evidence": [
-    "L4 live probe (image-dialog-l4.test.mjs, 2026-11-02T18:04:11.523Z): opens via a real click (Insert tab + #btn-image); title 'Insert image', Image file input (accepts png; real bytes -> data: preview + size fields + armed Insert), Width/Height number inputs (min 1, hidden until a file), size hint; Cancel+Insert(primary, disabled until file) verified",
-    "L4 fidelity: real PNG via setInputFiles previews + arms Insert; invalid type rejected with error (Insert stays disabled); width 123 + Insert puts <img width=\"123\"> into the flat HTML at the saved caret; empty size inserts at natural size (no width/height attrs); Cancel mutates nothing; selection-on-<img> routes the same dialog into the contextual Replace-image path (measured) — text-caret inserts are the plain case",
-    "declared divergence: OO Insert→Image opens a menu into the native OS file picker (interact census: insert/Image opens \"menu\", header-footer/Image opens a 0-control modal mask; the committed OO dialog census captured NO field-level insert-image dialog) — the file + width/height + Insert/Cancel contract is pinned from the MS-Word-style insert-image shape; WO ships an anchored popover with preview + size fields as the semantic carrier (table-dialog precedent, measured)"
+    "L4 dialog field parity: 6/6 OO fields covered {'Swatches': 'Swatches', 'Custom color': 'Custom color', 'R': 'R', 'G': 'G', 'B': 'B', 'Hex': 'HEX'} — OO modal existence measured [layout/PageColor -> modal (census-oo-interactions.json)]",
+    "L2 act: probe fields act on the document (--paper=#FEF3C7)",
+    "opened via real route: click #pagecolor (tab layout)"
+   ]
+  },
+  {
+   "feature": "dialog.chart-dialog.l4",
+   "cluster": "other",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:chart-dialog",
+     "trigger": "insert/Chart -> modal (census-oo-interactions.json)",
+     "label": "chart-dialog",
+     "fields": [
+      "Chart type",
+      "Data",
+      "Preview"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "chart-dialog",
+    "where": "dialog:chart-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 dialog field parity: 3/3 OO fields covered {'Chart type': 'Chart type', 'Data': 'Data (label, value per row)', 'Preview': 'Preview (updates live)'} — OO modal existence measured [insert/Chart -> modal (census-oo-interactions.json)]",
+    "L2 act: probe fields act on the document (preview=true inserted=true)",
+    "opened via real route: click #btn-chart (tab insert, via #btn-insert-more)"
+   ]
+  },
+  {
+   "feature": "dialog.comment-dialog.l4",
+   "cluster": "other",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:comment-dialog",
+     "trigger": "insert/Comment -> modal (census-oo-interactions.json)",
+     "label": "comment-dialog",
+     "fields": [
+      "Comment"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "comment-dialog",
+    "where": "dialog:comment-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 dialog field parity: 1/1 OO fields covered {'Comment': 'Comment'} — OO modal existence measured [insert/Comment -> modal (census-oo-interactions.json)]",
+    "L2 act: probe fields act on the document (comment span/panel after insert)",
+    "opened via real route: click #btn-comment (tab collaboration)"
+   ]
+  },
+  {
+   "feature": "dialog.compare-dialog.l4",
+   "cluster": "other",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:compare-dialog",
+     "trigger": "collaboration/Compare -> modal (census-oo-interactions.json)",
+     "label": "compare-dialog",
+     "fields": [
+      "Select document to compare"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "compare-dialog",
+    "where": "dialog:compare-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 dialog field parity: 1/1 OO fields covered {'Select document to compare': 'Select document to compare'} — OO modal existence measured [collaboration/Compare -> modal (census-oo-interactions.json)]",
+    "functional: not provable offline (needs server-side document list)",
+    "opened via real route: click [data-cmd=\"compareVersion\"] (tab collaboration)"
+   ]
+  },
+  {
+   "feature": "dialog.combine-dialog.l4",
+   "cluster": "other",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:combine-dialog",
+     "trigger": "collaboration/Combine -> modal (census-oo-interactions.json)",
+     "label": "combine-dialog",
+     "fields": [
+      "Select documents to combine"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "combine-dialog",
+    "where": "dialog:combine-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 dialog field parity: 1/1 OO fields covered {'Select documents to combine': 'Select documents to combine'} — OO modal existence measured [collaboration/Combine -> modal (census-oo-interactions.json)]",
+    "functional: not provable offline (needs server-side document list)",
+    "opened via real route: click [data-cmd=\"combineRevisions\"] (tab collaboration)"
+   ]
+  },
+  {
+   "feature": "dialog.textfromfile-dialog.l4",
+   "cluster": "other",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:textfromfile-dialog",
+     "trigger": "insert/Text fromFile -> modal (census-oo-interactions.json)",
+     "label": "textfromfile-dialog",
+     "fields": [
+      "Choose file"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "textfromfile-dialog",
+    "where": "dialog:textfromfile-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 dialog field parity: 1/1 OO fields covered {'Choose file': 'Choose file…'} — OO modal existence measured [insert/Text fromFile -> modal (census-oo-interactions.json)]",
+    "L2 act: probe fields act on the document (file text inserted into #editor)",
+    "opened via real route: click #btn-textfile (tab insert)"
+   ]
+  },
+  {
+   "feature": "dialog.field-dialog.l4",
+   "cluster": "other",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:field-dialog",
+     "trigger": "insert/Field -> modal (census-oo-interactions.json)",
+     "label": "field-dialog",
+     "fields": [
+      "Field type"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "field-dialog",
+    "where": "dialog:field-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 dialog field parity: 1/1 OO fields covered {'Field type': 'Field type'} — OO modal existence measured [insert/Field -> modal (census-oo-interactions.json)]",
+    "L2 act: probe fields act on the document (PAGE field value '1' in #editor (status: Inserted PAGE field))",
+    "opened via real route: click #btn-field (tab references)"
+   ]
+  },
+  {
+   "feature": "dialog.speech-dialog.l4",
+   "cluster": "other",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:speech-dialog",
+     "trigger": "plugins/Speech -> modal (census-oo-interactions.json)",
+     "label": "speech-dialog",
+     "fields": [
+      "Voice",
+      "Speed",
+      "Pitch"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "speech-dialog",
+    "where": "dialog:speech-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 dialog field parity: 3/3 OO fields covered {'Voice': 'Voice', 'Speed': 'Speed', 'Pitch': 'Pitch'} — OO modal existence measured [plugins/Speech -> modal (census-oo-interactions.json)]",
+    "functional: not provable offline (needs server-side document list)",
+    "opened via real route: click #btn-readaloud (tab view, via #btn-speech)"
    ]
   }
  ]
