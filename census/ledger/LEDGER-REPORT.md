@@ -334,12 +334,21 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **plugins.speech-input** [control] → WO: dictate
 - ✅ L2 **plugins.highlight-code** [control] → WO: code
 
-## other — 5 features (L0:0 L1:4 L3:0)
+## other — 14 features (L0:0 L1:4 L3:0)
 - 🔲 L1 **other.chatbot** [control] → WO: btn-ai-assistant
 - 🔲 L1 **other.summarization** [control] → WO: aiSummarize
 - 🔲 L1 **other.translation** [control] → WO: aiTranslate
 - 🔲 L1 **other.create-ai-assistant** [control] → WO: createAiAssistant
 - ✅ L2 **other.settings** [control] → WO: aiSettings
+- ✅ L4 **dialog.equation-dialog.l4** [dialog] (2 OO fields) → WO: equation-dialog
+- ✅ L4 **dialog.pagecolor-dialog.l4** [dialog] (6 OO fields) → WO: pagecolor-dialog
+- ✅ L4 **dialog.chart-dialog.l4** [dialog] (3 OO fields) → WO: chart-dialog
+- ✅ L4 **dialog.comment-dialog.l4** [dialog] (1 OO fields) → WO: comment-dialog
+- ✅ L4 **dialog.compare-dialog.l4** [dialog] (1 OO fields) → WO: compare-dialog
+- ✅ L4 **dialog.combine-dialog.l4** [dialog] (1 OO fields) → WO: combine-dialog
+- ✅ L4 **dialog.textfromfile-dialog.l4** [dialog] (1 OO fields) → WO: textfromfile-dialog
+- ✅ L4 **dialog.field-dialog.l4** [dialog] (1 OO fields) → WO: field-dialog
+- ✅ L4 **dialog.speech-dialog.l4** [dialog] (3 OO fields) → WO: speech-dialog
 
 ## statusbar — 10 features (L0:0 L1:10 L3:0)
 - 🔲 L1 **statusbar.word-count** [statusbar-item] → WO: sb-word-count

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T19:11:20.910258",
+ "generated": "2026-11-02T19:14:33.459199",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -13,7 +13,7 @@
   "L1": 385,
   "L2": 81,
   "L3": 38,
-  "L4": 6
+  "L4": 15
  },
  "features": [
   {
@@ -10372,6 +10372,241 @@
     "L4 fidelity: center + 40/20/32 + 1.5 + keeps via OK puts text-align/margins/text-indent/line-height inline styles + keep-lines-together/keep-with-next classes on the caret <p> (visible in the flat HTML); reopening reads the live block back into every field; the negative path zeroes styles and untoggles (page-break-before on); Cancel mutates nothing",
     "declared divergence: OO opens \"Paragraph advanced settings\" from the ctx menu row (census-oo-deep contextMenu, enabled) and the right panel \"Show advanced settings\"; the committed OO dialog census captured no field-level paragraph modal — the field contract is pinned from the MS-Word-style Indents & Spacing shape (alignment, left/right/first-line indents, line spacing, keeps, page break, Tabs…, OK/Cancel)",
     "declared divergence: OO additionally carries Before/After paragraph spacing + \"Don't add interval between paragraphs of the same style\" (right-panel census) — WO defers those to the ribbon line-spacing control and right panel; recorded divergence, not gated"
+   ]
+  },
+  {
+   "feature": "dialog.equation-dialog.l4",
+   "cluster": "other",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:equation-dialog",
+     "trigger": "insert/Equation -> modal (census-oo-interactions.json)",
+     "label": "equation-dialog",
+     "fields": [
+      "Linear notation",
+      "Preview"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "equation-dialog",
+    "where": "dialog:equation-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 dialog field parity: 2/2 OO fields covered {'Linear notation': 'Linear notation (^ superscript, _ subscript, sqrt(), a/b)', 'Preview': 'Preview'} — OO modal existence measured [insert/Equation -> modal (census-oo-interactions.json)]",
+    "L2 act: probe fields act on the document (preview=true inserted=true)",
+    "opened via real route: click #btn-equation (tab insert)"
+   ]
+  },
+  {
+   "feature": "dialog.pagecolor-dialog.l4",
+   "cluster": "other",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:pagecolor-dialog",
+     "trigger": "layout/PageColor -> modal (census-oo-interactions.json)",
+     "label": "pagecolor-dialog",
+     "fields": [
+      "Swatches",
+      "Custom color",
+      "R",
+      "G",
+      "B",
+      "Hex"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "pagecolor-dialog",
+    "where": "dialog:pagecolor-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 dialog field parity: 6/6 OO fields covered {'Swatches': 'Swatches', 'Custom color': 'Custom color', 'R': 'R', 'G': 'G', 'B': 'B', 'Hex': 'HEX'} — OO modal existence measured [layout/PageColor -> modal (census-oo-interactions.json)]",
+    "L2 act: probe fields act on the document (--paper=#FEF3C7)",
+    "opened via real route: click #pagecolor (tab layout)"
+   ]
+  },
+  {
+   "feature": "dialog.chart-dialog.l4",
+   "cluster": "other",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:chart-dialog",
+     "trigger": "insert/Chart -> modal (census-oo-interactions.json)",
+     "label": "chart-dialog",
+     "fields": [
+      "Chart type",
+      "Data",
+      "Preview"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "chart-dialog",
+    "where": "dialog:chart-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 dialog field parity: 3/3 OO fields covered {'Chart type': 'Chart type', 'Data': 'Data (label, value per row)', 'Preview': 'Preview (updates live)'} — OO modal existence measured [insert/Chart -> modal (census-oo-interactions.json)]",
+    "L2 act: probe fields act on the document (preview=true inserted=true)",
+    "opened via real route: click #btn-chart (tab insert, via #btn-insert-more)"
+   ]
+  },
+  {
+   "feature": "dialog.comment-dialog.l4",
+   "cluster": "other",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:comment-dialog",
+     "trigger": "insert/Comment -> modal (census-oo-interactions.json)",
+     "label": "comment-dialog",
+     "fields": [
+      "Comment"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "comment-dialog",
+    "where": "dialog:comment-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 dialog field parity: 1/1 OO fields covered {'Comment': 'Comment'} — OO modal existence measured [insert/Comment -> modal (census-oo-interactions.json)]",
+    "L2 act: probe fields act on the document (comment span/panel after insert)",
+    "opened via real route: click #btn-comment (tab collaboration)"
+   ]
+  },
+  {
+   "feature": "dialog.compare-dialog.l4",
+   "cluster": "other",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:compare-dialog",
+     "trigger": "collaboration/Compare -> modal (census-oo-interactions.json)",
+     "label": "compare-dialog",
+     "fields": [
+      "Select document to compare"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "compare-dialog",
+    "where": "dialog:compare-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 dialog field parity: 1/1 OO fields covered {'Select document to compare': 'Select document to compare'} — OO modal existence measured [collaboration/Compare -> modal (census-oo-interactions.json)]",
+    "functional: not provable offline (needs server-side document list)",
+    "opened via real route: click [data-cmd=\"compareVersion\"] (tab collaboration)"
+   ]
+  },
+  {
+   "feature": "dialog.combine-dialog.l4",
+   "cluster": "other",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:combine-dialog",
+     "trigger": "collaboration/Combine -> modal (census-oo-interactions.json)",
+     "label": "combine-dialog",
+     "fields": [
+      "Select documents to combine"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "combine-dialog",
+    "where": "dialog:combine-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 dialog field parity: 1/1 OO fields covered {'Select documents to combine': 'Select documents to combine'} — OO modal existence measured [collaboration/Combine -> modal (census-oo-interactions.json)]",
+    "functional: not provable offline (needs server-side document list)",
+    "opened via real route: click [data-cmd=\"combineRevisions\"] (tab collaboration)"
+   ]
+  },
+  {
+   "feature": "dialog.textfromfile-dialog.l4",
+   "cluster": "other",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:textfromfile-dialog",
+     "trigger": "insert/Text fromFile -> modal (census-oo-interactions.json)",
+     "label": "textfromfile-dialog",
+     "fields": [
+      "Choose file"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "textfromfile-dialog",
+    "where": "dialog:textfromfile-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 dialog field parity: 1/1 OO fields covered {'Choose file': 'Choose file…'} — OO modal existence measured [insert/Text fromFile -> modal (census-oo-interactions.json)]",
+    "L2 act: probe fields act on the document (file text inserted into #editor)",
+    "opened via real route: click #btn-textfile (tab insert)"
+   ]
+  },
+  {
+   "feature": "dialog.field-dialog.l4",
+   "cluster": "other",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:field-dialog",
+     "trigger": "insert/Field -> modal (census-oo-interactions.json)",
+     "label": "field-dialog",
+     "fields": [
+      "Field type"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "field-dialog",
+    "where": "dialog:field-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 dialog field parity: 1/1 OO fields covered {'Field type': 'Field type'} — OO modal existence measured [insert/Field -> modal (census-oo-interactions.json)]",
+    "L2 act: probe fields act on the document (PAGE field value '1' in #editor (status: Inserted PAGE field))",
+    "opened via real route: click #btn-field (tab references)"
+   ]
+  },
+  {
+   "feature": "dialog.speech-dialog.l4",
+   "cluster": "other",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:speech-dialog",
+     "trigger": "plugins/Speech -> modal (census-oo-interactions.json)",
+     "label": "speech-dialog",
+     "fields": [
+      "Voice",
+      "Speed",
+      "Pitch"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "speech-dialog",
+    "where": "dialog:speech-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 dialog field parity: 3/3 OO fields covered {'Voice': 'Voice', 'Speed': 'Speed', 'Pitch': 'Pitch'} — OO modal existence measured [plugins/Speech -> modal (census-oo-interactions.json)]",
+    "functional: not provable offline (needs server-side document list)",
+    "opened via real route: click #btn-readaloud (tab view, via #btn-speech)"
    ]
   }
  ]
