@@ -2,7 +2,7 @@
  "version": 1,
  "probe": "image-dialog-l4",
  "feature": "dialog.image-dialog.l4",
- "generated": "2026-11-02T18:04:11.523Z",
+ "generated": "2026-11-02T18:06:46.532Z",
  "ok": true,
  "checks": [
   {
