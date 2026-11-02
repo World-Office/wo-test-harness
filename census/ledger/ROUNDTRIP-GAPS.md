@@ -1,9 +1,9 @@
 # LEDGER2-ROUNDTRIP: persistence gaps
 
-Generated: 2026-11-02T14:28:53.801Z
+Generated: 2026-11-02T16:20:46.261Z
 Conversion endpoint: `http://192.168.42.42:8086/api/conversion/convert` (html -> docx -> html)
 Editor: `/home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg`
-Probed: 27 document-level commands — survived: 27, lost: 0
+Probed: 28 document-level commands — survived: 28, lost: 0
 
 A feature reaches **L3 (persists)** only when its mutation marker is present
 in the editor serialization *and* still present after booting a fresh editor
@@ -65,7 +65,6 @@ dialog-only, or state toggles with no serialized marker).
 - `insert.text-box` (wo.match `insertTextbox`) — lost attribute: none serialized (no marker contract)
 - `insert.text-art` (wo.match `insertTextart`) — lost attribute: none serialized (no marker contract)
 - `insert.drop-cap` (wo.match `toggleDropcap`) — lost attribute: none serialized (no marker contract)
-- `insert.date-time` (wo.match `pagenumber-dialog`) — lost attribute: none serialized (no marker contract)
 - `insert.text-from-file` (wo.match `btn-textfile`) — lost attribute: none serialized (no marker contract)
 - `insert.field` (wo.match `btn-field`) — lost attribute: none serialized (no marker contract)
 - `insert.equation` (wo.match `btn-equation`) — lost attribute: none serialized (no marker contract)
@@ -134,7 +133,6 @@ dialog-only, or state toggles with no serialized marker).
 - `plugins.zotero` (wo.match `pluginUnavailable`) — lost attribute: none serialized (no marker contract)
 - `plugins.speech` (wo.match `btn-speech`) — lost attribute: none serialized (no marker contract)
 - `plugins.speech-input` (wo.match `dictate`) — lost attribute: none serialized (no marker contract)
-- `headerfooter.date-time` (wo.match `pagenumber-dialog`) — lost attribute: none serialized (no marker contract)
 - `headerfooter.field` (wo.match `btn-field`) — lost attribute: none serialized (no marker contract)
 - `headerfooter.close` (wo.match `btn-hf-close`) — lost attribute: none serialized (no marker contract)
 - `other.settings` (wo.match `aiSettings`) — lost attribute: none serialized (no marker contract)
@@ -207,7 +205,6 @@ dialog-only, or state toggles with no serialized marker).
 - `chart.legend` (wo.match `Legend`) — lost attribute: none serialized (no marker contract)
 - `chart.trendline` (wo.match `Trendline`) — lost attribute: none serialized (no marker contract)
 - `chart.up-down-bars` (wo.match `Up/Down Bars`) — lost attribute: none serialized (no marker contract)
-- `insert.dlg-date-time` (wo.match `pagenumber-dialog`) — lost attribute: none serialized (no marker contract)
 - `insert.dlg-symbol` (wo.match `symbol-dialog`) — lost attribute: none serialized (no marker contract)
 - `page.dlg-margins` (wo.match `Margins`) — lost attribute: none serialized (no marker contract)
 - `page.dlg-page-size` (wo.match `btn-multipage`) — lost attribute: none serialized (no marker contract)
@@ -217,9 +214,8 @@ dialog-only, or state toggles with no serialized marker).
 - `references.dlg-insert-caption` (wo.match `insertCaption`) — lost attribute: none serialized (no marker contract)
 - `references.dlg-cross-reference` (wo.match `crossref-dialog`) — lost attribute: none serialized (no marker contract)
 - `table.dlg-table-of-figures` (wo.match `tableoffigures-dialog`) — lost attribute: none serialized (no marker contract)
-- `table.dlg-table-of-contents` (wo.match `updatetoc-dialog`) — lost attribute: none serialized (no marker contract)
+- `table.dlg-table-of-contents` (wo.match `toc-dialog`) — lost attribute: none serialized (no marker contract)
 - `macros.dlg-macros` (wo.match `btn-macro-menu`) — lost attribute: none serialized (no marker contract)
-- `headerfooter.dlg-date-time` (wo.match `pagenumber-dialog`) — lost attribute: none serialized (no marker contract)
 - `file.back` (wo.match `Back`) — lost attribute: none serialized (no marker contract)
 - `file.save` (wo.match `Save`) — lost attribute: none serialized (no marker contract)
 - `file.download-as` (wo.match `Download As`) — lost attribute: none serialized (no marker contract)
