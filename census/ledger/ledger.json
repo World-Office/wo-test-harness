@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T10:34:49.509935",
+ "generated": "2026-11-02T14:46:54.291152",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,7 +10,7 @@
  ],
  "totals": {
   "L0": 0,
-  "L1": 390,
+  "L1": 393,
   "L2": 83,
   "L3": 28,
   "L4": 0
@@ -7801,6 +7801,66 @@
    },
    "level": 1,
    "evidence": []
+  },
+  {
+   "feature": "formatting.heading-1",
+   "cluster": "formatting",
+   "kind": "formatting",
+   "oo": [
+    {
+     "surface": "style-gallery",
+     "label": "Heading 1",
+     "enabled": true
+    }
+   ],
+   "wo": {
+    "match": "applyHeading1",
+    "where": "tab:home"
+   },
+   "level": 1,
+   "evidence": [
+    "OO style gallery Heading 1 + shortcut Ctrl+Alt+1 (census-shortcuts: matched); WO Home 'Heading 1' control (formatBlock) + applyHeading1 command"
+   ]
+  },
+  {
+   "feature": "formatting.heading-2",
+   "cluster": "formatting",
+   "kind": "formatting",
+   "oo": [
+    {
+     "surface": "style-gallery",
+     "label": "Heading 2",
+     "enabled": true
+    }
+   ],
+   "wo": {
+    "match": "applyHeading2",
+    "where": "tab:home"
+   },
+   "level": 1,
+   "evidence": [
+    "OO style gallery Heading 2 + shortcut Ctrl+Alt+2 (census-shortcuts: matched); WO Home 'Heading 2' control (formatBlock) + applyHeading2 command"
+   ]
+  },
+  {
+   "feature": "formatting.heading-3",
+   "cluster": "formatting",
+   "kind": "formatting",
+   "oo": [
+    {
+     "surface": "style-gallery",
+     "label": "Heading 3",
+     "enabled": true
+    }
+   ],
+   "wo": {
+    "match": "applyHeading3",
+    "where": "tab:home"
+   },
+   "level": 1,
+   "evidence": [
+    "OO style gallery Heading 3 + shortcut Ctrl+Alt+3 (census-shortcuts: matched); WO Home 'Heading 3' control (formatBlock) + applyHeading3 command"
+   ]
   },
   {
    "feature": "ctx.insert-caption",

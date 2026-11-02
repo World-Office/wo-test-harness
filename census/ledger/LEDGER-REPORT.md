@@ -47,7 +47,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L2 **file.protection** [control] → WO: protectDialog
 - ✅ L2 **file.view** [control] → WO: displayMode
 
-## formatting — 53 features (L0:0 L1:20 L3:16)
+## formatting — 56 features (L0:0 L1:23 L3:16)
 - 🔲 L1 **formatting.font** [control] → WO: font-family
 - 🔲 L1 **formatting.font-size** [control] → WO: font-size
 - 🔲 L1 **formatting.increment-font-size-ctrl** [control] → WO: font-size
@@ -68,6 +68,9 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.increasefontsize** [shortcut] → WO: Ctrl+]
 - 🔲 L1 **shortcut.decreasefontsize** [shortcut] → WO: Ctrl+[
 - 🔲 L1 **shortcut.showall** [shortcut] → WO: ¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)
+- 🔲 L1 **formatting.heading-1** [formatting] → WO: applyHeading1
+- 🔲 L1 **formatting.heading-2** [formatting] → WO: applyHeading2
+- 🔲 L1 **formatting.heading-3** [formatting] → WO: applyHeading3
 - ✅ L2 **formatting.multilevel-list** [control] → WO: multilevel
 - ✅ L2 **formatting.text-direction** [control] → WO: directionRtl
 - ✅ L2 **shortcut.bold** [shortcut] → WO: Ctrl+B

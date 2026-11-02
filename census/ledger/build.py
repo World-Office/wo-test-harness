@@ -371,6 +371,23 @@ if sc_path.exists():
             elif r.get("verdict") in ("browser-native", "nav"):
                 ledger[fid]["evidence"].append(r.get("wo", "browser/caret"))
 
+# 6b. heading paragraph styles (manual rows). OO's Home style gallery is
+# canvas-drawn and not enumerable by the deep census (no Heading buttons in
+# census-oo-deep tabs.home), so these rows are pinned by hand: OO side from
+# census-shortcuts (ApplyHeading1-3, Ctrl+Alt+1..3, verdict matched), WO side
+# from census-wo-deep (Home-tab "Heading N" controls, cmd formatBlock) and
+# the applyHeadingN wo-commands the roundtrip probes dispatch.
+for _i, _combo in ((1, "Ctrl+Alt+1"), (2, "Ctrl+Alt+2"), (3, "Ctrl+Alt+3")):
+    _fid = f"formatting.heading-{_i}"
+    add(_fid, "formatting",
+        {"surface": "style-gallery", "label": f"Heading {_i}", "enabled": True},
+        "formatting")
+    ledger[_fid]["wo"] = {"match": f"applyHeading{_i}", "where": "tab:home"}
+    ledger[_fid]["level"] = 1
+    ledger[_fid]["evidence"].append(
+        f"OO style gallery Heading {_i} + shortcut {_combo} (census-shortcuts: matched); "
+        f"WO Home 'Heading {_i}' control (formatBlock) + applyHeading{_i} command")
+
 # 7. scenario context menus (census-ctx.json — T-002). One row per OO
 #    ctx-menu caption; chart submenu option-children collapse into their
 #    group's single lead row so C3 reports ~9 chart groups, not ~45 options.
