@@ -29,11 +29,11 @@
   },
   "reverified": {
     "date": "2026-11-02",
-    "attempt": 2,
-    "reason": "task re-dispatched after attempt-1 recorded '0 commits ahead' — same bookkeeping race as VIS-001: the fix had already landed and merged into server main as be3546239",
-    "server_main": "be3546239 is an ancestor of server main HEAD (76b37a431); fix unchanged since",
-    "probe_rerun": "live collapse probe 6/6 PASS, 'VIS-002-LIVE: ALL GREEN'",
-    "gate_rerun": "2\nOK"
+    "attempt": 3,
+    "reason": "task re-dispatched again after another '0 commits ahead' round — fix landed and merged long ago as server be3546239; this round re-verified on current server main and refreshed the record",
+    "server_main": "661546015 (be3546239 still ancestor); #right-panel[hidden]{display:none} present in style.css:2262, static pin unchanged in right-panel.test.mjs",
+    "probe_rerun": "node --test right-panel.test.mjs: 1 pass / 0 fail (includes VIS-002 assert)",
+    "gate_rerun": "verbatim gate grep -q sidebar editor.js -> exit 0 PASS"
   },
   "verified": "2026-11-02"
 }
