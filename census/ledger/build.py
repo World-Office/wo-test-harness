@@ -688,6 +688,57 @@ if fd_path.exists():
     print("  L4 merge: font-dialog %s (%d/%d fields)"
           % ("PARITY" if fd.get("parity") else "GAP", len(_fd_ok), len(_fd_fields)))
 
+# --------------------------- L4 merge (table-dialog-l4.test.mjs, L4-004)
+# The insert-table "dialog" contract: OO's Insert->Table is a hover GRID
+# picker (census btn-inserttable — no numeric dialog, no OK/Cancel); the
+# numeric rows/cols shape is the MS-Word-style contract. WO ships a
+# rows/cols popover (#table-dialog, opened by a REAL click on #btn-table).
+# L4 is EARNED by the live probe table-dialog-l4.test.mjs: it opens the
+# dialog the user way, asserts the field/button contract AND the insert
+# semantics (3x4 -> real <table>, clamped bounds, Cancel mutates nothing).
+# A failing check pins the row below L4 with the measured defect as loud
+# evidence — never a silent pass.
+tdl4_path = HERE / "table-dialog-l4.json"
+if tdl4_path.exists():
+    try:
+        tdl4 = json.load(open(tdl4_path))
+    except ValueError:
+        tdl4 = None
+    if tdl4:
+        _fid = tdl4.get("feature") or "dialog.table-dialog.l4"
+        _row = ledger.setdefault(_fid, {
+            "feature": _fid, "cluster": "table", "kind": "dialog",
+            "oo": [], "wo": None, "level": 0, "evidence": [],
+        })
+        _row["oo"].append({"surface": "insert:btn-inserttable", "label": "Table",
+                            "fields": ["Rows", "Columns"],
+                            "note": "pinned contract — OO Insert->Table is a hover grid picker; "
+                                    "the OO dialog census captured no numeric insert-table dialog"})
+        _row["wo"] = {"match": "table-dialog", "where": "dialog:table-dialog"}
+        _row["level"] = max(_row["level"], 1)
+        _row["evidence"].append(
+            "L4 live probe (table-dialog-l4.test.mjs, "
+            + (tdl4.get("generated") or "?") + "): opens via real clicks (Insert tab + #btn-table); "
+            + "title 'Insert table', Rows/Columns number fields (min/max 1-20/1-10, defaults 2/3), "
+            + "Cancel+Insert(primary) verified")
+        if tdl4.get("ok"):
+            _row["level"] = 4
+            _row["evidence"].append(
+                "L4 fidelity: rows x cols + Insert puts a real <table> (3x4 verified) into the doc "
+                + "at the saved selection; out-of-range values clamp (99x0 -> 20x1); Cancel mutates nothing")
+        else:
+            for _c in tdl4.get("checks", []):
+                if not _c.get("ok"):
+                    _row["evidence"].append(
+                        "L4 DEFECT (measured, probe check '" + _c.get("name", "?")
+                        + "'): " + _c.get("detail", "failed"))
+            _row["evidence"].append(
+                "NOT L4: re-run table-dialog-l4.test.mjs + build.py after the editor fix")
+        for _g in tdl4.get("declaredGaps", []) or []:
+            _row["evidence"].append("declared divergence: " + _g)
+        print("  L4 live probe: dialog.table-dialog.l4 "
+              + ("at L4" if tdl4.get("ok") else "NOT at L4 (measured defect — see evidence)"))
+
 # ---------------------------------------------------------------- report
 by_cluster = defaultdict(lambda: {"L0": 0, "L1": 0, "L2": 0, "L3": 0, "L4": 0, "rows": []})
 for row in ledger.values():

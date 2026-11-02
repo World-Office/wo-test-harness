@@ -167,7 +167,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L3 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 - ✅ L4 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: symbol-dialog
 
-## table — 15 features (L0:0 L1:11 L3:3)
+## table — 16 features (L0:0 L1:11 L3:3)
 - 🔲 L1 **table.table-of-contents** [control] → WO: updatetoc-dialog
 - 🔲 L1 **table.update-table** [control] → WO: updateToc
 - 🔲 L1 **table.draw-table** [menu-item] → WO: Draw table
@@ -183,6 +183,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L3 **table.table** [control] → WO: Table ▾
 - ✅ L3 **table.insert-custom-table** [menu-item] → WO: btn-table
 - ✅ L3 **table.convert-text-to-table** [menu-item] → WO: Convert Text to Table…
+- ✅ L4 **dialog.table-dialog.l4** [dialog] (2 OO fields) → WO: table-dialog
 
 ## image — 2 features (L0:0 L1:2 L3:0)
 - 🔲 L1 **image.image** [control] → WO: btn-hf-image

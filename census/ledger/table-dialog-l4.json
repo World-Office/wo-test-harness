@@ -1,0 +1,89 @@
+{
+ "version": 1,
+ "probe": "table-dialog-l4",
+ "feature": "dialog.table-dialog.l4",
+ "generated": "2026-11-02T17:43:51.473Z",
+ "ok": true,
+ "checks": [
+  {
+   "name": "open via real clicks (Insert tab + #btn-table)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Insert table\"",
+   "ok": true,
+   "detail": "\"Insert table\""
+  },
+  {
+   "name": "field Rows: label + input[type=number] min 1 max 20",
+   "ok": true,
+   "detail": "label=\"Rows\" type=\"number\" min=\"1\" max=\"20\""
+  },
+  {
+   "name": "field Columns: label + input[type=number] min 1 max 10",
+   "ok": true,
+   "detail": "label=\"Columns\" type=\"number\" min=\"1\" max=\"10\""
+  },
+  {
+   "name": "defaults reset on open: rows 2, cols 3",
+   "ok": true,
+   "detail": "rows=\"2\" cols=\"3\""
+  },
+  {
+   "name": "buttons Cancel + Insert(primary)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" insert=\"Insert\" primary=true"
+  },
+  {
+   "name": "declared divergence: exactly the two OO fields (OO Insert->Table is a hover grid picker; a stray WO field would be a parity finding, not a pass)",
+   "ok": true,
+   "detail": "labels=[\"Rows\",\"Columns\"]"
+  },
+  {
+   "name": "3x4 + Insert -> <table> with 3 rows x 4 cells (flat HTML, seed text intact)",
+   "ok": true,
+   "detail": "tables=[{\"rows\":3,\"cells\":4}] flatHasTable=true sentinel=true"
+  },
+  {
+   "name": "out-of-range clamps to bounds: 99x0 -> 20 rows x 1 col",
+   "ok": true,
+   "detail": "tables=[{\"rows\":20,\"cells\":1},{\"rows\":3,\"cells\":4}]"
+  },
+  {
+   "name": "cancel mutates nothing",
+   "ok": true,
+   "detail": "tables=2 (expected still 2)"
+  }
+ ],
+ "declaredGaps": [
+  "OO Insert->Table is a hover GRID picker (census btn-inserttable; the committed OO dialog census captured no numeric insert-table dialog and no OK/Cancel) — the numeric rows/cols contract is pinned from the MS-Word-style insert-table shape; WO ships a rows/cols popover with Insert(=OK)/Cancel as the semantic carrier (measured)"
+ ],
+ "contract": {
+  "open": "real click #btn-table (editor.js: addEventListener(\"click\", insertTable); bus route \"openTableDialog\")",
+  "title": "Insert table",
+  "fields": [
+   {
+    "label": "Rows",
+    "tag": "input",
+    "type": "number",
+    "min": 1,
+    "max": 20,
+    "default": 2
+   },
+   {
+    "label": "Columns",
+    "tag": "input",
+    "type": "number",
+    "min": 1,
+    "max": 10,
+    "default": 3
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Insert"
+  ],
+  "behavior": "rows x cols + Insert -> <table> at the saved selection (flat HTML); values clamp to min/max; Cancel mutates nothing"
+ }
+}

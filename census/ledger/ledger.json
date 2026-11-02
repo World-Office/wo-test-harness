@@ -13,7 +13,7 @@
   "L1": 385,
   "L2": 81,
   "L3": 38,
-  "L4": 2
+  "L4": 3
  },
  "features": [
   {
@@ -1014,6 +1014,32 @@
    "level": 3,
    "evidence": [
     "L3 roundtrip ok [btn-table]: marker /<table\\b/ survived html->docx->html"
+   ]
+  },
+  {
+   "feature": "dialog.table-dialog.l4",
+   "cluster": "table",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "insert:btn-inserttable",
+     "label": "Table",
+     "fields": [
+      "Rows",
+      "Columns"
+     ],
+     "note": "pinned contract — OO Insert->Table is a hover grid picker; the OO dialog census captured no numeric insert-table dialog"
+    }
+   ],
+   "wo": {
+    "match": "table-dialog",
+    "where": "dialog:table-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 live probe (table-dialog-l4.test.mjs, 2026-11-02T17:43:51.473Z): opens via real clicks (Insert tab + #btn-table); title 'Insert table', Rows/Columns number fields (min/max 1-20/1-10, defaults 2/3), Cancel+Insert(primary) verified",
+    "L4 fidelity: rows x cols + Insert puts a real <table> (3x4 verified) into the doc at the saved selection; out-of-range values clamp (99x0 -> 20x1); Cancel mutates nothing",
+    "declared divergence: OO Insert->Table is a hover GRID picker (census btn-inserttable; the committed OO dialog census captured no numeric insert-table dialog and no OK/Cancel) — the numeric rows/cols contract is pinned from the MS-Word-style insert-table shape; WO ships a rows/cols popover with Insert(=OK)/Cancel as the semantic carrier (measured)"
    ]
   },
   {
