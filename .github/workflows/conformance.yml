@@ -103,6 +103,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # PKG-001 contract, offline and fast: committed level-ledger has no
+      # silently parked row, and the build guard still trips on a synthetic
+      # one. Runs before the expensive setup so a regression fails fast.
+      - name: No silently parked ledger rows (PKG-001 contract, offline)
+        run: python3 census/ledger/test-no-parked.py
+
       - name: Check out World-Office/server (spawned by reconcile.py)
         uses: actions/checkout@v4
         with:
