@@ -1,0 +1,98 @@
+{
+ "version": 1,
+ "probe": "image-dialog-l4",
+ "feature": "dialog.image-dialog.l4",
+ "generated": "2026-11-02T18:04:11.523Z",
+ "ok": true,
+ "checks": [
+  {
+   "name": "open via real clicks (Insert tab + #btn-image)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Insert image\"",
+   "ok": true,
+   "detail": "\"Insert image\""
+  },
+  {
+   "name": "field Image file: label + input[type=file] accepting png",
+   "ok": true,
+   "detail": "label=\"Image file\" type=\"file\" acceptPng=true"
+  },
+  {
+   "name": "fields Width/Height: labels + input[type=number] min 1, hidden until a file is picked",
+   "ok": true,
+   "detail": "w=\"Width\"/\"number\"/\"1\" h=\"Height\"/\"number\"/\"1\" sizeFieldsHidden=true previewHidden=true"
+  },
+  {
+   "name": "size hint \"leave empty for original size\"",
+   "ok": true,
+   "detail": "\"leave empty for original size\""
+  },
+  {
+   "name": "buttons Cancel + Insert(primary, disabled until file)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" insert=\"Insert\" primary=true disabled=true"
+  },
+  {
+   "name": "file field applies: PNG -> preview shown (data:image/png), size fields revealed, Insert armed, no error",
+   "ok": true,
+   "detail": "{\"previewVisible\":true,\"previewDataUrl\":true,\"sizesVisible\":true,\"okEnabled\":true,\"err\":\"\"}"
+  },
+  {
+   "name": "invalid type rejected with error (Insert stays disabled, preview hidden)",
+   "ok": true,
+   "detail": "{\"err\":\"Unsupported image type\",\"okDisabled\":true,\"previewHidden\":true}"
+  },
+  {
+   "name": "width applies + Insert -> <img width=\"123\"> in flat HTML, seed text intact, dialog closed",
+   "ok": true,
+   "detail": "imgs=[{\"w\":\"123\",\"h\":null,\"alt\":\"probe.png\"}] flatHasImg=true sentinel=true closed=true"
+  },
+  {
+   "name": "empty size inserts at natural size (no width/height attrs)",
+   "ok": true,
+   "detail": "imgs=[{\"w\":\"123\",\"h\":null,\"alt\":\"probe.png\"},{\"w\":null,\"h\":null,\"alt\":\"probe2.png\"}]"
+  },
+  {
+   "name": "cancel mutates nothing",
+   "ok": true,
+   "detail": "imgs=2 (expected still 2) closed=true"
+  }
+ ],
+ "declaredGaps": [
+  "OO Insert→Image opens a menu into the native OS file picker (interact census: insert/Image opens \"menu\", header-footer/Image opens a 0-control modal mask; the committed OO dialog census captured NO field-level insert-image dialog) — the file + width/height + Insert/Cancel contract is pinned from the MS-Word-style insert-image shape; WO ships an anchored popover with preview + size fields as the semantic carrier (table-dialog precedent, measured)"
+ ],
+ "contract": {
+  "open": "real click #btn-image (editor.js: getElementById(\"btn-image\").addEventListener(\"click\", insertImage))",
+  "title": "Insert image",
+  "fields": [
+   {
+    "label": "Image file",
+    "tag": "input",
+    "type": "file",
+    "accept": "image/png,image/jpeg,image/gif,image/bmp,image/webp,image/svg+xml"
+   },
+   {
+    "label": "Width",
+    "tag": "input",
+    "type": "number",
+    "min": 1,
+    "note": "hidden until a file is picked; empty = original size"
+   },
+   {
+    "label": "Height",
+    "tag": "input",
+    "type": "number",
+    "min": 1,
+    "note": "hidden until a file is picked; empty = original size"
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Insert"
+  ],
+  "behavior": "real file -> data: preview + armed Insert; invalid type rejected with error; width 123 + Insert -> <img width=\"123\"> at the saved caret; empty size -> natural size (no width/height attrs); Cancel mutates nothing; a selection ON an <img> routes the same dialog into the contextual Replace-image path (measured during probe bring-up; the ctx.replace-image ledger row), text-caret inserts are the plain case"
+ }
+}

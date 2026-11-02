@@ -779,6 +779,66 @@ if sd_path.exists():
             "L4 symbol-dialog probe GAP: " + ", ".join(_sd_bad or ["empty artifact"]))
     print("  L4 merge: symbol-dialog %s (%d/%d rows)"
           % ("PARITY" if sd.get("parity") else "GAP", len(_sd_ok), len(_sd_fields)))
+# --------------------------- L4 merge (image-dialog-l4.test.mjs, L4-003)
+# The insert-image "dialog" contract: OO's Insert->Image opens a menu into
+# the NATIVE OS file picker (interact census: insert/Image opens "menu",
+# header-footer/Image opens a 0-control modal mask) — the OO dialog census
+# captured no field-level insert-image dialog. The file + width/height +
+# Insert/Cancel shape is the MS-Word-style pinned contract (table-dialog
+# precedent). WO ships it as the anchored popover #image-dialog (opened by
+# a REAL click on #btn-image): file input with preview, width/height number
+# fields revealed only once a file is picked, Insert armed only for a valid
+# image. L4 is EARNED by the live probe image-dialog-l4.test.mjs: real
+# setInputFiles bytes, invalid-type rejection, width-attr insert at the
+# saved caret, natural-size insert for empty fields, Cancel mutates
+# nothing. A failing check pins the row below L4 with the measured defect
+# as loud evidence — never a silent pass.
+idl4_path = HERE / "image-dialog-l4.json"
+if idl4_path.exists():
+    try:
+        idl4 = json.load(open(idl4_path))
+    except ValueError:
+        raise SystemExit("ledger: image-dialog-l4.json is not valid JSON — fix the probe artifact")
+    _idl4_ok = [c for c in idl4.get("checks", []) if c.get("ok")]
+    _fid = idl4.get("feature") or "dialog.image-dialog.l4"
+    _row = ledger.setdefault(_fid, {
+        "feature": _fid, "cluster": "image", "kind": "dialog",
+        "oo": [], "wo": None, "level": 0, "evidence": [],
+    })
+    _row["oo"].append({"surface": "insert:btn-image", "label": "Image",
+                        "fields": ["Image file", "Width", "Height"],
+                        "note": "pinned contract — OO Insert->Image is a menu into the native OS "
+                                "file picker; the OO dialog census captured no insert-image dialog "
+                                "(fields pinned from the MS-Word-style shape)"})
+    _row["wo"] = {"match": "image-dialog (image-dialog-l4.test.mjs)",
+                   "where": "dialog:image-dialog"}
+    _row["level"] = max(_row["level"], 1)
+    _row["evidence"].append(
+        "L4 live probe (image-dialog-l4.test.mjs, "
+        + (idl4.get("generated") or "?") + "): opens via a real click (Insert tab + #btn-image); "
+        + "title 'Insert image', Image file input (accepts png; real bytes -> data: preview + size "
+        + "fields + armed Insert), Width/Height number inputs (min 1, hidden until a file), size hint; "
+        + "Cancel+Insert(primary, disabled until file) verified")
+    if idl4.get("ok"):
+        _row["level"] = 4
+        _row["evidence"].append(
+            "L4 fidelity: real PNG via setInputFiles previews + arms Insert; invalid type rejected "
+            + "with error (Insert stays disabled); width 123 + Insert puts <img width=\"123\"> into "
+            + "the flat HTML at the saved caret; empty size inserts at natural size (no width/height "
+            + "attrs); Cancel mutates nothing; selection-on-<img> routes the same dialog into the "
+            + "contextual Replace-image path (measured) — text-caret inserts are the plain case")
+    else:
+        for _c in idl4.get("checks", []):
+            if not _c.get("ok"):
+                _row["evidence"].append(
+                    "L4 DEFECT (measured, probe check '" + _c.get("name", "?")
+                    + "'): " + _c.get("detail", "failed"))
+        _row["evidence"].append(
+            "NOT L4: re-run image-dialog-l4.test.mjs + build.py after the editor fix")
+    for _g in idl4.get("declaredGaps", []) or []:
+        _row["evidence"].append("declared divergence: " + _g)
+    print("  L4 live probe: dialog.image-dialog.l4 "
+          + ("at L4" if idl4.get("ok") else "NOT at L4 (measured defect — see evidence)"))
 
 # ---------------------------------------------------------------- report
 by_cluster = defaultdict(lambda: {"L0": 0, "L1": 0, "L2": 0, "L3": 0, "L4": 0, "rows": []})

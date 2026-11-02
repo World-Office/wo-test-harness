@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T18:48:27.822480",
+ "generated": "2026-11-02T19:04:11.761426",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -13,7 +13,7 @@
   "L1": 385,
   "L2": 81,
   "L3": 38,
-  "L4": 4
+  "L4": 5
  },
  "features": [
   {
@@ -10309,6 +10309,33 @@
    "level": 4,
    "evidence": [
     "L4 symbol-dialog field parity: 5/5 rows live-verified (5 apply-verified: font/range drive the grid, glyph click inserts Ω into flat HTML, close re-closes; OO Symbols/Special-chars tabs collapse into grid+Range — recorded divergence)"
+   ]
+  },
+  {
+   "feature": "dialog.image-dialog.l4",
+   "cluster": "image",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "insert:btn-image",
+     "label": "Image",
+     "fields": [
+      "Image file",
+      "Width",
+      "Height"
+     ],
+     "note": "pinned contract — OO Insert->Image is a menu into the native OS file picker; the OO dialog census captured no insert-image dialog (fields pinned from the MS-Word-style shape)"
+    }
+   ],
+   "wo": {
+    "match": "image-dialog (image-dialog-l4.test.mjs)",
+    "where": "dialog:image-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 live probe (image-dialog-l4.test.mjs, 2026-11-02T18:04:11.523Z): opens via a real click (Insert tab + #btn-image); title 'Insert image', Image file input (accepts png; real bytes -> data: preview + size fields + armed Insert), Width/Height number inputs (min 1, hidden until a file), size hint; Cancel+Insert(primary, disabled until file) verified",
+    "L4 fidelity: real PNG via setInputFiles previews + arms Insert; invalid type rejected with error (Insert stays disabled); width 123 + Insert puts <img width=\"123\"> into the flat HTML at the saved caret; empty size inserts at natural size (no width/height attrs); Cancel mutates nothing; selection-on-<img> routes the same dialog into the contextual Replace-image path (measured) — text-caret inserts are the plain case",
+    "declared divergence: OO Insert→Image opens a menu into the native OS file picker (interact census: insert/Image opens \"menu\", header-footer/Image opens a 0-control modal mask; the committed OO dialog census captured NO field-level insert-image dialog) — the file + width/height + Insert/Cancel contract is pinned from the MS-Word-style insert-image shape; WO ships an anchored popover with preview + size fields as the semantic carrier (table-dialog precedent, measured)"
    ]
   }
  ]

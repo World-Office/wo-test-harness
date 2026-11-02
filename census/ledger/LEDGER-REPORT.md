@@ -186,9 +186,10 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L3 **table.convert-text-to-table** [menu-item] → WO: Convert Text to Table…
 - ✅ L4 **dialog.table-dialog.l4** [dialog] (2 OO fields) → WO: table-dialog
 
-## image — 2 features (L0:0 L1:2 L3:0)
+## image — 3 features (L0:0 L1:2 L3:0)
 - 🔲 L1 **image.image** [control] → WO: btn-hf-image
 - 🔲 L1 **image.photo-editor** [control] → WO: photoEditor
+- ✅ L4 **dialog.image-dialog.l4** [dialog] (3 OO fields) → WO: image-dialog (image-dialog-l4.test.mjs)
 
 ## chart — 20 features (L0:0 L1:20 L3:0)
 - 🔲 L1 **chart.chart** [control] → WO: insertObject
