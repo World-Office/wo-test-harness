@@ -17,17 +17,21 @@ $PY census/artifact-check.py --self-test >/dev/null
 # deterministic ledger assertions (fails loudly on census artifacts / modal gaps)
 $PY census/artifact-check.py >/dev/null && echo "  ledger asserts: pass"
 
-# T-002 heading parity: formatting.heading-{1,2,3} rows must exist in the ledger
-# (same contract as the campaign acceptance gate; build.py's loud guard only
-# fires on manual rebuild — this checks the committed artifact)
+# T-002 heading parity: formatting.heading-{1,2,3} rows must exist in the
+# ledger at L3 (roundtrip-proven), not merely exist — presence alone would
+# let a stale/dummy artifact or a level-downgraded rebuild pass silently.
+# (Same contract as the campaign acceptance gate, hardened; build.py's loud
+# guard covers the rebuild path — this checks the committed artifact.)
 $PY - <<'EOF'
 import json, sys
 d = json.load(open("census/ledger/ledger.json"))
-ids = {f.get("feature") for f in d["features"]}
-missing = [n for n in ("formatting.heading-1", "formatting.heading-2", "formatting.heading-3")
-           if n not in ids]
-if missing:
-    sys.exit("dev-check: heading rows missing from ledger.json: " + str(missing))
+rows = {f.get("feature"): f for f in d["features"]}
+for fid in ("formatting.heading-1", "formatting.heading-2", "formatting.heading-3"):
+    row = rows.get(fid)
+    if row is None:
+        sys.exit("dev-check: heading row missing from ledger.json: " + fid)
+    if row.get("level", 0) < 3:
+        sys.exit(f"dev-check: {fid} at L{row.get('level')} — expected L3 (roundtrip-proven)")
 EOF
 echo "  heading rows: pass"
 
