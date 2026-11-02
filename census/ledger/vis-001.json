@@ -29,12 +29,12 @@
     "output": "21\nOK"
   },
   "reverified": {
-    "date": "2026-11-02",
-    "attempt": 2,
-    "reason": "task re-dispatched after attempt-1 work had already merged (bookkeeping race: '0 commits ahead' recorded before merge e02d6dd landed)",
-    "server_main": "76b37a4317c952ef1cac8311151aaeb1b09be1e3 (fix commit is server main HEAD, unchanged since)",
-    "probe_rerun": "node scripts/chrome-probe.mjs — all 9 checks PASS incl. (e2), 'chrome-probe: ALL GREEN'",
-    "gate_rerun": "21\nOK"
+    "date": "2026-11-03",
+    "attempt": 3,
+    "reason": "task re-dispatched again (attempt-1 no-op was a bookkeeping race: server fix 76b37a431 + ledger stamps f7c6349/509d596 had already merged to harness main)",
+    "server_main": "76b37a4317c952ef1cac8311151aaeb1b09be1e3 (fix commit is still server main HEAD)",
+    "probe_rerun": "node scripts/chrome-probe.mjs on tf/VIS-001 worktree — all 9 checks PASS incl. (e2), 'chrome-probe: ALL GREEN'",
+    "gate_rerun": "verbatim prompt gate grep -q z-index style.css → exit 0; grep -c = 21"
   },
-  "verified": "2026-11-02"
+  "verified": "2026-11-03"
 }
