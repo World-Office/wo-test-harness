@@ -749,7 +749,9 @@ async function main() {
   }
   fs.writeFileSync(GAPS_MD, lines.join('\n') + '\n');
 
-  process.stdout.write(`roundtrip: ${survived}/${results.length} survived, level3=${survived}\n`);
+  const cmds = results.filter((r) => r.key !== 'c2-3-ol-start');
+  const cmdOk = cmds.filter((r) => r.ok).length;
+  process.stdout.write(`roundtrip: ${survived}/${results.length} survived (commands ${cmdOk}/${cmds.length}), level3=${survived}\n`);
 }
 
 main().catch((e) => {
