@@ -28,5 +28,13 @@
     "command": "cd /home/weiss/git/World-Office/server && grep -c 'z-index' apps/web/apps/documenteditor-wysiwyg/style.css && echo OK || echo FAIL",
     "output": "21\nOK"
   },
+  "reverified": {
+    "date": "2026-11-02",
+    "attempt": 2,
+    "reason": "task re-dispatched after attempt-1 work had already merged (bookkeeping race: '0 commits ahead' recorded before merge e02d6dd landed)",
+    "server_main": "76b37a4317c952ef1cac8311151aaeb1b09be1e3 (fix commit is server main HEAD, unchanged since)",
+    "probe_rerun": "node scripts/chrome-probe.mjs — all 9 checks PASS incl. (e2), 'chrome-probe: ALL GREEN'",
+    "gate_rerun": "21\nOK"
+  },
   "verified": "2026-11-02"
 }
