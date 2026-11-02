@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T18:51:41.046422",
+ "generated": "2026-11-02T19:08:29.740654",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -13,7 +13,7 @@
   "L1": 385,
   "L2": 81,
   "L3": 38,
-  "L4": 11
+  "L4": 14
  },
  "features": [
   {
@@ -10257,6 +10257,85 @@
    "level": 4,
    "evidence": [
     "L4 font-group field parity: 11/11 OO font fields live-verified (6 apply-verified: driving family/size/bold/italic/colors changes flat HTML)"
+   ]
+  },
+  {
+   "feature": "dialog.table-dialog.l4",
+   "cluster": "table",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "insert:btn-inserttable",
+     "label": "Table",
+     "fields": [
+      "Rows",
+      "Columns"
+     ],
+     "note": "pinned contract — OO Insert->Table is a hover grid picker; the OO dialog census captured no numeric insert-table dialog"
+    }
+   ],
+   "wo": {
+    "match": "table-dialog",
+    "where": "dialog:table-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 live probe (table-dialog-l4.test.mjs, 2026-11-02T18:05:47.016Z): opens via real clicks (Insert tab + #btn-table); title 'Insert table', Rows/Columns number fields (min/max 1-20/1-10, defaults 2/3), Cancel+Insert(primary) verified",
+    "L4 fidelity: rows x cols + Insert puts a real <table> (3x4 verified) into the doc at the saved selection; out-of-range values clamp (99x0 -> 20x1); Cancel mutates nothing",
+    "declared divergence: OO Insert->Table is a hover GRID picker (census btn-inserttable; the committed OO dialog census captured no numeric insert-table dialog and no OK/Cancel) — the numeric rows/cols contract is pinned from the MS-Word-style insert-table shape; WO ships a rows/cols popover with Insert(=OK)/Cancel as the semantic carrier (measured)"
+   ]
+  },
+  {
+   "feature": "dialog.symbol-dialog.l4",
+   "cluster": "insert",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:Symbol",
+     "label": "Symbol dialog (field-level)",
+     "fields": [
+      "Font",
+      "Range",
+      "Symbol dialog surface",
+      "Insert (glyph click inserts at caret)",
+      "Close"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "symbol-dialog (symbol-dialog-l4.test.mjs)",
+    "where": "dialog:symbol-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 symbol-dialog field parity: 5/5 rows live-verified (5 apply-verified: font/range drive the grid, glyph click inserts Ω into flat HTML, close re-closes; OO Symbols/Special-chars tabs collapse into grid+Range — recorded divergence)"
+   ]
+  },
+  {
+   "feature": "dialog.image-dialog.l4",
+   "cluster": "image",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "insert:btn-image",
+     "label": "Image",
+     "fields": [
+      "Image file",
+      "Width",
+      "Height"
+     ],
+     "note": "pinned contract — OO Insert->Image is a menu into the native OS file picker; the OO dialog census captured no insert-image dialog (fields pinned from the MS-Word-style shape)"
+    }
+   ],
+   "wo": {
+    "match": "image-dialog (image-dialog-l4.test.mjs)",
+    "where": "dialog:image-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 live probe (image-dialog-l4.test.mjs, 2026-11-02T18:04:11.523Z): opens via a real click (Insert tab + #btn-image); title 'Insert image', Image file input (accepts png; real bytes -> data: preview + size fields + armed Insert), Width/Height number inputs (min 1, hidden until a file), size hint; Cancel+Insert(primary, disabled until file) verified",
+    "L4 fidelity: real PNG via setInputFiles previews + arms Insert; invalid type rejected with error (Insert stays disabled); width 123 + Insert puts <img width=\"123\"> into the flat HTML at the saved caret; empty size inserts at natural size (no width/height attrs); Cancel mutates nothing; selection-on-<img> routes the same dialog into the contextual Replace-image path (measured) — text-caret inserts are the plain case",
+    "declared divergence: OO Insert→Image opens a menu into the native OS file picker (interact census: insert/Image opens \"menu\", header-footer/Image opens a 0-control modal mask; the committed OO dialog census captured NO field-level insert-image dialog) — the file + width/height + Insert/Cancel contract is pinned from the MS-Word-style insert-image shape; WO ships an anchored popover with preview + size fields as the semantic carrier (table-dialog precedent, measured)"
    ]
   },
   {
