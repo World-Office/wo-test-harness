@@ -35,6 +35,9 @@ const path = require("path");
 const { chromium } = require("playwright");
 
 const WO_URL = process.env.WO_URL || "http://192.168.42.42:8082/word/";
+// server 404s /word (no trailing slash) since the route change — normalize so
+// both spellings load the editor (guard + goto)
+const PAGE_URL = WO_URL.endsWith("/") ? WO_URL : WO_URL + "/";
 const OUT = process.env.WO_DLG_OUT || path.join(__dirname, "census", "census-wo-dialogs.json");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -129,7 +132,7 @@ const SKIPPED_REGISTRY_IDS = new Set(["backstage-overlay"]); // overlay → cens
 // never add it, the census silently under-reports the surface — so fail hard,
 // naming the missing entry (same contract as STALE-DEFERRED in reconcile.py).
 async function checkRegistryCoverage() {
-  const jsUrl = new URL("editor.js", WO_URL).href;
+  const jsUrl = new URL("editor.js", PAGE_URL).href;
   const src = await (await fetch(jsUrl)).text();
   const m = src.match(/DIALOG_IDS\s*=\s*\[([^\]]*)\]/);
   if (!m) { console.error(`census-wo-dialogs: no DIALOG_IDS found in ${jsUrl} — guard cannot verify coverage`); process.exit(1); }
@@ -225,7 +228,7 @@ async function closeAll(page) {
   const browser = await chromium.launch({ args: ["--no-sandbox"] });
   const page = await browser.newPage({ viewport: { width: 1600, height: 1000 } });
   page.on("pageerror", (e) => process.stderr.write("pageerror: " + e.message.slice(0, 120) + "\n"));
-  await page.goto(WO_URL, { waitUntil: "domcontentloaded", timeout: 40000 });
+  await page.goto(PAGE_URL, { waitUntil: "domcontentloaded", timeout: 40000 });
   await sleep(5000); // let editor boot
 
   const dialogs = [];
