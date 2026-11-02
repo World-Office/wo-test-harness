@@ -2,6 +2,7 @@
 
 Generated from: census-oo-deep + census-oo-dialogs + census-wo-deep. 
 L3 layer: ledger/roundtrip.cjs (27/27 commands survive html->docx->html).
+L4 layer: ledger/dialog-parity.py (1/7 dialogs carry the OO field contract).
 Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
@@ -105,12 +106,12 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **formatting.heading-2** [formatting] → WO: applyHeading2
 - ✅ L3 **formatting.heading-3** [formatting] → WO: applyHeading3
 
-## insert — 56 features (L0:0 L1:36 L3:5)
+## insert — 56 features (L0:0 L1:35 L3:5)
 - 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
 - 🔲 L1 **insert.breaks** [control] → WO: Breaks
 - 🔲 L1 **insert.shape** [control] → WO: insertObject
 - 🔲 L1 **insert.smartart** [control] → WO: btn-smartart
-- 🔲 L1 **insert.date-time** [control] → WO: pagenumber-dialog
+- 🔲 L1 **insert.date-time** [control] → WO: btn-datetime
 - 🔲 L1 **insert.text-from-file** [control] → WO: btn-textfile
 - 🔲 L1 **insert.field** [control] → WO: btn-field
 - 🔲 L1 **insert.equation** [control] → WO: btn-equation
@@ -132,8 +133,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **insert.limits-and-logarithms** [menu-item] → WO: Limits and logarithms
 - 🔲 L1 **insert.operators** [menu-item] → WO: Operators
 - 🔲 L1 **insert.matrices** [menu-item] → WO: Matrices
-- 🔲 L1 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
-- 🔲 L1 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: symbol-dialog
+- 🔲 L1 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 - 🔲 L1 **shortcut.inserthyperlink** [shortcut] → WO: Ctrl+K
 - 🔲 L1 **shortcut.insertpagenumber** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.inserttab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
@@ -162,6 +162,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **insert.symbol** [control] → WO: btn-symbol
 - ✅ L3 **insert.more-symbols** [menu-item] → WO: Symbols ▾
 - ✅ L3 **insert.symbols** [menu-item] → WO: Symbols ▾
+- ✅ L4 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: symbol-dialog
 
 ## table — 15 features (L0:0 L1:11 L3:3)
 - 🔲 L1 **table.table-of-contents** [control] → WO: updatetoc-dialog
@@ -169,7 +170,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **table.draw-table** [menu-item] → WO: Draw table
 - 🔲 L1 **table.erase-table** [menu-item] → WO: Erase table
 - 🔲 L1 **table.dlg-table-of-figures** [dialog] (7 OO fields) → WO: tableoffigures-dialog
-- 🔲 L1 **table.dlg-table-of-contents** [dialog] (7 OO fields) → WO: updatetoc-dialog
+- 🔲 L1 **table.dlg-table-of-contents** [dialog] (7 OO fields) → WO: toc-dialog
 - 🔲 L1 **ctx.merge-cells** [ctx-menu] → WO: ctx data-ctx=TableMergeCells
 - 🔲 L1 **ctx.split-cell** [ctx-menu] → WO: ctx data-ctx=TableSplitCell
 - 🔲 L1 **ctx.distribute-rows** [ctx-menu] → WO: ctx data-ctx=DistributeRows -> distributeTableRows (equalize row heights)
@@ -225,10 +226,10 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L2 **review.display-mode** [control] → WO: displayMode
 
 ## headerfooter — 6 features (L0:0 L1:4 L3:2)
-- 🔲 L1 **headerfooter.date-time** [control] → WO: pagenumber-dialog
+- 🔲 L1 **headerfooter.date-time** [control] → WO: btn-datetime
 - 🔲 L1 **headerfooter.field** [control] → WO: btn-field
 - 🔲 L1 **headerfooter.close** [control] → WO: btn-hf-close
-- 🔲 L1 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
+- 🔲 L1 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 - ✅ L3 **headerfooter.header-footer** [control] → WO: insertHeaderFooter
 - ✅ L3 **headerfooter.page-number** [control] → WO: insertPageNumber
 

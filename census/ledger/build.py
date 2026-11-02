@@ -93,13 +93,19 @@ ALIASES = {
     # backstage: OO File-screen section -> WO backstage row
     "protection": "protect",
     # --- dialogs: OO dialog title -> WO dialog id (from census-wo-dialogs) ---
+    # --- dialogs: OO dialog title -> WO dialog id (from census-wo-dialogs) ---
     "bookmarks": "bookmark-dialog", "bookmark": "bookmark-dialog",
     "plugin manager": "plugins-dialog", "plugins": "plugins-dialog",
     "manage plugins": "plugins-dialog",
     "cross reference": "crossref-dialog", "cross-reference": "crossref-dialog",
-    "date time": "pagenumber-dialog", "date & time": "pagenumber-dialog",
     "table of contents": "toc-dialog", "toc": "toc-dialog",
     "table of figures": "tableoffigures-dialog",
+    # OO Date & Time dialog (date field + "Update automatically") -> WO has
+    # NO date dialog; the real counterpart surface is btn-datetime (inserts
+    # current date). The old pagenumber-dialog alias was a false join
+    # (retired with the L4 dialog-parity probe: a dialog matched for surface
+    # presence must not imply field parity with a DIFFERENT capability).
+    "date time": "btn-datetime", "date & time": "btn-datetime",
 }
 
 # WO dialog surface index built after wo_dlg loads (below).
@@ -110,6 +116,11 @@ def wo_dialog_match(label: str):
     for key, want in ALIASES.items():
         if want.endswith("-dialog") and (key in n or n == key):
             want_n = norm(want.replace("-dialog", ""))
+            # exact id first (alias "toc-dialog" must hit toc-dialog, not
+            # updatetoc-dialog via substring)
+            for did, idn, dtitle in wo_dlgs:
+                if want_n == idn:
+                    return (did, "dialog:" + did)
             for did, idn, dtitle in wo_dlgs:
                 if want_n in idn:
                     return (did, "dialog:" + did)
@@ -552,6 +563,30 @@ if rt_path.exists():
                     f"L3 roundtrip ok [{entry.get('key')}]: {str(entry.get('detail'))[:120]}")
     rt_merged = True
 
+# ------------------------------------------ L4 merge (dialog-parity.py)
+# Contract: parity=true means every OO dialog FIELD resolved to a WO field
+# with a compatible control kind (superset allowed — no OO field missing).
+dp_path = HERE / "dialog-parity.json"
+dp_merged = False
+if dp_path.exists():
+    dp = json.load(open(dp_path))
+    _l4 = 0
+    for e in dp.get("dialogs", []):
+        if not e.get("parity"):
+            continue
+        row = ledger.get(e["feature"])
+        if row is None:
+            continue
+        if row["level"] < 4:
+            row["level"] = 4
+            _l4 += 1
+        row["evidence"].append(
+            "L4 dialog field parity: %d/%d OO fields covered %s (buttons OO %s vs WO %s)" % (
+                e.get("covered", 0), e.get("total", 0), e.get("mapping", {}),
+                e.get("buttons", {}).get("oo"), e.get("buttons", {}).get("wo")))
+    dp_merged = True
+    print("  L4 merge: %d dialog rows at full field parity (dialog-parity.py)" % _l4)
+
 # --------------------------- T-008 registered capability parks (build-time)
 # Parked own-project capability planes (plan C12 macros / C13 capability /
 # forms-as-own-epic). The WO surface exercised here is a market-compatible
@@ -610,12 +645,16 @@ if rt_merged:
     print(f"  L3 persists: {tot['L3']}  (roundtrip.cjs: {rt.get('survived', 0)}/{rt.get('probed', 0)} commands survived html->docx->html)")
 else:
     print("  L2/L3/L4   : not yet probed (ledger/roundtrip.cjs fills L3)")
+if dp_merged:
+    print(f"  L4 fidelity: {tot['L4']}  (dialog-parity.py: {dp.get('summary', {}).get('parity', 0)}/{dp.get('summary', {}).get('probed', 0)} dialogs at full field parity)")
 
 # markdown report
 md = ["# Feature Ledger v1 — real completeness map", ""]
 md.append(f"Generated from: census-oo-deep + census-oo-dialogs + census-wo-deep. ")
 if rt_merged:
     md.append(f"L3 layer: ledger/roundtrip.cjs ({rt.get('survived', 0)}/{rt.get('probed', 0)} commands survive html->docx->html).")
+if dp_merged:
+    md.append(f"L4 layer: ledger/dialog-parity.py ({dp.get('summary', {}).get('parity', 0)}/{dp.get('summary', {}).get('probed', 0)} dialogs carry the OO field contract).")
 md.append("Levels: **L0** missing · **L1** surface exists (visual parity — the old")
 md.append("census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·")
 md.append("**L3** persists (round-trip) · **L4** fidelity vs OO output.")

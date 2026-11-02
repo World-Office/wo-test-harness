@@ -1,0 +1,218 @@
+{
+ "version": 1,
+ "generated": "2026-11-02T15:33:57.324244",
+ "source": {
+  "oo": "census/census-oo-dialogs.json",
+  "wo": "census/census/census-wo-dialogs.json",
+  "pairing": "ledger/ledger.json dialog rows (audited join)"
+ },
+ "summary": {
+  "probed": 7,
+  "parity": 1
+ },
+ "dialogs": [
+  {
+   "feature": "insert.dlg-symbol",
+   "oo_title": "Symbol",
+   "wo_dialog": "symbol-dialog",
+   "covered": 2,
+   "total": 2,
+   "missing": [],
+   "extra_wo": [],
+   "mapping": {
+    "Font": "Font",
+    "Range": "Range"
+   },
+   "buttons": {
+    "oo": [
+     "Symbols",
+     "Special characters",
+     "Insert",
+     "Close"
+    ],
+    "wo": [
+     "Close"
+    ]
+   },
+   "parity": true
+  },
+  {
+   "feature": "table.dlg-table-of-contents",
+   "oo_title": "Table of contents",
+   "wo_dialog": "toc-dialog",
+   "covered": 0,
+   "total": 7,
+   "missing": [
+    "Show page numbers",
+    "Right align page numbers",
+    "Leader",
+    "Format table of contents as links",
+    "Build table of contents from",
+    "Levels",
+    "Styles"
+   ],
+   "extra_wo": [
+    "Title"
+   ],
+   "mapping": {},
+   "buttons": {
+    "oo": [
+     "OK",
+     "Cancel"
+    ],
+    "wo": [
+     "Cancel",
+     "Insert"
+    ]
+   },
+   "parity": false
+  },
+  {
+   "feature": "table.dlg-table-of-figures",
+   "oo_title": "Table of figures",
+   "wo_dialog": "tableoffigures-dialog",
+   "covered": 1,
+   "total": 7,
+   "missing": [
+    "Show page numbers",
+    "Right align page numbers",
+    "Leader",
+    "Format table of figures as links",
+    "Build table of figures from",
+    "Include label and number"
+   ],
+   "extra_wo": [
+    "Label"
+   ],
+   "mapping": {
+    "Styles": "Style"
+   },
+   "buttons": {
+    "oo": [
+     "OK",
+     "Cancel"
+    ],
+    "wo": [
+     "Cancel",
+     "Insert"
+    ]
+   },
+   "parity": false
+  },
+  {
+   "feature": "page.dlg-columns",
+   "oo_title": "Columns",
+   "wo_dialog": "columns-dialog",
+   "covered": 1,
+   "total": 5,
+   "missing": [
+    "1",
+    "2",
+    "Equal column width",
+    "Column divider"
+   ],
+   "extra_wo": [
+    "Gap (px)"
+   ],
+   "mapping": {
+    "Number of columns": "Columns"
+   },
+   "buttons": {
+    "oo": [
+     "OK",
+     "Cancel"
+    ],
+    "wo": [
+     "Cancel",
+     "Insert"
+    ]
+   },
+   "parity": false
+  },
+  {
+   "feature": "references.dlg-cross-reference",
+   "oo_title": "Cross-reference",
+   "wo_dialog": "crossref-dialog",
+   "covered": 0,
+   "total": 5,
+   "missing": [
+    "Reference type",
+    "Insert reference to",
+    "Insert as link",
+    "Include above/below",
+    "Separate numbers with"
+   ],
+   "extra_wo": [
+    "Target bookmark",
+    "Display text"
+   ],
+   "mapping": {},
+   "buttons": {
+    "oo": [
+     "Insert",
+     "Close"
+    ],
+    "wo": [
+     "Cancel",
+     "Insert"
+    ]
+   },
+   "parity": false
+  },
+  {
+   "feature": "page.dlg-hyphenation",
+   "oo_title": "Hyphenation",
+   "wo_dialog": "hyphenation-dialog",
+   "covered": 0,
+   "total": 2,
+   "missing": [
+    "Automatically hyphenate document",
+    "Hyphenate words in CAPS"
+   ],
+   "extra_wo": [
+    "Hyphenation"
+   ],
+   "mapping": {},
+   "buttons": {
+    "oo": [
+     "OK",
+     "Cancel"
+    ],
+    "wo": [
+     "Cancel",
+     "OK"
+    ]
+   },
+   "parity": false
+  },
+  {
+   "feature": "references.dlg-bookmarks",
+   "oo_title": "Bookmarks",
+   "wo_dialog": "bookmark-dialog",
+   "covered": 0,
+   "total": 2,
+   "missing": [
+    "Sort by",
+    "Hidden bookmarks"
+   ],
+   "extra_wo": [
+    "Name"
+   ],
+   "mapping": {},
+   "buttons": {
+    "oo": [
+     "Add",
+     "Go to",
+     "Get link",
+     "Delete",
+     "Close"
+    ],
+    "wo": [
+     "Cancel",
+     "Insert"
+    ]
+   },
+   "parity": false
+  }
+ ]
+}
