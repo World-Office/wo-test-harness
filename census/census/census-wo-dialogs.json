@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-11-02T14:07:02.455Z",
+  "capturedAt": "2026-11-02T14:28:05.618Z",
   "engine": "wo-docserver",
   "dialogs": [
     {
@@ -54,7 +54,44 @@
       "openedBy": "forced:forced (cmd insertSymbol)",
       "visible": true,
       "title": "Insert symbol",
-      "fields": [],
+      "fields": [
+        {
+          "label": "Font",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Default",
+            "Arial",
+            "Times New Roman",
+            "Courier New",
+            "Georgia",
+            "Verdana",
+            "Trebuchet MS",
+            "Comic Sans MS",
+            "Impact",
+            "Palatino Linotype",
+            "Tahoma"
+          ]
+        },
+        {
+          "label": "Range",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Basic Latin",
+            "Latin-1 Supplement",
+            "Latin Extended-A",
+            "Greek",
+            "Cyrillic",
+            "General Punctuation",
+            "Currency Symbols",
+            "Arrows",
+            "Math Operators",
+            "Geometric Shapes",
+            "Dingbats"
+          ]
+        }
+      ],
       "buttons": [
         "Close"
       ],
