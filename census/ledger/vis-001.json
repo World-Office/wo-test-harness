@@ -1,0 +1,32 @@
+{
+  "task": "VIS-001",
+  "title": "Fix ribbon sub-menu z-index cut by ruler",
+  "summary": "Right-edge ribbon .menu-list triggers anchored left:0 pushed the list past .toolbar's overflow-x clip edge — the sub-menu opened off-screen / was sliced at the ribbon-ruler band boundary. Fix (server repo): setMenu() measures the just-opened list against #toolbar's right edge and adds .flip-right (right-anchored); .menu-list.flip-right .menu-sublist flyouts open left. Pinned live by chrome-probe check (e2).",
+  "server_fix_commit": "76b37a4317c952ef1cac8311151aaeb1b09be1e3",
+  "server_fix_files": [
+    "apps/web/apps/documenteditor-wysiwyg/editor.js",
+    "apps/web/apps/documenteditor-wysiwyg/style.css",
+    "apps/web/apps/documenteditor-wysiwyg/scripts/chrome-probe.mjs"
+  ],
+  "probe": {
+    "command": "node scripts/chrome-probe.mjs (from apps/web/apps/documenteditor-wysiwyg in the server repo)",
+    "result": "chrome-probe: ALL GREEN",
+    "checks": [
+      "(a) wordmark + File tab share row 1; File is first",
+      "(b) band background is OO light gray in the light theme",
+      "(f) 12 tabs + census Home control count unchanged",
+      "(d) 1440px Home: chevrons hidden",
+      "(c) 900px: › visible, click shifts content, ‹ appears, clamped at max",
+      "(c2) tab switch resets the offset",
+      "(e) 900px: dropdown opens fully visible below the band",
+      "(e2) VIS-001: right-edge dropdown flips inside the band (ruler no longer cuts it)",
+      "(g) zero pageerrors"
+    ],
+    "e2_pin": "list.right <= toolbar.right + 0.5 (no clip-edge cut) AND elementFromPoint at mid-ruler band inside the list (menu paints ON TOP of the ruler)"
+  },
+  "acceptance_gate": {
+    "command": "cd /home/weiss/git/World-Office/server && grep -c 'z-index' apps/web/apps/documenteditor-wysiwyg/style.css && echo OK || echo FAIL",
+    "output": "21\nOK"
+  },
+  "verified": "2026-11-02"
+}
