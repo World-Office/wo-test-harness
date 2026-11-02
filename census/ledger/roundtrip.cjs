@@ -288,6 +288,47 @@ const PROBES = [
     survive: '<h3\\b',
     xml: 'w:pStyle[^>]*Heading3',
   },
+  // ---- HRT-001 heading edge cases (2026-11-04): demote, relevel, styled run.
+  // Same ledger rows as the base probes (both the formatting.* and the
+  // shortcut.* row per level), verified deeper than apply-once:
+  //   - demote  : H1 -> P must leave NO heading behind after roundtrip
+  //               (no stale w:pStyle Heading1 survives re-formatting).
+  //   - relevel : H1 -> H3 must REPLACE the level (h1 gone, h3 kept), not
+  //               accumulate pStyles.
+  //   - styled  : an italic run INSIDE an H2 must keep both the paragraph
+  //               style (w:pStyle Heading2) and the run property (w:i)
+  //               through html->docx->html. NOTE: bold is NOT usable here —
+  //               inside <h2> text is already bold (UA styles), so
+  //               execCommand('bold') toggles to font-weight:normal instead.
+  {
+    key: 'applyHeading1-demote',
+    also: ['Ctrl+Alt+1', 'applyHeading1'],
+    clicks: [{ cmd: 'formatBlock', value: 'H1' }, { cmd: 'formatBlock', value: 'P' }],
+    midExpect: '<h1\\b',
+    expect: 'sentinel',
+    notExpect: '<h1\\b',
+    survive: 'sentinel',
+    notSurvive: '<h1\\b',
+  },
+  {
+    key: 'applyHeading1-relevel',
+    also: ['Ctrl+Alt+3', 'applyHeading3'],
+    clicks: [{ cmd: 'formatBlock', value: 'H1' }, { cmd: 'formatBlock', value: 'H3' }],
+    midExpect: '<h1\\b',
+    expect: '<h3\\b',
+    notExpect: '<h1\\b',
+    survive: '<h3\\b',
+    notSurvive: '<h1\\b',
+    xml: 'w:pStyle[^>]*Heading3',
+  },
+  {
+    key: 'applyHeading2-styled-run',
+    also: ['Ctrl+Alt+2', 'applyHeading2'],
+    clicks: [{ cmd: 'formatBlock', value: 'H2' }, { cmd: 'italic' }],
+    expect: '(?=[\\s\\S]*<h2\\b)(?=[\\s\\S]*<(?:i|em)\\b|font-style\\s*:\\s*italic)',
+    survive: '(?=[\\s\\S]*<h2\\b)(?=[\\s\\S]*<(?:i|em)\\b|font-style\\s*:\\s*italic)',
+    xml: 'w:pStyle[^>]*Heading2',
+  },
 ];
 
 /* -------------- ledger coverage -------------- */

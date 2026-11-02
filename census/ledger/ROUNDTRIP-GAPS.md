@@ -1,9 +1,9 @@
 # LEDGER2-ROUNDTRIP: persistence gaps
 
-Generated: 2026-11-02T16:46:15.277Z
+Generated: 2026-11-02T17:42:26.983Z
 Conversion endpoint: `http://192.168.42.42:8086/api/conversion/convert` (html -> docx -> html)
 Editor: `/home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg`
-Probed: 28 document-level commands (27 command probes + 1 direct converter case) — survived: 28, lost: 0
+Probed: 31 document-level commands (30 command probes + 1 direct converter case) — survived: 31, lost: 0
 
 A feature reaches **L3 (persists)** only when its mutation marker is present
 in the editor serialization *and* still present after booting a fresh editor
@@ -490,4 +490,5 @@ dialog-only, or state toggles with no serialized marker).
 - `ctx.clear-field` (wo.match `ctx data-ctx=ClearField (empties page-number/[data-field])`) — lost attribute: none serialized (no marker contract)
 - `ctx.group` (wo.match `Layout tab objectOp group (groupSelectedObjects)`) — lost attribute: none serialized (no marker contract)
 - `ctx.ungroup` (wo.match `Layout tab objectOp ungroup (ungroupSelectedObjects)`) — lost attribute: none serialized (no marker contract)
+- `dialog.font-dialog.l4` (wo.match `font group (font-dialog-l4.test.mjs)`) — lost attribute: none serialized (no marker contract)
 

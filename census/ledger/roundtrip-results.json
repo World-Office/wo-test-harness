@@ -1,9 +1,9 @@
 {
-  "generated": "2026-11-02T16:46:15.277Z",
+  "generated": "2026-11-02T17:42:26.983Z",
   "convert_url": "http://192.168.42.42:8086/api/conversion/convert",
   "editor_dir": "/home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg",
-  "probed": 28,
-  "survived": 28,
+  "probed": 31,
+  "survived": 31,
   "entries": [
     {
       "key": "applyHeading1",
@@ -19,13 +19,52 @@
       ]
     },
     {
+      "key": "applyHeading1-demote",
+      "ok": true,
+      "phase": "persisted",
+      "detail": "marker /sentinel/ survived html->docx->html",
+      "html1": "<p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "ms": 5782,
+      "features": [
+        "shortcut.applyheading1",
+        "formatting.heading-1"
+      ]
+    },
+    {
+      "key": "applyHeading1-relevel",
+      "ok": true,
+      "phase": "persisted",
+      "detail": "marker /<h3\\b/ survived html->docx->html",
+      "html1": "<h3>ROUNDTRIP sentinel alpha text.</h3><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "html3": " <h3>ROUNDTRIP sentinel alpha text.</h3><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "ms": 5788,
+      "features": [
+        "shortcut.applyheading3",
+        "formatting.heading-3"
+      ]
+    },
+    {
       "key": "applyHeading2",
       "ok": true,
       "phase": "persisted",
       "detail": "marker /<h2\\b/ survived html->docx->html",
       "html1": "<h2>ROUNDTRIP sentinel alpha text.</h2><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <h2>ROUNDTRIP sentinel alpha text.</h2><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5370,
+      "ms": 5376,
+      "features": [
+        "shortcut.applyheading2",
+        "formatting.heading-2"
+      ]
+    },
+    {
+      "key": "applyHeading2-styled-run",
+      "ok": true,
+      "phase": "persisted",
+      "detail": "marker /(?=[\\s\\S]*<h2\\b)(?=[\\s\\S]*<(?:i|em)\\b|font-style\\s*:\\s*italic)/ survived html->docx->html",
+      "html1": "<h2>ROUNDTRIP <i>sentinel</i> alpha text.</h2><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "html3": " <h2>ROUNDTRIP <em>sentinel</em> alpha text.</h2><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
+      "ms": 5383,
       "features": [
         "shortcut.applyheading2",
         "formatting.heading-2"
@@ -38,7 +77,7 @@
       "detail": "marker /<h3\\b/ survived html->docx->html",
       "html1": "<h3>ROUNDTRIP sentinel alpha text.</h3><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <h3>ROUNDTRIP sentinel alpha text.</h3><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5375,
+      "ms": 5367,
       "features": [
         "shortcut.applyheading3",
         "formatting.heading-3"
@@ -51,7 +90,7 @@
       "detail": "marker /<(b|strong)\\b|font-weight\\s*:\\s*(bold|[6-9]00)/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP <b>sentinel</b> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP <strong>sentinel</strong> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5516,
+      "ms": 5568,
       "features": [
         "formatting.bold-ctrl-b"
       ]
@@ -63,7 +102,7 @@
       "detail": "marker \"2026-11-02\" survived html->docx->html",
       "html1": "<p>ROUNDTRIP 2026-11-02 alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP 2026-11-02 alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5418,
+      "ms": 5403,
       "features": [
         "insert.date-time",
         "headerfooter.date-time",
@@ -78,7 +117,7 @@
       "detail": "marker \"!\" survived html->docx->html",
       "html1": "<p>ROUNDTRIP ! alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP ! alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5432,
+      "ms": 5421,
       "features": [
         "insert.symbol",
         "insert.more-symbols",
@@ -92,7 +131,7 @@
       "detail": "marker /<table\\b/ survived html->docx->html",
       "html1": "<table><tbody><tr><td><br></td><td><br></td><td><br></td></tr><tr><td><br></td><td><br></td><td><br></td></tr></tbody></table><p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p><table> <tbody><tr> <td> </td> <td> </td> <td> </td> </tr> <tr> <td> </td> <td> </td> <td> </td> </tr> </tbody></table>",
-      "ms": 5745,
+      "ms": 5722,
       "features": [
         "table.table",
         "table.insert-custom-table"
@@ -112,7 +151,7 @@
       "detail": "marker /SENTINEL/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP SENTINEL alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP SENTINEL alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5406,
+      "ms": 5397,
       "features": [
         "formatting.change-case"
       ]
@@ -124,7 +163,7 @@
       "detail": "marker /<table\\b/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><table><tbody><tr><td>alpha</td><td>beta</td><td>gamma</td></tr></tbody></table><p></p>",
       "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><table> <tbody><tr> <td>alpha</td> <td>beta</td> <td>gamma</td> </tr> </tbody></table>",
-      "ms": 5754,
+      "ms": 5738,
       "features": [
         "table.convert-text-to-table"
       ]
@@ -136,7 +175,7 @@
       "detail": "marker /<blockquote\\b|margin-left\\s*:/ survived html->docx->html",
       "html1": "<blockquote style=\"margin: 0 0 0 40px; border: none; padding: 0px;\"><p>ROUNDTRIP sentinel alpha text.</p></blockquote><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <blockquote> <p>ROUNDTRIP sentinel alpha text.</p> </blockquote><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5372,
+      "ms": 5371,
       "features": [
         "formatting.increase-indent-ctrl-m"
       ]
@@ -148,7 +187,7 @@
       "detail": "marker /page-header|page-footer|wo-hf/ survived html->docx->html",
       "html1": "<header class=\"page-header\" style=\"padding-top: 12.5mm;\">Header text</header><p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <header class=\"page-header\"><p>Header text</p></header><p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5749,
+      "ms": 5729,
       "features": [
         "headerfooter.header-footer"
       ]
@@ -160,7 +199,7 @@
       "detail": "marker /<hr\\b/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP&nbsp;</p><hr><p>&nbsp;alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP&nbsp;</p><hr><p>&nbsp;alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5421,
+      "ms": 5390,
       "features": [
         "ctx.horizontal-line-settings"
       ]
@@ -172,7 +211,7 @@
       "detail": "marker /<ol\\b/ survived html->docx->html",
       "html1": "<p><ol><li>ROUNDTRIP sentinel alpha text.</li></ol></p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <ol> <li>ROUNDTRIP sentinel alpha text.</li> </ol><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5415,
+      "ms": 5385,
       "features": [
         "formatting.numbering"
       ]
@@ -184,7 +223,7 @@
       "detail": "marker /page-number|wo:field-op[^>]*PAGE|field[^>]*PAGE/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP&nbsp;<span class=\"page-number\"></span>&nbsp;alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p><span class=\"page-number\"></span>ROUNDTRIP&nbsp;&nbsp;alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5381,
+      "ms": 5365,
       "features": [
         "insert.page-number",
         "headerfooter.page-number"
@@ -197,7 +236,7 @@
       "detail": "marker /<ul\\b/ survived html->docx->html",
       "html1": "<p><ul><li>ROUNDTRIP sentinel alpha text.</li></ul></p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <ul> <li>ROUNDTRIP sentinel alpha text.</li> </ul><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5380,
+      "ms": 5369,
       "features": [
         "formatting.bullets"
       ]
@@ -209,7 +248,7 @@
       "detail": "marker /<(i|em)\\b|font-style\\s*:\\s*italic/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP <i>sentinel</i> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP <em>sentinel</em> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5492,
+      "ms": 5562,
       "features": [
         "formatting.italic-ctrl-i"
       ]
@@ -221,7 +260,7 @@
       "detail": "marker /text-align\\s*:\\s*center/ survived html->docx->html",
       "html1": "<p style=\"text-align: center; \">ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p style=\"text-align: center\">ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5450,
+      "ms": 5423,
       "features": [
         "formatting.align-center-ctrl-e"
       ]
@@ -233,7 +272,7 @@
       "detail": "marker /text-align\\s*:\\s*justify/ survived html->docx->html",
       "html1": "<p style=\"text-align: justify; \">ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p style=\"text-align: justify\">ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5392,
+      "ms": 5413,
       "features": [
         "formatting.justified-ctrl-j"
       ]
@@ -245,7 +284,7 @@
       "detail": "marker /sentinel/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5437,
+      "ms": 5403,
       "features": [
         "formatting.align-left-ctrl-l"
       ]
@@ -257,7 +296,7 @@
       "detail": "marker /text-align\\s*:\\s*right/ survived html->docx->html",
       "html1": "<p style=\"text-align: right; \">ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p style=\"text-align: right\">ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5394,
+      "ms": 5403,
       "features": [
         "formatting.align-right-ctrl-r"
       ]
@@ -269,7 +308,7 @@
       "detail": "marker /<a\\b/ survived html->docx->html",
       "html1": "<p><a href=\"https://example.com\" style=\"font-size: 12pt;\">https://example.com</a>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p><a href=\"https://example.com\">https://example.com</a>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5757,
+      "ms": 5738,
       "features": [
         "insert.link",
         "references.link"
@@ -282,7 +321,7 @@
       "detail": "marker /sentinel/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP sentinel alpha text.</p><p><br>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5782,
+      "ms": 5773,
       "features": [
         "formatting.decrease-indent-ctrl-shift-m"
       ]
@@ -294,7 +333,7 @@
       "detail": "marker /sentinel/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP sentinel alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5802,
+      "ms": 5784,
       "features": [
         "formatting.clear-style"
       ]
@@ -306,7 +345,7 @@
       "detail": "marker /<(s|strike|del)\\b|line-through/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP <strike>sentinel</strike> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP <s>sentinel</s> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5560,
+      "ms": 5410,
       "features": [
         "formatting.strikethrough-ctrl-5"
       ]
@@ -318,7 +357,7 @@
       "detail": "marker /<sub\\b|vertical-align[^>]*\\bsub\\b/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP <sub>sentinel</sub> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP <sub>sentinel</sub> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5587,
+      "ms": 5422,
       "features": [
         "formatting.subscript-ctrl"
       ]
@@ -330,7 +369,7 @@
       "detail": "marker /<sup\\b|vertical-align[^>]*super/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP <sup>sentinel</sup> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP <sup>sentinel</sup> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5572,
+      "ms": 5432,
       "features": [
         "formatting.superscript-ctrl"
       ]
@@ -342,7 +381,7 @@
       "detail": "marker /<u\\b|text-decoration[^>]*underline/ survived html->docx->html",
       "html1": "<p>ROUNDTRIP <u>sentinel</u> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
       "html3": " <p>ROUNDTRIP <u>sentinel</u> alpha text.</p><p>Second paragraph body here.</p><p>alpha,beta,gamma</p>",
-      "ms": 5504,
+      "ms": 5551,
       "features": [
         "formatting.underline-ctrl-u"
       ]
