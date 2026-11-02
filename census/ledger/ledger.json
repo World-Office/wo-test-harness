@@ -1845,8 +1845,8 @@
     }
    ],
    "wo": {
-    "match": "insertTableOfFigures",
-    "where": "tab:references"
+    "match": "tableoffigures-dialog",
+    "where": "dialog:tableoffigures-dialog"
    },
    "level": 2,
    "evidence": [
@@ -4367,8 +4367,8 @@
     }
    ],
    "wo": {
-    "match": "insertTableOfFigures",
-    "where": "tab:references"
+    "match": "tableoffigures-dialog",
+    "where": "dialog:tableoffigures-dialog"
    },
    "level": 1,
    "evidence": [

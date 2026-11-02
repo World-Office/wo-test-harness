@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-11-01T00:03:15.435Z",
+  "capturedAt": "2026-11-02T13:38:39.799Z",
   "engine": "wo-docserver",
   "dialogs": [
     {
@@ -1364,7 +1364,8 @@
             "Text box",
             "Chart",
             "Equation",
-            "Text art"
+            "Text art",
+            "Spreadsheet"
           ]
         },
         {
@@ -1565,6 +1566,745 @@
       "rect": {
         "w": 1600,
         "h": 1000
+      }
+    },
+    {
+      "id": "compare-dialog",
+      "openedBy": "forced:forced (cmd compareVersion)",
+      "visible": true,
+      "title": "Compare.Title",
+      "fields": [
+        {
+          "label": "Select document to compare",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "-- Select a document --"
+          ]
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Compare"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "combine-dialog",
+      "openedBy": "forced:forced (cmd combineRevisions)",
+      "visible": true,
+      "title": "Combine.Title",
+      "fields": [
+        {
+          "label": "Select documents to combine",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "-- Select documents --"
+          ]
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Combine"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "speech-dialog",
+      "openedBy": "forced:forced (cmd readAloud)",
+      "visible": true,
+      "title": "View.SpeechSettings",
+      "fields": [
+        {
+          "label": "Voice",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Default"
+          ]
+        },
+        {
+          "label": "Speed",
+          "tag": "input",
+          "type": "range",
+          "options": []
+        },
+        {
+          "label": "1",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Pitch",
+          "tag": "input",
+          "type": "range",
+          "options": []
+        },
+        {
+          "label": "1",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "speechinput-dialog",
+      "openedBy": "forced:forced (cmd dictate)",
+      "visible": true,
+      "title": "SpeechInput.Title",
+      "fields": [
+        {
+          "label": "Language",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "English (United States)",
+            "English (United Kingdom)",
+            "Deutsch (Deutschland)",
+            "Français (France)",
+            "Español (España)"
+          ]
+        },
+        {
+          "label": "Interim results",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "ocr-dialog",
+      "openedBy": "forced:forced (cmd ocrRun)",
+      "visible": true,
+      "title": "Plugins.Ocr",
+      "fields": [],
+      "buttons": [
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "tableoffigures-dialog",
+      "openedBy": "forced:forced (cmd insertTableOfFigures)",
+      "visible": true,
+      "title": "TableOfFigures.Title",
+      "fields": [
+        {
+          "label": "Label",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Style",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Formal",
+            "Simple"
+          ]
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "plugin-unavailable-dialog",
+      "openedBy": "forced:forced (cmd pluginUnavailable)",
+      "visible": true,
+      "title": "Plugins.UnavailableTitle",
+      "fields": [],
+      "buttons": [
+        "Close"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "shape-dialog",
+      "openedBy": "forced:forced (cmd insertShape)",
+      "visible": true,
+      "title": "Insert.Shape",
+      "fields": [
+        {
+          "label": "Select a shape",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Rectangle",
+        "Circle",
+        "Triangle",
+        "Rounded Rectangle",
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "formula-dialog",
+      "openedBy": "dlg:formula-dialog",
+      "visible": true,
+      "title": "Formula.Title",
+      "fields": [
+        {
+          "label": "Function",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "SUM — sum of numbers",
+            "AVERAGE — average of numbers",
+            "COUNT — count of numeric cells",
+            "MAX — largest number",
+            "MIN — smallest number"
+          ]
+        },
+        {
+          "label": "Direction",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Above",
+            "Below",
+            "Left",
+            "Right"
+          ]
+        },
+        {
+          "label": "Formula",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "autocorrect-dialog",
+      "openedBy": "dlg:autocorrect-dialog",
+      "visible": true,
+      "title": "Autocorrect.Title",
+      "fields": [
+        {
+          "label": "Replace while typing",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Smart quotes (curly)",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Replace -- with – and --- with —",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Automatic bulleted lists (type - )",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Automatic numbered lists (type 1. )",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Replacements (from=to, one per line)",
+          "tag": "textarea",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Apply"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "background-plugins-dialog",
+      "openedBy": "dlg:background-plugins-dialog",
+      "visible": true,
+      "title": "Plugins.BackgroundSettings",
+      "fields": [],
+      "buttons": [
+        "Close"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "bullets-numbering-dialog",
+      "openedBy": "dlg:bullets-numbering-dialog",
+      "visible": true,
+      "title": "Ctx.BulletsAndNumbering",
+      "fields": [
+        {
+          "label": "Numbering style",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Decimal",
+            "Lowercase letters",
+            "Uppercase letters",
+            "Lowercase Roman",
+            "Uppercase Roman",
+            "Bullet (filled)",
+            "Bullet (hollow)",
+            "Bullet (square)"
+          ]
+        },
+        {
+          "label": "Start at",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "numbering-value-dialog",
+      "openedBy": "dlg:numbering-value-dialog",
+      "visible": true,
+      "title": "List.NumberingValue",
+      "fields": [
+        {
+          "label": "Start at",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "list-indents-dialog",
+      "openedBy": "dlg:list-indents-dialog",
+      "visible": true,
+      "title": "Ctx.AdjustListIndents",
+      "fields": [
+        {
+          "label": "Left indent",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Hanging indent",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "paragraph-settings-dialog",
+      "openedBy": "dlg:paragraph-settings-dialog",
+      "visible": true,
+      "title": "Ctx.ParagraphSettings",
+      "fields": [
+        {
+          "label": "Alignment",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Left",
+            "Center",
+            "Right",
+            "Justify"
+          ]
+        },
+        {
+          "label": "Left indent",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Right indent",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "First line indent",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Line spacing",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Single",
+            "1.5 lines",
+            "Double"
+          ]
+        },
+        {
+          "label": "Keep lines together",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Keep with next",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Page break before",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Tabs…",
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "hr-settings-dialog",
+      "openedBy": "dlg:hr-settings-dialog",
+      "visible": true,
+      "title": "Ctx.HorizontalLineSettings",
+      "fields": [
+        {
+          "label": "Width (% of page)",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Height (px)",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Line color",
+          "tag": "input",
+          "type": "color",
+          "options": []
+        },
+        {
+          "label": "Alignment",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Center",
+            "Left",
+            "Right"
+          ]
+        }
+      ],
+      "buttons": [
+        "Insert",
+        "Close"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "tabs-dialog",
+      "openedBy": "dlg:tabs-dialog",
+      "visible": true,
+      "title": "Tabs.Title",
+      "fields": [
+        {
+          "label": "Default tab width (px)",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Tab stops",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Add tab stop",
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "textfromfile-dialog",
+      "openedBy": "dlg:textfromfile-dialog",
+      "visible": true,
+      "title": "Dialog.TextFromFileTitle",
+      "fields": [
+        {
+          "label": "Choose file…",
+          "tag": "input",
+          "type": "file",
+          "options": []
+        },
+        {
+          "label": "Insert mode",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "Format",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "hf-close-confirm-dialog",
+      "openedBy": "dlg:hf-close-confirm-dialog",
+      "visible": true,
+      "title": "HF.CloseConfirmTitle",
+      "fields": [],
+      "buttons": [
+        "Cancel",
+        "Discard",
+        "Save"
+      ],
+      "rect": {
+        "w": 1600,
+        "h": 1000
+      }
+    },
+    {
+      "id": "table-dialog",
+      "openedBy": "forced:forced (cmd openTableDialog)",
+      "visible": true,
+      "title": "Toolbar.InsertTable",
+      "fields": [
+        {
+          "label": "Rows",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Columns",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 236,
+        "h": 170
+      }
+    },
+    {
+      "id": "image-dialog",
+      "openedBy": "dlg:image-dialog",
+      "visible": true,
+      "title": "Toolbar.InsertImage",
+      "fields": [
+        {
+          "label": "Image file",
+          "tag": "input",
+          "type": "file",
+          "options": []
+        },
+        {
+          "label": "Width",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Height",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "leave empty for original size",
+          "tag": "text",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 300,
+        "h": 221
+      }
+    },
+    {
+      "id": "table-to-text-dialog",
+      "openedBy": "forced:forced (cmd convertTableToText)",
+      "visible": true,
+      "title": "TableToText.Title",
+      "fields": [
+        {
+          "label": "Separate cells with",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Tabs",
+            "Commas",
+            "Custom"
+          ]
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "OK"
+      ],
+      "rect": {
+        "w": 300,
+        "h": 130
+      }
+    },
+    {
+      "id": "text-to-table-dialog",
+      "openedBy": "forced:forced (cmd convertTextToTable)",
+      "visible": true,
+      "title": "TextToTable.Title",
+      "fields": [
+        {
+          "label": "Separate text at",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Automatic",
+            "Commas",
+            "Tabs",
+            "Semicolons",
+            "Custom"
+          ]
+        },
+        {
+          "label": "Number of columns",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Cancel",
+        "Insert"
+      ],
+      "rect": {
+        "w": 300,
+        "h": 170
       }
     }
   ]

@@ -168,14 +168,14 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **table.update-table** [control] → WO: updateToc
 - 🔲 L1 **table.draw-table** [menu-item] → WO: Draw table
 - 🔲 L1 **table.erase-table** [menu-item] → WO: Erase table
-- 🔲 L1 **table.dlg-table-of-figures** [dialog] (7 OO fields) → WO: insertTableOfFigures
+- 🔲 L1 **table.dlg-table-of-figures** [dialog] (7 OO fields) → WO: tableoffigures-dialog
 - 🔲 L1 **table.dlg-table-of-contents** [dialog] (7 OO fields) → WO: updatetoc-dialog
 - 🔲 L1 **ctx.merge-cells** [ctx-menu] → WO: ctx data-ctx=TableMergeCells
 - 🔲 L1 **ctx.split-cell** [ctx-menu] → WO: ctx data-ctx=TableSplitCell
 - 🔲 L1 **ctx.distribute-rows** [ctx-menu] → WO: ctx data-ctx=DistributeRows -> distributeTableRows (equalize row heights)
 - 🔲 L1 **ctx.distribute-columns** [ctx-menu] → WO: ctx data-ctx=DistributeColumns -> distributeTableColumns (equalize column widths)
 - 🔲 L1 **ctx.several-rows-columns** [ctx-menu] → WO: table-ops dialog Insert several rows/cols (op-apply-rows/op-apply-cols; insertTableRow/Col count)
-- ✅ L2 **table.table-of-figures** [control] → WO: insertTableOfFigures
+- ✅ L2 **table.table-of-figures** [control] → WO: tableoffigures-dialog
 - ✅ L3 **table.table** [control] → WO: Table ▾
 - ✅ L3 **table.insert-custom-table** [menu-item] → WO: btn-table
 - ✅ L3 **table.convert-text-to-table** [menu-item] → WO: Convert Text to Table…

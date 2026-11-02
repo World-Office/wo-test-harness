@@ -99,6 +99,7 @@ ALIASES = {
     "cross reference": "crossref-dialog", "cross-reference": "crossref-dialog",
     "date time": "pagenumber-dialog", "date & time": "pagenumber-dialog",
     "table of contents": "toc-dialog", "toc": "toc-dialog",
+    "table of figures": "tableoffigures-dialog",
 }
 
 # WO dialog surface index built after wo_dlg loads (below).
@@ -170,7 +171,8 @@ oo_deep = json.load(open(CEN / "census-oo-deep.json"))
 oo_dlg = json.load(open(CEN / "census-oo-dialogs.json"))
 oo_int = json.load(open(CEN / "census-oo-interactions.json"))
 wo_deep = json.load(open(CEN / "census-wo-deep.json"))
-wo_dlg = json.load(open(CEN / "census-wo-dialogs.json")) if (CEN / "census-wo-dialogs.json").exists() else {"dialogs": []}
+wo_dlg_path = HERE.parent / "census-wo-dialogs.json"  # written by census/census-wo-dialogs.cjs
+wo_dlg = json.load(open(wo_dlg_path)) if wo_dlg_path.exists() else {"dialogs": []}
 
 # WO dialog surface index: (id, title) for every censused WO dialog.
 wo_dlgs = []   # list of (id, titleNorm, title)
@@ -475,12 +477,23 @@ if acts_path.exists():
             "Alt+Shift+D": "insertEndnote",
         }
 
+        # dialog-id matches resolve to their census-recorded opener command
+        # (openedBy "cmd:x" or "forced:… (cmd x)") so a control that matches
+        # a WO dialog keeps its acts evidence instead of dropping to L1.
+        _dlg_cmd = {}
+        for _d in (wo_dlg.get("dialogs") or []):
+            _m = re.match(r"(?:cmd:(\S+))|(?:forced:\S+ \(cmd (\S+)\))", _d.get("openedBy") or "")
+            if _m:
+                _dlg_cmd[_d["id"]] = _m.group(1) or _m.group(2)
+
         def _acts_key(match, kind):
             "map a ledger wo.match to a probe key (cmd:/ctx:/btn:/shortcut:)"
             if kind == "shortcut":
                 combo = _canon_combo(match)
                 return "shortcut:" + combo if combo else None
             m = (match or "").strip()
+            if m in _dlg_cmd:
+                m = _dlg_cmd[m]
             if m.startswith("btn-"):
                 if ("btn:" + m) in _acts:
                     return "btn:" + m
@@ -498,6 +511,12 @@ if acts_path.exists():
                     "control", "menu-item", "ctx-menu", "shortcut") and _row.get("wo"):
                 _k = _acts_key(_row["wo"].get("match", ""), _row.get("kind"))
                 _hit = _acts.get(_k) if _k else None
+                # dialog-borrowed evidence must itself prove a dialog opened
+                # (acts dialog:false means the cmd mutated without one —
+                # wrong evidence for a dialog-matched row)
+                _dlg_row = _row["wo"].get("match", "") in _dlg_cmd
+                if _dlg_row and _hit and not _hit.get("dialog"):
+                    _hit = None
                 _src = _k or ""
                 if not (_hit and _hit.get("mutated")) and _row.get("kind") == "shortcut":
                     # transitivity: combo -> command -> acts
