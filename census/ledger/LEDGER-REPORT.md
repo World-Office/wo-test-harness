@@ -1,7 +1,7 @@
 # Feature Ledger v1 — real completeness map
 
 Generated from: census-oo-deep + census-oo-dialogs + census-wo-deep. 
-L3 layer: ledger/roundtrip.cjs (23/24 commands survive html->docx->html).
+L3 layer: ledger/roundtrip.cjs (24/24 commands survive html->docx->html).
 Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
@@ -102,7 +102,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **formatting.align-right-ctrl-r** [control] → WO: justifyRight
 - ✅ L3 **formatting.justified-ctrl-j** [control] → WO: justifyFull
 
-## insert — 56 features (L0:0 L1:36 L3:4)
+## insert — 56 features (L0:0 L1:36 L3:5)
 - 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
 - 🔲 L1 **insert.breaks** [control] → WO: Breaks
 - 🔲 L1 **insert.shape** [control] → WO: insertObject
@@ -139,7 +139,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.insertequation** [shortcut] → WO: Ctrl+Alt+=
 - 🔲 L1 **shortcut.horizontalellipsis** [shortcut] → WO: Alt+;
 - 🔲 L1 **shortcut.insertfootnotenow** [shortcut] → WO: Ctrl+Alt+F
-- ✅ L2 **insert.page-number** [control] → WO: insertPageNumber
 - ✅ L2 **insert.text-box** [control] → WO: insertTextbox
 - ✅ L2 **insert.text-art** [control] → WO: insertTextart
 - ✅ L2 **insert.drop-cap** [control] → WO: toggleDropcap
@@ -156,6 +155,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L2 **shortcut.emdash** [shortcut] → WO: Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation)
 - ✅ L2 **shortcut.endash** [shortcut] → WO: Ctrl+Minus (OO true combo; preventDefault blocks browser zoom-out)
 - ✅ L3 **insert.link** [control] → WO: link
+- ✅ L3 **insert.page-number** [control] → WO: insertPageNumber
 - ✅ L3 **insert.symbol** [control] → WO: btn-symbol
 - ✅ L3 **insert.more-symbols** [menu-item] → WO: Symbols ▾
 - ✅ L3 **insert.symbols** [menu-item] → WO: Symbols ▾
@@ -221,13 +221,13 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **review.grammar-spelling** [control] → WO: btn-ai-grammar
 - ✅ L2 **review.display-mode** [control] → WO: displayMode
 
-## headerfooter — 6 features (L0:0 L1:4 L3:1)
+## headerfooter — 6 features (L0:0 L1:4 L3:2)
 - 🔲 L1 **headerfooter.date-time** [control] → WO: pagenumber-dialog
 - 🔲 L1 **headerfooter.field** [control] → WO: btn-field
 - 🔲 L1 **headerfooter.close** [control] → WO: btn-hf-close
 - 🔲 L1 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: pagenumber-dialog
-- ✅ L2 **headerfooter.page-number** [control] → WO: insertPageNumber
 - ✅ L3 **headerfooter.header-footer** [control] → WO: insertHeaderFooter
+- ✅ L3 **headerfooter.page-number** [control] → WO: insertPageNumber
 
 ## page — 49 features (L0:0 L1:43 L3:0)
 - 🔲 L1 **page.margins** [control] → WO: Margins

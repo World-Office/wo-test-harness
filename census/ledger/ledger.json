@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T08:10:35.765572",
+ "generated": "2026-11-02T10:34:49.509935",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -11,8 +11,8 @@
  "totals": {
   "L0": 0,
   "L1": 390,
-  "L2": 85,
-  "L3": 26,
+  "L2": 83,
+  "L3": 28,
   "L4": 0
  },
  "features": [
@@ -1172,9 +1172,10 @@
     "match": "insertPageNumber",
     "where": "tab:insert"
    },
-   "level": 2,
+   "level": 3,
    "evidence": [
-    "L2 acts (live probe ?): cmd:insertPageNumber mutated #editor DOM: DIV:+SPAN"
+    "L2 acts (live probe ?): cmd:insertPageNumber mutated #editor DOM: DIV:+SPAN",
+    "L3 roundtrip ok [insertPageNumber]: marker /page-number|wo:field-op[^>]*PAGE|field[^>]*PAGE/ survived html->docx->html"
    ]
   },
   {
@@ -2568,9 +2569,10 @@
     "match": "insertPageNumber",
     "where": "tab:insert"
    },
-   "level": 2,
+   "level": 3,
    "evidence": [
-    "L2 acts (live probe ?): cmd:insertPageNumber mutated #editor DOM: DIV:+SPAN"
+    "L2 acts (live probe ?): cmd:insertPageNumber mutated #editor DOM: DIV:+SPAN",
+    "L3 roundtrip ok [insertPageNumber]: marker /page-number|wo:field-op[^>]*PAGE|field[^>]*PAGE/ survived html->docx->html"
    ]
   },
   {
