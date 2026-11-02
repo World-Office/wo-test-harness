@@ -1,7 +1,7 @@
 # Feature Ledger v1 — real completeness map
 
 Generated from: census-oo-deep + census-oo-dialogs + census-wo-deep. 
-L3 layer: ledger/roundtrip.cjs (21/21 commands survive html->docx->html).
+L3 layer: ledger/roundtrip.cjs (23/24 commands survive html->docx->html).
 Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
@@ -47,7 +47,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L2 **file.protection** [control] → WO: protectDialog
 - ✅ L2 **file.view** [control] → WO: displayMode
 
-## formatting — 53 features (L0:0 L1:20 L3:14)
+## formatting — 53 features (L0:0 L1:20 L3:16)
 - 🔲 L1 **formatting.font** [control] → WO: font-family
 - 🔲 L1 **formatting.font-size** [control] → WO: font-size
 - 🔲 L1 **formatting.increment-font-size-ctrl** [control] → WO: font-size
@@ -69,8 +69,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.decreasefontsize** [shortcut] → WO: Ctrl+[
 - 🔲 L1 **shortcut.showall** [shortcut] → WO: ¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)
 - ✅ L2 **formatting.multilevel-list** [control] → WO: multilevel
-- ✅ L2 **formatting.decrease-indent-ctrl-shift-m** [control] → WO: outdent
-- ✅ L2 **formatting.increase-indent-ctrl-m** [control] → WO: indent
 - ✅ L2 **formatting.text-direction** [control] → WO: directionRtl
 - ✅ L2 **shortcut.bold** [shortcut] → WO: Ctrl+B
 - ✅ L2 **shortcut.italic** [shortcut] → WO: Ctrl+I
@@ -97,6 +95,8 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **formatting.clear-style** [control] → WO: removeFormat
 - ✅ L3 **formatting.bullets** [control] → WO: insertUnorderedList
 - ✅ L3 **formatting.numbering** [control] → WO: Numbering style options
+- ✅ L3 **formatting.decrease-indent-ctrl-shift-m** [control] → WO: outdent
+- ✅ L3 **formatting.increase-indent-ctrl-m** [control] → WO: indent
 - ✅ L3 **formatting.align-left-ctrl-l** [control] → WO: justifyLeft
 - ✅ L3 **formatting.align-center-ctrl-e** [control] → WO: justifyCenter
 - ✅ L3 **formatting.align-right-ctrl-r** [control] → WO: justifyRight

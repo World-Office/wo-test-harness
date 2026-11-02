@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T06:28:47.350105",
+ "generated": "2026-11-02T08:10:35.765572",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -11,8 +11,8 @@
  "totals": {
   "L0": 0,
   "L1": 390,
-  "L2": 87,
-  "L3": 24,
+  "L2": 85,
+  "L3": 26,
   "L4": 0
  },
  "features": [
@@ -707,9 +707,10 @@
     "match": "outdent",
     "where": "tab:home"
    },
-   "level": 2,
+   "level": 3,
    "evidence": [
-    "L2 acts (live probe ?): cmd:outdent mutated #editor DOM: P:+BR"
+    "L2 acts (live probe ?): cmd:outdent mutated #editor DOM: P:+BR",
+    "L3 roundtrip ok [outdent]: marker /sentinel/ survived html->docx->html"
    ]
   },
   {
@@ -727,9 +728,10 @@
     "match": "indent",
     "where": "tab:home"
    },
-   "level": 2,
+   "level": 3,
    "evidence": [
-    "L2 acts (live probe ?): cmd:indent mutated #editor DOM: DIV:+BLOCKQUOTE"
+    "L2 acts (live probe ?): cmd:indent mutated #editor DOM: DIV:+BLOCKQUOTE",
+    "L3 roundtrip ok [indent]: marker /<blockquote\\b|margin-left\\s*:/ survived html->docx->html"
    ]
   },
   {

@@ -232,6 +232,33 @@ const PROBES = [
     survive: '<hr\\b',
     xml: 'w:pBdr',
   },
+  // ---- L2-depth extension (2026-11-02): indent/outdent/page-number -------
+  {
+    key: 'indent',
+    also: ['increase-indent-ctrl-m'],
+    clicks: [{ cmd: 'indent' }],
+    expect: '<blockquote\\b|margin-left\\s*:',
+    survive: '<blockquote\\b|margin-left\\s*:',
+    xml: 'w:ind[^>]*w:left',
+  },
+  {
+    key: 'outdent',
+    also: ['decrease-indent-ctrl-shift-m'],
+    clicks: [{ cmd: 'indent' }, { cmd: 'outdent' }],
+    midExpect: '<blockquote\\b|margin-left\\s*:',
+    expect: 'sentinel',
+    notExpect: '<blockquote\\b|margin-left\\s*:{2,}|w:ind[^>]*w:left',
+    survive: 'sentinel',
+    notSurvive: '<blockquote\\b|margin-left\\s*:{2,}|w:ind[^>]*w:left',
+  },
+  {
+    key: 'insertPageNumber',
+    also: ['insert-page-number'],
+    clicks: [{ cmd: 'insertPageNumber' }],
+    expect: 'page-number|wo:field-op[^>]*PAGE|field[^>]*PAGE',
+    survive: 'page-number|wo:field-op[^>]*PAGE|field[^>]*PAGE',
+    xml: 'fldSimple[^>]*PAGE|PAGE',
+  },
 ];
 
 /* -------------- ledger coverage -------------- */
