@@ -259,6 +259,35 @@ const PROBES = [
     survive: 'page-number|wo:field-op[^>]*PAGE|field[^>]*PAGE',
     xml: 'fldSimple[^>]*PAGE|PAGE',
   },
+  // ---- heading-1/2/3 (2026-11-03): formatBlock H1/H2/H3 via the style ----
+  // ---- gallery card. Ledger: shortcut.applyheading{1,2,3} rows carry  ----
+  // wo.match Ctrl+Alt+{1,2,3}; formatting.heading-{1,2,3} rows (if added)
+  // carry wo.match applyHeading{1,2,3} — key covers the latter, also the
+  // former. Headings map to w:pStyle Heading{n} (html->docx) and back.
+  {
+    key: 'applyHeading1',
+    also: ['Ctrl+Alt+1', 'formatting.heading-1'],
+    clicks: [{ cmd: 'formatBlock', value: 'H1' }],
+    expect: '<h1\\b',
+    survive: '<h1\\b',
+    xml: 'w:pStyle[^>]*Heading1',
+  },
+  {
+    key: 'applyHeading2',
+    also: ['Ctrl+Alt+2', 'formatting.heading-2'],
+    clicks: [{ cmd: 'formatBlock', value: 'H2' }],
+    expect: '<h2\\b',
+    survive: '<h2\\b',
+    xml: 'w:pStyle[^>]*Heading2',
+  },
+  {
+    key: 'applyHeading3',
+    also: ['Ctrl+Alt+3', 'formatting.heading-3'],
+    clicks: [{ cmd: 'formatBlock', value: 'H3' }],
+    expect: '<h3\\b',
+    survive: '<h3\\b',
+    xml: 'w:pStyle[^>]*Heading3',
+  },
 ];
 
 /* -------------- ledger coverage -------------- */

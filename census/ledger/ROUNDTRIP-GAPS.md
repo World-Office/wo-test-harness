@@ -1,9 +1,9 @@
 # LEDGER2-ROUNDTRIP: persistence gaps
 
-Generated: 2026-11-02T09:34:43.005Z
+Generated: 2026-11-02T13:51:57.935Z
 Conversion endpoint: `http://192.168.42.42:8086/api/conversion/convert` (html -> docx -> html)
 Editor: `/home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg`
-Probed: 24 document-level commands — survived: 24, lost: 0
+Probed: 27 document-level commands — survived: 27, lost: 0
 
 A feature reaches **L3 (persists)** only when its mutation marker is present
 in the editor serialization *and* still present after booting a fresh editor
@@ -95,7 +95,7 @@ dialog-only, or state toggles with no serialized marker).
 - `references.bookmark` (wo.match `bookmark-dialog`) — lost attribute: none serialized (no marker contract)
 - `references.caption` (wo.match `insertCaption`) — lost attribute: none serialized (no marker contract)
 - `references.cross-reference` (wo.match `crossref-dialog`) — lost attribute: none serialized (no marker contract)
-- `table.table-of-figures` (wo.match `insertTableOfFigures`) — lost attribute: none serialized (no marker contract)
+- `table.table-of-figures` (wo.match `tableoffigures-dialog`) — lost attribute: none serialized (no marker contract)
 - `review.co-editing-mode` (wo.match `coedit-mode`) — lost attribute: none serialized (no marker contract)
 - `review.add-comment` (wo.match `btn-comment`) — lost attribute: none serialized (no marker contract)
 - `review.delete` (wo.match `deleteComment`) — lost attribute: none serialized (no marker contract)
@@ -216,7 +216,7 @@ dialog-only, or state toggles with no serialized marker).
 - `references.dlg-bookmarks` (wo.match `bookmark-dialog`) — lost attribute: none serialized (no marker contract)
 - `references.dlg-insert-caption` (wo.match `insertCaption`) — lost attribute: none serialized (no marker contract)
 - `references.dlg-cross-reference` (wo.match `crossref-dialog`) — lost attribute: none serialized (no marker contract)
-- `table.dlg-table-of-figures` (wo.match `insertTableOfFigures`) — lost attribute: none serialized (no marker contract)
+- `table.dlg-table-of-figures` (wo.match `tableoffigures-dialog`) — lost attribute: none serialized (no marker contract)
 - `table.dlg-table-of-contents` (wo.match `updatetoc-dialog`) — lost attribute: none serialized (no marker contract)
 - `macros.dlg-macros` (wo.match `btn-macro-menu`) — lost attribute: none serialized (no marker contract)
 - `headerfooter.dlg-date-time` (wo.match `pagenumber-dialog`) — lost attribute: none serialized (no marker contract)
@@ -364,9 +364,6 @@ dialog-only, or state toggles with no serialized marker).
 - `shortcut.strikeout` (wo.match `Shift+Cmd+X / Ctrl+Shift+X (strikeThrough toggle)`) — lost attribute: none serialized (no marker contract)
 - `shortcut.selectrightword` (wo.match `browser caret/scroll (n/a for web editor)`) — lost attribute: none serialized (no marker contract)
 - `shortcut.selectleftword` (wo.match `browser caret/scroll (n/a for web editor)`) — lost attribute: none serialized (no marker contract)
-- `shortcut.applyheading1` (wo.match `Ctrl+Alt+1`) — lost attribute: none serialized (no marker contract)
-- `shortcut.applyheading2` (wo.match `Ctrl+Alt+2`) — lost attribute: none serialized (no marker contract)
-- `shortcut.applyheading3` (wo.match `Ctrl+Alt+3`) — lost attribute: none serialized (no marker contract)
 - `shortcut.littlemoveobjectleft` (wo.match `browser caret/scroll (n/a for web editor)`) — lost attribute: none serialized (no marker contract)
 - `shortcut.littlemoveobjectright` (wo.match `browser caret/scroll (n/a for web editor)`) — lost attribute: none serialized (no marker contract)
 - `shortcut.littlemoveobjectup` (wo.match `browser caret/scroll (n/a for web editor)`) — lost attribute: none serialized (no marker contract)
