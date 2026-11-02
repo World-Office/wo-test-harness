@@ -738,6 +738,47 @@ if tdl4_path.exists():
             _row["evidence"].append("declared divergence: " + _g)
         print("  L4 live probe: dialog.table-dialog.l4 "
               + ("at L4" if tdl4.get("ok") else "NOT at L4 (measured defect — see evidence)"))
+# --------------------------- L4 merge (symbol-dialog-l4.test.mjs, L4-002)
+# OO's Symbol modal (Insert → Symbol → More symbols) carries the field
+# contract Font + Range over a glyph grid with buttons Symbols / Special
+# characters / Insert / Close. The live probe symbol-dialog-l4.test.mjs
+# drives the REAL WO dialog (opened by the real ribbon button, not a forced
+# cmd): selects font (grid re-renders in that font), switches range (Unicode
+# block in the option value; Ω must appear for Greek), clicks a glyph
+# (inserts at the saved caret → flat HTML) and closes. Button divergence is
+# recorded, not gated (dialog-parity.py precedent): OO's tabs collapse into
+# grid + Range; OO Insert = insert-on-glyph-click. A failing probe keeps the
+# row honest at L1 with the failing rows in the evidence.
+sd_path = HERE / "symbol-dialog-l4.json"
+if sd_path.exists():
+    try:
+        sd = json.load(open(sd_path))
+    except ValueError:
+        raise SystemExit("ledger: symbol-dialog-l4.json is not valid JSON — fix the probe artifact")
+    _sd_fields = sd.get("fields", [])
+    _sd_ok = [f for f in _sd_fields if f.get("ok")]
+    _fid = "dialog.symbol-dialog.l4"
+    add(_fid, "insert",
+        {"surface": "dialog:Symbol", "label": "Symbol dialog (field-level)",
+         "fields": [f.get("oo") for f in _sd_fields]},
+        "dialog")
+    ledger[_fid]["wo"] = {"match": "symbol-dialog (symbol-dialog-l4.test.mjs)",
+                           "where": "dialog:symbol-dialog"}
+    if sd.get("parity"):
+        ledger[_fid]["level"] = 4
+        ledger[_fid]["evidence"].append(
+            "L4 symbol-dialog field parity: %d/%d rows live-verified "
+            "(%d apply-verified: font/range drive the grid, glyph click inserts "
+            "Ω into flat HTML, close re-closes; OO Symbols/Special-chars tabs "
+            "collapse into grid+Range — recorded divergence)"
+            % (len(_sd_ok), len(_sd_fields), sd.get("summary", {}).get("appliedVerified", 0)))
+    else:
+        ledger[_fid]["level"] = 1
+        _sd_bad = [f.get("oo") for f in _sd_fields if not f.get("ok")]
+        ledger[_fid]["evidence"].append(
+            "L4 symbol-dialog probe GAP: " + ", ".join(_sd_bad or ["empty artifact"]))
+    print("  L4 merge: symbol-dialog %s (%d/%d rows)"
+          % ("PARITY" if sd.get("parity") else "GAP", len(_sd_ok), len(_sd_fields)))
 
 # ---------------------------------------------------------------- report
 by_cluster = defaultdict(lambda: {"L0": 0, "L1": 0, "L2": 0, "L3": 0, "L4": 0, "rows": []})

@@ -1,7 +1,7 @@
 # Feature Ledger v1 — real completeness map
 
 Generated from: census-oo-deep + census-oo-dialogs + census-wo-deep. 
-L3 layer: ledger/roundtrip.cjs (28/28 commands survive html->docx->html).
+L3 layer: ledger/roundtrip.cjs (31/31 commands survive html->docx->html).
 L4 layer: ledger/dialog-parity.py (1/7 dialogs carry the OO field contract).
 Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
@@ -109,7 +109,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L3 **formatting.heading-3** [formatting] → WO: applyHeading3
 - ✅ L4 **dialog.font-dialog.l4** [dialog] (11 OO fields) → WO: font group (font-dialog-l4.test.mjs)
 
-## insert — 56 features (L0:0 L1:33 L3:7)
+## insert — 57 features (L0:0 L1:33 L3:7)
 - 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
 - 🔲 L1 **insert.breaks** [control] → WO: Breaks
 - 🔲 L1 **insert.shape** [control] → WO: insertObject
@@ -166,6 +166,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L3 **insert.symbols** [menu-item] → WO: Symbols ▾
 - ✅ L3 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 - ✅ L4 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: symbol-dialog
+- ✅ L4 **dialog.symbol-dialog.l4** [dialog] (5 OO fields) → WO: symbol-dialog (symbol-dialog-l4.test.mjs)
 
 ## table — 16 features (L0:0 L1:11 L3:3)
 - 🔲 L1 **table.table-of-contents** [control] → WO: updatetoc-dialog

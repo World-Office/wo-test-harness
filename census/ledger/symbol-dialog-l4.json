@@ -1,0 +1,55 @@
+{
+ "version": 1,
+ "generated": "2026-11-02T17:48:45.321Z",
+ "source": {
+  "oo": "census/census/census-oo-dialogs.json (dialog: Symbol — fields Font, Range)",
+  "wo": "live editor drive (symbol-dialog-l4.test.mjs)",
+  "pairing": "declared FIELD_MAP in symbol-dialog-l4.test.mjs",
+  "buttonsNote": "OO tabs Symbols/Special characters collapse into the WO grid + Range select; OO Insert = direct insert-on-glyph-click (dialog-parity.py precedent: buttons recorded, fields gate)"
+ },
+ "summary": {
+  "probed": 5,
+  "covered": 5,
+  "appliedVerified": 5
+ },
+ "parity": true,
+ "fields": [
+  {
+   "oo": "Font",
+   "sel": "#symbol-font",
+   "kind": "choice",
+   "present": true,
+   "applied": true,
+   "ok": true
+  },
+  {
+   "oo": "Range",
+   "sel": "#symbol-range",
+   "kind": "choice",
+   "present": true,
+   "applied": true,
+   "ok": true
+  },
+  {
+   "oo": "Symbol dialog surface",
+   "sel": "#symbol-dialog.open",
+   "present": true,
+   "applied": true,
+   "ok": true
+  },
+  {
+   "oo": "Insert (glyph click inserts at caret)",
+   "sel": "#symbol-grid .symbol-btn",
+   "present": true,
+   "applied": true,
+   "ok": true
+  },
+  {
+   "oo": "Close",
+   "sel": "#btn-symbol-close",
+   "present": true,
+   "applied": true,
+   "ok": true
+  }
+ ]
+}

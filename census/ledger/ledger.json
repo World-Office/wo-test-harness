@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T18:40:41.274463",
+ "generated": "2026-11-02T18:48:27.822480",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -13,7 +13,7 @@
   "L1": 385,
   "L2": 81,
   "L3": 38,
-  "L4": 3
+  "L4": 4
  },
  "features": [
   {
@@ -1014,32 +1014,6 @@
    "level": 3,
    "evidence": [
     "L3 roundtrip ok [btn-table]: marker /<table\\b/ survived html->docx->html"
-   ]
-  },
-  {
-   "feature": "dialog.table-dialog.l4",
-   "cluster": "table",
-   "kind": "dialog",
-   "oo": [
-    {
-     "surface": "insert:btn-inserttable",
-     "label": "Table",
-     "fields": [
-      "Rows",
-      "Columns"
-     ],
-     "note": "pinned contract — OO Insert->Table is a hover grid picker; the OO dialog census captured no numeric insert-table dialog"
-    }
-   ],
-   "wo": {
-    "match": "table-dialog",
-    "where": "dialog:table-dialog"
-   },
-   "level": 4,
-   "evidence": [
-    "L4 live probe (table-dialog-l4.test.mjs, 2026-11-02T17:43:51.473Z): opens via real clicks (Insert tab + #btn-table); title 'Insert table', Rows/Columns number fields (min/max 1-20/1-10, defaults 2/3), Cancel+Insert(primary) verified",
-    "L4 fidelity: rows x cols + Insert puts a real <table> (3x4 verified) into the doc at the saved selection; out-of-range values clamp (99x0 -> 20x1); Cancel mutates nothing",
-    "declared divergence: OO Insert->Table is a hover GRID picker (census btn-inserttable; the committed OO dialog census captured no numeric insert-table dialog and no OK/Cancel) — the numeric rows/cols contract is pinned from the MS-Word-style insert-table shape; WO ships a rows/cols popover with Insert(=OK)/Cancel as the semantic carrier (measured)"
    ]
   },
   {
@@ -7466,7 +7440,8 @@
    "level": 3,
    "evidence": [
     "L2 acts (live probe ?): shortcut:Ctrl+Alt+1 mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)",
-    "L3 roundtrip ok [applyHeading1]: marker /<h1\\b/ survived html->docx->html"
+    "L3 roundtrip ok [applyHeading1]: marker /<h1\\b/ survived html->docx->html",
+    "L3 roundtrip ok [applyHeading1-demote]: marker /sentinel/ survived html->docx->html"
    ]
   },
   {
@@ -7488,7 +7463,8 @@
    "level": 3,
    "evidence": [
     "L2 acts (live probe ?): shortcut:Ctrl+Alt+2 mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)",
-    "L3 roundtrip ok [applyHeading2]: marker /<h2\\b/ survived html->docx->html"
+    "L3 roundtrip ok [applyHeading2]: marker /<h2\\b/ survived html->docx->html",
+    "L3 roundtrip ok [applyHeading2-styled-run]: marker /(?=[\\s\\S]*<h2\\b)(?=[\\s\\S]*<(?:i|em)\\b|font-style\\s*:\\s*italic)/ survived html->docx->html"
    ]
   },
   {
@@ -7510,6 +7486,7 @@
    "level": 3,
    "evidence": [
     "L2 acts (live probe ?): shortcut:Ctrl+Alt+3 mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)",
+    "L3 roundtrip ok [applyHeading1-relevel]: marker /<h3\\b/ survived html->docx->html",
     "L3 roundtrip ok [applyHeading3]: marker /<h3\\b/ survived html->docx->html"
    ]
   },
@@ -7856,7 +7833,8 @@
    "level": 3,
    "evidence": [
     "OO style gallery Heading 1 + shortcut Ctrl+Alt+1 (census-shortcuts: matched); WO Home 'Heading 1' control (formatBlock) + applyHeading1 command",
-    "L3 roundtrip ok [applyHeading1]: marker /<h1\\b/ survived html->docx->html"
+    "L3 roundtrip ok [applyHeading1]: marker /<h1\\b/ survived html->docx->html",
+    "L3 roundtrip ok [applyHeading1-demote]: marker /sentinel/ survived html->docx->html"
    ]
   },
   {
@@ -7877,7 +7855,8 @@
    "level": 3,
    "evidence": [
     "OO style gallery Heading 2 + shortcut Ctrl+Alt+2 (census-shortcuts: matched); WO Home 'Heading 2' control (formatBlock) + applyHeading2 command",
-    "L3 roundtrip ok [applyHeading2]: marker /<h2\\b/ survived html->docx->html"
+    "L3 roundtrip ok [applyHeading2]: marker /<h2\\b/ survived html->docx->html",
+    "L3 roundtrip ok [applyHeading2-styled-run]: marker /(?=[\\s\\S]*<h2\\b)(?=[\\s\\S]*<(?:i|em)\\b|font-style\\s*:\\s*italic)/ survived html->docx->html"
    ]
   },
   {
@@ -7898,6 +7877,7 @@
    "level": 3,
    "evidence": [
     "OO style gallery Heading 3 + shortcut Ctrl+Alt+3 (census-shortcuts: matched); WO Home 'Heading 3' control (formatBlock) + applyHeading3 command",
+    "L3 roundtrip ok [applyHeading1-relevel]: marker /<h3\\b/ survived html->docx->html",
     "L3 roundtrip ok [applyHeading3]: marker /<h3\\b/ survived html->docx->html"
    ]
   },
@@ -10277,6 +10257,58 @@
    "level": 4,
    "evidence": [
     "L4 font-group field parity: 11/11 OO font fields live-verified (6 apply-verified: driving family/size/bold/italic/colors changes flat HTML)"
+   ]
+  },
+  {
+   "feature": "dialog.table-dialog.l4",
+   "cluster": "table",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "insert:btn-inserttable",
+     "label": "Table",
+     "fields": [
+      "Rows",
+      "Columns"
+     ],
+     "note": "pinned contract — OO Insert->Table is a hover grid picker; the OO dialog census captured no numeric insert-table dialog"
+    }
+   ],
+   "wo": {
+    "match": "table-dialog",
+    "where": "dialog:table-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 live probe (table-dialog-l4.test.mjs, 2026-11-02T17:43:51.473Z): opens via real clicks (Insert tab + #btn-table); title 'Insert table', Rows/Columns number fields (min/max 1-20/1-10, defaults 2/3), Cancel+Insert(primary) verified",
+    "L4 fidelity: rows x cols + Insert puts a real <table> (3x4 verified) into the doc at the saved selection; out-of-range values clamp (99x0 -> 20x1); Cancel mutates nothing",
+    "declared divergence: OO Insert->Table is a hover GRID picker (census btn-inserttable; the committed OO dialog census captured no numeric insert-table dialog and no OK/Cancel) — the numeric rows/cols contract is pinned from the MS-Word-style insert-table shape; WO ships a rows/cols popover with Insert(=OK)/Cancel as the semantic carrier (measured)"
+   ]
+  },
+  {
+   "feature": "dialog.symbol-dialog.l4",
+   "cluster": "insert",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:Symbol",
+     "label": "Symbol dialog (field-level)",
+     "fields": [
+      "Font",
+      "Range",
+      "Symbol dialog surface",
+      "Insert (glyph click inserts at caret)",
+      "Close"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "symbol-dialog (symbol-dialog-l4.test.mjs)",
+    "where": "dialog:symbol-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 symbol-dialog field parity: 5/5 rows live-verified (5 apply-verified: font/range drive the grid, glyph click inserts Ω into flat HTML, close re-closes; OO Symbols/Special-chars tabs collapse into grid+Range — recorded divergence)"
    ]
   }
  ]
