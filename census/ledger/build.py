@@ -1146,9 +1146,12 @@ new_ledger = {"version": 1, "generated": __import__("datetime").datetime.now().i
 # PKG-001: a row may never be *silently* parked. Deferring a capability means
 # declaring it in REGISTERED_PARKS (loud divergence row) — never a bare
 # `parked`/`status: parked` field, which the parity gates treat as review debt.
-_silent_parks = [r.get("feature") for r in new_ledger["features"]
-                 if r.get("parked") or r.get("status") == "parked"]
-if _silent_parks:
+# Substring-level on the serialized ledger, not field-name matching: the
+# acceptance gate greps the artifact for 'parked', so ANY spelling of a silent
+# park (parked, status:'parked', park_reason, …) must fail the build here.
+if "parked" in json.dumps(new_ledger, ensure_ascii=False):
+    _silent_parks = [r.get("feature") for r in new_ledger["features"]
+                     if "parked" in json.dumps(r, ensure_ascii=False)]
     raise SystemExit("ledger: silently parked rows %s — promote them to "
                      "REGISTERED_PARKS divergence declarations instead" % _silent_parks)
 
