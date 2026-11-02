@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T14:46:54.291152",
+ "generated": "2026-11-02T15:06:01.119030",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,9 +10,9 @@
  ],
  "totals": {
   "L0": 0,
-  "L1": 393,
-  "L2": 83,
-  "L3": 28,
+  "L1": 390,
+  "L2": 80,
+  "L3": 34,
   "L4": 0
  },
  "features": [
@@ -7430,9 +7430,10 @@
     "match": "Ctrl+Alt+1",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 3,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Alt+1 mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
+    "L2 acts (live probe ?): shortcut:Ctrl+Alt+1 mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)",
+    "L3 roundtrip ok [applyHeading1]: marker /<h1\\b/ survived html->docx->html"
    ]
   },
   {
@@ -7451,9 +7452,10 @@
     "match": "Ctrl+Alt+2",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 3,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Alt+2 mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
+    "L2 acts (live probe ?): shortcut:Ctrl+Alt+2 mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)",
+    "L3 roundtrip ok [applyHeading2]: marker /<h2\\b/ survived html->docx->html"
    ]
   },
   {
@@ -7472,9 +7474,10 @@
     "match": "Ctrl+Alt+3",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 3,
    "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Alt+3 mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
+    "L2 acts (live probe ?): shortcut:Ctrl+Alt+3 mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)",
+    "L3 roundtrip ok [applyHeading3]: marker /<h3\\b/ survived html->docx->html"
    ]
   },
   {
@@ -7817,9 +7820,10 @@
     "match": "applyHeading1",
     "where": "tab:home"
    },
-   "level": 1,
+   "level": 3,
    "evidence": [
-    "OO style gallery Heading 1 + shortcut Ctrl+Alt+1 (census-shortcuts: matched); WO Home 'Heading 1' control (formatBlock) + applyHeading1 command"
+    "OO style gallery Heading 1 + shortcut Ctrl+Alt+1 (census-shortcuts: matched); WO Home 'Heading 1' control (formatBlock) + applyHeading1 command",
+    "L3 roundtrip ok [applyHeading1]: marker /<h1\\b/ survived html->docx->html"
    ]
   },
   {
@@ -7837,9 +7841,10 @@
     "match": "applyHeading2",
     "where": "tab:home"
    },
-   "level": 1,
+   "level": 3,
    "evidence": [
-    "OO style gallery Heading 2 + shortcut Ctrl+Alt+2 (census-shortcuts: matched); WO Home 'Heading 2' control (formatBlock) + applyHeading2 command"
+    "OO style gallery Heading 2 + shortcut Ctrl+Alt+2 (census-shortcuts: matched); WO Home 'Heading 2' control (formatBlock) + applyHeading2 command",
+    "L3 roundtrip ok [applyHeading2]: marker /<h2\\b/ survived html->docx->html"
    ]
   },
   {
@@ -7857,9 +7862,10 @@
     "match": "applyHeading3",
     "where": "tab:home"
    },
-   "level": 1,
+   "level": 3,
    "evidence": [
-    "OO style gallery Heading 3 + shortcut Ctrl+Alt+3 (census-shortcuts: matched); WO Home 'Heading 3' control (formatBlock) + applyHeading3 command"
+    "OO style gallery Heading 3 + shortcut Ctrl+Alt+3 (census-shortcuts: matched); WO Home 'Heading 3' control (formatBlock) + applyHeading3 command",
+    "L3 roundtrip ok [applyHeading3]: marker /<h3\\b/ survived html->docx->html"
    ]
   },
   {

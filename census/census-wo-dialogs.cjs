@@ -23,8 +23,9 @@
  *
  * Env:
  *   WO_URL  (default http://192.168.42.42:8082/word/ — prod; read-only probing)
- *   WO_DLG_OUT (default census/census-wo-dialogs.json — next to the script;
- *   ledger/build.py reads it from there)
+ *   WO_DLG_OUT (default census/census/census-wo-dialogs.json — canonical
+ *   capture dir, same place census-wo-deep writes; ledger/build.py reads it
+ *   from there)
  *
  * Out schema (matches census-oo-dialogs.json):
  *   { capturedAt, engine, dialogs: [ {id,title,openedBy,tabs:[],fields:[],buttons:[],rect} ] }
@@ -34,7 +35,7 @@ const path = require("path");
 const { chromium } = require("playwright");
 
 const WO_URL = process.env.WO_URL || "http://192.168.42.42:8082/word/";
-const OUT = process.env.WO_DLG_OUT || path.join(__dirname, "census-wo-dialogs.json");
+const OUT = process.env.WO_DLG_OUT || path.join(__dirname, "census", "census-wo-dialogs.json");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // Every dialog in WO's DIALOG_IDS registry. `open` is how we open it:

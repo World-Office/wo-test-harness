@@ -171,7 +171,7 @@ oo_deep = json.load(open(CEN / "census-oo-deep.json"))
 oo_dlg = json.load(open(CEN / "census-oo-dialogs.json"))
 oo_int = json.load(open(CEN / "census-oo-interactions.json"))
 wo_deep = json.load(open(CEN / "census-wo-deep.json"))
-wo_dlg_path = HERE.parent / "census-wo-dialogs.json"  # written by census/census-wo-dialogs.cjs
+wo_dlg_path = CEN / "census-wo-dialogs.json"  # written by census/census-wo-dialogs.cjs
 wo_dlg = json.load(open(wo_dlg_path)) if wo_dlg_path.exists() else {"dialogs": []}
 
 # WO dialog surface index: (id, title) for every censused WO dialog.

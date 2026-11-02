@@ -1,7 +1,7 @@
 # Feature Ledger v1 — real completeness map
 
 Generated from: census-oo-deep + census-oo-dialogs + census-wo-deep. 
-L3 layer: ledger/roundtrip.cjs (24/24 commands survive html->docx->html).
+L3 layer: ledger/roundtrip.cjs (27/27 commands survive html->docx->html).
 Levels: **L0** missing · **L1** surface exists (visual parity — the old
 census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 **L3** persists (round-trip) · **L4** fidelity vs OO output.
@@ -47,7 +47,7 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L2 **file.protection** [control] → WO: protectDialog
 - ✅ L2 **file.view** [control] → WO: displayMode
 
-## formatting — 56 features (L0:0 L1:23 L3:16)
+## formatting — 56 features (L0:0 L1:20 L3:22)
 - 🔲 L1 **formatting.font** [control] → WO: font-family
 - 🔲 L1 **formatting.font-size** [control] → WO: font-size
 - 🔲 L1 **formatting.increment-font-size-ctrl** [control] → WO: font-size
@@ -68,9 +68,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - 🔲 L1 **shortcut.increasefontsize** [shortcut] → WO: Ctrl+]
 - 🔲 L1 **shortcut.decreasefontsize** [shortcut] → WO: Ctrl+[
 - 🔲 L1 **shortcut.showall** [shortcut] → WO: ¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)
-- 🔲 L1 **formatting.heading-1** [formatting] → WO: applyHeading1
-- 🔲 L1 **formatting.heading-2** [formatting] → WO: applyHeading2
-- 🔲 L1 **formatting.heading-3** [formatting] → WO: applyHeading3
 - ✅ L2 **formatting.multilevel-list** [control] → WO: multilevel
 - ✅ L2 **formatting.text-direction** [control] → WO: directionRtl
 - ✅ L2 **shortcut.bold** [shortcut] → WO: Ctrl+B
@@ -85,9 +82,6 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L2 **shortcut.indent** [shortcut] → WO: Ctrl+M
 - ✅ L2 **shortcut.unindent** [shortcut] → WO: Ctrl+Shift+M
 - ✅ L2 **shortcut.strikeout** [shortcut] → WO: Shift+Cmd+X / Ctrl+Shift+X (strikeThrough toggle)
-- ✅ L2 **shortcut.applyheading1** [shortcut] → WO: Ctrl+Alt+1
-- ✅ L2 **shortcut.applyheading2** [shortcut] → WO: Ctrl+Alt+2
-- ✅ L2 **shortcut.applyheading3** [shortcut] → WO: Ctrl+Alt+3
 - ✅ L3 **formatting.change-case** [control] → WO: Change case
 - ✅ L3 **formatting.bold-ctrl-b** [control] → WO: bold
 - ✅ L3 **formatting.italic-ctrl-i** [control] → WO: italic
@@ -104,6 +98,12 @@ census ceiling, 'deficit 3' lives here) · **L2** acts (behavior probe) ·
 - ✅ L3 **formatting.align-center-ctrl-e** [control] → WO: justifyCenter
 - ✅ L3 **formatting.align-right-ctrl-r** [control] → WO: justifyRight
 - ✅ L3 **formatting.justified-ctrl-j** [control] → WO: justifyFull
+- ✅ L3 **shortcut.applyheading1** [shortcut] → WO: Ctrl+Alt+1
+- ✅ L3 **shortcut.applyheading2** [shortcut] → WO: Ctrl+Alt+2
+- ✅ L3 **shortcut.applyheading3** [shortcut] → WO: Ctrl+Alt+3
+- ✅ L3 **formatting.heading-1** [formatting] → WO: applyHeading1
+- ✅ L3 **formatting.heading-2** [formatting] → WO: applyHeading2
+- ✅ L3 **formatting.heading-3** [formatting] → WO: applyHeading3
 
 ## insert — 56 features (L0:0 L1:36 L3:5)
 - 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
