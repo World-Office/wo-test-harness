@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T10:34:49.509935",
+ "generated": "2026-11-02T14:41:58.741687",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -1845,8 +1845,8 @@
     }
    ],
    "wo": {
-    "match": "insertTableOfFigures",
-    "where": "tab:references"
+    "match": "tableoffigures-dialog",
+    "where": "dialog:tableoffigures-dialog"
    },
    "level": 2,
    "evidence": [
@@ -4367,8 +4367,8 @@
     }
    ],
    "wo": {
-    "match": "insertTableOfFigures",
-    "where": "tab:references"
+    "match": "tableoffigures-dialog",
+    "where": "dialog:tableoffigures-dialog"
    },
    "level": 1,
    "evidence": [

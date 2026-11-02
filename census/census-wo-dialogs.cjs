@@ -23,7 +23,8 @@
  *
  * Env:
  *   WO_URL  (default http://192.168.42.42:8082/word/ — prod; read-only probing)
- *   WO_DLG_OUT (default census/census-wo-dialogs.json)
+ *   WO_DLG_OUT (default census/census-wo-dialogs.json — next to the script;
+ *   ledger/build.py reads it from there)
  *
  * Out schema (matches census-oo-dialogs.json):
  *   { capturedAt, engine, dialogs: [ {id,title,openedBy,tabs:[],fields:[],buttons:[],rect} ] }
@@ -33,7 +34,7 @@ const path = require("path");
 const { chromium } = require("playwright");
 
 const WO_URL = process.env.WO_URL || "http://192.168.42.42:8082/word/";
-const OUT = process.env.WO_DLG_OUT || path.join(__dirname, "census/census-wo-dialogs.json");
+const OUT = process.env.WO_DLG_OUT || path.join(__dirname, "census-wo-dialogs.json");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // Every dialog in WO's DIALOG_IDS registry. `open` is how we open it:
@@ -88,6 +89,34 @@ const DIALOGS = [
   ["suggest-dialog", "cmd:suggest"],
   ["toc-dialog", "cmd:toc"],
   ["image-alt-dialog", "cmd:imageAlt"],
+  // ---- registry additions: the deployed editor's DIALOG_IDS grew beyond the
+  // original 42 (compare/combine/speech/ocr/… + the paragraph/list settings
+  // family). Routes where a command exists; otherwise direct structural open
+  // (dlg: — the opener needs caret context we don't stage in a census run).
+  ["compare-dialog", "cmd:compareVersion"],
+  ["combine-dialog", "cmd:combineRevisions"],
+  ["speech-dialog", "cmd:readAloud"],
+  ["speechinput-dialog", "cmd:dictate"],
+  ["ocr-dialog", "cmd:ocrRun"],
+  ["tableoffigures-dialog", "cmd:insertTableOfFigures"],
+  ["plugin-unavailable-dialog", "cmd:pluginUnavailable"],
+  ["shape-dialog", "cmd:insertShape"],
+  ["formula-dialog", "dlg:formula-dialog"],            // table-menu fx item, needs cell context
+  ["autocorrect-dialog", "dlg:autocorrect-dialog"],    // opened from settings dialog
+  ["background-plugins-dialog", "dlg:background-plugins-dialog"],
+  ["bullets-numbering-dialog", "dlg:bullets-numbering-dialog"], // list ctx-menu, needs caret in list
+  ["numbering-value-dialog", "dlg:numbering-value-dialog"],     // list ctx-menu, needs caret in list
+  ["list-indents-dialog", "dlg:list-indents-dialog"],           // list ctx-menu, needs caret in list
+  ["paragraph-settings-dialog", "dlg:paragraph-settings-dialog"],
+  ["hr-settings-dialog", "dlg:hr-settings-dialog"],             // hr ctx-menu settings
+  ["tabs-dialog", "dlg:tabs-dialog"],                           // paragraph settings -> Tabs
+  ["textfromfile-dialog", "dlg:textfromfile-dialog"],           // Insert > Text from file
+  ["hf-close-confirm-dialog", "dlg:hf-close-confirm-dialog"],   // header/footer exit confirm
+  // anchored insert popovers (dialog elements in index.html, not in DIALOG_IDS)
+  ["table-dialog", "cmd:openTableDialog"],
+  ["image-dialog", "dlg:image-dialog"],
+  ["table-to-text-dialog", "cmd:convertTableToText"],
+  ["text-to-table-dialog", "cmd:convertTextToTable"],
   // backstage is an overlay, captured by census-wo-deep; skip here.
 ];
 
