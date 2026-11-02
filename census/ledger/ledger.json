@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T19:04:11.761426",
+ "generated": "2026-11-02T19:06:23.208396",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10280,7 +10280,7 @@
    },
    "level": 4,
    "evidence": [
-    "L4 live probe (table-dialog-l4.test.mjs, 2026-11-02T17:43:51.473Z): opens via real clicks (Insert tab + #btn-table); title 'Insert table', Rows/Columns number fields (min/max 1-20/1-10, defaults 2/3), Cancel+Insert(primary) verified",
+    "L4 live probe (table-dialog-l4.test.mjs, 2026-11-02T18:05:47.016Z): opens via real clicks (Insert tab + #btn-table); title 'Insert table', Rows/Columns number fields (min/max 1-20/1-10, defaults 2/3), Cancel+Insert(primary) verified",
     "L4 fidelity: rows x cols + Insert puts a real <table> (3x4 verified) into the doc at the saved selection; out-of-range values clamp (99x0 -> 20x1); Cancel mutates nothing",
     "declared divergence: OO Insert->Table is a hover GRID picker (census btn-inserttable; the committed OO dialog census captured no numeric insert-table dialog and no OK/Cancel) — the numeric rows/cols contract is pinned from the MS-Word-style insert-table shape; WO ships a rows/cols popover with Insert(=OK)/Cancel as the semantic carrier (measured)"
    ]
