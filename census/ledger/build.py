@@ -874,6 +874,15 @@ new_ledger = {"version": 1, "generated": __import__("datetime").datetime.now().i
               "levels": ["L0 missing", "L1 surface", "L2 acts", "L3 persists", "L4 fidelity"],
               "totals": {k: tot[k] for k in ["L0", "L1", "L2", "L3", "L4"]},
               "features": list(ledger.values())}
+# PKG-001: a row may never be *silently* parked. Deferring a capability means
+# declaring it in REGISTERED_PARKS (loud divergence row) — never a bare
+# `parked`/`status: parked` field, which the parity gates treat as review debt.
+_silent_parks = [r.get("feature") for r in new_ledger["features"]
+                 if r.get("parked") or r.get("status") == "parked"]
+if _silent_parks:
+    raise SystemExit("ledger: silently parked rows %s — promote them to "
+                     "REGISTERED_PARKS divergence declarations instead" % _silent_parks)
+
 # Idempotent rebuild (T-005): keep the committed `generated` stamp when nothing
 # else changed, so a gate run of build.py never dirties the checkout (that
 # dirt is what broke the tf/T-005 merge into main on attempt 1).
