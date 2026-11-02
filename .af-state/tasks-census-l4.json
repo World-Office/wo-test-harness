@@ -19,13 +19,13 @@
       "id": "T-001",
       "title": "Dialog census alignment: capture missing 19 dialogs from DIALOG_IDS",
       "description": "WO editor has 61 DIALOG_IDS entries but census has only 42 dialogs. Run: cd /home/weiss/git/World-Office/wo-test-harness && NO_PROXY=127.0.0.1,localhost WO_URL=http://192.168.42.42:8082/word /usr/bin/node census/census-wo-dialogs.cjs. Requires Playwright with chromium. After capture, verify census/census/census-wo-dialogs.json has at least 60 dialog entries.",
-      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && /usr/bin/python3 -c 'import json; d=json.load(open("census/census/census-wo-dialogs.json")); print("OK" if len(d.get("dialogs",[])) >= 60 else "FAIL: " + str(len(d.get("dialogs",[]))))'"
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && /usr/bin/python3 -c 'import json; d=json.load(open(\"census/census/census-wo-dialogs.json\")); print(\"OK\" if len(d.get(\"dialogs\",[])) >= 60 else \"FAIL: \" + str(len(d.get(\"dialogs\",[]))))'"
     },
     {
       "id": "T-002",
       "title": "Verify heading rows exist in ledger or add them",
       "description": "Verify ledger.json contains formatting.heading-1, formatting.heading-2, formatting.heading-3 entries (match: heading1/2/3; wo.match: applyHeading1/2/3; kind: formatting). If missing, add these rows manually. Must produce a commit.",
-      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && /usr/bin/python3 -c 'import json; d=json.load(open("census/ledger/ledger.json")); ids=[f.get("feature") for f in d["features"]]; needed=["formatting.heading-1","formatting.heading-2","formatting.heading-3"]; print("OK" if all(n in ids for n in needed) else "FAIL: " + str([n for n in needed if n not in ids]))'"
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && /usr/bin/python3 -c 'import json; d=json.load(open(\"census/ledger/ledger.json\")); ids=[f.get(\"feature\") for f in d[\"features\"]]; needed=[\"formatting.heading-1\",\"formatting.heading-2\",\"formatting.heading-3\"]; print(\"OK\" if all(n in ids for n in needed) else \"FAIL: \" + str([n for n in needed if n not in ids]))'"
     },
     {
       "id": "T-003",
@@ -38,14 +38,14 @@
       "id": "T-004",
       "title": "L4 fidelity: implement first L4 probe for dialog field-level parity",
       "description": "L4 = per-dialog field/button-level parity. Create a gate test (e.g., census/ledger/link-dialog-l4.test.mjs) that: opens link-dialog via cmd:insertLink, asserts dialog fields match OO expected (URL label, Text to display label, button names). Add a ledger row feature 'dialog.link-dialog.l4' at level 4 with evidence mention. Commit changes.",
-      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && /usr/bin/python3 -c 'import json; d=json.load(open("census/ledger/ledger.json")); l4=sum(1 for f in d["features"] if f["level"]==4); print("OK" if l4 > 0 else "FAIL: L4=" + str(l4))'"
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && /usr/bin/python3 -c 'import json; d=json.load(open(\"census/ledger/ledger.json\")); l4=sum(1 for f in d[\"features\"] if f[\"level\"]==4); print(\"OK\" if l4 > 0 else \"FAIL: L4=\" + str(l4))'"
     },
     {
       "id": "T-005",
       "title": "Full ledger rebuild: run build.py, commit all changes",
       "description": "Run /usr/bin/python3 census/ledger/build.py. Verify ledger totals: L0:0 and L4 > 0. Stage all census changes (ledger.json, census files, caption maps, etc.) and commit with message describing the census expansion. Push to origin/main.",
       "depends_on": ["T-001", "T-003", "T-004"],
-      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && /usr/bin/python3 census/ledger/build.py > /dev/null 2>&1 && /usr/bin/python3 -c 'import json; d=json.load(open("census/ledger/ledger.json")); totals=d.get("totals",{}); print("OK" if totals.get("L0",999)==0 and totals.get("L4",0) > 0 else "FAIL: " + str(totals))'"
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && /usr/bin/python3 census/ledger/build.py > /dev/null 2>&1 && /usr/bin/python3 -c 'import json; d=json.load(open(\"census/ledger/ledger.json\")); totals=d.get(\"totals\",{}); print(\"OK\" if totals.get(\"L0\",999)==0 and totals.get(\"L4\",0) > 0 else \"FAIL: \" + str(totals))'"
     }
   ],
   "context": {
