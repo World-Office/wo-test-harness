@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T19:04:11.761426",
+ "generated": "2026-11-02T19:08:47.443166",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -13,7 +13,7 @@
   "L1": 385,
   "L2": 81,
   "L3": 38,
-  "L4": 5
+  "L4": 6
  },
  "features": [
   {
@@ -10336,6 +10336,42 @@
     "L4 live probe (image-dialog-l4.test.mjs, 2026-11-02T18:04:11.523Z): opens via a real click (Insert tab + #btn-image); title 'Insert image', Image file input (accepts png; real bytes -> data: preview + size fields + armed Insert), Width/Height number inputs (min 1, hidden until a file), size hint; Cancel+Insert(primary, disabled until file) verified",
     "L4 fidelity: real PNG via setInputFiles previews + arms Insert; invalid type rejected with error (Insert stays disabled); width 123 + Insert puts <img width=\"123\"> into the flat HTML at the saved caret; empty size inserts at natural size (no width/height attrs); Cancel mutates nothing; selection-on-<img> routes the same dialog into the contextual Replace-image path (measured) — text-caret inserts are the plain case",
     "declared divergence: OO Insert→Image opens a menu into the native OS file picker (interact census: insert/Image opens \"menu\", header-footer/Image opens a 0-control modal mask; the committed OO dialog census captured NO field-level insert-image dialog) — the file + width/height + Insert/Cancel contract is pinned from the MS-Word-style insert-image shape; WO ships an anchored popover with preview + size fields as the semantic carrier (table-dialog precedent, measured)"
+   ]
+  },
+  {
+   "feature": "dialog.paragraph-settings-dialog.l4",
+   "cluster": "formatting",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "ctx-menu:ParagraphSettings",
+     "label": "Paragraph advanced settings (field-level)",
+     "fields": [
+      "Alignment",
+      "Left indent",
+      "Right indent",
+      "First line indent",
+      "Line spacing",
+      "Keep lines together",
+      "Keep with next",
+      "Page break before",
+      "Tabs…",
+      "OK",
+      "Cancel"
+     ],
+     "note": "pinned contract — OO's Paragraph-advanced-settings modal opens via the ctx-menu row (census-oo-deep) / right panel Show-advanced; the OO dialog census captured no field-level paragraph modal (fields pinned from the MS-Word-style Indents & Spacing shape)"
+    }
+   ],
+   "wo": {
+    "match": "paragraph-settings-dialog (paragraph-dialog-l4.test.mjs)",
+    "where": "ctx-menu:ParagraphSettings"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 live probe (paragraph-dialog-l4.test.mjs, 2026-11-02T18:08:32.361Z): opens via a real right-click on the caret paragraph + the ctx-menu ParagraphSettings row; title 'Paragraph advanced settings' (OO's ctx-row label); Alignment select left/center/right/justify, Left/Right indent number 0..500, First line indent number -200..200 (negatives = hanging), Line spacing select 1/1.5/2, Keep lines together / Keep with next / Page break before checkboxes, Tabs… + Cancel + OK(primary) verified",
+    "L4 fidelity: center + 40/20/32 + 1.5 + keeps via OK puts text-align/margins/text-indent/line-height inline styles + keep-lines-together/keep-with-next classes on the caret <p> (visible in the flat HTML); reopening reads the live block back into every field; the negative path zeroes styles and untoggles (page-break-before on); Cancel mutates nothing",
+    "declared divergence: OO opens \"Paragraph advanced settings\" from the ctx menu row (census-oo-deep contextMenu, enabled) and the right panel \"Show advanced settings\"; the committed OO dialog census captured no field-level paragraph modal — the field contract is pinned from the MS-Word-style Indents & Spacing shape (alignment, left/right/first-line indents, line spacing, keeps, page break, Tabs…, OK/Cancel)",
+    "declared divergence: OO additionally carries Before/After paragraph spacing + \"Don't add interval between paragraphs of the same style\" (right-panel census) — WO defers those to the ribbon line-spacing control and right panel; recorded divergence, not gated"
    ]
   }
  ]
