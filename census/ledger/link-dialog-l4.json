@@ -11,6 +11,11 @@
   "title": "Insert link",
   "fields": [
    {
+    "label": "Text to display",
+    "tag": "input",
+    "type": "text"
+   },
+   {
     "label": "URL",
     "tag": "input",
     "type": "url"
@@ -21,16 +26,16 @@
    "Insert"
   ]
  },
- "covered": 1,
+ "covered": 2,
  "total": 2,
- "missing": [
-  "Text to display"
- ],
+ "missing": [],
  "mapping": {
+  "Text to display": "Text to display",
   "URL": "URL"
  },
- "parity": false,
+ "parity": true,
  "functional": true,
+ "functional_text": true,
  "error": null,
- "capturedAt": "2026-11-02T18:06:16.877Z"
+ "capturedAt": "2026-11-02T18:49:04.182Z"
 }

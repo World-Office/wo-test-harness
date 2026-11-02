@@ -621,6 +621,9 @@ if ldp_path.exists():
         if ld.get("functional"):
             ledger[_ld_fid]["evidence"].append(
                 "L2 act: URL field + Insert produced <a href> in #editor (probe)")
+        if ld.get("functional_text"):
+            ledger[_ld_fid]["evidence"].append(
+                "L4 act: Text to display drove the anchor text (probe)")
         ledger[_ld_fid]["evidence"].append(
             "opened via real route: " + str(ld.get("openedBy") or "?"))
     print("  L4 probe merge: link-dialog %s (%s/%s OO fields)"
