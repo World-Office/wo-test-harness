@@ -36,7 +36,7 @@ const WO = {
   CenterPara: { v: "matched", wb: "Ctrl+E" },
   JustifyPara: { v: "matched", wb: "Ctrl+J" },
   RightPara: { v: "matched", wb: "Ctrl+R" },
-  LeftPara: { v: "matched", wb: "Ctrl+Shift+L" },
+  LeftPara: { v: "matched", wb: "Ctrl+L" },
   IncreaseFontSize: { v: "matched", wb: "Ctrl+]" },
   DecreaseFontSize: { v: "matched", wb: "Ctrl+[" },
   ZoomIn: { v: "matched", wb: "Ctrl+Plus/=" },
@@ -51,12 +51,14 @@ const WO = {
   CloseMenu: { v: "matched", wb: "Escape" },
 
   // diverged: feature present, different combo
-  ApplyListBullet: { v: "diverged", wb: "Ctrl+Shift+8 (OO uses Ctrl+Shift+L)" },
-  InsertBulletedList: { v: "diverged", wb: "Ctrl+Shift+8 (OO uses Ctrl+Shift+L)" },
-  InsertNumberedList: { v: "diverged", wb: "Ctrl+Shift+7" },
+  ApplyListBullet: { v: "matched", wb: "Ctrl+Shift+L (realigned 2026-11-03 to OO combo)" },
+  InsertBulletedList: { v: "matched", wb: "Ctrl+Shift+L (realigned 2026-11-03 to OO combo)" },
+  InsertNumberedList: { v: "diverged", wb: "Ctrl+Shift+7 (Google Docs combo; OO uses the bullets-style menu)" },
   ApplyListNumber: { v: "diverged", wb: "Ctrl+Shift+7" },
   ApplyNormalText: { v: "diverged", wb: "Ctrl+Alt+0" },
   InsertComment: { v: "diverged", wb: "Ctrl+Enter confirms comment dialog" },
+  InsertPageNumber: { v: "matched", wb: "Ctrl+Shift+P (realigned 2026-11-03 to OO combo; inserts PAGE-field span)" },
+  ShowAll: { v: "matched", wb: "Ctrl+Shift+8 (realigned 2026-11-03 to OO combo; marks overlay toggle)" },
 
   // Implemented 2026-10-28 (C1): were missing, now bound. Web adaptation of
   // the OO combo noted where the browser/zoom conflicts forced a variant.
@@ -103,7 +105,6 @@ const WO = {
   OpenContextMenu: { v: "browser-native", wb: "Shift+F10 fires the contextmenu DOM event; WO handler shows the custom menu" },
   SpeechWorker: { v: "diverged", wb: "Ctrl+Alt+Z read-aloud (OO SpeechWorker panel; WO maps to TTS)" },
   HorizontalEllipsis: { v: "matched", wb: "Alt+;" },
-  ShowAll: { v: "diverged", wb: "¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)" },
 
   // browser-native: WO relies on the browser for these
   Copy: { v: "browser-native", wb: "Ctrl+C / Cmd+C" },

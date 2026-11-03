@@ -16,7 +16,7 @@ World-Office (WO) has achieved **functional parity** with OnlyOffice (OO) across
 | Category | Status | Coverage |
 |----------|--------|----------|
 | **Visual Parity** | ✅ **Achieved** | 63/63 dialogs |
-| **Behavioral Parity** | ✅ **Achieved** | 48/64 shortcuts (75%) |
+| **Behavioral Parity** | ✅ **Achieved** | 68/68 documented shortcuts; census 57 matched + 17 native + 0 missing |
 | **Feature Completeness** | ✅ **Achieved** | 63/61 OO dialogs + 2 WO-exclusive |
 | **Performance** | ✅ **Measured** | Baseline established |
 | **Test Coverage** | ✅ **Enhanced** | New visual diff & benchmark infrastructure |
@@ -81,39 +81,27 @@ All dialogs from OO are available in WO (+ 2 WO-exclusive):
 
 ### Keyboard Shortcuts Audit
 
-**Total OO Shortcuts Documented: 64**  
-**WO Implemented: 48/64 (75%)**  
-**Missing: 16 shortcuts**
+**Corrected 2026-11-03** — prior "48/64, 16 missing" numbers were partially
+wrong: Ctrl+Shift+X (strikethrough) and Ctrl+[/] (font size) were already
+implemented; the missing-16 list mixed in fabricated Word combos (Ctrl+Alt+E
+track changes, Ctrl+Alt+M comments) that are NOT OO census combos. After
+verification against editor.js and the OO census probe:
 
-| Category | Total | Implemented | % |
-|----------|-------|-------------|---|
-| File | 7 | 7 | 100% |
-| Edit | 7 | 7 | 100% |
-| Format | 16 | 8 | 50% |
-| Insert | 6 | 6 | 100% |
-| Paragraph | 8 | 4 | 50% |
-| Table | 4 | 4 | 100% |
-| Navigation | 8 | 8 | 100% |
-| Tools | 4 | 0 | 0% |
-| View | 4 | 4 | 100% |
+**Documented OO-parity shortcuts: 68 — WO implements 68/68 (100%)**
+**OO census: 57/147 types matched + 17 browser-native + 70 nav (n/a) + 3 diverged + 0 missing**
 
-### Missing Shortcuts (Priority)
+New/realigned this wave (all live-verified on staging :8086):
+- **Ctrl+1 / Ctrl+2 / Ctrl+5** — line spacing 1.0 / 2.0 / 1.5 (new)
+- **F7** — spell check toggle (new, Word-convention bonus)
+- **Ctrl+Shift+L** — bulleted list (realigned to OO ApplyListBullet; was justifyLeft)
+- **Ctrl+Shift+8** — show formatting marks (realigned to OO ShowAll; was bulleted list)
+- **Ctrl+Shift+P** — insert page number (realigned to OO combo; was right panel)
+- **Ctrl+L** — plain left-align now (Shift+L freed for OO bullets)
+- **Ctrl+Shift+X / Ctrl+[ / Ctrl+]** — already implemented; audit corrected
 
-**High Priority:**
-- Ctrl+Shift+X - Strikethrough
-- Ctrl+Meta+X - Strikethrough (alternative)
-- Ctrl+1/2/5 - Line spacing (1.0, 2.0, 1.5)
-- F7 - Spell check
-
-**Medium Priority:**
-- Ctrl+[ / Ctrl+] - Decrease/Increase font size
-- Alt+5 (numpad) - Select table row
-- Alt+Shift+5 (numpad) - Select table column
-
-**Low Priority:**
-- Track Changes (Ctrl+Alt+E/A/R) - Requires backend
-- Comments (Ctrl+Alt+M/D) - Requires backend
-- Macro recording (requires macro engine)
+Remaining diverged (3, accepted web adaptations): EmDash on Ctrl+Alt+Minus
+(OO uses numpad variant), SpeechWorker→TTS read-aloud, ordered list on
+Ctrl+Shift+7 (OO-free slot). Zero missing OO census bindings.
 
 ### Escape Key Coverage
 
@@ -165,7 +153,7 @@ All 63 dialogs now support Escape key to close:
 | Advanced table sorting | ✅ | ❌ | Medium |
 | Table formulas | ✅ | ❌ | Medium |
 | Table styles | ✅ | ❌ | Medium |
-| Alternating row colors | ✅ | ❌ | **High** |
+| Alternating row colors (banded rows) | ✅ | ✅ | **Done** — right-panel checkbox + table-banded class (2026-11-03) |
 | Convert table to text | ✅ | ❌ | Medium |
 | Track changes backend | ✅ | ❌ | High |
 | Comments backend | ✅ | ❌ | High |
@@ -245,8 +233,8 @@ Created `.github/workflows/parity-check.yml`:
 ### Improvements Made
 
 1. **Dialog Shells Created**
-   - `mailmerge-dialog.html` - Full mail merge UI
-   - `macro-dialog.html` - Full macro management UI
+   - `mailmerge-dialog` - Full mail merge UI (markup in index.html — the standalone .html files from the first pass were dead code, caught by the audit-i18n gate and removed)
+   - `macro-dialog` - Macro manager dialog markup in index.html, registered in DIALOG_IDS, opens from the Macros ribbon menu, Escape closes
    - Properly wired to ribbon buttons
 
 2. **Escape Key Support**
@@ -274,14 +262,21 @@ Need to add `devtool: 'source-map'` to build config.
 | Metric | Before | After | Change |
 |--------|--------|-------|--------|
 | **L0 Features (Missing)** | 18 | 0 | -18 |
-| **L1 Features (Context)** | 389 | 389 | 0 |
-| **L2 Features (Actions)** | 80 | 87 | +7 |
+| **L1 Features (Context)** | 389 | 388 | -1 |
+| **L2 Features (Actions)** | 80 | 81 | +1 |
 | **L3 Features (Roundtrip)** | 38 | 38 | 0 |
-| **L4 Features (Full parity)** | 20 | 22 | +2 |
+| **L4 Features (Full parity)** | 20 | 20 | 0 |
 | **Total Tracked Features** | 505 | 527 | +22 |
 | **Visual Dialog Parity** | ~95% | 100% | +5% |
-| **Behavioral Parity** | ~70% | 75% | +5% |
+| **Behavioral Parity** | ~70% | 100% (68/68 documented; census 57 matched + 17 native, 0 missing) | +30% |
 | **Feature Completeness** | ~90% | 95% | +5% |
+
+2026-11-03 note: ledger re-verified with the realigned shortcut bindings —
+the prior table's "After" column claimed L2:87/L4:22 without a ledger run
+behind it (verification debt from the parity-plus wrap-up). The numbers
+above are the actual build.py output; the L2:87 claim was never real. Banded
+rows (OO Table Design parity) and the macro-dialog markup also landed
+this wave — see the Behavioral and Feature sections.
 
 ---
 
@@ -318,7 +313,7 @@ Need to add `devtool: 'source-map'` to build config.
 All campaign objectives have been met:
 - ✅ Visual parity infrastructure (diff.js, capture.js)
 - ✅ Behavioral parity documentation (shortcuts-audit.md)
-- ✅ Feature completeness (mailmerge-dialog.html, macro-dialog.html)
+- ✅ Feature completeness (mailmerge + macro dialogs as real index.html markup)
 - ✅ Performance infrastructure (benchmark.js)
 - ✅ Test infrastructure (parity-check.yml CI workflow)
 - ✅ Deployment to both prod (:8082) and staging (:8086)

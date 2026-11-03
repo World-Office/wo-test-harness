@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generated": "2026-11-01T11:34:34.651Z",
+  "generated": "2026-11-03T17:52:30.709Z",
   "source": "sdkjs/word/Editor/Shortcuts.js (147 types) vs WO editor keydown handler",
   "engine": "static-parse",
   "totals": {
-    "matched": 54,
-    "diverged": 5,
+    "matched": 57,
+    "diverged": 3,
     "browser-native": 17,
-    "nav": 71,
+    "nav": 70,
     "missing": 0,
     "total": 147
   },
@@ -423,8 +423,8 @@
     {
       "type": "ApplyListBullet",
       "combo": "Ctrl+Shift+L",
-      "verdict": "diverged",
-      "wo": "Ctrl+Shift+8 (OO uses Ctrl+Shift+L)"
+      "verdict": "matched",
+      "wo": "Ctrl+Shift+L (realigned 2026-11-03 to OO combo)"
     },
     {
       "type": "ResetChar",
@@ -466,7 +466,7 @@
       "type": "LeftPara",
       "combo": "Ctrl+L",
       "verdict": "matched",
-      "wo": "Ctrl+Shift+L"
+      "wo": "Ctrl+L"
     },
     {
       "type": "InsertPageBreak",
@@ -489,14 +489,14 @@
     {
       "type": "InsertPageNumber",
       "combo": "Ctrl+Shift+P",
-      "verdict": "nav",
-      "wo": "browser caret/scroll (n/a for web editor)"
+      "verdict": "matched",
+      "wo": "Ctrl+Shift+P (realigned 2026-11-03 to OO combo; inserts PAGE-field span)"
     },
     {
       "type": "ShowAll",
       "combo": "Ctrl+Shift+8",
-      "verdict": "diverged",
-      "wo": "¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)"
+      "verdict": "matched",
+      "wo": "Ctrl+Shift+8 (realigned 2026-11-03 to OO combo; marks overlay toggle)"
     },
     {
       "type": "StartIndent",

@@ -70,7 +70,7 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **shortcut.resetchar** [shortcut] → WO: Ctrl+Space (remove formatting)
 - 🔲 L1 **shortcut.increasefontsize** [shortcut] → WO: Ctrl+]
 - 🔲 L1 **shortcut.decreasefontsize** [shortcut] → WO: Ctrl+[
-- 🔲 L1 **shortcut.showall** [shortcut] → WO: ¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)
+- 🔲 L1 **shortcut.leftpara** [shortcut] → WO: Ctrl+L
 - 🔲 L1 **dialog.dropcap-dialog.l4** [dialog] (3 OO fields) → WO: dropcap-l4 (dropcap-dialog-l4.test.mjs)
 - ✅ L2 **formatting.multilevel-list** [control] → WO: multilevel
 - ✅ L2 **formatting.text-direction** [control] → WO: directionRtl
@@ -78,13 +78,13 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **shortcut.italic** [shortcut] → WO: Ctrl+I
 - ✅ L2 **shortcut.underline** [shortcut] → WO: Ctrl+U
 - ✅ L2 **shortcut.smallcaps** [shortcut] → WO: Ctrl+Shift+K
-- ✅ L2 **shortcut.applylistbullet** [shortcut] → WO: Ctrl+Shift+8 (OO uses Ctrl+Shift+L)
+- ✅ L2 **shortcut.applylistbullet** [shortcut] → WO: Ctrl+Shift+L (realigned 2026-11-03 to OO combo)
 - ✅ L2 **shortcut.centerpara** [shortcut] → WO: Ctrl+E
 - ✅ L2 **shortcut.justifypara** [shortcut] → WO: Ctrl+J
 - ✅ L2 **shortcut.rightpara** [shortcut] → WO: Ctrl+R
-- ✅ L2 **shortcut.leftpara** [shortcut] → WO: Ctrl+Shift+L
 - ✅ L2 **shortcut.indent** [shortcut] → WO: Ctrl+M
 - ✅ L2 **shortcut.unindent** [shortcut] → WO: Ctrl+Shift+M
+- ✅ L2 **shortcut.showall** [shortcut] → WO: Ctrl+Shift+8 (realigned 2026-11-03 to OO combo; marks overlay toggle)
 - ✅ L2 **shortcut.strikeout** [shortcut] → WO: Shift+Cmd+X / Ctrl+Shift+X (strikeThrough toggle)
 - ✅ L3 **formatting.change-case** [control] → WO: Change case
 - ✅ L3 **formatting.bold-ctrl-b** [control] → WO: bold
@@ -111,7 +111,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L4 **dialog.font-dialog.l4** [dialog] (11 OO fields) → WO: font group (font-dialog-l4.test.mjs)
 - ✅ L4 **dialog.paragraph-settings-dialog.l4** [dialog] (11 OO fields) → WO: paragraph-settings-dialog (paragraph-dialog-l4.test.mjs)
 
-## insert — 59 features (L0:0 L1:34 L3:7)
+## insert — 59 features (L0:0 L1:33 L3:7)
 - 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
 - 🔲 L1 **insert.breaks** [control] → WO: Breaks
 - 🔲 L1 **insert.shape** [control] → WO: insertObject
@@ -138,7 +138,6 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **insert.operators** [menu-item] → WO: Operators
 - 🔲 L1 **insert.matrices** [menu-item] → WO: Matrices
 - 🔲 L1 **shortcut.inserthyperlink** [shortcut] → WO: Ctrl+K
-- 🔲 L1 **shortcut.insertpagenumber** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.inserttab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.inserttablebreak** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.insertlinebreakmultilineform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
@@ -154,6 +153,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **shortcut.nonbreakingspace** [shortcut] → WO: Ctrl+Shift+Space
 - ✅ L2 **shortcut.nonbreakinghyphen** [shortcut] → WO: Ctrl+Shift+Minus
 - ✅ L2 **shortcut.insertpagebreak** [shortcut] → WO: Ctrl+Enter
+- ✅ L2 **shortcut.insertpagenumber** [shortcut] → WO: Ctrl+Shift+P (realigned 2026-11-03 to OO combo; inserts PAGE-field span)
 - ✅ L2 **shortcut.insertendnotenow** [shortcut] → WO: Ctrl+Alt+D
 - ✅ L2 **shortcut.copyrightsign** [shortcut] → WO: Ctrl+Alt+G
 - ✅ L2 **shortcut.eurosign** [shortcut] → WO: Ctrl+Alt+E

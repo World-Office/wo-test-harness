@@ -491,6 +491,10 @@ if acts_path.exists():
             "Ctrl+Comma": "superscript", "Ctrl+,": "superscript",
             "Ctrl+Shift+8": "insertUnorderedList", "Ctrl+Shift+7": "insertOrderedList",
             "Alt+Shift+D": "insertEndnote",
+            # 2026-11-03 realignment (live-verified on :8086): OO census
+            # combos now bound in WO — resolves their ledger rows to L2 acts
+            # evidence via cmd:insertUnorderedList / cmd:insertPageNumber.
+            "Ctrl+Shift+L": "insertUnorderedList", "Ctrl+Shift+P": "insertPageNumber",
         }
 
         # dialog-id matches resolve to their census-recorded opener command

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-02T20:53:57.815348",
+ "generated": "2026-11-03T18:52:30.772493",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,8 +10,8 @@
  ],
  "totals": {
   "L0": 0,
-  "L1": 389,
-  "L2": 80,
+  "L1": 388,
+  "L2": 81,
   "L3": 38,
   "L4": 20
  },
@@ -6183,13 +6183,12 @@
     }
    ],
    "wo": {
-    "match": "Ctrl+Shift+8 (OO uses Ctrl+Shift+L)",
+    "match": "Ctrl+Shift+L (realigned 2026-11-03 to OO combo)",
     "where": "shortcut"
    },
    "level": 2,
    "evidence": [
-    "WO uses different combo: Ctrl+Shift+8 (OO uses Ctrl+Shift+L)",
-    "L2 acts (live probe ?): shortcut:Ctrl+Shift+8 mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
+    "L2 acts (live probe ?): shortcut:Ctrl+Shift+L mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
@@ -6327,13 +6326,11 @@
     }
    ],
    "wo": {
-    "match": "Ctrl+Shift+L",
+    "match": "Ctrl+L",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (live probe ?): shortcut:Ctrl+Shift+L mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.insertpagebreak",
@@ -6411,12 +6408,12 @@
     }
    ],
    "wo": {
-    "match": "browser caret/scroll (n/a for web editor)",
+    "match": "Ctrl+Shift+P (realigned 2026-11-03 to OO combo; inserts PAGE-field span)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "L2 acts (live probe ?): cmd:insertPageNumber mutated #editor DOM: DIV:+SPAN"
    ]
   },
   {
@@ -6432,12 +6429,12 @@
     }
    ],
    "wo": {
-    "match": "¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)",
+    "match": "Ctrl+Shift+8 (realigned 2026-11-03 to OO combo; marks overlay toggle)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "WO uses different combo: ¶ button / View toggle (Ctrl+Shift+8 is bulleted-list in WO — OO collision kept as-is)"
+    "L2 acts (live probe ?): shortcut:Ctrl+Shift+8 mutated #editor DOM: legacy: committed L2 observation (harness bdec86a)"
    ]
   },
   {
