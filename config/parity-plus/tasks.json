@@ -1,104 +1,90 @@
 {
   "campaign": "parity-plus",
-  "goal": "Make WO harness par with OO, then better",
-  "acceptance": "OO parity with measurable improvements",
+  "goal": "Make WO harness par with OO, then better. Build on existing bootstrap files.",
+  "acceptance": "All infrastructure files enhanced, visual/behavioral gaps documented, performance benchmarks > OO",
   "max_parallel": 10,
-  "policy": {
-    "no_change_is_not_success": false
-  },
+  "policy": {"no_change_is_not_success": false},
   "tasks": [
     {
       "id": "VIS-001",
-      "title": "Create census/visual/diff.js",
-      "description": "Create census/visual/diff.js - a Node.js script using pixelmatch npm package for screenshot comparison. Export async function compareScreenshots(img1Path, img2Path, threshold=0.01) that returns {match: boolean, diffPixels: number}.",
+      "title": "Enhance diff.js with per-dialog thresholds",
+      "description": "Update census/visual/diff.js: add configurable threshold per dialog type (0.01 for small, 0.05 for large). Add function compareDialogScreenshots(name, ooPath, woPath). Commit.",
       "repo": "/home/weiss/git/World-Office/wo-test-harness",
-      "accept": "test -f census/visual/diff.js && echo OK || echo FAIL",
+      "accept": "grep -q compareDialogScreenshots census/visual/diff.js",
       "timeout": "10m"
     },
     {
       "id": "VIS-002",
-      "title": "Create census/visual/capture.js",
-      "description": "Create census/visual/capture.js - a Node.js script using @playwright/test for screenshot capture. Export async function capturePage(url, outputPath).",
+      "title": "Enhance capture.js with dialog open helpers",
+      "description": "Update census/visual/capture.js: add openDialog(name) that clicks ribbon button to open dialog before capture. Add waitForDialog(name) using MutationObserver. Commit.",
       "repo": "/home/weiss/git/World-Office/wo-test-harness",
-      "accept": "test -f census/visual/capture.js && echo OK || echo FAIL",
+      "accept": "grep -q openDialog census/visual/capture.js",
       "timeout": "10m"
     },
     {
       "id": "BHV-001",
-      "title": "Create shortcuts-audit.md",
-      "description": "Create census/behavioral/shortcuts-audit.md. Document all OO keyboard shortcuts grouped by category (File, Edit, View, Insert, Format, Table).",
+      "title": "Complete shortcuts-audit.md with WO status column",
+      "description": "Update census/behavioral/shortcuts-audit.md: add WO Status column to each shortcut entry. Values: Implemented, Missing, Partial, Different. Commit.",
       "repo": "/home/weiss/git/World-Office/wo-test-harness",
-      "accept": "test -f census/behavioral/shortcuts-audit.md && echo OK || echo FAIL",
+      "accept": "grep -q 'WO Status' census/behavioral/shortcuts-audit.md",
       "timeout": "10m"
     },
     {
       "id": "BHV-002",
-      "title": "Add Escape key to close dialogs",
-      "description": "In editor.js, add Escape key handler to ALL dialogs. Add: dialogEl.addEventListener('keydown', e => { if (e.key === 'Escape') dialogEl.classList.remove('open'); });",
+      "title": "Add Escape key handlers to all remaining dialogs",
+      "description": "In editor.js, search for all dialogs opened with .classList.add('open'). For each without Escape handler, add: dialogEl.addEventListener('keydown', e => { if (e.key==='Escape') dialogEl.classList.remove('open'); });. Commit.",
       "repo": "/home/weiss/git/World-Office/server",
-      "accept": "grep -q 'Escape' server/apps/web/apps/documenteditor-wysiwyg/editor.js && echo OK || echo FAIL",
+      "accept": "grep -c 'Escape' apps/web/apps/documenteditor-wysiwyg/editor.js",
       "timeout": "15m"
     },
     {
       "id": "FTR-001",
-      "title": "Document missing dialogs",
-      "description": "Create census/ledger/missing-dialogs.md. Compare DIALOG_IDS against OO and list missing ones.",
-      "repo": "/home/weiss/git/World-Office/wo-test-harness",
-      "accept": "test -f census/ledger/missing-dialogs.md && echo OK || echo FAIL",
-      "timeout": "10m"
-    },
-    {
-      "id": "FTR-002",
-      "title": "Document table features gap",
-      "description": "Create census/table-features-audit.md. List OO table features and mark which are implemented in WO.",
-      "repo": "/home/weiss/git/World-Office/wo-test-harness",
-      "accept": "test -f census/table-features-audit.md && echo OK || echo FAIL",
-      "timeout": "10m"
-    },
-    {
-      "id": "PERF-001",
-      "title": "Create benchmark.js",
-      "description": "Create census/performance/benchmark.js. Add functions to measure editor load time and rendering performance using performance.now().",
-      "repo": "/home/weiss/git/World-Office/wo-test-harness",
-      "accept": "test -f census/performance/benchmark.js && echo OK || echo FAIL",
-      "timeout": "10m"
-    },
-    {
-      "id": "TEST-001",
-      "title": "Create parity-check.yml CI workflow",
-      "description": "Create .github/workflows/parity-check.yml. Run on push: build, test, ledger build. Use workflow_dispatch.",
+      "title": "Create 2 missing dialog shells",
+      "description": "From census/ledger/missing-dialogs.md, pick mail-merge and macro. Create dialog HTML + CSS files in server/apps/web/apps/documenteditor-wysiwyg/. Add to DIALOG_IDS in editor.js. Commit.",
       "repo": "/home/weiss/git/World-Office/server",
-      "accept": "test -f .github/workflows/parity-check.yml && echo OK || echo FAIL",
-      "timeout": "10m"
-    },
-    {
-      "id": "DEPLOY-001",
-      "title": "Deploy to cloud.graphwiz.ai",
-      "description": "Build worldoffice/documentserver:parity-plus Docker image. Deploy to prod :8082 and staging :8086. Copy editor.js, style.css, index.html to editor-ui mounts.",
-      "repo": "/home/weiss/git/World-Office/server",
-      "depends_on": [
-        "VIS-001",
-        "VIS-002",
-        "BHV-001",
-        "BHV-002",
-        "FTR-001",
-        "FTR-002",
-        "PERF-001",
-        "TEST-001"
-      ],
-      "accept": "curl -s -o /dev/null -w '%{http_code}' http://192.168.42.42:8082/word/editor.js | grep -q 200 && echo OK || echo FAIL",
+      "accept": "test -f apps/web/apps/documenteditor-wysiwyg/mail-merge-dialog.html",
       "timeout": "20m"
     },
     {
-      "id": "FINAL-001",
-      "title": "Create PARITY-REPORT.md",
-      "description": "Create census/PARITY-REPORT.md. Document all improvements: visual parity, behavioral parity, feature completeness, performance benchmarks.",
+      "id": "FTR-002",
+      "title": "Implement table alternating row colors",
+      "description": "Add alternating row color feature for tables. In style.css, add .table tr:nth-child(even) { background: #f5f5f5; }. Add toggle button in ribbon. Commit.",
+      "repo": "/home/weiss/git/World-Office/server",
+      "accept": "grep -q ':nth-child(even)' apps/web/apps/documenteditor-wysiwyg/style.css",
+      "timeout": "20m"
+    },
+    {
+      "id": "PERF-001",
+      "title": "Run and document benchmark results",
+      "description": "Use census/performance/benchmark.js to measure current performance. Run runBenchmark() in browser console on staging (:8086). Save results to census/performance/baseline-wo.json. Commit.",
       "repo": "/home/weiss/git/World-Office/wo-test-harness",
-      "depends_on": [
-        "DEPLOY-001"
-      ],
-      "accept": "test -f census/PARITY-REPORT.md && echo OK || echo FAIL",
-      "timeout": "10m"
+      "accept": "test -f census/performance/baseline-wo.json",
+      "timeout": "15m"
+    },
+    {
+      "id": "PERF-002",
+      "title": "Optimize editor.js - use requestAnimationFrame",
+      "description": "In editor.js, find DOM updates that aren't time-critical (selection highlighting, scroll position updates). Wrap in requestAnimationFrame(() => {...}). Target: reduce input latency. Commit.",
+      "repo": "/home/weiss/git/World-Office/server",
+      "accept": "git diff HEAD~1 | grep -q requestAnimationFrame",
+      "timeout": "20m"
+    },
+    {
+      "id": "TEST-001",
+      "title": "Run parity-check.yml CI workflow manually",
+      "description": "Trigger .github/workflows/parity-check.yml via workflow_dispatch. Wait for completion. Document results in census/PARITY-RUN-LOG.md. Commit.",
+      "repo": "/home/weiss/git/World-Office/server",
+      "accept": "test -f census/PARITY-RUN-LOG.md",
+      "timeout": "25m"
+    },
+    {
+      "id": "DEPLOY-001",
+      "title": "Deploy parity-plus improvements",
+      "description": "Build Docker image worldoffice/documentserver:parity-plus. Deploy to prod :8082 and staging :8086. Copy editor.js, style.css, index.html to editor-ui mounts. Verify with curl.",
+      "repo": "/home/weiss/git/World-Office/server",
+      "depends_on": ["VIS-001", "VIS-002", "BHV-001", "BHV-002", "FTR-001", "FTR-002", "PERF-001", "PERF-002", "TEST-001"],
+      "accept": "curl -s -o /dev/null -w '%{http_code}' http://192.168.42.42:8082/word/editor.js",
+      "timeout": "20m"
     }
   ]
 }

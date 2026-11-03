@@ -1,65 +1,15 @@
 {
   "max_parallel": 10,
   "workers": [
-    {
-      "name": "pp-1",
-      "provider": "litellm",
-      "model": "zai/glm-5.2",
-      "enabled": true
-    },
-    {
-      "name": "pp-2",
-      "provider": "litellm",
-      "model": "zai/glm-5.2",
-      "enabled": true
-    },
-    {
-      "name": "pp-3",
-      "provider": "litellm",
-      "model": "zai/glm-5.2",
-      "enabled": true
-    },
-    {
-      "name": "pp-4",
-      "provider": "litellm",
-      "model": "zai/glm-5.2",
-      "enabled": true
-    },
-    {
-      "name": "pp-5",
-      "provider": "litellm",
-      "model": "zai/glm-5.2",
-      "enabled": true
-    },
-    {
-      "name": "pp-6",
-      "provider": "litellm",
-      "model": "zai/glm-5.2",
-      "enabled": true
-    },
-    {
-      "name": "pp-7",
-      "provider": "litellm",
-      "model": "zai/glm-5.2",
-      "enabled": true
-    },
-    {
-      "name": "pp-8",
-      "provider": "litellm",
-      "model": "zai/glm-5.2",
-      "enabled": true
-    },
-    {
-      "name": "pp-9",
-      "provider": "litellm",
-      "model": "zai/glm-5.2",
-      "enabled": true
-    },
-    {
-      "name": "pp-10",
-      "provider": "litellm",
-      "model": "zai/glm-5.2",
-      "enabled": true
-    }
+    {"name": "pp-1", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "pp-2", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "pp-3", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "pp-4", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "pp-5", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "pp-6", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "pp-7", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "pp-8", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "pp-9", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "pp-10", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true}
   ]
 }

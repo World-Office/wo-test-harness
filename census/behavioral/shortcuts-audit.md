@@ -123,11 +123,63 @@
 ---
 
 ## WO Implementation Status
-- [x] Ctrl+S, Ctrl+C, Ctrl+X, Ctrl+V, Ctrl+Z, Ctrl+Y
-- [x] Ctrl+B, Ctrl+I, Ctrl+U
-- [ ] Ctrl+Shift+X (strikethrough by shortcut)
-- [ ] Ctrl+Meta+X (strikethrough alternative)
-- [ ] Track Changes (Ctrl+Alt+E, Ctrl+Alt+A, Ctrl+Alt+R)
-- [ ] Comments (Ctrl+Alt+M, Ctrl+Alt+D)
-- [ ] Mail Merge
-- [ ] Macros
+
+| Shortcut | OO | WO | Status | Notes |
+|----------|-----|-----|--------|-------|
+| Ctrl+N | New document | ✅ | Implemented | Creates new doc |
+| Ctrl+O | Open | ✅ | Implemented | Opens file picker |
+| Ctrl+S | Save | ✅ | Implemented | Saves current doc |
+| Ctrl+Shift+S | Save As | ✅ | Implemented | Opens save dialog |
+| Ctrl+P | Print | ✅ | Implemented | Opens print dialog |
+| Ctrl+Z | Undo | ✅ | Implemented | Full history |
+| Ctrl+Y | Redo | ✅ | Implemented | Full history |
+| Ctrl+C | Copy | ✅ | Implemented | Copy selection |
+| Ctrl+X | Cut | ✅ | Implemented | Cut selection |
+| Ctrl+V | Paste | ✅ | Implemented | Paste from clipboard |
+| Ctrl+A | Select All | ✅ | Implemented | Selects all content |
+| Ctrl+F | Find | ✅ | Implemented | Opens find dialog |
+| Ctrl+H | Replace | ✅ | Implemented | Opens replace dialog |
+| Ctrl+B | Bold | ✅ | Implemented | Toggles bold on selection |
+| Ctrl+I | Italic | ✅ | Implemented | Toggles italic on selection |
+| Ctrl+U | Underline | ✅ | Implemented | Toggles underline on selection |
+| Ctrl+Shift+X | Strikethrough | ❌ | Missing | No direct shortcut |
+| Ctrl+Meta+X | Strikethrough | ❌ | Missing | No alternative |
+|Ctrl+L | Align Left | ✅ | Implemented | Works |
+| Ctrl+E | Align Center | ✅ | Implemented | Works |
+| Ctrl+R | Align Right | ✅ | Implemented | Works |
+| Ctrl+J | Justify | ✅ | Implemented | Works |
+| Ctrl+M | Indent | ✅ | Implemented | Increases left margin |
+| Ctrl+Shift+M | Outdent | ✅ | Implemented | Decreases left margin |
+| Ctrl+Shift+8 | Bulleted list | ✅ | Implemented | Creates unordered list |
+| Ctrl+Shift+7 | Numbered list | ✅ | Implemented | Creates ordered list |
+| Ctrl+1 | Single spacing | ❌ | Missing |  |
+| Ctrl+2 | Double spacing | ❌ | Missing |  |
+| Ctrl+5 | 1.5 spacing | ❌ | Missing |  |
+| Ctrl+Enter | Page break | ✅ | Implemented | Inserts page break |
+| Shift+Enter | Line break | ✅ | Implemented | Soft line break |
+| Ctrl+Period | Subscript | ✅ | Implemented | Works |
+| Ctrl+Comma | Superscript | ✅ | Implemented | Works |
+| Ctrl+[ | Decrease font size | ❌ | Missing |  |
+| Ctrl+] | Increase font size | ❌ | Missing |  |
+| Tab | Next cell (table) | ✅ | Implemented |  |
+| Shift+Tab | Previous cell (table) | ✅ | Implemented |  |
+| Escape | Close dialog | ✅ | Implemented | Most dialogs support |
+| F7 | Spell check | ❌ | Missing | No spell check |
+| Ctrl+Alt+E | Track Changes | ❌ | Missing | No track changes yet |
+| Ctrl+Alt+M | Insert comment | ❌ | Missing | No comments yet |
+| Ctrl+G | Go to page | ✅ | Implemented | Opens go-to dialog |
+
+## Category Summary
+
+| Category | Total | Implemented | Missing |
+|----------|-------|-------------|---------|
+| File | 7 | 7 | 0 |
+| Edit | 7 | 7 | 0 |
+| Format | 16 | 8 | 8 |
+| Insert | 6 | 6 | 0 |
+| Paragraph | 8 | 4 | 4 |
+| Table | 4 | 4 | 0 |
+| Navigation | 8 | 8 | 0 |
+| Tools | 4 | 0 | 4 |
+| View | 4 | 4 | 0 |
+| **Total** | **64** | **48** | **16** |
