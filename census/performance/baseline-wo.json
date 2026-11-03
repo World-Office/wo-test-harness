@@ -1,0 +1,104 @@
+{
+  "_meta": {
+    "generator": "census/performance/benchmark.js",
+    "iterations": 7,
+    "big_doc_iterations": 5
+  },
+  "cold_load": {
+    "unit": "ms",
+    "samples": [
+      142,
+      176,
+      207,
+      169,
+      202,
+      210,
+      157
+    ],
+    "median_ms": 176,
+    "n": 7,
+    "env": {
+      "url": "http://192.168.42.42:8086/word/",
+      "date": "2026-11-03T23:47:49.449Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.7827.55 Safari/537.36"
+    }
+  },
+  "typing_latency": {
+    "unit": "ms",
+    "samples": [
+      158,
+      142,
+      124,
+      123,
+      107,
+      136,
+      117
+    ],
+    "median_ms": 124,
+    "n": 7,
+    "note": "total wall-clock to type 100 sequential keyboard.type events into one paragraph; per-char ~= median_ms/100",
+    "env": {
+      "url": "http://192.168.42.42:8086/word/",
+      "date": "2026-11-03T23:47:52.903Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.7827.55 Safari/537.36"
+    }
+  },
+  "select_all_bold_large_doc": {
+    "unit": "ms",
+    "samples": [
+      46,
+      26,
+      33,
+      26,
+      26
+    ],
+    "median_ms": 26,
+    "n": 5,
+    "note": "Ctrl+A + Ctrl+B until bold markup observable in a 50-paragraph document (typed in untimed)",
+    "env": {
+      "url": "http://192.168.42.42:8086/word/",
+      "date": "2026-11-03T23:48:18.006Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.7827.55 Safari/537.36"
+    }
+  },
+  "table_insert": {
+    "unit": "ms",
+    "samples": [
+      68,
+      54,
+      49,
+      58,
+      71,
+      54,
+      54
+    ],
+    "median_ms": 54,
+    "n": 7,
+    "note": "#btn-table click → rows/cols dialog → #btn-table-ok → <table> present in #editor",
+    "env": {
+      "url": "http://192.168.42.42:8086/word/",
+      "date": "2026-11-03T23:48:22.306Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.7827.55 Safari/537.36"
+    }
+  },
+  "banded_toggle": {
+    "unit": "ms",
+    "samples": [
+      37,
+      16,
+      15,
+      15,
+      18,
+      16,
+      14
+    ],
+    "median_ms": 16,
+    "n": 7,
+    "note": "rp-table-banded label click → table gains .table-banded (dispatched label click: same label→checkbox→handler path as a user click; right-panel visibility internals block synthetic pointer events)",
+    "env": {
+      "url": "http://192.168.42.42:8086/word/",
+      "date": "2026-11-03T23:48:35.154Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.7827.55 Safari/537.36"
+    }
+  }
+}

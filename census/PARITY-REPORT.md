@@ -278,6 +278,28 @@ above are the actual build.py output; the L2:87 claim was never real. Banded
 rows (OO Table Design parity) and the macro-dialog markup also landed
 this wave — see the Behavioral and Feature sections.
 
+### Performance Baseline
+
+First measured performance baseline (INFRA-BENCH-BASELINE, 2026-11-04):
+`census/performance/benchmark.js` run against the staging editor
+(`http://192.168.42.42:8086/word/`, staging docserver). Medians over
+7 iterations per scenario (5 for the large-doc scenario), wall-clock ms
+including the Playwright round-trip; raw samples in
+`census/performance/baseline-wo.json`.
+
+| Scenario | Median (ms) | Notes |
+|----------|------------:|-------|
+| Cold editor load (goto → editor ready) | 176 | domcontentloaded + toolbar + seeded document model |
+| Typing latency (100 keystrokes) | 124 | ~1.2 ms per keystroke end-to-end |
+| Select-all + bold on 50-paragraph doc | 26 | Ctrl+A + Ctrl+B until bold markup observable |
+| Table insertion (dialog flow) | 54 | Insert-table dialog → `<table>` in editor |
+| Banded-rows toggle | 16 | click → `.table-banded` applied to the table |
+
+One-line interpretation: interactive editing operations are all fast
+(tens of ms) and page load dominates the editor experience — these are the
+**first baseline numbers**; PERF-002 follow-up optimization work is judged
+against them.
+
 ---
 
 ## 🎯 Next Steps
