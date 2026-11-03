@@ -1,0 +1,30 @@
+{
+  "defaults": {
+    "max_attempts": 3,
+    "accept_timeout_s": 900,
+    "agent_timeout_s": 3600,
+    "retry_delay_s": 0
+  },
+  "workers": [
+    {
+      "name": "w4-a",
+      "provider": "litellm",
+      "model": "litellm/glm-4.7",
+      "api_key_env": "LITELLM_API_KEY",
+      "enabled": true,
+      "cli": "/home/weiss/git/agentflow/scripts/af-opencode.sh",
+      "output": "text",
+      "params_b": 4.7
+    },
+    {
+      "name": "w4-b",
+      "provider": "litellm",
+      "model": "litellm/glm-4.7",
+      "api_key_env": "LITELLM_API_KEY",
+      "enabled": true,
+      "cli": "/home/weiss/git/agentflow/scripts/af-opencode.sh",
+      "output": "text",
+      "params_b": 4.7
+    }
+  ]
+}

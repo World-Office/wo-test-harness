@@ -1,0 +1,81 @@
+{
+  "defaults": { "max_attempts": 3, "accept_timeout_s": 900, "agent_timeout_s": 3600 },
+  "tasks": [
+    {
+      "id": "BUG-PAGENUM-DUALFIRE",
+      "repo": "server",
+      "title": "Fix #btn-pagenumber dual-fire: click plants a stray page-number span AND opens the dialog",
+      "deps": [],
+      "priority": 10,
+      "scope": [
+        "apps/web/apps/documenteditor-wysiwyg/index.html",
+        "apps/web/apps/documenteditor-wysiwyg/pagenumber.test.mjs"
+      ],
+      "touch": [
+        "apps/web/apps/documenteditor-wysiwyg/index.html",
+        "apps/web/apps/documenteditor-wysiwyg/pagenumber.test.mjs"
+      ],
+      "accept": "cd apps/web/apps/documenteditor-wysiwyg && node --check editor.js && node pagenumber.test.mjs 2>&1 | grep -q 'PASS' && ! grep -q 'id=\"btn-pagenumber\" data-cmd=\"insertPageNumber\"' index.html && grep -q 'dual-fire' pagenumber.test.mjs",
+      "acceptance_prose": "MEASURED DEFECT (recorded in the parity ledger as 'dialog.pagenumber-dialog.l4 declared quirk'): the toolbar button in apps/web/apps/documenteditor-wysiwyg/index.html line 449 is '<button id=\"btn-pagenumber\" data-cmd=\"insertPageNumber\" title=\"Insert page number field\" data-i18n-title=\"Toolbar.PageNumberTitle\" aria-label=\"Insert page number\">#</button>'. It ALSO has a click listener in editor.js (~line 8840, the ['btn-pagenumber', 'pagenumber-dialog'] overlay-wiring table) that opens pagenumber-dialog. So ONE click does BOTH: the generic data-cmd delegation runs the insertPageNumber command (plants a bare inline span.page-number at the caret) AND the dialog opens — the stray span is the bug. FIX: remove ONLY the data-cmd=\"insertPageNumber\" attribute from that button in index.html (keep id, title, data-i18n-title, aria-label exactly as they are — tests pin them). Do NOT touch editor.js. The dialog's Insert button (#btn-pagenumber-ok) and the Ctrl+Shift+P shortcut remain the real insertion paths. VERIFIED FACTS: (1) pagenumber.test.mjs currently pins only 'id=\"btn-pagenumber\"' presence and the ['btn-pagenumber', 'pagenumber-dialog'] wiring — nothing pins data-cmd on the button, so removing it breaks no existing assert. (2) Static tests in this repo use plain src.includes(...) comparisons — NO regex. Then extend apps/web/apps/documenteditor-wysiwyg/pagenumber.test.mjs with an anti-regression pin: assert that the exact string '<button id=\"btn-pagenumber\" data-cmd=\"insertPageNumber\"' does NOT appear in index.html (comment it with 'dual-fire guard'), asserting instead that the button keeps its data-i18n-title. Test files are plain node scripts that end by printing 'PASS' (read the end of the existing file for the exact pattern and copy it). Commit with message 'fix: btn-pagenumber dual-fire — strip data-cmd, dialog is the only insertion path'.",
+      "manual": false
+    },
+    {
+      "id": "FTR-BANDED-COLS",
+      "repo": "server",
+      "title": "Banded columns (OO tableStylerColumns parity) — right-panel toggle like the existing banded rows",
+      "deps": ["BUG-PAGENUM-DUALFIRE"],
+      "priority": 5,
+      "scope": [
+        "apps/web/apps/documenteditor-wysiwyg/editor.js",
+        "apps/web/apps/documenteditor-wysiwyg/index.html",
+        "apps/web/apps/documenteditor-wysiwyg/i18n.js",
+        "apps/web/apps/documenteditor-wysiwyg/style.css",
+        "apps/web/apps/documenteditor-wysiwyg/banded-columns.test.mjs"
+      ],
+      "touch": ["apps/web/apps/documenteditor-wysiwyg/banded-columns.test.mjs"],
+      "accept": "cd apps/web/apps/documenteditor-wysiwyg && node --check editor.js && node banded-columns.test.mjs 2>&1 | grep -q 'PASS'",
+      "acceptance_prose": "VERIFIED OO FACT: OnlyOffice's TableSettingsAdvanced.js contains tableStylerRows AND tableStylerColumns — banded columns is a real OO feature. WO already has banded ROWS (landed 2026-11-03); replicate that exact pattern for COLUMNS. COPY THE EXISTING PRECEDENT (read these first, mirror them): (1) index.html right-panel table section has the checkbox '<input type=\"checkbox\" id=\"rp-table-banded\">' followed by a label using data-i18n=\"RightPanel.BandedRows\" — add a sibling checkbox id=\"rp-table-banded-cols\" with data-i18n=\"RightPanel.BandedColumns\" right after it. (2) editor.js has function applyTableBanded(on) right after applyTableBackground (~line 6898): it toggles class 'table-banded' on the closest table of the caret, calls markObjectMutation, collab sync, status update. Add applyTableBandedCols(on) immediately after it doing the same with class 'table-banded-cols'. (3) syncTablePanelControls (~line 6925) sets bandedIn.checked from classList.contains('table-banded') — add the cols sibling. (4) The table change-listeners block (~line 7207, where rp-table-banded gets its change listener with a READ_ONLY guard) — add the cols listener calling applyTableBandedCols. (5) style.css (~line 1448) has '#editor table.table-banded > tbody > tr:nth-child(even) > td' with background-color: #f2f2f2 — add '#editor table.table-banded-cols td:nth-child(even)' (plus ':not(:only-child)' not needed) with the same #f2f2f2. (6) i18n.js: EVERY key must exist in BOTH the en and de maps — add 'RightPanel.BandedColumns': 'Banded columns' (en) and 'Banded columns' translated as 'Spaltenstreifen' (de). CONVENTIONS: i18n placeholder style .replace(\"{n}\", String(n)) if ever needed; 'node --check editor.js' must pass; static tests use plain includes(), never regex. DELIVERABLE: new test file apps/web/apps/documenteditor-wysiwyg/banded-columns.test.mjs (plain node script printing 'PASS', copy the assert style from parity-plus2.test.mjs) pinning: checkbox id in index.html, BOTH i18n keys (en and de strings), applyTableBandedCols + classList toggle 'table-banded-cols' in editor.js, the CSS selector in style.css, the sync in syncTablePanelControls, and the change listener with READ_ONLY guard. Commit with message 'feat: banded columns (OO tableStylerColumns parity) — right-panel toggle + table-banded-cols class'.",
+      "manual": false
+    },
+    {
+      "id": "DOC-TABLE-AUDIT-TRUTH",
+      "repo": "main",
+      "title": "Rewrite census/table-features-audit.md honestly: retract fabricated Word-only rows with OO-bundle grep evidence",
+      "deps": [],
+      "priority": 5,
+      "scope": ["census/table-features-audit.md"],
+      "touch": ["census/table-features-audit.md"],
+      "accept": "grep -q 'Out-of-census' census/table-features-audit.md && grep -q 'tableStylerColumns' census/table-features-audit.md && ! grep -q '\\[ \\] \\*\\*Table sorting\\*\\*' census/table-features-audit.md",
+      "acceptance_prose": "The audit file census/table-features-audit.md lists as 'Missing in WO' several rows that are FABRICATED (from MS Word knowledge, not the OnlyOffice census). VERIFIED GROUND TRUTH from the OO bundle (docker exec nc-ooh-onlyonlyonlyoffice-1, files /var/www/onlyoffice/documentserver/web-apps/apps/documenteditor/main/app.js and .../app/view/TableSettingsAdvanced.js): (a) grep 'sortTable|SortRange|\"Sort\"' → ZERO matches → OO document editor has NO table sorting; (b) 'RepeatHeadingRows|repeat' → ZERO → no header-row-repeat; (c) 'autofit|AutoFit|TableLayout' in app.js → ZERO → no AutoFit toggle; OO's TableSettingsAdvanced.js DOES contain tableStylerRows and tableStylerColumns (banded rows/columns). ALSO VERIFIED — these audit rows are STALE, the features EXIST in WO's apps/web/apps/documenteditor-wysiwyg/editor.js: 'Convert table to text' (openTableToTextDialog, cmd convertTableToText ~line 1544), 'Convert text to table' (text-to-table-dialog ~line 2218), 'Table formulas' (formulaCellValue ~line 2455, table-formula.test.mjs exists), 'Alternating row colors' (applyTableBanded, class table-banded), 'Insert row/column at end' (covered by the existing add row below / add column right handlers — same as OO's context menu). TASK: rewrite the audit file so every row carries its evidence: (1) a 'Implemented in WO (verified)' section listing the above with the line anchors; (2) an 'Out-of-census (fabricated rows retracted)' section for Table sorting, Header row repeat, AutoFormat table, AutoFit column width, Distribute rows/columns — each with the one-line grep verdict quoted above and a note that they are Word/LibreOffice features absent from the OO bundle, so they are NOT parity gaps; (3) keep any remaining genuinely-open item only if you can point at OO-bundle evidence for it (if you cannot, move it to out-of-census). Mention banded columns as the one OO table-styler capability WO did not have at capture time (a separate task lands it). Do not touch any other file. Commit with message 'docs: table-features-audit truth fix — retract Word-only rows, cite OO bundle grep evidence'.",
+      "manual": false
+    },
+    {
+      "id": "INFRA-BENCH-BASELINE",
+      "repo": "main",
+      "title": "Run census/performance/benchmark.js against staging :8086, commit baseline-wo.json + Performance Baseline section in PARITY-REPORT.md",
+      "deps": ["DOC-TABLE-AUDIT-TRUTH"],
+      "priority": 0,
+      "scope": [
+        "census/performance/benchmark.js",
+        "census/performance/baseline-wo.json",
+        "census/PARITY-REPORT.md"
+      ],
+      "touch": ["census/performance/baseline-wo.json"],
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness 2>/dev/null; /usr/bin/python3 -c \"import json; d=json.load(open('census/performance/baseline-wo.json')); ks=list(d.keys()); assert len(ks)>=3, ks; print('BASELINE-OK', ks)\" && grep -q 'Performance Baseline' census/PARITY-REPORT.md",
+      "acceptance_prose": "census/performance/benchmark.js was written but NEVER RUN (written during the parity-plus wrap-up). Run it, fix whatever breaks (it is in scope to edit), and commit the measured baseline. VERIFIED FACTS for running it: the staging editor is at http://192.168.42.42:8086/word/ (staging docserver container ocstaging-docserver-1, healthy); use /usr/bin/node (a python3 shim breaks scripts — node is fine); Playwright scripts in this repo MUST be executed from the census/ directory (relative path resolution) with env NO_PROXY=127.0.0.1,localhost; page.goto must use waitUntil: 'domcontentloaded' plus fixed page.waitForTimeout (~2000-3000ms) — 'networkidle' TIMES OUT on this app; take measurements as medians over >=5 iterations per scenario. Benchmark at minimum these scenarios: (1) cold editor load (goto → contenteditable visible), (2) typing latency (time N sequential keyboard.type events into a paragraph), (3) select-all + bold on a large document (paste ~50 paragraphs first), (4) table insertion + applyTableBanded toggle. DELIVERABLES: (a) census/performance/baseline-wo.json — an object with scenario keys, each holding samples[], median_ms, and env {url, date, userAgent} — must parse as JSON with >=3 keys; (b) a '### Performance Baseline' section (under the existing '## 📊 Summary Metrics' heading or directly after it) in census/PARITY-REPORT.md rendering the medians as a markdown table with a one-line interpretation (these are the FIRST baseline numbers; PERF-002 follow-up work will be judged against them). Do not delete or rewrite other PARITY-REPORT sections; insert cleanly. Commit with message 'perf: first measured baseline (benchmark.js on staging :8086) + report section'.",
+      "manual": false
+    },
+    {
+      "id": "INFRA-PARITY-LOG",
+      "repo": "main",
+      "title": "Execute the parity-check workflow steps locally and write census/PARITY-RUN-LOG.md with per-step verdicts",
+      "deps": ["INFRA-BENCH-BASELINE"],
+      "priority": -5,
+      "scope": ["census/PARITY-RUN-LOG.md"],
+      "touch": ["census/PARITY-RUN-LOG.md"],
+      "accept": "grep -q 'VERDICT' census/PARITY-RUN-LOG.md && grep -qi 'git sha' census/PARITY-RUN-LOG.md && test $(grep -c '^## Step' census/PARITY-RUN-LOG.md) -ge 3",
+      "acceptance_prose": "The CI workflow at /home/weiss/git/World-Office/server/.github/workflows/parity-check.yml (READ-ONLY for you — it lives in the server repo, reachable at that absolute path; do NOT edit anything outside your scope) defines the parity-check steps. Read it, then EXECUTE each workflow step locally against the CURRENT main branches of both repos and record results in a new file census/PARITY-RUN-LOG.md. VERIFIED FACTS: (1) the editor test suite lives in /home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg/*.test.mjs — plain node scripts printing PASS, run each with /usr/bin/node EXCEPT shift-enter-behavior.test.mjs which is a JEST suite: run it from /home/weiss/git/World-Office/server with 'npx jest --config jest.config.cjs apps/web/apps/documenteditor-wysiwyg/shift-enter-behavior.test.mjs' (it passes 3/3; ignore npm-warning noise); (2) the feature ledger rebuilds with 'cd /home/weiss/git/World-Office/wo-test-harness/census/ledger && /usr/bin/python3 build.py' (use /usr/bin/python3 — a python3 shim breaks); (3) census shortcut stats come from 'cd /home/weiss/git/World-Office/wo-test-harness/census && node census-shortcuts.cjs' (hits the staging URL, needs NO_PROXY=127.0.0.1,localhost); (4) the current expected ledger shape is {L0:0, L1:388, L2:81, L3:38, L4:20} = 527 features — record what build.py actually prints; if it differs, record the delta as a finding, do not 'fix' it silently. PARITY-RUN-LOG.md structure: title + date + 'git sha' line for BOTH repos (git -C <abs path> rev-parse --short HEAD), then one '## Step N — <name>' section per workflow step with the exact command run, duration, tail of output, and PASS/FAIL; end with '## VERDICT' summarizing pass/fail counts. Anything you cannot run (e.g. a step needing GitHub Actions infra), record as SKIPPED with reason — never fake a PASS. Commit with message 'docs: first parity-check run log (local execution of workflow steps)'.",
+      "manual": false
+    }
+  ]
+}
