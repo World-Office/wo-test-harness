@@ -59,9 +59,9 @@ Three layers, each machine-checkable:
 
 | Artifact | Content |
 |----------|---------|
-| `ledger.json` (80 KB) | 242 features / 16 clusters, each with level, oo_surface, wo counterpart |
+| `ledger.json` (80 KB) | 527 features / 18 clusters, each with level, oo_surface, wo counterpart (2026-11-03: L0=0) |
 | `LEDGER-REPORT.md` | human completeness map per cluster ("statusbar — 13 features (L0:11 L1:2 L3:0)") |
-| `roundtrip.cjs` + `roundtrip-results.json` | persistence probe + its committed results (13/13) |
+| `roundtrip.cjs` + `roundtrip-results.json` | persistence probe + its committed results (31/31) |
 | `ROUNDTRIP-GAPS.md` | documented endpoint deviations history (workarounds section now retired) |
 
 ## Level 3 — roundtrip.cjs internals (the L3 engine)

@@ -64,15 +64,18 @@ Per OO surface:
 4. **Level assignment**:
    - no WO match → **L0**
    - control/dialog exists → **L1**
-   - behavior evidence (fx/interact artifacts) → **L2**
+   - behavior evidence (acts probes: `census-wo-acts.cjs` drives every
+     visible `button[data-cmd]` and records DOM mutations; keyboard combos
+     promote via the `COMBO_COMMAND` combo→command map) → **L2**
    - row in `roundtrip-results.json` with `survived` → **L3**
    - (L4 reserved for conformance-scored fidelity)
-5. **Emit**: `ledger.json` (242 rows / 16 clusters) + `LEDGER-REPORT.md`
+5. **Emit**: `ledger.json` (**527 rows / 18 clusters**, 2026-11-03 —
+   {L0:0, L1:388, L2:81, L3:38, L4:20}) + `LEDGER-REPORT.md`
    with per-cluster counts, e.g. `statusbar — 13 features (L0:11 L1:2 L3:0)`.
 
 ## Stage 4 — persistence proof (`ledger/roundtrip.cjs`)
 
-13 PROBE commands, each run through the REAL stack:
+**31 PROBE commands**, each run through the REAL stack:
 
 1. Fresh editor via Playwright; command applied with synthetic events.
 2. Read `flatHtml` (editor DOM serialization).
@@ -86,7 +89,7 @@ Passing probes write `roundtrip-results.json`, which `build.py` merges as L3.
 Failures are classified by phase (apply / convert / reload) — that
 classification drove the LEDGER2 root-cause work (entities, run styling,
 sup/sub, alignment, lists, hyperlinks → all fixed in the server converters
-2026-10-27, gates 10/10 + 13/13).
+2026-10-27; 31/31 verbatim since the 2026-11-01 extension).
 
 **Target selection discipline**: point `WO_CONVERT_URL` at a **freshly
 built** local docserver (`:18087`); never trust staging/prod containers of
@@ -95,16 +98,20 @@ unknown age (ADR-18).
 ## Stage 5 — campaign burn-down (the loop that closes gaps)
 
 ```
-deep-gap.py report  ──▶  server/config/tasks.json (agentflow campaign)
-   workers in isolated worktrees, policy "NO CHANGE IS NOT SUCCESS"
+deep-gap.py report  ──▶  config/<campaign>/tasks.json (agentflow or manual)
+   workers in isolated worktrees; gates are count-agnostic and must
+   themselves fail on a no-op change (af 0.1.0 has no built-in
+   "NO CHANGE IS NOT SUCCESS" policy — and gates must stay worktree-relative)
    acceptance: count-agnostic gates (in-repo: static JS pins, cargo suites;
                cross-repo: this harness's re-runs)
    ──▶ merge to server main ──▶ redeploy prod (pageerror sweep) ──▶ re-score
 ```
 
 Historical arc: parity deficit 152 → 3 (L1 era) → ledger v1 exposed L0:44 →
-campaigns LEDGER3/LEDGER2 + chrome/gray-void fixes → **L0:1**
-(insert-spreadsheet remains), roundtrip 13/13 verbatim.
+campaigns LEDGER3/LEDGER2 + chrome/gray-void fixes → L0:18 → phases 4–5 af
+campaigns + L2 acts/keyboard hardening → **L0:0 (2026-11-03)**, ledger 527
+features / 18 clusters, roundtrip 31/31 verbatim, shortcut census 57 matched
+/ 0 missing.
 
 ## Operating cheatsheet
 

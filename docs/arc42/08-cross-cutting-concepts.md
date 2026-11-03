@@ -10,9 +10,10 @@
 | L3 PERSISTS | mutation survives editor→docx→reload | ledger/roundtrip.cjs |
 | L4 FIDELITY | output matches OO's own output for the same op | cross-engine conformance |
 
-The completeness contract is **L0 ≈ 0** — "deficit 3" in the old census was an
-L1 ceiling artifact; the ledger exposed the real L0 backlog (44 → 1 after the
-2026-10 campaigns).
+The completeness contract is **L0 = 0** — "deficit 3" in the old census was an
+L1 ceiling artifact; the ledger exposed the real L0 backlog (44 → 18 in the
+2026-10 campaigns → **0 on 2026-11-03** via phase 4/5 af campaigns and L2
+acts/keyboard hardening).
 
 ## Noise control (honesty in both directions)
 

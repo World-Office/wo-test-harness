@@ -4,13 +4,13 @@ Quality tree — priority-ordered, with the enforced check for each leaf:
 
 ```
 Q1 Completeness honesty (the ledger contract)
- ├─ Q1.1 L0 count ≈ 0: 242 features scored; last real L0 cluster =
- │       insert-spreadsheet (own task)
+ ├─ Q1.1 L0 = 0 achieved 2026-11-03: 527 features scored / 18 clusters
+ │       {L0:0, L1:388, L2:81, L3:38, L4:20}
  ├─ Q1.2 Deferred rows stay loud (STALE-DEFERRED = hard failure)
  └─ Q1.3 Register/graph drift gate: seed.py --check green (111 F-###,
          1383 tests / 1632 edges)
 Q2 Persistence proof
- ├─ Q2.1 roundtrip.cjs 13/13 survived, level3=13 — verbatim payloads
+ ├─ Q2.1 roundtrip.cjs 31/31 survived, level3=31 — verbatim payloads
  ├─ Q2.2 Results committed (roundtrip-results.json) and merged into
  │       the ledger as L3 evidence
  └─ Q2.3 Converter regression surfaces as a FAIL (no sanitization)

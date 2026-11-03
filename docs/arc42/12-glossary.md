@@ -6,7 +6,7 @@
 | **backstage** | OO's full-screen backstage menu (File menu overlay) — excluded from some census joins by policy. |
 | **chrome gate** | Window-chrome parity: ribbon/toolbar/statusbar geometry vs OO (chrome-*.cjs + chrome-gate.py). |
 | **census (structural)** | Inventory of tabs/controls/menus/dialog fields captured via Playwright; `-deep` variants include backstage/menus/statusbar/dialogs. |
-| **cluster** | Ledger grouping of feature surfaces (16 clusters: Home tab, Insert tab, statusbar, …). |
+| **cluster** | Ledger grouping of feature surfaces (18 clusters: Home tab, Insert tab, statusbar, …). |
 | **count-agnostic gate** | Accept criterion phrased as a relation (e.g. "all captured controls clickable"), not a magic count (ADR-17). |
 | **deep-gap.py** | Deep-census diff producing the campaign implementation backlog (explicitly NOT a gate). |
 | **deficit** | Count of census features with no WO counterpart ("deficit 152→3" was the old L1-ceiling metric; ledger L0 supersedes it). |

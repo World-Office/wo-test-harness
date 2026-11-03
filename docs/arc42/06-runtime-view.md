@@ -34,7 +34,7 @@ census/ $ /usr/bin/python3 ledger/build.py
 census/ledger/ $ NO_PROXY='127.0.0.1,localhost' \
   WO_CONVERT_URL=http://127.0.0.1:18087/api/conversion/convert \
   /usr/bin/node roundtrip.cjs
-   → "roundtrip: 13/13 survived, level3=13"
+   → "roundtrip: 31/31 survived, level3=31"
    → roundtrip-results.json (committed evidence)
 ```
 Against a LOCAL fresh build: `cd server && cargo build -p wo-docserver`,

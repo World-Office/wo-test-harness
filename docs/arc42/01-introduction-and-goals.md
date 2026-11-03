@@ -13,7 +13,7 @@ product code (server repo) is judged by gates defined here.
 | # | Goal | Motivation |
 |---|------|-----------|
 | G1 | **One machine-checkable completeness contract** | Parity is a count, not a feeling. The ledger scores every OO feature surface at L0 missing → L4 fidelity. "Done" is L0≈0, not "looks done". |
-| G2 | **Persistence proven, not assumed** | A feature only counts when its document mutation survives editor → docx → reload (round-trip gates, 13/13). |
+| G2 | **Persistence proven, not assumed** | A feature only counts when its document mutation survives editor → docx → reload (round-trip gates, 31/31). |
 | G3 | **Cross-engine truth** | Rendered docx output is scored against LibreOffice (and OO goldens) — not eyeballed. |
 | G4 | **Campaign-drivable** | agentflow/taskfleet workers consume gap reports as task lists; every fix lands with a gate that fails loudly on regression. |
 | G5 | **Honest noise control** | Deferred/loud rows, noise filters, matcher aliases — a green gate must never hide a real gap, and noise must never fake a gap. |
