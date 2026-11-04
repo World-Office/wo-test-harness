@@ -38,9 +38,17 @@ let chromium;
 try {
   ({ chromium } = require('playwright'));
 } catch {
-  const { execSync } = require('child_process');
-  const root = execSync('npm root -g', { encoding: 'utf8' }).trim();
-  ({ chromium } = require(path.join(root, 'playwright')));
+  // CI (ci.yml fig job) installs playwright into the SERVER's tests/ dir
+  // (npm install --no-save playwright@1.59.1, working-directory: tests);
+  // from this file that is ../../tests/node_modules. Dev boxes use the
+  // npm-global install instead.
+  try {
+    ({ chromium } = require(path.join(__dirname, '..', '..', 'tests', 'node_modules', 'playwright')));
+  } catch {
+    const { execSync } = require('child_process');
+    const root = execSync('npm root -g', { encoding: 'utf8' }).trim();
+    ({ chromium } = require(path.join(root, 'playwright')));
+  }
 }
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
