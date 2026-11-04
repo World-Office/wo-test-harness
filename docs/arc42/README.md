@@ -7,10 +7,10 @@
 > **Scope:** the harness repo (`wo-test-harness`). Product side:
 > workspace-level `World-Office/docs/arc42/` (current Rust stack).
 > **Status snapshot 2026-11-03:** ledger 527 features / 18 clusters with
-> **L0 = 0** (L0 44→18 in phases 4–5 → 0 via L2 acts hardening);
-> roundtrip gates 31/31 **verbatim** (workarounds retired 2026-10-27);
-> shortcut census 57 matched / 0 missing; register 111 F-### ids,
-> graph drift gate green; CI 6 jobs.
+> **L0 = 0** (L0 44→1 in the 2026-10 true-gap campaigns → 0 on 2026-11-03
+> after the L2 acts/keyboard hardening); roundtrip gates 31/31 **verbatim**
+> (workarounds retired 2026-10-27); shortcut census 57 matched / 0 missing;
+> register 111 F-### ids, graph drift gate green; CI 6 jobs.
 
 ## Document map
 

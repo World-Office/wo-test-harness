@@ -2,7 +2,8 @@
 
 > arc42 annex. The heart of the harness: how an OO feature surface becomes a
 > scored ledger row, and how a campaign turns that row green. Written
-> 2026-10-27 against harness @ `42db8d5`.
+> 2026-10-27 against harness @ `42db8d5`; updated 2026-11-03 (ledger 527/18,
+> L0 = 0, acts/L2 + COMBO_COMMAND, roundtrip 31/31).
 
 ## The pipeline at a glance
 
@@ -89,7 +90,7 @@ Passing probes write `roundtrip-results.json`, which `build.py` merges as L3.
 Failures are classified by phase (apply / convert / reload) — that
 classification drove the LEDGER2 root-cause work (entities, run styling,
 sup/sub, alignment, lists, hyperlinks → all fixed in the server converters
-2026-10-27; 31/31 verbatim since the 2026-11-01 extension).
+2026-10-27; 31/31 verbatim since the 2026-11-02 extension).
 
 **Target selection discipline**: point `WO_CONVERT_URL` at a **freshly
 built** local docserver (`:18087`); never trust staging/prod containers of
