@@ -117,7 +117,8 @@ features / 18 clusters, roundtrip 31/31 verbatim, shortcut census 57 matched
 ## Operating cheatsheet
 
 ```sh
-# one-run full gate
+# one-run full gate (local; --visual/--chrome need the OO rig + goldens,
+# so CI runs the same command minus those two)
 WO_SERVER_DIR=../server /usr/bin/python3 census/reconcile.py \
   --check --seed-check --interactions --fx --geometry --visual --ai
 

@@ -661,9 +661,16 @@ def main() -> int:
                     help="also run the AI spec-contract-test pyramid gate (census/ai-contracts.py)")
     ap.add_argument("--docserver", choices=["rust", "python"], default="rust",
                     help="which docserver stack to spawn (rust = canonical wo-docserver + stub WOPI; "
-                         "python = opencloud-docserver REST surface; gates must pass on BOTH)")
+                         "python = REMOVED 2026-10-14 — the opencloud-docserver REST surface was "
+                         "decommissioned; only rust works)")
     ap.add_argument("--self-test", action="store_true", help="run the delta-logic self-test and exit")
     args = ap.parse_args()
+
+    if args.docserver == "python":
+        print("ERROR: the Python docserver (opencloud-docserver) was decommissioned 2026-10-14; "
+              "only the Rust wo-docserver exists. Drop --docserver python (or pass rust).",
+              file=sys.stderr)
+        return 2
 
     if args.self_test:
         self_test()

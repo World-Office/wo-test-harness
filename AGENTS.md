@@ -314,7 +314,7 @@ WO_SERVER_DIR=/path/to/World-Office/server /usr/bin/python3 harness-graph/seed.p
 # Unified self-test
 WO_SERVER_DIR=/path/to/World-Office/server bash tf-test-harness/test-harness.sh --self-test
 
-# Full CI gate (ledger + interactions + fx functional + geometry + visual pixel gate)
+# Full gate (ledger + interactions + fx + geometry + visual pixel; --visual/--chrome need the OO rig/goldens, so CI runs the same without them)
 WO_SERVER_DIR=/path/to/World-Office/server /usr/bin/python3 census/reconcile.py \
   --check --seed-check --interactions --fx --geometry --visual
 
@@ -329,15 +329,16 @@ cargo build -p wo-conformance-docx --bin wo-render-ir
 
 ## Windows host
 
-`/usr/bin/python3` is just `python`. The docserver deps (python-docx, uvicorn)
-come from the server's uv project, and `reconcile.py` spawns `sys.executable`, so
-the gate must run inside `opencloud-docserver`'s venv (once: `uv sync --frozen`):
+`/usr/bin/python3` is just `python`. The docserver is the **Rust**
+`wo-docserver` binary — `reconcile.py` builds it via `cargo build -p
+wo-docserver` inside `WO_SERVER_DIR` (or points at a running stack via
+`CENSUS_WO_URL`), so no Python docserver, no uv venv, no `python-docx`/
+`uvicorn` (that stack was decommissioned 2026-10-14):
 
 ```powershell
-cd <server>/opencloud-docserver
 cd <harness>/census; npm install --no-save playwright@1.61.1   # gitignored
 $env:WO_SERVER_DIR = 'C:/path/to/server'
-& uv run --frozen python <harness>/census/reconcile.py --check --seed-check --interactions --fx --geometry --visual
+& python <harness>/census/reconcile.py --check --seed-check --interactions --fx --geometry --visual
 ```
 
 Run the gate via PowerShell, not Git Bash: MSYS2 mangles `;`-separated env vars

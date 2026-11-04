@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Dual-stack A/B bench: Rust wo-docserver vs Python opencloud-docserver.
+"""Rust wo-docserver A/B bench (the python opencloud-docserver side was
+decommissioned 2026-10-14; the guarded `python` mode below is kept as
+history and skips itself when the dir no longer exists).
 
 Every number this prints is measured on this machine, in one sequential run
-(rust first, then python — same load window). Timing via time.time() around
+(rust first — same load window). Timing via time.time() around
 urllib requests; medians over fixed N. No /usr/bin/time, no bc.
 
 Metrics

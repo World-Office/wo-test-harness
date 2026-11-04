@@ -24,7 +24,9 @@ production repo (`World-Office/server`).
 
 - **Register:** 137 features, `graph.json` in sync (819 tests, 9388 edges);
   drift gate green (regenerated 2026-11-03).
-- **Ledger:** 152 OO rows covered / 119 real / 83 deferred — deferred rows grouped by reason, printed loudly on every run (a green gate never hides the gap).
+- **Ledger:** 527 features across 18 clusters, **L0 = 0** (L1 388 / L2 81 /
+  L3 38 / L4 20); roundtrip 31/31; deferred rows grouped by reason, printed
+  loudly on every run (a green gate never hides the gap).
 - **Full gate (one command, rc=0 today):**
   ```sh
   WO_SERVER_DIR=/path/to/server /usr/bin/python3 census/reconcile.py \

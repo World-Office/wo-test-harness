@@ -127,11 +127,11 @@ jobs:
         run: cargo build -p wo-docserver -p mcp-server
         working-directory: server
 
-      - name: Install docserver dependencies (no docker — reconcile spawns uvicorn locally)
+      - name: Install Python deps (pyyaml only — seed.py; the Python
+                docserver was decommissioned 2026-10-14, reconcile spawns
+                the rust binary built above)
         run: python3 -m pip install --break-system-packages \
-          fastapi 'uvicorn[standard]>=0.30' 'python-docx>=1.1' \
-          'python-jose[cryptography]>=3.3' 'PyJWT>=2.8' python-multipart \
-          'lxml>=5.0' 'jinja2>=3.1.6' 'odfpy>=1.4' pyyaml
+          pyyaml
 
       - name: Install Node + Playwright
         uses: actions/setup-node@v4
