@@ -4,7 +4,9 @@
  */
 
 const fs = require('fs');
-const pixelmatch = require('pixelmatch');
+// pixelmatch v6 exports { pixelmatch }; v5 was directly callable
+const _pixelmatch = require('pixelmatch');
+const pixelmatch = _pixelmatch.pixelmatch || _pixelmatch.default || _pixelmatch;
 const { PNG } = require('pngjs');
 
 /**
