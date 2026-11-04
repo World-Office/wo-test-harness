@@ -136,3 +136,35 @@ function generateReport(results) {
 }
 
 module.exports = { compareScreenshots, compareDialogScreenshots, compareAllDialogs, generateReport, DIALOG_THRESHOLDS, getThreshold };
+
+// CLI self-test: `node diff.js --self-test` — proves the pixelmatch v6 named
+// export loads and the compare core measures diffs correctly, using two
+// synthetic 8×8 buffers (no screenshots or servers needed). CI
+// (server .github/workflows/parity-check.yml visual-diff job) runs this so
+// the step actually gates something — `node diff.js` without arguments used
+// to be a silent no-op (library module, no main) behind continue-on-error.
+if (process.argv.includes('--self-test')) {
+  const png = (r, g, b) => {
+    const p = new PNG({ width: 8, height: 8 });
+    for (let i = 0; i < p.data.length; i += 4) { p.data[i] = r; p.data[i + 1] = g; p.data[i + 2] = b; p.data[i + 3] = 255; }
+    return p;
+  };
+  const write = (p) => PNG.sync.write(p);
+  const fs2 = require('fs');
+  const os = require('os');
+  const path = require('path');
+  const dir = fs2.mkdtempSync(path.join(os.tmpdir(), 'wo-visdiff-'));
+  const a = path.join(dir, 'a.png'), b = path.join(dir, 'b.png');
+  fs2.writeFileSync(a, write(png(200, 0, 0)));
+  const red = png(200, 0, 0);
+  // flip 3 pixels to a distant color
+  for (const idx of [4, 40, 60]) { red.data[idx * 4] = 0; red.data[idx * 4 + 1] = 255; }
+  fs2.writeFileSync(b, write(red));
+  (async () => {
+    const same = await compareScreenshots(a, a, 0.01);
+    const diff = await compareScreenshots(a, b, 0.01);
+    const ok = same.match === true && diff.match === false && diff.diffPixels === 3;
+    console.log(`self-test: identical=${same.match} modified=${diff.match} diffPixels=${diff.diffPixels} -> ${ok ? 'PASS' : 'FAIL'}`);
+    process.exit(ok ? 0 : 1);
+  })().catch(e => { console.error('self-test FAIL:', e); process.exit(1); });
+}

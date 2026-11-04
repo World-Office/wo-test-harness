@@ -91,3 +91,28 @@ JS gate suite as a CI step, (2) either drop `continue-on-error` from
 visual-diff or make it fail on script errors (not on diff ratio), (3) the
 `diff.js` fix should be backported to the workflow's `npm install` pin
 (pixelmatch v5) or kept at v6 with the fixed require (this log's fix).
+
+**RESOLVED 2026-11-04** (server commit + harness `diff.js --self-test`):
+1. ✅ `editor-gates` job added to `parity-check.yml` — runs every
+   `documenteditor-wysiwyg/*.test.mjs` with plain node (131 locally green;
+   `shift-enter-behavior.test.mjs` skipped: jest+CommonJS by design, drives a
+   live editor via `WO_EDITOR_URL`).
+2. ✅ `continue-on-error` dropped; the step now runs `node diff.js
+   --self-test` (synthetic 8×8 buffers: identical=match, 3-pixel variant
+   =fail) so it gates module-load + compare-core correctness. Diff-ratio
+   failures remain a local/live-flow concern — CI has no screenshots.
+3. ✅ Kept v6 with the fixed require; pins are now explicit:
+   `pixelmatch@6.4.0 pngjs@7.0.0` (`@playwright/test` install dropped — only
+   `capture.js` needs it and this job never runs capture).
+
+Same session also repaired the L2+L4 `parity-contracts` job in `ci.yml`
+(30/30 red since the ledger migration): `generate-manifest.cjs` +
+`gen-gaps.cjs` ported to the `{features:[…]}` ledger schema,
+`run-parity.cjs` no longer swallows the generator's exit code, overrides
+rekeyed to current ids (`table.table`, `protect.encrypt`,
+`formatting.paragraph-line-spacing`) with an override-only fallback, and
+probes fixed against moved markup (`file-menu` → backstage overlay,
+`menu-hit` skips `hidden` contextual tabs, `tab-switch-widths` asserts
+chevron-reachability instead of "no rect past viewport" — the style gallery
+clips by design and its dropdown keeps every style reachable). Result:
+contracts 4/4 pass, surfaces 4/4 pass against the real editor.
