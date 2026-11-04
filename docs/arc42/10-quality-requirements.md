@@ -7,8 +7,9 @@ Q1 Completeness honesty (the ledger contract)
  ├─ Q1.1 L0 = 0 achieved 2026-11-03: 527 features scored / 18 clusters
  │       {L0:0, L1:388, L2:81, L3:38, L4:20}
  ├─ Q1.2 Deferred rows stay loud (STALE-DEFERRED = hard failure)
- └─ Q1.3 Register/graph drift gate: seed.py --check green (111 F-###,
-         1383 tests / 1632 edges)
+ └─ Q1.3 Register/graph drift gate: seed.py --check green (137
+         features / 119 commands / 119 surfaces / 819 tests / 9388 edges,
+         regenerated 2026-11-03)
 Q2 Persistence proof
  ├─ Q2.1 roundtrip.cjs 31/31 survived, level3=31 — verbatim payloads
  ├─ Q2.2 Results committed (roundtrip-results.json) and merged into

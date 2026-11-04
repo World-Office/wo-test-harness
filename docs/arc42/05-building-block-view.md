@@ -4,7 +4,7 @@
 
 ```
 wo-test-harness/
-├── register/ + harness-graph/    SPEC: features.yaml (111 F-###) → graph.json
+├── register/ + harness-graph/    SPEC: features.yaml (137 F-###) → graph.json
 ├── conformance/ + conformance-docx/   FIDELITY: corpus, entropy driver,
 │                                   NormalizedRender scoring vs LibreOffice
 ├── census/                        PARITY: OO/WO inventory + ledger + gates
@@ -83,7 +83,7 @@ PROBES (13 commands: bold/italic/underline/strike/sub/sup/symbols/datetime/
 ## Register + conformance (unchanged core)
 
 - `harness-graph/`: `features.yaml` → `seed.py` → `graph.json`
-  (111 stable F-### ids, 1383 tests / 1632 edges, `--check` drift gate).
+  (137 stable F-### ids, 819 tests / 9388 edges, `--check` drift gate, regenerated 2026-11-03).
 - `conformance/` (`wo-conformance`): real-docx corpus, entropy test-driver,
   NormalizedRender cross-engine scoring (wo-docx-renderer vs LibreOffice).
 - `conformance-docx/`: `DocxConformanceAdapter` + `wo-render-ir` binary,

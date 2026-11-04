@@ -1,8 +1,23 @@
 {
  "edges": [
   {
+   "from": "toolbar:acceptTrackedChange",
+   "to": "acceptTrackedChange",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:addText",
+   "to": "addText",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:aiRewrite",
    "to": "aiRewrite",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:aiSettings",
+   "to": "aiSettings",
    "type": "TRIGGERS"
   },
   {
@@ -21,8 +36,33 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:applyColumns",
+   "to": "applyColumns",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:applyPageMargins",
+   "to": "applyPageMargins",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:applyPageOrientation",
+   "to": "applyPageOrientation",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:applyPageSize",
+   "to": "applyPageSize",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:bold",
    "to": "bold",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:bookmark",
+   "to": "bookmark",
    "type": "TRIGGERS"
   },
   {
@@ -36,13 +76,78 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:chart3d",
+   "to": "chart3d",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:chartEditData",
+   "to": "chartEditData",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:chartElement",
+   "to": "chartElement",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:chartSettings",
+   "to": "chartSettings",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:chartSize",
+   "to": "chartSize",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:chartType",
+   "to": "chartType",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:chartUpdateData",
+   "to": "chartUpdateData",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:closeFileMenu",
+   "to": "closeFileMenu",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:code",
    "to": "code",
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:combineRevisions",
+   "to": "combineRevisions",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:compareVersion",
    "to": "compareVersion",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:convertTableToText",
+   "to": "convertTableToText",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:convertTextToTable",
+   "to": "convertTextToTable",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:createAiAssistant",
+   "to": "createAiAssistant",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:deleteComment",
+   "to": "deleteComment",
    "type": "TRIGGERS"
   },
   {
@@ -58,6 +163,11 @@
   {
    "from": "toolbar:displayMode",
    "to": "displayMode",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:equationTemplate",
+   "to": "equationTemplate",
    "type": "TRIGGERS"
   },
   {
@@ -111,6 +221,11 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:insertBlankPage",
+   "to": "insertBlankPage",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:insertCaption",
    "to": "insertCaption",
    "type": "TRIGGERS"
@@ -118,6 +233,16 @@
   {
    "from": "toolbar:insertCitation",
    "to": "insertCitation",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:insertColumnBreak",
+   "to": "insertColumnBreak",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:insertComment",
+   "to": "insertComment",
    "type": "TRIGGERS"
   },
   {
@@ -141,6 +266,11 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:insertHeaderFooter",
+   "to": "insertHeaderFooter",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:insertIndexEntry",
    "to": "insertIndexEntry",
    "type": "TRIGGERS"
@@ -156,8 +286,28 @@
    "type": "TRIGGERS"
   },
   {
-   "from": "toolbar:insertPageNumber",
-   "to": "insertPageNumber",
+   "from": "toolbar:insertPageBreak",
+   "to": "insertPageBreak",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:insertSectionBreak",
+   "to": "insertSectionBreak",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:insertTableOfFigures",
+   "to": "insertTableOfFigures",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:insertTextart",
+   "to": "insertTextart",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:insertTextbox",
+   "to": "insertTextbox",
    "type": "TRIGGERS"
   },
   {
@@ -201,6 +351,11 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:mailMerge",
+   "to": "mailMerge",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:managePlugins",
    "to": "managePlugins",
    "type": "TRIGGERS"
@@ -216,6 +371,11 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:objectOp",
+   "to": "objectOp",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:ocrRun",
    "to": "ocrRun",
    "type": "TRIGGERS"
@@ -226,8 +386,23 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:openColumnsDialog",
+   "to": "openColumnsDialog",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:openCrossref",
    "to": "openCrossref",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:openPageSetup",
+   "to": "openPageSetup",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:openTableDialog",
+   "to": "openTableDialog",
    "type": "TRIGGERS"
   },
   {
@@ -238,6 +413,11 @@
   {
    "from": "toolbar:photoEditor",
    "to": "photoEditor",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:pluginUnavailable",
+   "to": "pluginUnavailable",
    "type": "TRIGGERS"
   },
   {
@@ -261,13 +441,38 @@
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:rejectTrackedChange",
+   "to": "rejectTrackedChange",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:removeFormat",
    "to": "removeFormat",
    "type": "TRIGGERS"
   },
   {
+   "from": "toolbar:resolveComment",
+   "to": "resolveComment",
+   "type": "TRIGGERS"
+  },
+  {
    "from": "toolbar:restrictEditing",
    "to": "restrictEditing",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:saveDocument",
+   "to": "saveDocument",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:selectAll",
+   "to": "selectAll",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:showWordCount",
+   "to": "showWordCount",
    "type": "TRIGGERS"
   },
   {
@@ -293,6 +498,16 @@
   {
    "from": "toolbar:superscript",
    "to": "superscript",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:tableDrawMode",
+   "to": "tableDrawMode",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:tableEraseMode",
+   "to": "tableEraseMode",
    "type": "TRIGGERS"
   },
   {
@@ -343,6 +558,11 @@
   {
    "from": "toolbar:toggleOddEven",
    "to": "toggleOddEven",
+   "type": "TRIGGERS"
+  },
+  {
+   "from": "toolbar:toggleRightPanel",
+   "to": "toggleRightPanel",
    "type": "TRIGGERS"
   },
   {
@@ -536,6 +756,11 @@
    "type": "IMPLEMENTED_BY"
   },
   {
+   "from": "tests/core/crates/wo-html/src/parser.rs::page_number_span_parses_and_serializes",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-html/src/parser.rs::test_fuzz_random_entities_no_panic",
    "to": "F-040",
    "type": "COVERS"
@@ -712,6 +937,11 @@
   },
   {
    "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_nested_formatting",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_p_nested_block_hoist",
    "to": "F-040",
    "type": "COVERS"
   },
@@ -2086,6 +2316,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-040",
    "type": "COVERS"
@@ -3272,6 +3507,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-040",
    "type": "COVERS"
   },
@@ -3316,6 +3556,11 @@
    "type": "IMPLEMENTED_BY"
   },
   {
+   "from": "tests/core/crates/wo-html/src/parser.rs::page_number_span_parses_and_serializes",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-html/src/parser.rs::test_fuzz_random_entities_no_panic",
    "to": "F-041",
    "type": "COVERS"
@@ -3492,6 +3737,11 @@
   },
   {
    "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_nested_formatting",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_p_nested_block_hoist",
    "to": "F-041",
    "type": "COVERS"
   },
@@ -4866,6 +5116,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-041",
    "type": "COVERS"
@@ -6052,6 +6307,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-041",
    "type": "COVERS"
   },
@@ -6866,6 +7126,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-051",
    "type": "COVERS"
@@ -8056,6 +8321,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
+   "to": "F-051",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_recalc_on_edit",
    "to": "F-051",
    "type": "COVERS"
@@ -8111,6 +8381,11 @@
    "type": "IMPLEMENTED_BY"
   },
   {
+   "from": "F-076",
+   "to": "insertPageBreak",
+   "type": "IMPLEMENTED_BY"
+  },
+  {
    "from": "F-084",
    "to": "insertHeader",
    "type": "IMPLEMENTED_BY"
@@ -8121,9 +8396,9 @@
    "type": "IMPLEMENTED_BY"
   },
   {
-   "from": "F-085",
-   "to": "insertPageNumber",
-   "type": "IMPLEMENTED_BY"
+   "from": "tests/core/crates/wo-html/src/parser.rs::page_number_span_parses_and_serializes",
+   "to": "F-102",
+   "type": "COVERS"
   },
   {
    "from": "tests/core/crates/wo-html/src/parser.rs::test_fuzz_random_entities_no_panic",
@@ -8302,6 +8577,11 @@
   },
   {
    "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_nested_formatting",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-html/src/parser.rs::test_parse_p_nested_block_hoist",
    "to": "F-102",
    "type": "COVERS"
   },
@@ -9676,6 +9956,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-102",
    "type": "COVERS"
@@ -10862,6 +11147,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-102",
    "type": "COVERS"
   },
@@ -12641,6 +12931,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-200",
    "type": "COVERS"
@@ -13827,6 +14122,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-200",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-200",
    "type": "COVERS"
   },
@@ -14946,6 +15246,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-201",
    "type": "COVERS"
@@ -16132,6 +16437,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-201",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-201",
    "type": "COVERS"
   },
@@ -17251,6 +17561,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-203",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-203",
    "type": "COVERS"
@@ -18437,6 +18752,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-203",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-203",
    "type": "COVERS"
   },
@@ -19556,6 +19876,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-204",
    "type": "COVERS"
@@ -20742,6 +21067,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-204",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-204",
    "type": "COVERS"
   },
@@ -21921,6 +22251,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-206",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-206",
    "type": "COVERS"
@@ -23107,6 +23442,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-206",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-206",
    "type": "COVERS"
   },
@@ -23981,6 +24321,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-208",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-208",
    "type": "COVERS"
@@ -25167,6 +25512,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-208",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-208",
    "type": "COVERS"
   },
@@ -25991,6 +26341,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-209",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-209",
    "type": "COVERS"
@@ -27177,6 +27532,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-209",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-209",
    "type": "COVERS"
   },
@@ -28196,6 +28556,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-300",
    "type": "COVERS"
@@ -29382,6 +29747,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-300",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-300",
    "type": "COVERS"
   },
@@ -30216,6 +30586,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-301",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-301",
    "type": "COVERS"
@@ -31402,6 +31777,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-301",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-301",
    "type": "COVERS"
   },
@@ -32416,6 +32796,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-302",
    "type": "COVERS"
@@ -33602,6 +33987,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-302",
    "type": "COVERS"
   },
@@ -34406,6 +34796,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-303",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-303",
    "type": "COVERS"
@@ -35592,6 +35987,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-303",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-303",
    "type": "COVERS"
   },
@@ -36501,6 +36901,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-305",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-305",
    "type": "COVERS"
@@ -37687,6 +38092,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-305",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-305",
    "type": "COVERS"
   },
@@ -38676,6 +39086,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-306",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-306",
    "type": "COVERS"
@@ -39862,6 +40277,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-306",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-306",
    "type": "COVERS"
   },
@@ -41036,6 +41456,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-403",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-403",
    "type": "COVERS"
@@ -42222,6 +42647,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-403",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-403",
    "type": "COVERS"
   },
@@ -43146,6 +43576,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-404",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-404",
    "type": "COVERS"
@@ -44332,6 +44767,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-404",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-404",
    "type": "COVERS"
   },
@@ -45136,6 +45576,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "to": "F-405",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "to": "F-405",
    "type": "COVERS"
@@ -46322,6 +46767,11 @@
   },
   {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "to": "F-405",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "to": "F-405",
    "type": "COVERS"
   },
@@ -46491,12 +46941,27 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-10-22T13:05:43+00:00",
+ "generated_at": "2026-11-04T07:42:37+00:00",
  "nodes": [
+  {
+   "id": "acceptTrackedChange",
+   "label": "Command",
+   "source": "editor.js:runCommand('acceptTrackedChange')"
+  },
+  {
+   "id": "addText",
+   "label": "Command",
+   "source": "editor.js:runCommand('addText')"
+  },
   {
    "id": "aiRewrite",
    "label": "Command",
    "source": "editor.js:runCommand('aiRewrite')"
+  },
+  {
+   "id": "aiSettings",
+   "label": "Command",
+   "source": "editor.js:runCommand('aiSettings')"
   },
   {
    "id": "aiSummarize",
@@ -46514,9 +46979,34 @@
    "source": "editor.js:runCommand('allCaps')"
   },
   {
+   "id": "applyColumns",
+   "label": "Command",
+   "source": "editor.js:runCommand('applyColumns')"
+  },
+  {
+   "id": "applyPageMargins",
+   "label": "Command",
+   "source": "editor.js:runCommand('applyPageMargins')"
+  },
+  {
+   "id": "applyPageOrientation",
+   "label": "Command",
+   "source": "editor.js:runCommand('applyPageOrientation')"
+  },
+  {
+   "id": "applyPageSize",
+   "label": "Command",
+   "source": "editor.js:runCommand('applyPageSize')"
+  },
+  {
    "id": "bold",
    "label": "Command",
    "source": "editor.js:runCommand('bold')"
+  },
+  {
+   "id": "bookmark",
+   "label": "Command",
+   "source": "editor.js:runCommand('bookmark')"
   },
   {
    "id": "browsePlugins",
@@ -46529,14 +47019,79 @@
    "source": "editor.js:runCommand('changeCase')"
   },
   {
+   "id": "chart3d",
+   "label": "Command",
+   "source": "editor.js:runCommand('chart3d')"
+  },
+  {
+   "id": "chartEditData",
+   "label": "Command",
+   "source": "editor.js:runCommand('chartEditData')"
+  },
+  {
+   "id": "chartElement",
+   "label": "Command",
+   "source": "editor.js:runCommand('chartElement')"
+  },
+  {
+   "id": "chartSettings",
+   "label": "Command",
+   "source": "editor.js:runCommand('chartSettings')"
+  },
+  {
+   "id": "chartSize",
+   "label": "Command",
+   "source": "editor.js:runCommand('chartSize')"
+  },
+  {
+   "id": "chartType",
+   "label": "Command",
+   "source": "editor.js:runCommand('chartType')"
+  },
+  {
+   "id": "chartUpdateData",
+   "label": "Command",
+   "source": "editor.js:runCommand('chartUpdateData')"
+  },
+  {
+   "id": "closeFileMenu",
+   "label": "Command",
+   "source": "editor.js:runCommand('closeFileMenu')"
+  },
+  {
    "id": "code",
    "label": "Command",
    "source": "editor.js:runCommand('code')"
   },
   {
+   "id": "combineRevisions",
+   "label": "Command",
+   "source": "editor.js:runCommand('combineRevisions')"
+  },
+  {
    "id": "compareVersion",
    "label": "Command",
    "source": "editor.js:runCommand('compareVersion')"
+  },
+  {
+   "id": "convertTableToText",
+   "label": "Command",
+   "source": "editor.js:runCommand('convertTableToText')"
+  },
+  {
+   "id": "convertTextToTable",
+   "label": "Command",
+   "source": "editor.js:runCommand('convertTextToTable')"
+  },
+  {
+   "id": "createAiAssistant",
+   "label": "Command",
+   "source": "editor.js:runCommand('createAiAssistant')"
+  },
+  {
+   "id": "deleteComment",
+   "label": "Command",
+   "source": "editor.js:runCommand('deleteComment')"
   },
   {
    "id": "dictate",
@@ -46552,6 +47107,11 @@
    "id": "displayMode",
    "label": "Command",
    "source": "editor.js:runCommand('displayMode')"
+  },
+  {
+   "id": "equationTemplate",
+   "label": "Command",
+   "source": "editor.js:runCommand('equationTemplate')"
   },
   {
    "id": "fontName",
@@ -46604,6 +47164,11 @@
    "source": "editor.js:runCommand('inkThickness')"
   },
   {
+   "id": "insertBlankPage",
+   "label": "Command",
+   "source": "editor.js:runCommand('insertBlankPage')"
+  },
+  {
    "id": "insertCaption",
    "label": "Command",
    "source": "editor.js:runCommand('insertCaption')"
@@ -46612,6 +47177,16 @@
    "id": "insertCitation",
    "label": "Command",
    "source": "editor.js:runCommand('insertCitation')"
+  },
+  {
+   "id": "insertColumnBreak",
+   "label": "Command",
+   "source": "editor.js:runCommand('insertColumnBreak')"
+  },
+  {
+   "id": "insertComment",
+   "label": "Command",
+   "source": "editor.js:runCommand('insertComment')"
   },
   {
    "id": "insertEndnote",
@@ -46634,6 +47209,11 @@
    "source": "editor.js:runCommand('insertHeader')"
   },
   {
+   "id": "insertHeaderFooter",
+   "label": "Command",
+   "source": "editor.js:runCommand('insertHeaderFooter')"
+  },
+  {
    "id": "insertIndexEntry",
    "label": "Command",
    "source": "editor.js:runCommand('insertIndexEntry')"
@@ -46649,9 +47229,29 @@
    "source": "editor.js:runCommand('insertOrderedList')"
   },
   {
-   "id": "insertPageNumber",
+   "id": "insertPageBreak",
    "label": "Command",
-   "source": "editor.js:runCommand('insertPageNumber')"
+   "source": "editor.js:runCommand('insertPageBreak')"
+  },
+  {
+   "id": "insertSectionBreak",
+   "label": "Command",
+   "source": "editor.js:runCommand('insertSectionBreak')"
+  },
+  {
+   "id": "insertTableOfFigures",
+   "label": "Command",
+   "source": "editor.js:runCommand('insertTableOfFigures')"
+  },
+  {
+   "id": "insertTextart",
+   "label": "Command",
+   "source": "editor.js:runCommand('insertTextart')"
+  },
+  {
+   "id": "insertTextbox",
+   "label": "Command",
+   "source": "editor.js:runCommand('insertTextbox')"
   },
   {
    "id": "insertUnorderedList",
@@ -46694,6 +47294,11 @@
    "source": "editor.js:runCommand('listStyle')"
   },
   {
+   "id": "mailMerge",
+   "label": "Command",
+   "source": "editor.js:runCommand('mailMerge')"
+  },
+  {
    "id": "managePlugins",
    "label": "Command",
    "source": "editor.js:runCommand('managePlugins')"
@@ -46709,6 +47314,11 @@
    "source": "editor.js:runCommand('nextTrackedChange')"
   },
   {
+   "id": "objectOp",
+   "label": "Command",
+   "source": "editor.js:runCommand('objectOp')"
+  },
+  {
    "id": "ocrRun",
    "label": "Command",
    "source": "editor.js:runCommand('ocrRun')"
@@ -46719,9 +47329,24 @@
    "source": "editor.js:runCommand('openBorders')"
   },
   {
+   "id": "openColumnsDialog",
+   "label": "Command",
+   "source": "editor.js:runCommand('openColumnsDialog')"
+  },
+  {
    "id": "openCrossref",
    "label": "Command",
    "source": "editor.js:runCommand('openCrossref')"
+  },
+  {
+   "id": "openPageSetup",
+   "label": "Command",
+   "source": "editor.js:runCommand('openPageSetup')"
+  },
+  {
+   "id": "openTableDialog",
+   "label": "Command",
+   "source": "editor.js:runCommand('openTableDialog')"
   },
   {
    "id": "outdent",
@@ -46732,6 +47357,11 @@
    "id": "photoEditor",
    "label": "Command",
    "source": "editor.js:runCommand('photoEditor')"
+  },
+  {
+   "id": "pluginUnavailable",
+   "label": "Command",
+   "source": "editor.js:runCommand('pluginUnavailable')"
   },
   {
    "id": "prevTrackedChange",
@@ -46754,14 +47384,39 @@
    "source": "editor.js:runCommand('redo')"
   },
   {
+   "id": "rejectTrackedChange",
+   "label": "Command",
+   "source": "editor.js:runCommand('rejectTrackedChange')"
+  },
+  {
    "id": "removeFormat",
    "label": "Command",
    "source": "editor.js:runCommand('removeFormat')"
   },
   {
+   "id": "resolveComment",
+   "label": "Command",
+   "source": "editor.js:runCommand('resolveComment')"
+  },
+  {
    "id": "restrictEditing",
    "label": "Command",
    "source": "editor.js:runCommand('restrictEditing')"
+  },
+  {
+   "id": "saveDocument",
+   "label": "Command",
+   "source": "editor.js:runCommand('saveDocument')"
+  },
+  {
+   "id": "selectAll",
+   "label": "Command",
+   "source": "editor.js:runCommand('selectAll')"
+  },
+  {
+   "id": "showWordCount",
+   "label": "Command",
+   "source": "editor.js:runCommand('showWordCount')"
   },
   {
    "id": "smallCaps",
@@ -46787,6 +47442,16 @@
    "id": "superscript",
    "label": "Command",
    "source": "editor.js:runCommand('superscript')"
+  },
+  {
+   "id": "tableDrawMode",
+   "label": "Command",
+   "source": "editor.js:runCommand('tableDrawMode')"
+  },
+  {
+   "id": "tableEraseMode",
+   "label": "Command",
+   "source": "editor.js:runCommand('tableEraseMode')"
   },
   {
    "id": "toggleChat",
@@ -46839,6 +47504,11 @@
    "source": "editor.js:runCommand('toggleOddEven')"
   },
   {
+   "id": "toggleRightPanel",
+   "label": "Command",
+   "source": "editor.js:runCommand('toggleRightPanel')"
+  },
+  {
    "id": "toggleSameAsPrev",
    "label": "Command",
    "source": "editor.js:runCommand('toggleSameAsPrev')"
@@ -46869,7 +47539,25 @@
    "source": "editor.js:runCommand('updateToc')"
   },
   {
+   "id": "toolbar:acceptTrackedChange",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:addText",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:aiRewrite",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:aiSettings",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -46893,7 +47581,37 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:applyColumns",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:applyPageMargins",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:applyPageOrientation",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:applyPageSize",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:bold",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:bookmark",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -46911,13 +47629,91 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:chart3d",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:chartEditData",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:chartElement",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:chartSettings",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:chartSize",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:chartType",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:chartUpdateData",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:closeFileMenu",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:code",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
   },
   {
+   "id": "toolbar:combineRevisions",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:compareVersion",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:convertTableToText",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:convertTextToTable",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:createAiAssistant",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:deleteComment",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -46936,6 +47732,12 @@
   },
   {
    "id": "toolbar:displayMode",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:equationTemplate",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -47001,6 +47803,12 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:insertBlankPage",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:insertCaption",
    "kind": "toolbar-button",
    "label": "Surface",
@@ -47008,6 +47816,18 @@
   },
   {
    "id": "toolbar:insertCitation",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:insertColumnBreak",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:insertComment",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -47037,6 +47857,12 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:insertHeaderFooter",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:insertIndexEntry",
    "kind": "toolbar-button",
    "label": "Surface",
@@ -47055,7 +47881,31 @@
    "source": "index.html"
   },
   {
-   "id": "toolbar:insertPageNumber",
+   "id": "toolbar:insertPageBreak",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:insertSectionBreak",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:insertTableOfFigures",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:insertTextart",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:insertTextbox",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -47109,6 +47959,12 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:mailMerge",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:managePlugins",
    "kind": "toolbar-button",
    "label": "Surface",
@@ -47127,6 +47983,12 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:objectOp",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:ocrRun",
    "kind": "toolbar-button",
    "label": "Surface",
@@ -47139,7 +48001,25 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:openColumnsDialog",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:openCrossref",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:openPageSetup",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:openTableDialog",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -47152,6 +48032,12 @@
   },
   {
    "id": "toolbar:photoEditor",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:pluginUnavailable",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -47181,13 +48067,43 @@
    "source": "index.html"
   },
   {
+   "id": "toolbar:rejectTrackedChange",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:removeFormat",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
   },
   {
+   "id": "toolbar:resolveComment",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
    "id": "toolbar:restrictEditing",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:saveDocument",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:selectAll",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:showWordCount",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -47218,6 +48134,18 @@
   },
   {
    "id": "toolbar:superscript",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:tableDrawMode",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:tableEraseMode",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -47278,6 +48206,12 @@
   },
   {
    "id": "toolbar:toggleOddEven",
+   "kind": "toolbar-button",
+   "label": "Surface",
+   "source": "index.html"
+  },
+  {
+   "id": "toolbar:toggleRightPanel",
    "kind": "toolbar-button",
    "label": "Surface",
    "source": "index.html"
@@ -47371,6 +48305,12 @@
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-docserver/src/wopi.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::page_number_span_parses_and_serializes",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
   },
   {
    "id": "tests/core/crates/wo-html/src/parser.rs::test_fuzz_random_entities_no_panic",
@@ -47584,6 +48524,12 @@
   },
   {
    "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_nested_formatting",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-html/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-html/src/parser.rs::test_parse_p_nested_block_hoist",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-html/src/parser.rs"
@@ -50595,6 +51541,12 @@
    "path": "ore/crates/wo-x2t/src/converters.rs"
   },
   {
+   "id": "tests/core/crates/wo-x2t/src/converters.rs::test_horizontal_rule_survives_editor_save_cycle_t006",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-x2t/src/converters.rs"
+  },
+  {
    "id": "tests/core/crates/wo-x2t/src/converters.rs::test_html_blocks_to_lines_all_variants",
    "label": "Test",
    "layer": "rust",
@@ -52018,6 +52970,12 @@
   },
   {
    "id": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_cell_address_type_f204",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-x2t/src/converters.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-x2t/src/converters.rs::test_xlsx_extra_parts_byte_faithful_roundtrip",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-x2t/src/converters.rs"
@@ -53883,11 +54841,11 @@
   }
  ],
  "stats": {
-  "commands": 75,
-  "edges": 9298,
+  "commands": 119,
+  "edges": 9388,
   "features": 137,
-  "surfaces": 75,
-  "tests": 815
+  "surfaces": 119,
+  "tests": 819
  },
  "version": 1
 }

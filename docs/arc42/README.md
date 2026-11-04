@@ -10,7 +10,8 @@
 > **L0 = 0** (L0 44→1 in the 2026-10 true-gap campaigns → 0 on 2026-11-03
 > after the L2 acts/keyboard hardening); roundtrip gates 31/31 **verbatim**
 > (workarounds retired 2026-10-27); shortcut census 57 matched / 0 missing;
-> register 111 F-### ids, graph drift gate green; CI 6 jobs.
+> register 137 F-### ids, graph drift gate green (137 features / 819 tests /
+> 9388 edges, regenerated 2026-11-03); harness conformance CI 6 jobs.
 
 ## Document map
 

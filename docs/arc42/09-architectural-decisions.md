@@ -2,6 +2,11 @@
 
 Short-form ADRs (decision → consequence). Dates are first-recorded dates.
 
+> **Numbering:** this is the *harness* series `ADR-01..ADR-18`. The product
+> repo carries a **separate** series `AD-1..AD-13` (see `World-Office/
+> docs/arc42/09-*`) for product-level decisions — the numbers overlap by
+> coincidence, not by reference. Cite as `ADR-n` here, `AD-n` there.
+
 | ADR | Decision | Why / Consequence |
 |-----|----------|-------------------|
 | ADR-01 (2026-07) | **Stable `F-###` register with honest parity tags**, ids never reused; F-tags inside module docstrings. | Worklists for agents + audit trail for humans; `check-register.py` + seed drift keep it honest. |

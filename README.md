@@ -22,7 +22,8 @@ production repo (`World-Office/server`).
 
 ## Current state (snapshot)
 
-- **Register:** 111 features, `graph.json` in sync (1383 tests, 1632 edges); drift gate green.
+- **Register:** 137 features, `graph.json` in sync (819 tests, 9388 edges);
+  drift gate green (regenerated 2026-11-03).
 - **Ledger:** 152 OO rows covered / 119 real / 83 deferred — deferred rows grouped by reason, printed loudly on every run (a green gate never hides the gap).
 - **Full gate (one command, rc=0 today):**
   ```sh
