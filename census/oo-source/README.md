@@ -22,6 +22,9 @@ the OO image ships, so the reference cannot drift from what OO actually builds.
 | `oo-refer-extract.cjs` | Extractor: ribbon tabs + toolbar buttons (with F1 shortcut-hint letters) + template slots + right-panel sections + toolbar shortcut-action names → `oo-reference.json` |
 | `oo-reference.json` | Committed output (pinned version 252.232.451.526) |
 | `oo-reconcile.cjs` | Source ↔ census audit: census blind spots (OO toolbar controls the runtime walk never captured), stale/ghost captures, right-panel section delta; appends to `../ledger/SOURCE-RECONCILE.md` |
+| `oo-shortcut-dump.cjs` | Runtime dump of the authoritative OO shortcut key table (142 actions) from the live editor SDK (`Asc.c_oAscDefaultShortcuts`) → `oo-shortcuts.json` |
+| `oo-shortcuts.json` | Committed ground truth: every OO default shortcut (action → keys), captured from the running editor at version 252.232.451.526 |
+| `oo-shortcut-reconcile.cjs` | OO shortcut table vs WO parity contracts: 142/142 OO default shortcuts covered (98 `shortcut.*` name-joined, 44 concept-mapped, **0 gap candidates**); idempotent ledger section (marker-replaced); run on contract changes |
 
 ## Re-extract (when the OO image is upgraded)
 
@@ -36,6 +39,21 @@ node oo-reconcile.cjs ../census/census-oo.json oo-reference.json ../ledger/SOURC
 On version change, review `oo-reference.json` diffs and re-run `oo-reconcile.cjs`
 — new ribbon/right-panel controls surface there before they can silently
 outpace WO's coverage.
+
+## Shortcuts
+
+The OO shortcut key map is NOT plaintext in the shipped source — it lives in the
+minified core SDK (`Asc.c_oAscDefaultShortcuts`). Extract it from the running
+editor instead:
+
+```sh
+node oo-shortcut-dump.cjs oo-shortcuts.json   # needs rig + DS up (OO_URL env)
+node oo-shortcut-reconcile.cjs oo-shortcuts.json   # vs word-parity-contracts.json
+```
+
+`oo-shortcut-reconcile.cjs` re-runs are idempotent (its ledger section is
+marker-replaced). Re-run after any WO shortcut contract change so a newly
+promoted shortcut can never leave a silent OO-default gap.
 
 ## Consumers
 

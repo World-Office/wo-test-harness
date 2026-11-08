@@ -1,0 +1,2036 @@
+{
+ "source": "OO editor runtime (Asc.c_oAscDefaultShortcuts via rig iframe)",
+ "capturedAt": "2026-11-08T22:51:03.260Z",
+ "url": "http://127.0.0.1:8735/rig-editor.html",
+ "actions": 142,
+ "shortcuts": [
+  {
+   "name": "OpenFilePanel",
+   "type": 1,
+   "keys": [
+    {
+     "key": "Alt+F",
+     "raw": {
+      "keyCode": 70,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "OpenFindDialog",
+   "type": 2,
+   "keys": [
+    {
+     "key": "Ctrl+F",
+     "raw": {
+      "keyCode": 70,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "OpenFindAndReplaceMenu",
+   "type": 3,
+   "keys": [
+    {
+     "key": "Ctrl+H",
+     "raw": {
+      "keyCode": 72,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "OpenCommentsPanel",
+   "type": 4,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+H",
+     "raw": {
+      "keyCode": 72,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "OpenCommentField",
+   "type": 5,
+   "keys": [
+    {
+     "key": "Alt+H",
+     "raw": {
+      "keyCode": 72,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "OpenChatPanel",
+   "type": 6,
+   "keys": [
+    {
+     "key": "Alt+Q",
+     "raw": {
+      "keyCode": 81,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "Save",
+   "type": 7,
+   "keys": [
+    {
+     "key": "Ctrl+S",
+     "raw": {
+      "keyCode": 83,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "PrintPreviewAndPrint",
+   "type": 8,
+   "keys": [
+    {
+     "key": "Ctrl+P",
+     "raw": {
+      "keyCode": 80,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SaveAs",
+   "type": 9,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+S",
+     "raw": {
+      "keyCode": 83,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "OpenHelpMenu",
+   "type": 10,
+   "keys": [
+    {
+     "key": "F1",
+     "raw": {
+      "keyCode": 112,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "OpenContextMenu",
+   "type": 15,
+   "keys": [
+    {
+     "key": "Shift+F10",
+     "raw": {
+      "keyCode": 121,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "CloseMenu",
+   "type": 16,
+   "keys": [
+    {
+     "key": "Ctrl+Esc",
+     "raw": {
+      "keyCode": 27,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "Zoom100",
+   "type": 17,
+   "keys": [
+    {
+     "key": "Ctrl+0",
+     "raw": {
+      "keyCode": 48,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "UpdateFields",
+   "type": 18,
+   "keys": [
+    {
+     "key": "F9",
+     "raw": {
+      "keyCode": 120,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToStartLine",
+   "type": 19,
+   "keys": [
+    {
+     "key": "Home",
+     "raw": {
+      "keyCode": 36,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToStartDocument",
+   "type": 20,
+   "keys": [
+    {
+     "key": "Ctrl+Home",
+     "raw": {
+      "keyCode": 36,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToEndLine",
+   "type": 21,
+   "keys": [
+    {
+     "key": "End",
+     "raw": {
+      "keyCode": 35,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToEndDocument",
+   "type": 22,
+   "keys": [
+    {
+     "key": "Ctrl+End",
+     "raw": {
+      "keyCode": 35,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToStartPreviousPage",
+   "type": 23,
+   "keys": [
+    {
+     "key": "Ctrl+Alt+PgUp",
+     "raw": {
+      "keyCode": 33,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToStartNextPage",
+   "type": 24,
+   "keys": [
+    {
+     "key": "Ctrl+Alt+PgDn",
+     "raw": {
+      "keyCode": 34,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "ScrollDown",
+   "type": 25,
+   "keys": [
+    {
+     "key": "PgDn",
+     "raw": {
+      "keyCode": 34,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "ScrollUp",
+   "type": 26,
+   "keys": [
+    {
+     "key": "PgUp",
+     "raw": {
+      "keyCode": 33,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "ZoomIn",
+   "type": 27,
+   "keys": [
+    {
+     "key": "Ctrl+=",
+     "raw": {
+      "keyCode": 187,
+      "isLocked": false,
+      "isHidden": false
+     }
+    },
+    {
+     "key": "Ctrl+Np+",
+     "raw": {
+      "keyCode": 107,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "ZoomOut",
+   "type": 28,
+   "keys": [
+    {
+     "key": "Ctrl+-",
+     "raw": {
+      "keyCode": 189,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToRightChar",
+   "type": 29,
+   "keys": [
+    {
+     "key": "Right",
+     "raw": {
+      "keyCode": 39,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToLeftChar",
+   "type": 30,
+   "keys": [
+    {
+     "key": "Left",
+     "raw": {
+      "keyCode": 37,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToUpLine",
+   "type": 31,
+   "keys": [
+    {
+     "key": "Up",
+     "raw": {
+      "keyCode": 38,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToDownLine",
+   "type": 32,
+   "keys": [
+    {
+     "key": "Down",
+     "raw": {
+      "keyCode": 40,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToStartWord",
+   "type": 33,
+   "keys": [
+    {
+     "key": "Ctrl+Left",
+     "raw": {
+      "keyCode": 37,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToEndWord",
+   "type": 34,
+   "keys": [
+    {
+     "key": "Ctrl+Right",
+     "raw": {
+      "keyCode": 39,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "NextModalControl",
+   "type": 35,
+   "keys": [
+    {
+     "key": "Tab",
+     "raw": {
+      "keyCode": 9,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "PreviousModalControl",
+   "type": 36,
+   "keys": [
+    {
+     "key": "Shift+Tab",
+     "raw": {
+      "keyCode": 9,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToLowerHeaderFooter",
+   "type": 37,
+   "keys": [
+    {
+     "key": "PgDn",
+     "raw": {
+      "keyCode": 34,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToUpperHeaderFooter",
+   "type": 38,
+   "keys": [
+    {
+     "key": "PgUp",
+     "raw": {
+      "keyCode": 33,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToLowerHeader",
+   "type": 39,
+   "keys": [
+    {
+     "key": "Alt+PgDn",
+     "raw": {
+      "keyCode": 34,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToUpperHeader",
+   "type": 40,
+   "keys": [
+    {
+     "key": "Alt+PgUp",
+     "raw": {
+      "keyCode": 33,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "EndParagraph",
+   "type": 41,
+   "keys": [
+    {
+     "key": "Enter",
+     "raw": {
+      "keyCode": 13,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "InsertLineBreak",
+   "type": 42,
+   "keys": [
+    {
+     "key": "Shift+Enter",
+     "raw": {
+      "keyCode": 13,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "InsertColumnBreak",
+   "type": 43,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+Enter",
+     "raw": {
+      "keyCode": 13,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "EquationAddPlaceholder",
+   "type": 44,
+   "keys": [
+    {
+     "key": "Enter",
+     "raw": {
+      "keyCode": 13,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "EquationChangeAlignmentLeft",
+   "type": 45,
+   "keys": [
+    {
+     "key": "Shift+Tab",
+     "raw": {
+      "keyCode": 9,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "EquationChangeAlignmentRight",
+   "type": 46,
+   "keys": [
+    {
+     "key": "Tab",
+     "raw": {
+      "keyCode": 9,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "DeleteLeftChar",
+   "type": 47,
+   "keys": [
+    {
+     "key": "Backspace",
+     "raw": {
+      "keyCode": 8,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "DeleteRightChar",
+   "type": 48,
+   "keys": [
+    {
+     "key": "Delete",
+     "raw": {
+      "keyCode": 46,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "DeleteLeftWord",
+   "type": 49,
+   "keys": [
+    {
+     "key": "Ctrl+Backspace",
+     "raw": {
+      "keyCode": 8,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "DeleteRightWord",
+   "type": 50,
+   "keys": [
+    {
+     "key": "Ctrl+Delete",
+     "raw": {
+      "keyCode": 46,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "NonBreakingSpace",
+   "type": 51,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+Space",
+     "raw": {
+      "keyCode": 32,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "NonBreakingHyphen",
+   "type": 52,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+-",
+     "raw": {
+      "keyCode": 189,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "EditUndo",
+   "type": 53,
+   "keys": [
+    {
+     "key": "Ctrl+Z",
+     "raw": {
+      "keyCode": 90,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "EditRedo",
+   "type": 54,
+   "keys": [
+    {
+     "key": "Ctrl+Y",
+     "raw": {
+      "keyCode": 89,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "Cut",
+   "type": 55,
+   "keys": [
+    {
+     "key": "Ctrl+X",
+     "raw": {
+      "keyCode": 88,
+      "isLocked": false,
+      "isHidden": false
+     }
+    },
+    {
+     "key": "Shift+Delete",
+     "raw": {
+      "keyCode": 46,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "Copy",
+   "type": 56,
+   "keys": [
+    {
+     "key": "Ctrl+C",
+     "raw": {
+      "keyCode": 67,
+      "isLocked": false,
+      "isHidden": false
+     }
+    },
+    {
+     "key": "Ctrl+Insert",
+     "raw": {
+      "keyCode": 45,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "Paste",
+   "type": 57,
+   "keys": [
+    {
+     "key": "Ctrl+V",
+     "raw": {
+      "keyCode": 86,
+      "isLocked": false,
+      "isHidden": false
+     }
+    },
+    {
+     "key": "Shift+Insert",
+     "raw": {
+      "keyCode": 45,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "PasteTextWithoutFormat",
+   "type": 58,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+V",
+     "raw": {
+      "keyCode": 86,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "CopyFormat",
+   "type": 59,
+   "keys": [
+    {
+     "key": "Ctrl+Alt+C",
+     "raw": {
+      "keyCode": 67,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "PasteFormat",
+   "type": 60,
+   "keys": [
+    {
+     "key": "Ctrl+Alt+V",
+     "raw": {
+      "keyCode": 86,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SpecialOptionsKeepSourceFormat",
+   "type": 61,
+   "keys": [
+    {
+     "key": "Ctrl+K",
+     "raw": {
+      "keyCode": 75,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SpecialOptionsKeepTextOnly",
+   "type": 62,
+   "keys": [
+    {
+     "key": "Ctrl+T",
+     "raw": {
+      "keyCode": 84,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SpecialOptionsOverwriteCells",
+   "type": 63,
+   "keys": [
+    {
+     "key": "Ctrl+O",
+     "raw": {
+      "keyCode": 79,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SpecialOptionsNestTable",
+   "type": 64,
+   "keys": [
+    {
+     "key": "Ctrl+N",
+     "raw": {
+      "keyCode": 78,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "InsertHyperlink",
+   "type": 65,
+   "keys": [
+    {
+     "key": "Ctrl+K",
+     "raw": {
+      "keyCode": 75,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "VisitHyperlink",
+   "type": 66,
+   "keys": [
+    {
+     "key": "Enter",
+     "raw": {
+      "keyCode": 13,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "EditSelectAll",
+   "type": 67,
+   "keys": [
+    {
+     "key": "Ctrl+A",
+     "raw": {
+      "keyCode": 65,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SelectToStartLine",
+   "type": 68,
+   "keys": [
+    {
+     "key": "Shift+Home",
+     "raw": {
+      "keyCode": 36,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SelectToEndLine",
+   "type": 69,
+   "keys": [
+    {
+     "key": "Shift+End",
+     "raw": {
+      "keyCode": 35,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SelectToStartDocument",
+   "type": 70,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+Home",
+     "raw": {
+      "keyCode": 36,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SelectToEndDocument",
+   "type": 71,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+End",
+     "raw": {
+      "keyCode": 35,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SelectRightChar",
+   "type": 72,
+   "keys": [
+    {
+     "key": "Shift+Right",
+     "raw": {
+      "keyCode": 39,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SelectLeftChar",
+   "type": 73,
+   "keys": [
+    {
+     "key": "Shift+Left",
+     "raw": {
+      "keyCode": 37,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SelectRightWord",
+   "type": 74,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+Right",
+     "raw": {
+      "keyCode": 39,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SelectLeftWord",
+   "type": 75,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+Left",
+     "raw": {
+      "keyCode": 37,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SelectLineUp",
+   "type": 76,
+   "keys": [
+    {
+     "key": "Shift+Up",
+     "raw": {
+      "keyCode": 38,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SelectLineDown",
+   "type": 77,
+   "keys": [
+    {
+     "key": "Shift+Down",
+     "raw": {
+      "keyCode": 40,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SelectPageUp",
+   "type": 78,
+   "keys": [
+    {
+     "key": "Shift+PgUp",
+     "raw": {
+      "keyCode": 33,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SelectPageDown",
+   "type": 79,
+   "keys": [
+    {
+     "key": "Shift+PgDn",
+     "raw": {
+      "keyCode": 34,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SelectToBeginPreviousPage",
+   "type": 80,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+PgUp",
+     "raw": {
+      "keyCode": 33,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SelectToBeginNextPage",
+   "type": 81,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+PgDn",
+     "raw": {
+      "keyCode": 34,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "Bold",
+   "type": 82,
+   "keys": [
+    {
+     "key": "Ctrl+B",
+     "raw": {
+      "keyCode": 66,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "Italic",
+   "type": 83,
+   "keys": [
+    {
+     "key": "Ctrl+I",
+     "raw": {
+      "keyCode": 73,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "Underline",
+   "type": 84,
+   "keys": [
+    {
+     "key": "Ctrl+U",
+     "raw": {
+      "keyCode": 85,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "Strikeout",
+   "type": 85,
+   "keys": [
+    {
+     "key": "Ctrl+5",
+     "raw": {
+      "keyCode": 53,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "Subscript",
+   "type": 86,
+   "keys": [
+    {
+     "key": "Ctrl+.",
+     "raw": {
+      "keyCode": 190,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "Superscript",
+   "type": 87,
+   "keys": [
+    {
+     "key": "Ctrl+,",
+     "raw": {
+      "keyCode": 188,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "ApplyHeading1",
+   "type": 88,
+   "keys": [
+    {
+     "key": "Alt+1",
+     "raw": {
+      "keyCode": 49,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "ApplyHeading2",
+   "type": 89,
+   "keys": [
+    {
+     "key": "Alt+2",
+     "raw": {
+      "keyCode": 50,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "ApplyHeading3",
+   "type": 90,
+   "keys": [
+    {
+     "key": "Alt+3",
+     "raw": {
+      "keyCode": 51,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "ApplyListBullet",
+   "type": 91,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+L",
+     "raw": {
+      "keyCode": 76,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "ResetChar",
+   "type": 92,
+   "keys": [
+    {
+     "key": "Ctrl+Space",
+     "raw": {
+      "keyCode": 32,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "IncreaseFontSize",
+   "type": 93,
+   "keys": [
+    {
+     "key": "Ctrl+]",
+     "raw": {
+      "keyCode": 221,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "DecreaseFontSize",
+   "type": 94,
+   "keys": [
+    {
+     "key": "Ctrl+[",
+     "raw": {
+      "keyCode": 219,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "CenterPara",
+   "type": 95,
+   "keys": [
+    {
+     "key": "Ctrl+E",
+     "raw": {
+      "keyCode": 69,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "JustifyPara",
+   "type": 96,
+   "keys": [
+    {
+     "key": "Ctrl+J",
+     "raw": {
+      "keyCode": 74,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "RightPara",
+   "type": 97,
+   "keys": [
+    {
+     "key": "Ctrl+R",
+     "raw": {
+      "keyCode": 82,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "LeftPara",
+   "type": 98,
+   "keys": [
+    {
+     "key": "Ctrl+L",
+     "raw": {
+      "keyCode": 76,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "InsertPageBreak",
+   "type": 99,
+   "keys": [
+    {
+     "key": "Ctrl+Enter",
+     "raw": {
+      "keyCode": 13,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "Indent",
+   "type": 100,
+   "keys": [
+    {
+     "key": "Ctrl+M",
+     "raw": {
+      "keyCode": 77,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "UnIndent",
+   "type": 101,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+M",
+     "raw": {
+      "keyCode": 77,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "InsertPageNumber",
+   "type": 102,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+P",
+     "raw": {
+      "keyCode": 80,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "ShowAll",
+   "type": 103,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+8",
+     "raw": {
+      "keyCode": 56,
+      "isLocked": false,
+      "isHidden": false
+     }
+    },
+    {
+     "key": "Ctrl+Shift+Np8",
+     "raw": {
+      "keyCode": 104,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "StartIndent",
+   "type": 104,
+   "keys": [
+    {
+     "key": "Tab",
+     "raw": {
+      "keyCode": 9,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "StartUnIndent",
+   "type": 105,
+   "keys": [
+    {
+     "key": "Shift+Tab",
+     "raw": {
+      "keyCode": 9,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "InsertTab",
+   "type": 106,
+   "keys": [
+    {
+     "key": "Tab",
+     "raw": {
+      "keyCode": 9,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MixedIndent",
+   "type": 107,
+   "keys": [
+    {
+     "key": "Tab",
+     "raw": {
+      "keyCode": 9,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MixedUnIndent",
+   "type": 108,
+   "keys": [
+    {
+     "key": "Shift+Tab",
+     "raw": {
+      "keyCode": 9,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "EditShape",
+   "type": 109,
+   "keys": [
+    {
+     "key": "Enter",
+     "raw": {
+      "keyCode": 13,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "LittleMoveObjectLeft",
+   "type": 110,
+   "keys": [
+    {
+     "key": "Ctrl+Left",
+     "raw": {
+      "keyCode": 37,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "LittleMoveObjectRight",
+   "type": 111,
+   "keys": [
+    {
+     "key": "Ctrl+Right",
+     "raw": {
+      "keyCode": 39,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "LittleMoveObjectUp",
+   "type": 112,
+   "keys": [
+    {
+     "key": "Ctrl+Up",
+     "raw": {
+      "keyCode": 38,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "LittleMoveObjectDown",
+   "type": 113,
+   "keys": [
+    {
+     "key": "Ctrl+Down",
+     "raw": {
+      "keyCode": 40,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "BigMoveObjectLeft",
+   "type": 114,
+   "keys": [
+    {
+     "key": "Left",
+     "raw": {
+      "keyCode": 37,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "BigMoveObjectRight",
+   "type": 115,
+   "keys": [
+    {
+     "key": "Right",
+     "raw": {
+      "keyCode": 39,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "BigMoveObjectUp",
+   "type": 116,
+   "keys": [
+    {
+     "key": "Up",
+     "raw": {
+      "keyCode": 38,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "BigMoveObjectDown",
+   "type": 117,
+   "keys": [
+    {
+     "key": "Down",
+     "raw": {
+      "keyCode": 40,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveFocusToNextObject",
+   "type": 118,
+   "keys": [
+    {
+     "key": "Tab",
+     "raw": {
+      "keyCode": 9,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveFocusToPreviousObject",
+   "type": 119,
+   "keys": [
+    {
+     "key": "Shift+Tab",
+     "raw": {
+      "keyCode": 9,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "InsertEndnoteNow",
+   "type": 120,
+   "keys": [
+    {
+     "key": "Ctrl+Alt+D",
+     "raw": {
+      "keyCode": 68,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "InsertFootnoteNow",
+   "type": 121,
+   "keys": [
+    {
+     "key": "Ctrl+Alt+F",
+     "raw": {
+      "keyCode": 70,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToNextCell",
+   "type": 122,
+   "keys": [
+    {
+     "key": "Tab",
+     "raw": {
+      "keyCode": 9,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToPreviousCell",
+   "type": 123,
+   "keys": [
+    {
+     "key": "Shift+Tab",
+     "raw": {
+      "keyCode": 9,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToNextRow",
+   "type": 124,
+   "keys": [
+    {
+     "key": "Down",
+     "raw": {
+      "keyCode": 40,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToPreviousRow",
+   "type": 125,
+   "keys": [
+    {
+     "key": "Up",
+     "raw": {
+      "keyCode": 38,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "EndParagraphCell",
+   "type": 126,
+   "keys": [
+    {
+     "key": "Enter",
+     "raw": {
+      "keyCode": 13,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "AddNewRow",
+   "type": 127,
+   "keys": [
+    {
+     "key": "Tab",
+     "raw": {
+      "keyCode": 9,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "InsertTableBreak",
+   "type": 128,
+   "keys": [
+    {
+     "key": "Ctrl+Shift+Enter",
+     "raw": {
+      "keyCode": 13,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToNextForm",
+   "type": 129,
+   "keys": [
+    {
+     "key": "Tab",
+     "raw": {
+      "keyCode": 9,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToPreviousForm",
+   "type": 130,
+   "keys": [
+    {
+     "key": "Shift+Tab",
+     "raw": {
+      "keyCode": 9,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "ChooseNextComboBoxOption",
+   "type": 131,
+   "keys": [
+    {
+     "key": "Down",
+     "raw": {
+      "keyCode": 40,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "ChoosePreviousComboBoxOption",
+   "type": 132,
+   "keys": [
+    {
+     "key": "Up",
+     "raw": {
+      "keyCode": 38,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "InsertEquation",
+   "type": 133,
+   "keys": [
+    {
+     "key": "Alt+=",
+     "raw": {
+      "keyCode": 187,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "EmDash",
+   "type": 134,
+   "keys": [
+    {
+     "key": "Ctrl+Alt+Np-",
+     "raw": {
+      "keyCode": 109,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "EnDash",
+   "type": 135,
+   "keys": [
+    {
+     "key": "Ctrl+Np-",
+     "raw": {
+      "keyCode": 109,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "CopyrightSign",
+   "type": 136,
+   "keys": [
+    {
+     "key": "Ctrl+Alt+G",
+     "raw": {
+      "keyCode": 71,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "EuroSign",
+   "type": 137,
+   "keys": [
+    {
+     "key": "Ctrl+Alt+E",
+     "raw": {
+      "keyCode": 69,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "RegisteredSign",
+   "type": 138,
+   "keys": [
+    {
+     "key": "Ctrl+Alt+R",
+     "raw": {
+      "keyCode": 82,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "TrademarkSign",
+   "type": 139,
+   "keys": [
+    {
+     "key": "Ctrl+Alt+T",
+     "raw": {
+      "keyCode": 84,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "HorizontalEllipsis",
+   "type": 140,
+   "keys": [
+    {
+     "key": "Ctrl+Alt+.",
+     "raw": {
+      "keyCode": 190,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "ReplaceUnicodeToSymbol",
+   "type": 141,
+   "keys": [
+    {
+     "key": "Alt+X",
+     "raw": {
+      "keyCode": 88,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "SpeechWorker",
+   "type": 143,
+   "keys": [
+    {
+     "key": "Ctrl+Alt+Z",
+     "raw": {
+      "keyCode": 90,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "EditChart",
+   "type": 144,
+   "keys": [
+    {
+     "key": "Enter",
+     "raw": {
+      "keyCode": 13,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "InsertLineBreakMultilineForm",
+   "type": 145,
+   "keys": [
+    {
+     "key": "Enter",
+     "raw": {
+      "keyCode": 13,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToNextPage",
+   "type": 146,
+   "keys": [
+    {
+     "key": "Alt+PgDn",
+     "raw": {
+      "keyCode": 34,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  },
+  {
+   "name": "MoveToPreviousPage",
+   "type": 147,
+   "keys": [
+    {
+     "key": "Alt+PgUp",
+     "raw": {
+      "keyCode": 33,
+      "isLocked": false,
+      "isHidden": false
+     }
+    }
+   ]
+  }
+ ]
+}

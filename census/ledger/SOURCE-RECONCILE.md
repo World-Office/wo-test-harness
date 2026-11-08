@@ -101,3 +101,116 @@ OO source sections WO has NO right-panel counterpart:
 (WO may route these to dedicated dialogs — verify each is otherwise contracted.)
 
 ---
+### OO default shortcuts vs WO coverage (undefined) — 142 actions
+
+Ground truth: oo-shortcuts.json (142 actions, dumped from the live editor SDK at 2026-11-08).
+Name-joined to `shortcut.*` contracts: **98**; concept-mapped: **44**; **NO WO coverage: 0**.
+
+#### No-coverage OO default shortcuts (real gap candidates)
+- none
+
+#### Concept-mapped (WO covers via other tokens)
+
+- `openfinddialog` [Ctrl+F] -> ctrl+f, btn-find
+- `openfindandreplacemenu` [Ctrl+H] -> ctrl+h — replace
+- `openchatpanel` [Alt+Q] -> togglechat — chat sidebar (WO toggle), OO Alt+Q
+- `save` [Ctrl+S] -> save, ctrl+s
+- `closemenu` [Ctrl+Esc] -> escape — close menu/dialog
+- `zoom100` [Ctrl+0] -> ctrl+0, btn-zoom-reset
+- `zoomin` [Ctrl+= | Ctrl+k] -> ctrl+plus/=, btn-zoom-in — OO Ctrl+= / Ctrl+NumPlus
+- `zoomout` [Ctrl+-] -> ctrl+minus, btn-zoom-out — OO Ctrl+- ; matches WO Control+Minus=zoomOut (L2O-06 canon)
+- `insertcolumnbreak` [Ctrl+Shift+Enter] -> ctrl+shift+enter, breaks — column break
+- `deleteleftchar` [Backspace] -> backspace
+- `deleterightchar` [Delete] -> delete
+- `deleteleftword` [Ctrl+Backspace] -> (skip family) — caret/word deletion — permanent-skip family (WO nav parity backlog) [SKIP]
+- `deleterightword` [Ctrl+Delete] -> (skip family) — caret/word deletion — permanent-skip family [SKIP]
+- `nonbreakingspace` [Ctrl+Shift+ ] -> ctrl+shift+space
+- `nonbreakinghyphen` [Ctrl+Shift+-] -> ctrl+shift+minus
+- `editundo` [Ctrl+Z] -> ctrl+z
+- `pastetextwithoutformat` [Ctrl+Shift+V] -> ctrl+shift+v
+- `inserthyperlink` [Ctrl+K] -> ctrl+k, link
+- `editselectall` [Ctrl+A] -> selectall, ctrl+a
+- `bold` [Ctrl+B] -> bold, ctrl+b — WO bold contract
+- `italic` [Ctrl+I] -> italic, ctrl+i — WO italic contract
+- `underline` [Ctrl+U] -> underline, ctrl+u — WO underline contract
+- `subscript` [Ctrl+.] -> subscript, ctrl+, — OO Ctrl+, vs WO ctrl+, (same)
+- `superscript` [Ctrl+,] -> superscript — OO Ctrl+. vs WO (script tools)
+- `applyheading1` [Alt+1] -> applyheading1 — Alt+1
+- `applyheading2` [Alt+2] -> applyheading2 — Alt+2
+- `applyheading3` [Alt+3] -> applyheading3 — Alt+3
+- `increasefontsize` [Ctrl+]] -> ctrl+]
+- `decreasefontsize` [Ctrl+[] -> ctrl+[
+- `centerpara` [Ctrl+E] -> justifycenter, ctrl+e — center align
+- `justifypara` [Ctrl+J] -> justifyfull, ctrl+j — justify
+- `rightpara` [Ctrl+R] -> justifyright, ctrl+r — right align
+- `leftpara` [Ctrl+L] -> justifyleft, ctrl+l — left align
+- `insertpagebreak` [Ctrl+Enter] -> ctrl+enter, breaks — page break
+- `indent` [Ctrl+M] -> ctrl+m, indent
+- `unindent` [Ctrl+Shift+M] -> ctrl+shift+m, outdent
+- `insertendnotenow` [Ctrl+Alt+D] -> ctrl+alt+d, insertfootnote — endnote
+- `insertfootnotenow` [Ctrl+Alt+F] -> ctrl+alt+f, insertfootnote
+- `insertequation` [Alt+=] -> ctrl+alt+=, btn-equation, equation-dialog — OO default Alt+= ; WO: macro/equation dialog [SKIP]
+- `copyrightsign` [Ctrl+Alt+G] -> ctrl+alt+g — insert symbol ©
+- `eurosign` [Ctrl+Alt+E] -> ctrl+alt+e — insert symbol €
+- `registeredsign` [Ctrl+Alt+R] -> ctrl+alt+r — insert symbol ®
+- `trademarksign` [Ctrl+Alt+T] -> ctrl+alt+t — insert symbol ™
+- `horizontalellipsis` [Ctrl+Alt+.] -> symbol-dialog — insert … via symbol dialog [SKIP]
+
+---
+<!-- oo-shortcuts -->
+### OO default shortcuts vs WO coverage (undefined) — 142 actions
+
+Ground truth: oo-shortcuts.json (142 actions, dumped from the live editor SDK at 2026-11-08).
+Name-joined to `shortcut.*` contracts: **98**; concept-mapped: **44**; **NO WO coverage: 0**.
+
+#### No-coverage OO default shortcuts (real gap candidates)
+- none
+
+#### Concept-mapped (WO covers via other tokens)
+
+- `openfinddialog` [Ctrl+F] -> ctrl+f, btn-find
+- `openfindandreplacemenu` [Ctrl+H] -> ctrl+h — replace
+- `openchatpanel` [Alt+Q] -> togglechat — chat sidebar (WO toggle), OO Alt+Q
+- `save` [Ctrl+S] -> save, ctrl+s
+- `closemenu` [Ctrl+Esc] -> escape — close menu/dialog
+- `zoom100` [Ctrl+0] -> ctrl+0, btn-zoom-reset
+- `zoomin` [Ctrl+= | Ctrl+Np+] -> ctrl+plus/=, btn-zoom-in — OO Ctrl+= / Ctrl+NumPlus
+- `zoomout` [Ctrl+-] -> ctrl+minus, btn-zoom-out — OO Ctrl+- ; matches WO Control+Minus=zoomOut (L2O-06 canon)
+- `insertcolumnbreak` [Ctrl+Shift+Enter] -> ctrl+shift+enter, breaks — column break
+- `deleteleftchar` [Backspace] -> backspace
+- `deleterightchar` [Delete] -> delete
+- `deleteleftword` [Ctrl+Backspace] -> (skip family) — caret/word deletion — permanent-skip family (WO nav parity backlog) [SKIP]
+- `deleterightword` [Ctrl+Delete] -> (skip family) — caret/word deletion — permanent-skip family [SKIP]
+- `nonbreakingspace` [Ctrl+Shift+Space] -> ctrl+shift+space
+- `nonbreakinghyphen` [Ctrl+Shift+-] -> ctrl+shift+minus
+- `editundo` [Ctrl+Z] -> ctrl+z
+- `pastetextwithoutformat` [Ctrl+Shift+V] -> ctrl+shift+v
+- `inserthyperlink` [Ctrl+K] -> ctrl+k, link
+- `editselectall` [Ctrl+A] -> selectall, ctrl+a
+- `bold` [Ctrl+B] -> bold, ctrl+b — WO bold contract
+- `italic` [Ctrl+I] -> italic, ctrl+i — WO italic contract
+- `underline` [Ctrl+U] -> underline, ctrl+u — WO underline contract
+- `subscript` [Ctrl+.] -> subscript, ctrl+, — OO Ctrl+, vs WO ctrl+, (same)
+- `superscript` [Ctrl+,] -> superscript — OO Ctrl+. vs WO (script tools)
+- `applyheading1` [Alt+1] -> applyheading1 — Alt+1
+- `applyheading2` [Alt+2] -> applyheading2 — Alt+2
+- `applyheading3` [Alt+3] -> applyheading3 — Alt+3
+- `increasefontsize` [Ctrl+]] -> ctrl+]
+- `decreasefontsize` [Ctrl+[] -> ctrl+[
+- `centerpara` [Ctrl+E] -> justifycenter, ctrl+e — center align
+- `justifypara` [Ctrl+J] -> justifyfull, ctrl+j — justify
+- `rightpara` [Ctrl+R] -> justifyright, ctrl+r — right align
+- `leftpara` [Ctrl+L] -> justifyleft, ctrl+l — left align
+- `insertpagebreak` [Ctrl+Enter] -> ctrl+enter, breaks — page break
+- `indent` [Ctrl+M] -> ctrl+m, indent
+- `unindent` [Ctrl+Shift+M] -> ctrl+shift+m, outdent
+- `insertendnotenow` [Ctrl+Alt+D] -> ctrl+alt+d, insertfootnote — endnote
+- `insertfootnotenow` [Ctrl+Alt+F] -> ctrl+alt+f, insertfootnote
+- `insertequation` [Alt+=] -> ctrl+alt+=, btn-equation, equation-dialog — OO default Alt+= ; WO: macro/equation dialog [SKIP]
+- `copyrightsign` [Ctrl+Alt+G] -> ctrl+alt+g — insert symbol ©
+- `eurosign` [Ctrl+Alt+E] -> ctrl+alt+e — insert symbol €
+- `registeredsign` [Ctrl+Alt+R] -> ctrl+alt+r — insert symbol ®
+- `trademarksign` [Ctrl+Alt+T] -> ctrl+alt+t — insert symbol ™
+- `horizontalellipsis` [Ctrl+Alt+.] -> symbol-dialog — insert … via symbol dialog [SKIP]
+<!-- /oo-shortcuts -->
+---
