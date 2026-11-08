@@ -1,0 +1,335 @@
+{
+ "source": "onlyoffice/documentserver web-apps/apps/documenteditor/main (source served by the OO reference image; AGPL-3.0). Extract via: docker cp <container>:/var/www/onlyoffice/documentserver/web-apps/apps/documenteditor/main /tmp/oo-src-de",
+ "version": "252.232.451.526",
+ "extractedAt": "2026-11-08T21:36:00.781Z",
+ "ribbonTabs": [
+  "home",
+  "ins",
+  "layout",
+  "links"
+ ],
+ "ribbonButtons": [
+  {
+   "id": "id-toolbar-btn-print",
+   "hint": "P"
+  },
+  {
+   "id": "id-toolbar-btn-save",
+   "hint": "S"
+  },
+  {
+   "id": "id-toolbar-btn-undo",
+   "hint": "Z"
+  },
+  {
+   "id": "id-toolbar-btn-redo",
+   "hint": "Y"
+  },
+  {
+   "id": "id-toolbar-btn-copy",
+   "hint": "C"
+  },
+  {
+   "id": "id-toolbar-btn-paste",
+   "hint": "V"
+  },
+  {
+   "id": "id-toolbar-btn-cut",
+   "hint": "X"
+  },
+  {
+   "id": "id-toolbar-btn-select-all",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-replace",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-incfont",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-decfont",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-bold",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-italic",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-underline",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-strikeout",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-superscript",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-subscript",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-highlight",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-fontcolor",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-paracolor",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-borders",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-case",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-align-left",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-align-center",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-align-right",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-align-just",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-decoffset",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-incoffset",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-linespace",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-direction",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-hidenchars",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-markers",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-numbering",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-multilevels",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-text-from-file",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-blankpage",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-clearstyle",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-copystyle",
+   "hint": ""
+  },
+  {
+   "id": "id-toolbar-btn-colorschemas",
+   "hint": ""
+  }
+ ],
+ "ribbonSlotIds": [
+  "slot-btn-save",
+  "slot-btn-print",
+  "slot-btn-copy",
+  "slot-btn-paste",
+  "slot-btn-undo",
+  "slot-btn-redo",
+  "slot-btn-cut",
+  "slot-btn-copystyle",
+  "slot-field-fontname",
+  "slot-field-fontsize",
+  "slot-btn-incfont",
+  "slot-btn-decfont",
+  "slot-btn-changecase",
+  "slot-btn-bold",
+  "slot-btn-italic",
+  "slot-btn-underline",
+  "slot-btn-strikeout",
+  "slot-btn-superscript",
+  "slot-btn-subscript",
+  "slot-btn-highlight",
+  "slot-btn-fontcolor",
+  "slot-btn-clearstyle",
+  "slot-btn-markers",
+  "slot-btn-numbering",
+  "slot-btn-multilevels",
+  "slot-btn-decoffset",
+  "slot-btn-incoffset",
+  "slot-btn-linespace",
+  "slot-btn-direction",
+  "slot-btn-align-center",
+  "slot-btn-align-just",
+  "slot-btn-hidenchars",
+  "slot-btn-paracolor",
+  "slot-btn-borders",
+  "slot-field-styles",
+  "slot-btn-replace",
+  "slot-btn-select-all",
+  "slot-btn-blankpage",
+  "slot-btn-instable",
+  "slot-btn-insshape",
+  "slot-btn-inssmartart",
+  "slot-btn-inschart",
+  "slot-btn-instext",
+  "slot-btn-instextart",
+  "slot-btn-dropcap",
+  "slot-btn-text-from-file",
+  "slot-btn-insequation",
+  "slot-btn-inssymbol",
+  "slot-btn-controls",
+  "slot-btn-pagemargins",
+  "slot-btn-pageorient",
+  "slot-btn-pagesize",
+  "slot-btn-columns",
+  "slot-btn-line-numbers",
+  "slot-btn-hyphenation",
+  "slot-lbl-ind-left",
+  "slot-spin-ind-left",
+  "slot-lbl-ind-right",
+  "slot-spin-ind-right",
+  "slot-lbl-space-before",
+  "slot-spin-space-before",
+  "slot-lbl-space-after",
+  "slot-spin-space-after",
+  "slot-img-movefrwd",
+  "slot-img-movebkwd",
+  "slot-img-align",
+  "slot-img-group",
+  "slot-shapes-merge",
+  "slot-btn-watermark",
+  "slot-btn-pagecolor",
+  "slot-btn-colorschemas",
+  "slot-btn-add-text",
+  "slot-btn-contents-update",
+  "slot-btn-bookmarks",
+  "slot-btn-caption",
+  "slot-btn-crossref",
+  "slot-btn-tof",
+  "slot-btn-tof-update"
+ ],
+ "ribbonSourceIds": [
+  "id-toolbar-btn-print",
+  "id-toolbar-btn-save",
+  "id-toolbar-btn-undo",
+  "id-toolbar-btn-redo",
+  "id-toolbar-btn-copy",
+  "id-toolbar-btn-paste",
+  "id-toolbar-btn-cut",
+  "id-toolbar-btn-select-all",
+  "id-toolbar-btn-replace",
+  "id-toolbar-btn-incfont",
+  "id-toolbar-btn-decfont",
+  "id-toolbar-btn-bold",
+  "id-toolbar-btn-italic",
+  "id-toolbar-btn-underline",
+  "id-toolbar-btn-strikeout",
+  "id-toolbar-btn-superscript",
+  "id-toolbar-btn-subscript",
+  "id-toolbar-btn-highlight",
+  "id-toolbar-btn-fontcolor",
+  "id-toolbar-btn-paracolor",
+  "id-toolbar-btn-borders",
+  "id-toolbar-btn-case",
+  "id-toolbar-btn-align-left",
+  "id-toolbar-btn-align-center",
+  "id-toolbar-btn-align-right",
+  "id-toolbar-btn-align-just",
+  "id-toolbar-btn-decoffset",
+  "id-toolbar-btn-incoffset",
+  "id-toolbar-btn-linespace",
+  "id-toolbar-btn-direction",
+  "id-toolbar-btn-hidenchars",
+  "id-toolbar-btn-markers",
+  "id-toolbar-btn-numbering",
+  "id-toolbar-btn-multilevels",
+  "id-toolbar-btn-text-from-file",
+  "id-toolbar-btn-blankpage",
+  "id-toolbar-menu-no-highlight-controls",
+  "id-toolbar-menu-new-control-color",
+  "id-toolbar-btn-clearstyle",
+  "id-toolbar-btn-copystyle",
+  "id-toolbar-btn-colorschemas",
+  "id-toolbar-menu-item-horizontal-line",
+  "id-toolbar-menu-item-border-width",
+  "id-toolbar-mnu-item-border-color",
+  "id-toolbar-menu-auto-bordercolor"
+ ],
+ "ribbonShortcutActions": [
+  "PrintPreviewAndPrint",
+  "Save",
+  "EditUndo",
+  "EditRedo",
+  "Copy",
+  "Paste",
+  "Cut",
+  "EditSelectAll",
+  "OpenFindAndReplaceMenu",
+  "IncreaseFontSize",
+  "DecreaseFontSize",
+  "Bold",
+  "Italic",
+  "Underline",
+  "Strikeout",
+  "Superscript",
+  "Subscript",
+  "LeftPara",
+  "CenterPara",
+  "RightPara",
+  "JustifyPara",
+  "UnIndent",
+  "Indent",
+  "ShowAll",
+  "CopyFormat"
+ ],
+ "rightPanel": [
+  "paragraph-settings",
+  "table-settings",
+  "image-settings",
+  "shape-settings",
+  "mail-merge-settings",
+  "textart-settings",
+  "signature-settings",
+  "form-settings",
+  "send-for-signing-settings",
+  "filling-status-settings"
+ ]
+}
