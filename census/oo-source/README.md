@@ -30,6 +30,12 @@ the OO image ships, so the reference cannot drift from what OO actually builds.
 | `oo-dialog-extract.cjs` | OO dialog SOURCE inventory → `oo-dialogs.json` (36 `AdvancedSettingsWindow` components with ids/types from view/*Dialog.js|*Dlg.js) |
 | `oo-dialogs.json` | Committed OO dialog manifest |
 | `oo-dialog-reconcile.cjs` | OO dialogs vs WO contract tokens: 36/36 covered or declared divergence (30 direct hits, 6 diverged), **0 unmapped**; idempotent marker-replaced ledger section |
+| `oo-filemenu-extract.cjs` | OO File menu (backstage) SOURCE inventory → `oo-filemenu.json` (19 rail buttons, 10 panels from FileMenu.template + FileMenu.js/Panels.js) |
+| `oo-filemenu.json` | Committed OO File menu manifest |
+| `oo-filemenu-reconcile.cjs` | OO File buttons/panels vs WO backstage drop-in rows: 19 buttons → 16 covered / 3 diverged / 0 unmapped; 10 panels → 10/0/0; idempotent |
+| `oo-statusbar-extract.cjs` | OO status bar SOURCE inventory → `oo-statusbar.json` (17 controls from StatusBar.template + Statusbar.js) |
+| `oo-statusbar.json` | Committed OO status bar manifest |
+| `oo-statusbar-reconcile.cjs` | OO statusbar controls vs WO sb-*/btn-zoom*/btn-multipage tokens: 17 controls → 9 covered / 8 declared divergences / 0 unmapped; idempotent |
 
 ## Re-extract (when the OO image is upgraded)
 

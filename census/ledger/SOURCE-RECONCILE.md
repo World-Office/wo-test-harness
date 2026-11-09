@@ -264,4 +264,76 @@ OO dialog inventory: **36** components from view/*Dialog.js|*Dlg.js. Direct toke
 <!-- /oo-dialogs -->
 ---
 <!-- /oo-dialogs -->
----
+---<!-- oo-filemenu -->
+## OO File menu vs WO backstage (19 buttons, 10 panels)
+
+OO File rail buttons: direct WO row hits **16**, declared divergences **3**, unmapped **0**. Panels: hits **10**, diverged **0**, unmapped **0**.
+
+
+| OO button | verdict | WO surface |
+|---|---|---|
+| fm-btn-return | covered | backstage.overlay |
+| fm-btn-create | covered | backstage.pane-new |
+| fm-btn-recent | covered | backstage.pane-open |
+| fm-btn-save | covered | backstage.pane-save |
+| fm-btn-edit | diverged | DIVERGE: edit = return-to-document focus; WO overlay close button serves it |
+| fm-btn-download | covered | backstage.pane-export |
+| fm-btn-save-copy | covered | backstage.pane-save |
+| fm-btn-save-desktop | diverged | DIVERGE: desktop-save is a host-mode action; WO console editor keeps document on server |
+| fm-btn-print | covered | backstage.pane-print |
+| fm-btn-print-with-preview | covered | backstage.pane-print |
+| fm-btn-rename | diverged | DIVERGE: rename is host-file-op (wo:file-rename channel), not a backstage row |
+| fm-btn-protect | covered | backstage.pane-protect |
+| fm-btn-info | covered | backstage.pane-info |
+| fm-btn-history | covered | backstage.pane-history |
+| fm-btn-rights | covered | backstage.pane-protect |
+| fm-btn-back | covered | backstage.overlay |
+| fm-btn-settings | covered | backstage.pane-settings |
+| fm-btn-help | covered | backstage.pane-help |
+| fm-btn-suggest | covered | backstage.pane-suggest |
+
+| OO panel | verdict | WO surface |
+|---|---|---|
+| panel-saveas | covered | backstage.pane-save |
+| panel-savecopy | covered | backstage.pane-save |
+| panel-recentfiles | covered | backstage.pane-open |
+| panel-createnew | covered | backstage.pane-new |
+| panel-info | covered | backstage.pane-info |
+| panel-rights | covered | backstage.pane-protect |
+| panel-settings | covered | backstage.pane-settings |
+| panel-help | covered | backstage.pane-help |
+| panel-protect | covered | backstage.pane-protect |
+| panel-print | covered | backstage.pane-print |
+
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- oo-statusbar -->
+## OO status bar vs WO tokens (17 OO controls)
+
+Direct WO token hits **9**; declared divergences **8**; unmapped **0**.
+
+
+| OO control | verdict | WO surface |
+|---|---|---|
+| label-pages | diverged |  WO sb-page-count id in statusbar DOM, not contract-tokenized |
+| status-goto-box | diverged |  Go-to-page input; WO covers via Find (btn-find) + page navigation |
+| status-goto-page | diverged |  Go-to-page input; WO covers via Find (btn-find) + page navigation |
+| slot-status-btn-info | diverged |  info slide-in = WO backstage pane-info |
+| label-action | diverged |  OO transient action/status text; WO shows status in overlay toasts |
+| btn-cnt-lang | covered | sb-lang |
+| btn-doc-lang | covered | sb-lang |
+| btn-doc-spell | covered | sb-doc-spell |
+| btn-doc-review | covered | sb-track-changes |
+| status-btn-select-tool | diverged |  native selection indicator; no WO control (browser native) |
+| status-btn-hand-tool | diverged |  hand/pan tool; WO pans with scroll + selection cursor |
+| status-btn-multiple-pages | covered | btn-multipage |
+| btn-zoom-topage | covered | btn-zoom-fit |
+| btn-zoom-towidth | covered | btn-zoom-fit |
+| btn-zoom-down | covered | btn-zoom-out |
+| label-zoom | diverged |  WO sb-zoom-label id in statusbar DOM, not contract-tokenized |
+| btn-zoom-up | covered | btn-zoom-in |
+
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->

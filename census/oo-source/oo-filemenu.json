@@ -1,0 +1,39 @@
+{
+ "source": "documenteditor/main/app/template/FileMenu.template + view/FileMenu.js + view/FileMenuPanels.js",
+ "buttons": [
+  "fm-btn-return",
+  "fm-btn-create",
+  "fm-btn-recent",
+  "fm-btn-save",
+  "fm-btn-edit",
+  "fm-btn-download",
+  "fm-btn-save-copy",
+  "fm-btn-save-desktop",
+  "fm-btn-print",
+  "fm-btn-print-with-preview",
+  "fm-btn-rename",
+  "fm-btn-protect",
+  "fm-btn-info",
+  "fm-btn-history",
+  "fm-btn-rights",
+  "fm-btn-back",
+  "fm-btn-settings",
+  "fm-btn-help",
+  "fm-btn-suggest"
+ ],
+ "panels": [
+  "panel-saveas",
+  "panel-savecopy",
+  "panel-recentfiles",
+  "panel-createnew",
+  "panel-info",
+  "panel-rights",
+  "panel-settings",
+  "panel-help",
+  "panel-protect",
+  "panel-print"
+ ],
+ "extraButtonsInJs": [],
+ "extraPanelsInJs": [],
+ "jsCommandTokens": []
+}

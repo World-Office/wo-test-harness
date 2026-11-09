@@ -1,0 +1,26 @@
+{
+ "source": "documenteditor/main/app/template/StatusBar.template + view/Statusbar.js",
+ "templateIds": [
+  "label-pages",
+  "status-goto-box",
+  "status-goto-page",
+  "slot-status-btn-info",
+  "label-action",
+  "btn-cnt-lang",
+  "btn-doc-lang",
+  "btn-doc-spell",
+  "btn-doc-review",
+  "status-btn-select-tool",
+  "status-btn-hand-tool",
+  "status-btn-multiple-pages",
+  "btn-zoom-topage",
+  "btn-zoom-towidth",
+  "btn-zoom-down",
+  "label-zoom",
+  "btn-zoom-up"
+ ],
+ "jsWiredIds": [
+  "status-zoom",
+  "btn-toolbar"
+ ]
+}
