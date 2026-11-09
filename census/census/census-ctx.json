@@ -1,5 +1,5 @@
 {
- "source": "OO web-apps/.../view/DocumentHolderExt.js (5 scenario menus, 302 MenuItems) vs WO #ctx-menu (75 data-ctx actions)",
+ "source": "OO web-apps/.../view/DocumentHolderExt.js (6 scenario menus — textMenu 51 / tableMenu 45 / pictureMenu 37 / viewModeMenu 12 + hdrMenu, viewPDFModeMenu dynamic; 237 MenuItem ctors, 48 separators — see census/oo-source/oo-ctx-manifest.json) vs WO #ctx-menu (75 data-ctx actions)",
  "totals": {
   "rows": 166,
   "matched": 81,

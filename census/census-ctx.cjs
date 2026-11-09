@@ -4,8 +4,15 @@
  *
  * Rig truth: OO right-click menus are built in
  *   web-apps/apps/documenteditor/main/app/view/DocumentHolderExt.js
- * as ~302 Common.UI.MenuItem entries across five scenario menus
- * (textMenu, tableMenu, pictureMenu, hlMenu, viewModeMenu). Their
+ * as six scenario menus (textMenu/tableMenu/pictureMenu/hdrMenu/
+ * viewModeMenu/viewPDFModeMenu) assembled from a pool of pre-built
+ * Common.UI.MenuItem refs. SOURCE-VERIFIED at the pinned reference image
+ * (see census/oo-source/oo-ctx-manifest.json, re-derived from
+ * DocumentHolderExt.js): 237 MenuItem constructors + 48 separators; static
+ * per-menu item counts pictureMenu 37 / tableMenu 45 / textMenu 51 /
+ * viewModeMenu 12 (hdrMenu + viewPDFModeMenu fill items dynamically at
+ * runtime). An older OO bundle counted ~302 MenuItems — this manifest is
+ * the current truth. Their
  * captions resolve to DE.Views.DocumentHolder.* (sub) locale keys.
  * /tmp/oo-ctx-resolved.json holds var->caption resolved against the OO
  * en locale (4479 keys).
@@ -258,7 +265,7 @@ const counts = { matched: 0, diverged: 0, "browser-native": 0, nav: 0, missing: 
 for (const r of rows) counts[r.verdict === "n/a" ? "n_a" : r.verdict]++;
 
 const out = {
-  source: "OO web-apps/.../view/DocumentHolderExt.js (5 scenario menus, 302 MenuItems) vs WO #ctx-menu (75 data-ctx actions)",
+  source: "OO web-apps/.../view/DocumentHolderExt.js (6 scenario menus — textMenu 51 / tableMenu 45 / pictureMenu 37 / viewModeMenu 12 + hdrMenu, viewPDFModeMenu dynamic; 237 MenuItem ctors, 48 separators — see census/oo-source/oo-ctx-manifest.json) vs WO #ctx-menu (75 data-ctx actions)",
   totals: { rows: rows.length, ...counts },
   ledger_rows: rows.length - counts.n_a,
   chart_groups: [...ledgerSets].map((g) => g),

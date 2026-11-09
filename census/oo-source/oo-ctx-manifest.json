@@ -1,0 +1,34 @@
+{
+ "sourceFile": "documenteditor/main/app/view/DocumentHolderExt.js",
+ "menus": {
+  "pictureMenu": {
+   "items": 37,
+   "chars": 14821
+  },
+  "tableMenu": {
+   "items": 45,
+   "chars": 16575
+  },
+  "textMenu": {
+   "items": 51,
+   "chars": 18515
+  },
+  "hdrMenu": {
+   "items": 1,
+   "chars": 781
+  },
+  "viewModeMenu": {
+   "items": 12,
+   "chars": 5155
+  },
+  "viewPDFModeMenu": {
+   "items": 1,
+   "chars": 286
+  }
+ },
+ "totals": {
+  "menuItemConstructors": 237,
+  "captionEntries": 48,
+  "separators": 48
+ }
+}

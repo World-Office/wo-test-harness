@@ -214,3 +214,54 @@ Name-joined to `shortcut.*` contracts: **98**; concept-mapped: **44**; **NO WO c
 - `horizontalellipsis` [Ctrl+Alt+.] -> symbol-dialog — insert … via symbol dialog [SKIP]
 <!-- /oo-shortcuts -->
 ---
+<!-- oo-dialogs -->
+### OO source dialogs vs WO coverage (36 dialogs, 2026-11-09)
+
+OO dialog inventory: **36** components from view/*Dialog.js|*Dlg.js. Direct token hits: **30**; declared-divergence (WO covers via other token): **6**; unmapped: **0**.
+
+
+| OO dialog | file | verdict | WO token |
+|---|---|---|---|
+| BookmarksDialog | BookmarksDialog.js | covered | bookmark-dialog |
+| CaptionDialog | CaptionDialog.js | covered | insertcaption |
+| CellsAddDialog | CellsAddDialog.js | covered | table-dialog |
+| ControlSettingsDialog | ControlSettingsDialog.js | covered | table-dialog |
+| CrossReferenceDialog | CrossReferenceDialog.js | covered | crossref-dialog |
+| CustomColumnsDialog | CustomColumnsDialog.js | covered | columns-dialog |
+| DateTimeDialog | DateTimeDialog.js | covered | btn-datetime |
+| DropcapSettingsAdvanced | DropcapSettingsAdvanced.js | covered | dialog.dropcap-dialog.l4 |
+| EditListItemDialog | EditListItemDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: list-indents |
+| HyperlinkSettingsDialog | HyperlinkSettingsDialog.js | covered | link-dialog |
+| HyphenationDialog | HyphenationDialog.js | covered | hyphenation-dialog |
+| ImageSettingsAdvanced | ImageSettingsAdvanced.js | covered | dialog.image-dialog.l4 |
+| LineNumbersDialog | LineNumbersDialog.js | covered | dialog.linenumbers-dialog.l4, togglelinenumbers |
+| ListIndentsDialog | ListIndentsDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: list-indents |
+| ListSettingsDialog | ListSettingsDialog.js | covered | multilevel |
+| ListTypesAdvanced | ListTypesAdvanced.js | covered | multilevel |
+| MailMergeEmailDlg | MailMergeEmailDlg.js | covered | mailmerge |
+| NoteSettingsDialog | NoteSettingsDialog.js | covered | insertfootnote |
+| NotesRemoveDialog | NotesRemoveDialog.js | covered | insertfootnote |
+| NumberingValueDialog | NumberingValueDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: setNumberingValue |
+| PageMarginsDialog | PageMarginsDialog.js | covered | margins |
+| PageNumberingDlg | PageNumberingDlg.js | covered | dialog.pagenumber-dialog.l4 |
+| PageSizeDialog | PageSizeDialog.js | covered | size |
+| ParagraphSettingsAdvanced | ParagraphSettingsAdvanced.js | covered | dialog.paragraph-settings-dialog.l4 |
+| ProtectDialog | ProtectDialog.js | covered | protectdialog, restrictediting |
+| RoleDeleteDlg | RoleDeleteDlg.js | covered | protectdialog |
+| RoleEditDlg | RoleEditDlg.js | covered | protectdialog |
+| RolesManagerDlg | RolesManagerDlg.js | covered | protectdialog |
+| SaveFormDlg | SaveFormDlg.js | diverged | WO covers via surface not tokenized as a dialog — expected: saveform |
+| StyleTitleDialog | StyleTitleDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: style |
+| TableFormulaDialog | TableFormulaDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: table-formula |
+| TableOfContentsSettings | TableOfContentsSettings.js | covered | toc-dialog |
+| TableSettingsAdvanced | TableSettingsAdvanced.js | covered | table-dialog |
+| TableToTextDialog | TableToTextDialog.js | covered | dialog.text-to-table-dialog.l4 |
+| TextToTableDialog | TextToTableDialog.js | covered | dialog.text-to-table-dialog.l4 |
+| WatermarkSettingsDialog | WatermarkSettingsDialog.js | covered | dialog.watermark-dialog.l4 |
+
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---

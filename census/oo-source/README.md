@@ -25,6 +25,11 @@ the OO image ships, so the reference cannot drift from what OO actually builds.
 | `oo-shortcut-dump.cjs` | Runtime dump of the authoritative OO shortcut key table (142 actions) from the live editor SDK (`Asc.c_oAscDefaultShortcuts`) → `oo-shortcuts.json` |
 | `oo-shortcuts.json` | Committed ground truth: every OO default shortcut (action → keys), captured from the running editor at version 252.232.451.526 |
 | `oo-shortcut-reconcile.cjs` | OO shortcut table vs WO parity contracts: 142/142 OO default shortcuts covered (98 `shortcut.*` name-joined, 44 concept-mapped, **0 gap candidates**); idempotent ledger section (marker-replaced); run on contract changes |
+| `oo-ctx-extract.cjs` | OO context-menu SOURCE verifier → `oo-ctx-manifest.json`: 6 scenario menus with per-menu item counts (textMenu 51 / tableMenu 45 / pictureMenu 37 / viewModeMenu 12 + dynamic hdr/PDF menus), 237 MenuItem constructors, 48 separators |
+| `oo-ctx-manifest.json` | Committed source-verified ctx inventory (backs census-ctx.cjs provenance) |
+| `oo-dialog-extract.cjs` | OO dialog SOURCE inventory → `oo-dialogs.json` (36 `AdvancedSettingsWindow` components with ids/types from view/*Dialog.js|*Dlg.js) |
+| `oo-dialogs.json` | Committed OO dialog manifest |
+| `oo-dialog-reconcile.cjs` | OO dialogs vs WO contract tokens: 36/36 covered or declared divergence (30 direct hits, 6 diverged), **0 unmapped**; idempotent marker-replaced ledger section |
 
 ## Re-extract (when the OO image is upgraded)
 

@@ -1,0 +1,294 @@
+{
+ "source": "documenteditor/main/app/view/*Dialog.js|*Dlg.js (AdvancedSettingsWindow / Window components)",
+ "extractedAt": "2026-11-09T07:07:58.613Z",
+ "dialogs": [
+  {
+   "file": "BookmarksDialog.js",
+   "component": "BookmarksDialog",
+   "id": "window-bookmarks",
+   "modal": false,
+   "title": "textTitle",
+   "chars": 21906
+  },
+  {
+   "file": "CaptionDialog.js",
+   "component": "CaptionDialog",
+   "id": "window-caption",
+   "modal": false,
+   "title": "textTitle",
+   "chars": 24630
+  },
+  {
+   "file": "CellsAddDialog.js",
+   "component": "CellsAddDialog",
+   "id": null,
+   "modal": false,
+   "title": "textTitle",
+   "chars": 6033
+  },
+  {
+   "file": "ControlSettingsDialog.js",
+   "component": "ControlSettingsDialog",
+   "id": null,
+   "modal": false,
+   "title": "textTitle",
+   "chars": 39749
+  },
+  {
+   "file": "CrossReferenceDialog.js",
+   "component": "CrossReferenceDialog",
+   "id": "window-cross-ref",
+   "modal": false,
+   "title": "txtTitle",
+   "chars": 22861
+  },
+  {
+   "file": "CustomColumnsDialog.js",
+   "component": "CustomColumnsDialog",
+   "id": "window-custom-columns",
+   "modal": false,
+   "title": "textTitle",
+   "chars": 27681
+  },
+  {
+   "file": "DateTimeDialog.js",
+   "component": "DateTimeDialog",
+   "id": "window-date-time",
+   "modal": false,
+   "title": "txtTitle",
+   "chars": 11664
+  },
+  {
+   "file": "DropcapSettingsAdvanced.js",
+   "component": "DropcapSettingsAdvanced",
+   "id": null,
+   "modal": false,
+   "title": "textTitle",
+   "chars": 54773
+  },
+  {
+   "file": "EditListItemDialog.js",
+   "component": "EditListItemDialog",
+   "id": null,
+   "modal": false,
+   "title": null,
+   "chars": 6352
+  },
+  {
+   "file": "HyperlinkSettingsDialog.js",
+   "component": "HyperlinkSettingsDialog",
+   "id": "window-hyperlink",
+   "modal": false,
+   "title": "textTitle",
+   "chars": 21983
+  },
+  {
+   "file": "HyphenationDialog.js",
+   "component": "HyphenationDialog",
+   "id": "window-hyphenation-dlg",
+   "modal": false,
+   "title": "textTitle",
+   "chars": 8665
+  },
+  {
+   "file": "ImageSettingsAdvanced.js",
+   "component": "ImageSettingsAdvanced",
+   "id": null,
+   "modal": false,
+   "title": "textTitle",
+   "chars": 165593
+  },
+  {
+   "file": "LineNumbersDialog.js",
+   "component": "LineNumbersDialog",
+   "id": "window-line-numbers",
+   "modal": false,
+   "title": "textTitle",
+   "chars": 11380
+  },
+  {
+   "file": "ListIndentsDialog.js",
+   "component": "ListIndentsDialog",
+   "id": "window-list-indents",
+   "modal": false,
+   "title": "textTitle",
+   "chars": 8318
+  },
+  {
+   "file": "ListSettingsDialog.js",
+   "component": "ListSettingsDialog",
+   "id": null,
+   "modal": false,
+   "title": "txtTitle",
+   "chars": 69570
+  },
+  {
+   "file": "ListTypesAdvanced.js",
+   "component": "ListTypesAdvanced",
+   "id": null,
+   "modal": false,
+   "title": null,
+   "chars": 4653
+  },
+  {
+   "file": "MailMergeEmailDlg.js",
+   "component": "MailMergeEmailDlg",
+   "id": null,
+   "modal": false,
+   "title": "textTitle",
+   "chars": 10386
+  },
+  {
+   "file": "NoteSettingsDialog.js",
+   "component": "NoteSettingsDialog",
+   "id": "window-note-settings",
+   "modal": false,
+   "title": "textTitle",
+   "chars": 22616
+  },
+  {
+   "file": "NotesRemoveDialog.js",
+   "component": "NotesRemoveDialog",
+   "id": null,
+   "modal": false,
+   "title": "textTitle",
+   "chars": 4056
+  },
+  {
+   "file": "NumberingValueDialog.js",
+   "component": "NumberingValueDialog",
+   "id": null,
+   "modal": false,
+   "title": "textTitle",
+   "chars": 6890
+  },
+  {
+   "file": "PageMarginsDialog.js",
+   "component": "PageMarginsDialog",
+   "id": "window-page-margins",
+   "modal": false,
+   "title": "textTitle",
+   "chars": 21403
+  },
+  {
+   "file": "PageNumberingDlg.js",
+   "component": "PageNumberingDlg",
+   "id": null,
+   "modal": false,
+   "title": "txtTitle",
+   "chars": 11372
+  },
+  {
+   "file": "PageSizeDialog.js",
+   "component": "PageSizeDialog",
+   "id": "window-page-size",
+   "modal": false,
+   "title": "textTitle",
+   "chars": 10354
+  },
+  {
+   "file": "ParagraphSettingsAdvanced.js",
+   "component": "ParagraphSettingsAdvanced",
+   "id": null,
+   "modal": false,
+   "title": "textTitle",
+   "chars": 81758
+  },
+  {
+   "file": "ProtectDialog.js",
+   "component": "ProtectDialog",
+   "id": null,
+   "modal": false,
+   "title": "txtTitle",
+   "chars": 9133
+  },
+  {
+   "file": "RoleDeleteDlg.js",
+   "component": "RoleDeleteDlg",
+   "id": null,
+   "modal": false,
+   "title": "textTitle",
+   "chars": 5282
+  },
+  {
+   "file": "RoleEditDlg.js",
+   "component": "RoleEditDlg",
+   "id": null,
+   "modal": false,
+   "title": null,
+   "chars": 8746
+  },
+  {
+   "file": "RolesManagerDlg.js",
+   "component": "RolesManagerDlg",
+   "id": null,
+   "modal": false,
+   "title": "txtTitle",
+   "chars": 14997
+  },
+  {
+   "file": "SaveFormDlg.js",
+   "component": "SaveFormDlg",
+   "id": null,
+   "modal": false,
+   "title": "txtTitle",
+   "chars": 6703
+  },
+  {
+   "file": "StyleTitleDialog.js",
+   "component": "StyleTitleDialog",
+   "id": null,
+   "modal": false,
+   "title": "textTitle",
+   "chars": 5957
+  },
+  {
+   "file": "TableFormulaDialog.js",
+   "component": "TableFormulaDialog",
+   "id": null,
+   "modal": false,
+   "title": "textTitle",
+   "chars": 10219
+  },
+  {
+   "file": "TableOfContentsSettings.js",
+   "component": "TableOfContentsSettings",
+   "id": "window-table-contents",
+   "modal": false,
+   "title": "textTitle",
+   "chars": 47053
+  },
+  {
+   "file": "TableSettingsAdvanced.js",
+   "component": "TableSettingsAdvanced",
+   "id": null,
+   "modal": false,
+   "title": "textTitle",
+   "chars": 111538
+  },
+  {
+   "file": "TableToTextDialog.js",
+   "component": "TableToTextDialog",
+   "id": null,
+   "modal": false,
+   "title": "textTitle",
+   "chars": 7851
+  },
+  {
+   "file": "TextToTableDialog.js",
+   "component": "TextToTableDialog",
+   "id": null,
+   "modal": false,
+   "title": "textTitle",
+   "chars": 17765
+  },
+  {
+   "file": "WatermarkSettingsDialog.js",
+   "component": "WatermarkSettingsDialog",
+   "id": "window-watermark",
+   "modal": false,
+   "title": "textTitle",
+   "chars": 28578
+  }
+ ]
+}
