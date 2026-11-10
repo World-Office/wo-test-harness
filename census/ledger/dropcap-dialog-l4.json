@@ -2,8 +2,8 @@
  "version": 1,
  "probe": "dropcap-dialog-l4",
  "feature": "dialog.dropcap-dialog.l4",
- "generated": "2026-11-02T18:36:53.975Z",
- "ok": false,
+ "generated": "2026-11-10T19:53:24.376Z",
+ "ok": true,
  "checks": [
   {
    "name": "open via real right-click + ctx row DropcapSettings",
@@ -52,12 +52,12 @@
   },
   {
    "name": "Position none removes the dropcap wrap (text restored)",
-   "ok": false,
-   "detail": "has=false rest=\"pcap senti\""
+   "ok": true,
+   "detail": "has=false rest=\"Dropcap se\""
   },
   {
    "name": "cancel mutates nothing",
-   "ok": false,
+   "ok": true,
    "detail": "has=false closed=true"
   }
  ],

@@ -2,8 +2,8 @@
  "version": 1,
  "probe": "pagenumber-dialog-l4",
  "feature": "dialog.pagenumber-dialog.l4",
- "generated": "2026-11-02T18:37:07.210Z",
- "ok": false,
+ "generated": "2026-11-10T19:53:30.959Z",
+ "ok": true,
  "checks": [
   {
    "name": "open via real clicks (Insert tab + #btn-pagenumber)",
@@ -47,13 +47,13 @@
   },
   {
    "name": "At cursor inserts an inline span.page-number[data-format=upperLetter] text-align:left",
-   "ok": false,
-   "detail": "inline=0 span=null"
+   "ok": true,
+   "detail": "inline=1 span={\"fmt\":\"upperLetter\",\"align\":\"left\"}"
   },
   {
    "name": "cancel plants nothing",
    "ok": true,
-   "detail": "hdr={\"fmt\":\"upperLetter\",\"align\":\"left\",\"display\":\"block\"}/{\"fmt\":\"upperLetter\",\"align\":\"left\",\"display\":\"block\"} closed=true"
+   "detail": "hdr={\"fmt\":\"lowerRoman\",\"align\":\"right\",\"display\":\"block\"}/{\"fmt\":\"lowerRoman\",\"align\":\"right\",\"display\":\"block\"} closed=true"
   }
  ],
  "declaredGaps": [

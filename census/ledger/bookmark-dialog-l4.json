@@ -2,8 +2,8 @@
  "version": 1,
  "probe": "bookmark-dialog-l4",
  "feature": "dialog.bookmark-dialog.l4",
- "generated": "2026-11-02T18:37:14.340Z",
- "ok": false,
+ "generated": "2026-11-10T19:53:38.074Z",
+ "ok": true,
  "checks": [
   {
    "name": "open via real clicks (References tab + #btn-bookmark)",
@@ -37,18 +37,18 @@
   },
   {
    "name": "bare caret + mark2 -> second bookmark whose text is the name",
-   "ok": false,
-   "detail": "n=1"
+   "ok": true,
+   "detail": "n=2"
   },
   {
    "name": "empty name keeps the dialog open and inserts nothing",
-   "ok": false,
-   "detail": "open=true n=1"
+   "ok": true,
+   "detail": "open=true n=2"
   },
   {
    "name": "cancel plants nothing",
-   "ok": false,
-   "detail": "n=1 closed=true"
+   "ok": true,
+   "detail": "n=2 closed=true"
   }
  ],
  "declaredGaps": [

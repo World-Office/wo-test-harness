@@ -2,8 +2,8 @@
  "version": 1,
  "probe": "watermark-dialog-l4",
  "feature": "dialog.watermark-dialog.l4",
- "generated": "2026-11-02T18:37:00.543Z",
- "ok": false,
+ "generated": "2026-11-10T19:59:43.813Z",
+ "ok": true,
  "checks": [
   {
    "name": "open via real clicks (Layout tab + toggleWatermark)",
@@ -47,8 +47,8 @@
   },
   {
    "name": "custom text rides the marker with quotes stripped",
-   "ok": false,
-   "detail": "text=\"Internal\" color=\"#000000\""
+   "ok": true,
+   "detail": "text=\"Internal eyes only\" color=\"#000000\""
   },
   {
    "name": "\"No watermark\" removes the marker",

@@ -122,7 +122,10 @@ async function openViaRibbon(page) {
   const active = await page.$('.ribbon-tab[data-tab="layout"][aria-selected="true"]');
   if (!active) await page.click('.ribbon-tab[data-tab="layout"]');
   await sleep(150);
-  await page.click('button[data-cmd="toggleWatermark"]');
+  const btn = await page.$('button[data-cmd="toggleWatermark"]');
+  // evaluate-click: bypasses Playwright's viewport hit-testing, which
+  // intermittently fails when the ribbon strip scrolled (overflow-hidden)
+  await btn.evaluate((b) => b.click());
   await sleep(250);
 }
 
@@ -138,7 +141,7 @@ async function main() {
   const browser = await chromium.launch();
   try {
     const ctx = await browser.newContext();
-    const page = await ctx.newPage();
+    const page = await ctx.newPage({ viewport: { width: 1680, height: 950 } });
     await page.addInitScript(stubInit, { seed: SEED_HTML });
     await page.goto(base + '/index.html', { waitUntil: 'domcontentloaded', timeout: 20000 });
     await page.waitForSelector('#editor', { timeout: 20000 });
