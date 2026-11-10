@@ -1,0 +1,69 @@
+{
+ "version": 1,
+ "probe": "crossref-dialog-l4",
+ "feature": "dialog.crossref-dialog.l4",
+ "generated": "2026-11-10T19:53:38.074Z",
+ "ok": true,
+ "checks": [
+  {
+   "name": "open via real clicks (References tab + openCrossref)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Insert cross-reference\"",
+   "ok": true,
+   "detail": "\"Insert cross-reference\""
+  },
+  {
+   "name": "field Target bookmark: select",
+   "ok": true,
+   "detail": "\"Target bookmark\" select"
+  },
+  {
+   "name": "field Display text: text input",
+   "ok": true,
+   "detail": "\"Display text\" text"
+  },
+  {
+   "name": "buttons Cancel + Insert(primary)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" insert=\"Insert\" primary=true"
+  },
+  {
+   "name": "select mark1 + \"custom-ref\" + Insert -> span.crossref[data-target][data-display-text] (flat HTML)",
+   "ok": true,
+   "detail": "has=true target=\"mark1\" display=\"custom-ref\" flat=true/true/true n=1 closed=true"
+  },
+  {
+   "name": "cancel plants nothing (single crossref)",
+   "ok": true,
+   "detail": "n=1 closed=true"
+  }
+ ],
+ "declaredGaps": [
+  "the committed OO dialog census carries a \"Cross-reference\" modal with fields: Reference type, Insert reference to, Insert as link, Include above/below, Separate numbers with — WO ships Target bookmark + Display text only; OO fields beyond these two are deferred as recorded divergence (census-oo-dialogs.json has the full OO contract)",
+  "WO writes the document-semantic span.crossref marker with data-target and data-display-text attrs lazy-rendered into the flat HTML by the converters (editor.js confirmCrossrefDialog)"
+ ],
+ "contract": {
+  "open": "real clicks: References tab + ribbon openCrossref (editor.js: openCrossref)",
+  "title": "Insert cross-reference",
+  "fields": [
+   {
+    "label": "Target bookmark",
+    "tag": "select",
+    "type": "select"
+   },
+   {
+    "label": "Display text",
+    "tag": "input",
+    "type": "text"
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Insert"
+  ],
+  "behavior": "requires a pre-existing bookmark; Target bookmark + Display text + Insert plants span.crossref[data-target][data-display-text] at the caret (DOC-semantic marker, survives serialization into flat HTML); Cancel plants nothing"
+ }
+}

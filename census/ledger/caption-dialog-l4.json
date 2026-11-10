@@ -1,0 +1,121 @@
+{
+ "version": 1,
+ "probe": "caption-dialog-l4",
+ "feature": "dialog.caption-dialog.l4",
+ "generated": "2026-11-10T19:53:38.074Z",
+ "ok": true,
+ "checks": [
+  {
+   "name": "open via real clicks (References tab + insertCaption)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Insert caption\"",
+   "ok": true,
+   "detail": "\"Insert caption\""
+  },
+  {
+   "name": "field Caption: text input",
+   "ok": true,
+   "detail": "\"Caption\" text"
+  },
+  {
+   "name": "field Label: select (Figure/Table/Equation)",
+   "ok": true,
+   "detail": "\"Label\" select"
+  },
+  {
+   "name": "field Exclude label from caption: checkbox",
+   "ok": true,
+   "detail": "\"Exclude label from caption\" checkbox"
+  },
+  {
+   "name": "field Numbering: checkbox",
+   "ok": true,
+   "detail": "\"Numbering\" checkbox"
+  },
+  {
+   "name": "field Include chapter number: checkbox",
+   "ok": true,
+   "detail": "\"Include chapter number\" checkbox"
+  },
+  {
+   "name": "field Chapter starts with style: select",
+   "ok": true,
+   "detail": "\"Chapter starts with style\" select"
+  },
+  {
+   "name": "field Use separator: checkbox",
+   "ok": true,
+   "detail": "\"Use separator\" checkbox"
+  },
+  {
+   "name": "buttons Cancel + OK(primary)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" ok=\"OK\" primary=true"
+  },
+  {
+   "name": "caption \"My Figure\" + label Figure + numbering + OK -> caption wrapper (flat HTML)",
+   "ok": true,
+   "detail": "has=true text=\"Figure\" flat=true closed=true"
+  },
+  {
+   "name": "cancel plants nothing (single caption)",
+   "ok": true,
+   "detail": "n=1 closed=true"
+  }
+ ],
+ "declaredGaps": [
+  "the committed OO dialog census carries an \"Insert caption\" modal (triggered by Bookmark in OO) with an extra Insert field (not a WO capability); WO matches all other OO fields: Caption, Label, Exclude label from caption, Numbering, Include chapter number, Chapter starts with style, Use separator",
+  "WO writes the document-semantic caption wrapper with data attributes; the exact HTML form depends on the selection context (img/table/etc)"
+ ],
+ "contract": {
+  "open": "real clicks: References tab + insertCaption cmd (editor.js: insertCaption)",
+  "title": "Insert caption",
+  "fields": [
+   {
+    "label": "Caption",
+    "tag": "input",
+    "type": "text"
+   },
+   {
+    "label": "Label",
+    "tag": "select",
+    "type": "select",
+    "options": ["Figure", "Table", "Equation"]
+   },
+   {
+    "label": "Exclude label from caption",
+    "tag": "input",
+    "type": "checkbox"
+   },
+   {
+    "label": "Numbering",
+    "tag": "input",
+    "type": "checkbox"
+   },
+   {
+    "label": "Include chapter number",
+    "tag": "input",
+    "type": "checkbox"
+   },
+   {
+    "label": "Chapter starts with style",
+    "tag": "select",
+    "type": "select",
+    "options": ["Heading 1", "Heading 2", "Heading 3"]
+   },
+   {
+    "label": "Use separator",
+    "tag": "input",
+    "type": "checkbox"
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "OK"
+  ],
+  "behavior": "Caption + Label + options + OK plants the caption wrapper at the selection or caret (DOC-semantic marker, survives serialization); Cancel plants nothing"
+ }
+}
