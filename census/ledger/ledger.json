@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-03T18:52:30.772493",
+ "generated": "2026-11-10T21:21:14.274231",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,10 +10,10 @@
  ],
  "totals": {
   "L0": 0,
-  "L1": 388,
+  "L1": 384,
   "L2": 81,
   "L3": 38,
-  "L4": 20
+  "L4": 24
  },
  "features": [
   {
@@ -10737,12 +10737,10 @@
     "match": "dropcap-l4 (dropcap-dialog-l4.test.mjs)",
     "where": "dialog:dropcap-l4"
    },
-   "level": 1,
+   "level": 4,
    "evidence": [
     "L4 live probe (dropcap-dialog-l4.test.mjs): dropped/3/5pt + OK wraps the caret paragraph's first char in span.dropcap with --drop-lines/--drop-distance CSS vars (flat HTML); clamps 2..5 / 0..50; in-margin variant — MEASURED DEFECT: re-apply and Position-none EAT the wrapped character (applyDropcap/removeDropcapOnly remove() the span without restoring its text node; MS Word restores the char)",
-    "L4 DEFECT (measured, probe check 'Position none removes the dropcap wrap (text restored)'): has=false rest=\"pcap senti\"",
-    "L4 DEFECT (measured, probe check 'cancel mutates nothing'): has=false closed=true",
-    "NOT L4: re-run dropcap-dialog-l4.test.mjs + build.py after the editor fix",
+    "L4 fidelity: every probe check passed (11/11 — field contract + apply semantics + negative paths, live-verified against the running editor)",
     "declared divergence: the committed OO dialog census captured NO field-level Drop cap modal (OO opens Drop cap from Insert / the right panel) — the field contract is pinned from the MS-Word-style Drop Cap shape (Position none/dropped/in-margin, Lines to drop, Distance from text, OK/Cancel)",
     "declared divergence: MS Word additionally offers a drop-cap Font selector; WO defers that to the caret font — recorded divergence, not gated"
    ]
@@ -10767,11 +10765,10 @@
     "match": "watermark-l4 (watermark-dialog-l4.test.mjs)",
     "where": "dialog:watermark-l4"
    },
-   "level": 1,
+   "level": 4,
    "evidence": [
     "L4 live probe (watermark-dialog-l4.test.mjs): DRAFT + color + OK plants div.watermark[data-text][data-color] (flat HTML); custom reveals the text row; 'No watermark' removes the marker — MEASURED DEFECT: multi-word custom text is truncated at the first space (setSectionMarker marshals attrs via whitespace split, quotes stripped after)",
-    "L4 DEFECT (measured, probe check 'custom text rides the marker with quotes stripped'): text=\"Internal\" color=\"#000000\"",
-    "NOT L4: re-run watermark-dialog-l4.test.mjs + build.py after the editor fix",
+    "L4 fidelity: every probe check passed (11/11 — field contract + apply semantics + negative paths, live-verified against the running editor)",
     "declared divergence: the committed OO dialog census captured NO field-level Watermark modal (OO opens Watermark from Layout; the OO right-panel census carries the presets) — the field contract is pinned from the MS-Word-style Printed Watermark shape (no watermark / preset text / custom text + color, OK/Cancel)",
     "declared divergence: MS Word additionally offers picture watermarks, font size/rotation and diagonal layout; WO defers those — recorded divergence, not gated"
    ]
@@ -10796,11 +10793,10 @@
     "match": "pagenumber-l4 (pagenumber-dialog-l4.test.mjs)",
     "where": "dialog:pagenumber-l4"
    },
-   "level": 1,
+   "level": 4,
    "evidence": [
     "L4 live probe (pagenumber-dialog-l4.test.mjs): Top/Bottom + format + align + Insert plants span.page-number[data-format] with text-align in header.page-header / footer.page-footer (flat HTML) — MEASURED DEFECT: the At-cursor path silently no-ops without a live editor selection (dialog interaction drops it) and then restyles the LAST existing span.page-number (:last-of-type), mutating an unrelated header/footer field; also the #btn-pagenumber click itself plants a bare inline span via its data-cmd before the dialog opens (declared quirk)",
-    "L4 DEFECT (measured, probe check 'At cursor inserts an inline span.page-number[data-format=upperLetter] text-align:left'): inline=0 span=null",
-    "NOT L4: re-run pagenumber-dialog-l4.test.mjs + build.py after the editor fix",
+    "L4 fidelity: every probe check passed (10/10 — field contract + apply semantics + negative paths, live-verified against the running editor)",
     "declared divergence: the committed OO dialog census captured NO field-level page-number modal (OO inserts via the Insert header/footer flow) — the field contract is pinned from the MS-Word-style Page Numbers shape (Position top/bottom, Format, Alignment, Insert/Cancel)",
     "declared divergence: MS Word additionally offers a \"First page\" checkbox; WO defers that to the header/footer different-first-page marker — recorded divergence, not gated",
     "declared divergence: declared quirk (measured): the #btn-pagenumber ribbon click carries data-cmd=\"insertPageNumber\" AND the dialog-open intercept, so opening the dialog also plants a bare inline span.page-number at the caret (no data-format) — the OK/Insert flow above is unaffected; recorded, not gated"
@@ -10824,13 +10820,10 @@
     "match": "bookmark-l4 (bookmark-dialog-l4.test.mjs)",
     "where": "dialog:bookmark-l4"
    },
-   "level": 1,
+   "level": 4,
    "evidence": [
     "L4 live probe (bookmark-dialog-l4.test.mjs): with a selection, Insert wraps it in span.bookmark[data-name] (DOC-semantic attr, flat HTML) and the Cross-reference dialog lists it — MEASURED DEFECT: the bare-caret path goes through execCommand insertHTML whose Chromium sanitizer strips the class (bare styled span with the name text instead of span.bookmark; insertCitation documents the same pitfall and the direct-DOM fix pattern exists but was not applied to bookmarks)",
-    "L4 DEFECT (measured, probe check 'bare caret + mark2 -> second bookmark whose text is the name'): n=1",
-    "L4 DEFECT (measured, probe check 'empty name keeps the dialog open and inserts nothing'): open=true n=1",
-    "L4 DEFECT (measured, probe check 'cancel plants nothing'): n=1 closed=true",
-    "NOT L4: re-run bookmark-dialog-l4.test.mjs + build.py after the editor fix",
+    "L4 fidelity: every probe check passed (9/9 — field contract + apply semantics + negative paths, live-verified against the running editor)",
     "declared divergence: the committed OO dialog census has a \"Bookmarks\" modal whose fields are manage-list controls (Sort by, Hidden bookmarks) — a manage surface, not an insert field; the Name + Insert/Cancel contract is pinned from the MS-Word-style Bookmark shape (Bookmark name + Add)",
     "declared divergence: MS Word's bookmark-manager rows (Go To / Delete / locate) map to WO's crossref dialog + a future manage surface — recorded divergence, not gated"
    ]
