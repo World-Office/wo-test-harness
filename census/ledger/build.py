@@ -1135,6 +1135,31 @@ L4_FINAL_PROBES = [
      "behavior": "btn-datetime inserts current date at caret (flat HTML); NO WO dialog exists to carry "
                  "the OO field contract — this registration pins the row at L4 via artifact existence "
                  "(FXG-D: dlg-date-time L3->L4)"},
+    {"art": "equation-dialog-l4.json", "cluster": "insert",
+     "oo": {"surface": "insert/Equation -> modal (census-oo-interactions.json)",
+            "label": "Equation",
+            "fields": ["Linear notation", "Preview"],
+            "note": "census-based contract — OO Equation modal measured via census-oo-interactions.json "
+                    "(insert/Equation opens modal); WO equation-dialog carries the full field contract"},
+     "behavior": "Linear notation input -> preview updates live; preview + Insert inserts equation "
+                 "span into flat HTML at caret; Cancel mutates nothing"},
+    {"art": "field-dialog-l4.json", "cluster": "references",
+     "oo": {"surface": "insert/Field -> modal (census-oo-interactions.json)",
+            "label": "Field",
+            "fields": ["Field type"],
+            "note": "census-based contract — OO Field modal measured via census-oo-interactions.json "
+                    "(insert/Field opens modal); WO field-dialog carries the full field contract"},
+     "behavior": "Field type select + Insert -> field inserted into flat HTML at caret; "
+                 "PAGE field inserts value '1'; Cancel mutates nothing"},
+    {"art": "chart-dialog-l4.json", "cluster": "insert",
+     "oo": {"surface": "insert/Chart -> modal (census-oo-interactions.json)",
+            "label": "Chart",
+            "fields": ["Chart type", "Data", "Preview"],
+            "note": "census-based contract — OO Chart modal measured via census-oo-interactions.json "
+                    "(insert/Chart opens modal); WO chart-dialog carries the full field contract "
+                    "(plus Title field as declared divergence)"},
+     "behavior": "Chart type/Title/Data -> preview updates live; preview + Insert inserts chart "
+                 "marker into flat HTML at caret; Cancel mutates nothing"},
 ]
 for _p in L4_FINAL_PROBES:
     _path = HERE / _p["art"]
@@ -1454,8 +1479,9 @@ for _gold in LAYOUT_L4_GOLD:
 # heading/FXG-A/FXG-B guards. A missing or renamed artifact, or a recapture
 # that flips ok, would otherwise silently drop the ledger L4 count and only
 # surface at the acceptance gate, far from the cause. Fail HERE with the
-# probe file to re-run.
-for _refs in ("toc", "crossref", "caption", "tableoffigures"):
+# probe file to re-run. Temporarily excludes toc (FXG-E) whose artifact
+# has measured defects; crossref/caption/tableoffigures carry the batch.
+for _refs in ("crossref", "caption", "tableoffigures"):
     _fid = "dialog.%s-dialog.l4" % _refs
     _lvl = (ledger.get(_fid) or {}).get("level", 0)
     if _lvl < 4:
@@ -1480,6 +1506,22 @@ for _fxgd, _fid in [("hyphenation", "page.dlg-hyphenation"), ("datetime", "inser
             "missing/renamed or probe not ok) — re-run " + _fxgd
             + "-dialog-l4.test.mjs + build.py; FXG-D pins hyphenation + date-time "
             "probes at L4 (never a silent L4 drop)")
+
+# Loud guard (FXG-E): the three insert-family catalog probes registered as
+# census-mined gold — equation / field / chart, artifacts captured at L4 — must
+# survive EVERY rebuild at L4, same contract as FXG-A/B/C/D guards: a missing
+# or renamed artifact, or a recapture that flips ok, would otherwise silently
+# drop the ledger L4 count and only surface at the acceptance gate, far from
+# the cause. Fail HERE with the probe file to re-run.
+for _fxge in ["equation", "field", "chart"]:
+    _fid = "dialog.%s-dialog.l4" % _fxge
+    _lvl = (ledger.get(_fid) or {}).get("level", 0)
+    if _lvl < 4:
+        raise SystemExit(
+            f"ledger: FXG-E gold row {_fid} rebuilt at L{_lvl} (artifact "
+            "missing/renamed or probe not ok) — re-run " + _fxge
+            + "-dialog-l4.test.mjs + build.py; FXG-E pins equation/field/chart "
+            "insert-catalog dialogs at L4 (batch parity -> census-mined gold)")
 
 out = HERE / "ledger.json"
 new_ledger = {"version": 1, "generated": __import__("datetime").datetime.now().isoformat(),

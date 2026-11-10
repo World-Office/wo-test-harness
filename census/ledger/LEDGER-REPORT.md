@@ -111,7 +111,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L4 **dialog.paragraph-settings-dialog.l4** [dialog] (11 OO fields) → WO: paragraph-settings-dialog (paragraph-dialog-l4.test.mjs)
 - ✅ L4 **dialog.dropcap-dialog.l4** [dialog] (3 OO fields) → WO: dropcap-l4 (dropcap-dialog-l4.test.mjs)
 
-## insert — 59 features (L0:0 L1:32 L3:7)
+## insert — 59 features (L0:0 L1:32 L3:6)
 - 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
 - 🔲 L1 **insert.breaks** [control] → WO: Breaks
 - 🔲 L1 **insert.shape** [control] → WO: insertObject
@@ -166,7 +166,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L3 **insert.symbol** [control] → WO: btn-symbol
 - ✅ L3 **insert.more-symbols** [menu-item] → WO: Symbols ▾
 - ✅ L3 **insert.symbols** [menu-item] → WO: Symbols ▾
-- ✅ L3 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
+- ✅ L4 **insert.dlg-date-time** [dialog] (1 OO fields) → WO: insert.dlg-date-time (datetime-dialog-l4.test.mjs)
 - ✅ L4 **insert.dlg-symbol** [dialog] (2 OO fields) → WO: symbol-dialog
 - ✅ L4 **dialog.symbol-dialog.l4** [dialog] (5 OO fields) → WO: symbol-dialog (symbol-dialog-l4.test.mjs)
 - ✅ L4 **dialog.hr-settings-dialog.l4** [dialog] (4 OO fields) → WO: hr-settings-l4 (hr-settings-dialog-l4.test.mjs)
@@ -244,7 +244,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L3 **headerfooter.date-time** [control] → WO: btn-datetime
 - ✅ L3 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 
-## page — 54 features (L0:0 L1:43 L3:0)
+## page — 54 features (L0:0 L1:42 L3:0)
 - 🔲 L1 **page.margins** [control] → WO: Margins
 - 🔲 L1 **page.orientation** [control] → WO: Orientation
 - 🔲 L1 **page.size** [control] → WO: Size
@@ -287,31 +287,35 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **page.dlg-margins** [dialog] (8 OO fields) → WO: Margins
 - 🔲 L1 **page.dlg-page-size** [dialog] (3 OO fields) → WO: btn-multipage
 - 🔲 L1 **page.dlg-columns** [dialog] (5 OO fields) → WO: columns-dialog
-- 🔲 L1 **page.dlg-hyphenation** [dialog] (2 OO fields) → WO: hyphenation-dialog
 - ✅ L2 **page.line-numbers** [control] → WO: toggleLineNumbers
 - ✅ L2 **page.hyphenation** [control] → WO: toggleHyphenation
 - ✅ L2 **page.watermark** [control] → WO: toggleWatermark
 - ✅ L2 **page.none** [menu-item] → WO: toggleHyphenation
 - ✅ L2 **page.automatic** [menu-item] → WO: toggleHyphenation
 - ✅ L2 **page.hyphenation-options** [menu-item] → WO: toggleHyphenation
+- ✅ L4 **page.dlg-hyphenation** [dialog] (2 OO fields) → WO: page.dlg-hyphenation (hyphenation-dialog-l4.test.mjs)
 - ✅ L4 **dialog.linenumbers-dialog.l4** [dialog] (1 OO fields) → WO: linenumbers-l4 (linenumbers-dialog-l4.test.mjs)
 - ✅ L4 **dialog.watermark-dialog.l4** [dialog] (3 OO fields) → WO: watermark-l4 (watermark-dialog-l4.test.mjs)
 - ✅ L4 **dialog.margins-dialog.l4** [dialog] (8 OO fields) → WO: page-setup-dialog
 - ✅ L4 **dialog.page-size-dialog.l4** [dialog] (3 OO fields) → WO: page-setup-dialog
 - ✅ L4 **dialog.columns-dialog.l4** [dialog] (5 OO fields) → WO: columns-dialog
 
-## references — 11 features (L0:0 L1:6 L3:1)
+## references — 15 features (L0:0 L1:7 L3:1)
 - 🔲 L1 **references.add-text** [control] → WO: btn-addtext
 - 🔲 L1 **references.bookmark** [control] → WO: bookmark-dialog
 - 🔲 L1 **references.cross-reference** [control] → WO: crossref-dialog
 - 🔲 L1 **references.dlg-bookmarks** [dialog] (2 OO fields) → WO: bookmark-dialog
 - 🔲 L1 **references.dlg-insert-caption** [dialog] (8 OO fields) → WO: insertCaption
 - 🔲 L1 **references.dlg-cross-reference** [dialog] (5 OO fields) → WO: crossref-dialog
+- 🔲 L1 **dialog.toc-dialog.l4** [dialog] (7 OO fields) → WO: toc-l4 (toc-dialog-l4.test.mjs)
 - ✅ L2 **references.footnote** [control] → WO: insertFootnote
 - ✅ L2 **references.caption** [control] → WO: insertCaption
 - ✅ L3 **references.link** [control] → WO: link
 - ✅ L4 **dialog.link-dialog.l4** [dialog] (2 OO fields) → WO: link-dialog
 - ✅ L4 **dialog.bookmark-dialog.l4** [dialog] (1 OO fields) → WO: bookmark-l4 (bookmark-dialog-l4.test.mjs)
+- ✅ L4 **dialog.crossref-dialog.l4** [dialog] (5 OO fields) → WO: crossref-l4 (crossref-dialog-l4.test.mjs)
+- ✅ L4 **dialog.caption-dialog.l4** [dialog] (8 OO fields) → WO: caption-l4 (caption-dialog-l4.test.mjs)
+- ✅ L4 **dialog.tableoffigures-dialog.l4** [dialog] (7 OO fields) → WO: tableoffigures-l4 (tableoffigures-dialog-l4.test.mjs)
 
 ## protect — 2 features (L0:0 L1:0 L3:0)
 - ✅ L2 **protect.encrypt** [control] → WO: protectDialog
@@ -350,14 +354,14 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **other.translation** [control] → WO: aiTranslate
 - 🔲 L1 **other.create-ai-assistant** [control] → WO: createAiAssistant
 - ✅ L2 **other.settings** [control] → WO: aiSettings
-- ✅ L4 **dialog.equation-dialog.l4** [dialog] (2 OO fields) → WO: equation-dialog
+- ✅ L4 **dialog.equation-dialog.l4** [dialog] (2 OO fields) → WO: equation-l4 (equation-dialog-l4.test.mjs)
 - ✅ L4 **dialog.pagecolor-dialog.l4** [dialog] (6 OO fields) → WO: pagecolor-dialog
-- ✅ L4 **dialog.chart-dialog.l4** [dialog] (3 OO fields) → WO: chart-dialog
+- ✅ L4 **dialog.chart-dialog.l4** [dialog] (3 OO fields) → WO: chart-l4 (chart-dialog-l4.test.mjs)
 - ✅ L4 **dialog.comment-dialog.l4** [dialog] (1 OO fields) → WO: comment-dialog
 - ✅ L4 **dialog.compare-dialog.l4** [dialog] (1 OO fields) → WO: compare-dialog
 - ✅ L4 **dialog.combine-dialog.l4** [dialog] (1 OO fields) → WO: combine-dialog
 - ✅ L4 **dialog.textfromfile-dialog.l4** [dialog] (1 OO fields) → WO: textfromfile-dialog
-- ✅ L4 **dialog.field-dialog.l4** [dialog] (1 OO fields) → WO: field-dialog
+- ✅ L4 **dialog.field-dialog.l4** [dialog] (1 OO fields) → WO: field-l4 (field-dialog-l4.test.mjs)
 - ✅ L4 **dialog.speech-dialog.l4** [dialog] (3 OO fields) → WO: speech-dialog
 
 ## statusbar — 10 features (L0:0 L1:10 L3:0)

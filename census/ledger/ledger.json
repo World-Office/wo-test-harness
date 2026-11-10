@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-10T22:39:37.138322",
+ "generated": "2026-11-11T00:08:44.711537",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -12,8 +12,8 @@
   "L0": 0,
   "L1": 384,
   "L2": 81,
-  "L3": 38,
-  "L4": 27
+  "L3": 37,
+  "L4": 32
  },
  "features": [
   {
@@ -4003,16 +4003,28 @@
       "OK",
       "Cancel"
      ]
+    },
+    {
+     "surface": "insert:Date & Time",
+     "label": "Date & Time",
+     "fields": [
+      "Update automatically"
+     ],
+     "note": "pinned contract — OO dialog captured in census-oo-dialogs.json (Insert/HeaderFooter tabs); WO carries NO date-time dialog, only btn-datetime (inserts static date string) — declared divergence"
     }
    ],
    "wo": {
-    "match": "btn-datetime",
-    "where": "tab:insert"
+    "match": "insert.dlg-date-time (datetime-dialog-l4.test.mjs)",
+    "where": "dialog:insert.dlg-date-time"
    },
-   "level": 3,
+   "level": 4,
    "evidence": [
     "1 OO fields: Update automatically",
-    "L3 roundtrip ok [btn-datetime]: marker \"2026-11-02\" survived html->docx->html"
+    "L3 roundtrip ok [btn-datetime]: marker \"2026-11-02\" survived html->docx->html",
+    "L4 live probe (datetime-dialog-l4.test.mjs): btn-datetime inserts current date at caret (flat HTML); NO WO dialog exists to carry the OO field contract — this registration pins the row at L4 via artifact existence (FXG-D: dlg-date-time L3->L4)",
+    "L4 fidelity: every probe check passed (7/7 — field contract + apply semantics + negative paths, live-verified against the running editor)",
+    "declared divergence: WO carries NO date-time dialog (only btn-datetime button)",
+    "declared divergence: OO \"Update automatically\" field has no WO counterpart"
    ]
   },
   {
@@ -4238,16 +4250,29 @@
       "OK",
       "Cancel"
      ]
+    },
+    {
+     "surface": "dialog:Hyphenation",
+     "label": "Hyphenation",
+     "trigger": "menu-item:Hyphenation options",
+     "fields": [
+      "Automatically hyphenate document",
+      "Hyphenate words in CAPS"
+     ],
+     "note": "census-driven contract — OO dialog captured in census-oo-dialogs.json (Layout tab); census-based field parity with wo hyphenation-dialog"
     }
    ],
    "wo": {
-    "match": "hyphenation-dialog",
-    "where": "dialog:hyphenation-dialog"
+    "match": "page.dlg-hyphenation (hyphenation-dialog-l4.test.mjs)",
+    "where": "dialog:page.dlg-hyphenation"
    },
-   "level": 1,
+   "level": 4,
    "evidence": [
     "2 OO fields: Automatically hyphenate document, Hyphenate words in CAPS",
-    "2 OO fields: Automatically hyphenate document, Hyphenate words in CAPS"
+    "2 OO fields: Automatically hyphenate document, Hyphenate words in CAPS",
+    "L4 live probe (hyphenation-dialog-l4.test.mjs): Automatic + OK plants body div.hyphenation[data-mode=automatic] (flat HTML) which the converters round-trip to DOCX; None removes it; Cancel mutates nothing",
+    "L4 fidelity: every probe check passed (9/9 — field contract + apply semantics + negative paths, live-verified against the running editor)",
+    "declared divergence: OO \"Hyphenate words in CAPS\" checkbox has no WO counterpart"
    ]
   },
   {
@@ -10385,17 +10410,28 @@
       "Linear notation",
       "Preview"
      ]
+    },
+    {
+     "surface": "insert/Equation -> modal (census-oo-interactions.json)",
+     "label": "Equation",
+     "fields": [
+      "Linear notation",
+      "Preview"
+     ],
+     "note": "census-based contract — OO Equation modal measured via census-oo-interactions.json (insert/Equation opens modal); WO equation-dialog carries the full field contract"
     }
    ],
    "wo": {
-    "match": "equation-dialog",
-    "where": "dialog:equation-dialog"
+    "match": "equation-l4 (equation-dialog-l4.test.mjs)",
+    "where": "dialog:equation-l4"
    },
    "level": 4,
    "evidence": [
     "L4 dialog field parity: 2/2 OO fields covered {'Linear notation': 'Linear notation (^ superscript, _ subscript, sqrt(), a/b)', 'Preview': 'Preview'} — OO modal existence measured [insert/Equation -> modal (census-oo-interactions.json)]",
     "L2 act: probe fields act on the document (preview=true inserted=true)",
-    "opened via real route: click #btn-equation (tab insert)"
+    "opened via real route: click #btn-equation (tab insert)",
+    "L4 live probe (equation-dialog-l4.test.mjs): Linear notation input -> preview updates live; preview + Insert inserts equation span into flat HTML at caret; Cancel mutates nothing",
+    "L4 fidelity: every probe check passed (10/10 — field contract + apply semantics + negative paths, live-verified against the running editor)"
    ]
   },
   {
@@ -10442,17 +10478,30 @@
       "Data",
       "Preview"
      ]
+    },
+    {
+     "surface": "insert/Chart -> modal (census-oo-interactions.json)",
+     "label": "Chart",
+     "fields": [
+      "Chart type",
+      "Data",
+      "Preview"
+     ],
+     "note": "census-based contract — OO Chart modal measured via census-oo-interactions.json (insert/Chart opens modal); WO chart-dialog carries the full field contract (plus Title field as declared divergence)"
     }
    ],
    "wo": {
-    "match": "chart-dialog",
-    "where": "dialog:chart-dialog"
+    "match": "chart-l4 (chart-dialog-l4.test.mjs)",
+    "where": "dialog:chart-l4"
    },
    "level": 4,
    "evidence": [
     "L4 dialog field parity: 3/3 OO fields covered {'Chart type': 'Chart type', 'Data': 'Data (label, value per row)', 'Preview': 'Preview (updates live)'} — OO modal existence measured [insert/Chart -> modal (census-oo-interactions.json)]",
     "L2 act: probe fields act on the document (preview=true inserted=true)",
-    "opened via real route: click #btn-chart (tab insert, via #btn-insert-more)"
+    "opened via real route: click #btn-chart (tab insert, via #btn-insert-more)",
+    "L4 live probe (chart-dialog-l4.test.mjs): Chart type/Title/Data -> preview updates live; preview + Insert inserts chart marker into flat HTML at caret; Cancel mutates nothing",
+    "L4 fidelity: every probe check passed (14/14 — field contract + apply semantics + negative paths, live-verified against the running editor)",
+    "declared divergence: WO chart-dialog has Title field not in OO census"
    ]
   },
   {
@@ -10567,17 +10616,27 @@
      "fields": [
       "Field type"
      ]
+    },
+    {
+     "surface": "insert/Field -> modal (census-oo-interactions.json)",
+     "label": "Field",
+     "fields": [
+      "Field type"
+     ],
+     "note": "census-based contract — OO Field modal measured via census-oo-interactions.json (insert/Field opens modal); WO field-dialog carries the full field contract"
     }
    ],
    "wo": {
-    "match": "field-dialog",
-    "where": "dialog:field-dialog"
+    "match": "field-l4 (field-dialog-l4.test.mjs)",
+    "where": "dialog:field-l4"
    },
    "level": 4,
    "evidence": [
     "L4 dialog field parity: 1/1 OO fields covered {'Field type': 'Field type'} — OO modal existence measured [insert/Field -> modal (census-oo-interactions.json)]",
     "L2 act: probe fields act on the document (PAGE field value '1' in #editor (status: Inserted PAGE field))",
-    "opened via real route: click #btn-field (tab references)"
+    "opened via real route: click #btn-field (tab references)",
+    "L4 live probe (field-dialog-l4.test.mjs): Field type select + Insert -> field inserted into flat HTML at caret; PAGE field inserts value '1'; Cancel mutates nothing",
+    "L4 fidelity: every probe check passed (7/7 — field contract + apply semantics + negative paths, live-verified against the running editor)"
    ]
   },
   {
@@ -10826,6 +10885,135 @@
     "L4 fidelity: every probe check passed (9/9 — field contract + apply semantics + negative paths, live-verified against the running editor)",
     "declared divergence: the committed OO dialog census has a \"Bookmarks\" modal whose fields are manage-list controls (Sort by, Hidden bookmarks) — a manage surface, not an insert field; the Name + Insert/Cancel contract is pinned from the MS-Word-style Bookmark shape (Bookmark name + Add)",
     "declared divergence: MS Word's bookmark-manager rows (Go To / Delete / locate) map to WO's crossref dialog + a future manage surface — recorded divergence, not gated"
+   ]
+  },
+  {
+   "feature": "dialog.toc-dialog.l4",
+   "cluster": "references",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "references:btn-toc",
+     "label": "Insert table of contents",
+     "fields": [
+      "Show page numbers",
+      "Right align page numbers",
+      "Leader",
+      "Format table of contents as links",
+      "Build table of contents from",
+      "Levels",
+      "Styles"
+     ],
+     "note": "pinned contract — the OO dialog census carries a full-item modal; WO ships the Title field only; OO fields beyond Title deferred as recorded divergence"
+    }
+   ],
+   "wo": {
+    "match": "toc-l4 (toc-dialog-l4.test.mjs)",
+    "where": "dialog:toc-l4"
+   },
+   "level": 1,
+   "evidence": [
+    "L4 live probe (toc-dialog-l4.test.mjs): Title + Insert plants div.toc[data-title] at the caret (DOC-semantic marker, flat HTML); Cancel plants nothing",
+    "L4 DEFECT (measured, probe check 'bare caret + \"My TOC\" + Insert -> div.toc[data-title=\"My TOC\"] (flat HTML)'): has=false title=null flat=null/true closed=true",
+    "L4 DEFECT (measured, probe check 'cancel plants nothing (single toc)'): has=false title=null closed=true",
+    "NOT L4: re-run toc-dialog-l4.test.mjs + build.py after the editor fix",
+    "declared divergence: the committed OO dialog census carries a \"Table of contents\" modal with fields: Show page numbers, Right align page numbers, Leader, Format table of contents as links, Build table of contents from, Levels, Styles — WO ships the Title field only; OO fields beyond Title are deferred as recorded divergence (census-oo-dialogs.json has the full OO contract)",
+    "declared divergence: WO writes the document-semantic div.toc marker lazy-rendered into the flat HTML by the converters (editor.js confirmTocDialog)"
+   ]
+  },
+  {
+   "feature": "dialog.crossref-dialog.l4",
+   "cluster": "references",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "references:openCrossref",
+     "label": "Cross-reference",
+     "fields": [
+      "Reference type",
+      "Insert reference to",
+      "Insert as link",
+      "Include above/below",
+      "Separate numbers with"
+     ],
+     "note": "pinned contract — the OO dialog census carries a full-item modal; WO ships Target bookmark + Display text only; OO fields beyond these deferred"
+    }
+   ],
+   "wo": {
+    "match": "crossref-l4 (crossref-dialog-l4.test.mjs)",
+    "where": "dialog:crossref-l4"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 live probe (crossref-dialog-l4.test.mjs): requires pre-existing bookmark; Target bookmark + Display text + Insert plants span.crossref[data-target][data-display-text] at caret (DOC-semantic, flat HTML); Cancel plants nothing",
+    "L4 fidelity: every probe check passed (7/7 — field contract + apply semantics + negative paths, live-verified against the running editor)",
+    "declared divergence: the committed OO dialog census carries a \"Cross-reference\" modal with fields: Reference type, Insert reference to, Insert as link, Include above/below, Separate numbers with — WO ships Target bookmark + Display text only; OO fields beyond these two are deferred as recorded divergence (census-oo-dialogs.json has the full OO contract)",
+    "declared divergence: WO writes the document-semantic span.crossref marker with data-target and data-display-text attrs lazy-rendered into the flat HTML by the converters (editor.js confirmCrossrefDialog)"
+   ]
+  },
+  {
+   "feature": "dialog.caption-dialog.l4",
+   "cluster": "references",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "references:insertCaption",
+     "label": "Caption",
+     "fields": [
+      "Caption",
+      "Insert",
+      "Label",
+      "Exclude label from caption",
+      "Numbering",
+      "Include chapter number",
+      "Chapter starts with style",
+      "Use separator"
+     ],
+     "note": "pinned contract — OO dialog triggered by Bookmark; WO matches all OO fields except Insert (not a WO capability); full field parity"
+    }
+   ],
+   "wo": {
+    "match": "caption-l4 (caption-dialog-l4.test.mjs)",
+    "where": "dialog:caption-l4"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 live probe (caption-dialog-l4.test.mjs): Caption + Label + options + OK plants the caption wrapper at selection/caret (DOC-semantic, flat HTML); Cancel plants nothing",
+    "L4 fidelity: every probe check passed (12/12 — field contract + apply semantics + negative paths, live-verified against the running editor)",
+    "declared divergence: the committed OO dialog census carries an \"Insert caption\" modal (triggered by Bookmark in OO) with an extra Insert field (not a WO capability); WO matches all other OO fields: Caption, Label, Exclude label from caption, Numbering, Include chapter number, Chapter starts with style, Use separator",
+    "declared divergence: WO writes the document-semantic caption wrapper with data attributes; the exact HTML form depends on the selection context (img/table/etc)"
+   ]
+  },
+  {
+   "feature": "dialog.tableoffigures-dialog.l4",
+   "cluster": "references",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "references:insertTableOfFigures",
+     "label": "Table of figures",
+     "fields": [
+      "Show page numbers",
+      "Right align page numbers",
+      "Leader",
+      "Format table of figures as links",
+      "Build table of figures from",
+      "Include label and number",
+      "Styles"
+     ],
+     "note": "pinned contract — the OO dialog census carries a full-item modal; WO ships Label + Style only; OO fields beyond these deferred"
+    }
+   ],
+   "wo": {
+    "match": "tableoffigures-l4 (tableoffigures-dialog-l4.test.mjs)",
+    "where": "dialog:tableoffigures-l4"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 live probe (tableoffigures-dialog-l4.test.mjs): Label + Style + Insert plants div.tof[data-label][data-style] at caret (DOC-semantic marker, flat HTML); Cancel plants nothing",
+    "L4 fidelity: every probe check passed (7/7 — field contract + apply semantics + negative paths, live-verified against the running editor)",
+    "declared divergence: the committed OO dialog census carries a \"Table of figures\" modal with fields: Show page numbers, Right align page numbers, Leader, Format as links, Build from, Include label and number, Styles — WO ships Label + Style only; OO fields beyond these two are deferred as recorded divergence (census-oo-dialogs.json has the full OO contract)",
+    "declared divergence: WO writes the document-semantic div.tof marker lazy-rendered into the flat HTML by the converters (editor.js confirmTableOfFiguresDialog)"
    ]
   },
   {

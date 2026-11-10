@@ -1,0 +1,53 @@
+{
+  "probe": "ledger/field-dialog-l4.test.mjs",
+  "feature": "dialog.field-dialog.l4",
+  "oo_fields": [
+    "Field type"
+  ],
+  "wo_fields": [
+    "Field type"
+  ],
+  "openedBy": "click #btn-field (tab references)",
+  "covered": 1,
+  "total": 1,
+  "checks": [
+    {
+      "name": "OO census carries Field modal (insert/Field)",
+      "ok": true,
+      "detail": "1 fields: [\"Field type\"]"
+    },
+    {
+      "name": "OO field: Field type",
+      "ok": true,
+      "detail": "fields=[\"Field type\"]"
+    },
+    {
+      "name": "WO census carries field-dialog",
+      "ok": true,
+      "detail": "1 fields: [\"Field type\"]"
+    },
+    {
+      "name": "WO field: Field type (select)",
+      "ok": true,
+      "detail": "fields=[\"Field type\"]"
+    },
+    {
+      "name": "Parity: OO \"Field type\" covered by WO Field type select",
+      "ok": true,
+      "detail": "OO field maps to WO select with Page number, Date, Time, etc."
+    },
+    {
+      "name": "Behavior: Field type select + Insert -> field inserted into flat HTML",
+      "ok": true,
+      "detail": "recorded contract: PAGE field inserts \"1\" at caret"
+    },
+    {
+      "name": "Behavior: Cancel mutates nothing",
+      "ok": true,
+      "detail": "recorded contract"
+    }
+  ],
+  "declaredGaps": [],
+  "ok": true,
+  "capturedAt": "2026-11-10T23:08:07.556Z"
+}

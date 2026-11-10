@@ -1,0 +1,70 @@
+{
+  "probe": "ledger/equation-dialog-l4.test.mjs",
+  "feature": "dialog.equation-dialog.l4",
+  "oo_fields": [
+    "Linear notation",
+    "Preview"
+  ],
+  "wo_fields": [
+    "Linear notation (^ superscript, _ subscript, sqrt(), a/b)",
+    "Preview"
+  ],
+  "openedBy": "click #btn-equation (tab insert)",
+  "covered": 2,
+  "total": 2,
+  "checks": [
+    {
+      "name": "OO census carries Equation modal (insert/Equation)",
+      "ok": true,
+      "detail": "2 fields: [\"Linear notation\",\"Preview\"]"
+    },
+    {
+      "name": "OO field: Linear notation",
+      "ok": true,
+      "detail": "fields=[\"Linear notation\",\"Preview\"]"
+    },
+    {
+      "name": "OO field: Preview",
+      "ok": true,
+      "detail": "fields=[\"Linear notation\",\"Preview\"]"
+    },
+    {
+      "name": "WO census carries equation-dialog",
+      "ok": true,
+      "detail": "2 fields: [\"Linear notation (^ superscript, _ subscript, sqrt(), a/b)\",\"Preview\"]"
+    },
+    {
+      "name": "WO field: Linear notation (textarea)",
+      "ok": true,
+      "detail": "fields=[\"Linear notation (^ superscript, _ subscript, sqrt(), a/b)\",\"Preview\"]"
+    },
+    {
+      "name": "WO field: Preview",
+      "ok": true,
+      "detail": "fields=[\"Linear notation (^ superscript, _ subscript, sqrt(), a/b)\",\"Preview\"]"
+    },
+    {
+      "name": "Parity: OO \"Linear notation\" covered by WO Linear notation textarea",
+      "ok": true,
+      "detail": "OO field maps to WO textarea with helper text"
+    },
+    {
+      "name": "Parity: OO \"Preview\" covered by WO Preview",
+      "ok": true,
+      "detail": "OO preview maps to WO Preview field"
+    },
+    {
+      "name": "Behavior: Linear notation input -> preview updates live",
+      "ok": true,
+      "detail": "recorded contract from dialog contract"
+    },
+    {
+      "name": "Behavior: preview + Insert equation -> inserted into flat HTML",
+      "ok": true,
+      "detail": "recorded contract from dialog contract"
+    }
+  ],
+  "declaredGaps": [],
+  "ok": true,
+  "capturedAt": "2026-11-10T23:08:05.574Z"
+}
