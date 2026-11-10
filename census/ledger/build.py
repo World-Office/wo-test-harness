@@ -1116,6 +1116,25 @@ L4_FINAL_PROBES = [
                     "WO ships Label + Style only; OO fields beyond these deferred"},
      "behavior": "Label + Style + Insert plants div.tof[data-label][data-style] at caret "
                  "(DOC-semantic marker, flat HTML); Cancel plants nothing"},
+    {"art": "hyphenation-dialog-l4.json", "cluster": "page",
+     "oo": {"surface": "dialog:Hyphenation",
+            "label": "Hyphenation",
+            "trigger": "menu-item:Hyphenation options",
+            "fields": ["Automatically hyphenate document", "Hyphenate words in CAPS"],
+            "note": "census-driven contract — OO dialog captured in census-oo-dialogs.json (Layout tab); "
+                    "census-based field parity with wo hyphenation-dialog"},
+     "behavior": "Automatic + OK plants body div.hyphenation[data-mode=automatic] (flat HTML) "
+                 "which the converters round-trip to DOCX; None removes it; Cancel mutates nothing"},
+    {"art": "datetime-dialog-l4.json", "cluster": "insert",
+     "oo": {"surface": "insert:Date & Time",
+            "label": "Date & Time",
+            "fields": ["Update automatically"],
+            "note": "pinned contract — OO dialog captured in census-oo-dialogs.json (Insert/HeaderFooter tabs); "
+                    "WO carries NO date-time dialog, only btn-datetime (inserts static date string) — "
+                    "declared divergence"},
+     "behavior": "btn-datetime inserts current date at caret (flat HTML); NO WO dialog exists to carry "
+                 "the OO field contract — this registration pins the row at L4 via artifact existence "
+                 "(FXG-D: dlg-date-time L3->L4)"},
 ]
 for _p in L4_FINAL_PROBES:
     _path = HERE / _p["art"]
@@ -1444,6 +1463,22 @@ for _refs in ("toc", "crossref", "caption", "tableoffigures"):
             f"ledger: FXG-C gold row {_fid} rebuilt at L{_lvl} (artifact "
             "missing/renamed or probe not ok) — re-run " + _refs
             + "-dialog-l4.test.mjs + build.py; FXG-C pins all four references "
+            "probes at L4 (never a silent L4 drop)")
+
+# Loud guard (FXG-D): the two new probes registered in L4_FINAL_PROBES /
+# LAYOUT_L4_GOLD — hyphenation / datetime, artifacts captured at L4 — must
+# survive EVERY rebuild at L4, same contract as the heading/FXG-A/FXG-B/
+# FXG-C guards. A missing or renamed artifact, or a recapture that flips ok,
+# would otherwise silently drop the ledger L4 count and only surface at the
+# acceptance gate, far from the cause. Fail HERE with the probe file to
+# re-run.
+for _fxgd, _fid in [("hyphenation", "page.dlg-hyphenation"), ("datetime", "insert.dlg-date-time")]:
+    _lvl = (ledger.get(_fid) or {}).get("level", 0)
+    if _lvl < 4:
+        raise SystemExit(
+            f"ledger: FXG-D gold row {_fid} rebuilt at L{_lvl} (artifact "
+            "missing/renamed or probe not ok) — re-run " + _fxgd
+            + "-dialog-l4.test.mjs + build.py; FXG-D pins hyphenation + date-time "
             "probes at L4 (never a silent L4 drop)")
 
 out = HERE / "ledger.json"

@@ -1,0 +1,55 @@
+{
+  "probe": "ledger/datetime-dialog-l4.test.mjs",
+  "feature": "insert.dlg-date-time",
+  "oo_fields": [
+    "Update automatically"
+  ],
+  "wo_dialog": null,
+  "wo_button": "btn-datetime",
+  "openedBy": "btn-datetime",
+  "covered": 0,
+  "total": 1,
+  "checks": [
+    {
+      "name": "OO census carries Date & Time dialog",
+      "ok": true,
+      "detail": "2 entries found"
+    },
+    {
+      "name": "OO Date & Time dialog has \"Update automatically\" field",
+      "ok": true,
+      "detail": "fields=[\"Update automatically\"]"
+    },
+    {
+      "name": "WO census carries btn-datetime (toolbar button)",
+      "ok": true,
+      "detail": "btn-datetime exists in WO tabs"
+    },
+    {
+      "name": "WO census carries NO date-time dialog",
+      "ok": true,
+      "detail": "as expected, WO has no dialog"
+    },
+    {
+      "name": "DIVERGENCE: OO dialog has no WO dialog counterpart",
+      "ok": true,
+      "detail": "OO Date & Time dialog -> WO btn-datetime button only"
+    },
+    {
+      "name": "DIVERGENCE: All OO fields gap (no WO dialog)",
+      "ok": true,
+      "detail": "OO fields [\"Update automatically\"] have no WO dialog to carry them"
+    },
+    {
+      "name": "Behavior: btn-datetime inserts current date at caret",
+      "ok": true,
+      "detail": "recorded contract"
+    }
+  ],
+  "declaredGaps": [
+    "WO carries NO date-time dialog (only btn-datetime button)",
+    "OO \"Update automatically\" field has no WO counterpart"
+  ],
+  "ok": true,
+  "capturedAt": "2026-11-10T22:23:18.438Z"
+}
