@@ -1,0 +1,66 @@
+{
+  "probe": "ledger/hyphenation-dialog-l4.test.mjs",
+  "feature": "page.dlg-hyphenation",
+  "oo_fields": [
+    "Automatically hyphenate document",
+    "Hyphenate words in CAPS"
+  ],
+  "wo_fields": [
+    "Hyphenation"
+  ],
+  "openedBy": "Layout > Hyphenation options (menu-item:Hyphenation options)",
+  "covered": 1,
+  "total": 2,
+  "checks": [
+    {
+      "name": "OO census carries Hyphenation dialog",
+      "ok": true,
+      "detail": "2 fields: [\"Automatically hyphenate document\",\"Hyphenate words in CAPS\"]"
+    },
+    {
+      "name": "OO field: Automatically hyphenate document",
+      "ok": true,
+      "detail": "fields=[\"Automatically hyphenate document\",\"Hyphenate words in CAPS\"]"
+    },
+    {
+      "name": "OO field: Hyphenate words in CAPS",
+      "ok": true,
+      "detail": "fields=[\"Automatically hyphenate document\",\"Hyphenate words in CAPS\"]"
+    },
+    {
+      "name": "WO census carries hyphenation-dialog",
+      "ok": true,
+      "detail": "1 fields: [\"Hyphenation\"]"
+    },
+    {
+      "name": "WO field: Hyphenation (select)",
+      "ok": true,
+      "detail": "fields=[\"Hyphenation\"]"
+    },
+    {
+      "name": "Parity: OO \"Automatically hyphenate\" covered by WO Hyphenation",
+      "ok": true,
+      "detail": "OO checkbox maps to WO select value \"Automatic\""
+    },
+    {
+      "name": "DIVERGENCE: OO \"Hyphenate words in CAPS\" not in WO",
+      "ok": true,
+      "detail": "declared divergence, not gated"
+    },
+    {
+      "name": "Behavior: Automatic -> div.hyphenation[data-mode] in flat HTML",
+      "ok": true,
+      "detail": "recorded contract"
+    },
+    {
+      "name": "Behavior: None + OK removes hyphenation marker",
+      "ok": true,
+      "detail": "recorded contract"
+    }
+  ],
+  "declaredGaps": [
+    "OO \"Hyphenate words in CAPS\" checkbox has no WO counterpart"
+  ],
+  "ok": true,
+  "capturedAt": "2026-11-10T22:23:15.609Z"
+}
