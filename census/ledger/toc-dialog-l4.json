@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "probe": "toc-dialog-l4",
+ "feature": "dialog.toc-dialog.l4",
+ "generated": "2026-11-10T22:00:20.098Z",
+ "ok": false,
+ "checks": [
+  {
+   "name": "open via real clicks (References tab + #btn-toc)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Insert table of contents\"",
+   "ok": true,
+   "detail": "\"Insert table of contents\""
+  },
+  {
+   "name": "field Title: text input",
+   "ok": true,
+   "detail": "\"Title\" text"
+  },
+  {
+   "name": "buttons Cancel + Insert(primary)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" insert=\"Insert\" primary=true"
+  },
+  {
+   "name": "bare caret + \"My TOC\" + Insert -> div.toc[data-title=\"My TOC\"] (flat HTML)",
+   "ok": false,
+   "detail": "has=false title=null flat=null/true closed=true"
+  },
+  {
+   "name": "cancel plants nothing (single toc)",
+   "ok": false,
+   "detail": "has=false title=null closed=true"
+  }
+ ],
+ "declaredGaps": [
+  "the committed OO dialog census carries a \"Table of contents\" modal with fields: Show page numbers, Right align page numbers, Leader, Format table of contents as links, Build table of contents from, Levels, Styles — WO ships the Title field only; OO fields beyond Title are deferred as recorded divergence (census-oo-dialogs.json has the full OO contract)",
+  "WO writes the document-semantic div.toc marker lazy-rendered into the flat HTML by the converters (editor.js confirmTocDialog)"
+ ],
+ "contract": {
+  "open": "real clicks: References tab + ribbon #btn-toc (editor.js: toc)",
+  "title": "Insert table of contents",
+  "fields": [
+   {
+    "label": "Title",
+    "tag": "input",
+    "type": "text"
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Insert"
+  ],
+  "behavior": "Title + Insert plants div.toc[data-title] at the caret (DOC-semantic marker, survives serialization into flat HTML); Cancel plants nothing"
+ }
+}

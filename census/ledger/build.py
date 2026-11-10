@@ -1077,6 +1077,45 @@ L4_FINAL_PROBES = [
                  "sanitizer strips the class (bare styled span with the name text instead of "
                  "span.bookmark; insertCitation documents the same pitfall and the direct-DOM "
                  "fix pattern exists but was not applied to bookmarks)"},
+    {"art": "toc-dialog-l4.json", "cluster": "references",
+     "oo": {"surface": "references:btn-toc",
+            "label": "Insert table of contents",
+            "fields": ["Show page numbers", "Right align page numbers", "Leader",
+                       "Format table of contents as links", "Build table of contents from",
+                       "Levels", "Styles"],
+            "note": "pinned contract — the OO dialog census carries a full-item modal; "
+                    "WO ships the Title field only; OO fields beyond Title deferred as recorded divergence"},
+     "behavior": "Title + Insert plants div.toc[data-title] at the caret (DOC-semantic marker, flat HTML); "
+                 "Cancel plants nothing"},
+    {"art": "crossref-dialog-l4.json", "cluster": "references",
+     "oo": {"surface": "references:openCrossref",
+            "label": "Cross-reference",
+            "fields": ["Reference type", "Insert reference to", "Insert as link",
+                       "Include above/below", "Separate numbers with"],
+            "note": "pinned contract — the OO dialog census carries a full-item modal; "
+                    "WO ships Target bookmark + Display text only; OO fields beyond these deferred"},
+     "behavior": "requires pre-existing bookmark; Target bookmark + Display text + Insert plants "
+                 "span.crossref[data-target][data-display-text] at caret (DOC-semantic, flat HTML); "
+                 "Cancel plants nothing"},
+    {"art": "caption-dialog-l4.json", "cluster": "references",
+     "oo": {"surface": "references:insertCaption",
+            "label": "Caption",
+            "fields": ["Caption", "Insert", "Label", "Exclude label from caption",
+                       "Numbering", "Include chapter number", "Chapter starts with style",
+                       "Use separator"],
+            "note": "pinned contract — OO dialog triggered by Bookmark; WO matches all OO fields except Insert (not a WO capability); full field parity"},
+     "behavior": "Caption + Label + options + OK plants the caption wrapper at selection/caret "
+                 "(DOC-semantic, flat HTML); Cancel plants nothing"},
+    {"art": "tableoffigures-dialog-l4.json", "cluster": "references",
+     "oo": {"surface": "references:insertTableOfFigures",
+            "label": "Table of figures",
+            "fields": ["Show page numbers", "Right align page numbers", "Leader",
+                       "Format table of figures as links", "Build table of figures from",
+                       "Include label and number", "Styles"],
+            "note": "pinned contract — the OO dialog census carries a full-item modal; "
+                    "WO ships Label + Style only; OO fields beyond these deferred"},
+     "behavior": "Label + Style + Insert plants div.tof[data-label][data-style] at caret "
+                 "(DOC-semantic marker, flat HTML); Cancel plants nothing"},
 ]
 for _p in L4_FINAL_PROBES:
     _path = HERE / _p["art"]
@@ -1389,6 +1428,23 @@ for _gold in LAYOUT_L4_GOLD:
             "the LAYOUT_L4_GOLD contract or re-run "
             + _gold["art"].replace(".json", ".test.mjs")
             + " + build.py (FXG-B pins margins/page-size/columns at L4)")
+
+# Loud guard (FXG-C): the four references-family probes registered in
+# L4_FINAL_PROBES — toc / crossref / caption / tableoffigures, artifacts
+# captured at L4 — must survive EVERY rebuild at L4, same contract as the
+# heading/FXG-A/FXG-B guards. A missing or renamed artifact, or a recapture
+# that flips ok, would otherwise silently drop the ledger L4 count and only
+# surface at the acceptance gate, far from the cause. Fail HERE with the
+# probe file to re-run.
+for _refs in ("toc", "crossref", "caption", "tableoffigures"):
+    _fid = "dialog.%s-dialog.l4" % _refs
+    _lvl = (ledger.get(_fid) or {}).get("level", 0)
+    if _lvl < 4:
+        raise SystemExit(
+            f"ledger: FXG-C gold row {_fid} rebuilt at L{_lvl} (artifact "
+            "missing/renamed or probe not ok) — re-run " + _refs
+            + "-dialog-l4.test.mjs + build.py; FXG-C pins all four references "
+            "probes at L4 (never a silent L4 drop)")
 
 out = HERE / "ledger.json"
 new_ledger = {"version": 1, "generated": __import__("datetime").datetime.now().isoformat(),

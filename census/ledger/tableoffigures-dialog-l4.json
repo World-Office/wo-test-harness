@@ -1,0 +1,71 @@
+{
+ "version": 1,
+ "probe": "tableoffigures-dialog-l4",
+ "feature": "dialog.tableoffigures-dialog.l4",
+ "generated": "2026-11-10T19:53:38.074Z",
+ "ok": true,
+ "checks": [
+  {
+   "name": "open via real clicks (References tab + insertTableOfFigures)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title contains \"Table of figures\"",
+   "ok": true,
+   "detail": "\"TableOfFigures.Title\""
+  },
+  {
+   "name": "field Label: select",
+   "ok": true,
+   "detail": "\"Label\" select"
+  },
+  {
+   "name": "field Style: select",
+   "ok": true,
+   "detail": "\"Style\" select"
+  },
+  {
+   "name": "buttons Cancel + Insert(primary)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" insert=\"Insert\" primary=true"
+  },
+  {
+   "name": "bare caret + Label \"Figure\" + Style \"Formal\" + Insert -> div.tof[data-label][data-style] (flat HTML)",
+   "ok": true,
+   "detail": "has=true label=\"Figure\" style=\"Formal\" flat=true/true/true closed=true"
+  },
+  {
+   "name": "cancel plants nothing (single tof)",
+   "ok": true,
+   "detail": "n=1 closed=true"
+  }
+ ],
+ "declaredGaps": [
+  "the committed OO dialog census carries a \"Table of figures\" modal with fields: Show page numbers, Right align page numbers, Leader, Format as links, Build from, Include label and number, Styles — WO ships Label + Style only; OO fields beyond these two are deferred as recorded divergence (census-oo-dialogs.json has the full OO contract)",
+  "WO writes the document-semantic div.tof marker lazy-rendered into the flat HTML by the converters (editor.js confirmTableOfFiguresDialog)"
+ ],
+ "contract": {
+  "open": "real clicks: References tab + insertTableOfFigures cmd (editor.js: insertTableOfFigures)",
+  "title": "TableOfFigures.Title / Insert table of figures",
+  "fields": [
+   {
+    "label": "Label",
+    "tag": "select",
+    "type": "select",
+    "options": ["Figure"]
+   },
+   {
+    "label": "Style",
+    "tag": "select",
+    "type": "select",
+    "options": ["Formal", "Simple"]
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Insert"
+  ],
+  "behavior": "Label + Style + Insert plants div.tof[data-label][data-style] at the caret (DOC-semantic marker, survives serialization into flat HTML); Cancel plants nothing"
+ }
+}
