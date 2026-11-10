@@ -1,0 +1,97 @@
+{
+ "version": 1,
+ "probe": "columns-dialog-l4",
+ "feature": "dialog.columns-dialog.l4",
+ "generated": "2026-11-10T21:39:15.290Z",
+ "ok": true,
+ "oo_fields": [
+  "Number of columns",
+  "1",
+  "2",
+  "Equal column width",
+  "Column divider"
+ ],
+ "oo_buttons": [
+  "OK",
+  "Cancel"
+ ],
+ "trigger": "menu-item:Custom columns",
+ "checks": [
+  {
+   "name": "census mine: OO \"Columns\" dialog (tab layout) — fields incl. \"Number of columns\", OK/Cancel, trigger",
+   "ok": true,
+   "detail": "fields=[\"Number of columns\",\"1\",\"2\",\"Equal column width\",\"Column divider\"] buttons=[\"OK\",\"Cancel\"] trigger=menu-item:Custom columns"
+  },
+  {
+   "name": "census route: Layout > Columns > \"Custom columns\" (data-cmd openColumnsDialog) opens the dialog",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "gated OO field \"Number of columns\" -> #columns-count number 1..6, default 2",
+   "ok": true,
+   "detail": "label=\"Columns\" {\"type\":\"number\",\"val\":\"2\",\"min\":\"1\",\"max\":\"6\"}"
+  },
+  {
+   "name": "WO extra: Gap (px) number 0..200, default 36",
+   "ok": true,
+   "detail": "label=\"Gap (px)\" {\"type\":\"number\",\"val\":\"36\",\"min\":\"0\",\"max\":\"200\"}"
+  },
+  {
+   "name": "chrome: title \"Insert columns\", Cancel + Insert(primary)",
+   "ok": true,
+   "detail": "title=\"Insert columns\" cancel=\"Cancel\" insert=\"Insert\""
+  },
+  {
+   "name": "Insert (3 / 42px) -> section[data-columns=3 data-column-gap=42] in the flat HTML",
+   "ok": true,
+   "detail": "closed=true has=true cols=3 gap=42 flat=true/true"
+  },
+  {
+   "name": "out-of-range clamps: 99 -> data-columns=6, 9999 -> gap=200",
+   "ok": true,
+   "detail": "cols=6 gap=200"
+  },
+  {
+   "name": "preset route: Layout > Columns > Two (data-cmd applyColumns) plants data-columns=2",
+   "ok": true,
+   "detail": "cols=2 layout=null"
+  },
+  {
+   "name": "Cancel mutates nothing (marker keeps the Two preset), dialog closes",
+   "ok": true,
+   "detail": "closed=true cols=2"
+  }
+ ],
+ "declaredGaps": [
+  "Per-column width spinners (1/2): collapse into the equal-width section mechanism (one data-column-gap knob — recorded divergence, not gated)",
+  "Equal column width: satisfied by mechanism — WO columns are equal-width by construction (no checkbox exists — recorded divergence, not gated)",
+  "Column divider: rule between columns deferred — the section marker has no divider attribute (recorded divergence, not gated)"
+ ],
+ "contract": {
+  "open": "real clicks: census route Layout > Columns > \"Custom columns\" (data-cmd openColumnsDialog)",
+  "title": "Insert columns",
+  "wo_dialog": "columns-dialog",
+  "fields": [
+   {
+    "label": "Number of columns",
+    "tag": "number",
+    "maps": "Columns",
+    "range": "1..6",
+    "default": 2
+   },
+   {
+    "label": "Gap (px)",
+    "tag": "number",
+    "wo_extra": true,
+    "range": "0..200",
+    "default": 36
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Insert"
+  ],
+  "behavior": "Insert wraps the caret position in section[data-columns][data-column-gap] (count clamps 1..6, gap clamps 0..200); the Layout > Columns presets (One/Two/Three/Left/Right) plant the same marker (asymmetric layouts add data-columns-layout); Cancel plants nothing"
+ }
+}

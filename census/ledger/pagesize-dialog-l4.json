@@ -1,0 +1,80 @@
+{
+ "version": 1,
+ "probe": "pagesize-dialog-l4",
+ "feature": "dialog.page-size-dialog.l4",
+ "generated": "2026-11-10T21:38:19.467Z",
+ "ok": true,
+ "oo_fields": [
+  "Preset",
+  "Width",
+  "Height"
+ ],
+ "oo_buttons": [
+  "OK",
+  "Cancel"
+ ],
+ "trigger": "menu-item:Custom page size",
+ "checks": [
+  {
+   "name": "census mine: OO \"Page size\" dialog (tab layout) — fields incl. Preset, OK/Cancel, trigger",
+   "ok": true,
+   "detail": "fields=[\"Preset\",\"Width\",\"Height\"] buttons=[\"OK\",\"Cancel\"] trigger=menu-item:Custom page size"
+  },
+  {
+   "name": "census route: Layout > Size > \"Custom page size\" (data-cmd openPageSetup) opens the dialog",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "gated OO field \"Preset\" -> Size select: 13 \"WxH\" twip presets + Custom, default A4 11906x16838",
+   "ok": true,
+   "detail": "n=14 first=11906x16838 last=custom default=11906x16838"
+  },
+  {
+   "name": "shared page-setup dialog chrome: title \"Page setup\", Cancel + Apply(primary)",
+   "ok": true,
+   "detail": "title=\"Page setup\" cancel=\"Cancel\" apply=\"Apply\""
+  },
+  {
+   "name": "Letter preset + Apply -> div.page-setup[data-page-w=12240 data-page-h=15840] portrait",
+   "ok": true,
+   "detail": "closed=true 12240x15840 portrait flat=true/true"
+  },
+  {
+   "name": "reopen reads the live size back (12240x15840)",
+   "ok": true,
+   "detail": "size=12240x15840"
+  },
+  {
+   "name": "Orientation landscape + Apply swaps data-page-w/h (15840 x 12240)",
+   "ok": true,
+   "detail": "15840x12240 landscape"
+  },
+  {
+   "name": "Cancel mutates nothing (marker keeps landscape Letter geometry), dialog closes",
+   "ok": true,
+   "detail": "closed=true 15840x12240 landscape"
+  }
+ ],
+ "declaredGaps": [
+  "Width/Height: free numeric custom size carried by mechanism — Size option values are \"WxH\" twips and Apply writes data-page-w/data-page-h; no separate spinners (recorded divergence, not gated)"
+ ],
+ "contract": {
+  "open": "real clicks: census route Layout > Size > \"Custom page size\" (data-cmd openPageSetup) AND ribbon #btn-page-setup (shared dialog)",
+  "title": "Page setup",
+  "wo_dialog": "page-setup-dialog",
+  "fields": [
+   {
+    "label": "Preset",
+    "tag": "select",
+    "maps": "Size",
+    "options": "13 \"WxH\" twip presets + Custom (default 11906x16838 = A4)"
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Apply"
+  ],
+  "behavior": "Size preset -> Apply writes div.page-setup[data-page-w][data-page-h] at body start (flat HTML, w:sectPr round-trip); landscape swaps the pair; reopen reads the live size back into the select; Cancel plants nothing"
+ }
+}
