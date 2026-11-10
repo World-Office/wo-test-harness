@@ -1,0 +1,124 @@
+{
+ "version": 1,
+ "probe": "margins-dialog-l4",
+ "feature": "dialog.margins-dialog.l4",
+ "generated": "2026-11-10T21:10:21.677Z",
+ "ok": true,
+ "oo_fields": [
+  "Margins",
+  "Top",
+  "Bottom",
+  "Left",
+  "Right",
+  "Gutter position",
+  "Orientation",
+  "Multiple pages"
+ ],
+ "oo_buttons": [
+  "OK",
+  "Cancel"
+ ],
+ "trigger": "menu-item:Custom margins",
+ "checks": [
+  {
+   "name": "census mine: OO \"Margins\" dialog (tab layout) — 8 fields, OK/Cancel, trigger",
+   "ok": true,
+   "detail": "fields=[\"Margins\",\"Top\",\"Bottom\",\"Left\",\"Right\",\"Gutter position\",\"Orientation\",\"Multiple pages\"] buttons=[\"OK\",\"Cancel\"] trigger=menu-item:Custom margins"
+  },
+  {
+   "name": "open via real #btn-page-setup click (Layout tab)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Page setup\" (WO shared page-setup dialog)",
+   "ok": true,
+   "detail": "\"Page setup\""
+  },
+  {
+   "name": "field Size: 13 \"WxH\" twip presets + Custom (superset standing for OO \"Margins\" preset combo)",
+   "ok": true,
+   "detail": "label=\"Size\" n=14 first=11906x16838 last=custom default=11906x16838"
+  },
+  {
+   "name": "field Orientation: Portrait/Landscape radios (default Portrait)",
+   "ok": true,
+   "detail": "[{\"value\":\"portrait\",\"checked\":true},{\"value\":\"landscape\",\"checked\":false}]"
+  },
+  {
+   "name": "field Margins (inches): Top/Bottom/Left/Right number inputs (default 1.0 on open)",
+   "ok": true,
+   "detail": "label=\"Margins (inches)\" T/B/L/R=1.0/1.0/1.0/1.0"
+  },
+  {
+   "name": "buttons Cancel + Apply(primary)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" apply=\"Apply\" primary=true"
+  },
+  {
+   "name": "census route: Layout > Margins > \"Custom margins\" (data-cmd openPageSetup) reopens the dialog",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Apply (2 / 1.5 / 1 / 0.5 in, portrait) -> div.page-setup[data-margin-top=2880 bottom=2160 left=1440 right=720] 11906x16838 at body start (flat HTML)",
+   "ok": true,
+   "detail": "closed=true has=true 11906x16838 portrait mt/mb/ml/mr=2880/2160/1440/720 flat=true/true"
+  },
+  {
+   "name": "reopen reads the live margins back (2.0 / 1.5 / 1.0 / 0.5)",
+   "ok": true,
+   "detail": "T/B/L/R=2.0/1.5/1.0/0.5"
+  },
+  {
+   "name": "Orientation landscape + Apply swaps data-page-w/h (16838 x 11906), margins kept",
+   "ok": true,
+   "detail": "16838x11906 landscape mt/mr=2880/720"
+  },
+  {
+   "name": "Cancel mutates nothing (marker keeps the landscape geometry), dialog closes",
+   "ok": true,
+   "detail": "closed=true 16838x11906 landscape mt=2880"
+  }
+ ],
+ "declaredGaps": [
+  "Gutter position: WO has no gutter model — deferred by the .page-setup marker's single data-margin-* twip set (recorded divergence, not gated)",
+  "Multiple pages: OO's mirror/multiple-pages book layout is deferred (recorded divergence, not gated)"
+ ],
+ "contract": {
+  "open": "real clicks: Layout tab + ribbon #btn-page-setup AND the census route Layout > Margins > \"Custom margins\" (data-cmd openPageSetup)",
+  "title": "Page setup",
+  "wo_dialog": "page-setup-dialog",
+  "fields": [
+   {
+    "label": "Size",
+    "tag": "select",
+    "options": "13 \"WxH\" twip presets + Custom (default 11906x16838 = A4)"
+   },
+   {
+    "label": "Orientation",
+    "tag": "radio",
+    "options": [
+     "portrait",
+     "landscape"
+    ]
+   },
+   {
+    "label": "Margins (inches)",
+    "tag": "number",
+    "fields": [
+     "Top",
+     "Bottom",
+     "Left",
+     "Right"
+    ],
+    "default": 1
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Apply"
+  ],
+  "behavior": "Apply plants div.page-setup[data-page-w][data-page-h][data-orient][data-margin-top/bottom/left/right] (inches x 1440 twips) at body start (flat HTML, w:sectPr round-trip); landscape swaps the WxH pair; reopen reads live values back; Cancel plants nothing"
+ }
+}
