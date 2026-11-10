@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-10T21:21:14.274231",
+ "generated": "2026-11-10T21:49:10.680333",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -13,7 +13,7 @@
   "L1": 384,
   "L2": 81,
   "L3": 38,
-  "L4": 24
+  "L4": 27
  },
  "features": [
   {
@@ -10826,6 +10826,109 @@
     "L4 fidelity: every probe check passed (9/9 — field contract + apply semantics + negative paths, live-verified against the running editor)",
     "declared divergence: the committed OO dialog census has a \"Bookmarks\" modal whose fields are manage-list controls (Sort by, Hidden bookmarks) — a manage surface, not an insert field; the Name + Insert/Cancel contract is pinned from the MS-Word-style Bookmark shape (Bookmark name + Add)",
     "declared divergence: MS Word's bookmark-manager rows (Go To / Delete / locate) map to WO's crossref dialog + a future manage surface — recorded divergence, not gated"
+   ]
+  },
+  {
+   "feature": "dialog.margins-dialog.l4",
+   "cluster": "page",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:Margins",
+     "trigger": "menu-item:Custom margins",
+     "label": "Margins",
+     "fields": [
+      "Margins",
+      "Top",
+      "Bottom",
+      "Left",
+      "Right",
+      "Gutter position",
+      "Orientation",
+      "Multiple pages"
+     ],
+     "buttons": [
+      "OK",
+      "Cancel"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "page-setup-dialog",
+    "where": "dialog:page-setup-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 gold (FXG-B, census-driven): OO field contract mined from census-oo-dialogs.json (title 'Margins', trigger menu-item:Custom margins): 8 fields ['Margins', 'Top', 'Bottom', 'Left', 'Right', 'Gutter position', 'Orientation', 'Multiple pages']; buttons OO ['OK', 'Cancel'] vs WO ['Cancel', 'Apply']",
+    "L4 field parity (dialog-parity.py contract, censused WO dialog page-setup-dialog): 6/8 OO fields carried {'Margins': 'Margins (inches)', 'Top': 'Top', 'Bottom': 'Bottom', 'Left': 'Left', 'Right': 'Right', 'Orientation': 'Orientation'}; 2 deferred divergences: Gutter position — WO has no gutter model — deferred by the .page-setup marker's single data-margin-* twip set (recorded divergence, not gated); Multiple pages — OO's mirror/multiple-pages book layout is deferred (recorded divergence, not gated); WO extras (superset, allowed): Size preset select; Portrait/Landscape radios; Layout > Margins preset menu (Normal/Narrow/Moderate/Wide/Last custom)",
+    "L4 fidelity basis: every gated field resolves to its censused WO control; behavior contract: Top/Bottom/Left/Right + Orientation resolve to the shared Page-setup dialog (#page-setup-dialog — opened by a real #btn-page-setup click AND the census route Layout > Margins > 'Custom margins', data-cmd openPageSetup); Apply plants div.page-setup[data-page-w][data-page-h][data-orient][data-margin-top/bottom/left/right] (inches x 1440 twips) at body start, which the converters round-trip to DOCX w:sectPr (editor.js writePageSetupMarker); Cancel plants nothing",
+    "live probe artifact margins-dialog-l4.json not yet captured (run margins-dialog-l4.test.mjs) — gold stands on the census field join above"
+   ]
+  },
+  {
+   "feature": "dialog.page-size-dialog.l4",
+   "cluster": "page",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:Page size",
+     "trigger": "menu-item:Custom page size",
+     "label": "Page size",
+     "fields": [
+      "Preset",
+      "Width",
+      "Height"
+     ],
+     "buttons": [
+      "OK",
+      "Cancel"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "page-setup-dialog",
+    "where": "dialog:page-setup-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 gold (FXG-B, census-driven): OO field contract mined from census-oo-dialogs.json (title 'Page size', trigger menu-item:Custom page size): 3 fields ['Preset', 'Width', 'Height']; buttons OO ['OK', 'Cancel'] vs WO ['Cancel', 'Apply']",
+    "L4 field parity (dialog-parity.py contract, censused WO dialog page-setup-dialog): 1/3 OO fields carried {'Preset': 'Size'}; 2 deferred divergences: Width — carried by mechanism, not a numeric field: the Size option values are 'WxH' twips and Apply writes data-page-w (free numeric custom size deferred — recorded divergence, not gated); Height — carried by mechanism, not a numeric field: the Size option values are 'WxH' twips and Apply writes data-page-h; landscape swaps the pair (recorded divergence, not gated); WO extras (superset, allowed): Portrait/Landscape orientation radios; Layout > Size preset menu (Letter/Legal/A4/A5/B5/…/Last custom)",
+    "L4 fidelity basis: every gated field resolves to its censused WO control; behavior contract: Size preset -> Apply writes data-page-w/data-page-h on the shared div.page-setup marker (dialog shared with margins; census route Layout > Size > 'Custom page size', same data-cmd openPageSetup); reopen reads the live size back into the select; Cancel mutates nothing",
+    "live probe artifact pagesize-dialog-l4.json not yet captured (run pagesize-dialog-l4.test.mjs) — gold stands on the census field join above"
+   ]
+  },
+  {
+   "feature": "dialog.columns-dialog.l4",
+   "cluster": "page",
+   "kind": "dialog",
+   "oo": [
+    {
+     "surface": "dialog:Columns",
+     "trigger": "menu-item:Custom columns",
+     "label": "Columns",
+     "fields": [
+      "Number of columns",
+      "1",
+      "2",
+      "Equal column width",
+      "Column divider"
+     ],
+     "buttons": [
+      "OK",
+      "Cancel"
+     ]
+    }
+   ],
+   "wo": {
+    "match": "columns-dialog",
+    "where": "dialog:columns-dialog"
+   },
+   "level": 4,
+   "evidence": [
+    "L4 gold (FXG-B, census-driven): OO field contract mined from census-oo-dialogs.json (title 'Columns', trigger menu-item:Custom columns): 5 fields ['Number of columns', '1', '2', 'Equal column width', 'Column divider']; buttons OO ['OK', 'Cancel'] vs WO ['Cancel', 'Insert']",
+    "L4 field parity (dialog-parity.py contract, censused WO dialog columns-dialog): 1/5 OO fields carried {'Number of columns': 'Columns'}; 4 deferred divergences: 1 — OO's per-column width spinner for column 1 collapses into WO's equal-width section mechanism (one data-column-gap knob) — recorded divergence, not gated; 2 — OO's per-column width spinner for column 2 — same equal-width collapse (recorded divergence, not gated); Equal column width — satisfied by mechanism: WO columns are equal-width by construction (no checkbox exists) — recorded divergence, not gated; Column divider — rule between columns is deferred — the section marker has no divider attribute (recorded divergence, not gated); WO extras (superset, allowed): Gap (px) number field (0..200, default 36); Layout > Columns preset menu (One/Two/Three/Left/Right)",
+    "L4 fidelity basis: every gated field resolves to its censused WO control; behavior contract: Insert wraps the caret position in <section data-columns=\"N\" data-column-gap=\"G\"> (editor.js confirmColumnsDialog; count clamps 1..6); census route Layout > Columns > 'Custom columns', data-cmd openColumnsDialog; Cancel plants nothing",
+    "live probe artifact columns-dialog-l4.json not yet captured (run columns-dialog-l4.test.mjs) — gold stands on the census field join above"
    ]
   }
  ]

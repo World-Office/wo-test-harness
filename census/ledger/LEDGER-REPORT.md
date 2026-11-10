@@ -244,7 +244,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L3 **headerfooter.date-time** [control] → WO: btn-datetime
 - ✅ L3 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 
-## page — 51 features (L0:0 L1:43 L3:0)
+## page — 54 features (L0:0 L1:43 L3:0)
 - 🔲 L1 **page.margins** [control] → WO: Margins
 - 🔲 L1 **page.orientation** [control] → WO: Orientation
 - 🔲 L1 **page.size** [control] → WO: Size
@@ -296,6 +296,9 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **page.hyphenation-options** [menu-item] → WO: toggleHyphenation
 - ✅ L4 **dialog.linenumbers-dialog.l4** [dialog] (1 OO fields) → WO: linenumbers-l4 (linenumbers-dialog-l4.test.mjs)
 - ✅ L4 **dialog.watermark-dialog.l4** [dialog] (3 OO fields) → WO: watermark-l4 (watermark-dialog-l4.test.mjs)
+- ✅ L4 **dialog.margins-dialog.l4** [dialog] (8 OO fields) → WO: page-setup-dialog
+- ✅ L4 **dialog.page-size-dialog.l4** [dialog] (3 OO fields) → WO: page-setup-dialog
+- ✅ L4 **dialog.columns-dialog.l4** [dialog] (5 OO fields) → WO: columns-dialog
 
 ## references — 11 features (L0:0 L1:6 L3:1)
 - 🔲 L1 **references.add-text** [control] → WO: btn-addtext
