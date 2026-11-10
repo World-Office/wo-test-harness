@@ -1121,6 +1121,211 @@ for _p in L4_FINAL_PROBES:
     print("  L4 live probe: %s %s" % (_fid, "at L4" if _art.get("ok")
                                       else "NOT at L4 (measured defect — see evidence)"))
 
+# --------------------------- L4 gold: Layout page-setup dialogs (FXG-B)
+# Margins / Page size / Columns are the one OO dialog-census family whose
+# modals ARE captured (census-oo-dialogs.json, tab "layout", triggers
+# "menu-item:Custom margins|Custom page size|Custom columns") — so unlike
+# the pinned-contract probes above, their gold is CENSUS-DRIVEN: the OO
+# field contract is MINED from the committed census at build time (a lost
+# or re-titled census dialog fails the build here — heading-guard spirit),
+# the WO field side is measured from census-wo-dialogs.json, and the
+# parity verdict follows the dialog-parity.py contract over a DECLARED
+# mapping table: every GATED OO field must resolve to its censused WO
+# control (superset allowed — "no OO field missing" among the carried
+# core); census fields WO deliberately collapses into a mechanism or
+# defers are DECLARED below — recorded divergence, never gated, never
+# silently dropped (symbol/bookmark/watermark probe precedent). The
+# gated + deferred sets must account for EVERY mined census field, so a
+# census field added/renamed upstream fails the build instead of
+# quietly escaping the contract.
+def oo_census_dialog(title):
+    "mine the committed OO dialog census (first exact-title match)"
+    for e in oo_dlg.get("dialogs", []):
+        if (e.get("dialog") or {}).get("title") == title:
+            return e
+    return None
+
+def wo_census_fields(dlg_id):
+    "censused WO dialog fields (list) or None when the id is unknown"
+    for e in wo_dlg.get("dialogs", []):
+        if e.get("id") == dlg_id:
+            return e.get("fields", [])
+    return None
+
+LAYOUT_L4_GOLD = [
+    {
+        "fid": "dialog.margins-dialog.l4",
+        "art": "margins-dialog-l4.json",
+        "cluster": "page",
+        "census_title": "Margins",
+        "trigger": "menu-item:Custom margins",
+        "wo_dialog": "page-setup-dialog",
+        "gated": {
+            "Margins": "Margins (inches)",  # OO's preset combo -> WO margins group
+            "Top": "Top", "Bottom": "Bottom", "Left": "Left", "Right": "Right",
+            "Orientation": "Orientation",   # + the Portrait/Landscape radio pair
+        },
+        "deferred": {
+            "Gutter position": "WO has no gutter model — deferred by the .page-setup marker's "
+                               "single data-margin-* twip set (recorded divergence, not gated)",
+            "Multiple pages": "OO's mirror/multiple-pages book layout is deferred "
+                              "(recorded divergence, not gated)",
+        },
+        "wo_extra": ["Size preset select", "Portrait/Landscape radios",
+                     "Layout > Margins preset menu (Normal/Narrow/Moderate/Wide/Last custom)"],
+        "behavior": "Top/Bottom/Left/Right + Orientation resolve to the shared Page-setup "
+                    "dialog (#page-setup-dialog — opened by a real #btn-page-setup click AND "
+                    "the census route Layout > Margins > 'Custom margins', data-cmd "
+                    "openPageSetup); Apply plants div.page-setup[data-page-w][data-page-h]"
+                    "[data-orient][data-margin-top/bottom/left/right] (inches x 1440 twips) "
+                    "at body start, which the converters round-trip to DOCX w:sectPr "
+                    "(editor.js writePageSetupMarker); Cancel plants nothing",
+    },
+    {
+        "fid": "dialog.page-size-dialog.l4",
+        "art": "pagesize-dialog-l4.json",
+        "cluster": "page",
+        "census_title": "Page size",
+        "trigger": "menu-item:Custom page size",
+        "wo_dialog": "page-setup-dialog",
+        "gated": {
+            "Preset": "Size",  # 14 WxH presets + Custom (option values carry W x H twips)
+        },
+        "deferred": {
+            "Width": "carried by mechanism, not a numeric field: the Size option values are "
+                     "'WxH' twips and Apply writes data-page-w (free numeric custom size "
+                     "deferred — recorded divergence, not gated)",
+            "Height": "carried by mechanism, not a numeric field: the Size option values are "
+                      "'WxH' twips and Apply writes data-page-h; landscape swaps the pair "
+                      "(recorded divergence, not gated)",
+        },
+        "wo_extra": ["Portrait/Landscape orientation radios",
+                     "Layout > Size preset menu (Letter/Legal/A4/A5/B5/…/Last custom)"],
+        "behavior": "Size preset -> Apply writes data-page-w/data-page-h on the shared "
+                    "div.page-setup marker (dialog shared with margins; census route "
+                    "Layout > Size > 'Custom page size', same data-cmd openPageSetup); "
+                    "reopen reads the live size back into the select; Cancel mutates nothing",
+    },
+    {
+        "fid": "dialog.columns-dialog.l4",
+        "art": "columns-dialog-l4.json",
+        "cluster": "page",
+        "census_title": "Columns",
+        "trigger": "menu-item:Custom columns",
+        "wo_dialog": "columns-dialog",
+        "gated": {
+            "Number of columns": "Columns",  # #columns-count, number 1..6, default 2
+        },
+        "deferred": {
+            "1": "OO's per-column width spinner for column 1 collapses into WO's equal-width "
+                 "section mechanism (one data-column-gap knob) — recorded divergence, not gated",
+            "2": "OO's per-column width spinner for column 2 — same equal-width collapse "
+                 "(recorded divergence, not gated)",
+            "Equal column width": "satisfied by mechanism: WO columns are equal-width by "
+                                  "construction (no checkbox exists) — recorded divergence, "
+                                  "not gated",
+            "Column divider": "rule between columns is deferred — the section marker has no "
+                              "divider attribute (recorded divergence, not gated)",
+        },
+        "wo_extra": ["Gap (px) number field (0..200, default 36)",
+                     "Layout > Columns preset menu (One/Two/Three/Left/Right)"],
+        "behavior": "Insert wraps the caret position in <section data-columns=\"N\" "
+                    "data-column-gap=\"G\"> (editor.js confirmColumnsDialog; count clamps "
+                    "1..6); census route Layout > Columns > 'Custom columns', data-cmd "
+                    "openColumnsDialog; Cancel plants nothing",
+    },
+]
+for _g in LAYOUT_L4_GOLD:
+    _gid, _gart = _g["fid"], _g["art"]
+    # 1. mine the OO contract from the committed census (never re-declared here)
+    _mine = oo_census_dialog(_g["census_title"])
+    if _mine is None:
+        raise SystemExit(
+            "ledger: FXG-B gold row %s lost its OO census dialog %r — "
+            "census-oo-dialogs.json was retitled/rewritten; re-pin the gold contract"
+            % (_gid, _g["census_title"]))
+    _census_fields = [f.get("label", "") for f in _mine["dialog"].get("fields", []) if f.get("label")]
+    _trigger = (_mine.get("trigger") or {}).get("via") or _g["trigger"]
+    # 2. the declared contract must account for EVERY mined census field
+    _declared = set(_g["gated"]) | set(_g["deferred"])
+    if set(_census_fields) != _declared:
+        raise SystemExit(
+            "ledger: FXG-B gold row %s contract drift — census fields %s vs declared %s; "
+            "gate the fields WO carries, declare the rest, never drop one silently"
+            % (_gid, sorted(_census_fields), sorted(_declared)))
+    # 3. measure the WO side from the committed WO dialog census
+    _wf = wo_census_fields(_g["wo_dialog"])
+    _wo_labels = [f.get("label", "") for f in (_wf or [])]
+    _wo_buttons = next((e.get("buttons") for e in wo_dlg.get("dialogs", [])
+                        if e.get("id") == _g["wo_dialog"]), [])
+    _missing = [oo for oo, wo in _g["gated"].items() if wo not in _wo_labels]
+    _ok = _wf is not None and not _missing
+    # 4. row + evidence
+    add(_gid, _g["cluster"],
+        {"surface": "dialog:" + _g["census_title"], "trigger": _trigger,
+         "label": _g["census_title"], "fields": _census_fields,
+         "buttons": _mine["dialog"].get("buttons", [])}, "dialog")
+    ledger[_gid]["wo"] = {"match": _g["wo_dialog"], "where": "dialog:" + _g["wo_dialog"]}
+    ledger[_gid]["level"] = max(ledger[_gid]["level"], 1)
+    ledger[_gid]["evidence"].append(
+        "L4 gold (FXG-B, census-driven): OO field contract mined from census-oo-dialogs.json "
+        "(title %r, trigger %s): %d fields %s; buttons OO %s vs WO %s"
+        % (_g["census_title"], _trigger, len(_census_fields), _census_fields,
+           _mine["dialog"].get("buttons", []), _wo_buttons))
+    _map = {oo: wo for oo, wo in _g["gated"].items() if wo in _wo_labels}
+    ledger[_gid]["evidence"].append(
+        "L4 field parity (dialog-parity.py contract, censused WO dialog %s): %d/%d OO fields "
+        "carried %s; %d deferred divergences: %s; WO extras (superset, allowed): %s"
+        % (_g["wo_dialog"], len(_map), len(_census_fields), _map,
+           len(_g["deferred"]), "; ".join(k + " — " + v for k, v in _g["deferred"].items()),
+           "; ".join(_g["wo_extra"])))
+    if _ok:
+        ledger[_gid]["level"] = 4
+        ledger[_gid]["evidence"].append(
+            "L4 fidelity basis: every gated field resolves to its censused WO control; "
+            "behavior contract: " + _g["behavior"])
+    else:
+        ledger[_gid]["evidence"].append(
+            "L4 DEFECT (measured): gated fields missing from the censused WO dialog %s: %s "
+            "— NOT L4 until the editor carries them" % (_g["wo_dialog"], _missing))
+    # 5. live-probe artifact join when the probe has been captured
+    _apath = HERE / _gart
+    if _apath.exists():
+        try:
+            _art = json.load(open(_apath))
+        except ValueError:
+            raise SystemExit("ledger: %s is not valid JSON — fix the probe artifact" % _gart)
+        if _art.get("oo_fields") != _census_fields:
+            ledger[_gid]["evidence"].append(
+                "L4 probe artifact contract drift (%s): oo_fields %s != census %s — "
+                "re-capture %s" % (_gart, _art.get("oo_fields"), _census_fields,
+                                    _gart.replace(".json", ".test.mjs")))
+            _ok = False
+        elif _art.get("ok"):
+            ledger[_gid]["evidence"].append(
+                "L4 live probe verified (%s, %s): %d/%d checks passed against the running "
+                "editor" % (_gart.replace(".json", ".test.mjs"), _art.get("generated", "?"),
+                            len([c for c in _art.get("checks", []) if c.get("ok")]),
+                            len(_art.get("checks", []))))
+        else:
+            for _c in _art.get("checks", []):
+                if not _c.get("ok"):
+                    ledger[_gid]["evidence"].append(
+                        "L4 DEFECT (measured, probe check '%s'): %s"
+                        % (_c.get("name", "?"), _c.get("detail", "failed")))
+            ledger[_gid]["evidence"].append(
+                "NOT L4: re-run %s + build.py after the editor fix"
+                % _gart.replace(".json", ".test.mjs"))
+            _ok = False
+    else:
+        ledger[_gid]["evidence"].append(
+            "live probe artifact %s not yet captured (run %s) — gold stands on the census "
+            "field join above" % (_gart, _gart.replace(".json", ".test.mjs")))
+    if not _ok and ledger[_gid]["level"] >= 4:
+        ledger[_gid]["level"] = 2
+    print("  L4 gold (FXG-B): %s %s"
+          % (_gid, "at L4" if ledger[_gid]["level"] == 4 else "NOT at L4 (see evidence)"))
+
 # ---------------------------------------------------------------- report
 by_cluster = defaultdict(lambda: {"L0": 0, "L1": 0, "L2": 0, "L3": 0, "L4": 0, "rows": []})
 for row in ledger.values():
@@ -1166,6 +1371,24 @@ for _orphan in ("dropcap", "watermark", "pagenumber", "bookmark"):
             "missing/renamed or probe not ok) — re-run " + _orphan
             + "-dialog-l4.test.mjs + build.py; FXG-A pins all four orphan "
             "probes at L4 (never a silent L4 24->20 drop)")
+
+# Loud guard (FXG-B): the three census-driven Layout page-setup gold rows
+# (margins / page-size / columns — mined from census-oo-dialogs.json) must
+# survive EVERY rebuild at L4, same contract as the heading/FXG-A guards:
+# the mined census dialog going away, a census field added/renamed outside
+# the declared contract, or the censused WO dialog losing a gated field
+# each fail the build at the cause instead of silently dropping the ledger
+# L4 count at the acceptance gate far away.
+for _gold in LAYOUT_L4_GOLD:
+    _fid = _gold["fid"]
+    _lvl = (ledger.get(_fid) or {}).get("level", 0)
+    if _lvl < 4:
+        raise SystemExit(
+            f"ledger: FXG-B gold row {_fid} rebuilt at L{_lvl} — the census "
+            "field join or the live-probe artifact flipped below parity; fix "
+            "the LAYOUT_L4_GOLD contract or re-run "
+            + _gold["art"].replace(".json", ".test.mjs")
+            + " + build.py (FXG-B pins margins/page-size/columns at L4)")
 
 out = HERE / "ledger.json"
 new_ledger = {"version": 1, "generated": __import__("datetime").datetime.now().isoformat(),
