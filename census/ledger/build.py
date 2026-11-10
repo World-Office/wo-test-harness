@@ -1150,6 +1150,23 @@ for _i in (1, 2, 3):
             "rebuild — roundtrip-results.json lost its applyHeadingN probe; "
             "recapture roundtrip.cjs before regenerating the ledger")
 
+# Loud guard (FXG-A): the four now-green orphan probes registered in
+# L4_FINAL_PROBES — dropcap / watermark / pagenumber / bookmark, artifacts
+# all-ok since the viewport + evaluate-click regen — must survive EVERY
+# rebuild at L4, same contract as the heading guard above. A missing or
+# renamed artifact, or a recapture that flips ok, would otherwise silently
+# drop the ledger L4 24 -> 20 and only surface at the acceptance gate, far
+# from the cause. Fail HERE with the probe file to re-run.
+for _orphan in ("dropcap", "watermark", "pagenumber", "bookmark"):
+    _fid = "dialog.%s-dialog.l4" % _orphan
+    _lvl = (ledger.get(_fid) or {}).get("level", 0)
+    if _lvl < 4:
+        raise SystemExit(
+            f"ledger: orphan probe row {_fid} rebuilt at L{_lvl} (artifact "
+            "missing/renamed or probe not ok) — re-run " + _orphan
+            + "-dialog-l4.test.mjs + build.py; FXG-A pins all four orphan "
+            "probes at L4 (never a silent L4 24->20 drop)")
+
 out = HERE / "ledger.json"
 new_ledger = {"version": 1, "generated": __import__("datetime").datetime.now().isoformat(),
               "levels": ["L0 missing", "L1 surface", "L2 acts", "L3 persists", "L4 fidelity"],
