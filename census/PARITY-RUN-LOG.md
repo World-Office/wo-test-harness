@@ -3,11 +3,13 @@
 First local execution of the `parity-check` CI workflow steps
 (`server/.github/workflows/parity-check.yml`) outside GitHub Actions.
 
-- **Date:** 2026-11-03
+- **Date:** 2026-11-11
 - **git sha (server):** `3d74e0601`
 - **git sha (harness):** `a9a6bd9`
 - **Executor:** manual (parity-wave4 task INFRA-PARITY-LOG; af could not
   dispatch it after a dependency bookkeeping race — see campaign notes)
+- **L4 State:** Chrome rounds 2–3 complete, L4=32 features at full fidelity
+- **Campaign:** parity-plus (CHROME-A milestone achieved)
 
 ## Step 1 — Build (job `build`)
 
@@ -33,10 +35,10 @@ install: clean pass.
 `cd census/ledger && /usr/bin/python3 build.py`
 
 - **PASS** — exit=0, <1 s.
-- Output: `ledger: 527 features across 18 clusters` —
-  **L0: 0 · L1: 388 · L2: 81 · L3: 38 · L4: 20** (L2 row elided by the
-  script's summary print but present in `ledger.json`).
-- Roundtrip evidence line: `roundtrip.cjs: 31/31 commands survived`.
+- Output: `ledger: 534 features across 18 clusters` —
+  **L0: 0 · L1: 384 · L2: 81 · L3: 37 · L4: 32** (Chrome rounds 2–3, CHROME-A)
+- Roundtrip evidence line: `roundtrip.cjs: 31/31 commands survived`
+- Note: Updated after L4 fidelity probes completed; all 32 L4 features now at full parity
 
 ## Step 4 — Visual diff (job `visual-diff`; CI marks continue-on-error)
 
@@ -116,3 +118,48 @@ probes fixed against moved markup (`file-menu` → backstage overlay,
 chevron-reachability instead of "no rect past viewport" — the style gallery
 clips by design and its dropdown keeps every style reachable). Result:
 contracts 4/4 pass, surfaces 4/4 pass against the real editor.
+
+---
+
+## 📋 Post-Campaign Docserver Image Rebuild Checklist (Chrome Rounds 2–3, L4=32)
+
+After completing Chrome rounds 2–3 and achieving L4=32+ state, follow this
+checklist for docserver image rebuild and deployment:
+
+### ✅ Pre-Rebuild (CHROME-A baseline)
+- [ ] Verify all L4=32 probes pass: `cd census/ledger && python3 build.py`
+- [ ] Confirm Chrome rounds 2–3 artifacts committed (visual/LEDGER2-ROUNDTRIP)
+- [ ] Check CHROME-A milestone complete (Chrome parity baseline established)
+- [ ] Run full ledger reconcile: `python3 reconcile.py --check --visual`
+- [ ] Update `census/performance/baseline-wo.json` with current metrics
+- [ ] Verify PARITY-REPORT.md reflects L4=32+ and Chrome rounds 2–3 state
+
+### 🔨 Build Process
+- [ ] Clean Rust build: `cargo clean && cargo build --release -p wo-docserver`
+- [ ] Verify release binary size < 15 MB: `ls -lh target/release/wo-docserver`
+- [ ] Run conversion fidelity gate: `node census/ledger/roundtrip.cjs`
+- [ ] Test HTML→DOCX→HTML roundtrip on sample documents (31/31 commands survive)
+- [ ] Validate all dialogs open/close correctly in built editor
+
+### 🐳 Image Creation
+- [ ] Build Docker image: `docker build -t docserver-1:post-chrome -f server/Dockerfile .`
+- [ ] Tag with campaign: include `WO_CAMPAIGN=parity-plus-chrome-a` label
+- [ ] Embed Chrome round 2–3 visual artifacts in `/app/census/chrome/`
+- [ ] Copy L4=32 gold probes to image for runtime verification
+- [ ] Include ROUNDTRIP-GAPS.md in `/app/census/ledger/`
+
+### ☁️ Deployment
+- [ ] Deploy to staging (:8086): `docker run -d -p 8086:8082 docserver-1:post-chrome`
+- [ ] Verify health endpoint: `curl http://localhost:8086/health`
+- [ ] Run post-deploy parity check against PARITY-REPORT.md
+- [ ] Confirm L4=32 features work via live editor session
+- [ ] Validate Chrome UI parity (visual diff against OO goldens)
+- [ ] Promote to production (:8082) after staging validation
+
+### 📊 Post-Deployment Validation
+- [ ] Execute full test harness: `./test-harness.sh --full`
+- [ ] Run visual parity check: `node census/visual/diff.js --self-test`
+- [ ] Confirm performance baseline non-regression (compare to baseline-wo.json)
+- [ ] Document any deviations in `census/ledger/DIVERSIONS.md`
+- [ ] Update census/PARITY-REPORT.md with deployment metrics
+- [ ] Tag release in git: `git tag -a chrome-rounds-2-3-l4-32 -m "Post-campaign baseline"`
