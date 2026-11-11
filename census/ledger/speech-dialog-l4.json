@@ -1,0 +1,89 @@
+{
+ "version": 1,
+ "probe": "speech-dialog-l4",
+ "feature": "dialog.speech-dialog.l4",
+ "generated": "2026-11-11T08:02:00.176Z",
+ "ok": true,
+ "checks": [
+  {
+   "name": "read aloud with nothing to read -> loud status error, dialog NOT opened",
+   "ok": true,
+   "detail": "open=false status=\"Nothing to read — select text or place the cursor in a paragraph\""
+  },
+  {
+   "name": "open via real clicks (View tab + Speech menu + Read aloud)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Speech Settings\"; Voice select keeps the Default option (no voices)",
+   "ok": true,
+   "detail": "title=\"Speech Settings\" voiceTag=select options=[\"\"]"
+  },
+  {
+   "name": "fields Voice + Speed(range 0.5..2 step .1) + Pitch(range 0.5..2 step .1) labelled",
+   "ok": true,
+   "detail": "labels=[\"Voice\",\"Speed\",\"Pitch\"] rate={\"min\":\"0.5\",\"max\":\"2\",\"step\":\"0.1\",\"value\":\"1\",\"type\":\"range\"} pitch={\"min\":\"0.5\",\"max\":\"2\",\"step\":\"0.1\",\"value\":\"1\",\"type\":\"range\"} readouts=1/1"
+  },
+  {
+   "name": "buttons Cancel + OK(primary)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" ok=\"OK\" primary=true"
+  },
+  {
+   "name": "Speed 1.5 updates its readout span live",
+   "ok": true,
+   "detail": "rate=1.5 readout=1.5"
+  },
+  {
+   "name": "OK closes + queues the utterance: paragraph text, rate 1.5, pitch 1, lang en-US",
+   "ok": true,
+   "detail": "closed=true spoken=1 text=\"l4 speech probe sentinel paragraph for read aloud.\" rate=1.5 pitch=1 lang=en-US"
+  },
+  {
+   "name": "reopen + Cancel closes and queues nothing (still 1 utterance)",
+   "ok": true,
+   "detail": "reopened=true closed=true spoken=1"
+  }
+ ],
+ "declaredGaps": [
+  "the committed OO interaction census proves the Speech modal exists (plugins/Speech -> modal, controls:0 — the OO rig captured the modal mask, not fields); the OO field contract (Voice / Speed / Pitch) is pinned from the batch PROBES dict and flips deliberately with this probe",
+  "OO reads through its SpeechWorker panel; WO drives the Web Speech API (speechSynthesis) — the offline probe STUBS speechSynthesis (headless Chromium has no voices/audio) and gates the queued-utterance contract (text/rate/pitch/lang); actual audio playback is out of probe scope",
+  "the voice select is populated from speechSynthesis.getVoices() — the stub ships none, so Default is the only option here; with real voices the select lists them (measured wiring in openSpeechDialog)"
+ ],
+ "contract": {
+  "open": "real clicks: View tab + Speech menu (#btn-speech) + Read aloud (data-cmd=readAloud -> readAloud() collects selection/paragraph, openSpeechDialog populates voices)",
+  "title": "Speech Settings",
+  "fields": [
+   {
+    "label": "Voice",
+    "tag": "select",
+    "type": "text",
+    "note": "options from speechSynthesis.getVoices(); Default kept when none"
+   },
+   {
+    "label": "Speed",
+    "tag": "input",
+    "type": "range",
+    "min": 0.5,
+    "max": 2,
+    "step": 0.1,
+    "note": "live readout span #speech-rate-value; clamped 0.5..2 on apply"
+   },
+   {
+    "label": "Pitch",
+    "tag": "input",
+    "type": "range",
+    "min": 0.5,
+    "max": 2,
+    "step": 0.1,
+    "note": "live readout span #speech-pitch-value; clamped 0.5..2 on apply"
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "OK (primary)"
+  ],
+  "behavior": "Read aloud collects the selection (or the caret paragraph), opens the dialog; OK queues a SpeechSynthesisUtterance with the collected text, the configured rate/pitch (clamped 0.5..2) and the editor lang (default en-US), then closes; nothing to read -> loud status error and the dialog never opens; Cancel closes and queues nothing"
+ }
+}

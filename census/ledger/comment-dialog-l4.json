@@ -1,0 +1,77 @@
+{
+ "version": 1,
+ "probe": "comment-dialog-l4",
+ "feature": "dialog.comment-dialog.l4",
+ "generated": "2026-11-11T08:01:53.790Z",
+ "ok": true,
+ "checks": [
+  {
+   "name": "open via real clicks (Collaboration tab + #btn-comment)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Add comment\"; field Comment is a textarea",
+   "ok": true,
+   "detail": "title=\"Add comment\" label=\"Comment\" tag=textarea"
+  },
+  {
+   "name": "buttons Cancel + Comment(primary); body starts EMPTY on open",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" ok=\"Comment\" primary=true body=\"\""
+  },
+  {
+   "name": "OK closes + wraps the selected word in span.comment with data-id/author/comment",
+   "ok": true,
+   "detail": "closed=true spans=1 text=\"bravo\" data-comment=\"l4 probe: tighten this wording\" author=\"You\" uuid=true"
+  },
+  {
+   "name": "comments panel opens + lists the comment text",
+   "ok": true,
+   "detail": "panelHidden=false items=[\"l4 probe: tighten this wording\"]"
+  },
+  {
+   "name": "Ctrl+Enter in the textarea confirms the second comment",
+   "ok": true,
+   "detail": "closed=true spans=2 text=\"delta\" data-comment=\"l4 probe: second thread via Ctrl+Enter\""
+  },
+  {
+   "name": "both comments carry unique data-ids and both are listed in the panel",
+   "ok": true,
+   "detail": "uniqueIds=2 panelItems=[\"l4 probe: tighten this wording\",\"l4 probe: second thread via Ctrl+Enter\"]"
+  },
+  {
+   "name": "Cancel closes + plants nothing (still 2 spans, panel intact)",
+   "ok": true,
+   "detail": "closed=true spans=2"
+  },
+  {
+   "name": "reopened dialog starts empty again (fresh state for the next comment)",
+   "ok": true,
+   "detail": "open=true body=\"\""
+  }
+ ],
+ "declaredGaps": [
+  "the committed OO interaction census proves the Comment trigger opens a surface (insert/Comment -> modal; the OO rig captured its dropdown — 87 controls — not field-level dialog fields); the OO field contract (Comment) is pinned from the batch PROBES dict and flips deliberately with this probe",
+  "WO stores a comment as span.comment metadata on the wrapped selection (data-id/data-author/data-comment) + a comments side panel; OO keeps comments in its own annotation layer — the wrap + panel contract is what this probe pins (declared divergence)",
+  "comment persistence across html->docx->html is the roundtrip layer (roundtrip.cjs); this probe pins the dialog + insert semantics",
+  "measured quirk: confirmCommentDialog wraps whatever range it captured at open — a comment confirmed with no live selection plants an empty span.comment (metadata carried, wrapped text empty); the probe always opens with a real selection (the user flow) and asserts the wrap"
+ ],
+ "contract": {
+  "open": "real clicks: Collaboration tab + #btn-comment (editor.js: openCommentDialog at the current selection)",
+  "title": "Add comment",
+  "fields": [
+   {
+    "label": "Comment",
+    "tag": "textarea",
+    "type": "text",
+    "note": "cleared on every open; Ctrl+Enter confirms from the textarea"
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Comment (primary)"
+  ],
+  "behavior": "OK (or Ctrl+Enter) wraps the current selection in span.comment[data-id][data-author][data-comment] and opens the comments panel listing the thread; Cancel closes and plants nothing"
+ }
+}
