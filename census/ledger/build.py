@@ -1195,6 +1195,47 @@ L4_FINAL_PROBES = [
                  "merges into the caret block, following lines each in their own paragraph — "
                  "measured quirk); Plain text escapes markup; Keep formatting inserts raw HTML; "
                  "Replace selection swaps the selected text; Cancel resets and plants nothing"},
+    {"art": "pagecolor-dialog-l4.json", "cluster": "page",
+     "oo": {"surface": "layout/PageColor -> modal (census-oo-interactions.json)",
+            "label": "Page Color",
+            "fields": ["Swatches", "Custom color", "Hex", "R", "G", "B"],
+            "note": "census-based contract — OO PageColor modal measured via census-oo-interactions.json "
+                    "(layout/PageColor opens a modal; controls:0 — the OO rig captured the modal mask, "
+                    "not fields); WO pagecolor-dialog carries the swatch palette + HEX/RGB/custom "
+                    "picker contract (curated 12-swatch set vs OO's full picker — declared divergence)"},
+     "behavior": "open via Layout tab + #pagecolor (openPageColorDialog — native picker replaced); "
+                 "HEX drives the RGB trio + custom picker live; OK lands the picked color as the "
+                 "--paper variable on the editor surface; Automatic (wo-command pageColorAutomatic) "
+                 "and No Color (wo-command pageColorNone) clear the override through the replayable "
+                 "command bus (markDirty replaces their loud status lines with 'Unsaved changes…' — "
+                 "measured); Cancel plants nothing"},
+    {"art": "comment-dialog-l4.json", "cluster": "review",
+     "oo": {"surface": "insert/Comment -> modal (census-oo-interactions.json)",
+            "label": "Comment",
+            "fields": ["Comment"],
+            "note": "census-based contract — OO Comment trigger measured via census-oo-interactions.json "
+                    "(insert/Comment opens a surface; the OO rig captured its dropdown — 87 controls — "
+                    "not field-level dialog fields); WO comment-dialog carries the single Comment "
+                    "textarea contract"},
+     "behavior": "open via Collaboration tab + #btn-comment (openCommentDialog at the current "
+                 "selection); OK (or Ctrl+Enter in the textarea) wraps the selected word in "
+                 "span.comment[data-id][data-author][data-comment] and opens the comments panel "
+                 "listing the thread; a confirm with no live selection plants an empty span "
+                 "(metadata carried, text empty — measured); Cancel closes and plants nothing"},
+    {"art": "speech-dialog-l4.json", "cluster": "view",
+     "oo": {"surface": "plugins/Speech -> modal (census-oo-interactions.json)",
+            "label": "Speech",
+            "fields": ["Voice", "Speed", "Pitch"],
+            "note": "census-based contract — OO Speech modal measured via census-oo-interactions.json "
+                    "(plugins/Speech opens a modal; controls:0); OO reads through its SpeechWorker "
+                    "panel, WO through the Web Speech API — the offline probe stubs speechSynthesis "
+                    "and gates the queued-utterance contract"},
+     "behavior": "open via View tab + Speech menu + Read aloud (readAloud collects the selection or "
+                 "the caret paragraph, openSpeechDialog populates voices); nothing to read -> loud "
+                 "status error and the dialog never opens; Voice/Speed/Pitch fields (ranges "
+                 "0.5..2 step .1 with live readouts); OK queues a SpeechSynthesisUtterance with the "
+                 "collected text, configured rate/pitch (clamped 0.5..2) and the editor lang "
+                 "(default en-US), then closes; Cancel closes and queues nothing"},
 ]
 for _p in L4_FINAL_PROBES:
     _path = HERE / _p["art"]
@@ -1575,6 +1616,56 @@ for _fxgf in ("compare", "combine", "textfromfile"):
             "missing/renamed or probe not ok) — re-run " + _fxgf
             + "-dialog-l4.test.mjs + build.py; FXG-F pins compare/combine/"
             "textfromfile at L4 (batch parity -> census gold + live behavior)")
+
+# Loud guard (FXG-G): the last three batch-parity dialogs of dialog-l4.test.mjs
+# (pagecolor — functional "--paper" already, comment, speech — functional=null
+# "not provable offline" there) promoted to dedicated LIVE deep-probes with
+# their artifacts captured at L4, same contract as the heading/FXG-A..F guards:
+# a missing or renamed artifact, or a recapture that flips ok, fails the build
+# HERE at the cause, never silently at the gate. FXG-G additionally pins the
+# CENSUS the rows are mined from: census-oo-interactions.json must still carry
+# the measured modal-existence rows (layout/PageColor / insert/Comment /
+# plugins/Speech -> modal) — a census row lost or re-titled upstream fails the
+# build instead of quietly hollowing the gold.
+_oo_ix_path = CEN / "census-oo-interactions.json"
+try:
+    _oo_ix = json.load(open(_oo_ix_path))
+except ValueError:
+    raise SystemExit("ledger: census-oo-interactions.json is not valid JSON — fix the census capture")
+_oo_ix_rows = [
+    (_r.get("tab"), _r.get("label"), _r.get("opens"))
+    for _r in _oo_ix.get("interactions", []) if isinstance(_r, dict)
+]
+for _tab, _label in (("layout", "PageColor"), ("insert", "Comment"), ("plugins", "Speech")):
+    if (_tab, _label, "modal") not in _oo_ix_rows:
+        raise SystemExit(
+            "ledger: FXG-G census anchor lost — census-oo-interactions.json no longer "
+            "measures %s/%s -> modal (re-capture the OO census or re-pin the "
+            "pagecolor/comment/speech gold rows)" % (_tab, _label))
+for _fxgg in ("pagecolor", "comment", "speech"):
+    _fid = "dialog.%s-dialog.l4" % _fxgg
+    _p = HERE / (_fxgg + "-dialog-l4.json")
+    if not _p.exists():
+        raise SystemExit(
+            "ledger: FXG-G artifact %s missing/renamed — re-run %s-dialog-l4.test.mjs; "
+            "FXG-G pins pagecolor/comment/speech at L4 (batch parity -> census "
+            "gold + live behavior)" % (_p.name, _fxgg))
+    try:
+        _a = json.load(open(_p))
+    except ValueError:
+        raise SystemExit("ledger: FXG-G artifact %s is not valid JSON — fix the probe artifact" % _p.name)
+    if not _a.get("ok"):
+        raise SystemExit(
+            "ledger: FXG-G artifact %s recorded ok=false (probe checks failed) — "
+            "re-run %s-dialog-l4.test.mjs + build.py after the editor fix; FXG-G "
+            "pins pagecolor/comment/speech at L4" % (_p.name, _fxgg))
+    _lvl = (ledger.get(_fid) or {}).get("level", 0)
+    if _lvl < 4:
+        raise SystemExit(
+            f"ledger: FXG-G gold row {_fid} rebuilt at L{_lvl} (artifact "
+            "missing/renamed or probe not ok) — re-run " + _fxgg
+            + "-dialog-l4.test.mjs + build.py; FXG-G pins pagecolor/comment/"
+            "speech at L4 (batch parity -> census gold + live behavior)")
 
 out = HERE / "ledger.json"
 new_ledger = {"version": 1, "generated": __import__("datetime").datetime.now().isoformat(),
