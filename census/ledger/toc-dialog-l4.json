@@ -2,8 +2,8 @@
  "version": 1,
  "probe": "toc-dialog-l4",
  "feature": "dialog.toc-dialog.l4",
- "generated": "2026-11-10T22:00:20.098Z",
- "ok": false,
+ "generated": "2026-11-11T07:46:58.628Z",
+ "ok": true,
  "checks": [
   {
    "name": "open via real clicks (References tab + #btn-toc)",
@@ -11,9 +11,9 @@
    "detail": ""
   },
   {
-   "name": "title \"Insert table of contents\"",
+   "name": "title \"Table of contents\"",
    "ok": true,
-   "detail": "\"Insert table of contents\""
+   "detail": "\"Table of contents\""
   },
   {
    "name": "field Title: text input",
@@ -27,13 +27,13 @@
   },
   {
    "name": "bare caret + \"My TOC\" + Insert -> div.toc[data-title=\"My TOC\"] (flat HTML)",
-   "ok": false,
-   "detail": "has=false title=null flat=null/true closed=true"
+   "ok": true,
+   "detail": "has=true title=\"My TOC\" flat=true/true closed=true"
   },
   {
    "name": "cancel plants nothing (single toc)",
-   "ok": false,
-   "detail": "has=false title=null closed=true"
+   "ok": true,
+   "detail": "has=true title=\"My TOC\" closed=true"
   }
  ],
  "declaredGaps": [
@@ -42,7 +42,7 @@
  ],
  "contract": {
   "open": "real clicks: References tab + ribbon #btn-toc (editor.js: toc)",
-  "title": "Insert table of contents",
+  "title": "Table of contents",
   "fields": [
    {
     "label": "Title",

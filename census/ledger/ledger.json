@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-11T00:08:44.711537",
+ "generated": "2026-11-11T08:46:58.693462",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,10 +10,10 @@
  ],
  "totals": {
   "L0": 0,
-  "L1": 384,
+  "L1": 383,
   "L2": 81,
   "L3": 37,
-  "L4": 32
+  "L4": 33
  },
  "features": [
   {
@@ -10541,17 +10541,29 @@
      "fields": [
       "Select document to compare"
      ]
+    },
+    {
+     "surface": "collaboration/Compare -> modal (census-oo-interactions.json)",
+     "label": "Compare",
+     "fields": [
+      "Select document to compare"
+     ],
+     "note": "census-based contract — OO Compare modal measured via census-oo-interactions.json (collaboration/Compare opens a modal; controls:0 — the OO rig captured the modal mask, not fields); WO compare-dialog carries the single document-picker contract"
     }
    ],
    "wo": {
-    "match": "compare-dialog",
-    "where": "dialog:compare-dialog"
+    "match": "compare-l4 (compare-dialog-l4.test.mjs)",
+    "where": "dialog:compare-l4"
    },
    "level": 4,
    "evidence": [
     "L4 dialog field parity: 1/1 OO fields covered {'Select document to compare': 'Select document to compare'} — OO modal existence measured [collaboration/Compare -> modal (census-oo-interactions.json)]",
     "functional: not provable offline (needs server-side document list)",
-    "opened via real route: click [data-cmd=\"compareVersion\"] (tab collaboration)"
+    "opened via real route: click [data-cmd=\"compareVersion\"] (tab collaboration)",
+    "L4 live probe (compare-dialog-l4.test.mjs): open via Collaboration > Compare (compareVersion); document list loads from GET /api/documents with the current document filtered; Compare without a selection keeps the dialog open with a loud error; select + Compare fetches compare?other=<id> and loads the diff HTML into the editor; Cancel plants nothing",
+    "L4 fidelity: every probe check passed (8/8 — field contract + apply semantics + negative paths, live-verified against the running editor)",
+    "declared divergence: the committed OO interaction census proves the Compare modal exists (collaboration/Compare -> modal, controls:0 — the OO rig captured the modal mask, not fields); the OO field contract is pinned from the compare shape (one document picker) and flips deliberately with this probe",
+    "declared divergence: WO applies the docserver /compare diff HTML as the live document (loadDocumentHTML); OO produces a tracked-changes review document — the offline probe proves the picker + fetch + apply contract against a stubbed docserver"
    ]
   },
   {
@@ -10566,17 +10578,29 @@
      "fields": [
       "Select documents to combine"
      ]
+    },
+    {
+     "surface": "collaboration/Combine -> modal (census-oo-interactions.json)",
+     "label": "Combine",
+     "fields": [
+      "Select documents to combine"
+     ],
+     "note": "census-based contract — OO Combine modal measured via census-oo-interactions.json (collaboration/Combine opens a modal; controls:0); WO combine-dialog carries the multi document-picker contract (multiple select vs Compare's single picker)"
     }
    ],
    "wo": {
-    "match": "combine-dialog",
-    "where": "dialog:combine-dialog"
+    "match": "combine-l4 (combine-dialog-l4.test.mjs)",
+    "where": "dialog:combine-l4"
    },
    "level": 4,
    "evidence": [
     "L4 dialog field parity: 1/1 OO fields covered {'Select documents to combine': 'Select documents to combine'} — OO modal existence measured [collaboration/Combine -> modal (census-oo-interactions.json)]",
     "functional: not provable offline (needs server-side document list)",
-    "opened via real route: click [data-cmd=\"combineRevisions\"] (tab collaboration)"
+    "opened via real route: click [data-cmd=\"combineRevisions\"] (tab collaboration)",
+    "L4 live probe (combine-dialog-l4.test.mjs): open via Collaboration > Combine (combineRevisions); multi-select list loads from GET /api/documents with the current document filtered; Combine without a selection keeps the dialog open with a loud error; multi-select + Combine fetches combine?docs=<id>&docs=<id> and loads the merged HTML into the editor; Cancel plants nothing",
+    "L4 fidelity: every probe check passed (8/8 — field contract + apply semantics + negative paths, live-verified against the running editor)",
+    "declared divergence: the committed OO interaction census proves the Combine modal exists (collaboration/Combine -> modal, controls:0 — the OO rig captured the modal mask, not fields); the OO field contract is pinned from the combine shape (multi document picker) and flips deliberately with this probe",
+    "declared divergence: WO applies the docserver /combine merged HTML as the live document (loadDocumentHTML); OO merges revisions into a tracked-changes review document — the offline probe proves the multi-picker + fetch + apply contract against a stubbed docserver"
    ]
   },
   {
@@ -10591,17 +10615,30 @@
      "fields": [
       "Choose file"
      ]
+    },
+    {
+     "surface": "insert/Text fromFile -> modal (census-oo-interactions.json)",
+     "label": "Text fromFile",
+     "fields": [
+      "Choose file"
+     ],
+     "note": "census-based contract — OO Text fromFile modal measured via census-oo-interactions.json (insert/Text fromFile opens a modal; controls:0); WO textfromfile-dialog carries the file-picker contract plus Insert mode / Format"
     }
    ],
    "wo": {
-    "match": "textfromfile-dialog",
-    "where": "dialog:textfromfile-dialog"
+    "match": "textfromfile-l4 (textfromfile-dialog-l4.test.mjs)",
+    "where": "dialog:textfromfile-l4"
    },
    "level": 4,
    "evidence": [
     "L4 dialog field parity: 1/1 OO fields covered {'Choose file': 'Choose file…'} — OO modal existence measured [insert/Text fromFile -> modal (census-oo-interactions.json)]",
     "L2 act: probe fields act on the document (file text inserted into #editor)",
-    "opened via real route: click #btn-textfile (tab insert)"
+    "opened via real route: click #btn-textfile (tab insert)",
+    "L4 live probe (textfromfile-dialog-l4.test.mjs): open via Insert > Text from File (#btn-textfile); Insert stays disabled until a file is chosen; txt + Auto-detect lands the file lines at the caret (first line merges into the caret block, following lines each in their own paragraph — measured quirk); Plain text escapes markup; Keep formatting inserts raw HTML; Replace selection swaps the selected text; Cancel resets and plants nothing",
+    "L4 fidelity: every probe check passed (12/12 — field contract + apply semantics + negative paths, live-verified against the running editor)",
+    "declared divergence: the committed OO interaction census proves the Text fromFile modal exists (insert/Text fromFile -> modal, controls:0 — the OO rig captured the modal mask, not fields); the OO field contract is pinned from the file-picker shape (Choose file) and flips deliberately with this probe; WO additionally carries Insert mode / Format",
+    "declared divergence: MEASURED QUIRK (Chromium insertHTML block semantics): the FIRST file line merges into the caret’s block while every FOLLOWING line lands in its own new paragraph — MS Word splits the caret paragraph so each file line becomes its own paragraph (recorded divergence, never a silent pass)",
+    "declared divergence: the .docx insert path needs the docserver import-docx endpoint — the offline probe proves the .txt/.html paths (per-line paragraphs, escaping, raw-HTML keep-formatting, replace-selection); the docx conversion itself is server-side"
    ]
   },
   {
@@ -10911,12 +10948,10 @@
     "match": "toc-l4 (toc-dialog-l4.test.mjs)",
     "where": "dialog:toc-l4"
    },
-   "level": 1,
+   "level": 4,
    "evidence": [
     "L4 live probe (toc-dialog-l4.test.mjs): Title + Insert plants div.toc[data-title] at the caret (DOC-semantic marker, flat HTML); Cancel plants nothing",
-    "L4 DEFECT (measured, probe check 'bare caret + \"My TOC\" + Insert -> div.toc[data-title=\"My TOC\"] (flat HTML)'): has=false title=null flat=null/true closed=true",
-    "L4 DEFECT (measured, probe check 'cancel plants nothing (single toc)'): has=false title=null closed=true",
-    "NOT L4: re-run toc-dialog-l4.test.mjs + build.py after the editor fix",
+    "L4 fidelity: every probe check passed (6/6 — field contract + apply semantics + negative paths, live-verified against the running editor)",
     "declared divergence: the committed OO dialog census carries a \"Table of contents\" modal with fields: Show page numbers, Right align page numbers, Leader, Format table of contents as links, Build table of contents from, Levels, Styles — WO ships the Title field only; OO fields beyond Title are deferred as recorded divergence (census-oo-dialogs.json has the full OO contract)",
     "declared divergence: WO writes the document-semantic div.toc marker lazy-rendered into the flat HTML by the converters (editor.js confirmTocDialog)"
    ]

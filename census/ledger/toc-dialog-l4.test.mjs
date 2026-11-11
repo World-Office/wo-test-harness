@@ -7,7 +7,7 @@
  * Contract (campaign comprehensive-parity, task FINAL-001): open the dialog
  * the way a user does — REAL clicks: the References tab, then the ribbon
  * button #btn-toc (editor.js: toc) — then assert
- *   - title "Insert table of contents"
+ *   - title "Table of contents"
  *   - fields: Title (text input)
  *   - buttons: Cancel + Insert (primary)
  *   - BEHAVIOR (fidelity, not surface): Title "My TOC" + Insert plants
@@ -174,7 +174,7 @@ async function main() {
         ok: ok ? ok.textContent.trim() : null, okPrimary: !!(ok && ok.classList.contains('primary')),
       };
     });
-    check('title "Insert table of contents"', c.title === 'Insert table of contents', JSON.stringify(c.title));
+    check('title "Table of contents"', c.title === 'Table of contents', JSON.stringify(c.title));
     check('field Title: text input',
       c.titleLabel === 'Title' && c.titleType === 'text',
       `${JSON.stringify(c.titleLabel)} ${c.titleType}`);
@@ -228,7 +228,7 @@ async function main() {
     ],
     contract: {
       open: 'real clicks: References tab + ribbon #btn-toc (editor.js: toc)',
-      title: 'Insert table of contents',
+      title: 'Table of contents',
       fields: [
         { label: 'Title', tag: 'input', type: 'text' },
       ],

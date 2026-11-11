@@ -300,19 +300,19 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L4 **dialog.page-size-dialog.l4** [dialog] (3 OO fields) → WO: page-setup-dialog
 - ✅ L4 **dialog.columns-dialog.l4** [dialog] (5 OO fields) → WO: columns-dialog
 
-## references — 15 features (L0:0 L1:7 L3:1)
+## references — 15 features (L0:0 L1:6 L3:1)
 - 🔲 L1 **references.add-text** [control] → WO: btn-addtext
 - 🔲 L1 **references.bookmark** [control] → WO: bookmark-dialog
 - 🔲 L1 **references.cross-reference** [control] → WO: crossref-dialog
 - 🔲 L1 **references.dlg-bookmarks** [dialog] (2 OO fields) → WO: bookmark-dialog
 - 🔲 L1 **references.dlg-insert-caption** [dialog] (8 OO fields) → WO: insertCaption
 - 🔲 L1 **references.dlg-cross-reference** [dialog] (5 OO fields) → WO: crossref-dialog
-- 🔲 L1 **dialog.toc-dialog.l4** [dialog] (7 OO fields) → WO: toc-l4 (toc-dialog-l4.test.mjs)
 - ✅ L2 **references.footnote** [control] → WO: insertFootnote
 - ✅ L2 **references.caption** [control] → WO: insertCaption
 - ✅ L3 **references.link** [control] → WO: link
 - ✅ L4 **dialog.link-dialog.l4** [dialog] (2 OO fields) → WO: link-dialog
 - ✅ L4 **dialog.bookmark-dialog.l4** [dialog] (1 OO fields) → WO: bookmark-l4 (bookmark-dialog-l4.test.mjs)
+- ✅ L4 **dialog.toc-dialog.l4** [dialog] (7 OO fields) → WO: toc-l4 (toc-dialog-l4.test.mjs)
 - ✅ L4 **dialog.crossref-dialog.l4** [dialog] (5 OO fields) → WO: crossref-l4 (crossref-dialog-l4.test.mjs)
 - ✅ L4 **dialog.caption-dialog.l4** [dialog] (8 OO fields) → WO: caption-l4 (caption-dialog-l4.test.mjs)
 - ✅ L4 **dialog.tableoffigures-dialog.l4** [dialog] (7 OO fields) → WO: tableoffigures-l4 (tableoffigures-dialog-l4.test.mjs)
@@ -358,9 +358,9 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L4 **dialog.pagecolor-dialog.l4** [dialog] (6 OO fields) → WO: pagecolor-dialog
 - ✅ L4 **dialog.chart-dialog.l4** [dialog] (3 OO fields) → WO: chart-l4 (chart-dialog-l4.test.mjs)
 - ✅ L4 **dialog.comment-dialog.l4** [dialog] (1 OO fields) → WO: comment-dialog
-- ✅ L4 **dialog.compare-dialog.l4** [dialog] (1 OO fields) → WO: compare-dialog
-- ✅ L4 **dialog.combine-dialog.l4** [dialog] (1 OO fields) → WO: combine-dialog
-- ✅ L4 **dialog.textfromfile-dialog.l4** [dialog] (1 OO fields) → WO: textfromfile-dialog
+- ✅ L4 **dialog.compare-dialog.l4** [dialog] (1 OO fields) → WO: compare-l4 (compare-dialog-l4.test.mjs)
+- ✅ L4 **dialog.combine-dialog.l4** [dialog] (1 OO fields) → WO: combine-l4 (combine-dialog-l4.test.mjs)
+- ✅ L4 **dialog.textfromfile-dialog.l4** [dialog] (1 OO fields) → WO: textfromfile-l4 (textfromfile-dialog-l4.test.mjs)
 - ✅ L4 **dialog.field-dialog.l4** [dialog] (1 OO fields) → WO: field-l4 (field-dialog-l4.test.mjs)
 - ✅ L4 **dialog.speech-dialog.l4** [dialog] (3 OO fields) → WO: speech-dialog
 
