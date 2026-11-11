@@ -1,0 +1,110 @@
+{
+ "version": 1,
+ "probe": "textfromfile-dialog-l4",
+ "feature": "dialog.textfromfile-dialog.l4",
+ "generated": "2026-11-11T07:14:38.979Z",
+ "ok": true,
+ "checks": [
+  {
+   "name": "open via real clicks (Insert tab + Text from File btn)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Insert text from file\"",
+   "ok": true,
+   "detail": "\"Insert text from file\""
+  },
+  {
+   "name": "field Choose file…: file input with the OO-ish accept list",
+   "ok": true,
+   "detail": "label=\"Choose file…\" tag=input type=file accept=.txt,.md,.html,.htm,.csv,.docx"
+  },
+  {
+   "name": "field Insert mode: select (Insert / Replace selection)",
+   "ok": true,
+   "detail": "labels=[\"Choose file…\",\"Insert mode\",\"Format\"] options=[\"Insert\",\"Replace selection\"]"
+  },
+  {
+   "name": "field Format: select (Auto-detect / Plain text / Keep formatting (HTML))",
+   "ok": true,
+   "detail": "options=[\"Auto-detect\",\"Plain text\",\"Keep formatting (HTML)\"]"
+  },
+  {
+   "name": "buttons Cancel + Insert(primary) — Insert disabled until a file is chosen",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" insert=\"Insert\" primary=true disabled=true"
+  },
+  {
+   "name": "change handler enables Insert once a file is chosen",
+   "ok": true,
+   "detail": "enabled=true"
+  },
+  {
+   "name": "txt + Auto-detect: file lines land at the caret, line 2+ each in its own block paragraph",
+   "ok": true,
+   "detail": "closed=true reset=true blocks=true"
+  },
+  {
+   "name": "Plain text format escapes markup (literal <b> text, no bold element)",
+   "ok": true,
+   "detail": "literal=true boldEl=false"
+  },
+  {
+   "name": "Keep formatting: raw file HTML lands (<b>bold sentinel</b> becomes a bold element)",
+   "ok": true,
+   "detail": "text=true boldEl=true"
+  },
+  {
+   "name": "Replace selection mode swaps the selected text for the file content",
+   "ok": true,
+   "detail": "replaced=true inserted=true"
+  },
+  {
+   "name": "Cancel resets (file cleared, Insert disabled) and plants nothing",
+   "ok": true,
+   "detail": "closed=true reset=true docUnchanged=true"
+  }
+ ],
+ "declaredGaps": [
+  "the committed OO interaction census proves the Text fromFile modal exists (insert/Text fromFile -> modal, controls:0 — the OO rig captured the modal mask, not fields); the OO field contract is pinned from the file-picker shape (Choose file) and flips deliberately with this probe; WO additionally carries Insert mode / Format",
+  "MEASURED QUIRK (Chromium insertHTML block semantics): the FIRST file line merges into the caret’s block while every FOLLOWING line lands in its own new paragraph — MS Word splits the caret paragraph so each file line becomes its own paragraph (recorded divergence, never a silent pass)",
+  "the .docx insert path needs the docserver import-docx endpoint — the offline probe proves the .txt/.html paths (per-line paragraphs, escaping, raw-HTML keep-formatting, replace-selection); the docx conversion itself is server-side"
+ ],
+ "contract": {
+  "open": "real clicks: Insert tab + Text from File btn (editor.js: #btn-textfile -> openDlg(textfromfile-dialog))",
+  "title": "Insert text from file",
+  "fields": [
+   {
+    "label": "Choose file…",
+    "tag": "input",
+    "type": "file",
+    "accept": ".txt,.md,.html,.htm,.csv,.docx"
+   },
+   {
+    "label": "Insert mode",
+    "tag": "select",
+    "type": "select",
+    "options": [
+     "Insert",
+     "Replace selection"
+    ]
+   },
+   {
+    "label": "Format",
+    "tag": "select",
+    "type": "select",
+    "options": [
+     "Auto-detect",
+     "Plain text",
+     "Keep formatting (HTML)"
+    ]
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Insert (primary, disabled until a file is chosen)"
+  ],
+  "behavior": "txt + Auto-detect lands the file lines at the caret (first line merges into the caret block, following lines each in their own paragraph); Plain text escapes markup; Keep formatting inserts raw HTML; Replace selection swaps the selected text; Cancel resets the file state and plants nothing"
+ }
+}

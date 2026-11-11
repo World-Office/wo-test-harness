@@ -1,0 +1,71 @@
+{
+ "version": 1,
+ "probe": "combine-dialog-l4",
+ "feature": "dialog.combine-dialog.l4",
+ "generated": "2026-11-11T07:10:14.202Z",
+ "ok": true,
+ "checks": [
+  {
+   "name": "open via real clicks (Collaboration tab + Combine cmd)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Combine Documents\"",
+   "ok": true,
+   "detail": "\"Combine Documents\""
+  },
+  {
+   "name": "field Select documents to combine: MULTIPLE select (vs Compare single picker)",
+   "ok": true,
+   "detail": "\"Select documents to combine\" tag=select multiple=true"
+  },
+  {
+   "name": "buttons Cancel + Combine(primary)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" apply=\"Combine\" primary=true"
+  },
+  {
+   "name": "document list loads from /api/documents with the current document filtered",
+   "ok": true,
+   "detail": "options=[\"\",\"alpha-l4.docx\",\"beta-l4.docx\"]"
+  },
+  {
+   "name": "Combine without selection -> loud error, dialog stays open, doc untouched",
+   "ok": true,
+   "detail": "open=true error=\"Please select at least one document to combine\" docUnchanged=true"
+  },
+  {
+   "name": "multi-select + Combine -> dialog closes, combine?docs=<id>&docs=<id> fetched, merged HTML in editor",
+   "ok": true,
+   "detail": "closed=true bothDocs=true sentinel=true"
+  },
+  {
+   "name": "reopen + Cancel closes and plants nothing",
+   "ok": true,
+   "detail": "closed=true docUnchanged=true"
+  }
+ ],
+ "declaredGaps": [
+  "the committed OO interaction census proves the Combine modal exists (collaboration/Combine -> modal, controls:0 — the OO rig captured the modal mask, not fields); the OO field contract is pinned from the combine shape (multi document picker) and flips deliberately with this probe",
+  "WO applies the docserver /combine merged HTML as the live document (loadDocumentHTML); OO merges revisions into a tracked-changes review document — the offline probe proves the multi-picker + fetch + apply contract against a stubbed docserver"
+ ],
+ "contract": {
+  "open": "real clicks: Collaboration tab + Combine cmd (editor.js: combineRevisions -> openCombineDialog)",
+  "title": "Combine Documents",
+  "fields": [
+   {
+    "label": "Select documents to combine",
+    "tag": "select",
+    "type": "select",
+    "multiple": true,
+    "note": "options load from GET /api/documents; the current document is filtered out"
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Combine (primary)"
+  ],
+  "behavior": "Combine without a selection keeps the dialog open with a loud error; multi-select + Combine fetches combine?docs=<id>&docs=<id> and loads the merged HTML into the editor; Cancel closes and plants nothing"
+ }
+}

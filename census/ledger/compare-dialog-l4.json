@@ -1,0 +1,71 @@
+{
+ "version": 1,
+ "probe": "compare-dialog-l4",
+ "feature": "dialog.compare-dialog.l4",
+ "generated": "2026-11-11T07:09:11.451Z",
+ "ok": true,
+ "checks": [
+  {
+   "name": "open via real clicks (Collaboration tab + Compare cmd)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Compare Documents\"",
+   "ok": true,
+   "detail": "\"Compare Documents\""
+  },
+  {
+   "name": "field Select document to compare: SINGLE select",
+   "ok": true,
+   "detail": "\"Select document to compare\" tag=select multiple=false"
+  },
+  {
+   "name": "buttons Cancel + Compare(primary)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" apply=\"Compare\" primary=true"
+  },
+  {
+   "name": "document list loads from /api/documents with the current document filtered",
+   "ok": true,
+   "detail": "options=[\"\",\"alpha-l4.docx\",\"beta-l4.docx\"]"
+  },
+  {
+   "name": "Compare without selection -> loud error, dialog stays open, doc untouched",
+   "ok": true,
+   "detail": "open=true error=\"Please select a document to compare\" docUnchanged=true"
+  },
+  {
+   "name": "select + Compare -> dialog closes, compare?other=<id> fetched, diff HTML in editor",
+   "ok": true,
+   "detail": "closed=true fetched=true sentinel=true"
+  },
+  {
+   "name": "reopen + Cancel closes and plants nothing",
+   "ok": true,
+   "detail": "closed=true docUnchanged=true"
+  }
+ ],
+ "declaredGaps": [
+  "the committed OO interaction census proves the Compare modal exists (collaboration/Compare -> modal, controls:0 — the OO rig captured the modal mask, not fields); the OO field contract is pinned from the compare shape (one document picker) and flips deliberately with this probe",
+  "WO applies the docserver /compare diff HTML as the live document (loadDocumentHTML); OO produces a tracked-changes review document — the offline probe proves the picker + fetch + apply contract against a stubbed docserver"
+ ],
+ "contract": {
+  "open": "real clicks: Collaboration tab + Compare cmd (editor.js: compareVersion -> openCompareDialog)",
+  "title": "Compare Documents",
+  "fields": [
+   {
+    "label": "Select document to compare",
+    "tag": "select",
+    "type": "select",
+    "multiple": false,
+    "note": "options load from GET /api/documents; the current document is filtered out"
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Compare (primary)"
+  ],
+  "behavior": "Compare without a selection keeps the dialog open with a loud error; select + Compare fetches compare?other=<id> and loads the diff HTML into the editor; Cancel closes and plants nothing"
+ }
+}
