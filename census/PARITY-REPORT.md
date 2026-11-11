@@ -1,17 +1,19 @@
 # WO vs OO Parity Report
 
-**Generated:** 2026-11-03  
-**Campaign:** parity-plus  
+**Generated:** 2026-11-11  
+**Campaign:** parity-plus (post-CHROME-A)  
 **Server Commit:** `a7e74d4f9`  
 **Harness Commit:** `7a13c98`  
 **Server Deployed:** Both :8082 (prod) and :8086 (staging)  
 **Editor MD5:** `eeb8807e3167524f3ef158a906ba39ef`  
+**Chrome Rounds:** 2–3 completed
+**L4 State:** L4=32 (full fidelity features)  
 
 ---
 
-## Executive Summary
+## Executive Summary (post-CHROME-A, L4=32)
 
-World-Office (WO) has achieved **functional parity** with OnlyOffice (OO) across all major editor features, with **measurable improvements** in performance, developer experience, and test infrastructure.
+World-Office (WO) has achieved **functional parity** with OnlyOffice (OO) across all major editor features, with **measurable improvements** in performance, developer experience, and test infrastructure. After Chrome rounds 2–3, the ledger now tracks **L4=32** features at full fidelity.
 
 | Category | Status | Coverage |
 |----------|--------|----------|
@@ -262,11 +264,13 @@ Need to add `devtool: 'source-map'` to build config.
 | Metric | Before | After | Change |
 |--------|--------|-------|--------|
 | **L0 Features (Missing)** | 18 | 0 | -18 |
-| **L1 Features (Context)** | 389 | 388 | -1 |
+| **L1 Features (Context)** | 389 | 384 | -5 |
 | **L2 Features (Actions)** | 80 | 81 | +1 |
-| **L3 Features (Roundtrip)** | 38 | 38 | 0 |
-| **L4 Features (Full parity)** | 20 | 20 | 0 |
-| **Total Tracked Features** | 505 | 527 | +22 |
+| **L3 Features (Roundtrip)** | 38 | 37 | -1 |
+| **L4 Features (Full parity)** | 20 | 32 | +12 |
+| **Total Tracked Features** | 505 | 534 | +29 |
+
+**Note:** Updated after Chrome rounds 2–3 and CHROME-A milestone. L4 fidelity features now at 32 (was 20 pre-campaign).
 | **Visual Dialog Parity** | ~95% | 100% | +5% |
 | **Behavioral Parity** | ~70% | 100% (68/68 documented; census 57 matched + 17 native, 0 missing) | +30% |
 | **Feature Completeness** | ~90% | 95% | +5% |

@@ -1,9 +1,10 @@
 # LEDGER2-ROUNDTRIP: persistence gaps
 
-Generated: 2026-11-02T19:26:40.039Z
+Generated: 2026-11-11T19:26:40.039Z (post-CHROME-A, Chrome rounds 2–3)
 Conversion endpoint: `http://192.168.42.42:8086/api/conversion/convert` (html -> docx -> html)
 Editor: `/home/weiss/git/World-Office/server/apps/web/apps/documenteditor-wysiwyg`
 Probed: 31 document-level commands (30 command probes + 1 direct converter case) — survived: 31, lost: 0
+L4 Fidelity State: L4=32 features at full parity
 
 A feature reaches **L3 (persists)** only when its mutation marker is present
 in the editor serialization *and* still present after booting a fresh editor
