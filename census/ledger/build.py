@@ -1160,6 +1160,41 @@ L4_FINAL_PROBES = [
                     "(plus Title field as declared divergence)"},
      "behavior": "Chart type/Title/Data -> preview updates live; preview + Insert inserts chart "
                  "marker into flat HTML at caret; Cancel mutates nothing"},
+    {"art": "compare-dialog-l4.json", "cluster": "other",
+     "oo": {"surface": "collaboration/Compare -> modal (census-oo-interactions.json)",
+            "label": "Compare",
+            "fields": ["Select document to compare"],
+            "note": "census-based contract — OO Compare modal measured via census-oo-interactions.json "
+                    "(collaboration/Compare opens a modal; controls:0 — the OO rig captured the modal "
+                    "mask, not fields); WO compare-dialog carries the single document-picker contract"},
+     "behavior": "open via Collaboration > Compare (compareVersion); document list loads from "
+                 "GET /api/documents with the current document filtered; Compare without a selection "
+                 "keeps the dialog open with a loud error; select + Compare fetches compare?other=<id> "
+                 "and loads the diff HTML into the editor; Cancel plants nothing"},
+    {"art": "combine-dialog-l4.json", "cluster": "other",
+     "oo": {"surface": "collaboration/Combine -> modal (census-oo-interactions.json)",
+            "label": "Combine",
+            "fields": ["Select documents to combine"],
+            "note": "census-based contract — OO Combine modal measured via census-oo-interactions.json "
+                    "(collaboration/Combine opens a modal; controls:0); WO combine-dialog carries the "
+                    "multi document-picker contract (multiple select vs Compare's single picker)"},
+     "behavior": "open via Collaboration > Combine (combineRevisions); multi-select list loads from "
+                 "GET /api/documents with the current document filtered; Combine without a selection "
+                 "keeps the dialog open with a loud error; multi-select + Combine fetches "
+                 "combine?docs=<id>&docs=<id> and loads the merged HTML into the editor; Cancel "
+                 "plants nothing"},
+    {"art": "textfromfile-dialog-l4.json", "cluster": "insert",
+     "oo": {"surface": "insert/Text fromFile -> modal (census-oo-interactions.json)",
+            "label": "Text fromFile",
+            "fields": ["Choose file"],
+            "note": "census-based contract — OO Text fromFile modal measured via census-oo-interactions.json "
+                    "(insert/Text fromFile opens a modal; controls:0); WO textfromfile-dialog carries "
+                    "the file-picker contract plus Insert mode / Format"},
+     "behavior": "open via Insert > Text from File (#btn-textfile); Insert stays disabled until a "
+                 "file is chosen; txt + Auto-detect lands the file lines at the caret (first line "
+                 "merges into the caret block, following lines each in their own paragraph — "
+                 "measured quirk); Plain text escapes markup; Keep formatting inserts raw HTML; "
+                 "Replace selection swaps the selected text; Cancel resets and plants nothing"},
 ]
 for _p in L4_FINAL_PROBES:
     _path = HERE / _p["art"]
@@ -1522,6 +1557,24 @@ for _fxge in ["equation", "field", "chart"]:
             "missing/renamed or probe not ok) — re-run " + _fxge
             + "-dialog-l4.test.mjs + build.py; FXG-E pins equation/field/chart "
             "insert-catalog dialogs at L4 (batch parity -> census-mined gold)")
+
+# Loud guard (FXG-F): the three batch-parity dialogs of dialog-l4.test.mjs
+# (compare / combine / textfromfile — functional=null "needs server-side
+# document list" there) promoted to dedicated LIVE deep-probes with their
+# artifacts captured at L4 — must survive EVERY rebuild at L4, same contract
+# as the heading/FXG-A/B/C/D/E guards. A missing or renamed artifact, or a
+# recapture that flips ok, would otherwise silently drop the ledger L4 count
+# and only surface at the acceptance gate, far from the cause. Fail HERE with
+# the probe file to re-run.
+for _fxgf in ("compare", "combine", "textfromfile"):
+    _fid = "dialog.%s-dialog.l4" % _fxgf
+    _lvl = (ledger.get(_fid) or {}).get("level", 0)
+    if _lvl < 4:
+        raise SystemExit(
+            f"ledger: FXG-F gold row {_fid} rebuilt at L{_lvl} (artifact "
+            "missing/renamed or probe not ok) — re-run " + _fxgf
+            + "-dialog-l4.test.mjs + build.py; FXG-F pins compare/combine/"
+            "textfromfile at L4 (batch parity -> census gold + live behavior)")
 
 out = HERE / "ledger.json"
 new_ledger = {"version": 1, "generated": __import__("datetime").datetime.now().isoformat(),
