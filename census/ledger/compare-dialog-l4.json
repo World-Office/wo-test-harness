@@ -2,7 +2,7 @@
  "version": 1,
  "probe": "compare-dialog-l4",
  "feature": "dialog.compare-dialog.l4",
- "generated": "2026-11-11T07:09:11.451Z",
+ "generated": "2026-11-11T07:18:04.447Z",
  "ok": true,
  "checks": [
   {

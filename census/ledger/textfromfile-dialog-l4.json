@@ -2,7 +2,7 @@
  "version": 1,
  "probe": "textfromfile-dialog-l4",
  "feature": "dialog.textfromfile-dialog.l4",
- "generated": "2026-11-11T07:14:38.979Z",
+ "generated": "2026-11-11T07:18:19.348Z",
  "ok": true,
  "checks": [
   {
