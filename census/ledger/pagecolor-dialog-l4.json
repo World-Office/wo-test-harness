@@ -1,0 +1,137 @@
+{
+ "version": 1,
+ "probe": "pagecolor-dialog-l4",
+ "feature": "dialog.pagecolor-dialog.l4",
+ "generated": "2026-11-11T07:35:31.902Z",
+ "ok": true,
+ "checks": [
+  {
+   "name": "open via real clicks (Layout tab + #pagecolor preview input)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "title \"Page Color\"",
+   "ok": true,
+   "detail": "\"Page Color\""
+  },
+  {
+   "name": "fields Swatches(12) + Custom color + HEX + R/G/B",
+   "ok": true,
+   "detail": "labels=[\"Swatches\",\"Custom color\",\"HEX\",\"R\",\"G\",\"B\"] swatches=12"
+  },
+  {
+   "name": "buttons Cancel + Automatic + No Color + OK(primary)",
+   "ok": true,
+   "detail": "cancel=\"Cancel\" automatic=\"Automatic\" none=\"No Color\" ok=\"OK\" primary=true"
+  },
+  {
+   "name": "HEX #FEF3C7 drives RGB trio + custom picker live",
+   "ok": true,
+   "detail": "R=254 G=243 B=199 custom=#fef3c7"
+  },
+  {
+   "name": "OK closes + lands --paper=#FEF3C7 with status \"Page color set\"",
+   "ok": true,
+   "detail": "closed=true paper=\"#FEF3C7\" status=\"Page color set\""
+  },
+  {
+   "name": "reopen shows Automatic as a plain (unselected) choice over the override",
+   "ok": true,
+   "detail": "open=true autoSel=false"
+  },
+  {
+   "name": "Automatic closes + clears the --paper override",
+   "ok": true,
+   "detail": "closed=true paper=\"\" status=\"Unsaved changes…\""
+  },
+  {
+   "name": "Automatic confirmed through the wo-command bus (pageColorAutomatic)",
+   "ok": true,
+   "detail": "busStatus=\"Unsaved changes…\" (markDirty replaces the loud status line — measured)"
+  },
+  {
+   "name": "swatch #dbeafe selects + syncs HEX/RGB/custom",
+   "ok": true,
+   "detail": "sel=[\"#dbeafe\"] hex=#DBEAFE RGB=219/234/254"
+  },
+  {
+   "name": "swatch OK lands --paper=#DBEAFE",
+   "ok": true,
+   "detail": "closed=true paper=\"#DBEAFE\""
+  },
+  {
+   "name": "No Color closes + clears the --paper override (wo-command pageColorNone)",
+   "ok": true,
+   "detail": "closed=true paper=\"\" status=\"Unsaved changes…\""
+  },
+  {
+   "name": "No Color status line replaced by the dirty marker (measured quirk)",
+   "ok": true,
+   "detail": "status=\"Unsaved changes…\" — clearPageColor()/applyPageColorAutomatic() call markDirty(), whose \"Unsaved changes…\" indicator overwrites the loud \"Page color set to …\" status line"
+  },
+  {
+   "name": "Cancel closes and plants nothing (--paper stays unset)",
+   "ok": true,
+   "detail": "closed=true paper=\"\""
+  }
+ ],
+ "declaredGaps": [
+  "the committed OO interaction census proves the Page Color modal exists (layout/PageColor -> modal, controls:0 — the OO rig captured the modal mask, not fields); the OO field contract (Swatches / Custom color / R / G / B / Hex) is pinned from the batch PROBES dict and flips deliberately with this probe",
+  "WO's palette is a curated 12-swatch set + HEX/RGB/custom inputs; OO exposes its full color picker — the picker MECHANISM parity is the contract here (every input path lands --paper), not swatch-for-swatch equality (declared divergence)",
+  "WO applies the page color as the live --paper CSS variable on the editor surface (status \"Page color set\"); OO bakes the page-style background into the file — persistence is covered by the document layer, this probe pins the dialog + apply contract",
+  "measured quirk: the loud \"Page color set to Automatic/No Color\" status lines are immediately replaced by the \"Unsaved changes…\" dirty marker (markDirty() in clearPageColor/applyPageColorAutomatic) — the --paper semantics are what the probe gates on"
+ ],
+ "contract": {
+  "open": "real clicks: Layout tab + #pagecolor preview input (editor.js: click -> openPageColorDialog — native picker replaced)",
+  "title": "Page Color",
+  "fields": [
+   {
+    "label": "Swatches",
+    "tag": "swatches",
+    "type": "palette",
+    "count": 12,
+    "note": "curated .color-swatch buttons; click selects + syncs HEX/RGB/custom"
+   },
+   {
+    "label": "Custom color",
+    "tag": "input",
+    "type": "color"
+   },
+   {
+    "label": "HEX",
+    "tag": "input",
+    "type": "text",
+    "note": "drives the RGB trio + custom picker live (input event)"
+   },
+   {
+    "label": "R",
+    "tag": "input",
+    "type": "number",
+    "min": 0,
+    "max": 255
+   },
+   {
+    "label": "G",
+    "tag": "input",
+    "type": "number",
+    "min": 0,
+    "max": 255
+   },
+   {
+    "label": "B",
+    "tag": "input",
+    "type": "number",
+    "min": 0,
+    "max": 255
+   }
+  ],
+  "buttons": [
+   "Cancel",
+   "Automatic",
+   "No Color",
+   "OK (primary)"
+  ],
+  "behavior": "OK lands the picked color as the --paper variable on the editor surface; Automatic (wo-command pageColorAutomatic) and No Color (wo-command pageColorNone) clear the override through the replayable command bus; Cancel plants nothing"
+ }
+}
