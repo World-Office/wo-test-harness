@@ -368,7 +368,7 @@ const SELECT_CMDS = new Set(["bold", "italic", "underline", "strikeThrough", "fo
   );
   const combos = (Array.isArray(shortcutRows) ? shortcutRows : shortcutRows.shortcuts || shortcutRows.rows || [])
     .map((r) => r.combo || r.shortcut || r.type).filter(Boolean);
-  const SKIP_KEYS = new Set(["W", "w", "P", "p", "ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End", "PageUp", "PageDown"]);
+  const SKIP_KEYS = new Set(["W", "w", "P", "p", "N", "T", "Q", "F1", "F3", "F4", "F5", "F6", "F11", "F12", "ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End", "PageUp", "PageDown"]);
   // The earlier passes leave a table + a contenteditable=false object in the
   // doc; a mixed selection across a non-editable boundary silently kills
   // execCommand formatting (measured with bold). Start the keyboard sweep on

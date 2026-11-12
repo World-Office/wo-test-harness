@@ -554,6 +554,34 @@ if acts_path.exists():
         print("  L2 merge: %d rows promoted (acts probe: %d mutated surfaces)" % (
             _l2_promoted, sum(1 for v in _acts.values() if v.get("mutated"))))
 
+# ------------------------------------------------- L2 merge (contract results)
+# The parity runner (server/tests/parity/run-parity.cjs) proves L2 the same
+# way the acts probe does — real user action, real observable effect — but
+# per-contract (pre/trigger/assert) instead of raw click-mutation. A PASS
+# result is L2 evidence; fold it in so the ledger tracks the runner, not
+# just the coarse probe. (Runner may be ahead: menus, dialogs, view state.)
+cr_path = HERE / "../../../server/tests/parity/contract-results.json"
+_cr_promoted = 0
+if cr_path.exists():
+    try:
+        _cr = json.load(open(cr_path))
+        _cr_pass = set()
+        for _r in _cr.get("results", []):
+            if _r.get("ok") is True or _r.get("status") == "pass":
+                if _r.get("feature"):
+                    _cr_pass.add(_r["feature"])
+        for _fid in _cr_pass:
+            _row = ledger.get(_fid)
+            if _row is not None and _row.get("level", 0) < 2:
+                _row["level"] = 2
+                _row.setdefault("evidence", []).append(
+                    "L2 acts (contract PASS): %s asserted via parity runner" % _fid)
+                _cr_promoted += 1
+        print("L2 contracts merge: %d promoted (runner PASS %d, matched ledger)"
+              % (_cr_promoted, len(_cr_pass)))
+    except Exception as e:
+        print("L2 contracts merge skipped (%s)" % e)
+
 # ------------------------------------------------- L3 merge (roundtrip.cjs)
 # Contract: entries with ok=true survived html -> docx -> html; entry.features
 # lists ledger feature ids (matched by wo.match incl. label aliases).
