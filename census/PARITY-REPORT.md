@@ -1,17 +1,19 @@
 # WO vs OO Parity Report
 
-**Generated:** 2026-11-11  
-**Campaign:** parity-plus (post-CHROME-A)  
-**Server Commit:** `a7e74d4f9`  
-**Harness Commit:** `7a13c98`  
-**Server Deployed:** Both :8082 (prod) and :8086 (staging)  
-**Editor MD5:** `eeb8807e3167524f3ef158a906ba39ef`  
-**Chrome Rounds:** 2–3 completed
-**L4 State:** L4=32 (full fidelity features)  
+**Generated:** 2026-11-12  
+**Campaign:** CHROME-G (OO@1920 overflow parity) — post-completion refresh  
+**Server Commit:** `4a8eb9b6f` (UI head `5309e2fe3`)  
+**Harness Commit:** `d6e23db`  
+**Server Deployed:** prod :8082 @ `4a8eb9b6f` (freshness gate ok; staging :8086 pending flip)  
+**Chrome Rounds:** 2–3 + CHROME-G complete  
+**L4 State:** L4=33 (full fidelity features)  
+**Parity Suite:** 488/0 — contracts 473 pass / 5 known-gap / 0 FAIL  
+**Local Editor Suites:** 151/151 · Dump v6: 0 fehlend / 2 extra (dokumentierte Formel-Deviation)  
+**Completeness Gates:** 3/8 closed (fail, chrome-diff, roundtrip)  
 
 ---
 
-## Executive Summary (post-CHROME-A, L4=32)
+## Executive Summary (post-CHROME-G, L4=33)
 
 World-Office (WO) has achieved **functional parity** with OnlyOffice (OO) across all major editor features, with **measurable improvements** in performance, developer experience, and test infrastructure. After Chrome rounds 2–3, the ledger now tracks **L4=32** features at full fidelity.
 
