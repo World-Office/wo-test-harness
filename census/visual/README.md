@@ -66,8 +66,15 @@ docserver-frontend-dist) — Abfragen auf WO-Pfade einschränken.
 
 ## Offene Punkte (Stand 2026-11-11)
 
-1. **„Mehr"-Overflow** auf WO-Tabs fehlt (Startseite 48 sichtbare Buttons vs
-   OO ~15 + „Mehr"; Diagrammdesign 28 vs 10) — Task CHROME-F in af-Kampagne `oo-chrome4`.
-2. **QAT-Piktogramme** als pixel-exakte OO-PNGs statt Inline-SVG — CHROME-E.
-3. **Review-Display-Mode** („Alle Änderungen anzeigen") in der Statusleiste — CHROME-G.
-4. **toc-dialog-L4** demotet (3/6 Checks) — LEDGER-H.
+Alle vier offenen Punkte sind erledigt (Stand 2026-11-12):
+
+1. **„Mehr"-Overflow** ✅ CHROME-G (commit 5309e2fe3): `.wo-ovf`-Kollaps
+   (hidden-but-wired) über alle Tabs + `data-menu-cmd`-Spiegel in den
+   Mehr-Menüs; Chrome-Dump v6: 0 fehlend (eine dokumentierte Formel-
+   Abweichung, s. index.html-Kommentar).
+2. **QAT-Piktogramme** ✅ CHROME-E — pixel-exakte OO-PNGs als Base64-
+   Data-URIs (`.oo-ic-qat-*`).
+3. **Review-Display-Mode** ✅ `#sb-review-display-mode` in der Statusleiste
+   (`setReviewDisplay`, Statusbar.DisplayMode-Select).
+4. **toc-dialog-L4** ✅ LEDGER-H — 6/6 Checks grün; `link-dialog-l4`
+   registriert (covered 2/2); L4-Fidelity bleibt 33.
