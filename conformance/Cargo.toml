@@ -18,7 +18,6 @@ reqwest = { workspace = true, features = ["blocking", "json"] }
 
 
 [dev-dependencies]
-zip = { workspace = true }
 tempfile = { workspace = true }
 
 [[bin]]

@@ -9,6 +9,7 @@ license = "AGPL-3.0-or-later"
 repository = "https://github.com/World-Office/wo-test-harness"
 
 [workspace.dependencies]
+zip = { version = "9", default-features = false, features = ["deflate"] }
 anyhow = "1"
 thiserror = "2"
 serde = { version = "1", features = ["derive"] }
@@ -18,5 +19,4 @@ sha2 = "0.10"
 chrono = { version = "0.4", features = ["serde"] }
 jsonwebtoken = { version = "10", default-features = false, features = ["rust_crypto"] }
 reqwest = { version = "0.12", features = ["blocking", "json", "multipart"] }
-zip = { version = "2", default-features = false, features = ["deflate", "time"] }
 tempfile = "3"
