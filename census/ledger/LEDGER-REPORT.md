@@ -355,14 +355,14 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **other.create-ai-assistant** [control] → WO: createAiAssistant
 - ✅ L2 **other.settings** [control] → WO: aiSettings
 - ✅ L4 **dialog.equation-dialog.l4** [dialog] (2 OO fields) → WO: equation-l4 (equation-dialog-l4.test.mjs)
-- ✅ L4 **dialog.pagecolor-dialog.l4** [dialog] (6 OO fields) → WO: pagecolor-dialog
+- ✅ L4 **dialog.pagecolor-dialog.l4** [dialog] (6 OO fields) → WO: pagecolor-l4 (pagecolor-dialog-l4.test.mjs)
 - ✅ L4 **dialog.chart-dialog.l4** [dialog] (3 OO fields) → WO: chart-l4 (chart-dialog-l4.test.mjs)
-- ✅ L4 **dialog.comment-dialog.l4** [dialog] (1 OO fields) → WO: comment-dialog
+- ✅ L4 **dialog.comment-dialog.l4** [dialog] (1 OO fields) → WO: comment-l4 (comment-dialog-l4.test.mjs)
 - ✅ L4 **dialog.compare-dialog.l4** [dialog] (1 OO fields) → WO: compare-l4 (compare-dialog-l4.test.mjs)
 - ✅ L4 **dialog.combine-dialog.l4** [dialog] (1 OO fields) → WO: combine-l4 (combine-dialog-l4.test.mjs)
 - ✅ L4 **dialog.textfromfile-dialog.l4** [dialog] (1 OO fields) → WO: textfromfile-l4 (textfromfile-dialog-l4.test.mjs)
 - ✅ L4 **dialog.field-dialog.l4** [dialog] (1 OO fields) → WO: field-l4 (field-dialog-l4.test.mjs)
-- ✅ L4 **dialog.speech-dialog.l4** [dialog] (3 OO fields) → WO: speech-dialog
+- ✅ L4 **dialog.speech-dialog.l4** [dialog] (3 OO fields) → WO: speech-l4 (speech-dialog-l4.test.mjs)
 
 ## statusbar — 10 features (L0:0 L1:10 L3:0)
 - 🔲 L1 **statusbar.word-count** [statusbar-item] → WO: sb-word-count

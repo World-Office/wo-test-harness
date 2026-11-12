@@ -1,7 +1,25 @@
 # Wiring `.vsdx` (and Visio variants) — Root Cause & Reproducible Fix
 
-**Status:** DONE — DIAGNOSED + REPRODUCIBLE + DEPLOYED TO PROD (2026-09-28).
-The reva mime-table patch is live in production. Image
+**Status:** SUPERSEDED by OpenCloud v9.1.0 (2026-11-11). — reva v2.52.2
+(opencloud-rolling:9.1.0) ships the full Visio MIME table natively
+(`vsdx → application/vnd.ms-visio.drawing.main+xml`, plus vssx/vstx/vsdm/vssm/vstm).
+The custom patch image `worldoffice/opencloud:7.3.0-visio-prod` is RETIRED; prod
+opencloud + collaboration now run the official `quay.io/opencloudeu/opencloud-rolling:9.1.0`.
+Required v9 env additions (both services): `HOME: /var/lib/opencloud`,
+`OC_CONFIG_DIR: /etc/opencloud`, `OC_MACHINE_AUTH_API_KEY: <shared hex>` (must match
+across services; generated once, stored alongside compose backups).
+App-registry config volume (`opencloud-compose_opencloud-config`) got the six visio
+MIME entries appended under `app_registry.mimetypes` (default_app: WorldOffice).
+**Verified end-to-end on prod:** web 200 + valid theme (login OK), DAV PUT/PROPFIND
+vsdx → `ms-visio.drawing.main+xml`, `/app/list` → all 6 visio MIMEs with WorldOffice
+provider, browser click → `/app/open` → `editor.cloud.graphwiz.ai/hosting/wopi/diagram/edit`
+→ diagram editor SPA loaded (`/external-worldoffice/personal/admin/check910.vsdx`).
+Rollback: `docker-compose.yml.bak-9.1.0-*` on legion (pre-9.1.0 = 7.3.0-visio-prod).
+NOTE: do NOT rebuild a custom image from the upstream Dockerfile — its generate stage
+runs `make node-generate-prod` in the WRONG workdir (web/idp assets never downloaded →
+"Missing or invalid config" / zod theme failure). Use official images.
+
+**History — DONE (2026-09-28):** custom reva mime-table patch
 `worldoffice/opencloud:7.3.0-visio-prod` (188MB, web assets embedded) deployed to both
 prod `opencloud` + `collaboration`; opencloud Healthy, `/` → 200 (web UI served), and
 **prod storage PROPFIND on `seed.vsdx` → `application/vnd.ms-visio.drawing`**

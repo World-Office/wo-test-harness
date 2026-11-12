@@ -55,9 +55,31 @@ const srcIds = new Set(ref.ribbonSourceIds);
 const srcSlots = new Set(ref.ribbonSlotIds);
 const srcBtns = new Set(ref.ribbonButtons.map((b) => b.id));
 
-// (a) census misses: stable OO source toolbar ids with no captured counterpart
+// (a) census misses: stable OO source toolbar ids with no captured counterpart.
+// CONTRACT_COVERED: runtime walk never saw the OO control (title-bar/QAT or
+// overflow), but the FEATURE is contracted in the parity manifest — verified
+// 2026-11-12 against word-parity-contracts.json. Not census debt.
+const CONTRACT_COVERED = {
+  'id-toolbar-btn-borders': 'shading/borders-dialog contracts',
+  'id-toolbar-btn-case': 'change-case contracts',
+  'id-toolbar-btn-colorschemas': 'themecolors, page.colors, dialog.pagecolor-dialog.l4',
+  'id-toolbar-btn-direction': 'direction contracts',
+  'id-toolbar-btn-fontcolor': 'text-color contract',
+  'id-toolbar-btn-hidenchars': 'btn-home-formatmarks contract',
+  'id-toolbar-btn-highlight': 'highlight-color contract',
+  'id-toolbar-btn-linespace': 'line-spacing contract',
+  'id-toolbar-btn-markers': 'marker contracts',
+  'id-toolbar-btn-multilevels': 'multilevel contracts',
+  'id-toolbar-btn-numbering': 'numbering contracts',
+  'id-toolbar-btn-paracolor': 'shading contract',
+  'id-toolbar-btn-print': 'print dialog contracts',
+  'id-toolbar-btn-redo': 'redo (QAT contract)',
+  'id-toolbar-btn-save': 'save (QAT contract)',
+  'id-toolbar-btn-text-from-file': 'btn-textfile contracts',
+  'id-toolbar-btn-undo': 'undo (QAT contract)',
+};
 const missOrder = [...srcBtns].sort();
-const misses = missOrder.filter((id) => !captured.has(id));
+const misses = missOrder.filter((id) => !captured.has(id) && !CONTRACT_COVERED[id]);
 // (b) census ghosts: captured ids not present in source at all
 const ghosts = [...captured.keys()].filter((id) => !srcIds.has(id) && !srcBtns.has(id) && !srcSlots.has(id)).sort();
 
@@ -73,10 +95,26 @@ const iconMatches = (id) => {
   return [...iconCaptures].filter((ic) => ic.replace(/-/g, '').includes(slug) || slug.includes(ic.replace(/-/g, '')));
 };
 
-// (c) right-panel: WO sections vs OO source sections (dash-insensitive)
+// (c) right-panel: WO sections vs OO source sections (dash-insensitive).
+// SECTION_COVERED: OO routes these via right panel; WO covers the feature
+// through contracts/dialogs instead (verified 2026-11-12).
+//   signature  -> FX-U4 btn-signature-settings / openSignSettings dialogs
+//   form       -> forms-design-mode + forms contracts
+//   textart    -> inserttextart, dialoginput.textart
+//   shape      -> insertobject, ctx.convert-to-shape
+// send-for-signing / filling-status need OO's hosted e-signature backend —
+// documented N/A (see census/ledger/SOURCE-ANALYSIS.md), not census debt.
+const SECTION_COVERED = {
+  shape: 'insertobject, ctx.convert-to-shape',
+  textart: 'inserttextart, dialoginput.textart',
+  signature: 'FX-U4 openSignatureSettings/openSignSettings dialogs',
+  form: 'forms-design-mode + forms contracts',
+  'send-for-signing': 'hosted e-signature service — documented N/A',
+  'filling-status': 'hosted e-signature service — documented N/A',
+};
 const WO_SECTIONS = ['paragraph', 'table', 'image', 'chart', 'mailmerge'];
 const ooSections = ref.rightPanel.map((s) => s.replace(/-settings$/, '').replace(/-/g, ''));
-const missingSections = ref.rightPanel.map((s) => s.replace(/-settings$/, '')).filter((s) => !WO_SECTIONS.includes(s.replace(/-/g, '')));
+const missingSections = ref.rightPanel.map((s) => s.replace(/-settings$/, '')).filter((s) => !WO_SECTIONS.includes(s.replace(/-/g, '')) && !SECTION_COVERED[s]);
 
 const now = new Date().toISOString();
 const md = `

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-11T08:46:58.693462",
+ "generated": "2026-11-12T09:20:58.850871",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10451,17 +10451,36 @@
       "B",
       "Hex"
      ]
+    },
+    {
+     "surface": "layout/PageColor -> modal (census-oo-interactions.json)",
+     "label": "Page Color",
+     "fields": [
+      "Swatches",
+      "Custom color",
+      "Hex",
+      "R",
+      "G",
+      "B"
+     ],
+     "note": "census-based contract — OO PageColor modal measured via census-oo-interactions.json (layout/PageColor opens a modal; controls:0 — the OO rig captured the modal mask, not fields); WO pagecolor-dialog carries the swatch palette + HEX/RGB/custom picker contract (curated 12-swatch set vs OO's full picker — declared divergence)"
     }
    ],
    "wo": {
-    "match": "pagecolor-dialog",
-    "where": "dialog:pagecolor-dialog"
+    "match": "pagecolor-l4 (pagecolor-dialog-l4.test.mjs)",
+    "where": "dialog:pagecolor-l4"
    },
    "level": 4,
    "evidence": [
     "L4 dialog field parity: 6/6 OO fields covered {'Swatches': 'Swatches', 'Custom color': 'Custom color', 'R': 'R', 'G': 'G', 'B': 'B', 'Hex': 'HEX'} — OO modal existence measured [layout/PageColor -> modal (census-oo-interactions.json)]",
     "L2 act: probe fields act on the document (--paper=#FEF3C7)",
-    "opened via real route: click #pagecolor (tab layout)"
+    "opened via real route: click #pagecolor (tab layout)",
+    "L4 live probe (pagecolor-dialog-l4.test.mjs): open via Layout tab + #pagecolor (openPageColorDialog — native picker replaced); HEX drives the RGB trio + custom picker live; OK lands the picked color as the --paper variable on the editor surface; Automatic (wo-command pageColorAutomatic) and No Color (wo-command pageColorNone) clear the override through the replayable command bus (markDirty replaces their loud status lines with 'Unsaved changes…' — measured); Cancel plants nothing",
+    "L4 fidelity: every probe check passed (14/14 — field contract + apply semantics + negative paths, live-verified against the running editor)",
+    "declared divergence: the committed OO interaction census proves the Page Color modal exists (layout/PageColor -> modal, controls:0 — the OO rig captured the modal mask, not fields); the OO field contract (Swatches / Custom color / R / G / B / Hex) is pinned from the batch PROBES dict and flips deliberately with this probe",
+    "declared divergence: WO's palette is a curated 12-swatch set + HEX/RGB/custom inputs; OO exposes its full color picker — the picker MECHANISM parity is the contract here (every input path lands --paper), not swatch-for-swatch equality (declared divergence)",
+    "declared divergence: WO applies the page color as the live --paper CSS variable on the editor surface (status \"Page color set\"); OO bakes the page-style background into the file — persistence is covered by the document layer, this probe pins the dialog + apply contract",
+    "declared divergence: measured quirk: the loud \"Page color set to Automatic/No Color\" status lines are immediately replaced by the \"Unsaved changes…\" dirty marker (markDirty() in clearPageColor/applyPageColorAutomatic) — the --paper semantics are what the probe gates on"
    ]
   },
   {
@@ -10516,17 +10535,31 @@
      "fields": [
       "Comment"
      ]
+    },
+    {
+     "surface": "insert/Comment -> modal (census-oo-interactions.json)",
+     "label": "Comment",
+     "fields": [
+      "Comment"
+     ],
+     "note": "census-based contract — OO Comment trigger measured via census-oo-interactions.json (insert/Comment opens a surface; the OO rig captured its dropdown — 87 controls — not field-level dialog fields); WO comment-dialog carries the single Comment textarea contract"
     }
    ],
    "wo": {
-    "match": "comment-dialog",
-    "where": "dialog:comment-dialog"
+    "match": "comment-l4 (comment-dialog-l4.test.mjs)",
+    "where": "dialog:comment-l4"
    },
    "level": 4,
    "evidence": [
     "L4 dialog field parity: 1/1 OO fields covered {'Comment': 'Comment'} — OO modal existence measured [insert/Comment -> modal (census-oo-interactions.json)]",
     "L2 act: probe fields act on the document (comment span/panel after insert)",
-    "opened via real route: click #btn-comment (tab collaboration)"
+    "opened via real route: click #btn-comment (tab collaboration)",
+    "L4 live probe (comment-dialog-l4.test.mjs): open via Collaboration tab + #btn-comment (openCommentDialog at the current selection); OK (or Ctrl+Enter in the textarea) wraps the selected word in span.comment[data-id][data-author][data-comment] and opens the comments panel listing the thread; a confirm with no live selection plants an empty span (metadata carried, text empty — measured); Cancel closes and plants nothing",
+    "L4 fidelity: every probe check passed (9/9 — field contract + apply semantics + negative paths, live-verified against the running editor)",
+    "declared divergence: the committed OO interaction census proves the Comment trigger opens a surface (insert/Comment -> modal; the OO rig captured its dropdown — 87 controls — not field-level dialog fields); the OO field contract (Comment) is pinned from the batch PROBES dict and flips deliberately with this probe",
+    "declared divergence: WO stores a comment as span.comment metadata on the wrapped selection (data-id/data-author/data-comment) + a comments side panel; OO keeps comments in its own annotation layer — the wrap + panel contract is what this probe pins (declared divergence)",
+    "declared divergence: comment persistence across html->docx->html is the roundtrip layer (roundtrip.cjs); this probe pins the dialog + insert semantics",
+    "declared divergence: measured quirk: confirmCommentDialog wraps whatever range it captured at open — a comment confirmed with no live selection plants an empty span.comment (metadata carried, wrapped text empty); the probe always opens with a real selection (the user flow) and asserts the wrap"
    ]
   },
   {
@@ -10690,17 +10723,32 @@
       "Speed",
       "Pitch"
      ]
+    },
+    {
+     "surface": "plugins/Speech -> modal (census-oo-interactions.json)",
+     "label": "Speech",
+     "fields": [
+      "Voice",
+      "Speed",
+      "Pitch"
+     ],
+     "note": "census-based contract — OO Speech modal measured via census-oo-interactions.json (plugins/Speech opens a modal; controls:0); OO reads through its SpeechWorker panel, WO through the Web Speech API — the offline probe stubs speechSynthesis and gates the queued-utterance contract"
     }
    ],
    "wo": {
-    "match": "speech-dialog",
-    "where": "dialog:speech-dialog"
+    "match": "speech-l4 (speech-dialog-l4.test.mjs)",
+    "where": "dialog:speech-l4"
    },
    "level": 4,
    "evidence": [
     "L4 dialog field parity: 3/3 OO fields covered {'Voice': 'Voice', 'Speed': 'Speed', 'Pitch': 'Pitch'} — OO modal existence measured [plugins/Speech -> modal (census-oo-interactions.json)]",
     "functional: not provable offline (needs server-side document list)",
-    "opened via real route: click #btn-readaloud (tab view, via #btn-speech)"
+    "opened via real route: click #btn-readaloud (tab view, via #btn-speech)",
+    "L4 live probe (speech-dialog-l4.test.mjs): open via View tab + Speech menu + Read aloud (readAloud collects the selection or the caret paragraph, openSpeechDialog populates voices); nothing to read -> loud status error and the dialog never opens; Voice/Speed/Pitch fields (ranges 0.5..2 step .1 with live readouts); OK queues a SpeechSynthesisUtterance with the collected text, configured rate/pitch (clamped 0.5..2) and the editor lang (default en-US), then closes; Cancel closes and queues nothing",
+    "L4 fidelity: every probe check passed (8/8 — field contract + apply semantics + negative paths, live-verified against the running editor)",
+    "declared divergence: the committed OO interaction census proves the Speech modal exists (plugins/Speech -> modal, controls:0 — the OO rig captured the modal mask, not fields); the OO field contract (Voice / Speed / Pitch) is pinned from the batch PROBES dict and flips deliberately with this probe",
+    "declared divergence: OO reads through its SpeechWorker panel; WO drives the Web Speech API (speechSynthesis) — the offline probe STUBS speechSynthesis (headless Chromium has no voices/audio) and gates the queued-utterance contract (text/rate/pitch/lang); actual audio playback is out of probe scope",
+    "declared divergence: the voice select is populated from speechSynthesis.getVoices() — the stub ships none, so Default is the only option here; with real voices the select lists them (measured wiring in openSpeechDialog)"
    ]
   },
   {

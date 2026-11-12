@@ -161,7 +161,7 @@ Name-joined to `shortcut.*` contracts: **98**; concept-mapped: **44**; **NO WO c
 ### OO default shortcuts vs WO coverage (undefined) — 142 actions
 
 Ground truth: oo-shortcuts.json (142 actions, dumped from the live editor SDK at 2026-11-08).
-Name-joined to `shortcut.*` contracts: **98**; concept-mapped: **44**; **NO WO coverage: 0**.
+Name-joined to `shortcut.*` contracts: **112**; concept-mapped: **30**; **NO WO coverage: 0**.
 
 #### No-coverage OO default shortcuts (real gap candidates)
 - none
@@ -181,60 +181,67 @@ Name-joined to `shortcut.*` contracts: **98**; concept-mapped: **44**; **NO WO c
 - `deleterightchar` [Delete] -> delete
 - `deleteleftword` [Ctrl+Backspace] -> (skip family) — caret/word deletion — permanent-skip family (WO nav parity backlog) [SKIP]
 - `deleterightword` [Ctrl+Delete] -> (skip family) — caret/word deletion — permanent-skip family [SKIP]
-- `nonbreakingspace` [Ctrl+Shift+Space] -> ctrl+shift+space
 - `nonbreakinghyphen` [Ctrl+Shift+-] -> ctrl+shift+minus
 - `editundo` [Ctrl+Z] -> ctrl+z
-- `pastetextwithoutformat` [Ctrl+Shift+V] -> ctrl+shift+v
 - `inserthyperlink` [Ctrl+K] -> ctrl+k, link
 - `editselectall` [Ctrl+A] -> selectall, ctrl+a
-- `bold` [Ctrl+B] -> bold, ctrl+b — WO bold contract
-- `italic` [Ctrl+I] -> italic, ctrl+i — WO italic contract
-- `underline` [Ctrl+U] -> underline, ctrl+u — WO underline contract
 - `subscript` [Ctrl+.] -> subscript, ctrl+, — OO Ctrl+, vs WO ctrl+, (same)
 - `superscript` [Ctrl+,] -> superscript — OO Ctrl+. vs WO (script tools)
-- `applyheading1` [Alt+1] -> applyheading1 — Alt+1
-- `applyheading2` [Alt+2] -> applyheading2 — Alt+2
-- `applyheading3` [Alt+3] -> applyheading3 — Alt+3
 - `increasefontsize` [Ctrl+]] -> ctrl+]
 - `decreasefontsize` [Ctrl+[] -> ctrl+[
 - `centerpara` [Ctrl+E] -> justifycenter, ctrl+e — center align
 - `justifypara` [Ctrl+J] -> justifyfull, ctrl+j — justify
 - `rightpara` [Ctrl+R] -> justifyright, ctrl+r — right align
-- `leftpara` [Ctrl+L] -> justifyleft, ctrl+l — left align
-- `insertpagebreak` [Ctrl+Enter] -> ctrl+enter, breaks — page break
 - `indent` [Ctrl+M] -> ctrl+m, indent
 - `unindent` [Ctrl+Shift+M] -> ctrl+shift+m, outdent
 - `insertendnotenow` [Ctrl+Alt+D] -> ctrl+alt+d, insertfootnote — endnote
 - `insertfootnotenow` [Ctrl+Alt+F] -> ctrl+alt+f, insertfootnote
-- `insertequation` [Alt+=] -> ctrl+alt+=, btn-equation, equation-dialog — OO default Alt+= ; WO: macro/equation dialog [SKIP]
-- `copyrightsign` [Ctrl+Alt+G] -> ctrl+alt+g — insert symbol ©
-- `eurosign` [Ctrl+Alt+E] -> ctrl+alt+e — insert symbol €
-- `registeredsign` [Ctrl+Alt+R] -> ctrl+alt+r — insert symbol ®
-- `trademarksign` [Ctrl+Alt+T] -> ctrl+alt+t — insert symbol ™
+- `insertequation` [Alt+=] -> ctrl+alt+=, btn-equation — OO default Alt+= ; WO: macro/equation dialog [SKIP]
 - `horizontalellipsis` [Ctrl+Alt+.] -> symbol-dialog — insert … via symbol dialog [SKIP]
 <!-- /oo-shortcuts -->
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
 ---
 <!-- oo-dialogs -->
 ### OO source dialogs vs WO coverage (36 dialogs, 2026-11-09)
 
-OO dialog inventory: **36** components from view/*Dialog.js|*Dlg.js. Direct token hits: **30**; declared-divergence (WO covers via other token): **6**; unmapped: **0**.
+OO dialog inventory: **36** components from view/*Dialog.js|*Dlg.js. Direct token hits: **17**; declared-divergence (WO covers via other token): **19**; unmapped: **0**.
 
 
 | OO dialog | file | verdict | WO token |
 |---|---|---|---|
 | BookmarksDialog | BookmarksDialog.js | covered | bookmark-dialog |
 | CaptionDialog | CaptionDialog.js | covered | insertcaption |
-| CellsAddDialog | CellsAddDialog.js | covered | table-dialog |
-| ControlSettingsDialog | ControlSettingsDialog.js | covered | table-dialog |
+| CellsAddDialog | CellsAddDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: table-dialog |
+| ControlSettingsDialog | ControlSettingsDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: contentcontrol / table-dialog |
 | CrossReferenceDialog | CrossReferenceDialog.js | covered | crossref-dialog |
 | CustomColumnsDialog | CustomColumnsDialog.js | covered | columns-dialog |
-| DateTimeDialog | DateTimeDialog.js | covered | btn-datetime |
-| DropcapSettingsAdvanced | DropcapSettingsAdvanced.js | covered | dialog.dropcap-dialog.l4 |
+| DateTimeDialog | DateTimeDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: btn-datetime |
+| DropcapSettingsAdvanced | DropcapSettingsAdvanced.js | diverged | WO covers via surface not tokenized as a dialog — expected: dialog.dropcap-dialog.l4 |
 | EditListItemDialog | EditListItemDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: list-indents |
-| HyperlinkSettingsDialog | HyperlinkSettingsDialog.js | covered | link-dialog |
+| HyperlinkSettingsDialog | HyperlinkSettingsDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: link-dialog |
 | HyphenationDialog | HyphenationDialog.js | covered | hyphenation-dialog |
-| ImageSettingsAdvanced | ImageSettingsAdvanced.js | covered | dialog.image-dialog.l4 |
-| LineNumbersDialog | LineNumbersDialog.js | covered | dialog.linenumbers-dialog.l4, togglelinenumbers |
+| ImageSettingsAdvanced | ImageSettingsAdvanced.js | diverged | WO covers via surface not tokenized as a dialog — expected: dialog.image-dialog.l4 |
+| LineNumbersDialog | LineNumbersDialog.js | covered | togglelinenumbers |
 | ListIndentsDialog | ListIndentsDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: list-indents |
 | ListSettingsDialog | ListSettingsDialog.js | covered | multilevel |
 | ListTypesAdvanced | ListTypesAdvanced.js | covered | multilevel |
@@ -243,9 +250,9 @@ OO dialog inventory: **36** components from view/*Dialog.js|*Dlg.js. Direct toke
 | NotesRemoveDialog | NotesRemoveDialog.js | covered | insertfootnote |
 | NumberingValueDialog | NumberingValueDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: setNumberingValue |
 | PageMarginsDialog | PageMarginsDialog.js | covered | margins |
-| PageNumberingDlg | PageNumberingDlg.js | covered | dialog.pagenumber-dialog.l4 |
+| PageNumberingDlg | PageNumberingDlg.js | diverged | WO covers via surface not tokenized as a dialog — expected: dialog.pagenumber-dialog.l4 |
 | PageSizeDialog | PageSizeDialog.js | covered | size |
-| ParagraphSettingsAdvanced | ParagraphSettingsAdvanced.js | covered | dialog.paragraph-settings-dialog.l4 |
+| ParagraphSettingsAdvanced | ParagraphSettingsAdvanced.js | diverged | WO covers via surface not tokenized as a dialog — expected: dialog.paragraph-settings-dialog.l4 |
 | ProtectDialog | ProtectDialog.js | covered | protectdialog, restrictediting |
 | RoleDeleteDlg | RoleDeleteDlg.js | covered | protectdialog |
 | RoleEditDlg | RoleEditDlg.js | covered | protectdialog |
@@ -253,12 +260,52 @@ OO dialog inventory: **36** components from view/*Dialog.js|*Dlg.js. Direct toke
 | SaveFormDlg | SaveFormDlg.js | diverged | WO covers via surface not tokenized as a dialog — expected: saveform |
 | StyleTitleDialog | StyleTitleDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: style |
 | TableFormulaDialog | TableFormulaDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: table-formula |
-| TableOfContentsSettings | TableOfContentsSettings.js | covered | toc-dialog |
-| TableSettingsAdvanced | TableSettingsAdvanced.js | covered | table-dialog |
-| TableToTextDialog | TableToTextDialog.js | covered | dialog.text-to-table-dialog.l4 |
-| TextToTableDialog | TextToTableDialog.js | covered | dialog.text-to-table-dialog.l4 |
-| WatermarkSettingsDialog | WatermarkSettingsDialog.js | covered | dialog.watermark-dialog.l4 |
+| TableOfContentsSettings | TableOfContentsSettings.js | diverged | WO covers via surface not tokenized as a dialog — expected: toc-dialog |
+| TableSettingsAdvanced | TableSettingsAdvanced.js | diverged | WO covers via surface not tokenized as a dialog — expected: table-dialog |
+| TableToTextDialog | TableToTextDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: dialog.text-to-table-dialog.l4 |
+| TextToTableDialog | TextToTableDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: dialog.text-to-table-dialog.l4 |
+| WatermarkSettingsDialog | WatermarkSettingsDialog.js | diverged | WO covers via surface not tokenized as a dialog — expected: dialog.watermark-dialog.l4 |
 
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
+<!-- /oo-dialogs -->
+---
 <!-- /oo-dialogs -->
 ---
 <!-- /oo-dialogs -->
@@ -308,6 +355,26 @@ OO File rail buttons: direct WO row hits **16**, declared divergences **3**, unm
 <!-- /oo-filemenu -->
 <!-- /oo-filemenu -->
 <!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
 <!-- oo-statusbar -->
 ## OO status bar vs WO tokens (17 OO controls)
 
@@ -337,3 +404,83 @@ Direct WO token hits **9**; declared divergences **8**; unmapped **0**.
 <!-- /oo-statusbar -->
 <!-- /oo-statusbar -->
 <!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+<!-- /oo-statusbar -->
+
+## Source reconciliation — 2026-11-12
+
+OO source: **252.232.451.526** (web-apps bundle inside the reference image, extracted by
+oo-refer-extract.cjs). Reference fields: 39 toolbar buttons,
+45 static toolbar-source ids, 78 template
+slots, 10 right-panel sections, 25
+toolbar shortcut actions.
+
+### (a) Census blind spots — OO toolbar controls the runtime walk never captured (0)
+
+These are real OO ribbon controls for which NO census row exists, so the parity
+contract set never asks WO about them. Each becomes a candidate contract row or a
+deliberately-recorded known gap. ("icon-only" = the census captured it under a
+dropdown/menu component with a null id + icon class, i.e. partially captured.)
+- none
+### (b) Stale/corrupt census captures (0)
+
+Captured ids with no source counterpart (after normalizing runtime/dynamic ids).
+Likely renamed or mis-parsed at capture time.
+- none
+
+### (c) Right-panel section delta — OO 10 vs WO 5
+
+WO right panel (#right-panel rail): paragraph, table, image, chart, mailmerge.
+OO source sections WO has NO right-panel counterpart:
+- none
+(WO may route these to dedicated dialogs — verify each is otherwise contracted.)
+
+---
+
+## Source reconciliation — 2026-11-12
+
+OO source: **252.232.451.526** (web-apps bundle inside the reference image, extracted by
+oo-refer-extract.cjs). Reference fields: 39 toolbar buttons,
+45 static toolbar-source ids, 78 template
+slots, 10 right-panel sections, 25
+toolbar shortcut actions.
+
+### (a) Census blind spots — OO toolbar controls the runtime walk never captured (0)
+
+These are real OO ribbon controls for which NO census row exists, so the parity
+contract set never asks WO about them. Each becomes a candidate contract row or a
+deliberately-recorded known gap. ("icon-only" = the census captured it under a
+dropdown/menu component with a null id + icon class, i.e. partially captured.)
+- none
+### (b) Stale/corrupt census captures (0)
+
+Captured ids with no source counterpart (after normalizing runtime/dynamic ids).
+Likely renamed or mis-parsed at capture time.
+- none
+
+### (c) Right-panel section delta — OO 10 vs WO 5
+
+WO right panel (#right-panel rail): paragraph, table, image, chart, mailmerge.
+OO source sections WO has NO right-panel counterpart:
+- none
+(WO may route these to dedicated dialogs — verify each is otherwise contracted.)
+
+---
