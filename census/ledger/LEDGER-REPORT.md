@@ -111,9 +111,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L4 **dialog.paragraph-settings-dialog.l4** [dialog] (11 OO fields) → WO: paragraph-settings-dialog (paragraph-dialog-l4.test.mjs)
 - ✅ L4 **dialog.dropcap-dialog.l4** [dialog] (3 OO fields) → WO: dropcap-l4 (dropcap-dialog-l4.test.mjs)
 
-## insert — 59 features (L0:0 L1:2 L3:6)
-- 🔲 L1 **shortcut.inserttab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.insertlinebreakmultilineform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+## insert — 59 features (L0:0 L1:0 L3:6)
 - ✅ L2 **insert.blank-page** [control] → WO: btn-multipage
 - ✅ L2 **insert.breaks** [control] → WO: Breaks
 - ✅ L2 **insert.shape** [control] → WO: insertObject
@@ -149,8 +147,10 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **shortcut.inserthyperlink** [shortcut] → WO: Ctrl+K
 - ✅ L2 **shortcut.insertpagebreak** [shortcut] → WO: Ctrl+Enter
 - ✅ L2 **shortcut.insertpagenumber** [shortcut] → WO: Ctrl+Shift+P (realigned 2026-11-03 to OO combo; inserts PAGE-field span)
+- ✅ L2 **shortcut.inserttab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.insertendnotenow** [shortcut] → WO: Ctrl+Alt+D
 - ✅ L2 **shortcut.inserttablebreak** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- ✅ L2 **shortcut.insertlinebreakmultilineform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.copyrightsign** [shortcut] → WO: Ctrl+Alt+G
 - ✅ L2 **shortcut.eurosign** [shortcut] → WO: Ctrl+Alt+E
 - ✅ L2 **shortcut.registeredsign** [shortcut] → WO: Ctrl+Alt+R
@@ -376,23 +376,10 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **statusbar.btn-zoom-down** [statusbar-item] → WO: btn-zoom-out
 - ✅ L2 **statusbar.btn-zoom-up** [statusbar-item] → WO: btn-zoom-in
 
-## shortcuts — 62 features (L0:0 L1:18 L3:0)
-- 🔲 L1 **shortcut.movetolowerheaderfooter** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetoupperheaderfooter** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetolowerheader** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetoupperheader** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.equationchangealignmentleft** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.equationchangealignmentright** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+## shortcuts — 62 features (L0:0 L1:5 L3:0)
 - 🔲 L1 **shortcut.specialoptionskeepsourceformat** [shortcut] → WO: Ctrl+V default rich paste; Ctrl+K = hyperlink (OO collision)
-- 🔲 L1 **shortcut.specialoptionskeeptextonly** [shortcut] → WO: Ctrl+T plain-text paste (clipboard.readText -> insertText)
 - 🔲 L1 **shortcut.specialoptionsoverwritecells** [shortcut] → WO: Ctrl+O consumed by browser (open file); spreadsheet cell semantics n/a
 - 🔲 L1 **shortcut.specialoptionsnesttable** [shortcut] → WO: Ctrl+N consumed by browser (new window)
-- 🔲 L1 **shortcut.mixedindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.mixedunindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetonextform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.movetopreviousform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.choosenextcomboboxoption** [shortcut] → WO: browser caret/scroll (n/a for web editor)
-- 🔲 L1 **shortcut.choosepreviouscomboboxoption** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.nextfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.previousfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.zoom100** [shortcut] → WO: Ctrl+0
@@ -410,11 +397,20 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **shortcut.movetodownline** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.nextmodalcontrol** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.previousmodalcontrol** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- ✅ L2 **shortcut.movetolowerheaderfooter** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- ✅ L2 **shortcut.movetoupperheaderfooter** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- ✅ L2 **shortcut.movetolowerheader** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- ✅ L2 **shortcut.movetoupperheader** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.endparagraph** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.equationaddplaceholder** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- ✅ L2 **shortcut.equationchangealignmentleft** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- ✅ L2 **shortcut.equationchangealignmentright** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- ✅ L2 **shortcut.specialoptionskeeptextonly** [shortcut] → WO: Ctrl+T plain-text paste (clipboard.readText -> insertText)
 - ✅ L2 **shortcut.visithyperlink** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.startindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.startunindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- ✅ L2 **shortcut.mixedindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- ✅ L2 **shortcut.mixedunindent** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.bigmoveobjectleft** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.bigmoveobjectright** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.bigmoveobjectup** [shortcut] → WO: browser caret/scroll (n/a for web editor)
@@ -427,6 +423,10 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **shortcut.movetopreviousrow** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.endparagraphcell** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.addnewrow** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- ✅ L2 **shortcut.movetonextform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- ✅ L2 **shortcut.movetopreviousform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- ✅ L2 **shortcut.choosenextcomboboxoption** [shortcut] → WO: browser caret/scroll (n/a for web editor)
+- ✅ L2 **shortcut.choosepreviouscomboboxoption** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.speechworker** [shortcut] → WO: Ctrl+Alt+Z read-aloud (OO SpeechWorker panel; WO maps to TTS)
 - ✅ L2 **shortcut.movetostartpreviouspage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.movetostartnextpage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
@@ -440,9 +440,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **shortcut.movetonextpage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.movetopreviouspage** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 
-## edit — 137 features (L0:0 L1:3 L3:1)
-- 🔲 L1 **ctx.edit-wrap-boundary** [ctx-menu] → WO: ctx data-ctx=EditWrapBoundary — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-wrap-boundary marker + SetStatus NotAvailable ⏸ registered park
-- 🔲 L1 **ctx.edit-points** [ctx-menu] → WO: ctx data-ctx=EditPoints — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-points marker + SetStatus NotAvailable ⏸ registered park
+## edit — 137 features (L0:0 L1:1 L3:1)
 - 🔲 L1 **ctx.select-language** [ctx-menu] → WO: ctx data-ctx=SelectLanguage
 - ✅ L2 **shortcut.deleteleftchar** [shortcut] → WO: Backspace
 - ✅ L2 **shortcut.deleterightchar** [shortcut] → WO: Delete
@@ -494,6 +492,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **ctx.send-to-background** [ctx-menu] → WO: Layout tab objectOp send-to-background
 - ✅ L2 **ctx.bring-forward** [ctx-menu] → WO: Layout tab objectOp bring-forward
 - ✅ L2 **ctx.send-backward** [ctx-menu] → WO: Layout tab objectOp send-backward
+- ✅ L2 **ctx.edit-wrap-boundary** [ctx-menu] → WO: ctx data-ctx=EditWrapBoundary — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-wrap-boundary marker + SetStatus NotAvailable ⏸ registered park
 - ✅ L2 **ctx.in-line-with-text** [ctx-menu] → WO: ctx data-ctx=WrapInline
 - ✅ L2 **ctx.square** [ctx-menu] → WO: ctx data-ctx=WrapSquare
 - ✅ L2 **ctx.tight** [ctx-menu] → WO: ctx data-ctx=WrapTight (rect placeholder: aliases obj-square + data-wrap=tight; documentd divergence until a vector contour exists)
@@ -515,6 +514,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **ctx.crop** [ctx-menu] → WO: ctx data-ctx=Crop -> photo editor crop tool (drag + Apply)
 - ✅ L2 **ctx.remove-content-control** [ctx-menu] → WO: ctx data-ctx=RemoveContentControl
 - ✅ L2 **ctx.content-control-settings** [ctx-menu] → WO: ctx data-ctx=ContentControlSettings
+- ✅ L2 **ctx.edit-points** [ctx-menu] → WO: ctx data-ctx=EditPoints — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-points marker + SetStatus NotAvailable ⏸ registered park
 - ✅ L2 **ctx.edit-object** [ctx-menu] → WO: ctx data-ctx=EditObject -> editSelectedObject (object-dialog prefilled from the placeholder; updates in place)
 - ✅ L2 **ctx.link** [ctx-menu] → WO: ctx data-ctx=Link
 - ✅ L2 **ctx.edit-link** [ctx-menu] → WO: ctx data-ctx=EditLink

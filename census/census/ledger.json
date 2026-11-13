@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-12T23:44:13.164287",
+ "generated": "2026-11-13T06:49:19.569331",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,8 +10,8 @@
  ],
  "totals": {
   "L0": 0,
-  "L1": 26,
-  "L2": 438,
+  "L1": 9,
+  "L2": 455,
   "L3": 37,
   "L4": 33
  },
@@ -5717,9 +5717,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS): shortcut.movetolowerheaderfooter asserted via parity runner"
    ]
   },
   {
@@ -5738,9 +5739,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS): shortcut.movetoupperheaderfooter asserted via parity runner"
    ]
   },
   {
@@ -5759,9 +5761,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS): shortcut.movetolowerheader asserted via parity runner"
    ]
   },
   {
@@ -5780,9 +5783,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS): shortcut.movetoupperheader asserted via parity runner"
    ]
   },
   {
@@ -5888,9 +5892,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS): shortcut.equationchangealignmentleft asserted via parity runner"
    ]
   },
   {
@@ -5909,9 +5914,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS): shortcut.equationchangealignmentright asserted via parity runner"
    ]
   },
   {
@@ -6121,8 +6127,10 @@
     "match": "Ctrl+T plain-text paste (clipboard.readText -> insertText)",
     "where": "shortcut"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): shortcut.specialoptionskeeptextonly asserted via parity runner"
+   ]
   },
   {
    "feature": "shortcut.specialoptionsoverwritecells",
@@ -6955,9 +6963,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS): shortcut.inserttab asserted via parity runner"
    ]
   },
   {
@@ -6976,9 +6985,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS): shortcut.mixedindent asserted via parity runner"
    ]
   },
   {
@@ -6997,9 +7007,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS): shortcut.mixedunindent asserted via parity runner"
    ]
   },
   {
@@ -7369,9 +7380,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS): shortcut.movetonextform asserted via parity runner"
    ]
   },
   {
@@ -7390,9 +7402,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS): shortcut.movetopreviousform asserted via parity runner"
    ]
   },
   {
@@ -7411,9 +7424,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS): shortcut.choosenextcomboboxoption asserted via parity runner"
    ]
   },
   {
@@ -7432,9 +7446,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS): shortcut.choosepreviouscomboboxoption asserted via parity runner"
    ]
   },
   {
@@ -7453,9 +7468,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS): shortcut.insertlinebreakmultilineform asserted via parity runner"
    ]
   },
   {
@@ -8931,9 +8947,10 @@
     "match": "ctx data-ctx=EditWrapBoundary — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-wrap-boundary marker + SetStatus NotAvailable",
     "where": "ctx-menu"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
     "WO surface elsewhere: ctx data-ctx=EditWrapBoundary — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-wrap-boundary marker + SetStatus NotAvailable",
+    "L2 acts (contract PASS): ctx.edit-wrap-boundary asserted via parity runner",
     "registered park (Phase 5 / WO-22): OO 'Edit wrap boundary' edits the wrap-polygon contour — same absent vector model; ctx row is a LOUD divergence (wo:edit-wrap-boundary marker + SetStatus NotAvailable)"
    ],
    "divergence": "registered"
@@ -9399,9 +9416,10 @@
     "match": "ctx data-ctx=EditPoints — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-points marker + SetStatus NotAvailable",
     "where": "ctx-menu"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
     "WO surface elsewhere: ctx data-ctx=EditPoints — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-points marker + SetStatus NotAvailable",
+    "L2 acts (contract PASS): ctx.edit-points asserted via parity runner",
     "registered park (Phase 5 / WO-22): OO 'Edit points' is a bezier-point editor — WO has no vector path/contour model (CSS/SVG placeholders); ctx row is a LOUD divergence (wo:edit-points marker + SetStatus NotAvailable)"
    ],
    "divergence": "registered"
