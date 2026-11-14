@@ -192,7 +192,7 @@ function buildDiff(oo, wo) {
   const d = [];
   // Chrome
   d.push({ sec: 'chrome', field: 'totalH', oo: oo.chrome.totalH, wo: wo.chrome.totalH, Δ: wo.chrome.totalH - oo.chrome.totalH });
-  d.push({ sec: 'chrome', field: 'tabStrip.bg', oo: oo.chrome.boxTabs?.bg, wo: wo.chrome.titlebar?.bg });
+  d.push({ sec: 'chrome', field: 'tabStrip.bg', oo: oo.chrome.toolbar?.bg, wo: wo.chrome.titlebar?.bg });
   d.push({ sec: 'chrome', field: 'tabStrip.h', oo: oo.chrome.boxTabs?.h, wo: wo.chrome.titlebar?.h });
   d.push({ sec: 'chrome', field: 'btnArea.bg', oo: oo.chrome.boxControls?.bg, wo: wo.chrome.toolbar?.bg });
   d.push({ sec: 'chrome', field: 'btnArea.h', oo: oo.chrome.boxControls?.h, wo: wo.chrome.toolbar?.h });
@@ -208,7 +208,13 @@ function buildDiff(oo, wo) {
   d.push({ sec: 'qat', field: 'count', oo: oo.qat?.btns?.length, wo: wo.qat?.btns?.length });
   d.push({ sec: 'qat', field: 'w', oo: oo.qat?.w, wo: wo.qat?.w });
   // Home buttons — match by nearest x within row
-  const ooHome = (oo.home?.btns || []);
+  const ooHomeAll = (oo.home?.btns || []);
+  // OO's home capture includes its QAT strip (save/copy/paste/cut + print/undo/
+  // redo/copystyle) because OO embeds QAT in box-controls; WO keeps QAT in a
+  // separate .qat-strip outside .ribbon-page. Exclude OO QAT ids so btnCount
+  // compares like with like.
+  const QAT_IDS = new Set(['save', 'copy', 'paste', 'cut', 'print', 'undo', 'redo', 'copystyle']);
+  const ooHome = ooHomeAll.filter((b) => !QAT_IDS.has(b.id));
   // WO: count BOTH direct button-like row items (capture stores them as items
   // with themselves as the clickable) AND buttons nested inside item wrappers.
   const woBtnOf = (it) => (it.tag === 'BUTTON' || it.tag === 'SELECT') && it.w > 3
@@ -216,7 +222,7 @@ function buildDiff(oo, wo) {
   const woHome = (wo.home?.rows || []).flatMap(r => (r.items || []).flatMap(woBtnOf));
   d.push({ sec: 'home', field: 'btnCount', oo: ooHome.length, wo: woHome.length });
   // Insert buttons
-  const ooIns = (oo.insert?.btns || []);
+  const ooIns = (oo.insert?.btns || []).filter((b) => !QAT_IDS.has(b.id));
   const woIns = (wo.insert?.rows || []).flatMap(r => (r.items || []).flatMap(woBtnOf));
   d.push({ sec: 'insert', field: 'btnCount', oo: ooIns.length, wo: woIns.length });
   for (let i = 0; i < Math.min(ooIns.length, woIns.length); i++) {
