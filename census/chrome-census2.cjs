@@ -19,12 +19,17 @@ const WO_URL = process.env.WO_URL || 'https://editor.cloud.graphwiz.ai/word/';
 const OO_DEMO = process.env.OO_DEMO || 'https://world-office.graphwiz.ai/demo';
 const OUT = process.argv.includes('--out') ? process.argv[process.argv.indexOf('--out') + 1] : '/tmp/census2.json';
 const VIEWPORT = { width: 1680, height: 950 };
+/* WO serves German labels only when the browser advertises de — without
+   Accept-Language headers it falls back to English while OO (static demo)
+   stays German, so widths diverge and every tab x looks shifted. Match the
+   locale on both sides. */
+const LOCALE = { locale: 'de-DE', extraHTTPHeaders: { 'Accept-Language': 'de-DE,de;q=0.9,en;q=0.8' } };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // ── WO capture ─────────────────────────────────────────────────────────
 async function captureWO() {
   const b = await chromium.launch();
-  const p = await b.newPage({ viewport: VIEWPORT });
+  const p = await b.newPage({ viewport: VIEWPORT, ...LOCALE });
   await p.goto(WO_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
   await p.waitForSelector('#editor', { timeout: 30000 });
   await sleep(3000);
@@ -103,7 +108,7 @@ async function captureWO() {
 // ── OO capture ─────────────────────────────────────────────────────────
 async function captureOO() {
   const b = await chromium.launch();
-  const p = await b.newPage({ viewport: VIEWPORT });
+  const p = await b.newPage({ viewport: VIEWPORT, ...LOCALE });
   await p.goto(OO_DEMO, { waitUntil: 'load', timeout: 90000 });
   await sleep(5000);
   const fileEl = await p.$('.file');
@@ -204,11 +209,15 @@ function buildDiff(oo, wo) {
   d.push({ sec: 'qat', field: 'w', oo: oo.qat?.w, wo: wo.qat?.w });
   // Home buttons — match by nearest x within row
   const ooHome = (oo.home?.btns || []);
-  const woHome = (wo.home?.rows || []).flatMap(r => (r.items || []).flatMap(it => it.btns || []));
+  // WO: count BOTH direct button-like row items (capture stores them as items
+  // with themselves as the clickable) AND buttons nested inside item wrappers.
+  const woBtnOf = (it) => (it.tag === 'BUTTON' || it.tag === 'SELECT') && it.w > 3
+    ? [it] : (it.btns || []);
+  const woHome = (wo.home?.rows || []).flatMap(r => (r.items || []).flatMap(woBtnOf));
   d.push({ sec: 'home', field: 'btnCount', oo: ooHome.length, wo: woHome.length });
   // Insert buttons
   const ooIns = (oo.insert?.btns || []);
-  const woIns = (wo.insert?.rows || []).flatMap(r => r.btns || []);
+  const woIns = (wo.insert?.rows || []).flatMap(r => (r.items || []).flatMap(woBtnOf));
   d.push({ sec: 'insert', field: 'btnCount', oo: ooIns.length, wo: woIns.length });
   for (let i = 0; i < Math.min(ooIns.length, woIns.length); i++) {
     d.push({ sec: 'insert', field: `${ooIns[i].text || ooIns[i].id}`, oo: { x: ooIns[i].x, w: ooIns[i].w, h: ooIns[i].h }, wo: { x: woIns[i].x, w: woIns[i].w, h: woIns[i].h } });
@@ -225,8 +234,8 @@ function buildDiff(oo, wo) {
   console.log(`\n=== ${OUT} ===`);
   console.log(`chrome totalH: OO=${oo.chrome.totalH} WO=${wo.chrome.totalH}`);
   console.log(`tabs: OO=${oo.tabs.length} WO=${wo.tabs.length}`);
-  console.log(`home btns: OO=${oo.home?.btns?.length} WO=${(wo.home?.rows||[]).flatMap(r=>(r.items||[]).flatMap(i=>i.btns||[])).length}`);
-  console.log(`insert btns: OO=${oo.insert?.btns?.length} WO=${(wo.insert?.rows||[]).flatMap(r=>r.btns||[]).length}`);
+  console.log(`home btns: OO=${oo.home?.btns?.length} WO=${(wo.home?.rows||[]).flatMap(r=>(r.items||[]).flatMap(i=>i.tag==="BUTTON"&&i.w>3?[i]:(i.btns||[]))).length}`);
+  console.log(`insert btns: OO=${oo.insert?.btns?.length} WO=${(wo.insert?.rows||[]).flatMap(r=>(r.items||[]).flatMap(i=>i.tag==="BUTTON"&&i.w>3?[i]:(i.btns||[]))).length}`);
   console.log('\nKey diffs:');
   diffs.filter(d => d.Δ !== undefined && d.Δ !== 0).forEach(d => console.log(`  [${d.sec}] ${d.field}: OO=${JSON.stringify(d.oo)} WO=${JSON.stringify(d.wo)} Δ=${d.Δ}`));
   diffs.filter(d => d.Δ === undefined && JSON.stringify(d.oo) !== JSON.stringify(d.wo)).slice(0, 10).forEach(d => console.log(`  [${d.sec}] ${d.field}: OO=${JSON.stringify(d.oo)?.slice(0,50)} WO=${JSON.stringify(d.wo)?.slice(0,50)}`));
