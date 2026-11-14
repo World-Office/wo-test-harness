@@ -121,13 +121,20 @@ async function woBand(b, vpW, tab) {
 
 // ── OO band capture via frameEditor element screenshot ─────────────────
 async function ooContext(p) {
-  const ctx = await p.newContext({ viewport: { width: 1680, height: 950 }, ...LOCALE });
+  // viewport must hold the 1680px iframe + page chrome (iframe sits at x=25)
+  const ctx = await p.newContext({ viewport: { width: 1760, height: 950 }, ...LOCALE });
   const op = await ctx.newPage();
   await op.goto(OO_DEMO, { waitUntil: 'load', timeout: 90000 });
   await sleep(6000);
   const fe = await op.$('.file');
   if (fe) await fe.click();
   await sleep(15000);
+  // OO demo iframe is only ~807px wide — enlarge it so OO re-lays-out wide
+  // (it is responsive; at 845px+ it shows ALL groups, at ≤830 it collapses
+  // them). Without this the census compares WO@WIDE vs OO@NARROW and every
+  // "home/insert has more buttons" verdict is a false comparison.
+  await op.addStyleTag({ content: 'iframe[name="frameEditor"] { width: 1680px !important; height: 950px !important; }' });
+  await sleep(3000);
   const fr = op.frames().find((f) => f.name() === 'frameEditor');
   return { ctx, op, fr };
 }

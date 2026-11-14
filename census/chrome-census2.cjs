@@ -114,6 +114,12 @@ async function captureOO() {
   const fileEl = await p.$('.file');
   if (fileEl) await fileEl.click();
   await sleep(15000);
+  // OO demo iframe renders at only ~807px; enlarge so OO re-lays-out at the
+  // same target width as WO. OO is responsive (collapses only below ~845px),
+  // so without this the census compared WO@1680 vs OO@807 and signalled
+  // false "WO has more buttons" verdicts.
+  await p.addStyleTag({ content: 'iframe[name="frameEditor"] { width: 1680px !important; height: 950px !important; }' });
+  await sleep(3000);
   const f = p.frames().find(fr => fr.name() === 'frameEditor');
   if (!f) throw new Error('OO frame not found');
 
