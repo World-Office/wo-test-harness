@@ -163,3 +163,16 @@ checklist for docserver image rebuild and deployment:
 - [ ] Document any deviations in `census/ledger/DIVERSIONS.md`
 - [ ] Update census/PARITY-REPORT.md with deployment metrics
 - [ ] Tag release in git: `git tag -a chrome-rounds-2-3-l4-32 -m "Post-campaign baseline"`
+
+## 2026-11-15 — .wo-ovf root cause + rig correction
+- Rig bug: OO demo iframe is fixed ~807px; census compared WO@1680 vs
+  OO@807 → false "WO has more buttons". OO is actually responsive
+  (44-46 home btns at >=845px, collapse only <~840px).
+- Rule bug: .wo-ovf display:none applied at all widths; OO only collapses
+  below ~844. Gated via media query (server f1fe5831d).
+- Gallery flex-shrink: rb-styles flex:1 1 auto so it clips tail cards
+  like OO's combo-styles field (server 9889203b0).
+- Rigs: census2/census3 widen OO iframe to 1680 (+viewport 1760) —
+  harness d397fff. census2 home OO 17→38, insert 16→23.
+- Suites: 158/158 pass (local). Bands: home ink ~2.2-2.3% vs OO 4.1%;
+  residual delta = OO colored wide styles strip + QAT sprite color.
