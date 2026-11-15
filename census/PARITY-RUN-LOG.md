@@ -176,3 +176,16 @@ checklist for docserver image rebuild and deployment:
   harness d397fff. census2 home OO 17→38, insert 16→23.
 - Suites: 158/158 pass (local). Bands: home ink ~2.2-2.3% vs OO 4.1%;
   residual delta = OO colored wide styles strip + QAT sprite color.
+
+## 2026-11-15 — styles-gallery colored previews (band color parity)
+- OO's combo-styles strip embeds 104x40 mini-render chips per style:
+  heading text in accent blue #376092 + gray body lines; measured 5.9%
+  color inside the field. WO cards were plain text + 2px rule -> whole
+  band color gap traced to THIS, not icon faces (reconfirmed icon
+  hypothesis refuted).
+- style.css: gc-name rendered in target typography, headings tinted
+  #376092, gc-preview = 3 gray bars; cards 78->104px (OO chip width).
+  server 126b84a13.
+- Result @1680: band col 0.16 -> 0.58% (OO measured 0.55-0.92% fresh),
+  gallery area 3.1-3.4% vs OO 4.3%. Row still fits tools zone at
+  1680/1440/1280. Suites 158/158.
