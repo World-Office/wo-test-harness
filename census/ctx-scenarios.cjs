@@ -49,7 +49,7 @@ const { chromium } = require('playwright');
 const HERE = __dirname;
 const WO_URL = process.env.WO_URL || 'http://192.168.42.42:8082/word/';
 const OO_URL = process.env.OO_URL || 'http://127.0.0.1:8735/rig-editor.html';
-const OUT_DIR = process.env.CTX_OUT || path.join(__dirname, '..');
+const OUT_DIR = process.env.CTX_OUT || __dirname;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // ---- Normalized caption map: OO var -> canonical caption ---------------
@@ -57,21 +57,21 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // Used to normalize live captions against known identifiers.
 const CAPTION_MAP = {
   // textMenu core
-  'Cut': ['textCut', 'Cut'],
-  'Copy': ['textCopy', 'Copy'],
-  'Paste': ['textPaste', 'Paste'],
-  'Undo': ['textUndo', 'Undo'],
-  'Redo': ['textRedo', 'Redo'],
-  'Print Selection': ['txtPrintSelection', 'Print selection'],
-  'Select All': ['selectText', 'Select All'],
+  'Cut': ['Cut', 'Cut'],
+  'Copy': ['Copy', 'Copy'],
+  'Paste': ['Paste', 'Paste'],
+  'Undo': ['Undo', 'Undo'],
+  'Redo': ['Redo', 'Redo'],
+  'Print Selection': ['PrintSelection', 'Print selection'],
+  'Select All': ['SelectAll', 'Select All'],
   
   // text formatting / paragraph
-  'Paragraph Advanced Settings': ['advancedParagraphText', 'Paragraph advanced settings'],
+  'Paragraph Advanced Settings': ['ParagraphSettings', 'Paragraph advanced settings'],
   'Frame Advanced Settings': ['advancedFrameText', 'Frame advanced settings'],
   'Drop Cap Advanced Settings': ['advancedDropCapText', 'Drop cap advanced settings'],
   'Equation Advanced Settings': ['advancedEquationText', 'Equation advanced settings'],
-  'Page Break Before': ['breakBeforeText', 'Page break before'],
-  'Keep Lines Together': ['keepLinesText', 'Keep lines together'],
+  'Page Break Before': ['PageBreakBefore', 'Page break before'],
+  'Keep Lines Together': ['KeepLines', 'Keep lines together'],
   
   // spellcheck
   'Language': ['langText', 'Language'],
@@ -80,13 +80,13 @@ const CAPTION_MAP = {
   'Add to Dictionary': ['toDictionaryText', 'Add to Dictionary'],
   
   // links
-  'Link': ['hyperlinkText', 'Link'],
+  'Link': ['Link', 'Link'],
   'Edit Link': ['editHyperlinkText', 'Edit Link'],
   'Remove Link': ['removeHyperlinkText', 'Remove Link'],
   'Copy Hyperlink Address': ['copyHyperlinkText', 'Copy hyperlink address'],
   
   // comments / track changes
-  'Add Comment': ['addCommentText', 'Add comment'],
+  'Add Comment': ['AddComment', 'Add comment'],
   'Accept': ['textAccept', 'Accept'],
   'Reject': ['textReject', 'Reject'],
   'Follow Move': ['textFollow', 'Follow move'],
@@ -108,7 +108,7 @@ const CAPTION_MAP = {
   'List Indents': ['textIndents', 'List indents'],
   
   // styles
-  'Formatting as Style': ['styleText', 'Formatting as style'],
+  'Formatting as Style': ['FormattingAsStyle', 'Formatting as style'],
   
   // table menu
   'Insert Column Left': ['insertColumnLeftText', 'Insert column left'],
@@ -165,7 +165,7 @@ const CAPTION_MAP = {
   'Ungroup': ['txtUngroup', 'Ungroup'],
   
   // AI
-  'AI': ['aiText', 'AI'],
+  'AI': ['AI', 'AI'],
 };
 
 // Reverse: canonical -> display caption
@@ -177,15 +177,15 @@ const DISPLAY = Object.fromEntries(
 const OO_MENU_ORDERS = {
   textMenu: [
     'spellSuggestion', 'moreSpell', 'ignoreSpellText', 'ignoreAllSpellText', 'toDictionaryText',
-    'langText', 'textCut', 'textCopy', 'textPaste', 'txtPrintSelection',
+    'langText', 'Cut', 'Copy', 'Paste', 'PrintSelection',
     'textAccept', 'textReject', 'textRemoveControl', 'textEditControls',
     'textRefreshField', 'textEditField', 'textFieldCodes', 'textClearField',
-    'textTOCSettings', 'textUpdateTOC', 'breakBeforeText', 'keepLinesText',
-    'advancedParagraphText', 'advancedFrameText', 'advancedDropCapText',
-    'advancedEquationText', 'addCommentText', 'hyperlinkText', 'editHyperlinkText',
+    'textTOCSettings', 'textUpdateTOC', 'PageBreakBefore', 'KeepLines',
+    'ParagraphSettings', 'advancedFrameText', 'advancedDropCapText',
+    'advancedEquationText', 'AddComment', 'Link', 'editHyperlinkText',
     'removeHyperlinkText', 'copyHyperlinkText', 'textFollow',
     'textStartNewList', 'textStartNumberingFrom', 'textContinueNumbering', 'textIndents',
-    'bulletsText', 'styleText', 'saveStyleText', 'updateStyleText',
+    'bulletsText', 'FormattingAsStyle', 'saveStyleText', 'updateStyleText',
   ],
   tableMenu: [
     'insertText', 'insertColumnLeftText', 'insertColumnRightText', 'insertRowAboveText',
@@ -346,10 +346,17 @@ async function captureContextMenu(page, scenario) {
   const menuData = await page.evaluate(() => {
     const result = { surface: 'none', rows: [] };
     
-    // Find any visible context menu
+    // Find any visible context menu — prioritize explicit ctx-menu ids over
+    // generic [role=menu] (the File ribbon menu is also role=menu and sits
+    // first in DOM order, so it must NOT win over a real ctx menu).
     let menu = null;
-    const candidates = document.querySelectorAll('#ctx-menu, #contextMenu, .ctx-menu, [role=menu], .menu, .menu-popup');
-    for (const c of candidates) {
+    const all = document.querySelectorAll('#ctx-menu, #contextMenu, .ctx-menu, .menu-popup, [role=menu], .menu');
+    const ordered = [...all].sort((a, b) => {
+      const aid = a.id === 'ctx-menu' || a.id === 'contextMenu' || a.classList.contains('ctx-menu') ? 0 : 1;
+      const bid = b.id === 'ctx-menu' || b.id === 'contextMenu' || b.classList.contains('ctx-menu') ? 0 : 1;
+      return aid - bid;
+    });
+    for (const c of ordered) {
       const s = getComputedStyle(c);
       if (s.display === 'none' || s.visibility === 'hidden') continue;
       const r = c.getBoundingClientRect();
@@ -440,7 +447,7 @@ async function captureContextMenu(page, scenario) {
 
 // ---- Seed scenario content into the editor ---------------------------------
 async function seedScenario(page, scenario) {
-  const { id, seed, table, image, shape, field, toc, header, trackedChanges } = scenario;
+  const { id, seed, table, image, shape, field, toc, header, trackedChanges, misspelled } = scenario;
   
   if (table) {
     await page.evaluate(() => {

@@ -48,8 +48,12 @@ function contractRows(contracts, scenario) {
 function reconcile(contracts, capture, scenario) {
   const expected = contractRows(contracts, scenario);
   if (!expected) return { scenario, skipped: true, reason: 'no contract' };
-  const records = capture.filter((r) => r.engine === 'wo' && r.scenario === scenario);
-  const actual = records.length ? records[0].rows.map((r) => r.key) : [];
+  const records = capture.filter((r) => r.engine === 'worldoffice' && r.scenario === scenario);
+  const actual = records.length
+    ? records[0].visible
+        .map((r) => r.canonical || r.key)
+        .filter((v) => typeof v === 'string' && v)
+    : [];
   const exp = new Set(expected);
   const act = new Set(actual);
   const missing = expected.filter((k) => !act.has(k));
@@ -93,8 +97,10 @@ function main() {
     console.log('RECONCILE-OK (no capture to reconcile)');
     return 0;
   }
-  const capture = JSON.parse(fs.readFileSync(capturePath, 'utf8'));
-  const scenarios = new Set(capture.filter((r) => r.engine === 'wo').map((r) => r.scenario));
+  const rawCapture = JSON.parse(fs.readFileSync(capturePath, 'utf8'));
+  // the walker emits { scenarios: [...], capturedAt } — unwrap for reconcile
+  const capture = Array.isArray(rawCapture) ? rawCapture : (rawCapture.scenarios || []);
+  const scenarios = new Set(capture.filter((r) => r.engine === 'worldoffice').map((r) => r.scenario));
   let summary = { ok: 0, missing: 0, extra: 0, scenarios: 0 };
   for (const s of scenarios) {
     const r = reconcile(contracts, capture, s);
