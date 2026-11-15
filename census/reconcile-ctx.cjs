@@ -51,6 +51,7 @@ function reconcile(contracts, capture, scenario) {
   const records = capture.filter((r) => r.engine === 'worldoffice' && r.scenario === scenario);
   const actual = records.length
     ? records[0].visible
+        .filter((r) => !r.dynamic) // dynamic spell suggestions are word-dependent
         .map((r) => r.canonical || r.key)
         .filter((v) => typeof v === 'string' && v)
     : [];

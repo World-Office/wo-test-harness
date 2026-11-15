@@ -74,10 +74,11 @@ const CAPTION_MAP = {
   'Keep Lines Together': ['KeepLines', 'Keep lines together'],
   
   // spellcheck
-  'Language': ['langText', 'Language'],
-  'Ignore': ['ignoreSpellText', 'Ignore'],
-  'Ignore All': ['ignoreAllSpellText', 'Ignore All'],
-  'Add to Dictionary': ['toDictionaryText', 'Add to Dictionary'],
+  'Language': ['SelectLanguage', 'Language'],
+  'Ignore': ['Ignore', 'Ignore'],
+  'Ignore All': ['IgnoreAll', 'Ignore all'],
+  'Add to Dictionary': ['AddToDictionary', 'Add to dictionary'],
+  'Select Language': ['SelectLanguage', 'Select language'],
   
   // links
   'Link': ['Link', 'Link'],
@@ -315,19 +316,33 @@ async function captureContextMenu(page, scenario) {
     }, scenario.image);
     await sleep(400);
   } else if (scenario.misspelled) {
-    // Find and click on a misspelled word (marked up by OO/WO)
-    await page.evaluate(() => {
+    // Right-click a misspelled-word marker if the spell engine produced one;
+    // otherwise fall back to a plain right-click on the seeded text so we
+    // still capture the menu (11-row plain set) instead of the File menu.
+    const clicked = await page.evaluate(() => {
       const ed = document.getElementById('editor') || document.querySelector('[contenteditable]');
-      if (!ed) return;
-      // OO marks misspelled with class .x-spelling-error-3 or similar
-      // WO marks with spellcheck-error class
-      const misspelled = ed.querySelector('.x-spelling-error, .spellcheck-error');
-      if (!misspelled) return;
-      const r = misspelled.getBoundingClientRect();
-      misspelled.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, clientX: r.left + 5, clientY: r.top + 5, button: 2 }));
-      misspelled.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, clientX: r.left + 5, clientY: r.top + 5, button: 2 }));
-      misspelled.dispatchEvent(new MouseEvent('contextmenu', { bubbles: true, cancelable: true, clientX: r.left + 5, clientY: r.top + 5, button: 2 }));
+      if (!ed) return false;
+      const misspelled = ed.querySelector('span.wo-misspelled, .x-spelling-error, .spellcheck-error');
+      const target = misspelled || ed.querySelector('p');
+      if (!target) return false;
+      const r = target.getBoundingClientRect();
+      const ev = { bubbles: true, cancelable: true, clientX: r.left + 5, clientY: r.top + r.height / 2, button: 2 };
+      target.dispatchEvent(new MouseEvent('mousedown', ev));
+      target.dispatchEvent(new MouseEvent('mouseup', ev));
+      target.dispatchEvent(new MouseEvent('contextmenu', ev));
+      return true;
     });
+    if (!clicked) {
+      await page.evaluate(() => {
+        const ed = document.getElementById('editor') || document.querySelector('[contenteditable]');
+        if (!ed) return;
+        const r = ed.getBoundingClientRect();
+        const ev = { bubbles: true, cancelable: true, clientX: r.left + r.width / 2, clientY: r.top + r.height / 2, button: 2 };
+        ed.dispatchEvent(new MouseEvent('mousedown', ev));
+        ed.dispatchEvent(new MouseEvent('mouseup', ev));
+        ed.dispatchEvent(new MouseEvent('contextmenu', ev));
+      });
+    }
     await sleep(400);
   } else {
     // Default: click in the middle of the editor content area
@@ -431,6 +446,9 @@ async function captureContextMenu(page, scenario) {
           order,
           submenu: hasSubmenu,
           group,
+          // dynamic rows (spell suggestions) are word-dependent; reconcile
+          // skips them like the contract does
+          dynamic: !!(item.closest && item.closest('[data-dynamic]')),
           canonical: null, // will be filled by normalizer
         });
         order++;
@@ -500,12 +518,31 @@ async function seedScenario(page, scenario) {
       ed.appendChild(div);
     });
   } else if (misspelled) {
+    // Enable spellcheck first (off by default), seed misspellings, keep the
+    // caret in a SEPARATE paragraph — runSpellCheck() skips the caret's own
+    // block — then wait out the ~800ms debounce + dictionary fetch.
+    await page.evaluate(() => {
+      const btn = document.getElementById('sb-doc-spell');
+      const pressed = btn && btn.getAttribute('aria-pressed') === 'true';
+      if (btn && !pressed) btn.click();
+    });
     await page.evaluate(() => {
       const ed = document.getElementById('editor') || document.querySelector('[contenteditable]');
       if (!ed) return;
-      // Insert text with intentional misspellings that WO/OO should mark
-      ed.innerHTML = '<p>This is teh sentense witht mispelled wrds.</p>';
+      ed.innerHTML = '<p>This is teh sentense witht mispelled wrds.</p><p>ok</p>';
+      // caret into the clean second paragraph so the first gets marked
+      const p2 = ed.querySelectorAll('p')[1];
+      if (p2) {
+        const rng = document.createRange();
+        rng.selectNodeContents(p2);
+        rng.collapse(false);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(rng);
+        ed.focus();
+      }
     });
+    await sleep(2500);
   } else if (field) {
     await page.evaluate(() => {
       const ed = document.getElementById('editor') || document.querySelector('[contenteditable]');
