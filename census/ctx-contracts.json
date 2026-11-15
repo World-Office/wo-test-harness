@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "source": "OO 9.4.0 source + 2026-11-15 live capture",
+    "baseline": "text/misspelled verified live; table/image approx",
+    "contract_keys": "canonical row keys matching WO data-ctx values or best-effort OO mappings"
+  },
+  "text": [
+    "Cut",
+    "Copy",
+    "Paste",
+    "PrintSelection",
+    "PageBreakBefore",
+    "KeepLines",
+    "ParagraphSettings",
+    "AddComment",
+    "Link",
+    "FormattingAsStyle",
+    "AI"
+  ],
+  "misspelled": [
+    "Ignore",
+    "IgnoreAll",
+    "AddToDictionary",
+    "SelectLanguage",
+    "Cut",
+    "Copy",
+    "Paste",
+    "PrintSelection",
+    "PageBreakBefore",
+    "KeepLines",
+    "ParagraphSettings",
+    "AddComment",
+    "Link",
+    "FormattingAsStyle",
+    "AI"
+  ],
+  "table": {
+    "approx": true,
+    "rows": [
+      "Cut",
+      "Copy",
+      "Paste",
+      "TableCellProperties",
+      "InsertRowAbove",
+      "InsertRowBelow",
+      "InsertColumnLeft",
+      "InsertColumnRight",
+      "DeleteRow",
+      "DeleteColumn",
+      "MergeCells",
+      "SplitCell",
+      "SplitTable",
+      "TableProperties",
+      "ParagraphSettings"
+    ]
+  },
+  "image": {
+    "approx": true,
+    "rows": [
+      "Cut",
+      "Copy",
+      "Paste",
+      "EditAltText",
+      "WrapInline",
+      "WrapSquare",
+      "WrapTight",
+      "WrapBehind",
+      "WrapFront",
+      "WrapThrough",
+      "TopAndBottom",
+      "EditObject",
+      "ConvertToShape",
+      "SizeAndProperties"
+    ]
+  }
+}
