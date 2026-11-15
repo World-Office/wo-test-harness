@@ -224,6 +224,20 @@ const DE_MAP = [
   ['Sprache wählen', 'SelectLanguage'], ['Zum Wörterbuch hinzufügen', 'AddToDictionary'],
   ['Erweiterte Absatzeinstellungen', 'ParagraphSettings'],
   ['Aufheben', 'Undo'],
+  // live OO 9.4 de strings — object contexts (table/image/shape menus):
+  ['Zellen verbinden', 'MergeCells'], ['Zelle teilen', 'SplitCell'],
+  ['Zeilen verteilen', 'DistributeRows'], ['Spalten verteilen', 'DistributeColumns'],
+  ['Beschriftung einfügen', 'InsertCaption'],
+  ['Tabelle - Erweiterte Einstellungen', 'TableProperties'],
+  ['Auswählen', 'Select'], ['Löschen', 'Delete'], ['Textausrichtung', 'TextAlignment'],
+  ['Zuschneiden', 'Crop'], ['Tatsächliche Größe', 'ActualSize'],
+  ['Bild ersetzen', 'ReplaceImage'],
+  ['Erweiterte Einstellungen des Bildes', 'ImageSettings'],
+  ['Als Bild speichern', 'SaveAsImage'], ['Drehen', 'Rotate'],
+  ['Textumbruch', 'TextWrap'], ['Anordnen', 'Arrange'], ['Ausrichten', 'Align'],
+  ['Formen zusammenführen', 'CombineShapes'], ['Punkte bearbeiten', 'EditPoints'],
+  ['Erweiterte Einstellungen der Form', 'ShapeSettings'],
+  ['Größe und Eigenschaften', 'SizeAndProperties'],
 ];
 
 function toCanonical(caption) {
@@ -694,20 +708,14 @@ async function main() {
 async function captureOO(browser) {
   const p = await browser.newPage({ viewport: { width: 1760, height: 950 } });
   console.log(`  Connecting to OO at ${OO_URL} ...`);
-  await p.goto(OO_URL, { waitUntil: 'load', timeout: 90000 });
-  await sleep(5000);
-  const fileEl = await p.$('.file');
-  if (fileEl) await fileEl.click();
-  await sleep(15000);
-  await p.addStyleTag({ content: 'iframe[name="frameEditor"] { width: 1680px !important; height: 950px !important; }' });
-  await sleep(3000);
-  const f = p.frames().find((fr) => fr.name() === 'frameEditor');
-  if (!f) {
+  await openDemoDoc(p);
+  const f = () => p.frames().find((fr) => fr.name() === 'frameEditor');
+  if (!f()) {
     console.log('  OO frameEditor not found - skipping OO capture');
     await p.close();
     return;
   }
-  await f.waitForSelector('.toolbar, #toolbar, .box-tabs', { timeout: 30000 }).catch(() => {});
+  await f().waitForSelector('.toolbar, #toolbar, .box-tabs', { timeout: 30000 }).catch(() => {});
   const out = [];
   console.log('  OO editor frame loaded (frameEditor).');
   const offset = await p.evaluate(() => {
@@ -724,7 +732,11 @@ async function captureOO(browser) {
     [700, 320], [760, 340], [840, 360], [650, 380], [700, 420], [840, 500],
   ];
 
-  for (const scenario of SCENARIOS) {
+  // Seeded object scenarios run LAST: inserting a table/image/shape at doc
+  // start pushes the text down and shifts the SPOTS ladder coordinates.
+  const isSeeded = (s) => s.table || s.image || s.shape;
+  const ordered = [...SCENARIOS].sort((a, b) => (isSeeded(a) ? 1 : 0) - (isSeeded(b) ? 1 : 0));
+  for (const scenario of ordered) {
     if (scenario.id === 'header-footer' || scenario.id === 'toc' ||
         scenario.id === 'field' || scenario.trackedChanges) {
       continue; // skip TODO items
@@ -733,6 +745,15 @@ async function captureOO(browser) {
     try {
       let menuData = { surface: 'none', rows: [] };
       let hit = null;
+      if (isSeeded(scenario)) {
+        console.log('      fresh doc for seeded scenario ...');
+        await openDemoDoc(p);
+        await seedOOObject(p, scenario);
+        await p.keyboard.press('Shift+F10');
+        await sleep(1000);
+        const md = await extractOOContextMenu(p.frames().find((fr) => fr.name() === 'frameEditor'));
+        if (md.rows.length > 0) { menuData = md; hit = ['shift-f10', 'seeded']; }
+      } else {
       for (const [fx, fy] of SPOTS) {
         await p.keyboard.press('Escape').catch(() => {});
         await sleep(200);
@@ -744,9 +765,10 @@ async function captureOO(browser) {
         }
         await p.mouse.click(offset.x + fx, offset.y + fy, { button: 'right' });
         await sleep(550);
-        const md = await extractOOContextMenu(f);
+        const md = await extractOOContextMenu(f());
         if (md.rows.length > 0) { menuData = md; hit = [fx, fy]; break; }
       }
+      } // end SPOTS ladder
       if (hit) console.log(`      menu at (${hit[0]},${hit[1]}): ${menuData.rows.length} rows`);
       else console.log('      no ctx menu opened at any spot');
 
@@ -777,6 +799,123 @@ async function captureOO(browser) {
   return out;
 }
 
+// ---- Open a fresh demo doc (unique key per open — openKey) -----------------
+// Full recipe: goto demo → click the file card → wait for the editor →
+// widen frameEditor to 1680x950 → settle. Used at startup and REUSED before
+// each seeded object scenario: after the right-click scenarios OO is left in
+// a state where ribbon dropdowns stop opening; a fresh open (fresh doc key)
+// resets everything and gives each seed a pristine doc.
+async function openDemoDoc(p) {
+  await p.goto(OO_URL, { waitUntil: 'load', timeout: 90000 });
+  await sleep(5000);
+  const fileEl = await p.$('.file');
+  if (fileEl) await fileEl.click();
+  await sleep(15000);
+  await p.addStyleTag({ content: 'iframe[name="frameEditor"] { width: 1680px !important; height: 950px !important; }' });
+  await sleep(12000);
+  const f = p.frames().find((fr) => fr.name() === 'frameEditor');
+  if (f) await f.waitForSelector('.toolbar, #toolbar, .box-tabs', { timeout: 30000 }).catch(() => {});
+  return f;
+}
+
+// ---- Seed object scenarios (table/image/shape) in the live OO demo -------
+// Recipes verified live against the OO 9.4 demo (Bericht.docx):
+//   table: Insert ribbon → table button → dimension-picker canvas (10x8 grid,
+//          hover cell (3,3), label must read "3 x 3") → click inserts 3x3.
+//   image: Insert ribbon → image button main part → "Bild aus Datei" →
+//          filechooser → setFiles → inline image stays SELECTED.
+//   shape: Insert ribbon → shape button main part → first .item-shape tile →
+//          DRAG on canvas (Word-style draw mode) to draw the shape.
+// After seeding, the object/caret is selected → Shift+F10 opens its ctx menu.
+// NOTE: no canvas caret click before ribbon interaction — a prior doc click
+// makes the ribbon dropdown dead (focus theft).
+async function seedOOObject(p, scenario) {
+  const F = () => p.frames().find((fr) => fr.name() === 'frameEditor');
+  const R = () => p.evaluate(() => {
+    const r = document.querySelector('iframe[name="frameEditor"]').getBoundingClientRect();
+    return { x: r.x, y: r.y };
+  });
+  await F().evaluate(() => document.getElementById('ins').click());
+  await sleep(900);
+  const btnSel = scenario.table ? '.btn-inserttable'
+    : scenario.image ? '.btn-insertimage' : '.btn-insertshape';
+  const btn = await F().evaluate((sel) => {
+    const b = document.querySelector(sel) && document.querySelector(sel).closest('button');
+    if (!b) return null;
+    const r = b.getBoundingClientRect();
+    return { cx: Math.round(r.x + r.width / 2), cy: Math.round(r.y + r.height / 2), w: Math.round(r.width) };
+  }, btnSel);
+  if (!btn) throw new Error('ribbon button not found: ' + btnSel);
+  // table button is a single button (click center); image/shape are split
+  // buttons — click the left (main) part to avoid the split arrow.
+  let off = await R();
+  await p.mouse.click(off.x + (scenario.table ? btn.cx : btn.cx - btn.w * 0.25), off.y + btn.cy);
+  await sleep(1200);
+  if (scenario.table) {
+    const picker = await F().evaluate(() => {
+      const dd = [...document.querySelectorAll('.dropdown-menu')]
+        .filter((e) => e.getBoundingClientRect().height > 25 && getComputedStyle(e).display !== 'none')[0];
+      const cv = dd && dd.querySelector('canvas');
+      if (!cv) return null;
+      const r = cv.getBoundingClientRect();
+      return { x: r.x, y: r.y, w: r.width, h: r.height };
+    });
+    if (!picker) throw new Error('table dimension picker not found');
+    off = await R();
+    const px = off.x + picker.x + 2.5 * (picker.w / 10);
+    const py = off.y + picker.y + 2.5 * (picker.h / 8);
+    await p.mouse.move(px, py);
+    await sleep(400);
+    const lbl = await F().evaluate(() => {
+      const dd = [...document.querySelectorAll('.dropdown-menu')]
+        .filter((e) => e.getBoundingClientRect().height > 25 && getComputedStyle(e).display !== 'none')[0];
+      const label = dd && [...dd.querySelectorAll('*')]
+        .find((e) => e.children.length === 0 && /\d+ ?x ?\d+/.test(e.textContent));
+      return label ? label.textContent.trim() : null;
+    });
+    if (!/3\s*x\s*3/i.test(lbl || '')) throw new Error('picker label not 3x3: ' + lbl);
+    await p.mouse.click(px, py);
+    await sleep(2500);
+  } else if (scenario.image) {
+    const item = await F().evaluate(() => {
+      const dd = [...document.querySelectorAll('.dropdown-menu')]
+        .filter((e) => e.getBoundingClientRect().height > 25 && getComputedStyle(e).display !== 'none')[0];
+      const li = dd && [...dd.querySelectorAll('li')]
+        .find((l) => /Datei/i.test(l.textContent) && l.getBoundingClientRect().height > 5);
+      if (!li) return null;
+      const r = li.getBoundingClientRect();
+      return { x: Math.round(r.x + r.width / 2), y: Math.round(r.y + r.height / 2) };
+    });
+    if (!item) throw new Error('"Bild aus Datei" menu item not found');
+    const fcDone = p.waitForEvent('filechooser', { timeout: 8000 })
+      .then((fc) => fc.setFiles(path.join(__dirname, 'census', 'chrome-oo.png')));
+    off = await R();
+    await p.mouse.click(off.x + item.x, off.y + item.y);
+    await fcDone;
+    await sleep(3500);
+  } else {
+    const tile = await F().evaluate(() => {
+      const dds = [...document.querySelectorAll('.dropdown-menu')]
+        .filter((e) => e.getBoundingClientRect().height > 25 && getComputedStyle(e).display !== 'none');
+      const dd = dds[dds.length - 1];
+      const t = dd && [...dd.querySelectorAll('.item-shape')].filter((e) => e.querySelector('svg'))[0];
+      if (!t) return null;
+      const r = t.getBoundingClientRect();
+      return { x: Math.round(r.x + r.width / 2), y: Math.round(r.y + r.height / 2) };
+    });
+    if (!tile) throw new Error('shape tile not found');
+    off = await R();
+    await p.mouse.click(off.x + tile.x, off.y + tile.y);
+    await sleep(800);
+    off = await R();
+    await p.mouse.move(off.x + 500, off.y + 400);
+    await p.mouse.down();
+    await p.mouse.move(off.x + 800, off.y + 620, { steps: 10 });
+    await p.mouse.up();
+    await sleep(2500);
+  }
+}
+
 // ---- Extract OO context menu -----------------------------------------------
 async function extractOOContextMenu(frame) {
   // OO 9.x renders its context menu as a bare <ul> (no stable class) appended
@@ -785,18 +924,21 @@ async function extractOOContextMenu(frame) {
   const result = await frame.evaluate(() => {
     const result = { surface: 'none', rows: [] };
     let best = null;
-    // OO appends its context menu directly to <body>; the ribbon tab bar is
-    // also an 11-li <ul>, so prefer body-appended uls to avoid grabbing it.
-    const all = [...document.querySelectorAll('ul')];
-    const bodyUls = all.filter((u) => u.parentElement === document.body);
-    for (const ul of bodyUls.length ? bodyUls : all) {
+    // The ctx menu renders as ul.dropdown-menu inside a body-level
+    // menu-container div (OO 9.4 live). Exclude the ribbon tab bar
+    // (ul[role=tablist]); prefer dropdown-menu class; pick most visible li.
+    const all = [...document.querySelectorAll('ul')].filter(
+      (u) => !u.closest('[role=tablist], .nav-tabs, .box-tabs'));
+    for (const ul of all) {
       const s = getComputedStyle(ul);
       if (s.display === 'none' || s.visibility === 'hidden') continue;
       const r = ul.getBoundingClientRect();
       if (r.width < 80 || r.height < 40) continue;
       const lis = [...ul.querySelectorAll(':scope > li')].filter(
         (li) => li.getBoundingClientRect().height > 5 && getComputedStyle(li).display !== 'none');
-      if (lis.length >= 3 && (!best || lis.length > best.lis.length)) best = { ul, lis };
+      const isDd = /dropdown-menu/.test(String(ul.className));
+      if (lis.length >= 3 && (!best || (isDd && !best.isDd) || (isDd === best.isDd && lis.length > best.lis.length)))
+        best = { ul, lis, isDd };
     }
     if (!best) return result;
     result.surface = 'oo-ctx-ul';

@@ -145,3 +145,33 @@ in `wo-website/demo/docker-compose.yml` (currently `:latest` — silently drifte
 | 4 | Behavior contracts | Per-scenario contract files + WO gating update | Medium |
 | 5 | Chrome probe | `chrome-surface.cjs` (focus/hover/outline/tooltip diff) | Small |
 | 6 | Pin OO 9.4.0 | compose `:latest` → `:9.4.0` | 1 line |
+
+## Task (a) complete — seeded OO rig for table/image/shape ctx menus (2026-05-30)
+
+Live OO 9.4 demo now yields ALL 7 ctx scenarios (text 11 / selection 15 /
+multi-selection 15 / misspelled 15 / **table 19 / image 17 / shape 15**).
+
+Prereq fixes (wo-website demo, `6370ec0`): unique doc key per open
+(`openKey`) + preset guest `editorConfig.user` — the collab-name modal
+prompted on EVERY edit otherwise and its input cannot be automated.
+
+Verified recipes (in `seedOOObject`, ctx-scenarios.cjs):
+- table: Insert → table btn → dimension-picker CANVAS (10x8), hover cell
+  (3,3) until label reads "3 x 3" → click inserts. Caret lands in cell.
+- image: Insert → image btn MAIN part → "Bild aus Datei" → filechooser →
+  setFiles(census/chrome-oo.png). Image stays selected.
+- shape: Insert → shape btn MAIN part → first .item-shape tile → DRAG on
+  canvas (draw mode, single click inserts nothing).
+- capture: Shift+F10 opens the ctx menu AT THE SELECTION — no coordinate
+  hunt. Each seeded scenario re-opens a FRESH doc (right-click scenarios
+  poison ribbon-dropdown state).
+- menu DOM: ul.dropdown-menu inside body-level menu-container-asc-gen*;
+  extractor now prefers dropdown-menu class and excludes [role=tablist].
+
+Key engine-diff results (reconcile): WO table ctx lacks MergeCells,
+SplitCell, TableProperties, InsertRow*/Column* (11 rows vs OO 19); WO image
+ctx has granular wrap entries while OO uses one "Textumbruch" submenu
+(single-menu-model divergence, contract approx).
+
+Carry-over: 7 ledger dialog L4 tests fail on WO title drift ("Insert
+bookmark"→"Bookmark" etc.) — pre-existing, unrelated to ctx.

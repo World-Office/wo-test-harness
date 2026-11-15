@@ -2,8 +2,8 @@
  "version": 1,
  "probe": "bookmark-dialog-l4",
  "feature": "dialog.bookmark-dialog.l4",
- "generated": "2026-11-10T19:53:38.074Z",
- "ok": true,
+ "generated": "2026-11-15T21:57:32.078Z",
+ "ok": false,
  "checks": [
   {
    "name": "open via real clicks (References tab + #btn-bookmark)",
@@ -12,8 +12,8 @@
   },
   {
    "name": "title \"Insert bookmark\"",
-   "ok": true,
-   "detail": "\"Insert bookmark\""
+   "ok": false,
+   "detail": "\"Bookmark\""
   },
   {
    "name": "field Name: label + text input (placeholder \"e.g. Section1\")",
