@@ -83,7 +83,7 @@ function main() {
         return 1;
       }
     }
-    const fixture = [{ engine: 'wo', scenario: 'text', rows: FIXTURE.text }]
+    const fixture = [{ engine: 'worldoffice', scenario: 'text', visible: FIXTURE.text }]
     const results = fixture.map((r) => r.scenario).map((s) => reconcile(contracts, fixture, s));
     console.log('RECONCILE-OK');
     return 0;
@@ -113,6 +113,30 @@ function main() {
   console.log(
     `reconcile: ${summary.scenarios} scenarios, ${summary.ok} clean, ${summary.missing} missing rows, ${summary.extra} extra rows`,
   );
+
+  // Live engine diff: worldoffice vs onlyoffice rows per shared scenario.
+  // Note: the OO demo doc is fixed (Bericht.docx) — scenarios that need
+  // seeded content (table/image/shape) see whatever lives at the probe spot,
+  // so diffs there are rig limits, not necessarily product gaps.
+  const wo = {};
+  const oo = {};
+  for (const r of capture) (r.engine === 'worldoffice' ? wo : oo)[r.scenario] = r;
+  const shared = [...new Set([...Object.keys(wo), ...Object.keys(oo)])].sort();
+  if (shared.length) {
+    console.log('engine diff (worldoffice vs onlyoffice, live capture):');
+    for (const s of shared) {
+      const w = (wo[s] ? wo[s].visible || [] : []).map((r) => r.canonical).filter(Boolean);
+      const o = (oo[s] ? oo[s].visible || [] : []).map((r) => r.canonical).filter(Boolean);
+      const inW = w.filter((k) => !o.includes(k));
+      const inO = o.filter((k) => !w.includes(k));
+      const verdict = !wo[s] ? 'no-wo' : !oo[s] ? 'no-oo' : (w.length === o.length && inW.length === 0 && inO.length === 0) ? 'IDENTICAL' : 'differs';
+      console.log(`  ${s}: ${verdict} (wo=${w.length} oo=${o.length})`);
+      if (verdict === 'differs') {
+        if (inW.length) console.log(`    only-wo: ${inW.join(', ')}`);
+        if (inO.length) console.log(`    only-oo: ${inO.join(', ')}`);
+      }
+    }
+  }
   return 0;
 }
 

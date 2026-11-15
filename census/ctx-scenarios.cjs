@@ -48,7 +48,7 @@ const { chromium } = require('playwright');
 
 const HERE = __dirname;
 const WO_URL = process.env.WO_URL || 'http://192.168.42.42:8082/word/';
-const OO_URL = process.env.OO_URL || 'http://127.0.0.1:8735/rig-editor.html';
+const OO_URL = process.env.OO_URL || 'https://world-office.graphwiz.ai/demo';
 const OUT_DIR = process.env.CTX_OUT || __dirname;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -208,8 +208,29 @@ const OO_MENU_ORDERS = {
 };
 
 // Normalize a live caption to a canonical key (best-effort)
+// German → canonical (live OO demo runs lang=de; captions arrive German).
+// Prefix match: li text concatenates nested submenu labels
+// ("Formatierung als FormatvorlageNe…"), so startsWith is the right test.
+const DE_MAP = [
+  ['Ausschneiden', 'Cut'], ['Kopieren', 'Copy'], ['Einfügen', 'Paste'],
+  ['Auswahl drucken', 'PrintSelection'], ['Seitenumbruch oberhalb', 'PageBreakBefore'],
+  ['Absatz zusammenhalten', 'KeepLines'], ['Absatz - Erweiterte Einstellungen', 'ParagraphSettings'],
+  ['Kommentar hinzufügen', 'AddComment'], ['Link', 'Link'],
+  ['Formatierung als Formatvorlage', 'FormattingAsStyle'], ['AI', 'AI'],
+  ['Rückgängig', 'Undo'], ['Wiederholen', 'Redo'], ['Alle auswählen', 'SelectAll'],
+  // live OO 9.4 de strings (observed on Bericht.docx):
+  ['Auslassen', 'Ignore'], ['Alle auslassen', 'IgnoreAll'],
+  ['Sprache wählen', 'SelectLanguage'], ['Zum Wörterbuch hinzufügen', 'AddToDictionary'],
+  ['Erweiterte Absatzeinstellungen', 'ParagraphSettings'],
+  ['Aufheben', 'Undo'],
+];
+
 function toCanonical(caption) {
   const normalized = String(caption || '').trim().replace(/\s+/g, ' ');
+  // German live captions first (longest prefix wins: 'Alle ignorieren' > 'Ignorieren')
+  for (const [de, key] of [...DE_MAP].sort((a, b) => b[0].length - a[0].length)) {
+    if (normalized.startsWith(de)) return key;
+  }
   // Direct lookup in MAP keys
   for (const [display, [key]] of Object.entries(CAPTION_MAP)) {
     if (display.toLowerCase() === normalized.toLowerCase()) return key;
@@ -560,7 +581,8 @@ async function main() {
   try {
     browser = await chromium.launch({ args: ['--no-sandbox'] });
     
-    // Capture WO
+    // Capture WO (skip with OO_ONLY=1 to re-run just the OO side)
+    if (!process.env.OO_ONLY) {
     const woPage = await browser.newPage({ viewport: { width: 1600, height: 1000 } });
     console.log(`  Connecting to WO at ${WO_URL} ...`);
     await woPage.goto(WO_URL, { waitUntil: 'domcontentloaded', timeout: 30000 });
@@ -599,197 +621,165 @@ async function main() {
       });
       await sleep(200);
     }
-    
-    // Capture OO (skipped if OO_URL not reachable)
+    } // end !OO_ONLY
+
+    // Capture OO via the live demo (real right-click; synthetic events won't
+    // open OO's native menu).
     try {
-      const ooPage = await browser.newPage({ viewport: { width: 1600, height: 1000 } });
-      console.log(`  Connecting to OO at ${OO_URL} ...`);
-      await ooPage.goto(OO_URL, { waitUntil: 'domcontentloaded', timeout: 40000 });
-      
-      // Find the OO editor frame
-      let ooFrame = null;
-      for (let i = 0; i < 40 && !ooFrame; i++) {
-        await sleep(1000);
-        ooFrame = await ooPage.frame({ url: (u) => u.includes('/web-apps/') || u.includes('documenteditor') });
-      }
-      
-      if (ooFrame) {
-        await ooFrame.waitForSelector('#toolbar .panel.active', { timeout: 30000 });
-        console.log(`  OO editor frame loaded.`);
-        
-        for (const scenario of SCENARIOS) {
-          if (scenario.id === 'header-footer' || scenario.id === 'toc' || 
-              scenario.id === 'field' || scenario.trackedChanges) {
-            continue; // skip TODO items
-          }
-          
-          console.log(`    OO scenario: ${scenario.id} ...`);
-          
-          // Seed and right-click via OO frame
-          await seedScenarioOO(ooFrame, scenario);
-          await sleep(300);
-          
-          // Extract OO context menu
-          const menuData = await extractOOContextMenu(ooFrame, scenario);
-          const visibleRows = [];
-          for (const row of menuData.rows) {
-            const canonical = toCanonical(row.caption);
-            visibleRows.push({ ...row, canonical });
-          }
-          
-          const data = {
-            scenario: scenario.id,
-            label: scenario.label,
-            engine: 'onlyoffice',
-            surface: menuData.surface,
-            visible: visibleRows,
-            hidden: [],
-            capturedAt: new Date().toISOString(),
-            viewport: { width: 1600, height: 1000 },
-          };
-          results.scenarios.push(data);
-          
-          // Close ctx menu
-          await ooFrame.evaluate(() => {
-            document.querySelectorAll('.menu, [role=menu]').forEach(m => {
-              const s = getComputedStyle(m);
-              if (s.display !== 'none') m.style.display = 'none';
-            });
-            document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
-          });
-          await sleep(200);
-        }
-      } else {
-        console.log(`  OO editor frame not found within timeout - skipping OO capture`);
-      }
+      const ooResults = await captureOO(browser);
+      results.scenarios.push(...ooResults);
     } catch (ooErr) {
       console.log(`  OO capture skipped: ${ooErr.message}`);
     }
-    
-    // Write consolidated output
+
+    // Write consolidated output (OO_ONLY merges into the existing file,
+    // replacing only the onlyoffice entries)
     const outPath = path.join(OUT_DIR, 'ctx-scenarios.json');
+    let scenarios = results.scenarios;
+    if (process.env.OO_ONLY && fs.existsSync(outPath)) {
+      const prev = JSON.parse(fs.readFileSync(outPath, 'utf8'));
+      scenarios = [...prev.scenarios.filter((s) => s.engine !== 'onlyoffice'), ...scenarios];
+    }
+    const payload = { scenarios, capturedAt: new Date().toISOString() };
     fs.mkdirSync(path.dirname(outPath), { recursive: true });
-    fs.writeFileSync(outPath, JSON.stringify(results, null, 2));
+    fs.writeFileSync(outPath, JSON.stringify(payload, null, 2));
     console.log(`  Output written to ${outPath}`);
-    console.log(`  Total scenarios captured: ${results.scenarios.length}`);
+    console.log(`  Total scenarios captured: ${scenarios.length}`);
   } finally {
     if (browser) await browser.close();
   }
 }
-
-// ---- OO-specific seed -------------------------------------------------------
-async function seedScenarioOO(frame, scenario) {
-  const { id, seed, table, image, shape, misspelled } = scenario;
-  
-  if (table) {
-    await frame.evaluate(() => {
-      const ed = document.getElementById('id_viewer') || document.getElementById('editor');
-      if (!ed) return;
-      // Use OO command to insert table
-      if (window.Asc && window.Asc.editor) {
-        window.Asc.editor.flush();
-        window.Asc.editor.executeMethod('InsertTable', [2, 2, '1', '1']);
-      }
-    });
-    await sleep(600);
-  } else if (image) {
-    // OO doesn't support inserting images via JS easily without UI
-    // For now, skip
-  } else if (shape) {
-    // OO shape insertion via Asc editor
-    await frame.evaluate(() => {
-      if (window.Asc && window.Asc.editor) {
-        window.Asc.editor.flush();
-        window.Asc.editor.executeMethod('InsertShape', ['rectangle', 100, 60]);
-      }
-    });
-    await sleep(600);
-  } else if (misspelled) {
-    await frame.evaluate(() => {
-      const ed = document.getElementById('id_viewer') || document.getElementById('editor');
-      if (!ed) return;
-      // Insert text with misspellings
-      const doc = window.Asc && window.Asc.editor && window.Asc.editor.getDocument();
-      if (doc) {
-        doc.insertText('teh mispelled wrd', true);
-      }
-    });
-    await sleep(300);
-  } else {
-    await frame.evaluate((seedText) => {
-      const ed = document.getElementById('id_viewer') || document.getElementById('editor');
-      if (!ed) return;
-      const doc = window.Asc && window.Asc.editor && window.Asc.editor.getDocument();
-      if (doc) {
-        doc.insertText(seedText || '', true);
-      }
-    }, seed || '');
-    await sleep(300);
+// The only reliable way to open OO's context menu is a REAL right-click at a
+// document-area coordinate: synthetic contextmenu events are ignored.
+// Recipe (from chrome-census2.cjs): open the demo, click Bericht.docx, wait
+// ~15s, widen iframe[name=frameEditor] to 1680x950, wait 3s, find the frame
+// by name, then right-click at frame-local coords + the iframe page offset.
+async function captureOO(browser) {
+  const p = await browser.newPage({ viewport: { width: 1760, height: 950 } });
+  console.log(`  Connecting to OO at ${OO_URL} ...`);
+  await p.goto(OO_URL, { waitUntil: 'load', timeout: 90000 });
+  await sleep(5000);
+  const fileEl = await p.$('.file');
+  if (fileEl) await fileEl.click();
+  await sleep(15000);
+  await p.addStyleTag({ content: 'iframe[name="frameEditor"] { width: 1680px !important; height: 950px !important; }' });
+  await sleep(3000);
+  const f = p.frames().find((fr) => fr.name() === 'frameEditor');
+  if (!f) {
+    console.log('  OO frameEditor not found - skipping OO capture');
+    await p.close();
+    return;
   }
+  await f.waitForSelector('.toolbar, #toolbar, .box-tabs', { timeout: 30000 }).catch(() => {});
+  const out = [];
+  console.log('  OO editor frame loaded (frameEditor).');
+  const offset = await p.evaluate(() => {
+    const iframe = document.querySelector('iframe[name="frameEditor"]');
+    if (!iframe) return { x: 0, y: 0 };
+    const r = iframe.getBoundingClientRect();
+    return { x: Math.round(r.x), y: Math.round(r.y) };
+  });
+
+  // Right-click spots (frame-local). OO opens the text ctx menu only on
+  // content — verified working spots for Bericht.docx; the ladder falls
+  // through until a menu actually appears.
+  const SPOTS = [
+    [700, 320], [760, 340], [840, 360], [650, 380], [700, 420], [840, 500],
+  ];
+
+  for (const scenario of SCENARIOS) {
+    if (scenario.id === 'header-footer' || scenario.id === 'toc' ||
+        scenario.id === 'field' || scenario.trackedChanges) {
+      continue; // skip TODO items
+    }
+    console.log(`    OO scenario: ${scenario.id} ...`);
+    try {
+      let menuData = { surface: 'none', rows: [] };
+      let hit = null;
+      for (const [fx, fy] of SPOTS) {
+        await p.keyboard.press('Escape').catch(() => {});
+        await sleep(200);
+        if (scenario.selection || scenario['multi-selection']) {
+          // double-click selects the word under the cursor, then right-click
+          // the selection
+          await p.mouse.dblclick(offset.x + fx, offset.y + fy, { delay: 80 });
+          await sleep(250);
+        }
+        await p.mouse.click(offset.x + fx, offset.y + fy, { button: 'right' });
+        await sleep(550);
+        const md = await extractOOContextMenu(f);
+        if (md.rows.length > 0) { menuData = md; hit = [fx, fy]; break; }
+      }
+      if (hit) console.log(`      menu at (${hit[0]},${hit[1]}): ${menuData.rows.length} rows`);
+      else console.log('      no ctx menu opened at any spot');
+
+      const visibleRows = [];
+      for (const row of menuData.rows) {
+        const canonical = toCanonical(row.caption);
+        visibleRows.push({ ...row, canonical });
+      }
+      const data = {
+        scenario: scenario.id,
+        label: scenario.label,
+        engine: 'onlyoffice',
+        surface: menuData.surface,
+        visible: visibleRows,
+        hidden: [],
+        capturedAt: new Date().toISOString(),
+        viewport: { width: 1760, height: 950 },
+      };
+      out.push(data);
+
+      await p.keyboard.press('Escape').catch(() => {});
+      await sleep(200);
+    } catch (sErr) {
+      console.log(`    OO scenario ${scenario.id} failed: ${sErr.message}`);
+    }
+  }
+  await p.close();
+  return out;
 }
 
 // ---- Extract OO context menu -----------------------------------------------
-async function extractOOContextMenu(frame, scenario) {
+async function extractOOContextMenu(frame) {
+  // OO 9.x renders its context menu as a bare <ul> (no stable class) appended
+  // to body. Find the visible <ul> with the most visible <li>s — that is the
+  // context menu — and read each li's own text (skip nested submenu labels).
   const result = await frame.evaluate(() => {
     const result = { surface: 'none', rows: [] };
-    
-    // Find visible context menu in OO
-    let menu = null;
-    const candidates = document.querySelectorAll('.menu, .menu-list, [role=menu]');
-    for (const c of candidates) {
-      const s = getComputedStyle(c);
+    let best = null;
+    // OO appends its context menu directly to <body>; the ribbon tab bar is
+    // also an 11-li <ul>, so prefer body-appended uls to avoid grabbing it.
+    const all = [...document.querySelectorAll('ul')];
+    const bodyUls = all.filter((u) => u.parentElement === document.body);
+    for (const ul of bodyUls.length ? bodyUls : all) {
+      const s = getComputedStyle(ul);
       if (s.display === 'none' || s.visibility === 'hidden') continue;
-      const r = c.getBoundingClientRect();
-      if (r.width === 0 || r.height === 0) continue;
-      menu = c;
-      break;
+      const r = ul.getBoundingClientRect();
+      if (r.width < 80 || r.height < 40) continue;
+      const lis = [...ul.querySelectorAll(':scope > li')].filter(
+        (li) => li.getBoundingClientRect().height > 5 && getComputedStyle(li).display !== 'none');
+      if (lis.length >= 3 && (!best || lis.length > best.lis.length)) best = { ul, lis };
     }
-    
-    if (!menu) return result;
-    
-    result.surface = menu.className || 'menu';
-    
-    const items = menu.querySelectorAll('li, .item, [role=menuitem], .menu-item');
-    const seen = new Set();
+    if (!best) return result;
+    result.surface = 'oo-ctx-ul';
     let order = 0;
-    
-    for (const item of items) {
-      const s = getComputedStyle(item);
-      if (s.display === 'none' || s.visibility === 'hidden') continue;
-      const r = item.getBoundingClientRect();
-      if (r.width === 0 || r.height === 0) continue;
-      
-      const captionEl = item.querySelector('.text, .caption, .title, .label') || item;
-      const caption = (captionEl.textContent || captionEl.getAttribute('title') || '').trim().split('\n')[0].slice(0, 60);
-      
-      if (!caption || seen.has(caption)) continue;
-      seen.add(caption);
-      
-      const isSeparator = !caption || /^[-—\/]+$/.test(caption) || item.classList.contains('separator');
-      const isDisabled = item.classList.contains('disabled') || item.getAttribute('aria-disabled') === 'true' || item.disabled;
-      const isChecked = item.classList.contains('checked') || item.getAttribute('aria-checked') === 'true';
-      const hasSubmenu = item.querySelector('.submenu, .menu-list, .menu, [role=menu]') !== null ||
-        item.getAttribute('aria-haspopup') === 'true';
-      
-      const parentGroup = item.closest('[role=menu], .menu-list, .menu');
-      const groupHeader = parentGroup ? parentGroup.querySelector('.group-header, .group-title, .header') : null;
-      const group = groupHeader ? (groupHeader.textContent || '').trim().slice(0, 30) : null;
-      
-      if (!isSeparator && caption) {
-        result.rows.push({
-          caption,
-          state: isDisabled ? 'disabled' : isChecked ? 'checked' : 'visible',
-          order,
-          submenu: hasSubmenu,
-          group,
-        });
-        order++;
-      }
+    for (const li of best.lis) {
+      const clone = li.cloneNode(true);
+      clone.querySelectorAll('ul, .submenu, .menu').forEach((n) => n.remove());
+      const caption = (clone.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60);
+      const isSeparator = !caption || li.classList.contains('separator') || li.hasAttribute('data-separator');
+      if (isSeparator) continue;
+      result.rows.push({
+        caption,
+        state: li.classList.contains('disabled') || li.getAttribute('aria-disabled') === 'true' ? 'disabled' : 'visible',
+        order: order++,
+        submenu: li.querySelector('ul, .submenu') !== null,
+        group: null,
+      });
     }
-    
     return result;
   });
-  
   return result;
 }
 
