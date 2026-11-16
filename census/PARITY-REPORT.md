@@ -13,6 +13,18 @@
 
 ---
 
+## Declared WO-only home extras (2026-11-16, live de-DE diff)
+
+Live home-tab walk (WO local editor vs OO 9.4 public demo, both de-DE, label-normalized): WO 23 vs OO 15 controls. Three extras are deliberate WO value-adds (kept by decision 2026-11-16) — OO exposes the same features differently:
+
+| # | WO extra | OO 9.4 home | Note |
+|---|---|---|---|
+| 1 | Style preset buttons (Standardtext, Titel, Untertitel, Überschrift 1–3) | styles in dropdown/gallery | WO = one-click presets |
+| 2 | Formatvorlagen select | styles gallery | pairs with #1 |
+| 3 | Paragraph shading picker (Absatzschattierung) | no home counterpart | shading exists in OO only via dialog |
+
+These are declared divergences, not parity debt. Cosmetic label wording diffs (WO "Schriftgröße erhöhen" vs OO "Schriftart vergrößern" etc.) left as-is. Related: 4 hardcoded English aria-labels fixed in server `1cc342147`.
+
 ## Executive Summary (post-CHROME-G, L4=33)
 
 World-Office (WO) has achieved **functional parity** with OnlyOffice (OO) across all major editor features, with **measurable improvements** in performance, developer experience, and test infrastructure. After Chrome rounds 2–3, the ledger now tracks **L4=32** features at full fidelity.
