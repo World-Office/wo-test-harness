@@ -62,6 +62,133 @@ function dedupeTabText(t) {
     });
   }
 
+  // Contextual tabs: activate and capture Header & Footer
+  try {
+    // Go to Insert tab and try to insert a header/footer
+    await page.click('[role=tab]:has-text("Insert")', { timeout: 5000 });
+    await sleep(500);
+    // Try different selectors for header/footer insertion
+    const hfSelectors = [
+      'button[title*="Header" i]',
+      'button[aria-label*="Header" i]',
+      '[role=menuitem][aria-label*="Header" i]',
+      '[role=menuitem]:has-text("Header")',
+      '[role=menuitem]:has-text("Header &")',
+      'button:text("Header")',
+    ];
+    let hfLabel = null;
+    for (const sel of hfSelectors) {
+      try {
+        const btn = await page.$(sel);
+        if (btn) {
+          await btn.click({ timeout: 3000 });
+          await sleep(1500);
+          // Click in the document body to potentially activate the tab
+          await page.mouse.click(400, 300);
+          await sleep(1000);
+          // Re-scan tabs
+          const tabElsAfter = await page.$$('[role=tab]');
+          const tabsAfter = [];
+          for (const el of tabElsAfter) {
+            const vis = await el.evaluate((e) => e.offsetParent !== null);
+            if (vis) {
+              const label = await el.evaluate((e) => (e.textContent || '').trim());
+              tabsAfter.push(dedupeTabText(label));
+            }
+          }
+          hfLabel = tabsAfter.find(t => /header.*footer|footer.*header/i.test(t));
+          if (hfLabel) break;
+        }
+      } catch {}
+    }
+    if (hfLabel) {
+      await page.click(`[role=tab]:has-text("${hfLabel}")`, { timeout: 5000 });
+      await sleep(700);
+      perTab[hfLabel] = await page.evaluate(() => {
+        const btns = [...document.querySelectorAll('button, [role=menuitem], select')]
+          .filter((e) => e.offsetParent !== null)
+          .map((e) => ({
+            label: (e.getAttribute('aria-label') || e.title || e.textContent || '').trim().slice(0, 60),
+            disabled: e.disabled === true || e.getAttribute('aria-disabled') === 'true',
+            kind: e.tagName === 'SELECT' ? 'select' : 'button',
+          }))
+          .filter((b) => b.label && !/^(Back|Save|Download As|Print|Protect|Info|Advanced Settings|Help|Suggest a Feature)$/i.test(b.label));
+        return btns;
+      });
+      console.log(`  Activated contextual tab: ${hfLabel} - ${perTab[hfLabel].length} controls`);
+    } else {
+      console.log(`  Warning: Header & Footer tab not found after activation attempt`);
+    }
+  } catch (e) {
+    console.log(`  Warning: Could not activate Header & Footer tab: ${e.message}`);
+  }
+
+  // Contextual tabs: activate and capture Chart Design
+  try {
+    // Go to Insert tab and try to insert a chart
+    await page.click('[role=tab]:has-text("Insert")', { timeout: 5000 });
+    await sleep(500);
+    // Try different selectors for chart insertion
+    const chartSelectors = [
+      'button[title*="Chart" i]',
+      'button[aria-label*="Chart" i]',
+      '[role=menuitem][aria-label*="Chart" i]',
+      '[role=menuitem]:has-text("Chart")',
+      'button:text("Chart")',
+    ];
+    let cdLabel = null;
+    for (const sel of chartSelectors) {
+      try {
+        const btn = await page.$(sel);
+        if (btn) {
+          await btn.click({ timeout: 3000 });
+          await sleep(2000);
+          // Re-scan tabs to find Chart Design
+          const tabElsAfter = await page.$$('[role=tab]');
+          const tabsAfter = [];
+          for (const el of tabElsAfter) {
+            const vis = await el.evaluate((e) => e.offsetParent !== null);
+            if (vis) {
+              const label = await el.evaluate((e) => (e.textContent || '').trim());
+              tabsAfter.push(dedupeTabText(label));
+            }
+          }
+          cdLabel = tabsAfter.find(t => /chart.*design|design.*chart/i.test(t));
+          if (cdLabel) break;
+        }
+      } catch {}
+    }
+    if (cdLabel) {
+      await page.click(`[role=tab]:has-text("${cdLabel}")`, { timeout: 5000 });
+      await sleep(700);
+      perTab[cdLabel] = await page.evaluate(() => {
+        const btns = [...document.querySelectorAll('button, [role=menuitem], select')]
+          .filter((e) => e.offsetParent !== null)
+          .map((e) => ({
+            label: (e.getAttribute('aria-label') || e.title || e.textContent || '').trim().slice(0, 60),
+            disabled: e.disabled === true || e.getAttribute('aria-disabled') === 'true',
+            kind: e.tagName === 'SELECT' ? 'select' : 'button',
+          }))
+          .filter((b) => b.label && !/^(Back|Save|Download As|Print|Protect|Info|Advanced Settings|Help|Suggest a Feature)$/i.test(b.label));
+        return btns;
+      });
+      console.log(`  Activated contextual tab: ${cdLabel} - ${perTab[cdLabel].length} controls`);
+    } else {
+      console.log(`  Warning: Chart Design tab not found after activation attempt`);
+    }
+  } catch (e) {
+    console.log(`  Warning: Could not activate Chart Design tab: ${e.message}`);
+  }
+
+  // Re-scan all tabs one more time to get the final list
+  const finalTabEls = await page.$$('[role=tab]');
+  const finalTabs = [];
+  for (const el of finalTabEls) {
+    const vis = await el.evaluate((e) => e.offsetParent !== null);
+    if (vis) finalTabs.push(await el.evaluate((e) => (e.textContent || '').trim()));
+  }
+  const finalTabLabels = finalTabs.map(dedupeTabText).filter(Boolean);
+
   // File menu (same probe as census-react.cjs)
   let fileMenu = [];
   try {
@@ -77,7 +204,7 @@ function dedupeTabText(t) {
     engine: 'worldoffice-react',
     capturedAt: new Date().toISOString(),
     viewport: { width: 1440, height: 900 },
-    tabs: tabLabels,
+    tabs: finalTabLabels,
     ribbon: perTab,
     fileMenu,
     pageErrors: errs,
@@ -85,7 +212,7 @@ function dedupeTabText(t) {
   fs.mkdirSync(OUT, { recursive: true });
   fs.writeFileSync(path.join(OUT, 'census-react-deep.json'), JSON.stringify(out, null, 1));
   const total = Object.values(perTab).reduce((n, l) => n + l.length, 0);
-  console.log(`tabs: ${tabLabels.length} | ribbon controls: ${total} | fileMenu: ${fileMenu.length} | pageErrors: ${errs.length}`);
+  console.log(`tabs: ${finalTabLabels.length} | ribbon controls: ${total} | fileMenu: ${fileMenu.length} | pageErrors: ${errs.length}`);
   for (const [t, l] of Object.entries(perTab)) console.log(`  ${t}: ${l.length}`);
   await browser.close();
 })();

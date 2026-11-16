@@ -69,6 +69,9 @@ def main() -> int:
     react_ribbon = {t: {norm(b.get("label", "")) for b in rows if b.get("label")} for t, rows in re_.get("ribbon", {}).items()}
     # File menu is captured as fileMenu entries, not a ribbon tab
     react_ribbon["File"] = {norm(b.get("label", "")) for b in re_.get("fileMenu", []) if b.get("label")}
+    
+    # Build normalized tab name lookup: map normalized names to original names
+    react_tab_norm = {norm(t): t for t in react_ribbon.keys()}
 
     results = {}
     for key, tab in oo["tabs"].items():
@@ -81,7 +84,14 @@ def main() -> int:
         if key == "file":
             nav = {norm(v) for v in TAB_MAP.values()} | {"editing"}
             rows = [l for l in rows if norm(l) not in nav]
+        # Try normalized lookup first
         rlabels = react_ribbon.get(rname)
+        if rlabels is None:
+            # Try case-insensitive lookup via normalized name
+            norm_rname = norm(rname)
+            original_rname = react_tab_norm.get(norm_rname)
+            if original_rname:
+                rlabels = react_ribbon.get(original_rname)
         if rlabels is None:
             results[tab.get("label", key)] = {"status": "pending-activation", "oo": len(rows), "missing": rows}
             continue
