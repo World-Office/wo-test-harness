@@ -12,3 +12,6 @@ sheet-oracle/cases.json
 /target
 # TaskFleet ephemera (kept only in server checkouts when embedded)
 .tf-worktrees/
+
+# runtime-generated live capture (never commit)
+census/ctx-scenarios.json
