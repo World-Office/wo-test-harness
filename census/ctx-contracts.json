@@ -1,8 +1,9 @@
 {
   "_meta": {
-    "source": "OO 9.4.0 source + 2026-11-15 live capture",
-    "baseline": "text/misspelled verified live; table/image approx",
-    "contract_keys": "canonical row keys matching WO data-ctx values or best-effort OO mappings"
+    "source": "OO 9.4.0 live capture (seeded rig) + source analysis",
+    "baseline": "text/misspelled/table/image/shape verified live; duplicate rows (2x Paste, 2x TextAlignment in table) deduped",
+    "contract_keys": "canonical row keys matching WO data-ctx values or best-effort OO mappings",
+    "update": "2026-05-30: table/image refreshed from live capture; shape added"
   },
   "text": [
     "Cut",
@@ -35,42 +36,67 @@
     "AI"
   ],
   "table": {
-    "approx": true,
+    "live": "seeded OO 9.4.0 rig (2026-11-15), right-click in cell",
     "rows": [
       "Cut",
       "Copy",
       "Paste",
-      "TableCellProperties",
-      "InsertRowAbove",
-      "InsertRowBelow",
-      "InsertColumnLeft",
-      "InsertColumnRight",
-      "DeleteRow",
-      "DeleteColumn",
+      "PrintSelection",
+      "Select",
+      "Delete",
       "MergeCells",
       "SplitCell",
-      "SplitTable",
+      "DistributeRows",
+      "DistributeColumns",
+      "TextAlignment",
+      "InsertCaption",
       "TableProperties",
-      "ParagraphSettings"
+      "Link",
+      "ParagraphSettings",
+      "FormattingAsStyle",
+      "AI"
     ]
   },
   "image": {
-    "approx": true,
+    "live": "seeded OO 9.4.0 rig (2026-11-15), right-click on image",
     "rows": [
       "Cut",
       "Copy",
       "Paste",
-      "EditAltText",
-      "WrapInline",
-      "WrapSquare",
-      "WrapTight",
-      "WrapBehind",
-      "WrapFront",
-      "WrapThrough",
-      "TopAndBottom",
-      "EditObject",
-      "ConvertToShape",
-      "SizeAndProperties"
+      "PrintSelection",
+      "Arrange",
+      "Align",
+      "CombineShapes",
+      "TextWrap",
+      "Rotate",
+      "InsertCaption",
+      "SaveAsImage",
+      "Link",
+      "Crop",
+      "ActualSize",
+      "ReplaceImage",
+      "ImageSettings",
+      "AI"
+    ]
+  },
+  "shape": {
+    "live": "seeded OO 9.4.0 rig (2026-11-15), right-click on shape",
+    "rows": [
+      "Cut",
+      "Copy",
+      "Paste",
+      "PrintSelection",
+      "Arrange",
+      "Align",
+      "CombineShapes",
+      "TextWrap",
+      "Rotate",
+      "InsertCaption",
+      "SaveAsImage",
+      "Link",
+      "EditPoints",
+      "ShapeSettings",
+      "AI"
     ]
   }
 }
