@@ -7,7 +7,7 @@
  * Contract (campaign comprehensive-parity, task FINAL-001): open the dialog
  * the way a user does — REAL clicks: the References tab, then the ribbon
  * command insertCaption (editor.js: insertCaption) — then assert
- *   - title "Insert caption"
+ *   - title "Caption"
  *   - fields: Caption (text input), Label (select: Figure/Table/Equation),
  *     Exclude label from caption (checkbox), Numbering (checkbox),
  *     Include chapter number (checkbox), Chapter starts with style (select),
@@ -111,11 +111,11 @@ function pageHelpers() {
   };
   window.__L4_CAPTION__ = function () {
     const ed = document.querySelector('#editor');
-    const cap = ed && ed.querySelector('.caption, figcaption, [data-caption]');
+    const cap = ed && ed.querySelector('.caption, figcaption, [data-caption], em.wo-caption');
     const flat = window.__WO_FLAT_HTML__();
     return {
       has: !!cap,
-      n: ed ? ed.querySelectorAll('.caption, figcaption, [data-caption]').length : 0,
+      n: ed ? ed.querySelectorAll('.caption, figcaption, [data-caption], em.wo-caption').length : 0,
       text: cap ? cap.textContent : null,
       flat: flat.includes('caption') || flat.includes('figcaption'),
     };
@@ -192,7 +192,7 @@ async function main() {
         ok: ok ? ok.textContent.trim() : null, okPrimary: !!(ok && ok.classList.contains('primary')),
       };
     });
-    check('title "Insert caption"', c.title === 'Insert caption', JSON.stringify(c.title));
+    check('title "Caption"', c.title === 'Caption', JSON.stringify(c.title));
     check('field Caption: text input',
       c.captionLabelLab === 'Caption' && c.captionTextType === 'text',
       `${JSON.stringify(c.captionLabelLab)} ${c.captionTextType}`);
@@ -221,7 +221,7 @@ async function main() {
     // --- 5. behavior: fill caption + label + OK -> caption wrapper ---
     await page.evaluate(() => window.__L4_CARET__());
     await page.fill('#caption-text', 'My Figure');
-    await page.select('#caption-label', 'Figure');
+    await page.selectOption('#caption-label', 'Figure');
     await page.check('#caption-numbering');
     await page.click('#btn-caption-ok');
     await sleep(400);
@@ -266,7 +266,7 @@ async function main() {
     ],
     contract: {
       open: 'real clicks: References tab + insertCaption cmd (editor.js: insertCaption)',
-      title: 'Insert caption',
+      title: 'Caption',
       fields: [
         { label: 'Caption', tag: 'input', type: 'text' },
         { label: 'Label', tag: 'select', type: 'select', options: ['Figure', 'Table', 'Equation'] },

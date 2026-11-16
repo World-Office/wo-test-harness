@@ -2,7 +2,7 @@
  "version": 1,
  "probe": "table-dialog-l4",
  "feature": "dialog.table-dialog.l4",
- "generated": "2026-11-15T21:56:52.332Z",
+ "generated": "2026-11-16T06:37:23.664Z",
  "ok": true,
  "checks": [
   {

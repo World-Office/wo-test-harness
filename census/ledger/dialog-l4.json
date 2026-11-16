@@ -6,8 +6,8 @@
  },
  "summary": {
   "probed": 9,
-  "parity": 7,
-  "broken": 2
+  "parity": 9,
+  "broken": 0
  },
  "results": [
   {
@@ -63,15 +63,64 @@
     "B",
     "Hex"
    ],
-   "openedBy": null,
-   "wo": null,
-   "covered": 0,
+   "openedBy": "click #pagecolor (tab layout)",
+   "wo": {
+    "id": "pagecolor-dialog",
+    "title": "Page Color",
+    "fields": [
+     {
+      "label": "Swatches",
+      "tag": "text",
+      "type": "text"
+     },
+     {
+      "label": "Custom color",
+      "tag": "input",
+      "type": "color"
+     },
+     {
+      "label": "HEX",
+      "tag": "input",
+      "type": "text"
+     },
+     {
+      "label": "R",
+      "tag": "input",
+      "type": "number"
+     },
+     {
+      "label": "G",
+      "tag": "input",
+      "type": "number"
+     },
+     {
+      "label": "B",
+      "tag": "input",
+      "type": "number"
+     }
+    ],
+    "buttons": [
+     "Cancel",
+     "Automatic",
+     "No Color",
+     "OK"
+    ]
+   },
+   "covered": 6,
    "total": 6,
    "missing": [],
-   "mapping": {},
-   "parity": false,
-   "functional": null,
-   "error": "page.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#pagecolor')\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"color\" id=\"pagecolor\" value=\"#ffffff\" aria-label=\"Page color\" data-i18n-aria-label=\"Layout.PageColor\"/>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiti"
+   "mapping": {
+    "Swatches": "Swatches",
+    "Custom color": "Custom color",
+    "R": "R",
+    "G": "G",
+    "B": "B",
+    "Hex": "HEX"
+   },
+   "parity": true,
+   "functional": true,
+   "error": null,
+   "functional_detail": "--paper=#FEF3C7"
   },
   {
    "feature": "dialog.chart-dialog.l4",
@@ -315,16 +364,45 @@
     "Speed",
     "Pitch"
    ],
-   "openedBy": null,
-   "wo": null,
-   "covered": 0,
+   "openedBy": "click #btn-readaloud (tab view, via #btn-speech)",
+   "wo": {
+    "id": "speech-dialog",
+    "title": "Speech Settings",
+    "fields": [
+     {
+      "label": "Voice",
+      "tag": "select",
+      "type": "text"
+     },
+     {
+      "label": "Speed",
+      "tag": "input",
+      "type": "range"
+     },
+     {
+      "label": "Pitch",
+      "tag": "input",
+      "type": "range"
+     }
+    ],
+    "buttons": [
+     "Cancel",
+     "OK"
+    ]
+   },
+   "covered": 3,
    "total": 3,
    "missing": [],
-   "mapping": {},
-   "parity": false,
+   "mapping": {
+    "Voice": "Voice",
+    "Speed": "Speed",
+    "Pitch": "Pitch"
+   },
+   "parity": true,
    "functional": null,
-   "error": "page.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#btn-speech')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" id=\"btn-speech\" aria-haspopup=\"true\" aria-expanded=\"false\" data-i18n=\"View.Speech\" class=\"menu-trigger caret-btn wo-ovf\">…</button>\u001b[22m\n\u001b[2m  - attempti"
+   "error": null,
+   "functional_detail": "not provable offline (needs server-side document list)"
   }
  ],
- "capturedAt": "2026-11-15T21:56:53.820Z"
+ "capturedAt": "2026-11-16T06:37:19.352Z"
 }

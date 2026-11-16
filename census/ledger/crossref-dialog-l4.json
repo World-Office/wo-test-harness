@@ -2,7 +2,7 @@
  "version": 1,
  "probe": "crossref-dialog-l4",
  "feature": "dialog.crossref-dialog.l4",
- "generated": "2026-11-10T19:53:38.074Z",
+ "generated": "2026-11-16T06:37:12.432Z",
  "ok": true,
  "checks": [
   {
@@ -11,9 +11,9 @@
    "detail": ""
   },
   {
-   "name": "title \"Insert cross-reference\"",
+   "name": "title \"Cross-reference\"",
    "ok": true,
-   "detail": "\"Insert cross-reference\""
+   "detail": "\"Cross-reference\""
   },
   {
    "name": "field Target bookmark: select",
@@ -31,9 +31,9 @@
    "detail": "cancel=\"Cancel\" insert=\"Insert\" primary=true"
   },
   {
-   "name": "select mark1 + \"custom-ref\" + Insert -> span.crossref[data-target][data-display-text] (flat HTML)",
+   "name": "select mark1 + \"custom-ref\" + Insert -> anchor crossref a[href=\"#mark1\"] (flat HTML)",
    "ok": true,
-   "detail": "has=true target=\"mark1\" display=\"custom-ref\" flat=true/true/true n=1 closed=true"
+   "detail": "has=true target=\"mark1\" display=\"custom-ref\" flat=true/undefined/true n=1 closed=true"
   },
   {
    "name": "cancel plants nothing (single crossref)",
@@ -47,7 +47,7 @@
  ],
  "contract": {
   "open": "real clicks: References tab + ribbon openCrossref (editor.js: openCrossref)",
-  "title": "Insert cross-reference",
+  "title": "Cross-reference",
   "fields": [
    {
     "label": "Target bookmark",

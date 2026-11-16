@@ -2,7 +2,7 @@
  "version": 1,
  "probe": "dropcap-dialog-l4",
  "feature": "dialog.dropcap-dialog.l4",
- "generated": "2026-11-10T19:53:24.376Z",
+ "generated": "2026-11-16T06:37:15.036Z",
  "ok": true,
  "checks": [
   {

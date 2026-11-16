@@ -2,7 +2,7 @@
  "version": 1,
  "probe": "comment-dialog-l4",
  "feature": "dialog.comment-dialog.l4",
- "generated": "2026-11-15T21:56:40.517Z",
+ "generated": "2026-11-16T06:37:14.681Z",
  "ok": true,
  "checks": [
   {

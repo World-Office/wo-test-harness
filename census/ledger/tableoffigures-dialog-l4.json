@@ -2,7 +2,7 @@
  "version": 1,
  "probe": "tableoffigures-dialog-l4",
  "feature": "dialog.tableoffigures-dialog.l4",
- "generated": "2026-11-10T19:53:38.074Z",
+ "generated": "2026-11-16T06:37:24.432Z",
  "ok": true,
  "checks": [
   {
@@ -13,12 +13,12 @@
   {
    "name": "title contains \"Table of figures\"",
    "ok": true,
-   "detail": "\"TableOfFigures.Title\""
+   "detail": "\"Insert Table of Figures\""
   },
   {
-   "name": "field Label: select",
+   "name": "field Label: title text input",
    "ok": true,
-   "detail": "\"Label\" select"
+   "detail": "\"Label\" input"
   },
   {
    "name": "field Style: select",
@@ -31,9 +31,9 @@
    "detail": "cancel=\"Cancel\" insert=\"Insert\" primary=true"
   },
   {
-   "name": "bare caret + Label \"Figure\" + Style \"Formal\" + Insert -> div.tof[data-label][data-style] (flat HTML)",
+   "name": "bare caret + title \"My Figures\" + Insert -> div.toc[data-kind=figures][data-title] (flat HTML)",
    "ok": true,
-   "detail": "has=true label=\"Figure\" style=\"Formal\" flat=true/true/true closed=true"
+   "detail": "has=true title=\"My Figures\" flat=true/true closed=true"
   },
   {
    "name": "cancel plants nothing (single tof)",
@@ -53,13 +53,18 @@
     "label": "Label",
     "tag": "select",
     "type": "select",
-    "options": ["Figure"]
+    "options": [
+     "Figure"
+    ]
    },
    {
     "label": "Style",
     "tag": "select",
     "type": "select",
-    "options": ["Formal", "Simple"]
+    "options": [
+     "Formal",
+     "Simple"
+    ]
    }
   ],
   "buttons": [

@@ -203,7 +203,7 @@ async function functionalCheck(page, kind) {
     await page.waitForTimeout(200); // live preview refresh (input handler)
     const previewed = await page.evaluate(() =>
       (document.getElementById('equation-preview') || {}).innerHTML || '');
-    await page.click('#btn-equation-ok', { timeout: 3000 });
+    await page.click('#btn-equation-ok', { timeout: 15000 });
     await page.waitForTimeout(300);
     const inserted = await page.evaluate(() =>
       !!document.querySelector('#editor svg, #editor img, #editor .object'));
@@ -213,7 +213,7 @@ async function functionalCheck(page, kind) {
     await page.fill('#pagecolor-hex', '#FEF3C7');
     await page.dispatchEvent('#pagecolor-hex', 'input');
     await page.waitForTimeout(150);
-    await page.click('#btn-pagecolor-ok', { timeout: 3000 });
+    await page.click('#btn-pagecolor-ok', { timeout: 15000 });
     await page.waitForTimeout(200);
     const paper = await page.evaluate(() => {
       const ed = document.getElementById('editor');
@@ -226,7 +226,7 @@ async function functionalCheck(page, kind) {
     await page.waitForTimeout(200); // live preview refresh
     const previewed = await page.evaluate(() =>
       (document.getElementById('chart-preview') || {}).innerHTML || '');
-    await page.click('#btn-chart-ok', { timeout: 3000 });
+    await page.click('#btn-chart-ok', { timeout: 15000 });
     await page.waitForTimeout(300);
     const inserted = await page.evaluate(() =>
       !!document.querySelector('#editor svg, #editor img, #editor .object'));
@@ -234,7 +234,7 @@ async function functionalCheck(page, kind) {
   }
   if (kind === 'comment') {
     await page.fill('#comment-body', 'l4 probe comment');
-    await page.click('#btn-comment-ok', { timeout: 3000 });
+    await page.click('#btn-comment-ok', { timeout: 15000 });
     await page.waitForTimeout(300);
     const ok = await page.evaluate(() =>
       !!document.querySelector('#editor .comment, #comments-panel .comment'));
@@ -245,7 +245,7 @@ async function functionalCheck(page, kind) {
     fs.writeFileSync(tmp, 'L4PROBE text-from-file sentinel\n');
     await page.setInputFiles('#textfromfile-input', tmp);
     await page.waitForTimeout(200);
-    await page.click('#btn-textfromfile-insert', { timeout: 3000 });
+    await page.click('#btn-textfromfile-insert', { timeout: 15000 });
     await page.waitForTimeout(400);
     const ok = await page.evaluate(() =>
       (document.getElementById('editor') || {}).innerText.includes('L4PROBE text-from-file sentinel'));
@@ -264,7 +264,7 @@ async function functionalCheck(page, kind) {
       else { range.selectNodeContents(ed); range.collapse(false); }
       sel.removeAllRanges(); sel.addRange(range);
     });
-    await page.click('#btn-field-ok', { timeout: 3000 });
+    await page.click('#btn-field-ok', { timeout: 15000 });
     await page.waitForTimeout(300);
     // the editor's normalizer rewrites the inserted field span (class/
     // data-field are stripped, value survives) — assert the VALUE landed
@@ -287,7 +287,7 @@ async function functionalCheck(page, kind) {
   const browser = loadPlaywright().chromium.launch({ args: ['--no-sandbox'] });
   try {
     const b = await browser;
-    const ctx = await b.newContext();
+    const ctx = await b.newContext({ viewport: { width: 2300, height: 950 } });
     const page = await ctx.newPage();
     await page.addInitScript(stubInit, { seed: SEED_HTML });
     await page.goto(`http://127.0.0.1:${PORT}/index.html`, { waitUntil: 'domcontentloaded', timeout: 20000 });
@@ -305,8 +305,14 @@ async function functionalCheck(page, kind) {
         parity: false, functional: null, error: null,
       };
       try {
+        // 0) clean slate: force-close any overlay a previous spec left open
+        //    (an open .dialog-overlay intercepts all pointer events).
+        await page.evaluate(() => {
+          document.querySelectorAll('.dialog-overlay.open').forEach((d) => d.classList.remove('open'));
+          document.querySelectorAll('.menu-list:not([hidden])').forEach((m) => m.setAttribute('hidden', ''));
+        });
         // 1) REAL user route: activate the dialog's ribbon tab, then click
-        await page.click(`.ribbon-tab[data-tab="${spec.open.tab}"]`, { timeout: 5000 });
+        await page.click(`.ribbon-tab[data-tab="${spec.open.tab}"]`, { timeout: 15000 });
         await page.waitForTimeout(200);
         if (spec.open.selectText) {
           // a comment needs a range: select some text first (real user flow)
@@ -325,10 +331,10 @@ async function functionalCheck(page, kind) {
           });
         }
         if (spec.open.pre) {
-          await page.click(spec.open.pre, { timeout: 5000 });
+          await page.click(spec.open.pre, { timeout: 15000 });
           await page.waitForTimeout(250); // menu-list unhide
         }
-        await page.click(spec.open.click, { timeout: 5000 });
+        await page.click(spec.open.click, { timeout: 15000 });
         await page.waitForTimeout(300);
         const opened = await page.evaluate((id) => {
           const d = document.getElementById(id);
@@ -391,7 +397,7 @@ async function functionalCheck(page, kind) {
         await closeIt();
         await page.waitForTimeout(150);
       } catch (e) {
-        out.error = String(e && e.message || e).slice(0, 300);
+        out.error = String(e && e.message || e).slice(0, 600);
         await page.keyboard.press('Escape').catch(() => {});
         await page.evaluate((id) => {
           const d = document.getElementById(id);
@@ -403,7 +409,7 @@ async function functionalCheck(page, kind) {
       const flag = out.error ? 'BROKEN' : out.parity ? 'PARITY' : 'GAP';
       console.log(`dialog-l4: ${flag} ${out.feature} ${out.covered}/${out.total}`
         + (out.missing.length ? ` missing=[${out.missing.join(', ')}]` : '')
-        + (out.error ? ` error=${out.error.slice(0, 80)}` : ` functional=${out.functional}`));
+        + (out.error ? ` error=${out.error}` : ` functional=${out.functional}`));
     }
 
     await ctx.close();

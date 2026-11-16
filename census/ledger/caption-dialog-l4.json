@@ -2,7 +2,7 @@
  "version": 1,
  "probe": "caption-dialog-l4",
  "feature": "dialog.caption-dialog.l4",
- "generated": "2026-11-10T19:53:38.074Z",
+ "generated": "2026-11-16T06:37:12.415Z",
  "ok": true,
  "checks": [
   {
@@ -11,9 +11,9 @@
    "detail": ""
   },
   {
-   "name": "title \"Insert caption\"",
+   "name": "title \"Caption\"",
    "ok": true,
-   "detail": "\"Insert caption\""
+   "detail": "\"Caption\""
   },
   {
    "name": "field Caption: text input",
@@ -58,7 +58,7 @@
   {
    "name": "caption \"My Figure\" + label Figure + numbering + OK -> caption wrapper (flat HTML)",
    "ok": true,
-   "detail": "has=true text=\"Figure\" flat=true closed=true"
+   "detail": "has=true text=\"Figure 1. My Figure\" flat=true closed=true"
   },
   {
    "name": "cancel plants nothing (single caption)",
@@ -72,7 +72,7 @@
  ],
  "contract": {
   "open": "real clicks: References tab + insertCaption cmd (editor.js: insertCaption)",
-  "title": "Insert caption",
+  "title": "Caption",
   "fields": [
    {
     "label": "Caption",
@@ -83,7 +83,11 @@
     "label": "Label",
     "tag": "select",
     "type": "select",
-    "options": ["Figure", "Table", "Equation"]
+    "options": [
+     "Figure",
+     "Table",
+     "Equation"
+    ]
    },
    {
     "label": "Exclude label from caption",
@@ -104,7 +108,11 @@
     "label": "Chapter starts with style",
     "tag": "select",
     "type": "select",
-    "options": ["Heading 1", "Heading 2", "Heading 3"]
+    "options": [
+     "Heading 1",
+     "Heading 2",
+     "Heading 3"
+    ]
    },
    {
     "label": "Use separator",

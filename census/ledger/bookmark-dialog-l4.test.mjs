@@ -7,7 +7,7 @@
  * Contract (campaign comprehensive-parity, task FINAL-001): open the dialog
  * the way a user does — REAL clicks: the References tab, then the ribbon
  * button #btn-bookmark (editor.js: openBookmarkDialog) — then assert
- *   - title "Insert bookmark"
+ *   - title "Bookmark"
  *   - fields: Name (text input, placeholder "e.g. Section1")
  *   - buttons: Cancel + Insert (primary)
  *   - BEHAVIOR (fidelity, not surface): select real text, name it "mark1",
@@ -206,7 +206,7 @@ async function main() {
         ok: ok ? ok.textContent.trim() : null, okPrimary: !!(ok && ok.classList.contains('primary')),
       };
     });
-    check('title "Insert bookmark"', c.title === 'Insert bookmark', JSON.stringify(c.title));
+    check('title "Bookmark"', c.title === 'Bookmark', JSON.stringify(c.title));
     check('field Name: label + text input (placeholder "e.g. Section1")',
       c.nameLabel === 'Name' && c.nameType === 'text' && c.namePh === 'e.g. Section1',
       `${JSON.stringify(c.nameLabel)} ${c.nameType} ph=${JSON.stringify(c.namePh)}`);
@@ -307,7 +307,7 @@ async function main() {
     ],
     contract: {
       open: 'real clicks: References tab + ribbon #btn-bookmark (editor.js: openBookmarkDialog)',
-      title: 'Insert bookmark',
+      title: 'Bookmark',
       fields: [
         { label: 'Name', tag: 'input', type: 'text', placeholder: 'e.g. Section1' },
       ],

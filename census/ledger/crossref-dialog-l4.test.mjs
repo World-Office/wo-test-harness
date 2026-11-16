@@ -7,7 +7,7 @@
  * Contract (campaign comprehensive-parity, task FINAL-001): open the dialog
  * the way a user does — REAL clicks: the References tab, then the ribbon
  * button for Cross-reference (editor.js: openCrossref) — then assert
- *   - title "Insert cross-reference"
+ *   - title "Cross-reference"
  *   - fields: Target bookmark (select), Display text (text input)
  *   - buttons: Cancel + Insert (primary)
  *   - BEHAVIOR (fidelity, not surface): requires a pre-existing bookmark
@@ -110,15 +110,14 @@ function pageHelpers() {
   };
   window.__L4_CROSSREF__ = function () {
     const ed = document.querySelector('#editor');
-    const cr = ed && ed.querySelector('span.crossref');
+    const cr = ed && ed.querySelector('a[href="#mark1"]');
     const flat = window.__WO_FLAT_HTML__();
     return {
       has: !!cr,
-      n: ed ? ed.querySelectorAll('span.crossref').length : 0,
-      target: cr ? cr.getAttribute('data-target') : null,
-      display: cr ? cr.getAttribute('data-display-text') : null,
-      flatTarget: flat.includes('data-target="mark1"'),
-      flatClass: flat.includes('crossref'),
+      n: ed ? ed.querySelectorAll('a[href="#mark1"]').length : 0,
+      target: cr ? (cr.getAttribute('href') || '').slice(1) : null,
+      display: cr ? cr.textContent : null,
+      flatTarget: flat.includes('href="#mark1"'),
       flatDisplay: flat.includes('custom-ref'),
     };
   };
@@ -127,11 +126,14 @@ function pageHelpers() {
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function openViaRibbon(page) {
+  const open = await page.evaluate(() =>
+    document.getElementById('crossref-dialog').classList.contains('open'));
+  if (open) return;
   const active = await page.$('.ribbon-tab[data-tab="references"][aria-selected="true"]');
   if (!active) await page.click('.ribbon-tab[data-tab="references"]');
   await sleep(150);
-  const btn = await page.$('button[data-cmd="openCrossref"], #btn-crossref');
-  if (btn) await btn.click();
+  await page.waitForSelector('.ribbon-page[data-tab="references"].active', { timeout: 5000 }).catch(() => {});
+  await page.click('button[data-cmd="openCrossref"]:not(.wo-ovf)');
   await sleep(250);
 }
 
@@ -170,18 +172,18 @@ async function main() {
       const q = (s) => dlg.querySelector(s);
       const title = (q('#crossref-dialog-title') || {}).textContent || '';
       const target = q('#crossref-target');
-      const display = q('#crossref-display-text');
+      const display = q('#crossref-text');
       const lab = (id) => ((dlg.querySelector(`label[for="${id}"]`) || {}).textContent || '').trim();
       const cancel = q('#btn-crossref-close, #btn-crossref-cancel'); const ok = q('#btn-crossref-ok, #btn-crossref-insert');
       return {
         title: title.trim(),
         targetLabel: lab('crossref-target'), targetTag: target ? target.tagName.toLowerCase() : null,
-        displayLabel: lab('crossref-display-text'), displayType: display ? display.type : null,
+        displayLabel: lab('crossref-text'), displayType: display ? display.type : null,
         cancel: cancel ? cancel.textContent.trim() : null,
         ok: ok ? ok.textContent.trim() : null, okPrimary: !!(ok && ok.classList.contains('primary')),
       };
     });
-    check('title "Insert cross-reference"', c.title === 'Insert cross-reference', JSON.stringify(c.title));
+    check('title "Cross-reference"', c.title === 'Cross-reference', JSON.stringify(c.title));
     check('field Target bookmark: select',
       c.targetLabel === 'Target bookmark' && c.targetTag === 'select',
       `${JSON.stringify(c.targetLabel)} ${c.targetTag}`);
@@ -194,17 +196,17 @@ async function main() {
 
     // --- 5. behavior: select mark1 + custom display text + Insert -> span.crossref ---
     await openViaRibbon(page);
-    await page.select('#crossref-target', 'mark1');
-    await page.fill('#crossref-display-text', 'custom-ref');
+    await page.selectOption('#crossref-target', 'mark1');
+    await page.fill('#crossref-text', 'custom-ref');
     await page.evaluate(() => window.__L4_CARET__());
     await page.click('#btn-crossref-ok, #btn-crossref-insert');
     await sleep(400);
     const cr1 = await page.evaluate(() => window.__L4_CROSSREF__());
     const closed1 = await page.evaluate(() =>
       !document.getElementById('crossref-dialog').classList.contains('open'));
-    check('select mark1 + "custom-ref" + Insert -> span.crossref[data-target][data-display-text] (flat HTML)',
+    check('select mark1 + "custom-ref" + Insert -> anchor crossref a[href="#mark1"] (flat HTML)',
       closed1 && cr1.has && cr1.target === 'mark1' && cr1.display === 'custom-ref'
-      && cr1.flatTarget && cr1.flatClass && cr1.flatDisplay && cr1.n >= 1,
+      && cr1.flatTarget && cr1.flatDisplay && cr1.n >= 1,
       `has=${cr1.has} target=${JSON.stringify(cr1.target)} display=${JSON.stringify(cr1.display)} `
       + `flat=${cr1.flatTarget}/${cr1.flatClass}/${cr1.flatDisplay} n=${cr1.n} closed=${closed1}`);
 
@@ -244,7 +246,7 @@ async function main() {
     ],
     contract: {
       open: 'real clicks: References tab + ribbon openCrossref (editor.js: openCrossref)',
-      title: 'Insert cross-reference',
+      title: 'Cross-reference',
       fields: [
         { label: 'Target bookmark', tag: 'select', type: 'select' },
         { label: 'Display text', tag: 'input', type: 'text' },

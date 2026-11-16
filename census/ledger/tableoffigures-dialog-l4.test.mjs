@@ -109,16 +109,14 @@ function pageHelpers() {
   };
   window.__L4_TOF__ = function () {
     const ed = document.querySelector('#editor');
-    const tof = ed && ed.querySelector('div.tof');
+    const tof = ed && ed.querySelector('div.toc[data-kind="figures"]');
     const flat = window.__WO_FLAT_HTML__();
     return {
       has: !!tof,
-      n: ed ? ed.querySelectorAll('div.tof').length : 0,
-      label: tof ? tof.getAttribute('data-label') : null,
-      style: tof ? tof.getAttribute('data-style') : null,
-      flatLabel: tof && flat.includes('data-label="Figure"'),
-      flatStyle: tof && flat.includes('data-style="Formal"'),
-      flatClass: flat.includes('class="tof"') || flat.includes('div.tof'),
+      n: ed ? ed.querySelectorAll('div.toc[data-kind="figures"]').length : 0,
+      title: tof ? tof.getAttribute('data-title') : null,
+      flatTitle: !!tof && flat.includes('data-kind="figures"'),
+      flatClass: flat.includes('class="toc"'),
     };
   };
 }
@@ -168,21 +166,21 @@ async function main() {
       const dlg = document.getElementById('tableoffigures-dialog');
       const q = (s) => dlg.querySelector(s);
       const title = (q('#tableoffigures-dialog-title') || {}).textContent || '';
-      const tofLabel = q('#tof-label');
+      const tofLabel = q('#tof-title');
       const tofStyle = q('#tof-style');
       const lab = (id) => ((dlg.querySelector(`label[for="${id}"]`) || {}).textContent || '').trim();
       const cancel = q('#btn-tof-close, #btn-tof-cancel'); const ok = q('#btn-tof-ok, #btn-tof-insert');
       return {
         title: title.trim(),
-        labelLabel: lab('tof-label'), labelTag: tofLabel ? tofLabel.tagName.toLowerCase() : null,
+        labelLabel: lab('tof-title'), labelTag: tofLabel ? tofLabel.tagName.toLowerCase() : null,
         styleLabel: lab('tof-style'), styleTag: tofStyle ? tofStyle.tagName.toLowerCase() : null,
         cancel: cancel ? cancel.textContent.trim() : null,
         ok: ok ? ok.textContent.trim() : null, okPrimary: !!(ok && ok.classList.contains('primary')),
       };
     });
     check('title contains "Table of figures"', c.title.toLowerCase().includes('table of figures'), JSON.stringify(c.title));
-    check('field Label: select',
-      c.labelLabel === 'Label' && c.labelTag === 'select',
+    check('field Label: title text input',
+      c.labelLabel === 'Label' && c.labelTag === 'input',
       `${JSON.stringify(c.labelLabel)} ${c.labelTag}`);
     check('field Style: select',
       c.styleLabel === 'Style' && c.styleTag === 'select',
@@ -193,18 +191,18 @@ async function main() {
 
     // --- 5. behavior: caret + Label "Figure" + Style "Formal" + Insert -> div.tof ---
     await page.evaluate(() => window.__L4_CARET__());
-    await page.select('#tof-label', 'Figure');
-    await page.select('#tof-style', 'Formal');
+    await page.fill('#tof-title', 'My Figures');
+    await page.selectOption('#tof-style', 'formal');
     await page.click('#btn-tof-ok, #btn-tof-insert');
     await sleep(400);
     const tof1 = await page.evaluate(() => window.__L4_TOF__());
     const closed1 = await page.evaluate(() =>
       !document.getElementById('tableoffigures-dialog').classList.contains('open'));
-    check('bare caret + Label "Figure" + Style "Formal" + Insert -> div.tof[data-label][data-style] (flat HTML)',
-      closed1 && tof1.has && tof1.label === 'Figure' && tof1.style === 'Formal'
-      && tof1.flatLabel && tof1.flatStyle && tof1.flatClass,
-      `has=${tof1.has} label=${JSON.stringify(tof1.label)} style=${JSON.stringify(tof1.style)} `
-      + `flat=${tof1.flatLabel}/${tof1.flatStyle}/${tof1.flatClass} closed=${closed1}`);
+    check('bare caret + title "My Figures" + Insert -> div.toc[data-kind=figures][data-title] (flat HTML)',
+      closed1 && tof1.has && tof1.title === 'My Figures'
+      && tof1.flatTitle && tof1.flatClass,
+      `has=${tof1.has} title=${JSON.stringify(tof1.title)} `
+      + `flat=${tof1.flatTitle}/${tof1.flatClass} closed=${closed1}`);
 
     // --- 6. cancel plants nothing ---
     await openViaRibbon(page);
