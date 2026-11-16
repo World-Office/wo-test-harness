@@ -1,5 +1,13 @@
 # wo-test-harness
 
+> **Status 2026-11-16 — substrate switched.** Prod `/word` serves the **React
+> canvas editor** (documenteditor-react). The python-lineage wysiwyg editor is
+> retired from deployment (source + corpus in-tree, legacy). Primary census
+> target = react app; baseline: `census/REACT-BASELINE.md` (78% OO-label
+> coverage), golden: `census/census/census-react-deep.json`, rig v4:
+> `census/run-react-rig.sh`. The wysiwyg-era ledger remains valid history for
+> the retired substrate only.
+>
 > **Status 2026-10-04 — ACTIVE, canonical-stack.** Default measurement mode is the
 > **Rust docserver** (`core/crates/wo-docserver`, deployed at `editor.cloud.graphwiz.ai`);
 > the Python mode is kept for parity verification until sunset (DUAL-STACK-VERIFIED).

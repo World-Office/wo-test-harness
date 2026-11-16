@@ -3,6 +3,11 @@
 Workspace container for the World-Office test-harness tooling extracted from
 the server repo (`World-Office/server`). See `README.md` for the unit map.
 
+**Primary target since 2026-11-16: the React canvas editor** (deployed
+`/word`). Baseline + rig + golden: `census/REACT-BASELINE.md`,
+`census/run-react-rig.sh`, `census/census/census-react-deep.json`.
+The wysiwyg editor is retired from deployment; its tests are legacy.
+
 ## Structure
 
 ```
