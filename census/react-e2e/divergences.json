@@ -1,0 +1,15 @@
+{
+  "File": {
+    "find": "browser-native Ctrl+F / ribbon Home Find & Replace; react File menu carries document ops only",
+    "copy": "browser-native clipboard; OO backstage QAT cluster not replicated by design",
+    "paste": "browser-native clipboard; OO backstage QAT cluster not replicated by design",
+    "cut": "browser-native clipboard; OO backstage QAT cluster not replicated by design",
+    "copystyle": "not ported (QAT convenience); Format Painter on Home covers the use case"
+  },
+  "AI": {
+    "_tab": "product-specific AI tab; not part of the OO parity ladder (declared divergence 2026-11-16)"
+  },
+  "Forms": {
+    "_tab": "react Forms tab is a placeholder shell; parity deferred until OO Forms semantics are specced"
+  }
+}
