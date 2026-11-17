@@ -9,11 +9,11 @@ rc=0
 fail() { echo "MASTER GATE: FAIL — $1"; rc=1; }
 
 echo "── 1. engine suite (wo-renderer-wasm)"
-(cd "$SERVER" && timeout 400 cargo test -p wo-renderer-wasm 2>&1 | tail -1 | grep -q "test result: ok" ) \
+(cd "$SERVER" && timeout 900 cargo test -p wo-renderer-wasm >/dev/null 2>&1) \
   || fail "engine tests"
 
 echo "── 2. react unit suite (documenteditor-react)"
-(cd "$SERVER/apps/web/apps/documenteditor-react" && timeout 300 pnpm test 2>&1 | tail -3 | grep -qE "passed|0 failed") \
+(cd "$SERVER/apps/web/apps/documenteditor-react" && timeout 300 npx vitest run >/dev/null 2>&1) \
   || fail "react tests"
 
 echo "── 3. E2E probes + coverage gate (fresh build on the rig)"

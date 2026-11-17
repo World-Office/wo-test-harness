@@ -50,14 +50,14 @@ function dedupeTabText(t) {
     } catch { continue; }
     await sleep(700);
     perTab[label] = await page.evaluate(() => {
-      const btns = [...document.querySelectorAll('button, [role=menuitem], select')]
+      const btns = [...document.querySelectorAll('button, [role=menuitem], select, input[type=checkbox][aria-label]')]
         .filter((e) => e.offsetParent !== null)
         .map((e) => ({
           label: (e.getAttribute('aria-label') || e.title || e.textContent || '').trim().slice(0, 60),
           disabled: e.disabled === true || e.getAttribute('aria-disabled') === 'true',
           kind: e.tagName === 'SELECT' ? 'select' : 'button',
         }))
-        .filter((b) => b.label && !/^(Back|Save|Download As|Print|Protect|Info|Advanced Settings|Help|Suggest a Feature)$/i.test(b.label));
+        .filter((b) => b.label && !/^(Back|Save|Download As|Print|Protect|Info|Help|Suggest a Feature)$/i.test(b.label));
       return btns;
     });
   }
@@ -130,14 +130,14 @@ function dedupeTabText(t) {
       }
       await sleep(700);
       perTab[hfLabel] = await page.evaluate(() => {
-        const btns = [...document.querySelectorAll('button, [role=menuitem], select')]
+        const btns = [...document.querySelectorAll('button, [role=menuitem], select, input[type=checkbox][aria-label]')]
           .filter((e) => e.offsetParent !== null)
           .map((e) => ({
             label: (e.getAttribute('aria-label') || e.title || e.textContent || '').trim().slice(0, 60),
             disabled: e.disabled === true || e.getAttribute('aria-disabled') === 'true',
             kind: e.tagName === 'SELECT' ? 'select' : 'button',
           }))
-          .filter((b) => b.label && !/^(Back|Save|Download As|Print|Protect|Info|Advanced Settings|Help|Suggest a Feature)$/i.test(b.label));
+          .filter((b) => b.label && !/^(Back|Save|Download As|Print|Protect|Info|Help|Suggest a Feature)$/i.test(b.label));
         return btns;
       });
       console.log(`  Activated contextual tab: ${hfLabel} - ${perTab[hfLabel].length} controls`);
@@ -197,14 +197,14 @@ function dedupeTabText(t) {
       }
       await sleep(700);
       perTab[cdLabel] = await page.evaluate(() => {
-        const btns = [...document.querySelectorAll('button, [role=menuitem], select')]
+        const btns = [...document.querySelectorAll('button, [role=menuitem], select, input[type=checkbox][aria-label]')]
           .filter((e) => e.offsetParent !== null)
           .map((e) => ({
             label: (e.getAttribute('aria-label') || e.title || e.textContent || '').trim().slice(0, 60),
             disabled: e.disabled === true || e.getAttribute('aria-disabled') === 'true',
             kind: e.tagName === 'SELECT' ? 'select' : 'button',
           }))
-          .filter((b) => b.label && !/^(Back|Save|Download As|Print|Protect|Info|Advanced Settings|Help|Suggest a Feature)$/i.test(b.label));
+          .filter((b) => b.label && !/^(Back|Save|Download As|Print|Protect|Info|Help|Suggest a Feature)$/i.test(b.label));
         return btns;
       });
       console.log(`  Activated contextual tab: ${cdLabel} - ${perTab[cdLabel].length} controls`);
