@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-16T06:37:23.218Z",
+ "generated": "2026-11-16T20:54:50.661Z",
  "source": {
   "oo": "census/census/census-oo-dialogs.json (dialog: Symbol — fields Font, Range)",
   "wo": "live editor drive (symbol-dialog-l4.test.mjs)",

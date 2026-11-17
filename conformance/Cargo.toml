@@ -19,6 +19,7 @@ reqwest = { workspace = true, features = ["blocking", "json"] }
 
 [dev-dependencies]
 tempfile = { workspace = true }
+zip = { workspace = true }
 
 [[bin]]
 name = "wo-conformance"

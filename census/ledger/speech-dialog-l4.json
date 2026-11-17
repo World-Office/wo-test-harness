@@ -2,7 +2,7 @@
  "version": 1,
  "probe": "speech-dialog-l4",
  "feature": "dialog.speech-dialog.l4",
- "generated": "2026-11-16T06:37:21.530Z",
+ "generated": "2026-11-16T20:54:48.853Z",
  "ok": true,
  "checks": [
   {

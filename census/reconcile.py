@@ -497,6 +497,7 @@ def run_interactions(server: Path, out: Path, mode: str = "rust") -> int:
     capture(server, out, script="interact-wo.cjs", mode=mode)
     return subprocess.run(
         [sys.executable, "interact-diff.py", "--wo", str(out / "interact-wo.json"),
+         "--ledger", str(Path(out) / "ledger.json"),
          "--out", str(out)],
         cwd=HERE,
     ).returncode

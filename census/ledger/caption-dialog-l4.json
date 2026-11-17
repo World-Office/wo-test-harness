@@ -2,7 +2,7 @@
  "version": 1,
  "probe": "caption-dialog-l4",
  "feature": "dialog.caption-dialog.l4",
- "generated": "2026-11-16T06:37:12.415Z",
+ "generated": "2026-11-16T20:54:39.615Z",
  "ok": true,
  "checks": [
   {

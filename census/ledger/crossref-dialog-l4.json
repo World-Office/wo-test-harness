@@ -2,7 +2,7 @@
  "version": 1,
  "probe": "crossref-dialog-l4",
  "feature": "dialog.crossref-dialog.l4",
- "generated": "2026-11-16T06:37:12.432Z",
+ "generated": "2026-11-16T20:54:39.757Z",
  "ok": true,
  "checks": [
   {

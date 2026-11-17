@@ -1,601 +1,6 @@
 {
  "edges": [
   {
-   "from": "toolbar:acceptTrackedChange",
-   "to": "acceptTrackedChange",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:addText",
-   "to": "addText",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:aiRewrite",
-   "to": "aiRewrite",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:aiSettings",
-   "to": "aiSettings",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:aiSummarize",
-   "to": "aiSummarize",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:aiTranslate",
-   "to": "aiTranslate",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:allCaps",
-   "to": "allCaps",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:applyColumns",
-   "to": "applyColumns",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:applyPageMargins",
-   "to": "applyPageMargins",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:applyPageOrientation",
-   "to": "applyPageOrientation",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:applyPageSize",
-   "to": "applyPageSize",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:bold",
-   "to": "bold",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:bookmark",
-   "to": "bookmark",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:browsePlugins",
-   "to": "browsePlugins",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:changeCase",
-   "to": "changeCase",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:chart3d",
-   "to": "chart3d",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:chartEditData",
-   "to": "chartEditData",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:chartElement",
-   "to": "chartElement",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:chartSettings",
-   "to": "chartSettings",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:chartSize",
-   "to": "chartSize",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:chartType",
-   "to": "chartType",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:chartUpdateData",
-   "to": "chartUpdateData",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:closeFileMenu",
-   "to": "closeFileMenu",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:code",
-   "to": "code",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:combineRevisions",
-   "to": "combineRevisions",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:compareVersion",
-   "to": "compareVersion",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:convertTableToText",
-   "to": "convertTableToText",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:convertTextToTable",
-   "to": "convertTextToTable",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:createAiAssistant",
-   "to": "createAiAssistant",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:deleteComment",
-   "to": "deleteComment",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:dictate",
-   "to": "dictate",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:directionRtl",
-   "to": "directionRtl",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:displayMode",
-   "to": "displayMode",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:equationTemplate",
-   "to": "equationTemplate",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:fontName",
-   "to": "fontName",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:fontSize",
-   "to": "fontSize",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:fontSizeDec",
-   "to": "fontSizeDec",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:fontSizeInc",
-   "to": "fontSizeInc",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:formatBlock",
-   "to": "formatBlock",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:indent",
-   "to": "indent",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:inkColor",
-   "to": "inkColor",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:inkMode",
-   "to": "inkMode",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:inkSelect",
-   "to": "inkSelect",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:inkThickness",
-   "to": "inkThickness",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertBlankPage",
-   "to": "insertBlankPage",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertCaption",
-   "to": "insertCaption",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertCitation",
-   "to": "insertCitation",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertColumnBreak",
-   "to": "insertColumnBreak",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertComment",
-   "to": "insertComment",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertEndnote",
-   "to": "insertEndnote",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertFooter",
-   "to": "insertFooter",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertFootnote",
-   "to": "insertFootnote",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertHeader",
-   "to": "insertHeader",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertHeaderFooter",
-   "to": "insertHeaderFooter",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertIndexEntry",
-   "to": "insertIndexEntry",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertObject",
-   "to": "insertObject",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertOrderedList",
-   "to": "insertOrderedList",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertPageBreak",
-   "to": "insertPageBreak",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertSectionBreak",
-   "to": "insertSectionBreak",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertTableOfFigures",
-   "to": "insertTableOfFigures",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertTextart",
-   "to": "insertTextart",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertTextbox",
-   "to": "insertTextbox",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:insertUnorderedList",
-   "to": "insertUnorderedList",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:italic",
-   "to": "italic",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:justifyCenter",
-   "to": "justifyCenter",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:justifyFull",
-   "to": "justifyFull",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:justifyLeft",
-   "to": "justifyLeft",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:justifyRight",
-   "to": "justifyRight",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:link",
-   "to": "link",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:listStyle",
-   "to": "listStyle",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:mailMerge",
-   "to": "mailMerge",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:managePlugins",
-   "to": "managePlugins",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:multilevel",
-   "to": "multilevel",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:nextTrackedChange",
-   "to": "nextTrackedChange",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:objectOp",
-   "to": "objectOp",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:ocrRun",
-   "to": "ocrRun",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:openBorders",
-   "to": "openBorders",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:openColumnsDialog",
-   "to": "openColumnsDialog",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:openCrossref",
-   "to": "openCrossref",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:openPageSetup",
-   "to": "openPageSetup",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:openTableDialog",
-   "to": "openTableDialog",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:outdent",
-   "to": "outdent",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:photoEditor",
-   "to": "photoEditor",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:pluginUnavailable",
-   "to": "pluginUnavailable",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:prevTrackedChange",
-   "to": "prevTrackedChange",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:protectDialog",
-   "to": "protectDialog",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:readAloud",
-   "to": "readAloud",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:redo",
-   "to": "redo",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:rejectTrackedChange",
-   "to": "rejectTrackedChange",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:removeFormat",
-   "to": "removeFormat",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:resolveComment",
-   "to": "resolveComment",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:restrictEditing",
-   "to": "restrictEditing",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:saveDocument",
-   "to": "saveDocument",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:selectAll",
-   "to": "selectAll",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:showWordCount",
-   "to": "showWordCount",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:smallCaps",
-   "to": "smallCaps",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:strikeDouble",
-   "to": "strikeDouble",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:strikeThrough",
-   "to": "strikeThrough",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:subscript",
-   "to": "subscript",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:superscript",
-   "to": "superscript",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:tableDrawMode",
-   "to": "tableDrawMode",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:tableEraseMode",
-   "to": "tableEraseMode",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:toggleChat",
-   "to": "toggleChat",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:toggleDifferentFirst",
-   "to": "toggleDifferentFirst",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:toggleDropcap",
-   "to": "toggleDropcap",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:toggleFooterFromBottom",
-   "to": "toggleFooterFromBottom",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:toggleHeaderFromTop",
-   "to": "toggleHeaderFromTop",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:toggleHyphenation",
-   "to": "toggleHyphenation",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:toggleInk",
-   "to": "toggleInk",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:toggleLineNumbers",
-   "to": "toggleLineNumbers",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:toggleNavigation",
-   "to": "toggleNavigation",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:toggleOddEven",
-   "to": "toggleOddEven",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:toggleRightPanel",
-   "to": "toggleRightPanel",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:toggleSameAsPrev",
-   "to": "toggleSameAsPrev",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:toggleWatermark",
-   "to": "toggleWatermark",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:underline",
-   "to": "underline",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:underlineDouble",
-   "to": "underlineDouble",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:undo",
-   "to": "undo",
-   "type": "TRIGGERS"
-  },
-  {
-   "from": "toolbar:updateToc",
-   "to": "updateToc",
-   "type": "TRIGGERS"
-  },
-  {
    "from": "census:census/probe-ai.cjs",
    "to": "F-143",
    "type": "PROBES"
@@ -661,101 +66,6 @@
    "type": "COVERS"
   },
   {
-   "from": "F-010",
-   "to": "bold",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-011",
-   "to": "italic",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-012",
-   "to": "underline",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-013",
-   "to": "strikeThrough",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-014",
-   "to": "subscript",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-015",
-   "to": "superscript",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-016",
-   "to": "allCaps",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-017",
-   "to": "smallCaps",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-018",
-   "to": "code",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-030",
-   "to": "insertUnorderedList",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-031",
-   "to": "insertOrderedList",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-032",
-   "to": "insertUnorderedList",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-032",
-   "to": "insertOrderedList",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-033",
-   "to": "justifyLeft",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-034",
-   "to": "justifyCenter",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-035",
-   "to": "justifyRight",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-036",
-   "to": "justifyFull",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-037",
-   "to": "indent",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-038",
-   "to": "outdent",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
    "from": "tests/core/crates/wo-html/src/parser.rs::page_number_span_parses_and_serializes",
    "to": "F-040",
    "type": "COVERS"
@@ -1321,7 +631,32 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_convert_docxf_content_types_roundtrip",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_detect_format",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_docxf_content_type_helpers",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_docxf_package_detection",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_docxf_parses_as_docx",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_docxf_to_docx_conversion_treated_as_docx",
    "to": "F-040",
    "type": "COVERS"
   },
@@ -1332,6 +667,26 @@
   },
   {
    "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_is_ooxml_file",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_numbering_emitted_without_body_reference",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_numbering_foreign_parse",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_numbering_foreign_round_trip",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_numbering_template_fallback",
    "to": "F-040",
    "type": "COVERS"
   },
@@ -1436,7 +791,32 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::xlsx_chart_bridge_json_matches_wo_chart_contract",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::xlsx_chart_serializes_without_input_path",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::xlsx_chart_space_parses_typed",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::xlsx_chart_space_reserializes_identically",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_content_types_present",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_docxf_writer_output_roundtrips_through_reader",
    "to": "F-040",
    "type": "COVERS"
   },
@@ -1452,6 +832,11 @@
   },
   {
    "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_roundtrip_through_zip",
+   "to": "F-040",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_docxf_emits_forms_aware_content_type",
    "to": "F-040",
    "type": "COVERS"
   },
@@ -3551,11 +2936,6 @@
    "type": "COVERS"
   },
   {
-   "from": "F-041",
-   "to": "directionRtl",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
    "from": "tests/core/crates/wo-html/src/parser.rs::page_number_span_parses_and_serializes",
    "to": "F-041",
    "type": "COVERS"
@@ -4121,7 +3501,32 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_convert_docxf_content_types_roundtrip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_detect_format",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_docxf_content_type_helpers",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_docxf_package_detection",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_docxf_parses_as_docx",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_docxf_to_docx_conversion_treated_as_docx",
    "to": "F-041",
    "type": "COVERS"
   },
@@ -4132,6 +3537,26 @@
   },
   {
    "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_is_ooxml_file",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_numbering_emitted_without_body_reference",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_numbering_foreign_parse",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_numbering_foreign_round_trip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_numbering_template_fallback",
    "to": "F-041",
    "type": "COVERS"
   },
@@ -4236,7 +3661,32 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::xlsx_chart_bridge_json_matches_wo_chart_contract",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::xlsx_chart_serializes_without_input_path",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::xlsx_chart_space_parses_typed",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::xlsx_chart_space_reserializes_identically",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_content_types_present",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_docxf_writer_output_roundtrips_through_reader",
    "to": "F-041",
    "type": "COVERS"
   },
@@ -4252,6 +3702,11 @@
   },
   {
    "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_roundtrip_through_zip",
+   "to": "F-041",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_docxf_emits_forms_aware_content_type",
    "to": "F-041",
    "type": "COVERS"
   },
@@ -6351,16 +5806,6 @@
    "type": "COVERS"
   },
   {
-   "from": "F-050",
-   "to": "formatBlock",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-051",
-   "to": "formatBlock",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
    "from": "tests/core/crates/wo-x2t/src/converters.rs::test_block_element_to_xhtml_all_variants",
    "to": "F-051",
    "type": "COVERS"
@@ -8361,41 +7806,6 @@
    "type": "COVERS"
   },
   {
-   "from": "F-060",
-   "to": "undo",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-061",
-   "to": "redo",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-073",
-   "to": "insertFootnote",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-074",
-   "to": "insertEndnote",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-076",
-   "to": "insertPageBreak",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-084",
-   "to": "insertHeader",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
-   "from": "F-084",
-   "to": "insertFooter",
-   "type": "IMPLEMENTED_BY"
-  },
-  {
    "from": "tests/core/crates/wo-html/src/parser.rs::page_number_span_parses_and_serializes",
    "to": "F-102",
    "type": "COVERS"
@@ -8961,7 +8371,32 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_convert_docxf_content_types_roundtrip",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_detect_format",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_docxf_content_type_helpers",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_docxf_package_detection",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_docxf_parses_as_docx",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_docxf_to_docx_conversion_treated_as_docx",
    "to": "F-102",
    "type": "COVERS"
   },
@@ -8972,6 +8407,26 @@
   },
   {
    "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_is_ooxml_file",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_numbering_emitted_without_body_reference",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_numbering_foreign_parse",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_numbering_foreign_round_trip",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::test_numbering_template_fallback",
    "to": "F-102",
    "type": "COVERS"
   },
@@ -9076,7 +8531,32 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::xlsx_chart_bridge_json_matches_wo_chart_contract",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::xlsx_chart_serializes_without_input_path",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::xlsx_chart_space_parses_typed",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/parser.rs::xlsx_chart_space_reserializes_identically",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_content_types_present",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_docxf_writer_output_roundtrips_through_reader",
    "to": "F-102",
    "type": "COVERS"
   },
@@ -9092,6 +8572,11 @@
   },
   {
    "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_roundtrip_through_zip",
+   "to": "F-102",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_docxf_emits_forms_aware_content_type",
    "to": "F-102",
    "type": "COVERS"
   },
@@ -31826,6 +31311,11 @@
    "type": "COVERS"
   },
   {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_docxf_writer_output_roundtrips_through_reader",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
    "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_escape_xml",
    "to": "F-302",
    "type": "COVERS"
@@ -31837,6 +31327,11 @@
   },
   {
    "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_roundtrip_through_zip",
+   "to": "F-302",
+   "type": "COVERS"
+  },
+  {
+   "from": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_docxf_emits_forms_aware_content_type",
    "to": "F-302",
    "type": "COVERS"
   },
@@ -46941,1317 +46436,8 @@
    "type": "COVERS"
   }
  ],
- "generated_at": "2026-11-04T07:42:37+00:00",
+ "generated_at": "2026-11-17T19:56:08+00:00",
  "nodes": [
-  {
-   "id": "acceptTrackedChange",
-   "label": "Command",
-   "source": "editor.js:runCommand('acceptTrackedChange')"
-  },
-  {
-   "id": "addText",
-   "label": "Command",
-   "source": "editor.js:runCommand('addText')"
-  },
-  {
-   "id": "aiRewrite",
-   "label": "Command",
-   "source": "editor.js:runCommand('aiRewrite')"
-  },
-  {
-   "id": "aiSettings",
-   "label": "Command",
-   "source": "editor.js:runCommand('aiSettings')"
-  },
-  {
-   "id": "aiSummarize",
-   "label": "Command",
-   "source": "editor.js:runCommand('aiSummarize')"
-  },
-  {
-   "id": "aiTranslate",
-   "label": "Command",
-   "source": "editor.js:runCommand('aiTranslate')"
-  },
-  {
-   "id": "allCaps",
-   "label": "Command",
-   "source": "editor.js:runCommand('allCaps')"
-  },
-  {
-   "id": "applyColumns",
-   "label": "Command",
-   "source": "editor.js:runCommand('applyColumns')"
-  },
-  {
-   "id": "applyPageMargins",
-   "label": "Command",
-   "source": "editor.js:runCommand('applyPageMargins')"
-  },
-  {
-   "id": "applyPageOrientation",
-   "label": "Command",
-   "source": "editor.js:runCommand('applyPageOrientation')"
-  },
-  {
-   "id": "applyPageSize",
-   "label": "Command",
-   "source": "editor.js:runCommand('applyPageSize')"
-  },
-  {
-   "id": "bold",
-   "label": "Command",
-   "source": "editor.js:runCommand('bold')"
-  },
-  {
-   "id": "bookmark",
-   "label": "Command",
-   "source": "editor.js:runCommand('bookmark')"
-  },
-  {
-   "id": "browsePlugins",
-   "label": "Command",
-   "source": "editor.js:runCommand('browsePlugins')"
-  },
-  {
-   "id": "changeCase",
-   "label": "Command",
-   "source": "editor.js:runCommand('changeCase')"
-  },
-  {
-   "id": "chart3d",
-   "label": "Command",
-   "source": "editor.js:runCommand('chart3d')"
-  },
-  {
-   "id": "chartEditData",
-   "label": "Command",
-   "source": "editor.js:runCommand('chartEditData')"
-  },
-  {
-   "id": "chartElement",
-   "label": "Command",
-   "source": "editor.js:runCommand('chartElement')"
-  },
-  {
-   "id": "chartSettings",
-   "label": "Command",
-   "source": "editor.js:runCommand('chartSettings')"
-  },
-  {
-   "id": "chartSize",
-   "label": "Command",
-   "source": "editor.js:runCommand('chartSize')"
-  },
-  {
-   "id": "chartType",
-   "label": "Command",
-   "source": "editor.js:runCommand('chartType')"
-  },
-  {
-   "id": "chartUpdateData",
-   "label": "Command",
-   "source": "editor.js:runCommand('chartUpdateData')"
-  },
-  {
-   "id": "closeFileMenu",
-   "label": "Command",
-   "source": "editor.js:runCommand('closeFileMenu')"
-  },
-  {
-   "id": "code",
-   "label": "Command",
-   "source": "editor.js:runCommand('code')"
-  },
-  {
-   "id": "combineRevisions",
-   "label": "Command",
-   "source": "editor.js:runCommand('combineRevisions')"
-  },
-  {
-   "id": "compareVersion",
-   "label": "Command",
-   "source": "editor.js:runCommand('compareVersion')"
-  },
-  {
-   "id": "convertTableToText",
-   "label": "Command",
-   "source": "editor.js:runCommand('convertTableToText')"
-  },
-  {
-   "id": "convertTextToTable",
-   "label": "Command",
-   "source": "editor.js:runCommand('convertTextToTable')"
-  },
-  {
-   "id": "createAiAssistant",
-   "label": "Command",
-   "source": "editor.js:runCommand('createAiAssistant')"
-  },
-  {
-   "id": "deleteComment",
-   "label": "Command",
-   "source": "editor.js:runCommand('deleteComment')"
-  },
-  {
-   "id": "dictate",
-   "label": "Command",
-   "source": "editor.js:runCommand('dictate')"
-  },
-  {
-   "id": "directionRtl",
-   "label": "Command",
-   "source": "editor.js:runCommand('directionRtl')"
-  },
-  {
-   "id": "displayMode",
-   "label": "Command",
-   "source": "editor.js:runCommand('displayMode')"
-  },
-  {
-   "id": "equationTemplate",
-   "label": "Command",
-   "source": "editor.js:runCommand('equationTemplate')"
-  },
-  {
-   "id": "fontName",
-   "label": "Command",
-   "source": "editor.js:runCommand('fontName')"
-  },
-  {
-   "id": "fontSize",
-   "label": "Command",
-   "source": "editor.js:runCommand('fontSize')"
-  },
-  {
-   "id": "fontSizeDec",
-   "label": "Command",
-   "source": "editor.js:runCommand('fontSizeDec')"
-  },
-  {
-   "id": "fontSizeInc",
-   "label": "Command",
-   "source": "editor.js:runCommand('fontSizeInc')"
-  },
-  {
-   "id": "formatBlock",
-   "label": "Command",
-   "source": "editor.js:runCommand('formatBlock')"
-  },
-  {
-   "id": "indent",
-   "label": "Command",
-   "source": "editor.js:runCommand('indent')"
-  },
-  {
-   "id": "inkColor",
-   "label": "Command",
-   "source": "editor.js:runCommand('inkColor')"
-  },
-  {
-   "id": "inkMode",
-   "label": "Command",
-   "source": "editor.js:runCommand('inkMode')"
-  },
-  {
-   "id": "inkSelect",
-   "label": "Command",
-   "source": "editor.js:runCommand('inkSelect')"
-  },
-  {
-   "id": "inkThickness",
-   "label": "Command",
-   "source": "editor.js:runCommand('inkThickness')"
-  },
-  {
-   "id": "insertBlankPage",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertBlankPage')"
-  },
-  {
-   "id": "insertCaption",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertCaption')"
-  },
-  {
-   "id": "insertCitation",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertCitation')"
-  },
-  {
-   "id": "insertColumnBreak",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertColumnBreak')"
-  },
-  {
-   "id": "insertComment",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertComment')"
-  },
-  {
-   "id": "insertEndnote",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertEndnote')"
-  },
-  {
-   "id": "insertFooter",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertFooter')"
-  },
-  {
-   "id": "insertFootnote",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertFootnote')"
-  },
-  {
-   "id": "insertHeader",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertHeader')"
-  },
-  {
-   "id": "insertHeaderFooter",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertHeaderFooter')"
-  },
-  {
-   "id": "insertIndexEntry",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertIndexEntry')"
-  },
-  {
-   "id": "insertObject",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertObject')"
-  },
-  {
-   "id": "insertOrderedList",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertOrderedList')"
-  },
-  {
-   "id": "insertPageBreak",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertPageBreak')"
-  },
-  {
-   "id": "insertSectionBreak",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertSectionBreak')"
-  },
-  {
-   "id": "insertTableOfFigures",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertTableOfFigures')"
-  },
-  {
-   "id": "insertTextart",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertTextart')"
-  },
-  {
-   "id": "insertTextbox",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertTextbox')"
-  },
-  {
-   "id": "insertUnorderedList",
-   "label": "Command",
-   "source": "editor.js:runCommand('insertUnorderedList')"
-  },
-  {
-   "id": "italic",
-   "label": "Command",
-   "source": "editor.js:runCommand('italic')"
-  },
-  {
-   "id": "justifyCenter",
-   "label": "Command",
-   "source": "editor.js:runCommand('justifyCenter')"
-  },
-  {
-   "id": "justifyFull",
-   "label": "Command",
-   "source": "editor.js:runCommand('justifyFull')"
-  },
-  {
-   "id": "justifyLeft",
-   "label": "Command",
-   "source": "editor.js:runCommand('justifyLeft')"
-  },
-  {
-   "id": "justifyRight",
-   "label": "Command",
-   "source": "editor.js:runCommand('justifyRight')"
-  },
-  {
-   "id": "link",
-   "label": "Command",
-   "source": "editor.js:runCommand('link')"
-  },
-  {
-   "id": "listStyle",
-   "label": "Command",
-   "source": "editor.js:runCommand('listStyle')"
-  },
-  {
-   "id": "mailMerge",
-   "label": "Command",
-   "source": "editor.js:runCommand('mailMerge')"
-  },
-  {
-   "id": "managePlugins",
-   "label": "Command",
-   "source": "editor.js:runCommand('managePlugins')"
-  },
-  {
-   "id": "multilevel",
-   "label": "Command",
-   "source": "editor.js:runCommand('multilevel')"
-  },
-  {
-   "id": "nextTrackedChange",
-   "label": "Command",
-   "source": "editor.js:runCommand('nextTrackedChange')"
-  },
-  {
-   "id": "objectOp",
-   "label": "Command",
-   "source": "editor.js:runCommand('objectOp')"
-  },
-  {
-   "id": "ocrRun",
-   "label": "Command",
-   "source": "editor.js:runCommand('ocrRun')"
-  },
-  {
-   "id": "openBorders",
-   "label": "Command",
-   "source": "editor.js:runCommand('openBorders')"
-  },
-  {
-   "id": "openColumnsDialog",
-   "label": "Command",
-   "source": "editor.js:runCommand('openColumnsDialog')"
-  },
-  {
-   "id": "openCrossref",
-   "label": "Command",
-   "source": "editor.js:runCommand('openCrossref')"
-  },
-  {
-   "id": "openPageSetup",
-   "label": "Command",
-   "source": "editor.js:runCommand('openPageSetup')"
-  },
-  {
-   "id": "openTableDialog",
-   "label": "Command",
-   "source": "editor.js:runCommand('openTableDialog')"
-  },
-  {
-   "id": "outdent",
-   "label": "Command",
-   "source": "editor.js:runCommand('outdent')"
-  },
-  {
-   "id": "photoEditor",
-   "label": "Command",
-   "source": "editor.js:runCommand('photoEditor')"
-  },
-  {
-   "id": "pluginUnavailable",
-   "label": "Command",
-   "source": "editor.js:runCommand('pluginUnavailable')"
-  },
-  {
-   "id": "prevTrackedChange",
-   "label": "Command",
-   "source": "editor.js:runCommand('prevTrackedChange')"
-  },
-  {
-   "id": "protectDialog",
-   "label": "Command",
-   "source": "editor.js:runCommand('protectDialog')"
-  },
-  {
-   "id": "readAloud",
-   "label": "Command",
-   "source": "editor.js:runCommand('readAloud')"
-  },
-  {
-   "id": "redo",
-   "label": "Command",
-   "source": "editor.js:runCommand('redo')"
-  },
-  {
-   "id": "rejectTrackedChange",
-   "label": "Command",
-   "source": "editor.js:runCommand('rejectTrackedChange')"
-  },
-  {
-   "id": "removeFormat",
-   "label": "Command",
-   "source": "editor.js:runCommand('removeFormat')"
-  },
-  {
-   "id": "resolveComment",
-   "label": "Command",
-   "source": "editor.js:runCommand('resolveComment')"
-  },
-  {
-   "id": "restrictEditing",
-   "label": "Command",
-   "source": "editor.js:runCommand('restrictEditing')"
-  },
-  {
-   "id": "saveDocument",
-   "label": "Command",
-   "source": "editor.js:runCommand('saveDocument')"
-  },
-  {
-   "id": "selectAll",
-   "label": "Command",
-   "source": "editor.js:runCommand('selectAll')"
-  },
-  {
-   "id": "showWordCount",
-   "label": "Command",
-   "source": "editor.js:runCommand('showWordCount')"
-  },
-  {
-   "id": "smallCaps",
-   "label": "Command",
-   "source": "editor.js:runCommand('smallCaps')"
-  },
-  {
-   "id": "strikeDouble",
-   "label": "Command",
-   "source": "editor.js:runCommand('strikeDouble')"
-  },
-  {
-   "id": "strikeThrough",
-   "label": "Command",
-   "source": "editor.js:runCommand('strikeThrough')"
-  },
-  {
-   "id": "subscript",
-   "label": "Command",
-   "source": "editor.js:runCommand('subscript')"
-  },
-  {
-   "id": "superscript",
-   "label": "Command",
-   "source": "editor.js:runCommand('superscript')"
-  },
-  {
-   "id": "tableDrawMode",
-   "label": "Command",
-   "source": "editor.js:runCommand('tableDrawMode')"
-  },
-  {
-   "id": "tableEraseMode",
-   "label": "Command",
-   "source": "editor.js:runCommand('tableEraseMode')"
-  },
-  {
-   "id": "toggleChat",
-   "label": "Command",
-   "source": "editor.js:runCommand('toggleChat')"
-  },
-  {
-   "id": "toggleDifferentFirst",
-   "label": "Command",
-   "source": "editor.js:runCommand('toggleDifferentFirst')"
-  },
-  {
-   "id": "toggleDropcap",
-   "label": "Command",
-   "source": "editor.js:runCommand('toggleDropcap')"
-  },
-  {
-   "id": "toggleFooterFromBottom",
-   "label": "Command",
-   "source": "editor.js:runCommand('toggleFooterFromBottom')"
-  },
-  {
-   "id": "toggleHeaderFromTop",
-   "label": "Command",
-   "source": "editor.js:runCommand('toggleHeaderFromTop')"
-  },
-  {
-   "id": "toggleHyphenation",
-   "label": "Command",
-   "source": "editor.js:runCommand('toggleHyphenation')"
-  },
-  {
-   "id": "toggleInk",
-   "label": "Command",
-   "source": "editor.js:runCommand('toggleInk')"
-  },
-  {
-   "id": "toggleLineNumbers",
-   "label": "Command",
-   "source": "editor.js:runCommand('toggleLineNumbers')"
-  },
-  {
-   "id": "toggleNavigation",
-   "label": "Command",
-   "source": "editor.js:runCommand('toggleNavigation')"
-  },
-  {
-   "id": "toggleOddEven",
-   "label": "Command",
-   "source": "editor.js:runCommand('toggleOddEven')"
-  },
-  {
-   "id": "toggleRightPanel",
-   "label": "Command",
-   "source": "editor.js:runCommand('toggleRightPanel')"
-  },
-  {
-   "id": "toggleSameAsPrev",
-   "label": "Command",
-   "source": "editor.js:runCommand('toggleSameAsPrev')"
-  },
-  {
-   "id": "toggleWatermark",
-   "label": "Command",
-   "source": "editor.js:runCommand('toggleWatermark')"
-  },
-  {
-   "id": "underline",
-   "label": "Command",
-   "source": "editor.js:runCommand('underline')"
-  },
-  {
-   "id": "underlineDouble",
-   "label": "Command",
-   "source": "editor.js:runCommand('underlineDouble')"
-  },
-  {
-   "id": "undo",
-   "label": "Command",
-   "source": "editor.js:runCommand('undo')"
-  },
-  {
-   "id": "updateToc",
-   "label": "Command",
-   "source": "editor.js:runCommand('updateToc')"
-  },
-  {
-   "id": "toolbar:acceptTrackedChange",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:addText",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:aiRewrite",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:aiSettings",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:aiSummarize",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:aiTranslate",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:allCaps",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:applyColumns",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:applyPageMargins",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:applyPageOrientation",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:applyPageSize",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:bold",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:bookmark",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:browsePlugins",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:changeCase",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:chart3d",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:chartEditData",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:chartElement",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:chartSettings",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:chartSize",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:chartType",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:chartUpdateData",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:closeFileMenu",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:code",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:combineRevisions",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:compareVersion",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:convertTableToText",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:convertTextToTable",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:createAiAssistant",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:deleteComment",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:dictate",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:directionRtl",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:displayMode",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:equationTemplate",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:fontName",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:fontSize",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:fontSizeDec",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:fontSizeInc",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:formatBlock",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:indent",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:inkColor",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:inkMode",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:inkSelect",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:inkThickness",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertBlankPage",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertCaption",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertCitation",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertColumnBreak",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertComment",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertEndnote",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertFooter",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertFootnote",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertHeader",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertHeaderFooter",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertIndexEntry",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertObject",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertOrderedList",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertPageBreak",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertSectionBreak",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertTableOfFigures",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertTextart",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertTextbox",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:insertUnorderedList",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:italic",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:justifyCenter",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:justifyFull",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:justifyLeft",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:justifyRight",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:link",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:listStyle",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:mailMerge",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:managePlugins",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:multilevel",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:nextTrackedChange",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:objectOp",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:ocrRun",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:openBorders",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:openColumnsDialog",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:openCrossref",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:openPageSetup",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:openTableDialog",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:outdent",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:photoEditor",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:pluginUnavailable",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:prevTrackedChange",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:protectDialog",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:readAloud",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:redo",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:rejectTrackedChange",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:removeFormat",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:resolveComment",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:restrictEditing",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:saveDocument",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:selectAll",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:showWordCount",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:smallCaps",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:strikeDouble",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:strikeThrough",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:subscript",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:superscript",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:tableDrawMode",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:tableEraseMode",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:toggleChat",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:toggleDifferentFirst",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:toggleDropcap",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:toggleFooterFromBottom",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:toggleHeaderFromTop",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:toggleHyphenation",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:toggleInk",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:toggleLineNumbers",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:toggleNavigation",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:toggleOddEven",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:toggleRightPanel",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:toggleSameAsPrev",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:toggleWatermark",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:underline",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:underlineDouble",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:undo",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
-  {
-   "id": "toolbar:updateToc",
-   "kind": "toolbar-button",
-   "label": "Surface",
-   "source": "index.html"
-  },
   {
    "id": "tests/core/crates/wo-docserver/src/ai.rs::clean_markdown_strips_fences",
    "label": "Test",
@@ -49267,7 +47453,37 @@
    "path": "ore/crates/wo-ooxml/src/parser.rs"
   },
   {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_convert_docxf_content_types_roundtrip",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
    "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_detect_format",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_docxf_content_type_helpers",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_docxf_package_detection",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_docxf_parses_as_docx",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_docxf_to_docx_conversion_treated_as_docx",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-ooxml/src/parser.rs"
@@ -49280,6 +47496,30 @@
   },
   {
    "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_is_ooxml_file",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_numbering_emitted_without_body_reference",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_numbering_foreign_parse",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_numbering_foreign_round_trip",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::test_numbering_template_fallback",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-ooxml/src/parser.rs"
@@ -49405,7 +47645,37 @@
    "path": "ore/crates/wo-ooxml/src/parser.rs"
   },
   {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::xlsx_chart_bridge_json_matches_wo_chart_contract",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::xlsx_chart_serializes_without_input_path",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::xlsx_chart_space_parses_typed",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/parser.rs::xlsx_chart_space_reserializes_identically",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/parser.rs"
+  },
+  {
    "id": "tests/core/crates/wo-ooxml/src/serializer.rs::test_content_types_present",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/serializer.rs::test_docxf_writer_output_roundtrips_through_reader",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-ooxml/src/serializer.rs"
@@ -49424,6 +47694,12 @@
   },
   {
    "id": "tests/core/crates/wo-ooxml/src/serializer.rs::test_roundtrip_through_zip",
+   "label": "Test",
+   "layer": "rust",
+   "path": "ore/crates/wo-ooxml/src/serializer.rs"
+  },
+  {
+   "id": "tests/core/crates/wo-ooxml/src/serializer.rs::test_serialize_docxf_emits_forms_aware_content_type",
    "label": "Test",
    "layer": "rust",
    "path": "ore/crates/wo-ooxml/src/serializer.rs"
@@ -54841,11 +53117,11 @@
   }
  ],
  "stats": {
-  "commands": 119,
-  "edges": 9388,
+  "commands": 0,
+  "edges": 9287,
   "features": 137,
-  "surfaces": 119,
-  "tests": 819
+  "surfaces": 0,
+  "tests": 834
  },
  "version": 1
 }

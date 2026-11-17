@@ -6,8 +6,8 @@
  },
  "summary": {
   "probed": 9,
-  "parity": 9,
-  "broken": 0
+  "parity": 0,
+  "broken": 9
  },
  "results": [
   {
@@ -18,38 +18,17 @@
     "Linear notation",
     "Preview"
    ],
-   "openedBy": "click #btn-equation (tab insert)",
-   "wo": {
-    "id": "equation-dialog",
-    "title": "Equation",
-    "fields": [
-     {
-      "label": "Linear notation (^ superscript, _ subscript, sqrt(), a/b)",
-      "tag": "textarea",
-      "type": "text"
-     },
-     {
-      "label": "Preview",
-      "tag": "text",
-      "type": "text"
-     }
-    ],
-    "buttons": [
-     "Cancel",
-     "Insert equation"
-    ]
-   },
-   "covered": 2,
+   "openedBy": null,
+   "wo": null,
+   "covered": 0,
    "total": 2,
-   "missing": [],
-   "mapping": {
-    "Linear notation": "Linear notation (^ superscript, _ subscript, sqrt(), a/b)",
-    "Preview": "Preview"
-   },
-   "parity": true,
-   "functional": true,
-   "error": null,
-   "functional_detail": "preview=true inserted=true"
+   "missing": [
+    "Linear notation",
+    "Preview"
+   ],
+   "parity": false,
+   "functional": null,
+   "error": "browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-thr"
   },
   {
    "feature": "dialog.pagecolor-dialog.l4",
@@ -63,64 +42,21 @@
     "B",
     "Hex"
    ],
-   "openedBy": "click #pagecolor (tab layout)",
-   "wo": {
-    "id": "pagecolor-dialog",
-    "title": "Page Color",
-    "fields": [
-     {
-      "label": "Swatches",
-      "tag": "text",
-      "type": "text"
-     },
-     {
-      "label": "Custom color",
-      "tag": "input",
-      "type": "color"
-     },
-     {
-      "label": "HEX",
-      "tag": "input",
-      "type": "text"
-     },
-     {
-      "label": "R",
-      "tag": "input",
-      "type": "number"
-     },
-     {
-      "label": "G",
-      "tag": "input",
-      "type": "number"
-     },
-     {
-      "label": "B",
-      "tag": "input",
-      "type": "number"
-     }
-    ],
-    "buttons": [
-     "Cancel",
-     "Automatic",
-     "No Color",
-     "OK"
-    ]
-   },
-   "covered": 6,
+   "openedBy": null,
+   "wo": null,
+   "covered": 0,
    "total": 6,
-   "missing": [],
-   "mapping": {
-    "Swatches": "Swatches",
-    "Custom color": "Custom color",
-    "R": "R",
-    "G": "G",
-    "B": "B",
-    "Hex": "HEX"
-   },
-   "parity": true,
-   "functional": true,
-   "error": null,
-   "functional_detail": "--paper=#FEF3C7"
+   "missing": [
+    "Swatches",
+    "Custom color",
+    "R",
+    "G",
+    "B",
+    "Hex"
+   ],
+   "parity": false,
+   "functional": null,
+   "error": "browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-thr"
   },
   {
    "feature": "dialog.chart-dialog.l4",
@@ -131,49 +67,18 @@
     "Data",
     "Preview"
    ],
-   "openedBy": "click #btn-chart (tab insert, via #btn-insert-more)",
-   "wo": {
-    "id": "chart-dialog",
-    "title": "Chart editor",
-    "fields": [
-     {
-      "label": "Chart type",
-      "tag": "select",
-      "type": "text"
-     },
-     {
-      "label": "Title",
-      "tag": "input",
-      "type": "text"
-     },
-     {
-      "label": "Data (label, value per row)",
-      "tag": "text",
-      "type": "text"
-     },
-     {
-      "label": "Preview (updates live)",
-      "tag": "text",
-      "type": "text"
-     }
-    ],
-    "buttons": [
-     "Cancel",
-     "Insert chart"
-    ]
-   },
-   "covered": 3,
+   "openedBy": null,
+   "wo": null,
+   "covered": 0,
    "total": 3,
-   "missing": [],
-   "mapping": {
-    "Chart type": "Chart type",
-    "Data": "Data (label, value per row)",
-    "Preview": "Preview (updates live)"
-   },
-   "parity": true,
-   "functional": true,
-   "error": null,
-   "functional_detail": "preview=true inserted=true"
+   "missing": [
+    "Chart type",
+    "Data",
+    "Preview"
+   ],
+   "parity": false,
+   "functional": null,
+   "error": "browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-thr"
   },
   {
    "feature": "dialog.comment-dialog.l4",
@@ -182,32 +87,16 @@
    "oo_fields": [
     "Comment"
    ],
-   "openedBy": "click #btn-comment (tab collaboration)",
-   "wo": {
-    "id": "comment-dialog",
-    "title": "Add comment",
-    "fields": [
-     {
-      "label": "Comment",
-      "tag": "textarea",
-      "type": "text"
-     }
-    ],
-    "buttons": [
-     "Cancel",
-     "Comment"
-    ]
-   },
-   "covered": 1,
+   "openedBy": null,
+   "wo": null,
+   "covered": 0,
    "total": 1,
-   "missing": [],
-   "mapping": {
-    "Comment": "Comment"
-   },
-   "parity": true,
-   "functional": true,
-   "error": null,
-   "functional_detail": "comment span/panel after insert"
+   "missing": [
+    "Comment"
+   ],
+   "parity": false,
+   "functional": null,
+   "error": "browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-thr"
   },
   {
    "feature": "dialog.compare-dialog.l4",
@@ -216,32 +105,16 @@
    "oo_fields": [
     "Select document to compare"
    ],
-   "openedBy": "click [data-cmd=\"compareVersion\"] (tab collaboration)",
-   "wo": {
-    "id": "compare-dialog",
-    "title": "Compare Documents",
-    "fields": [
-     {
-      "label": "Select document to compare",
-      "tag": "select",
-      "type": "text"
-     }
-    ],
-    "buttons": [
-     "Cancel",
-     "Compare"
-    ]
-   },
-   "covered": 1,
+   "openedBy": null,
+   "wo": null,
+   "covered": 0,
    "total": 1,
-   "missing": [],
-   "mapping": {
-    "Select document to compare": "Select document to compare"
-   },
-   "parity": true,
+   "missing": [
+    "Select document to compare"
+   ],
+   "parity": false,
    "functional": null,
-   "error": null,
-   "functional_detail": "not provable offline (needs server-side document list)"
+   "error": "browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-thr"
   },
   {
    "feature": "dialog.combine-dialog.l4",
@@ -250,32 +123,16 @@
    "oo_fields": [
     "Select documents to combine"
    ],
-   "openedBy": "click [data-cmd=\"combineRevisions\"] (tab collaboration)",
-   "wo": {
-    "id": "combine-dialog",
-    "title": "Combine Documents",
-    "fields": [
-     {
-      "label": "Select documents to combine",
-      "tag": "select",
-      "type": "text"
-     }
-    ],
-    "buttons": [
-     "Cancel",
-     "Combine"
-    ]
-   },
-   "covered": 1,
+   "openedBy": null,
+   "wo": null,
+   "covered": 0,
    "total": 1,
-   "missing": [],
-   "mapping": {
-    "Select documents to combine": "Select documents to combine"
-   },
-   "parity": true,
+   "missing": [
+    "Select documents to combine"
+   ],
+   "parity": false,
    "functional": null,
-   "error": null,
-   "functional_detail": "not provable offline (needs server-side document list)"
+   "error": "browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-thr"
   },
   {
    "feature": "dialog.textfromfile-dialog.l4",
@@ -284,42 +141,16 @@
    "oo_fields": [
     "Choose file"
    ],
-   "openedBy": "click #btn-textfile (tab insert)",
-   "wo": {
-    "id": "textfromfile-dialog",
-    "title": "Insert text from file",
-    "fields": [
-     {
-      "label": "Choose file…",
-      "tag": "input",
-      "type": "file"
-     },
-     {
-      "label": "Insert mode",
-      "tag": "text",
-      "type": "text"
-     },
-     {
-      "label": "Format",
-      "tag": "text",
-      "type": "text"
-     }
-    ],
-    "buttons": [
-     "Cancel",
-     "Insert"
-    ]
-   },
-   "covered": 1,
+   "openedBy": null,
+   "wo": null,
+   "covered": 0,
    "total": 1,
-   "missing": [],
-   "mapping": {
-    "Choose file": "Choose file…"
-   },
-   "parity": true,
-   "functional": true,
-   "error": null,
-   "functional_detail": "file text inserted into #editor"
+   "missing": [
+    "Choose file"
+   ],
+   "parity": false,
+   "functional": null,
+   "error": "browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-thr"
   },
   {
    "feature": "dialog.field-dialog.l4",
@@ -328,32 +159,16 @@
    "oo_fields": [
     "Field type"
    ],
-   "openedBy": "click #btn-field (tab references)",
-   "wo": {
-    "id": "field-dialog",
-    "title": "Insert field",
-    "fields": [
-     {
-      "label": "Field type",
-      "tag": "select",
-      "type": "text"
-     }
-    ],
-    "buttons": [
-     "Cancel",
-     "Insert"
-    ]
-   },
-   "covered": 1,
+   "openedBy": null,
+   "wo": null,
+   "covered": 0,
    "total": 1,
-   "missing": [],
-   "mapping": {
-    "Field type": "Field type"
-   },
-   "parity": true,
-   "functional": true,
-   "error": null,
-   "functional_detail": "PAGE field value '1' in #editor (status: Inserted PAGE field)"
+   "missing": [
+    "Field type"
+   ],
+   "parity": false,
+   "functional": null,
+   "error": "browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-thr"
   },
   {
    "feature": "dialog.speech-dialog.l4",
@@ -364,45 +179,19 @@
     "Speed",
     "Pitch"
    ],
-   "openedBy": "click #btn-readaloud (tab view, via #btn-speech)",
-   "wo": {
-    "id": "speech-dialog",
-    "title": "Speech Settings",
-    "fields": [
-     {
-      "label": "Voice",
-      "tag": "select",
-      "type": "text"
-     },
-     {
-      "label": "Speed",
-      "tag": "input",
-      "type": "range"
-     },
-     {
-      "label": "Pitch",
-      "tag": "input",
-      "type": "range"
-     }
-    ],
-    "buttons": [
-     "Cancel",
-     "OK"
-    ]
-   },
-   "covered": 3,
+   "openedBy": null,
+   "wo": null,
+   "covered": 0,
    "total": 3,
-   "missing": [],
-   "mapping": {
-    "Voice": "Voice",
-    "Speed": "Speed",
-    "Pitch": "Pitch"
-   },
-   "parity": true,
+   "missing": [
+    "Voice",
+    "Speed",
+    "Pitch"
+   ],
+   "parity": false,
    "functional": null,
-   "error": null,
-   "functional_detail": "not provable offline (needs server-side document list)"
+   "error": "browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-thr"
   }
  ],
- "capturedAt": "2026-11-16T06:37:19.352Z"
+ "capturedAt": "2026-11-16T23:56:25.957Z"
 }

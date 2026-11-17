@@ -106,18 +106,30 @@ clearLocks();
   await page.evaluate(() => document.querySelectorAll('.dialog-overlay.open').forEach(d => d.classList.remove('open')));
   await sleep(150);
 
-  // file menu dropdown — the editor toggles it on CLICK, not mousedown
-  // (a dispatched MouseEvent('mousedown') never opens it -> 0 rows forever)
-  const fileTrigger = await page.$('#btn-file');
-  if (fileTrigger) { await fileTrigger.click(); await sleep(500); }
+  // file menu — old wysiwyg: #btn-file opens a BACKSTAGE overlay (#backstage-overlay
+  // .backstage-nav button); react substrate: button[data-tab="file"] opens
+  // [role="menubar"][aria-label="File menu"] button items. Toggle via CLICK.
+  const fileTrigger = (await page.$('#btn-file')) || (await page.$('button[data-tab="file"]'));
+  if (fileTrigger) { await fileTrigger.click(); await sleep(600); }
   census.surfaces['menu-file'] = await page.evaluate(() => ({
-    buttons: [...document.querySelectorAll('#file-menu .menu-item, #file-menu button, #file-menu [role=menuitem]')]
+    buttons: [...document.querySelectorAll(
+      '#file-menu .menu-item, #file-menu button, #file-menu [role=menuitem], ' +
+      '#backstage-overlay .backstage-nav button, ' +
+      '[role="menubar"][aria-label="File menu"] button')]
       .filter(b => b.offsetParent !== null).map(b => ({
         id: b.id || null, label: ((b.textContent || '').trim() || undefined),
         enabled: !b.disabled && !((b.className + '').includes('disabled')),
       })),
   }));
   await page.keyboard.press('Escape');
+  await page.evaluate(() => {
+    // backstage (wysiwyg) is a modal overlay — close it; react toggles via FileTab
+    document.querySelectorAll('#backstage-overlay.open, .dialog-overlay.open')
+      .forEach(d => d.classList.remove('open'));
+    const tab = document.querySelector('button[data-tab="file"]');
+    if (tab && tab.offsetParent !== null) tab.click();
+  });
+  await sleep(400);
   console.log(`censused menu-file: ${census.surfaces['menu-file'].buttons.length} rows`);
 
   // statusbar + zoom controls

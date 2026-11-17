@@ -2,7 +2,7 @@
  "version": 1,
  "probe": "find-dialog-l4",
  "feature": "dialog.find-dialog.l4",
- "generated": "2026-11-16T06:37:13.777Z",
+ "generated": "2026-11-16T20:54:41.045Z",
  "ok": true,
  "checks": [
   {

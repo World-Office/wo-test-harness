@@ -2,7 +2,7 @@
  "version": 1,
  "probe": "hr-settings-dialog-l4",
  "feature": "dialog.hr-settings-dialog.l4",
- "generated": "2026-11-16T06:37:17.965Z",
+ "generated": "2026-11-16T20:54:45.685Z",
  "ok": true,
  "checks": [
   {

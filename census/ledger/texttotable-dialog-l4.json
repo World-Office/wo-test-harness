@@ -2,7 +2,7 @@
  "version": 1,
  "probe": "texttotable-dialog-l4",
  "feature": "dialog.text-to-table-dialog.l4",
- "generated": "2026-11-16T06:37:33.618Z",
+ "generated": "2026-11-16T20:55:01.056Z",
  "ok": true,
  "checks": [
   {

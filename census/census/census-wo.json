@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice",
- "capturedAt": "2026-11-01T00:00:47.351Z",
+ "capturedAt": "2026-11-17T20:23:13.536Z",
  "viewport": "1440x900",
  "tabs": {
   "home": {
@@ -1196,7 +1196,6 @@
     },
     {
      "id": "btn-pagenumber",
-     "cmd": "insertPageNumber",
      "label": "#",
      "enabled": true,
      "x": 721,
@@ -1865,6 +1864,17 @@
      "y": 0,
      "w": 0,
      "h": 0
+    },
+    {
+     "id": "btn-spreadsheet",
+     "cmd": "insertObject",
+     "hidden": true,
+     "label": "Spreadsheet",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
     }
    ],
    "combos": [
@@ -2460,7 +2470,40 @@
      "id": null,
      "cmd": "objectOp",
      "hidden": true,
+     "label": "Tight",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "hidden": true,
      "label": "Behind text",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "hidden": true,
+     "label": "In front of text",
+     "enabled": true,
+     "x": 0,
+     "y": 0,
+     "w": 0,
+     "h": 0
+    },
+    {
+     "id": null,
+     "cmd": "objectOp",
+     "hidden": true,
+     "label": "Through",
      "enabled": true,
      "x": 0,
      "y": 0,
@@ -3708,7 +3751,73 @@
  },
  "surfaces": {
   "menu-file": {
-   "buttons": []
+   "buttons": [
+    {
+     "id": null,
+     "label": "Back",
+     "enabled": true
+    },
+    {
+     "id": null,
+     "label": "New",
+     "enabled": true
+    },
+    {
+     "id": null,
+     "label": "Open…",
+     "enabled": true
+    },
+    {
+     "id": null,
+     "label": "Save",
+     "enabled": true
+    },
+    {
+     "id": null,
+     "label": "Download As",
+     "enabled": true
+    },
+    {
+     "id": null,
+     "label": "Info",
+     "enabled": true
+    },
+    {
+     "id": null,
+     "label": "History",
+     "enabled": true
+    },
+    {
+     "id": null,
+     "label": "AI changes",
+     "enabled": true
+    },
+    {
+     "id": null,
+     "label": "Print",
+     "enabled": true
+    },
+    {
+     "id": null,
+     "label": "Settings",
+     "enabled": true
+    },
+    {
+     "id": null,
+     "label": "Protect",
+     "enabled": true
+    },
+    {
+     "id": null,
+     "label": "Help & about",
+     "enabled": true
+    },
+    {
+     "id": null,
+     "label": "Suggest a feature",
+     "enabled": true
+    }
+   ]
   },
   "statusbar": {
    "buttons": [
@@ -3722,7 +3831,7 @@
      "id": "sb-doc-spell",
      "label": "Check spelling",
      "enabled": true,
-     "x": 268
+     "x": 241
     },
     {
      "id": "sb-lang",

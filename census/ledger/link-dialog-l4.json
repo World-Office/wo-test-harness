@@ -5,37 +5,15 @@
   "Text to display",
   "URL"
  ],
- "openedBy": "click #btn-link (toolbar Insert link)",
- "wo": {
-  "id": "link-dialog",
-  "title": "Insert link",
-  "fields": [
-   {
-    "label": "Text to display",
-    "tag": "input",
-    "type": "text"
-   },
-   {
-    "label": "URL",
-    "tag": "input",
-    "type": "url"
-   }
-  ],
-  "buttons": [
-   "Cancel",
-   "Insert"
-  ]
- },
- "covered": 2,
+ "openedBy": null,
+ "wo": null,
+ "covered": 0,
  "total": 2,
  "missing": [],
- "mapping": {
-  "Text to display": "Text to display",
-  "URL": "URL"
- },
- "parity": true,
- "functional": true,
- "functional_text": true,
- "error": null,
- "capturedAt": "2026-11-16T06:37:13.356Z"
+ "mapping": {},
+ "parity": false,
+ "functional": false,
+ "functional_text": false,
+ "error": "browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-thr",
+ "capturedAt": "2026-11-16T23:56:30.028Z"
 }

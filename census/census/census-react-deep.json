@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice-react",
- "capturedAt": "2026-11-16T22:18:36.838Z",
+ "capturedAt": "2026-11-17T08:54:10.343Z",
  "viewport": {
   "width": 1440,
   "height": 900
@@ -18,7 +18,8 @@
   "Forms",
   "Plugins",
   "AI",
-  "Chart Design"
+  "Chart Design",
+  "Header & Footer"
  ],
  "ribbon": {
   "Home": [
@@ -173,7 +174,7 @@
     "kind": "select"
    },
    {
-    "label": "Size89101112141618202428364872",
+    "label": "Font size",
     "disabled": false,
     "kind": "select"
    },
@@ -318,6 +319,11 @@
     "kind": "button"
    },
    {
+    "label": "Spell checking",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "Track changes",
     "disabled": false,
     "kind": "button"
@@ -374,6 +380,11 @@
    },
    {
     "label": "Track Changes",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Co-editing Mode",
     "disabled": false,
     "kind": "button"
    },
@@ -555,6 +566,41 @@
     "kind": "button"
    },
    {
+    "label": "Header & Footer",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Header",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Footer",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Page Number",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Date & Time",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Field",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Comment",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "Previous page",
     "disabled": true,
     "kind": "button"
@@ -581,6 +627,11 @@
    },
    {
     "label": "Track Changes",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Co-editing Mode",
     "disabled": false,
     "kind": "button"
    },
@@ -797,6 +848,16 @@
     "kind": "button"
    },
    {
+    "label": "Different First Page",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Different Odd & Even",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "Remove Header",
     "disabled": false,
     "kind": "button"
@@ -833,6 +894,11 @@
    },
    {
     "label": "Track Changes",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Co-editing Mode",
     "disabled": false,
     "kind": "button"
    },
@@ -1004,6 +1070,11 @@
     "kind": "button"
    },
    {
+    "label": "Link",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "Previous page",
     "disabled": true,
     "kind": "button"
@@ -1030,6 +1101,11 @@
    },
    {
     "label": "Track Changes",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Co-editing Mode",
     "disabled": false,
     "kind": "button"
    },
@@ -1136,6 +1212,11 @@
     "kind": "button"
    },
    {
+    "label": "Co-editing Mode",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "Accept",
     "disabled": false,
     "kind": "button"
@@ -1237,6 +1318,11 @@
    },
    {
     "label": "Track Changes",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Co-editing Mode",
     "disabled": false,
     "kind": "button"
    },
@@ -1374,6 +1460,11 @@
    },
    {
     "label": "Track Changes",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Co-editing Mode",
     "disabled": false,
     "kind": "button"
    },
@@ -1520,6 +1611,16 @@
     "kind": "button"
    },
    {
+    "label": "Spell checking",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Track changes",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "Multiple pages",
     "disabled": false,
     "kind": "button"
@@ -1571,6 +1672,11 @@
    },
    {
     "label": "Track Changes",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Co-editing Mode",
     "disabled": false,
     "kind": "button"
    },
@@ -1672,6 +1778,11 @@
     "kind": "button"
    },
    {
+    "label": "Multiple Pages",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "Zoom In",
     "disabled": false,
     "kind": "button"
@@ -1683,6 +1794,31 @@
    },
    {
     "label": "Zoom to 100%",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Spell Check",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Ruler",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Gridlines",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Headings",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Dark Document",
     "disabled": false,
     "kind": "button"
    },
@@ -1733,6 +1869,11 @@
    },
    {
     "label": "Track Changes",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Co-editing Mode",
     "disabled": false,
     "kind": "button"
    },
@@ -1885,6 +2026,11 @@
    },
    {
     "label": "Track Changes",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Co-editing Mode",
     "disabled": false,
     "kind": "button"
    },
@@ -2076,6 +2222,11 @@
     "kind": "button"
    },
    {
+    "label": "Spell checking",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "Track changes",
     "disabled": false,
     "kind": "button"
@@ -2132,6 +2283,11 @@
    },
    {
     "label": "Track Changes",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Co-editing Mode",
     "disabled": false,
     "kind": "button"
    },
@@ -2293,6 +2449,11 @@
     "kind": "button"
    },
    {
+    "label": "Co-editing Mode",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "Spell Check",
     "disabled": false,
     "kind": "button"
@@ -2390,6 +2551,11 @@
     "kind": "button"
    },
    {
+    "label": "Header & FooterHeader & Footer",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "ChartElements",
     "disabled": false,
     "kind": "button"
@@ -2410,12 +2576,72 @@
     "kind": "select"
    },
    {
+    "label": "Advanced settings",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "Wrapping",
     "disabled": false,
     "kind": "select"
    },
    {
     "label": "3Drotation",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Advanced settings",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Width",
+    "disabled": false,
+    "kind": "select"
+   },
+   {
+    "label": "Height",
+    "disabled": false,
+    "kind": "select"
+   },
+   {
+    "label": "▇Bar",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "━Line",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "●Pie",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "▲Area",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "▌Column",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "✕Scatter",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "DefaultMonochromeVibrantPastel",
+    "disabled": false,
+    "kind": "select"
+   },
+   {
+    "label": "Edit Data",
     "disabled": false,
     "kind": "button"
    },
@@ -2446,6 +2672,178 @@
    },
    {
     "label": "Track Changes",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Co-editing Mode",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Spell Check",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Fit to Page",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Fit to Width",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Zoom Out",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Zoom In",
+    "disabled": false,
+    "kind": "button"
+   }
+  ],
+  "Header & Footer": [
+   {
+    "label": "File",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "FileFile",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "HomeHome",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "InsertInsert",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "LayoutLayout",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "ReferencesReferences",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "CollaborationCollaboration",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "ProtectionProtection",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "DrawDraw",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "ViewView",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "FormsForms",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "PluginsPlugins",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "AIAI",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Chart DesignChart Design",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Header & Footer",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Close",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Header & Footer",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Page Number",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Date & Time",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Field",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Image",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Previous page",
+    "disabled": true,
+    "kind": "button"
+   },
+   {
+    "label": "Next page",
+    "disabled": true,
+    "kind": "button"
+   },
+   {
+    "label": "Select Tool",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Hand Tool",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Language",
+    "disabled": false,
+    "kind": "select"
+   },
+   {
+    "label": "Track Changes",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Co-editing Mode",
     "disabled": false,
     "kind": "button"
    },
