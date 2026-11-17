@@ -21,7 +21,7 @@ TAB_MAP = {  # OO census key → react tab label
     "file": "File", "home": "Home", "ins": "Insert", "draw": "Draw",
     "layout": "Layout", "links": "References", "review": "Collaboration",
     "protect": "Protection", "view": "View", "plugins": "Plugins",
-    "headerfooter": "Header & Footer", "forms": "Forms", "ai": "AI",
+    "headerfooter": "Header & Footer", "charttab": "Chart Design", "forms": "Forms", "ai": "AI",
 }
 # OO contextual tabs appear under uuid keys; match by their own label.
 CHART_KEY = "chart"

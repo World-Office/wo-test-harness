@@ -64,10 +64,9 @@ function dedupeTabText(t) {
 
   // Contextual tabs: activate and capture Header & Footer
   try {
-    // Go to Insert tab and try to insert a header/footer
+    // Method 1: Try to click Header button in Insert tab
     await page.click('[role=tab]:has-text("Insert")', { timeout: 5000 });
     await sleep(500);
-    // Try different selectors for header/footer insertion
     const hfSelectors = [
       'button[title*="Header" i]',
       'button[aria-label*="Header" i]',
@@ -83,10 +82,8 @@ function dedupeTabText(t) {
         if (btn) {
           await btn.click({ timeout: 3000 });
           await sleep(1500);
-          // Click in the document body to potentially activate the tab
           await page.mouse.click(400, 300);
           await sleep(1000);
-          // Re-scan tabs
           const tabElsAfter = await page.$$('[role=tab]');
           const tabsAfter = [];
           for (const el of tabElsAfter) {
@@ -101,8 +98,36 @@ function dedupeTabText(t) {
         }
       } catch {}
     }
+    
+    // Method 2: If no Header button, try clicking in the header area of the document
+    if (!hfLabel) {
+      try {
+        // Click in the top margin area to create/edit a header
+        await page.mouse.click(200, 100);
+        await sleep(1500);
+        // Click again to ensure focus
+        await page.mouse.click(200, 100);
+        await sleep(1000);
+        // Re-scan tabs
+        const tabElsAfter = await page.$$('[role=tab]');
+        const tabsAfter = [];
+        for (const el of tabElsAfter) {
+          const vis = await el.evaluate((e) => e.offsetParent !== null);
+          if (vis) {
+            const label = await el.evaluate((e) => (e.textContent || '').trim());
+            tabsAfter.push(dedupeTabText(label));
+          }
+        }
+        hfLabel = tabsAfter.find(t => /header.*footer|footer.*header/i.test(t));
+      } catch {}
+    }
+    
     if (hfLabel) {
-      await page.click(`[role=tab]:has-text("${hfLabel}")`, { timeout: 5000 });
+      try {
+        await page.click(`[role=tab]:has-text("${hfLabel}")`, { timeout: 5000 });
+      } catch {
+        // Tab might already be active
+      }
       await sleep(700);
       perTab[hfLabel] = await page.evaluate(() => {
         const btns = [...document.querySelectorAll('button, [role=menuitem], select')]
@@ -117,7 +142,7 @@ function dedupeTabText(t) {
       });
       console.log(`  Activated contextual tab: ${hfLabel} - ${perTab[hfLabel].length} controls`);
     } else {
-      console.log(`  Warning: Header & Footer tab not found after activation attempt`);
+      console.log(`  Warning: Header & Footer tab not found after activation attempts`);
     }
   } catch (e) {
     console.log(`  Warning: Could not activate Header & Footer tab: ${e.message}`);
@@ -143,6 +168,12 @@ function dedupeTabText(t) {
         if (btn) {
           await btn.click({ timeout: 3000 });
           await sleep(2000);
+          // Click in the document to ensure chart is placed
+          await page.mouse.click(300, 400);
+          await sleep(1000);
+          // Select the chart to activate Chart Design tab
+          await page.mouse.click(300, 400);
+          await sleep(1500);
           // Re-scan tabs to find Chart Design
           const tabElsAfter = await page.$$('[role=tab]');
           const tabsAfter = [];
@@ -159,7 +190,11 @@ function dedupeTabText(t) {
       } catch {}
     }
     if (cdLabel) {
-      await page.click(`[role=tab]:has-text("${cdLabel}")`, { timeout: 5000 });
+      try {
+        await page.click(`[role=tab]:has-text("${cdLabel}")`, { timeout: 5000 });
+      } catch {
+        // Tab might already be active
+      }
       await sleep(700);
       perTab[cdLabel] = await page.evaluate(() => {
         const btns = [...document.querySelectorAll('button, [role=menuitem], select')]
