@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T11:35:42+00:00",
+ "generated": "2026-11-18T17:29:02+00:00",
  "sources": {
   "oo": "census/census/census-oo-deep.json",
   "react": "census/census/census-react-deep.json",
@@ -1319,9 +1319,9 @@
      "label": "Status Bar",
      "contextual": false,
      "counts": {
-      "done": 15,
-      "diverged": 1,
-      "missing": 1,
+      "done": 17,
+      "diverged": 0,
+      "missing": 0,
       "iconOnly": 0,
       "total": 17
      },
@@ -1358,8 +1358,8 @@
        "label": "Action status",
        "ooLabel": "Action status",
        "ooId": "label-action",
-       "status": "missing",
-       "reason": "transient action-status text slot; react statusbar has no status/message text (StatusBar.tsx: pager/zoom/word-count only)"
+       "status": "done",
+       "reason": "react status slot de-statusbar-status + documentStore.setStatusMessage (save/export/spellcheck events, StatusBar.tsx role=status)"
       },
       {
        "label": "Language",
@@ -1407,8 +1407,8 @@
        "label": "Multiple pages",
        "ooLabel": "Multiple pages",
        "ooId": "status-btn-multiple-pages",
-       "status": "diverged",
-       "reason": "react ships the toggle in the View tab (census-react-deep ribbon 'Multiple Pages'; word-commands.ts toggleMultiplePages), not in the statusbar"
+       "status": "done",
+       "reason": "react statusbar multipage toggle sharing one documentStore.multipageView state with the View tab (StatusBar.tsx + toggleMultiplePages)"
       },
       {
        "label": "Fit to Page",
@@ -1460,9 +1460,9 @@
      "label": "Dialogs",
      "contextual": false,
      "counts": {
-      "done": 27,
+      "done": 34,
       "diverged": 3,
-      "missing": 9,
+      "missing": 2,
       "iconOnly": 0,
       "total": 39
      },
@@ -1485,8 +1485,8 @@
        "label": "Cells Add",
        "ooLabel": "Cells Add",
        "ooId": "CellsAddDialog",
-       "status": "missing",
-       "reason": "react table ctx = Merge/Split/Delete only (ctx-contracts.json, live-verified); no insertCell command (word-commands.ts)"
+       "status": "done",
+       "reason": "react Table Panel offers Insert Cells (Right/Down) with shift direction, OO 'Cells Add' dialog parity (TablePanel.tsx insertCells right/down)"
       },
       {
        "label": "Form Controls",
@@ -1527,8 +1527,8 @@
        "label": "Edit List Item",
        "ooLabel": "Edit List Item",
        "ooId": "EditListItemDialog",
-       "status": "missing",
-       "reason": "react Form Controls panel edits dropdown options at insert time only (FormPanel.tsx dropdownOptions → insertDropdownControl); no edit-items path for a placed control"
+       "status": "done",
+       "reason": "react Form Controls panel edits dropdown options post-insert via contextual 'Edit Form Control' section (FormPanel.tsx editFormControl)"
       },
       {
        "label": "Insert link",
@@ -1569,15 +1569,15 @@
        "label": "List Settings",
        "ooLabel": "List Settings",
        "ooId": "ListSettingsDialog",
-       "status": "missing",
-       "reason": "react ships bullet/ordered/task list toggles (word-commands.ts) but no list-settings dialog (numbering formats, per-level indents)"
+       "status": "done",
+       "reason": "react Styles panel: list style picker incl. numbering formats — listNumberingStyle (decimal/lowerAlpha/lowerRoman) + indent (StylesPanel.tsx, rte-command.ts)"
       },
       {
        "label": "List Types",
        "ooLabel": "List Types",
        "ooId": "ListTypesAdvanced",
-       "status": "missing",
-       "reason": "react ships bullet/ordered/task list toggles (word-commands.ts) but no list-type picker dialog"
+       "status": "done",
+       "reason": "react Styles panel: bullet/ordered/task + numbering-type picker (listNumberingStyle decimal/lowerAlpha/lowerRoman, StylesPanel.tsx)"
       },
       {
        "label": "Mail Merge Email",
@@ -1597,8 +1597,8 @@
        "label": "Notes Remove",
        "ooLabel": "Notes Remove",
        "ooId": "NotesRemoveDialog",
-       "status": "missing",
-       "reason": "react Cross-Reference panel lists footnote targets (footnote filter, CrossReferencePanel.tsx); no remove-notes command (word-commands.ts has removeHeader/removeFooter only)"
+       "status": "done",
+       "reason": "react Cross-Reference panel: Remove All Footnotes / Remove All Endnotes buttons (CrossReferencePanel.tsx + remove-notes.ts removeAllFootnotesCommand/removeAllEndnotesCommand)"
       },
       {
        "label": "List.NumberingValue",
@@ -1667,15 +1667,15 @@
        "label": "Save Form",
        "ooLabel": "Save Form",
        "ooId": "SaveFormDlg",
-       "status": "missing",
-       "reason": "react Save-as panel exports DOCX (+pdf/txt via conversion, SaveAsPanel.tsx EXPORT_FORMATS); no save-as-form"
+       "status": "done",
+       "reason": "react Save As panel: 'Form' export — buildFormDocx maps content-control spans into a fillable DOCX (SaveAsPanel.tsx EXPORT_FORMATS id 'form', lib buildFormDocx)"
       },
       {
        "label": "Style Title",
        "ooLabel": "Style Title",
        "ooId": "StyleTitleDialog",
-       "status": "missing",
-       "reason": "react 'Formatting as style' copies formatting (copyStyle, word-commands.ts); no style-naming dialog"
+       "status": "done",
+       "reason": "react Styles panel: Save as Style + inline Rename on user styles (StylesPanel.tsx handleCommitRename, user-styles registry)"
       },
       {
        "label": "Formula.Title",
@@ -1753,9 +1753,9 @@
      "label": "Right Panel",
      "contextual": false,
      "counts": {
-      "done": 8,
+      "done": 9,
       "diverged": 0,
-      "missing": 2,
+      "missing": 1,
       "iconOnly": 0,
       "total": 10
      },
@@ -1827,8 +1827,8 @@
        "label": "Filling status",
        "ooLabel": "Filling status",
        "ooId": "filling-status-settings",
-       "status": "missing",
-       "reason": "react Form Controls panel inserts/edits controls (FormPanel.tsx); no fill-status reporting"
+       "status": "done",
+       "reason": "react FormPanel 'Filling status' section: total/answered/empty per form control (src/lib/form-status.ts + FORM_CONTROL_LABELS)"
       }
      ]
     }
@@ -6196,9 +6196,9 @@
  ],
  "totals": {
   "controls": 462,
-  "done": 425,
-  "diverged": 24,
-  "missing": 13,
+  "done": 435,
+  "diverged": 23,
+  "missing": 4,
   "iconOnly": 58,
   "surfaces": {
    "ribbon": {
@@ -6217,23 +6217,23 @@
    },
    "statusbar": {
     "controls": 17,
-    "done": 15,
-    "diverged": 1,
-    "missing": 1,
+    "done": 17,
+    "diverged": 0,
+    "missing": 0,
     "iconOnly": 0
    },
    "dialogs": {
     "controls": 39,
-    "done": 27,
+    "done": 34,
     "diverged": 3,
-    "missing": 9,
+    "missing": 2,
     "iconOnly": 0
    },
    "rightpanel": {
     "controls": 10,
-    "done": 8,
+    "done": 9,
     "diverged": 0,
-    "missing": 2,
+    "missing": 1,
     "iconOnly": 0
    },
    "ctx": {

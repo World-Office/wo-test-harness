@@ -198,7 +198,7 @@ STATUSBAR_SEMANTICS = {
     "btn-doc-review": ("Track changes", None, None),
     "status-btn-select-tool": ("Select tool", None, None),
     "status-btn-hand-tool": ("Hand tool", None, None),
-    "status-btn-multiple-pages": ("Multiple pages", None, None),  # → diverged (View tab)
+    "status-btn-multiple-pages": ("Multiple pages", None, None),  # → done (PGP-8 statusbar toggle)
     "btn-zoom-topage": ("Fit to page", None, None),
     "btn-zoom-towidth": ("Fit to width", None, None),
     "btn-zoom-down": ("Zoom out", None, None),
@@ -206,11 +206,15 @@ STATUSBAR_SEMANTICS = {
     "btn-zoom-up": ("Zoom in", None, None),
 }
 # PG-11 gap triage — same feature shipped on a different react surface:
-STATUSBAR_DIVERGED = {
-    "status-btn-multiple-pages": "react ships the toggle in the View tab (census-react-deep "
-                                 "ribbon 'Multiple Pages'; word-commands.ts toggleMultiplePages), "
-                                 "not in the statusbar",
+# PGP-1..9 shipped (campaign port-graph-parity, 2026-11-18, server main 9ba80faa4):
+# rows the deployed react editor now implements on a matching surface.
+STATUSBAR_SHIPPED = {
+    "label-action": "react status slot de-statusbar-status + documentStore.setStatusMessage "
+                     "(save/export/spellcheck events, StatusBar.tsx role=status)",
+    "status-btn-multiple-pages": "react statusbar multipage toggle sharing one documentStore.multipageView "
+                                   "state with the View tab (StatusBar.tsx + toggleMultiplePages)",
 }
+STATUSBAR_DIVERGED = {}
 STATUSBAR_MISS_EVIDENCE = {
     "label-action": "transient action-status text slot; react statusbar has no status/message "
                     "text (StatusBar.tsx: pager/zoom/word-count only)",
@@ -236,12 +240,15 @@ def build_statusbar(oo: dict, re_: dict, src: dict) -> dict:
         if label_match(target, set(rlabels)):
             status = "done"
             label_out = rlabels.get(norm(target), target)
+        elif STATUSBAR_SHIPPED.get(tid):
+            status, label_out = "done", label
         elif tid in STATUSBAR_DIVERGED:
             status, label_out = "diverged", label
         else:
             status, label_out = "missing", label
-        reason_out = (reason if status == "done"
-                      else STATUSBAR_DIVERGED.get(tid)
+        reason_out = (reason if status == "done" and not STATUSBAR_SHIPPED.get(tid)
+                      else STATUSBAR_SHIPPED.get(tid)
+                      or STATUSBAR_DIVERGED.get(tid)
                       or STATUSBAR_MISS_EVIDENCE.get(tid)
                       or "no react statusbar counterpart — honest gap")
         controls.append({"label": label_out, "ooLabel": runtime.get(tid) or label,
@@ -292,6 +299,24 @@ REACT_ROUTE = {
     "CaptionDialog": ("Cross-Reference", "insertCaption routes to the react Cross-Reference panel (word-commands.ts)"),
     "TableOfContentsSettings": ("Cross-Reference", "insertToc routes to the react Cross-Reference panel (word-commands.ts)"),
 }
+# PGP-1..9 shipped (campaign port-graph-parity, 2026-11-18, server main 9ba80faa4):
+# rows previously missing are now DONE with shipped-evidence reasons.
+REACT_SHIPPED = {
+    "CellsAddDialog": "react Table Panel offers Insert Cells (Right/Down) with shift direction, "
+                       "OO 'Cells Add' dialog parity (TablePanel.tsx insertCells right/down)",
+    "EditListItemDialog": "react Form Controls panel edits dropdown options post-insert via contextual "
+                           "'Edit Form Control' section (FormPanel.tsx editFormControl)",
+    "ListSettingsDialog": "react Styles panel: list style picker incl. numbering formats — "
+                           "listNumberingStyle (decimal/lowerAlpha/lowerRoman) + indent (StylesPanel.tsx, rte-command.ts)",
+    "ListTypesAdvanced": "react Styles panel: bullet/ordered/task + numbering-type picker "
+                          "(listNumberingStyle decimal/lowerAlpha/lowerRoman, StylesPanel.tsx)",
+    "NotesRemoveDialog": "react Cross-Reference panel: Remove All Footnotes / Remove All Endnotes buttons "
+                         "(CrossReferencePanel.tsx + remove-notes.ts removeAllFootnotesCommand/removeAllEndnotesCommand)",
+    "SaveFormDlg": "react Save As panel: 'Form' export — buildFormDocx maps content-control spans "
+                      "into a fillable DOCX (SaveAsPanel.tsx EXPORT_FORMATS id 'form', lib buildFormDocx)",
+    "StyleTitleDialog": "react Styles panel: Save as Style + inline Rename on user styles "
+                         "(StylesPanel.tsx handleCommitRename, user-styles registry)",
+}
 # components the deployed editor answers with a direct action, no dialog.
 REACT_DIRECT = {
     "DateTimeDialog": "react insertDateTime inserts a DATETIME field directly — no dialog (word-commands.ts)",
@@ -312,22 +337,8 @@ REACT_DIVERGED = {
 # honest-gap string (grep-verified against word-commands.ts, FormPanel.tsx,
 # CrossReferencePanel.tsx, SaveAsPanel.tsx, ctx-contracts.json).
 DLG_MISS_EVIDENCE = {
-    "CellsAddDialog": "react table ctx = Merge/Split/Delete only (ctx-contracts.json, live-verified); "
-                      "no insertCell command (word-commands.ts)",
-    "EditListItemDialog": "react Form Controls panel edits dropdown options at insert time only "
-                          "(FormPanel.tsx dropdownOptions → insertDropdownControl); no edit-items "
-                          "path for a placed control",
-    "ListSettingsDialog": "react ships bullet/ordered/task list toggles (word-commands.ts) but no "
-                          "list-settings dialog (numbering formats, per-level indents)",
-    "ListTypesAdvanced": "react ships bullet/ordered/task list toggles (word-commands.ts) but no "
-                         "list-type picker dialog",
-    "NotesRemoveDialog": "react Cross-Reference panel lists footnote targets (footnote filter, "
-                         "CrossReferencePanel.tsx); no remove-notes command (word-commands.ts has "
-                         "removeHeader/removeFooter only)",
     "RoleEditDlg": "rights are WOPI-derived read-only (FileMenu/panels/RightsPanel.tsx); no per-role editing",
     "RoleDeleteDlg": "rights are WOPI-derived read-only (FileMenu/panels/RightsPanel.tsx); no per-role delete",
-    "SaveFormDlg": "react Save-as panel exports DOCX (+pdf/txt via conversion, SaveAsPanel.tsx EXPORT_FORMATS); no save-as-form",
-    "StyleTitleDialog": "react 'Formatting as style' copies formatting (copyStyle, word-commands.ts); no style-naming dialog",
 }
 # runtime-captured OO dialog title → source component (joins census evidence).
 RUNTIME_TITLE_JOIN = {
@@ -417,6 +428,8 @@ def build_dialogs(src_dialogs: list, runtime_dlgs: list, wo_dlgs: list,
         elif rt and (wv.get(norm(rt)) or (norm(rt).endswith("s") and wv.get(norm(rt)[:-1]))):
             legacy = wv.get(norm(rt)) or wv[norm(rt)[:-1]]
             status, label, reason = "done", legacy, None
+        elif REACT_SHIPPED.get(comp):
+            status, label, reason = "done", display, REACT_SHIPPED[comp]
         else:
             status, label, reason = "missing", display, DLG_MISS_EVIDENCE.get(comp, MISSING_DLG_REASON)
         controls.append({"label": label, "ooLabel": display, "ooId": row["ooId"],
@@ -550,8 +563,11 @@ RIGHTPANEL_SEMANTICS = {
 RIGHTPANEL_MISS_REASONS = {
     "send-for-signing-settings": "react ships self-signing only (SignaturePanel.tsx 'Add "
                                  "Signature'/'Sign as'); no send-for-signing workflow",
-    "filling-status-settings": "react Form Controls panel inserts/edits controls (FormPanel.tsx); "
-                                "no fill-status reporting",
+}
+# PGP-9 shipped (campaign port-graph-parity, 2026-11-18, server main 9ba80faa4).
+RIGHTPANEL_SHIPPED = {
+    "filling-status-settings": "react FormPanel 'Filling status' section: total/answered/empty "
+                                "per form control (src/lib/form-status.ts + FORM_CONTROL_LABELS)",
 }
 
 
@@ -564,6 +580,8 @@ def build_rightpanel(src_ref: dict, react_dlgs: list) -> dict:
     for sid, (label, rid, why) in RIGHTPANEL_SEMANTICS.items():
         if rid in panels:
             status, out, reason = "done", panels[rid], why
+        elif RIGHTPANEL_SHIPPED.get(sid):
+            status, out, reason = "done", label, RIGHTPANEL_SHIPPED[sid]
         else:
             status, out, reason = "missing", label, RIGHTPANEL_MISS_REASONS.get(
                 sid, "no react right-rail counterpart — honest gap")
