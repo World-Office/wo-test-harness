@@ -24,7 +24,7 @@ fi
 
 if [ "${1:-}" = "--capture" ] || [ "${2:-}" = "--capture" ]; then
   echo "[e2e] capturing fresh deep census → census/census-react-deep.json"
-  (cd "$CENSUS" && CENSUS_REACT_URL="$BASE" /usr/bin/node census-react-deep.cjs) || exit 1
+  (cd "$CENSUS" && CENSUS_REACT_URL="$BASE" node census-react-deep.cjs) || exit 1
 fi
 
 rc=0
@@ -37,7 +37,7 @@ emit() { # emit <id> <ok>
 for probe in "$HERE"/probe-*.cjs; do
   id="$(basename "$probe" .cjs)"
   echo "── $id"
-  if /usr/bin/node "$probe"; then emit "$id" true; else emit "$id" false; rc=1; fi
+  if node "$probe"; then emit "$id" true; else emit "$id" false; rc=1; fi
 done
 
 echo "── coverage"
