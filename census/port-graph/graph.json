@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T09:52:03+00:00",
+ "generated": "2026-11-18T11:18:25+00:00",
  "sources": {
   "oo": "census/census/census-oo-deep.json",
   "react": "census/census/census-react-deep.json",
@@ -10,7 +10,14 @@
   "ooDialogs": "census/census/census-oo-dialogs.json",
   "reactDialogs": "census/census/census-react-dialogs.json",
   "woDialogs": "census/census/census-wo-dialogs.json",
-  "shortcuts": "census/census/census-shortcuts.json"
+  "shortcuts": "census/census/census-shortcuts.json",
+  "ooBackstageLabels": "census/census/census-oo.json",
+  "srcDialogs": "census/oo-source/oo-dialogs.json",
+  "srcFilemenu": "census/oo-source/oo-filemenu.json",
+  "srcStatusbar": "census/oo-source/oo-statusbar.json",
+  "srcCtxManifest": "census/oo-source/oo-ctx-manifest.json",
+  "srcReference": "census/oo-source/oo-reference.json",
+  "srcShortcuts": "census/oo-source/oo-shortcuts.json"
  },
  "surfaces": [
   {
@@ -1055,57 +1062,253 @@
       }
      ]
     }
-   ]
+   ],
+   "sourceManifest": {
+    "tabs": 4,
+    "buttons": 39,
+    "slotIds": 78,
+    "sourceIds": 45,
+    "shortcutActions": 25,
+    "note": "source templates (4 tabs) ⊆ runtime census (14 tabs incl. contextual) — runtime kept as baseline, counts noted; per-button source ids are chrome-level detail"
+   }
   },
   {
    "id": "filemenu",
    "label": "File Menu",
    "tabs": [
     {
-     "id": "filemenu",
-     "label": "File",
+     "id": "filemenu-buttons",
+     "label": "Backstage Buttons",
      "contextual": false,
      "counts": {
-      "done": 0,
-      "diverged": 5,
-      "missing": 0,
+      "done": 17,
+      "diverged": 0,
+      "missing": 2,
       "iconOnly": 0,
-      "total": 5
+      "total": 19
      },
      "controls": [
       {
-       "label": "Find (Ctrl+F)",
-       "ooLabel": "Find (Ctrl+F)",
-       "status": "diverged",
-       "reason": "browser-native Ctrl+F / ribbon Home Find & Replace; react File menu carries document ops only"
+       "label": "Back",
+       "ooLabel": "Back",
+       "ooId": "fm-btn-return",
+       "status": "done",
+       "reason": null
       },
       {
-       "label": "Copy (Ctrl+Insert)",
-       "ooLabel": "Copy (Ctrl+Insert)",
-       "status": "diverged",
-       "reason": "browser-native clipboard; OO backstage QAT cluster not replicated by design"
+       "label": "Create New",
+       "ooLabel": "Create New",
+       "ooId": "fm-btn-create",
+       "status": "done",
+       "reason": null
       },
       {
-       "label": "Paste (Ctrl+V)",
-       "ooLabel": "Paste (Ctrl+V)",
-       "status": "diverged",
-       "reason": "browser-native clipboard; OO backstage QAT cluster not replicated by design"
+       "label": "Open Recent",
+       "ooLabel": "Open Recent",
+       "ooId": "fm-btn-recent",
+       "status": "done",
+       "reason": null
       },
       {
-       "label": "Cut (Ctrl+X)",
-       "ooLabel": "Cut (Ctrl+X)",
-       "status": "diverged",
-       "reason": "browser-native clipboard; OO backstage QAT cluster not replicated by design"
+       "label": "Save",
+       "ooLabel": "Save",
+       "ooId": "fm-btn-save",
+       "status": "done",
+       "reason": null
       },
       {
-       "label": "Copy style (Ctrl+Alt+C)",
-       "ooLabel": "Copy style (Ctrl+Alt+C)",
-       "status": "diverged",
-       "reason": "not ported (QAT convenience); Format Painter on Home covers the use case"
+       "label": "Edit Document",
+       "ooLabel": "Edit Document",
+       "ooId": "fm-btn-edit",
+       "status": "missing",
+       "reason": "no react file-menu counterpart — honest gap"
+      },
+      {
+       "label": "Download as...",
+       "ooLabel": "Download As",
+       "ooId": "fm-btn-download",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Save Copy as...",
+       "ooLabel": "Save Copy As",
+       "ooId": "fm-btn-save-copy",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Save to Desktop",
+       "ooLabel": "Save to Desktop",
+       "ooId": "fm-btn-save-desktop",
+       "status": "missing",
+       "reason": "no react file-menu counterpart — honest gap"
+      },
+      {
+       "label": "Print",
+       "ooLabel": "Print",
+       "ooId": "fm-btn-print",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Print with Preview",
+       "ooLabel": "Print with Preview",
+       "ooId": "fm-btn-print-with-preview",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Rename...",
+       "ooLabel": "Rename",
+       "ooId": "fm-btn-rename",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "ProtectDoc",
+       "ooLabel": "Protect",
+       "ooId": "fm-btn-protect",
+       "status": "done",
+       "reason": "react backstage panel component 'ProtectDoc'"
+      },
+      {
+       "label": "DocumentInfo",
+       "ooLabel": "Info",
+       "ooId": "fm-btn-info",
+       "status": "done",
+       "reason": "react backstage panel component 'DocumentInfo'"
+      },
+      {
+       "label": "Version History...",
+       "ooLabel": "Version History",
+       "ooId": "fm-btn-history",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Access Rights...",
+       "ooLabel": "Access Rights",
+       "ooId": "fm-btn-rights",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Go to Documents",
+       "ooLabel": "Go to Documents",
+       "ooId": "fm-btn-back",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Advanced Settings...",
+       "ooLabel": "Advanced Settings",
+       "ooId": "fm-btn-settings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Help...",
+       "ooLabel": "Help",
+       "ooId": "fm-btn-help",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Suggest Feature",
+       "ooLabel": "Suggest a Feature",
+       "ooId": "fm-btn-suggest",
+       "status": "done",
+       "reason": null
+      }
+     ]
+    },
+    {
+     "id": "filemenu-panels",
+     "label": "Backstage Panels",
+     "contextual": false,
+     "counts": {
+      "done": 10,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 0,
+      "total": 10
+     },
+     "controls": [
+      {
+       "label": "Save as...",
+       "ooLabel": "Save As",
+       "ooId": "panel-saveas",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "SaveCopy",
+       "ooLabel": "Save Copy",
+       "ooId": "panel-savecopy",
+       "status": "done",
+       "reason": "react backstage panel component 'SaveCopy'"
+      },
+      {
+       "label": "RecentFiles",
+       "ooLabel": "Recent Files",
+       "ooId": "panel-recentfiles",
+       "status": "done",
+       "reason": "react backstage panel component 'RecentFiles'"
+      },
+      {
+       "label": "Create New",
+       "ooLabel": "Create New",
+       "ooId": "panel-createnew",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Document Info...",
+       "ooLabel": "Document Info",
+       "ooId": "panel-info",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Access Rights...",
+       "ooLabel": "Access Rights",
+       "ooId": "panel-rights",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Advanced Settings...",
+       "ooLabel": "Advanced Settings",
+       "ooId": "panel-settings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Help...",
+       "ooLabel": "Help",
+       "ooId": "panel-help",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Protect Document",
+       "ooLabel": "Protect Document",
+       "ooId": "panel-protect",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Print",
+       "ooLabel": "Print",
+       "ooId": "panel-print",
+       "status": "done",
+       "reason": null
       }
      ]
     }
-   ]
+   ],
+   "note": "v3 baseline = oo-filemenu.json source manifest (19 buttons + 10 panels, OO build 252.232.451.526); the runtime file-tab capture was quick-access chrome (Find/Copy/Paste) and is not the backstage surface; id→label table in PORT-GRAPH.md"
   },
   {
    "id": "statusbar",
@@ -1116,122 +1319,521 @@
      "label": "Status Bar",
      "contextual": false,
      "counts": {
-      "done": 2,
+      "done": 15,
       "diverged": 0,
-      "missing": 0,
-      "iconOnly": 11,
-      "total": 13
+      "missing": 2,
+      "iconOnly": 0,
+      "total": 17
      },
      "controls": [
       {
+       "label": "Page 1 of 0",
+       "ooLabel": "Page count",
+       "ooId": "label-pages",
+       "status": "done",
+       "reason": "react pager text 'Page N of M'"
+      },
+      {
+       "label": "Next page",
+       "ooLabel": "Go to page box",
+       "ooId": "status-goto-box",
+       "status": "done",
+       "reason": "react pager (Previous page / Next page buttons)"
+      },
+      {
+       "label": "Next page",
+       "ooLabel": "Go to page button",
+       "ooId": "status-goto-page",
+       "status": "done",
+       "reason": "react pager (Previous page / Next page buttons)"
+      },
+      {
        "label": "Words: 0",
        "ooLabel": "Word count",
+       "ooId": "slot-status-btn-info",
        "status": "done",
+       "reason": "react 'Words: N' text"
+      },
+      {
+       "label": "Action status",
+       "ooLabel": "Action status",
+       "ooId": "label-action",
+       "status": "missing",
        "reason": null
       },
       {
        "label": "Language",
        "ooLabel": "English – United States",
+       "ooId": "btn-cnt-lang",
+       "status": "done",
+       "reason": "container of doc-lang + doc-spell; react ships Language + Spell Check"
+      },
+      {
+       "label": "Language",
+       "ooLabel": "Language",
+       "ooId": "btn-doc-lang",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Spell Check",
+       "ooLabel": "Spell check",
+       "ooId": "btn-doc-spell",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Track Changes",
+       "ooLabel": "Track changes",
+       "ooId": "btn-doc-review",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Select Tool",
+       "ooLabel": "Select tool",
+       "ooId": "status-btn-select-tool",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Hand Tool",
+       "ooLabel": "Hand tool",
+       "ooId": "status-btn-hand-tool",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Multiple pages",
+       "ooLabel": "Multiple pages",
+       "ooId": "status-btn-multiple-pages",
+       "status": "missing",
+       "reason": null
+      },
+      {
+       "label": "Fit to Page",
+       "ooLabel": "Fit to page",
+       "ooId": "btn-zoom-topage",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Fit to Width",
+       "ooLabel": "Fit to width",
+       "ooId": "btn-zoom-towidth",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Zoom Out",
+       "ooLabel": "Zoom out",
+       "ooId": "btn-zoom-down",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "100%",
+       "ooLabel": "Zoom",
+       "ooId": "label-zoom",
+       "status": "done",
+       "reason": "react zoom value text"
+      },
+      {
+       "label": "Zoom In",
+       "ooLabel": "Zoom in",
+       "ooId": "btn-zoom-up",
        "status": "done",
        "reason": null
       }
      ],
-     "note": "real compare vs react statusbar census; aliases for OO slot values vs react control titles (Word count→Words: N, doc language→Language)"
+     "note": "v3 union: 17 source template ids (oo-statusbar.json, OO build pinned) ∪ runtime census rows (joined by DOM id); ids→semantics table in PORT-GRAPH.md"
     }
    ]
   },
   {
    "id": "dialogs",
    "label": "Dialogs",
-   "caveat": "WO side = react panels census (deployed editor; route aliases verified in word-commands.ts) with the legacy wysiwyg census as fallback for modals the panels census does not reach (Symbol, Page setup, Columns, Hyphenation)",
+   "caveat": "v3 baseline = 36 source dialogs (oo-dialogs.json, OO build 252.232.451.526) ∪ runtime-only titles; WO evidence = react panels census (deployed) with the legacy wysiwyg census as fallback; rows with no evidence = missing (honest gap)",
    "tabs": [
     {
      "id": "dialogs",
      "label": "Dialogs",
      "contextual": false,
      "counts": {
-      "done": 11,
+      "done": 26,
       "diverged": 1,
-      "missing": 0,
+      "missing": 12,
       "iconOnly": 0,
-      "total": 12
+      "total": 39
      },
      "controls": [
       {
-       "label": "Date & time",
-       "ooLabel": "Date & time",
-       "status": "diverged",
-       "reason": "react insertDateTime inserts a DATETIME field directly — no dialog (word-commands.ts)"
-      },
-      {
-       "label": "Insert symbol",
-       "ooLabel": "Symbol",
-       "status": "done",
-       "reason": null
-      },
-      {
-       "label": "Page setup",
-       "ooLabel": "Margins",
-       "status": "done",
-       "reason": "combined into WO 'Page setup' (fields: Size, Margins)"
-      },
-      {
-       "label": "Page setup",
-       "ooLabel": "Page size",
-       "status": "done",
-       "reason": "combined into WO 'Page setup' (fields: Size, Margins)"
-      },
-      {
-       "label": "Insert columns",
-       "ooLabel": "Columns",
-       "status": "done",
-       "reason": null
-      },
-      {
-       "label": "Hyphenation",
-       "ooLabel": "Hyphenation",
-       "status": "done",
-       "reason": null
-      },
-      {
        "label": "Cross-Reference",
        "ooLabel": "Bookmarks",
+       "ooId": "window-bookmarks",
        "status": "done",
        "reason": "insertBookmark routes to the react Cross-Reference panel (word-commands.ts)"
       },
       {
        "label": "Cross-Reference",
        "ooLabel": "Insert caption",
+       "ooId": "window-caption",
        "status": "done",
        "reason": "insertCaption routes to the react Cross-Reference panel (word-commands.ts)"
       },
       {
+       "label": "Cells Add",
+       "ooLabel": "Cells Add",
+       "ooId": "CellsAddDialog",
+       "status": "missing",
+       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+      },
+      {
+       "label": "Control Settings",
+       "ooLabel": "Control Settings",
+       "ooId": "ControlSettingsDialog",
+       "status": "missing",
+       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+      },
+      {
        "label": "Cross-Reference",
        "ooLabel": "Cross-reference",
+       "ooId": "window-cross-ref",
        "status": "done",
        "reason": null
       },
       {
-       "label": "Cross-Reference",
-       "ooLabel": "Table of figures",
+       "label": "Insert columns",
+       "ooLabel": "Columns",
+       "ooId": "window-custom-columns",
        "status": "done",
-       "reason": "insertTableOfFigures routes to the react Cross-Reference panel (word-commands.ts)"
+       "reason": "legacy 'Insert columns' dialog"
+      },
+      {
+       "label": "Date & time",
+       "ooLabel": "Date & time",
+       "ooId": "window-date-time",
+       "status": "diverged",
+       "reason": "react insertDateTime inserts a DATETIME field directly — no dialog (word-commands.ts)"
+      },
+      {
+       "label": "Drop Cap",
+       "ooLabel": "Dropcap Settings",
+       "ooId": "DropcapSettingsAdvanced",
+       "status": "done",
+       "reason": "legacy Drop Cap dialog"
+      },
+      {
+       "label": "Edit List Item",
+       "ooLabel": "Edit List Item",
+       "ooId": "EditListItemDialog",
+       "status": "missing",
+       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+      },
+      {
+       "label": "Insert link",
+       "ooLabel": "Hyperlink Settings",
+       "ooId": "window-hyperlink",
+       "status": "done",
+       "reason": "legacy hyperlink dialog"
+      },
+      {
+       "label": "Hyphenation",
+       "ooLabel": "Hyphenation",
+       "ooId": "window-hyphenation-dlg",
+       "status": "done",
+       "reason": "legacy Hyphenation dialog"
+      },
+      {
+       "label": "Image Settings",
+       "ooLabel": "Image Settings",
+       "ooId": "ImageSettingsAdvanced",
+       "status": "done",
+       "reason": "advanced settings → react Image Settings right-rail panel"
+      },
+      {
+       "label": "Line Numbers",
+       "ooLabel": "Line Numbers",
+       "ooId": "window-line-numbers",
+       "status": "done",
+       "reason": "legacy Line Numbers dialog"
+      },
+      {
+       "label": "Ctx.AdjustListIndents",
+       "ooLabel": "List Indents",
+       "ooId": "window-list-indents",
+       "status": "done",
+       "reason": "legacy list-indents dialog"
+      },
+      {
+       "label": "List Settings",
+       "ooLabel": "List Settings",
+       "ooId": "ListSettingsDialog",
+       "status": "missing",
+       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+      },
+      {
+       "label": "List Types",
+       "ooLabel": "List Types",
+       "ooId": "ListTypesAdvanced",
+       "status": "missing",
+       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+      },
+      {
+       "label": "Mail Merge Email",
+       "ooLabel": "Mail Merge Email",
+       "ooId": "MailMergeEmailDlg",
+       "status": "missing",
+       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+      },
+      {
+       "label": "Footnote and Endnote",
+       "ooLabel": "Note Settings",
+       "ooId": "window-note-settings",
+       "status": "done",
+       "reason": "legacy Footnote and Endnote dialog"
+      },
+      {
+       "label": "Notes Remove",
+       "ooLabel": "Notes Remove",
+       "ooId": "NotesRemoveDialog",
+       "status": "missing",
+       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+      },
+      {
+       "label": "List.NumberingValue",
+       "ooLabel": "Numbering Value",
+       "ooId": "NumberingValueDialog",
+       "status": "done",
+       "reason": "legacy numbering-value dialog"
+      },
+      {
+       "label": "Page setup",
+       "ooLabel": "Margins",
+       "ooId": "window-page-margins",
+       "status": "done",
+       "reason": "combined into WO 'Page setup' (fields: Size, Margins)"
+      },
+      {
+       "label": "Dialog.PageNumberTitle",
+       "ooLabel": "Page Numbering",
+       "ooId": "PageNumberingDlg",
+       "status": "done",
+       "reason": "legacy page-numbering dialog"
+      },
+      {
+       "label": "Page setup",
+       "ooLabel": "Page size",
+       "ooId": "window-page-size",
+       "status": "done",
+       "reason": "combined into WO 'Page setup' (fields: Size, Margins)"
+      },
+      {
+       "label": "Ctx.ParagraphSettings",
+       "ooLabel": "Paragraph Settings",
+       "ooId": "ParagraphSettingsAdvanced",
+       "status": "done",
+       "reason": "legacy paragraph settings dialog"
+      },
+      {
+       "label": "Prot.Title",
+       "ooLabel": "Protect",
+       "ooId": "ProtectDialog",
+       "status": "done",
+       "reason": "legacy protect dialog"
+      },
+      {
+       "label": "Role Delete",
+       "ooLabel": "Role Delete",
+       "ooId": "RoleDeleteDlg",
+       "status": "missing",
+       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+      },
+      {
+       "label": "Role Edit",
+       "ooLabel": "Role Edit",
+       "ooId": "RoleEditDlg",
+       "status": "missing",
+       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+      },
+      {
+       "label": "Roles Manager",
+       "ooLabel": "Roles Manager",
+       "ooId": "RolesManagerDlg",
+       "status": "missing",
+       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+      },
+      {
+       "label": "Save Form",
+       "ooLabel": "Save Form",
+       "ooId": "SaveFormDlg",
+       "status": "missing",
+       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+      },
+      {
+       "label": "Style Title",
+       "ooLabel": "Style Title",
+       "ooId": "StyleTitleDialog",
+       "status": "missing",
+       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+      },
+      {
+       "label": "Formula.Title",
+       "ooLabel": "Table Formula",
+       "ooId": "TableFormulaDialog",
+       "status": "done",
+       "reason": "legacy table formula dialog"
       },
       {
        "label": "Cross-Reference",
        "ooLabel": "Table of contents",
+       "ooId": "window-table-contents",
        "status": "done",
        "reason": "insertToc routes to the react Cross-Reference panel (word-commands.ts)"
       },
       {
+       "label": "Table Settings",
+       "ooLabel": "Table Settings",
+       "ooId": "TableSettingsAdvanced",
+       "status": "done",
+       "reason": "advanced settings → react Table Settings right-rail panel"
+      },
+      {
+       "label": "TableToText.Title",
+       "ooLabel": "Table To Text",
+       "ooId": "TableToTextDialog",
+       "status": "done",
+       "reason": "legacy table-to-text dialog"
+      },
+      {
+       "label": "TextToTable.Title",
+       "ooLabel": "Text To Table",
+       "ooId": "TextToTableDialog",
+       "status": "done",
+       "reason": "legacy text-to-table dialog"
+      },
+      {
+       "label": "Watermark",
+       "ooLabel": "Watermark Settings",
+       "ooId": "window-watermark",
+       "status": "done",
+       "reason": "legacy Watermark dialog"
+      },
+      {
+       "label": "Insert symbol",
+       "ooLabel": "Symbol",
+       "ooId": "Symbol",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "TableOfFigures.Title",
+       "ooLabel": "Table of figures",
+       "ooId": "Table of figures",
+       "status": "done",
+       "reason": null
+      },
+      {
        "label": "Plugins",
        "ooLabel": "Macros",
+       "ooId": "Macros",
        "status": "done",
        "reason": "macros routes to the react Plugins panel (word-commands.ts)"
       }
      ]
     }
    ]
+  },
+  {
+   "id": "rightpanel",
+   "label": "Right Panel",
+   "tabs": [
+    {
+     "id": "rightpanel",
+     "label": "Right Panel",
+     "contextual": false,
+     "counts": {
+      "done": 8,
+      "diverged": 0,
+      "missing": 2,
+      "iconOnly": 0,
+      "total": 10
+     },
+     "controls": [
+      {
+       "label": "Styles",
+       "ooLabel": "Paragraph settings",
+       "ooId": "paragraph-settings",
+       "status": "done",
+       "reason": "react rail 'paragraph' panel (Styles list)"
+      },
+      {
+       "label": "Table Settings",
+       "ooLabel": "Table settings",
+       "ooId": "table-settings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Image Settings",
+       "ooLabel": "Image settings",
+       "ooId": "image-settings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Shape Settings",
+       "ooLabel": "Shape settings",
+       "ooId": "shape-settings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Mail Merge",
+       "ooLabel": "Mail merge settings",
+       "ooId": "mail-merge-settings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "WordArt / Text Effects",
+       "ooLabel": "Text art settings",
+       "ooId": "textart-settings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Digital Signature",
+       "ooLabel": "Signature settings",
+       "ooId": "signature-settings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Form Controls",
+       "ooLabel": "Form settings",
+       "ooId": "form-settings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Send for signing",
+       "ooLabel": "Send for signing",
+       "ooId": "send-for-signing-settings",
+       "status": "missing",
+       "reason": "no react right-rail counterpart — honest gap"
+      },
+      {
+       "label": "Filling status",
+       "ooLabel": "Filling status",
+       "ooId": "filling-status-settings",
+       "status": "missing",
+       "reason": "no react right-rail counterpart — honest gap"
+      }
+     ]
+    }
+   ],
+   "note": "v3 baseline = oo-reference.json rightPanel (10 sections); react ships 15 right-rail panels — react-only: ai-assistant, chart, comments, crossreference, plugins, review, theme (superset, not debt)"
   },
   {
    "id": "ctx",
@@ -1761,7 +2363,41 @@
      "live": "seeded OO 9.4.0 rig (2026-11-15), right-click on shape"
     }
    ],
-   "note": "verified live via ctx-scenarios — OO 9.4.0 live capture (seeded rig) + source analysis"
+   "note": "verified live via ctx-scenarios — OO 9.4.0 live capture (seeded rig) + source analysis",
+   "manifest": {
+    "menus": {
+     "pictureMenu": {
+      "items": 37,
+      "chars": 14821
+     },
+     "tableMenu": {
+      "items": 45,
+      "chars": 16575
+     },
+     "textMenu": {
+      "items": 51,
+      "chars": 18515
+     },
+     "hdrMenu": {
+      "items": 1,
+      "chars": 781
+     },
+     "viewModeMenu": {
+      "items": 12,
+      "chars": 5155
+     },
+     "viewPDFModeMenu": {
+      "items": 1,
+      "chars": 286
+     }
+    },
+    "totals": {
+     "menuItemConstructors": 237,
+     "captionEntries": 48,
+     "separators": 48
+    },
+    "note": "oo-ctx-manifest counts source menuItem constructors (237) — counts only, no labels; controls below are the 75 live-verified ctx-contract rows (no controls invented)"
+   }
   },
   {
    "id": "shortcuts",
@@ -5559,11 +6195,11 @@
   }
  ],
  "totals": {
-  "controls": 386,
-  "done": 360,
-  "diverged": 26,
-  "missing": 0,
-  "iconOnly": 69,
+  "controls": 462,
+  "done": 423,
+  "diverged": 21,
+  "missing": 18,
+  "iconOnly": 58,
   "surfaces": {
    "ribbon": {
     "controls": 145,
@@ -5573,24 +6209,31 @@
     "iconOnly": 58
    },
    "filemenu": {
-    "controls": 5,
-    "done": 0,
-    "diverged": 5,
-    "missing": 0,
+    "controls": 29,
+    "done": 27,
+    "diverged": 0,
+    "missing": 2,
     "iconOnly": 0
    },
    "statusbar": {
-    "controls": 2,
-    "done": 2,
+    "controls": 17,
+    "done": 15,
     "diverged": 0,
-    "missing": 0,
-    "iconOnly": 11
+    "missing": 2,
+    "iconOnly": 0
    },
    "dialogs": {
-    "controls": 12,
-    "done": 11,
+    "controls": 39,
+    "done": 26,
     "diverged": 1,
-    "missing": 0,
+    "missing": 12,
+    "iconOnly": 0
+   },
+   "rightpanel": {
+    "controls": 10,
+    "done": 8,
+    "diverged": 0,
+    "missing": 2,
     "iconOnly": 0
    },
    "ctx": {

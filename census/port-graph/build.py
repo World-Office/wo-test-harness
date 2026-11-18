@@ -17,6 +17,21 @@ Reads the committed census artifacts (no node, no playwright, no network):
                                          fallback for dialogs the panels census
                                          does not reach: modals like Symbol)
   census/census/census-shortcuts.json    OO Shortcuts.js vs WO keydown (147, static)
+  census/census/census-oo.json           OO runtime backstage labels (portal-mode capture;
+                                         anchors the filemenu id→label map)
+  census/oo-source/oo-dialogs.json       SOURCE manifest: 36 dialogs (OO build 252.232.451.526)
+  census/oo-source/oo-filemenu.json      SOURCE manifest: 19 backstage buttons + 10 panels
+  census/oo-source/oo-statusbar.json     SOURCE manifest: 17 statusbar template ids
+  census/oo-source/oo-ctx-manifest.json  SOURCE manifest: ctx menu constructor counts (237)
+  census/oo-source/oo-reference.json     SOURCE manifest: ribbon/counts + 10 rightPanel sections
+  census/oo-source/oo-shortcuts.json     SOURCE manifest: 142 runtime shortcut actions
+
+v3 UNION RULE: the OO-side baseline of every surface is the UNION of the
+source manifests (oo-source/, the larger truth dug from OO's templates) with
+the runtime censuses. build.py self-asserts union completeness and exits
+loudly if any manifest row lacks a graph row. Rows with NO react-side
+evidence are `missing` — the honest gap, never massaged to keep done-gate
+green (see PORT-GRAPH.md).
 
 Emits census/port-graph/graph.json (see PORT-GRAPH.md). Derived artifact:
 regenerate after a census capture — never hand-edit.
@@ -39,6 +54,14 @@ OO_DLG_PATH = CENSUS / "census" / "census-oo-dialogs.json"
 REACT_DLG_PATH = CENSUS / "census" / "census-react-dialogs.json"
 WO_DLG_PATH = CENSUS / "census" / "census-wo-dialogs.json"
 SHORTCUTS_PATH = CENSUS / "census" / "census-shortcuts.json"
+OO_BACKSTAGE_PATH = CENSUS / "census" / "census-oo.json"
+OO_SRC = CENSUS / "oo-source"
+SRC_DIALOGS_PATH = OO_SRC / "oo-dialogs.json"
+SRC_FILEMENU_PATH = OO_SRC / "oo-filemenu.json"
+SRC_STATUSBAR_PATH = OO_SRC / "oo-statusbar.json"
+SRC_CTX_PATH = OO_SRC / "oo-ctx-manifest.json"
+SRC_REF_PATH = OO_SRC / "oo-reference.json"
+SRC_SHORTCUTS_PATH = OO_SRC / "oo-shortcuts.json"
 OUT_PATH = HERE / "graph.json"
 
 
@@ -91,14 +114,11 @@ def label_match(oo_label: str, react_labels: set[str]) -> bool:
 
 def react_label_universe(re_: dict) -> dict[str, dict[str, str]]:
     """react tab name → {norm(label): original react label}."""
-    uni: dict[str, dict[str, str]] = {
+    return {
         t: {norm(b.get("label", "")): b.get("label", "")
             for b in rows if b.get("label")}
         for t, rows in re_.get("ribbon", {}).items()
     }
-    uni["File"] = {norm(b.get("label", "")): b.get("label", "")
-                   for b in re_.get("fileMenu", []) if b.get("label")}
-    return uni
 
 
 def resolve_react_tab(key: str, tab: dict, uni: dict) -> str | None:
@@ -124,9 +144,6 @@ def build_tab(tab_key: str, tab: dict, uni: dict, div: dict) -> dict:
     tab_div = div_tab.get("_tab") if isinstance(div_tab, dict) else None
 
     buttons = tab.get("buttons", [])
-    if tab_key == "file":  # OO backstage embeds ribbon-nav buttons — chrome, not features
-        nav = {norm(v) for v in TAB_MAP.values()} | {"editing"}
-        buttons = [b for b in buttons if norm(b.get("label", "")) not in nav]
 
     controls, counts = [], {"done": 0, "diverged": 0, "missing": 0, "iconOnly": 0}
     for b in buttons:
@@ -153,72 +170,147 @@ def build_tab(tab_key: str, tab: dict, uni: dict, div: dict) -> dict:
             "controls": controls}
 
 
-# OO's statusbar census captured slot VALUES where react's captured control
-# TITLES; these norm-keyed pairs are the same control (see PORT-GRAPH.md).
-STATUSBAR_ALIASES = {"wordcount": "words0", "englishunitedstates": "language"}
+# v3: the OO-side baseline is the UNION of the source manifests (oo-source/,
+# OO build 252.232.451.526) with the runtime censuses. Every mapping table
+# below is documented in PORT-GRAPH.md; every manifest row MUST appear as a
+# graph row (asserted in main()).
 
 
-def build_statusbar(oo: dict, re_: dict) -> dict:
-    """OO statusBar vs react statusbar — real label compare (PG-4 capture)."""
-    rmap = {norm(i.get("label", "")): i.get("label", "")
-            for i in re_.get("statusbar", []) if i.get("label")}
-    seen, controls, icon_only = set(), [], 0
+def assert_union(surface: str, manifest: set, emitted: set) -> None:
+    gap = manifest - emitted
+    if gap:
+        sys.exit(f"union FAIL {surface}: manifest rows missing from graph: {sorted(gap)}")
+
+
+# --- statusbar (v3): union of 17 template ids + runtime census rows ----------
+# oo-statusbar.json template id → (label, react alias, reason). react alias =
+# the react statusbar control this id maps to when plain label match can't
+# see it (slot VALUES vs control TITLES; containers; text slots).
+STATUSBAR_SEMANTICS = {
+    "label-pages": ("Page count", "Page 1 of 0", "react pager text 'Page N of M'"),
+    "status-goto-box": ("Go to page box", "Next page", "react pager (Previous page / Next page buttons)"),
+    "status-goto-page": ("Go to page button", "Next page", "react pager (Previous page / Next page buttons)"),
+    "slot-status-btn-info": ("Word count", "Words: 0", "react 'Words: N' text"),
+    "label-action": ("Action status", None, None),  # transient status text, no react counterpart → missing
+    "btn-cnt-lang": ("Language container", "Language", "container of doc-lang + doc-spell; react ships Language + Spell Check"),
+    "btn-doc-lang": ("Language", None, None),
+    "btn-doc-spell": ("Spell check", None, None),
+    "btn-doc-review": ("Track changes", None, None),
+    "status-btn-select-tool": ("Select tool", None, None),
+    "status-btn-hand-tool": ("Hand tool", None, None),
+    "status-btn-multiple-pages": ("Multiple pages", None, None),  # → missing
+    "btn-zoom-topage": ("Fit to page", None, None),
+    "btn-zoom-towidth": ("Fit to width", None, None),
+    "btn-zoom-down": ("Zoom out", None, None),
+    "label-zoom": ("Zoom", "100%", "react zoom value text"),
+    "btn-zoom-up": ("Zoom in", None, None),
+}
+
+
+def build_statusbar(oo: dict, re_: dict, src: dict) -> dict:
+    """v3: baseline = union(17 source template ids, runtime census rows).
+
+    Runtime rows join by DOM id (they carry the captured OO labels/slots);
+    ids not in the template (asc-gen*, empty) are duplicates — skipped."""
+    rlabels = {norm(i.get("label", "")): i.get("label", "")
+               for i in re_.get("statusbar", []) if i.get("label")}
+    runtime: dict[str, str] = {}  # template id → captured runtime label
     for item in oo.get("statusBar", []):
-        label = item.get("label", "")
-        if not norm(label):
-            icon_only += 1  # layout-segment duplicates counted once per empty row
-        elif label not in seen:  # OO DOM repeats segments (Word count ×4) — one node each
-            seen.add(label)
-            n = STATUSBAR_ALIASES.get(norm(label), norm(label))
-            if n in rmap or label_match(label, set(rmap)):
-                status, reason = "done", None
-                label_out = rmap.get(n, label)
-            else:
-                status, reason, label_out = "missing", None, label
-            controls.append({"label": label_out, "ooLabel": label,
-                             "status": status, "reason": reason})
-    counts = {"done": sum(1 for c in controls if c["status"] == "done"),
-              "diverged": 0, "missing": sum(1 for c in controls if c["status"] == "missing"),
-              "iconOnly": icon_only, "total": len(controls) + icon_only}
+        rid = item.get("id", "")
+        if rid in STATUSBAR_SEMANTICS:
+            runtime.setdefault(rid, item.get("label", ""))
+
+    controls, counts = [], {"done": 0, "diverged": 0, "missing": 0, "iconOnly": 0}
+    for tid, (label, alias, reason) in STATUSBAR_SEMANTICS.items():
+        target = alias if alias else label
+        if label_match(target, set(rlabels)):
+            status = "done"
+            label_out = rlabels.get(norm(target), target)
+        else:
+            status, label_out = "missing", label
+        controls.append({"label": label_out, "ooLabel": runtime.get(tid) or label,
+                         "ooId": tid, "status": status,
+                         "reason": reason if status == "done" else None})
+        counts[status] += 1
+    counts["total"] = len(controls)
     return {"id": "statusbar", "label": "Status Bar", "contextual": False,
             "counts": counts, "controls": controls,
-            "note": "real compare vs react statusbar census; aliases for OO slot values "
-                    "vs react control titles (Word count→Words: N, doc language→Language)"}
+            "note": f"v3 union: {len(src.get('templateIds', []))} source template ids "
+                    f"(oo-statusbar.json, OO build pinned) ∪ runtime census rows "
+                    f"(joined by DOM id); ids→semantics table in PORT-GRAPH.md"}
 
 
-# OO dialog title → (WO dialog it is combined into, why) — legacy WO census.
-DIALOG_ALIASES = {
-    "Margins": ("Page setup", "combined into WO 'Page setup' (fields: Size, Margins)"),
-    "Page size": ("Page setup", "combined into WO 'Page setup' (fields: Size, Margins)"),
+# --- dialogs (v3): baseline = 36 source dialogs ∪ runtime-only titles -----
+# oo-dialogs.json component → (legacy WO dialog title, why) — identity-certain
+# joins to the legacy wysiwyg census (fallback evidence for modals the react
+# panels census does not reach).
+DIALOG_COMPONENT_ALIASES = {
+    "CustomColumnsDialog": ("Insert columns", "legacy 'Insert columns' dialog"),
+    "HyphenationDialog": ("Hyphenation", "legacy Hyphenation dialog"),
+    "PageMarginsDialog": ("Page setup", "combined into WO 'Page setup' (fields: Size, Margins)"),
+    "PageSizeDialog": ("Page setup", "combined into WO 'Page setup' (fields: Size, Margins)"),
+    "ParagraphSettingsAdvanced": ("Ctx.ParagraphSettings", "legacy paragraph settings dialog"),
+    "DropcapSettingsAdvanced": ("Drop Cap", "legacy Drop Cap dialog"),
+    "ListIndentsDialog": ("Ctx.AdjustListIndents", "legacy list-indents dialog"),
+    "NumberingValueDialog": ("List.NumberingValue", "legacy numbering-value dialog"),
+    "LineNumbersDialog": ("Line Numbers", "legacy Line Numbers dialog"),
+    "NoteSettingsDialog": ("Footnote and Endnote", "legacy Footnote and Endnote dialog"),
+    "TableFormulaDialog": ("Formula.Title", "legacy table formula dialog"),
+    "TableToTextDialog": ("TableToText.Title", "legacy table-to-text dialog"),
+    "TextToTableDialog": ("TextToTable.Title", "legacy text-to-table dialog"),
+    "ProtectDialog": ("Prot.Title", "legacy protect dialog"),
+    "HyperlinkSettingsDialog": ("Insert link", "legacy hyperlink dialog"),
+    "WatermarkSettingsDialog": ("Watermark", "legacy Watermark dialog"),
+    "PageNumberingDlg": ("Dialog.PageNumberTitle", "legacy page-numbering dialog"),
 }
-# OO dialog title → (react right-rail panel, why) — the deployed editor routes
-# these commands to a panel instead of opening a modal (src/lib/word-commands.ts:
-# insertToc/insertBookmark/insertCaption/insertCrossReference/
-# insertTableOfFigures → toggleRightPanel("crossreference"); macros → "plugins").
-REACT_DLG_ALIASES = {
-    "Bookmarks": ("Cross-Reference", "insertBookmark routes to the react Cross-Reference panel (word-commands.ts)"),
-    "Insert caption": ("Cross-Reference", "insertCaption routes to the react Cross-Reference panel (word-commands.ts)"),
-    "Table of figures": ("Cross-Reference", "insertTableOfFigures routes to the react Cross-Reference panel (word-commands.ts)"),
-    "Table of contents": ("Cross-Reference", "insertToc routes to the react Cross-Reference panel (word-commands.ts)"),
+# component → (react right-rail panel title, why) — advanced-settings dialogs
+# the deployed editor answers with a panel (census-react-dialogs.json).
+REACT_PANEL_ALIASES = {
+    "TableSettingsAdvanced": ("Table Settings", "advanced settings → react Table Settings right-rail panel"),
+    "ImageSettingsAdvanced": ("Image Settings", "advanced settings → react Image Settings right-rail panel"),
+}
+# component → react routing evidence (src/lib/word-commands.ts, PG-9).
+REACT_ROUTE = {
+    "BookmarksDialog": ("Cross-Reference", "insertBookmark routes to the react Cross-Reference panel (word-commands.ts)"),
+    "CaptionDialog": ("Cross-Reference", "insertCaption routes to the react Cross-Reference panel (word-commands.ts)"),
+    "TableOfContentsSettings": ("Cross-Reference", "insertToc routes to the react Cross-Reference panel (word-commands.ts)"),
+}
+# components the deployed editor answers with a direct action, no dialog.
+REACT_DIRECT = {
+    "DateTimeDialog": "react insertDateTime inserts a DATETIME field directly — no dialog (word-commands.ts)",
+}
+# runtime-captured OO dialog title → source component (joins census evidence).
+RUNTIME_TITLE_JOIN = {
+    "Date & time": "DateTimeDialog", "Margins": "PageMarginsDialog",
+    "Page size": "PageSizeDialog", "Columns": "CustomColumnsDialog",
+    "Hyphenation": "HyphenationDialog", "Bookmarks": "BookmarksDialog",
+    "Insert caption": "CaptionDialog", "Cross-reference": "CrossReferenceDialog",
+    "Table of contents": "TableOfContentsSettings",
+}
+# PG-9 alias that applies to a runtime-only title (no source dialog row).
+RUNTIME_TITLE_REACT = {
     "Macros": ("Plugins", "macros routes to the react Plugins panel (word-commands.ts)"),
 }
-# OO dialogs the deployed editor answers with a direct action, no dialog.
-REACT_DLG_DIRECT = {
-    "Date & time": "react insertDateTime inserts a DATETIME field directly — no dialog (word-commands.ts)",
-}
-NO_DLG_REASON = "no counterpart in the react panels census or the legacy WO dialog census"
+MISSING_DLG_REASON = "no evidence in the react panels census or the legacy WO dialog census — honest gap"
 
 
-def build_dialogs(oo_dlgs: list, wo_dlgs: list, react_dlgs: list) -> dict:
-    """OO dialogs vs react panels census (primary) + legacy WO census (fallback).
+def camel_split(name: str) -> str:
+    name = re.sub(r"(Dialog|Dlg|Advanced|Window)$", "", name) or name
+    return re.sub(r"(?<=[a-z])(?=[A-Z])", " ", name)
 
-    One control per unique OO title. Match order: react direct-action (documented
-    divergence) → react route alias → react title match → legacy combined alias
-    → legacy title match (i18n-key variants indexed)."""
+
+def build_dialogs(src_dialogs: list, runtime_dlgs: list, wo_dlgs: list,
+                  react_dlgs: list) -> dict:
+    """v3: baseline = 36 source dialogs (oo-dialogs.json) ∪ runtime-only titles.
+
+    Evidence chain per row (PG-9 order, react evidence first): react direct
+    action → react route alias → react panel alias → react panel title match
+    (via joined runtime title) → legacy component alias → legacy title match.
+    No evidence at any tier → missing (the honest gap, never 'diverged')."""
     rv = {norm(d.get("title", "")): d.get("title", "")
           for d in react_dlgs if d.get("title")}
-    # WO titles mix i18n keys ('Toolbar.Find', 'TableOfFigures.Title') with
-    # resolved strings ('Insert symbol'): index every norm variant → original.
+    # WO titles mix i18n keys ('Toolbar.Find') with resolved strings
+    # ('Insert symbol'): index every norm variant → original.
     wv: dict[str, str] = {}
     for d in wo_dlgs:
         t = d.get("title", "")
@@ -233,42 +325,189 @@ def build_dialogs(oo_dlgs: list, wo_dlgs: list, react_dlgs: list) -> dict:
         for c in cands:
             wv.setdefault(norm(c), t)
 
-    seen, controls = set(), []
-    for d in oo_dlgs:
+    runtime_titles: dict[str, str] = {}  # unique runtime title → component | ""
+    for d in runtime_dlgs:
         title = (d.get("dialog") or {}).get("title", "")
-        if not title or title in seen:  # same dialog from two triggers → one node
-            continue
-        seen.add(title)
-        n = norm(title)
-        direct = REACT_DLG_DIRECT.get(title)
-        ralias = REACT_DLG_ALIASES.get(title)
-        alias = DIALOG_ALIASES.get(title)
-        legacy_hit = (not direct and not ralias and n not in rv
-                      and (wv.get(n) or (n.endswith("s") and wv.get(n[:-1])) or None))
-        if direct:
-            status, label, reason = "diverged", title, direct
-        elif ralias and norm(ralias[0]) in rv:
-            status, label, reason = "done", rv[norm(ralias[0])], ralias[1]
-        elif n in rv:
-            status, label, reason = "done", rv[n], None
-        elif alias and norm(alias[0]) in wv:
-            status, label, reason = "done", wv[norm(alias[0])], alias[1]
-        elif legacy_hit:
-            status, label, reason = "done", legacy_hit, None  # Bookmarks→'Insert bookmark'
+        if title:
+            runtime_titles.setdefault(title, RUNTIME_TITLE_JOIN.get(title, ""))
+
+    rows: dict[str, dict] = {}  # component (or runtime title when source-less) → row
+    for s in src_dialogs:
+        comp = s.get("component", "")
+        rows[comp] = {"component": comp, "ooId": s.get("id") or comp,
+                      "runtimeTitle": None, "status": None}
+    for title, comp in runtime_titles.items():
+        if comp in rows:
+            rows[comp]["runtimeTitle"] = title  # evidence joins the source row
         else:
-            status, label, reason = "diverged", title, NO_DLG_REASON
-        controls.append({"label": label, "ooLabel": title,
+            rows[title] = {"component": None, "ooId": title,
+                           "runtimeTitle": title, "status": None}  # runtime-only row
+
+    controls = []
+    for key, row in rows.items():
+        comp, rt = row["component"], row["runtimeTitle"]
+        display = rt or camel_split(comp)
+        direct = REACT_DIRECT.get(comp)
+        route = REACT_ROUTE.get(comp) or (RUNTIME_TITLE_REACT.get(rt) if rt else None)
+        palias = REACT_PANEL_ALIASES.get(comp)
+        lalias = DIALOG_COMPONENT_ALIASES.get(comp)
+        if direct:
+            status, label, reason = "diverged", display, direct
+        elif route and norm(route[0]) in rv:
+            status, label, reason = "done", rv[norm(route[0])], route[1]
+        elif palias and norm(palias[0]) in rv:
+            status, label, reason = "done", rv[norm(palias[0])], palias[1]
+        elif rt and norm(rt) in rv:
+            status, label, reason = "done", rv[norm(rt)], None
+        elif lalias and norm(lalias[0]) in wv:
+            status, label, reason = "done", wv[norm(lalias[0])], lalias[1]
+        elif rt and (wv.get(norm(rt)) or (norm(rt).endswith("s") and wv.get(norm(rt)[:-1]))):
+            legacy = wv.get(norm(rt)) or wv[norm(rt)[:-1]]
+            status, label, reason = "done", legacy, None
+        else:
+            status, label, reason = "missing", display, MISSING_DLG_REASON
+        controls.append({"label": label, "ooLabel": display, "ooId": row["ooId"],
                          "status": status, "reason": reason})
     counts = {"done": sum(1 for c in controls if c["status"] == "done"),
               "diverged": sum(1 for c in controls if c["status"] == "diverged"),
-              "missing": 0, "iconOnly": 0, "total": len(controls)}
+              "missing": sum(1 for c in controls if c["status"] == "missing"),
+              "iconOnly": 0, "total": len(controls)}
     return {"id": "dialogs", "label": "Dialogs",
-            "caveat": "WO side = react panels census (deployed editor; route aliases "
-                      "verified in word-commands.ts) with the legacy wysiwyg census as "
-                      "fallback for modals the panels census does not reach (Symbol, "
-                      "Page setup, Columns, Hyphenation)",
+            "caveat": "v3 baseline = 36 source dialogs (oo-dialogs.json, OO build "
+                      "252.232.451.526) ∪ runtime-only titles; WO evidence = react panels "
+                      "census (deployed) with the legacy wysiwyg census as fallback; "
+                      "rows with no evidence = missing (honest gap)",
             "tabs": [{"id": "dialogs", "label": "Dialogs", "contextual": False,
                       "counts": counts, "controls": controls}]}
+
+
+# --- filemenu (v3): baseline = 19 source buttons + 10 source panels ----------
+# oo-filemenu.json id → OO label. Labels come from the committed portal-mode
+# runtime backstage census (census-oo.json) where captured; the 8 buttons not
+# visible there get labels derived from the id suffix (documented in PORT-GRAPH.md).
+FILEMENU_LABELS = {
+    "fm-btn-return": "Back", "fm-btn-create": "Create New",
+    "fm-btn-recent": "Open Recent", "fm-btn-save": "Save",
+    "fm-btn-download": "Download As", "fm-btn-print": "Print",
+    "fm-btn-protect": "Protect", "fm-btn-info": "Info",
+    "fm-btn-settings": "Advanced Settings", "fm-btn-help": "Help",
+    "fm-btn-suggest": "Suggest a Feature",
+    # not visible in the portal-mode runtime capture → label from id suffix:
+    "fm-btn-edit": "Edit Document", "fm-btn-save-copy": "Save Copy As",
+    "fm-btn-save-desktop": "Save to Desktop",
+    "fm-btn-print-with-preview": "Print with Preview", "fm-btn-rename": "Rename",
+    "fm-btn-history": "Version History", "fm-btn-rights": "Access Rights",
+    "fm-btn-back": "Go to Documents",
+}
+PANEL_LABELS = {
+    "panel-saveas": "Save As", "panel-savecopy": "Save Copy",
+    "panel-recentfiles": "Recent Files", "panel-createnew": "Create New",
+    "panel-info": "Document Info", "panel-rights": "Access Rights",
+    "panel-settings": "Advanced Settings", "panel-help": "Help",
+    "panel-protect": "Protect Document", "panel-print": "Print",
+}
+# react backstage panel components (server src/components/FileMenu/panels/,
+# verified PG-10 — build.py reads only committed artifacts, so the list is
+# pinned here deliberately).
+REACT_BACKSTAGE_PANELS = ["CreateNew", "DocumentInfo", "FileBrowser", "Help",
+                          "PrintPreview", "ProtectDoc", "RecentFiles", "Rights",
+                          "SaveAs", "SaveCopy", "Settings", "Share", "VersionHistory"]
+# source id → react backstage panel component (evidence when the react fileMenu
+# label alone can't see the match, e.g. 'Protect' vs 'Protect Document').
+FILEMENU_PANEL_TARGETS = {
+    "fm-btn-create": "CreateNew", "fm-btn-recent": "RecentFiles",
+    "fm-btn-save-copy": "SaveCopy", "fm-btn-protect": "ProtectDoc",
+    "fm-btn-info": "DocumentInfo",
+    "panel-saveas": "SaveAs", "panel-savecopy": "SaveCopy",
+    "panel-recentfiles": "RecentFiles", "panel-createnew": "CreateNew",
+    "panel-info": "DocumentInfo", "panel-rights": "Rights",
+    "panel-settings": "Settings", "panel-help": "Help",
+    "panel-protect": "ProtectDoc", "panel-print": "PrintPreview",
+}
+# label-level aliases where neither plain label match nor a panel applies.
+FILEMENU_LABEL_ALIASES = {"Suggest a Feature": "Suggest Feature"}
+
+
+def build_filemenu(src: dict, re_: dict) -> dict:
+    """v3: baseline = oo-filemenu.json (19 buttons + 10 panels) as two tabs.
+
+    React evidence: census-react-deep fileMenu labels + the pinned react
+    backstage panel components. Unmatched = missing (honest)."""
+    rlabels = {norm(b.get("label", "")): b.get("label", "")
+               for b in re_.get("fileMenu", []) if b.get("label")}
+    panels = set(REACT_BACKSTAGE_PANELS)
+
+    def match(oo_id: str, label: str):
+        target = FILEMENU_LABEL_ALIASES.get(label, label)
+        if label_match(target, set(rlabels)):
+            return "done", rlabels.get(norm(target), target), None
+        panel = FILEMENU_PANEL_TARGETS.get(oo_id)
+        if panel in panels:
+            return "done", panel, f"react backstage panel component '{panel}'"
+        return "missing", label, "no react file-menu counterpart — honest gap"
+
+    tabs = []
+    for tid, tlabel, rows in (("filemenu-buttons", "Backstage Buttons", src.get("buttons", [])),
+                              ("filemenu-panels", "Backstage Panels", src.get("panels", []))):
+        labels = FILEMENU_LABELS if tid == "filemenu-buttons" else PANEL_LABELS
+        controls = []
+        for oo_id in rows:
+            status, label, reason = match(oo_id, labels.get(oo_id, oo_id))
+            controls.append({"label": label, "ooLabel": labels.get(oo_id, oo_id),
+                             "ooId": oo_id, "status": status, "reason": reason})
+        counts = {"done": sum(1 for c in controls if c["status"] == "done"),
+                  "diverged": 0,
+                  "missing": sum(1 for c in controls if c["status"] == "missing"),
+                  "iconOnly": 0, "total": len(controls)}
+        tabs.append({"id": tid, "label": tlabel, "contextual": False,
+                     "counts": counts, "controls": controls})
+    return {"id": "filemenu", "label": "File Menu", "tabs": tabs,
+            "note": "v3 baseline = oo-filemenu.json source manifest (19 buttons + "
+                    "10 panels, OO build 252.232.451.526); the runtime file-tab "
+                    "capture was quick-access chrome (Find/Copy/Paste) and is not "
+                    "the backstage surface; id→label table in PORT-GRAPH.md"}
+
+
+# --- rightpanel (v3, NEW): OO right-panel sections vs react right-rail panels --
+# oo-reference.json rightPanel section id → (label, react panel id, why).
+RIGHTPANEL_SEMANTICS = {
+    "paragraph-settings": ("Paragraph settings", "paragraph", "react rail 'paragraph' panel (Styles list)"),
+    "table-settings": ("Table settings", "table", None),
+    "image-settings": ("Image settings", "image", None),
+    "shape-settings": ("Shape settings", "shape", None),
+    "mail-merge-settings": ("Mail merge settings", "mailmerge", None),
+    "textart-settings": ("Text art settings", "textart", None),
+    "signature-settings": ("Signature settings", "signature", None),
+    "form-settings": ("Form settings", "form", None),
+    "send-for-signing-settings": ("Send for signing", None, None),   # → missing
+    "filling-status-settings": ("Filling status", None, None),       # → missing
+}
+
+
+def build_rightpanel(src_ref: dict, react_dlgs: list) -> dict:
+    """NEW v3 surface: OO's 10 right-panel sections (oo-reference.json) vs the
+    react editor's 15 right-rail panels (census-react-dialogs.json, PG-8)."""
+    panels = {d.get("id"): d.get("title") for d in react_dlgs
+              if d.get("id") and d.get("title")}
+    controls = []
+    for sid, (label, rid, why) in RIGHTPANEL_SEMANTICS.items():
+        if rid in panels:
+            status, out, reason = "done", panels[rid], why
+        else:
+            status, out, reason = "missing", label, "no react right-rail counterpart — honest gap"
+        controls.append({"label": out, "ooLabel": label, "ooId": sid,
+                         "status": status, "reason": reason})
+    counts = {"done": sum(1 for c in controls if c["status"] == "done"),
+              "diverged": 0,
+              "missing": sum(1 for c in controls if c["status"] == "missing"),
+              "iconOnly": 0, "total": len(controls)}
+    extras = sorted(set(panels) - {rid for _, rid, _ in RIGHTPANEL_SEMANTICS.values() if rid})
+    return {"id": "rightpanel", "label": "Right Panel",
+            "tabs": [{"id": "rightpanel", "label": "Right Panel",
+                      "contextual": False, "counts": counts, "controls": controls}],
+            "note": f"v3 baseline = oo-reference.json rightPanel (10 sections); react "
+                    f"ships {len(panels)} right-rail panels — react-only: {', '.join(extras)} "
+                    f"(superset, not debt)"}
 
 
 def build_ctx(ctx: dict) -> dict:
@@ -359,24 +598,89 @@ def main() -> int:
     react_dlg = require(REACT_DLG_PATH)
     wo_dlg = require(WO_DLG_PATH)
     shortcuts = require(SHORTCUTS_PATH)
+    src_dialogs = require(SRC_DIALOGS_PATH)["dialogs"]
+    src_filemenu = require(SRC_FILEMENU_PATH)
+    src_statusbar = require(SRC_STATUSBAR_PATH)
+    src_ctx = require(SRC_CTX_PATH)
+    src_ref = require(SRC_REF_PATH)
+    src_shortcuts = require(SRC_SHORTCUTS_PATH)
     uni = react_label_universe(re_)
+
+    # --- v3 union self-asserts: every source-manifest row MUST be a graph row ---
+    assert_union("statusbar", set(src_statusbar.get("templateIds", [])),
+                 set(STATUSBAR_SEMANTICS))
+    assert_union("filemenu", set(src_filemenu.get("buttons", [])) | set(src_filemenu.get("panels", [])),
+                 set(FILEMENU_LABELS) | set(PANEL_LABELS))
+    assert_union("rightpanel", set(src_ref.get("rightPanel", [])),
+                 set(RIGHTPANEL_SEMANTICS))
+    src_tabs = set(src_ref.get("ribbonTabs", []))
+    assert_union("ribbon.sourceTabs", src_tabs, set(oo.get("tabs", {})) | {"file"})
+
+    def shortcuts_union() -> list:
+        """Append a missing row for every oo-source action absent from the census
+        (all 142 are present today — this stays loud if a capture regresses)."""
+        have = {s.get("type") for s in shortcuts.get("shortcuts", [])}
+        return [s for s in src_shortcuts.get("shortcuts", [])
+                if s["name"] not in have]
 
     ribbon_tabs = [build_tab(k, t, uni, div)
                    for k, t in oo.get("tabs", {}).items() if k != "file"]
-    filemenu_tab = build_tab("file", oo["tabs"].get("file", {"buttons": []}), uni, div)
-    filemenu_tab["id"] = "filemenu"
     shortcuts_surface, sc_check = build_shortcuts(shortcuts)
+    for extra in shortcuts_union():  # honest gap if the source has MORE than the census
+        shortcuts_surface["tabs"][0]["controls"].append(
+            {"label": extra["name"], "ooLabel": extra["name"], "ooId": extra["name"],
+             "status": "missing", "reason": "in oo-shortcuts.json but not the shortcut census"})
+        t = shortcuts_surface["tabs"][0]
+        t["counts"]["missing"] += 1
+        t["counts"]["total"] += 1
 
     surfaces = [
-        {"id": "ribbon", "label": "Ribbon", "tabs": ribbon_tabs},
-        {"id": "filemenu", "label": "File Menu", "tabs": [filemenu_tab]},
-        {"id": "statusbar", "label": "Status Bar", "tabs": [build_statusbar(oo, re_)]},
-        build_dialogs(oo_dlg.get("dialogs", []), wo_dlg.get("dialogs", []),
-                      react_dlg.get("dialogs", [])),
+        {"id": "ribbon", "label": "Ribbon", "tabs": ribbon_tabs,
+         "sourceManifest": {"tabs": len(src_ref.get("ribbonTabs", [])),
+                            "buttons": len(src_ref.get("ribbonButtons", [])),
+                            "slotIds": len(src_ref.get("ribbonSlotIds", [])),
+                            "sourceIds": len(src_ref.get("ribbonSourceIds", [])),
+                            "shortcutActions": len(src_ref.get("ribbonShortcutActions", [])),
+                            "note": "source templates (4 tabs) ⊆ runtime census (14 tabs "
+                                    "incl. contextual) — runtime kept as baseline, counts "
+                                    "noted; per-button source ids are chrome-level detail"}},
+        build_filemenu(src_filemenu, re_),
+        {"id": "statusbar", "label": "Status Bar",
+         "tabs": [build_statusbar(oo, re_, src_statusbar)]},
+        build_dialogs(src_dialogs, oo_dlg.get("dialogs", []),
+                      wo_dlg.get("dialogs", []), react_dlg.get("dialogs", [])),
+        build_rightpanel(src_ref, react_dlg.get("dialogs", [])),
         build_ctx(ctx),
         shortcuts_surface,
         build_ledger(ledger["features"]),
     ]
+    ctx_surface = surfaces[5]
+    ctx_surface["manifest"] = {"menus": src_ctx.get("menus", {}),
+                               "totals": src_ctx.get("totals", {}),
+                               "note": "oo-ctx-manifest counts source menuItem "
+                                       "constructors (237) — counts only, no labels; "
+                                       "controls below are the 75 live-verified "
+                                       "ctx-contract rows (no controls invented)"}
+
+    # --- post-build union self-asserts: every manifest row IS a graph row ---
+    def emitted_oo_ids(surface: dict) -> set:
+        return {c.get("ooId") for t in surface.get("tabs", []) for c in t["controls"]}
+
+    assert_union("filemenu", set(src_filemenu.get("buttons", [])) | set(src_filemenu.get("panels", [])),
+                 emitted_oo_ids(surfaces[1]))
+    assert_union("statusbar", set(src_statusbar.get("templateIds", [])),
+                 emitted_oo_ids(surfaces[2]))
+    dlg_rows = [c for t in surfaces[3]["tabs"] for c in t["controls"]]
+    # joined runtime titles surface as ooLabel on their source row's control
+    dlg_keys = {c["ooId"] for c in dlg_rows} | {c["ooLabel"] for c in dlg_rows}
+    assert_union("dialogs",
+                 {d.get("id") or d["component"] for d in src_dialogs}
+                 | {t for t in RUNTIME_TITLE_JOIN}
+                 | {(d.get("dialog") or {}).get("title", "") for d in oo_dlg.get("dialogs", [])
+                    if (d.get("dialog") or {}).get("title", "")},
+                 dlg_keys)
+    assert_union("rightpanel", set(src_ref.get("rightPanel", [])),
+                 emitted_oo_ids(surfaces[4]))
 
     totals = {"controls": 0, "done": 0, "diverged": 0, "missing": 0,
               "iconOnly": 0, "surfaces": {}}
@@ -406,6 +710,13 @@ def main() -> int:
             "reactDialogs": "census/census/census-react-dialogs.json",
             "woDialogs": "census/census/census-wo-dialogs.json",
             "shortcuts": "census/census/census-shortcuts.json",
+            "ooBackstageLabels": "census/census/census-oo.json",
+            "srcDialogs": "census/oo-source/oo-dialogs.json",
+            "srcFilemenu": "census/oo-source/oo-filemenu.json",
+            "srcStatusbar": "census/oo-source/oo-statusbar.json",
+            "srcCtxManifest": "census/oo-source/oo-ctx-manifest.json",
+            "srcReference": "census/oo-source/oo-reference.json",
+            "srcShortcuts": "census/oo-source/oo-shortcuts.json",
         },
         "surfaces": surfaces,
         "totals": totals,
@@ -417,6 +728,18 @@ def main() -> int:
           f"iconOnly={totals['iconOnly']}), {totals['ledgerFeatures']} ledger features, "
           f"{len(graph['probes'])} probes")
     print(f"shortcuts cross-check OK: {sc_check['graph']} == source totals {sc_check['source']}")
+    print("v3 union baselines (source manifest ∪ runtime census):")
+    for sid, base in (("filemenu", f"{len(src_filemenu.get('buttons', []))} buttons + "
+                       f"{len(src_filemenu.get('panels', []))} panels"),
+                      ("statusbar", f"{len(src_statusbar.get('templateIds', []))} template ids"),
+                      ("dialogs", f"{len(src_dialogs)} source dialogs ∪ runtime-only titles"),
+                      ("rightpanel", f"{len(src_ref.get('rightPanel', []))} sections"),
+                      ("shortcuts", f"{src_shortcuts.get('actions', 0)} source actions ⊆ census")):
+        st = totals["surfaces"].get(sid, {})
+        print(f"  {sid:11} baseline={base:42} "
+              f"done={st.get('done', 0)} diverged={st.get('diverged', 0)} "
+              f"missing={st.get('missing', 0)}")
+    print("union self-asserts OK (every manifest row is a graph row)")
     return 0
 
 
