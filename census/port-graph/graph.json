@@ -1,11 +1,15 @@
 {
- "generated": "2026-11-18T01:26:42+00:00",
+ "generated": "2026-11-18T06:31:02+00:00",
  "sources": {
   "oo": "census/census/census-oo-deep.json",
   "react": "census/census/census-react-deep.json",
   "divergences": "census/react-e2e/divergences.json",
   "ledger": "census/census/ledger.json",
-  "contracts": "census/react-e2e/contract-results.json"
+  "contracts": "census/react-e2e/contract-results.json",
+  "ctx": "census/ctx-contracts.json",
+  "ooDialogs": "census/census/census-oo-dialogs.json",
+  "woDialogs": "census/census/census-wo-dialogs.json",
+  "shortcuts": "census/census/census-shortcuts.json"
  },
  "surfaces": [
   {
@@ -1119,19 +1123,1544 @@
      },
      "controls": [
       {
-       "label": "Word count",
+       "label": "Words: 0",
        "ooLabel": "Word count",
        "status": "done",
        "reason": null
       },
       {
-       "label": "English – United States",
+       "label": "Language",
        "ooLabel": "English – United States",
        "status": "done",
        "reason": null
       }
      ],
-     "caveat": "react statusbar census not in artifacts; from ledger evidence (statusbar cluster)"
+     "note": "real compare vs react statusbar census; aliases for OO slot values vs react control titles (Word count→Words: N, doc language→Language)"
+    }
+   ]
+  },
+  {
+   "id": "dialogs",
+   "label": "Dialogs",
+   "caveat": "WO side = legacy wysiwyg census; react dialog census pending",
+   "tabs": [
+    {
+     "id": "dialogs",
+     "label": "Dialogs",
+     "contextual": false,
+     "counts": {
+      "done": 9,
+      "diverged": 3,
+      "missing": 0,
+      "iconOnly": 0,
+      "total": 12
+     },
+     "controls": [
+      {
+       "label": "Date & time",
+       "ooLabel": "Date & time",
+       "status": "diverged",
+       "reason": "no counterpart in legacy WO dialog census; react dialog census pending (see caveat)"
+      },
+      {
+       "label": "Insert symbol",
+       "ooLabel": "Symbol",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Page setup",
+       "ooLabel": "Margins",
+       "status": "done",
+       "reason": "combined into WO 'Page setup' (fields: Size, Margins)"
+      },
+      {
+       "label": "Page setup",
+       "ooLabel": "Page size",
+       "status": "done",
+       "reason": "combined into WO 'Page setup' (fields: Size, Margins)"
+      },
+      {
+       "label": "Insert columns",
+       "ooLabel": "Columns",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Hyphenation",
+       "ooLabel": "Hyphenation",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Insert bookmark",
+       "ooLabel": "Bookmarks",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Insert caption",
+       "ooLabel": "Insert caption",
+       "status": "diverged",
+       "reason": "no counterpart in legacy WO dialog census; react dialog census pending (see caveat)"
+      },
+      {
+       "label": "Insert cross-reference",
+       "ooLabel": "Cross-reference",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "TableOfFigures.Title",
+       "ooLabel": "Table of figures",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Insert table of contents",
+       "ooLabel": "Table of contents",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Macros",
+       "ooLabel": "Macros",
+       "status": "diverged",
+       "reason": "no counterpart in legacy WO dialog census; react dialog census pending (see caveat)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ctx",
+   "label": "Context Menus",
+   "tabs": [
+    {
+     "id": "text",
+     "label": "Text",
+     "contextual": false,
+     "counts": {
+      "done": 11,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 0,
+      "total": 11
+     },
+     "controls": [
+      {
+       "label": "Cut",
+       "ooLabel": "Cut",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Copy",
+       "ooLabel": "Copy",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Paste",
+       "ooLabel": "Paste",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "PrintSelection",
+       "ooLabel": "PrintSelection",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "PageBreakBefore",
+       "ooLabel": "PageBreakBefore",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "KeepLines",
+       "ooLabel": "KeepLines",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "ParagraphSettings",
+       "ooLabel": "ParagraphSettings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "AddComment",
+       "ooLabel": "AddComment",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Link",
+       "ooLabel": "Link",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "FormattingAsStyle",
+       "ooLabel": "FormattingAsStyle",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "AI",
+       "ooLabel": "AI",
+       "status": "done",
+       "reason": null
+      }
+     ]
+    },
+    {
+     "id": "misspelled",
+     "label": "Misspelled",
+     "contextual": false,
+     "counts": {
+      "done": 15,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 0,
+      "total": 15
+     },
+     "controls": [
+      {
+       "label": "Ignore",
+       "ooLabel": "Ignore",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "IgnoreAll",
+       "ooLabel": "IgnoreAll",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "AddToDictionary",
+       "ooLabel": "AddToDictionary",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "SelectLanguage",
+       "ooLabel": "SelectLanguage",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Cut",
+       "ooLabel": "Cut",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Copy",
+       "ooLabel": "Copy",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Paste",
+       "ooLabel": "Paste",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "PrintSelection",
+       "ooLabel": "PrintSelection",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "PageBreakBefore",
+       "ooLabel": "PageBreakBefore",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "KeepLines",
+       "ooLabel": "KeepLines",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "ParagraphSettings",
+       "ooLabel": "ParagraphSettings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "AddComment",
+       "ooLabel": "AddComment",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Link",
+       "ooLabel": "Link",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "FormattingAsStyle",
+       "ooLabel": "FormattingAsStyle",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "AI",
+       "ooLabel": "AI",
+       "status": "done",
+       "reason": null
+      }
+     ]
+    },
+    {
+     "id": "table",
+     "label": "Table",
+     "contextual": false,
+     "counts": {
+      "done": 17,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 0,
+      "total": 17
+     },
+     "controls": [
+      {
+       "label": "Cut",
+       "ooLabel": "Cut",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Copy",
+       "ooLabel": "Copy",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Paste",
+       "ooLabel": "Paste",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "PrintSelection",
+       "ooLabel": "PrintSelection",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Select",
+       "ooLabel": "Select",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Delete",
+       "ooLabel": "Delete",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "MergeCells",
+       "ooLabel": "MergeCells",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "SplitCell",
+       "ooLabel": "SplitCell",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "DistributeRows",
+       "ooLabel": "DistributeRows",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "DistributeColumns",
+       "ooLabel": "DistributeColumns",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "TextAlignment",
+       "ooLabel": "TextAlignment",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "InsertCaption",
+       "ooLabel": "InsertCaption",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "TableProperties",
+       "ooLabel": "TableProperties",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Link",
+       "ooLabel": "Link",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "ParagraphSettings",
+       "ooLabel": "ParagraphSettings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "FormattingAsStyle",
+       "ooLabel": "FormattingAsStyle",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "AI",
+       "ooLabel": "AI",
+       "status": "done",
+       "reason": null
+      }
+     ],
+     "live": "seeded OO 9.4.0 rig (2026-11-15), right-click in cell"
+    },
+    {
+     "id": "image",
+     "label": "Image",
+     "contextual": false,
+     "counts": {
+      "done": 17,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 0,
+      "total": 17
+     },
+     "controls": [
+      {
+       "label": "Cut",
+       "ooLabel": "Cut",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Copy",
+       "ooLabel": "Copy",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Paste",
+       "ooLabel": "Paste",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "PrintSelection",
+       "ooLabel": "PrintSelection",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Arrange",
+       "ooLabel": "Arrange",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Align",
+       "ooLabel": "Align",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "CombineShapes",
+       "ooLabel": "CombineShapes",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "TextWrap",
+       "ooLabel": "TextWrap",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Rotate",
+       "ooLabel": "Rotate",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "InsertCaption",
+       "ooLabel": "InsertCaption",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "SaveAsImage",
+       "ooLabel": "SaveAsImage",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Link",
+       "ooLabel": "Link",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Crop",
+       "ooLabel": "Crop",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "ActualSize",
+       "ooLabel": "ActualSize",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "ReplaceImage",
+       "ooLabel": "ReplaceImage",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "ImageSettings",
+       "ooLabel": "ImageSettings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "AI",
+       "ooLabel": "AI",
+       "status": "done",
+       "reason": null
+      }
+     ],
+     "live": "seeded OO 9.4.0 rig (2026-11-15), right-click on image"
+    },
+    {
+     "id": "shape",
+     "label": "Shape",
+     "contextual": false,
+     "counts": {
+      "done": 15,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 0,
+      "total": 15
+     },
+     "controls": [
+      {
+       "label": "Cut",
+       "ooLabel": "Cut",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Copy",
+       "ooLabel": "Copy",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Paste",
+       "ooLabel": "Paste",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "PrintSelection",
+       "ooLabel": "PrintSelection",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Arrange",
+       "ooLabel": "Arrange",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Align",
+       "ooLabel": "Align",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "CombineShapes",
+       "ooLabel": "CombineShapes",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "TextWrap",
+       "ooLabel": "TextWrap",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Rotate",
+       "ooLabel": "Rotate",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "InsertCaption",
+       "ooLabel": "InsertCaption",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "SaveAsImage",
+       "ooLabel": "SaveAsImage",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Link",
+       "ooLabel": "Link",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "EditPoints",
+       "ooLabel": "EditPoints",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "ShapeSettings",
+       "ooLabel": "ShapeSettings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "AI",
+       "ooLabel": "AI",
+       "status": "done",
+       "reason": null
+      }
+     ],
+     "live": "seeded OO 9.4.0 rig (2026-11-15), right-click on shape"
+    }
+   ],
+   "note": "verified live via ctx-scenarios — OO 9.4.0 live capture (seeded rig) + source analysis"
+  },
+  {
+   "id": "shortcuts",
+   "label": "Keyboard Shortcuts",
+   "tabs": [
+    {
+     "id": "shortcuts",
+     "label": "Keyboard Shortcuts",
+     "contextual": false,
+     "counts": {
+      "done": 127,
+      "diverged": 20,
+      "missing": 0,
+      "iconOnly": 0,
+      "total": 147
+     },
+     "controls": [
+      {
+       "label": "Ctrl+F OpenFindDialog",
+       "ooLabel": "Ctrl+F OpenFindDialog",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+H OpenFindAndReplaceMenu",
+       "ooLabel": "Ctrl+H OpenFindAndReplaceMenu",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Shift+H OpenCommentsPanel",
+       "ooLabel": "Ctrl+Shift+H OpenCommentsPanel",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+S Save",
+       "ooLabel": "Ctrl+S Save",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+P PrintPreviewAndPrint",
+       "ooLabel": "Ctrl+P PrintPreviewAndPrint",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "Ctrl+Shift+S SaveAs",
+       "ooLabel": "Ctrl+Shift+S SaveAs",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "F1 OpenHelpMenu",
+       "ooLabel": "F1 OpenHelpMenu",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Shift+F10 OpenContextMenu",
+       "ooLabel": "Shift+F10 OpenContextMenu",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "Ctrl+Escape CloseMenu",
+       "ooLabel": "Ctrl+Escape CloseMenu",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+0 Zoom100",
+       "ooLabel": "Ctrl+0 Zoom100",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "F9 UpdateFields",
+       "ooLabel": "F9 UpdateFields",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Home MoveToStartLine",
+       "ooLabel": "Home MoveToStartLine",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Ctrl+Home MoveToStartDocument",
+       "ooLabel": "Ctrl+Home MoveToStartDocument",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "End MoveToEndLine",
+       "ooLabel": "End MoveToEndLine",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Ctrl+End MoveToEndDocument",
+       "ooLabel": "Ctrl+End MoveToEndDocument",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "PageDown ScrollDown",
+       "ooLabel": "PageDown ScrollDown",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "PageUp ScrollUp",
+       "ooLabel": "PageUp ScrollUp",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Ctrl+Equal ZoomIn",
+       "ooLabel": "Ctrl+Equal ZoomIn",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Minus ZoomOut",
+       "ooLabel": "Ctrl+Minus ZoomOut",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "ArrowRight MoveToRightChar",
+       "ooLabel": "ArrowRight MoveToRightChar",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "ArrowLeft MoveToLeftChar",
+       "ooLabel": "ArrowLeft MoveToLeftChar",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "ArrowUp MoveToUpLine",
+       "ooLabel": "ArrowUp MoveToUpLine",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "ArrowDown MoveToDownLine",
+       "ooLabel": "ArrowDown MoveToDownLine",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Tab NextModalControl",
+       "ooLabel": "Tab NextModalControl",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Shift+Tab PreviousModalControl",
+       "ooLabel": "Shift+Tab PreviousModalControl",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "PageDown MoveToLowerHeaderFooter",
+       "ooLabel": "PageDown MoveToLowerHeaderFooter",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "PageUp MoveToUpperHeaderFooter",
+       "ooLabel": "PageUp MoveToUpperHeaderFooter",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Alt+PageDown MoveToLowerHeader",
+       "ooLabel": "Alt+PageDown MoveToLowerHeader",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Alt+PageUp MoveToUpperHeader",
+       "ooLabel": "Alt+PageUp MoveToUpperHeader",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Enter EndParagraph",
+       "ooLabel": "Enter EndParagraph",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Shift+Enter InsertLineBreak",
+       "ooLabel": "Shift+Enter InsertLineBreak",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "Ctrl+Shift+Enter InsertColumnBreak",
+       "ooLabel": "Ctrl+Shift+Enter InsertColumnBreak",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Enter EquationAddPlaceholder",
+       "ooLabel": "Enter EquationAddPlaceholder",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Shift+Tab EquationChangeAlignmentLeft",
+       "ooLabel": "Shift+Tab EquationChangeAlignmentLeft",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Tab EquationChangeAlignmentRight",
+       "ooLabel": "Tab EquationChangeAlignmentRight",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Backspace DeleteLeftChar",
+       "ooLabel": "Backspace DeleteLeftChar",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "Delete DeleteRightChar",
+       "ooLabel": "Delete DeleteRightChar",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "Ctrl+Shift+Space NonBreakingSpace",
+       "ooLabel": "Ctrl+Shift+Space NonBreakingSpace",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Shift+Minus NonBreakingHyphen",
+       "ooLabel": "Ctrl+Shift+Minus NonBreakingHyphen",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Z EditUndo",
+       "ooLabel": "Ctrl+Z EditUndo",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Y EditRedo",
+       "ooLabel": "Ctrl+Y EditRedo",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Alt+C CopyFormat",
+       "ooLabel": "Ctrl+Alt+C CopyFormat",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Alt+V PasteFormat",
+       "ooLabel": "Ctrl+Alt+V PasteFormat",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+K SpecialOptionsKeepSourceFormat",
+       "ooLabel": "Ctrl+K SpecialOptionsKeepSourceFormat",
+       "status": "diverged",
+       "reason": "see census-shortcuts source: sdkjs/word/Editor/Shortcuts.js (147 types) vs WO editor keydown handler"
+      },
+      {
+       "label": "Ctrl+T SpecialOptionsKeepTextOnly",
+       "ooLabel": "Ctrl+T SpecialOptionsKeepTextOnly",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+O SpecialOptionsOverwriteCells",
+       "ooLabel": "Ctrl+O SpecialOptionsOverwriteCells",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "Ctrl+N SpecialOptionsNestTable",
+       "ooLabel": "Ctrl+N SpecialOptionsNestTable",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "Ctrl+K InsertHyperlink",
+       "ooLabel": "Ctrl+K InsertHyperlink",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Enter VisitHyperlink",
+       "ooLabel": "Enter VisitHyperlink",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Ctrl+A EditSelectAll",
+       "ooLabel": "Ctrl+A EditSelectAll",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "Shift+Home SelectToStartLine",
+       "ooLabel": "Shift+Home SelectToStartLine",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Shift+End SelectToEndLine",
+       "ooLabel": "Shift+End SelectToEndLine",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Ctrl+Shift+Home SelectToStartDocument",
+       "ooLabel": "Ctrl+Shift+Home SelectToStartDocument",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Ctrl+Shift+End SelectToEndDocument",
+       "ooLabel": "Ctrl+Shift+End SelectToEndDocument",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Shift+ArrowRight SelectRightChar",
+       "ooLabel": "Shift+ArrowRight SelectRightChar",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Shift+ArrowLeft SelectLeftChar",
+       "ooLabel": "Shift+ArrowLeft SelectLeftChar",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Shift+ArrowUp SelectLineUp",
+       "ooLabel": "Shift+ArrowUp SelectLineUp",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Shift+ArrowDown SelectLineDown",
+       "ooLabel": "Shift+ArrowDown SelectLineDown",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Shift+PageUp SelectPageUp",
+       "ooLabel": "Shift+PageUp SelectPageUp",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Shift+PageDown SelectPageDown",
+       "ooLabel": "Shift+PageDown SelectPageDown",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Ctrl+Shift+PageUp SelectToBeginPreviousPage",
+       "ooLabel": "Ctrl+Shift+PageUp SelectToBeginPreviousPage",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Ctrl+Shift+PageDown SelectToBeginNextPage",
+       "ooLabel": "Ctrl+Shift+PageDown SelectToBeginNextPage",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Ctrl+B Bold",
+       "ooLabel": "Ctrl+B Bold",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+I Italic",
+       "ooLabel": "Ctrl+I Italic",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+U Underline",
+       "ooLabel": "Ctrl+U Underline",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Shift+K SmallCaps",
+       "ooLabel": "Ctrl+Shift+K SmallCaps",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Period Subscript",
+       "ooLabel": "Ctrl+Period Subscript",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Comma Superscript",
+       "ooLabel": "Ctrl+Comma Superscript",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Shift+L ApplyListBullet",
+       "ooLabel": "Ctrl+Shift+L ApplyListBullet",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Space ResetChar",
+       "ooLabel": "Ctrl+Space ResetChar",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "Ctrl+BracketRight IncreaseFontSize",
+       "ooLabel": "Ctrl+BracketRight IncreaseFontSize",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+BracketLeft DecreaseFontSize",
+       "ooLabel": "Ctrl+BracketLeft DecreaseFontSize",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+E CenterPara",
+       "ooLabel": "Ctrl+E CenterPara",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+J JustifyPara",
+       "ooLabel": "Ctrl+J JustifyPara",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+R RightPara",
+       "ooLabel": "Ctrl+R RightPara",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+L LeftPara",
+       "ooLabel": "Ctrl+L LeftPara",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Enter InsertPageBreak",
+       "ooLabel": "Ctrl+Enter InsertPageBreak",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+M Indent",
+       "ooLabel": "Ctrl+M Indent",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Shift+M UnIndent",
+       "ooLabel": "Ctrl+Shift+M UnIndent",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Shift+P InsertPageNumber",
+       "ooLabel": "Ctrl+Shift+P InsertPageNumber",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Shift+8 ShowAll",
+       "ooLabel": "Ctrl+Shift+8 ShowAll",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Tab StartIndent",
+       "ooLabel": "Tab StartIndent",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Shift+Tab StartUnIndent",
+       "ooLabel": "Shift+Tab StartUnIndent",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Tab InsertTab",
+       "ooLabel": "Tab InsertTab",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Tab MixedIndent",
+       "ooLabel": "Tab MixedIndent",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Shift+Tab MixedUnIndent",
+       "ooLabel": "Shift+Tab MixedUnIndent",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Enter EditShape",
+       "ooLabel": "Enter EditShape",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "Enter EditChart",
+       "ooLabel": "Enter EditChart",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "ArrowLeft BigMoveObjectLeft",
+       "ooLabel": "ArrowLeft BigMoveObjectLeft",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "ArrowRight BigMoveObjectRight",
+       "ooLabel": "ArrowRight BigMoveObjectRight",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "ArrowUp BigMoveObjectUp",
+       "ooLabel": "ArrowUp BigMoveObjectUp",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "ArrowDown BigMoveObjectDown",
+       "ooLabel": "ArrowDown BigMoveObjectDown",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Tab MoveFocusToNextObject",
+       "ooLabel": "Tab MoveFocusToNextObject",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Shift+Tab MoveFocusToPreviousObject",
+       "ooLabel": "Shift+Tab MoveFocusToPreviousObject",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Ctrl+Alt+D InsertEndnoteNow",
+       "ooLabel": "Ctrl+Alt+D InsertEndnoteNow",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Tab MoveToNextCell",
+       "ooLabel": "Tab MoveToNextCell",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Shift+Tab MoveToPreviousCell",
+       "ooLabel": "Shift+Tab MoveToPreviousCell",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "ArrowDown MoveToNextRow",
+       "ooLabel": "ArrowDown MoveToNextRow",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "ArrowUp MoveToPreviousRow",
+       "ooLabel": "ArrowUp MoveToPreviousRow",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Enter EndParagraphCell",
+       "ooLabel": "Enter EndParagraphCell",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Tab AddNewRow",
+       "ooLabel": "Tab AddNewRow",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Ctrl+Shift+Enter InsertTableBreak",
+       "ooLabel": "Ctrl+Shift+Enter InsertTableBreak",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Tab MoveToNextForm",
+       "ooLabel": "Tab MoveToNextForm",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Shift+Tab MoveToPreviousForm",
+       "ooLabel": "Shift+Tab MoveToPreviousForm",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "ArrowDown ChooseNextComboBoxOption",
+       "ooLabel": "ArrowDown ChooseNextComboBoxOption",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "ArrowUp ChoosePreviousComboBoxOption",
+       "ooLabel": "ArrowUp ChoosePreviousComboBoxOption",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Enter InsertLineBreakMultilineForm",
+       "ooLabel": "Enter InsertLineBreakMultilineForm",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Ctrl+Alt+G CopyrightSign",
+       "ooLabel": "Ctrl+Alt+G CopyrightSign",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Alt+E EuroSign",
+       "ooLabel": "Ctrl+Alt+E EuroSign",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Alt+R RegisteredSign",
+       "ooLabel": "Ctrl+Alt+R RegisteredSign",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Alt+T TrademarkSign",
+       "ooLabel": "Ctrl+Alt+T TrademarkSign",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Alt+Z SpeechWorker",
+       "ooLabel": "Ctrl+Alt+Z SpeechWorker",
+       "status": "diverged",
+       "reason": "see census-shortcuts source: sdkjs/word/Editor/Shortcuts.js (147 types) vs WO editor keydown handler"
+      },
+      {
+       "label": "Ctrl+Alt+F OpenFilePanel",
+       "ooLabel": "Ctrl+Alt+F OpenFilePanel",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Alt+Meta+A OpenCommentField",
+       "ooLabel": "Alt+Meta+A OpenCommentField",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Alt+Q OpenChatPanel",
+       "ooLabel": "Ctrl+Alt+Q OpenChatPanel",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Alt+PageUp MoveToStartPreviousPage",
+       "ooLabel": "Alt+PageUp MoveToStartPreviousPage",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Alt+PageDown MoveToStartNextPage",
+       "ooLabel": "Alt+PageDown MoveToStartNextPage",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Alt+ArrowLeft MoveToStartWord",
+       "ooLabel": "Alt+ArrowLeft MoveToStartWord",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Alt+ArrowRight MoveToEndWord",
+       "ooLabel": "Alt+ArrowRight MoveToEndWord",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Alt+Backspace DeleteLeftWord",
+       "ooLabel": "Alt+Backspace DeleteLeftWord",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "Alt+Delete DeleteRightWord",
+       "ooLabel": "Alt+Delete DeleteRightWord",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "Meta+X Cut",
+       "ooLabel": "Meta+X Cut",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "Meta+C Copy",
+       "ooLabel": "Meta+C Copy",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "Meta+V Paste",
+       "ooLabel": "Meta+V Paste",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "Shift+Meta+V PasteTextWithoutFormat",
+       "ooLabel": "Shift+Meta+V PasteTextWithoutFormat",
+       "status": "diverged",
+       "reason": "browser-native"
+      },
+      {
+       "label": "Shift+Meta+X Strikeout",
+       "ooLabel": "Shift+Meta+X Strikeout",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Shift+Alt+ArrowRight SelectRightWord",
+       "ooLabel": "Shift+Alt+ArrowRight SelectRightWord",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Shift+Alt+ArrowLeft SelectLeftWord",
+       "ooLabel": "Shift+Alt+ArrowLeft SelectLeftWord",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Ctrl+Alt+1 ApplyHeading1",
+       "ooLabel": "Ctrl+Alt+1 ApplyHeading1",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Alt+2 ApplyHeading2",
+       "ooLabel": "Ctrl+Alt+2 ApplyHeading2",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Alt+3 ApplyHeading3",
+       "ooLabel": "Ctrl+Alt+3 ApplyHeading3",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Meta+ArrowLeft LittleMoveObjectLeft",
+       "ooLabel": "Meta+ArrowLeft LittleMoveObjectLeft",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Meta+ArrowRight LittleMoveObjectRight",
+       "ooLabel": "Meta+ArrowRight LittleMoveObjectRight",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Meta+ArrowUp LittleMoveObjectUp",
+       "ooLabel": "Meta+ArrowUp LittleMoveObjectUp",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Meta+ArrowDown LittleMoveObjectDown",
+       "ooLabel": "Meta+ArrowDown LittleMoveObjectDown",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Ctrl+Alt+Equal InsertEquation",
+       "ooLabel": "Ctrl+Alt+Equal InsertEquation",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Alt+Semicolon HorizontalEllipsis",
+       "ooLabel": "Alt+Semicolon HorizontalEllipsis",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Alt+Meta+X ReplaceUnicodeToSymbol",
+       "ooLabel": "Alt+Meta+X ReplaceUnicodeToSymbol",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Alt+PageDown MoveToNextPage",
+       "ooLabel": "Alt+PageDown MoveToNextPage",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Alt+PageUp MoveToPreviousPage",
+       "ooLabel": "Alt+PageUp MoveToPreviousPage",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Ctrl+Alt+F InsertFootnoteNow",
+       "ooLabel": "Ctrl+Alt+F InsertFootnoteNow",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Alt+Minus EmDash",
+       "ooLabel": "Ctrl+Alt+Minus EmDash",
+       "status": "diverged",
+       "reason": "see census-shortcuts source: sdkjs/word/Editor/Shortcuts.js (147 types) vs WO editor keydown handler"
+      },
+      {
+       "label": "Ctrl+Minus EnDash",
+       "ooLabel": "Ctrl+Minus EnDash",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Ctrl+Tab NextFileTab",
+       "ooLabel": "Ctrl+Tab NextFileTab",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Ctrl+Shift+Tab PreviousFileTab",
+       "ooLabel": "Ctrl+Shift+Tab PreviousFileTab",
+       "status": "done",
+       "reason": "navigation"
+      },
+      {
+       "label": "Meta+O OpenExistingFile",
+       "ooLabel": "Meta+O OpenExistingFile",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Meta+W CloseFile",
+       "ooLabel": "Meta+W CloseFile",
+       "status": "done",
+       "reason": null
+      }
+     ]
     }
    ]
   },
@@ -4029,11 +5558,55 @@
   }
  ],
  "totals": {
-  "controls": 152,
-  "done": 147,
-  "diverged": 5,
+  "controls": 386,
+  "done": 358,
+  "diverged": 28,
   "missing": 0,
   "iconOnly": 69,
+  "surfaces": {
+   "ribbon": {
+    "controls": 145,
+    "done": 145,
+    "diverged": 0,
+    "missing": 0,
+    "iconOnly": 58
+   },
+   "filemenu": {
+    "controls": 5,
+    "done": 0,
+    "diverged": 5,
+    "missing": 0,
+    "iconOnly": 0
+   },
+   "statusbar": {
+    "controls": 2,
+    "done": 2,
+    "diverged": 0,
+    "missing": 0,
+    "iconOnly": 11
+   },
+   "dialogs": {
+    "controls": 12,
+    "done": 9,
+    "diverged": 3,
+    "missing": 0,
+    "iconOnly": 0
+   },
+   "ctx": {
+    "controls": 75,
+    "done": 75,
+    "diverged": 0,
+    "missing": 0,
+    "iconOnly": 0
+   },
+   "shortcuts": {
+    "controls": 147,
+    "done": 127,
+    "diverged": 20,
+    "missing": 0,
+    "iconOnly": 0
+   }
+  },
   "ledgerFeatures": 534
  },
  "probes": [
