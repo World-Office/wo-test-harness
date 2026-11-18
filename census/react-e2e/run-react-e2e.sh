@@ -24,15 +24,26 @@ fi
 
 if [ "${1:-}" = "--capture" ] || [ "${2:-}" = "--capture" ]; then
   echo "[e2e] capturing fresh deep census → census/census-react-deep.json"
-  (cd "$CENSUS" && URL_BASE="$BASE" /usr/bin/node census-react-deep.cjs) || exit 1
+  (cd "$CENSUS" && CENSUS_REACT_URL="$BASE" /usr/bin/node census-react-deep.cjs) || exit 1
 fi
 
 rc=0
+results=""
+sep=""
+emit() { # emit <id> <ok>
+  results+="${sep}{\"id\":\"$1\",\"name\":\"$1\",\"ok\":$2}"
+  sep=","
+}
 for probe in "$HERE"/probe-*.cjs; do
-  echo "── $(basename "$probe")"
-  /usr/bin/node "$probe" || rc=1
+  id="$(basename "$probe" .cjs)"
+  echo "── $id"
+  if /usr/bin/node "$probe"; then emit "$id" true; else emit "$id" false; rc=1; fi
 done
 
 echo "── coverage"
-/usr/bin/python3 "$HERE/coverage-check.py" --gate || rc=1
+if /usr/bin/python3 "$HERE/coverage-check.py" --gate; then emit coverage-gate true; else emit coverage-gate false; rc=1; fi
+
+# fig oracle artifact (fig/fig-check.cjs parity-contracts reads results[].ok).
+# CONSUMER: server CI copies this to tests/parity/contract-results.json.
+printf '{"generated":"%s","results":[%s]}\n' "$(date -u +%FT%TZ)" "$results" > "${CONTRACT_RESULTS_OUT:-$HERE/contract-results.json}"
 exit $rc

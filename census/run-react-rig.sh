@@ -11,7 +11,9 @@
 #   then: CENSUS_REACT_URL=http://127.0.0.1:<port>/word/ node census-react-deep.cjs
 set -euo pipefail
 PORT="${1:-8931}"
-REPO="$(git -C "$(dirname "$0")" rev-parse --show-toplevel)/../server"
+# SERVER_DIR: override for CI (harness checked out as a sibling of the server
+# repo, not inside World-Office/ like the dev box)
+REPO="${SERVER_DIR:-$(git -C "$(dirname "$0")" rev-parse --show-toplevel)/../server}"
 REPO="$(readlink -f "$REPO")"
 APP="$REPO/apps/web/apps/documenteditor-react"
 BIN="$REPO/target/debug/wo-docserver"

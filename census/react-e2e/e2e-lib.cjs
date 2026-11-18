@@ -1,6 +1,13 @@
 // react-e2e/e2e-lib.cjs — shared boot + assertion helpers for the react E2E suite.
 // Every probe: exit 0 = PASS, non-zero = FAIL, console lines `PASS: …`/`FAIL: …`.
-const { chromium } = require('/home/weiss/.npm-global/lib/node_modules/playwright/index.mjs');
+let chromium;
+try {
+  // CI + any checkout with a local playwright
+  ({ chromium } = require('playwright'));
+} catch {
+  // dev box: global install (repo has no playwright dep)
+  ({ chromium } = require('/home/weiss/.npm-global/lib/node_modules/playwright/index.mjs'));
+}
 
 const BASE = process.env.E2E_BASE_URL || 'http://127.0.0.1:8932/word/';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -14,7 +21,7 @@ function ok(name, cond, extra = '') {
 }
 
 async function boot(opts = {}) {
-  const b = await chromium.launch();
+  const b = await chromium.launch({ args: ['--no-sandbox', '--disable-dev-shm-usage'] });
   const ctx = await b.newContext({
     viewport: { width: 1440, height: 900 },
     acceptDownloads: opts.downloads !== false,
