@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T06:31:02+00:00",
+ "generated": "2026-11-18T09:52:03+00:00",
  "sources": {
   "oo": "census/census/census-oo-deep.json",
   "react": "census/census/census-react-deep.json",
@@ -8,6 +8,7 @@
   "contracts": "census/react-e2e/contract-results.json",
   "ctx": "census/ctx-contracts.json",
   "ooDialogs": "census/census/census-oo-dialogs.json",
+  "reactDialogs": "census/census/census-react-dialogs.json",
   "woDialogs": "census/census/census-wo-dialogs.json",
   "shortcuts": "census/census/census-shortcuts.json"
  },
@@ -1142,15 +1143,15 @@
   {
    "id": "dialogs",
    "label": "Dialogs",
-   "caveat": "WO side = legacy wysiwyg census; react dialog census pending",
+   "caveat": "WO side = react panels census (deployed editor; route aliases verified in word-commands.ts) with the legacy wysiwyg census as fallback for modals the panels census does not reach (Symbol, Page setup, Columns, Hyphenation)",
    "tabs": [
     {
      "id": "dialogs",
      "label": "Dialogs",
      "contextual": false,
      "counts": {
-      "done": 9,
-      "diverged": 3,
+      "done": 11,
+      "diverged": 1,
       "missing": 0,
       "iconOnly": 0,
       "total": 12
@@ -1160,7 +1161,7 @@
        "label": "Date & time",
        "ooLabel": "Date & time",
        "status": "diverged",
-       "reason": "no counterpart in legacy WO dialog census; react dialog census pending (see caveat)"
+       "reason": "react insertDateTime inserts a DATETIME field directly — no dialog (word-commands.ts)"
       },
       {
        "label": "Insert symbol",
@@ -1193,40 +1194,40 @@
        "reason": null
       },
       {
-       "label": "Insert bookmark",
+       "label": "Cross-Reference",
        "ooLabel": "Bookmarks",
        "status": "done",
-       "reason": null
+       "reason": "insertBookmark routes to the react Cross-Reference panel (word-commands.ts)"
       },
       {
-       "label": "Insert caption",
+       "label": "Cross-Reference",
        "ooLabel": "Insert caption",
-       "status": "diverged",
-       "reason": "no counterpart in legacy WO dialog census; react dialog census pending (see caveat)"
+       "status": "done",
+       "reason": "insertCaption routes to the react Cross-Reference panel (word-commands.ts)"
       },
       {
-       "label": "Insert cross-reference",
+       "label": "Cross-Reference",
        "ooLabel": "Cross-reference",
        "status": "done",
        "reason": null
       },
       {
-       "label": "TableOfFigures.Title",
+       "label": "Cross-Reference",
        "ooLabel": "Table of figures",
        "status": "done",
-       "reason": null
+       "reason": "insertTableOfFigures routes to the react Cross-Reference panel (word-commands.ts)"
       },
       {
-       "label": "Insert table of contents",
+       "label": "Cross-Reference",
        "ooLabel": "Table of contents",
        "status": "done",
-       "reason": null
+       "reason": "insertToc routes to the react Cross-Reference panel (word-commands.ts)"
       },
       {
-       "label": "Macros",
+       "label": "Plugins",
        "ooLabel": "Macros",
-       "status": "diverged",
-       "reason": "no counterpart in legacy WO dialog census; react dialog census pending (see caveat)"
+       "status": "done",
+       "reason": "macros routes to the react Plugins panel (word-commands.ts)"
       }
      ]
     }
@@ -5559,8 +5560,8 @@
  ],
  "totals": {
   "controls": 386,
-  "done": 358,
-  "diverged": 28,
+  "done": 360,
+  "diverged": 26,
   "missing": 0,
   "iconOnly": 69,
   "surfaces": {
@@ -5587,8 +5588,8 @@
    },
    "dialogs": {
     "controls": 12,
-    "done": 9,
-    "diverged": 3,
+    "done": 11,
+    "diverged": 1,
     "missing": 0,
     "iconOnly": 0
    },
