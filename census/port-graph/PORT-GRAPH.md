@@ -163,15 +163,16 @@ signature-settings→`signature`, form-settings→`form`, filling-status→react
 FormPanel 'Filling status' section (PGP-9); send-for-signing has no react
 counterpart (missing — DSS backend feature).
 
-## Current state (post-PGP-1..9, graph build 2026-11-18) — done-gate output verbatim
+## Current state (post-PGP-A1..A4, graph build 2026-11-18) — done-gate output verbatim
 
 520 control nodes — done=435, diverged=23, missing=4, iconOnly=58
 (+534 ledger features). Diverged: 3 dialogs (Date & time — react inserts
 directly; Mail Merge panel-no-email; Roles → WOPI panels), 20 shortcuts
-(3 diverged + 17 browser-native). 9 source rows shipped in campaign
-port-graph-parity (server main 9ba80faa4): Cells Add, Edit List Item, List
-Settings, List Types, Notes Remove, Save Form, Style Title, statusbar Action
-status + Multiple pages, rightpanel Filling status.
+(3 diverged + 17 browser-native). The context-menu surface was
+de-rubber-stamped (v3.2): statuses now require react evidence. PGP-A
+campaign (server main 990857b39) shipped all five ctx menus,
+75/75 contract rows done with real implementations: table (PGP-1), text
+(PGP-A1), image (PGP-A2), shape (PGP-A3), misspelled (PGP-A4).
 (3 diverged + 17 browser-native).
 
 ```

@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T21:36:26+00:00",
+ "generated": "2026-11-18T21:50:10+00:00",
  "sources": {
   "oo": "census/census/census-oo-deep.json",
   "react": "census/census/census-react-deep.json",
@@ -1924,9 +1924,9 @@
      "label": "Misspelled",
      "contextual": false,
      "counts": {
-      "done": 2,
-      "diverged": 5,
-      "missing": 8,
+      "done": 15,
+      "diverged": 0,
+      "missing": 0,
       "iconOnly": 0,
       "total": 15
      },
@@ -1940,8 +1940,8 @@
       {
        "label": "IgnoreAll",
        "ooLabel": "IgnoreAll",
-       "status": "missing",
-       "reason": "no react misspelled right-click menu (PGP-A backlog)"
+       "status": "done",
+       "reason": null
       },
       {
        "label": "AddToDictionary",
@@ -1952,74 +1952,74 @@
       {
        "label": "SelectLanguage",
        "ooLabel": "SelectLanguage",
-       "status": "diverged",
-       "reason": "react spellcheck menu dictionary/docs language cmd exists (btn-doc-lang) (not rendered on this surface)"
+       "status": "done",
+       "reason": null
       },
       {
        "label": "Cut",
        "ooLabel": "Cut",
-       "status": "diverged",
-       "reason": "browser-native cut handled globally; no react misspelled ctx menu yet"
+       "status": "done",
+       "reason": null
       },
       {
        "label": "Copy",
        "ooLabel": "Copy",
-       "status": "diverged",
-       "reason": "browser-native copy handled globally; no react misspelled ctx menu yet"
+       "status": "done",
+       "reason": null
       },
       {
        "label": "Paste",
        "ooLabel": "Paste",
-       "status": "diverged",
-       "reason": "browser-native paste handled globally; no react misspelled ctx menu yet"
+       "status": "done",
+       "reason": null
       },
       {
        "label": "PrintSelection",
        "ooLabel": "PrintSelection",
-       "status": "diverged",
-       "reason": "browser-native printselection handled globally; no react misspelled ctx menu yet"
+       "status": "done",
+       "reason": null
       },
       {
        "label": "PageBreakBefore",
        "ooLabel": "PageBreakBefore",
-       "status": "missing",
-       "reason": "no react misspelled right-click menu (PGP-A backlog)"
+       "status": "done",
+       "reason": null
       },
       {
        "label": "KeepLines",
        "ooLabel": "KeepLines",
-       "status": "missing",
-       "reason": "no react misspelled right-click menu (PGP-A backlog)"
+       "status": "done",
+       "reason": null
       },
       {
        "label": "ParagraphSettings",
        "ooLabel": "ParagraphSettings",
-       "status": "missing",
-       "reason": "no react misspelled right-click menu (PGP-A backlog)"
+       "status": "done",
+       "reason": null
       },
       {
        "label": "AddComment",
        "ooLabel": "AddComment",
-       "status": "missing",
-       "reason": "no react misspelled right-click menu (PGP-A backlog)"
+       "status": "done",
+       "reason": null
       },
       {
        "label": "Link",
        "ooLabel": "Link",
-       "status": "missing",
-       "reason": "no react misspelled right-click menu (PGP-A backlog)"
+       "status": "done",
+       "reason": null
       },
       {
        "label": "FormattingAsStyle",
        "ooLabel": "FormattingAsStyle",
-       "status": "missing",
-       "reason": "no react misspelled right-click menu (PGP-A backlog)"
+       "status": "done",
+       "reason": null
       },
       {
        "label": "AI",
        "ooLabel": "AI",
-       "status": "missing",
-       "reason": "no react misspelled right-click menu (PGP-A backlog)"
+       "status": "done",
+       "reason": null
       }
      ]
     },
@@ -2363,7 +2363,7 @@
      "live": "seeded OO 9.4.0 rig (2026-11-15), right-click on shape"
     }
    ],
-   "note": "verified live via ctx-scenarios — OO 9.4.0 live capture (seeded rig) + source analysis; v3.2: statuses now require react evidence (table=PGP-1 + spellcheck; text=PGP-A1, image=PGP-A2, shape=PGP-A3 — server main da10808cc)",
+   "note": "verified live via ctx-scenarios — OO 9.4.0 live capture (seeded rig) + source analysis; v3.2: statuses now require react evidence (table=PGP-1; text=PGP-A1, image=PGP-A2, shape=PGP-A3, misspelled=PGP-A4 — server main 990857b39)",
    "manifest": {
     "menus": {
      "pictureMenu": {
@@ -6196,9 +6196,9 @@
  ],
  "totals": {
   "controls": 462,
-  "done": 422,
-  "diverged": 28,
-  "missing": 12,
+  "done": 435,
+  "diverged": 23,
+  "missing": 4,
   "iconOnly": 58,
   "surfaces": {
    "ribbon": {
@@ -6238,9 +6238,9 @@
    },
    "ctx": {
     "controls": 75,
-    "done": 62,
-    "diverged": 5,
-    "missing": 8,
+    "done": 75,
+    "diverged": 0,
+    "missing": 0,
     "iconOnly": 0
    },
    "shortcuts": {

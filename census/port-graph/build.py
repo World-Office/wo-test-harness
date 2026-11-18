@@ -620,9 +620,13 @@ def build_ctx(ctx: dict) -> dict:
             "MergeCells", "SplitCell", "DistributeRows", "DistributeColumns",
             "TextAlignment", "InsertCaption", "TableProperties", "Link",
             "ParagraphSettings", "FormattingAsStyle", "AI")},
-        # spellcheck menu: suggestions + Ignore + AddToDictionary rendered.
-        "misspelled": {"Ignore": None, "AddToDictionary": None,
-                       "SelectLanguage": "dictionary/docs language cmd exists (btn-doc-lang)"},
+        # spellcheck menu: PGP-A4 completed all 15 contract rows (suggestions,
+        # Ignore, IgnoreAll, AddToDictionary, SelectLanguage + text/browser rows).
+        "misspelled": {r: None for r in (
+            "Ignore", "IgnoreAll", "AddToDictionary", "SelectLanguage",
+            "Cut", "Copy", "Paste", "PrintSelection", "PageBreakBefore",
+            "KeepLines", "ParagraphSettings", "AddComment", "Link",
+            "FormattingAsStyle", "AI")},
         # PGP-A1 (text), PGP-A2 (image), PGP-A3 (shape): full ctx menus shipped
         # (server main da10808cc) — every contract row rendered + wired to a
         # real command (browser rows execCommand, command rows wo-command).
@@ -676,8 +680,8 @@ def build_ctx(ctx: dict) -> dict:
             "note": "verified live via ctx-scenarios — " +
                     ctx.get("_meta", {}).get("source", "") +
                     "; v3.2: statuses now require react evidence "
-                    "(table=PGP-1 + spellcheck; text=PGP-A1, image=PGP-A2, "
-                    "shape=PGP-A3 — server main da10808cc)"}
+                    "(table=PGP-1; text=PGP-A1, image=PGP-A2, shape=PGP-A3, "
+                    "misspelled=PGP-A4 — server main 990857b39)"}
 
 
 def build_shortcuts(sc: dict) -> tuple[dict, dict]:
