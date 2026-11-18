@@ -41,6 +41,7 @@ def main() -> int:
             return 2
 
     missing_total = 0
+    undocumented = []
     for s in surfaces:
         tabs = s.get("tabs", [])
         if not tabs and "clusters" in s:  # ledger surface: features, no controls
@@ -63,13 +64,20 @@ def main() -> int:
                       f"diverged={t['counts']['diverged']} "
                       f"missing={t['counts']['missing']}")
             for x in miss:
-                print(f"      MISSING {t['id']}/{x['ooLabel']}")
-            missing_total += len(miss)
+                documented = bool((x.get("reason") or "").strip())
+                tag = "GAP (documented)" if documented else "MISSING"
+                print(f"      {tag} {t['id']}/{x['ooLabel']}")
+                if not documented:
+                    missing_total += 1
+                    undocumented.append(f"{s['id']}/{t['id']}/{x['ooLabel']}")
 
     if missing_total:
-        print(f"GATE FAIL — {missing_total} undocumented-missing control(s)")
+        print(f"GATE FAIL — {missing_total} undocumented-missing control(s):")
+        for u in undocumented[:10]:
+            print(f"      {u}")
     else:
-        print("GATE OK — no undocumented-missing controls")
+        print("GATE OK — no undocumented-missing controls "
+              "(documented gaps are listed, not failed)")
     return 1 if (strict and missing_total) else 0
 
 

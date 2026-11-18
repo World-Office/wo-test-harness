@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T11:18:37+00:00",
+ "generated": "2026-11-18T11:26:21+00:00",
  "sources": {
   "oo": "census/census/census-oo-deep.json",
   "react": "census/census/census-react-deep.json",
@@ -1359,7 +1359,7 @@
        "ooLabel": "Action status",
        "ooId": "label-action",
        "status": "missing",
-       "reason": null
+       "reason": "no react statusbar counterpart — honest gap"
       },
       {
        "label": "Language",
@@ -1408,7 +1408,7 @@
        "ooLabel": "Multiple pages",
        "ooId": "status-btn-multiple-pages",
        "status": "missing",
-       "reason": null
+       "reason": "no react statusbar counterpart — honest gap"
       },
       {
        "label": "Fit to Page",

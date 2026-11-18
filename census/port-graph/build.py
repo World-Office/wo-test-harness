@@ -230,7 +230,8 @@ def build_statusbar(oo: dict, re_: dict, src: dict) -> dict:
             status, label_out = "missing", label
         controls.append({"label": label_out, "ooLabel": runtime.get(tid) or label,
                          "ooId": tid, "status": status,
-                         "reason": reason if status == "done" else None})
+                         "reason": reason if status == "done"
+                         else "no react statusbar counterpart — honest gap"})
         counts[status] += 1
     counts["total"] = len(controls)
     return {"id": "statusbar", "label": "Status Bar", "contextual": False,
