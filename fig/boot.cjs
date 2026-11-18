@@ -23,7 +23,7 @@ const WEB = [
 // UI root with ALL five editor types, repo source / built dists
 function ensureFullUiRoot() {
   const map = {
-    word: path.join(WEB, 'documenteditor-wysiwyg'),
+    word: path.join(WEB, 'documenteditor-react', 'dist'),
     sheet: path.join(WEB, 'spreadsheeteditor-react', 'dist'),
     slide: path.join(WEB, 'presentationeditor-react', 'dist'),
     pdf: path.join(WEB, 'pdfeditor-react', 'dist'),
