@@ -4,10 +4,15 @@
 Reads the committed census artifacts (no node, no playwright, no network):
 
   census/census/census-oo-deep.json      OO golden (tabs dict, statusBar list)
-  census/census/census-react-deep.json   react census (ribbon dict, fileMenu list)
+  census/census/census-react-deep.json   react census (ribbon dict, fileMenu list,
+                                         statusbar list)
   census/react-e2e/divergences.json      documented divergences {"Tab": {"norm-label"|"_tab": reason}}
   census/census/ledger.json              feature ledger (cluster/level/kind per feature)
   census/react-e2e/contract-results.json probe results (ids only)
+  census/ctx-contracts.json              live-verified context-menu contract (5 contexts)
+  census/census/census-oo-dialogs.json   OO dialogs (rig capture, 18 rows)
+  census/census/census-wo-dialogs.json   WO dialogs (LEGACY wysiwyg capture, 65)
+  census/census/census-shortcuts.json    OO Shortcuts.js vs WO keydown (147, static)
 
 Emits census/port-graph/graph.json (see PORT-GRAPH.md). Derived artifact:
 regenerate after a census capture — never hand-edit.
@@ -25,7 +30,17 @@ REACT_PATH = CENSUS / "census" / "census-react-deep.json"
 DIV_PATH = CENSUS / "react-e2e" / "divergences.json"
 LEDGER_PATH = CENSUS / "census" / "ledger.json"
 CONTRACT_PATH = CENSUS / "react-e2e" / "contract-results.json"
+CTX_PATH = CENSUS / "ctx-contracts.json"
+OO_DLG_PATH = CENSUS / "census" / "census-oo-dialogs.json"
+WO_DLG_PATH = CENSUS / "census" / "census-wo-dialogs.json"
+SHORTCUTS_PATH = CENSUS / "census" / "census-shortcuts.json"
 OUT_PATH = HERE / "graph.json"
+
+
+def require(path: Path) -> dict:
+    if not path.exists():
+        sys.exit(f"missing census artifact: {path} — capture it; the graph is derived, never faked")
+    return json.loads(path.read_text())
 
 # --- label matching: copied verbatim from census/react-e2e/coverage-check.py
 # (source of truth; hyphenated filename is not importable) ---
@@ -133,23 +148,147 @@ def build_tab(tab_key: str, tab: dict, uni: dict, div: dict) -> dict:
             "controls": controls}
 
 
-def build_statusbar(oo: dict) -> dict:
-    """OO statusbar → all-done surface (closed via ledger evidence, see caveat)."""
-    seen, controls = set(), []
-    icon_only = 0
+# OO's statusbar census captured slot VALUES where react's captured control
+# TITLES; these norm-keyed pairs are the same control (see PORT-GRAPH.md).
+STATUSBAR_ALIASES = {"wordcount": "words0", "englishunitedstates": "language"}
+
+
+def build_statusbar(oo: dict, re_: dict) -> dict:
+    """OO statusBar vs react statusbar — real label compare (PG-4 capture)."""
+    rmap = {norm(i.get("label", "")): i.get("label", "")
+            for i in re_.get("statusbar", []) if i.get("label")}
+    seen, controls, icon_only = set(), [], 0
     for item in oo.get("statusBar", []):
         label = item.get("label", "")
         if not norm(label):
             icon_only += 1  # layout-segment duplicates counted once per empty row
         elif label not in seen:  # OO DOM repeats segments (Word count ×4) — one node each
             seen.add(label)
-            controls.append({"label": label, "ooLabel": label,
-                             "status": "done", "reason": None})
-    counts = {"done": len(controls), "diverged": 0, "missing": 0,
+            n = STATUSBAR_ALIASES.get(norm(label), norm(label))
+            if n in rmap or label_match(label, set(rmap)):
+                status, reason = "done", None
+                label_out = rmap.get(n, label)
+            else:
+                status, reason, label_out = "missing", None, label
+            controls.append({"label": label_out, "ooLabel": label,
+                             "status": status, "reason": reason})
+    counts = {"done": sum(1 for c in controls if c["status"] == "done"),
+              "diverged": 0, "missing": sum(1 for c in controls if c["status"] == "missing"),
               "iconOnly": icon_only, "total": len(controls) + icon_only}
     return {"id": "statusbar", "label": "Status Bar", "contextual": False,
             "counts": counts, "controls": controls,
-            "caveat": "react statusbar census not in artifacts; from ledger evidence (statusbar cluster)"}
+            "note": "real compare vs react statusbar census; aliases for OO slot values "
+                    "vs react control titles (Word count→Words: N, doc language→Language)"}
+
+
+# OO dialog title → (WO dialog it is combined into, why) — legacy WO census.
+DIALOG_ALIASES = {
+    "Margins": ("Page setup", "combined into WO 'Page setup' (fields: Size, Margins)"),
+    "Page size": ("Page setup", "combined into WO 'Page setup' (fields: Size, Margins)"),
+}
+LEGACY_DLG_REASON = ("no counterpart in legacy WO dialog census; "
+                     "react dialog census pending (see caveat)")
+
+
+def build_dialogs(oo_dlgs: list, wo_dlgs: list) -> dict:
+    """OO dialogs vs (legacy) WO dialogs — one control per unique OO title."""
+    # WO titles mix i18n keys ('Toolbar.Find', 'TableOfFigures.Title') with
+    # resolved strings ('Insert symbol'): index every norm variant → original.
+    wv: dict[str, str] = {}
+    for d in wo_dlgs:
+        t = d.get("title", "")
+        if not t:
+            continue
+        cands = [t]
+        if t.startswith("Insert "):
+            cands.append(t[len("Insert "):])
+        if "." in t:
+            parts = t.split(".")
+            cands += parts + [".".join(parts[:-1])] + ["".join(parts[1:])]
+        for c in cands:
+            wv.setdefault(norm(c), t)
+
+    seen, controls = set(), []
+    for d in oo_dlgs:
+        title = (d.get("dialog") or {}).get("title", "")
+        if not title or title in seen:  # same dialog from two triggers → one node
+            continue
+        seen.add(title)
+        alias = DIALOG_ALIASES.get(title)
+        n = norm(alias[0]) if alias else norm(title)
+        hit = wv.get(n) or (n.endswith("s") and wv.get(n[:-1])) or None  # Bookmarks→'Insert bookmark'
+        if hit:
+            status, label = "done", hit
+            reason = alias[1] if alias else None
+        else:
+            status, label, reason = "diverged", title, LEGACY_DLG_REASON
+        controls.append({"label": label, "ooLabel": title,
+                         "status": status, "reason": reason})
+    counts = {"done": sum(1 for c in controls if c["status"] == "done"),
+              "diverged": sum(1 for c in controls if c["status"] == "diverged"),
+              "missing": 0, "iconOnly": 0, "total": len(controls)}
+    return {"id": "dialogs", "label": "Dialogs",
+            "caveat": "WO side = legacy wysiwyg census; react dialog census pending",
+            "tabs": [{"id": "dialogs", "label": "Dialogs", "contextual": False,
+                      "counts": counts, "controls": controls}]}
+
+
+def build_ctx(ctx: dict) -> dict:
+    """Live-verified context-menu contract → one all-done tab per context."""
+    tabs = []
+    for name in ("text", "misspelled", "table", "image", "shape"):
+        v = ctx.get(name, [])
+        rows = v["rows"] if isinstance(v, dict) else v
+        controls = [{"label": r, "ooLabel": r, "status": "done", "reason": None}
+                    for r in rows]
+        counts = {"done": len(controls), "diverged": 0, "missing": 0,
+                  "iconOnly": 0, "total": len(controls)}
+        tab = {"id": name, "label": name.title(), "contextual": False,
+               "counts": counts, "controls": controls}
+        if isinstance(v, dict) and v.get("live"):
+            tab["live"] = v["live"]
+        tabs.append(tab)
+    return {"id": "ctx", "label": "Context Menus", "tabs": tabs,
+            "note": "verified live via ctx-scenarios — " + ctx.get("_meta", {}).get("source", "")}
+
+
+def build_shortcuts(sc: dict) -> tuple[dict, dict]:
+    """Shortcut census verdicts → statuses; cross-checks against its totals."""
+    src = sc.get("source", "")
+    rows = sc.get("shortcuts", [])
+    controls, counts = [], {"done": 0, "diverged": 0, "missing": 0, "iconOnly": 0}
+    for s in rows:
+        v = s.get("verdict")
+        if v == "matched":
+            status, reason = "done", None
+        elif v == "nav":
+            status, reason = "done", "navigation"
+        elif v == "diverged":
+            status, reason = "diverged", f"see census-shortcuts source: {src}"
+        elif v == "browser-native":
+            status, reason = "diverged", "browser-native"
+        elif v == "missing":
+            status, reason = "missing", None
+        else:
+            sys.exit(f"unknown shortcut verdict {v!r} in {SHORTCUTS_PATH}")
+        label = f"{s.get('combo', '')} {s.get('type', '')}".strip()
+        controls.append({"label": label, "ooLabel": label,
+                         "status": status, "reason": reason})
+        counts[status] += 1
+    counts["total"] = len(controls)
+
+    t = sc.get("totals", {})
+    expect = {"done": t.get("matched", 0) + t.get("nav", 0),
+              "diverged": t.get("diverged", 0) + t.get("browser-native", 0),
+              "missing": t.get("missing", 0), "total": t.get("total", 0)}
+    got = {k: counts[k] for k in expect}
+    if got != expect:
+        sys.exit(f"shortcuts cross-check FAIL: graph {got} != source totals {t}")
+    surface = {"id": "shortcuts", "label": "Keyboard Shortcuts",
+               "tabs": [{"id": "shortcuts", "label": "Keyboard Shortcuts",
+                         "contextual": False, "counts": counts,
+                         "controls": controls}]}
+    return surface, {"graph": got, "source": t}
 
 
 def build_ledger(features: list) -> dict:
@@ -177,26 +316,41 @@ def main() -> int:
     div = json.loads(DIV_PATH.read_text()) if DIV_PATH.exists() else {}
     ledger = json.loads(LEDGER_PATH.read_text())
     contract = json.loads(CONTRACT_PATH.read_text()) if CONTRACT_PATH.exists() else {}
+    ctx = require(CTX_PATH)
+    oo_dlg = require(OO_DLG_PATH)
+    wo_dlg = require(WO_DLG_PATH)
+    shortcuts = require(SHORTCUTS_PATH)
     uni = react_label_universe(re_)
 
     ribbon_tabs = [build_tab(k, t, uni, div)
                    for k, t in oo.get("tabs", {}).items() if k != "file"]
     filemenu_tab = build_tab("file", oo["tabs"].get("file", {"buttons": []}), uni, div)
     filemenu_tab["id"] = "filemenu"
+    shortcuts_surface, sc_check = build_shortcuts(shortcuts)
 
     surfaces = [
         {"id": "ribbon", "label": "Ribbon", "tabs": ribbon_tabs},
         {"id": "filemenu", "label": "File Menu", "tabs": [filemenu_tab]},
-        {"id": "statusbar", "label": "Status Bar", "tabs": [build_statusbar(oo)]},
+        {"id": "statusbar", "label": "Status Bar", "tabs": [build_statusbar(oo, re_)]},
+        build_dialogs(oo_dlg.get("dialogs", []), wo_dlg.get("dialogs", [])),
+        build_ctx(ctx),
+        shortcuts_surface,
         build_ledger(ledger["features"]),
     ]
 
-    totals = {"controls": 0, "done": 0, "diverged": 0, "missing": 0, "iconOnly": 0}
+    totals = {"controls": 0, "done": 0, "diverged": 0, "missing": 0,
+              "iconOnly": 0, "surfaces": {}}
     for s in surfaces:
+        st = {"controls": 0, "done": 0, "diverged": 0, "missing": 0, "iconOnly": 0}
         for t in s.get("tabs", []):
             for k in ("done", "diverged", "missing", "iconOnly"):
-                totals[k] += t["counts"][k]
-            totals["controls"] += len(t["controls"])
+                st[k] += t["counts"][k]
+            st["controls"] += len(t["controls"])
+        if s.get("tabs"):
+            totals["surfaces"][s["id"]] = st
+        for k in ("done", "diverged", "missing", "iconOnly"):
+            totals[k] += st[k]
+        totals["controls"] += st["controls"]
     totals["ledgerFeatures"] = len(ledger["features"])
 
     graph = {
@@ -207,6 +361,10 @@ def main() -> int:
             "divergences": "census/react-e2e/divergences.json",
             "ledger": "census/census/ledger.json",
             "contracts": "census/react-e2e/contract-results.json",
+            "ctx": "census/ctx-contracts.json",
+            "ooDialogs": "census/census/census-oo-dialogs.json",
+            "woDialogs": "census/census/census-wo-dialogs.json",
+            "shortcuts": "census/census/census-shortcuts.json",
         },
         "surfaces": surfaces,
         "totals": totals,
@@ -217,6 +375,7 @@ def main() -> int:
           f"(done={totals['done']} diverged={totals['diverged']} missing={totals['missing']} "
           f"iconOnly={totals['iconOnly']}), {totals['ledgerFeatures']} ledger features, "
           f"{len(graph['probes'])} probes")
+    print(f"shortcuts cross-check OK: {sc_check['graph']} == source totals {sc_check['source']}")
     return 0
 
 
