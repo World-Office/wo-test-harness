@@ -11,7 +11,11 @@ Reads the committed census artifacts (no node, no playwright, no network):
   census/react-e2e/contract-results.json probe results (ids only)
   census/ctx-contracts.json              live-verified context-menu contract (5 contexts)
   census/census/census-oo-dialogs.json   OO dialogs (rig capture, 18 rows)
-  census/census/census-wo-dialogs.json   WO dialogs (LEGACY wysiwyg capture, 65)
+  census/census/census-react-dialogs.json react editor dialogs (15 right-rail
+                                         panels, PG-8; the deployed surface)
+  census/census/census-wo-dialogs.json   WO dialogs (LEGACY wysiwyg capture, 65;
+                                         fallback for dialogs the panels census
+                                         does not reach: modals like Symbol)
   census/census/census-shortcuts.json    OO Shortcuts.js vs WO keydown (147, static)
 
 Emits census/port-graph/graph.json (see PORT-GRAPH.md). Derived artifact:
@@ -32,6 +36,7 @@ LEDGER_PATH = CENSUS / "census" / "ledger.json"
 CONTRACT_PATH = CENSUS / "react-e2e" / "contract-results.json"
 CTX_PATH = CENSUS / "ctx-contracts.json"
 OO_DLG_PATH = CENSUS / "census" / "census-oo-dialogs.json"
+REACT_DLG_PATH = CENSUS / "census" / "census-react-dialogs.json"
 WO_DLG_PATH = CENSUS / "census" / "census-wo-dialogs.json"
 SHORTCUTS_PATH = CENSUS / "census" / "census-shortcuts.json"
 OUT_PATH = HERE / "graph.json"
@@ -186,12 +191,32 @@ DIALOG_ALIASES = {
     "Margins": ("Page setup", "combined into WO 'Page setup' (fields: Size, Margins)"),
     "Page size": ("Page setup", "combined into WO 'Page setup' (fields: Size, Margins)"),
 }
-LEGACY_DLG_REASON = ("no counterpart in legacy WO dialog census; "
-                     "react dialog census pending (see caveat)")
+# OO dialog title → (react right-rail panel, why) — the deployed editor routes
+# these commands to a panel instead of opening a modal (src/lib/word-commands.ts:
+# insertToc/insertBookmark/insertCaption/insertCrossReference/
+# insertTableOfFigures → toggleRightPanel("crossreference"); macros → "plugins").
+REACT_DLG_ALIASES = {
+    "Bookmarks": ("Cross-Reference", "insertBookmark routes to the react Cross-Reference panel (word-commands.ts)"),
+    "Insert caption": ("Cross-Reference", "insertCaption routes to the react Cross-Reference panel (word-commands.ts)"),
+    "Table of figures": ("Cross-Reference", "insertTableOfFigures routes to the react Cross-Reference panel (word-commands.ts)"),
+    "Table of contents": ("Cross-Reference", "insertToc routes to the react Cross-Reference panel (word-commands.ts)"),
+    "Macros": ("Plugins", "macros routes to the react Plugins panel (word-commands.ts)"),
+}
+# OO dialogs the deployed editor answers with a direct action, no dialog.
+REACT_DLG_DIRECT = {
+    "Date & time": "react insertDateTime inserts a DATETIME field directly — no dialog (word-commands.ts)",
+}
+NO_DLG_REASON = "no counterpart in the react panels census or the legacy WO dialog census"
 
 
-def build_dialogs(oo_dlgs: list, wo_dlgs: list) -> dict:
-    """OO dialogs vs (legacy) WO dialogs — one control per unique OO title."""
+def build_dialogs(oo_dlgs: list, wo_dlgs: list, react_dlgs: list) -> dict:
+    """OO dialogs vs react panels census (primary) + legacy WO census (fallback).
+
+    One control per unique OO title. Match order: react direct-action (documented
+    divergence) → react route alias → react title match → legacy combined alias
+    → legacy title match (i18n-key variants indexed)."""
+    rv = {norm(d.get("title", "")): d.get("title", "")
+          for d in react_dlgs if d.get("title")}
     # WO titles mix i18n keys ('Toolbar.Find', 'TableOfFigures.Title') with
     # resolved strings ('Insert symbol'): index every norm variant → original.
     wv: dict[str, str] = {}
@@ -214,21 +239,34 @@ def build_dialogs(oo_dlgs: list, wo_dlgs: list) -> dict:
         if not title or title in seen:  # same dialog from two triggers → one node
             continue
         seen.add(title)
+        n = norm(title)
+        direct = REACT_DLG_DIRECT.get(title)
+        ralias = REACT_DLG_ALIASES.get(title)
         alias = DIALOG_ALIASES.get(title)
-        n = norm(alias[0]) if alias else norm(title)
-        hit = wv.get(n) or (n.endswith("s") and wv.get(n[:-1])) or None  # Bookmarks→'Insert bookmark'
-        if hit:
-            status, label = "done", hit
-            reason = alias[1] if alias else None
+        legacy_hit = (not direct and not ralias and n not in rv
+                      and (wv.get(n) or (n.endswith("s") and wv.get(n[:-1])) or None))
+        if direct:
+            status, label, reason = "diverged", title, direct
+        elif ralias and norm(ralias[0]) in rv:
+            status, label, reason = "done", rv[norm(ralias[0])], ralias[1]
+        elif n in rv:
+            status, label, reason = "done", rv[n], None
+        elif alias and norm(alias[0]) in wv:
+            status, label, reason = "done", wv[norm(alias[0])], alias[1]
+        elif legacy_hit:
+            status, label, reason = "done", legacy_hit, None  # Bookmarks→'Insert bookmark'
         else:
-            status, label, reason = "diverged", title, LEGACY_DLG_REASON
+            status, label, reason = "diverged", title, NO_DLG_REASON
         controls.append({"label": label, "ooLabel": title,
                          "status": status, "reason": reason})
     counts = {"done": sum(1 for c in controls if c["status"] == "done"),
               "diverged": sum(1 for c in controls if c["status"] == "diverged"),
               "missing": 0, "iconOnly": 0, "total": len(controls)}
     return {"id": "dialogs", "label": "Dialogs",
-            "caveat": "WO side = legacy wysiwyg census; react dialog census pending",
+            "caveat": "WO side = react panels census (deployed editor; route aliases "
+                      "verified in word-commands.ts) with the legacy wysiwyg census as "
+                      "fallback for modals the panels census does not reach (Symbol, "
+                      "Page setup, Columns, Hyphenation)",
             "tabs": [{"id": "dialogs", "label": "Dialogs", "contextual": False,
                       "counts": counts, "controls": controls}]}
 
@@ -318,6 +356,7 @@ def main() -> int:
     contract = json.loads(CONTRACT_PATH.read_text()) if CONTRACT_PATH.exists() else {}
     ctx = require(CTX_PATH)
     oo_dlg = require(OO_DLG_PATH)
+    react_dlg = require(REACT_DLG_PATH)
     wo_dlg = require(WO_DLG_PATH)
     shortcuts = require(SHORTCUTS_PATH)
     uni = react_label_universe(re_)
@@ -332,7 +371,8 @@ def main() -> int:
         {"id": "ribbon", "label": "Ribbon", "tabs": ribbon_tabs},
         {"id": "filemenu", "label": "File Menu", "tabs": [filemenu_tab]},
         {"id": "statusbar", "label": "Status Bar", "tabs": [build_statusbar(oo, re_)]},
-        build_dialogs(oo_dlg.get("dialogs", []), wo_dlg.get("dialogs", [])),
+        build_dialogs(oo_dlg.get("dialogs", []), wo_dlg.get("dialogs", []),
+                      react_dlg.get("dialogs", [])),
         build_ctx(ctx),
         shortcuts_surface,
         build_ledger(ledger["features"]),
@@ -363,6 +403,7 @@ def main() -> int:
             "contracts": "census/react-e2e/contract-results.json",
             "ctx": "census/ctx-contracts.json",
             "ooDialogs": "census/census/census-oo-dialogs.json",
+            "reactDialogs": "census/census/census-react-dialogs.json",
             "woDialogs": "census/census/census-wo-dialogs.json",
             "shortcuts": "census/census/census-shortcuts.json",
         },
