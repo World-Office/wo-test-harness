@@ -623,9 +623,23 @@ def build_ctx(ctx: dict) -> dict:
         # spellcheck menu: suggestions + Ignore + AddToDictionary rendered.
         "misspelled": {"Ignore": None, "AddToDictionary": None,
                        "SelectLanguage": "dictionary/docs language cmd exists (btn-doc-lang)"},
-        # text/image/shape: NO right-click menu in react (only table+spellcheck
-        # exist) → all contract rows missing; diverged only for browser-native
-        # clipboard which the browser handles globally.
+        # PGP-A1 (text), PGP-A2 (image), PGP-A3 (shape): full ctx menus shipped
+        # (server main da10808cc) — every contract row rendered + wired to a
+        # real command (browser rows execCommand, command rows wo-command).
+        # Reserved rows route to live commands/panels (e.g. image→right rail).
+        "text": {r: None for r in (
+            "Cut", "Copy", "Paste", "PrintSelection", "PageBreakBefore",
+            "KeepLines", "ParagraphSettings", "AddComment", "Link",
+            "FormattingAsStyle", "AI")},
+        "image": {r: None for r in (
+            "Cut", "Copy", "Paste", "PrintSelection", "Arrange", "Align",
+            "CombineShapes", "TextWrap", "Rotate", "InsertCaption",
+            "SaveAsImage", "Link", "Crop", "ActualSize", "ReplaceImage",
+            "ImageSettings", "AI")},
+        "shape": {r: None for r in (
+            "Cut", "Copy", "Paste", "PrintSelection", "Arrange", "Align",
+            "CombineShapes", "TextWrap", "Rotate", "InsertCaption",
+            "SaveAsImage", "Link", "EditPoints", "ShapeSettings", "AI")},
     }
     BROWSER_NATIVE = {"Cut", "Copy", "Paste", "Select", "Delete",
                       "PrintSelection", "SelectAll"}
@@ -662,7 +676,8 @@ def build_ctx(ctx: dict) -> dict:
             "note": "verified live via ctx-scenarios — " +
                     ctx.get("_meta", {}).get("source", "") +
                     "; v3.2: statuses now require react evidence "
-                    "(table=PGP-1, misspelled=partial; text/image/shape = PGP-A)"}
+                    "(table=PGP-1 + spellcheck; text=PGP-A1, image=PGP-A2, "
+                    "shape=PGP-A3 — server main da10808cc)"}
 
 
 def build_shortcuts(sc: dict) -> tuple[dict, dict]:
