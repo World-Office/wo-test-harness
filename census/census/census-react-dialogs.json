@@ -1,0 +1,639 @@
+{
+  "capturedAt": "2026-11-18T07:42:47.106Z",
+  "engine": "worldoffice-react",
+  "dialogs": [
+    {
+      "id": "ai-assistant",
+      "openedBy": "rail:ai-assistant",
+      "visible": true,
+      "title": "AI Assistant",
+      "fields": [
+        {
+          "label": "Custom instruction (e.g., 'Make it more formal' or 'Explain this concept')",
+          "tag": "textarea",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Apply Custom Prompt"
+      ],
+      "rect": {
+        "w": 301,
+        "h": 911
+      }
+    },
+    {
+      "id": "comments",
+      "openedBy": "rail:comments",
+      "visible": true,
+      "title": "Comments",
+      "fields": [
+        {
+          "label": "Select text first, then add a comment…",
+          "tag": "textarea",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "×",
+        "Add Comment"
+      ],
+      "rect": {
+        "w": 301,
+        "h": 911
+      }
+    },
+    {
+      "id": "review",
+      "openedBy": "rail:review",
+      "visible": true,
+      "title": "Track Changes",
+      "fields": [
+        {
+          "label": "Record changes",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Next Change",
+        "Accept",
+        "Reject",
+        "Accept All",
+        "Reject All"
+      ],
+      "rect": {
+        "w": 301,
+        "h": 911
+      }
+    },
+    {
+      "id": "paragraph",
+      "openedBy": "rail:paragraph",
+      "visible": true,
+      "title": "Styles",
+      "fields": [],
+      "buttons": [
+        "Normal",
+        "Title",
+        "Subtitle",
+        "Heading 1",
+        "Heading 2",
+        "Heading 3",
+        "Quote",
+        "Code Block"
+      ],
+      "rect": {
+        "w": 221,
+        "h": 911
+      }
+    },
+    {
+      "id": "table",
+      "openedBy": "rail:table",
+      "visible": true,
+      "title": "Table Settings",
+      "fields": [
+        {
+          "label": "Header row",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "Cell Borders",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "None",
+            "Solid",
+            "Dashed",
+            "Dotted",
+            "Double"
+          ]
+        },
+        {
+          "label": "Border color",
+          "tag": "input",
+          "type": "color",
+          "options": []
+        },
+        {
+          "label": "Background color",
+          "tag": "input",
+          "type": "color",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Insert Above",
+        "Insert Below",
+        "Delete Row",
+        "Insert Left",
+        "Insert Right",
+        "Delete Column",
+        "Merge Cells",
+        "Split Cell",
+        "▦",
+        "▣",
+        "▢",
+        "Clear",
+        "↥Top",
+        "↕Middle",
+        "↧Bottom"
+      ],
+      "rect": {
+        "w": 261,
+        "h": 911
+      }
+    },
+    {
+      "id": "image",
+      "openedBy": "rail:image",
+      "visible": true,
+      "title": "Image Settings",
+      "fields": [
+        {
+          "label": "Width",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Height",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Lock aspect ratio",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "Border",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "No Border",
+            "Solid",
+            "Dashed",
+            "Dotted",
+            "Double"
+          ]
+        },
+        {
+          "label": "Descriptive text for accessibility",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "⊞Inline",
+        "◈Square",
+        "◇Tight",
+        "◇Through",
+        "⇕Top & Bottom",
+        "▤Behind Text",
+        "▣In Front"
+      ],
+      "rect": {
+        "w": 261,
+        "h": 911
+      }
+    },
+    {
+      "id": "shape",
+      "openedBy": "rail:shape",
+      "visible": true,
+      "title": "Shape Settings",
+      "fields": [
+        {
+          "label": "Shadow",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "",
+          "tag": "input",
+          "type": "color",
+          "options": []
+        },
+        {
+          "label": "",
+          "tag": "input",
+          "type": "color",
+          "options": []
+        },
+        {
+          "label": "",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "None",
+            "0.5 pt",
+            "1 pt",
+            "2 pt",
+            "4 pt"
+          ]
+        },
+        {
+          "label": "",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Solid",
+            "Dashed",
+            "Dotted",
+            "Double"
+          ]
+        },
+        {
+          "label": "",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "None"
+      ],
+      "rect": {
+        "w": 261,
+        "h": 911
+      }
+    },
+    {
+      "id": "chart",
+      "openedBy": "rail:chart",
+      "visible": true,
+      "title": "Chart Settings",
+      "fields": [
+        {
+          "label": "Show legend",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "Show data labels",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "Show gridlines",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "Width",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "Height",
+          "tag": "input",
+          "type": "number",
+          "options": []
+        },
+        {
+          "label": "",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Default",
+            "Monochrome",
+            "Vibrant",
+            "Pastel"
+          ]
+        },
+        {
+          "label": "",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "▇Bar",
+        "━Line",
+        "●Pie",
+        "▲Area",
+        "▌Column",
+        "✕Scatter",
+        "Edit Data"
+      ],
+      "rect": {
+        "w": 261,
+        "h": 911
+      }
+    },
+    {
+      "id": "textart",
+      "openedBy": "rail:textart",
+      "visible": true,
+      "title": "WordArt / Text Effects",
+      "fields": [
+        {
+          "label": "Shadow",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "Reflection",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "Glow",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "",
+          "tag": "input",
+          "type": "color",
+          "options": []
+        },
+        {
+          "label": "",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Solid",
+            "Gradient",
+            "Pattern"
+          ]
+        },
+        {
+          "label": "",
+          "tag": "input",
+          "type": "color",
+          "options": []
+        },
+        {
+          "label": "",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "None",
+            "0.5 pt",
+            "1 pt",
+            "2 pt",
+            "3 pt"
+          ]
+        }
+      ],
+      "buttons": [
+        "None",
+        "Arch Up",
+        "Arch Down",
+        "Circle",
+        "Button",
+        "Wave 1",
+        "Wave 2",
+        "Chevron"
+      ],
+      "rect": {
+        "w": 261,
+        "h": 911
+      }
+    },
+    {
+      "id": "mailmerge",
+      "openedBy": "rail:mailmerge",
+      "visible": true,
+      "title": "Mail Merge",
+      "fields": [
+        {
+          "label": "Paste CSV here…\nFirstName,LastName,Email\nJohn,Doe,john@example.com\nJane,Smith,jane@example.com",
+          "tag": "textarea",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "Reset",
+        "Upload CSV"
+      ],
+      "rect": {
+        "w": 321,
+        "h": 911
+      }
+    },
+    {
+      "id": "signature",
+      "openedBy": "rail:signature",
+      "visible": true,
+      "title": "Digital Signature",
+      "fields": [
+        {
+          "label": "Show signature in document",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "Include timestamp",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        },
+        {
+          "label": "",
+          "tag": "select",
+          "type": "select",
+          "options": [
+            "Approval",
+            "Review",
+            "Execution",
+            "Witness"
+          ]
+        }
+      ],
+      "buttons": [
+        "Add Signature"
+      ],
+      "rect": {
+        "w": 261,
+        "h": 911
+      }
+    },
+    {
+      "id": "form",
+      "openedBy": "rail:form",
+      "visible": true,
+      "title": "Form Controls",
+      "fields": [
+        {
+          "label": "Required",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "Locked (read-only)",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "Enter placeholder text\\u2026",
+          "tag": "input",
+          "type": "text",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "AaPlain TextA simple text field for user input",
+        "☑CheckboxA checkable option",
+        "☰DropdownA list of predefined options",
+        "📅Date PickerA date selection control",
+        "Insert Control"
+      ],
+      "rect": {
+        "w": 261,
+        "h": 911
+      }
+    },
+    {
+      "id": "plugins",
+      "openedBy": "rail:plugins",
+      "visible": true,
+      "title": "Plugins",
+      "fields": [
+        {
+          "label": "",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        },
+        {
+          "label": "",
+          "tag": "input",
+          "type": "checkbox",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "+ Browse Plugin Store",
+        "Word Count"
+      ],
+      "rect": {
+        "w": 261,
+        "h": 911
+      }
+    },
+    {
+      "id": "crossreference",
+      "openedBy": "rail:crossreference",
+      "visible": true,
+      "title": "Cross-Reference",
+      "fields": [
+        {
+          "label": "Text",
+          "tag": "input",
+          "type": "radio",
+          "options": []
+        },
+        {
+          "label": "Number",
+          "tag": "input",
+          "type": "radio",
+          "options": []
+        },
+        {
+          "label": "Above/Below",
+          "tag": "input",
+          "type": "radio",
+          "options": []
+        }
+      ],
+      "buttons": [
+        "All",
+        "Heading",
+        "Caption",
+        "Footnote",
+        "Section",
+        "Insert Cross-Reference"
+      ],
+      "rect": {
+        "w": 301,
+        "h": 911
+      }
+    },
+    {
+      "id": "theme",
+      "openedBy": "rail:theme",
+      "visible": true,
+      "title": "Document Theme",
+      "fields": [],
+      "buttons": [
+        "OfficeAptos / Aptos",
+        "ClassicCalibri Light / Calibri",
+        "DarkSegoe UI / Segoe UI",
+        "ModernMontserrat / Open Sans",
+        "ElegantGeorgia / Palatino Linotype",
+        "PlayfulComic Sans MS / Trebuchet MS"
+      ],
+      "rect": {
+        "w": 261,
+        "h": 911
+      }
+    }
+  ]
+}
