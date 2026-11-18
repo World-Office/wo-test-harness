@@ -46,4 +46,14 @@ if /usr/bin/python3 "$HERE/coverage-check.py" --gate; then emit coverage-gate tr
 # fig oracle artifact (fig/fig-check.cjs parity-contracts reads results[].ok).
 # CONSUMER: server CI copies this to tests/parity/contract-results.json.
 printf '{"generated":"%s","results":[%s]}\n' "$(date -u +%FT%TZ)" "$results" > "${CONTRACT_RESULTS_OUT:-$HERE/contract-results.json}"
+
+# port-graph regeneration (graph.json is derived: rebuild after the probes +
+# capture above wrote contract-results.json / census-react-deep.json), then
+# done-gate: undocumented-missing controls fail the lane (diverged = documented debt).
+echo "── port-graph"
+if /usr/bin/python3 "$CENSUS/port-graph/build.py" > /dev/null; then emit port-graph-build true; else emit port-graph-build false; rc=1; fi
+
+echo "── done-gate"
+if /usr/bin/python3 "$CENSUS/port-graph/done-gate.py" --strict; then emit done-gate true; else emit done-gate false; rc=1; fi
+
 exit $rc
