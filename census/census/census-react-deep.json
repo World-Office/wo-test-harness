@@ -1,21 +1,19 @@
 {
  "engine": "worldoffice-react",
- "capturedAt": "2026-11-17T08:54:10.343Z",
+ "capturedAt": "2026-11-18T06:06:21.640Z",
  "viewport": {
   "width": 1440,
   "height": 900
  },
  "tabs": [
-  "File",
   "Home",
   "Insert",
+  "Draw",
   "Layout",
   "References",
   "Collaboration",
   "Protection",
-  "Draw",
   "View",
-  "Forms",
   "Plugins",
   "AI",
   "Chart Design",
@@ -29,17 +27,17 @@
     "kind": "button"
    },
    {
-    "label": "FileFile",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "Home",
     "disabled": false,
     "kind": "button"
    },
    {
     "label": "InsertInsert",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "DrawDraw",
     "disabled": false,
     "kind": "button"
    },
@@ -64,17 +62,7 @@
     "kind": "button"
    },
    {
-    "label": "DrawDraw",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "ViewView",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "FormsForms",
     "disabled": false,
     "kind": "button"
    },
@@ -421,17 +409,17 @@
     "kind": "button"
    },
    {
-    "label": "FileFile",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "HomeHome",
     "disabled": false,
     "kind": "button"
    },
    {
     "label": "Insert",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "DrawDraw",
     "disabled": false,
     "kind": "button"
    },
@@ -456,17 +444,7 @@
     "kind": "button"
    },
    {
-    "label": "DrawDraw",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "ViewView",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "FormsForms",
     "disabled": false,
     "kind": "button"
    },
@@ -661,14 +639,9 @@
     "kind": "button"
    }
   ],
-  "Layout": [
+  "Draw": [
    {
     "label": "File",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "FileFile",
     "disabled": false,
     "kind": "button"
    },
@@ -679,6 +652,213 @@
    },
    {
     "label": "InsertInsert",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Draw",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "LayoutLayout",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "ReferencesReferences",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "CollaborationCollaboration",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "ProtectionProtection",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "ViewView",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "PluginsPlugins",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "AIAI",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Chart DesignChart Design",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Cut",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Copy",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Paste",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Copy style",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Select",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Eraser",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Word count",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "English – United States",
+    "disabled": false,
+    "kind": "select"
+   },
+   {
+    "label": "Set document language",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Spell checking",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Track changes",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Multiple pages",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Fit to page",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Fit to width",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Zoom out",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Zoom in",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Previous page",
+    "disabled": true,
+    "kind": "button"
+   },
+   {
+    "label": "Next page",
+    "disabled": true,
+    "kind": "button"
+   },
+   {
+    "label": "Select Tool",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Hand Tool",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Language",
+    "disabled": false,
+    "kind": "select"
+   },
+   {
+    "label": "Track Changes",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Co-editing Mode",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Spell Check",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Fit to Page",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Fit to Width",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Zoom Out",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Zoom In",
+    "disabled": false,
+    "kind": "button"
+   }
+  ],
+  "Layout": [
+   {
+    "label": "File",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "HomeHome",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "InsertInsert",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "DrawDraw",
     "disabled": false,
     "kind": "button"
    },
@@ -703,17 +883,7 @@
     "kind": "button"
    },
    {
-    "label": "DrawDraw",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "ViewView",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "FormsForms",
     "disabled": false,
     "kind": "button"
    },
@@ -935,17 +1105,17 @@
     "kind": "button"
    },
    {
-    "label": "FileFile",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "HomeHome",
     "disabled": false,
     "kind": "button"
    },
    {
     "label": "InsertInsert",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "DrawDraw",
     "disabled": false,
     "kind": "button"
    },
@@ -970,17 +1140,7 @@
     "kind": "button"
    },
    {
-    "label": "DrawDraw",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "ViewView",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "FormsForms",
     "disabled": false,
     "kind": "button"
    },
@@ -1142,17 +1302,17 @@
     "kind": "button"
    },
    {
-    "label": "FileFile",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "HomeHome",
     "disabled": false,
     "kind": "button"
    },
    {
     "label": "InsertInsert",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "DrawDraw",
     "disabled": false,
     "kind": "button"
    },
@@ -1177,17 +1337,7 @@
     "kind": "button"
    },
    {
-    "label": "DrawDraw",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "ViewView",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "FormsForms",
     "disabled": false,
     "kind": "button"
    },
@@ -1359,17 +1509,17 @@
     "kind": "button"
    },
    {
-    "label": "FileFile",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "HomeHome",
     "disabled": false,
     "kind": "button"
    },
    {
     "label": "InsertInsert",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "DrawDraw",
     "disabled": false,
     "kind": "button"
    },
@@ -1394,17 +1544,7 @@
     "kind": "button"
    },
    {
-    "label": "DrawDraw",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "ViewView",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "FormsForms",
     "disabled": false,
     "kind": "button"
    },
@@ -1494,218 +1634,6 @@
     "kind": "button"
    }
   ],
-  "Draw": [
-   {
-    "label": "File",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "FileFile",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "HomeHome",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "InsertInsert",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "LayoutLayout",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "ReferencesReferences",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "CollaborationCollaboration",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "ProtectionProtection",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Draw",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "ViewView",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "FormsForms",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "PluginsPlugins",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "AIAI",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Chart DesignChart Design",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Cut",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Copy",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Paste",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Copy style",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Select",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Eraser",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Word count",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "English – United States",
-    "disabled": false,
-    "kind": "select"
-   },
-   {
-    "label": "Set document language",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Spell checking",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Track changes",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Multiple pages",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Fit to page",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Fit to width",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Zoom out",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Zoom in",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Previous page",
-    "disabled": true,
-    "kind": "button"
-   },
-   {
-    "label": "Next page",
-    "disabled": true,
-    "kind": "button"
-   },
-   {
-    "label": "Select Tool",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Hand Tool",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Language",
-    "disabled": false,
-    "kind": "select"
-   },
-   {
-    "label": "Track Changes",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Co-editing Mode",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Spell Check",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Fit to Page",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Fit to Width",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Zoom Out",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Zoom In",
-    "disabled": false,
-    "kind": "button"
-   }
-  ],
   "View": [
    {
     "label": "File",
@@ -1713,37 +1641,12 @@
     "kind": "button"
    },
    {
-    "label": "FileFile",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "HomeHome",
     "disabled": false,
     "kind": "button"
    },
    {
     "label": "InsertInsert",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "LayoutLayout",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "ReferencesReferences",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "CollaborationCollaboration",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "ProtectionProtection",
     "disabled": false,
     "kind": "button"
    },
@@ -1753,12 +1656,27 @@
     "kind": "button"
    },
    {
-    "label": "View",
+    "label": "LayoutLayout",
     "disabled": false,
     "kind": "button"
    },
    {
-    "label": "FormsForms",
+    "label": "ReferencesReferences",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "CollaborationCollaboration",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "ProtectionProtection",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "View",
     "disabled": false,
     "kind": "button"
    },
@@ -1903,163 +1821,6 @@
     "kind": "button"
    }
   ],
-  "Forms": [
-   {
-    "label": "File",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "FileFile",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "HomeHome",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "InsertInsert",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "LayoutLayout",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "ReferencesReferences",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "CollaborationCollaboration",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "ProtectionProtection",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "DrawDraw",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "ViewView",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Forms",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "PluginsPlugins",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "AIAI",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Chart DesignChart Design",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Text Input",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Checkbox",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Dropdown",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Date Picker",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Combo Box",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Previous page",
-    "disabled": true,
-    "kind": "button"
-   },
-   {
-    "label": "Next page",
-    "disabled": true,
-    "kind": "button"
-   },
-   {
-    "label": "Select Tool",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Hand Tool",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Language",
-    "disabled": false,
-    "kind": "select"
-   },
-   {
-    "label": "Track Changes",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Co-editing Mode",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Spell Check",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Fit to Page",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Fit to Width",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Zoom Out",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "Zoom In",
-    "disabled": false,
-    "kind": "button"
-   }
-  ],
   "Plugins": [
    {
     "label": "File",
@@ -2067,17 +1828,17 @@
     "kind": "button"
    },
    {
-    "label": "FileFile",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "HomeHome",
     "disabled": false,
     "kind": "button"
    },
    {
     "label": "InsertInsert",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "DrawDraw",
     "disabled": false,
     "kind": "button"
    },
@@ -2102,17 +1863,7 @@
     "kind": "button"
    },
    {
-    "label": "DrawDraw",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "ViewView",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "FormsForms",
     "disabled": false,
     "kind": "button"
    },
@@ -2324,17 +2075,17 @@
     "kind": "button"
    },
    {
-    "label": "FileFile",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "HomeHome",
     "disabled": false,
     "kind": "button"
    },
    {
     "label": "InsertInsert",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "DrawDraw",
     "disabled": false,
     "kind": "button"
    },
@@ -2359,17 +2110,7 @@
     "kind": "button"
    },
    {
-    "label": "DrawDraw",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "ViewView",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "FormsForms",
     "disabled": false,
     "kind": "button"
    },
@@ -2486,17 +2227,17 @@
     "kind": "button"
    },
    {
-    "label": "FileFile",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "HomeHome",
     "disabled": false,
     "kind": "button"
    },
    {
     "label": "InsertInsert",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "DrawDraw",
     "disabled": false,
     "kind": "button"
    },
@@ -2521,17 +2262,7 @@
     "kind": "button"
    },
    {
-    "label": "DrawDraw",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "ViewView",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "FormsForms",
     "disabled": false,
     "kind": "button"
    },
@@ -2713,17 +2444,17 @@
     "kind": "button"
    },
    {
-    "label": "FileFile",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "HomeHome",
     "disabled": false,
     "kind": "button"
    },
    {
     "label": "InsertInsert",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "DrawDraw",
     "disabled": false,
     "kind": "button"
    },
@@ -2748,17 +2479,7 @@
     "kind": "button"
    },
    {
-    "label": "DrawDraw",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
     "label": "ViewView",
-    "disabled": false,
-    "kind": "button"
-   },
-   {
-    "label": "FormsForms",
     "disabled": false,
     "kind": "button"
    },
@@ -2966,6 +2687,68 @@
   {
    "label": "Close Editor",
    "enabled": true
+  }
+ ],
+ "statusbar": [
+  {
+   "label": "Previous page",
+   "kind": "button"
+  },
+  {
+   "label": "Page 1 of 0",
+   "kind": "text"
+  },
+  {
+   "label": "Next page",
+   "kind": "button"
+  },
+  {
+   "label": "Select Tool",
+   "kind": "button"
+  },
+  {
+   "label": "Hand Tool",
+   "kind": "button"
+  },
+  {
+   "label": "Language",
+   "kind": "button"
+  },
+  {
+   "label": "Words: 0",
+   "kind": "text"
+  },
+  {
+   "label": "Track Changes",
+   "kind": "button"
+  },
+  {
+   "label": "Co-editing Mode",
+   "kind": "button"
+  },
+  {
+   "label": "Spell Check",
+   "kind": "button"
+  },
+  {
+   "label": "Fit to Page",
+   "kind": "button"
+  },
+  {
+   "label": "Fit to Width",
+   "kind": "button"
+  },
+  {
+   "label": "Zoom Out",
+   "kind": "button"
+  },
+  {
+   "label": "100%",
+   "kind": "text"
+  },
+  {
+   "label": "Zoom In",
+   "kind": "button"
   }
  ],
  "pageErrors": []

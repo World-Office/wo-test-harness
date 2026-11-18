@@ -224,6 +224,22 @@ function dedupeTabText(t) {
   }
   const finalTabLabels = finalTabs.map(dedupeTabText).filter(Boolean);
 
+  // ── status bar (capture BEFORE the file menu: its full-screen panel
+  // can cover/hide the bar) — DOM order is already left-to-right ──
+  const statusbar = await page.evaluate(() => {
+    const bar = document.querySelector(".de-statusbar");
+    if (!bar) return [];
+    return [...bar.querySelectorAll("button, select, .de-statusbar-label, .de-statusbar-page-label")]
+      .filter((e) => e.offsetParent !== null)
+      .map((e) => ({
+        label: (e.getAttribute("title") || e.getAttribute("aria-label") || e.textContent || "")
+          .trim()
+          .slice(0, 40),
+        kind: e.tagName === "BUTTON" || e.tagName === "SELECT" ? "button" : "text",
+      }))
+      .filter((i) => i.label);
+  });
+
   // File menu (same probe as census-react.cjs)
   let fileMenu = [];
   try {
@@ -242,12 +258,13 @@ function dedupeTabText(t) {
     tabs: finalTabLabels,
     ribbon: perTab,
     fileMenu,
+    statusbar,
     pageErrors: errs,
   };
   fs.mkdirSync(OUT, { recursive: true });
   fs.writeFileSync(path.join(OUT, 'census-react-deep.json'), JSON.stringify(out, null, 1));
   const total = Object.values(perTab).reduce((n, l) => n + l.length, 0);
-  console.log(`tabs: ${finalTabLabels.length} | ribbon controls: ${total} | fileMenu: ${fileMenu.length} | pageErrors: ${errs.length}`);
+  console.log(`tabs: ${finalTabLabels.length} | ribbon controls: ${total} | fileMenu: ${fileMenu.length} | statusbar: ${statusbar.length} | pageErrors: ${errs.length}`);
   for (const [t, l] of Object.entries(perTab)) console.log(`  ${t}: ${l.length}`);
   await browser.close();
 })();
