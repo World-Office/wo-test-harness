@@ -162,50 +162,89 @@ panel, table-settings→`table`, image-settings→`image`, shape-settings→
 signature-settings→`signature`, form-settings→`form`; send-for-signing and
 filling-status have no react counterpart (missing).
 
-## Current state (PG-10 build) — done-gate output verbatim
+## Current state (PG-11 build) — done-gate output verbatim
 
-462 control nodes — done=423, diverged=21, missing=18, iconOnly=58
+462 control nodes — done=425, diverged=24, missing=13, iconOnly=58
 (+534 ledger features). Diverged: 1 dialogs (Date & time — react inserts
-directly), 20 shortcuts (3 diverged + 17 browser-native).
+directly), 2 dialogs (PG-11: Mail Merge panel-no-email, Roles → WOPI panels),
+1 statusbar (PG-11: Multiple pages → View tab), 20 shortcuts
+(3 diverged + 17 browser-native).
 
 ```
 ribbon        203 controls  done=145 diverged=0 missing=0 iconOnly=58
-filemenu       29 controls  done=27 diverged=0 missing=2 iconOnly=0
-    filemenu-buttons         done= 17 diverged=0 missing=2
-      MISSING filemenu-buttons/Edit Document
-      MISSING filemenu-buttons/Save to Desktop
-statusbar      17 controls  done=15 diverged=0 missing=2 iconOnly=0
-    statusbar                done= 15 diverged=0 missing=2
-      MISSING statusbar/Action status
-      MISSING statusbar/Multiple pages
-dialogs        39 controls  done=26 diverged=1 missing=12 iconOnly=0
-    dialogs                  done= 26 diverged=1 missing=12
-      MISSING dialogs/Cells Add
-      MISSING dialogs/Control Settings
-      MISSING dialogs/Edit List Item
-      MISSING dialogs/List Settings
-      MISSING dialogs/List Types
-      MISSING dialogs/Mail Merge Email
-      MISSING dialogs/Notes Remove
-      MISSING dialogs/Role Delete
-      MISSING dialogs/Role Edit
-      MISSING dialogs/Roles Manager
-      MISSING dialogs/Save Form
-      MISSING dialogs/Style Title
+filemenu       29 controls  done=28 diverged=0 missing=1 iconOnly=0
+    filemenu-buttons         done= 18 diverged=0 missing=1
+      GAP (documented) filemenu-buttons/Edit Document
+statusbar      17 controls  done=15 diverged=1 missing=1 iconOnly=0
+    statusbar                done= 15 diverged=1 missing=1
+      GAP (documented) statusbar/Action status
+dialogs        39 controls  done=27 diverged=3 missing=9 iconOnly=0
+    dialogs                  done= 27 diverged=3 missing=9
+      GAP (documented) dialogs/Cells Add
+      GAP (documented) dialogs/Edit List Item
+      GAP (documented) dialogs/List Settings
+      GAP (documented) dialogs/List Types
+      GAP (documented) dialogs/Notes Remove
+      GAP (documented) dialogs/Role Delete
+      GAP (documented) dialogs/Role Edit
+      GAP (documented) dialogs/Save Form
+      GAP (documented) dialogs/Style Title
 rightpanel     10 controls  done=8 diverged=0 missing=2 iconOnly=0
     rightpanel               done=  8 diverged=0 missing=2
-      MISSING rightpanel/Send for signing
-      MISSING rightpanel/Filling status
+      GAP (documented) rightpanel/Send for signing
+      GAP (documented) rightpanel/Filling status
 ctx            75 controls  done=75 diverged=0 missing=0 iconOnly=0
 shortcuts     147 controls  done=127 diverged=20 missing=0 iconOnly=0
 ledger       18 clusters, 534 features (no control nodes)
-GATE FAIL — 18 undocumented-missing control(s)
+GATE OK — no undocumented-missing controls (documented gaps are listed, not failed)
 ```
 
-The 18 missing rows ARE the honest gap the v3 union was built to expose
-(source truth ⊃ runtime truth ⊃ react coverage). GATE FAIL here is correct
-reporting, not a regression — the gap closes by porting features or
-documenting divergences, never by editing statuses.
+The 13 remaining gaps are the honest residual after the PG-11 triage —
+each documented with the evidence that was searched and not found (see
+Gap triage below). The gap closes by porting features or documenting
+divergences, never by editing statuses.
+
+## Gap triage (PG-11)
+
+Evidence-based reclassification of the 18 honest-gap rows the v3 union
+exposed. Evidence dug from the deployed react editor source (server
+`apps/web/apps/documenteditor-react`: `lib/word-commands.ts`, `FormPanel.tsx`,
+`MailMergePanel.tsx`, `SignaturePanel.tsx`, `CrossReferencePanel.tsx`,
+`FileMenu/panels/*`, `StatusBar.tsx`) and the committed censuses
+(`census-react-dialogs.json`, `census-react-deep.json`, `ctx-contracts.json`).
+Result: **5 promoted** (2 done, 3 diverged), **13 stay missing** — now each
+with the searched evidence cited in `graph.json` instead of the generic
+`no evidence in the react panels census or the legacy WO dialog census`
+string. Rows close by porting features or documenting divergences, never by
+editing statuses.
+
+### Promoted — evidence found
+
+| Row | Status | Evidence |
+|-----|--------|----------|
+| dialogs/Control Settings | done | react **Form Controls** right-rail panel (Required/Locked/placeholder fields, census-react-dialogs.json) is the control-settings surface |
+| filemenu/Save to Desktop | done | react 'Save as…' item **is** action `save-desktop` (FileMenuItems.tsx) |
+| dialogs/Mail Merge Email | diverged | react Mail Merge panel merges pasted/uploaded CSV locally (Insert-field/Preview/Reset, MailMergePanel.tsx + lib/mail-merge.ts) — no email dispatch |
+| dialogs/Roles Manager | diverged | react Protect Document + Access Rights backstage panels show WOPI-derived rights (ProtectDocPanel/RightsPanel.tsx); role CRUD delegated to portal sharing |
+| statusbar/Multiple pages | diverged | react ships the toggle in the **View tab** (census-react-deep ribbon 'Multiple Pages'; `toggleMultiplePages`), not the statusbar |
+
+### Still missing — evidence cited, none found
+
+| Row | Evidence searched and failed |
+|-----|------------------------------|
+| dialogs/Cells Add | table ctx = Merge/Split/Delete only (ctx-contracts.json, live-verified); no `insertCell` command |
+| dialogs/Edit List Item | FormPanel edits dropdown options at **insert time** only; no edit path for a placed control |
+| dialogs/List Settings | bullet/ordered/task toggles exist (word-commands.ts); no numbering-format/indent settings dialog |
+| dialogs/List Types | same — no list-type picker dialog |
+| dialogs/Notes Remove | Cross-Reference panel lists footnote targets; no remove-notes command (`removeHeader`/`removeFooter` only) |
+| dialogs/Role Edit | rights are WOPI-derived read-only (RightsPanel.tsx); no per-role editing |
+| dialogs/Role Delete | same — no per-role delete |
+| dialogs/Save Form | Save-as panel exports DOCX (+pdf/txt via conversion, SaveAsPanel.tsx EXPORT_FORMATS); no save-as-form |
+| dialogs/Style Title | 'Formatting as style' copies formatting (`copyStyle`); no style-naming dialog |
+| filemenu/Edit Document | edit rights are WOPI-derived (UserCanWrite → Protect panel Full Access/Read-Only); no user-facing edit/view switch |
+| statusbar/Action status | transient text slot; react statusbar has pager/zoom/word-count only (StatusBar.tsx) |
+| rightpanel/Send for signing | react ships self-signing only (SignaturePanel.tsx); no send-for-signing workflow |
+| rightpanel/Filling status | Form Controls panel inserts/edits controls; no fill-status reporting |
 
 ## Regenerate & query
 

@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T11:26:21+00:00",
+ "generated": "2026-11-18T11:35:42+00:00",
  "sources": {
   "oo": "census/census/census-oo-deep.json",
   "react": "census/census/census-react-deep.json",
@@ -1081,9 +1081,9 @@
      "label": "Backstage Buttons",
      "contextual": false,
      "counts": {
-      "done": 17,
+      "done": 18,
       "diverged": 0,
-      "missing": 2,
+      "missing": 1,
       "iconOnly": 0,
       "total": 19
      },
@@ -1121,7 +1121,7 @@
        "ooLabel": "Edit Document",
        "ooId": "fm-btn-edit",
        "status": "missing",
-       "reason": "no react file-menu counterpart — honest gap"
+       "reason": "WO edit rights are WOPI-derived (UserCanWrite → Protect Document panel Full Access/Read-Only, ProtectDocPanel.tsx); no user-facing edit/view switch backstage"
       },
       {
        "label": "Download as...",
@@ -1138,11 +1138,11 @@
        "reason": null
       },
       {
-       "label": "Save to Desktop",
+       "label": "Save as...",
        "ooLabel": "Save to Desktop",
        "ooId": "fm-btn-save-desktop",
-       "status": "missing",
-       "reason": "no react file-menu counterpart — honest gap"
+       "status": "done",
+       "reason": "react 'Save as…' item is action save-desktop (FileMenuItems.tsx)"
       },
       {
        "label": "Print",
@@ -1320,8 +1320,8 @@
      "contextual": false,
      "counts": {
       "done": 15,
-      "diverged": 0,
-      "missing": 2,
+      "diverged": 1,
+      "missing": 1,
       "iconOnly": 0,
       "total": 17
      },
@@ -1359,7 +1359,7 @@
        "ooLabel": "Action status",
        "ooId": "label-action",
        "status": "missing",
-       "reason": "no react statusbar counterpart — honest gap"
+       "reason": "transient action-status text slot; react statusbar has no status/message text (StatusBar.tsx: pager/zoom/word-count only)"
       },
       {
        "label": "Language",
@@ -1407,8 +1407,8 @@
        "label": "Multiple pages",
        "ooLabel": "Multiple pages",
        "ooId": "status-btn-multiple-pages",
-       "status": "missing",
-       "reason": "no react statusbar counterpart — honest gap"
+       "status": "diverged",
+       "reason": "react ships the toggle in the View tab (census-react-deep ribbon 'Multiple Pages'; word-commands.ts toggleMultiplePages), not in the statusbar"
       },
       {
        "label": "Fit to Page",
@@ -1460,9 +1460,9 @@
      "label": "Dialogs",
      "contextual": false,
      "counts": {
-      "done": 26,
-      "diverged": 1,
-      "missing": 12,
+      "done": 27,
+      "diverged": 3,
+      "missing": 9,
       "iconOnly": 0,
       "total": 39
      },
@@ -1486,14 +1486,14 @@
        "ooLabel": "Cells Add",
        "ooId": "CellsAddDialog",
        "status": "missing",
-       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+       "reason": "react table ctx = Merge/Split/Delete only (ctx-contracts.json, live-verified); no insertCell command (word-commands.ts)"
       },
       {
-       "label": "Control Settings",
+       "label": "Form Controls",
        "ooLabel": "Control Settings",
        "ooId": "ControlSettingsDialog",
-       "status": "missing",
-       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+       "status": "done",
+       "reason": "control settings → react Form Controls right-rail panel (Required/Locked/placeholder fields, census-react-dialogs.json)"
       },
       {
        "label": "Cross-Reference",
@@ -1528,7 +1528,7 @@
        "ooLabel": "Edit List Item",
        "ooId": "EditListItemDialog",
        "status": "missing",
-       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+       "reason": "react Form Controls panel edits dropdown options at insert time only (FormPanel.tsx dropdownOptions → insertDropdownControl); no edit-items path for a placed control"
       },
       {
        "label": "Insert link",
@@ -1570,21 +1570,21 @@
        "ooLabel": "List Settings",
        "ooId": "ListSettingsDialog",
        "status": "missing",
-       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+       "reason": "react ships bullet/ordered/task list toggles (word-commands.ts) but no list-settings dialog (numbering formats, per-level indents)"
       },
       {
        "label": "List Types",
        "ooLabel": "List Types",
        "ooId": "ListTypesAdvanced",
        "status": "missing",
-       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+       "reason": "react ships bullet/ordered/task list toggles (word-commands.ts) but no list-type picker dialog"
       },
       {
        "label": "Mail Merge Email",
        "ooLabel": "Mail Merge Email",
        "ooId": "MailMergeEmailDlg",
-       "status": "missing",
-       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+       "status": "diverged",
+       "reason": "react Mail Merge right-rail panel merges pasted/uploaded CSV locally (Insert-field/Preview/Reset, MailMergePanel.tsx + lib/mail-merge.ts) — no email dispatch; mailMerge routes to the panel (word-commands.ts)"
       },
       {
        "label": "Footnote and Endnote",
@@ -1598,7 +1598,7 @@
        "ooLabel": "Notes Remove",
        "ooId": "NotesRemoveDialog",
        "status": "missing",
-       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+       "reason": "react Cross-Reference panel lists footnote targets (footnote filter, CrossReferencePanel.tsx); no remove-notes command (word-commands.ts has removeHeader/removeFooter only)"
       },
       {
        "label": "List.NumberingValue",
@@ -1647,35 +1647,35 @@
        "ooLabel": "Role Delete",
        "ooId": "RoleDeleteDlg",
        "status": "missing",
-       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+       "reason": "rights are WOPI-derived read-only (FileMenu/panels/RightsPanel.tsx); no per-role delete"
       },
       {
        "label": "Role Edit",
        "ooLabel": "Role Edit",
        "ooId": "RoleEditDlg",
        "status": "missing",
-       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+       "reason": "rights are WOPI-derived read-only (FileMenu/panels/RightsPanel.tsx); no per-role editing"
       },
       {
        "label": "Roles Manager",
        "ooLabel": "Roles Manager",
        "ooId": "RolesManagerDlg",
-       "status": "missing",
-       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+       "status": "diverged",
+       "reason": "react answers with the Protect Document + Access Rights backstage panels (WOPI-derived Full Access/Read-Only + Owner/Can-Edit, FileMenu/panels/ProtectDocPanel.tsx + RightsPanel.tsx) — role management delegated to portal sharing"
       },
       {
        "label": "Save Form",
        "ooLabel": "Save Form",
        "ooId": "SaveFormDlg",
        "status": "missing",
-       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+       "reason": "react Save-as panel exports DOCX (+pdf/txt via conversion, SaveAsPanel.tsx EXPORT_FORMATS); no save-as-form"
       },
       {
        "label": "Style Title",
        "ooLabel": "Style Title",
        "ooId": "StyleTitleDialog",
        "status": "missing",
-       "reason": "no evidence in the react panels census or the legacy WO dialog census — honest gap"
+       "reason": "react 'Formatting as style' copies formatting (copyStyle, word-commands.ts); no style-naming dialog"
       },
       {
        "label": "Formula.Title",
@@ -1821,14 +1821,14 @@
        "ooLabel": "Send for signing",
        "ooId": "send-for-signing-settings",
        "status": "missing",
-       "reason": "no react right-rail counterpart — honest gap"
+       "reason": "react ships self-signing only (SignaturePanel.tsx 'Add Signature'/'Sign as'); no send-for-signing workflow"
       },
       {
        "label": "Filling status",
        "ooLabel": "Filling status",
        "ooId": "filling-status-settings",
        "status": "missing",
-       "reason": "no react right-rail counterpart — honest gap"
+       "reason": "react Form Controls panel inserts/edits controls (FormPanel.tsx); no fill-status reporting"
       }
      ]
     }
@@ -6196,9 +6196,9 @@
  ],
  "totals": {
   "controls": 462,
-  "done": 423,
-  "diverged": 21,
-  "missing": 18,
+  "done": 425,
+  "diverged": 24,
+  "missing": 13,
   "iconOnly": 58,
   "surfaces": {
    "ribbon": {
@@ -6210,23 +6210,23 @@
    },
    "filemenu": {
     "controls": 29,
-    "done": 27,
+    "done": 28,
     "diverged": 0,
-    "missing": 2,
+    "missing": 1,
     "iconOnly": 0
    },
    "statusbar": {
     "controls": 17,
     "done": 15,
-    "diverged": 0,
-    "missing": 2,
+    "diverged": 1,
+    "missing": 1,
     "iconOnly": 0
    },
    "dialogs": {
     "controls": 39,
-    "done": 26,
-    "diverged": 1,
-    "missing": 12,
+    "done": 27,
+    "diverged": 3,
+    "missing": 9,
     "iconOnly": 0
    },
    "rightpanel": {

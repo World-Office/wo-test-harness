@@ -198,12 +198,22 @@ STATUSBAR_SEMANTICS = {
     "btn-doc-review": ("Track changes", None, None),
     "status-btn-select-tool": ("Select tool", None, None),
     "status-btn-hand-tool": ("Hand tool", None, None),
-    "status-btn-multiple-pages": ("Multiple pages", None, None),  # → missing
+    "status-btn-multiple-pages": ("Multiple pages", None, None),  # → diverged (View tab)
     "btn-zoom-topage": ("Fit to page", None, None),
     "btn-zoom-towidth": ("Fit to width", None, None),
     "btn-zoom-down": ("Zoom out", None, None),
     "label-zoom": ("Zoom", "100%", "react zoom value text"),
     "btn-zoom-up": ("Zoom in", None, None),
+}
+# PG-11 gap triage — same feature shipped on a different react surface:
+STATUSBAR_DIVERGED = {
+    "status-btn-multiple-pages": "react ships the toggle in the View tab (census-react-deep "
+                                 "ribbon 'Multiple Pages'; word-commands.ts toggleMultiplePages), "
+                                 "not in the statusbar",
+}
+STATUSBAR_MISS_EVIDENCE = {
+    "label-action": "transient action-status text slot; react statusbar has no status/message "
+                    "text (StatusBar.tsx: pager/zoom/word-count only)",
 }
 
 
@@ -226,12 +236,17 @@ def build_statusbar(oo: dict, re_: dict, src: dict) -> dict:
         if label_match(target, set(rlabels)):
             status = "done"
             label_out = rlabels.get(norm(target), target)
+        elif tid in STATUSBAR_DIVERGED:
+            status, label_out = "diverged", label
         else:
             status, label_out = "missing", label
+        reason_out = (reason if status == "done"
+                      else STATUSBAR_DIVERGED.get(tid)
+                      or STATUSBAR_MISS_EVIDENCE.get(tid)
+                      or "no react statusbar counterpart — honest gap")
         controls.append({"label": label_out, "ooLabel": runtime.get(tid) or label,
                          "ooId": tid, "status": status,
-                         "reason": reason if status == "done"
-                         else "no react statusbar counterpart — honest gap"})
+                         "reason": reason_out})
         counts[status] += 1
     counts["total"] = len(controls)
     return {"id": "statusbar", "label": "Status Bar", "contextual": False,
@@ -264,11 +279,12 @@ DIALOG_COMPONENT_ALIASES = {
     "WatermarkSettingsDialog": ("Watermark", "legacy Watermark dialog"),
     "PageNumberingDlg": ("Dialog.PageNumberTitle", "legacy page-numbering dialog"),
 }
-# component → (react right-rail panel title, why) — advanced-settings dialogs
+# component → react right-rail panel title, why) — advanced-settings dialogs
 # the deployed editor answers with a panel (census-react-dialogs.json).
 REACT_PANEL_ALIASES = {
     "TableSettingsAdvanced": ("Table Settings", "advanced settings → react Table Settings right-rail panel"),
     "ImageSettingsAdvanced": ("Image Settings", "advanced settings → react Image Settings right-rail panel"),
+    "ControlSettingsDialog": ("Form Controls", "control settings → react Form Controls right-rail panel (Required/Locked/placeholder fields, census-react-dialogs.json)"),
 }
 # component → react routing evidence (src/lib/word-commands.ts, PG-9).
 REACT_ROUTE = {
@@ -279,6 +295,39 @@ REACT_ROUTE = {
 # components the deployed editor answers with a direct action, no dialog.
 REACT_DIRECT = {
     "DateTimeDialog": "react insertDateTime inserts a DATETIME field directly — no dialog (word-commands.ts)",
+}
+# PG-11 gap triage — components the deployed editor answers with a DIFFERENT,
+# reduced surface (diverged, evidence cited; source: server
+# apps/web/apps/documenteditor-react + committed censuses):
+REACT_DIVERGED = {
+    "MailMergeEmailDlg": "react Mail Merge right-rail panel merges pasted/uploaded CSV locally "
+                         "(Insert-field/Preview/Reset, MailMergePanel.tsx + lib/mail-merge.ts) — "
+                         "no email dispatch; mailMerge routes to the panel (word-commands.ts)",
+    "RolesManagerDlg": "react answers with the Protect Document + Access Rights backstage panels "
+                       "(WOPI-derived Full Access/Read-Only + Owner/Can-Edit, FileMenu/panels/"
+                       "ProtectDocPanel.tsx + RightsPanel.tsx) — role management delegated to portal sharing",
+}
+# PG-11 gap triage — rows evidence PROVES absent in the deployed editor:
+# stay missing, but with the searched evidence cited instead of the generic
+# honest-gap string (grep-verified against word-commands.ts, FormPanel.tsx,
+# CrossReferencePanel.tsx, SaveAsPanel.tsx, ctx-contracts.json).
+DLG_MISS_EVIDENCE = {
+    "CellsAddDialog": "react table ctx = Merge/Split/Delete only (ctx-contracts.json, live-verified); "
+                      "no insertCell command (word-commands.ts)",
+    "EditListItemDialog": "react Form Controls panel edits dropdown options at insert time only "
+                          "(FormPanel.tsx dropdownOptions → insertDropdownControl); no edit-items "
+                          "path for a placed control",
+    "ListSettingsDialog": "react ships bullet/ordered/task list toggles (word-commands.ts) but no "
+                          "list-settings dialog (numbering formats, per-level indents)",
+    "ListTypesAdvanced": "react ships bullet/ordered/task list toggles (word-commands.ts) but no "
+                         "list-type picker dialog",
+    "NotesRemoveDialog": "react Cross-Reference panel lists footnote targets (footnote filter, "
+                         "CrossReferencePanel.tsx); no remove-notes command (word-commands.ts has "
+                         "removeHeader/removeFooter only)",
+    "RoleEditDlg": "rights are WOPI-derived read-only (FileMenu/panels/RightsPanel.tsx); no per-role editing",
+    "RoleDeleteDlg": "rights are WOPI-derived read-only (FileMenu/panels/RightsPanel.tsx); no per-role delete",
+    "SaveFormDlg": "react Save-as panel exports DOCX (+pdf/txt via conversion, SaveAsPanel.tsx EXPORT_FORMATS); no save-as-form",
+    "StyleTitleDialog": "react 'Formatting as style' copies formatting (copyStyle, word-commands.ts); no style-naming dialog",
 }
 # runtime-captured OO dialog title → source component (joins census evidence).
 RUNTIME_TITLE_JOIN = {
@@ -349,11 +398,14 @@ def build_dialogs(src_dialogs: list, runtime_dlgs: list, wo_dlgs: list,
         comp, rt = row["component"], row["runtimeTitle"]
         display = rt or camel_split(comp)
         direct = REACT_DIRECT.get(comp)
+        diverged = REACT_DIVERGED.get(comp)
         route = REACT_ROUTE.get(comp) or (RUNTIME_TITLE_REACT.get(rt) if rt else None)
         palias = REACT_PANEL_ALIASES.get(comp)
         lalias = DIALOG_COMPONENT_ALIASES.get(comp)
         if direct:
             status, label, reason = "diverged", display, direct
+        elif diverged:
+            status, label, reason = "diverged", display, diverged
         elif route and norm(route[0]) in rv:
             status, label, reason = "done", rv[norm(route[0])], route[1]
         elif palias and norm(palias[0]) in rv:
@@ -366,7 +418,7 @@ def build_dialogs(src_dialogs: list, runtime_dlgs: list, wo_dlgs: list,
             legacy = wv.get(norm(rt)) or wv[norm(rt)[:-1]]
             status, label, reason = "done", legacy, None
         else:
-            status, label, reason = "missing", display, MISSING_DLG_REASON
+            status, label, reason = "missing", display, DLG_MISS_EVIDENCE.get(comp, MISSING_DLG_REASON)
         controls.append({"label": label, "ooLabel": display, "ooId": row["ooId"],
                          "status": status, "reason": reason})
     counts = {"done": sum(1 for c in controls if c["status"] == "done"),
@@ -426,7 +478,17 @@ FILEMENU_PANEL_TARGETS = {
     "panel-protect": "ProtectDoc", "panel-print": "PrintPreview",
 }
 # label-level aliases where neither plain label match nor a panel applies.
-FILEMENU_LABEL_ALIASES = {"Suggest a Feature": "Suggest Feature"}
+FILEMENU_LABEL_ALIASES = {"Suggest a Feature": "Suggest Feature",
+                         # react 'Save as…' IS action save-desktop (FileMenuItems.tsx)
+                         "Save to Desktop": "Save as..."}
+# PG-11 gap triage — per-id evidence overriding the generic reasons.
+FILEMENU_DONE_REASONS = {
+    "fm-btn-save-desktop": "react 'Save as…' item is action save-desktop (FileMenuItems.tsx)",
+}
+FILEMENU_MISS_EVIDENCE = {
+    "fm-btn-edit": "WO edit rights are WOPI-derived (UserCanWrite → Protect Document panel "
+                   "Full Access/Read-Only, ProtectDocPanel.tsx); no user-facing edit/view switch backstage",
+}
 
 
 def build_filemenu(src: dict, re_: dict) -> dict:
@@ -441,11 +503,12 @@ def build_filemenu(src: dict, re_: dict) -> dict:
     def match(oo_id: str, label: str):
         target = FILEMENU_LABEL_ALIASES.get(label, label)
         if label_match(target, set(rlabels)):
-            return "done", rlabels.get(norm(target), target), None
+            return "done", rlabels.get(norm(target), target), FILEMENU_DONE_REASONS.get(oo_id)
         panel = FILEMENU_PANEL_TARGETS.get(oo_id)
         if panel in panels:
             return "done", panel, f"react backstage panel component '{panel}'"
-        return "missing", label, "no react file-menu counterpart — honest gap"
+        return "missing", label, FILEMENU_MISS_EVIDENCE.get(
+            oo_id, "no react file-menu counterpart — honest gap")
 
     tabs = []
     for tid, tlabel, rows in (("filemenu-buttons", "Backstage Buttons", src.get("buttons", [])),
@@ -483,6 +546,13 @@ RIGHTPANEL_SEMANTICS = {
     "send-for-signing-settings": ("Send for signing", None, None),   # → missing
     "filling-status-settings": ("Filling status", None, None),       # → missing
 }
+# PG-11 gap triage — miss reasons citing what the deployed editor ships instead.
+RIGHTPANEL_MISS_REASONS = {
+    "send-for-signing-settings": "react ships self-signing only (SignaturePanel.tsx 'Add "
+                                 "Signature'/'Sign as'); no send-for-signing workflow",
+    "filling-status-settings": "react Form Controls panel inserts/edits controls (FormPanel.tsx); "
+                                "no fill-status reporting",
+}
 
 
 def build_rightpanel(src_ref: dict, react_dlgs: list) -> dict:
@@ -495,7 +565,8 @@ def build_rightpanel(src_ref: dict, react_dlgs: list) -> dict:
         if rid in panels:
             status, out, reason = "done", panels[rid], why
         else:
-            status, out, reason = "missing", label, "no react right-rail counterpart — honest gap"
+            status, out, reason = "missing", label, RIGHTPANEL_MISS_REASONS.get(
+                sid, "no react right-rail counterpart — honest gap")
         controls.append({"label": out, "ooLabel": label, "ooId": sid,
                          "status": status, "reason": reason})
     counts = {"done": sum(1 for c in controls if c["status"] == "done"),
