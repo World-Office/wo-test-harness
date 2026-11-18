@@ -601,14 +601,57 @@ def build_rightpanel(src_ref: dict, react_dlgs: list) -> dict:
 
 
 def build_ctx(ctx: dict) -> dict:
-    """Live-verified context-menu contract → one all-done tab per context."""
+    """Context-menu contract vs react-evidence. v3.2 FIX (2026-11-18): this
+    surface previously rubber-stamped every OO live-verified row as `done` —
+    but react ships right-click menus only for TABLE (PGP-1) + SPELLCHECK.
+    Statuses now require react evidence per row:
+      text/image/shape = missing until a menu exists (PGP-A campaign);
+      browser-native rows record the browser fallback as diverged;
+      commands that route to a panel/command but have NO ctx menu stay
+      missing (the surface is the right-click menu, not the command)."""
+    # Contract row -> react evidence. 'done': rendered in a react ctx menu.
+    # None = no evidence → missing.
+    # exc_note: tuple (row, note) for diverged rows (capability exists, not
+    #   on this surface).
+    REACT_CTX = {
+        # table: PGP-1 shipped TableContextMenu with every contract row.
+        "table": {r: None for r in (
+            "Cut", "Copy", "Paste", "PrintSelection", "Select", "Delete",
+            "MergeCells", "SplitCell", "DistributeRows", "DistributeColumns",
+            "TextAlignment", "InsertCaption", "TableProperties", "Link",
+            "ParagraphSettings", "FormattingAsStyle", "AI")},
+        # spellcheck menu: suggestions + Ignore + AddToDictionary rendered.
+        "misspelled": {"Ignore": None, "AddToDictionary": None,
+                       "SelectLanguage": "dictionary/docs language cmd exists (btn-doc-lang)"},
+        # text/image/shape: NO right-click menu in react (only table+spellcheck
+        # exist) → all contract rows missing; diverged only for browser-native
+        # clipboard which the browser handles globally.
+    }
+    BROWSER_NATIVE = {"Cut", "Copy", "Paste", "Select", "Delete",
+                      "PrintSelection", "SelectAll"}
     tabs = []
     for name in ("text", "misspelled", "table", "image", "shape"):
         v = ctx.get(name, [])
         rows = v["rows"] if isinstance(v, dict) else v
-        controls = [{"label": r, "ooLabel": r, "status": "done", "reason": None}
-                    for r in rows]
-        counts = {"done": len(controls), "diverged": 0, "missing": 0,
+        evidence = REACT_CTX.get(name) or {}
+        controls = []
+        for r in rows:
+            ev = evidence.get(r)
+            if name in REACT_CTX and r in evidence and ev is None:
+                status, reason = "done", None
+            elif name == "misspelled" and r in evidence:
+                status, reason = "diverged", f"react spellcheck menu {ev} (not rendered on this surface)"
+            elif r in BROWSER_NATIVE:
+                status = "diverged"
+                reason = f"browser-native {r.lower()} handled globally; no react {name} ctx menu yet"
+            else:
+                status = "missing"
+                reason = f"no react {name} right-click menu (PGP-A backlog)"
+            controls.append({"label": r, "ooLabel": r,
+                             "status": status, "reason": reason})
+        counts = {"done": sum(1 for c in controls if c["status"] == "done"),
+                  "diverged": sum(1 for c in controls if c["status"] == "diverged"),
+                  "missing": sum(1 for c in controls if c["status"] == "missing"),
                   "iconOnly": 0, "total": len(controls)}
         tab = {"id": name, "label": name.title(), "contextual": False,
                "counts": counts, "controls": controls}
@@ -616,7 +659,10 @@ def build_ctx(ctx: dict) -> dict:
             tab["live"] = v["live"]
         tabs.append(tab)
     return {"id": "ctx", "label": "Context Menus", "tabs": tabs,
-            "note": "verified live via ctx-scenarios — " + ctx.get("_meta", {}).get("source", "")}
+            "note": "verified live via ctx-scenarios — " +
+                    ctx.get("_meta", {}).get("source", "") +
+                    "; v3.2: statuses now require react evidence "
+                    "(table=PGP-1, misspelled=partial; text/image/shape = PGP-A)"}
 
 
 def build_shortcuts(sc: dict) -> tuple[dict, dict]:

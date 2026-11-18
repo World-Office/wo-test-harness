@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T17:29:02+00:00",
+ "generated": "2026-11-18T20:34:29+00:00",
  "sources": {
   "oo": "census/census/census-oo-deep.json",
   "react": "census/census/census-react-deep.json",
@@ -1844,9 +1844,9 @@
      "label": "Text",
      "contextual": false,
      "counts": {
-      "done": 11,
-      "diverged": 0,
-      "missing": 0,
+      "done": 0,
+      "diverged": 4,
+      "missing": 7,
       "iconOnly": 0,
       "total": 11
      },
@@ -1854,68 +1854,68 @@
       {
        "label": "Cut",
        "ooLabel": "Cut",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "browser-native cut handled globally; no react text ctx menu yet"
       },
       {
        "label": "Copy",
        "ooLabel": "Copy",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "browser-native copy handled globally; no react text ctx menu yet"
       },
       {
        "label": "Paste",
        "ooLabel": "Paste",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "browser-native paste handled globally; no react text ctx menu yet"
       },
       {
        "label": "PrintSelection",
        "ooLabel": "PrintSelection",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "browser-native printselection handled globally; no react text ctx menu yet"
       },
       {
        "label": "PageBreakBefore",
        "ooLabel": "PageBreakBefore",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react text right-click menu (PGP-A backlog)"
       },
       {
        "label": "KeepLines",
        "ooLabel": "KeepLines",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react text right-click menu (PGP-A backlog)"
       },
       {
        "label": "ParagraphSettings",
        "ooLabel": "ParagraphSettings",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react text right-click menu (PGP-A backlog)"
       },
       {
        "label": "AddComment",
        "ooLabel": "AddComment",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react text right-click menu (PGP-A backlog)"
       },
       {
        "label": "Link",
        "ooLabel": "Link",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react text right-click menu (PGP-A backlog)"
       },
       {
        "label": "FormattingAsStyle",
        "ooLabel": "FormattingAsStyle",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react text right-click menu (PGP-A backlog)"
       },
       {
        "label": "AI",
        "ooLabel": "AI",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react text right-click menu (PGP-A backlog)"
       }
      ]
     },
@@ -1924,9 +1924,9 @@
      "label": "Misspelled",
      "contextual": false,
      "counts": {
-      "done": 15,
-      "diverged": 0,
-      "missing": 0,
+      "done": 2,
+      "diverged": 5,
+      "missing": 8,
       "iconOnly": 0,
       "total": 15
      },
@@ -1940,8 +1940,8 @@
       {
        "label": "IgnoreAll",
        "ooLabel": "IgnoreAll",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react misspelled right-click menu (PGP-A backlog)"
       },
       {
        "label": "AddToDictionary",
@@ -1952,74 +1952,74 @@
       {
        "label": "SelectLanguage",
        "ooLabel": "SelectLanguage",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "react spellcheck menu dictionary/docs language cmd exists (btn-doc-lang) (not rendered on this surface)"
       },
       {
        "label": "Cut",
        "ooLabel": "Cut",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "browser-native cut handled globally; no react misspelled ctx menu yet"
       },
       {
        "label": "Copy",
        "ooLabel": "Copy",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "browser-native copy handled globally; no react misspelled ctx menu yet"
       },
       {
        "label": "Paste",
        "ooLabel": "Paste",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "browser-native paste handled globally; no react misspelled ctx menu yet"
       },
       {
        "label": "PrintSelection",
        "ooLabel": "PrintSelection",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "browser-native printselection handled globally; no react misspelled ctx menu yet"
       },
       {
        "label": "PageBreakBefore",
        "ooLabel": "PageBreakBefore",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react misspelled right-click menu (PGP-A backlog)"
       },
       {
        "label": "KeepLines",
        "ooLabel": "KeepLines",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react misspelled right-click menu (PGP-A backlog)"
       },
       {
        "label": "ParagraphSettings",
        "ooLabel": "ParagraphSettings",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react misspelled right-click menu (PGP-A backlog)"
       },
       {
        "label": "AddComment",
        "ooLabel": "AddComment",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react misspelled right-click menu (PGP-A backlog)"
       },
       {
        "label": "Link",
        "ooLabel": "Link",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react misspelled right-click menu (PGP-A backlog)"
       },
       {
        "label": "FormattingAsStyle",
        "ooLabel": "FormattingAsStyle",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react misspelled right-click menu (PGP-A backlog)"
       },
       {
        "label": "AI",
        "ooLabel": "AI",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react misspelled right-click menu (PGP-A backlog)"
       }
      ]
     },
@@ -2145,9 +2145,9 @@
      "label": "Image",
      "contextual": false,
      "counts": {
-      "done": 17,
-      "diverged": 0,
-      "missing": 0,
+      "done": 0,
+      "diverged": 4,
+      "missing": 13,
       "iconOnly": 0,
       "total": 17
      },
@@ -2155,104 +2155,104 @@
       {
        "label": "Cut",
        "ooLabel": "Cut",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "browser-native cut handled globally; no react image ctx menu yet"
       },
       {
        "label": "Copy",
        "ooLabel": "Copy",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "browser-native copy handled globally; no react image ctx menu yet"
       },
       {
        "label": "Paste",
        "ooLabel": "Paste",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "browser-native paste handled globally; no react image ctx menu yet"
       },
       {
        "label": "PrintSelection",
        "ooLabel": "PrintSelection",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "browser-native printselection handled globally; no react image ctx menu yet"
       },
       {
        "label": "Arrange",
        "ooLabel": "Arrange",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react image right-click menu (PGP-A backlog)"
       },
       {
        "label": "Align",
        "ooLabel": "Align",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react image right-click menu (PGP-A backlog)"
       },
       {
        "label": "CombineShapes",
        "ooLabel": "CombineShapes",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react image right-click menu (PGP-A backlog)"
       },
       {
        "label": "TextWrap",
        "ooLabel": "TextWrap",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react image right-click menu (PGP-A backlog)"
       },
       {
        "label": "Rotate",
        "ooLabel": "Rotate",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react image right-click menu (PGP-A backlog)"
       },
       {
        "label": "InsertCaption",
        "ooLabel": "InsertCaption",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react image right-click menu (PGP-A backlog)"
       },
       {
        "label": "SaveAsImage",
        "ooLabel": "SaveAsImage",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react image right-click menu (PGP-A backlog)"
       },
       {
        "label": "Link",
        "ooLabel": "Link",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react image right-click menu (PGP-A backlog)"
       },
       {
        "label": "Crop",
        "ooLabel": "Crop",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react image right-click menu (PGP-A backlog)"
       },
       {
        "label": "ActualSize",
        "ooLabel": "ActualSize",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react image right-click menu (PGP-A backlog)"
       },
       {
        "label": "ReplaceImage",
        "ooLabel": "ReplaceImage",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react image right-click menu (PGP-A backlog)"
       },
       {
        "label": "ImageSettings",
        "ooLabel": "ImageSettings",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react image right-click menu (PGP-A backlog)"
       },
       {
        "label": "AI",
        "ooLabel": "AI",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react image right-click menu (PGP-A backlog)"
       }
      ],
      "live": "seeded OO 9.4.0 rig (2026-11-15), right-click on image"
@@ -2262,9 +2262,9 @@
      "label": "Shape",
      "contextual": false,
      "counts": {
-      "done": 15,
-      "diverged": 0,
-      "missing": 0,
+      "done": 0,
+      "diverged": 4,
+      "missing": 11,
       "iconOnly": 0,
       "total": 15
      },
@@ -2272,98 +2272,98 @@
       {
        "label": "Cut",
        "ooLabel": "Cut",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "browser-native cut handled globally; no react shape ctx menu yet"
       },
       {
        "label": "Copy",
        "ooLabel": "Copy",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "browser-native copy handled globally; no react shape ctx menu yet"
       },
       {
        "label": "Paste",
        "ooLabel": "Paste",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "browser-native paste handled globally; no react shape ctx menu yet"
       },
       {
        "label": "PrintSelection",
        "ooLabel": "PrintSelection",
-       "status": "done",
-       "reason": null
+       "status": "diverged",
+       "reason": "browser-native printselection handled globally; no react shape ctx menu yet"
       },
       {
        "label": "Arrange",
        "ooLabel": "Arrange",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react shape right-click menu (PGP-A backlog)"
       },
       {
        "label": "Align",
        "ooLabel": "Align",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react shape right-click menu (PGP-A backlog)"
       },
       {
        "label": "CombineShapes",
        "ooLabel": "CombineShapes",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react shape right-click menu (PGP-A backlog)"
       },
       {
        "label": "TextWrap",
        "ooLabel": "TextWrap",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react shape right-click menu (PGP-A backlog)"
       },
       {
        "label": "Rotate",
        "ooLabel": "Rotate",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react shape right-click menu (PGP-A backlog)"
       },
       {
        "label": "InsertCaption",
        "ooLabel": "InsertCaption",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react shape right-click menu (PGP-A backlog)"
       },
       {
        "label": "SaveAsImage",
        "ooLabel": "SaveAsImage",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react shape right-click menu (PGP-A backlog)"
       },
       {
        "label": "Link",
        "ooLabel": "Link",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react shape right-click menu (PGP-A backlog)"
       },
       {
        "label": "EditPoints",
        "ooLabel": "EditPoints",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react shape right-click menu (PGP-A backlog)"
       },
       {
        "label": "ShapeSettings",
        "ooLabel": "ShapeSettings",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react shape right-click menu (PGP-A backlog)"
       },
       {
        "label": "AI",
        "ooLabel": "AI",
-       "status": "done",
-       "reason": null
+       "status": "missing",
+       "reason": "no react shape right-click menu (PGP-A backlog)"
       }
      ],
      "live": "seeded OO 9.4.0 rig (2026-11-15), right-click on shape"
     }
    ],
-   "note": "verified live via ctx-scenarios — OO 9.4.0 live capture (seeded rig) + source analysis",
+   "note": "verified live via ctx-scenarios — OO 9.4.0 live capture (seeded rig) + source analysis; v3.2: statuses now require react evidence (table=PGP-1, misspelled=partial; text/image/shape = PGP-A)",
    "manifest": {
     "menus": {
      "pictureMenu": {
@@ -6196,9 +6196,9 @@
  ],
  "totals": {
   "controls": 462,
-  "done": 435,
-  "diverged": 23,
-  "missing": 4,
+  "done": 379,
+  "diverged": 40,
+  "missing": 43,
   "iconOnly": 58,
   "surfaces": {
    "ribbon": {
@@ -6238,9 +6238,9 @@
    },
    "ctx": {
     "controls": 75,
-    "done": 75,
-    "diverged": 0,
-    "missing": 0,
+    "done": 19,
+    "diverged": 17,
+    "missing": 39,
     "iconOnly": 0
    },
    "shortcuts": {
