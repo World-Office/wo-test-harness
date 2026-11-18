@@ -1,0 +1,4045 @@
+{
+ "generated": "2026-11-18T01:26:42+00:00",
+ "sources": {
+  "oo": "census/census/census-oo-deep.json",
+  "react": "census/census/census-react-deep.json",
+  "divergences": "census/react-e2e/divergences.json",
+  "ledger": "census/census/ledger.json",
+  "contracts": "census/react-e2e/contract-results.json"
+ },
+ "surfaces": [
+  {
+   "id": "ribbon",
+   "label": "Ribbon",
+   "tabs": [
+    {
+     "id": "home",
+     "label": "Home",
+     "contextual": false,
+     "counts": {
+      "done": 37,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 5,
+      "total": 42
+     },
+     "controls": [
+      {
+       "label": "Font",
+       "ooLabel": "Font",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Font size",
+       "ooLabel": "Font size",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Increment font size",
+       "ooLabel": "Increment font size (Ctrl+])",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Decrement font size",
+       "ooLabel": "Decrement font size (Ctrl+[)",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Change case",
+       "ooLabel": "Change case",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Bold",
+       "ooLabel": "Bold (Ctrl+B)",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Italic",
+       "ooLabel": "Italic (Ctrl+I)",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Underline",
+       "ooLabel": "Underline (Ctrl+U)",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Strikethrough",
+       "ooLabel": "Strikethrough (Ctrl+5)",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Superscript",
+       "ooLabel": "Superscript (Ctrl+,)",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Subscript",
+       "ooLabel": "Subscript (Ctrl+.)",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Highlight color",
+       "ooLabel": "Highlight color",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Highlight color",
+       "ooLabel": "Highlight color",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Font color",
+       "ooLabel": "Font color",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Font color",
+       "ooLabel": "Font color",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Clear style",
+       "ooLabel": "Clear style",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Bullets",
+       "ooLabel": "Bullets",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Bullets",
+       "ooLabel": "Bullets",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Numbering",
+       "ooLabel": "Numbering",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Numbering",
+       "ooLabel": "Numbering",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Multilevel list",
+       "ooLabel": "Multilevel list",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Decrease indent",
+       "ooLabel": "Decrease indent (Ctrl+Shift+M)",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Increase indent",
+       "ooLabel": "Increase indent (Ctrl+M)",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Paragraph line spacing",
+       "ooLabel": "Paragraph line spacing",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Text direction",
+       "ooLabel": "Text direction",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Align left",
+       "ooLabel": "Align left (Ctrl+L)",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Align center",
+       "ooLabel": "Align center (Ctrl+E)",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Align right",
+       "ooLabel": "Align right (Ctrl+R)",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Justified",
+       "ooLabel": "Justified (Ctrl+J)",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Nonprinting characters",
+       "ooLabel": "Nonprinting characters (Ctrl+Shift+8)",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Nonprinting characters",
+       "ooLabel": "Nonprinting characters (Ctrl+Shift+8)",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Shading",
+       "ooLabel": "Shading",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Shading",
+       "ooLabel": "Shading",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Borders",
+       "ooLabel": "Borders",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Borders",
+       "ooLabel": "Borders",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Replace",
+       "ooLabel": "Replace (Ctrl+H)",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Select all",
+       "ooLabel": "Select all (Ctrl+A)",
+       "status": "done",
+       "reason": null
+      }
+     ]
+    },
+    {
+     "id": "ins",
+     "label": "Insert",
+     "contextual": false,
+     "counts": {
+      "done": 20,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 3,
+      "total": 23
+     },
+     "controls": [
+      {
+       "label": "Blank Page",
+       "ooLabel": "Blank\nPage",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Breaks",
+       "ooLabel": "Breaks",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Table",
+       "ooLabel": "Table",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Image",
+       "ooLabel": "Image",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Shape",
+       "ooLabel": "Shape",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "SmartArt",
+       "ooLabel": "SmartArt",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Chart",
+       "ooLabel": "Chart",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Comment",
+       "ooLabel": "Comment",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Link",
+       "ooLabel": "Link",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Header & Footer",
+       "ooLabel": "Header &\nFooter",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Page Number",
+       "ooLabel": "Page\nNumber",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Text Box",
+       "ooLabel": "Text\nBox",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Text Art",
+       "ooLabel": "Text\nArt",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Drop Cap",
+       "ooLabel": "Drop\nCap",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Date & Time",
+       "ooLabel": "Date &\nTime",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Text from File",
+       "ooLabel": "Text from\nFile",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Field",
+       "ooLabel": "Field",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Equation",
+       "ooLabel": "Equation",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Symbol",
+       "ooLabel": "Symbol",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Content Controls",
+       "ooLabel": "Content\nControls",
+       "status": "done",
+       "reason": null
+      }
+     ]
+    },
+    {
+     "id": "draw",
+     "label": "Draw",
+     "contextual": false,
+     "counts": {
+      "done": 2,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 6,
+      "total": 8
+     },
+     "controls": [
+      {
+       "label": "Select",
+       "ooLabel": "Select",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Eraser",
+       "ooLabel": "Eraser",
+       "status": "done",
+       "reason": null
+      }
+     ]
+    },
+    {
+     "id": "layout",
+     "label": "Layout",
+     "contextual": false,
+     "counts": {
+      "done": 16,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 15,
+      "total": 31
+     },
+     "controls": [
+      {
+       "label": "Margins",
+       "ooLabel": "Margins",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Orientation",
+       "ooLabel": "Orientation",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Size",
+       "ooLabel": "Size",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Columns",
+       "ooLabel": "Columns",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Breaks",
+       "ooLabel": "Breaks",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Line Numbers",
+       "ooLabel": "Line\nNumbers",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Hyphenation",
+       "ooLabel": "Hyphenation",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Wrapping",
+       "ooLabel": "Wrapping",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Bring Forward",
+       "ooLabel": "Bring\nForward",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Send Backward",
+       "ooLabel": "Send\nBackward",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Align",
+       "ooLabel": "Align",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Group",
+       "ooLabel": "Group",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Merge Shapes",
+       "ooLabel": "Merge\nShapes",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Watermark",
+       "ooLabel": "Watermark",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Page Color",
+       "ooLabel": "Page\nColor",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Colors",
+       "ooLabel": "Colors",
+       "status": "done",
+       "reason": null
+      }
+     ]
+    },
+    {
+     "id": "links",
+     "label": "References",
+     "contextual": false,
+     "counts": {
+      "done": 10,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 3,
+      "total": 13
+     },
+     "controls": [
+      {
+       "label": "Table of Contents",
+       "ooLabel": "Table of\nContents",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Add Text",
+       "ooLabel": "Add Text",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Update Table",
+       "ooLabel": "Update Table",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Footnote",
+       "ooLabel": "Footnote",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Link",
+       "ooLabel": "Link",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Bookmark",
+       "ooLabel": "Bookmark",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Caption",
+       "ooLabel": "Caption",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Cross-reference",
+       "ooLabel": "Cross-reference",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Table of Figures",
+       "ooLabel": "Table of Figures",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Update Table",
+       "ooLabel": "Update Table",
+       "status": "done",
+       "reason": null
+      }
+     ]
+    },
+    {
+     "id": "review",
+     "label": "Collaboration",
+     "contextual": false,
+     "counts": {
+      "done": 14,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 7,
+      "total": 21
+     },
+     "controls": [
+      {
+       "label": "Co-editing Mode",
+       "ooLabel": "Co-editing\nMode",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Add Comment",
+       "ooLabel": "Add\nComment",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Delete",
+       "ooLabel": "Delete",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Resolve",
+       "ooLabel": "Resolve",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Track Changes",
+       "ooLabel": "Track\nChanges",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Display Mode",
+       "ooLabel": "Display\nMode",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Previous",
+       "ooLabel": "Previous",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Next",
+       "ooLabel": "Next",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Accept",
+       "ooLabel": "Accept",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Reject",
+       "ooLabel": "Reject",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Compare",
+       "ooLabel": "Compare",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Combine",
+       "ooLabel": "Combine",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Chat",
+       "ooLabel": "Chat",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Mail Merge",
+       "ooLabel": "Mail\nMerge",
+       "status": "done",
+       "reason": null
+      }
+     ]
+    },
+    {
+     "id": "protect",
+     "label": "Protection",
+     "contextual": false,
+     "counts": {
+      "done": 2,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 0,
+      "total": 2
+     },
+     "controls": [
+      {
+       "label": "Encrypt",
+       "ooLabel": "Encrypt",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Protect Document",
+       "ooLabel": "Protect\nDocument",
+       "status": "done",
+       "reason": null
+      }
+     ]
+    },
+    {
+     "id": "view",
+     "label": "View",
+     "contextual": false,
+     "counts": {
+      "done": 10,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 2,
+      "total": 12
+     },
+     "controls": [
+      {
+       "label": "Headings",
+       "ooLabel": "Headings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Fit to Page",
+       "ooLabel": "Fit To Page",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Fit to Width",
+       "ooLabel": "Fit To Width",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Zoom to 100%",
+       "ooLabel": "Zoom to 100%",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Multiple Pages",
+       "ooLabel": "Multiple Pages",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Interface Theme",
+       "ooLabel": "Interface\nTheme",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Dark Document",
+       "ooLabel": "Dark\nDocument",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Macros",
+       "ooLabel": "Macros",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Record Macro",
+       "ooLabel": "Record macro",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Pause Recording",
+       "ooLabel": "Pause recording",
+       "status": "done",
+       "reason": null
+      }
+     ]
+    },
+    {
+     "id": "plugins",
+     "label": "Plugins",
+     "contextual": false,
+     "counts": {
+      "done": 12,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 4,
+      "total": 16
+     },
+     "controls": [
+      {
+       "label": "PluginManager",
+       "ooLabel": "Plugin\nManager",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Backgroundplugins",
+       "ooLabel": "Background\nplugins",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "PhotoEditor",
+       "ooLabel": "Photo\nEditor",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "YouTube",
+       "ooLabel": "YouTube",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "OCR",
+       "ooLabel": "OCR",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Translator",
+       "ooLabel": "Translator",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Mendeley",
+       "ooLabel": "Mendeley",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Thesaurus",
+       "ooLabel": "Thesaurus",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Highlightcode",
+       "ooLabel": "Highlight\ncode",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Zotero",
+       "ooLabel": "Zotero",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Speech",
+       "ooLabel": "Speech",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Speechinput",
+       "ooLabel": "Speech\ninput",
+       "status": "done",
+       "reason": null
+      }
+     ]
+    },
+    {
+     "id": "headerfooter",
+     "label": "Header & Footer",
+     "contextual": true,
+     "counts": {
+      "done": 6,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 6,
+      "total": 12
+     },
+     "controls": [
+      {
+       "label": "Header & Footer",
+       "ooLabel": "Header &\nFooter",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Page Number",
+       "ooLabel": "Page\nNumber",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Date & Time",
+       "ooLabel": "Date &\nTime",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Field",
+       "ooLabel": "Field",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Image",
+       "ooLabel": "Image",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Close",
+       "ooLabel": "Close",
+       "status": "done",
+       "reason": null
+      }
+     ]
+    },
+    {
+     "id": "8713d619-4e06-ab2c-09da-f8ce4a3a70e0",
+     "label": "AI",
+     "contextual": false,
+     "counts": {
+      "done": 6,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 2,
+      "total": 8
+     },
+     "controls": [
+      {
+       "label": "Settings",
+       "ooLabel": "Settings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Chatbot",
+       "ooLabel": "Chatbot",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Summarization",
+       "ooLabel": "Summarization",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Translation",
+       "ooLabel": "Translation",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Grammar &Spelling",
+       "ooLabel": "Grammar &\nSpelling",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Create AIassistant",
+       "ooLabel": "Create AI\nassistant",
+       "status": "done",
+       "reason": null
+      }
+     ]
+    },
+    {
+     "id": "charttab",
+     "label": "Chart design",
+     "contextual": true,
+     "counts": {
+      "done": 10,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 5,
+      "total": 15
+     },
+     "controls": [
+      {
+       "label": "ChartElements",
+       "ooLabel": "Chart\nElements",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Edit Data",
+       "ooLabel": "Edit\nData",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Edit Data",
+       "ooLabel": "Edit\nData",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "UpdateData",
+       "ooLabel": "Update\nData",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Chart type",
+       "ooLabel": "Chart type",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Advanced settings",
+       "ooLabel": "Advanced settings",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Wrapping",
+       "ooLabel": "Wrapping",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Width",
+       "ooLabel": "Width",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "Height",
+       "ooLabel": "Height",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "3Drotation",
+       "ooLabel": "3D\nrotation",
+       "status": "done",
+       "reason": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "filemenu",
+   "label": "File Menu",
+   "tabs": [
+    {
+     "id": "filemenu",
+     "label": "File",
+     "contextual": false,
+     "counts": {
+      "done": 0,
+      "diverged": 5,
+      "missing": 0,
+      "iconOnly": 0,
+      "total": 5
+     },
+     "controls": [
+      {
+       "label": "Find (Ctrl+F)",
+       "ooLabel": "Find (Ctrl+F)",
+       "status": "diverged",
+       "reason": "browser-native Ctrl+F / ribbon Home Find & Replace; react File menu carries document ops only"
+      },
+      {
+       "label": "Copy (Ctrl+Insert)",
+       "ooLabel": "Copy (Ctrl+Insert)",
+       "status": "diverged",
+       "reason": "browser-native clipboard; OO backstage QAT cluster not replicated by design"
+      },
+      {
+       "label": "Paste (Ctrl+V)",
+       "ooLabel": "Paste (Ctrl+V)",
+       "status": "diverged",
+       "reason": "browser-native clipboard; OO backstage QAT cluster not replicated by design"
+      },
+      {
+       "label": "Cut (Ctrl+X)",
+       "ooLabel": "Cut (Ctrl+X)",
+       "status": "diverged",
+       "reason": "browser-native clipboard; OO backstage QAT cluster not replicated by design"
+      },
+      {
+       "label": "Copy style (Ctrl+Alt+C)",
+       "ooLabel": "Copy style (Ctrl+Alt+C)",
+       "status": "diverged",
+       "reason": "not ported (QAT convenience); Format Painter on Home covers the use case"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "statusbar",
+   "label": "Status Bar",
+   "tabs": [
+    {
+     "id": "statusbar",
+     "label": "Status Bar",
+     "contextual": false,
+     "counts": {
+      "done": 2,
+      "diverged": 0,
+      "missing": 0,
+      "iconOnly": 11,
+      "total": 13
+     },
+     "controls": [
+      {
+       "label": "Word count",
+       "ooLabel": "Word count",
+       "status": "done",
+       "reason": null
+      },
+      {
+       "label": "English – United States",
+       "ooLabel": "English – United States",
+       "status": "done",
+       "reason": null
+      }
+     ],
+     "caveat": "react statusbar census not in artifacts; from ledger evidence (statusbar cluster)"
+    }
+   ]
+  },
+  {
+   "id": "ledger",
+   "label": "Feature Ledger",
+   "clusters": [
+    {
+     "id": "chart",
+     "counts": {
+      "features": 20,
+      "byLevel": {
+       "2": 20
+      }
+     },
+     "features": [
+      {
+       "id": "chart.chart.chart",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "chart.chart.chart-elements",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "chart.chart.edit-data",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "chart.chart.update-data",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "chart.chart.chart-type",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "chart.chart.advanced-settings",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "chart.chart.wrapping",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "chart.chart.width",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "chart.chart.height",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "chart.chart.3d-rotation",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "chart.chart.axes",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "chart.chart.axis-titles",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "chart.chart.chart-title",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "chart.chart.data-labels",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "chart.chart.error-bars",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "chart.chart.gridlines",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "chart.chart.legend",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "chart.chart.trendline",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "chart.chart.up-down-bars",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "chart.ctx.chart.datatable",
+       "level": 2,
+       "kind": "ctx-menu"
+      }
+     ]
+    },
+    {
+     "id": "edit",
+     "counts": {
+      "features": 137,
+      "byLevel": {
+       "2": 134,
+       "3": 1,
+       "1": 1,
+       "4": 1
+      }
+     },
+     "features": [
+      {
+       "id": "edit.shortcut.deleteleftchar",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.deleterightchar",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.editundo",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.editredo",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.editselectall",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.selecttostartline",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.selecttoendline",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.selecttostartdocument",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.selecttoenddocument",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.selectrightchar",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.selectleftchar",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.selectlineup",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.selectlinedown",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.selectpageup",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.selectpagedown",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.selecttobeginpreviouspage",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.selecttobeginnextpage",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.editshape",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.editchart",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.deleteleftword",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.deleterightword",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.cut",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.copy",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.paste",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.pastetextwithoutformat",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.selectrightword",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.shortcut.selectleftword",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "edit.ctx.insert-caption",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.save-as-picture",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.align-left",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.align-center",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.align-right",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.align-top",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.align-middle",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.align-bottom",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.distribute-horizontally",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.distribute-vertically",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.merge-shapes",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.axis-titles",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.chart-title",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.data-labels",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.error-bars",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.gridlines",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.legend",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.trendline",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.up-down-bars",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.bring-to-foreground",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.send-to-background",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.bring-forward",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.send-backward",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.edit-wrap-boundary",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.in-line-with-text",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.square",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.tight",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.through",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.top-and-bottom",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.in-front-of-text",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.behind-text",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.edit-data",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.actual-size",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.convert-to-shape",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.replace-image",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.copy",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.paste",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.cut",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.accept-change",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.reject-change",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.print-selection",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.rotate",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.crop",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.remove-content-control",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.content-control-settings",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.edit-points",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.edit-object",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.link",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.edit-link",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.copy-hyperlink-address",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.remove-link",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.resize-to-cell",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.horizontal-line-settings",
+       "level": 3,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.text-alignment",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.top",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.middle",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.bottom",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.left",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.center",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.right",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.justify",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.table-advanced-settings",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.paragraph-advanced-settings",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.formatting-as-style",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.create-new-style",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.update-1-style",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.update-entire-table",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.update-page-numbers-only",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.add-comment",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.follow-move",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.select-language",
+       "level": 1,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.ignore",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.ignore-all",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.add-to-dictionary",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.spellcheck",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.text-direction",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.horizontal",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.rotate-text-down",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.rotate-text-up",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.start-new-list",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.set-numbering-value",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.continue-numbering",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.adjust-list-indents",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.bullets-and-numbering",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.update-field",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.edit-field",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.toggle-field-codes",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.equation-settings",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.select",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.row",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.column",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.cell",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.column-left",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.column-right",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.row-above",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.row-below",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.cells",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.page-break-before",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.keep-lines-together",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.frame-advanced-settings",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.drop-cap-settings",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.table-of-contents-settings",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.update-table-of-contents",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.edit-header",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.undo",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.redo",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.clear-field",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.group",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.ctx.ungroup",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "edit.dialog.find-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      }
+     ]
+    },
+    {
+     "id": "file",
+     "counts": {
+      "features": 39,
+      "byLevel": {
+       "2": 38,
+       "1": 1
+      }
+     },
+     "features": [
+      {
+       "id": "file.file.file",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.home",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.insert",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.draw",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.layout",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.references",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.collaboration",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.protection",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.view",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.plugins",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.ai",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.editing",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.find-ctrl-f",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.copy-ctrl-insert",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.paste-ctrl-v",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.cut-ctrl-x",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.copy-style-ctrl-alt-c",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.mail-merge",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "file.file.back",
+       "level": 2,
+       "kind": "backstage-item"
+      },
+      {
+       "id": "file.file.save",
+       "level": 2,
+       "kind": "backstage-item"
+      },
+      {
+       "id": "file.file.download-as",
+       "level": 2,
+       "kind": "backstage-item"
+      },
+      {
+       "id": "file.file.protect",
+       "level": 2,
+       "kind": "backstage-item"
+      },
+      {
+       "id": "file.file.advanced-settings",
+       "level": 2,
+       "kind": "backstage-item"
+      },
+      {
+       "id": "file.file.suggest-a-feature",
+       "level": 2,
+       "kind": "backstage-item"
+      },
+      {
+       "id": "file.shortcut.openfinddialog",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "file.shortcut.openfindandreplacemenu",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "file.shortcut.opencommentspanel",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "file.shortcut.save",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "file.shortcut.printpreviewandprint",
+       "level": 1,
+       "kind": "shortcut"
+      },
+      {
+       "id": "file.shortcut.saveas",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "file.shortcut.openhelpmenu",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "file.shortcut.opencontextmenu",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "file.shortcut.closemenu",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "file.shortcut.updatefields",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "file.shortcut.openfilepanel",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "file.shortcut.opencommentfield",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "file.shortcut.openchatpanel",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "file.shortcut.openexistingfile",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "file.shortcut.closefile",
+       "level": 2,
+       "kind": "shortcut"
+      }
+     ]
+    },
+    {
+     "id": "formatting",
+     "counts": {
+      "features": 59,
+      "byLevel": {
+       "2": 34,
+       "3": 22,
+       "4": 3
+      }
+     },
+     "features": [
+      {
+       "id": "formatting.formatting.font",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.font-size",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.increment-font-size-ctrl",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.decrement-font-size-ctrl",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.change-case",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.bold-ctrl-b",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.italic-ctrl-i",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.underline-ctrl-u",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.strikethrough-ctrl-5",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.superscript-ctrl",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.subscript-ctrl",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.highlight-color",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.font-color",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.clear-style",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.bullets",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.numbering",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.multilevel-list",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.decrease-indent-ctrl-shift-m",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.increase-indent-ctrl-m",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.paragraph-line-spacing",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.text-direction",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.align-left-ctrl-l",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.align-center-ctrl-e",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.align-right-ctrl-r",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.justified-ctrl-j",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.nonprinting-characters-ctrl-shift-8",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.shading",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.borders",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.replace-ctrl-h",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.formatting.select-all-ctrl-a",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "formatting.shortcut.copyformat",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.pasteformat",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.bold",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.italic",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.underline",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.smallcaps",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.subscript",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.superscript",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.applylistbullet",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.resetchar",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.increasefontsize",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.decreasefontsize",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.centerpara",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.justifypara",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.rightpara",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.leftpara",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.indent",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.unindent",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.showall",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.strikeout",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.applyheading1",
+       "level": 3,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.applyheading2",
+       "level": 3,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.shortcut.applyheading3",
+       "level": 3,
+       "kind": "shortcut"
+      },
+      {
+       "id": "formatting.formatting.heading-1",
+       "level": 3,
+       "kind": "formatting"
+      },
+      {
+       "id": "formatting.formatting.heading-2",
+       "level": 3,
+       "kind": "formatting"
+      },
+      {
+       "id": "formatting.formatting.heading-3",
+       "level": 3,
+       "kind": "formatting"
+      },
+      {
+       "id": "formatting.dialog.font-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "formatting.dialog.paragraph-settings-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "formatting.dialog.dropcap-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      }
+     ]
+    },
+    {
+     "id": "headerfooter",
+     "counts": {
+      "features": 6,
+      "byLevel": {
+       "3": 4,
+       "2": 2
+      }
+     },
+     "features": [
+      {
+       "id": "headerfooter.headerfooter.header-footer",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "headerfooter.headerfooter.page-number",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "headerfooter.headerfooter.date-time",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "headerfooter.headerfooter.field",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "headerfooter.headerfooter.close",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "headerfooter.headerfooter.dlg-date-time",
+       "level": 3,
+       "kind": "dialog"
+      }
+     ]
+    },
+    {
+     "id": "image",
+     "counts": {
+      "features": 3,
+      "byLevel": {
+       "2": 2,
+       "4": 1
+      }
+     },
+     "features": [
+      {
+       "id": "image.image.image",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "image.image.photo-editor",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "image.dialog.image-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      }
+     ]
+    },
+    {
+     "id": "insert",
+     "counts": {
+      "features": 59,
+      "byLevel": {
+       "2": 48,
+       "3": 6,
+       "4": 5
+      }
+     },
+     "features": [
+      {
+       "id": "insert.insert.blank-page",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.breaks",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.shape",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.smartart",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.link",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.page-number",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.text-box",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.text-art",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.drop-cap",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.date-time",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.text-from-file",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.field",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.equation",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.symbol",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.content-controls",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.select",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.eraser",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "insert.insert.insert-page-break",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.insert-column-break",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.insert-section-break",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.insert-spreadsheet",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.more-symbols",
+       "level": 3,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.symbols",
+       "level": 3,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.fractions",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.scripts",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.radicals",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.integrals",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.large-operators",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.brackets",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.functions",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.accents",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.limits-and-logarithms",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.operators",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.matrices",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "insert.insert.dlg-date-time",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "insert.insert.dlg-symbol",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "insert.shortcut.insertlinebreak",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.insertcolumnbreak",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.nonbreakingspace",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.nonbreakinghyphen",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.inserthyperlink",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.insertpagebreak",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.insertpagenumber",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.inserttab",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.insertendnotenow",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.inserttablebreak",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.insertlinebreakmultilineform",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.copyrightsign",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.eurosign",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.registeredsign",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.trademarksign",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.insertequation",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.horizontalellipsis",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.insertfootnotenow",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.emdash",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.shortcut.endash",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "insert.dialog.symbol-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "insert.dialog.hr-settings-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "insert.dialog.pagenumber-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      }
+     ]
+    },
+    {
+     "id": "macros",
+     "counts": {
+      "features": 3,
+      "byLevel": {
+       "2": 3
+      }
+     },
+     "features": [
+      {
+       "id": "macros.macros.macros",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "macros.macros.record-macro",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "macros.macros.dlg-macros",
+       "level": 2,
+       "kind": "dialog"
+      }
+     ]
+    },
+    {
+     "id": "other",
+     "counts": {
+      "features": 14,
+      "byLevel": {
+       "2": 5,
+       "4": 9
+      }
+     },
+     "features": [
+      {
+       "id": "other.other.settings",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "other.other.chatbot",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "other.other.summarization",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "other.other.translation",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "other.other.create-ai-assistant",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "other.dialog.equation-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "other.dialog.pagecolor-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "other.dialog.chart-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "other.dialog.comment-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "other.dialog.compare-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "other.dialog.combine-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "other.dialog.textfromfile-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "other.dialog.field-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "other.dialog.speech-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      }
+     ]
+    },
+    {
+     "id": "page",
+     "counts": {
+      "features": 54,
+      "byLevel": {
+       "2": 48,
+       "4": 6
+      }
+     },
+     "features": [
+      {
+       "id": "page.page.margins",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "page.page.orientation",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "page.page.size",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "page.page.columns",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "page.page.breaks",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "page.page.line-numbers",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "page.page.hyphenation",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "page.page.wrapping",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "page.page.bring-forward",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "page.page.send-backward",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "page.page.align",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "page.page.group",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "page.page.merge-shapes",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "page.page.watermark",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "page.page.page-color",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "page.page.colors",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "page.page.last-custom",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.normal",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.narrow",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.moderate",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.wide",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.custom-margins",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.us-letter",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.us-legal",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.a4",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.a5",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.b5",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.envelope-10",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.envelope-dl",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.tabloid",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.a3",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.tabloid-oversize",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.roc-16k",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.envelope-choukei-3",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.super-b-a3",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.custom-page-size",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.one",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.two",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.three",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.left",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.right",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.custom-columns",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.none",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.automatic",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.hyphenation-options",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "page.page.dlg-margins",
+       "level": 2,
+       "kind": "dialog"
+      },
+      {
+       "id": "page.page.dlg-page-size",
+       "level": 2,
+       "kind": "dialog"
+      },
+      {
+       "id": "page.page.dlg-columns",
+       "level": 2,
+       "kind": "dialog"
+      },
+      {
+       "id": "page.page.dlg-hyphenation",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "page.dialog.linenumbers-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "page.dialog.watermark-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "page.dialog.margins-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "page.dialog.page-size-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "page.dialog.columns-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      }
+     ]
+    },
+    {
+     "id": "plugins",
+     "counts": {
+      "features": 10,
+      "byLevel": {
+       "2": 10
+      }
+     },
+     "features": [
+      {
+       "id": "plugins.plugins.plugin-manager",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "plugins.plugins.background-plugins",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "plugins.plugins.youtube",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "plugins.plugins.ocr",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "plugins.plugins.translator",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "plugins.plugins.mendeley",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "plugins.plugins.highlight-code",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "plugins.plugins.zotero",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "plugins.plugins.speech",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "plugins.plugins.speech-input",
+       "level": 2,
+       "kind": "control"
+      }
+     ]
+    },
+    {
+     "id": "protect",
+     "counts": {
+      "features": 2,
+      "byLevel": {
+       "2": 2
+      }
+     },
+     "features": [
+      {
+       "id": "protect.protect.encrypt",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "protect.protect.protect-document",
+       "level": 2,
+       "kind": "control"
+      }
+     ]
+    },
+    {
+     "id": "references",
+     "counts": {
+      "features": 15,
+      "byLevel": {
+       "2": 8,
+       "3": 1,
+       "4": 6
+      }
+     },
+     "features": [
+      {
+       "id": "references.references.add-text",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "references.references.footnote",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "references.references.link",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "references.references.bookmark",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "references.references.caption",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "references.references.cross-reference",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "references.references.dlg-bookmarks",
+       "level": 2,
+       "kind": "dialog"
+      },
+      {
+       "id": "references.references.dlg-insert-caption",
+       "level": 2,
+       "kind": "dialog"
+      },
+      {
+       "id": "references.references.dlg-cross-reference",
+       "level": 2,
+       "kind": "dialog"
+      },
+      {
+       "id": "references.dialog.link-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "references.dialog.bookmark-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "references.dialog.toc-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "references.dialog.crossref-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "references.dialog.caption-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "references.dialog.tableoffigures-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      }
+     ]
+    },
+    {
+     "id": "review",
+     "counts": {
+      "features": 16,
+      "byLevel": {
+       "2": 16
+      }
+     },
+     "features": [
+      {
+       "id": "review.review.comment",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "review.review.co-editing-mode",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "review.review.add-comment",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "review.review.delete",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "review.review.resolve",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "review.review.track-changes",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "review.review.display-mode",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "review.review.previous",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "review.review.next",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "review.review.accept",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "review.review.reject",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "review.review.compare",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "review.review.combine",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "review.review.chat",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "review.review.thesaurus",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "review.review.grammar-spelling",
+       "level": 2,
+       "kind": "control"
+      }
+     ]
+    },
+    {
+     "id": "shortcuts",
+     "counts": {
+      "features": 62,
+      "byLevel": {
+       "2": 57,
+       "1": 5
+      }
+     },
+     "features": [
+      {
+       "id": "shortcuts.shortcut.zoom100",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetostartline",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetostartdocument",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetoendline",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetoenddocument",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.scrolldown",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.scrollup",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.zoomin",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.zoomout",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetorightchar",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetoleftchar",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetoupline",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetodownline",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.nextmodalcontrol",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.previousmodalcontrol",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetolowerheaderfooter",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetoupperheaderfooter",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetolowerheader",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetoupperheader",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.endparagraph",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.equationaddplaceholder",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.equationchangealignmentleft",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.equationchangealignmentright",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.specialoptionskeepsourceformat",
+       "level": 1,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.specialoptionskeeptextonly",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.specialoptionsoverwritecells",
+       "level": 1,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.specialoptionsnesttable",
+       "level": 1,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.visithyperlink",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.startindent",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.startunindent",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.mixedindent",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.mixedunindent",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.bigmoveobjectleft",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.bigmoveobjectright",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.bigmoveobjectup",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.bigmoveobjectdown",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movefocustonextobject",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movefocustopreviousobject",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetonextcell",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetopreviouscell",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetonextrow",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetopreviousrow",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.endparagraphcell",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.addnewrow",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetonextform",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetopreviousform",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.choosenextcomboboxoption",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.choosepreviouscomboboxoption",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.speechworker",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetostartpreviouspage",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetostartnextpage",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetostartword",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetoendword",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.littlemoveobjectleft",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.littlemoveobjectright",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.littlemoveobjectup",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.littlemoveobjectdown",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.replaceunicodetosymbol",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetonextpage",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.movetopreviouspage",
+       "level": 2,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.nextfiletab",
+       "level": 1,
+       "kind": "shortcut"
+      },
+      {
+       "id": "shortcuts.shortcut.previousfiletab",
+       "level": 1,
+       "kind": "shortcut"
+      }
+     ]
+    },
+    {
+     "id": "statusbar",
+     "counts": {
+      "features": 10,
+      "byLevel": {
+       "2": 8,
+       "1": 2
+      }
+     },
+     "features": [
+      {
+       "id": "statusbar.statusbar.word-count",
+       "level": 2,
+       "kind": "statusbar-item"
+      },
+      {
+       "id": "statusbar.statusbar.english-united-states",
+       "level": 1,
+       "kind": "statusbar-item"
+      },
+      {
+       "id": "statusbar.statusbar.btn-doc-lang",
+       "level": 1,
+       "kind": "statusbar-item"
+      },
+      {
+       "id": "statusbar.statusbar.btn-doc-spell",
+       "level": 2,
+       "kind": "statusbar-item"
+      },
+      {
+       "id": "statusbar.statusbar.btn-doc-review",
+       "level": 2,
+       "kind": "statusbar-item"
+      },
+      {
+       "id": "statusbar.statusbar.status-btn-multiple-pages",
+       "level": 2,
+       "kind": "statusbar-item"
+      },
+      {
+       "id": "statusbar.statusbar.btn-zoom-topage",
+       "level": 2,
+       "kind": "statusbar-item"
+      },
+      {
+       "id": "statusbar.statusbar.btn-zoom-towidth",
+       "level": 2,
+       "kind": "statusbar-item"
+      },
+      {
+       "id": "statusbar.statusbar.btn-zoom-down",
+       "level": 2,
+       "kind": "statusbar-item"
+      },
+      {
+       "id": "statusbar.statusbar.btn-zoom-up",
+       "level": 2,
+       "kind": "statusbar-item"
+      }
+     ]
+    },
+    {
+     "id": "table",
+     "counts": {
+      "features": 17,
+      "byLevel": {
+       "3": 3,
+       "2": 12,
+       "4": 2
+      }
+     },
+     "features": [
+      {
+       "id": "table.table.table",
+       "level": 3,
+       "kind": "control"
+      },
+      {
+       "id": "table.table.table-of-contents",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "table.table.update-table",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "table.table.table-of-figures",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "table.table.insert-custom-table",
+       "level": 3,
+       "kind": "menu-item"
+      },
+      {
+       "id": "table.table.draw-table",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "table.table.erase-table",
+       "level": 2,
+       "kind": "menu-item"
+      },
+      {
+       "id": "table.table.convert-text-to-table",
+       "level": 3,
+       "kind": "menu-item"
+      },
+      {
+       "id": "table.table.dlg-table-of-figures",
+       "level": 2,
+       "kind": "dialog"
+      },
+      {
+       "id": "table.table.dlg-table-of-contents",
+       "level": 2,
+       "kind": "dialog"
+      },
+      {
+       "id": "table.ctx.merge-cells",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "table.ctx.split-cell",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "table.ctx.distribute-rows",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "table.ctx.distribute-columns",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "table.ctx.several-rows-columns",
+       "level": 2,
+       "kind": "ctx-menu"
+      },
+      {
+       "id": "table.dialog.table-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      },
+      {
+       "id": "table.dialog.text-to-table-dialog.l4",
+       "level": 4,
+       "kind": "dialog"
+      }
+     ]
+    },
+    {
+     "id": "view",
+     "counts": {
+      "features": 8,
+      "byLevel": {
+       "2": 8
+      }
+     },
+     "features": [
+      {
+       "id": "view.view.headings",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "view.view.fit-to-page",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "view.view.fit-to-width",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "view.view.zoom-to-100",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "view.view.multiple-pages",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "view.view.interface-theme",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "view.view.dark-document",
+       "level": 2,
+       "kind": "control"
+      },
+      {
+       "id": "view.view.pause-recording",
+       "level": 2,
+       "kind": "control"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "totals": {
+  "controls": 152,
+  "done": 147,
+  "diverged": 5,
+  "missing": 0,
+  "iconOnly": 69,
+  "ledgerFeatures": 534
+ },
+ "probes": [
+  "probe-health",
+  "probe-ribbon",
+  "probe-roundtrip",
+  "coverage-gate"
+ ]
+}
