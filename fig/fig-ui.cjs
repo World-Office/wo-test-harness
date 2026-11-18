@@ -7,7 +7,7 @@
 // the WO editor boots locally behind fig-boot (:18113). One probe captures the
 // SAME structure on both sides:
 //
-//   tabs[]        ribbon tab labels + geometry (OO: li.ribtab; WO: .ribbon-tabs)
+//   tabs[]        ribbon tab labels + geometry (OO: li.ribtab; WO: [role=tab])
 //   oneRow        all tabs share a single y-band
 //   fileInRow     the File trigger sits IN the tab row (not a separate line)
 //   backstage     File menu / backstage items {label, enabled, x, y, w, h}
@@ -63,12 +63,19 @@ new DocsAPI.DocEditor('editor', {
     lang: ${JSON.stringify(LANG)}, customization: { hideRightMenu: true, hideRulers: true, forcesave: false } }
 });</script></body></html>`;
 
-// German chrome strings that must never appear when UI_LLCC selects English.
+// German chrome strings that must never appear when the browser locale is
+// English (react tab vocabulary: de.json translations of the ribbon tabs).
 const DE_TOKENS = [
-  'Datei', 'Öffnen', 'Drucken', 'Verlauf', 'Startseite', 'Einfügen', 'Zeichnen',
-  'Verweise', 'Zusammenarbeit', 'Schutz', 'Ansicht', 'Kopf- und Fußzeile',
-  'Exportieren', 'Neu', 'Bearbeiten', 'Anwendungsmenü',
+  'Datei', 'Start', 'Einfügen', 'Referenzen', 'Ansicht',
 ];
+
+// Language-consistency vocabulary for the de-DE probe: tabs whose de.json
+// translation differs from English. A tab with no de.json key (Collaboration,
+// Protection, Plugins, AI) legitimately renders English under de-DE — it is
+// not part of either list. Mixed = a translatable tab showing EN while
+// another shows DE (the i18n resolution broke).
+const EN_ONLY = ['File', 'Home', 'Insert', 'References', 'View'];
+const DE_ONLY = ['Datei', 'Start', 'Einfügen', 'Referenzen', 'Ansicht'];
 
 const rectOf = (r) => ({
   x: Math.round(r.x), y: Math.round(r.y),
@@ -149,6 +156,12 @@ async function captureOO(browser) {
 }
 
 // ---- WO capture ----------------------------------------------------------
+// The served /word/ editor is the REACT app (documenteditor-react): Fluent UI
+// ribbon — tabs are [role=tab][data-tab-value] inside the TabList, the File
+// trigger is the FileTab button ([data-tab="file"]) rendered before the
+// TabList in the same tab bar, and the File menu is a full-screen backstage
+// (menubar[aria-label="File menu"]). The react menu ignores Escape — it is
+// closed by re-clicking the FileTab.
 // opts.locale emulates the browser language (de-DE etc.) to exercise the
 // navigator-language resolution path; opts.url may carry UI_LLCC for the
 // WOPI-param path.
@@ -161,12 +174,17 @@ async function captureWO(browser, base, opts = {}) {
   await sleep(6000);
 
   const tabs = await page.evaluate(() => {
+    // FluentUI renders the caption twice (a .fui-Tab__content span plus a
+    // reserved-space twin) — take the first non-reserved content span.
+    const labelOf = (el) =>
+      (el.querySelector('.fui-Tab__content:not(.fui-Tab__content--reserved-space)') || el)
+        .textContent || '';
     const out = [];
-    document.querySelectorAll('.ribbon-tabs .ribbon-tab').forEach((b) => {
+    document.querySelectorAll('[role=tab][data-tab-value]').forEach((b) => {
       const r = b.getBoundingClientRect();
       out.push({
-        id: b.dataset.tab || '',
-        label: (b.textContent || '').trim(),
+        id: b.dataset.tabValue || '',
+        label: labelOf(b).trim(),
         hidden: !!b.hidden || r.width <= 0,
         x: Math.round(r.x), y: Math.round(r.y), w: Math.round(r.width), h: Math.round(r.height),
       });
@@ -174,33 +192,34 @@ async function captureWO(browser, base, opts = {}) {
     return out;
   });
 
-  // The File trigger, wherever it currently lives (menu-bar legacy or tab row).
+  // The File trigger (FileTab button, first element of the tab bar).
   const fileTrigger = await page.evaluate(() => {
-    const b = document.getElementById('btn-file');
+    const b = document.querySelector('button[data-tab="file"]');
     if (!b) return null;
     const r = b.getBoundingClientRect();
     return { x: Math.round(r.x), y: Math.round(r.y), w: Math.round(r.width), h: Math.round(r.height), label: (b.textContent || '').trim() };
   });
 
-  // Language purity scan over the visible chrome (tab row + menu bar + file menu).
+  // Language purity scan over the visible chrome (tab bar + File trigger).
   const chromeText = await page.evaluate(() => {
     const grab = (sel) =>
       [...document.querySelectorAll(sel)]
         .filter((e) => !e.hidden && e.getBoundingClientRect().width > 0)
         .map((e) => (e.textContent || '').trim())
         .join('\n');
-    return [grab('.ribbon-tabs *'), grab('#menu-bar *')].join('\n');
+    return [grab('[role=tablist] *'), grab('button[data-tab="file"]')].join('\n');
   });
   const germanStrings = DE_TOKENS.filter((t) => chromeText.includes(t));
 
-  // Open the file menu (WO backstage equivalent) and capture items.
-  await page.evaluate(() => document.getElementById('btn-file')?.click());
+  // Open the file menu (WO backstage equivalent) and capture items; close
+  // by re-clicking the FileTab (Escape is not wired in the react menu).
+  await page.evaluate(() => document.querySelector('button[data-tab="file"]')?.click());
   await sleep(700);
   const backstage = await page.evaluate(() => {
-    const ul = document.getElementById('file-menu');
-    if (!ul || ul.hidden) return null;
+    const bar = document.querySelector('[role="menubar"][aria-label="File menu"]');
+    if (!bar) return null;
     const items = [];
-    ul.querySelectorAll('button').forEach((b) => {
+    bar.querySelectorAll('button').forEach((b) => {
       const r = b.getBoundingClientRect();
       if (r.width <= 0 || r.height <= 0) return;
       items.push({
@@ -212,7 +231,7 @@ async function captureWO(browser, base, opts = {}) {
     });
     return items;
   });
-  await page.evaluate(() => document.body.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true })));
+  await page.evaluate(() => document.querySelector('button[data-tab="file"]')?.click());
   await page.close();
   return { tabs, fileTrigger, backstage, germanStrings };
 }
@@ -259,8 +278,6 @@ async function main() {
   const woDe = await captureWO(browser, base, { locale: 'de-DE' });
   await browser.close();
 
-  const EN_ONLY = ['File', 'Home', 'Insert', 'Draw', 'References', 'Collaboration', 'Protection', 'View'];
-  const DE_ONLY = ['Datei', 'Start', 'Einf\u00fcgen', 'Zeichnen', 'Verweise', 'Zusammenarbeit', 'Schutz', 'Ansicht'];
   const deLabels = woDe.tabs.filter((t) => !t.hidden).map((t) => t.label)
     .concat(woDe.fileTrigger ? [woDe.fileTrigger.label] : []);
   const hasEn = deLabels.some((l) => EN_ONLY.includes(l));
