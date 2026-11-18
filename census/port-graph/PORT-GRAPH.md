@@ -159,15 +159,19 @@ the dicts in `build.py` — every entry names its evidence source verbatim.
 **rightpanel** (`RIGHTPANEL_SEMANTICS`): paragraph-settings→react `paragraph`
 panel, table-settings→`table`, image-settings→`image`, shape-settings→
 `shape`, mail-merge-settings→`mailmerge`, textart-settings→`textart`,
-signature-settings→`signature`, form-settings→`form`; send-for-signing and
-filling-status have no react counterpart (missing).
+signature-settings→`signature`, form-settings→`form`, filling-status→react
+FormPanel 'Filling status' section (PGP-9); send-for-signing has no react
+counterpart (missing — DSS backend feature).
 
-## Current state (PG-11 build) — done-gate output verbatim
+## Current state (post-PGP-1..9, graph build 2026-11-18) — done-gate output verbatim
 
-462 control nodes — done=425, diverged=24, missing=13, iconOnly=58
-(+534 ledger features). Diverged: 1 dialogs (Date & time — react inserts
-directly), 2 dialogs (PG-11: Mail Merge panel-no-email, Roles → WOPI panels),
-1 statusbar (PG-11: Multiple pages → View tab), 20 shortcuts
+520 control nodes — done=435, diverged=23, missing=4, iconOnly=58
+(+534 ledger features). Diverged: 3 dialogs (Date & time — react inserts
+directly; Mail Merge panel-no-email; Roles → WOPI panels), 20 shortcuts
+(3 diverged + 17 browser-native). 9 source rows shipped in campaign
+port-graph-parity (server main 9ba80faa4): Cells Add, Edit List Item, List
+Settings, List Types, Notes Remove, Save Form, Style Title, statusbar Action
+status + Multiple pages, rightpanel Filling status.
 (3 diverged + 17 browser-native).
 
 ```
@@ -175,34 +179,25 @@ ribbon        203 controls  done=145 diverged=0 missing=0 iconOnly=58
 filemenu       29 controls  done=28 diverged=0 missing=1 iconOnly=0
     filemenu-buttons         done= 18 diverged=0 missing=1
       GAP (documented) filemenu-buttons/Edit Document
-statusbar      17 controls  done=15 diverged=1 missing=1 iconOnly=0
-    statusbar                done= 15 diverged=1 missing=1
-      GAP (documented) statusbar/Action status
-dialogs        39 controls  done=27 diverged=3 missing=9 iconOnly=0
-    dialogs                  done= 27 diverged=3 missing=9
-      GAP (documented) dialogs/Cells Add
-      GAP (documented) dialogs/Edit List Item
-      GAP (documented) dialogs/List Settings
-      GAP (documented) dialogs/List Types
-      GAP (documented) dialogs/Notes Remove
+statusbar      17 controls  done=17 diverged=0 missing=0 iconOnly=0
+    statusbar                done= 17 diverged=0 missing=0
+dialogs        39 controls  done=34 diverged=3 missing=2 iconOnly=0
+    dialogs                  done= 34 diverged=3 missing=2
       GAP (documented) dialogs/Role Delete
       GAP (documented) dialogs/Role Edit
-      GAP (documented) dialogs/Save Form
-      GAP (documented) dialogs/Style Title
-rightpanel     10 controls  done=8 diverged=0 missing=2 iconOnly=0
-    rightpanel               done=  8 diverged=0 missing=2
+rightpanel     10 controls  done=9 diverged=0 missing=1 iconOnly=0
+    rightpanel               done=  9 diverged=0 missing=1
       GAP (documented) rightpanel/Send for signing
-      GAP (documented) rightpanel/Filling status
 ctx            75 controls  done=75 diverged=0 missing=0 iconOnly=0
 shortcuts     147 controls  done=127 diverged=20 missing=0 iconOnly=0
 ledger       18 clusters, 534 features (no control nodes)
 GATE OK — no undocumented-missing controls (documented gaps are listed, not failed)
 ```
 
-The 13 remaining gaps are the honest residual after the PG-11 triage —
-each documented with the evidence that was searched and not found (see
-Gap triage below). The gap closes by porting features or documenting
-divergences, never by editing statuses.
+The 4 remaining gaps are the honest residual — all OnlyOffice DocSpace/
+DSS enterprise features (backend-scoped: per-role rights, edit-mode switch,
+e-signing workflows). Each is documented with the evidence searched. The
+gap closes by adding a backend, never by editing statuses.
 
 ## Gap triage (PG-11)
 
