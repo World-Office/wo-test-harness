@@ -178,12 +178,14 @@ jobs:
         # The vanilla wysiwyg app was retired 2026-11-16; the rust docserver
         # now serves the React editor, which must be built before reconcile
         # can capture /word/ (the census waits for the React #toolbar).
+        # wasm-pack pinned to v0.15.0 (exact-version URL; "latest/download"
+        # with a versioned asset name does not resolve).
         run: |
           npm install -g pnpm@9
           if ! command -v wasm-pack >/dev/null 2>&1; then
-            curl -L -f -s --retry 3 https://github.com/rustwasm/wasm-pack/releases/latest/download/wasm-pack-v0.14.0-x86_64-unknown-linux-musl.tar.gz -o /tmp/wp.tgz \
+            curl -L -f -s --retry 3 https://github.com/rustwasm/wasm-pack/releases/download/v0.15.0/wasm-pack-v0.15.0-x86_64-unknown-linux-musl.tar.gz -o /tmp/wp.tgz \
               && tar -xzf /tmp/wp.tgz -C /tmp \
-              && sudo mv /tmp/wasm-pack-v0.14.0-x86_64-unknown-linux-musl/wasm-pack /usr/local/bin/
+              && sudo mv /tmp/wasm-pack-v0.15.0-x86_64-unknown-linux-musl/wasm-pack /usr/local/bin/
           fi
           wasm-pack --version
 
