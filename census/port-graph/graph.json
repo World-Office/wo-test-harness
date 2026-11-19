@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-19T05:17:47+00:00",
+ "generated": "2026-11-19T10:24:32+00:00",
  "sources": {
   "oo": "census/census/census-oo-deep.json",
   "react": "census/census/census-react-deep.json",
@@ -17,7 +17,8 @@
   "srcStatusbar": "census/oo-source/oo-statusbar.json",
   "srcCtxManifest": "census/oo-source/oo-ctx-manifest.json",
   "srcReference": "census/oo-source/oo-reference.json",
-  "srcShortcuts": "census/oo-source/oo-shortcuts.json"
+  "srcShortcuts": "census/oo-source/oo-shortcuts.json",
+  "srcEngine": "census/oo-source/oo-engine-commands.json"
  },
  "surfaces": [
   {
@@ -3302,6 +3303,2275 @@
    ]
   },
   {
+   "id": "engine",
+   "label": "Engine Commands",
+   "manifest": {
+    "source": "sdkjs (pinned OO checkout, web-apps build 252.232.451.526) — static extraction: word/apiDefines.js (Asc.c_oAscDocumentShortcutType, c_oAscContextMenuTypes) + word/Editor/Document.js switch-case labels",
+    "ooBuild": "252.232.451.526",
+    "gitRev": "9d2138866d929be32f1d107e8b5bfae36156e097",
+    "counts": {
+     "shortcutCommands": 147,
+     "ctxMenuTypes": 10,
+     "dispatchCommands": 116,
+     "dispatchCasesFoldedIntoShortcuts": 47,
+     "commands": 226
+    },
+    "total": 226,
+    "note": "static sdkjs extraction (census/oo-source/oo-engine-commands.json, HE-2): command names, not UI labels; enum-qualified shortcut cases fold into their shortcut row"
+   },
+   "reactVocabulary": {
+    "richTextCommands": 130,
+    "woCommands": 202,
+    "note": "pinned snapshots of rte-command.ts (RichTextCommand union) and word-commands.ts (wo-command cases) @ 990857b39 — build.py reads only committed artifacts"
+   },
+   "tabs": [
+    {
+     "id": "engine",
+     "label": "sdkjs Command Universe",
+     "contextual": false,
+     "counts": {
+      "done": 16,
+      "diverged": 27,
+      "missing": 35,
+      "iconOnly": 0,
+      "covered": 148,
+      "total": 226
+     },
+     "controls": [
+      {
+       "label": "AboveBelow",
+       "ooLabel": "Asc.c_oAscDocumentRefenceToType.AboveBelow",
+       "ooId": "case:Asc.c_oAscDocumentRefenceToType.AboveBelow",
+       "ooQualified": "Asc.c_oAscDocumentRefenceToType.AboveBelow",
+       "kind": "dispatch",
+       "react": "insertCrossReference",
+       "status": "done",
+       "reason": "react cross-reference format 'aboveBelow' — CrossRefFormat union + the Cross-reference panel's 'Above/Below' radio (lib/cross-ref.ts, CrossReferencePanel.tsx)"
+      },
+      {
+       "label": "NoteNumber",
+       "ooLabel": "Asc.c_oAscDocumentRefenceToType.NoteNumber",
+       "ooId": "case:Asc.c_oAscDocumentRefenceToType.NoteNumber",
+       "ooQualified": "Asc.c_oAscDocumentRefenceToType.NoteNumber",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "react CrossRefFormat = text|number|pageNumber|aboveBelow (lib/cross-ref.ts) — no note-number reference format"
+      },
+      {
+       "label": "NoteNumberFormatted",
+       "ooLabel": "Asc.c_oAscDocumentRefenceToType.NoteNumberFormatted",
+       "ooId": "case:Asc.c_oAscDocumentRefenceToType.NoteNumberFormatted",
+       "ooQualified": "Asc.c_oAscDocumentRefenceToType.NoteNumberFormatted",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "react CrossRefFormat = text|number|pageNumber|aboveBelow (lib/cross-ref.ts) — no formatted-note-number reference format"
+      },
+      {
+       "label": "OnlyCaptionText",
+       "ooLabel": "Asc.c_oAscDocumentRefenceToType.OnlyCaptionText",
+       "ooId": "case:Asc.c_oAscDocumentRefenceToType.OnlyCaptionText",
+       "ooQualified": "Asc.c_oAscDocumentRefenceToType.OnlyCaptionText",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "react CrossRefFormat = text|number|pageNumber|aboveBelow (lib/cross-ref.ts) — no caption-text-only reference format"
+      },
+      {
+       "label": "OnlyLabelAndNumber",
+       "ooLabel": "Asc.c_oAscDocumentRefenceToType.OnlyLabelAndNumber",
+       "ooId": "case:Asc.c_oAscDocumentRefenceToType.OnlyLabelAndNumber",
+       "ooQualified": "Asc.c_oAscDocumentRefenceToType.OnlyLabelAndNumber",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "react CrossRefFormat = text|number|pageNumber|aboveBelow (lib/cross-ref.ts) — no label-and-number reference format"
+      },
+      {
+       "label": "PageNum",
+       "ooLabel": "Asc.c_oAscDocumentRefenceToType.PageNum",
+       "ooId": "case:Asc.c_oAscDocumentRefenceToType.PageNum",
+       "ooQualified": "Asc.c_oAscDocumentRefenceToType.PageNum",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "react CrossRefFormat carries pageNumber (lib/cross-ref.ts) but the Cross-reference panel exposes Text/Number/Above-Below only — page-number refs resolve yet cannot be inserted"
+      },
+      {
+       "label": "historydescription_BuilderScript",
+       "ooLabel": "AscDFH.historydescription_BuilderScript",
+       "ooId": "case:AscDFH.historydescription_BuilderScript",
+       "ooQualified": "AscDFH.historydescription_BuilderScript",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "builder-script (macro) journal entry — react has no macro/builder engine (macros parked as their own project, census/interact-divergences.json)"
+      },
+      {
+       "label": "historydescription_Document_InsertTextFromFile",
+       "ooLabel": "AscDFH.historydescription_Document_InsertTextFromFile",
+       "ooId": "case:AscDFH.historydescription_Document_InsertTextFromFile",
+       "ooQualified": "AscDFH.historydescription_Document_InsertTextFromFile",
+       "kind": "dispatch",
+       "react": "loadHtml",
+       "status": "done",
+       "reason": "react 'Text from File' opens a hidden file picker and inserts the chosen file's contents (word-commands.ts:763 textFromFile) → loadHtml"
+      },
+      {
+       "label": "historyitem_Document_AddItem",
+       "ooLabel": "AscDFH.historyitem_Document_AddItem",
+       "ooId": "case:AscDFH.historyitem_Document_AddItem",
+       "ooQualified": "AscDFH.historyitem_Document_AddItem",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "engine undo/redo journal entry (document content add) — react records edits as ProseMirror transactions with the history plugin, or ModelOp ops on the canvas editor; there is no per-item journal"
+      },
+      {
+       "label": "historyitem_Document_DefaultTab",
+       "ooLabel": "AscDFH.historyitem_Document_DefaultTab",
+       "ooId": "case:AscDFH.historyitem_Document_DefaultTab",
+       "ooQualified": "AscDFH.historyitem_Document_DefaultTab",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "no default-tab-stop setting in the react editor (no defaultTab/tabStop token anywhere in documenteditor-react/src)"
+      },
+      {
+       "label": "historyitem_Document_EvenAndOddHeaders",
+       "ooLabel": "AscDFH.historyitem_Document_EvenAndOddHeaders",
+       "ooId": "case:AscDFH.historyitem_Document_EvenAndOddHeaders",
+       "ooQualified": "AscDFH.historyitem_Document_EvenAndOddHeaders",
+       "kind": "dispatch",
+       "react": "differentOddEven",
+       "status": "done",
+       "reason": "react RichTextCommand differentOddEven (rte-command.ts) — Header & Footer 'Different odd & even'"
+      },
+      {
+       "label": "historyitem_Document_MathSettings",
+       "ooLabel": "AscDFH.historyitem_Document_MathSettings",
+       "ooId": "case:AscDFH.historyitem_Document_MathSettings",
+       "ooQualified": "AscDFH.historyitem_Document_MathSettings",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "no math node or math settings in react; the 'equation' wo-command routes to the Plugins panel with 'no dedicated equation/symbol surface yet' (word-commands.ts:862)"
+      },
+      {
+       "label": "historyitem_Document_RemoveItem",
+       "ooLabel": "AscDFH.historyitem_Document_RemoveItem",
+       "ooId": "case:AscDFH.historyitem_Document_RemoveItem",
+       "ooQualified": "AscDFH.historyitem_Document_RemoveItem",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "engine undo/redo journal entry (document content remove) — react records edits as ProseMirror transactions with the history plugin, or ModelOp ops on the canvas editor; there is no per-item journal"
+      },
+      {
+       "label": "historyitem_Document_Settings_AutoHyphenation",
+       "ooLabel": "AscDFH.historyitem_Document_Settings_AutoHyphenation",
+       "ooId": "case:AscDFH.historyitem_Document_Settings_AutoHyphenation",
+       "ooQualified": "AscDFH.historyitem_Document_Settings_AutoHyphenation",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "react ships a WASM hyphenator (spell_load_hyphenation/spell_hyphenate, hooks/useSpellchecker.ts:118-156) but no auto-hyphenation document setting; the 'hyphenation' wo-command only toggles the paragraph panel (word-commands.ts:875)"
+      },
+      {
+       "label": "historyitem_Document_Settings_ConsecutiveHyphenLimit",
+       "ooLabel": "AscDFH.historyitem_Document_Settings_ConsecutiveHyphenLimit",
+       "ooId": "case:AscDFH.historyitem_Document_Settings_ConsecutiveHyphenLimit",
+       "ooQualified": "AscDFH.historyitem_Document_Settings_ConsecutiveHyphenLimit",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "react hyphenation is per-word through the WASM spell engine (hooks/useSpellchecker.ts) — no consecutive-hyphen-limit setting"
+      },
+      {
+       "label": "historyitem_Document_Settings_DoNotHyphenateCaps",
+       "ooLabel": "AscDFH.historyitem_Document_Settings_DoNotHyphenateCaps",
+       "ooId": "case:AscDFH.historyitem_Document_Settings_DoNotHyphenateCaps",
+       "ooQualified": "AscDFH.historyitem_Document_Settings_DoNotHyphenateCaps",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "react hyphenation is per-word through the WASM spell engine (hooks/useSpellchecker.ts) — no hyphenate-caps setting"
+      },
+      {
+       "label": "historyitem_Document_Settings_GutterAtTop",
+       "ooLabel": "AscDFH.historyitem_Document_Settings_GutterAtTop",
+       "ooId": "case:AscDFH.historyitem_Document_Settings_GutterAtTop",
+       "ooQualified": "AscDFH.historyitem_Document_Settings_GutterAtTop",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "react pageMargins is a normal/narrow/wide preset only (rte-command.ts:1426) — no margin-gutter model"
+      },
+      {
+       "label": "historyitem_Document_Settings_HyphenationZone",
+       "ooLabel": "AscDFH.historyitem_Document_Settings_HyphenationZone",
+       "ooId": "case:AscDFH.historyitem_Document_Settings_HyphenationZone",
+       "ooQualified": "AscDFH.historyitem_Document_Settings_HyphenationZone",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "react hyphenation is per-word through the WASM spell engine (hooks/useSpellchecker.ts) — no hyphenation-zone setting"
+      },
+      {
+       "label": "historyitem_Document_Settings_MirrorMargins",
+       "ooLabel": "AscDFH.historyitem_Document_Settings_MirrorMargins",
+       "ooId": "case:AscDFH.historyitem_Document_Settings_MirrorMargins",
+       "ooQualified": "AscDFH.historyitem_Document_Settings_MirrorMargins",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "react pageMargins is a normal/narrow/wide preset only (rte-command.ts:1426) — no mirror-margins setting"
+      },
+      {
+       "label": "End",
+       "ooLabel": "End",
+       "ooId": "case:End",
+       "ooQualified": "End",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "loop-boundary sentinel of the CDocument selection walk (Document.js:8151) — not a command; react selections are editor-state selections (ProseMirror TextSelection / wasm set_selection_anchor, lib/wasm-renderer.ts:73)"
+      },
+      {
+       "label": "Start",
+       "ooLabel": "Start",
+       "ooId": "case:Start",
+       "ooQualified": "Start",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "loop-boundary sentinel of the CDocument selection walk (Document.js:8151) — not a command; react selections are editor-state selections (ProseMirror TextSelection / wasm set_selection_anchor, lib/wasm-renderer.ts:73)"
+      },
+      {
+       "label": "Margin",
+       "ooLabel": "c_oAscHAnchor.Margin",
+       "ooId": "case:c_oAscHAnchor.Margin",
+       "ooQualified": "c_oAscHAnchor.Margin",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "OO frame/drawing anchor enum (Document.js:4715 frame-position math) — react has no anchor model and documentStore.alignObjects() is a TODO stub (stores/DocumentStore.ts:412)"
+      },
+      {
+       "label": "Page",
+       "ooLabel": "c_oAscHAnchor.Page",
+       "ooId": "case:c_oAscHAnchor.Page",
+       "ooQualified": "c_oAscHAnchor.Page",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "OO frame/drawing anchor enum (Document.js:4715 frame-position math) — react has no anchor model and documentStore.alignObjects() is a TODO stub (stores/DocumentStore.ts:412)"
+      },
+      {
+       "label": "Text",
+       "ooLabel": "c_oAscHAnchor.Text",
+       "ooId": "case:c_oAscHAnchor.Text",
+       "ooQualified": "c_oAscHAnchor.Text",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "OO frame/drawing anchor enum (Document.js:4715 frame-position math) — react has no anchor model and documentStore.alignObjects() is a TODO stub (stores/DocumentStore.ts:412)"
+      },
+      {
+       "label": "Column",
+       "ooLabel": "c_oAscSectionBreakType.Column",
+       "ooId": "case:c_oAscSectionBreakType.Column",
+       "ooQualified": "c_oAscSectionBreakType.Column",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "react SectionBreakType = next-page|continuous|even-page|odd-page (lib/section-break.ts:21) — no column section break"
+      },
+      {
+       "label": "Continuous",
+       "ooLabel": "c_oAscSectionBreakType.Continuous",
+       "ooId": "case:c_oAscSectionBreakType.Continuous",
+       "ooQualified": "c_oAscSectionBreakType.Continuous",
+       "kind": "dispatch",
+       "react": "insertContinuousSectionBreak",
+       "status": "done",
+       "reason": "react RichTextCommand insertContinuousSectionBreak inserts data-section-type=continuous (rte-command.ts:1692)"
+      },
+      {
+       "label": "EvenPage",
+       "ooLabel": "c_oAscSectionBreakType.EvenPage",
+       "ooId": "case:c_oAscSectionBreakType.EvenPage",
+       "ooQualified": "c_oAscSectionBreakType.EvenPage",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "react SectionBreakType carries 'even-page' with its own label and page-break CSS (lib/section-break.ts:21) but no command inserts it — rte-command.ts inserts next-page/continuous only"
+      },
+      {
+       "label": "NextPage",
+       "ooLabel": "c_oAscSectionBreakType.NextPage",
+       "ooId": "case:c_oAscSectionBreakType.NextPage",
+       "ooQualified": "c_oAscSectionBreakType.NextPage",
+       "kind": "dispatch",
+       "react": "insertSectionBreak",
+       "status": "done",
+       "reason": "react RichTextCommand insertSectionBreak inserts data-section-type=next-page, the SectionBreak default (rte-command.ts:1686, lib/section-break.ts:47)"
+      },
+      {
+       "label": "OddPage",
+       "ooLabel": "c_oAscSectionBreakType.OddPage",
+       "ooId": "case:c_oAscSectionBreakType.OddPage",
+       "ooQualified": "c_oAscSectionBreakType.OddPage",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "react SectionBreakType carries 'odd-page' with its own label and page-break CSS (lib/section-break.ts:21) but no command inserts it — rte-command.ts inserts next-page/continuous only"
+      },
+      {
+       "label": "Margin",
+       "ooLabel": "c_oAscVAnchor.Margin",
+       "ooId": "case:c_oAscVAnchor.Margin",
+       "ooQualified": "c_oAscVAnchor.Margin",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "OO frame/drawing anchor enum (Document.js:4715 frame-position math) — react has no anchor model and documentStore.alignObjects() is a TODO stub (stores/DocumentStore.ts:412)"
+      },
+      {
+       "label": "Page",
+       "ooLabel": "c_oAscVAnchor.Page",
+       "ooId": "case:c_oAscVAnchor.Page",
+       "ooQualified": "c_oAscVAnchor.Page",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "OO frame/drawing anchor enum (Document.js:4715 frame-position math) — react has no anchor model and documentStore.alignObjects() is a TODO stub (stores/DocumentStore.ts:412)"
+      },
+      {
+       "label": "Text",
+       "ooLabel": "c_oAscVAnchor.Text",
+       "ooId": "case:c_oAscVAnchor.Text",
+       "ooQualified": "c_oAscVAnchor.Text",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "OO frame/drawing anchor enum (Document.js:4715 frame-position math) — react has no anchor model and documentStore.alignObjects() is a TODO stub (stores/DocumentStore.ts:412)"
+      },
+      {
+       "label": "Center",
+       "ooLabel": "c_oAscXAlign.Center",
+       "ooId": "case:c_oAscXAlign.Center",
+       "ooQualified": "c_oAscXAlign.Center",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "OO frame alignment enum relative to its anchor (Document.js:4715) — react has no frame-positioning model and documentStore.alignObjects() is a TODO stub (stores/DocumentStore.ts:412)"
+      },
+      {
+       "label": "Inside",
+       "ooLabel": "c_oAscXAlign.Inside",
+       "ooId": "case:c_oAscXAlign.Inside",
+       "ooQualified": "c_oAscXAlign.Inside",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "OO frame alignment enum relative to its anchor (Document.js:4715) — react has no frame-positioning model and documentStore.alignObjects() is a TODO stub (stores/DocumentStore.ts:412)"
+      },
+      {
+       "label": "Left",
+       "ooLabel": "c_oAscXAlign.Left",
+       "ooId": "case:c_oAscXAlign.Left",
+       "ooQualified": "c_oAscXAlign.Left",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "OO frame alignment enum relative to its anchor (Document.js:4715) — react has no frame-positioning model and documentStore.alignObjects() is a TODO stub (stores/DocumentStore.ts:412)"
+      },
+      {
+       "label": "Outside",
+       "ooLabel": "c_oAscXAlign.Outside",
+       "ooId": "case:c_oAscXAlign.Outside",
+       "ooQualified": "c_oAscXAlign.Outside",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "OO frame alignment enum relative to its anchor (Document.js:4715) — react has no frame-positioning model and documentStore.alignObjects() is a TODO stub (stores/DocumentStore.ts:412)"
+      },
+      {
+       "label": "Right",
+       "ooLabel": "c_oAscXAlign.Right",
+       "ooId": "case:c_oAscXAlign.Right",
+       "ooQualified": "c_oAscXAlign.Right",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "OO frame alignment enum relative to its anchor (Document.js:4715) — react has no frame-positioning model and documentStore.alignObjects() is a TODO stub (stores/DocumentStore.ts:412)"
+      },
+      {
+       "label": "Bottom",
+       "ooLabel": "c_oAscYAlign.Bottom",
+       "ooId": "case:c_oAscYAlign.Bottom",
+       "ooQualified": "c_oAscYAlign.Bottom",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "OO frame alignment enum relative to its anchor (Document.js:4715) — react has no frame-positioning model and documentStore.alignObjects() is a TODO stub (stores/DocumentStore.ts:412)"
+      },
+      {
+       "label": "Center",
+       "ooLabel": "c_oAscYAlign.Center",
+       "ooId": "case:c_oAscYAlign.Center",
+       "ooQualified": "c_oAscYAlign.Center",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "OO frame alignment enum relative to its anchor (Document.js:4715) — react has no frame-positioning model and documentStore.alignObjects() is a TODO stub (stores/DocumentStore.ts:412)"
+      },
+      {
+       "label": "Inside",
+       "ooLabel": "c_oAscYAlign.Inside",
+       "ooId": "case:c_oAscYAlign.Inside",
+       "ooQualified": "c_oAscYAlign.Inside",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "OO frame alignment enum relative to its anchor (Document.js:4715) — react has no frame-positioning model and documentStore.alignObjects() is a TODO stub (stores/DocumentStore.ts:412)"
+      },
+      {
+       "label": "Outside",
+       "ooLabel": "c_oAscYAlign.Outside",
+       "ooId": "case:c_oAscYAlign.Outside",
+       "ooQualified": "c_oAscYAlign.Outside",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "OO frame alignment enum relative to its anchor (Document.js:4715) — react has no frame-positioning model and documentStore.alignObjects() is a TODO stub (stores/DocumentStore.ts:412)"
+      },
+      {
+       "label": "Top",
+       "ooLabel": "c_oAscYAlign.Top",
+       "ooId": "case:c_oAscYAlign.Top",
+       "ooQualified": "c_oAscYAlign.Top",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "OO frame alignment enum relative to its anchor (Document.js:4715) — react has no frame-positioning model and documentStore.alignObjects() is a TODO stub (stores/DocumentStore.ts:412)"
+      },
+      {
+       "label": "docpostype_Endnotes",
+       "ooLabel": "docpostype_Endnotes",
+       "ooId": "case:docpostype_Endnotes",
+       "ooQualified": "docpostype_Endnotes",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "react EndnoteMark is a reference mark only (lib/endnote-mark.ts) — no endnote content region to host the cursor"
+      },
+      {
+       "label": "docpostype_Footnotes",
+       "ooLabel": "docpostype_Footnotes",
+       "ooId": "case:docpostype_Footnotes",
+       "ooQualified": "docpostype_Footnotes",
+       "kind": "dispatch",
+       "react": "insertFootnote",
+       "status": "done",
+       "reason": "react footnotes are editable FootnoteItem blocks inside a FootnoteSection (lib/footnote-mark.ts) — the note content hosts the cursor"
+      },
+      {
+       "label": "docpostype_HdrFtr",
+       "ooLabel": "docpostype_HdrFtr",
+       "ooId": "case:docpostype_HdrFtr",
+       "ooQualified": "docpostype_HdrFtr",
+       "kind": "dispatch",
+       "react": "editHeader",
+       "status": "done",
+       "reason": "react editHeader/editFooter open the HeaderFooterEditor region (components/HeaderFooter.tsx; rte-command.ts) — the cursor-in-header/footer mode OO selects with docpostype_HdrFtr"
+      },
+      {
+       "label": "hdrftr_Footer",
+       "ooLabel": "hdrftr_Footer",
+       "ooId": "case:hdrftr_Footer",
+       "ooQualified": "hdrftr_Footer",
+       "kind": "dispatch",
+       "react": "insertPageNumber",
+       "status": "done",
+       "reason": "react PageNumber node + insertPageNumber (lib/page-number.ts) rendered in the HeaderFooterEditor 'footer' region (components/HeaderFooter.tsx)"
+      },
+      {
+       "label": "hdrftr_Header",
+       "ooLabel": "hdrftr_Header",
+       "ooId": "case:hdrftr_Header",
+       "ooQualified": "hdrftr_Header",
+       "kind": "dispatch",
+       "react": "insertPageNumber",
+       "status": "done",
+       "reason": "react PageNumber node + insertPageNumber (lib/page-number.ts) rendered in the HeaderFooterEditor 'header' region (components/HeaderFooter.tsx)"
+      },
+      {
+       "label": "para_ContinuationSeparator",
+       "ooLabel": "para_ContinuationSeparator",
+       "ooId": "case:para_ContinuationSeparator",
+       "ooQualified": "para_ContinuationSeparator",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "react renders a single footnote separator (lib/footnote-mark.ts:184) — no continuation separator for notes that spill over a page"
+      },
+      {
+       "label": "para_EndnoteRef",
+       "ooLabel": "para_EndnoteRef",
+       "ooId": "case:para_EndnoteRef",
+       "ooQualified": "para_EndnoteRef",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "react endnote display is the EndnoteMark's own text (lib/endnote-mark.ts) — no separate ref-mark item"
+      },
+      {
+       "label": "para_EndnoteReference",
+       "ooLabel": "para_EndnoteReference",
+       "ooId": "case:para_EndnoteReference",
+       "ooQualified": "para_EndnoteReference",
+       "kind": "dispatch",
+       "react": "insertEndnote",
+       "status": "done",
+       "reason": "react EndnoteMark inline mark — the superscript in body text (lib/endnote-mark.ts)"
+      },
+      {
+       "label": "para_Field",
+       "ooLabel": "para_Field",
+       "ooId": "case:para_Field",
+       "ooQualified": "para_Field",
+       "kind": "dispatch",
+       "react": "insertField",
+       "status": "done",
+       "reason": "react fieldSpan node + the insertField RichTextCommand (lib/field-span.ts, rte-command.ts)"
+      },
+      {
+       "label": "para_FootnoteRef",
+       "ooLabel": "para_FootnoteRef",
+       "ooId": "case:para_FootnoteRef",
+       "ooQualified": "para_FootnoteRef",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "react footnote numbering is computed by the footnotes plugin over FootnoteItem content (lib/footnote-mark.ts) — no separate ref-mark item"
+      },
+      {
+       "label": "para_FootnoteReference",
+       "ooLabel": "para_FootnoteReference",
+       "ooId": "case:para_FootnoteReference",
+       "ooQualified": "para_FootnoteReference",
+       "kind": "dispatch",
+       "react": "insertFootnote",
+       "status": "done",
+       "reason": "react FootnoteReference inline mark — the superscript in body text (lib/footnote-mark.ts)"
+      },
+      {
+       "label": "para_InstrText",
+       "ooLabel": "para_InstrText",
+       "ooId": "case:para_InstrText",
+       "ooQualified": "para_InstrText",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "react FieldSpan carries the field name as its text content, i.e. the field-code view (lib/field-span.ts) — no separate instruction-text item"
+      },
+      {
+       "label": "para_Math",
+       "ooLabel": "para_Math",
+       "ooId": "case:para_Math",
+       "ooQualified": "para_Math",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "no math node in react; the 'equation' wo-command routes to the Plugins panel with 'no dedicated equation/symbol surface yet' (word-commands.ts:862)"
+      },
+      {
+       "label": "para_NewLine",
+       "ooLabel": "para_NewLine",
+       "ooId": "case:para_NewLine",
+       "ooQualified": "para_NewLine",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "no hard-break/line-break node in react (no hardBreak token in documenteditor-react/src; lib/conversion.ts maps <br> to a newline)"
+      },
+      {
+       "label": "para_PageNum",
+       "ooLabel": "para_PageNum",
+       "ooId": "case:para_PageNum",
+       "ooQualified": "para_PageNum",
+       "kind": "dispatch",
+       "react": "insertPageNumber",
+       "status": "done",
+       "reason": "react PageNumber node, renumbered by a ProseMirror plugin, + the insertPageNumber RichTextCommand (lib/page-number.ts)"
+      },
+      {
+       "label": "para_Separator",
+       "ooLabel": "para_Separator",
+       "ooId": "case:para_Separator",
+       "ooQualified": "para_Separator",
+       "kind": "dispatch",
+       "status": "done",
+       "reason": "react renders the footnote separator (hr.footnote-separator, lib/footnote-mark.ts:184)"
+      },
+      {
+       "label": "para_Space",
+       "ooLabel": "para_Space",
+       "ooId": "case:para_Space",
+       "ooQualified": "para_Space",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "engine item discriminator — react keeps spaces inside ProseMirror text nodes"
+      },
+      {
+       "label": "para_Tab",
+       "ooLabel": "para_Tab",
+       "ooId": "case:para_Tab",
+       "ooQualified": "para_Tab",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "no tab-stop model in react — '\\t' is only a word-break character (lib/auto-correct.ts:136)"
+      },
+      {
+       "label": "para_Text",
+       "ooLabel": "para_Text",
+       "ooId": "case:para_Text",
+       "ooQualified": "para_Text",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "engine paragraph-item discriminator — react's document model is TipTap/ProseMirror (RichTextEditor) with the wasm canvas model behind CanvasEditor; a text run is a text node"
+      },
+      {
+       "label": "para_TextPr",
+       "ooLabel": "para_TextPr",
+       "ooId": "case:para_TextPr",
+       "ooQualified": "para_TextPr",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "engine run-properties item — react formats runs with ProseMirror marks (rte-command.ts bold/italic/highlight/…), not a para_TextPr item"
+      },
+      {
+       "label": "reviewtype_Add",
+       "ooLabel": "reviewtype_Add",
+       "ooId": "case:reviewtype_Add",
+       "ooQualified": "reviewtype_Add",
+       "kind": "dispatch",
+       "status": "done",
+       "reason": "react track-changes marks inserted text with trackInsert (lib/track-changes/index.ts:113)"
+      },
+      {
+       "label": "reviewtype_Common",
+       "ooLabel": "reviewtype_Common",
+       "ooId": "case:reviewtype_Common",
+       "ooQualified": "reviewtype_Common",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "OO reviewtype_Common is the un-flagged case of RegisterReviewType (Document.js:1087) — react expresses it as the absence of trackInsert/trackDelete marks (lib/track-changes/index.ts)"
+      },
+      {
+       "label": "reviewtype_Remove",
+       "ooLabel": "reviewtype_Remove",
+       "ooId": "case:reviewtype_Remove",
+       "ooQualified": "reviewtype_Remove",
+       "kind": "dispatch",
+       "status": "done",
+       "reason": "react track-changes marks deleted text with trackDelete (lib/track-changes/index.ts:109)"
+      },
+      {
+       "label": "selectionflag_Common",
+       "ooLabel": "selectionflag_Common",
+       "ooId": "case:selectionflag_Common",
+       "ooQualified": "selectionflag_Common",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "engine selection flag walked for co-edit locking (Document.js:14237) — react co-editing is CRDT-based over WebSocket (hooks/useCanvasCollaboration.ts, lib/collaboration.ts) with no selection-lock walk"
+      },
+      {
+       "label": "selectionflag_Numbering",
+       "ooLabel": "selectionflag_Numbering",
+       "ooId": "case:selectionflag_Numbering",
+       "ooQualified": "selectionflag_Numbering",
+       "kind": "dispatch",
+       "status": "missing",
+       "reason": "engine numbering-selection lock (Document.js:14262) — no react counterpart (hooks/useCanvasCollaboration.ts carries document ops only, no lock plane)"
+      },
+      {
+       "label": "type_Paragraph",
+       "ooLabel": "type_Paragraph",
+       "ooId": "case:type_Paragraph",
+       "ooQualified": "type_Paragraph",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "engine element-type discriminator — react models it as a ProseMirror paragraph node; the table↔text conversion that switches on it is tracked on the dialogs surface (TextToTable/TableToText)"
+      },
+      {
+       "label": "type_Table",
+       "ooLabel": "type_Table",
+       "ooId": "case:type_Table",
+       "ooQualified": "type_Table",
+       "kind": "dispatch",
+       "status": "diverged",
+       "reason": "engine element-type discriminator — react models it as a ProseMirror table node; the table↔text conversion that switches on it is tracked on the dialogs surface (TextToTable/TableToText)"
+      },
+      {
+       "label": "AnimEffect",
+       "ooLabel": "AnimEffect",
+       "ooId": "ctx:AnimEffect",
+       "ooQualified": "Asc.c_oAscContextMenuTypes.AnimEffect",
+       "kind": "ctx-menu",
+       "status": "diverged",
+       "reason": "slide-editor ctx-menu kind (slide/apiDefines.js) — out of scope: this graph tracks the word-editor port"
+      },
+      {
+       "label": "ChangeHdrFtr",
+       "ooLabel": "ChangeHdrFtr",
+       "ooId": "ctx:ChangeHdrFtr",
+       "ooQualified": "Asc.c_oAscContextMenuTypes.ChangeHdrFtr",
+       "kind": "ctx-menu",
+       "status": "missing",
+       "reason": "react ctx menus are text/misspelled/table/image/shape only; headers/footers are edited through Layout ▸ Header & Footer (components/HeaderFooter.tsx) with no right-click menu"
+      },
+      {
+       "label": "Common",
+       "ooLabel": "Common",
+       "ooId": "ctx:Common",
+       "ooQualified": "Asc.c_oAscContextMenuTypes.Common",
+       "kind": "ctx-menu",
+       "coveredBy": "ctx/text,misspelled,table,image,shape",
+       "status": "done",
+       "reason": "react ships the word ctx menus text/misspelled/table/image/shape — the ctx surface's 75 contract rows (TextContextMenu.tsx, SpellcheckContextMenu.tsx, TableContextMenu.tsx, ImageContextMenu.tsx, ShapeContextMenu.tsx)"
+      },
+      {
+       "label": "Layout",
+       "ooLabel": "Layout",
+       "ooId": "ctx:Layout",
+       "ooQualified": "Asc.c_oAscContextMenuTypes.Layout",
+       "kind": "ctx-menu",
+       "status": "diverged",
+       "reason": "slide-editor ctx-menu kind (slide/apiDefines.js) — out of scope: this graph tracks the word-editor port"
+      },
+      {
+       "label": "Main",
+       "ooLabel": "Main",
+       "ooId": "ctx:Main",
+       "ooQualified": "Asc.c_oAscContextMenuTypes.Main",
+       "kind": "ctx-menu",
+       "status": "diverged",
+       "reason": "slide-editor ctx-menu kind (slide/apiDefines.js) — out of scope: this graph tracks the word-editor port"
+      },
+      {
+       "label": "Master",
+       "ooLabel": "Master",
+       "ooId": "ctx:Master",
+       "ooQualified": "Asc.c_oAscContextMenuTypes.Master",
+       "kind": "ctx-menu",
+       "status": "diverged",
+       "reason": "slide-editor ctx-menu kind (slide/apiDefines.js) — out of scope: this graph tracks the word-editor port"
+      },
+      {
+       "label": "Thumbnails",
+       "ooLabel": "Thumbnails",
+       "ooId": "ctx:Thumbnails",
+       "ooQualified": "Asc.c_oAscContextMenuTypes.Thumbnails",
+       "kind": "ctx-menu",
+       "status": "diverged",
+       "reason": "slide-editor ctx-menu kind (slide/apiDefines.js) — out of scope: this graph tracks the word-editor port"
+      },
+      {
+       "label": "TimelineZoom",
+       "ooLabel": "TimelineZoom",
+       "ooId": "ctx:TimelineZoom",
+       "ooQualified": "Asc.c_oAscContextMenuTypes.TimelineZoom",
+       "kind": "ctx-menu",
+       "status": "diverged",
+       "reason": "slide-editor ctx-menu kind (slide/apiDefines.js) — out of scope: this graph tracks the word-editor port"
+      },
+      {
+       "label": "changeSeries",
+       "ooLabel": "changeSeries",
+       "ooId": "ctx:changeSeries",
+       "ooQualified": "Asc.c_oAscContextMenuTypes.changeSeries",
+       "kind": "ctx-menu",
+       "status": "diverged",
+       "reason": "cell-editor ctx-menu kind (cell/apiDefines.js) — out of scope: this graph tracks the word-editor port"
+      },
+      {
+       "label": "common",
+       "ooLabel": "common",
+       "ooId": "ctx:common",
+       "ooQualified": "Asc.c_oAscContextMenuTypes.common",
+       "kind": "ctx-menu",
+       "status": "diverged",
+       "reason": "cell-editor ctx-menu kind (cell/apiDefines.js) — out of scope: this graph tracks the word-editor port"
+      },
+      {
+       "label": "AddNewRow",
+       "ooLabel": "AddNewRow",
+       "ooId": "shortcut:AddNewRow",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.AddNewRow",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Tab AddNewRow",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Tab AddNewRow (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "ApplyHeading1",
+       "ooLabel": "ApplyHeading1",
+       "ooId": "shortcut:ApplyHeading1",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.ApplyHeading1",
+       "kind": "shortcut",
+       "react": "heading1",
+       "coveredBy": "shortcuts/Ctrl+Alt+1 ApplyHeading1",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Alt+1 ApplyHeading1 (census verdict matched: Ctrl+Alt+1)"
+      },
+      {
+       "label": "ApplyHeading2",
+       "ooLabel": "ApplyHeading2",
+       "ooId": "shortcut:ApplyHeading2",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.ApplyHeading2",
+       "kind": "shortcut",
+       "react": "heading2",
+       "coveredBy": "shortcuts/Ctrl+Alt+2 ApplyHeading2",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Alt+2 ApplyHeading2 (census verdict matched: Ctrl+Alt+2)"
+      },
+      {
+       "label": "ApplyHeading3",
+       "ooLabel": "ApplyHeading3",
+       "ooId": "shortcut:ApplyHeading3",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.ApplyHeading3",
+       "kind": "shortcut",
+       "react": "heading3",
+       "coveredBy": "shortcuts/Ctrl+Alt+3 ApplyHeading3",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Alt+3 ApplyHeading3 (census verdict matched: Ctrl+Alt+3)"
+      },
+      {
+       "label": "ApplyListBullet",
+       "ooLabel": "ApplyListBullet",
+       "ooId": "shortcut:ApplyListBullet",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.ApplyListBullet",
+       "kind": "shortcut",
+       "react": "bulletList",
+       "coveredBy": "shortcuts/Ctrl+Shift+L ApplyListBullet",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Shift+L ApplyListBullet (census verdict matched: Ctrl+Shift+L (realigned 2026-11-03 to OO combo))"
+      },
+      {
+       "label": "BigMoveObjectDown",
+       "ooLabel": "BigMoveObjectDown",
+       "ooId": "shortcut:BigMoveObjectDown",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.BigMoveObjectDown",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/ArrowDown BigMoveObjectDown",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/ArrowDown BigMoveObjectDown (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "BigMoveObjectLeft",
+       "ooLabel": "BigMoveObjectLeft",
+       "ooId": "shortcut:BigMoveObjectLeft",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.BigMoveObjectLeft",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/ArrowLeft BigMoveObjectLeft",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/ArrowLeft BigMoveObjectLeft (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "BigMoveObjectRight",
+       "ooLabel": "BigMoveObjectRight",
+       "ooId": "shortcut:BigMoveObjectRight",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.BigMoveObjectRight",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/ArrowRight BigMoveObjectRight",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/ArrowRight BigMoveObjectRight (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "BigMoveObjectUp",
+       "ooLabel": "BigMoveObjectUp",
+       "ooId": "shortcut:BigMoveObjectUp",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.BigMoveObjectUp",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/ArrowUp BigMoveObjectUp",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/ArrowUp BigMoveObjectUp (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "Bold",
+       "ooLabel": "Bold",
+       "ooId": "shortcut:Bold",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.Bold",
+       "kind": "shortcut",
+       "react": "bold",
+       "coveredBy": "shortcuts/Ctrl+B Bold",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+B Bold (census verdict matched: Ctrl+B); also tracked at ribbon/home/Bold (Ctrl+B) (done)"
+      },
+      {
+       "label": "CenterPara",
+       "ooLabel": "CenterPara",
+       "ooId": "shortcut:CenterPara",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.CenterPara",
+       "kind": "shortcut",
+       "react": "alignCenter",
+       "coveredBy": "shortcuts/Ctrl+E CenterPara",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+E CenterPara (census verdict matched: Ctrl+E)"
+      },
+      {
+       "label": "ChooseNextComboBoxOption",
+       "ooLabel": "ChooseNextComboBoxOption",
+       "ooId": "shortcut:ChooseNextComboBoxOption",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.ChooseNextComboBoxOption",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/ArrowDown ChooseNextComboBoxOption",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/ArrowDown ChooseNextComboBoxOption (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "ChoosePreviousComboBoxOption",
+       "ooLabel": "ChoosePreviousComboBoxOption",
+       "ooId": "shortcut:ChoosePreviousComboBoxOption",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.ChoosePreviousComboBoxOption",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/ArrowUp ChoosePreviousComboBoxOption",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/ArrowUp ChoosePreviousComboBoxOption (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "CloseFile",
+       "ooLabel": "CloseFile",
+       "ooId": "shortcut:CloseFile",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.CloseFile",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Meta+W CloseFile",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Meta+W CloseFile (census verdict matched: Cmd+W / Ctrl+W (prevents browser tab-close: dirty confirm + wo:close-document + notifyHost(close)))"
+      },
+      {
+       "label": "CloseMenu",
+       "ooLabel": "CloseMenu",
+       "ooId": "shortcut:CloseMenu",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.CloseMenu",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Escape CloseMenu",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Escape CloseMenu (census verdict matched: Escape)"
+      },
+      {
+       "label": "Copy",
+       "ooLabel": "Copy",
+       "ooId": "shortcut:Copy",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.Copy",
+       "kind": "shortcut",
+       "react": "copy",
+       "coveredBy": "shortcuts/Meta+C Copy",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Meta+C Copy (census verdict browser-native: Ctrl+C / Cmd+C); also tracked at ctx/text/Copy (done)"
+      },
+      {
+       "label": "CopyFormat",
+       "ooLabel": "CopyFormat",
+       "ooId": "shortcut:CopyFormat",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.CopyFormat",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Alt+C CopyFormat",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Alt+C CopyFormat (census verdict matched: Ctrl+Alt+C (format painter — captures inline + semantic char formatting))"
+      },
+      {
+       "label": "CopyrightSign",
+       "ooLabel": "CopyrightSign",
+       "ooId": "shortcut:CopyrightSign",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.CopyrightSign",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Alt+G CopyrightSign",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Alt+G CopyrightSign (census verdict matched: Ctrl+Alt+G)"
+      },
+      {
+       "label": "Cut",
+       "ooLabel": "Cut",
+       "ooId": "shortcut:Cut",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.Cut",
+       "kind": "shortcut",
+       "react": "cut",
+       "coveredBy": "shortcuts/Meta+X Cut",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Meta+X Cut (census verdict browser-native: Ctrl+X / Cmd+X); also tracked at ctx/text/Cut (done)"
+      },
+      {
+       "label": "DecreaseFontSize",
+       "ooLabel": "DecreaseFontSize",
+       "ooId": "shortcut:DecreaseFontSize",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.DecreaseFontSize",
+       "kind": "shortcut",
+       "react": "decreaseFontSize",
+       "coveredBy": "shortcuts/Ctrl+BracketLeft DecreaseFontSize",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+BracketLeft DecreaseFontSize (census verdict matched: Ctrl+[)"
+      },
+      {
+       "label": "DeleteLeftChar",
+       "ooLabel": "DeleteLeftChar",
+       "ooId": "shortcut:DeleteLeftChar",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.DeleteLeftChar",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Backspace DeleteLeftChar",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Backspace DeleteLeftChar (census verdict browser-native: Backspace)"
+      },
+      {
+       "label": "DeleteLeftWord",
+       "ooLabel": "DeleteLeftWord",
+       "ooId": "shortcut:DeleteLeftWord",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.DeleteLeftWord",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Alt+Backspace DeleteLeftWord",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Alt+Backspace DeleteLeftWord (census verdict browser-native: Alt+Backspace)"
+      },
+      {
+       "label": "DeleteRightChar",
+       "ooLabel": "DeleteRightChar",
+       "ooId": "shortcut:DeleteRightChar",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.DeleteRightChar",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Delete DeleteRightChar",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Delete DeleteRightChar (census verdict browser-native: Delete)"
+      },
+      {
+       "label": "DeleteRightWord",
+       "ooLabel": "DeleteRightWord",
+       "ooId": "shortcut:DeleteRightWord",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.DeleteRightWord",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Alt+Delete DeleteRightWord",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Alt+Delete DeleteRightWord (census verdict browser-native: Alt+Delete)"
+      },
+      {
+       "label": "EditChart",
+       "ooLabel": "EditChart",
+       "ooId": "shortcut:EditChart",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.EditChart",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Enter EditChart",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Enter EditChart (census verdict browser-native: Enter edits object)"
+      },
+      {
+       "label": "EditRedo",
+       "ooLabel": "EditRedo",
+       "ooId": "shortcut:EditRedo",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.EditRedo",
+       "kind": "shortcut",
+       "react": "redo",
+       "coveredBy": "shortcuts/Ctrl+Y EditRedo",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Y EditRedo (census verdict matched: Ctrl+Y / Ctrl+Shift+Z)"
+      },
+      {
+       "label": "EditSelectAll",
+       "ooLabel": "EditSelectAll",
+       "ooId": "shortcut:EditSelectAll",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.EditSelectAll",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+A EditSelectAll",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Ctrl+A EditSelectAll (census verdict browser-native: Ctrl+A)"
+      },
+      {
+       "label": "EditShape",
+       "ooLabel": "EditShape",
+       "ooId": "shortcut:EditShape",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.EditShape",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Enter EditShape",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Enter EditShape (census verdict browser-native: Enter edits object)"
+      },
+      {
+       "label": "EditUndo",
+       "ooLabel": "EditUndo",
+       "ooId": "shortcut:EditUndo",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.EditUndo",
+       "kind": "shortcut",
+       "react": "undo",
+       "coveredBy": "shortcuts/Ctrl+Z EditUndo",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Z EditUndo (census verdict matched: Ctrl+Z)"
+      },
+      {
+       "label": "EmDash",
+       "ooLabel": "EmDash",
+       "ooId": "shortcut:EmDash",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.EmDash",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Alt+Minus EmDash",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Ctrl+Alt+Minus EmDash (census verdict diverged: Ctrl+Alt+Minus (OO uses Ctrl+Alt+NumpadMinus; numpad-less web adaptation))"
+      },
+      {
+       "label": "EnDash",
+       "ooLabel": "EnDash",
+       "ooId": "shortcut:EnDash",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.EnDash",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Minus EnDash",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Minus EnDash (census verdict matched: Ctrl+Minus (OO true combo; preventDefault blocks browser zoom-out))"
+      },
+      {
+       "label": "EndParagraph",
+       "ooLabel": "EndParagraph",
+       "ooId": "shortcut:EndParagraph",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.EndParagraph",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Enter EndParagraph",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Enter EndParagraph (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "EndParagraphCell",
+       "ooLabel": "EndParagraphCell",
+       "ooId": "shortcut:EndParagraphCell",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.EndParagraphCell",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Enter EndParagraphCell",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Enter EndParagraphCell (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "EquationAddPlaceholder",
+       "ooLabel": "EquationAddPlaceholder",
+       "ooId": "shortcut:EquationAddPlaceholder",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.EquationAddPlaceholder",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Enter EquationAddPlaceholder",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Enter EquationAddPlaceholder (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "EquationChangeAlignmentLeft",
+       "ooLabel": "EquationChangeAlignmentLeft",
+       "ooId": "shortcut:EquationChangeAlignmentLeft",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.EquationChangeAlignmentLeft",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+Tab EquationChangeAlignmentLeft",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+Tab EquationChangeAlignmentLeft (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "EquationChangeAlignmentRight",
+       "ooLabel": "EquationChangeAlignmentRight",
+       "ooId": "shortcut:EquationChangeAlignmentRight",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.EquationChangeAlignmentRight",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Tab EquationChangeAlignmentRight",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Tab EquationChangeAlignmentRight (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "EuroSign",
+       "ooLabel": "EuroSign",
+       "ooId": "shortcut:EuroSign",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.EuroSign",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Alt+E EuroSign",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Alt+E EuroSign (census verdict matched: Ctrl+Alt+E)"
+      },
+      {
+       "label": "HorizontalEllipsis",
+       "ooLabel": "HorizontalEllipsis",
+       "ooId": "shortcut:HorizontalEllipsis",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.HorizontalEllipsis",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Alt+Semicolon HorizontalEllipsis",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Alt+Semicolon HorizontalEllipsis (census verdict matched: Alt+;)"
+      },
+      {
+       "label": "IncreaseFontSize",
+       "ooLabel": "IncreaseFontSize",
+       "ooId": "shortcut:IncreaseFontSize",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.IncreaseFontSize",
+       "kind": "shortcut",
+       "react": "increaseFontSize",
+       "coveredBy": "shortcuts/Ctrl+BracketRight IncreaseFontSize",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+BracketRight IncreaseFontSize (census verdict matched: Ctrl+])"
+      },
+      {
+       "label": "Indent",
+       "ooLabel": "Indent",
+       "ooId": "shortcut:Indent",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.Indent",
+       "kind": "shortcut",
+       "react": "indent",
+       "coveredBy": "shortcuts/Ctrl+M Indent",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+M Indent (census verdict matched: Ctrl+M)"
+      },
+      {
+       "label": "InsertColumnBreak",
+       "ooLabel": "InsertColumnBreak",
+       "ooId": "shortcut:InsertColumnBreak",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.InsertColumnBreak",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Shift+Enter InsertColumnBreak",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Shift+Enter InsertColumnBreak (census verdict matched: Ctrl+Shift+Enter)"
+      },
+      {
+       "label": "InsertEndnoteNow",
+       "ooLabel": "InsertEndnoteNow",
+       "ooId": "shortcut:InsertEndnoteNow",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.InsertEndnoteNow",
+       "kind": "shortcut",
+       "react": "insertEndnote",
+       "coveredBy": "shortcuts/Ctrl+Alt+D InsertEndnoteNow",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Alt+D InsertEndnoteNow (census verdict matched: Ctrl+Alt+D)"
+      },
+      {
+       "label": "InsertEquation",
+       "ooLabel": "InsertEquation",
+       "ooId": "shortcut:InsertEquation",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.InsertEquation",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Alt+Equal InsertEquation",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Alt+Equal InsertEquation (census verdict matched: Ctrl+Alt+=)"
+      },
+      {
+       "label": "InsertFootnoteNow",
+       "ooLabel": "InsertFootnoteNow",
+       "ooId": "shortcut:InsertFootnoteNow",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.InsertFootnoteNow",
+       "kind": "shortcut",
+       "react": "insertFootnote",
+       "coveredBy": "shortcuts/Ctrl+Alt+F InsertFootnoteNow",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Alt+F InsertFootnoteNow (census verdict matched: Ctrl+Alt+F)"
+      },
+      {
+       "label": "InsertHyperlink",
+       "ooLabel": "InsertHyperlink",
+       "ooId": "shortcut:InsertHyperlink",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.InsertHyperlink",
+       "kind": "shortcut",
+       "react": "link",
+       "coveredBy": "shortcuts/Ctrl+K InsertHyperlink",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+K InsertHyperlink (census verdict matched: Ctrl+K)"
+      },
+      {
+       "label": "InsertLineBreak",
+       "ooLabel": "InsertLineBreak",
+       "ooId": "shortcut:InsertLineBreak",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.InsertLineBreak",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+Enter InsertLineBreak",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Shift+Enter InsertLineBreak (census verdict browser-native: Shift+Enter inserts <br> natively in contentEditable)"
+      },
+      {
+       "label": "InsertLineBreakMultilineForm",
+       "ooLabel": "InsertLineBreakMultilineForm",
+       "ooId": "shortcut:InsertLineBreakMultilineForm",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.InsertLineBreakMultilineForm",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Enter InsertLineBreakMultilineForm",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Enter InsertLineBreakMultilineForm (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "InsertPageBreak",
+       "ooLabel": "InsertPageBreak",
+       "ooId": "shortcut:InsertPageBreak",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.InsertPageBreak",
+       "kind": "shortcut",
+       "react": "pageBreak",
+       "coveredBy": "shortcuts/Ctrl+Enter InsertPageBreak",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Enter InsertPageBreak (census verdict matched: Ctrl+Enter)"
+      },
+      {
+       "label": "InsertPageNumber",
+       "ooLabel": "InsertPageNumber",
+       "ooId": "shortcut:InsertPageNumber",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.InsertPageNumber",
+       "kind": "shortcut",
+       "react": "insertPageNumber",
+       "coveredBy": "shortcuts/Ctrl+Shift+P InsertPageNumber",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Shift+P InsertPageNumber (census verdict matched: Ctrl+Shift+P (realigned 2026-11-03 to OO combo; inserts PAGE-field span))"
+      },
+      {
+       "label": "InsertTab",
+       "ooLabel": "InsertTab",
+       "ooId": "shortcut:InsertTab",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.InsertTab",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Tab InsertTab",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Tab InsertTab (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "InsertTableBreak",
+       "ooLabel": "InsertTableBreak",
+       "ooId": "shortcut:InsertTableBreak",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.InsertTableBreak",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Shift+Enter InsertTableBreak",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Shift+Enter InsertTableBreak (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "Italic",
+       "ooLabel": "Italic",
+       "ooId": "shortcut:Italic",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.Italic",
+       "kind": "shortcut",
+       "react": "italic",
+       "coveredBy": "shortcuts/Ctrl+I Italic",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+I Italic (census verdict matched: Ctrl+I); also tracked at ribbon/home/Italic (Ctrl+I) (done)"
+      },
+      {
+       "label": "JustifyPara",
+       "ooLabel": "JustifyPara",
+       "ooId": "shortcut:JustifyPara",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.JustifyPara",
+       "kind": "shortcut",
+       "react": "alignJustify",
+       "coveredBy": "shortcuts/Ctrl+J JustifyPara",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+J JustifyPara (census verdict matched: Ctrl+J)"
+      },
+      {
+       "label": "LeftPara",
+       "ooLabel": "LeftPara",
+       "ooId": "shortcut:LeftPara",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.LeftPara",
+       "kind": "shortcut",
+       "react": "alignLeft",
+       "coveredBy": "shortcuts/Ctrl+L LeftPara",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+L LeftPara (census verdict matched: Ctrl+L)"
+      },
+      {
+       "label": "LittleMoveObjectDown",
+       "ooLabel": "LittleMoveObjectDown",
+       "ooId": "shortcut:LittleMoveObjectDown",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.LittleMoveObjectDown",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Meta+ArrowDown LittleMoveObjectDown",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Meta+ArrowDown LittleMoveObjectDown (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "LittleMoveObjectLeft",
+       "ooLabel": "LittleMoveObjectLeft",
+       "ooId": "shortcut:LittleMoveObjectLeft",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.LittleMoveObjectLeft",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Meta+ArrowLeft LittleMoveObjectLeft",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Meta+ArrowLeft LittleMoveObjectLeft (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "LittleMoveObjectRight",
+       "ooLabel": "LittleMoveObjectRight",
+       "ooId": "shortcut:LittleMoveObjectRight",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.LittleMoveObjectRight",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Meta+ArrowRight LittleMoveObjectRight",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Meta+ArrowRight LittleMoveObjectRight (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "LittleMoveObjectUp",
+       "ooLabel": "LittleMoveObjectUp",
+       "ooId": "shortcut:LittleMoveObjectUp",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.LittleMoveObjectUp",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Meta+ArrowUp LittleMoveObjectUp",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Meta+ArrowUp LittleMoveObjectUp (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MixedIndent",
+       "ooLabel": "MixedIndent",
+       "ooId": "shortcut:MixedIndent",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MixedIndent",
+       "kind": "shortcut",
+       "react": "indent",
+       "coveredBy": "shortcuts/Tab MixedIndent",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Tab MixedIndent (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MixedUnIndent",
+       "ooLabel": "MixedUnIndent",
+       "ooId": "shortcut:MixedUnIndent",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MixedUnIndent",
+       "kind": "shortcut",
+       "react": "outdent",
+       "coveredBy": "shortcuts/Shift+Tab MixedUnIndent",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+Tab MixedUnIndent (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveFocusToNextObject",
+       "ooLabel": "MoveFocusToNextObject",
+       "ooId": "shortcut:MoveFocusToNextObject",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveFocusToNextObject",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Tab MoveFocusToNextObject",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Tab MoveFocusToNextObject (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveFocusToPreviousObject",
+       "ooLabel": "MoveFocusToPreviousObject",
+       "ooId": "shortcut:MoveFocusToPreviousObject",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveFocusToPreviousObject",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+Tab MoveFocusToPreviousObject",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+Tab MoveFocusToPreviousObject (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToDownLine",
+       "ooLabel": "MoveToDownLine",
+       "ooId": "shortcut:MoveToDownLine",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToDownLine",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/ArrowDown MoveToDownLine",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/ArrowDown MoveToDownLine (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToEndDocument",
+       "ooLabel": "MoveToEndDocument",
+       "ooId": "shortcut:MoveToEndDocument",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToEndDocument",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+End MoveToEndDocument",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+End MoveToEndDocument (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToEndLine",
+       "ooLabel": "MoveToEndLine",
+       "ooId": "shortcut:MoveToEndLine",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToEndLine",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/End MoveToEndLine",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/End MoveToEndLine (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToEndWord",
+       "ooLabel": "MoveToEndWord",
+       "ooId": "shortcut:MoveToEndWord",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToEndWord",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Alt+ArrowRight MoveToEndWord",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Alt+ArrowRight MoveToEndWord (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToLeftChar",
+       "ooLabel": "MoveToLeftChar",
+       "ooId": "shortcut:MoveToLeftChar",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToLeftChar",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/ArrowLeft MoveToLeftChar",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/ArrowLeft MoveToLeftChar (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToLowerHeader",
+       "ooLabel": "MoveToLowerHeader",
+       "ooId": "shortcut:MoveToLowerHeader",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToLowerHeader",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Alt+PageDown MoveToLowerHeader",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Alt+PageDown MoveToLowerHeader (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToLowerHeaderFooter",
+       "ooLabel": "MoveToLowerHeaderFooter",
+       "ooId": "shortcut:MoveToLowerHeaderFooter",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToLowerHeaderFooter",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/PageDown MoveToLowerHeaderFooter",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/PageDown MoveToLowerHeaderFooter (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToNextCell",
+       "ooLabel": "MoveToNextCell",
+       "ooId": "shortcut:MoveToNextCell",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToNextCell",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Tab MoveToNextCell",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Tab MoveToNextCell (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToNextForm",
+       "ooLabel": "MoveToNextForm",
+       "ooId": "shortcut:MoveToNextForm",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToNextForm",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Tab MoveToNextForm",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Tab MoveToNextForm (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToNextPage",
+       "ooLabel": "MoveToNextPage",
+       "ooId": "shortcut:MoveToNextPage",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToNextPage",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Alt+PageDown MoveToNextPage",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Alt+PageDown MoveToNextPage (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToNextRow",
+       "ooLabel": "MoveToNextRow",
+       "ooId": "shortcut:MoveToNextRow",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToNextRow",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/ArrowDown MoveToNextRow",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/ArrowDown MoveToNextRow (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToPreviousCell",
+       "ooLabel": "MoveToPreviousCell",
+       "ooId": "shortcut:MoveToPreviousCell",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToPreviousCell",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+Tab MoveToPreviousCell",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+Tab MoveToPreviousCell (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToPreviousForm",
+       "ooLabel": "MoveToPreviousForm",
+       "ooId": "shortcut:MoveToPreviousForm",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToPreviousForm",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+Tab MoveToPreviousForm",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+Tab MoveToPreviousForm (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToPreviousPage",
+       "ooLabel": "MoveToPreviousPage",
+       "ooId": "shortcut:MoveToPreviousPage",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToPreviousPage",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Alt+PageUp MoveToPreviousPage",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Alt+PageUp MoveToPreviousPage (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToPreviousRow",
+       "ooLabel": "MoveToPreviousRow",
+       "ooId": "shortcut:MoveToPreviousRow",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToPreviousRow",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/ArrowUp MoveToPreviousRow",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/ArrowUp MoveToPreviousRow (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToRightChar",
+       "ooLabel": "MoveToRightChar",
+       "ooId": "shortcut:MoveToRightChar",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToRightChar",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/ArrowRight MoveToRightChar",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/ArrowRight MoveToRightChar (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToStartDocument",
+       "ooLabel": "MoveToStartDocument",
+       "ooId": "shortcut:MoveToStartDocument",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToStartDocument",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Home MoveToStartDocument",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Home MoveToStartDocument (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToStartLine",
+       "ooLabel": "MoveToStartLine",
+       "ooId": "shortcut:MoveToStartLine",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToStartLine",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Home MoveToStartLine",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Home MoveToStartLine (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToStartNextPage",
+       "ooLabel": "MoveToStartNextPage",
+       "ooId": "shortcut:MoveToStartNextPage",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToStartNextPage",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Alt+PageDown MoveToStartNextPage",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Alt+PageDown MoveToStartNextPage (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToStartPreviousPage",
+       "ooLabel": "MoveToStartPreviousPage",
+       "ooId": "shortcut:MoveToStartPreviousPage",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToStartPreviousPage",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Alt+PageUp MoveToStartPreviousPage",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Alt+PageUp MoveToStartPreviousPage (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToStartWord",
+       "ooLabel": "MoveToStartWord",
+       "ooId": "shortcut:MoveToStartWord",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToStartWord",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Alt+ArrowLeft MoveToStartWord",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Alt+ArrowLeft MoveToStartWord (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToUpLine",
+       "ooLabel": "MoveToUpLine",
+       "ooId": "shortcut:MoveToUpLine",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToUpLine",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/ArrowUp MoveToUpLine",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/ArrowUp MoveToUpLine (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToUpperHeader",
+       "ooLabel": "MoveToUpperHeader",
+       "ooId": "shortcut:MoveToUpperHeader",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToUpperHeader",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Alt+PageUp MoveToUpperHeader",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Alt+PageUp MoveToUpperHeader (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "MoveToUpperHeaderFooter",
+       "ooLabel": "MoveToUpperHeaderFooter",
+       "ooId": "shortcut:MoveToUpperHeaderFooter",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.MoveToUpperHeaderFooter",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/PageUp MoveToUpperHeaderFooter",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/PageUp MoveToUpperHeaderFooter (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "NextFileTab",
+       "ooLabel": "NextFileTab",
+       "ooId": "shortcut:NextFileTab",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.NextFileTab",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Tab NextFileTab",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Tab NextFileTab (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "NextModalControl",
+       "ooLabel": "NextModalControl",
+       "ooId": "shortcut:NextModalControl",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.NextModalControl",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Tab NextModalControl",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Tab NextModalControl (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "NonBreakingHyphen",
+       "ooLabel": "NonBreakingHyphen",
+       "ooId": "shortcut:NonBreakingHyphen",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.NonBreakingHyphen",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Shift+Minus NonBreakingHyphen",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Shift+Minus NonBreakingHyphen (census verdict matched: Ctrl+Shift+Minus)"
+      },
+      {
+       "label": "NonBreakingSpace",
+       "ooLabel": "NonBreakingSpace",
+       "ooId": "shortcut:NonBreakingSpace",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.NonBreakingSpace",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Shift+Space NonBreakingSpace",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Shift+Space NonBreakingSpace (census verdict matched: Ctrl+Shift+Space)"
+      },
+      {
+       "label": "OpenChatPanel",
+       "ooLabel": "OpenChatPanel",
+       "ooId": "shortcut:OpenChatPanel",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.OpenChatPanel",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Alt+Q OpenChatPanel",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Alt+Q OpenChatPanel (census verdict matched: Ctrl+Alt+Q)"
+      },
+      {
+       "label": "OpenCommentField",
+       "ooLabel": "OpenCommentField",
+       "ooId": "shortcut:OpenCommentField",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.OpenCommentField",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Alt+Meta+A OpenCommentField",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Alt+Meta+A OpenCommentField (census verdict matched: Opt+Cmd+A (Mac; openCommentDialog at caret))"
+      },
+      {
+       "label": "OpenCommentsPanel",
+       "ooLabel": "OpenCommentsPanel",
+       "ooId": "shortcut:OpenCommentsPanel",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.OpenCommentsPanel",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Shift+H OpenCommentsPanel",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Shift+H OpenCommentsPanel (census verdict matched: Ctrl+Shift+H (comments rail))"
+      },
+      {
+       "label": "OpenContextMenu",
+       "ooLabel": "OpenContextMenu",
+       "ooId": "shortcut:OpenContextMenu",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.OpenContextMenu",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+F10 OpenContextMenu",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Shift+F10 OpenContextMenu (census verdict browser-native: Shift+F10 fires the contextmenu DOM event; WO handler shows the custom menu)"
+      },
+      {
+       "label": "OpenExistingFile",
+       "ooLabel": "OpenExistingFile",
+       "ooId": "shortcut:OpenExistingFile",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.OpenExistingFile",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Meta+O OpenExistingFile",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Meta+O OpenExistingFile (census verdict matched: Cmd+O / Ctrl+O (openBackstage(\"open\")))"
+      },
+      {
+       "label": "OpenFilePanel",
+       "ooLabel": "OpenFilePanel",
+       "ooId": "shortcut:OpenFilePanel",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.OpenFilePanel",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Alt+F OpenFilePanel",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Alt+F OpenFilePanel (census verdict matched: Ctrl+Alt+F (openBackstage(\"open\") + focus recent-files rail))"
+      },
+      {
+       "label": "OpenFindAndReplaceMenu",
+       "ooLabel": "OpenFindAndReplaceMenu",
+       "ooId": "shortcut:OpenFindAndReplaceMenu",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.OpenFindAndReplaceMenu",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+H OpenFindAndReplaceMenu",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+H OpenFindAndReplaceMenu (census verdict matched: Ctrl+H)"
+      },
+      {
+       "label": "OpenFindDialog",
+       "ooLabel": "OpenFindDialog",
+       "ooId": "shortcut:OpenFindDialog",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.OpenFindDialog",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+F OpenFindDialog",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+F OpenFindDialog (census verdict matched: Ctrl+F)"
+      },
+      {
+       "label": "OpenHelpMenu",
+       "ooLabel": "OpenHelpMenu",
+       "ooId": "shortcut:OpenHelpMenu",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.OpenHelpMenu",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/F1 OpenHelpMenu",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/F1 OpenHelpMenu (census verdict matched: F1 opens Help dialog)"
+      },
+      {
+       "label": "Paste",
+       "ooLabel": "Paste",
+       "ooId": "shortcut:Paste",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.Paste",
+       "kind": "shortcut",
+       "react": "paste",
+       "coveredBy": "shortcuts/Meta+V Paste",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Meta+V Paste (census verdict browser-native: Ctrl+V / Cmd+V); also tracked at ctx/text/Paste (done)"
+      },
+      {
+       "label": "PasteFormat",
+       "ooLabel": "PasteFormat",
+       "ooId": "shortcut:PasteFormat",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.PasteFormat",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Alt+V PasteFormat",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Alt+V PasteFormat (census verdict matched: Ctrl+Alt+V (format painter — applies to next selection as style span))"
+      },
+      {
+       "label": "PasteTextWithoutFormat",
+       "ooLabel": "PasteTextWithoutFormat",
+       "ooId": "shortcut:PasteTextWithoutFormat",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.PasteTextWithoutFormat",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+Meta+V PasteTextWithoutFormat",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Shift+Meta+V PasteTextWithoutFormat (census verdict browser-native: Ctrl+Shift+V)"
+      },
+      {
+       "label": "PreviousFileTab",
+       "ooLabel": "PreviousFileTab",
+       "ooId": "shortcut:PreviousFileTab",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.PreviousFileTab",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Shift+Tab PreviousFileTab",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Shift+Tab PreviousFileTab (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "PreviousModalControl",
+       "ooLabel": "PreviousModalControl",
+       "ooId": "shortcut:PreviousModalControl",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.PreviousModalControl",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+Tab PreviousModalControl",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+Tab PreviousModalControl (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "PrintPreviewAndPrint",
+       "ooLabel": "PrintPreviewAndPrint",
+       "ooId": "shortcut:PrintPreviewAndPrint",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.PrintPreviewAndPrint",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+P PrintPreviewAndPrint",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Ctrl+P PrintPreviewAndPrint (census verdict browser-native: Ctrl+P opens native print dialog (WO window.print))"
+      },
+      {
+       "label": "RegisteredSign",
+       "ooLabel": "RegisteredSign",
+       "ooId": "shortcut:RegisteredSign",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.RegisteredSign",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Alt+R RegisteredSign",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Alt+R RegisteredSign (census verdict matched: Ctrl+Alt+R)"
+      },
+      {
+       "label": "ReplaceUnicodeToSymbol",
+       "ooLabel": "ReplaceUnicodeToSymbol",
+       "ooId": "shortcut:ReplaceUnicodeToSymbol",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.ReplaceUnicodeToSymbol",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Alt+Meta+X ReplaceUnicodeToSymbol",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Alt+Meta+X ReplaceUnicodeToSymbol (census verdict matched: Opt+Cmd+X / Ctrl+Alt+X (convert \\uXXXX / \\u{...} under caret))"
+      },
+      {
+       "label": "ResetChar",
+       "ooLabel": "ResetChar",
+       "ooId": "shortcut:ResetChar",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.ResetChar",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Space ResetChar",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Ctrl+Space ResetChar (census verdict browser-native: Ctrl+Space (remove formatting))"
+      },
+      {
+       "label": "RightPara",
+       "ooLabel": "RightPara",
+       "ooId": "shortcut:RightPara",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.RightPara",
+       "kind": "shortcut",
+       "react": "alignRight",
+       "coveredBy": "shortcuts/Ctrl+R RightPara",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+R RightPara (census verdict matched: Ctrl+R)"
+      },
+      {
+       "label": "Save",
+       "ooLabel": "Save",
+       "ooId": "shortcut:Save",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.Save",
+       "kind": "shortcut",
+       "react": "save",
+       "coveredBy": "shortcuts/Ctrl+S Save",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+S Save (census verdict matched: Ctrl+S); also tracked at filemenu/filemenu-buttons/Save (done)"
+      },
+      {
+       "label": "SaveAs",
+       "ooLabel": "SaveAs",
+       "ooId": "shortcut:SaveAs",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SaveAs",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Shift+S SaveAs",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Shift+S SaveAs (census verdict matched: Ctrl+Shift+S (export backstage pane)); also tracked at filemenu/filemenu-panels/Save As (done)"
+      },
+      {
+       "label": "ScrollDown",
+       "ooLabel": "ScrollDown",
+       "ooId": "shortcut:ScrollDown",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.ScrollDown",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/PageDown ScrollDown",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/PageDown ScrollDown (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "ScrollUp",
+       "ooLabel": "ScrollUp",
+       "ooId": "shortcut:ScrollUp",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.ScrollUp",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/PageUp ScrollUp",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/PageUp ScrollUp (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "SelectLeftChar",
+       "ooLabel": "SelectLeftChar",
+       "ooId": "shortcut:SelectLeftChar",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SelectLeftChar",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+ArrowLeft SelectLeftChar",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+ArrowLeft SelectLeftChar (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "SelectLeftWord",
+       "ooLabel": "SelectLeftWord",
+       "ooId": "shortcut:SelectLeftWord",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SelectLeftWord",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+Alt+ArrowLeft SelectLeftWord",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+Alt+ArrowLeft SelectLeftWord (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "SelectLineDown",
+       "ooLabel": "SelectLineDown",
+       "ooId": "shortcut:SelectLineDown",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SelectLineDown",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+ArrowDown SelectLineDown",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+ArrowDown SelectLineDown (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "SelectLineUp",
+       "ooLabel": "SelectLineUp",
+       "ooId": "shortcut:SelectLineUp",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SelectLineUp",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+ArrowUp SelectLineUp",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+ArrowUp SelectLineUp (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "SelectPageDown",
+       "ooLabel": "SelectPageDown",
+       "ooId": "shortcut:SelectPageDown",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SelectPageDown",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+PageDown SelectPageDown",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+PageDown SelectPageDown (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "SelectPageUp",
+       "ooLabel": "SelectPageUp",
+       "ooId": "shortcut:SelectPageUp",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SelectPageUp",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+PageUp SelectPageUp",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+PageUp SelectPageUp (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "SelectRightChar",
+       "ooLabel": "SelectRightChar",
+       "ooId": "shortcut:SelectRightChar",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SelectRightChar",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+ArrowRight SelectRightChar",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+ArrowRight SelectRightChar (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "SelectRightWord",
+       "ooLabel": "SelectRightWord",
+       "ooId": "shortcut:SelectRightWord",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SelectRightWord",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+Alt+ArrowRight SelectRightWord",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+Alt+ArrowRight SelectRightWord (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "SelectToBeginNextPage",
+       "ooLabel": "SelectToBeginNextPage",
+       "ooId": "shortcut:SelectToBeginNextPage",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SelectToBeginNextPage",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Shift+PageDown SelectToBeginNextPage",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Shift+PageDown SelectToBeginNextPage (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "SelectToBeginPreviousPage",
+       "ooLabel": "SelectToBeginPreviousPage",
+       "ooId": "shortcut:SelectToBeginPreviousPage",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SelectToBeginPreviousPage",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Shift+PageUp SelectToBeginPreviousPage",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Shift+PageUp SelectToBeginPreviousPage (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "SelectToEndDocument",
+       "ooLabel": "SelectToEndDocument",
+       "ooId": "shortcut:SelectToEndDocument",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SelectToEndDocument",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Shift+End SelectToEndDocument",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Shift+End SelectToEndDocument (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "SelectToEndLine",
+       "ooLabel": "SelectToEndLine",
+       "ooId": "shortcut:SelectToEndLine",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SelectToEndLine",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+End SelectToEndLine",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+End SelectToEndLine (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "SelectToStartDocument",
+       "ooLabel": "SelectToStartDocument",
+       "ooId": "shortcut:SelectToStartDocument",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SelectToStartDocument",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Shift+Home SelectToStartDocument",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Shift+Home SelectToStartDocument (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "SelectToStartLine",
+       "ooLabel": "SelectToStartLine",
+       "ooId": "shortcut:SelectToStartLine",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SelectToStartLine",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+Home SelectToStartLine",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+Home SelectToStartLine (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "ShowAll",
+       "ooLabel": "ShowAll",
+       "ooId": "shortcut:ShowAll",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.ShowAll",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Shift+8 ShowAll",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Shift+8 ShowAll (census verdict matched: Ctrl+Shift+8 (realigned 2026-11-03 to OO combo; marks overlay toggle))"
+      },
+      {
+       "label": "SmallCaps",
+       "ooLabel": "SmallCaps",
+       "ooId": "shortcut:SmallCaps",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SmallCaps",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Shift+K SmallCaps",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Shift+K SmallCaps (census verdict matched: Ctrl+Shift+K)"
+      },
+      {
+       "label": "SpecialOptionsKeepSourceFormat",
+       "ooLabel": "SpecialOptionsKeepSourceFormat",
+       "ooId": "shortcut:SpecialOptionsKeepSourceFormat",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SpecialOptionsKeepSourceFormat",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+K SpecialOptionsKeepSourceFormat",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Ctrl+K SpecialOptionsKeepSourceFormat (census verdict diverged: Ctrl+V default rich paste; Ctrl+K = hyperlink (OO collision))"
+      },
+      {
+       "label": "SpecialOptionsKeepTextOnly",
+       "ooLabel": "SpecialOptionsKeepTextOnly",
+       "ooId": "shortcut:SpecialOptionsKeepTextOnly",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SpecialOptionsKeepTextOnly",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+T SpecialOptionsKeepTextOnly",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+T SpecialOptionsKeepTextOnly (census verdict matched: Ctrl+T plain-text paste (clipboard.readText -> insertText))"
+      },
+      {
+       "label": "SpecialOptionsNestTable",
+       "ooLabel": "SpecialOptionsNestTable",
+       "ooId": "shortcut:SpecialOptionsNestTable",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SpecialOptionsNestTable",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+N SpecialOptionsNestTable",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Ctrl+N SpecialOptionsNestTable (census verdict browser-native: Ctrl+N consumed by browser (new window))"
+      },
+      {
+       "label": "SpecialOptionsOverwriteCells",
+       "ooLabel": "SpecialOptionsOverwriteCells",
+       "ooId": "shortcut:SpecialOptionsOverwriteCells",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SpecialOptionsOverwriteCells",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+O SpecialOptionsOverwriteCells",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Ctrl+O SpecialOptionsOverwriteCells (census verdict browser-native: Ctrl+O consumed by browser (open file); spreadsheet cell semantics n/a)"
+      },
+      {
+       "label": "SpeechWorker",
+       "ooLabel": "SpeechWorker",
+       "ooId": "shortcut:SpeechWorker",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.SpeechWorker",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Alt+Z SpeechWorker",
+       "status": "diverged",
+       "reason": "cross-linked to shortcuts/Ctrl+Alt+Z SpeechWorker (census verdict diverged: Ctrl+Alt+Z read-aloud (OO SpeechWorker panel; WO maps to TTS))"
+      },
+      {
+       "label": "StartIndent",
+       "ooLabel": "StartIndent",
+       "ooId": "shortcut:StartIndent",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.StartIndent",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Tab StartIndent",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Tab StartIndent (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "StartUnIndent",
+       "ooLabel": "StartUnIndent",
+       "ooId": "shortcut:StartUnIndent",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.StartUnIndent",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Shift+Tab StartUnIndent",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+Tab StartUnIndent (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "Strikeout",
+       "ooLabel": "Strikeout",
+       "ooId": "shortcut:Strikeout",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.Strikeout",
+       "kind": "shortcut",
+       "react": "strike",
+       "coveredBy": "shortcuts/Shift+Meta+X Strikeout",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Shift+Meta+X Strikeout (census verdict matched: Shift+Cmd+X / Ctrl+Shift+X (strikeThrough toggle))"
+      },
+      {
+       "label": "Subscript",
+       "ooLabel": "Subscript",
+       "ooId": "shortcut:Subscript",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.Subscript",
+       "kind": "shortcut",
+       "react": "subscript",
+       "coveredBy": "shortcuts/Ctrl+Period Subscript",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Period Subscript (census verdict matched: Ctrl+.); also tracked at ribbon/home/Subscript (Ctrl+.) (done)"
+      },
+      {
+       "label": "Superscript",
+       "ooLabel": "Superscript",
+       "ooId": "shortcut:Superscript",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.Superscript",
+       "kind": "shortcut",
+       "react": "superscript",
+       "coveredBy": "shortcuts/Ctrl+Comma Superscript",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Comma Superscript (census verdict matched: Ctrl+,); also tracked at ribbon/home/Superscript (Ctrl+,) (done)"
+      },
+      {
+       "label": "TrademarkSign",
+       "ooLabel": "TrademarkSign",
+       "ooId": "shortcut:TrademarkSign",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.TrademarkSign",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+Alt+T TrademarkSign",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Alt+T TrademarkSign (census verdict matched: Ctrl+Alt+T)"
+      },
+      {
+       "label": "UnIndent",
+       "ooLabel": "UnIndent",
+       "ooId": "shortcut:UnIndent",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.UnIndent",
+       "kind": "shortcut",
+       "react": "outdent",
+       "coveredBy": "shortcuts/Ctrl+Shift+M UnIndent",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Shift+M UnIndent (census verdict matched: Ctrl+Shift+M)"
+      },
+      {
+       "label": "Underline",
+       "ooLabel": "Underline",
+       "ooId": "shortcut:Underline",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.Underline",
+       "kind": "shortcut",
+       "react": "underline",
+       "coveredBy": "shortcuts/Ctrl+U Underline",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+U Underline (census verdict matched: Ctrl+U); also tracked at ribbon/home/Underline (Ctrl+U) (done)"
+      },
+      {
+       "label": "UpdateFields",
+       "ooLabel": "UpdateFields",
+       "ooId": "shortcut:UpdateFields",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.UpdateFields",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/F9 UpdateFields",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/F9 UpdateFields (census verdict matched: F9 (fieldOpAtSelection update))"
+      },
+      {
+       "label": "VisitHyperlink",
+       "ooLabel": "VisitHyperlink",
+       "ooId": "shortcut:VisitHyperlink",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.VisitHyperlink",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Enter VisitHyperlink",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Enter VisitHyperlink (census verdict nav: browser caret/scroll (n/a for web editor))"
+      },
+      {
+       "label": "Zoom100",
+       "ooLabel": "Zoom100",
+       "ooId": "shortcut:Zoom100",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.Zoom100",
+       "kind": "shortcut",
+       "coveredBy": "shortcuts/Ctrl+0 Zoom100",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+0 Zoom100 (census verdict matched: Ctrl+0)"
+      },
+      {
+       "label": "ZoomIn",
+       "ooLabel": "ZoomIn",
+       "ooId": "shortcut:ZoomIn",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.ZoomIn",
+       "kind": "shortcut",
+       "react": "zoomIn",
+       "coveredBy": "shortcuts/Ctrl+Equal ZoomIn",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Equal ZoomIn (census verdict matched: Ctrl+Plus/=); also tracked at statusbar/statusbar/Zoom in (done)"
+      },
+      {
+       "label": "ZoomOut",
+       "ooLabel": "ZoomOut",
+       "ooId": "shortcut:ZoomOut",
+       "ooQualified": "Asc.c_oAscDocumentShortcutType.ZoomOut",
+       "kind": "shortcut",
+       "react": "zoomOut",
+       "coveredBy": "shortcuts/Ctrl+Minus ZoomOut",
+       "status": "done",
+       "reason": "cross-linked to shortcuts/Ctrl+Minus ZoomOut (census verdict matched: Ctrl+Minus); also tracked at statusbar/statusbar/Zoom out (done)"
+      }
+     ]
+    }
+   ],
+   "note": "v3.4 baseline = the engine manifest (147 shortcut + 10 ctx-kind + 69 dispatch commands); `covered` is the cross-link bucket — rows whose evidence already lives on another surface, so done+diverged+missing count NEW engine evidence only (done+diverged+missing+covered == total)"
+  },
+  {
    "id": "ledger",
    "label": "Feature Ledger",
    "clusters": [
@@ -6195,10 +8465,10 @@
   }
  ],
  "totals": {
-  "controls": 462,
-  "done": 435,
-  "diverged": 23,
-  "missing": 4,
+  "controls": 688,
+  "done": 451,
+  "diverged": 50,
+  "missing": 39,
   "iconOnly": 58,
   "surfaces": {
    "ribbon": {
@@ -6249,6 +8519,14 @@
     "diverged": 20,
     "missing": 0,
     "iconOnly": 0
+   },
+   "engine": {
+    "controls": 226,
+    "done": 16,
+    "diverged": 27,
+    "missing": 35,
+    "iconOnly": 0,
+    "covered": 148
    }
   },
   "ledgerFeatures": 534
