@@ -1,0 +1,7 @@
+{
+  "max_parallel": 2,
+  "workers": [
+    {"name": "pg-1", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true},
+    {"name": "pg-2", "provider": "litellm", "model": "zai/glm-5.2", "enabled": true}
+  ]
+}
