@@ -105,6 +105,53 @@ for t in {**wo["tabs"], **wo["surfaces"]}.values():
             WO_CONTROL_TOKENS.add(re.sub(r"^(sel|cmb)-|^btn-", "", c["id"]).lower())
 WO_CONTROL_TOKENS -= {None, ""}
 
+# The Nov-16 wysiwyg->react retirement changed the WO control identity scheme:
+# the ledger MAP's `real` targets were keyed to the retired editor's ids
+# (btn-toc, togglewatermark, home:fontSizeDec ...) while the shipped react
+# editor emits its own spec ids (insert-toc, watermark, increase-font-size ...).
+# REAL_ALIAS re-anchors a MAP real-target token to the shipped react token so
+# the parity ledger resolves against what is actually served. Ids are the only
+# stable identity (labels are localized); adding a feature to react = adding its
+# spec id, nothing else.
+REAL_ALIAS = {
+    "ai-grammar": "ai-grammar-spelling",
+    "aitranslate": "ai-translation",
+    "compareversion": "compare-documents",
+    "field": "insert-field",
+    "hf-close": "close-header-footer",
+    "header": "insert-header-footer",
+    "pagenumber": "insert-page-number",
+    "align-just": "align-justify",
+    "clearstyle": "clear-formatting",
+    "fontsizedec": "decrease-font-size",
+    "fontsizeinc": "increase-font-size",
+    "insertorderedlist": "ordered-list",
+    "insertunorderedlist": "bullet-list",
+    "shading-color": "shading",
+    "multilevel": "multilevel-list",
+    "openborders": "borders",
+    "view-formatmarks": "nonprinting",
+    "contentcontrol": "insert-content-control",
+    "insertobject": "insert-shape",
+    "smartart": "insert-smart-art",
+    "table": "insert-table",
+    "textfile": "text-from-file",
+    "toggledropcap": "insert-drop-cap",
+    "page-setup": "page-orientation",
+    "themecolors": "document-theme",
+    "togglehyphenation": "hyphenation",
+    "togglelinenumbers": "line-numbers",
+    "togglewatermark": "watermark",
+    "bgplugins": "background-plugins",
+    "dictate": "speech-input",
+    "ocrrun": "ocr",
+    "readaloud": "speech",
+    "addtext": "insert-text-box",
+    "bookmark": "insert-bookmark",
+    "opencrossref": "insert-cross-reference",
+    "footnote": "insert-footnote",
+    "toc": "insert-toc",
+}
 # hand mapping for residue (filled as triage progresses): token -> directive
 MAP = {
     "copystyle": {"covered": "native-clipboard"},
@@ -167,7 +214,7 @@ MAP = {
     "text-art": {"real": "insertobject"},
     "drop-cap": {"real": "toggledropcap"},
     "text-from-file": {"real": "textfile"},   # Insert > Text from File
-    "content-controls": {"deferred": "content-controls-unsupported"},
+    "content-controls": {"real": "insert:btn-insert-content-control"},
     "header-footer": {"real": "insert:btn-header"},
     "edit-header-footer": {"real": "insert:btn-header"},
     "insert-header-footer": {"real": "insert:btn-header"},
@@ -361,7 +408,7 @@ for slug, tab in oo["tabs"].items():
                     # honesty guard: claimed WO control must exist in census-wo
                     wt = val.split(":", 1)[1] if ":" in val else val
                     wt = re.sub(r"^(btn-|sel-|cmb-)", "", wt).lower()
-                    hitw = WO_TOK.get(wt)
+                    hitw = WO_TOK.get(wt) or WO_TOK.get(REAL_ALIAS.get(wt, ""))
                     if not hitw:
                         row["status"] = "UNMATCHED"; row["note"] = f"MAP real target missing in WO census: {val}"
                         ledger.append(row); continue
@@ -381,7 +428,7 @@ for slug, tab in oo["tabs"].items():
                     row["wo_tab"] = wc[0]
                     row["note"] = f"MAP deferred but WO ships it -- promote to real (was: {val})"
                 ledger.append(row); continue
-            hit = WO_TOK.get(tok) or WO_TOK.get(SYN.get(tok, ""))
+            hit = WO_TOK.get(tok) or WO_TOK.get(SYN.get(tok, "")) or WO_TOK.get(REAL_ALIAS.get(tok, ""))
             if hit:
                 row["status"] = "real"; row["wo"] = hit[1].get("id") or hit[1].get("cmd") or hit[0]; row["wo_tab"] = hit[0]
                 if hit[1].get("stub"): row["status"] = "stub"; row["ref"] = hit[1]["stub"]

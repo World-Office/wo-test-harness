@@ -125,14 +125,36 @@ def _rust_binary(server: Path) -> Path:
     return server / "target" / "debug" / "wo-docserver"
 
 
+def _ui_source(server: Path) -> Path:
+    """Locate the built react editor UI the rust docserver serves.
+
+    The vanilla wysiwyg app (apps/web/apps/documenteditor-wysiwyg) was RETIRED
+    from main on 2026-11-16 (moved to legacy/wysiwyg-python-editor); the
+    canonical editor bundle now lives in frontend-dist/word (collected by
+    scripts/collect-frontend-dist.mjs after `pnpm build`, what the Docker
+    image COPYs to /app/editor-ui/). Fall back to the raw vite dist, then
+    fail loud with a build hint instead of a silent 404 editor.
+    """
+    for cand in (server / "frontend-dist" / "word",
+                 server / "apps" / "web" / "apps" / "documenteditor-react" / "dist"):
+        if (cand / "index.html").is_file():
+            return cand
+    raise SystemExit(
+        "reconcile: no built editor UI found — expected "
+        "frontend-dist/word/index.html or documenteditor-react/dist/index.html. "
+        "Build it in the server checkout: `pnpm exec turbo run build "
+        "--filter=@world-office/documenteditor` then "
+        "`node scripts/collect-frontend-dist.mjs`."
+    )
+
+
 def _spawn_rust(server: Path, workdir: Path):
     """Boot wo-docserver + a stub WOPI host (OCIS stand-in); return (base, procs)."""
     docs = workdir / "docs"
     (docs).mkdir(parents=True, exist_ok=True)
     (workdir / "data").mkdir(exist_ok=True)
     ui = workdir / "editor-ui" / "word"
-    shutil.copytree(server / "apps" / "web" / "apps" / "documenteditor-wysiwyg", ui,
-                    dirs_exist_ok=True)
+    shutil.copytree(_ui_source(server), ui, dirs_exist_ok=True)
     if not (docs / "demo.docx").exists():
         shutil.copy(HERE / "rig" / "demo.docx", docs / "demo.docx")
     stub_port = _free_port()
