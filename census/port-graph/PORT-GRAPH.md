@@ -242,6 +242,23 @@ editing statuses.
 | rightpanel/Send for signing | react ships self-signing only (SignaturePanel.tsx); no send-for-signing workflow |
 | rightpanel/Filling status | Form Controls panel inserts/edits controls; no fill-status reporting |
 
+### Closure (2026-11-18, campaigns PGP-1..9 + PGP-A)
+
+All portable rows above shipped — the table is historical. Shipped-and-now-`done`:
+**Cells Add** (insertCells right/down, PGP-3), **Edit List Item** (FormPanel
+post-insert edit, PGP-4), **List Settings / List Types** (numbering picker,
+PGP-5), **Notes Remove** (removeAllFootnotes/Endnotes, PGP-2), **Save Form**
+(buildFormDocx w:sdt, PGP-7), **Style Title** (style rename, PGP-6),
+**statusbar Action status** (de-statusbar-status slot + setStatusMessage, PGP-8)
+and **Multiple pages** (statusbar toggle, PGP-8), **Filling status**
+(form-status.ts, PGP-9). The **ctx surface** (not in this table) was
+rubber-stamped 75/75 and re-based to react evidence (v3.2) — all five menus
+shipped (table PGP-1, text PGP-A1, image PGP-A2, shape PGP-A3, misspelled
+PGP-A4). Still `missing` (all DSS/DocSpace enterprise backend features):
+Edit Document, Role Edit, Role Delete, Send for signing. Ribbon builder
+hardened (v3.3): an OO tab that fails to resolve a react tab now marks its
+buttons `missing`, never rubber-stamps `done`.
+
 ## Regenerate & query
 
 ```sh
