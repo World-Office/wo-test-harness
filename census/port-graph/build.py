@@ -25,6 +25,9 @@ Reads the committed census artifacts (no node, no playwright, no network):
   census/oo-source/oo-ctx-manifest.json  SOURCE manifest: ctx menu constructor counts (237)
   census/oo-source/oo-reference.json     SOURCE manifest: ribbon/counts + 10 rightPanel sections
   census/oo-source/oo-shortcuts.json     SOURCE manifest: 142 runtime shortcut actions
+  census/oo-source/oo-engine-commands.json SOURCE manifest: 226 sdkjs engine commands
+                                         (147 shortcut types + 10 ctx kinds + 69 dispatch
+                                         cases; static extraction — names, not UI labels)
 
 v3 UNION RULE: the OO-side baseline of every surface is the UNION of the
 source manifests (oo-source/, the larger truth dug from OO's templates) with
@@ -62,6 +65,7 @@ SRC_STATUSBAR_PATH = OO_SRC / "oo-statusbar.json"
 SRC_CTX_PATH = OO_SRC / "oo-ctx-manifest.json"
 SRC_REF_PATH = OO_SRC / "oo-reference.json"
 SRC_SHORTCUTS_PATH = OO_SRC / "oo-shortcuts.json"
+SRC_ENGINE_PATH = OO_SRC / "oo-engine-commands.json"
 OUT_PATH = HERE / "graph.json"
 
 
@@ -745,6 +749,548 @@ def build_shortcuts(sc: dict) -> tuple[dict, dict]:
     return surface, {"graph": got, "source": t}
 
 
+# --- engine (v3.4, NEW — HE-3): the sdkjs command universe vs react dispatch --
+# oo-engine-commands.json (HE-2) is the STATIC OO engine-command universe, dug
+# from the pinned sdkjs checkout: every Asc.c_oAscDocumentShortcutType.* member
+# (147) + the c_oAscContextMenuTypes enum (10) + the word/Editor/Document.js
+# dispatcher case labels (69, after folding the enum-qualified shortcut cases
+# into their shortcut rows) = 226 commands. These are ENGINE names, not UI
+# labels, so the react side of this surface is a command-id join, not a label
+# match. Evidence, in priority order:
+#   1. cross-link  — the SAME command already has a row on another surface (all
+#      147 shortcut commands ARE the shortcut census's `type`s; ctx:Common is the
+#      ctx surface). Such rows go in the `covered` bucket, NOT done/missing: the
+#      evidence lives on the covering surface and the engine row only says "this
+#      command is that row" (cross-link, never a second vote).
+#   2. react dispatch — the command routes in the react editor (a RichTextCommand
+#      id or a wo-command case, pinned below) → done.
+#   3. documented difference (react ships the capability in another shape, or the
+#      row is not a word-engine command) → diverged, reason cites the evidence.
+#   4. engine-only → missing, reason cites what was searched.
+#
+# React command vocabulary — PINNED SNAPSHOTS, same doctrine as
+# REACT_BACKSTAGE_PANELS (PG-10): build.py reads only committed artifacts and CI
+# checks out no server clone. Provenance: World-Office/server
+# apps/web/apps/documenteditor-react @ 990857b39 (PGP-A4, 2026-11-18).
+# REACT_RICHTEXT_COMMANDS = the `export type RichTextCommand` union in
+#   src/lib/rte-command.ts (130 ids — the react toolbar/ctx command surface).
+# REACT_WO_COMMANDS = the wo-command case strings dispatched in
+#   src/lib/word-commands.ts (202 ids — the external command router).
+REACT_RICHTEXT_COMMANDS = [
+    "bold", "italic", "underline", "strike", "subscript", "superscript",
+    "textColor", "highlight", "fontFamily", "fontSize", "clearFormatting",
+    "undo", "redo", "cut", "copy", "paste", "normal", "heading1", "heading2",
+    "heading3", "heading4", "heading5", "heading6", "bulletList", "orderedList",
+    "taskList", "listNumberingStyle", "listIndent", "alignLeft", "alignCenter",
+    "alignRight", "alignJustify", "blockquote", "codeBlock", "link", "image",
+    "textWrap", "rotateImage", "saveAsImage", "crop", "actualSize",
+    "replaceImage", "rotateShape", "indent", "outdent", "insertTable",
+    "insertCells", "addRowBefore", "addRowAfter", "deleteRow", "addColumnBefore",
+    "addColumnAfter", "deleteColumn", "mergeCells", "splitCell",
+    "distributeRows", "distributeColumns", "toggleHeaderRow", "toggleHeaderColumn",
+    "toggleHeaderCell", "deleteTable", "pageBreak", "pageBreakBefore", "keepLines",
+    "horizontalRule", "lineSpacing", "paragraphSpacingBefore",
+    "paragraphSpacingAfter", "pageOrientation", "pageSize", "pageMargins",
+    "columns", "columnsReset", "editHeader", "editFooter", "removeHeader",
+    "removeFooter", "differentFirstPage", "differentOddEven", "find", "openTheme",
+    "openSearch", "findNext", "findPrevious", "replace", "replaceAll",
+    "addComment", "toggleComment", "insertToc", "updateToc", "insertFootnote",
+    "insertEndnote", "removeAllFootnotes", "removeAllEndnotes", "removeAllNotes",
+    "setTextDirection", "toggleSpellCheck", "toggleRuler", "toggleGridlines",
+    "toggleNavigation", "toggleMultiplePages", "toggleDarkDocument",
+    "toggleTrackChanges", "acceptChange", "rejectChange", "acceptAllChanges",
+    "rejectAllChanges", "nextChange", "insertPageNumber", "insertMergeField",
+    "loadHtml", "insertSectionBreak", "insertContinuousSectionBreak",
+    "insertCaptionFigure", "insertCaptionTable", "insertCrossReference",
+    "resolveCrossReferences", "insertPlainTextControl", "insertDropdownControl",
+    "insertCheckboxControl", "insertDatePickerControl", "setBoxBorder",
+    "removeBorders", "insertIndexEntry", "insertIndex", "updateIndex",
+    "insertDateTime", "insertField", "increaseFontSize", "decreaseFontSize",
+]
+REACT_WO_COMMANDS = [
+    "acceptAllChanges", "acceptChange", "addComment", "addTocText",
+    "advancedSettings", "ai-assistant", "aiAssistant", "aiChatbot",
+    "aiGrammarSpelling", "aiSettings", "aiSummarization", "aiTranslation",
+    "alignCenter", "alignJustify", "alignLeft", "alignObjects", "alignRight",
+    "applyStyle", "back", "backgroundPlugins", "blank-page", "blankPage",
+    "blockquote", "bold", "borders", "bringForward", "bullet-list", "bulletList",
+    "changeCase", "chart3DRotation", "chartAdvancedSettings",
+    "chartElementAxisTitles", "chartElementDataLabels", "chartElementErrorBars",
+    "chartElementGridlines", "chartElementLegend", "chartElements", "chartHeight",
+    "chartType", "chartWidth", "chartWrapping", "chat", "clearFormatting",
+    "closeHeaderFooter", "codeBlock", "columns", "combineDocuments",
+    "compareDocuments", "copyStyle", "crop", "decreaseFontSize", "deleteComment",
+    "differentFirstPage", "differentOddEven", "displayMode", "documentColors",
+    "download", "downloadAs", "dropCap", "editChartData", "editFooter",
+    "editHeader", "editPoints", "encrypt", "equation", "find", "fitToPage",
+    "fitToWidth", "fontFamily", "fontSize", "formattingAsStyle",
+    "groupObjects", "heading1", "heading2", "heading3", "heading4", "heading5",
+    "heading6", "help", "highlight", "highlightCode", "highlightColor",
+    "horizontal-rule", "horizontalRule", "hyphenation", "image",
+    "increaseFontSize", "indent", "info", "insert-continuous-section-break",
+    "insert-section-break", "insertBookmark", "insertCaption", "insertChart",
+    "insertCheckboxControl", "insertComment", "insertContentControl",
+    "insertContinuousSectionBreak", "insertCrossReference",
+    "insertDatePickerControl", "insertDateTime", "insertDropdownControl",
+    "insertEndnote", "insertField", "insertFootnote", "insertHeaderFooter",
+    "insertIndex", "insertIndexEntry", "insertPageNumber",
+    "insertPlainTextControl", "insertSectionBreak", "insertShape",
+    "insertSmartArt", "insertTable", "insertTableOfFigures", "insertToc",
+    "interfaceTheme", "italic", "lineNumbers", "lineSpacing", "link", "macros",
+    "mailMerge", "mendeley", "mergeShapes", "multiplePages", "nextChange", "ocr",
+    "openBreaksPanel", "openTheme", "ordered-list", "orderedList", "outdent",
+    "page-break", "pageBreak", "pageColor", "pageMargins", "pageOrientation",
+    "pageSize", "paragraphSettings", "pauseMacroRecording", "photoEditor",
+    "pluginManager", "plugins", "previousChange", "print", "printSelection",
+    "protect", "protect-document", "protectDocument", "recordMacro",
+    "rejectAllChanges", "rejectChange", "removeFooter", "removeHeader",
+    "replace", "resolveComment", "save", "sendBackward", "setDocumentLanguage",
+    "shading", "shape", "speech", "speechInput", "strike", "strikethrough",
+    "subscript", "suggestFeature", "superscript", "symbol", "tableProperties",
+    "task-list", "taskList", "textArt", "textBox", "textColor", "textWrap",
+    "thesaurus", "toggleCoEditingMode", "toggleComment", "toggleDarkDocument",
+    "toggleGridlines", "toggleMultiplePages", "toggleNavigation",
+    "toggleNonprinting", "togglePlugin", "toggleRuler", "toggleSpellCheck",
+    "toggleTrackChanges", "translator", "underline", "updateChartData",
+    "updateIndex", "updateToc", "watermark", "wordCount", "wrapping", "youtube",
+    "zoomIn", "zoomOut", "zoomTo100", "zotero",
+]
+REACT_ENGINE_COMMANDS = frozenset(REACT_RICHTEXT_COMMANDS) | frozenset(REACT_WO_COMMANDS)
+
+# OO shortcut command name → the react command that dispatches it (secondary
+# evidence only — the primary evidence for these rows is the shortcut census
+# verdict, i.e. the react keydown handler). Names the plain norm() join can't
+# see because OO and react spell the same command differently.
+ENGINE_SHORTCUT_REACT = {
+    "ApplyHeading1": "heading1", "ApplyHeading2": "heading2",
+    "ApplyHeading3": "heading3", "ApplyListBullet": "bulletList",
+    "CenterPara": "alignCenter", "LeftPara": "alignLeft",
+    "RightPara": "alignRight", "JustifyPara": "alignJustify",
+    "EditUndo": "undo", "EditRedo": "redo", "Strikeout": "strike",
+    "InsertPageBreak": "pageBreak", "InsertHyperlink": "link",
+    "InsertFootnoteNow": "insertFootnote", "InsertEndnoteNow": "insertEndnote",
+    "MixedIndent": "indent", "MixedUnIndent": "outdent", "UnIndent": "outdent",
+}
+
+# c_oAscContextMenuTypes member (manifest id) → (status, react evidence, reason).
+# The word kinds are the only ones in scope for this graph (word-editor port);
+# the slide/cell kinds are recorded as diverged out-of-scope rows so the union
+# stays complete and the scope decision is visible, not silent.
+ENGINE_CTX = {
+    "ctx:Common": ("done", None,
+                   "react ships the word ctx menus text/misspelled/table/image/"
+                   "shape — the ctx surface's 75 contract rows (TextContextMenu.tsx, "
+                   "SpellcheckContextMenu.tsx, TableContextMenu.tsx, "
+                   "ImageContextMenu.tsx, ShapeContextMenu.tsx)"),
+    "ctx:ChangeHdrFtr": ("missing", None,
+                         "react ctx menus are text/misspelled/table/image/shape only; "
+                         "headers/footers are edited through Layout ▸ Header & Footer "
+                         "(components/HeaderFooter.tsx) with no right-click menu"),
+    "ctx:AnimEffect": ("diverged", None, "slide-editor ctx-menu kind (slide/apiDefines.js) — "
+                       "out of scope: this graph tracks the word-editor port"),
+    "ctx:Layout": ("diverged", None, "slide-editor ctx-menu kind (slide/apiDefines.js) — "
+                   "out of scope: this graph tracks the word-editor port"),
+    "ctx:Main": ("diverged", None, "slide-editor ctx-menu kind (slide/apiDefines.js) — "
+                 "out of scope: this graph tracks the word-editor port"),
+    "ctx:Master": ("diverged", None, "slide-editor ctx-menu kind (slide/apiDefines.js) — "
+                   "out of scope: this graph tracks the word-editor port"),
+    "ctx:Thumbnails": ("diverged", None, "slide-editor ctx-menu kind (slide/apiDefines.js) — "
+                       "out of scope: this graph tracks the word-editor port"),
+    "ctx:TimelineZoom": ("diverged", None, "slide-editor ctx-menu kind (slide/apiDefines.js) — "
+                         "out of scope: this graph tracks the word-editor port"),
+    "ctx:changeSeries": ("diverged", None, "cell-editor ctx-menu kind (cell/apiDefines.js) — "
+                         "out of scope: this graph tracks the word-editor port"),
+    "ctx:common": ("diverged", None, "cell-editor ctx-menu kind (cell/apiDefines.js) — "
+                   "out of scope: this graph tracks the word-editor port"),
+}
+
+# Frame/drawing positioning enums (Document.js:4715 computes a frame's X/Y from
+# its anchor + alignment). React has neither an anchor model nor frame alignment:
+# the only hook, documentStore.alignObjects(), is a TODO stub.
+ENGINE_ANCHOR_REASON = ("OO frame/drawing anchor enum (Document.js:4715 frame-position "
+                        "math) — react has no anchor model and documentStore.alignObjects() "
+                        "is a TODO stub (stores/DocumentStore.ts:412)")
+ENGINE_ALIGN_REASON = ("OO frame alignment enum relative to its anchor (Document.js:4715) — "
+                       "react has no frame-positioning model and documentStore.alignObjects() "
+                       "is a TODO stub (stores/DocumentStore.ts:412)")
+
+# word/Editor/Document.js dispatcher case label → (status, react command, reason).
+# React evidence dug from apps/web/apps/documenteditor-react @ 990857b39 and the
+# pinned sdkjs checkout @ 9d21388 (line numbers cite those revs). Every manifest
+# dispatch case MUST have a row here (asserted) — a manifest change forces triage.
+ENGINE_DISPATCH = {
+    # cross-reference insert formats (Document.js reference-type dispatcher)
+    "Asc.c_oAscDocumentRefenceToType.AboveBelow": (
+        "done", "insertCrossReference",
+        "react cross-reference format 'aboveBelow' — CrossRefFormat union + the "
+        "Cross-reference panel's 'Above/Below' radio (lib/cross-ref.ts, "
+        "CrossReferencePanel.tsx)"),
+    "Asc.c_oAscDocumentRefenceToType.PageNum": (
+        "diverged", None,
+        "react CrossRefFormat carries pageNumber (lib/cross-ref.ts) but the "
+        "Cross-reference panel exposes Text/Number/Above-Below only — page-number "
+        "refs resolve yet cannot be inserted"),
+    "Asc.c_oAscDocumentRefenceToType.NoteNumber": (
+        "missing", None,
+        "react CrossRefFormat = text|number|pageNumber|aboveBelow (lib/cross-ref.ts) "
+        "— no note-number reference format"),
+    "Asc.c_oAscDocumentRefenceToType.NoteNumberFormatted": (
+        "missing", None,
+        "react CrossRefFormat = text|number|pageNumber|aboveBelow (lib/cross-ref.ts) "
+        "— no formatted-note-number reference format"),
+    "Asc.c_oAscDocumentRefenceToType.OnlyCaptionText": (
+        "missing", None,
+        "react CrossRefFormat = text|number|pageNumber|aboveBelow (lib/cross-ref.ts) "
+        "— no caption-text-only reference format"),
+    "Asc.c_oAscDocumentRefenceToType.OnlyLabelAndNumber": (
+        "missing", None,
+        "react CrossRefFormat = text|number|pageNumber|aboveBelow (lib/cross-ref.ts) "
+        "— no label-and-number reference format"),
+    # undo/redo journal descriptions + document settings (AscDFH.*)
+    "AscDFH.historydescription_BuilderScript": (
+        "missing", None,
+        "builder-script (macro) journal entry — react has no macro/builder engine "
+        "(macros parked as their own project, census/interact-divergences.json)"),
+    "AscDFH.historydescription_Document_InsertTextFromFile": (
+        "done", "loadHtml",
+        "react 'Text from File' opens a hidden file picker and inserts the chosen "
+        "file's contents (word-commands.ts:763 textFromFile) → loadHtml"),
+    "AscDFH.historyitem_Document_AddItem": (
+        "diverged", None,
+        "engine undo/redo journal entry (document content add) — react records edits as "
+        "ProseMirror transactions with the history plugin, or ModelOp ops on the canvas "
+        "editor; there is no per-item journal"),
+    "AscDFH.historyitem_Document_RemoveItem": (
+        "diverged", None,
+        "engine undo/redo journal entry (document content remove) — react records edits "
+        "as ProseMirror transactions with the history plugin, or ModelOp ops on the "
+        "canvas editor; there is no per-item journal"),
+    "AscDFH.historyitem_Document_DefaultTab": (
+        "missing", None,
+        "no default-tab-stop setting in the react editor (no defaultTab/tabStop "
+        "token anywhere in documenteditor-react/src)"),
+    "AscDFH.historyitem_Document_EvenAndOddHeaders": (
+        "done", "differentOddEven",
+        "react RichTextCommand differentOddEven (rte-command.ts) — Header & Footer "
+        "'Different odd & even'"),
+    "AscDFH.historyitem_Document_MathSettings": (
+        "missing", None,
+        "no math node or math settings in react; the 'equation' wo-command routes "
+        "to the Plugins panel with 'no dedicated equation/symbol surface yet' "
+        "(word-commands.ts:862)"),
+    "AscDFH.historyitem_Document_Settings_AutoHyphenation": (
+        "diverged", None,
+        "react ships a WASM hyphenator (spell_load_hyphenation/spell_hyphenate, "
+        "hooks/useSpellchecker.ts:118-156) but no auto-hyphenation document "
+        "setting; the 'hyphenation' wo-command only toggles the paragraph panel "
+        "(word-commands.ts:875)"),
+    "AscDFH.historyitem_Document_Settings_ConsecutiveHyphenLimit": (
+        "missing", None,
+        "react hyphenation is per-word through the WASM spell engine "
+        "(hooks/useSpellchecker.ts) — no consecutive-hyphen-limit setting"),
+    "AscDFH.historyitem_Document_Settings_DoNotHyphenateCaps": (
+        "missing", None,
+        "react hyphenation is per-word through the WASM spell engine "
+        "(hooks/useSpellchecker.ts) — no hyphenate-caps setting"),
+    "AscDFH.historyitem_Document_Settings_HyphenationZone": (
+        "missing", None,
+        "react hyphenation is per-word through the WASM spell engine "
+        "(hooks/useSpellchecker.ts) — no hyphenation-zone setting"),
+    "AscDFH.historyitem_Document_Settings_GutterAtTop": (
+        "missing", None,
+        "react pageMargins is a normal/narrow/wide preset only (rte-command.ts:1426) "
+        "— no margin-gutter model"),
+    "AscDFH.historyitem_Document_Settings_MirrorMargins": (
+        "missing", None,
+        "react pageMargins is a normal/narrow/wide preset only (rte-command.ts:1426) "
+        "— no mirror-margins setting"),
+    # frame/drawing anchoring + alignment (Document.js:4715 frame-position math)
+    "c_oAscHAnchor.Margin": ("missing", None, ENGINE_ANCHOR_REASON),    "c_oAscHAnchor.Page": ("missing", None, ENGINE_ANCHOR_REASON),
+    "c_oAscHAnchor.Text": ("missing", None, ENGINE_ANCHOR_REASON),
+    "c_oAscVAnchor.Margin": ("missing", None, ENGINE_ANCHOR_REASON),
+    "c_oAscVAnchor.Page": ("missing", None, ENGINE_ANCHOR_REASON),
+    "c_oAscVAnchor.Text": ("missing", None, ENGINE_ANCHOR_REASON),
+    "c_oAscXAlign.Center": ("missing", None, ENGINE_ALIGN_REASON),
+    "c_oAscXAlign.Inside": ("missing", None, ENGINE_ALIGN_REASON),
+    "c_oAscXAlign.Left": ("missing", None, ENGINE_ALIGN_REASON),
+    "c_oAscXAlign.Outside": ("missing", None, ENGINE_ALIGN_REASON),
+    "c_oAscXAlign.Right": ("missing", None, ENGINE_ALIGN_REASON),
+    "c_oAscYAlign.Bottom": ("missing", None, ENGINE_ALIGN_REASON),
+    "c_oAscYAlign.Center": ("missing", None, ENGINE_ALIGN_REASON),
+    "c_oAscYAlign.Inside": ("missing", None, ENGINE_ALIGN_REASON),
+    "c_oAscYAlign.Outside": ("missing", None, ENGINE_ALIGN_REASON),
+    "c_oAscYAlign.Top": ("missing", None, ENGINE_ALIGN_REASON),
+    # section-break types (Document.js:27395)
+    "c_oAscSectionBreakType.Column": (
+        "missing", None,
+        "react SectionBreakType = next-page|continuous|even-page|odd-page "
+        "(lib/section-break.ts:21) — no column section break"),
+    "c_oAscSectionBreakType.Continuous": (
+        "done", "insertContinuousSectionBreak",
+        "react RichTextCommand insertContinuousSectionBreak inserts "
+        "data-section-type=continuous (rte-command.ts:1692)"),
+    "c_oAscSectionBreakType.EvenPage": (
+        "diverged", None,
+        "react SectionBreakType carries 'even-page' with its own label and page-break "
+        "CSS (lib/section-break.ts:21) but no command inserts it — rte-command.ts "
+        "inserts next-page/continuous only"),
+    "c_oAscSectionBreakType.NextPage": (
+        "done", "insertSectionBreak",
+        "react RichTextCommand insertSectionBreak inserts data-section-type=next-page, "
+        "the SectionBreak default (rte-command.ts:1686, lib/section-break.ts:47)"),
+    "c_oAscSectionBreakType.OddPage": (
+        "diverged", None,
+        "react SectionBreakType carries 'odd-page' with its own label and page-break "
+        "CSS (lib/section-break.ts:21) but no command inserts it — rte-command.ts "
+        "inserts next-page/continuous only"),
+    # cursor-position regions (Document.js:16678)
+    "docpostype_HdrFtr": (
+        "done", "editHeader",
+        "react editHeader/editFooter open the HeaderFooterEditor region "
+        "(components/HeaderFooter.tsx; rte-command.ts) — the cursor-in-header/footer "
+        "mode OO selects with docpostype_HdrFtr"),
+    "docpostype_Footnotes": (
+        "done", "insertFootnote",
+        "react footnotes are editable FootnoteItem blocks inside a FootnoteSection "
+        "(lib/footnote-mark.ts) — the note content hosts the cursor"),
+    "docpostype_Endnotes": (
+        "diverged", None,
+        "react EndnoteMark is a reference mark only (lib/endnote-mark.ts) — no "
+        "endnote content region to host the cursor"),
+    # header/footer page-number targets (Document.js:15146 AddPageNum)
+    "hdrftr_Header": (
+        "done", "insertPageNumber",
+        "react PageNumber node + insertPageNumber (lib/page-number.ts) rendered in "
+        "the HeaderFooterEditor 'header' region (components/HeaderFooter.tsx)"),
+    "hdrftr_Footer": (
+        "done", "insertPageNumber",
+        "react PageNumber node + insertPageNumber (lib/page-number.ts) rendered in "
+        "the HeaderFooterEditor 'footer' region (components/HeaderFooter.tsx)"),
+    # paragraph item discriminators (the OO content model)
+    "para_Text": (
+        "diverged", None,
+        "engine paragraph-item discriminator — react's document model is TipTap/ProseMirror "
+        "(RichTextEditor) with the wasm canvas model behind CanvasEditor; a text run is a "
+        "text node"),
+    "para_TextPr": (
+        "diverged", None,
+        "engine run-properties item — react formats runs with ProseMirror marks "
+        "(rte-command.ts bold/italic/highlight/…), not a para_TextPr item"),
+    "para_Space": (
+        "diverged", None,
+        "engine item discriminator — react keeps spaces inside ProseMirror text nodes"),
+    "para_NewLine": (
+        "missing", None,
+        "no hard-break/line-break node in react (no hardBreak token in "
+        "documenteditor-react/src; lib/conversion.ts maps <br> to a newline)"),
+    "para_Tab": (
+        "missing", None,
+        "no tab-stop model in react — '\\t' is only a word-break character "
+        "(lib/auto-correct.ts:136)"),
+    "para_Field": (
+        "done", "insertField",
+        "react fieldSpan node + the insertField RichTextCommand (lib/field-span.ts, "
+        "rte-command.ts)"),
+    "para_InstrText": (
+        "diverged", None,
+        "react FieldSpan carries the field name as its text content, i.e. the field-code "
+        "view (lib/field-span.ts) — no separate instruction-text item"),
+    "para_Math": (
+        "missing", None,
+        "no math node in react; the 'equation' wo-command routes to the Plugins panel "
+        "with 'no dedicated equation/symbol surface yet' (word-commands.ts:862)"),
+    "para_PageNum": (
+        "done", "insertPageNumber",
+        "react PageNumber node, renumbered by a ProseMirror plugin, + the "
+        "insertPageNumber RichTextCommand (lib/page-number.ts)"),
+    "para_FootnoteReference": (
+        "done", "insertFootnote",
+        "react FootnoteReference inline mark — the superscript in body text "
+        "(lib/footnote-mark.ts)"),
+    "para_FootnoteRef": (
+        "diverged", None,
+        "react footnote numbering is computed by the footnotes plugin over FootnoteItem "
+        "content (lib/footnote-mark.ts) — no separate ref-mark item"),
+    "para_EndnoteReference": (
+        "done", "insertEndnote",
+        "react EndnoteMark inline mark — the superscript in body text "
+        "(lib/endnote-mark.ts)"),
+    "para_EndnoteRef": (
+        "diverged", None,
+        "react endnote display is the EndnoteMark's own text (lib/endnote-mark.ts) — "
+        "no separate ref-mark item"),
+    "para_Separator": (
+        "done", None,
+        "react renders the footnote separator (hr.footnote-separator, "
+        "lib/footnote-mark.ts:184)"),
+    "para_ContinuationSeparator": (
+        "missing", None,
+        "react renders a single footnote separator (lib/footnote-mark.ts:184) — no "
+        "continuation separator for notes that spill over a page"),
+    # review types (Document.js:1087 RegisterReviewType)
+    "reviewtype_Add": (
+        "done", None,
+        "react track-changes marks inserted text with trackInsert "
+        "(lib/track-changes/index.ts:113)"),
+    "reviewtype_Remove": (
+        "done", None,
+        "react track-changes marks deleted text with trackDelete "
+        "(lib/track-changes/index.ts:109)"),
+    "reviewtype_Common": (
+        "diverged", None,
+        "OO reviewtype_Common is the un-flagged case of RegisterReviewType "
+        "(Document.js:1087) — react expresses it as the absence of trackInsert/"
+        "trackDelete marks (lib/track-changes/index.ts)"),
+    # selection flags walked for co-edit locking (Document.js:14237)
+    "selectionflag_Common": (
+        "diverged", None,
+        "engine selection flag walked for co-edit locking (Document.js:14237) — react "
+        "co-editing is CRDT-based over WebSocket (hooks/useCanvasCollaboration.ts, "
+        "lib/collaboration.ts) with no selection-lock walk"),
+    "selectionflag_Numbering": (
+        "missing", None,
+        "engine numbering-selection lock (Document.js:14262) — no react counterpart "
+        "(hooks/useCanvasCollaboration.ts carries document ops only, no lock plane)"),
+    # element types (Document.js:28048 table↔text conversion)
+    "type_Paragraph": (
+        "diverged", None,
+        "engine element-type discriminator — react models it as a ProseMirror "
+        "paragraph node; the table↔text conversion that switches on it is tracked on "
+        "the dialogs surface (TextToTable/TableToText)"),
+    "type_Table": (
+        "diverged", None,
+        "engine element-type discriminator — react models it as a ProseMirror table "
+        "node; the table↔text conversion that switches on it is tracked on the "
+        "dialogs surface (TextToTable/TableToText)"),
+    # selection-walk loop sentinels (Document.js:8151)
+    "Start": (
+        "diverged", None,
+        "loop-boundary sentinel of the CDocument selection walk (Document.js:8151) — "
+        "not a command; react selections are editor-state selections (ProseMirror "
+        "TextSelection / wasm set_selection_anchor, lib/wasm-renderer.ts:73)"),
+    "End": (
+        "diverged", None,
+        "loop-boundary sentinel of the CDocument selection walk (Document.js:8151) — "
+        "not a command; react selections are editor-state selections (ProseMirror "
+        "TextSelection / wasm set_selection_anchor, lib/wasm-renderer.ts:73)"),
+}
+
+ENGINE_MISS_DEFAULT = "no react command — engine-only (catalogued, not ported)"
+
+
+def cross_link(label_universe: dict, label: str):
+    """Another surface's done/diverged row carrying the same normalized label.
+
+    The engine surface cross-links instead of re-asserting: a command that is
+    already a UI row on another surface gets `coveredBy` there."""
+    hit = label_universe.get(norm(label))
+    return hit if hit and hit[0] in ("done", "diverged") else None
+
+
+def build_engine(src: dict, shortcuts: dict, label_universe: dict) -> dict:
+    """NEW v3.4 surface: the static sdkjs command universe vs react dispatch.
+
+    `label_universe` is {norm(ooLabel): (status, "surface/tab/ooLabel")} built
+    from every OTHER surface's done/diverged rows — the cross-link check that
+    keeps a command already tracked as a UI row from being counted twice."""
+    cmds = src.get("commands", [])
+    dispatch_ids = {c["id"][len("case:"):] for c in cmds if c["kind"] == "dispatch"}
+    ctx_ids = {c["id"] for c in cmds if c["kind"] == "ctx-menu"}
+    # triage guard: a manifest row without a verdict (or a verdict without a
+    # manifest row) is a hard failure — never a silent default.
+    untriaged = sorted(c["id"] for c in cmds
+                       if not (c["kind"] == "shortcut"
+                               or c["id"] in ENGINE_CTX
+                               or (c["kind"] == "dispatch" and c["id"][len("case:"):] in ENGINE_DISPATCH)))
+    if untriaged:
+        sys.exit(f"engine FAIL: manifest commands with no verdict row: {untriaged}")
+    stale = sorted((set(ENGINE_DISPATCH) - dispatch_ids) | (set(ENGINE_CTX) - ctx_ids))
+    if stale:
+        sys.exit(f"engine FAIL: verdict rows with no manifest command: {stale}")
+    bad_react = sorted(({c for _, c, _ in ENGINE_DISPATCH.values() if c}
+                        | set(ENGINE_SHORTCUT_REACT.values())) - REACT_ENGINE_COMMANDS)
+    if bad_react:
+        sys.exit(f"engine FAIL: react command ids not in the pinned vocabulary "
+                 f"(re-verify REACT_RICHTEXT_COMMANDS/REACT_WO_COMMANDS): {bad_react}")
+
+    # shortcut commands: the census `type` IS this command — cross-linked.
+    sc = {s.get("type"): s for s in shortcuts.get("shortcuts", [])}
+    vernorm = {norm(u): u for u in REACT_ENGINE_COMMANDS}
+
+    controls, counts = [], {"done": 0, "diverged": 0, "missing": 0,
+                            "iconOnly": 0, "covered": 0}
+    for cmd in cmds:
+        cid, kind = cmd["id"], cmd["kind"]
+        case_label = cid[len("case:"):] if kind == "dispatch" else cid
+        display = cmd.get("name") or cmd.get("token") or case_label
+        row = {"label": display,
+               "ooLabel": display if kind != "dispatch" else case_label,
+               "ooId": cid, "ooQualified": cmd.get("qualified") or case_label,
+               "kind": kind}
+        react, covered_by = None, None
+        if kind == "shortcut":
+            census = sc.get(cmd["name"])
+            react = ENGINE_SHORTCUT_REACT.get(cmd["name"]) or vernorm.get(norm(cmd["name"]))
+            if census:  # the census `type` IS this command — cross-link, no 2nd vote
+                # verdict → status mirrors build_shortcuts(), the covering surface
+                verdict = census.get("verdict")
+                status = {"matched": "done", "nav": "done", "diverged": "diverged",
+                          "browser-native": "diverged", "missing": "missing"}.get(verdict)
+                if status is None:
+                    sys.exit(f"engine FAIL: unknown shortcut verdict {verdict!r} for {cid}")
+                label = f"{census.get('combo', '')} {census.get('type', '')}".strip()
+                covered_by = f"shortcuts/{label}"
+                reason = (f"cross-linked to {covered_by} (census verdict {verdict}: "
+                          f"{census.get('wo') or 'no WO keydown'})")
+            elif react:
+                status, reason = "done", f"react dispatches '{react}' (no key binding in the shortcut census)"
+            else:
+                status, reason = "missing", ("no key binding in the shortcut census and "
+                                             f"no react command — {ENGINE_MISS_DEFAULT}")
+        elif kind == "ctx-menu":
+            status, react, reason = ENGINE_CTX[cid]
+            if cid == "ctx:Common":  # the word ctx menus ARE the ctx surface
+                covered_by = "ctx/text,misspelled,table,image,shape"
+        else:
+            status, react, reason = ENGINE_DISPATCH[case_label]
+        if react:
+            row["react"] = react
+        extra = cross_link(label_universe, display)
+        if extra:  # secondary cross-link: the same name is also a UI row somewhere
+            reason = f"{reason}; also tracked at {extra[1]} ({extra[0]})"
+        if covered_by:
+            row["coveredBy"] = covered_by
+        row["status"], row["reason"] = status, reason
+        counts["covered" if covered_by else status] += 1
+        controls.append(row)
+    counts["total"] = len(controls)
+    by_kind = {}
+    for c in controls:
+        by_kind[c["kind"]] = by_kind.get(c["kind"], 0) + 1
+    return {"id": "engine", "label": "Engine Commands",
+            "manifest": {"source": src.get("source"), "ooBuild": src.get("ooBuild"),
+                         "gitRev": src.get("gitRev"), "counts": src.get("counts"),
+                         "total": src.get("total"),
+                         "note": "static sdkjs extraction (census/oo-source/"
+                                 "oo-engine-commands.json, HE-2): command names, not "
+                                 "UI labels; enum-qualified shortcut cases fold into "
+                                 "their shortcut row"},
+            "reactVocabulary": {"richTextCommands": len(REACT_RICHTEXT_COMMANDS),
+                                "woCommands": len(REACT_WO_COMMANDS),
+                                "note": "pinned snapshots of rte-command.ts "
+                                        "(RichTextCommand union) and word-commands.ts "
+                                        "(wo-command cases) @ 990857b39 — build.py "
+                                        "reads only committed artifacts"},
+            "tabs": [{"id": "engine", "label": "sdkjs Command Universe",
+                      "contextual": False, "counts": counts, "controls": controls}],
+            "note": f"v3.4 baseline = the engine manifest ({by_kind.get('shortcut', 0)} "
+                    f"shortcut + {by_kind.get('ctx-menu', 0)} ctx-kind + "
+                    f"{by_kind.get('dispatch', 0)} dispatch commands); `covered` is the "
+                    f"cross-link bucket — rows whose evidence already lives on another "
+                    f"surface, so done+diverged+missing count NEW engine evidence only "
+                    f"(done+diverged+missing+covered == total)"}
+
+
 def build_ledger(features: list) -> dict:
     clusters: dict[str, list] = {}
     for f in features:
@@ -781,6 +1327,7 @@ def main() -> int:
     src_ctx = require(SRC_CTX_PATH)
     src_ref = require(SRC_REF_PATH)
     src_shortcuts = require(SRC_SHORTCUTS_PATH)
+    src_engine = require(SRC_ENGINE_PATH)
     uni = react_label_universe(re_)
 
     # --- v3 union self-asserts: every source-manifest row MUST be a graph row ---
@@ -839,6 +1386,20 @@ def main() -> int:
                                        "controls below are the 75 live-verified "
                                        "ctx-contract rows (no controls invented)"}
 
+    # --- engine (v3.4, HE-3): cross-link universe of every other surface's
+    # done/diverged rows, so an engine command that is already a UI row links to
+    # it instead of being counted as new evidence a second time.
+    label_universe: dict[str, tuple] = {}
+    for s in surfaces:
+        for t in s.get("tabs", []):
+            for c in t.get("controls", []):
+                if c.get("ooLabel") and c.get("status") in ("done", "diverged"):
+                    label_universe.setdefault(
+                        norm(c["ooLabel"]),
+                        (c["status"], f"{s['id']}/{t['id']}/{c['ooLabel']}"))
+    engine_surface = build_engine(src_engine, shortcuts, label_universe)
+    surfaces.insert(-1, engine_surface)  # after shortcuts, before the ledger
+
     # --- post-build union self-asserts: every manifest row IS a graph row ---
     def emitted_oo_ids(surface: dict) -> set:
         return {c.get("ooId") for t in surface.get("tabs", []) for c in t["controls"]}
@@ -858,6 +1419,12 @@ def main() -> int:
                  dlg_keys)
     assert_union("rightpanel", set(src_ref.get("rightPanel", [])),
                  emitted_oo_ids(surfaces[4]))
+    engine_ids = emitted_oo_ids(engine_surface)
+    engine_manifest_ids = {c["id"] for c in src_engine.get("commands", [])}
+    assert_union("engine", engine_manifest_ids, engine_ids)
+    invented = engine_ids - engine_manifest_ids
+    if invented:  # no controls invented beyond the manifest (counts only, no labels)
+        sys.exit(f"union FAIL engine: graph rows with no manifest command: {sorted(invented)}")
 
     totals = {"controls": 0, "done": 0, "diverged": 0, "missing": 0,
               "iconOnly": 0, "surfaces": {}}
@@ -866,6 +1433,9 @@ def main() -> int:
         for t in s.get("tabs", []):
             for k in ("done", "diverged", "missing", "iconOnly"):
                 st[k] += t["counts"][k]
+            covered = t["counts"].get("covered", 0)
+            if covered:  # engine cross-link bucket — not a second done/missing vote
+                st["covered"] = st.get("covered", 0) + covered
             st["controls"] += len(t["controls"])
         if s.get("tabs"):
             totals["surfaces"][s["id"]] = st
@@ -873,6 +1443,7 @@ def main() -> int:
             totals[k] += st[k]
         totals["controls"] += st["controls"]
     totals["ledgerFeatures"] = len(ledger["features"])
+    engine_covered = totals["surfaces"].get("engine", {}).get("covered", 0)
 
     graph = {
         "generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -894,6 +1465,7 @@ def main() -> int:
             "srcCtxManifest": "census/oo-source/oo-ctx-manifest.json",
             "srcReference": "census/oo-source/oo-reference.json",
             "srcShortcuts": "census/oo-source/oo-shortcuts.json",
+            "srcEngine": "census/oo-source/oo-engine-commands.json",
         },
         "surfaces": surfaces,
         "totals": totals,
@@ -905,17 +1477,22 @@ def main() -> int:
           f"iconOnly={totals['iconOnly']}), {totals['ledgerFeatures']} ledger features, "
           f"{len(graph['probes'])} probes")
     print(f"shortcuts cross-check OK: {sc_check['graph']} == source totals {sc_check['source']}")
+    print(f"engine cross-links: {engine_covered}/{len(engine_manifest_ids)} commands are "
+          f"already tracked on another surface (covered, not re-voted)")
     print("v3 union baselines (source manifest ∪ runtime census):")
     for sid, base in (("filemenu", f"{len(src_filemenu.get('buttons', []))} buttons + "
                        f"{len(src_filemenu.get('panels', []))} panels"),
                       ("statusbar", f"{len(src_statusbar.get('templateIds', []))} template ids"),
                       ("dialogs", f"{len(src_dialogs)} source dialogs ∪ runtime-only titles"),
                       ("rightpanel", f"{len(src_ref.get('rightPanel', []))} sections"),
-                      ("shortcuts", f"{src_shortcuts.get('actions', 0)} source actions ⊆ census")):
+                      ("shortcuts", f"{src_shortcuts.get('actions', 0)} source actions ⊆ census"),
+                      ("engine", f"{src_engine.get('total', 0)} sdkjs commands "
+                                 f"(static manifest)")):
         st = totals["surfaces"].get(sid, {})
         print(f"  {sid:11} baseline={base:42} "
               f"done={st.get('done', 0)} diverged={st.get('diverged', 0)} "
-              f"missing={st.get('missing', 0)}")
+              f"missing={st.get('missing', 0)}"
+              + (f" covered={st['covered']}" if "covered" in st else ""))
     print("union self-asserts OK (every manifest row is a graph row)")
     return 0
 
