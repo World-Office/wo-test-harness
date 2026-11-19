@@ -1,0 +1,3403 @@
+{
+ "source": "sdkjs (pinned OO checkout, web-apps build 252.232.451.526) — static extraction: word/apiDefines.js (Asc.c_oAscDocumentShortcutType, c_oAscContextMenuTypes) + word/Editor/Document.js switch-case labels",
+ "ooBuild": "252.232.451.526",
+ "gitRev": "9d2138866d929be32f1d107e8b5bfae36156e097",
+ "sdkjsPath": "/home/weiss/git/OO/DocumentServer/sdkjs",
+ "extractor": "census/oo-source/oo-engine-extract.cjs",
+ "_note": "static extraction — command names, not UI labels; shortcut:* = engine keyboard/action command types (all referenced in word/**), ctx:* = context-menu kind enum (union over word/slide/cell), case:* = word/Editor/Document.js dispatcher case labels (numeric flags dropped; Asc.c_oAscDocumentShortcutType.* cases fold into their shortcut:* row)",
+ "counts": {
+  "shortcutCommands": 147,
+  "ctxMenuTypes": 10,
+  "dispatchCommands": 116,
+  "dispatchCasesFoldedIntoShortcuts": 47,
+  "commands": 226
+ },
+ "total": 226,
+ "shortcutCommands": [
+  {
+   "name": "AddNewRow",
+   "value": 127,
+   "qualified": "Asc.c_oAscDocumentShortcutType.AddNewRow",
+   "usedInWord": true
+  },
+  {
+   "name": "ApplyHeading1",
+   "value": 88,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ApplyHeading1",
+   "usedInWord": true
+  },
+  {
+   "name": "ApplyHeading2",
+   "value": 89,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ApplyHeading2",
+   "usedInWord": true
+  },
+  {
+   "name": "ApplyHeading3",
+   "value": 90,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ApplyHeading3",
+   "usedInWord": true
+  },
+  {
+   "name": "ApplyListBullet",
+   "value": 91,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ApplyListBullet",
+   "usedInWord": true
+  },
+  {
+   "name": "BigMoveObjectDown",
+   "value": 117,
+   "qualified": "Asc.c_oAscDocumentShortcutType.BigMoveObjectDown",
+   "usedInWord": true
+  },
+  {
+   "name": "BigMoveObjectLeft",
+   "value": 114,
+   "qualified": "Asc.c_oAscDocumentShortcutType.BigMoveObjectLeft",
+   "usedInWord": true
+  },
+  {
+   "name": "BigMoveObjectRight",
+   "value": 115,
+   "qualified": "Asc.c_oAscDocumentShortcutType.BigMoveObjectRight",
+   "usedInWord": true
+  },
+  {
+   "name": "BigMoveObjectUp",
+   "value": 116,
+   "qualified": "Asc.c_oAscDocumentShortcutType.BigMoveObjectUp",
+   "usedInWord": true
+  },
+  {
+   "name": "Bold",
+   "value": 82,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Bold",
+   "usedInWord": true
+  },
+  {
+   "name": "CenterPara",
+   "value": 95,
+   "qualified": "Asc.c_oAscDocumentShortcutType.CenterPara",
+   "usedInWord": true
+  },
+  {
+   "name": "ChooseNextComboBoxOption",
+   "value": 131,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ChooseNextComboBoxOption",
+   "usedInWord": true
+  },
+  {
+   "name": "ChoosePreviousComboBoxOption",
+   "value": 132,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ChoosePreviousComboBoxOption",
+   "usedInWord": true
+  },
+  {
+   "name": "CloseFile",
+   "value": 14,
+   "qualified": "Asc.c_oAscDocumentShortcutType.CloseFile",
+   "usedInWord": true
+  },
+  {
+   "name": "CloseMenu",
+   "value": 16,
+   "qualified": "Asc.c_oAscDocumentShortcutType.CloseMenu",
+   "usedInWord": true
+  },
+  {
+   "name": "Copy",
+   "value": 56,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Copy",
+   "usedInWord": true
+  },
+  {
+   "name": "CopyFormat",
+   "value": 59,
+   "qualified": "Asc.c_oAscDocumentShortcutType.CopyFormat",
+   "usedInWord": true
+  },
+  {
+   "name": "CopyrightSign",
+   "value": 136,
+   "qualified": "Asc.c_oAscDocumentShortcutType.CopyrightSign",
+   "usedInWord": true
+  },
+  {
+   "name": "Cut",
+   "value": 55,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Cut",
+   "usedInWord": true
+  },
+  {
+   "name": "DecreaseFontSize",
+   "value": 94,
+   "qualified": "Asc.c_oAscDocumentShortcutType.DecreaseFontSize",
+   "usedInWord": true
+  },
+  {
+   "name": "DeleteLeftChar",
+   "value": 47,
+   "qualified": "Asc.c_oAscDocumentShortcutType.DeleteLeftChar",
+   "usedInWord": true
+  },
+  {
+   "name": "DeleteLeftWord",
+   "value": 49,
+   "qualified": "Asc.c_oAscDocumentShortcutType.DeleteLeftWord",
+   "usedInWord": true
+  },
+  {
+   "name": "DeleteRightChar",
+   "value": 48,
+   "qualified": "Asc.c_oAscDocumentShortcutType.DeleteRightChar",
+   "usedInWord": true
+  },
+  {
+   "name": "DeleteRightWord",
+   "value": 50,
+   "qualified": "Asc.c_oAscDocumentShortcutType.DeleteRightWord",
+   "usedInWord": true
+  },
+  {
+   "name": "EditChart",
+   "value": 144,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EditChart",
+   "usedInWord": true
+  },
+  {
+   "name": "EditRedo",
+   "value": 54,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EditRedo",
+   "usedInWord": true
+  },
+  {
+   "name": "EditSelectAll",
+   "value": 67,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EditSelectAll",
+   "usedInWord": true
+  },
+  {
+   "name": "EditShape",
+   "value": 109,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EditShape",
+   "usedInWord": true
+  },
+  {
+   "name": "EditUndo",
+   "value": 53,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EditUndo",
+   "usedInWord": true
+  },
+  {
+   "name": "EmDash",
+   "value": 134,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EmDash",
+   "usedInWord": true
+  },
+  {
+   "name": "EnDash",
+   "value": 135,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EnDash",
+   "usedInWord": true
+  },
+  {
+   "name": "EndParagraph",
+   "value": 41,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EndParagraph",
+   "usedInWord": true
+  },
+  {
+   "name": "EndParagraphCell",
+   "value": 126,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EndParagraphCell",
+   "usedInWord": true
+  },
+  {
+   "name": "EquationAddPlaceholder",
+   "value": 44,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EquationAddPlaceholder",
+   "usedInWord": true
+  },
+  {
+   "name": "EquationChangeAlignmentLeft",
+   "value": 45,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EquationChangeAlignmentLeft",
+   "usedInWord": true
+  },
+  {
+   "name": "EquationChangeAlignmentRight",
+   "value": 46,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EquationChangeAlignmentRight",
+   "usedInWord": true
+  },
+  {
+   "name": "EuroSign",
+   "value": 137,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EuroSign",
+   "usedInWord": true
+  },
+  {
+   "name": "HorizontalEllipsis",
+   "value": 140,
+   "qualified": "Asc.c_oAscDocumentShortcutType.HorizontalEllipsis",
+   "usedInWord": true
+  },
+  {
+   "name": "IncreaseFontSize",
+   "value": 93,
+   "qualified": "Asc.c_oAscDocumentShortcutType.IncreaseFontSize",
+   "usedInWord": true
+  },
+  {
+   "name": "Indent",
+   "value": 100,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Indent",
+   "usedInWord": true
+  },
+  {
+   "name": "InsertColumnBreak",
+   "value": 43,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertColumnBreak",
+   "usedInWord": true
+  },
+  {
+   "name": "InsertEndnoteNow",
+   "value": 120,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertEndnoteNow",
+   "usedInWord": true
+  },
+  {
+   "name": "InsertEquation",
+   "value": 133,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertEquation",
+   "usedInWord": true
+  },
+  {
+   "name": "InsertFootnoteNow",
+   "value": 121,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertFootnoteNow",
+   "usedInWord": true
+  },
+  {
+   "name": "InsertHyperlink",
+   "value": 65,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertHyperlink",
+   "usedInWord": true
+  },
+  {
+   "name": "InsertLineBreak",
+   "value": 42,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertLineBreak",
+   "usedInWord": true
+  },
+  {
+   "name": "InsertLineBreakMultilineForm",
+   "value": 145,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertLineBreakMultilineForm",
+   "usedInWord": true
+  },
+  {
+   "name": "InsertPageBreak",
+   "value": 99,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertPageBreak",
+   "usedInWord": true
+  },
+  {
+   "name": "InsertPageNumber",
+   "value": 102,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertPageNumber",
+   "usedInWord": true
+  },
+  {
+   "name": "InsertTab",
+   "value": 106,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertTab",
+   "usedInWord": true
+  },
+  {
+   "name": "InsertTableBreak",
+   "value": 128,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertTableBreak",
+   "usedInWord": true
+  },
+  {
+   "name": "Italic",
+   "value": 83,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Italic",
+   "usedInWord": true
+  },
+  {
+   "name": "JustifyPara",
+   "value": 96,
+   "qualified": "Asc.c_oAscDocumentShortcutType.JustifyPara",
+   "usedInWord": true
+  },
+  {
+   "name": "LeftPara",
+   "value": 98,
+   "qualified": "Asc.c_oAscDocumentShortcutType.LeftPara",
+   "usedInWord": true
+  },
+  {
+   "name": "LittleMoveObjectDown",
+   "value": 113,
+   "qualified": "Asc.c_oAscDocumentShortcutType.LittleMoveObjectDown",
+   "usedInWord": true
+  },
+  {
+   "name": "LittleMoveObjectLeft",
+   "value": 110,
+   "qualified": "Asc.c_oAscDocumentShortcutType.LittleMoveObjectLeft",
+   "usedInWord": true
+  },
+  {
+   "name": "LittleMoveObjectRight",
+   "value": 111,
+   "qualified": "Asc.c_oAscDocumentShortcutType.LittleMoveObjectRight",
+   "usedInWord": true
+  },
+  {
+   "name": "LittleMoveObjectUp",
+   "value": 112,
+   "qualified": "Asc.c_oAscDocumentShortcutType.LittleMoveObjectUp",
+   "usedInWord": true
+  },
+  {
+   "name": "MixedIndent",
+   "value": 107,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MixedIndent",
+   "usedInWord": true
+  },
+  {
+   "name": "MixedUnIndent",
+   "value": 108,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MixedUnIndent",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveFocusToNextObject",
+   "value": 118,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveFocusToNextObject",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveFocusToPreviousObject",
+   "value": 119,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveFocusToPreviousObject",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToDownLine",
+   "value": 32,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToDownLine",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToEndDocument",
+   "value": 22,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToEndDocument",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToEndLine",
+   "value": 21,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToEndLine",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToEndWord",
+   "value": 34,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToEndWord",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToLeftChar",
+   "value": 30,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToLeftChar",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToLowerHeader",
+   "value": 39,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToLowerHeader",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToLowerHeaderFooter",
+   "value": 37,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToLowerHeaderFooter",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToNextCell",
+   "value": 122,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToNextCell",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToNextForm",
+   "value": 129,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToNextForm",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToNextPage",
+   "value": 146,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToNextPage",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToNextRow",
+   "value": 124,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToNextRow",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToPreviousCell",
+   "value": 123,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToPreviousCell",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToPreviousForm",
+   "value": 130,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToPreviousForm",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToPreviousPage",
+   "value": 147,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToPreviousPage",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToPreviousRow",
+   "value": 125,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToPreviousRow",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToRightChar",
+   "value": 29,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToRightChar",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToStartDocument",
+   "value": 20,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToStartDocument",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToStartLine",
+   "value": 19,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToStartLine",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToStartNextPage",
+   "value": 24,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToStartNextPage",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToStartPreviousPage",
+   "value": 23,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToStartPreviousPage",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToStartWord",
+   "value": 33,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToStartWord",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToUpLine",
+   "value": 31,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToUpLine",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToUpperHeader",
+   "value": 40,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToUpperHeader",
+   "usedInWord": true
+  },
+  {
+   "name": "MoveToUpperHeaderFooter",
+   "value": 38,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToUpperHeaderFooter",
+   "usedInWord": true
+  },
+  {
+   "name": "NextFileTab",
+   "value": 12,
+   "qualified": "Asc.c_oAscDocumentShortcutType.NextFileTab",
+   "usedInWord": true
+  },
+  {
+   "name": "NextModalControl",
+   "value": 35,
+   "qualified": "Asc.c_oAscDocumentShortcutType.NextModalControl",
+   "usedInWord": true
+  },
+  {
+   "name": "NonBreakingHyphen",
+   "value": 52,
+   "qualified": "Asc.c_oAscDocumentShortcutType.NonBreakingHyphen",
+   "usedInWord": true
+  },
+  {
+   "name": "NonBreakingSpace",
+   "value": 51,
+   "qualified": "Asc.c_oAscDocumentShortcutType.NonBreakingSpace",
+   "usedInWord": true
+  },
+  {
+   "name": "OpenChatPanel",
+   "value": 6,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenChatPanel",
+   "usedInWord": true
+  },
+  {
+   "name": "OpenCommentField",
+   "value": 5,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenCommentField",
+   "usedInWord": true
+  },
+  {
+   "name": "OpenCommentsPanel",
+   "value": 4,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenCommentsPanel",
+   "usedInWord": true
+  },
+  {
+   "name": "OpenContextMenu",
+   "value": 15,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenContextMenu",
+   "usedInWord": true
+  },
+  {
+   "name": "OpenExistingFile",
+   "value": 11,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenExistingFile",
+   "usedInWord": true
+  },
+  {
+   "name": "OpenFilePanel",
+   "value": 1,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenFilePanel",
+   "usedInWord": true
+  },
+  {
+   "name": "OpenFindAndReplaceMenu",
+   "value": 3,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenFindAndReplaceMenu",
+   "usedInWord": true
+  },
+  {
+   "name": "OpenFindDialog",
+   "value": 2,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenFindDialog",
+   "usedInWord": true
+  },
+  {
+   "name": "OpenHelpMenu",
+   "value": 10,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenHelpMenu",
+   "usedInWord": true
+  },
+  {
+   "name": "Paste",
+   "value": 57,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Paste",
+   "usedInWord": true
+  },
+  {
+   "name": "PasteFormat",
+   "value": 60,
+   "qualified": "Asc.c_oAscDocumentShortcutType.PasteFormat",
+   "usedInWord": true
+  },
+  {
+   "name": "PasteTextWithoutFormat",
+   "value": 58,
+   "qualified": "Asc.c_oAscDocumentShortcutType.PasteTextWithoutFormat",
+   "usedInWord": true
+  },
+  {
+   "name": "PreviousFileTab",
+   "value": 13,
+   "qualified": "Asc.c_oAscDocumentShortcutType.PreviousFileTab",
+   "usedInWord": true
+  },
+  {
+   "name": "PreviousModalControl",
+   "value": 36,
+   "qualified": "Asc.c_oAscDocumentShortcutType.PreviousModalControl",
+   "usedInWord": true
+  },
+  {
+   "name": "PrintPreviewAndPrint",
+   "value": 8,
+   "qualified": "Asc.c_oAscDocumentShortcutType.PrintPreviewAndPrint",
+   "usedInWord": true
+  },
+  {
+   "name": "RegisteredSign",
+   "value": 138,
+   "qualified": "Asc.c_oAscDocumentShortcutType.RegisteredSign",
+   "usedInWord": true
+  },
+  {
+   "name": "ReplaceUnicodeToSymbol",
+   "value": 141,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ReplaceUnicodeToSymbol",
+   "usedInWord": true
+  },
+  {
+   "name": "ResetChar",
+   "value": 92,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ResetChar",
+   "usedInWord": true
+  },
+  {
+   "name": "RightPara",
+   "value": 97,
+   "qualified": "Asc.c_oAscDocumentShortcutType.RightPara",
+   "usedInWord": true
+  },
+  {
+   "name": "Save",
+   "value": 7,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Save",
+   "usedInWord": true
+  },
+  {
+   "name": "SaveAs",
+   "value": 9,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SaveAs",
+   "usedInWord": true
+  },
+  {
+   "name": "ScrollDown",
+   "value": 25,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ScrollDown",
+   "usedInWord": true
+  },
+  {
+   "name": "ScrollUp",
+   "value": 26,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ScrollUp",
+   "usedInWord": true
+  },
+  {
+   "name": "SelectLeftChar",
+   "value": 73,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectLeftChar",
+   "usedInWord": true
+  },
+  {
+   "name": "SelectLeftWord",
+   "value": 75,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectLeftWord",
+   "usedInWord": true
+  },
+  {
+   "name": "SelectLineDown",
+   "value": 77,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectLineDown",
+   "usedInWord": true
+  },
+  {
+   "name": "SelectLineUp",
+   "value": 76,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectLineUp",
+   "usedInWord": true
+  },
+  {
+   "name": "SelectPageDown",
+   "value": 79,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectPageDown",
+   "usedInWord": true
+  },
+  {
+   "name": "SelectPageUp",
+   "value": 78,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectPageUp",
+   "usedInWord": true
+  },
+  {
+   "name": "SelectRightChar",
+   "value": 72,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectRightChar",
+   "usedInWord": true
+  },
+  {
+   "name": "SelectRightWord",
+   "value": 74,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectRightWord",
+   "usedInWord": true
+  },
+  {
+   "name": "SelectToBeginNextPage",
+   "value": 81,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectToBeginNextPage",
+   "usedInWord": true
+  },
+  {
+   "name": "SelectToBeginPreviousPage",
+   "value": 80,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectToBeginPreviousPage",
+   "usedInWord": true
+  },
+  {
+   "name": "SelectToEndDocument",
+   "value": 71,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectToEndDocument",
+   "usedInWord": true
+  },
+  {
+   "name": "SelectToEndLine",
+   "value": 69,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectToEndLine",
+   "usedInWord": true
+  },
+  {
+   "name": "SelectToStartDocument",
+   "value": 70,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectToStartDocument",
+   "usedInWord": true
+  },
+  {
+   "name": "SelectToStartLine",
+   "value": 68,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectToStartLine",
+   "usedInWord": true
+  },
+  {
+   "name": "ShowAll",
+   "value": 103,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ShowAll",
+   "usedInWord": true
+  },
+  {
+   "name": "SmallCaps",
+   "value": 148,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SmallCaps",
+   "usedInWord": true
+  },
+  {
+   "name": "SpecialOptionsKeepSourceFormat",
+   "value": 61,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SpecialOptionsKeepSourceFormat",
+   "usedInWord": true
+  },
+  {
+   "name": "SpecialOptionsKeepTextOnly",
+   "value": 62,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SpecialOptionsKeepTextOnly",
+   "usedInWord": true
+  },
+  {
+   "name": "SpecialOptionsNestTable",
+   "value": 64,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SpecialOptionsNestTable",
+   "usedInWord": true
+  },
+  {
+   "name": "SpecialOptionsOverwriteCells",
+   "value": 63,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SpecialOptionsOverwriteCells",
+   "usedInWord": true
+  },
+  {
+   "name": "SpeechWorker",
+   "value": 143,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SpeechWorker",
+   "usedInWord": true
+  },
+  {
+   "name": "StartIndent",
+   "value": 104,
+   "qualified": "Asc.c_oAscDocumentShortcutType.StartIndent",
+   "usedInWord": true
+  },
+  {
+   "name": "StartUnIndent",
+   "value": 105,
+   "qualified": "Asc.c_oAscDocumentShortcutType.StartUnIndent",
+   "usedInWord": true
+  },
+  {
+   "name": "Strikeout",
+   "value": 85,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Strikeout",
+   "usedInWord": true
+  },
+  {
+   "name": "Subscript",
+   "value": 86,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Subscript",
+   "usedInWord": true
+  },
+  {
+   "name": "Superscript",
+   "value": 87,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Superscript",
+   "usedInWord": true
+  },
+  {
+   "name": "TrademarkSign",
+   "value": 139,
+   "qualified": "Asc.c_oAscDocumentShortcutType.TrademarkSign",
+   "usedInWord": true
+  },
+  {
+   "name": "UnIndent",
+   "value": 101,
+   "qualified": "Asc.c_oAscDocumentShortcutType.UnIndent",
+   "usedInWord": true
+  },
+  {
+   "name": "Underline",
+   "value": 84,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Underline",
+   "usedInWord": true
+  },
+  {
+   "name": "UpdateFields",
+   "value": 18,
+   "qualified": "Asc.c_oAscDocumentShortcutType.UpdateFields",
+   "usedInWord": true
+  },
+  {
+   "name": "VisitHyperlink",
+   "value": 66,
+   "qualified": "Asc.c_oAscDocumentShortcutType.VisitHyperlink",
+   "usedInWord": true
+  },
+  {
+   "name": "Zoom100",
+   "value": 17,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Zoom100",
+   "usedInWord": true
+  },
+  {
+   "name": "ZoomIn",
+   "value": 27,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ZoomIn",
+   "usedInWord": true
+  },
+  {
+   "name": "ZoomOut",
+   "value": 28,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ZoomOut",
+   "usedInWord": true
+  }
+ ],
+ "ctxMenuTypes": [
+  {
+   "name": "AnimEffect",
+   "value": 3,
+   "qualified": "Asc.c_oAscContextMenuTypes.AnimEffect",
+   "editors": [
+    "slide"
+   ]
+  },
+  {
+   "name": "ChangeHdrFtr",
+   "value": 1,
+   "qualified": "Asc.c_oAscContextMenuTypes.ChangeHdrFtr",
+   "editors": [
+    "word"
+   ]
+  },
+  {
+   "name": "Common",
+   "value": 0,
+   "qualified": "Asc.c_oAscContextMenuTypes.Common",
+   "editors": [
+    "word"
+   ]
+  },
+  {
+   "name": "Layout",
+   "value": 5,
+   "qualified": "Asc.c_oAscContextMenuTypes.Layout",
+   "editors": [
+    "slide"
+   ]
+  },
+  {
+   "name": "Main",
+   "value": 0,
+   "qualified": "Asc.c_oAscContextMenuTypes.Main",
+   "editors": [
+    "slide"
+   ]
+  },
+  {
+   "name": "Master",
+   "value": 4,
+   "qualified": "Asc.c_oAscContextMenuTypes.Master",
+   "editors": [
+    "slide"
+   ]
+  },
+  {
+   "name": "Thumbnails",
+   "value": 1,
+   "qualified": "Asc.c_oAscContextMenuTypes.Thumbnails",
+   "editors": [
+    "slide"
+   ]
+  },
+  {
+   "name": "TimelineZoom",
+   "value": 6,
+   "qualified": "Asc.c_oAscContextMenuTypes.TimelineZoom",
+   "editors": [
+    "slide"
+   ]
+  },
+  {
+   "name": "changeSeries",
+   "value": 1,
+   "qualified": "Asc.c_oAscContextMenuTypes.changeSeries",
+   "editors": [
+    "cell"
+   ]
+  },
+  {
+   "name": "common",
+   "value": 0,
+   "qualified": "Asc.c_oAscContextMenuTypes.common",
+   "editors": [
+    "cell"
+   ]
+  }
+ ],
+ "dispatchCommands": [
+  {
+   "label": "Asc.c_oAscDocumentRefenceToType.AboveBelow",
+   "token": "AboveBelow",
+   "class": "Asc.c_oAscDocumentRefenceToType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentRefenceToType.NoteNumber",
+   "token": "NoteNumber",
+   "class": "Asc.c_oAscDocumentRefenceToType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentRefenceToType.NoteNumberFormatted",
+   "token": "NoteNumberFormatted",
+   "class": "Asc.c_oAscDocumentRefenceToType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentRefenceToType.OnlyCaptionText",
+   "token": "OnlyCaptionText",
+   "class": "Asc.c_oAscDocumentRefenceToType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentRefenceToType.OnlyLabelAndNumber",
+   "token": "OnlyLabelAndNumber",
+   "class": "Asc.c_oAscDocumentRefenceToType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentRefenceToType.PageNum",
+   "token": "PageNum",
+   "class": "Asc.c_oAscDocumentRefenceToType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.ApplyHeading1",
+   "token": "ApplyHeading1",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.ApplyHeading2",
+   "token": "ApplyHeading2",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.ApplyHeading3",
+   "token": "ApplyHeading3",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.ApplyListBullet",
+   "token": "ApplyListBullet",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.Bold",
+   "token": "Bold",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.CenterPara",
+   "token": "CenterPara",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.CopyFormat",
+   "token": "CopyFormat",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.CopyrightSign",
+   "token": "CopyrightSign",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.DecreaseFontSize",
+   "token": "DecreaseFontSize",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.EditRedo",
+   "token": "EditRedo",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.EditSelectAll",
+   "token": "EditSelectAll",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.EditUndo",
+   "token": "EditUndo",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.EmDash",
+   "token": "EmDash",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.EnDash",
+   "token": "EnDash",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.EuroSign",
+   "token": "EuroSign",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.HorizontalEllipsis",
+   "token": "HorizontalEllipsis",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.IncreaseFontSize",
+   "token": "IncreaseFontSize",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.Indent",
+   "token": "Indent",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.InsertColumnBreak",
+   "token": "InsertColumnBreak",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.InsertEndnoteNow",
+   "token": "InsertEndnoteNow",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.InsertEquation",
+   "token": "InsertEquation",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.InsertFootnoteNow",
+   "token": "InsertFootnoteNow",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.InsertHyperlink",
+   "token": "InsertHyperlink",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.InsertLineBreak",
+   "token": "InsertLineBreak",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.InsertPageBreak",
+   "token": "InsertPageBreak",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.InsertPageNumber",
+   "token": "InsertPageNumber",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.Italic",
+   "token": "Italic",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.JustifyPara",
+   "token": "JustifyPara",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.LeftPara",
+   "token": "LeftPara",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.NonBreakingHyphen",
+   "token": "NonBreakingHyphen",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.NonBreakingSpace",
+   "token": "NonBreakingSpace",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.PasteFormat",
+   "token": "PasteFormat",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.PrintPreviewAndPrint",
+   "token": "PrintPreviewAndPrint",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.RegisteredSign",
+   "token": "RegisteredSign",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.ResetChar",
+   "token": "ResetChar",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.RightPara",
+   "token": "RightPara",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.Save",
+   "token": "Save",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.ShowAll",
+   "token": "ShowAll",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.SmallCaps",
+   "token": "SmallCaps",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.SpeechWorker",
+   "token": "SpeechWorker",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.Strikeout",
+   "token": "Strikeout",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.Subscript",
+   "token": "Subscript",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.Superscript",
+   "token": "Superscript",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.TrademarkSign",
+   "token": "TrademarkSign",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.UnIndent",
+   "token": "UnIndent",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.Underline",
+   "token": "Underline",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "Asc.c_oAscDocumentShortcutType.UpdateFields",
+   "token": "UpdateFields",
+   "class": "Asc.c_oAscDocumentShortcutType"
+  },
+  {
+   "label": "AscDFH.historydescription_BuilderScript",
+   "token": "historydescription_BuilderScript",
+   "class": "AscDFH"
+  },
+  {
+   "label": "AscDFH.historydescription_Document_InsertTextFromFile",
+   "token": "historydescription_Document_InsertTextFromFile",
+   "class": "AscDFH"
+  },
+  {
+   "label": "AscDFH.historyitem_Document_AddItem",
+   "token": "historyitem_Document_AddItem",
+   "class": "AscDFH"
+  },
+  {
+   "label": "AscDFH.historyitem_Document_DefaultTab",
+   "token": "historyitem_Document_DefaultTab",
+   "class": "AscDFH"
+  },
+  {
+   "label": "AscDFH.historyitem_Document_EvenAndOddHeaders",
+   "token": "historyitem_Document_EvenAndOddHeaders",
+   "class": "AscDFH"
+  },
+  {
+   "label": "AscDFH.historyitem_Document_MathSettings",
+   "token": "historyitem_Document_MathSettings",
+   "class": "AscDFH"
+  },
+  {
+   "label": "AscDFH.historyitem_Document_RemoveItem",
+   "token": "historyitem_Document_RemoveItem",
+   "class": "AscDFH"
+  },
+  {
+   "label": "AscDFH.historyitem_Document_Settings_AutoHyphenation",
+   "token": "historyitem_Document_Settings_AutoHyphenation",
+   "class": "AscDFH"
+  },
+  {
+   "label": "AscDFH.historyitem_Document_Settings_ConsecutiveHyphenLimit",
+   "token": "historyitem_Document_Settings_ConsecutiveHyphenLimit",
+   "class": "AscDFH"
+  },
+  {
+   "label": "AscDFH.historyitem_Document_Settings_DoNotHyphenateCaps",
+   "token": "historyitem_Document_Settings_DoNotHyphenateCaps",
+   "class": "AscDFH"
+  },
+  {
+   "label": "AscDFH.historyitem_Document_Settings_GutterAtTop",
+   "token": "historyitem_Document_Settings_GutterAtTop",
+   "class": "AscDFH"
+  },
+  {
+   "label": "AscDFH.historyitem_Document_Settings_HyphenationZone",
+   "token": "historyitem_Document_Settings_HyphenationZone",
+   "class": "AscDFH"
+  },
+  {
+   "label": "AscDFH.historyitem_Document_Settings_MirrorMargins",
+   "token": "historyitem_Document_Settings_MirrorMargins",
+   "class": "AscDFH"
+  },
+  {
+   "label": "End",
+   "token": "End",
+   "class": "identifier"
+  },
+  {
+   "label": "Start",
+   "token": "Start",
+   "class": "identifier"
+  },
+  {
+   "label": "c_oAscHAnchor.Margin",
+   "token": "Margin",
+   "class": "c_oAscHAnchor"
+  },
+  {
+   "label": "c_oAscHAnchor.Page",
+   "token": "Page",
+   "class": "c_oAscHAnchor"
+  },
+  {
+   "label": "c_oAscHAnchor.Text",
+   "token": "Text",
+   "class": "c_oAscHAnchor"
+  },
+  {
+   "label": "c_oAscSectionBreakType.Column",
+   "token": "Column",
+   "class": "c_oAscSectionBreakType"
+  },
+  {
+   "label": "c_oAscSectionBreakType.Continuous",
+   "token": "Continuous",
+   "class": "c_oAscSectionBreakType"
+  },
+  {
+   "label": "c_oAscSectionBreakType.EvenPage",
+   "token": "EvenPage",
+   "class": "c_oAscSectionBreakType"
+  },
+  {
+   "label": "c_oAscSectionBreakType.NextPage",
+   "token": "NextPage",
+   "class": "c_oAscSectionBreakType"
+  },
+  {
+   "label": "c_oAscSectionBreakType.OddPage",
+   "token": "OddPage",
+   "class": "c_oAscSectionBreakType"
+  },
+  {
+   "label": "c_oAscVAnchor.Margin",
+   "token": "Margin",
+   "class": "c_oAscVAnchor"
+  },
+  {
+   "label": "c_oAscVAnchor.Page",
+   "token": "Page",
+   "class": "c_oAscVAnchor"
+  },
+  {
+   "label": "c_oAscVAnchor.Text",
+   "token": "Text",
+   "class": "c_oAscVAnchor"
+  },
+  {
+   "label": "c_oAscXAlign.Center",
+   "token": "Center",
+   "class": "c_oAscXAlign"
+  },
+  {
+   "label": "c_oAscXAlign.Inside",
+   "token": "Inside",
+   "class": "c_oAscXAlign"
+  },
+  {
+   "label": "c_oAscXAlign.Left",
+   "token": "Left",
+   "class": "c_oAscXAlign"
+  },
+  {
+   "label": "c_oAscXAlign.Outside",
+   "token": "Outside",
+   "class": "c_oAscXAlign"
+  },
+  {
+   "label": "c_oAscXAlign.Right",
+   "token": "Right",
+   "class": "c_oAscXAlign"
+  },
+  {
+   "label": "c_oAscYAlign.Bottom",
+   "token": "Bottom",
+   "class": "c_oAscYAlign"
+  },
+  {
+   "label": "c_oAscYAlign.Center",
+   "token": "Center",
+   "class": "c_oAscYAlign"
+  },
+  {
+   "label": "c_oAscYAlign.Inside",
+   "token": "Inside",
+   "class": "c_oAscYAlign"
+  },
+  {
+   "label": "c_oAscYAlign.Outside",
+   "token": "Outside",
+   "class": "c_oAscYAlign"
+  },
+  {
+   "label": "c_oAscYAlign.Top",
+   "token": "Top",
+   "class": "c_oAscYAlign"
+  },
+  {
+   "label": "docpostype_Endnotes",
+   "token": "docpostype_Endnotes",
+   "class": "identifier"
+  },
+  {
+   "label": "docpostype_Footnotes",
+   "token": "docpostype_Footnotes",
+   "class": "identifier"
+  },
+  {
+   "label": "docpostype_HdrFtr",
+   "token": "docpostype_HdrFtr",
+   "class": "identifier"
+  },
+  {
+   "label": "hdrftr_Footer",
+   "token": "hdrftr_Footer",
+   "class": "identifier"
+  },
+  {
+   "label": "hdrftr_Header",
+   "token": "hdrftr_Header",
+   "class": "identifier"
+  },
+  {
+   "label": "para_ContinuationSeparator",
+   "token": "para_ContinuationSeparator",
+   "class": "identifier"
+  },
+  {
+   "label": "para_EndnoteRef",
+   "token": "para_EndnoteRef",
+   "class": "identifier"
+  },
+  {
+   "label": "para_EndnoteReference",
+   "token": "para_EndnoteReference",
+   "class": "identifier"
+  },
+  {
+   "label": "para_Field",
+   "token": "para_Field",
+   "class": "identifier"
+  },
+  {
+   "label": "para_FootnoteRef",
+   "token": "para_FootnoteRef",
+   "class": "identifier"
+  },
+  {
+   "label": "para_FootnoteReference",
+   "token": "para_FootnoteReference",
+   "class": "identifier"
+  },
+  {
+   "label": "para_InstrText",
+   "token": "para_InstrText",
+   "class": "identifier"
+  },
+  {
+   "label": "para_Math",
+   "token": "para_Math",
+   "class": "identifier"
+  },
+  {
+   "label": "para_NewLine",
+   "token": "para_NewLine",
+   "class": "identifier"
+  },
+  {
+   "label": "para_PageNum",
+   "token": "para_PageNum",
+   "class": "identifier"
+  },
+  {
+   "label": "para_Separator",
+   "token": "para_Separator",
+   "class": "identifier"
+  },
+  {
+   "label": "para_Space",
+   "token": "para_Space",
+   "class": "identifier"
+  },
+  {
+   "label": "para_Tab",
+   "token": "para_Tab",
+   "class": "identifier"
+  },
+  {
+   "label": "para_Text",
+   "token": "para_Text",
+   "class": "identifier"
+  },
+  {
+   "label": "para_TextPr",
+   "token": "para_TextPr",
+   "class": "identifier"
+  },
+  {
+   "label": "reviewtype_Add",
+   "token": "reviewtype_Add",
+   "class": "identifier"
+  },
+  {
+   "label": "reviewtype_Common",
+   "token": "reviewtype_Common",
+   "class": "identifier"
+  },
+  {
+   "label": "reviewtype_Remove",
+   "token": "reviewtype_Remove",
+   "class": "identifier"
+  },
+  {
+   "label": "selectionflag_Common",
+   "token": "selectionflag_Common",
+   "class": "identifier"
+  },
+  {
+   "label": "selectionflag_Numbering",
+   "token": "selectionflag_Numbering",
+   "class": "identifier"
+  },
+  {
+   "label": "type_Paragraph",
+   "token": "type_Paragraph",
+   "class": "identifier"
+  },
+  {
+   "label": "type_Table",
+   "token": "type_Table",
+   "class": "identifier"
+  }
+ ],
+ "commands": [
+  {
+   "id": "case:Asc.c_oAscDocumentRefenceToType.AboveBelow",
+   "kind": "dispatch",
+   "token": "AboveBelow",
+   "class": "Asc.c_oAscDocumentRefenceToType"
+  },
+  {
+   "id": "case:Asc.c_oAscDocumentRefenceToType.NoteNumber",
+   "kind": "dispatch",
+   "token": "NoteNumber",
+   "class": "Asc.c_oAscDocumentRefenceToType"
+  },
+  {
+   "id": "case:Asc.c_oAscDocumentRefenceToType.NoteNumberFormatted",
+   "kind": "dispatch",
+   "token": "NoteNumberFormatted",
+   "class": "Asc.c_oAscDocumentRefenceToType"
+  },
+  {
+   "id": "case:Asc.c_oAscDocumentRefenceToType.OnlyCaptionText",
+   "kind": "dispatch",
+   "token": "OnlyCaptionText",
+   "class": "Asc.c_oAscDocumentRefenceToType"
+  },
+  {
+   "id": "case:Asc.c_oAscDocumentRefenceToType.OnlyLabelAndNumber",
+   "kind": "dispatch",
+   "token": "OnlyLabelAndNumber",
+   "class": "Asc.c_oAscDocumentRefenceToType"
+  },
+  {
+   "id": "case:Asc.c_oAscDocumentRefenceToType.PageNum",
+   "kind": "dispatch",
+   "token": "PageNum",
+   "class": "Asc.c_oAscDocumentRefenceToType"
+  },
+  {
+   "id": "case:AscDFH.historydescription_BuilderScript",
+   "kind": "dispatch",
+   "token": "historydescription_BuilderScript",
+   "class": "AscDFH"
+  },
+  {
+   "id": "case:AscDFH.historydescription_Document_InsertTextFromFile",
+   "kind": "dispatch",
+   "token": "historydescription_Document_InsertTextFromFile",
+   "class": "AscDFH"
+  },
+  {
+   "id": "case:AscDFH.historyitem_Document_AddItem",
+   "kind": "dispatch",
+   "token": "historyitem_Document_AddItem",
+   "class": "AscDFH"
+  },
+  {
+   "id": "case:AscDFH.historyitem_Document_DefaultTab",
+   "kind": "dispatch",
+   "token": "historyitem_Document_DefaultTab",
+   "class": "AscDFH"
+  },
+  {
+   "id": "case:AscDFH.historyitem_Document_EvenAndOddHeaders",
+   "kind": "dispatch",
+   "token": "historyitem_Document_EvenAndOddHeaders",
+   "class": "AscDFH"
+  },
+  {
+   "id": "case:AscDFH.historyitem_Document_MathSettings",
+   "kind": "dispatch",
+   "token": "historyitem_Document_MathSettings",
+   "class": "AscDFH"
+  },
+  {
+   "id": "case:AscDFH.historyitem_Document_RemoveItem",
+   "kind": "dispatch",
+   "token": "historyitem_Document_RemoveItem",
+   "class": "AscDFH"
+  },
+  {
+   "id": "case:AscDFH.historyitem_Document_Settings_AutoHyphenation",
+   "kind": "dispatch",
+   "token": "historyitem_Document_Settings_AutoHyphenation",
+   "class": "AscDFH"
+  },
+  {
+   "id": "case:AscDFH.historyitem_Document_Settings_ConsecutiveHyphenLimit",
+   "kind": "dispatch",
+   "token": "historyitem_Document_Settings_ConsecutiveHyphenLimit",
+   "class": "AscDFH"
+  },
+  {
+   "id": "case:AscDFH.historyitem_Document_Settings_DoNotHyphenateCaps",
+   "kind": "dispatch",
+   "token": "historyitem_Document_Settings_DoNotHyphenateCaps",
+   "class": "AscDFH"
+  },
+  {
+   "id": "case:AscDFH.historyitem_Document_Settings_GutterAtTop",
+   "kind": "dispatch",
+   "token": "historyitem_Document_Settings_GutterAtTop",
+   "class": "AscDFH"
+  },
+  {
+   "id": "case:AscDFH.historyitem_Document_Settings_HyphenationZone",
+   "kind": "dispatch",
+   "token": "historyitem_Document_Settings_HyphenationZone",
+   "class": "AscDFH"
+  },
+  {
+   "id": "case:AscDFH.historyitem_Document_Settings_MirrorMargins",
+   "kind": "dispatch",
+   "token": "historyitem_Document_Settings_MirrorMargins",
+   "class": "AscDFH"
+  },
+  {
+   "id": "case:End",
+   "kind": "dispatch",
+   "token": "End",
+   "class": "identifier"
+  },
+  {
+   "id": "case:Start",
+   "kind": "dispatch",
+   "token": "Start",
+   "class": "identifier"
+  },
+  {
+   "id": "case:c_oAscHAnchor.Margin",
+   "kind": "dispatch",
+   "token": "Margin",
+   "class": "c_oAscHAnchor"
+  },
+  {
+   "id": "case:c_oAscHAnchor.Page",
+   "kind": "dispatch",
+   "token": "Page",
+   "class": "c_oAscHAnchor"
+  },
+  {
+   "id": "case:c_oAscHAnchor.Text",
+   "kind": "dispatch",
+   "token": "Text",
+   "class": "c_oAscHAnchor"
+  },
+  {
+   "id": "case:c_oAscSectionBreakType.Column",
+   "kind": "dispatch",
+   "token": "Column",
+   "class": "c_oAscSectionBreakType"
+  },
+  {
+   "id": "case:c_oAscSectionBreakType.Continuous",
+   "kind": "dispatch",
+   "token": "Continuous",
+   "class": "c_oAscSectionBreakType"
+  },
+  {
+   "id": "case:c_oAscSectionBreakType.EvenPage",
+   "kind": "dispatch",
+   "token": "EvenPage",
+   "class": "c_oAscSectionBreakType"
+  },
+  {
+   "id": "case:c_oAscSectionBreakType.NextPage",
+   "kind": "dispatch",
+   "token": "NextPage",
+   "class": "c_oAscSectionBreakType"
+  },
+  {
+   "id": "case:c_oAscSectionBreakType.OddPage",
+   "kind": "dispatch",
+   "token": "OddPage",
+   "class": "c_oAscSectionBreakType"
+  },
+  {
+   "id": "case:c_oAscVAnchor.Margin",
+   "kind": "dispatch",
+   "token": "Margin",
+   "class": "c_oAscVAnchor"
+  },
+  {
+   "id": "case:c_oAscVAnchor.Page",
+   "kind": "dispatch",
+   "token": "Page",
+   "class": "c_oAscVAnchor"
+  },
+  {
+   "id": "case:c_oAscVAnchor.Text",
+   "kind": "dispatch",
+   "token": "Text",
+   "class": "c_oAscVAnchor"
+  },
+  {
+   "id": "case:c_oAscXAlign.Center",
+   "kind": "dispatch",
+   "token": "Center",
+   "class": "c_oAscXAlign"
+  },
+  {
+   "id": "case:c_oAscXAlign.Inside",
+   "kind": "dispatch",
+   "token": "Inside",
+   "class": "c_oAscXAlign"
+  },
+  {
+   "id": "case:c_oAscXAlign.Left",
+   "kind": "dispatch",
+   "token": "Left",
+   "class": "c_oAscXAlign"
+  },
+  {
+   "id": "case:c_oAscXAlign.Outside",
+   "kind": "dispatch",
+   "token": "Outside",
+   "class": "c_oAscXAlign"
+  },
+  {
+   "id": "case:c_oAscXAlign.Right",
+   "kind": "dispatch",
+   "token": "Right",
+   "class": "c_oAscXAlign"
+  },
+  {
+   "id": "case:c_oAscYAlign.Bottom",
+   "kind": "dispatch",
+   "token": "Bottom",
+   "class": "c_oAscYAlign"
+  },
+  {
+   "id": "case:c_oAscYAlign.Center",
+   "kind": "dispatch",
+   "token": "Center",
+   "class": "c_oAscYAlign"
+  },
+  {
+   "id": "case:c_oAscYAlign.Inside",
+   "kind": "dispatch",
+   "token": "Inside",
+   "class": "c_oAscYAlign"
+  },
+  {
+   "id": "case:c_oAscYAlign.Outside",
+   "kind": "dispatch",
+   "token": "Outside",
+   "class": "c_oAscYAlign"
+  },
+  {
+   "id": "case:c_oAscYAlign.Top",
+   "kind": "dispatch",
+   "token": "Top",
+   "class": "c_oAscYAlign"
+  },
+  {
+   "id": "case:docpostype_Endnotes",
+   "kind": "dispatch",
+   "token": "docpostype_Endnotes",
+   "class": "identifier"
+  },
+  {
+   "id": "case:docpostype_Footnotes",
+   "kind": "dispatch",
+   "token": "docpostype_Footnotes",
+   "class": "identifier"
+  },
+  {
+   "id": "case:docpostype_HdrFtr",
+   "kind": "dispatch",
+   "token": "docpostype_HdrFtr",
+   "class": "identifier"
+  },
+  {
+   "id": "case:hdrftr_Footer",
+   "kind": "dispatch",
+   "token": "hdrftr_Footer",
+   "class": "identifier"
+  },
+  {
+   "id": "case:hdrftr_Header",
+   "kind": "dispatch",
+   "token": "hdrftr_Header",
+   "class": "identifier"
+  },
+  {
+   "id": "case:para_ContinuationSeparator",
+   "kind": "dispatch",
+   "token": "para_ContinuationSeparator",
+   "class": "identifier"
+  },
+  {
+   "id": "case:para_EndnoteRef",
+   "kind": "dispatch",
+   "token": "para_EndnoteRef",
+   "class": "identifier"
+  },
+  {
+   "id": "case:para_EndnoteReference",
+   "kind": "dispatch",
+   "token": "para_EndnoteReference",
+   "class": "identifier"
+  },
+  {
+   "id": "case:para_Field",
+   "kind": "dispatch",
+   "token": "para_Field",
+   "class": "identifier"
+  },
+  {
+   "id": "case:para_FootnoteRef",
+   "kind": "dispatch",
+   "token": "para_FootnoteRef",
+   "class": "identifier"
+  },
+  {
+   "id": "case:para_FootnoteReference",
+   "kind": "dispatch",
+   "token": "para_FootnoteReference",
+   "class": "identifier"
+  },
+  {
+   "id": "case:para_InstrText",
+   "kind": "dispatch",
+   "token": "para_InstrText",
+   "class": "identifier"
+  },
+  {
+   "id": "case:para_Math",
+   "kind": "dispatch",
+   "token": "para_Math",
+   "class": "identifier"
+  },
+  {
+   "id": "case:para_NewLine",
+   "kind": "dispatch",
+   "token": "para_NewLine",
+   "class": "identifier"
+  },
+  {
+   "id": "case:para_PageNum",
+   "kind": "dispatch",
+   "token": "para_PageNum",
+   "class": "identifier"
+  },
+  {
+   "id": "case:para_Separator",
+   "kind": "dispatch",
+   "token": "para_Separator",
+   "class": "identifier"
+  },
+  {
+   "id": "case:para_Space",
+   "kind": "dispatch",
+   "token": "para_Space",
+   "class": "identifier"
+  },
+  {
+   "id": "case:para_Tab",
+   "kind": "dispatch",
+   "token": "para_Tab",
+   "class": "identifier"
+  },
+  {
+   "id": "case:para_Text",
+   "kind": "dispatch",
+   "token": "para_Text",
+   "class": "identifier"
+  },
+  {
+   "id": "case:para_TextPr",
+   "kind": "dispatch",
+   "token": "para_TextPr",
+   "class": "identifier"
+  },
+  {
+   "id": "case:reviewtype_Add",
+   "kind": "dispatch",
+   "token": "reviewtype_Add",
+   "class": "identifier"
+  },
+  {
+   "id": "case:reviewtype_Common",
+   "kind": "dispatch",
+   "token": "reviewtype_Common",
+   "class": "identifier"
+  },
+  {
+   "id": "case:reviewtype_Remove",
+   "kind": "dispatch",
+   "token": "reviewtype_Remove",
+   "class": "identifier"
+  },
+  {
+   "id": "case:selectionflag_Common",
+   "kind": "dispatch",
+   "token": "selectionflag_Common",
+   "class": "identifier"
+  },
+  {
+   "id": "case:selectionflag_Numbering",
+   "kind": "dispatch",
+   "token": "selectionflag_Numbering",
+   "class": "identifier"
+  },
+  {
+   "id": "case:type_Paragraph",
+   "kind": "dispatch",
+   "token": "type_Paragraph",
+   "class": "identifier"
+  },
+  {
+   "id": "case:type_Table",
+   "kind": "dispatch",
+   "token": "type_Table",
+   "class": "identifier"
+  },
+  {
+   "id": "ctx:AnimEffect",
+   "kind": "ctx-menu",
+   "name": "AnimEffect",
+   "value": 3,
+   "qualified": "Asc.c_oAscContextMenuTypes.AnimEffect",
+   "editors": [
+    "slide"
+   ]
+  },
+  {
+   "id": "ctx:ChangeHdrFtr",
+   "kind": "ctx-menu",
+   "name": "ChangeHdrFtr",
+   "value": 1,
+   "qualified": "Asc.c_oAscContextMenuTypes.ChangeHdrFtr",
+   "editors": [
+    "word"
+   ]
+  },
+  {
+   "id": "ctx:Common",
+   "kind": "ctx-menu",
+   "name": "Common",
+   "value": 0,
+   "qualified": "Asc.c_oAscContextMenuTypes.Common",
+   "editors": [
+    "word"
+   ]
+  },
+  {
+   "id": "ctx:Layout",
+   "kind": "ctx-menu",
+   "name": "Layout",
+   "value": 5,
+   "qualified": "Asc.c_oAscContextMenuTypes.Layout",
+   "editors": [
+    "slide"
+   ]
+  },
+  {
+   "id": "ctx:Main",
+   "kind": "ctx-menu",
+   "name": "Main",
+   "value": 0,
+   "qualified": "Asc.c_oAscContextMenuTypes.Main",
+   "editors": [
+    "slide"
+   ]
+  },
+  {
+   "id": "ctx:Master",
+   "kind": "ctx-menu",
+   "name": "Master",
+   "value": 4,
+   "qualified": "Asc.c_oAscContextMenuTypes.Master",
+   "editors": [
+    "slide"
+   ]
+  },
+  {
+   "id": "ctx:Thumbnails",
+   "kind": "ctx-menu",
+   "name": "Thumbnails",
+   "value": 1,
+   "qualified": "Asc.c_oAscContextMenuTypes.Thumbnails",
+   "editors": [
+    "slide"
+   ]
+  },
+  {
+   "id": "ctx:TimelineZoom",
+   "kind": "ctx-menu",
+   "name": "TimelineZoom",
+   "value": 6,
+   "qualified": "Asc.c_oAscContextMenuTypes.TimelineZoom",
+   "editors": [
+    "slide"
+   ]
+  },
+  {
+   "id": "ctx:changeSeries",
+   "kind": "ctx-menu",
+   "name": "changeSeries",
+   "value": 1,
+   "qualified": "Asc.c_oAscContextMenuTypes.changeSeries",
+   "editors": [
+    "cell"
+   ]
+  },
+  {
+   "id": "ctx:common",
+   "kind": "ctx-menu",
+   "name": "common",
+   "value": 0,
+   "qualified": "Asc.c_oAscContextMenuTypes.common",
+   "editors": [
+    "cell"
+   ]
+  },
+  {
+   "id": "shortcut:AddNewRow",
+   "kind": "shortcut",
+   "name": "AddNewRow",
+   "value": 127,
+   "qualified": "Asc.c_oAscDocumentShortcutType.AddNewRow",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:ApplyHeading1",
+   "kind": "shortcut",
+   "name": "ApplyHeading1",
+   "value": 88,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ApplyHeading1",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:ApplyHeading2",
+   "kind": "shortcut",
+   "name": "ApplyHeading2",
+   "value": 89,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ApplyHeading2",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:ApplyHeading3",
+   "kind": "shortcut",
+   "name": "ApplyHeading3",
+   "value": 90,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ApplyHeading3",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:ApplyListBullet",
+   "kind": "shortcut",
+   "name": "ApplyListBullet",
+   "value": 91,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ApplyListBullet",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:BigMoveObjectDown",
+   "kind": "shortcut",
+   "name": "BigMoveObjectDown",
+   "value": 117,
+   "qualified": "Asc.c_oAscDocumentShortcutType.BigMoveObjectDown",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:BigMoveObjectLeft",
+   "kind": "shortcut",
+   "name": "BigMoveObjectLeft",
+   "value": 114,
+   "qualified": "Asc.c_oAscDocumentShortcutType.BigMoveObjectLeft",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:BigMoveObjectRight",
+   "kind": "shortcut",
+   "name": "BigMoveObjectRight",
+   "value": 115,
+   "qualified": "Asc.c_oAscDocumentShortcutType.BigMoveObjectRight",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:BigMoveObjectUp",
+   "kind": "shortcut",
+   "name": "BigMoveObjectUp",
+   "value": 116,
+   "qualified": "Asc.c_oAscDocumentShortcutType.BigMoveObjectUp",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:Bold",
+   "kind": "shortcut",
+   "name": "Bold",
+   "value": 82,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Bold",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:CenterPara",
+   "kind": "shortcut",
+   "name": "CenterPara",
+   "value": 95,
+   "qualified": "Asc.c_oAscDocumentShortcutType.CenterPara",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:ChooseNextComboBoxOption",
+   "kind": "shortcut",
+   "name": "ChooseNextComboBoxOption",
+   "value": 131,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ChooseNextComboBoxOption",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:ChoosePreviousComboBoxOption",
+   "kind": "shortcut",
+   "name": "ChoosePreviousComboBoxOption",
+   "value": 132,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ChoosePreviousComboBoxOption",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:CloseFile",
+   "kind": "shortcut",
+   "name": "CloseFile",
+   "value": 14,
+   "qualified": "Asc.c_oAscDocumentShortcutType.CloseFile",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:CloseMenu",
+   "kind": "shortcut",
+   "name": "CloseMenu",
+   "value": 16,
+   "qualified": "Asc.c_oAscDocumentShortcutType.CloseMenu",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:Copy",
+   "kind": "shortcut",
+   "name": "Copy",
+   "value": 56,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Copy",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:CopyFormat",
+   "kind": "shortcut",
+   "name": "CopyFormat",
+   "value": 59,
+   "qualified": "Asc.c_oAscDocumentShortcutType.CopyFormat",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:CopyrightSign",
+   "kind": "shortcut",
+   "name": "CopyrightSign",
+   "value": 136,
+   "qualified": "Asc.c_oAscDocumentShortcutType.CopyrightSign",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:Cut",
+   "kind": "shortcut",
+   "name": "Cut",
+   "value": 55,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Cut",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:DecreaseFontSize",
+   "kind": "shortcut",
+   "name": "DecreaseFontSize",
+   "value": 94,
+   "qualified": "Asc.c_oAscDocumentShortcutType.DecreaseFontSize",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:DeleteLeftChar",
+   "kind": "shortcut",
+   "name": "DeleteLeftChar",
+   "value": 47,
+   "qualified": "Asc.c_oAscDocumentShortcutType.DeleteLeftChar",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:DeleteLeftWord",
+   "kind": "shortcut",
+   "name": "DeleteLeftWord",
+   "value": 49,
+   "qualified": "Asc.c_oAscDocumentShortcutType.DeleteLeftWord",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:DeleteRightChar",
+   "kind": "shortcut",
+   "name": "DeleteRightChar",
+   "value": 48,
+   "qualified": "Asc.c_oAscDocumentShortcutType.DeleteRightChar",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:DeleteRightWord",
+   "kind": "shortcut",
+   "name": "DeleteRightWord",
+   "value": 50,
+   "qualified": "Asc.c_oAscDocumentShortcutType.DeleteRightWord",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:EditChart",
+   "kind": "shortcut",
+   "name": "EditChart",
+   "value": 144,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EditChart",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:EditRedo",
+   "kind": "shortcut",
+   "name": "EditRedo",
+   "value": 54,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EditRedo",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:EditSelectAll",
+   "kind": "shortcut",
+   "name": "EditSelectAll",
+   "value": 67,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EditSelectAll",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:EditShape",
+   "kind": "shortcut",
+   "name": "EditShape",
+   "value": 109,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EditShape",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:EditUndo",
+   "kind": "shortcut",
+   "name": "EditUndo",
+   "value": 53,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EditUndo",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:EmDash",
+   "kind": "shortcut",
+   "name": "EmDash",
+   "value": 134,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EmDash",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:EnDash",
+   "kind": "shortcut",
+   "name": "EnDash",
+   "value": 135,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EnDash",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:EndParagraph",
+   "kind": "shortcut",
+   "name": "EndParagraph",
+   "value": 41,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EndParagraph",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:EndParagraphCell",
+   "kind": "shortcut",
+   "name": "EndParagraphCell",
+   "value": 126,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EndParagraphCell",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:EquationAddPlaceholder",
+   "kind": "shortcut",
+   "name": "EquationAddPlaceholder",
+   "value": 44,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EquationAddPlaceholder",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:EquationChangeAlignmentLeft",
+   "kind": "shortcut",
+   "name": "EquationChangeAlignmentLeft",
+   "value": 45,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EquationChangeAlignmentLeft",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:EquationChangeAlignmentRight",
+   "kind": "shortcut",
+   "name": "EquationChangeAlignmentRight",
+   "value": 46,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EquationChangeAlignmentRight",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:EuroSign",
+   "kind": "shortcut",
+   "name": "EuroSign",
+   "value": 137,
+   "qualified": "Asc.c_oAscDocumentShortcutType.EuroSign",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:HorizontalEllipsis",
+   "kind": "shortcut",
+   "name": "HorizontalEllipsis",
+   "value": 140,
+   "qualified": "Asc.c_oAscDocumentShortcutType.HorizontalEllipsis",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:IncreaseFontSize",
+   "kind": "shortcut",
+   "name": "IncreaseFontSize",
+   "value": 93,
+   "qualified": "Asc.c_oAscDocumentShortcutType.IncreaseFontSize",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:Indent",
+   "kind": "shortcut",
+   "name": "Indent",
+   "value": 100,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Indent",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:InsertColumnBreak",
+   "kind": "shortcut",
+   "name": "InsertColumnBreak",
+   "value": 43,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertColumnBreak",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:InsertEndnoteNow",
+   "kind": "shortcut",
+   "name": "InsertEndnoteNow",
+   "value": 120,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertEndnoteNow",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:InsertEquation",
+   "kind": "shortcut",
+   "name": "InsertEquation",
+   "value": 133,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertEquation",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:InsertFootnoteNow",
+   "kind": "shortcut",
+   "name": "InsertFootnoteNow",
+   "value": 121,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertFootnoteNow",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:InsertHyperlink",
+   "kind": "shortcut",
+   "name": "InsertHyperlink",
+   "value": 65,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertHyperlink",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:InsertLineBreak",
+   "kind": "shortcut",
+   "name": "InsertLineBreak",
+   "value": 42,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertLineBreak",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:InsertLineBreakMultilineForm",
+   "kind": "shortcut",
+   "name": "InsertLineBreakMultilineForm",
+   "value": 145,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertLineBreakMultilineForm",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:InsertPageBreak",
+   "kind": "shortcut",
+   "name": "InsertPageBreak",
+   "value": 99,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertPageBreak",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:InsertPageNumber",
+   "kind": "shortcut",
+   "name": "InsertPageNumber",
+   "value": 102,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertPageNumber",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:InsertTab",
+   "kind": "shortcut",
+   "name": "InsertTab",
+   "value": 106,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertTab",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:InsertTableBreak",
+   "kind": "shortcut",
+   "name": "InsertTableBreak",
+   "value": 128,
+   "qualified": "Asc.c_oAscDocumentShortcutType.InsertTableBreak",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:Italic",
+   "kind": "shortcut",
+   "name": "Italic",
+   "value": 83,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Italic",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:JustifyPara",
+   "kind": "shortcut",
+   "name": "JustifyPara",
+   "value": 96,
+   "qualified": "Asc.c_oAscDocumentShortcutType.JustifyPara",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:LeftPara",
+   "kind": "shortcut",
+   "name": "LeftPara",
+   "value": 98,
+   "qualified": "Asc.c_oAscDocumentShortcutType.LeftPara",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:LittleMoveObjectDown",
+   "kind": "shortcut",
+   "name": "LittleMoveObjectDown",
+   "value": 113,
+   "qualified": "Asc.c_oAscDocumentShortcutType.LittleMoveObjectDown",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:LittleMoveObjectLeft",
+   "kind": "shortcut",
+   "name": "LittleMoveObjectLeft",
+   "value": 110,
+   "qualified": "Asc.c_oAscDocumentShortcutType.LittleMoveObjectLeft",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:LittleMoveObjectRight",
+   "kind": "shortcut",
+   "name": "LittleMoveObjectRight",
+   "value": 111,
+   "qualified": "Asc.c_oAscDocumentShortcutType.LittleMoveObjectRight",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:LittleMoveObjectUp",
+   "kind": "shortcut",
+   "name": "LittleMoveObjectUp",
+   "value": 112,
+   "qualified": "Asc.c_oAscDocumentShortcutType.LittleMoveObjectUp",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MixedIndent",
+   "kind": "shortcut",
+   "name": "MixedIndent",
+   "value": 107,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MixedIndent",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MixedUnIndent",
+   "kind": "shortcut",
+   "name": "MixedUnIndent",
+   "value": 108,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MixedUnIndent",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveFocusToNextObject",
+   "kind": "shortcut",
+   "name": "MoveFocusToNextObject",
+   "value": 118,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveFocusToNextObject",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveFocusToPreviousObject",
+   "kind": "shortcut",
+   "name": "MoveFocusToPreviousObject",
+   "value": 119,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveFocusToPreviousObject",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToDownLine",
+   "kind": "shortcut",
+   "name": "MoveToDownLine",
+   "value": 32,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToDownLine",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToEndDocument",
+   "kind": "shortcut",
+   "name": "MoveToEndDocument",
+   "value": 22,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToEndDocument",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToEndLine",
+   "kind": "shortcut",
+   "name": "MoveToEndLine",
+   "value": 21,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToEndLine",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToEndWord",
+   "kind": "shortcut",
+   "name": "MoveToEndWord",
+   "value": 34,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToEndWord",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToLeftChar",
+   "kind": "shortcut",
+   "name": "MoveToLeftChar",
+   "value": 30,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToLeftChar",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToLowerHeader",
+   "kind": "shortcut",
+   "name": "MoveToLowerHeader",
+   "value": 39,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToLowerHeader",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToLowerHeaderFooter",
+   "kind": "shortcut",
+   "name": "MoveToLowerHeaderFooter",
+   "value": 37,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToLowerHeaderFooter",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToNextCell",
+   "kind": "shortcut",
+   "name": "MoveToNextCell",
+   "value": 122,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToNextCell",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToNextForm",
+   "kind": "shortcut",
+   "name": "MoveToNextForm",
+   "value": 129,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToNextForm",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToNextPage",
+   "kind": "shortcut",
+   "name": "MoveToNextPage",
+   "value": 146,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToNextPage",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToNextRow",
+   "kind": "shortcut",
+   "name": "MoveToNextRow",
+   "value": 124,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToNextRow",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToPreviousCell",
+   "kind": "shortcut",
+   "name": "MoveToPreviousCell",
+   "value": 123,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToPreviousCell",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToPreviousForm",
+   "kind": "shortcut",
+   "name": "MoveToPreviousForm",
+   "value": 130,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToPreviousForm",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToPreviousPage",
+   "kind": "shortcut",
+   "name": "MoveToPreviousPage",
+   "value": 147,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToPreviousPage",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToPreviousRow",
+   "kind": "shortcut",
+   "name": "MoveToPreviousRow",
+   "value": 125,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToPreviousRow",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToRightChar",
+   "kind": "shortcut",
+   "name": "MoveToRightChar",
+   "value": 29,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToRightChar",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToStartDocument",
+   "kind": "shortcut",
+   "name": "MoveToStartDocument",
+   "value": 20,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToStartDocument",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToStartLine",
+   "kind": "shortcut",
+   "name": "MoveToStartLine",
+   "value": 19,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToStartLine",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToStartNextPage",
+   "kind": "shortcut",
+   "name": "MoveToStartNextPage",
+   "value": 24,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToStartNextPage",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToStartPreviousPage",
+   "kind": "shortcut",
+   "name": "MoveToStartPreviousPage",
+   "value": 23,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToStartPreviousPage",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToStartWord",
+   "kind": "shortcut",
+   "name": "MoveToStartWord",
+   "value": 33,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToStartWord",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToUpLine",
+   "kind": "shortcut",
+   "name": "MoveToUpLine",
+   "value": 31,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToUpLine",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToUpperHeader",
+   "kind": "shortcut",
+   "name": "MoveToUpperHeader",
+   "value": 40,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToUpperHeader",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:MoveToUpperHeaderFooter",
+   "kind": "shortcut",
+   "name": "MoveToUpperHeaderFooter",
+   "value": 38,
+   "qualified": "Asc.c_oAscDocumentShortcutType.MoveToUpperHeaderFooter",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:NextFileTab",
+   "kind": "shortcut",
+   "name": "NextFileTab",
+   "value": 12,
+   "qualified": "Asc.c_oAscDocumentShortcutType.NextFileTab",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:NextModalControl",
+   "kind": "shortcut",
+   "name": "NextModalControl",
+   "value": 35,
+   "qualified": "Asc.c_oAscDocumentShortcutType.NextModalControl",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:NonBreakingHyphen",
+   "kind": "shortcut",
+   "name": "NonBreakingHyphen",
+   "value": 52,
+   "qualified": "Asc.c_oAscDocumentShortcutType.NonBreakingHyphen",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:NonBreakingSpace",
+   "kind": "shortcut",
+   "name": "NonBreakingSpace",
+   "value": 51,
+   "qualified": "Asc.c_oAscDocumentShortcutType.NonBreakingSpace",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:OpenChatPanel",
+   "kind": "shortcut",
+   "name": "OpenChatPanel",
+   "value": 6,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenChatPanel",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:OpenCommentField",
+   "kind": "shortcut",
+   "name": "OpenCommentField",
+   "value": 5,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenCommentField",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:OpenCommentsPanel",
+   "kind": "shortcut",
+   "name": "OpenCommentsPanel",
+   "value": 4,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenCommentsPanel",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:OpenContextMenu",
+   "kind": "shortcut",
+   "name": "OpenContextMenu",
+   "value": 15,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenContextMenu",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:OpenExistingFile",
+   "kind": "shortcut",
+   "name": "OpenExistingFile",
+   "value": 11,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenExistingFile",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:OpenFilePanel",
+   "kind": "shortcut",
+   "name": "OpenFilePanel",
+   "value": 1,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenFilePanel",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:OpenFindAndReplaceMenu",
+   "kind": "shortcut",
+   "name": "OpenFindAndReplaceMenu",
+   "value": 3,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenFindAndReplaceMenu",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:OpenFindDialog",
+   "kind": "shortcut",
+   "name": "OpenFindDialog",
+   "value": 2,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenFindDialog",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:OpenHelpMenu",
+   "kind": "shortcut",
+   "name": "OpenHelpMenu",
+   "value": 10,
+   "qualified": "Asc.c_oAscDocumentShortcutType.OpenHelpMenu",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:Paste",
+   "kind": "shortcut",
+   "name": "Paste",
+   "value": 57,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Paste",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:PasteFormat",
+   "kind": "shortcut",
+   "name": "PasteFormat",
+   "value": 60,
+   "qualified": "Asc.c_oAscDocumentShortcutType.PasteFormat",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:PasteTextWithoutFormat",
+   "kind": "shortcut",
+   "name": "PasteTextWithoutFormat",
+   "value": 58,
+   "qualified": "Asc.c_oAscDocumentShortcutType.PasteTextWithoutFormat",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:PreviousFileTab",
+   "kind": "shortcut",
+   "name": "PreviousFileTab",
+   "value": 13,
+   "qualified": "Asc.c_oAscDocumentShortcutType.PreviousFileTab",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:PreviousModalControl",
+   "kind": "shortcut",
+   "name": "PreviousModalControl",
+   "value": 36,
+   "qualified": "Asc.c_oAscDocumentShortcutType.PreviousModalControl",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:PrintPreviewAndPrint",
+   "kind": "shortcut",
+   "name": "PrintPreviewAndPrint",
+   "value": 8,
+   "qualified": "Asc.c_oAscDocumentShortcutType.PrintPreviewAndPrint",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:RegisteredSign",
+   "kind": "shortcut",
+   "name": "RegisteredSign",
+   "value": 138,
+   "qualified": "Asc.c_oAscDocumentShortcutType.RegisteredSign",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:ReplaceUnicodeToSymbol",
+   "kind": "shortcut",
+   "name": "ReplaceUnicodeToSymbol",
+   "value": 141,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ReplaceUnicodeToSymbol",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:ResetChar",
+   "kind": "shortcut",
+   "name": "ResetChar",
+   "value": 92,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ResetChar",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:RightPara",
+   "kind": "shortcut",
+   "name": "RightPara",
+   "value": 97,
+   "qualified": "Asc.c_oAscDocumentShortcutType.RightPara",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:Save",
+   "kind": "shortcut",
+   "name": "Save",
+   "value": 7,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Save",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:SaveAs",
+   "kind": "shortcut",
+   "name": "SaveAs",
+   "value": 9,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SaveAs",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:ScrollDown",
+   "kind": "shortcut",
+   "name": "ScrollDown",
+   "value": 25,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ScrollDown",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:ScrollUp",
+   "kind": "shortcut",
+   "name": "ScrollUp",
+   "value": 26,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ScrollUp",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SelectLeftChar",
+   "kind": "shortcut",
+   "name": "SelectLeftChar",
+   "value": 73,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectLeftChar",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SelectLeftWord",
+   "kind": "shortcut",
+   "name": "SelectLeftWord",
+   "value": 75,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectLeftWord",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SelectLineDown",
+   "kind": "shortcut",
+   "name": "SelectLineDown",
+   "value": 77,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectLineDown",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SelectLineUp",
+   "kind": "shortcut",
+   "name": "SelectLineUp",
+   "value": 76,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectLineUp",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SelectPageDown",
+   "kind": "shortcut",
+   "name": "SelectPageDown",
+   "value": 79,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectPageDown",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SelectPageUp",
+   "kind": "shortcut",
+   "name": "SelectPageUp",
+   "value": 78,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectPageUp",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SelectRightChar",
+   "kind": "shortcut",
+   "name": "SelectRightChar",
+   "value": 72,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectRightChar",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SelectRightWord",
+   "kind": "shortcut",
+   "name": "SelectRightWord",
+   "value": 74,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectRightWord",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SelectToBeginNextPage",
+   "kind": "shortcut",
+   "name": "SelectToBeginNextPage",
+   "value": 81,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectToBeginNextPage",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SelectToBeginPreviousPage",
+   "kind": "shortcut",
+   "name": "SelectToBeginPreviousPage",
+   "value": 80,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectToBeginPreviousPage",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SelectToEndDocument",
+   "kind": "shortcut",
+   "name": "SelectToEndDocument",
+   "value": 71,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectToEndDocument",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SelectToEndLine",
+   "kind": "shortcut",
+   "name": "SelectToEndLine",
+   "value": 69,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectToEndLine",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SelectToStartDocument",
+   "kind": "shortcut",
+   "name": "SelectToStartDocument",
+   "value": 70,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectToStartDocument",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SelectToStartLine",
+   "kind": "shortcut",
+   "name": "SelectToStartLine",
+   "value": 68,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SelectToStartLine",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:ShowAll",
+   "kind": "shortcut",
+   "name": "ShowAll",
+   "value": 103,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ShowAll",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:SmallCaps",
+   "kind": "shortcut",
+   "name": "SmallCaps",
+   "value": 148,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SmallCaps",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:SpecialOptionsKeepSourceFormat",
+   "kind": "shortcut",
+   "name": "SpecialOptionsKeepSourceFormat",
+   "value": 61,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SpecialOptionsKeepSourceFormat",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SpecialOptionsKeepTextOnly",
+   "kind": "shortcut",
+   "name": "SpecialOptionsKeepTextOnly",
+   "value": 62,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SpecialOptionsKeepTextOnly",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SpecialOptionsNestTable",
+   "kind": "shortcut",
+   "name": "SpecialOptionsNestTable",
+   "value": 64,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SpecialOptionsNestTable",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SpecialOptionsOverwriteCells",
+   "kind": "shortcut",
+   "name": "SpecialOptionsOverwriteCells",
+   "value": 63,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SpecialOptionsOverwriteCells",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:SpeechWorker",
+   "kind": "shortcut",
+   "name": "SpeechWorker",
+   "value": 143,
+   "qualified": "Asc.c_oAscDocumentShortcutType.SpeechWorker",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:StartIndent",
+   "kind": "shortcut",
+   "name": "StartIndent",
+   "value": 104,
+   "qualified": "Asc.c_oAscDocumentShortcutType.StartIndent",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:StartUnIndent",
+   "kind": "shortcut",
+   "name": "StartUnIndent",
+   "value": 105,
+   "qualified": "Asc.c_oAscDocumentShortcutType.StartUnIndent",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:Strikeout",
+   "kind": "shortcut",
+   "name": "Strikeout",
+   "value": 85,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Strikeout",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:Subscript",
+   "kind": "shortcut",
+   "name": "Subscript",
+   "value": 86,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Subscript",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:Superscript",
+   "kind": "shortcut",
+   "name": "Superscript",
+   "value": 87,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Superscript",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:TrademarkSign",
+   "kind": "shortcut",
+   "name": "TrademarkSign",
+   "value": 139,
+   "qualified": "Asc.c_oAscDocumentShortcutType.TrademarkSign",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:UnIndent",
+   "kind": "shortcut",
+   "name": "UnIndent",
+   "value": 101,
+   "qualified": "Asc.c_oAscDocumentShortcutType.UnIndent",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:Underline",
+   "kind": "shortcut",
+   "name": "Underline",
+   "value": 84,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Underline",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:UpdateFields",
+   "kind": "shortcut",
+   "name": "UpdateFields",
+   "value": 18,
+   "qualified": "Asc.c_oAscDocumentShortcutType.UpdateFields",
+   "usedInWord": true,
+   "documentCase": true
+  },
+  {
+   "id": "shortcut:VisitHyperlink",
+   "kind": "shortcut",
+   "name": "VisitHyperlink",
+   "value": 66,
+   "qualified": "Asc.c_oAscDocumentShortcutType.VisitHyperlink",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:Zoom100",
+   "kind": "shortcut",
+   "name": "Zoom100",
+   "value": 17,
+   "qualified": "Asc.c_oAscDocumentShortcutType.Zoom100",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:ZoomIn",
+   "kind": "shortcut",
+   "name": "ZoomIn",
+   "value": 27,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ZoomIn",
+   "usedInWord": true,
+   "documentCase": false
+  },
+  {
+   "id": "shortcut:ZoomOut",
+   "kind": "shortcut",
+   "name": "ZoomOut",
+   "value": 28,
+   "qualified": "Asc.c_oAscDocumentShortcutType.ZoomOut",
+   "usedInWord": true,
+   "documentCase": false
+  }
+ ]
+}
