@@ -178,15 +178,23 @@ jobs:
         # The vanilla wysiwyg app was retired 2026-11-16; the rust docserver
         # now serves the React editor, which must be built before reconcile
         # can capture /word/ (the census waits for the React #toolbar).
-        # wasm-pack pinned to v0.15.0 (exact-version URL; "latest/download"
-        # with a versioned asset name does not resolve).
+        # pnpm version comes from the server repo's packageManager field
+        # (pnpm@10.4.1); wasm-pack pinned to v0.15.0 (exact-version URL;
+        # "latest/download" with a versioned asset name does not resolve).
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+          package_json_file: server/package.json
+      - name: Install wasm-pack (throttle-proof, then cargo fallback)
         run: |
-          npm install -g pnpm@9
-          if ! command -v wasm-pack >/dev/null 2>&1; then
-            curl -L -f -s --retry 3 https://github.com/rustwasm/wasm-pack/releases/download/v0.15.0/wasm-pack-v0.15.0-x86_64-unknown-linux-musl.tar.gz -o /tmp/wp.tgz \
-              && tar -xzf /tmp/wp.tgz -C /tmp \
-              && sudo mv /tmp/wasm-pack-v0.15.0-x86_64-unknown-linux-musl/wasm-pack /usr/local/bin/
+          if command -v wasm-pack >/dev/null 2>&1; then echo "wasm-pack present"; exit 0; fi
+          if curl -L -f -s --retry 3 --retry-delay 5 https://github.com/rustwasm/wasm-pack/releases/download/v0.15.0/wasm-pack-v0.15.0-x86_64-unknown-linux-musl.tar.gz -o /tmp/wp.tgz \
+             && tar -xzf /tmp/wp.tgz -C /tmp \
+             && sudo mv /tmp/wasm-pack-v0.15.0-x86_64-unknown-linux-musl/wasm-pack /usr/local/bin/; then
+            wasm-pack --version; exit 0
           fi
+          echo "binary download failed, falling back to cargo install"
+          cargo install wasm-pack --locked
           wasm-pack --version
 
       - name: Build the word editor UI (filtered to the doc editor)
