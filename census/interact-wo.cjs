@@ -39,9 +39,22 @@ const classify = () => {
     return r.width > 4 && r.height > 4;
   };
   const modal = [...document.querySelectorAll('.dialog-overlay')].find(e => vis(e) && e.classList.contains('open'));
-  const menu = [...document.querySelectorAll('#file-menu, #ctx-menu, .menu-list, [role=menu], .insert-pop')]
+  const menu = [...document.querySelectorAll('#file-menu, #ctx-menu, .menu-list, [role=menu], .insert-pop,\
+    [data-surface="menu"]')]
     .find(e => vis(e) && !e.hidden);
-  const panel = [...document.querySelectorAll('#nav-panel, #chat-panel, #review-panel, #comments-panel')]
+  // react surfaces: .de-left-menu is a PERMANENT icon rail (~55px wide,
+  // always visible) not a click-opened menu, and many OO-modals route to the
+  // right properties panel (.de-properties-panel) or a left drawer that
+  // swings out wider than the rail. Width-aware: only count a drawer/menu as
+  // surfaced when it clears the rail width.
+  const railW = (() => { const r = document.querySelector('.de-left-menu'); return r ? r.getBoundingClientRect().width : 55; })();
+  for (const sel of ['.de-viewport-left-menu', '.de-left-menu']) {
+    if (menu) break;
+    const el = document.querySelector(sel);
+    if (el && vis(el) && el.getBoundingClientRect().width > railW + 40) { menu = el; break; }
+  }
+  const panel = [...document.querySelectorAll('#nav-panel, #chat-panel, #review-panel, #comments-panel, .de-properties-panel,\
+    .de-viewport-right-panel')]
     .find(e => vis(e) && !e.hidden);
   let el = null, kind = 'none', boxEl = null;
   if (modal) { el = modal; kind = 'modal'; boxEl = modal.querySelector(':scope > .dialog') || modal; }
@@ -62,14 +75,15 @@ const bus = ([cmd, value]) =>
   dispatchEvent(new CustomEvent('wo-command', { detail: { command: cmd, value: value } }));
 const closeAll = () => {
   document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
-  document.querySelectorAll('.dialog-overlay.open').forEach(d => {
-    const b = d.querySelector('button[id$="-close"], .find-close, [data-dialog-close]');
-    if (b) b.click();
-    else {
-      d.classList.remove('open');
-      d.style.display = '';
-    }
-  });
+  document.querySelectorAll('.dialog-overlay.open, .de-properties-panel, .de-viewport-right-panel')
+    .forEach(d => {
+      const b = d.querySelector('button[id$="-close"], .find-close, [data-dialog-close]');
+      if (b) b.click();
+      else {
+        d.classList.remove('open');
+        d.style.display = '';
+      }
+    });
   ['#file-menu', '#ctx-menu', '#nav-panel', '#chat-panel', '#review-panel', '#comments-panel']
     .forEach(s => { const e = document.querySelector(s); if (e) e.hidden = true; });
 };
