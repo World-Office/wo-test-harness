@@ -146,12 +146,34 @@ def build_tab(tab_key: str, tab: dict, uni: dict, div: dict) -> dict:
     buttons = tab.get("buttons", [])
 
     controls, counts = [], {"done": 0, "diverged": 0, "missing": 0, "iconOnly": 0}
+    if rname is None:
+        # Integrity guard (v3.3): an OO tab with NO resolving react tab used to
+        # rubber-stamp every button as `done`. Now every button is missing with
+        # reason (union-assert catches source tabs; this catches runtime-only).
+        for b in buttons:
+            oo_label = b.get("label", "")
+            if not norm(oo_label):
+                counts["iconOnly"] += 1
+                continue
+            controls.append({"label": oo_label, "ooLabel": oo_label,
+                             "status": "missing",
+                             "reason": "no react ribbon tab resolution — honest gap"})
+            counts["missing"] += 1
+        counts["total"] = sum(counts[k] for k in ("done", "diverged", "missing",
+                                                    "iconOnly"))
+        return {"id": tab_key, "label": tab.get("label", tab_key),
+                "contextual": bool(tab.get("contextual")), "counts": counts,
+                "controls": controls}
+
+    div_tab = div.get(rname, {}) if isinstance(div, dict) else {}
+    tab_div = div_tab.get("_tab") if isinstance(div_tab, dict) else None
+
     for b in buttons:
         oo_label = b.get("label", "")
         if not norm(oo_label):
             counts["iconOnly"] += 1
             continue
-        if rname is None or label_match(oo_label, rlabels):
+        if label_match(oo_label, rlabels):
             status, reason = "done", None
             label = rnorm.get(norm(oo_label), oo_label)
         else:
