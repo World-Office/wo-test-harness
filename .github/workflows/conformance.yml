@@ -97,6 +97,53 @@ jobs:
           WO_SERVER_DIR: ${{ github.workspace }}/server
         run: python3 harness-graph/seed.py --check
 
+  port-graph:
+    # HE-1: port-state graph gate (census/port-graph/ - the OO->react port
+    # graph). build.py + done-gate.py are pure stdlib over committed census
+    # artifacts: no server clone, no node, no network - seconds, fails fast.
+    name: Port-state graph gate (build union self-assert + stale graph + done-gate)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Snapshot the committed graph.json (staleness reference)
+        run: cp census/port-graph/graph.json "$RUNNER_TEMP/graph.committed.json"
+
+      - name: Build graph.json (v3 union self-assert)
+        # Rebuilds the derived graph from the committed census artifacts and
+        # self-asserts union completeness - a source-manifest row
+        # (census/oo-source/) without a graph row exits non-zero, so
+        # rubber-stamped manifests fail loudly instead of passing silently.
+        run: /usr/bin/python3 census/port-graph/build.py
+
+      - name: Stale-graph check (rebuild must reproduce the committed graph.json)
+        # build.py restamps the wall-clock "generated" field on every run, so
+        # a raw `git diff --exit-code` can never pass; compare the graph
+        # content with that one stamp stripped - any other drift fails here.
+        run: |
+          /usr/bin/python3 - "$RUNNER_TEMP/graph.committed.json" <<'PY'
+          import json, sys
+          from pathlib import Path
+
+          def load(path):
+              graph = json.loads(Path(path).read_text())
+              graph.pop("generated", None)  # wall-clock stamp, not content
+              return graph
+
+          committed = load(sys.argv[1])
+          rebuilt = load("census/port-graph/graph.json")
+          if committed != rebuilt:
+              print("STALE census/port-graph/graph.json: rebuild differs from\n"
+                    "the committed graph. Regenerate and commit:\n"
+                    "  /usr/bin/python3 census/port-graph/build.py", file=sys.stderr)
+              sys.exit(1)
+          print("graph.json fresh: rebuild reproduces the committed graph "
+                "(modulo the generated stamp)")
+          PY
+
+      - name: Done gate (strict - undocumented-missing controls fail)
+        run: /usr/bin/python3 census/port-graph/done-gate.py --strict
+
   census-ledger:
     name: Parity ledger gate (census-wo ↔ MAP, reconcile --check)
     runs-on: ubuntu-latest
