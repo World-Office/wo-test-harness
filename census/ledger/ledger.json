@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-13T06:49:19.569331",
+ "generated": "2026-11-20T15:37:36.593326",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -9,11 +9,11 @@
   "L4 fidelity"
  ],
  "totals": {
-  "L0": 0,
-  "L1": 9,
-  "L2": 455,
+  "L0": 1,
+  "L1": 351,
+  "L2": 113,
   "L3": 37,
-  "L4": 33
+  "L4": 32
  },
  "features": [
   {
@@ -31,10 +31,8 @@
     "match": "btn-textfile",
     "where": "tab:insert"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.file asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "file.home",
@@ -51,10 +49,9 @@
     "match": "tab:home",
     "where": "backstage/tab"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO backstage open/new/history panes cover recents",
-    "L2 acts (contract PASS): file.home asserted via parity runner"
+    "WO backstage open/new/history panes cover recents"
    ]
   },
   {
@@ -92,10 +89,8 @@
     "match": "toggleInk",
     "where": "tab:draw"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.draw asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "file.layout",
@@ -112,10 +107,9 @@
     "match": "tab:layout",
     "where": "backstage/tab"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO Layout tab (margins/orientation/size/columns) + page-setup-dialog",
-    "L2 acts (contract PASS): file.layout asserted via parity runner"
+    "WO Layout tab (margins/orientation/size/columns) + page-setup-dialog"
    ]
   },
   {
@@ -133,10 +127,9 @@
     "match": "tab:references",
     "where": "backstage/tab"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO References tab (TOC/footnotes/endnotes/captions/crossrefs)",
-    "L2 acts (contract PASS): file.references asserted via parity runner"
+    "WO References tab (TOC/footnotes/endnotes/captions/crossrefs)"
    ]
   },
   {
@@ -154,10 +147,9 @@
     "match": "tab:collaboration",
     "where": "backstage/tab"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO Collaboration tab (co-editing/track-changes/chat/compare)",
-    "L2 acts (contract PASS): file.collaboration asserted via parity runner"
+    "WO Collaboration tab (co-editing/track-changes/chat/compare)"
    ]
   },
   {
@@ -215,10 +207,8 @@
     "match": "plugins-dialog",
     "where": "dialog:plugins-dialog"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.plugins asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "file.ai",
@@ -235,10 +225,8 @@
     "match": "AI changes",
     "where": "backstage"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.ai asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "file.editing",
@@ -255,10 +243,8 @@
     "match": "coedit-mode",
     "where": "tab:collaboration"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.editing asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "file.find-ctrl-f",
@@ -275,10 +261,8 @@
     "match": "btn-find",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.find-ctrl-f asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "file.copy-ctrl-insert",
@@ -295,10 +279,8 @@
     "match": "btn-copy",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.copy-ctrl-insert asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "file.paste-ctrl-v",
@@ -315,10 +297,8 @@
     "match": "btn-paste",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.paste-ctrl-v asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "file.cut-ctrl-x",
@@ -335,10 +315,8 @@
     "match": "btn-cut",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.cut-ctrl-x asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "file.copy-style-ctrl-alt-c",
@@ -355,10 +333,8 @@
     "match": "btn-copy",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.copy-style-ctrl-alt-c asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "formatting.font",
@@ -375,10 +351,8 @@
     "match": "font-family",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): formatting.font asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "formatting.font-size",
@@ -395,10 +369,8 @@
     "match": "font-size",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): formatting.font-size asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "formatting.increment-font-size-ctrl",
@@ -415,10 +387,8 @@
     "match": "font-size",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): formatting.increment-font-size-ctrl asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "formatting.decrement-font-size-ctrl",
@@ -435,10 +405,8 @@
     "match": "font-size",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): formatting.decrement-font-size-ctrl asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "formatting.change-case",
@@ -457,7 +425,6 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (contract PASS): formatting.change-case asserted via parity runner",
     "L3 roundtrip ok [changeCase]: marker /SENTINEL/ survived html->docx->html"
    ]
   },
@@ -607,10 +574,8 @@
     "match": "highlight-color",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): formatting.highlight-color asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "formatting.font-color",
@@ -632,10 +597,8 @@
     "match": "text-color",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): formatting.font-color asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "formatting.clear-style",
@@ -706,7 +669,6 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (contract PASS): formatting.numbering asserted via parity runner",
     "L3 roundtrip ok [insertOrderedList]: marker /<ol\\b/ survived html->docx->html"
    ]
   },
@@ -725,10 +687,8 @@
     "match": "multilevel",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): formatting.multilevel-list asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "formatting.decrease-indent-ctrl-shift-m",
@@ -787,10 +747,8 @@
     "match": "line-spacing",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): formatting.paragraph-line-spacing asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "formatting.text-direction",
@@ -916,10 +874,8 @@
     "match": "btn-home-formatmarks",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): formatting.nonprinting-characters-ctrl-shift-8 asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "formatting.shading",
@@ -941,10 +897,8 @@
     "match": "Shading",
     "where": "menu:More formatting"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): formatting.shading asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "formatting.borders",
@@ -966,10 +920,8 @@
     "match": "openBorders",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): formatting.borders asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "formatting.replace-ctrl-h",
@@ -986,10 +938,8 @@
     "match": "btn-replace",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): formatting.replace-ctrl-h asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "formatting.select-all-ctrl-a",
@@ -1006,10 +956,8 @@
     "match": "selectAll",
     "where": "tab:home"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): formatting.select-all-ctrl-a asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.blank-page",
@@ -1026,10 +974,8 @@
     "match": "btn-multipage",
     "where": "statusbar"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.blank-page asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.breaks",
@@ -1046,10 +992,8 @@
     "match": "Breaks",
     "where": "tab:insert"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.breaks asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "table.table",
@@ -1068,7 +1012,6 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (contract PASS): table.table asserted via parity runner",
     "L3 roundtrip ok [btn-table]: marker /<table\\b/ survived html->docx->html"
    ]
   },
@@ -1092,10 +1035,8 @@
     "match": "btn-hf-image",
     "where": "tab:header-footer"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): image.image asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.shape",
@@ -1112,10 +1053,8 @@
     "match": "insertObject",
     "where": "tab:insert"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.shape asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.smartart",
@@ -1132,10 +1071,8 @@
     "match": "btn-smartart",
     "where": "tab:insert"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.smartart asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.chart",
@@ -1152,10 +1089,8 @@
     "match": "insertObject",
     "where": "tab:insert"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.chart asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "review.comment",
@@ -1194,7 +1129,6 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (contract PASS): insert.link asserted via parity runner",
     "L3 roundtrip ok [link]: marker /<a\\b/ survived html->docx->html"
    ]
   },
@@ -1322,7 +1256,6 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (contract PASS): insert.date-time asserted via parity runner",
     "L3 roundtrip ok [btn-datetime]: marker \"2026-11-02\" survived html->docx->html"
    ]
   },
@@ -1341,10 +1274,8 @@
     "match": "btn-textfile",
     "where": "tab:insert"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.text-from-file asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.field",
@@ -1361,10 +1292,8 @@
     "match": "btn-field",
     "where": "tab:references"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.field asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.equation",
@@ -1381,10 +1310,8 @@
     "match": "btn-equation",
     "where": "tab:insert"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.equation asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.symbol",
@@ -1403,7 +1330,6 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (contract PASS): insert.symbol asserted via parity runner",
     "L3 roundtrip ok [btn-symbol]: marker \"!\" survived html->docx->html"
    ]
   },
@@ -1422,10 +1348,8 @@
     "match": "btn-contentcontrol",
     "where": "tab:insert"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.content-controls asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.select",
@@ -1442,10 +1366,8 @@
     "match": "inkSelect",
     "where": "tab:draw"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.select asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.eraser",
@@ -1462,10 +1384,8 @@
     "match": "toggleInk",
     "where": "tab:draw"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.eraser asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.margins",
@@ -1482,10 +1402,8 @@
     "match": "Margins",
     "where": "tab:layout"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.margins asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.orientation",
@@ -1502,10 +1420,8 @@
     "match": "Orientation",
     "where": "tab:layout"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.orientation asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.size",
@@ -1522,10 +1438,8 @@
     "match": "Size",
     "where": "tab:layout"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.size asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.columns",
@@ -1542,10 +1456,8 @@
     "match": "Columns",
     "where": "tab:layout"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.columns asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.breaks",
@@ -1562,10 +1474,8 @@
     "match": "Breaks",
     "where": "tab:insert"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.breaks asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.line-numbers",
@@ -1622,10 +1532,8 @@
     "match": "Wrapping",
     "where": "tab:layout"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.wrapping asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.bring-forward",
@@ -1642,10 +1550,8 @@
     "match": "objectOp",
     "where": "tab:layout"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.bring-forward asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.send-backward",
@@ -1662,10 +1568,8 @@
     "match": "objectOp",
     "where": "tab:layout"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.send-backward asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.align",
@@ -1682,10 +1586,8 @@
     "match": "Align",
     "where": "tab:layout"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.align asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.group",
@@ -1702,10 +1604,8 @@
     "match": "objectOp",
     "where": "tab:layout"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.group asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.merge-shapes",
@@ -1722,10 +1622,8 @@
     "match": "btn-mergeshapes",
     "where": "tab:draw"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.merge-shapes asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.watermark",
@@ -1762,10 +1660,8 @@
     "match": "btn-multipage",
     "where": "statusbar"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.page-color asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.colors",
@@ -1782,10 +1678,8 @@
     "match": "themecolors",
     "where": "tab:layout"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.colors asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "table.table-of-contents",
@@ -1822,10 +1716,8 @@
     "match": "btn-addtext",
     "where": "tab:insert"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): references.add-text asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "table.update-table",
@@ -1889,7 +1781,6 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (contract PASS): references.link asserted via parity runner",
     "L3 roundtrip ok [link]: marker /<a\\b/ survived html->docx->html"
    ]
   },
@@ -1908,10 +1799,8 @@
     "match": "bookmark-dialog",
     "where": "dialog:bookmark-dialog"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): references.bookmark asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "references.caption",
@@ -1948,10 +1837,8 @@
     "match": "crossref-dialog",
     "where": "dialog:crossref-dialog"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): references.cross-reference asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "table.table-of-figures",
@@ -1988,10 +1875,8 @@
     "match": "coedit-mode",
     "where": "tab:collaboration"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): review.co-editing-mode asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "review.add-comment",
@@ -2008,10 +1893,8 @@
     "match": "btn-comment",
     "where": "tab:collaboration"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): review.add-comment asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "review.delete",
@@ -2028,10 +1911,8 @@
     "match": "deleteComment",
     "where": "tab:collaboration"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): review.delete asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "review.resolve",
@@ -2048,10 +1929,8 @@
     "match": "resolveComment",
     "where": "tab:collaboration"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): review.resolve asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "review.track-changes",
@@ -2068,10 +1947,8 @@
     "match": "btn-track-changes",
     "where": "tab:collaboration"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): review.track-changes asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "review.display-mode",
@@ -2108,10 +1985,8 @@
     "match": "prevTrackedChange",
     "where": "tab:collaboration"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): review.previous asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "review.next",
@@ -2128,10 +2003,8 @@
     "match": "nextTrackedChange",
     "where": "tab:collaboration"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): review.next asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "review.accept",
@@ -2148,10 +2021,8 @@
     "match": "acceptTrackedChange",
     "where": "tab:collaboration"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): review.accept asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "review.reject",
@@ -2168,10 +2039,8 @@
     "match": "rejectTrackedChange",
     "where": "tab:collaboration"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): review.reject asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "review.compare",
@@ -2188,10 +2057,8 @@
     "match": "compareVersion",
     "where": "tab:collaboration"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): review.compare asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "review.combine",
@@ -2208,10 +2075,8 @@
     "match": "combineRevisions",
     "where": "tab:collaboration"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): review.combine asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "review.chat",
@@ -2228,10 +2093,8 @@
     "match": "toggleChat",
     "where": "tab:collaboration"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): review.chat asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "file.mail-merge",
@@ -2248,10 +2111,8 @@
     "match": "mailMerge",
     "where": "tab:collaboration"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.mail-merge asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "protect.encrypt",
@@ -2308,10 +2169,8 @@
     "match": "btn-view-headings",
     "where": "tab:view"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): view.headings asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "view.fit-to-page",
@@ -2328,10 +2187,8 @@
     "match": "btn-multipage",
     "where": "statusbar"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): view.fit-to-page asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "view.fit-to-width",
@@ -2348,10 +2205,8 @@
     "match": "btn-view-fit-width",
     "where": "tab:view"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): view.fit-to-width asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "view.zoom-to-100",
@@ -2368,10 +2223,8 @@
     "match": "btn-zoom-reset",
     "where": "statusbar"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): view.zoom-to-100 asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "view.multiple-pages",
@@ -2388,10 +2241,8 @@
     "match": "btn-multipage",
     "where": "statusbar"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): view.multiple-pages asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "view.interface-theme",
@@ -2408,10 +2259,8 @@
     "match": "view-theme-select",
     "where": "tab:view"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): view.interface-theme asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "view.dark-document",
@@ -2428,10 +2277,8 @@
     "match": "btn-view-darkdoc",
     "where": "tab:view"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): view.dark-document asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "macros.macros",
@@ -2448,9 +2295,8 @@
     "match": "btn-macro-menu",
     "where": "tab:view"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "L2 acts (contract PASS): macros.macros asserted via parity runner",
     "registered park (plan C12): btn-macro-menu emits wo:macro event markers only — no macro engine"
    ],
    "divergence": "registered"
@@ -2470,9 +2316,8 @@
     "match": "Record macro",
     "where": "menu:btn-macro-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "L2 acts (contract PASS): macros.record-macro asserted via parity runner",
     "registered park (plan C12): btn-macro-record is a wo:macro marker stub"
    ],
    "divergence": "registered"
@@ -2492,10 +2337,8 @@
     "match": "Pause recording",
     "where": "menu:btn-macro-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): view.pause-recording asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "plugins.plugin-manager",
@@ -2512,9 +2355,8 @@
     "match": "plugins-dialog",
     "where": "dialog:plugins-dialog"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "L2 acts (contract PASS): plugins.plugin-manager asserted via parity runner",
     "registered park (plan C13): plugins-dialog is a stub surface (capability plane)"
    ],
    "divergence": "registered"
@@ -2534,10 +2376,8 @@
     "match": "plugins-dialog",
     "where": "dialog:plugins-dialog"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): plugins.background-plugins asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "image.photo-editor",
@@ -2554,10 +2394,8 @@
     "match": "photoEditor",
     "where": "tab:plugins"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): image.photo-editor asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "plugins.youtube",
@@ -2574,10 +2412,8 @@
     "match": "pluginUnavailable",
     "where": "tab:plugins"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): plugins.youtube asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "plugins.ocr",
@@ -2594,10 +2430,8 @@
     "match": "ocrRun",
     "where": "tab:plugins"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): plugins.ocr asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "plugins.translator",
@@ -2614,10 +2448,8 @@
     "match": "aiTranslate",
     "where": "tab:plugins"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): plugins.translator asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "plugins.mendeley",
@@ -2634,10 +2466,8 @@
     "match": "pluginUnavailable",
     "where": "tab:plugins"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): plugins.mendeley asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "review.thesaurus",
@@ -2654,10 +2484,8 @@
     "match": "aiRewrite",
     "where": "tab:plugins"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): review.thesaurus asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "plugins.highlight-code",
@@ -2694,10 +2522,8 @@
     "match": "pluginUnavailable",
     "where": "tab:plugins"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): plugins.zotero asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "plugins.speech",
@@ -2714,10 +2540,8 @@
     "match": "btn-speech",
     "where": "tab:view"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): plugins.speech asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "plugins.speech-input",
@@ -2734,10 +2558,8 @@
     "match": "dictate",
     "where": "tab:plugins"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): plugins.speech-input asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "headerfooter.page-number",
@@ -2777,7 +2599,6 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (contract PASS): headerfooter.date-time asserted via parity runner",
     "L3 roundtrip ok [btn-datetime]: marker \"2026-11-02\" survived html->docx->html"
    ]
   },
@@ -2796,10 +2617,8 @@
     "match": "btn-field",
     "where": "tab:references"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): headerfooter.field asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "headerfooter.close",
@@ -2816,10 +2635,8 @@
     "match": "btn-hf-close",
     "where": "tab:header-footer"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): headerfooter.close asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "other.settings",
@@ -2856,10 +2673,8 @@
     "match": "btn-ai-assistant",
     "where": "tab:ai"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): other.chatbot asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "other.summarization",
@@ -2876,10 +2691,8 @@
     "match": "aiSummarize",
     "where": "tab:ai"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): other.summarization asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "other.translation",
@@ -2896,10 +2709,8 @@
     "match": "aiTranslate",
     "where": "tab:ai"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): other.translation asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "review.grammar-spelling",
@@ -2916,10 +2727,8 @@
     "match": "btn-ai-grammar",
     "where": "tab:ai"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): review.grammar-spelling asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "other.create-ai-assistant",
@@ -2936,10 +2745,8 @@
     "match": "createAiAssistant",
     "where": "tab:ai"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): other.create-ai-assistant asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.chart-elements",
@@ -2956,10 +2763,8 @@
     "match": "Chart elements ▾",
     "where": "tab:chart-design"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.chart-elements asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.edit-data",
@@ -2981,10 +2786,8 @@
     "match": "chartEditData",
     "where": "tab:chart-design"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.edit-data asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.update-data",
@@ -3001,10 +2804,8 @@
     "match": "chartUpdateData",
     "where": "tab:chart-design"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.update-data asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.chart-type",
@@ -3021,10 +2822,8 @@
     "match": "Chart type ▾",
     "where": "tab:chart-design"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.chart-type asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.advanced-settings",
@@ -3041,10 +2840,8 @@
     "match": "chartSettings",
     "where": "tab:chart-design"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.advanced-settings asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.wrapping",
@@ -3061,10 +2858,8 @@
     "match": "Wrapping",
     "where": "tab:layout"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.wrapping asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.width",
@@ -3081,10 +2876,8 @@
     "match": "chart-width-input",
     "where": "tab:chart-design"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.width asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.height",
@@ -3101,10 +2894,8 @@
     "match": "chart-height-input",
     "where": "tab:chart-design"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.height asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.3d-rotation",
@@ -3121,10 +2912,8 @@
     "match": "chart3d",
     "where": "tab:chart-design"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.3d-rotation asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.insert-page-break",
@@ -3141,10 +2930,8 @@
     "match": "btn-multipage",
     "where": "statusbar"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.insert-page-break asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.insert-column-break",
@@ -3161,10 +2948,8 @@
     "match": "Insert column break",
     "where": "menu:Breaks"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.insert-column-break asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.insert-section-break",
@@ -3181,10 +2966,8 @@
     "match": "Insert section break",
     "where": "menu:Breaks"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.insert-section-break asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "table.insert-custom-table",
@@ -3203,7 +2986,6 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (contract PASS): table.insert-custom-table asserted via parity runner",
     "L3 roundtrip ok [btn-table]: marker /<table\\b/ survived html->docx->html"
    ]
   },
@@ -3222,10 +3004,8 @@
     "match": "Draw table",
     "where": "menu:Table ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): table.draw-table asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "table.erase-table",
@@ -3242,10 +3022,8 @@
     "match": "Erase table",
     "where": "menu:Table ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): table.erase-table asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "table.convert-text-to-table",
@@ -3264,7 +3042,6 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (contract PASS): table.convert-text-to-table asserted via parity runner",
     "L3 roundtrip ok [convertTextToTable]: marker /<table\\b/ survived html->docx->html"
    ]
   },
@@ -3283,10 +3060,8 @@
     "match": "Spreadsheet",
     "where": "menu:btn-insert-more"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.insert-spreadsheet asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.more-symbols",
@@ -3305,7 +3080,6 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (contract PASS): insert.more-symbols asserted via parity runner",
     "L3 roundtrip ok [btn-symbol]: marker \"!\" survived html->docx->html"
    ]
   },
@@ -3326,7 +3100,6 @@
    },
    "level": 3,
    "evidence": [
-    "L2 acts (contract PASS): insert.symbols asserted via parity runner",
     "L3 roundtrip ok [btn-symbol]: marker \"!\" survived html->docx->html"
    ]
   },
@@ -3345,10 +3118,8 @@
     "match": "Fractions",
     "where": "menu:Symbols ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.fractions asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.scripts",
@@ -3365,10 +3136,8 @@
     "match": "Scripts",
     "where": "menu:Symbols ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.scripts asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.radicals",
@@ -3385,10 +3154,8 @@
     "match": "Radicals",
     "where": "menu:Symbols ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.radicals asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.integrals",
@@ -3405,10 +3172,8 @@
     "match": "Integrals",
     "where": "menu:Symbols ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.integrals asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.large-operators",
@@ -3425,10 +3190,8 @@
     "match": "Large operators",
     "where": "menu:Symbols ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.large-operators asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.brackets",
@@ -3445,10 +3208,8 @@
     "match": "Brackets",
     "where": "menu:Symbols ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.brackets asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.functions",
@@ -3465,10 +3226,8 @@
     "match": "Functions",
     "where": "menu:Symbols ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.functions asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.accents",
@@ -3485,10 +3244,8 @@
     "match": "Accents",
     "where": "menu:Symbols ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.accents asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.limits-and-logarithms",
@@ -3505,10 +3262,8 @@
     "match": "Limits and logarithms",
     "where": "menu:Symbols ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.limits-and-logarithms asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.operators",
@@ -3525,10 +3280,8 @@
     "match": "Operators",
     "where": "menu:Symbols ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.operators asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.matrices",
@@ -3545,10 +3298,8 @@
     "match": "Matrices",
     "where": "menu:Symbols ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): insert.matrices asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.last-custom",
@@ -3565,10 +3316,8 @@
     "match": "Last Custom",
     "where": "menu:Margins"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.last-custom asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.normal",
@@ -3585,10 +3334,8 @@
     "match": "Normal",
     "where": "menu:Margins"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.normal asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.narrow",
@@ -3605,10 +3352,8 @@
     "match": "Narrow",
     "where": "menu:Margins"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.narrow asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.moderate",
@@ -3625,10 +3370,8 @@
     "match": "Moderate",
     "where": "menu:Margins"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.moderate asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.wide",
@@ -3645,10 +3388,8 @@
     "match": "Wide",
     "where": "menu:Margins"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.wide asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.custom-margins",
@@ -3665,10 +3406,8 @@
     "match": "Custom margins",
     "where": "menu:Margins"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.custom-margins asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.us-letter",
@@ -3685,10 +3424,8 @@
     "match": "Letter",
     "where": "menu:Size"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.us-letter asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.us-legal",
@@ -3705,10 +3442,8 @@
     "match": "Legal",
     "where": "menu:Size"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.us-legal asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.a4",
@@ -3725,10 +3460,8 @@
     "match": "A4",
     "where": "menu:Size"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.a4 asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.a5",
@@ -3745,10 +3478,8 @@
     "match": "A5",
     "where": "menu:Size"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.a5 asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.b5",
@@ -3765,10 +3496,8 @@
     "match": "B5",
     "where": "menu:Size"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.b5 asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.envelope-10",
@@ -3785,10 +3514,8 @@
     "match": "Envelope #10",
     "where": "menu:Size"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.envelope-10 asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.envelope-dl",
@@ -3805,10 +3532,8 @@
     "match": "Envelope DL",
     "where": "menu:Size"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.envelope-dl asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.tabloid",
@@ -3825,10 +3550,8 @@
     "match": "Tabloid",
     "where": "menu:Size"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.tabloid asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.a3",
@@ -3845,10 +3568,8 @@
     "match": "A3",
     "where": "menu:Size"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.a3 asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.tabloid-oversize",
@@ -3865,10 +3586,8 @@
     "match": "Tabloid Oversize",
     "where": "menu:Size"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.tabloid-oversize asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.roc-16k",
@@ -3885,10 +3604,8 @@
     "match": "ROC 16K",
     "where": "menu:Size"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.roc-16k asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.envelope-choukei-3",
@@ -3905,10 +3622,8 @@
     "match": "Envelope Choukei 3",
     "where": "menu:Size"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.envelope-choukei-3 asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.super-b-a3",
@@ -3925,10 +3640,8 @@
     "match": "Super B/A3",
     "where": "menu:Size"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.super-b-a3 asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.custom-page-size",
@@ -3945,10 +3658,8 @@
     "match": "btn-multipage",
     "where": "statusbar"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.custom-page-size asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.one",
@@ -3965,10 +3676,8 @@
     "match": "One",
     "where": "menu:Columns"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.one asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.two",
@@ -3985,10 +3694,8 @@
     "match": "Two",
     "where": "menu:Columns"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.two asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.three",
@@ -4005,10 +3712,8 @@
     "match": "Three",
     "where": "menu:Columns"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.three asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.left",
@@ -4025,10 +3730,8 @@
     "match": "Left",
     "where": "menu:Columns"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.left asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.right",
@@ -4045,10 +3748,8 @@
     "match": "Right",
     "where": "menu:Columns"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.right asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.custom-columns",
@@ -4065,10 +3766,8 @@
     "match": "Custom columns",
     "where": "menu:Columns"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): page.custom-columns asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "page.none",
@@ -4145,10 +3844,8 @@
     "match": "Axes",
     "where": "menu:Chart elements ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.axes asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.axis-titles",
@@ -4165,10 +3862,8 @@
     "match": "Axis Titles",
     "where": "menu:Chart elements ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.axis-titles asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.chart-title",
@@ -4185,10 +3880,8 @@
     "match": "Chart title",
     "where": "menu:Chart elements ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.chart-title asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.data-labels",
@@ -4205,10 +3898,8 @@
     "match": "Data labels",
     "where": "menu:Chart elements ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.data-labels asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.error-bars",
@@ -4225,10 +3916,8 @@
     "match": "Error Bars",
     "where": "menu:Chart elements ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.error-bars asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.gridlines",
@@ -4245,10 +3934,8 @@
     "match": "btn-gridlines",
     "where": "tab:view"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.gridlines asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.legend",
@@ -4265,10 +3952,8 @@
     "match": "Legend",
     "where": "menu:Chart elements ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.legend asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.trendline",
@@ -4285,10 +3970,8 @@
     "match": "Trendline",
     "where": "menu:Chart elements ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.trendline asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "chart.up-down-bars",
@@ -4305,10 +3988,8 @@
     "match": "Up/Down Bars",
     "where": "menu:Chart elements ▾"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): chart.up-down-bars asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "insert.dlg-date-time",
@@ -4344,7 +4025,6 @@
    "level": 4,
    "evidence": [
     "1 OO fields: Update automatically",
-    "L2 acts (contract PASS): insert.dlg-date-time asserted via parity runner",
     "L3 roundtrip ok [btn-datetime]: marker \"2026-11-02\" survived html->docx->html",
     "L4 live probe (datetime-dialog-l4.test.mjs): btn-datetime inserts current date at caret (flat HTML); NO WO dialog exists to carry the OO field contract — this registration pins the row at L4 via artifact existence (FXG-D: dlg-date-time L3->L4)",
     "L4 fidelity: every probe check passed (7/7 — field contract + apply semantics + negative paths, live-verified against the running editor)",
@@ -4396,7 +4076,6 @@
    "evidence": [
     "2 OO fields: Font, Range",
     "2 OO fields: Font, Range",
-    "L2 acts (contract PASS): insert.dlg-symbol asserted via parity runner",
     "L4 dialog field parity: 2/2 OO fields covered {'Font': 'Font', 'Range': 'Range'} (buttons OO ['Symbols', 'Special characters', 'Insert', 'Close'] vs WO ['Close'])"
    ]
   },
@@ -4448,11 +4127,10 @@
     "match": "Margins",
     "where": "tab:layout"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
     "8 OO fields: Margins, Top, Bottom, Left, Right, Gutter position, Orientation, Multiple pages",
-    "8 OO fields: Margins, Top, Bottom, Left, Right, Gutter position, Orientation, Multiple pages",
-    "L2 acts (contract PASS): page.dlg-margins asserted via parity runner"
+    "8 OO fields: Margins, Top, Bottom, Left, Right, Gutter position, Orientation, Multiple pages"
    ]
   },
   {
@@ -4493,11 +4171,10 @@
     "match": "btn-multipage",
     "where": "statusbar"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
     "3 OO fields: Preset, Width, Height",
-    "3 OO fields: Preset, Width, Height",
-    "L2 acts (contract PASS): page.dlg-page-size asserted via parity runner"
+    "3 OO fields: Preset, Width, Height"
    ]
   },
   {
@@ -4542,11 +4219,10 @@
     "match": "columns-dialog",
     "where": "dialog:columns-dialog"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
     "5 OO fields: Number of columns, 1, 2, Equal column width, Column divider",
-    "5 OO fields: Number of columns, 1, 2, Equal column width, Column divider",
-    "L2 acts (contract PASS): page.dlg-columns asserted via parity runner"
+    "5 OO fields: Number of columns, 1, 2, Equal column width, Column divider"
    ]
   },
   {
@@ -4599,7 +4275,6 @@
    "evidence": [
     "2 OO fields: Automatically hyphenate document, Hyphenate words in CAPS",
     "2 OO fields: Automatically hyphenate document, Hyphenate words in CAPS",
-    "L2 acts (contract PASS): page.dlg-hyphenation asserted via parity runner",
     "L4 live probe (hyphenation-dialog-l4.test.mjs): Automatic + OK plants body div.hyphenation[data-mode=automatic] (flat HTML) which the converters round-trip to DOCX; None removes it; Cancel mutates nothing",
     "L4 fidelity: every probe check passed (9/9 — field contract + apply semantics + negative paths, live-verified against the running editor)",
     "declared divergence: OO \"Hyphenate words in CAPS\" checkbox has no WO counterpart"
@@ -4631,10 +4306,9 @@
     "match": "bookmark-dialog",
     "where": "dialog:bookmark-dialog"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "2 OO fields: Sort by, Hidden bookmarks",
-    "L2 acts (contract PASS): references.dlg-bookmarks asserted via parity runner"
+    "2 OO fields: Sort by, Hidden bookmarks"
    ]
   },
   {
@@ -4668,10 +4342,9 @@
     "match": "insertCaption",
     "where": "tab:references"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "8 OO fields: Caption, Insert, Label, Exclude label from caption, Numbering, Include chapter number, Chapter starts with style, Use separator",
-    "L2 acts (contract PASS): references.dlg-insert-caption asserted via parity runner"
+    "8 OO fields: Caption, Insert, Label, Exclude label from caption, Numbering, Include chapter number, Chapter starts with style, Use separator"
    ]
   },
   {
@@ -4700,10 +4373,9 @@
     "match": "crossref-dialog",
     "where": "dialog:crossref-dialog"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "5 OO fields: Reference type, Insert reference to, Insert as link, Include above/below, Separate numbers with",
-    "L2 acts (contract PASS): references.dlg-cross-reference asserted via parity runner"
+    "5 OO fields: Reference type, Insert reference to, Insert as link, Include above/below, Separate numbers with"
    ]
   },
   {
@@ -4734,10 +4406,9 @@
     "match": "tableoffigures-dialog",
     "where": "dialog:tableoffigures-dialog"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "7 OO fields: Show page numbers, Right align page numbers, Leader, Format table of figures as links, Build table of figures from, Include label and number, Styles",
-    "L2 acts (contract PASS): table.dlg-table-of-figures asserted via parity runner"
+    "7 OO fields: Show page numbers, Right align page numbers, Leader, Format table of figures as links, Build table of figures from, Include label and number, Styles"
    ]
   },
   {
@@ -4768,10 +4439,9 @@
     "match": "toc-dialog",
     "where": "dialog:toc-dialog"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "7 OO fields: Show page numbers, Right align page numbers, Leader, Format table of contents as links, Build table of contents from, Levels, Styles",
-    "L2 acts (contract PASS): table.dlg-table-of-contents asserted via parity runner"
+    "7 OO fields: Show page numbers, Right align page numbers, Leader, Format table of contents as links, Build table of contents from, Levels, Styles"
    ]
   },
   {
@@ -4801,10 +4471,9 @@
     "match": "btn-macro-menu",
     "where": "tab:view"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
     "1 OO fields: Autostart",
-    "L2 acts (contract PASS): macros.dlg-macros asserted via parity runner",
     "registered park (plan C12): OO Macros modal is not implemented (marker stub only)"
    ],
    "divergence": "registered"
@@ -4835,7 +4504,6 @@
    "level": 3,
    "evidence": [
     "1 OO fields: Update automatically",
-    "L2 acts (contract PASS): headerfooter.dlg-date-time asserted via parity runner",
     "L3 roundtrip ok [btn-datetime]: marker \"2026-11-02\" survived html->docx->html"
    ]
   },
@@ -4853,10 +4521,8 @@
     "match": "Back",
     "where": "backstage"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.back asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "file.save",
@@ -4872,10 +4538,8 @@
     "match": "Save",
     "where": "backstage"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.save asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "file.download-as",
@@ -4891,10 +4555,8 @@
     "match": "Download As",
     "where": "backstage"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.download-as asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "file.protect",
@@ -4910,10 +4572,8 @@
     "match": "Protect",
     "where": "backstage"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.protect asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "file.advanced-settings",
@@ -4929,10 +4589,8 @@
     "match": "chartSettings",
     "where": "tab:chart-design"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.advanced-settings asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "file.suggest-a-feature",
@@ -4948,10 +4606,8 @@
     "match": "Suggest a feature",
     "where": "backstage"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): file.suggest-a-feature asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "statusbar.word-count",
@@ -4979,10 +4635,8 @@
     "match": "sb-word-count",
     "where": "statusbar"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): statusbar.word-count asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "statusbar.english-united-states",
@@ -5010,8 +4664,10 @@
     "match": "sb-lang",
     "where": "statusbar"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): statusbar.english-united-states asserted via parity runner"
+   ]
   },
   {
    "feature": "statusbar.btn-doc-lang",
@@ -5027,8 +4683,10 @@
     "match": "sb-lang",
     "where": "statusbar"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): statusbar.btn-doc-lang asserted via parity runner"
+   ]
   },
   {
    "feature": "statusbar.btn-doc-spell",
@@ -5044,10 +4702,8 @@
     "match": "sb-doc-spell",
     "where": "statusbar"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): statusbar.btn-doc-spell asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "statusbar.btn-doc-review",
@@ -5063,10 +4719,8 @@
     "match": "sb-track-changes",
     "where": "statusbar"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): statusbar.btn-doc-review asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "statusbar.status-btn-multiple-pages",
@@ -5082,10 +4736,8 @@
     "match": "btn-multipage",
     "where": "statusbar"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): statusbar.status-btn-multiple-pages asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "statusbar.btn-zoom-topage",
@@ -5101,10 +4753,8 @@
     "match": "btn-zoom-fit",
     "where": "statusbar"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): statusbar.btn-zoom-topage asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "statusbar.btn-zoom-towidth",
@@ -5120,10 +4770,8 @@
     "match": "btn-zoom-fit",
     "where": "statusbar"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): statusbar.btn-zoom-towidth asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "statusbar.btn-zoom-down",
@@ -5139,10 +4787,8 @@
     "match": "btn-zoom-out",
     "where": "statusbar"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): statusbar.btn-zoom-down asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "statusbar.btn-zoom-up",
@@ -5158,10 +4804,8 @@
     "match": "btn-zoom-in",
     "where": "statusbar"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): statusbar.btn-zoom-up asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.openfinddialog",
@@ -5179,10 +4823,8 @@
     "match": "Ctrl+F",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.openfinddialog asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.openfindandreplacemenu",
@@ -5200,10 +4842,8 @@
     "match": "Ctrl+H",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.openfindandreplacemenu asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.opencommentspanel",
@@ -5221,10 +4861,8 @@
     "match": "Ctrl+Shift+H (comments rail)",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.opencommentspanel asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.save",
@@ -5263,9 +4901,10 @@
     "match": "Ctrl+P opens native print dialog (WO window.print)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "Ctrl+P opens native print dialog (WO window.print)"
+    "Ctrl+P opens native print dialog (WO window.print)",
+    "L2 acts (contract PASS): shortcut.printpreviewandprint asserted via parity runner"
    ]
   },
   {
@@ -5305,10 +4944,8 @@
     "match": "F1 opens Help dialog",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.openhelpmenu asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.opencontextmenu",
@@ -5326,10 +4963,9 @@
     "match": "Shift+F10 fires the contextmenu DOM event; WO handler shows the custom menu",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "Shift+F10 fires the contextmenu DOM event; WO handler shows the custom menu",
-    "L2 acts (contract PASS): shortcut.opencontextmenu asserted via parity runner"
+    "Shift+F10 fires the contextmenu DOM event; WO handler shows the custom menu"
    ]
   },
   {
@@ -5348,10 +4984,8 @@
     "match": "Escape",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.closemenu asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.zoom100",
@@ -5369,10 +5003,8 @@
     "match": "Ctrl+0",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.zoom100 asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.updatefields",
@@ -5390,10 +5022,8 @@
     "match": "F9 (fieldOpAtSelection update)",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.updatefields asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.movetostartline",
@@ -5411,10 +5041,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetostartline asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5433,10 +5062,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetostartdocument asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5455,10 +5083,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetoendline asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5477,10 +5104,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetoenddocument asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5499,10 +5125,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.scrolldown asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5521,10 +5146,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.scrollup asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5543,10 +5167,8 @@
     "match": "Ctrl+Plus/=",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.zoomin asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.zoomout",
@@ -5585,10 +5207,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetorightchar asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5607,10 +5228,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetoleftchar asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5629,10 +5249,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetoupline asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5651,10 +5270,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetodownline asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5673,10 +5291,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.nextmodalcontrol asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5695,10 +5312,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.previousmodalcontrol asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5717,10 +5333,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetolowerheaderfooter asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5739,10 +5354,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetoupperheaderfooter asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5761,10 +5375,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetolowerheader asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5783,10 +5396,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetoupperheader asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5805,10 +5417,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.endparagraph asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5870,10 +5481,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.equationaddplaceholder asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5892,10 +5502,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.equationchangealignmentleft asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5914,10 +5523,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.equationchangealignmentright asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -5936,10 +5544,9 @@
     "match": "Backspace",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "Backspace",
-    "L2 acts (contract PASS): shortcut.deleteleftchar asserted via parity runner"
+    "Backspace"
    ]
   },
   {
@@ -5958,10 +5565,9 @@
     "match": "Delete",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "Delete",
-    "L2 acts (contract PASS): shortcut.deleterightchar asserted via parity runner"
+    "Delete"
    ]
   },
   {
@@ -6064,10 +5670,8 @@
     "match": "Ctrl+Alt+C (format painter — captures inline + semantic char formatting)",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.copyformat asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.pasteformat",
@@ -6085,10 +5689,8 @@
     "match": "Ctrl+Alt+V (format painter — applies to next selection as style span)",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.pasteformat asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.specialoptionskeepsourceformat",
@@ -6106,9 +5708,10 @@
     "match": "Ctrl+V default rich paste; Ctrl+K = hyperlink (OO collision)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "WO uses different combo: Ctrl+V default rich paste; Ctrl+K = hyperlink (OO collision)"
+    "WO uses different combo: Ctrl+V default rich paste; Ctrl+K = hyperlink (OO collision)",
+    "L2 acts (contract PASS): shortcut.specialoptionskeepsourceformat asserted via parity runner"
    ]
   },
   {
@@ -6127,10 +5730,8 @@
     "match": "Ctrl+T plain-text paste (clipboard.readText -> insertText)",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.specialoptionskeeptextonly asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.specialoptionsoverwritecells",
@@ -6148,9 +5749,10 @@
     "match": "Ctrl+O consumed by browser (open file); spreadsheet cell semantics n/a",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "Ctrl+O consumed by browser (open file); spreadsheet cell semantics n/a"
+    "Ctrl+O consumed by browser (open file); spreadsheet cell semantics n/a",
+    "L2 acts (contract PASS): shortcut.specialoptionsoverwritecells asserted via parity runner"
    ]
   },
   {
@@ -6169,9 +5771,10 @@
     "match": "Ctrl+N consumed by browser (new window)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "Ctrl+N consumed by browser (new window)"
+    "Ctrl+N consumed by browser (new window)",
+    "L2 acts (contract PASS): shortcut.specialoptionsnesttable asserted via parity runner"
    ]
   },
   {
@@ -6190,10 +5793,8 @@
     "match": "Ctrl+K",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.inserthyperlink asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.visithyperlink",
@@ -6211,10 +5812,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.visithyperlink asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -6233,10 +5833,9 @@
     "match": "Ctrl+A",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "Ctrl+A",
-    "L2 acts (contract PASS): shortcut.editselectall asserted via parity runner"
+    "Ctrl+A"
    ]
   },
   {
@@ -6255,10 +5854,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.selecttostartline asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -6277,10 +5875,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.selecttoendline asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -6299,10 +5896,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.selecttostartdocument asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -6321,10 +5917,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.selecttoenddocument asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -6343,10 +5938,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.selectrightchar asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -6365,10 +5959,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.selectleftchar asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -6387,10 +5980,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.selectlineup asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -6409,10 +6001,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.selectlinedown asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -6431,10 +6022,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.selectpageup asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -6453,10 +6043,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.selectpagedown asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -6475,10 +6064,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.selecttobeginpreviouspage asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -6497,10 +6085,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.selecttobeginnextpage asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -6919,10 +6506,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.startindent asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -6941,10 +6527,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.startunindent asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -6963,10 +6548,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.inserttab asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -6985,10 +6569,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.mixedindent asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7007,10 +6590,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.mixedunindent asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7029,10 +6611,9 @@
     "match": "Enter edits object",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "Enter edits object",
-    "L2 acts (contract PASS): shortcut.editshape asserted via parity runner"
+    "Enter edits object"
    ]
   },
   {
@@ -7051,10 +6632,9 @@
     "match": "Enter edits object",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "Enter edits object",
-    "L2 acts (contract PASS): shortcut.editchart asserted via parity runner"
+    "Enter edits object"
    ]
   },
   {
@@ -7073,10 +6653,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.bigmoveobjectleft asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7095,10 +6674,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.bigmoveobjectright asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7117,10 +6695,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.bigmoveobjectup asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7139,10 +6716,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.bigmoveobjectdown asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7161,10 +6737,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movefocustonextobject asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7183,10 +6758,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movefocustopreviousobject asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7226,10 +6800,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetonextcell asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7248,10 +6821,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetopreviouscell asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7270,10 +6842,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetonextrow asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7292,10 +6863,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetopreviousrow asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7314,10 +6884,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.endparagraphcell asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7336,10 +6905,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.addnewrow asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7358,10 +6926,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.inserttablebreak asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7380,10 +6947,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetonextform asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7402,10 +6968,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetopreviousform asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7424,10 +6989,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.choosenextcomboboxoption asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7446,10 +7010,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.choosepreviouscomboboxoption asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7468,10 +7031,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.insertlinebreakmultilineform asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7574,10 +7136,9 @@
     "match": "Ctrl+Alt+Z read-aloud (OO SpeechWorker panel; WO maps to TTS)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO uses different combo: Ctrl+Alt+Z read-aloud (OO SpeechWorker panel; WO maps to TTS)",
-    "L2 acts (contract PASS): shortcut.speechworker asserted via parity runner"
+    "WO uses different combo: Ctrl+Alt+Z read-aloud (OO SpeechWorker panel; WO maps to TTS)"
    ]
   },
   {
@@ -7617,10 +7178,8 @@
     "match": "Opt+Cmd+A (Mac; openCommentDialog at caret)",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.opencommentfield asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.openchatpanel",
@@ -7638,10 +7197,8 @@
     "match": "Ctrl+Alt+Q",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.openchatpanel asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.movetostartpreviouspage",
@@ -7659,10 +7216,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetostartpreviouspage asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7681,10 +7237,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetostartnextpage asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7703,10 +7258,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetostartword asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7725,10 +7279,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetoendword asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7900,10 +7453,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.selectrightword asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -7922,10 +7474,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.selectleftword asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -8013,10 +7564,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.littlemoveobjectleft asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -8035,10 +7585,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.littlemoveobjectright asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -8057,10 +7606,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.littlemoveobjectup asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -8079,10 +7627,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.littlemoveobjectdown asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -8101,10 +7648,8 @@
     "match": "Ctrl+Alt+=",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.insertequation asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.horizontalellipsis",
@@ -8122,10 +7667,8 @@
     "match": "Alt+;",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.horizontalellipsis asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.replaceunicodetosymbol",
@@ -8164,10 +7707,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetonextpage asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -8186,10 +7728,9 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)",
-    "L2 acts (contract PASS): shortcut.movetopreviouspage asserted via parity runner"
+    "browser caret/scroll (n/a for web editor)"
    ]
   },
   {
@@ -8272,9 +7813,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS): shortcut.nextfiletab asserted via parity runner"
    ]
   },
   {
@@ -8293,9 +7835,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS): shortcut.previousfiletab asserted via parity runner"
    ]
   },
   {
@@ -8314,10 +7857,8 @@
     "match": "Cmd+O / Ctrl+O (openBackstage(\"open\"))",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.openexistingfile asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "shortcut.closefile",
@@ -8335,10 +7876,8 @@
     "match": "Cmd+W / Ctrl+W (prevents browser tab-close: dirty confirm + wo:close-document + notifyHost(close))",
     "where": "shortcut"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): shortcut.closefile asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "formatting.heading-1",
@@ -8447,10 +7986,8 @@
     "match": "ctx data-ctx=SaveAsPicture -> objectOp save-as-picture",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.save-as-picture asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.align-left",
@@ -8468,10 +8005,9 @@
     "match": "Layout tab objectOp align-left",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Layout tab objectOp align-left",
-    "L2 acts (contract PASS): ctx.align-left asserted via parity runner"
+    "WO surface elsewhere: Layout tab objectOp align-left"
    ]
   },
   {
@@ -8490,10 +8026,9 @@
     "match": "Layout tab objectOp align-center",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Layout tab objectOp align-center",
-    "L2 acts (contract PASS): ctx.align-center asserted via parity runner"
+    "WO surface elsewhere: Layout tab objectOp align-center"
    ]
   },
   {
@@ -8512,10 +8047,9 @@
     "match": "Layout tab objectOp align-right",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Layout tab objectOp align-right",
-    "L2 acts (contract PASS): ctx.align-right asserted via parity runner"
+    "WO surface elsewhere: Layout tab objectOp align-right"
    ]
   },
   {
@@ -8534,10 +8068,9 @@
     "match": "Layout tab objectOp align-top",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Layout tab objectOp align-top",
-    "L2 acts (contract PASS): ctx.align-top asserted via parity runner"
+    "WO surface elsewhere: Layout tab objectOp align-top"
    ]
   },
   {
@@ -8556,10 +8089,9 @@
     "match": "Layout tab objectOp align-middle",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Layout tab objectOp align-middle",
-    "L2 acts (contract PASS): ctx.align-middle asserted via parity runner"
+    "WO surface elsewhere: Layout tab objectOp align-middle"
    ]
   },
   {
@@ -8578,10 +8110,9 @@
     "match": "Layout tab objectOp align-bottom",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Layout tab objectOp align-bottom",
-    "L2 acts (contract PASS): ctx.align-bottom asserted via parity runner"
+    "WO surface elsewhere: Layout tab objectOp align-bottom"
    ]
   },
   {
@@ -8642,10 +8173,9 @@
     "match": "Layout tab objectOp merge-union/intersect/subtract",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Layout tab objectOp merge-union/intersect/subtract",
-    "L2 acts (contract PASS): ctx.merge-shapes asserted via parity runner"
+    "WO surface elsewhere: Layout tab objectOp merge-union/intersect/subtract"
    ]
   },
   {
@@ -8664,10 +8194,9 @@
     "match": "Chart Design Chart elements>Axis Titles (chartElement axisTitles)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Chart Design Chart elements>Axis Titles (chartElement axisTitles)",
-    "L2 acts (contract PASS): ctx.axis-titles asserted via parity runner"
+    "WO surface elsewhere: Chart Design Chart elements>Axis Titles (chartElement axisTitles)"
    ]
   },
   {
@@ -8686,10 +8215,9 @@
     "match": "Chart Design Chart elements>Chart title (chartElement title)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Chart Design Chart elements>Chart title (chartElement title)",
-    "L2 acts (contract PASS): ctx.chart-title asserted via parity runner"
+    "WO surface elsewhere: Chart Design Chart elements>Chart title (chartElement title)"
    ]
   },
   {
@@ -8708,10 +8236,9 @@
     "match": "Chart Design Chart elements>Data labels (chartElement dataLabels)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Chart Design Chart elements>Data labels (chartElement dataLabels)",
-    "L2 acts (contract PASS): ctx.data-labels asserted via parity runner"
+    "WO surface elsewhere: Chart Design Chart elements>Data labels (chartElement dataLabels)"
    ]
   },
   {
@@ -8730,10 +8257,8 @@
     "match": "chartElement dataTable toggle renders data table in chartSVG",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.chart.datatable asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.error-bars",
@@ -8751,10 +8276,9 @@
     "match": "Chart Design Chart elements>Error bars (chartElement errorBars)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Chart Design Chart elements>Error bars (chartElement errorBars)",
-    "L2 acts (contract PASS): ctx.error-bars asserted via parity runner"
+    "WO surface elsewhere: Chart Design Chart elements>Error bars (chartElement errorBars)"
    ]
   },
   {
@@ -8773,10 +8297,9 @@
     "match": "Chart Design Chart elements>Gridlines (chartElement gridlines)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Chart Design Chart elements>Gridlines (chartElement gridlines)",
-    "L2 acts (contract PASS): ctx.gridlines asserted via parity runner"
+    "WO surface elsewhere: Chart Design Chart elements>Gridlines (chartElement gridlines)"
    ]
   },
   {
@@ -8795,10 +8318,9 @@
     "match": "Chart Design Chart elements>Legend (chartElement legend)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Chart Design Chart elements>Legend (chartElement legend)",
-    "L2 acts (contract PASS): ctx.legend asserted via parity runner"
+    "WO surface elsewhere: Chart Design Chart elements>Legend (chartElement legend)"
    ]
   },
   {
@@ -8817,10 +8339,9 @@
     "match": "Chart Design Chart elements>Trendline (chartElement trendline)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Chart Design Chart elements>Trendline (chartElement trendline)",
-    "L2 acts (contract PASS): ctx.trendline asserted via parity runner"
+    "WO surface elsewhere: Chart Design Chart elements>Trendline (chartElement trendline)"
    ]
   },
   {
@@ -8839,10 +8360,9 @@
     "match": "Chart Design Chart elements>Up/Down bars (chartElement upDownBars)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Chart Design Chart elements>Up/Down bars (chartElement upDownBars)",
-    "L2 acts (contract PASS): ctx.up-down-bars asserted via parity runner"
+    "WO surface elsewhere: Chart Design Chart elements>Up/Down bars (chartElement upDownBars)"
    ]
   },
   {
@@ -8861,10 +8381,8 @@
     "match": "Layout tab objectOp bring-to-foreground",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.bring-to-foreground asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.send-to-background",
@@ -8882,10 +8400,8 @@
     "match": "Layout tab objectOp send-to-background",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.send-to-background asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.bring-forward",
@@ -8903,10 +8419,9 @@
     "match": "Layout tab objectOp bring-forward",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Layout tab objectOp bring-forward",
-    "L2 acts (contract PASS): ctx.bring-forward asserted via parity runner"
+    "WO surface elsewhere: Layout tab objectOp bring-forward"
    ]
   },
   {
@@ -8925,10 +8440,9 @@
     "match": "Layout tab objectOp send-backward",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Layout tab objectOp send-backward",
-    "L2 acts (contract PASS): ctx.send-backward asserted via parity runner"
+    "WO surface elsewhere: Layout tab objectOp send-backward"
    ]
   },
   {
@@ -8947,10 +8461,9 @@
     "match": "ctx data-ctx=EditWrapBoundary — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-wrap-boundary marker + SetStatus NotAvailable",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
     "WO surface elsewhere: ctx data-ctx=EditWrapBoundary — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-wrap-boundary marker + SetStatus NotAvailable",
-    "L2 acts (contract PASS): ctx.edit-wrap-boundary asserted via parity runner",
     "registered park (Phase 5 / WO-22): OO 'Edit wrap boundary' edits the wrap-polygon contour — same absent vector model; ctx row is a LOUD divergence (wo:edit-wrap-boundary marker + SetStatus NotAvailable)"
    ],
    "divergence": "registered"
@@ -9055,10 +8568,9 @@
     "match": "obj-center block flow (top-and-bottom ≈ own-line block)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: obj-center block flow (top-and-bottom ≈ own-line block)",
-    "L2 acts (contract PASS): ctx.top-and-bottom asserted via parity runner"
+    "WO surface elsewhere: obj-center block flow (top-and-bottom ≈ own-line block)"
    ]
   },
   {
@@ -9119,10 +8631,9 @@
     "match": "Chart Design tab chartEditData -> openVectorEditor(chart)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Chart Design tab chartEditData -> openVectorEditor(chart)",
-    "L2 acts (contract PASS): ctx.edit-data asserted via parity runner"
+    "WO surface elsewhere: Chart Design tab chartEditData -> openVectorEditor(chart)"
    ]
   },
   {
@@ -9141,10 +8652,8 @@
     "match": "ctx data-ctx=ActualSize -> objectOp actual-size",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.actual-size asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.convert-to-shape",
@@ -9162,10 +8671,8 @@
     "match": "ctx data-ctx=ConvertToShape -> convert object placeholder to a drawing-shape placeholder via the shape picker",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.convert-to-shape asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.replace-image",
@@ -9183,10 +8690,8 @@
     "match": "ctx data-ctx=ReplaceImage -> objectOp replace-image (image-dialog)",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.replace-image asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.copy",
@@ -9204,10 +8709,8 @@
     "match": "ctx data-ctx=Copy",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.copy asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.paste",
@@ -9225,10 +8728,8 @@
     "match": "ctx data-ctx=Paste",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.paste asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.cut",
@@ -9246,10 +8747,8 @@
     "match": "ctx data-ctx=Cut",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.cut asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.accept-change",
@@ -9267,10 +8766,8 @@
     "match": "ctx data-ctx=AcceptChange",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.accept-change asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.reject-change",
@@ -9288,10 +8785,8 @@
     "match": "ctx data-ctx=RejectChange",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.reject-change asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.print-selection",
@@ -9309,10 +8804,9 @@
     "match": "Print button / Ctrl+P (browser print; no ctx item)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Print button / Ctrl+P (browser print; no ctx item)",
-    "L2 acts (contract PASS): ctx.print-selection asserted via parity runner"
+    "WO surface elsewhere: Print button / Ctrl+P (browser print; no ctx item)"
    ]
   },
   {
@@ -9331,10 +8825,9 @@
     "match": "right panel rp-image-rotate (applyImageRotate90)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: right panel rp-image-rotate (applyImageRotate90)",
-    "L2 acts (contract PASS): ctx.rotate asserted via parity runner"
+    "WO surface elsewhere: right panel rp-image-rotate (applyImageRotate90)"
    ]
   },
   {
@@ -9353,10 +8846,8 @@
     "match": "ctx data-ctx=Crop -> photo editor crop tool (drag + Apply)",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.crop asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.remove-content-control",
@@ -9374,10 +8865,8 @@
     "match": "ctx data-ctx=RemoveContentControl",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.remove-content-control asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.content-control-settings",
@@ -9395,10 +8884,8 @@
     "match": "ctx data-ctx=ContentControlSettings",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.content-control-settings asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.edit-points",
@@ -9416,10 +8903,9 @@
     "match": "ctx data-ctx=EditPoints — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-points marker + SetStatus NotAvailable",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
     "WO surface elsewhere: ctx data-ctx=EditPoints — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-points marker + SetStatus NotAvailable",
-    "L2 acts (contract PASS): ctx.edit-points asserted via parity runner",
     "registered park (Phase 5 / WO-22): OO 'Edit points' is a bezier-point editor — WO has no vector path/contour model (CSS/SVG placeholders); ctx row is a LOUD divergence (wo:edit-points marker + SetStatus NotAvailable)"
    ],
    "divergence": "registered"
@@ -9461,10 +8947,8 @@
     "match": "ctx data-ctx=Link",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.link asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.edit-link",
@@ -9482,10 +8966,8 @@
     "match": "ctx data-ctx=EditLink",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.edit-link asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.copy-hyperlink-address",
@@ -9503,10 +8985,8 @@
     "match": "ctx data-ctx=CopyHyperlinkAddress (clipboard)",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.copy-hyperlink-address asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.remove-link",
@@ -9524,10 +9004,8 @@
     "match": "ctx data-ctx=RemoveLink",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.remove-link asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.resize-to-cell",
@@ -9545,10 +9023,8 @@
     "match": "ctx data-ctx=ResizeToCell -> resizeSelectedObjectToCell (objects in table cells)",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.resize-to-cell asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.horizontal-line-settings",
@@ -9588,10 +9064,8 @@
     "match": "ctx data-ctx=TableMergeCells",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.merge-cells asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.split-cell",
@@ -9609,10 +9083,8 @@
     "match": "ctx data-ctx=TableSplitCell",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.split-cell asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.text-alignment",
@@ -9630,10 +9102,8 @@
     "match": "ctx data-ctx=TextAlignment",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.text-alignment asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.top",
@@ -9777,10 +9247,9 @@
     "match": "ribbon data-cmd=justifyFull (not in WO ctx)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: ribbon data-cmd=justifyFull (not in WO ctx)",
-    "L2 acts (contract PASS): ctx.justify asserted via parity runner"
+    "WO surface elsewhere: ribbon data-cmd=justifyFull (not in WO ctx)"
    ]
   },
   {
@@ -9799,10 +9268,9 @@
     "match": "table-ops-dialog (WO table settings surface)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: table-ops-dialog (WO table settings surface)",
-    "L2 acts (contract PASS): ctx.table-advanced-settings asserted via parity runner"
+    "WO surface elsewhere: table-ops-dialog (WO table settings surface)"
    ]
   },
   {
@@ -9821,10 +9289,8 @@
     "match": "ctx data-ctx=ParagraphSettings",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.paragraph-advanced-settings asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.formatting-as-style",
@@ -9842,10 +9308,8 @@
     "match": "ctx data-ctx=FormattingAsStyle",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.formatting-as-style asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.create-new-style",
@@ -9863,10 +9327,9 @@
     "match": "ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-save owned by host shell)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-save owned by host shell)",
-    "L2 acts (contract PASS): ctx.create-new-style asserted via parity runner"
+    "WO surface elsewhere: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-save owned by host shell)"
    ]
   },
   {
@@ -9885,10 +9348,9 @@
     "match": "ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-update owned by host shell)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-update owned by host shell)",
-    "L2 acts (contract PASS): ctx.update-1-style asserted via parity runner"
+    "WO surface elsewhere: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-update owned by host shell)"
    ]
   },
   {
@@ -9929,10 +9391,9 @@
     "match": "UpdateTOC dialog — toc-update select has 'Update page numbers only' option (refreshToc relinks; page numbers are live-preview links)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: UpdateTOC dialog — toc-update select has 'Update page numbers only' option (refreshToc relinks; page numbers are live-preview links)",
-    "L2 acts (contract PASS): ctx.update-page-numbers-only asserted via parity runner"
+    "WO surface elsewhere: UpdateTOC dialog — toc-update select has 'Update page numbers only' option (refreshToc relinks; page numbers are live-preview links)"
    ]
   },
   {
@@ -9972,10 +9433,8 @@
     "match": "ctx data-ctx=FollowMove",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.follow-move asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.select-language",
@@ -9993,8 +9452,10 @@
     "match": "ctx data-ctx=SelectLanguage",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): ctx.select-language asserted via parity runner"
+   ]
   },
   {
    "feature": "ctx.ignore",
@@ -10012,10 +9473,8 @@
     "match": "ctx data-ctx=Ignore",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.ignore asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.ignore-all",
@@ -10033,10 +9492,8 @@
     "match": "ctx data-ctx=IgnoreAll",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.ignore-all asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.add-to-dictionary",
@@ -10054,10 +9511,8 @@
     "match": "ctx data-ctx=AddToDictionary",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.add-to-dictionary asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.spellcheck",
@@ -10075,10 +9530,9 @@
     "match": "Review ribbon spellcheck / F7 (not in ctx)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Review ribbon spellcheck / F7 (not in ctx)",
-    "L2 acts (contract PASS): ctx.spellcheck asserted via parity runner"
+    "WO surface elsewhere: Review ribbon spellcheck / F7 (not in ctx)"
    ]
   },
   {
@@ -10097,10 +9551,8 @@
     "match": "ctx data-ctx=DistributeRows -> distributeTableRows (equalize row heights)",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.distribute-rows asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.distribute-columns",
@@ -10118,10 +9570,8 @@
     "match": "ctx data-ctx=DistributeColumns -> distributeTableColumns (equalize column widths)",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.distribute-columns asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.text-direction",
@@ -10139,10 +9589,8 @@
     "match": "ctx data-ctx=TextDirection",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.text-direction asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.horizontal",
@@ -10160,10 +9608,8 @@
     "match": "ctx data-ctx=TextDirHorizontal",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.horizontal asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.rotate-text-down",
@@ -10244,10 +9690,8 @@
     "match": "ctx data-ctx=SetNumberingValue -> NumberingValueDialog + applyNumberingValue (native ol split, restart at N)",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.set-numbering-value asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.continue-numbering",
@@ -10265,10 +9709,8 @@
     "match": "ctx data-ctx=ContinueNumbering -> continueNumbering (native ol merge)",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.continue-numbering asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.adjust-list-indents",
@@ -10286,10 +9728,8 @@
     "match": "ctx data-ctx=AdjustListIndents -> ListIndentsDialog + applyListIndents (margin-left/text-indent, round-trips as w:ind left/hanging)",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.adjust-list-indents asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.bullets-and-numbering",
@@ -10307,10 +9747,8 @@
     "match": "ctx data-ctx=BulletsAndNumbering -> BulletsNumberingDialog (list-style-type + start; round-trips as w:numFmt)",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.bullets-and-numbering asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.update-field",
@@ -10328,10 +9766,8 @@
     "match": "ctx data-ctx=UpdateField",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.update-field asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.edit-field",
@@ -10349,10 +9785,8 @@
     "match": "ctx data-ctx=EditField",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.edit-field asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.toggle-field-codes",
@@ -10370,10 +9804,8 @@
     "match": "ctx data-ctx=ToggleFieldCodes",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.toggle-field-codes asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.equation-settings",
@@ -10391,10 +9823,8 @@
     "match": "ctx data-ctx=EquationSettings",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.equation-settings asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.select",
@@ -10412,10 +9842,9 @@
     "match": "browser native selection",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "browser native",
-    "L2 acts (contract PASS): ctx.select asserted via parity runner"
+    "browser native"
    ]
   },
   {
@@ -10581,10 +10010,8 @@
     "match": "table-ops dialog Insert several rows/cols (op-apply-rows/op-apply-cols; insertTableRow/Col count)",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.several-rows-columns asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.cells",
@@ -10665,10 +10092,8 @@
     "match": "ctx data-ctx=FrameSettings",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.frame-advanced-settings asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.drop-cap-settings",
@@ -10686,10 +10111,8 @@
     "match": "dropcap-dialog (btn/ctx)",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.drop-cap-settings asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.table-of-contents-settings",
@@ -10749,10 +10172,9 @@
     "match": "Insert ribbon header/footer + headerfooter-dialog (not in ctx)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Insert ribbon header/footer + headerfooter-dialog (not in ctx)",
-    "L2 acts (contract PASS): ctx.edit-header asserted via parity runner"
+    "WO surface elsewhere: Insert ribbon header/footer + headerfooter-dialog (not in ctx)"
    ]
   },
   {
@@ -10813,10 +10235,8 @@
     "match": "ctx data-ctx=ClearField (empties page-number/[data-field])",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.clear-field asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "ctx.group",
@@ -10834,10 +10254,9 @@
     "match": "Layout tab objectOp group (groupSelectedObjects)",
     "where": "ctx-menu"
    },
-   "level": 2,
+   "level": 1,
    "evidence": [
-    "WO surface elsewhere: Layout tab objectOp group (groupSelectedObjects)",
-    "L2 acts (contract PASS): ctx.group asserted via parity runner"
+    "WO surface elsewhere: Layout tab objectOp group (groupSelectedObjects)"
    ]
   },
   {
@@ -10856,10 +10275,8 @@
     "match": "Layout tab objectOp ungroup (ungroupSelectedObjects)",
     "where": "ctx-menu"
    },
-   "level": 2,
-   "evidence": [
-    "L2 acts (contract PASS): ctx.ungroup asserted via parity runner"
-   ]
+   "level": 1,
+   "evidence": []
   },
   {
    "feature": "dialog.link-dialog.l4",
@@ -10880,12 +10297,9 @@
     "match": "link-dialog",
     "where": "dialog:link-dialog"
    },
-   "level": 4,
+   "level": 0,
    "evidence": [
-    "L4 link-dialog field parity: 2/2 OO fields covered {'Text to display': 'Text to display', 'URL': 'URL'}",
-    "L2 act: URL field + Insert produced <a href> in #editor (probe)",
-    "L4 act: Text to display drove the anchor text (probe)",
-    "opened via real route: click #btn-link (toolbar Insert link)"
+    "L4 probe BROKEN (recapture link-dialog-l4.test.mjs): browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chr"
    ]
   },
   {
@@ -10941,7 +10355,7 @@
    },
    "level": 4,
    "evidence": [
-    "L4 live probe (table-dialog-l4.test.mjs, 2026-11-02T19:24:05.378Z): opens via real clicks (Insert tab + #btn-table); title 'Insert table', Rows/Columns number fields (min/max 1-20/1-10, defaults 2/3), Cancel+Insert(primary) verified",
+    "L4 live probe (table-dialog-l4.test.mjs, 2026-11-16T20:54:51.409Z): opens via real clicks (Insert tab + #btn-table); title 'Insert table', Rows/Columns number fields (min/max 1-20/1-10, defaults 2/3), Cancel+Insert(primary) verified",
     "L4 fidelity: rows x cols + Insert puts a real <table> (3x4 verified) into the doc at the saved selection; out-of-range values clamp (99x0 -> 20x1); Cancel mutates nothing",
     "declared divergence: OO Insert->Table is a hover GRID picker (census btn-inserttable; the committed OO dialog census captured no numeric insert-table dialog and no OK/Cancel) — the numeric rows/cols contract is pinned from the MS-Word-style insert-table shape; WO ships a rows/cols popover with Insert(=OK)/Cancel as the semantic carrier (measured)"
    ]
@@ -10994,7 +10408,7 @@
    },
    "level": 4,
    "evidence": [
-    "L4 live probe (image-dialog-l4.test.mjs, 2026-11-02T18:46:40.003Z): opens via a real click (Insert tab + #btn-image); title 'Insert image', Image file input (accepts png; real bytes -> data: preview + size fields + armed Insert), Width/Height number inputs (min 1, hidden until a file), size hint; Cancel+Insert(primary, disabled until file) verified",
+    "L4 live probe (image-dialog-l4.test.mjs, 2026-11-16T20:54:47.613Z): opens via a real click (Insert tab + #btn-image); title 'Insert image', Image file input (accepts png; real bytes -> data: preview + size fields + armed Insert), Width/Height number inputs (min 1, hidden until a file), size hint; Cancel+Insert(primary, disabled until file) verified",
     "L4 fidelity: real PNG via setInputFiles previews + arms Insert; invalid type rejected with error (Insert stays disabled); width 123 + Insert puts <img width=\"123\"> into the flat HTML at the saved caret; empty size inserts at natural size (no width/height attrs); Cancel mutates nothing; selection-on-<img> routes the same dialog into the contextual Replace-image path (measured) — text-caret inserts are the plain case",
     "declared divergence: OO Insert→Image opens a menu into the native OS file picker (interact census: insert/Image opens \"menu\", header-footer/Image opens a 0-control modal mask; the committed OO dialog census captured NO field-level insert-image dialog) — the file + width/height + Insert/Cancel contract is pinned from the MS-Word-style insert-image shape; WO ships an anchored popover with preview + size fields as the semantic carrier (table-dialog precedent, measured)"
    ]
@@ -11029,7 +10443,7 @@
    },
    "level": 4,
    "evidence": [
-    "L4 live probe (paragraph-dialog-l4.test.mjs, 2026-11-02T19:21:07.837Z): opens via a real right-click on the caret paragraph + the ctx-menu ParagraphSettings row; title 'Paragraph advanced settings' (OO's ctx-row label); Alignment select left/center/right/justify, Left/Right indent number 0..500, First line indent number -200..200 (negatives = hanging), Line spacing select 1/1.5/2, Keep lines together / Keep with next / Page break before checkboxes, Tabs… + Cancel + OK(primary) verified",
+    "L4 live probe (paragraph-dialog-l4.test.mjs, 2026-11-16T20:54:48.433Z): opens via a real right-click on the caret paragraph + the ctx-menu ParagraphSettings row; title 'Paragraph advanced settings' (OO's ctx-row label); Alignment select left/center/right/justify, Left/Right indent number 0..500, First line indent number -200..200 (negatives = hanging), Line spacing select 1/1.5/2, Keep lines together / Keep with next / Page break before checkboxes, Tabs… + Cancel + OK(primary) verified",
     "L4 fidelity: center + 40/20/32 + 1.5 + keeps via OK puts text-align/margins/text-indent/line-height inline styles + keep-lines-together/keep-with-next classes on the caret <p> (visible in the flat HTML); reopening reads the live block back into every field; the negative path zeroes styles and untoggles (page-break-before on); Cancel mutates nothing",
     "declared divergence: OO opens \"Paragraph advanced settings\" from the ctx menu row (census-oo-deep contextMenu, enabled) and the right panel \"Show advanced settings\"; the committed OO dialog census captured no field-level paragraph modal — the field contract is pinned from the MS-Word-style Indents & Spacing shape (alignment, left/right/first-line indents, line spacing, keeps, page break, Tabs…, OK/Cancel)",
     "declared divergence: OO additionally carries Before/After paragraph spacing + \"Don't add interval between paragraphs of the same style\" (right-panel census) — WO defers those to the ribbon line-spacing control and right panel; recorded divergence, not gated"
@@ -11065,9 +10479,7 @@
    },
    "level": 4,
    "evidence": [
-    "L4 dialog field parity: 2/2 OO fields covered {'Linear notation': 'Linear notation (^ superscript, _ subscript, sqrt(), a/b)', 'Preview': 'Preview'} — OO modal existence measured [insert/Equation -> modal (census-oo-interactions.json)]",
-    "L2 act: probe fields act on the document (preview=true inserted=true)",
-    "opened via real route: click #btn-equation (tab insert)",
+    "L4 probe BROKEN (recapture dialog-l4.test.mjs): browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chr",
     "L4 live probe (equation-dialog-l4.test.mjs): Linear notation input -> preview updates live; preview + Insert inserts equation span into flat HTML at caret; Cancel mutates nothing",
     "L4 fidelity: every probe check passed (10/10 — field contract + apply semantics + negative paths, live-verified against the running editor)"
    ]
@@ -11110,9 +10522,7 @@
    },
    "level": 4,
    "evidence": [
-    "L4 dialog field parity: 6/6 OO fields covered {'Swatches': 'Swatches', 'Custom color': 'Custom color', 'R': 'R', 'G': 'G', 'B': 'B', 'Hex': 'HEX'} — OO modal existence measured [layout/PageColor -> modal (census-oo-interactions.json)]",
-    "L2 act: probe fields act on the document (--paper=#FEF3C7)",
-    "opened via real route: click #pagecolor (tab layout)",
+    "L4 probe BROKEN (recapture dialog-l4.test.mjs): browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chr",
     "L4 live probe (pagecolor-dialog-l4.test.mjs): open via Layout tab + #pagecolor (openPageColorDialog — native picker replaced); HEX drives the RGB trio + custom picker live; OK lands the picked color as the --paper variable on the editor surface; Automatic (wo-command pageColorAutomatic) and No Color (wo-command pageColorNone) clear the override through the replayable command bus (markDirty replaces their loud status lines with 'Unsaved changes…' — measured); Cancel plants nothing",
     "L4 fidelity: every probe check passed (14/14 — field contract + apply semantics + negative paths, live-verified against the running editor)",
     "declared divergence: the committed OO interaction census proves the Page Color modal exists (layout/PageColor -> modal, controls:0 — the OO rig captured the modal mask, not fields); the OO field contract (Swatches / Custom color / R / G / B / Hex) is pinned from the batch PROBES dict and flips deliberately with this probe",
@@ -11153,9 +10563,7 @@
    },
    "level": 4,
    "evidence": [
-    "L4 dialog field parity: 3/3 OO fields covered {'Chart type': 'Chart type', 'Data': 'Data (label, value per row)', 'Preview': 'Preview (updates live)'} — OO modal existence measured [insert/Chart -> modal (census-oo-interactions.json)]",
-    "L2 act: probe fields act on the document (preview=true inserted=true)",
-    "opened via real route: click #btn-chart (tab insert, via #btn-insert-more)",
+    "L4 probe BROKEN (recapture dialog-l4.test.mjs): browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chr",
     "L4 live probe (chart-dialog-l4.test.mjs): Chart type/Title/Data -> preview updates live; preview + Insert inserts chart marker into flat HTML at caret; Cancel mutates nothing",
     "L4 fidelity: every probe check passed (14/14 — field contract + apply semantics + negative paths, live-verified against the running editor)",
     "declared divergence: WO chart-dialog has Title field not in OO census"
@@ -11189,9 +10597,7 @@
    },
    "level": 4,
    "evidence": [
-    "L4 dialog field parity: 1/1 OO fields covered {'Comment': 'Comment'} — OO modal existence measured [insert/Comment -> modal (census-oo-interactions.json)]",
-    "L2 act: probe fields act on the document (comment span/panel after insert)",
-    "opened via real route: click #btn-comment (tab collaboration)",
+    "L4 probe BROKEN (recapture dialog-l4.test.mjs): browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chr",
     "L4 live probe (comment-dialog-l4.test.mjs): open via Collaboration tab + #btn-comment (openCommentDialog at the current selection); OK (or Ctrl+Enter in the textarea) wraps the selected word in span.comment[data-id][data-author][data-comment] and opens the comments panel listing the thread; a confirm with no live selection plants an empty span (metadata carried, text empty — measured); Cancel closes and plants nothing",
     "L4 fidelity: every probe check passed (9/9 — field contract + apply semantics + negative paths, live-verified against the running editor)",
     "declared divergence: the committed OO interaction census proves the Comment trigger opens a surface (insert/Comment -> modal; the OO rig captured its dropdown — 87 controls — not field-level dialog fields); the OO field contract (Comment) is pinned from the batch PROBES dict and flips deliberately with this probe",
@@ -11228,9 +10634,7 @@
    },
    "level": 4,
    "evidence": [
-    "L4 dialog field parity: 1/1 OO fields covered {'Select document to compare': 'Select document to compare'} — OO modal existence measured [collaboration/Compare -> modal (census-oo-interactions.json)]",
-    "functional: not provable offline (needs server-side document list)",
-    "opened via real route: click [data-cmd=\"compareVersion\"] (tab collaboration)",
+    "L4 probe BROKEN (recapture dialog-l4.test.mjs): browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chr",
     "L4 live probe (compare-dialog-l4.test.mjs): open via Collaboration > Compare (compareVersion); document list loads from GET /api/documents with the current document filtered; Compare without a selection keeps the dialog open with a loud error; select + Compare fetches compare?other=<id> and loads the diff HTML into the editor; Cancel plants nothing",
     "L4 fidelity: every probe check passed (8/8 — field contract + apply semantics + negative paths, live-verified against the running editor)",
     "declared divergence: the committed OO interaction census proves the Compare modal exists (collaboration/Compare -> modal, controls:0 — the OO rig captured the modal mask, not fields); the OO field contract is pinned from the compare shape (one document picker) and flips deliberately with this probe",
@@ -11265,9 +10669,7 @@
    },
    "level": 4,
    "evidence": [
-    "L4 dialog field parity: 1/1 OO fields covered {'Select documents to combine': 'Select documents to combine'} — OO modal existence measured [collaboration/Combine -> modal (census-oo-interactions.json)]",
-    "functional: not provable offline (needs server-side document list)",
-    "opened via real route: click [data-cmd=\"combineRevisions\"] (tab collaboration)",
+    "L4 probe BROKEN (recapture dialog-l4.test.mjs): browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chr",
     "L4 live probe (combine-dialog-l4.test.mjs): open via Collaboration > Combine (combineRevisions); multi-select list loads from GET /api/documents with the current document filtered; Combine without a selection keeps the dialog open with a loud error; multi-select + Combine fetches combine?docs=<id>&docs=<id> and loads the merged HTML into the editor; Cancel plants nothing",
     "L4 fidelity: every probe check passed (8/8 — field contract + apply semantics + negative paths, live-verified against the running editor)",
     "declared divergence: the committed OO interaction census proves the Combine modal exists (collaboration/Combine -> modal, controls:0 — the OO rig captured the modal mask, not fields); the OO field contract is pinned from the combine shape (multi document picker) and flips deliberately with this probe",
@@ -11302,9 +10704,7 @@
    },
    "level": 4,
    "evidence": [
-    "L4 dialog field parity: 1/1 OO fields covered {'Choose file': 'Choose file…'} — OO modal existence measured [insert/Text fromFile -> modal (census-oo-interactions.json)]",
-    "L2 act: probe fields act on the document (file text inserted into #editor)",
-    "opened via real route: click #btn-textfile (tab insert)",
+    "L4 probe BROKEN (recapture dialog-l4.test.mjs): browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chr",
     "L4 live probe (textfromfile-dialog-l4.test.mjs): open via Insert > Text from File (#btn-textfile); Insert stays disabled until a file is chosen; txt + Auto-detect lands the file lines at the caret (first line merges into the caret block, following lines each in their own paragraph — measured quirk); Plain text escapes markup; Keep formatting inserts raw HTML; Replace selection swaps the selected text; Cancel resets and plants nothing",
     "L4 fidelity: every probe check passed (12/12 — field contract + apply semantics + negative paths, live-verified against the running editor)",
     "declared divergence: the committed OO interaction census proves the Text fromFile modal exists (insert/Text fromFile -> modal, controls:0 — the OO rig captured the modal mask, not fields); the OO field contract is pinned from the file-picker shape (Choose file) and flips deliberately with this probe; WO additionally carries Insert mode / Format",
@@ -11340,9 +10740,7 @@
    },
    "level": 4,
    "evidence": [
-    "L4 dialog field parity: 1/1 OO fields covered {'Field type': 'Field type'} — OO modal existence measured [insert/Field -> modal (census-oo-interactions.json)]",
-    "L2 act: probe fields act on the document (PAGE field value '1' in #editor (status: Inserted PAGE field))",
-    "opened via real route: click #btn-field (tab references)",
+    "L4 probe BROKEN (recapture dialog-l4.test.mjs): browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chr",
     "L4 live probe (field-dialog-l4.test.mjs): Field type select + Insert -> field inserted into flat HTML at caret; PAGE field inserts value '1'; Cancel mutates nothing",
     "L4 fidelity: every probe check passed (7/7 — field contract + apply semantics + negative paths, live-verified against the running editor)"
    ]
@@ -11379,9 +10777,7 @@
    },
    "level": 4,
    "evidence": [
-    "L4 dialog field parity: 3/3 OO fields covered {'Voice': 'Voice', 'Speed': 'Speed', 'Pitch': 'Pitch'} — OO modal existence measured [plugins/Speech -> modal (census-oo-interactions.json)]",
-    "functional: not provable offline (needs server-side document list)",
-    "opened via real route: click #btn-readaloud (tab view, via #btn-speech)",
+    "L4 probe BROKEN (recapture dialog-l4.test.mjs): browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /home/weiss/.cache/ms-playwright/chromium_headless_shell-1228/chr",
     "L4 live probe (speech-dialog-l4.test.mjs): open via View tab + Speech menu + Read aloud (readAloud collects the selection or the caret paragraph, openSpeechDialog populates voices); nothing to read -> loud status error and the dialog never opens; Voice/Speed/Pitch fields (ranges 0.5..2 step .1 with live readouts); OK queues a SpeechSynthesisUtterance with the collected text, configured rate/pitch (clamped 0.5..2) and the editor lang (default en-US), then closes; Cancel closes and queues nothing",
     "L4 fidelity: every probe check passed (8/8 — field contract + apply semantics + negative paths, live-verified against the running editor)",
     "declared divergence: the committed OO interaction census proves the Speech modal exists (plugins/Speech -> modal, controls:0 — the OO rig captured the modal mask, not fields); the OO field contract (Voice / Speed / Pitch) is pinned from the batch PROBES dict and flips deliberately with this probe",
@@ -11771,7 +11167,7 @@
     "L4 gold (FXG-B, census-driven): OO field contract mined from census-oo-dialogs.json (title 'Margins', trigger menu-item:Custom margins): 8 fields ['Margins', 'Top', 'Bottom', 'Left', 'Right', 'Gutter position', 'Orientation', 'Multiple pages']; buttons OO ['OK', 'Cancel'] vs WO ['Cancel', 'Apply']",
     "L4 field parity (dialog-parity.py contract, censused WO dialog page-setup-dialog): 6/8 OO fields carried {'Margins': 'Margins (inches)', 'Top': 'Top', 'Bottom': 'Bottom', 'Left': 'Left', 'Right': 'Right', 'Orientation': 'Orientation'}; 2 deferred divergences: Gutter position — WO has no gutter model — deferred by the .page-setup marker's single data-margin-* twip set (recorded divergence, not gated); Multiple pages — OO's mirror/multiple-pages book layout is deferred (recorded divergence, not gated); WO extras (superset, allowed): Size preset select; Portrait/Landscape radios; Layout > Margins preset menu (Normal/Narrow/Moderate/Wide/Last custom)",
     "L4 fidelity basis: every gated field resolves to its censused WO control; behavior contract: Top/Bottom/Left/Right + Orientation resolve to the shared Page-setup dialog (#page-setup-dialog — opened by a real #btn-page-setup click AND the census route Layout > Margins > 'Custom margins', data-cmd openPageSetup); Apply plants div.page-setup[data-page-w][data-page-h][data-orient][data-margin-top/bottom/left/right] (inches x 1440 twips) at body start, which the converters round-trip to DOCX w:sectPr (editor.js writePageSetupMarker); Cancel plants nothing",
-    "L4 live probe verified (margins-dialog-l4.test.mjs, 2026-11-10T21:10:21.677Z): 12/12 checks passed against the running editor"
+    "L4 live probe verified (margins-dialog-l4.test.mjs, 2026-11-16T20:54:47.545Z): 12/12 checks passed against the running editor"
    ]
   },
   {
@@ -11803,7 +11199,7 @@
     "L4 gold (FXG-B, census-driven): OO field contract mined from census-oo-dialogs.json (title 'Page size', trigger menu-item:Custom page size): 3 fields ['Preset', 'Width', 'Height']; buttons OO ['OK', 'Cancel'] vs WO ['Cancel', 'Apply']",
     "L4 field parity (dialog-parity.py contract, censused WO dialog page-setup-dialog): 1/3 OO fields carried {'Preset': 'Size'}; 2 deferred divergences: Width — carried by mechanism, not a numeric field: the Size option values are 'WxH' twips and Apply writes data-page-w (free numeric custom size deferred — recorded divergence, not gated); Height — carried by mechanism, not a numeric field: the Size option values are 'WxH' twips and Apply writes data-page-h; landscape swaps the pair (recorded divergence, not gated); WO extras (superset, allowed): Portrait/Landscape orientation radios; Layout > Size preset menu (Letter/Legal/A4/A5/B5/…/Last custom)",
     "L4 fidelity basis: every gated field resolves to its censused WO control; behavior contract: Size preset -> Apply writes data-page-w/data-page-h on the shared div.page-setup marker (dialog shared with margins; census route Layout > Size > 'Custom page size', same data-cmd openPageSetup); reopen reads the live size back into the select; Cancel mutates nothing",
-    "L4 live probe verified (pagesize-dialog-l4.test.mjs, 2026-11-10T21:38:19.467Z): 8/8 checks passed against the running editor"
+    "L4 live probe verified (pagesize-dialog-l4.test.mjs, 2026-11-16T20:54:48.144Z): 8/8 checks passed against the running editor"
    ]
   },
   {
@@ -11837,7 +11233,7 @@
     "L4 gold (FXG-B, census-driven): OO field contract mined from census-oo-dialogs.json (title 'Columns', trigger menu-item:Custom columns): 5 fields ['Number of columns', '1', '2', 'Equal column width', 'Column divider']; buttons OO ['OK', 'Cancel'] vs WO ['Cancel', 'Insert']",
     "L4 field parity (dialog-parity.py contract, censused WO dialog columns-dialog): 1/5 OO fields carried {'Number of columns': 'Columns'}; 4 deferred divergences: 1 — OO's per-column width spinner for column 1 collapses into WO's equal-width section mechanism (one data-column-gap knob) — recorded divergence, not gated; 2 — OO's per-column width spinner for column 2 — same equal-width collapse (recorded divergence, not gated); Equal column width — satisfied by mechanism: WO columns are equal-width by construction (no checkbox exists) — recorded divergence, not gated; Column divider — rule between columns is deferred — the section marker has no divider attribute (recorded divergence, not gated); WO extras (superset, allowed): Gap (px) number field (0..200, default 36); Layout > Columns preset menu (One/Two/Three/Left/Right)",
     "L4 fidelity basis: every gated field resolves to its censused WO control; behavior contract: Insert wraps the caret position in <section data-columns=\"N\" data-column-gap=\"G\"> (editor.js confirmColumnsDialog; count clamps 1..6); census route Layout > Columns > 'Custom columns', data-cmd openColumnsDialog; Cancel plants nothing",
-    "L4 live probe verified (columns-dialog-l4.test.mjs, 2026-11-10T21:39:15.290Z): 9/9 checks passed against the running editor"
+    "L4 live probe verified (columns-dialog-l4.test.mjs, 2026-11-16T20:54:41.877Z): 9/9 checks passed against the running editor"
    ]
   }
  ]
