@@ -1,0 +1,74 @@
+{
+  "campaign": "graph-l2",
+  "goal": "Close the feature-graph frontier that the port-graph exposes: 9 ledger features below L2 and 9 xfail known-gaps (they are the SAME 9 features — see harness census/census/ledger.json + server tests/parity/contract-results.json). They collapse to 3 root causes, each with a fix task below: (A) 4 shortcut contracts whose `wo.match` is prose, so contract-runner.cjs line ~1439 builds `[data-cmd object Object]` and errors 'control not found' instead of driving the key; (B) 2 file-tab contracts with assertion.kind 'unspecified'; (C) 3 doc-language contracts (statusbar.english-united-states, statusbar.btn-doc-lang, ctx.select-language) expecting a #doc-lang dialog that word-commands.ts:947 'setDocumentLanguage' currently stubs to toggleRightPanel('plugins') while the real control is the react StatusBar language <select> (de-statusbar-select, value=languageCode, DocumentStore.setLanguageCode/setLanguage). After the fixes: contract-results.json knownGap 9 -> 0 (or each row promoted to pass, or honestly downgraded to a dated documented deviation), ledger features L1 -> L2 with 'covered'/'deviation' annotation, harness port-graph rebuilt + done-gate --strict GATE OK, and the harness reconcile gate (--check --seed-check --interactions --fx --geometry --ai) still exit 0. Dispatch via agentflow with 2 workers; tasks are disjoint (server-side editor vs harness-side runner) so run in parallel.",
+  "acceptance": "cd /home/weiss/git/World-Office/server/tests/parity && node contract-runner.cjs (full run, self-spawns docserver+chromium via _boot.cjs) writes contract-results.json with knownGap count == 0 (grep the summary line 'known-gap'); /usr/bin/python3 -c \"import json; r=json.load(open('tests/parity/contract-results.json')); assert r['knownGap']==0\" ; harness: cd /home/weiss/git/World-Office/wo-test-harness && /usr/bin/python3 census/port-graph/build.py && /usr/bin/python3 census/port-graph/done-gate.py --strict | grep -q 'GATE OK' && /usr/bin/python3 census/port-graph/completeness.py shows below-l2 == 0 and known-gap == 0; ledger.json below-L2 features promoted to level 2 with covered/deviation annotation; reconcile full gate exit 0. Both repos pushed (server: origin + fleet + github mirrors; harness: origin only).",
+  "max_parallel": 2,
+  "policy": {"no_change_is_not_success": true},
+  "tasks": [
+    {
+      "id": "GL2-1",
+      "repo": "server",
+      "deps": [],
+      "priority": 1,
+      "title": "Implement the real document-language path: setDocumentLanguage opens a language picker bound to StatusBar select + ctx-menu item, replacing the plugins-panel stub",
+      "scope": [
+        "apps/web/apps/documenteditor-react/src/lib/word-commands.ts",
+        "apps/web/apps/documenteditor-react/src/components/StatusBar/StatusBar.tsx",
+        "apps/web/apps/documenteditor-react/src/stores/DocumentStore.ts"
+      ],
+      "touch": [
+        "apps/web/apps/documenteditor-react/src/lib/word-commands.ts",
+        "apps/web/apps/documenteditor-react/src/components/StatusBar/StatusBar.tsx",
+        "apps/web/apps/documenteditor-react/src/stores/DocumentStore.ts"
+      ],
+      "accept": "cd /home/weiss/git/World-Office/server && node tests/parity/contract-runner.cjs 2>&1 | tail -5 shows the 3 doc-lang contracts (statusbar.english-united-states, statusbar.btn-doc-lang, ctx.select-language) no longer in known-gap: /usr/bin/python3 -c \"import json; r=json.load(open('tests/parity/contract-results.json')); kg=[x for x in r['results'] if not x.get('ok') and x.get('xfail')]; langs=[x for x in kg if 'lang' in json.dumps(x)]; assert not langs, langs; print('lang known-gaps:', len(langs))\" passes; grep -n 'setDocumentLanguage' apps/web/apps/documenteditor-react/src/lib/word-commands.ts shows it no longer calls toggleRightPanel('plugins'); tsc --noEmit clean (node_modules symlink /home/weiss/.wo-deps/documenteditor-react-node_modules if missing); the react bundle rebuilt (pnpm build ~30s) and rsync -a --delete dist/ frontend-dist/word/.",
+      "timeout": 7200,
+      "note": "Evidence: word-commands.ts:947-952 case \"setDocumentLanguage\" currently does documentStore.toggleRightPanel(\"plugins\") as a stub. The react StatusBar already has a working language <select class=\"de-statusbar-select\" value={languageCode}> with options en-US..zh-CN wired to documentStore.setLanguageCode. OO parity: clicking #btn-doc-lang (statusbar) or the ctx-menu 'Select Language' opens a language dialog listing languages; picking one sets the document language (spellcheck locale + displayed code). Design (lazy): make setDocumentLanguage focus/open the StatusBar language select (give it id=\"doc-lang\" or data-lang-select for the contract selector), or open a small popover with the same options calling documentStore.setLanguage(code) (which already exists at DocumentStore.ts:346). The ctx-menu 'select language' entry (search word-commands/ctx menu spec for 'language') must route to the same handler. Contracts expect a dialog with id #doc-lang containing language options — check tests/parity/word-parity-contracts.json entries for feature statusbar.btn-doc-lang / ctx.select-language to see the exact assertion (dialogSelector #doc-lang, probably dialog-visible + option click). Match that selector. Keep the change minimal: one handler + one popover/select + one ctx wiring. Do NOT rebuild the whole language subsystem. fx-wo.cjs arm() normalization resets stores via window.__woStores.document — if you add new store fields, arm() tolerates missing fields (it only sets known ones), so no harness change needed. After build, the fx gate must stay green: rerun census/fx-wo.cjs if time permits (10-13 min, run detached, NO concurrent chromium).",
+      "require": "server repo at /home/weiss/git/World-Office/server, main clean, node_modules symlink for react app present; contract manifest at tests/parity/word-parity-contracts.json lists the 3 lang contracts with their assertions."
+    },
+    {
+      "id": "GL2-2",
+      "repo": "server",
+      "deps": [],
+      "priority": 1,
+      "title": "Fix contract-runner shortcut driving for prose wo.match + implement/verify the 6 shortcut contracts (printpreview, 3x paste-special, next/previous file tab)",
+      "scope": [
+        "tests/parity/contract-runner.cjs",
+        "tests/parity/word-parity-contracts.json",
+        "apps/web/apps/documenteditor-react/src/lib/word-commands.ts",
+        "apps/web/apps/documenteditor-react/src/components/CanvasEditor.tsx"
+      ],
+      "touch": [
+        "tests/parity/contract-runner.cjs",
+        "tests/parity/word-parity-contracts.json",
+        "apps/web/apps/documenteditor-react/src/lib/word-commands.ts",
+        "apps/web/apps/documenteditor-react/src/components/CanvasEditor.tsx"
+      ],
+      "accept": "cd /home/weiss/git/World-Office/server && node tests/parity/contract-runner.cjs 2>&1 | tail -3 && /usr/bin/python3 -c \"import json; r=json.load(open('tests/parity/contract-results.json')); kg=[x for x in r['results'] if not x.get('ok') and x.get('xfail')]; feats={'shortcut.printpreviewandprint','shortcut.specialoptionskeepsourceformat','shortcut.specialoptionsoverwritecells','shortcut.specialoptionsnesttable','shortcut.nextfiletab','shortcut.previousfiletab'}; rem=[x for x in kg if x.get('feature') in feats]; assert not rem, rem; print('shortcut known-gaps remaining:', len(rem))\" && grep -n 'data-cmd.*object Object.*wo.match' tests/parity/contract-runner.cjs | head -3",
+      "timeout": 7200,
+      "note": "Root cause A: contract-runner.cjs ~line 1439 builds selector `[data-cmd=\"${e.wo}\"]` — when e.wo is an OBJECT ({match:'Ctrl+P ...', where:'shortcut'}) it stringifies to [object Object] and the lookup errors. Working shortcut contracts use wo={match:'Ctrl+F', where:'shortcut'} and assertion.kind dialog-visible etc. Fix: when e.wo is an object with where==='shortcut' and match starts with a key combo (Ctrl+/Alt+/Shift+ or plain key), drive page.keyboard.press(match) instead of querySelector; only fall back to selector when e.wo is a string id. Then give the 6 entries real assertions matching what react can observably do: (1) shortcut.printpreviewandprint (Ctrl+P): react calls window.print() — headless has no print preview; HONEST move: mark xfail=false with an assertion the runner supports, e.g. kind 'op-emitted' or observe that no dialog opens but a print event fires — simplest: add a tiny window.__woPrintCalled hook set in the keydown handler before window.print() and assert via kind 'dom-mutation'/custom that the hook flipped; OR downgrade honestly: keep KNOWN-GAP but fix the error message so it's a clean xfail, not a control-not-found ERROR. Prefer the hook: CanvasEditor keydown for Ctrl+P sets window.__woPrintInvoked=true then window.print(). (2-4) paste-special variants (keepsourceformat/overwritecells/nesttable — OO's Ctrl+Alt+V menu): react has no handler; check if a paste-special menu exists in react (grep 'pasteSpecial' apps/web/...); if none, the honest fix is a small paste-special dropdown on Ctrl+Alt+V offering the 3 variants that call the existing clipboard path with a mode flag through applyEngineResult — implement minimally OR document as deviation in the manifest note and set assertion.kind to match reality (e.g. menu-visible). Decide by effort; a 3-item menu is ~40 lines. (5-6) next/previousfiletab (Ctrl+PageDown/Up in OO cycles open file tabs): react is single-document — honest deviation: bind the keys to a no-op with a status message 'single document' OR leave as documented xfail with a CLEAN observed string (fix the 'unknown assertion.kind unspecified' by giving kind 'status-message' asserting the statusbar text). Do NOT fake passes. Each of the 6 must end as either pass-with-real-assertion or xfail-with-clean-documented-reason; the runner error strings must not contain '[object Object]'.",
+      "require": "tests/parity/_boot.cjs provides ensureServer/launchBrowser/openEditor; contract-runner self-spawns everything — just run node tests/parity/contract-runner.cjs from the server repo."
+    },
+    {
+      "id": "GL2-3",
+      "repo": "harness",
+      "deps": ["GL2-1", "GL2-2"],
+      "priority": 2,
+      "title": "Harness side: promote the 9 ledger features to L2, rebuild port-graph + completeness, verify reconcile gate stays green",
+      "scope": [
+        "census/census/ledger.json",
+        "census/port-graph/graph.json",
+        "census/port-graph/build.py"
+      ],
+      "touch": [
+        "census/census/ledger.json",
+        "census/port-graph/graph.json",
+        "census/port-graph/build.py"
+      ],
+      "accept": "cd /home/weiss/git/World-Office/wo-test-harness && git add -f census/census/ledger.json && /usr/bin/python3 -c \"import json; led=json.load(open('census/census/ledger.json')); below=[f for f in led['features'] if (f.get('level') or 0)<2]; assert not below, below; print('below-L2:', len(below))\" && /usr/bin/python3 census/port-graph/build.py >/dev/null && /usr/bin/python3 census/port-graph/done-gate.py --strict 2>&1 | grep -q 'GATE OK' && /usr/bin/python3 census/port-graph/completeness.py 2>&1 | grep -E 'below-l2|known-gap' | grep -q 'x]'",
+      "timeout": 3600,
+      "note": "After GL2-1/GL2-2 land on server main and merge into the harness worktree view (af handles repo checkout per repos.json — the harness task sees the server repo as sibling /home/weiss/git/World-Office/server), rerun the ledger build so the 9 features (statusbar.english-united-states, statusbar.btn-doc-lang, shortcut.printpreviewandprint, shortcut.specialoptionskeepsourceformat, shortcut.specialoptionsoverwritecells, shortcut.specialoptionsnesttable, shortcut.nextfiletab, shortcut.previousfiletab, ctx.select-language) move from L1 to L2 with a 'covered' or dated 'deviation' annotation — find the ledger builder (census/ledger/build.py or census-diff.py path) that assigns levels; the level comes from the contract result (pass => L2+). If a feature stays honestly unimplemented (e.g. paste-special deferred), annotate it 'deviation' with a dated note and let completeness.py count it under known-gap-with-doc instead of below-l2 — adjust completeness.py gate 6/7 only if the documented-deviation path exists (check how the other 9 known-gaps were documented before; the target is below-l2 0). Then rebuild graph (build.py) and confirm done-gate --strict GATE OK and completeness shows both gates [x]. Run the harness full gate once: reconcile --check --seed-check --interactions --fx --geometry --ai must stay exit 0 (fx needs the rebuilt server bundle — coordinate: GL2-1/2 rebuild+rsync frontend-dist BEFORE GL2-3 runs, af deps enforce order). ledger.json is gitignored at census/census/ → git add -f. Commit + push origin main.",
+      "require": "GL2-1 and GL2-2 merged to server main; harness main clean (af merges worktrees automatically)."
+    }
+  ]
+}
