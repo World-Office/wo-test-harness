@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-20T15:37:36.593326",
+ "generated": "2026-11-20T16:32:31.456116",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,8 +10,8 @@
  ],
  "totals": {
   "L0": 1,
-  "L1": 351,
-  "L2": 113,
+  "L1": 349,
+  "L2": 115,
   "L3": 37,
   "L4": 32
  },
@@ -4823,8 +4823,10 @@
     "match": "Ctrl+F",
     "where": "shortcut"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): shortcut.openfinddialog asserted via parity runner"
+   ]
   },
   {
    "feature": "shortcut.openfindandreplacemenu",
@@ -4842,8 +4844,10 @@
     "match": "Ctrl+H",
     "where": "shortcut"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): shortcut.openfindandreplacemenu asserted via parity runner"
+   ]
   },
   {
    "feature": "shortcut.opencommentspanel",

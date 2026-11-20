@@ -26,7 +26,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L4 **dialog.caption-dialog.l4** [dialog] (8 OO fields) → WO: caption-l4 (caption-dialog-l4.test.mjs)
 - ✅ L4 **dialog.tableoffigures-dialog.l4** [dialog] (7 OO fields) → WO: tableoffigures-l4 (tableoffigures-dialog-l4.test.mjs)
 
-## file — 39 features (L0:0 L1:32 L3:0)
+## file — 39 features (L0:0 L1:30 L3:0)
 - 🔲 L1 **file.file** [control] → WO: btn-textfile
 - 🔲 L1 **file.home** [control] → WO: tab:home
 - 🔲 L1 **file.draw** [control] → WO: toggleInk
@@ -48,8 +48,6 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **file.protect** [backstage-item] → WO: Protect
 - 🔲 L1 **file.advanced-settings** [backstage-item] → WO: chartSettings
 - 🔲 L1 **file.suggest-a-feature** [backstage-item] → WO: Suggest a feature
-- 🔲 L1 **shortcut.openfinddialog** [shortcut] → WO: Ctrl+F
-- 🔲 L1 **shortcut.openfindandreplacemenu** [shortcut] → WO: Ctrl+H
 - 🔲 L1 **shortcut.opencommentspanel** [shortcut] → WO: Ctrl+Shift+H (comments rail)
 - 🔲 L1 **shortcut.openhelpmenu** [shortcut] → WO: F1 opens Help dialog
 - 🔲 L1 **shortcut.opencontextmenu** [shortcut] → WO: Shift+F10 fires the contextmenu DOM event; WO handler shows the custom menu
@@ -62,6 +60,8 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **file.insert** [control] → WO: insertBlankPage
 - ✅ L2 **file.protection** [control] → WO: protectDialog
 - ✅ L2 **file.view** [control] → WO: displayMode
+- ✅ L2 **shortcut.openfinddialog** [shortcut] → WO: Ctrl+F
+- ✅ L2 **shortcut.openfindandreplacemenu** [shortcut] → WO: Ctrl+H
 - ✅ L2 **shortcut.save** [shortcut] → WO: Ctrl+S
 - ✅ L2 **shortcut.printpreviewandprint** [shortcut] → WO: Ctrl+P opens native print dialog (WO window.print)
 - ✅ L2 **shortcut.saveas** [shortcut] → WO: Ctrl+Shift+S (export backstage pane)
