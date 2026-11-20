@@ -1,0 +1,123 @@
+{
+  "_comment": "FX-census divergences, declared deliberately (loud-stub doctrine: silent rows must be either a precondition no-op in EXPECTED_SILENT, page-invisible in FX_NOOBSERVE, or registered here with the control's REAL behavior verified in source/probes). Keyed by '<ribbon-tab>|<control-id>' so a per-tab regression can never hide behind another tab's loud row. Same honesty rules as interact-divergences.json: every entry needs a verified date and a source/probe reference.",
+  "Home|btn-copy-style": {
+    "real": "Format painter is a TipTap-era feature; the canvas editor has no engine copy-style/format-painter path (word-commands copyStyle 1066 reads run formatting then apply_formatting only for TipTap). Click is routed but produces no observable change on canvas.",
+    "oo": "OO format painter copies source formatting to the next clicked range",
+    "verified": "2026-11-19 word-commands.ts:1066 + fx probe (rev/menus/panels/status/chrome all static)"
+  },
+  "PluginsPlugins|btn-copy-style": {
+    "real": "Same format painter gap as the Home-tab instance (duplicate id, same command path).",
+    "oo": "OO format painter",
+    "verified": "2026-11-19 word-commands.ts:1066"
+  },
+  "DrawDraw|btn-draw-select": {
+    "real": "Draw-tab marquee/object select requires an ink/shape surface; the canvas port has none. No observable change.",
+    "oo": "OO Draw tab select tool",
+    "verified": "2026-11-19 fx probe (all signals static)"
+  },
+  "DrawDraw|btn-draw-eraser": {
+    "real": "Ink eraser requires an ink surface; the canvas port has none. No observable change.",
+    "oo": "OO Draw tab eraser",
+    "verified": "2026-11-19 fx probe (all signals static)"
+  },
+  "DrawDraw|sel-draw-language-select": {
+    "real": "Language select writes documentStore language state only; the canvas editor has no spellcheck-language surface to observe.",
+    "oo": "OO sets proofing language with visible status feedback",
+    "verified": "2026-11-19 word-commands setLanguage (store-only, no DOM consumer)"
+  },
+  "DrawDraw|btn-draw-set-language": {
+    "real": "Same store-only language write as the select sibling.",
+    "oo": "OO set proofing language",
+    "verified": "2026-11-19 word-commands setLanguage (store-only)"
+  },
+  "CollaborationCollaboration|btn-track-changes": {
+    "real": "toggleTrackChanges flips documentStore.trackChanges but neither the ribbon button (no aria-pressed binding for plain buttons) nor the statusbar mirrors the flag on canvas, so the toggle has no observable surface.",
+    "oo": "OO shows track-changes state on the ribbon toggle and statusbar",
+    "verified": "2026-11-19 word-commands.ts:1009 + ControlRenderer (no aria-pressed for type button)"
+  },
+  "LayoutLayout|btn-line-numbers": {
+    "real": "setLineNumbersEnabled flips store state; no canvas renderer or DOM surface consumes it.",
+    "oo": "OO toggles visible line numbers",
+    "verified": "2026-11-19 DocumentStore.setLineNumbersEnabled (zero tsx consumers)"
+  },
+  "Home|btn-set-document-language": {
+    "real": "setLanguage writes store state only; no canvas/DOM surface observes the document language.",
+    "oo": "OO opens a language dialog and reflects the choice in proofing UI",
+    "verified": "2026-11-19 word-commands.ts:687 (store-only)"
+  },
+  "PluginsPlugins|btn-set-document-language": {
+    "real": "Duplicate of the Home-tab set-document-language (store-only).",
+    "oo": "OO language dialog",
+    "verified": "2026-11-19 word-commands.ts:946 (store-only)"
+  },
+  "LayoutLayout|btn-insert-field": {
+    "real": "At-rest field insert falls back to the TipTap rte path (onRichTextCommand insertField) which is a no-op on the canvas editor; the canvas engine has no field-insert op yet.",
+    "oo": "OO inserts a PAGE/NUMPAGES field at the cursor",
+    "verified": "2026-11-19 word-commands.ts:618-630 + fx probe"
+  },
+  "Home|btn-fit-to-width": {
+    "real": "setFitToWidth(true) writes store state; the statusbar only mirrors fitToPage, so fit-to-width has no observable surface.",
+    "oo": "OO zooms the page to fit the window width (zoom % changes)",
+    "verified": "2026-11-19 DocumentStore.ts:66 + StatusBar.tsx (fitToPage only)"
+  },
+  "PluginsPlugins|btn-fit-to-width": {
+    "real": "Duplicate of Home fit-to-width (store-only).",
+    "oo": "OO fit-to-width zoom",
+    "verified": "2026-11-19 DocumentStore.ts:66"
+  },
+  "Chart DesignChart Design|btn-update-chart-data": {
+    "real": "Chart-data update requires an inserted/selected chart; the census doc has none, so the click is context-bound dead.",
+    "oo": "OO opens the chart data editor for the selected chart",
+    "verified": "2026-11-19 fx probe (all signals static; census doc is chartless)"
+  },
+  "Chart DesignChart Design|sel-chart-width": {
+    "real": "Chart sizing requires an inserted chart; context-bound dead on the chartless census doc.",
+    "oo": "OO resizes the selected chart",
+    "verified": "2026-11-19 fx probe (all signals static)"
+  },
+  "Chart DesignChart Design|sel-chart-height": {
+    "real": "Chart sizing requires an inserted chart; context-bound dead on the chartless census doc.",
+    "oo": "OO resizes the selected chart",
+    "verified": "2026-11-19 fx probe (all signals static)"
+  },
+  "InsertInsert|btn-insert-field": {
+    "real": "Duplicate of the Layout-tab insert-field: at-rest field insert falls back to the TipTap rte path (no-op on canvas); the canvas engine has no field-insert op yet.",
+    "oo": "OO inserts a PAGE/NUMPAGES field at the cursor",
+    "verified": "2026-11-19 word-commands.ts:618-630 + fx-debug43"
+  },
+  "DrawDraw|btn-draw-cut": {
+    "real": "Draw-tab cut requires an ink surface; the canvas port has none. No observable change.",
+    "oo": "OO Draw tab cut",
+    "verified": "2026-11-19 fx-debug43 (all signals static)"
+  },
+  "LayoutLayout|btn-page-orientation": {
+    "real": "Dispatches world-office:page-layout with the CURRENT orientation value (the ribbon button carries no dropdown choice), so the layout container style is unchanged — a designed no-op at rest. OO opens a portrait/landscape dialog instead.",
+    "oo": "OO orientation dropdown/dialog",
+    "verified": "2026-11-19 word-commands.ts:736-748 + fx-debug43"
+  },
+  "LayoutLayout|btn-page-size": {
+    "real": "Same designed no-op as page-orientation: dispatches the current page size (A4) with no value source, so the container style is unchanged. OO opens a page-size dialog.",
+    "oo": "OO page-size dialog",
+    "verified": "2026-11-19 word-commands.ts:749-761 + fx-debug43"
+  },
+  "Chart DesignChart Design|sel-chart-wrapping": {
+    "real": "Chart text wrapping requires an inserted chart; context-bound dead on the chartless census doc.",
+    "oo": "OO wraps text around the selected chart",
+    "verified": "2026-11-19 fx-debug43 (all signals static)"
+  },
+  "PluginsPlugins|btn-word-count": {
+    "real": "Duplicate of the Home-tab word-count (status-loud there). Silent on the Plugins tab in the census walk — suspected right-panel toggle race after the AI tab walk; monitor on next runs.",
+    "oo": "OO opens a word-count dialog",
+    "verified": "2026-11-19 fx-debug43 (Home instance status-loud, Plugins instance silent)"
+  },
+  "Chart DesignChart Design|sel-chart-type": {
+    "real": "Chart type select requires an inserted chart; context-bound dead on the chartless census doc.",
+    "oo": "OO changes the selected chart's type",
+    "verified": "2026-11-19 fx-debug44 (all signals static)"
+  },
+  "ViewView|btn-record-macro": {
+    "real": "recordMacro flips documentStore.macroRecording but no statusbar/ribbon surface mirrors the recording state on the canvas editor (OO shows a REC indicator and records commands). Store-only toggle — observability debt; its sibling pause-recording is an EXPECTED_SILENT precondition row.",
+    "oo": "OO records a macro with a visible REC indicator",
+    "verified": "2026-11-19 DocumentStore.ts:437 toggleMacroRecording (zero tsx consumers) + fx-debug45/gate flip-flop"
+  }
+}

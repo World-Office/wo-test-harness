@@ -321,8 +321,11 @@ MAP = {
     # F-089-style decision (2026-09-11): bibliography citation is a field, like
     # ref.index (asc-gen889) — needs the field engine -> future iteration. The
     # WO citation button stays a loud data-stub until then; OO side resolves deferred.
-    "asc-gen887": {"real": "field"},   # Insert > Field dialog
-    "asc-gen889": {"real": "field"},   # Insert > Field dialog
+    # 2026-11-19: react routes insertCaption/insertCrossReference to the
+    # crossreference panel (word-commands.ts 1029-1031) — re-anchor to
+    # opencrossref, consistent with asc-gen891 Table of Figures.
+    "asc-gen887": {"real": "opencrossref"},   # Caption -> crossreference panel
+    "asc-gen889": {"real": "opencrossref"},   # Cross-reference -> crossreference panel
     "asc-gen891": {"real": "opencrossref"},
     "asc-gen893": {"covered": "references:ref.update-toc"},
     "asc-gen896": {"covered": "view:view-mode-stubs"},

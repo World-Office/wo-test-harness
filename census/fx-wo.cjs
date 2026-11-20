@@ -22,47 +22,92 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 // Controls that legitimately have no in-page effect in headless runs.
 // print* would open the browser print sheet; the slider is an <input>.
 const SKIP = new Set(['print', 'btn-print-qa', 'zoom-slider', 'btn-close',
-  'btn-fullscreen', 'btn-view-fullscreen']); // fullscreen is denied headless
+  'btn-fullscreen', 'btn-view-fullscreen', // fullscreen is denied headless
+  'btn-text-from-file', // opens a NATIVE file picker — unreachable headless
+]);
 // Controls that are legitimately silent against the pristine seeded baseline
 // ("already in state X" precondition no-ops). Every other control must
 // produce an observable effect (doc / menu / dialog / panel / status / chrome).
 const EXPECTED_SILENT = new Set([
+  // "already in state X" precondition no-ops against the pristine baseline
   'outdent',      // nothing indented in the pristine seed (indent is its own control)
   'removeFormat', // the pristine seed carries no formatting to clear
   'justifyLeft',  // pristine paragraphs are already left-aligned
   'formatBlock',  // 'P' on paragraphs is already the current block state
+  // walk-state precondition no-ops (state normalized per row in arm())
+  'btn-redo',                // nothing undone at arm time (fresh history)
+  'btn-zoom-100',            // zoom normalized to 100% before every row
+  'btn-pause-recording',     // no macro recording is running
+  'btn-close-header-footer', // header/footer mode normalized to none
+  'btn-bring-forward', 'btn-send-backward', 'btn-group', 'btn-merge-shapes',
+                     // shape ops: the census doc has no shapes (precondition)
+  'btn-remove-header', 'btn-remove-footer',
+                     // header/footer content normalized to pristine empty baseline
 ]);
+// Controls whose effect is real but page-INVISIBLE (e.g. clipboard copy:
+// writes the system clipboard, nothing in the DOM changes). Not defects.
+const FX_NOOBSERVE = new Set(['btn-copy', 'btn-draw-copy', 'copy', 'btn-select-all', 'selectAll']);
+// Deliberate divergences (fx-divergences.json, keyed '<tab>|<control-id>'):
+// silent rows whose REAL behavior is registered with a verified date — the
+// loud-stub gate treats them as declared, not defective.
+let FX_DIVERGENCES = new Set();
+try {
+  const fd = JSON.parse(require('fs').readFileSync(__dirname + '/fx-divergences.json', 'utf8'));
+  FX_DIVERGENCES = new Set(Object.keys(fd).filter(k => k !== '_comment'));
+} catch (e) { /* no registry → every silent row is a defect */ }
 
 (async () => {
   const { chromium } = require('playwright');
   const url = process.env.CENSUS_WO_URL;
   if (!url) { console.error('fx-wo: CENSUS_WO_URL required (spawn via reconcile.py)'); process.exit(2); }
   const browser = await chromium.launch({ headless: true });
-  const page = await (await browser.newContext({ viewport: { width: 1440, height: 900 } })).newPage();
+  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 },
+    permissions: ['clipboard-read', 'clipboard-write'] });
+  const page = await ctx.newPage();
   const errs = [];
   page.on('pageerror', e => errs.push(e.message.slice(0, 120)));
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
   await page.waitForSelector('#toolbar', { timeout: 30000 });
   await page.waitForTimeout(2500);
+  // paste needs clipboard content to be observable (seed AFTER load — about:blank
+  // rejects clipboard writes); copy has no page-visible effect (FX_NOOBSERVE).
+  await page.evaluate(() => navigator.clipboard.writeText('fx clipboard seed').catch(() => {})).catch(() => {});
+
+  // The react canvas editor owns document pixels in WASM — no innerHTML.
+  // Its container publishes a monotonic data-wo-rev counter bumped on every
+  // committed mutation (CanvasEditor bumpDocRev), which is the observable
+  // doc-mutation signal. Legacy wysiwyg (if ever re-engaged) uses innerHTML.
+  const editorInfo = await page.evaluate(() => ({
+    canvas: document.querySelector('[data-wo-rev]') !== null ||
+            (!document.getElementById('editor') && document.querySelectorAll('canvas').length > 0),
+  }));
+  const DOC_SIGNAL = editorInfo.canvas
+    ? `(document.querySelector('[data-wo-rev]')?.getAttribute('data-wo-rev') || '')`
+    : `document.getElementById('editor').innerHTML`;
 
   const snapshotJS = `(() => {
     const vis = el => { if (!el) return false; const r = el.getBoundingClientRect(); return r.width > 0 && r.height > 0; };
     const row2 = document.getElementById('ribbon-row-2');
     const activeTab = document.querySelector('.ribbon-page.active');
     return {
-      html: document.getElementById('editor').innerHTML,
-      menus: [...document.querySelectorAll('.menu-list,.rb-menu,.dropdown,.color-palette,.insert-pop,[id$="-menu"]')].filter(vis).length,
+      html: ${DOC_SIGNAL},
+      menus: [...document.querySelectorAll('.menu-list,.rb-menu,.dropdown,.color-palette,.insert-pop,[id$="-menu"],[role="menu"],[role="listbox"]')].filter(vis).length,
       dialogs: [...document.querySelectorAll('[role="dialog"]')].filter(vis).length,
       panels: [...document.querySelectorAll('[class*="panel"],[id*="panel"]')].filter(vis).length,
-      status: (document.getElementById('status')?.textContent || '').trim(),
-      // chrome-level effects: theme class, row-2 visibility, active tab,
-      // fullscreen, zoom slider, ruler visibility, and every aria-pressed
-      // toggle (track changes, gridlines, hyphenation, ...) joined.
-      chrome: document.documentElement.className + '|' + (row2 ? vis(row2) : '') + '|' +
+      status: ((document.getElementById('status')?.textContent) || document.querySelector('.de-statusbar')?.textContent || '').trim(),
+      // chrome-level effects: theme class + data-theme, row-2 visibility,
+      // active tab, fullscreen, zoom slider, ruler visibility, page-layout
+      // container inline style (margins/orientation/page size/columns),
+      // header/footer editing regions, and every aria-pressed toggle joined.
+      chrome: document.documentElement.className + '|' + (document.documentElement.dataset.theme || '') + '|' +
+              (row2 ? vis(row2) : '') + '|' +
               (activeTab ? activeTab.dataset.tab : '') + '|' + (document.fullscreenElement ? 'fs' : '') + '|' +
               (document.getElementById('zoom-slider')?.value || '') + '|' +
               (document.querySelector('.ruler') ? vis(document.querySelector('.ruler')) : '') + '|' +
               (document.getElementById('editor')?.getAttribute('style') || '') + '|' +
+              (document.querySelector('.de-viewport-editor > div')?.getAttribute('style') || '') + '|' +
+              (document.querySelector('[data-header-footer-region]') ? 'hf:' + [...document.querySelectorAll('[data-header-footer-region]')].map(e => e.getAttribute('style')).join(';') : '') + '|' +
+              [...document.querySelectorAll('.de-statusbar-btn,.de-statusbar-zoom-label')].map(e => e.className).join(',') + '|' +
               [...document.querySelectorAll('[aria-pressed]')].map(e => e.id + '=' + e.getAttribute('aria-pressed')).join(','),
     };
   })()`;
@@ -81,23 +126,94 @@ const EXPECTED_SILENT = new Set([
   // clean block seed: raw text nodes and empty <p> are invisible to the
   // block-level commands (line spacing / RTL / dropcap resolve <p> blocks),
   // so seed real paragraphs up front.
-  await page.evaluate(() => {
+  await page.evaluate((canvasMode) => {
+    // clean block seed: raw text nodes and empty <p> are invisible to the
+    // block-level commands (line spacing / RTL / dropcap resolve <p> blocks),
+    // so seed real paragraphs up front. The canvas editor owns its own
+    // document (no innerHTML) — nothing to seed.
+    if (canvasMode) return;
     const ed = document.getElementById('editor');
+    if (!ed) return;
     ed.innerHTML = '<p>Lorem ipsum dolor sit amet.</p><p>Consectetur adipiscing elit sed do.</p>';
     ed.dispatchEvent(new Event('input', { bubbles: true }));
-  });
+  }, editorInfo.canvas);
   await sleep(150);
-  const snap = () => page.evaluate(snapshotJS);
+  // null-safe: a control that navigates/crashes the page must not kill the
+  // whole census — the row just records no observable change.
+  const snap = async () => {
+    try { return await page.evaluate(snapshotJS); }
+    catch { return null; }
+  };
+  // canary: a broken snapshotJS (syntax error, null deref) would make EVERY
+  // row 'silent' and mask all defects — fail loudly at startup instead.
+  if (await snap() === null) {
+    console.error('fx-wo FATAL: snapshot eval failed at startup (broken snapshotJS)');
+    await browser.close();
+    process.exit(1);
+  }
   const arm = async () => { // real selection inside the editor before every click
-    await page.evaluate(() => {
-      const ed = document.getElementById('editor');
-      ed.focus();
-      const r = document.createRange(); r.selectNodeContents(ed);
-      const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
-    });
-    await sleep(60);
+    try {
+      // Normalize UI state so every control starts from a known baseline:
+      // zoom 100%, header/footer mode closed, panels closed, fit flags off.
+      // Without this the census walk order creates phantom silent rows
+      // (zoom clamped at max, edit-header a no-op after insert-header-footer).
+      await page.evaluate(() => {
+        const s = window.__woStores?.document;
+        if (!s) return;
+        try { if (s.zoomLevel !== 100) s.setZoomLevel(100); } catch {}
+        try { if (s.headerFooterMode !== 'none') s.headerFooterMode = 'none'; } catch {}
+        try { if (s.showFindPanel) s.setShowFindPanel(false); } catch {}
+        try { if (s.isFileMenuOpen) s.setFileMenuOpen(false); } catch {}
+        try { if (s.fitToPage) s.setFitToPage(false); } catch {}
+        try { if (s.fitToWidth) s.fitToWidth = false; } catch {}
+        try { if (s.activeRightPanel) s.setActiveRightPanel(null); } catch {}
+        try { if (s.headerHtml) s.headerHtml = ''; } catch {}
+        try { if (s.footerHtml) s.footerHtml = ''; } catch {}
+      }).catch(() => {});
+      if (editorInfo.canvas) {
+        // canvas engine: click focuses, type 'x' pushes an undoable mutation,
+        // Ctrl+A selects all (JS select-all drives engine anchor+extend).
+        // Formatting needs a selection; undo/redo need history — both armed.
+        await page.locator('canvas').first().click({ timeout: 2000, force: true });
+        await page.keyboard.type('x', { delay: 20 });
+        await page.keyboard.press('Control+a');
+        await sleep(80);
+        return;
+      }
+      await page.evaluate(() => {
+        const ed = document.getElementById('editor');
+        if (!ed) return;
+        ed.focus();
+        const r = document.createRange(); r.selectNodeContents(ed);
+        const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      });
+      await sleep(60);
+    } catch { /* page gone — snap() below records it */ }
   };
   const cleanup = async () => {
+    if (editorInfo.canvas) {
+      // react surfaces toggle: re-click the ACTIVE rail button to close its
+      // panel (Escape is a no-op on react panels) — same doctrine as
+      // interact-wo closeAll. An open panel would make the next control's
+      // panel delta read as zero -> false silent.
+      await page.evaluate(() => {
+        try {
+          const rt = document.querySelector('.de-right-menu-btn[aria-pressed="true"], .de-right-menu-btn.active');
+          if (rt) rt.click();
+          const lt = document.querySelector('.de-left-menu-btn[aria-pressed="true"], .de-left-menu-btn.active');
+          if (lt) lt.click();
+          [...document.querySelectorAll('.dialog-overlay.open')].forEach(d => {
+            const b = d.querySelector('button[id$="-close"], .find-close, [data-dialog-close]');
+            if (b) b.click();
+            else { d.classList.remove('open'); d.style.display = ''; }
+          });
+          ['#file-menu', '#ctx-menu'].forEach(s => { const e = document.querySelector(s); if (e) e.hidden = true; });
+        } catch (e) {}
+        document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+      }).catch(() => {});
+      await sleep(150);
+      return;
+    }
     await page.keyboard.press('Escape');
     await page.evaluate(() => {
       // restore chrome mutations: the collapse toggle hides ribbon-row-2 (every
@@ -125,18 +241,36 @@ const EXPECTED_SILENT = new Set([
 
   const tabs = await page.evaluate(() =>
     [...document.querySelectorAll('.ribbon-tab')].map(t => (t.textContent || '').trim()).filter(Boolean));
+  const t0 = Date.now();
+  const progress = m => console.error(`[fx ${(Date.now() - t0) / 1000 | 0}s] ${m}`);
   const rows = [];
   for (const tab of tabs) {
+    progress(`tab ${tab} (${rows.length} rows so far)`);
     await page.evaluate(t => {
       const el = [...document.querySelectorAll('.ribbon-tab')].find(x => (x.textContent || '').trim() === t);
       if (el) el.click();
     }, tab);
     await sleep(250);
     // enumerate controls as visible, clickable elements (handles → no selector ambiguity)
+    const activeOk = () => page.evaluate(() => !!document.querySelector('.ribbon-page.active'));
+    if (!(await activeOk())) {
+      // transient activation race: re-click the tab once, wait longer
+      await page.evaluate((pref) => {
+        const t = [...document.querySelectorAll('.ribbon-tab')].find(x => (x.textContent || '').trim().startsWith(String(pref).slice(0, 6)));
+        if (t) t.click();
+      }, tab);
+      await sleep(600);
+    }
+    if (!(await activeOk())) {
+      rows.push({ tab, key: 'TAB-ENUM-FAILED', label: tab, effect: 'unclickable', why: 'ribbon page never activated' });
+      console.log(`[fx] tab ${tab}: ribbon page never activated — recorded as unclickable`);
+      await cleanup();
+      continue;
+    }
     const handles = await page.$$('.ribbon-page.active button, .ribbon-page.active select');
     const meta = await page.evaluate(() => {
       const pg = document.querySelector('.ribbon-page.active');
-      const all = [...pg.querySelectorAll('button, select')];
+      const all = [...(pg ? pg.querySelectorAll('button, select') : [])];
       // TOP-LEVEL ribbon controls only: menu/popover/dialog internals are
       // exercised through their parent caret/button; enumerating them here
       // opens menus mid-loop and every later click degrades. i = index in the
@@ -171,11 +305,13 @@ const EXPECTED_SILENT = new Set([
             if (el) { if (el.hidden) el.hidden = false; el.click(); }
           }
           const ed = document.getElementById('editor');
-          ed.innerHTML = '<p>Lorem ipsum dolor sit amet.</p><p>Consectetur adipiscing elit sed do.</p>';
-          ed.dispatchEvent(new Event('input', { bubbles: true }));
-          // earlier controls can leave restrict-editing on (contentEditable
-          // off) — restore the pristine editable baseline
-          if (ed.contentEditable !== 'true') { ed.contentEditable = 'true'; ed.setAttribute('aria-readonly', 'false'); }
+          if (ed) { // canvas mode: the WASM engine owns the doc; nothing to re-seed
+            ed.innerHTML = '<p>Lorem ipsum dolor sit amet.</p><p>Consectetur adipiscing elit sed do.</p>';
+            ed.dispatchEvent(new Event('input', { bubbles: true }));
+            // earlier controls can leave restrict-editing on (contentEditable
+            // off) — restore the pristine editable baseline
+            if (ed.contentEditable !== 'true') { ed.contentEditable = 'true'; ed.setAttribute('aria-readonly', 'false'); }
+          }
           // modal overlays can re-open post-cleanup (async fetch adds .open
           // after the class restore) and swallow real mouse events — hard-close
           document.querySelectorAll('.dialog-overlay.open,.insert-pop.open,.menu-list.open,.rb-menu.open')
@@ -201,21 +337,21 @@ const EXPECTED_SILENT = new Set([
       // async handlers (plugin/AI fetches) settle late — poll for the first
       // observable change for up to ~3s instead of one fixed look.
       let after = await snap();
-      for (let t = 0; t < 10 && after.html === before.html && after.menus === before.menus &&
+      for (let t = 0; t < 10 && after && before &&
+           after.html === before.html && after.menus === before.menus &&
            after.dialogs === before.dialogs && after.panels === before.panels &&
            after.status === before.status && after.chrome === before.chrome; t++) {
         await sleep(300);
         after = await snap();
       }
       let eff = [];
-      {
-        const after2 = await snap();
-        if (after2.html !== before.html) eff.push('doc');
-        if (after2.menus > before.menus) eff.push('menu');
-        if (after2.dialogs > before.dialogs) eff.push('dialog');
-        if (after2.panels > before.panels) eff.push('panel');
-        if (after2.status !== before.status) eff.push('status');
-        if (after2.chrome !== before.chrome) eff.push('chrome');
+      if (after && before) {
+        if (after.html !== before.html) eff.push('doc');
+        if (after.menus > before.menus) eff.push('menu');
+        if (after.dialogs > before.dialogs) eff.push('dialog');
+        if (after.panels > before.panels) eff.push('panel');
+        if (after.status !== before.status) eff.push('status');
+        if (after.chrome !== before.chrome) eff.push('chrome');
       }
       // single retry for flapping rows (timing-dependent handler runs):
       // re-seed, re-arm, click again; keep the retry's effect if it lands.
@@ -223,8 +359,10 @@ const EXPECTED_SILENT = new Set([
         try {
           await page.evaluate(() => {
             const ed = document.getElementById('editor');
-            ed.innerHTML = '<p>Lorem ipsum dolor sit amet.</p><p>Consectetur adipiscing elit sed do.</p>';
-            ed.dispatchEvent(new Event('input', { bubbles: true }));
+            if (ed) { // canvas mode: nothing to re-seed
+              ed.innerHTML = '<p>Lorem ipsum dolor sit amet.</p><p>Consectetur adipiscing elit sed do.</p>';
+              ed.dispatchEvent(new Event('input', { bubbles: true }));
+            }
             document.querySelectorAll('.dialog-overlay.open,.insert-pop.open,.menu-list.open,.rb-menu.open')
               .forEach(e => e.classList.remove('open'));
           });
@@ -233,16 +371,24 @@ const EXPECTED_SILENT = new Set([
           await handles[k].click({ timeout: 1500, force: true });
           await sleep(700);
           const after2 = await snap();
-          if (after2.html !== before2.html) eff.push('doc');
-          if (after2.menus > before2.menus) eff.push('menu');
-          if (after2.dialogs > before2.dialogs) eff.push('dialog');
-          if (after2.panels > before2.panels) eff.push('panel');
-          if (after2.status !== before2.status) eff.push('status');
-          if (after2.chrome !== before2.chrome) eff.push('chrome');
+          if (after2 && before2) {
+            if (after2.html !== before2.html) eff.push('doc');
+            if (after2.menus > before2.menus) eff.push('menu');
+            if (after2.dialogs > before2.dialogs) eff.push('dialog');
+            if (after2.panels > before2.panels) eff.push('panel');
+            if (after2.status !== before2.status) eff.push('status');
+            if (after2.chrome !== before2.chrome) eff.push('chrome');
+          }
           if (eff.length) eff.push('retry');
         } catch (e) { /* keep original verdict */ }
       }
-      rows.push({ tab, key, label: m.label, effect: clicked ? (eff.length ? eff.join('+') : 'silent') : 'unclickable', why });
+      const effect = clicked ? (eff.length ? eff.join('+') : 'silent') : 'unclickable';
+      const divergent = effect === 'silent' && FX_DIVERGENCES.has(tab + '|' + (m.id || m.key || m.label));
+      rows.push({ tab, key, label: m.label,
+        effect: effect === 'silent' && (FX_NOOBSERVE.has(m.id) || FX_NOOBSERVE.has(m.cmd))
+          ? 'noobserve'
+          : effect === 'silent' && divergent ? 'divergence'
+          : effect, why });
       await cleanup();
     }
     await cleanup();

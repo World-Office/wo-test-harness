@@ -53,9 +53,23 @@ const classify = () => {
     const el = document.querySelector(sel);
     if (el && vis(el) && el.getBoundingClientRect().width > railW + 40) { menu = el; break; }
   }
-  const panel = [...document.querySelectorAll('#nav-panel, #chat-panel, #review-panel, #comments-panel, .de-properties-panel,\
-    .de-viewport-right-panel')]
-    .find(e => vis(e) && !e.hidden);
+  const panel = [...document.querySelectorAll('#nav-panel, #chat-panel, #review-panel, #comments-panel')]
+    .find(e => vis(e) && !e.hidden)
+    || (() => {
+      // react right-side panels: .de-properties-panel, .de-styles-panel,
+      // .de-track-changes-panel, ... any element whose class mentions panel,
+      // VISIBLE and wider than the 56px right rail (a real panel, not the
+      // rail / not a stray label). Some panels (CrossReference) mount with an
+      // EMPTY className, so also treat a present .de-viewport-right-menu with
+      // a child wider than the 40px rail as a panel.
+      return [...document.querySelectorAll('[class*="panel" i]')]
+        .find(e => vis(e) && e.getBoundingClientRect().width > 100)
+        || (() => {
+          const rm = document.querySelector('.de-viewport-right-menu');
+          if (!rm || !vis(rm)) return null;
+          return [...rm.children].find(e => vis(e) && e.getBoundingClientRect().width > 200);
+        })();
+    })();
   let el = null, kind = 'none', boxEl = null;
   if (modal) { el = modal; kind = 'modal'; boxEl = modal.querySelector(':scope > .dialog') || modal; }
   else if (menu) { el = menu; kind = 'menu'; boxEl = menu; }
@@ -74,16 +88,25 @@ const classify = () => {
 const bus = ([cmd, value]) =>
   dispatchEvent(new CustomEvent('wo-command', { detail: { command: cmd, value: value } }));
 const closeAll = () => {
-  document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
-  document.querySelectorAll('.dialog-overlay.open, .de-properties-panel, .de-viewport-right-panel')
-    .forEach(d => {
+  // react surfaces toggle: the rail buttons carry aria-pressed — re-clicking
+  // the ACTIVE one closes the panel (Escape is a no-op on react panels). Do
+  // this FIRST so later buttons start from a clean slate (a stray open panel
+  // would make the next same-panel button toggle-CLOSE -> false WO=none).
+  try {
+    const rt = document.querySelector('.de-right-menu-btn[aria-pressed="true"], .de-right-menu-btn.active');
+    if (rt) rt.click();
+    const lt = document.querySelector('.de-viewport-left-menu .de-left-menu-btn[aria-pressed="true"], .de-left-menu .de-left-menu-btn.active');
+    if (lt) lt.click();
+    // file menu / dialogs close via their own close affordances
+    [...document.querySelectorAll('.dialog-overlay.open')].forEach(d => {
       const b = d.querySelector('button[id$="-close"], .find-close, [data-dialog-close]');
       if (b) b.click();
-      else {
-        d.classList.remove('open');
-        d.style.display = '';
-      }
+      else { d.classList.remove('open'); d.style.display = ''; }
     });
+  } catch (e) {}
+  document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+  document.querySelectorAll('.de-properties-panel, .de-viewport-right-panel')
+    .forEach(d => { d.classList.remove('open'); });
   ['#file-menu', '#ctx-menu', '#nav-panel', '#chat-panel', '#review-panel', '#comments-panel']
     .forEach(s => { const e = document.querySelector(s); if (e) e.hidden = true; });
 };
@@ -141,7 +164,7 @@ const clickFileItem = label => {
         // for id-less cmd buttons only.
         if (b.id) await page.evaluate(id => { const e = document.getElementById(id); if (e) e.click(); }, b.id);
         else if (b.cmd) await page.evaluate(bus, [b.cmd, undefined]);
-        await sleep(140);
+        await sleep(450);
         res = await page.evaluate(classify);
       } catch (e) {
         res = { opens: 'error', msg: String(e.message).slice(0, 60) };
@@ -176,7 +199,7 @@ const clickFileItem = label => {
           try {
             if (b.cmd) await page.evaluate(bus, [b.cmd, undefined]);
             else await page.evaluate(id => { const e = document.getElementById(id); if (e) e.click(); }, b.id);
-            await sleep(140);
+            await sleep(450);
             res = await page.evaluate(classify);
           } catch (e) { res = { opens: 'error', msg: String(e.message).slice(0, 60) }; }
           interactions.push({ tab: slug, menu: t.id, ...b, opens: res.opens, surface_id: res.id, box: res.box,
@@ -198,7 +221,7 @@ const clickFileItem = label => {
       let res = null;
       try {
         await page.evaluate(id => { const e = document.getElementById(id); if (e) e.click(); }, c.id);
-        await sleep(140);
+        await sleep(450);
         res = await page.evaluate(classify);
       } catch (e) { res = { opens: 'error', msg: String(e.message).slice(0, 60) }; }
       interactions.push({ tab: slug, kind: c.kind, id: c.id, cmd: null, label: c.id,
@@ -221,7 +244,7 @@ const clickFileItem = label => {
       // the previous item's click closed the file menu — reopen before clicking
       // (#btn-file toggles, so only click when hidden)
       await page.evaluate(() => { const m = document.getElementById('file-menu'); const t = document.getElementById('btn-file'); if (m && m.hidden && t) t.click(); });
-      await sleep(140);
+      await sleep(450);
       const ok = await page.evaluate(clickFileItem, it.label);
       await sleep(160);
       res = ok ? await page.evaluate(classify) : { opens: 'none' };
