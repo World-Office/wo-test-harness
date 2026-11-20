@@ -1,6 +1,6 @@
 {
  "engine": "world-office",
- "capturedAt": "2026-10-02T14:25:33.446Z",
+ "capturedAt": "2026-11-20T07:13:11.417Z",
  "viewport": {
   "width": 1440,
   "height": 900
@@ -9,758 +9,1353 @@
  "controls": [
   {
    "tab": "Home",
+   "key": "btn-cut",
+   "label": "Cut",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-copy",
+   "label": "Copy",
+   "effect": "noobserve",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-paste",
+   "label": "Paste",
+   "effect": "doc+status",
+   "why": ""
+  },
+  {
+   "tab": "Home",
    "key": "btn-undo",
-   "label": "Undo (Ctrl+Z)",
+   "label": "Undo",
    "effect": "doc",
    "why": ""
   },
   {
    "tab": "Home",
-   "key": "font-family",
-   "label": "Font family",
+   "key": "btn-redo",
+   "label": "Redo",
    "effect": "doc",
    "why": ""
   },
   {
    "tab": "Home",
-   "key": "font-size",
+   "key": "btn-copy-style",
+   "label": "Copy style",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-increase-font-size",
+   "label": "Increment font size",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-decrease-font-size",
+   "label": "Decrement font size",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-change-case",
+   "label": "Change case",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-bold",
+   "label": "Bold",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-italic",
+   "label": "Italic",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-underline",
+   "label": "Underline",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-strikethrough",
+   "label": "Strikethrough",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-superscript",
+   "label": "Superscript",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-subscript",
+   "label": "Subscript",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "sel-font-family",
+   "label": "Font",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "sel-font-size",
    "label": "Font size",
    "effect": "doc",
    "why": ""
   },
   {
    "tab": "Home",
-   "key": "insertUnorderedList",
-   "label": "Bullet list",
-   "effect": "doc+chrome",
+   "key": "btn-text-color",
+   "label": "Font color",
+   "effect": "menu",
    "why": ""
   },
   {
    "tab": "Home",
-   "key": "insertOrderedList",
-   "label": "Numbered list",
-   "effect": "doc+chrome",
+   "key": "btn-highlight-color",
+   "label": "Highlight color",
+   "effect": "menu",
    "why": ""
   },
   {
    "tab": "Home",
-   "key": "multilevel",
+   "key": "btn-clear-formatting",
+   "label": "Clear style",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-bullet-list",
+   "label": "Bullets",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-ordered-list",
+   "label": "Numbering",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-task-list",
+   "label": "Tasks",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-multilevel-list",
    "label": "Multilevel list",
-   "effect": "doc+chrome",
+   "effect": "doc",
    "why": ""
   },
   {
    "tab": "Home",
-   "key": "outdent",
+   "key": "btn-outdent",
    "label": "Decrease indent",
    "effect": "doc",
    "why": ""
   },
   {
    "tab": "Home",
-   "key": "indent",
+   "key": "btn-indent",
    "label": "Increase indent",
    "effect": "doc",
    "why": ""
   },
   {
    "tab": "Home",
-   "key": "line-spacing",
-   "label": "Line spacing",
+   "key": "sel-line-spacing",
+   "label": "Paragraph line spacing",
    "effect": "doc",
    "why": ""
   },
   {
    "tab": "Home",
-   "key": "directionRtl",
-   "label": "Right-to-left paragraph",
-   "effect": "doc+chrome",
-   "why": ""
-  },
-  {
-   "tab": "Home",
-   "key": "btn-ribbon-collapse",
-   "label": "Show fewer toolbar buttons",
-   "effect": "chrome",
-   "why": ""
-  },
-  {
-   "tab": "Home",
-   "key": "btn-theme",
-   "label": "Toggle dark/light theme",
-   "effect": "chrome",
-   "why": ""
-  },
-  {
-   "tab": "Home",
-   "key": "bold",
-   "label": "Bold (Ctrl+B)",
-   "effect": "doc+chrome",
-   "why": ""
-  },
-  {
-   "tab": "Home",
-   "key": "italic",
-   "label": "Italic (Ctrl+I)",
-   "effect": "doc+chrome",
-   "why": ""
-  },
-  {
-   "tab": "Home",
-   "key": "underline",
-   "label": "Underline (Ctrl+U)",
-   "effect": "doc+chrome",
-   "why": ""
-  },
-  {
-   "tab": "Home",
-   "key": "strikeThrough",
-   "label": "Strikethrough",
-   "effect": "doc+chrome",
-   "why": ""
-  },
-  {
-   "tab": "Home",
-   "key": "superscript",
-   "label": "Toolbar.SuperscriptTitle",
-   "effect": "doc+chrome",
-   "why": ""
-  },
-  {
-   "tab": "Home",
-   "key": "removeFormat",
-   "label": "Clear formatting",
+   "key": "sel-text-direction",
+   "label": "Text direction",
    "effect": "doc",
    "why": ""
   },
   {
    "tab": "Home",
-   "key": "justifyLeft",
-   "label": "Align left (Ctrl+Shift+L)",
+   "key": "btn-align-left",
+   "label": "Align left",
    "effect": "doc",
    "why": ""
   },
   {
    "tab": "Home",
-   "key": "justifyCenter",
-   "label": "Center (Ctrl+E)",
-   "effect": "doc+chrome",
-   "why": ""
-  },
-  {
-   "tab": "Home",
-   "key": "justifyRight",
-   "label": "Align right (Ctrl+R)",
-   "effect": "doc+chrome",
-   "why": ""
-  },
-  {
-   "tab": "Home",
-   "key": "justifyFull",
-   "label": "Justify (Ctrl+J)",
-   "effect": "doc+chrome",
-   "why": ""
-  },
-  {
-   "tab": "Home",
-   "key": "formatBlock",
-   "label": "Paragraph",
-   "effect": "doc+retry",
-   "why": ""
-  },
-  {
-   "tab": "Home",
-   "key": "smallCaps",
-   "label": "Small caps",
+   "key": "btn-align-center",
+   "label": "Align center",
    "effect": "doc",
    "why": ""
   },
   {
    "tab": "Home",
-   "key": "code",
-   "label": "Inline code",
-   "effect": "doc+chrome",
+   "key": "btn-align-right",
+   "label": "Align right",
+   "effect": "doc",
    "why": ""
   },
   {
    "tab": "Home",
-   "key": "allCaps",
-   "label": "Uppercase",
+   "key": "btn-align-justify",
+   "label": "Justified",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-shading",
+   "label": "Shading",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-borders",
+   "label": "Borders",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-heading1",
+   "label": "H1",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-heading2",
+   "label": "H2",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-heading3",
+   "label": "H3",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-blockquote",
+   "label": "Quote",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "Home",
+   "key": "btn-code-block",
+   "label": "Code",
    "effect": "doc",
    "why": ""
   },
   {
    "tab": "Home",
    "key": "btn-find",
-   "label": "Find and replace (Ctrl+F)",
-   "effect": "dialog+chrome",
+   "label": "Find",
+   "effect": "panel",
    "why": ""
   },
   {
-   "tab": "Insert",
-   "key": "btn-table",
-   "label": "Insert table",
-   "effect": "menu+dialog",
+   "tab": "Home",
+   "key": "btn-replace",
+   "label": "Replace",
+   "effect": "panel",
    "why": ""
   },
   {
-   "tab": "Insert",
-   "key": "btn-table-ops",
-   "label": "Table actions (rows, columns, ",
-   "effect": "dialog",
+   "tab": "Home",
+   "key": "btn-select-all",
+   "label": "Select all",
+   "effect": "noobserve",
    "why": ""
   },
   {
-   "tab": "Insert",
-   "key": "btn-image",
-   "label": "Insert image",
-   "effect": "menu+dialog",
+   "tab": "Home",
+   "key": "btn-word-count",
+   "label": "Word count",
+   "effect": "divergence",
    "why": ""
   },
   {
-   "tab": "Insert",
-   "key": "btn-link",
-   "label": "Insert link",
-   "effect": "dialog",
+   "tab": "Home",
+   "key": "btn-set-document-language",
+   "label": "English – United States",
+   "effect": "dialog+status",
    "why": ""
   },
   {
-   "tab": "Insert",
-   "key": "btn-hr",
-   "label": "Insert horizontal rule",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "Insert",
-   "key": "btn-object",
-   "label": "Insert object",
-   "effect": "dialog",
-   "why": ""
-  },
-  {
-   "tab": "Insert",
-   "key": "btn-bookmark",
-   "label": "Insert bookmark",
-   "effect": "dialog",
-   "why": ""
-  },
-  {
-   "tab": "Insert",
-   "key": "btn-crossref",
-   "label": "Insert cross-reference",
-   "effect": "dialog",
-   "why": ""
-  },
-  {
-   "tab": "Insert",
-   "key": "btn-symbol",
-   "label": "Insert symbol",
-   "effect": "dialog",
-   "why": ""
-  },
-  {
-   "tab": "Insert",
-   "key": "btn-datetime",
-   "label": "Insert date",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "Insert",
-   "key": "btn-pagenumber",
-   "label": "Insert page number",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "Insert",
-   "key": "btn-header",
-   "label": "Insert page header",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "Insert",
-   "key": "btn-footer",
-   "label": "Insert page footer",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "Insert",
-   "key": "insertObject",
-   "label": "Shape",
-   "effect": "dialog",
-   "why": ""
-  },
-  {
-   "tab": "Insert",
-   "key": "insertObject",
-   "label": "Chart",
-   "effect": "dialog",
-   "why": ""
-  },
-  {
-   "tab": "Insert",
-   "key": "insertObject",
-   "label": "Text art",
-   "effect": "dialog",
-   "why": ""
-  },
-  {
-   "tab": "Insert",
-   "key": "toggleDropcap",
-   "label": "Drop cap",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "Insert",
-   "key": "insertObject",
-   "label": "Text box",
-   "effect": "dialog",
-   "why": ""
-  },
-  {
-   "tab": "Insert",
-   "key": "link",
-   "label": "Hyperlink",
-   "effect": "dialog",
-   "why": ""
-  },
-  {
-   "tab": "Draw",
-   "key": "btn-ink-draw",
-   "label": "Toggle drawing mode",
-   "effect": "status+chrome",
-   "why": ""
-  },
-  {
-   "tab": "Draw",
-   "key": "btn-ink-select",
-   "label": "Select objects",
-   "effect": "status+chrome",
-   "why": ""
-  },
-  {
-   "tab": "Draw",
-   "key": "btn-ink-pen",
-   "label": "Draw with pen",
-   "effect": "status+chrome",
-   "why": ""
-  },
-  {
-   "tab": "Draw",
-   "key": "btn-ink-highlighter",
-   "label": "Highlight text",
-   "effect": "status+chrome",
-   "why": ""
-  },
-  {
-   "tab": "Draw",
-   "key": "btn-ink-eraser",
-   "label": "Erase ink",
-   "effect": "status+chrome",
-   "why": ""
-  },
-  {
-   "tab": "Draw",
-   "key": "btn-ink-color",
-   "label": "Ink color",
-   "effect": "status",
-   "why": ""
-  },
-  {
-   "tab": "Draw",
-   "key": "btn-ink-thickness",
-   "label": "Ink thickness",
-   "effect": "status",
-   "why": ""
-  },
-  {
-   "tab": "Draw",
-   "key": "btn-group",
-   "label": "Group selected strokes",
-   "effect": "status",
-   "why": ""
-  },
-  {
-   "tab": "Draw",
-   "key": "btn-mergeshapes",
-   "label": "Merge selected strokes into on",
-   "effect": "status",
-   "why": ""
-  },
-  {
-   "tab": "Layout",
-   "key": "btn-page-break",
-   "label": "Insert page break",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "Layout",
-   "key": "btn-section-break",
-   "label": "Insert section break",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "Layout",
-   "key": "btn-columns",
-   "label": "Insert columns",
-   "effect": "dialog",
-   "why": ""
-  },
-  {
-   "tab": "Layout",
-   "key": "btn-page-setup",
-   "label": "Page setup",
-   "effect": "dialog",
-   "why": ""
-  },
-  {
-   "tab": "Layout",
-   "key": "toggleHyphenation",
-   "label": "Hyphenation",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "Layout",
-   "key": "toggleLineNumbers",
-   "label": "Line numbers",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "Layout",
-   "key": "toggleWatermark",
-   "label": "Watermark",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "Layout",
-   "key": "themecolors",
-   "label": "Layout.Colors",
-   "effect": "silent",
-   "why": ""
-  },
-  {
-   "tab": "References",
-   "key": "btn-toc",
-   "label": "Insert table of contents",
-   "effect": "dialog",
-   "why": ""
-  },
-  {
-   "tab": "References",
-   "key": "btn-footnote",
-   "label": "Insert footnote",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "References",
-   "key": "btn-endnote",
-   "label": "Insert endnote",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "References",
-   "key": "insertCaption",
-   "label": "Caption",
-   "effect": "doc+chrome",
-   "why": ""
-  },
-  {
-   "tab": "References",
-   "key": "insertCitation",
-   "label": "Citation",
-   "effect": "doc+chrome",
-   "why": ""
-  },
-  {
-   "tab": "References",
-   "key": "insertIndexEntry",
-   "label": "Index",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "References",
-   "key": "updateToc",
-   "label": "Update TOC",
-   "effect": "doc+status",
-   "why": ""
-  },
-  {
-   "tab": "References",
-   "key": "openCrossref",
-   "label": "Cross-reference",
-   "effect": "dialog",
-   "why": ""
-  },
-  {
-   "tab": "Collaboration",
+   "tab": "Home",
    "key": "btn-track-changes",
    "label": "Track changes",
    "effect": "chrome",
    "why": ""
   },
   {
-   "tab": "Collaboration",
-   "key": "btn-review-changes",
-   "label": "Review changes",
-   "effect": "panel",
-   "why": ""
-  },
-  {
-   "tab": "Collaboration",
-   "key": "btn-comment",
-   "label": "Add comment",
-   "effect": "dialog+chrome",
-   "why": ""
-  },
-  {
-   "tab": "Collaboration",
-   "key": "btn-comments",
-   "label": "Show comments",
-   "effect": "panel",
-   "why": ""
-  },
-  {
-   "tab": "Collaboration",
-   "key": "btn-chat-toggle",
-   "label": "Chat",
-   "effect": "panel+status",
-   "why": ""
-  },
-  {
-   "tab": "Collaboration",
-   "key": "compareVersion",
-   "label": "Compare",
-   "effect": "dialog+status",
-   "why": ""
-  },
-  {
-   "tab": "Collaboration",
-   "key": "displayMode",
-   "label": "Display mode",
-   "effect": "status",
-   "why": ""
-  },
-  {
-   "tab": "Collaboration",
-   "key": "prevTrackedChange",
-   "label": "Previous change",
-   "effect": "status",
-   "why": ""
-  },
-  {
-   "tab": "Collaboration",
-   "key": "nextTrackedChange",
-   "label": "Next change",
-   "effect": "status",
-   "why": ""
-  },
-  {
-   "tab": "Protection",
-   "key": "protectDialog",
-   "label": "Protect with password",
-   "effect": "dialog",
-   "why": ""
-  },
-  {
-   "tab": "Protection",
-   "key": "restrictEditing",
-   "label": "Restrict editing",
-   "effect": "status",
-   "why": ""
-  },
-  {
-   "tab": "View",
-   "key": "displayMode",
-   "label": "Document view",
-   "effect": "status",
-   "why": ""
-  },
-  {
-   "tab": "View",
-   "key": "btn-ruler-toggle",
-   "label": "Ruler",
+   "tab": "Home",
+   "key": "btn-multiple-pages",
+   "label": "Multiple pages",
    "effect": "chrome",
    "why": ""
   },
   {
-   "tab": "View",
-   "key": "btn-gridlines",
-   "label": "Gridlines",
-   "effect": "status+chrome",
+   "tab": "Home",
+   "key": "btn-fit-to-page",
+   "label": "Fit to page",
+   "effect": "chrome",
    "why": ""
   },
   {
-   "tab": "View",
-   "key": "btn-view-formatmarks",
-   "label": "View.FormattingMarks",
-   "effect": "status+chrome",
+   "tab": "Home",
+   "key": "btn-fit-to-width",
+   "label": "Fit to width",
+   "effect": "chrome",
    "why": ""
   },
   {
-   "tab": "View",
-   "key": "btn-nav-toggle",
-   "label": "Navigation",
-   "effect": "panel+status",
+   "tab": "Home",
+   "key": "btn-zoom-out",
+   "label": "Zoom out",
+   "effect": "status",
    "why": ""
   },
   {
-   "tab": "View",
-   "key": "btn-view-theme",
+   "tab": "Home",
+   "key": "btn-zoom-in",
+   "label": "Zoom in",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-blank-page",
+   "label": "Blank Page",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-page-break",
+   "label": "Breaks",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-insert-table",
+   "label": "Table",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-insert-image",
+   "label": "Image",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-insert-shape",
+   "label": "Shape",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-insert-smart-art",
+   "label": "SmartArt",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-insert-chart",
+   "label": "Chart",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-insert-link",
+   "label": "Link",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-horizontal-rule",
+   "label": "HR",
+   "effect": "doc",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-insert-text-box",
+   "label": "Text Box",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-insert-text-art",
+   "label": "Text Art",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-insert-drop-cap",
+   "label": "Drop Cap",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-insert-equation",
+   "label": "Equation",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-insert-symbol",
+   "label": "Symbol",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-insert-content-control",
+   "label": "Content Controls",
+   "effect": "menu",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-insert-header-footer",
+   "label": "Header & Footer",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-edit-header",
+   "label": "Header",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-edit-footer",
+   "label": "Footer",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-insert-page-number",
+   "label": "Page Number",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-insert-date-time",
+   "label": "Date & Time",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-insert-field",
+   "label": "Field",
+   "effect": "divergence",
+   "why": ""
+  },
+  {
+   "tab": "InsertInsert",
+   "key": "btn-add-comment",
+   "label": "Comment",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "DrawDraw",
+   "key": "btn-draw-cut",
+   "label": "Cut",
+   "effect": "divergence",
+   "why": ""
+  },
+  {
+   "tab": "DrawDraw",
+   "key": "btn-draw-copy",
+   "label": "Copy",
+   "effect": "noobserve",
+   "why": ""
+  },
+  {
+   "tab": "DrawDraw",
+   "key": "btn-draw-paste",
+   "label": "Paste",
+   "effect": "doc+status",
+   "why": ""
+  },
+  {
+   "tab": "DrawDraw",
+   "key": "btn-draw-copy-style",
+   "label": "Copy style",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "DrawDraw",
+   "key": "btn-draw-select",
+   "label": "Select",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "DrawDraw",
+   "key": "btn-draw-eraser",
+   "label": "Eraser",
+   "effect": "divergence",
+   "why": ""
+  },
+  {
+   "tab": "DrawDraw",
+   "key": "btn-draw-word-count",
+   "label": "Word count",
+   "effect": "divergence",
+   "why": ""
+  },
+  {
+   "tab": "DrawDraw",
+   "key": "sel-draw-language-select",
+   "label": "English – United States",
+   "effect": "dialog+status",
+   "why": ""
+  },
+  {
+   "tab": "DrawDraw",
+   "key": "btn-draw-set-language",
+   "label": "Set document language",
+   "effect": "dialog+status",
+   "why": ""
+  },
+  {
+   "tab": "DrawDraw",
+   "key": "btn-draw-multiple-pages",
+   "label": "Multiple pages",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "DrawDraw",
+   "key": "btn-draw-fit-to-page",
+   "label": "Fit to page",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "DrawDraw",
+   "key": "btn-draw-fit-to-width",
+   "label": "Fit to width",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "DrawDraw",
+   "key": "btn-draw-zoom-out",
+   "label": "Zoom out",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "DrawDraw",
+   "key": "btn-draw-zoom-in",
+   "label": "Zoom in",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-page-orientation",
+   "label": "Orientation",
+   "effect": "divergence",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-page-size",
+   "label": "Size",
+   "effect": "divergence",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-page-margins",
+   "label": "Margins",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-columns",
+   "label": "Columns",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-line-numbers",
+   "label": "Line Numbers",
+   "effect": "divergence",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-hyphenation",
+   "label": "Hyphenation",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-wrapping",
+   "label": "Wrapping",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-bring-forward",
+   "label": "Bring Forward",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-send-backward",
+   "label": "Send Backward",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-align",
+   "label": "Align",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-group",
+   "label": "Group",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-merge-shapes",
+   "label": "Merge Shapes",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-watermark",
+   "label": "Watermark",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-page-color",
+   "label": "Page Color",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-colors",
+   "label": "Colors",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-breaks",
+   "label": "Breaks",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-document-theme",
    "label": "Theme",
    "effect": "chrome",
    "why": ""
   },
   {
-   "tab": "View",
-   "key": "btn-view-fit",
-   "label": "Fit page",
+   "tab": "LayoutLayout",
+   "key": "btn-edit-header",
+   "label": "Header",
    "effect": "chrome",
    "why": ""
   },
   {
-   "tab": "Plugins",
-   "key": "browsePlugins",
-   "label": "Browse plugins",
+   "tab": "LayoutLayout",
+   "key": "btn-edit-footer",
+   "label": "Footer",
    "effect": "chrome",
    "why": ""
   },
   {
-   "tab": "Plugins",
-   "key": "managePlugins",
-   "label": "Manage plugins",
+   "tab": "LayoutLayout",
+   "key": "btn-insert-page-number",
+   "label": "Page Number",
    "effect": "chrome",
    "why": ""
   },
   {
-   "tab": "Plugins",
-   "key": "btn-bgplugins",
-   "label": "Background plugins",
-   "effect": "status+chrome",
+   "tab": "LayoutLayout",
+   "key": "btn-insert-date-time",
+   "label": "Date & Time",
+   "effect": "chrome",
    "why": ""
   },
   {
-   "tab": "Plugins",
+   "tab": "LayoutLayout",
+   "key": "btn-insert-field",
+   "label": "Field",
+   "effect": "divergence",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-close-header-footer",
+   "label": "Close",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-remove-header",
+   "label": "Remove Header",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "LayoutLayout",
+   "key": "btn-remove-footer",
+   "label": "Remove Footer",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "ReferencesReferences",
+   "key": "btn-insert-toc",
+   "label": "Table of Contents",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "ReferencesReferences",
+   "key": "btn-add-toc-text",
+   "label": "Add Text",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "ReferencesReferences",
+   "key": "btn-update-toc",
+   "label": "Update Table",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "ReferencesReferences",
+   "key": "btn-insert-footnote",
+   "label": "Footnote",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "ReferencesReferences",
+   "key": "btn-insert-endnote",
+   "label": "Endnote",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "ReferencesReferences",
+   "key": "btn-insert-bookmark",
+   "label": "Bookmark",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "ReferencesReferences",
+   "key": "btn-insert-caption",
+   "label": "Caption",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "ReferencesReferences",
+   "key": "btn-insert-cross-reference",
+   "label": "Cross-reference",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "ReferencesReferences",
+   "key": "btn-insert-table-of-figures",
+   "label": "Table of Figures",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "ReferencesReferences",
+   "key": "btn-add-comment",
+   "label": "Comment",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "ReferencesReferences",
+   "key": "btn-toggle-comment",
+   "label": "Remove",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "ReferencesReferences",
+   "key": "btn-mark-index-entry",
+   "label": "Mark Entry",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "ReferencesReferences",
+   "key": "btn-insert-index",
+   "label": "Insert Index",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "ReferencesReferences",
+   "key": "btn-update-index",
+   "label": "Update Index",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "ReferencesReferences",
+   "key": "btn-insert-link",
+   "label": "Link",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-track-changes",
+   "label": "Track Changes",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-co-editing-mode",
+   "label": "Co-editing Mode",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-accept-change",
+   "label": "Accept",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-reject-change",
+   "label": "Reject",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-accept-all",
+   "label": "Accept All",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-reject-all",
+   "label": "Reject All",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-previous-change",
+   "label": "Previous",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-next-change",
+   "label": "Next",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-add-comment",
+   "label": "Add Comment",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-delete-comment",
+   "label": "Delete",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-resolve-comment",
+   "label": "Resolve",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-comments-panel",
+   "label": "Comments",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-display-mode",
+   "label": "Display Mode",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-compare-documents",
+   "label": "Compare",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-combine-documents",
+   "label": "Combine",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-mail-merge",
+   "label": "Mail Merge",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "CollaborationCollaboration",
+   "key": "btn-chat-panel",
+   "label": "Chat",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "ProtectionProtection",
+   "key": "btn-protect-document",
+   "label": "Protect Document",
+   "effect": "panel",
+   "why": ""
+  },
+  {
+   "tab": "ProtectionProtection",
+   "key": "btn-encrypt",
+   "label": "Encrypt",
+   "effect": "panel",
+   "why": ""
+  },
+  {
+   "tab": "ViewView",
+   "key": "btn-multiple-pages",
+   "label": "Multiple Pages",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "ViewView",
+   "key": "btn-zoom-in",
+   "label": "Zoom In",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "ViewView",
+   "key": "btn-zoom-out",
+   "label": "Zoom Out",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "ViewView",
+   "key": "btn-zoom-100",
+   "label": "Zoom to 100%",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "ViewView",
+   "key": "sel-interface-theme",
+   "label": "Interface Theme",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "ViewView",
+   "key": "btn-macros",
+   "label": "Macros",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "ViewView",
+   "key": "btn-record-macro",
+   "label": "Record Macro",
+   "effect": "divergence",
+   "why": ""
+  },
+  {
+   "tab": "ViewView",
+   "key": "btn-pause-recording",
+   "label": "Pause Recording",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-plugins-cut",
+   "label": "Cut",
+   "effect": "silent",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-plugins-copy",
+   "label": "Copy",
+   "effect": "noobserve",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-plugins-paste",
+   "label": "Paste",
+   "effect": "doc+status",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-copy-style",
+   "label": "Copy style",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-plugin-manager",
+   "label": "PluginManager",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-background-plugins",
+   "label": "Backgroundplugins",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-photo-editor",
+   "label": "PhotoEditor",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-youtube",
+   "label": "YouTube",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
    "key": "btn-ocr",
    "label": "OCR",
-   "effect": "dialog+chrome",
+   "effect": "panel+chrome",
    "why": ""
   },
   {
-   "tab": "Plugins",
-   "key": "photoEditor",
-   "label": "Photo editor",
-   "effect": "dialog",
+   "tab": "PluginsPlugins",
+   "key": "btn-translator",
+   "label": "Translator",
+   "effect": "panel+chrome",
    "why": ""
   },
   {
-   "tab": "AI",
-   "key": "btn-ai-review-tab",
-   "label": "AI changes",
+   "tab": "PluginsPlugins",
+   "key": "btn-mendeley",
+   "label": "Mendeley",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-thesaurus",
+   "label": "Thesaurus",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-highlight-code",
+   "label": "Highlightcode",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-zotero",
+   "label": "Zotero",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-speech",
+   "label": "Speech",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-speech-input",
+   "label": "Speechinput",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-word-count",
+   "label": "Word count",
+   "effect": "divergence",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-set-document-language",
+   "label": "English – United States",
+   "effect": "dialog+status",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-track-changes",
+   "label": "Track changes",
    "effect": "chrome",
    "why": ""
   },
   {
-   "tab": "AI",
-   "key": "aiSummarize",
-   "label": "Summarize",
-   "effect": "doc+chrome",
-   "why": ""
-  },
-  {
-   "tab": "AI",
-   "key": "aiTranslate",
-   "label": "Translate",
-   "effect": "dialog+chrome",
-   "why": ""
-  },
-  {
-   "tab": "AI",
-   "key": "aiRewrite",
-   "label": "Rewrite",
-   "effect": "dialog",
-   "why": ""
-  },
-  {
-   "tab": "AI",
-   "key": "btn-ai-grammar",
-   "label": "Grammar",
-   "effect": "dialog",
-   "why": ""
-  },
-  {
-   "tab": "AI",
-   "key": "btn-ai-assistant",
-   "label": "AI assistant",
-   "effect": "dialog+chrome",
-   "why": ""
-  },
-  {
-   "tab": "Header & Footer",
-   "key": "btn-hf-close",
-   "label": "Close Header & Footer",
+   "tab": "PluginsPlugins",
+   "key": "btn-multiple-pages",
+   "label": "Multiple pages",
    "effect": "chrome",
    "why": ""
   },
   {
-   "tab": "Header & Footer",
-   "key": "btn-hf-pagenumber",
-   "label": "Page number",
-   "effect": "doc",
+   "tab": "PluginsPlugins",
+   "key": "btn-fit-to-page",
+   "label": "Fit to page",
+   "effect": "chrome",
    "why": ""
   },
   {
-   "tab": "Header & Footer",
-   "key": "btn-hf-datetime",
-   "label": "Date & time",
-   "effect": "doc",
+   "tab": "PluginsPlugins",
+   "key": "btn-fit-to-width",
+   "label": "Fit to width",
+   "effect": "chrome",
    "why": ""
   },
   {
-   "tab": "Header & Footer",
-   "key": "toggleDifferentFirst",
-   "label": "Different First Page",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "Header & Footer",
-   "key": "toggleOddEven",
-   "label": "Different Odd & Even",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "Header & Footer",
-   "key": "toggleHeaderFromTop",
-   "label": "Header from Top",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "Header & Footer",
-   "key": "toggleFooterFromBottom",
-   "label": "Footer from Bottom",
-   "effect": "doc",
-   "why": ""
-  },
-  {
-   "tab": "Header & Footer",
-   "key": "toggleSameAsPrev",
-   "label": "Same as previous",
+   "tab": "PluginsPlugins",
+   "key": "btn-zoom-out",
+   "label": "Zoom out",
    "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "PluginsPlugins",
+   "key": "btn-zoom-in",
+   "label": "Zoom in",
+   "effect": "status",
+   "why": ""
+  },
+  {
+   "tab": "AIAI",
+   "key": "btn-ai-settings",
+   "label": "Settings",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "AIAI",
+   "key": "btn-ai-chatbot",
+   "label": "Chatbot",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "AIAI",
+   "key": "btn-ai-summarization",
+   "label": "Summarization",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "AIAI",
+   "key": "btn-ai-translation",
+   "label": "Translation",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "AIAI",
+   "key": "btn-ai-grammar-spelling",
+   "label": "Grammar &Spelling",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "AIAI",
+   "key": "btn-ai-assistant-panel",
+   "label": "Create AIassistant",
+   "effect": "chrome",
+   "why": ""
+  },
+  {
+   "tab": "Chart DesignChart Design",
+   "key": "btn-chart-elements",
+   "label": "ChartElements",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Chart DesignChart Design",
+   "key": "btn-edit-chart-data",
+   "label": "EditData",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Chart DesignChart Design",
+   "key": "btn-update-chart-data",
+   "label": "UpdateData",
+   "effect": "divergence",
+   "why": ""
+  },
+  {
+   "tab": "Chart DesignChart Design",
+   "key": "sel-chart-type",
+   "label": "Chart type",
+   "effect": "divergence",
+   "why": ""
+  },
+  {
+   "tab": "Chart DesignChart Design",
+   "key": "btn-chart-advanced-settings",
+   "label": "Advanced settings",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Chart DesignChart Design",
+   "key": "sel-chart-wrapping",
+   "label": "Wrapping",
+   "effect": "divergence",
+   "why": ""
+  },
+  {
+   "tab": "Chart DesignChart Design",
+   "key": "btn-chart-3d-rotation",
+   "label": "3Drotation",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Chart DesignChart Design",
+   "key": "btn-chart-advanced-settings",
+   "label": "Advanced settings",
+   "effect": "panel+chrome",
+   "why": ""
+  },
+  {
+   "tab": "Chart DesignChart Design",
+   "key": "sel-chart-width",
+   "label": "Width",
+   "effect": "divergence",
+   "why": ""
+  },
+  {
+   "tab": "Chart DesignChart Design",
+   "key": "sel-chart-height",
+   "label": "Height",
+   "effect": "divergence",
    "why": ""
   }
  ]

@@ -43,6 +43,10 @@ const EXPECTED_SILENT = new Set([
                      // shape ops: the census doc has no shapes (precondition)
   'btn-remove-header', 'btn-remove-footer',
                      // header/footer content normalized to pristine empty baseline
+  'btn-align',       // alignObjects: console.log stub like the other shape ops
+                     // (DocumentStore TODO — objects cannot exist in the census doc)
+  'btn-page-margins', // valueless ribbon button RE-APPLIES the current margins
+                      // (react renders a direct re-apply where OO opens a menu)
 ]);
 // Controls whose effect is real but page-INVISIBLE (e.g. clipboard copy:
 // writes the system clipboard, nothing in the DOM changes). Not defects.
@@ -123,6 +127,7 @@ try {
     });
     window.__fxHtmlClass = document.documentElement.className;
   });
+  await page.evaluate((canvas) => { window.__fxCanvas = canvas; }, editorInfo.canvas); // per-row re-seed must skip canvas mode (see below)
   // clean block seed: raw text nodes and empty <p> are invisible to the
   // block-level commands (line spacing / RTL / dropcap resolve <p> blocks),
   // so seed real paragraphs up front.
@@ -304,14 +309,19 @@ try {
                        [...document.querySelectorAll('.ribbon-tab')].find(x => (x.textContent||'').trim() === tabName);
             if (el) { if (el.hidden) el.hidden = false; el.click(); }
           }
-          const ed = document.getElementById('editor');
-          if (ed) { // canvas mode: the WASM engine owns the doc; nothing to re-seed
-            ed.innerHTML = '<p>Lorem ipsum dolor sit amet.</p><p>Consectetur adipiscing elit sed do.</p>';
-            ed.dispatchEvent(new Event('input', { bubbles: true }));
-            // earlier controls can leave restrict-editing on (contentEditable
-            // off) — restore the pristine editable baseline
-            if (ed.contentEditable !== 'true') { ed.contentEditable = 'true'; ed.setAttribute('aria-readonly', 'false'); }
+          if (!window.__fxCanvas) {
+            const ed = document.getElementById('editor');
+            if (ed) {
+              ed.innerHTML = '<p>Lorem ipsum dolor sit amet.</p><p>Consectetur adipiscing elit sed do.</p>';
+              ed.dispatchEvent(new Event('input', { bubbles: true }));
+              // earlier controls can leave restrict-editing on (contentEditable
+              // off) — restore the pristine editable baseline
+              if (ed.contentEditable !== 'true') { ed.contentEditable = 'true'; ed.setAttribute('aria-readonly', 'false'); }
+            }
           }
+          // canvas mode: the WASM engine owns the doc — an innerHTML re-seed
+          // here used to WIPE the react canvas + the data-wo-rev doc signal,
+          // reading every engine-only control (cut) as silent. Nothing to seed.
           // modal overlays can re-open post-cleanup (async fetch adds .open
           // after the class restore) and swallow real mouse events — hard-close
           document.querySelectorAll('.dialog-overlay.open,.insert-pop.open,.menu-list.open,.rb-menu.open')
