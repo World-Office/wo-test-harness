@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-20T16:32:31.456116",
+ "generated": "2026-11-20T19:40:34.471691",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,8 +10,8 @@
  ],
  "totals": {
   "L0": 1,
-  "L1": 349,
-  "L2": 115,
+  "L1": 344,
+  "L2": 120,
   "L3": 37,
   "L4": 32
  },
@@ -1402,8 +1402,10 @@
     "match": "Margins",
     "where": "tab:layout"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): page.margins asserted via parity runner"
+   ]
   },
   {
    "feature": "page.orientation",
@@ -1420,8 +1422,10 @@
     "match": "Orientation",
     "where": "tab:layout"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): page.orientation asserted via parity runner"
+   ]
   },
   {
    "feature": "page.size",
@@ -1438,8 +1442,10 @@
     "match": "Size",
     "where": "tab:layout"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): page.size asserted via parity runner"
+   ]
   },
   {
    "feature": "page.columns",
@@ -1456,8 +1462,10 @@
     "match": "Columns",
     "where": "tab:layout"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): page.columns asserted via parity runner"
+   ]
   },
   {
    "feature": "page.breaks",
@@ -4127,10 +4135,11 @@
     "match": "Margins",
     "where": "tab:layout"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
     "8 OO fields: Margins, Top, Bottom, Left, Right, Gutter position, Orientation, Multiple pages",
-    "8 OO fields: Margins, Top, Bottom, Left, Right, Gutter position, Orientation, Multiple pages"
+    "8 OO fields: Margins, Top, Bottom, Left, Right, Gutter position, Orientation, Multiple pages",
+    "L2 acts (contract PASS): page.dlg-margins asserted via parity runner"
    ]
   },
   {

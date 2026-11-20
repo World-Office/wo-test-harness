@@ -261,11 +261,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L3 **headerfooter.date-time** [control] → WO: btn-datetime
 - ✅ L3 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 
-## page — 54 features (L0:0 L1:42 L3:0)
-- 🔲 L1 **page.margins** [control] → WO: Margins
-- 🔲 L1 **page.orientation** [control] → WO: Orientation
-- 🔲 L1 **page.size** [control] → WO: Size
-- 🔲 L1 **page.columns** [control] → WO: Columns
+## page — 54 features (L0:0 L1:37 L3:0)
 - 🔲 L1 **page.breaks** [control] → WO: Breaks
 - 🔲 L1 **page.wrapping** [control] → WO: Wrapping
 - 🔲 L1 **page.bring-forward** [control] → WO: objectOp
@@ -301,15 +297,19 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **page.left** [menu-item] → WO: Left
 - 🔲 L1 **page.right** [menu-item] → WO: Right
 - 🔲 L1 **page.custom-columns** [menu-item] → WO: Custom columns
-- 🔲 L1 **page.dlg-margins** [dialog] (8 OO fields) → WO: Margins
 - 🔲 L1 **page.dlg-page-size** [dialog] (3 OO fields) → WO: btn-multipage
 - 🔲 L1 **page.dlg-columns** [dialog] (5 OO fields) → WO: columns-dialog
+- ✅ L2 **page.margins** [control] → WO: Margins
+- ✅ L2 **page.orientation** [control] → WO: Orientation
+- ✅ L2 **page.size** [control] → WO: Size
+- ✅ L2 **page.columns** [control] → WO: Columns
 - ✅ L2 **page.line-numbers** [control] → WO: toggleLineNumbers
 - ✅ L2 **page.hyphenation** [control] → WO: toggleHyphenation
 - ✅ L2 **page.watermark** [control] → WO: toggleWatermark
 - ✅ L2 **page.none** [menu-item] → WO: toggleHyphenation
 - ✅ L2 **page.automatic** [menu-item] → WO: toggleHyphenation
 - ✅ L2 **page.hyphenation-options** [menu-item] → WO: toggleHyphenation
+- ✅ L2 **page.dlg-margins** [dialog] (8 OO fields) → WO: Margins
 - ✅ L4 **page.dlg-hyphenation** [dialog] (2 OO fields) → WO: page.dlg-hyphenation (hyphenation-dialog-l4.test.mjs)
 - ✅ L4 **dialog.linenumbers-dialog.l4** [dialog] (1 OO fields) → WO: linenumbers-l4 (linenumbers-dialog-l4.test.mjs)
 - ✅ L4 **dialog.watermark-dialog.l4** [dialog] (3 OO fields) → WO: watermark-l4 (watermark-dialog-l4.test.mjs)

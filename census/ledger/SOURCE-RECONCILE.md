@@ -238,6 +238,7 @@ Name-joined to `shortcut.*` contracts: **111**; concept-mapped: **31**; **NO WO 
 ---
 ---
 ---
+---
 <!-- oo-dialogs -->
 ### OO source dialogs vs WO coverage (36 dialogs, 2026-11-09)
 
@@ -283,6 +284,8 @@ OO dialog inventory: **36** components from view/*Dialog.js|*Dlg.js. Direct toke
 | TextToTableDialog | TextToTableDialog.js | covered | dialog.text-to-table-dialog.l4 |
 | WatermarkSettingsDialog | WatermarkSettingsDialog.js | covered | dialog.watermark-dialog.l4 |
 
+<!-- /oo-dialogs -->
+---
 <!-- /oo-dialogs -->
 ---
 <!-- /oo-dialogs -->
@@ -440,6 +443,7 @@ OO File rail buttons: direct WO row hits **16**, declared divergences **3**, unm
 <!-- /oo-filemenu -->
 <!-- /oo-filemenu -->
 <!-- /oo-filemenu -->
+<!-- /oo-filemenu -->
 <!-- oo-statusbar -->
 ## OO status bar vs WO tokens (17 OO controls)
 
@@ -466,6 +470,7 @@ Direct WO token hits **9**; declared divergences **8**; unmapped **0**.
 | label-zoom | diverged |  WO sb-zoom-label id in statusbar DOM, not contract-tokenized |
 | btn-zoom-up | covered | btn-zoom-in |
 
+<!-- /oo-statusbar -->
 <!-- /oo-statusbar -->
 <!-- /oo-statusbar -->
 <!-- /oo-statusbar -->
