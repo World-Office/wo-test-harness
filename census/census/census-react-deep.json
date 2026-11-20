@@ -1,6 +1,6 @@
 {
  "engine": "worldoffice-react",
- "capturedAt": "2026-11-18T06:06:21.640Z",
+ "capturedAt": "2026-11-20T05:09:20.117Z",
  "viewport": {
   "width": 1440,
   "height": 900
@@ -382,6 +382,11 @@
     "kind": "button"
    },
    {
+    "label": "Multiple Pages",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "Fit to Page",
     "disabled": false,
     "kind": "button"
@@ -619,6 +624,11 @@
     "kind": "button"
    },
    {
+    "label": "Multiple Pages",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "Fit to Page",
     "disabled": false,
     "kind": "button"
@@ -817,6 +827,11 @@
    },
    {
     "label": "Spell Check",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Multiple Pages",
     "disabled": false,
     "kind": "button"
    },
@@ -1078,6 +1093,11 @@
     "kind": "button"
    },
    {
+    "label": "Multiple Pages",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "Fit to Page",
     "disabled": false,
     "kind": "button"
@@ -1271,6 +1291,11 @@
    },
    {
     "label": "Spell Check",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Multiple Pages",
     "disabled": false,
     "kind": "button"
    },
@@ -1482,6 +1507,11 @@
     "kind": "button"
    },
    {
+    "label": "Multiple Pages",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "Fit to Page",
     "disabled": false,
     "kind": "button"
@@ -1610,6 +1640,11 @@
    },
    {
     "label": "Spell Check",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Multiple Pages",
     "disabled": false,
     "kind": "button"
    },
@@ -1797,6 +1832,11 @@
    },
    {
     "label": "Spell Check",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Multiple Pages",
     "disabled": false,
     "kind": "button"
    },
@@ -2048,6 +2088,11 @@
     "kind": "button"
    },
    {
+    "label": "Multiple Pages",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "Fit to Page",
     "disabled": false,
     "kind": "button"
@@ -2196,6 +2241,11 @@
    },
    {
     "label": "Spell Check",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Multiple Pages",
     "disabled": false,
     "kind": "button"
    },
@@ -2417,6 +2467,11 @@
     "kind": "button"
    },
    {
+    "label": "Multiple Pages",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
     "label": "Fit to Page",
     "disabled": false,
     "kind": "button"
@@ -2570,6 +2625,11 @@
    },
    {
     "label": "Spell Check",
+    "disabled": false,
+    "kind": "button"
+   },
+   {
+    "label": "Multiple Pages",
     "disabled": false,
     "kind": "button"
    },
@@ -2728,6 +2788,10 @@
   },
   {
    "label": "Spell Check",
+   "kind": "button"
+  },
+  {
+   "label": "Multiple Pages",
    "kind": "button"
   },
   {
