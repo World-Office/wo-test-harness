@@ -1,9 +1,9 @@
 {
- "ranAt": "2026-11-20T19:29:35.303Z",
+ "ranAt": "2026-11-20T23:51:58.452Z",
  "total": 668,
- "pass": 90,
+ "pass": 108,
  "knownGap": 0,
- "retarget": 578,
+ "retarget": 560,
  "fail": 0,
  "results": [
   {
@@ -221,10 +221,10 @@
    "feature": "formatting.change-case",
    "tab": "tab:home",
    "cls": "format",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"dom-mutation\",\"selector\":\".de-styles-panel\"}",
+   "observed": "found"
   },
   {
    "token": "bold",
@@ -311,10 +311,10 @@
    "feature": "formatting.clear-style",
    "tab": "tab:home",
    "cls": "format",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"rev-bump\"}",
+   "observed": "rev 28 -> 29"
   },
   {
    "token": "insertunorderedlist",
@@ -331,20 +331,20 @@
    "feature": "formatting.numbering",
    "tab": "tab:home",
    "cls": "structure",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"rev-bump\"}",
+   "observed": "rev 28 -> 29"
   },
   {
    "token": "multilevel",
    "feature": "formatting.multilevel-list",
    "tab": "tab:home",
    "cls": "dialog",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"rev-bump\"}",
+   "observed": "rev 28 -> 30"
   },
   {
    "token": "outdent",
@@ -431,30 +431,30 @@
    "feature": "formatting.nonprinting-characters-ctrl-shift-8",
    "tab": "tab:home",
    "cls": "view",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"dom-mutation\",\"selector\":\".de-styles-panel\"}",
+   "observed": "found"
   },
   {
    "token": "shading",
    "feature": "formatting.shading",
    "tab": "tab:home",
    "cls": "format",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"dom-mutation\",\"selector\":\".de-styles-panel\"}",
+   "observed": "found"
   },
   {
    "token": "openborders",
    "feature": "formatting.borders",
    "tab": "tab:home",
    "cls": "dialog",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"dom-mutation\",\"selector\":\".de-styles-panel\"}",
+   "observed": "found"
   },
   {
    "token": "btn-replace",
@@ -961,30 +961,30 @@
    "feature": "review.add-comment",
    "tab": "tab:review",
    "cls": "dialog",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"dom-mutation\",\"selector\":\".de-comments-panel\"} +3 subFeatures",
+   "observed": "found"
   },
   {
    "token": "deletecomment",
    "feature": "review.delete",
    "tab": "tab:review",
    "cls": "op",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"dom-mutation\",\"selector\":\".de-comments-panel\"}",
+   "observed": "found"
   },
   {
    "token": "resolvecomment",
    "feature": "review.resolve",
    "tab": "tab:review",
    "cls": "op",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"dom-mutation\",\"selector\":\".de-comments-panel\"}",
+   "observed": "found"
   },
   {
    "token": "btn-track-changes",
@@ -1001,80 +1001,80 @@
    "feature": "review.display-mode",
    "tab": "tab:review",
    "cls": "dialog",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"dom-mutation\",\"selector\":\".de-track-changes-panel\"} +2 subFeatures",
+   "observed": "found"
   },
   {
    "token": "prevtrackedchange",
    "feature": "review.previous",
    "tab": "tab:review",
    "cls": "op",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"dom-mutation\",\"selector\":\".de-track-changes-panel\"}",
+   "observed": "found"
   },
   {
    "token": "nexttrackedchange",
    "feature": "review.next",
    "tab": "tab:review",
    "cls": "op",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"dom-mutation\",\"selector\":\".de-track-changes-panel\"}",
+   "observed": "found"
   },
   {
    "token": "accepttrackedchange",
    "feature": "review.accept",
    "tab": "tab:review",
    "cls": "op",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"dom-mutation\",\"selector\":\".de-track-changes-panel\"}",
+   "observed": "found"
   },
   {
    "token": "rejecttrackedchange",
    "feature": "review.reject",
    "tab": "tab:review",
    "cls": "op",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"dom-mutation\",\"selector\":\".de-track-changes-panel\"}",
+   "observed": "found"
   },
   {
    "token": "compareversion",
    "feature": "review.compare",
    "tab": "tab:review",
    "cls": "dialog",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"dom-mutation\",\"selector\":\".de-track-changes-panel\"} +3 subFeatures",
+   "observed": "found"
   },
   {
    "token": "combinerevisions",
    "feature": "review.combine",
    "tab": "tab:review",
    "cls": "dialog",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"dom-mutation\",\"selector\":\".de-track-changes-panel\"} +3 subFeatures",
+   "observed": "found"
   },
   {
    "token": "togglechat",
    "feature": "review.chat",
    "tab": "tab:review",
    "cls": "dialog",
-   "xfail": true,
-   "ok": false,
-   "retarget": true,
-   "observed": "retarget: react canvas editor has no legacy parity DOM (#status/.dialog-overlay/data-cmd vocabulary) — row needs a react-port spec (manifest \"contract\") before it can be verified again"
+   "xfail": false,
+   "ok": true,
+   "expected": "{\"kind\":\"dom-mutation\",\"selector\":\".de-left-panel-chat\"}",
+   "observed": "found"
   },
   {
    "token": "mailmerge",
