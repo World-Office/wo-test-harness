@@ -128,8 +128,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L4 **dialog.paragraph-settings-dialog.l4** [dialog] (11 OO fields) → WO: paragraph-settings-dialog (paragraph-dialog-l4.test.mjs)
 - ✅ L4 **dialog.dropcap-dialog.l4** [dialog] (3 OO fields) → WO: dropcap-l4 (dropcap-dialog-l4.test.mjs)
 
-## insert — 59 features (L0:0 L1:31 L3:6)
-- 🔲 L1 **insert.blank-page** [control] → WO: btn-multipage
+## insert — 59 features (L0:0 L1:29 L3:6)
 - 🔲 L1 **insert.breaks** [control] → WO: Breaks
 - 🔲 L1 **insert.shape** [control] → WO: insertObject
 - 🔲 L1 **insert.smartart** [control] → WO: btn-smartart
@@ -139,7 +138,6 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **insert.content-controls** [control] → WO: btn-contentcontrol
 - 🔲 L1 **insert.select** [control] → WO: inkSelect
 - 🔲 L1 **insert.eraser** [control] → WO: toggleInk
-- 🔲 L1 **insert.insert-page-break** [menu-item] → WO: btn-multipage
 - 🔲 L1 **insert.insert-column-break** [menu-item] → WO: Insert column break
 - 🔲 L1 **insert.insert-section-break** [menu-item] → WO: Insert section break
 - 🔲 L1 **insert.insert-spreadsheet** [menu-item] → WO: Spreadsheet
@@ -160,9 +158,11 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **shortcut.insertlinebreakmultilineform** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - 🔲 L1 **shortcut.insertequation** [shortcut] → WO: Ctrl+Alt+=
 - 🔲 L1 **shortcut.horizontalellipsis** [shortcut] → WO: Alt+;
+- ✅ L2 **insert.blank-page** [control] → WO: btn-multipage
 - ✅ L2 **insert.text-box** [control] → WO: insertTextbox
 - ✅ L2 **insert.text-art** [control] → WO: insertTextart
 - ✅ L2 **insert.drop-cap** [control] → WO: toggleDropcap
+- ✅ L2 **insert.insert-page-break** [menu-item] → WO: btn-multipage
 - ✅ L2 **shortcut.insertlinebreak** [shortcut] → WO: Shift+Enter inserts <br> natively in contentEditable
 - ✅ L2 **shortcut.insertcolumnbreak** [shortcut] → WO: Ctrl+Shift+Enter
 - ✅ L2 **shortcut.nonbreakingspace** [shortcut] → WO: Ctrl+Shift+Space

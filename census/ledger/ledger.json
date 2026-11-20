@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-20T19:40:34.471691",
+ "generated": "2026-11-20T20:49:18.942069",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,8 +10,8 @@
  ],
  "totals": {
   "L0": 1,
-  "L1": 344,
-  "L2": 120,
+  "L1": 342,
+  "L2": 122,
   "L3": 37,
   "L4": 32
  },
@@ -974,8 +974,10 @@
     "match": "btn-multipage",
     "where": "statusbar"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): insert.blank-page asserted via parity runner"
+   ]
   },
   {
    "feature": "insert.breaks",
@@ -2938,8 +2940,10 @@
     "match": "btn-multipage",
     "where": "statusbar"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): insert.insert-page-break asserted via parity runner"
+   ]
   },
   {
    "feature": "insert.insert-column-break",
