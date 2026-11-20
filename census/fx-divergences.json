@@ -119,5 +119,20 @@
     "real": "recordMacro flips documentStore.macroRecording but no statusbar/ribbon surface mirrors the recording state on the canvas editor (OO shows a REC indicator and records commands). Store-only toggle — observability debt; its sibling pause-recording is an EXPECTED_SILENT precondition row.",
     "oo": "OO records a macro with a visible REC indicator",
     "verified": "2026-11-19 DocumentStore.ts:437 toggleMacroRecording (zero tsx consumers) + fx-debug45/gate flip-flop"
+  },
+  "DrawDraw|btn-draw-copy-style": {
+    "real": "Draw-tab format painter: same canvas-port debt as the Home/Plugins copy-style (word-commands copyStyle reads run formatting then applies only via the TipTap path). Flaps loud/silent per environment; the click is routed but produces no stable observable change on canvas.",
+    "oo": "OO format painter",
+    "verified": "2026-11-19 word-commands.ts:1066; loud in fx-debug45 (local), silent in CI run 44659539817"
+  },
+  "DrawDraw|btn-draw-word-count": {
+    "real": "Duplicate of the word-count panel toggle (toggleRightPanel('word-count')). Environment-flappy: locally statusbar-delta loud, in CI silent for the full 3s poll window — the right-panel/statusbar surface is async and racy in headless CI.",
+    "oo": "OO opens a word-count dialog",
+    "verified": "2026-11-19 loud in fx-debug45 (local), silent in CI run 44659539817"
+  },
+  "Home|btn-word-count": {
+    "real": "word-count panel toggle — environment-flappy surface (see DrawDraw|btn-draw-word-count): local runs observe a statusbar delta, CI headless runs do not within the poll window.",
+    "oo": "OO opens a word-count dialog",
+    "verified": "2026-11-19 loud in fx-debug45 (local), silent in CI run 44659539817"
   }
 }
