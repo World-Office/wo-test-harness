@@ -95,7 +95,7 @@ def main():
         ('unclassified', 'Manifest unclassified', unclassified, 0, unclassified == 0),
         ('no-run', 'Contracts ohne Lauf', no_run, 0, no_run == 0),
         ('fail', 'Contracts rot', fails, 0, fails == 0),
-        ('known-gap', 'Known-gaps (mit Deviation-Doku)', known, 0, False),
+        ('known-gap', 'Known-gaps (mit Deviation-Doku)', known, 0, known == 0),
         ('below-l2', 'Features unter L2 (L0/L1)', sum(below.values()), 0, not below),
         ('chrome-diff', 'Tabs mit Label-/Row-Delta', len(tab_gaps), 0, not tab_gaps),
         ('roundtrip', 'Roundtrip-Verluste', 0, 0, True),

@@ -5010,8 +5010,10 @@
     "match": "sb-lang",
     "where": "statusbar"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS 2026-11-20, graph-l2): statusbar.english-united-states driven by parity runner, assertion ok (contract-results.json ranAt 2026-11-20)"
+   ]
   },
   {
    "feature": "statusbar.btn-doc-lang",
@@ -5027,8 +5029,10 @@
     "match": "sb-lang",
     "where": "statusbar"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS 2026-11-20, graph-l2): statusbar.btn-doc-lang driven by parity runner, assertion ok (contract-results.json ranAt 2026-11-20)"
+   ]
   },
   {
    "feature": "statusbar.btn-doc-spell",
@@ -5263,9 +5267,10 @@
     "match": "Ctrl+P opens native print dialog (WO window.print)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "Ctrl+P opens native print dialog (WO window.print)"
+    "Ctrl+P opens native print dialog (WO window.print)",
+    "L2 acts (contract PASS 2026-11-20, graph-l2): shortcut.printpreviewandprint driven by parity runner, assertion ok (contract-results.json ranAt 2026-11-20)"
    ]
   },
   {
@@ -6106,9 +6111,10 @@
     "match": "Ctrl+V default rich paste; Ctrl+K = hyperlink (OO collision)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "WO uses different combo: Ctrl+V default rich paste; Ctrl+K = hyperlink (OO collision)"
+    "WO uses different combo: Ctrl+V default rich paste; Ctrl+K = hyperlink (OO collision)",
+    "L2 acts (contract PASS 2026-11-20, graph-l2): shortcut.specialoptionskeepsourceformat driven by parity runner, assertion ok (contract-results.json ranAt 2026-11-20)"
    ]
   },
   {
@@ -6148,9 +6154,10 @@
     "match": "Ctrl+O consumed by browser (open file); spreadsheet cell semantics n/a",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "Ctrl+O consumed by browser (open file); spreadsheet cell semantics n/a"
+    "Ctrl+O consumed by browser (open file); spreadsheet cell semantics n/a",
+    "L2 acts (contract PASS 2026-11-20, graph-l2): shortcut.specialoptionsoverwritecells driven by parity runner, assertion ok (contract-results.json ranAt 2026-11-20)"
    ]
   },
   {
@@ -6169,9 +6176,10 @@
     "match": "Ctrl+N consumed by browser (new window)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "Ctrl+N consumed by browser (new window)"
+    "Ctrl+N consumed by browser (new window)",
+    "L2 acts (contract PASS 2026-11-20, graph-l2): shortcut.specialoptionsnesttable driven by parity runner, assertion ok (contract-results.json ranAt 2026-11-20)"
    ]
   },
   {
@@ -8272,9 +8280,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS 2026-11-20, graph-l2): shortcut.nextfiletab driven by parity runner, assertion ok (contract-results.json ranAt 2026-11-20)"
    ]
   },
   {
@@ -8293,9 +8302,10 @@
     "match": "browser caret/scroll (n/a for web editor)",
     "where": "shortcut"
    },
-   "level": 1,
+   "level": 2,
    "evidence": [
-    "browser caret/scroll (n/a for web editor)"
+    "browser caret/scroll (n/a for web editor)",
+    "L2 acts (contract PASS 2026-11-20, graph-l2): shortcut.previousfiletab driven by parity runner, assertion ok (contract-results.json ranAt 2026-11-20)"
    ]
   },
   {
@@ -9993,8 +10003,10 @@
     "match": "ctx data-ctx=SelectLanguage",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS 2026-11-20, graph-l2): ctx.select-language driven by parity runner, assertion ok (contract-results.json ranAt 2026-11-20)"
+   ]
   },
   {
    "feature": "ctx.ignore",

@@ -1469,7 +1469,7 @@ def main() -> int:
         },
         "surfaces": surfaces,
         "totals": totals,
-        "probes": [r["id"] for r in contract.get("results", [])],
+        "probes": [r.get("id") or r.get("token") for r in contract.get("results", [])],
     }
     OUT_PATH.write_text(json.dumps(graph, indent=1, ensure_ascii=False) + "\n")
     print(f"graph.json: {totals['controls']} controls "
