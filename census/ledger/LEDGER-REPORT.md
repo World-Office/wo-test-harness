@@ -67,23 +67,23 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **shortcut.saveas** [shortcut] → WO: Ctrl+Shift+S (export backstage pane)
 - ✅ L2 **shortcut.openfilepanel** [shortcut] → WO: Ctrl+Alt+F (openBackstage("open") + focus recent-files rail)
 
-## formatting — 59 features (L0:0 L1:15 L3:22)
+## formatting — 59 features (L0:0 L1:11 L3:22)
 - 🔲 L1 **formatting.font** [control] → WO: font-family
 - 🔲 L1 **formatting.font-size** [control] → WO: font-size
 - 🔲 L1 **formatting.increment-font-size-ctrl** [control] → WO: font-size
 - 🔲 L1 **formatting.decrement-font-size-ctrl** [control] → WO: font-size
 - 🔲 L1 **formatting.highlight-color** [control] → WO: highlight-color
 - 🔲 L1 **formatting.font-color** [control] → WO: text-color
-- 🔲 L1 **formatting.multilevel-list** [control] → WO: multilevel
 - 🔲 L1 **formatting.paragraph-line-spacing** [control] → WO: line-spacing
-- 🔲 L1 **formatting.nonprinting-characters-ctrl-shift-8** [control] → WO: btn-home-formatmarks
-- 🔲 L1 **formatting.shading** [control] → WO: Shading
-- 🔲 L1 **formatting.borders** [control] → WO: openBorders
 - 🔲 L1 **formatting.replace-ctrl-h** [control] → WO: btn-replace
 - 🔲 L1 **formatting.select-all-ctrl-a** [control] → WO: selectAll
 - 🔲 L1 **shortcut.copyformat** [shortcut] → WO: Ctrl+Alt+C (format painter — captures inline + semantic char formatting)
 - 🔲 L1 **shortcut.pasteformat** [shortcut] → WO: Ctrl+Alt+V (format painter — applies to next selection as style span)
+- ✅ L2 **formatting.multilevel-list** [control] → WO: multilevel
 - ✅ L2 **formatting.text-direction** [control] → WO: directionRtl
+- ✅ L2 **formatting.nonprinting-characters-ctrl-shift-8** [control] → WO: btn-home-formatmarks
+- ✅ L2 **formatting.shading** [control] → WO: Shading
+- ✅ L2 **formatting.borders** [control] → WO: openBorders
 - ✅ L2 **shortcut.bold** [shortcut] → WO: Ctrl+B
 - ✅ L2 **shortcut.italic** [shortcut] → WO: Ctrl+I
 - ✅ L2 **shortcut.underline** [shortcut] → WO: Ctrl+U
@@ -235,23 +235,23 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **chart.up-down-bars** [menu-item] → WO: Up/Down Bars
 - 🔲 L1 **ctx.chart.datatable** [ctx-menu] → WO: chartElement dataTable toggle renders data table in chartSVG
 
-## review — 16 features (L0:0 L1:14 L3:0)
+## review — 16 features (L0:0 L1:4 L3:0)
 - 🔲 L1 **review.co-editing-mode** [control] → WO: coedit-mode
-- 🔲 L1 **review.add-comment** [control] → WO: btn-comment
-- 🔲 L1 **review.delete** [control] → WO: deleteComment
-- 🔲 L1 **review.resolve** [control] → WO: resolveComment
 - 🔲 L1 **review.track-changes** [control] → WO: btn-track-changes
-- 🔲 L1 **review.previous** [control] → WO: prevTrackedChange
-- 🔲 L1 **review.next** [control] → WO: nextTrackedChange
-- 🔲 L1 **review.accept** [control] → WO: acceptTrackedChange
-- 🔲 L1 **review.reject** [control] → WO: rejectTrackedChange
-- 🔲 L1 **review.compare** [control] → WO: compareVersion
-- 🔲 L1 **review.combine** [control] → WO: combineRevisions
-- 🔲 L1 **review.chat** [control] → WO: toggleChat
 - 🔲 L1 **review.thesaurus** [control] → WO: aiRewrite
 - 🔲 L1 **review.grammar-spelling** [control] → WO: btn-ai-grammar
 - ✅ L2 **review.comment** [control] → WO: insertComment
+- ✅ L2 **review.add-comment** [control] → WO: btn-comment
+- ✅ L2 **review.delete** [control] → WO: deleteComment
+- ✅ L2 **review.resolve** [control] → WO: resolveComment
 - ✅ L2 **review.display-mode** [control] → WO: displayMode
+- ✅ L2 **review.previous** [control] → WO: prevTrackedChange
+- ✅ L2 **review.next** [control] → WO: nextTrackedChange
+- ✅ L2 **review.accept** [control] → WO: acceptTrackedChange
+- ✅ L2 **review.reject** [control] → WO: rejectTrackedChange
+- ✅ L2 **review.compare** [control] → WO: compareVersion
+- ✅ L2 **review.combine** [control] → WO: combineRevisions
+- ✅ L2 **review.chat** [control] → WO: toggleChat
 
 ## headerfooter — 6 features (L0:0 L1:2 L3:4)
 - 🔲 L1 **headerfooter.field** [control] → WO: btn-field
