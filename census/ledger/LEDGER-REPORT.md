@@ -440,7 +440,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **shortcut.nextfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 - ✅ L2 **shortcut.previousfiletab** [shortcut] → WO: browser caret/scroll (n/a for web editor)
 
-## edit — 137 features (L0:0 L1:91 L3:1)
+## edit — 137 features (L0:0 L1:88 L3:1)
 - 🔲 L1 **shortcut.deleteleftchar** [shortcut] → WO: Backspace
 - 🔲 L1 **shortcut.deleterightchar** [shortcut] → WO: Delete
 - 🔲 L1 **shortcut.editselectall** [shortcut] → WO: Ctrl+A
@@ -497,7 +497,6 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **ctx.remove-content-control** [ctx-menu] → WO: ctx data-ctx=RemoveContentControl
 - 🔲 L1 **ctx.content-control-settings** [ctx-menu] → WO: ctx data-ctx=ContentControlSettings
 - 🔲 L1 **ctx.edit-points** [ctx-menu] → WO: ctx data-ctx=EditPoints — LOUD registered divergence (Phase 5/WO-22): no vector contour model; wo:edit-points marker + SetStatus NotAvailable ⏸ registered park
-- 🔲 L1 **ctx.link** [ctx-menu] → WO: ctx data-ctx=Link
 - 🔲 L1 **ctx.edit-link** [ctx-menu] → WO: ctx data-ctx=EditLink
 - 🔲 L1 **ctx.copy-hyperlink-address** [ctx-menu] → WO: ctx data-ctx=CopyHyperlinkAddress (clipboard)
 - 🔲 L1 **ctx.remove-link** [ctx-menu] → WO: ctx data-ctx=RemoveLink
@@ -505,8 +504,6 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **ctx.text-alignment** [ctx-menu] → WO: ctx data-ctx=TextAlignment
 - 🔲 L1 **ctx.justify** [ctx-menu] → WO: ribbon data-cmd=justifyFull (not in WO ctx)
 - 🔲 L1 **ctx.table-advanced-settings** [ctx-menu] → WO: table-ops-dialog (WO table settings surface)
-- 🔲 L1 **ctx.paragraph-advanced-settings** [ctx-menu] → WO: ctx data-ctx=ParagraphSettings
-- 🔲 L1 **ctx.formatting-as-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle
 - 🔲 L1 **ctx.create-new-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-save owned by host shell)
 - 🔲 L1 **ctx.update-1-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle -> wo:style-from-format host channel (style-update owned by host shell)
 - 🔲 L1 **ctx.update-page-numbers-only** [ctx-menu] → WO: UpdateTOC dialog — toc-update select has 'Update page numbers only' option (refreshToc relinks; page numbers are live-preview links)
@@ -550,12 +547,15 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **ctx.in-front-of-text** [ctx-menu] → WO: ctx data-ctx=WrapFront -> wrap-front = absolute float above the text (obj-front)
 - ✅ L2 **ctx.behind-text** [ctx-menu] → WO: ctx data-ctx=WrapBehind
 - ✅ L2 **ctx.edit-object** [ctx-menu] → WO: ctx data-ctx=EditObject -> editSelectedObject (object-dialog prefilled from the placeholder; updates in place)
+- ✅ L2 **ctx.link** [ctx-menu] → WO: ctx data-ctx=Link
 - ✅ L2 **ctx.top** [ctx-menu] → WO: ctx data-ctx=TextAlignTop
 - ✅ L2 **ctx.middle** [ctx-menu] → WO: ctx data-ctx=TextAlignMiddle
 - ✅ L2 **ctx.bottom** [ctx-menu] → WO: ctx data-ctx=TextAlignBottom
 - ✅ L2 **ctx.left** [ctx-menu] → WO: ctx data-ctx=TextAlignLeft
 - ✅ L2 **ctx.center** [ctx-menu] → WO: ctx data-ctx=TextAlignCenter
 - ✅ L2 **ctx.right** [ctx-menu] → WO: ctx data-ctx=TextAlignRight
+- ✅ L2 **ctx.paragraph-advanced-settings** [ctx-menu] → WO: ctx data-ctx=ParagraphSettings
+- ✅ L2 **ctx.formatting-as-style** [ctx-menu] → WO: ctx data-ctx=FormattingAsStyle
 - ✅ L2 **ctx.update-entire-table** [ctx-menu] → WO: ctx data-ctx=UpdateTOC / openUpdateTocDialog (whole-TOC update)
 - ✅ L2 **ctx.add-comment** [ctx-menu] → WO: ctx data-ctx=AddComment
 - ✅ L2 **ctx.select-language** [ctx-menu] → WO: ctx data-ctx=SelectLanguage

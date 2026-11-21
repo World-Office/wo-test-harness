@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-21T09:15:48.033905",
+ "generated": "2026-11-21T11:23:53.313352",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,8 +10,8 @@
  ],
  "totals": {
   "L0": 1,
-  "L1": 328,
-  "L2": 136,
+  "L1": 325,
+  "L2": 139,
   "L3": 37,
   "L4": 32
  },
@@ -8994,8 +8994,10 @@
     "match": "ctx data-ctx=Link",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): ctx.link asserted via parity runner"
+   ]
   },
   {
    "feature": "ctx.edit-link",
@@ -9336,8 +9338,10 @@
     "match": "ctx data-ctx=ParagraphSettings",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): ctx.paragraph-advanced-settings asserted via parity runner"
+   ]
   },
   {
    "feature": "ctx.formatting-as-style",
@@ -9355,8 +9359,10 @@
     "match": "ctx data-ctx=FormattingAsStyle",
     "where": "ctx-menu"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): ctx.formatting-as-style asserted via parity runner"
+   ]
   },
   {
    "feature": "ctx.create-new-style",
