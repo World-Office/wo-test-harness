@@ -67,19 +67,19 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **shortcut.saveas** [shortcut] → WO: Ctrl+Shift+S (export backstage pane)
 - ✅ L2 **shortcut.openfilepanel** [shortcut] → WO: Ctrl+Alt+F (openBackstage("open") + focus recent-files rail)
 
-## formatting — 59 features (L0:0 L1:11 L3:22)
-- 🔲 L1 **formatting.font** [control] → WO: font-family
-- 🔲 L1 **formatting.font-size** [control] → WO: font-size
+## formatting — 59 features (L0:0 L1:8 L3:22)
 - 🔲 L1 **formatting.increment-font-size-ctrl** [control] → WO: font-size
 - 🔲 L1 **formatting.decrement-font-size-ctrl** [control] → WO: font-size
 - 🔲 L1 **formatting.highlight-color** [control] → WO: highlight-color
 - 🔲 L1 **formatting.font-color** [control] → WO: text-color
-- 🔲 L1 **formatting.paragraph-line-spacing** [control] → WO: line-spacing
 - 🔲 L1 **formatting.replace-ctrl-h** [control] → WO: btn-replace
 - 🔲 L1 **formatting.select-all-ctrl-a** [control] → WO: selectAll
 - 🔲 L1 **shortcut.copyformat** [shortcut] → WO: Ctrl+Alt+C (format painter — captures inline + semantic char formatting)
 - 🔲 L1 **shortcut.pasteformat** [shortcut] → WO: Ctrl+Alt+V (format painter — applies to next selection as style span)
+- ✅ L2 **formatting.font** [control] → WO: font-family
+- ✅ L2 **formatting.font-size** [control] → WO: font-size
 - ✅ L2 **formatting.multilevel-list** [control] → WO: multilevel
+- ✅ L2 **formatting.paragraph-line-spacing** [control] → WO: line-spacing
 - ✅ L2 **formatting.text-direction** [control] → WO: directionRtl
 - ✅ L2 **formatting.nonprinting-characters-ctrl-shift-8** [control] → WO: btn-home-formatmarks
 - ✅ L2 **formatting.shading** [control] → WO: Shading

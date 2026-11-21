@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-21T11:23:53.313352",
+ "generated": "2026-11-21T19:34:59.142292",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,8 +10,8 @@
  ],
  "totals": {
   "L0": 1,
-  "L1": 325,
-  "L2": 139,
+  "L1": 322,
+  "L2": 142,
   "L3": 37,
   "L4": 32
  },
@@ -351,8 +351,10 @@
     "match": "font-family",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): formatting.font asserted via parity runner"
+   ]
   },
   {
    "feature": "formatting.font-size",
@@ -369,8 +371,10 @@
     "match": "font-size",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): formatting.font-size asserted via parity runner"
+   ]
   },
   {
    "feature": "formatting.increment-font-size-ctrl",
@@ -751,8 +755,10 @@
     "match": "line-spacing",
     "where": "tab:home"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): formatting.paragraph-line-spacing asserted via parity runner"
+   ]
   },
   {
    "feature": "formatting.text-direction",
