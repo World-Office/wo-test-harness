@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-11-21T19:34:59.142292",
+ "generated": "2026-11-21T23:42:37.867381",
  "levels": [
   "L0 missing",
   "L1 surface",
@@ -10,8 +10,8 @@
  ],
  "totals": {
   "L0": 1,
-  "L1": 322,
-  "L2": 142,
+  "L1": 318,
+  "L2": 146,
   "L3": 37,
   "L4": 32
  },
@@ -1328,8 +1328,10 @@
     "match": "btn-equation",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): insert.equation asserted via parity runner"
+   ]
   },
   {
    "feature": "insert.symbol",
@@ -1348,6 +1350,7 @@
    },
    "level": 3,
    "evidence": [
+    "L2 acts (contract PASS): insert.symbol asserted via parity runner",
     "L3 roundtrip ok [btn-symbol]: marker \"!\" survived html->docx->html"
    ]
   },
@@ -1366,8 +1369,10 @@
     "match": "btn-contentcontrol",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): insert.content-controls asserted via parity runner"
+   ]
   },
   {
    "feature": "insert.select",
@@ -1500,8 +1505,10 @@
     "match": "Breaks",
     "where": "tab:insert"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): page.breaks asserted via parity runner"
+   ]
   },
   {
    "feature": "page.line-numbers",
@@ -1704,8 +1711,10 @@
     "match": "themecolors",
     "where": "tab:layout"
    },
-   "level": 1,
-   "evidence": []
+   "level": 2,
+   "evidence": [
+    "L2 acts (contract PASS): page.colors asserted via parity runner"
+   ]
   },
   {
    "feature": "table.table-of-contents",
@@ -3128,6 +3137,7 @@
    },
    "level": 3,
    "evidence": [
+    "L2 acts (contract PASS): insert.more-symbols asserted via parity runner",
     "L3 roundtrip ok [btn-symbol]: marker \"!\" survived html->docx->html"
    ]
   },
@@ -3148,6 +3158,7 @@
    },
    "level": 3,
    "evidence": [
+    "L2 acts (contract PASS): insert.symbols asserted via parity runner",
     "L3 roundtrip ok [btn-symbol]: marker \"!\" survived html->docx->html"
    ]
   },

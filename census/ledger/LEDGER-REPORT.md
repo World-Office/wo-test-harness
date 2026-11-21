@@ -128,14 +128,12 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L4 **dialog.paragraph-settings-dialog.l4** [dialog] (11 OO fields) → WO: paragraph-settings-dialog (paragraph-dialog-l4.test.mjs)
 - ✅ L4 **dialog.dropcap-dialog.l4** [dialog] (3 OO fields) → WO: dropcap-l4 (dropcap-dialog-l4.test.mjs)
 
-## insert — 59 features (L0:0 L1:29 L3:6)
+## insert — 59 features (L0:0 L1:27 L3:6)
 - 🔲 L1 **insert.breaks** [control] → WO: Breaks
 - 🔲 L1 **insert.shape** [control] → WO: insertObject
 - 🔲 L1 **insert.smartart** [control] → WO: btn-smartart
 - 🔲 L1 **insert.text-from-file** [control] → WO: btn-textfile
 - 🔲 L1 **insert.field** [control] → WO: btn-field
-- 🔲 L1 **insert.equation** [control] → WO: btn-equation
-- 🔲 L1 **insert.content-controls** [control] → WO: btn-contentcontrol
 - 🔲 L1 **insert.select** [control] → WO: inkSelect
 - 🔲 L1 **insert.eraser** [control] → WO: toggleInk
 - 🔲 L1 **insert.insert-column-break** [menu-item] → WO: Insert column break
@@ -162,6 +160,8 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **insert.text-box** [control] → WO: insertTextbox
 - ✅ L2 **insert.text-art** [control] → WO: insertTextart
 - ✅ L2 **insert.drop-cap** [control] → WO: toggleDropcap
+- ✅ L2 **insert.equation** [control] → WO: btn-equation
+- ✅ L2 **insert.content-controls** [control] → WO: btn-contentcontrol
 - ✅ L2 **insert.insert-page-break** [menu-item] → WO: btn-multipage
 - ✅ L2 **shortcut.insertlinebreak** [shortcut] → WO: Shift+Enter inserts <br> natively in contentEditable
 - ✅ L2 **shortcut.insertcolumnbreak** [shortcut] → WO: Ctrl+Shift+Enter
@@ -261,8 +261,7 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L3 **headerfooter.date-time** [control] → WO: btn-datetime
 - ✅ L3 **headerfooter.dlg-date-time** [dialog] (1 OO fields) → WO: btn-datetime
 
-## page — 54 features (L0:0 L1:37 L3:0)
-- 🔲 L1 **page.breaks** [control] → WO: Breaks
+## page — 54 features (L0:0 L1:35 L3:0)
 - 🔲 L1 **page.wrapping** [control] → WO: Wrapping
 - 🔲 L1 **page.bring-forward** [control] → WO: objectOp
 - 🔲 L1 **page.send-backward** [control] → WO: objectOp
@@ -270,7 +269,6 @@ LOUD as a divergence row (never a silent stub).
 - 🔲 L1 **page.group** [control] → WO: objectOp
 - 🔲 L1 **page.merge-shapes** [control] → WO: btn-mergeshapes
 - 🔲 L1 **page.page-color** [control] → WO: btn-multipage
-- 🔲 L1 **page.colors** [control] → WO: themecolors
 - 🔲 L1 **page.last-custom** [menu-item] → WO: Last Custom
 - 🔲 L1 **page.normal** [menu-item] → WO: Normal
 - 🔲 L1 **page.narrow** [menu-item] → WO: Narrow
@@ -303,9 +301,11 @@ LOUD as a divergence row (never a silent stub).
 - ✅ L2 **page.orientation** [control] → WO: Orientation
 - ✅ L2 **page.size** [control] → WO: Size
 - ✅ L2 **page.columns** [control] → WO: Columns
+- ✅ L2 **page.breaks** [control] → WO: Breaks
 - ✅ L2 **page.line-numbers** [control] → WO: toggleLineNumbers
 - ✅ L2 **page.hyphenation** [control] → WO: toggleHyphenation
 - ✅ L2 **page.watermark** [control] → WO: toggleWatermark
+- ✅ L2 **page.colors** [control] → WO: themecolors
 - ✅ L2 **page.none** [menu-item] → WO: toggleHyphenation
 - ✅ L2 **page.automatic** [menu-item] → WO: toggleHyphenation
 - ✅ L2 **page.hyphenation-options** [menu-item] → WO: toggleHyphenation
