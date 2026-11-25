@@ -28,7 +28,11 @@ function dedupeTabText(t) {
 (async () => {
   if (!URL_BASE) throw new Error('CENSUS_REACT_URL is required');
   const browser = await chromium.launch();
-  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  // Match the OO golden's viewport (1600x1000): the ribbon is responsive, so
+  // rows/groups are only comparable to census-oo-deep.json at the same size.
+  const VW = Number(process.env.CENSUS_VIEWPORT_W) || 1600;
+  const VH = Number(process.env.CENSUS_VIEWPORT_H) || 1000;
+  const page = await browser.newPage({ viewport: { width: VW, height: VH } });
   const errs = [];
   page.on('pageerror', (e) => errs.push(String(e.message).slice(0, 160)));
   await page.goto(URL_BASE, { waitUntil: 'domcontentloaded', timeout: 30000 });
@@ -43,26 +47,64 @@ function dedupeTabText(t) {
   const tabLabels = tabs.map(dedupeTabText).filter(Boolean);
 
   const perTab = {};
+  const geometry = {}; // per-tab layout facts (rows/groups/boxes) — see REACT-BASELINE.md
+  const ROW_EPS = 6;   // px: controls within this y-distance share a visual row
   for (const label of tabLabels) {
     if (/^(file)$/i.test(label)) continue; // file = menu, captured below
     try {
       await page.click(`[role=tab]:has-text("${label}")`, { timeout: 5000 });
     } catch { continue; }
     await sleep(700);
-    perTab[label] = await page.evaluate(() => {
+    perTab[label] = await page.evaluate((ROW_EPS) => {
+      // Geometry (2026-11-25): label SETS cannot see "looks different" —
+      // row alignment, group boundaries and left-to-right order are what make
+      // a ribbon read as the same ribbon. OO's golden (census-oo-deep.json)
+      // already carries x/y/w/h; capture the same here so both are comparable.
+      const box = (e) => { const r = e.getBoundingClientRect(); return { x: Math.round(r.x), y: Math.round(r.y), w: Math.round(r.width), h: Math.round(r.height) }; };
       const btns = [...document.querySelectorAll('button, [role=menuitem], select, input[type=checkbox][aria-label]')]
         .filter((e) => e.offsetParent !== null)
         .map((e) => ({
           label: (e.getAttribute('aria-label') || e.title || e.textContent || '').trim().slice(0, 60),
           disabled: e.disabled === true || e.getAttribute('aria-disabled') === 'true',
           kind: e.tagName === 'SELECT' ? 'select' : 'button',
+          ...box(e),
         }))
         .filter((b) => b.label && !/^(Back|Save|Download As|Print|Protect|Info|Help|Suggest a Feature)$/i.test(b.label));
-      return btns;
-    });
+      // ribbon controls only: below the tab row, above the canvas
+      const tabs = [...document.querySelectorAll('[role=tab]')].filter((e) => e.offsetParent !== null);
+      const tabBottom = tabs.length ? Math.max(...tabs.map((e) => e.getBoundingClientRect().bottom)) : 0;
+      const ribbon = btns.filter((b) => b.y >= tabBottom - 1 && b.y < tabBottom + 150);
+      // rows: cluster by y (caret buttons sit a few px above their icon, so
+      // exact-y would split one visual row into several)
+      const sorted = [...ribbon].sort((a, b) => a.y - b.y || a.x - b.x);
+      let row = -1, lastY = -Infinity;
+      for (const b of sorted) { if (b.y - lastY > ROW_EPS) row++; b.row = row; lastY = b.y; }
+      const rows = row + 1;
+      // groups: within a row, a horizontal gap > GROUP_GAP px starts a new group
+      const GROUP_GAP = 12;
+      const groups = [];
+      for (let r = 0; r < rows; r++) {
+        const inRow = sorted.filter((b) => b.row === r);
+        let right = -Infinity;
+        for (const b of inRow) {
+          const last = groups[groups.length - 1];
+          if (!last || b.x - right > GROUP_GAP) groups.push({ row: r, x: b.x, right: b.x + b.w, n: 1 });
+          else { last.right = Math.max(last.right, b.x + b.w); last.n++; }
+          right = b.x + b.w;
+        }
+      }
+      // Array stays an array (4 consumers iterate it). Geometry rides along as
+      // non-index props: page.evaluate JSON-serializes, so return an OBJECT.
+      // Keep the FULL button list as `buttons` (unchanged shape for consumers) and
+      // carry the label on each ribbon box so geometry is self-describing: the two
+      // lists are NOT index-aligned (buttons also holds statusbar/left-panel items).
+      ribbon.sort((a, b) => a.row - b.row || a.x - b.x);
+      return { buttons: btns, geometry: { rows, groups, ribbon } };
+    }, ROW_EPS);
+    geometry[label] = perTab[label].geometry;
+    perTab[label] = perTab[label].buttons;
   }
 
-  // Contextual tabs: activate and capture Header & Footer
   try {
     // Method 1: Try to click Header button in Insert tab
     await page.click('[role=tab]:has-text("Insert")', { timeout: 5000 });
@@ -251,12 +293,16 @@ function dedupeTabText(t) {
         .map((b) => ({ label: (b.getAttribute('aria-label') || b.textContent || '').trim(), enabled: !(b.disabled === true) })));
   } catch {}
 
+  const viewport = page.viewportSize(); // real viewport, not a literal — OO's golden is 1600x1000; geometry is only comparable at the same size
   const out = {
     engine: 'worldoffice-react',
     capturedAt: new Date().toISOString(),
-    viewport: { width: 1440, height: 900 },
+    viewport: { width: viewport.width, height: viewport.height },
     tabs: finalTabLabels,
     ribbon: perTab,
+    // Layout facts per tab: { rows, groups:[{row,x,right,n}], ribbon:[{x,y,w,h,row}] }.
+    // Additive — `ribbon` above keeps its exact shape for existing consumers.
+    geometry,
     fileMenu,
     statusbar,
     pageErrors: errs,
