@@ -1,9 +1,9 @@
 {
  "engine": "worldoffice-react",
- "capturedAt": "2026-11-20T05:09:20.117Z",
+ "capturedAt": "2026-11-25T21:19:54.771Z",
  "viewport": {
-  "width": 1440,
-  "height": 900
+  "width": 1600,
+  "height": 1000
  },
  "tabs": [
   "Home",
@@ -24,2250 +24,4229 @@
    {
     "label": "File",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 8,
+    "y": 1,
+    "w": 54,
+    "h": 36
    },
    {
     "label": "Home",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 62,
+    "y": 2,
+    "w": 55,
+    "h": 32
    },
    {
     "label": "InsertInsert",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 117,
+    "y": 2,
+    "w": 54,
+    "h": 32
    },
    {
     "label": "DrawDraw",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 171,
+    "y": 2,
+    "w": 50,
+    "h": 32
    },
    {
     "label": "LayoutLayout",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 221,
+    "y": 2,
+    "w": 62,
+    "h": 32
    },
    {
     "label": "ReferencesReferences",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 283,
+    "y": 2,
+    "w": 92,
+    "h": 32
    },
    {
     "label": "CollaborationCollaboration",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 375,
+    "y": 2,
+    "w": 106,
+    "h": 32
    },
    {
     "label": "ProtectionProtection",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 481,
+    "y": 2,
+    "w": 85,
+    "h": 32
    },
    {
     "label": "ViewView",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 566,
+    "y": 2,
+    "w": 48,
+    "h": 32
    },
    {
     "label": "PluginsPlugins",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 614,
+    "y": 2,
+    "w": 67,
+    "h": 32
    },
    {
     "label": "AIAI",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 680,
+    "y": 2,
+    "w": 30,
+    "h": 32
    },
    {
     "label": "Chart DesignChart Design",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 710,
+    "y": 2,
+    "w": 103,
+    "h": 32
    },
    {
     "label": "Cut",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 47,
+    "y": 43,
+    "w": 61,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Copy",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 43,
+    "y": 76,
+    "w": 70,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Paste",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 41,
+    "y": 109,
+    "w": 73,
+    "h": 32,
+    "row": 2
    },
    {
     "label": "Undo",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 42,
+    "y": 142,
+    "w": 71,
+    "h": 32,
+    "row": 3
    },
    {
     "label": "Redo",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 42,
+    "y": 175,
+    "w": 71,
+    "h": 32,
+    "row": 4
    },
    {
     "label": "Copy style",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 43,
+    "y": 208,
+    "w": 70,
+    "h": 32
    },
    {
     "label": "Increment font size",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 167,
+    "y": 43,
+    "w": 143,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Decrement font size",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 311,
+    "y": 43,
+    "w": 149,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Change case",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 461,
+    "y": 43,
+    "w": 113,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Bold",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 199,
+    "y": 76,
+    "w": 66,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Italic",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 266,
+    "y": 76,
+    "w": 67,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Underline",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 334,
+    "y": 76,
+    "w": 93,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Strikethrough",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 428,
+    "y": 76,
+    "w": 113,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Superscript",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 177,
+    "y": 109,
+    "w": 103,
+    "h": 32,
+    "row": 2
    },
    {
     "label": "Subscript",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 281,
+    "y": 109,
+    "w": 92,
+    "h": 32,
+    "row": 2
    },
    {
     "label": "Font",
     "disabled": false,
-    "kind": "select"
+    "kind": "select",
+    "x": 374,
+    "y": 114,
+    "w": 108,
+    "h": 22,
+    "row": 2
    },
    {
     "label": "Font size",
     "disabled": false,
-    "kind": "select"
+    "kind": "select",
+    "x": 483,
+    "y": 114,
+    "w": 80,
+    "h": 22,
+    "row": 2
    },
    {
     "label": "Font color",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 213,
+    "y": 142,
+    "w": 95,
+    "h": 32,
+    "row": 3
    },
    {
     "label": "Highlight color",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 309,
+    "y": 142,
+    "w": 118,
+    "h": 32,
+    "row": 3
    },
    {
     "label": "Clear style",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 428,
+    "y": 142,
+    "w": 99,
+    "h": 32,
+    "row": 3
    },
    {
     "label": "Bullets",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 643,
+    "y": 43,
+    "w": 78,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Numbering",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 722,
+    "y": 43,
+    "w": 101,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Tasks",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 824,
+    "y": 43,
+    "w": 73,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Multilevel list",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 897,
+    "y": 43,
+    "w": 110,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Decrease indent",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 602,
+    "y": 76,
+    "w": 129,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Increase indent",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 732,
+    "y": 76,
+    "w": 124,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Paragraph line spacing",
     "disabled": false,
-    "kind": "select"
+    "kind": "select",
+    "x": 857,
+    "y": 81,
+    "w": 80,
+    "h": 22,
+    "row": 1
    },
    {
     "label": "Text direction",
     "disabled": false,
-    "kind": "select"
+    "kind": "select",
+    "x": 938,
+    "y": 81,
+    "w": 110,
+    "h": 22,
+    "row": 1
    },
    {
     "label": "Align left",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 636,
+    "y": 109,
+    "w": 88,
+    "h": 32,
+    "row": 2
    },
    {
     "label": "Align center",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 725,
+    "y": 109,
+    "w": 105,
+    "h": 32,
+    "row": 2
    },
    {
     "label": "Align right",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 832,
+    "y": 109,
+    "w": 95,
+    "h": 32,
+    "row": 2
    },
    {
     "label": "Justified",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 928,
+    "y": 109,
+    "w": 86,
+    "h": 32,
+    "row": 2
    },
    {
     "label": "Nonprinting characters",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 658,
+    "y": 142,
+    "w": 163,
+    "h": 32,
+    "row": 3
    },
    {
     "label": "Shading",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 821,
+    "y": 142,
+    "w": 86,
+    "h": 32,
+    "row": 3
    },
    {
     "label": "Borders",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 908,
+    "y": 142,
+    "w": 84,
+    "h": 32,
+    "row": 3
    },
    {
     "label": "H1",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1085,
+    "y": 43,
+    "w": 57,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "H2",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1085,
+    "y": 76,
+    "w": 57,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "H3",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1085,
+    "y": 109,
+    "w": 57,
+    "h": 32,
+    "row": 2
    },
    {
     "label": "Quote",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1077,
+    "y": 142,
+    "w": 75,
+    "h": 32,
+    "row": 3
    },
    {
     "label": "Code",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1079,
+    "y": 175,
+    "w": 71,
+    "h": 32,
+    "row": 4
    },
    {
     "label": "Find",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1189,
+    "y": 43,
+    "w": 65,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Replace",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1178,
+    "y": 76,
+    "w": 86,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Select all",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1178,
+    "y": 109,
+    "w": 86,
+    "h": 32,
+    "row": 2
    },
    {
     "label": "Word count",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1307,
+    "y": 43,
+    "w": 103,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "English – United States",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1281,
+    "y": 76,
+    "w": 155,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Spell checking",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1292,
+    "y": 109,
+    "w": 32,
+    "h": 32,
+    "row": 2
    },
    {
     "label": "Track changes",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1299,
+    "y": 142,
+    "w": 120,
+    "h": 32,
+    "row": 3
    },
    {
     "label": "Multiple pages",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1473,
+    "y": 43,
+    "w": 91,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Fit to page",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1469,
+    "y": 76,
+    "w": 99,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Fit to width",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1483,
+    "y": 109,
+    "w": 72,
+    "h": 32,
+    "row": 2
    },
    {
     "label": "Zoom out",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1472,
+    "y": 142,
+    "w": 93,
+    "h": 32,
+    "row": 3
    },
    {
     "label": "Zoom in",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1476,
+    "y": 175,
+    "w": 85,
+    "h": 32,
+    "row": 4
    },
    {
     "label": "Previous page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 10,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Next page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 125,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Select Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 192,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Hand Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 249,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Language",
     "disabled": false,
-    "kind": "select"
+    "kind": "button",
+    "x": 322,
+    "y": 974,
+    "w": 127,
+    "h": 20
    },
    {
     "label": "Track Changes",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 525,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Co-editing Mode",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 593,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Spell Check",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 661,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Multiple Pages",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1263,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Page",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1320,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Width",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1377,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom Out",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1434,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom In",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1537,
+    "y": 957,
+    "w": 55,
+    "h": 55
    }
   ],
   "Insert": [
    {
     "label": "File",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 8,
+    "y": 1,
+    "w": 54,
+    "h": 36
    },
    {
     "label": "HomeHome",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 62,
+    "y": 2,
+    "w": 55,
+    "h": 32
    },
    {
     "label": "Insert",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 117,
+    "y": 2,
+    "w": 54,
+    "h": 32
    },
    {
     "label": "DrawDraw",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 171,
+    "y": 2,
+    "w": 50,
+    "h": 32
    },
    {
     "label": "LayoutLayout",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 221,
+    "y": 2,
+    "w": 62,
+    "h": 32
    },
    {
     "label": "ReferencesReferences",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 283,
+    "y": 2,
+    "w": 92,
+    "h": 32
    },
    {
     "label": "CollaborationCollaboration",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 375,
+    "y": 2,
+    "w": 106,
+    "h": 32
    },
    {
     "label": "ProtectionProtection",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 481,
+    "y": 2,
+    "w": 85,
+    "h": 32
    },
    {
     "label": "ViewView",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 566,
+    "y": 2,
+    "w": 48,
+    "h": 32
    },
    {
     "label": "PluginsPlugins",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 614,
+    "y": 2,
+    "w": 67,
+    "h": 32
    },
    {
     "label": "AIAI",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 680,
+    "y": 2,
+    "w": 30,
+    "h": 32
    },
    {
     "label": "Chart DesignChart Design",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 710,
+    "y": 2,
+    "w": 103,
+    "h": 32
    },
    {
     "label": "Blank Page",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 30,
+    "y": 43,
+    "w": 103,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Breaks",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 42,
+    "y": 76,
+    "w": 79,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Table",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 164,
+    "y": 43,
+    "w": 71,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Image",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 288,
+    "y": 43,
+    "w": 75,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Shape",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 364,
+    "y": 43,
+    "w": 77,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "SmartArt",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 283,
+    "y": 76,
+    "w": 89,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Chart",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 374,
+    "y": 76,
+    "w": 71,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Link",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 494,
+    "y": 43,
+    "w": 64,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "HR",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 606,
+    "y": 43,
+    "w": 59,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Text Box",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 667,
+    "y": 43,
+    "w": 88,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Text Art",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 756,
+    "y": 43,
+    "w": 82,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Drop Cap",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 632,
+    "y": 76,
+    "w": 65,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Text from File",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 698,
+    "y": 76,
+    "w": 114,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Equation",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 903,
+    "y": 43,
+    "w": 89,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Symbol",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 907,
+    "y": 76,
+    "w": 82,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Content Controls",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1026,
+    "y": 43,
+    "w": 96,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Header & Footer",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1157,
+    "y": 43,
+    "w": 131,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Header",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1289,
+    "y": 43,
+    "w": 81,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Footer",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1371,
+    "y": 43,
+    "w": 77,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Page Number",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1449,
+    "y": 43,
+    "w": 116,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Date & Time",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1253,
+    "y": 76,
+    "w": 80,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Field",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1334,
+    "y": 76,
+    "w": 40,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Comment",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1375,
+    "y": 76,
+    "w": 94,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Previous page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 10,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Next page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 125,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Select Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 192,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Hand Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 249,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Language",
     "disabled": false,
-    "kind": "select"
+    "kind": "button",
+    "x": 322,
+    "y": 974,
+    "w": 127,
+    "h": 20
    },
    {
     "label": "Track Changes",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 525,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Co-editing Mode",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 593,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Spell Check",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 661,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Multiple Pages",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1263,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Page",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1320,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Width",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1377,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom Out",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1434,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom In",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1537,
+    "y": 957,
+    "w": 55,
+    "h": 55
    }
   ],
   "Draw": [
    {
     "label": "File",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 8,
+    "y": 1,
+    "w": 54,
+    "h": 36
    },
    {
     "label": "HomeHome",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 62,
+    "y": 2,
+    "w": 55,
+    "h": 32
    },
    {
     "label": "InsertInsert",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 117,
+    "y": 2,
+    "w": 54,
+    "h": 32
    },
    {
     "label": "Draw",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 171,
+    "y": 2,
+    "w": 50,
+    "h": 32
    },
    {
     "label": "LayoutLayout",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 221,
+    "y": 2,
+    "w": 62,
+    "h": 32
    },
    {
     "label": "ReferencesReferences",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 283,
+    "y": 2,
+    "w": 92,
+    "h": 32
    },
    {
     "label": "CollaborationCollaboration",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 375,
+    "y": 2,
+    "w": 106,
+    "h": 32
    },
    {
     "label": "ProtectionProtection",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 481,
+    "y": 2,
+    "w": 85,
+    "h": 32
    },
    {
     "label": "ViewView",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 566,
+    "y": 2,
+    "w": 48,
+    "h": 32
    },
    {
     "label": "PluginsPlugins",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 614,
+    "y": 2,
+    "w": 67,
+    "h": 32
    },
    {
     "label": "AIAI",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 680,
+    "y": 2,
+    "w": 30,
+    "h": 32
    },
    {
     "label": "Chart DesignChart Design",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 710,
+    "y": 2,
+    "w": 103,
+    "h": 32
    },
    {
     "label": "Cut",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 58,
+    "y": 43,
+    "w": 61,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Copy",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 120,
+    "y": 43,
+    "w": 70,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Paste",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 191,
+    "y": 43,
+    "w": 73,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Copy style",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 112,
+    "y": 76,
+    "w": 98,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Select",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 345,
+    "y": 43,
+    "w": 47,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Eraser",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 344,
+    "y": 76,
+    "w": 49,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Word count",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 433,
+    "y": 43,
+    "w": 98,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "English – United States",
     "disabled": false,
-    "kind": "select"
+    "kind": "select",
+    "x": 604,
+    "y": 48,
+    "w": 141,
+    "h": 22,
+    "row": 0
    },
    {
     "label": "Set document language",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 746,
+    "y": 43,
+    "w": 169,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Spell checking",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 693,
+    "y": 76,
+    "w": 32,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Track changes",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 989,
+    "y": 43,
+    "w": 32,
+    "h": 52,
+    "row": 0
    },
    {
     "label": "Multiple pages",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1166,
+    "y": 43,
+    "w": 91,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Fit to page",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1259,
+    "y": 43,
+    "w": 99,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Fit to width",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1359,
+    "y": 43,
+    "w": 100,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Zoom out",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1460,
+    "y": 43,
+    "w": 93,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Zoom in",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1317,
+    "y": 76,
+    "w": 85,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Previous page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 10,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Next page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 125,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Select Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 192,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Hand Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 249,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Language",
     "disabled": false,
-    "kind": "select"
+    "kind": "button",
+    "x": 322,
+    "y": 974,
+    "w": 127,
+    "h": 20
    },
    {
     "label": "Track Changes",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 525,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Co-editing Mode",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 593,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Spell Check",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 661,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Multiple Pages",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1263,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Page",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1320,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Width",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1377,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom Out",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1434,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom In",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1537,
+    "y": 957,
+    "w": 55,
+    "h": 55
    }
   ],
   "Layout": [
    {
     "label": "File",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 8,
+    "y": 1,
+    "w": 54,
+    "h": 36
    },
    {
     "label": "HomeHome",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 62,
+    "y": 2,
+    "w": 55,
+    "h": 32
    },
    {
     "label": "InsertInsert",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 117,
+    "y": 2,
+    "w": 54,
+    "h": 32
    },
    {
     "label": "DrawDraw",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 171,
+    "y": 2,
+    "w": 50,
+    "h": 32
    },
    {
     "label": "Layout",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 221,
+    "y": 2,
+    "w": 62,
+    "h": 32
    },
    {
     "label": "ReferencesReferences",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 283,
+    "y": 2,
+    "w": 92,
+    "h": 32
    },
    {
     "label": "CollaborationCollaboration",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 375,
+    "y": 2,
+    "w": 106,
+    "h": 32
    },
    {
     "label": "ProtectionProtection",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 481,
+    "y": 2,
+    "w": 85,
+    "h": 32
    },
    {
     "label": "ViewView",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 566,
+    "y": 2,
+    "w": 48,
+    "h": 32
    },
    {
     "label": "PluginsPlugins",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 614,
+    "y": 2,
+    "w": 67,
+    "h": 32
    },
    {
     "label": "AIAI",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 680,
+    "y": 2,
+    "w": 30,
+    "h": 32
    },
    {
     "label": "Chart DesignChart Design",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 710,
+    "y": 2,
+    "w": 103,
+    "h": 32
    },
    {
     "label": "Orientation",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 22,
+    "y": 43,
+    "w": 101,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Size",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 124,
+    "y": 43,
+    "w": 65,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Margins",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 190,
+    "y": 43,
+    "w": 85,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Columns",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 276,
+    "y": 43,
+    "w": 89,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Line Numbers",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 33,
+    "y": 76,
+    "w": 117,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Hyphenation",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 151,
+    "y": 76,
+    "w": 109,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Wrapping",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 261,
+    "y": 76,
+    "w": 93,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Bring Forward",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 403,
+    "y": 43,
+    "w": 117,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Send Backward",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 522,
+    "y": 43,
+    "w": 126,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Align",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 393,
+    "y": 76,
+    "w": 69,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Group",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 462,
+    "y": 76,
+    "w": 75,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Merge Shapes",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 539,
+    "y": 76,
+    "w": 120,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Watermark",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 705,
+    "y": 43,
+    "w": 100,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Page Color",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 704,
+    "y": 76,
+    "w": 102,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Colors",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 716,
+    "y": 109,
+    "w": 77,
+    "h": 32,
+    "row": 2
    },
    {
     "label": "Breaks",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 847,
+    "y": 43,
+    "w": 51,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Theme",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 915,
+    "y": 43,
+    "w": 79,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Header",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1062,
+    "y": 43,
+    "w": 81,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Footer",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1144,
+    "y": 43,
+    "w": 77,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Page Number",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1222,
+    "y": 43,
+    "w": 116,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Date & Time",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1339,
+    "y": 43,
+    "w": 80,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Field",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1420,
+    "y": 43,
+    "w": 40,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Close",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1461,
+    "y": 43,
+    "w": 73,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Different First Page",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1062,
+    "y": 76,
+    "w": 32,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Different Odd & Even",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1227,
+    "y": 76,
+    "w": 32,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Remove Header",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1404,
+    "y": 76,
+    "w": 129,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Remove Footer",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1235,
+    "y": 109,
+    "w": 125,
+    "h": 32,
+    "row": 2
    },
    {
     "label": "Previous page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 10,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Next page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 125,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Select Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 192,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Hand Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 249,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Language",
     "disabled": false,
-    "kind": "select"
+    "kind": "button",
+    "x": 322,
+    "y": 974,
+    "w": 127,
+    "h": 20
    },
    {
     "label": "Track Changes",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 525,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Co-editing Mode",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 593,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Spell Check",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 661,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Multiple Pages",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1263,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Page",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1320,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Width",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1377,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom Out",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1434,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom In",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1537,
+    "y": 957,
+    "w": 55,
+    "h": 55
    }
   ],
   "References": [
    {
     "label": "File",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 8,
+    "y": 1,
+    "w": 54,
+    "h": 36
    },
    {
     "label": "HomeHome",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 62,
+    "y": 2,
+    "w": 55,
+    "h": 32
    },
    {
     "label": "InsertInsert",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 117,
+    "y": 2,
+    "w": 54,
+    "h": 32
    },
    {
     "label": "DrawDraw",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 171,
+    "y": 2,
+    "w": 50,
+    "h": 32
    },
    {
     "label": "LayoutLayout",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 221,
+    "y": 2,
+    "w": 62,
+    "h": 32
    },
    {
     "label": "References",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 283,
+    "y": 2,
+    "w": 92,
+    "h": 32
    },
    {
     "label": "CollaborationCollaboration",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 375,
+    "y": 2,
+    "w": 106,
+    "h": 32
    },
    {
     "label": "ProtectionProtection",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 481,
+    "y": 2,
+    "w": 85,
+    "h": 32
    },
    {
     "label": "ViewView",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 566,
+    "y": 2,
+    "w": 48,
+    "h": 32
    },
    {
     "label": "PluginsPlugins",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 614,
+    "y": 2,
+    "w": 67,
+    "h": 32
    },
    {
     "label": "AIAI",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 680,
+    "y": 2,
+    "w": 30,
+    "h": 32
    },
    {
     "label": "Chart DesignChart Design",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 710,
+    "y": 2,
+    "w": 103,
+    "h": 32
    },
    {
     "label": "Table of Contents",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 69,
+    "y": 43,
+    "w": 135,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Add Text",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 205,
+    "y": 43,
+    "w": 88,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Update Table",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 125,
+    "y": 76,
+    "w": 113,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Footnote",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 405,
+    "y": 43,
+    "w": 89,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Endnote",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 406,
+    "y": 76,
+    "w": 87,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Bookmark",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 611,
+    "y": 43,
+    "w": 96,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Caption",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 708,
+    "y": 43,
+    "w": 83,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Cross-reference",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 793,
+    "y": 43,
+    "w": 128,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Table of Figures",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 702,
+    "y": 76,
+    "w": 127,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Comment",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1038,
+    "y": 43,
+    "w": 94,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Remove",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1042,
+    "y": 76,
+    "w": 87,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Mark Entry",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1244,
+    "y": 43,
+    "w": 100,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Insert Index",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1345,
+    "y": 43,
+    "w": 105,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Update Index",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1290,
+    "y": 76,
+    "w": 113,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Link",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1520,
+    "y": 43,
+    "w": 64,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Previous page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 10,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Next page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 125,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Select Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 192,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Hand Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 249,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Language",
     "disabled": false,
-    "kind": "select"
+    "kind": "button",
+    "x": 322,
+    "y": 974,
+    "w": 127,
+    "h": 20
    },
    {
     "label": "Track Changes",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 525,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Co-editing Mode",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 593,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Spell Check",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 661,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Multiple Pages",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1263,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Page",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1320,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Width",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1377,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom Out",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1434,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom In",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1537,
+    "y": 957,
+    "w": 55,
+    "h": 55
    }
   ],
   "Collaboration": [
    {
     "label": "File",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 8,
+    "y": 1,
+    "w": 54,
+    "h": 36
    },
    {
     "label": "HomeHome",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 62,
+    "y": 2,
+    "w": 55,
+    "h": 32
    },
    {
     "label": "InsertInsert",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 117,
+    "y": 2,
+    "w": 54,
+    "h": 32
    },
    {
     "label": "DrawDraw",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 171,
+    "y": 2,
+    "w": 50,
+    "h": 32
    },
    {
     "label": "LayoutLayout",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 221,
+    "y": 2,
+    "w": 62,
+    "h": 32
    },
    {
     "label": "ReferencesReferences",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 283,
+    "y": 2,
+    "w": 92,
+    "h": 32
    },
    {
     "label": "Collaboration",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 375,
+    "y": 2,
+    "w": 106,
+    "h": 32
    },
    {
     "label": "ProtectionProtection",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 481,
+    "y": 2,
+    "w": 85,
+    "h": 32
    },
    {
     "label": "ViewView",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 566,
+    "y": 2,
+    "w": 48,
+    "h": 32
    },
    {
     "label": "PluginsPlugins",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 614,
+    "y": 2,
+    "w": 67,
+    "h": 32
    },
    {
     "label": "AIAI",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 680,
+    "y": 2,
+    "w": 30,
+    "h": 32
    },
    {
     "label": "Chart DesignChart Design",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 710,
+    "y": 2,
+    "w": 103,
+    "h": 32
    },
    {
     "label": "Track Changes",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 77,
+    "y": 43,
+    "w": 123,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Co-editing Mode",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 73,
+    "y": 76,
+    "w": 130,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Accept",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 302,
+    "y": 43,
+    "w": 79,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Reject",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 381,
+    "y": 43,
+    "w": 76,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Accept All",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 458,
+    "y": 43,
+    "w": 95,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Reject All",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 554,
+    "y": 43,
+    "w": 92,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Previous",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 647,
+    "y": 43,
+    "w": 89,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Next",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 485,
+    "y": 76,
+    "w": 67,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Add Comment",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 820,
+    "y": 43,
+    "w": 119,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Delete",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 940,
+    "y": 43,
+    "w": 77,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Resolve",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1018,
+    "y": 43,
+    "w": 85,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Comments",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 912,
+    "y": 76,
+    "w": 100,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Display Mode",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1163,
+    "y": 43,
+    "w": 83,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Compare",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1293,
+    "y": 43,
+    "w": 63,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Combine",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1293,
+    "y": 76,
+    "w": 62,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Mail Merge",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1402,
+    "y": 43,
+    "w": 98,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Chat",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1517,
+    "y": 43,
+    "w": 67,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Previous page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 10,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Next page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 125,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Select Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 192,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Hand Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 249,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Language",
     "disabled": false,
-    "kind": "select"
+    "kind": "button",
+    "x": 322,
+    "y": 974,
+    "w": 127,
+    "h": 20
    },
    {
     "label": "Track Changes",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 525,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Co-editing Mode",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 593,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Spell Check",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 661,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Multiple Pages",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1263,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Page",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1320,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Width",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1377,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom Out",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1434,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom In",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1537,
+    "y": 957,
+    "w": 55,
+    "h": 55
    }
   ],
   "Protection": [
    {
     "label": "File",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 8,
+    "y": 1,
+    "w": 54,
+    "h": 36
    },
    {
     "label": "HomeHome",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 62,
+    "y": 2,
+    "w": 55,
+    "h": 32
    },
    {
     "label": "InsertInsert",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 117,
+    "y": 2,
+    "w": 54,
+    "h": 32
    },
    {
     "label": "DrawDraw",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 171,
+    "y": 2,
+    "w": 50,
+    "h": 32
    },
    {
     "label": "LayoutLayout",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 221,
+    "y": 2,
+    "w": 62,
+    "h": 32
    },
    {
     "label": "ReferencesReferences",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 283,
+    "y": 2,
+    "w": 92,
+    "h": 32
    },
    {
     "label": "CollaborationCollaboration",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 375,
+    "y": 2,
+    "w": 106,
+    "h": 32
    },
    {
     "label": "Protection",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 481,
+    "y": 2,
+    "w": 85,
+    "h": 32
    },
    {
     "label": "ViewView",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 566,
+    "y": 2,
+    "w": 48,
+    "h": 32
    },
    {
     "label": "PluginsPlugins",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 614,
+    "y": 2,
+    "w": 67,
+    "h": 32
    },
    {
     "label": "AIAI",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 680,
+    "y": 2,
+    "w": 30,
+    "h": 32
    },
    {
     "label": "Chart DesignChart Design",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 710,
+    "y": 2,
+    "w": 103,
+    "h": 32
    },
    {
     "label": "Protect Document",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 16,
+    "y": 43,
+    "w": 138,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Encrypt",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 155,
+    "y": 43,
+    "w": 55,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Previous page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 10,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Next page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 125,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Select Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 192,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Hand Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 249,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Language",
     "disabled": false,
-    "kind": "select"
+    "kind": "button",
+    "x": 322,
+    "y": 974,
+    "w": 127,
+    "h": 20
    },
    {
     "label": "Track Changes",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 525,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Co-editing Mode",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 593,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Spell Check",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 661,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Multiple Pages",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1263,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Page",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1320,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Width",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1377,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom Out",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1434,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom In",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1537,
+    "y": 957,
+    "w": 55,
+    "h": 55
    }
   ],
   "View": [
    {
     "label": "File",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 8,
+    "y": 1,
+    "w": 54,
+    "h": 36
    },
    {
     "label": "HomeHome",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 62,
+    "y": 2,
+    "w": 55,
+    "h": 32
    },
    {
     "label": "InsertInsert",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 117,
+    "y": 2,
+    "w": 54,
+    "h": 32
    },
    {
     "label": "DrawDraw",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 171,
+    "y": 2,
+    "w": 50,
+    "h": 32
    },
    {
     "label": "LayoutLayout",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 221,
+    "y": 2,
+    "w": 62,
+    "h": 32
    },
    {
     "label": "ReferencesReferences",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 283,
+    "y": 2,
+    "w": 92,
+    "h": 32
    },
    {
     "label": "CollaborationCollaboration",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 375,
+    "y": 2,
+    "w": 106,
+    "h": 32
    },
    {
     "label": "ProtectionProtection",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 481,
+    "y": 2,
+    "w": 85,
+    "h": 32
    },
    {
     "label": "View",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 566,
+    "y": 2,
+    "w": 48,
+    "h": 32
    },
    {
     "label": "PluginsPlugins",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 614,
+    "y": 2,
+    "w": 67,
+    "h": 32
    },
    {
     "label": "AIAI",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 680,
+    "y": 2,
+    "w": 30,
+    "h": 32
    },
    {
     "label": "Chart DesignChart Design",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 710,
+    "y": 2,
+    "w": 103,
+    "h": 32
    },
    {
     "label": "Multiple Pages",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 16,
+    "y": 43,
+    "w": 93,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Zoom In",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 110,
+    "y": 43,
+    "w": 86,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Zoom Out",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 197,
+    "y": 43,
+    "w": 95,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Zoom to 100%",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 293,
+    "y": 43,
+    "w": 120,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Spell Check",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 430,
+    "y": 43,
+    "w": 32,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Ruler",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 550,
+    "y": 43,
+    "w": 32,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Gridlines",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 628,
+    "y": 43,
+    "w": 32,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Headings",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 729,
+    "y": 43,
+    "w": 32,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Dark Document",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 833,
+    "y": 43,
+    "w": 32,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Interface Theme",
     "disabled": false,
-    "kind": "select"
+    "kind": "select",
+    "x": 991,
+    "y": 47,
+    "w": 86,
+    "h": 22,
+    "row": 0
    },
    {
     "label": "Macros",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1094,
+    "y": 43,
+    "w": 81,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Record Macro",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1176,
+    "y": 43,
+    "w": 117,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Pause Recording",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1295,
+    "y": 43,
+    "w": 134,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Previous page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 10,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Next page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 125,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Select Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 192,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Hand Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 249,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Language",
     "disabled": false,
-    "kind": "select"
+    "kind": "button",
+    "x": 322,
+    "y": 974,
+    "w": 127,
+    "h": 20
    },
    {
     "label": "Track Changes",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 525,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Co-editing Mode",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 593,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Spell Check",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 661,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Multiple Pages",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1263,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Page",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1320,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Width",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1377,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom Out",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1434,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom In",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1537,
+    "y": 957,
+    "w": 55,
+    "h": 55
    }
   ],
   "Plugins": [
    {
     "label": "File",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 8,
+    "y": 1,
+    "w": 54,
+    "h": 36
    },
    {
     "label": "HomeHome",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 62,
+    "y": 2,
+    "w": 55,
+    "h": 32
    },
    {
     "label": "InsertInsert",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 117,
+    "y": 2,
+    "w": 54,
+    "h": 32
    },
    {
     "label": "DrawDraw",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 171,
+    "y": 2,
+    "w": 50,
+    "h": 32
    },
    {
     "label": "LayoutLayout",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 221,
+    "y": 2,
+    "w": 62,
+    "h": 32
    },
    {
     "label": "ReferencesReferences",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 283,
+    "y": 2,
+    "w": 92,
+    "h": 32
    },
    {
     "label": "CollaborationCollaboration",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 375,
+    "y": 2,
+    "w": 106,
+    "h": 32
    },
    {
     "label": "ProtectionProtection",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 481,
+    "y": 2,
+    "w": 85,
+    "h": 32
    },
    {
     "label": "ViewView",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 566,
+    "y": 2,
+    "w": 48,
+    "h": 32
    },
    {
     "label": "Plugins",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 614,
+    "y": 2,
+    "w": 67,
+    "h": 32
    },
    {
     "label": "AIAI",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 680,
+    "y": 2,
+    "w": 30,
+    "h": 32
    },
    {
     "label": "Chart DesignChart Design",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 710,
+    "y": 2,
+    "w": 103,
+    "h": 32
    },
    {
     "label": "Cut",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 44,
+    "y": 43,
+    "w": 61,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Copy",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 106,
+    "y": 43,
+    "w": 70,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Paste",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 38,
+    "y": 76,
+    "w": 73,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Copy style",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 112,
+    "y": 76,
+    "w": 70,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "PluginManager",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 249,
+    "y": 43,
+    "w": 123,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Backgroundplugins",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 373,
+    "y": 43,
+    "w": 144,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "PhotoEditor",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 518,
+    "y": 43,
+    "w": 105,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "YouTube",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 624,
+    "y": 43,
+    "w": 61,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "OCR",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 686,
+    "y": 43,
+    "w": 41,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Translator",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 727,
+    "y": 43,
+    "w": 68,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Mendeley",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 796,
+    "y": 43,
+    "w": 66,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Thesaurus",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 369,
+    "y": 76,
+    "w": 71,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Highlightcode",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 441,
+    "y": 76,
+    "w": 115,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Zotero",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 556,
+    "y": 76,
+    "w": 49,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Speech",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 606,
+    "y": 76,
+    "w": 55,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Speechinput",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 662,
+    "y": 76,
+    "w": 81,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Word count",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 951,
+    "y": 43,
+    "w": 103,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "English – United States",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1055,
+    "y": 43,
+    "w": 167,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Spell checking",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 959,
+    "y": 76,
+    "w": 32,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Track changes",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1094,
+    "y": 76,
+    "w": 120,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Multiple pages",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1301,
+    "y": 43,
+    "w": 91,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Fit to page",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1394,
+    "y": 43,
+    "w": 99,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Fit to width",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1493,
+    "y": 43,
+    "w": 72,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Zoom out",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1344,
+    "y": 76,
+    "w": 93,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Zoom in",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1437,
+    "y": 76,
+    "w": 85,
+    "h": 32,
+    "row": 1
    },
    {
     "label": "Previous page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 10,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Next page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 125,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Select Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 192,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Hand Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 249,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Language",
     "disabled": false,
-    "kind": "select"
+    "kind": "button",
+    "x": 322,
+    "y": 974,
+    "w": 127,
+    "h": 20
    },
    {
     "label": "Track Changes",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 525,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Co-editing Mode",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 593,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Spell Check",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 661,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Multiple Pages",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1263,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Page",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1320,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Width",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1377,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom Out",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1434,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom In",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1537,
+    "y": 957,
+    "w": 55,
+    "h": 55
    }
   ],
   "AI": [
    {
     "label": "File",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 8,
+    "y": 1,
+    "w": 54,
+    "h": 36
    },
    {
     "label": "HomeHome",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 62,
+    "y": 2,
+    "w": 55,
+    "h": 32
    },
    {
     "label": "InsertInsert",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 117,
+    "y": 2,
+    "w": 54,
+    "h": 32
    },
    {
     "label": "DrawDraw",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 171,
+    "y": 2,
+    "w": 50,
+    "h": 32
    },
    {
     "label": "LayoutLayout",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 221,
+    "y": 2,
+    "w": 62,
+    "h": 32
    },
    {
     "label": "ReferencesReferences",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 283,
+    "y": 2,
+    "w": 92,
+    "h": 32
    },
    {
     "label": "CollaborationCollaboration",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 375,
+    "y": 2,
+    "w": 106,
+    "h": 32
    },
    {
     "label": "ProtectionProtection",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 481,
+    "y": 2,
+    "w": 85,
+    "h": 32
    },
    {
     "label": "ViewView",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 566,
+    "y": 2,
+    "w": 48,
+    "h": 32
    },
    {
     "label": "PluginsPlugins",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 614,
+    "y": 2,
+    "w": 67,
+    "h": 32
    },
    {
     "label": "AI",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 680,
+    "y": 2,
+    "w": 30,
+    "h": 32
    },
    {
     "label": "Chart DesignChart Design",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 710,
+    "y": 2,
+    "w": 103,
+    "h": 32
    },
    {
     "label": "Settings",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 16,
+    "y": 43,
+    "w": 85,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Chatbot",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 102,
+    "y": 43,
+    "w": 84,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Summarization",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 187,
+    "y": 43,
+    "w": 122,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Translation",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 310,
+    "y": 43,
+    "w": 101,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Grammar &Spelling",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 412,
+    "y": 43,
+    "w": 147,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Create AIassistant",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 560,
+    "y": 43,
+    "w": 139,
+    "h": 32,
+    "row": 0
    },
    {
     "label": "Previous page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 10,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Next page",
     "disabled": true,
-    "kind": "button"
+    "kind": "button",
+    "x": 125,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Select Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 192,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Hand Tool",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 249,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Language",
     "disabled": false,
-    "kind": "select"
+    "kind": "button",
+    "x": 322,
+    "y": 974,
+    "w": 127,
+    "h": 20
    },
    {
     "label": "Track Changes",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 525,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Co-editing Mode",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 593,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Spell Check",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 661,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Multiple Pages",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1263,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Page",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1320,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Fit to Width",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1377,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom Out",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1434,
+    "y": 957,
+    "w": 55,
+    "h": 55
    },
    {
     "label": "Zoom In",
     "disabled": false,
-    "kind": "button"
+    "kind": "button",
+    "x": 1537,
+    "y": 957,
+    "w": 55,
+    "h": 55
    }
   ],
   "Chart Design": [
@@ -2449,7 +4428,7 @@
    {
     "label": "Language",
     "disabled": false,
-    "kind": "select"
+    "kind": "button"
    },
    {
     "label": "Track Changes",
@@ -2611,7 +4590,7 @@
    {
     "label": "Language",
     "disabled": false,
-    "kind": "select"
+    "kind": "button"
    },
    {
     "label": "Track Changes",
@@ -2654,6 +4633,2813 @@
     "kind": "button"
    }
   ]
+ },
+ "geometry": {
+  "Home": {
+   "rows": 5,
+   "groups": [
+    {
+     "row": 0,
+     "x": 47,
+     "right": 108,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 167,
+     "right": 574,
+     "n": 3
+    },
+    {
+     "row": 0,
+     "x": 643,
+     "right": 1007,
+     "n": 4
+    },
+    {
+     "row": 0,
+     "x": 1085,
+     "right": 1142,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 1189,
+     "right": 1254,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 1307,
+     "right": 1410,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 1473,
+     "right": 1564,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 43,
+     "right": 113,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 199,
+     "right": 541,
+     "n": 4
+    },
+    {
+     "row": 1,
+     "x": 602,
+     "right": 856,
+     "n": 2
+    },
+    {
+     "row": 1,
+     "x": 1085,
+     "right": 1142,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 1178,
+     "right": 1264,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 1281,
+     "right": 1436,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 1469,
+     "right": 1568,
+     "n": 3
+    },
+    {
+     "row": 2,
+     "x": 41,
+     "right": 114,
+     "n": 1
+    },
+    {
+     "row": 2,
+     "x": 177,
+     "right": 373,
+     "n": 2
+    },
+    {
+     "row": 2,
+     "x": 636,
+     "right": 1014,
+     "n": 4
+    },
+    {
+     "row": 2,
+     "x": 1085,
+     "right": 1142,
+     "n": 1
+    },
+    {
+     "row": 2,
+     "x": 1178,
+     "right": 1264,
+     "n": 1
+    },
+    {
+     "row": 2,
+     "x": 1292,
+     "right": 1324,
+     "n": 1
+    },
+    {
+     "row": 2,
+     "x": 1483,
+     "right": 1555,
+     "n": 3
+    },
+    {
+     "row": 3,
+     "x": 42,
+     "right": 113,
+     "n": 1
+    },
+    {
+     "row": 3,
+     "x": 213,
+     "right": 527,
+     "n": 3
+    },
+    {
+     "row": 3,
+     "x": 658,
+     "right": 992,
+     "n": 3
+    },
+    {
+     "row": 3,
+     "x": 1077,
+     "right": 1152,
+     "n": 1
+    },
+    {
+     "row": 3,
+     "x": 1299,
+     "right": 1419,
+     "n": 1
+    },
+    {
+     "row": 3,
+     "x": 1472,
+     "right": 1565,
+     "n": 1
+    },
+    {
+     "row": 4,
+     "x": 42,
+     "right": 113,
+     "n": 1
+    },
+    {
+     "row": 4,
+     "x": 1079,
+     "right": 1150,
+     "n": 1
+    },
+    {
+     "row": 4,
+     "x": 1476,
+     "right": 1561,
+     "n": 1
+    }
+   ],
+   "ribbon": [
+    {
+     "label": "Cut",
+     "disabled": false,
+     "kind": "button",
+     "x": 47,
+     "y": 43,
+     "w": 61,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Increment font size",
+     "disabled": false,
+     "kind": "button",
+     "x": 167,
+     "y": 43,
+     "w": 143,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Decrement font size",
+     "disabled": false,
+     "kind": "button",
+     "x": 311,
+     "y": 43,
+     "w": 149,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Change case",
+     "disabled": false,
+     "kind": "button",
+     "x": 461,
+     "y": 43,
+     "w": 113,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Bullets",
+     "disabled": false,
+     "kind": "button",
+     "x": 643,
+     "y": 43,
+     "w": 78,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Numbering",
+     "disabled": false,
+     "kind": "button",
+     "x": 722,
+     "y": 43,
+     "w": 101,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Tasks",
+     "disabled": false,
+     "kind": "button",
+     "x": 824,
+     "y": 43,
+     "w": 73,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Multilevel list",
+     "disabled": false,
+     "kind": "button",
+     "x": 897,
+     "y": 43,
+     "w": 110,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "H1",
+     "disabled": false,
+     "kind": "button",
+     "x": 1085,
+     "y": 43,
+     "w": 57,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Find",
+     "disabled": false,
+     "kind": "button",
+     "x": 1189,
+     "y": 43,
+     "w": 65,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Word count",
+     "disabled": false,
+     "kind": "button",
+     "x": 1307,
+     "y": 43,
+     "w": 103,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Multiple pages",
+     "disabled": false,
+     "kind": "button",
+     "x": 1473,
+     "y": 43,
+     "w": 91,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Copy",
+     "disabled": false,
+     "kind": "button",
+     "x": 43,
+     "y": 76,
+     "w": 70,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Bold",
+     "disabled": false,
+     "kind": "button",
+     "x": 199,
+     "y": 76,
+     "w": 66,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Italic",
+     "disabled": false,
+     "kind": "button",
+     "x": 266,
+     "y": 76,
+     "w": 67,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Underline",
+     "disabled": false,
+     "kind": "button",
+     "x": 334,
+     "y": 76,
+     "w": 93,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Strikethrough",
+     "disabled": false,
+     "kind": "button",
+     "x": 428,
+     "y": 76,
+     "w": 113,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Decrease indent",
+     "disabled": false,
+     "kind": "button",
+     "x": 602,
+     "y": 76,
+     "w": 129,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Increase indent",
+     "disabled": false,
+     "kind": "button",
+     "x": 732,
+     "y": 76,
+     "w": 124,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Paragraph line spacing",
+     "disabled": false,
+     "kind": "select",
+     "x": 857,
+     "y": 81,
+     "w": 80,
+     "h": 22,
+     "row": 1
+    },
+    {
+     "label": "Text direction",
+     "disabled": false,
+     "kind": "select",
+     "x": 938,
+     "y": 81,
+     "w": 110,
+     "h": 22,
+     "row": 1
+    },
+    {
+     "label": "H2",
+     "disabled": false,
+     "kind": "button",
+     "x": 1085,
+     "y": 76,
+     "w": 57,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Replace",
+     "disabled": false,
+     "kind": "button",
+     "x": 1178,
+     "y": 76,
+     "w": 86,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "English – United States",
+     "disabled": false,
+     "kind": "button",
+     "x": 1281,
+     "y": 76,
+     "w": 155,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Fit to page",
+     "disabled": false,
+     "kind": "button",
+     "x": 1469,
+     "y": 76,
+     "w": 99,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Paste",
+     "disabled": false,
+     "kind": "button",
+     "x": 41,
+     "y": 109,
+     "w": 73,
+     "h": 32,
+     "row": 2
+    },
+    {
+     "label": "Superscript",
+     "disabled": false,
+     "kind": "button",
+     "x": 177,
+     "y": 109,
+     "w": 103,
+     "h": 32,
+     "row": 2
+    },
+    {
+     "label": "Subscript",
+     "disabled": false,
+     "kind": "button",
+     "x": 281,
+     "y": 109,
+     "w": 92,
+     "h": 32,
+     "row": 2
+    },
+    {
+     "label": "Font",
+     "disabled": false,
+     "kind": "select",
+     "x": 374,
+     "y": 114,
+     "w": 108,
+     "h": 22,
+     "row": 2
+    },
+    {
+     "label": "Font size",
+     "disabled": false,
+     "kind": "select",
+     "x": 483,
+     "y": 114,
+     "w": 80,
+     "h": 22,
+     "row": 2
+    },
+    {
+     "label": "Align left",
+     "disabled": false,
+     "kind": "button",
+     "x": 636,
+     "y": 109,
+     "w": 88,
+     "h": 32,
+     "row": 2
+    },
+    {
+     "label": "Align center",
+     "disabled": false,
+     "kind": "button",
+     "x": 725,
+     "y": 109,
+     "w": 105,
+     "h": 32,
+     "row": 2
+    },
+    {
+     "label": "Align right",
+     "disabled": false,
+     "kind": "button",
+     "x": 832,
+     "y": 109,
+     "w": 95,
+     "h": 32,
+     "row": 2
+    },
+    {
+     "label": "Justified",
+     "disabled": false,
+     "kind": "button",
+     "x": 928,
+     "y": 109,
+     "w": 86,
+     "h": 32,
+     "row": 2
+    },
+    {
+     "label": "H3",
+     "disabled": false,
+     "kind": "button",
+     "x": 1085,
+     "y": 109,
+     "w": 57,
+     "h": 32,
+     "row": 2
+    },
+    {
+     "label": "Select all",
+     "disabled": false,
+     "kind": "button",
+     "x": 1178,
+     "y": 109,
+     "w": 86,
+     "h": 32,
+     "row": 2
+    },
+    {
+     "label": "Spell checking",
+     "disabled": false,
+     "kind": "button",
+     "x": 1292,
+     "y": 109,
+     "w": 32,
+     "h": 32,
+     "row": 2
+    },
+    {
+     "label": "Fit to width",
+     "disabled": false,
+     "kind": "button",
+     "x": 1483,
+     "y": 109,
+     "w": 72,
+     "h": 32,
+     "row": 2
+    },
+    {
+     "label": "Undo",
+     "disabled": false,
+     "kind": "button",
+     "x": 42,
+     "y": 142,
+     "w": 71,
+     "h": 32,
+     "row": 3
+    },
+    {
+     "label": "Font color",
+     "disabled": false,
+     "kind": "button",
+     "x": 213,
+     "y": 142,
+     "w": 95,
+     "h": 32,
+     "row": 3
+    },
+    {
+     "label": "Highlight color",
+     "disabled": false,
+     "kind": "button",
+     "x": 309,
+     "y": 142,
+     "w": 118,
+     "h": 32,
+     "row": 3
+    },
+    {
+     "label": "Clear style",
+     "disabled": false,
+     "kind": "button",
+     "x": 428,
+     "y": 142,
+     "w": 99,
+     "h": 32,
+     "row": 3
+    },
+    {
+     "label": "Nonprinting characters",
+     "disabled": false,
+     "kind": "button",
+     "x": 658,
+     "y": 142,
+     "w": 163,
+     "h": 32,
+     "row": 3
+    },
+    {
+     "label": "Shading",
+     "disabled": false,
+     "kind": "button",
+     "x": 821,
+     "y": 142,
+     "w": 86,
+     "h": 32,
+     "row": 3
+    },
+    {
+     "label": "Borders",
+     "disabled": false,
+     "kind": "button",
+     "x": 908,
+     "y": 142,
+     "w": 84,
+     "h": 32,
+     "row": 3
+    },
+    {
+     "label": "Quote",
+     "disabled": false,
+     "kind": "button",
+     "x": 1077,
+     "y": 142,
+     "w": 75,
+     "h": 32,
+     "row": 3
+    },
+    {
+     "label": "Track changes",
+     "disabled": false,
+     "kind": "button",
+     "x": 1299,
+     "y": 142,
+     "w": 120,
+     "h": 32,
+     "row": 3
+    },
+    {
+     "label": "Zoom out",
+     "disabled": false,
+     "kind": "button",
+     "x": 1472,
+     "y": 142,
+     "w": 93,
+     "h": 32,
+     "row": 3
+    },
+    {
+     "label": "Redo",
+     "disabled": false,
+     "kind": "button",
+     "x": 42,
+     "y": 175,
+     "w": 71,
+     "h": 32,
+     "row": 4
+    },
+    {
+     "label": "Code",
+     "disabled": false,
+     "kind": "button",
+     "x": 1079,
+     "y": 175,
+     "w": 71,
+     "h": 32,
+     "row": 4
+    },
+    {
+     "label": "Zoom in",
+     "disabled": false,
+     "kind": "button",
+     "x": 1476,
+     "y": 175,
+     "w": 85,
+     "h": 32,
+     "row": 4
+    }
+   ]
+  },
+  "Insert": {
+   "rows": 2,
+   "groups": [
+    {
+     "row": 0,
+     "x": 30,
+     "right": 133,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 164,
+     "right": 235,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 288,
+     "right": 441,
+     "n": 2
+    },
+    {
+     "row": 0,
+     "x": 494,
+     "right": 558,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 606,
+     "right": 838,
+     "n": 3
+    },
+    {
+     "row": 0,
+     "x": 903,
+     "right": 992,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 1026,
+     "right": 1122,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 1157,
+     "right": 1565,
+     "n": 4
+    },
+    {
+     "row": 1,
+     "x": 42,
+     "right": 121,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 283,
+     "right": 445,
+     "n": 2
+    },
+    {
+     "row": 1,
+     "x": 632,
+     "right": 812,
+     "n": 2
+    },
+    {
+     "row": 1,
+     "x": 907,
+     "right": 989,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 1253,
+     "right": 1469,
+     "n": 3
+    }
+   ],
+   "ribbon": [
+    {
+     "label": "Blank Page",
+     "disabled": false,
+     "kind": "button",
+     "x": 30,
+     "y": 43,
+     "w": 103,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Table",
+     "disabled": false,
+     "kind": "button",
+     "x": 164,
+     "y": 43,
+     "w": 71,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Image",
+     "disabled": false,
+     "kind": "button",
+     "x": 288,
+     "y": 43,
+     "w": 75,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Shape",
+     "disabled": false,
+     "kind": "button",
+     "x": 364,
+     "y": 43,
+     "w": 77,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Link",
+     "disabled": false,
+     "kind": "button",
+     "x": 494,
+     "y": 43,
+     "w": 64,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "HR",
+     "disabled": false,
+     "kind": "button",
+     "x": 606,
+     "y": 43,
+     "w": 59,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Text Box",
+     "disabled": false,
+     "kind": "button",
+     "x": 667,
+     "y": 43,
+     "w": 88,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Text Art",
+     "disabled": false,
+     "kind": "button",
+     "x": 756,
+     "y": 43,
+     "w": 82,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Equation",
+     "disabled": false,
+     "kind": "button",
+     "x": 903,
+     "y": 43,
+     "w": 89,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Content Controls",
+     "disabled": false,
+     "kind": "button",
+     "x": 1026,
+     "y": 43,
+     "w": 96,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Header & Footer",
+     "disabled": false,
+     "kind": "button",
+     "x": 1157,
+     "y": 43,
+     "w": 131,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Header",
+     "disabled": false,
+     "kind": "button",
+     "x": 1289,
+     "y": 43,
+     "w": 81,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Footer",
+     "disabled": false,
+     "kind": "button",
+     "x": 1371,
+     "y": 43,
+     "w": 77,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Page Number",
+     "disabled": false,
+     "kind": "button",
+     "x": 1449,
+     "y": 43,
+     "w": 116,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Breaks",
+     "disabled": false,
+     "kind": "button",
+     "x": 42,
+     "y": 76,
+     "w": 79,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "SmartArt",
+     "disabled": false,
+     "kind": "button",
+     "x": 283,
+     "y": 76,
+     "w": 89,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Chart",
+     "disabled": false,
+     "kind": "button",
+     "x": 374,
+     "y": 76,
+     "w": 71,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Drop Cap",
+     "disabled": false,
+     "kind": "button",
+     "x": 632,
+     "y": 76,
+     "w": 65,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Text from File",
+     "disabled": false,
+     "kind": "button",
+     "x": 698,
+     "y": 76,
+     "w": 114,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Symbol",
+     "disabled": false,
+     "kind": "button",
+     "x": 907,
+     "y": 76,
+     "w": 82,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Date & Time",
+     "disabled": false,
+     "kind": "button",
+     "x": 1253,
+     "y": 76,
+     "w": 80,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Field",
+     "disabled": false,
+     "kind": "button",
+     "x": 1334,
+     "y": 76,
+     "w": 40,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Comment",
+     "disabled": false,
+     "kind": "button",
+     "x": 1375,
+     "y": 76,
+     "w": 94,
+     "h": 32,
+     "row": 1
+    }
+   ]
+  },
+  "Draw": {
+   "rows": 2,
+   "groups": [
+    {
+     "row": 0,
+     "x": 58,
+     "right": 264,
+     "n": 3
+    },
+    {
+     "row": 0,
+     "x": 345,
+     "right": 392,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 433,
+     "right": 531,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 746,
+     "right": 915,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 989,
+     "right": 1021,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 1166,
+     "right": 1553,
+     "n": 5
+    },
+    {
+     "row": 1,
+     "x": 112,
+     "right": 210,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 344,
+     "right": 393,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 693,
+     "right": 725,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 1317,
+     "right": 1402,
+     "n": 1
+    }
+   ],
+   "ribbon": [
+    {
+     "label": "Cut",
+     "disabled": false,
+     "kind": "button",
+     "x": 58,
+     "y": 43,
+     "w": 61,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Copy",
+     "disabled": false,
+     "kind": "button",
+     "x": 120,
+     "y": 43,
+     "w": 70,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Paste",
+     "disabled": false,
+     "kind": "button",
+     "x": 191,
+     "y": 43,
+     "w": 73,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Select",
+     "disabled": false,
+     "kind": "button",
+     "x": 345,
+     "y": 43,
+     "w": 47,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Word count",
+     "disabled": false,
+     "kind": "button",
+     "x": 433,
+     "y": 43,
+     "w": 98,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "English – United States",
+     "disabled": false,
+     "kind": "select",
+     "x": 604,
+     "y": 48,
+     "w": 141,
+     "h": 22,
+     "row": 0
+    },
+    {
+     "label": "Set document language",
+     "disabled": false,
+     "kind": "button",
+     "x": 746,
+     "y": 43,
+     "w": 169,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Track changes",
+     "disabled": false,
+     "kind": "button",
+     "x": 989,
+     "y": 43,
+     "w": 32,
+     "h": 52,
+     "row": 0
+    },
+    {
+     "label": "Multiple pages",
+     "disabled": false,
+     "kind": "button",
+     "x": 1166,
+     "y": 43,
+     "w": 91,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Fit to page",
+     "disabled": false,
+     "kind": "button",
+     "x": 1259,
+     "y": 43,
+     "w": 99,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Fit to width",
+     "disabled": false,
+     "kind": "button",
+     "x": 1359,
+     "y": 43,
+     "w": 100,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Zoom out",
+     "disabled": false,
+     "kind": "button",
+     "x": 1460,
+     "y": 43,
+     "w": 93,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Copy style",
+     "disabled": false,
+     "kind": "button",
+     "x": 112,
+     "y": 76,
+     "w": 98,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Eraser",
+     "disabled": false,
+     "kind": "button",
+     "x": 344,
+     "y": 76,
+     "w": 49,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Spell checking",
+     "disabled": false,
+     "kind": "button",
+     "x": 693,
+     "y": 76,
+     "w": 32,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Zoom in",
+     "disabled": false,
+     "kind": "button",
+     "x": 1317,
+     "y": 76,
+     "w": 85,
+     "h": 32,
+     "row": 1
+    }
+   ]
+  },
+  "Layout": {
+   "rows": 3,
+   "groups": [
+    {
+     "row": 0,
+     "x": 22,
+     "right": 365,
+     "n": 4
+    },
+    {
+     "row": 0,
+     "x": 403,
+     "right": 648,
+     "n": 2
+    },
+    {
+     "row": 0,
+     "x": 705,
+     "right": 805,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 847,
+     "right": 898,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 915,
+     "right": 994,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 1062,
+     "right": 1534,
+     "n": 6
+    },
+    {
+     "row": 1,
+     "x": 33,
+     "right": 354,
+     "n": 3
+    },
+    {
+     "row": 1,
+     "x": 393,
+     "right": 659,
+     "n": 3
+    },
+    {
+     "row": 1,
+     "x": 704,
+     "right": 806,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 1062,
+     "right": 1094,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 1227,
+     "right": 1259,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 1404,
+     "right": 1533,
+     "n": 1
+    },
+    {
+     "row": 2,
+     "x": 716,
+     "right": 793,
+     "n": 1
+    },
+    {
+     "row": 2,
+     "x": 1235,
+     "right": 1360,
+     "n": 1
+    }
+   ],
+   "ribbon": [
+    {
+     "label": "Orientation",
+     "disabled": false,
+     "kind": "button",
+     "x": 22,
+     "y": 43,
+     "w": 101,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Size",
+     "disabled": false,
+     "kind": "button",
+     "x": 124,
+     "y": 43,
+     "w": 65,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Margins",
+     "disabled": false,
+     "kind": "button",
+     "x": 190,
+     "y": 43,
+     "w": 85,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Columns",
+     "disabled": false,
+     "kind": "button",
+     "x": 276,
+     "y": 43,
+     "w": 89,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Bring Forward",
+     "disabled": false,
+     "kind": "button",
+     "x": 403,
+     "y": 43,
+     "w": 117,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Send Backward",
+     "disabled": false,
+     "kind": "button",
+     "x": 522,
+     "y": 43,
+     "w": 126,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Watermark",
+     "disabled": false,
+     "kind": "button",
+     "x": 705,
+     "y": 43,
+     "w": 100,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Breaks",
+     "disabled": false,
+     "kind": "button",
+     "x": 847,
+     "y": 43,
+     "w": 51,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Theme",
+     "disabled": false,
+     "kind": "button",
+     "x": 915,
+     "y": 43,
+     "w": 79,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Header",
+     "disabled": false,
+     "kind": "button",
+     "x": 1062,
+     "y": 43,
+     "w": 81,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Footer",
+     "disabled": false,
+     "kind": "button",
+     "x": 1144,
+     "y": 43,
+     "w": 77,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Page Number",
+     "disabled": false,
+     "kind": "button",
+     "x": 1222,
+     "y": 43,
+     "w": 116,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Date & Time",
+     "disabled": false,
+     "kind": "button",
+     "x": 1339,
+     "y": 43,
+     "w": 80,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Field",
+     "disabled": false,
+     "kind": "button",
+     "x": 1420,
+     "y": 43,
+     "w": 40,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Close",
+     "disabled": false,
+     "kind": "button",
+     "x": 1461,
+     "y": 43,
+     "w": 73,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Line Numbers",
+     "disabled": false,
+     "kind": "button",
+     "x": 33,
+     "y": 76,
+     "w": 117,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Hyphenation",
+     "disabled": false,
+     "kind": "button",
+     "x": 151,
+     "y": 76,
+     "w": 109,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Wrapping",
+     "disabled": false,
+     "kind": "button",
+     "x": 261,
+     "y": 76,
+     "w": 93,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Align",
+     "disabled": false,
+     "kind": "button",
+     "x": 393,
+     "y": 76,
+     "w": 69,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Group",
+     "disabled": false,
+     "kind": "button",
+     "x": 462,
+     "y": 76,
+     "w": 75,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Merge Shapes",
+     "disabled": false,
+     "kind": "button",
+     "x": 539,
+     "y": 76,
+     "w": 120,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Page Color",
+     "disabled": false,
+     "kind": "button",
+     "x": 704,
+     "y": 76,
+     "w": 102,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Different First Page",
+     "disabled": false,
+     "kind": "button",
+     "x": 1062,
+     "y": 76,
+     "w": 32,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Different Odd & Even",
+     "disabled": false,
+     "kind": "button",
+     "x": 1227,
+     "y": 76,
+     "w": 32,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Remove Header",
+     "disabled": false,
+     "kind": "button",
+     "x": 1404,
+     "y": 76,
+     "w": 129,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Colors",
+     "disabled": false,
+     "kind": "button",
+     "x": 716,
+     "y": 109,
+     "w": 77,
+     "h": 32,
+     "row": 2
+    },
+    {
+     "label": "Remove Footer",
+     "disabled": false,
+     "kind": "button",
+     "x": 1235,
+     "y": 109,
+     "w": 125,
+     "h": 32,
+     "row": 2
+    }
+   ]
+  },
+  "References": {
+   "rows": 2,
+   "groups": [
+    {
+     "row": 0,
+     "x": 69,
+     "right": 293,
+     "n": 2
+    },
+    {
+     "row": 0,
+     "x": 405,
+     "right": 494,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 611,
+     "right": 921,
+     "n": 3
+    },
+    {
+     "row": 0,
+     "x": 1038,
+     "right": 1132,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 1244,
+     "right": 1450,
+     "n": 2
+    },
+    {
+     "row": 0,
+     "x": 1520,
+     "right": 1584,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 125,
+     "right": 238,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 406,
+     "right": 493,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 702,
+     "right": 829,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 1042,
+     "right": 1129,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 1290,
+     "right": 1403,
+     "n": 1
+    }
+   ],
+   "ribbon": [
+    {
+     "label": "Table of Contents",
+     "disabled": false,
+     "kind": "button",
+     "x": 69,
+     "y": 43,
+     "w": 135,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Add Text",
+     "disabled": false,
+     "kind": "button",
+     "x": 205,
+     "y": 43,
+     "w": 88,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Footnote",
+     "disabled": false,
+     "kind": "button",
+     "x": 405,
+     "y": 43,
+     "w": 89,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Bookmark",
+     "disabled": false,
+     "kind": "button",
+     "x": 611,
+     "y": 43,
+     "w": 96,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Caption",
+     "disabled": false,
+     "kind": "button",
+     "x": 708,
+     "y": 43,
+     "w": 83,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Cross-reference",
+     "disabled": false,
+     "kind": "button",
+     "x": 793,
+     "y": 43,
+     "w": 128,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Comment",
+     "disabled": false,
+     "kind": "button",
+     "x": 1038,
+     "y": 43,
+     "w": 94,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Mark Entry",
+     "disabled": false,
+     "kind": "button",
+     "x": 1244,
+     "y": 43,
+     "w": 100,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Insert Index",
+     "disabled": false,
+     "kind": "button",
+     "x": 1345,
+     "y": 43,
+     "w": 105,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Link",
+     "disabled": false,
+     "kind": "button",
+     "x": 1520,
+     "y": 43,
+     "w": 64,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Update Table",
+     "disabled": false,
+     "kind": "button",
+     "x": 125,
+     "y": 76,
+     "w": 113,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Endnote",
+     "disabled": false,
+     "kind": "button",
+     "x": 406,
+     "y": 76,
+     "w": 87,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Table of Figures",
+     "disabled": false,
+     "kind": "button",
+     "x": 702,
+     "y": 76,
+     "w": 127,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Remove",
+     "disabled": false,
+     "kind": "button",
+     "x": 1042,
+     "y": 76,
+     "w": 87,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Update Index",
+     "disabled": false,
+     "kind": "button",
+     "x": 1290,
+     "y": 76,
+     "w": 113,
+     "h": 32,
+     "row": 1
+    }
+   ]
+  },
+  "Collaboration": {
+   "rows": 2,
+   "groups": [
+    {
+     "row": 0,
+     "x": 77,
+     "right": 200,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 302,
+     "right": 736,
+     "n": 5
+    },
+    {
+     "row": 0,
+     "x": 820,
+     "right": 1103,
+     "n": 3
+    },
+    {
+     "row": 0,
+     "x": 1163,
+     "right": 1246,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 1293,
+     "right": 1356,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 1402,
+     "right": 1500,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 1517,
+     "right": 1584,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 73,
+     "right": 203,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 485,
+     "right": 552,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 912,
+     "right": 1012,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 1293,
+     "right": 1355,
+     "n": 1
+    }
+   ],
+   "ribbon": [
+    {
+     "label": "Track Changes",
+     "disabled": false,
+     "kind": "button",
+     "x": 77,
+     "y": 43,
+     "w": 123,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Accept",
+     "disabled": false,
+     "kind": "button",
+     "x": 302,
+     "y": 43,
+     "w": 79,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Reject",
+     "disabled": false,
+     "kind": "button",
+     "x": 381,
+     "y": 43,
+     "w": 76,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Accept All",
+     "disabled": false,
+     "kind": "button",
+     "x": 458,
+     "y": 43,
+     "w": 95,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Reject All",
+     "disabled": false,
+     "kind": "button",
+     "x": 554,
+     "y": 43,
+     "w": 92,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Previous",
+     "disabled": false,
+     "kind": "button",
+     "x": 647,
+     "y": 43,
+     "w": 89,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Add Comment",
+     "disabled": false,
+     "kind": "button",
+     "x": 820,
+     "y": 43,
+     "w": 119,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Delete",
+     "disabled": false,
+     "kind": "button",
+     "x": 940,
+     "y": 43,
+     "w": 77,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Resolve",
+     "disabled": false,
+     "kind": "button",
+     "x": 1018,
+     "y": 43,
+     "w": 85,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Display Mode",
+     "disabled": false,
+     "kind": "button",
+     "x": 1163,
+     "y": 43,
+     "w": 83,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Compare",
+     "disabled": false,
+     "kind": "button",
+     "x": 1293,
+     "y": 43,
+     "w": 63,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Mail Merge",
+     "disabled": false,
+     "kind": "button",
+     "x": 1402,
+     "y": 43,
+     "w": 98,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Chat",
+     "disabled": false,
+     "kind": "button",
+     "x": 1517,
+     "y": 43,
+     "w": 67,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Co-editing Mode",
+     "disabled": false,
+     "kind": "button",
+     "x": 73,
+     "y": 76,
+     "w": 130,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Next",
+     "disabled": false,
+     "kind": "button",
+     "x": 485,
+     "y": 76,
+     "w": 67,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Comments",
+     "disabled": false,
+     "kind": "button",
+     "x": 912,
+     "y": 76,
+     "w": 100,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Combine",
+     "disabled": false,
+     "kind": "button",
+     "x": 1293,
+     "y": 76,
+     "w": 62,
+     "h": 32,
+     "row": 1
+    }
+   ]
+  },
+  "Protection": {
+   "rows": 1,
+   "groups": [
+    {
+     "row": 0,
+     "x": 16,
+     "right": 210,
+     "n": 2
+    }
+   ],
+   "ribbon": [
+    {
+     "label": "Protect Document",
+     "disabled": false,
+     "kind": "button",
+     "x": 16,
+     "y": 43,
+     "w": 138,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Encrypt",
+     "disabled": false,
+     "kind": "button",
+     "x": 155,
+     "y": 43,
+     "w": 55,
+     "h": 32,
+     "row": 0
+    }
+   ]
+  },
+  "View": {
+   "rows": 1,
+   "groups": [
+    {
+     "row": 0,
+     "x": 16,
+     "right": 413,
+     "n": 4
+    },
+    {
+     "row": 0,
+     "x": 430,
+     "right": 462,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 550,
+     "right": 582,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 628,
+     "right": 660,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 729,
+     "right": 761,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 833,
+     "right": 865,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 1094,
+     "right": 1429,
+     "n": 4
+    }
+   ],
+   "ribbon": [
+    {
+     "label": "Multiple Pages",
+     "disabled": false,
+     "kind": "button",
+     "x": 16,
+     "y": 43,
+     "w": 93,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Zoom In",
+     "disabled": false,
+     "kind": "button",
+     "x": 110,
+     "y": 43,
+     "w": 86,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Zoom Out",
+     "disabled": false,
+     "kind": "button",
+     "x": 197,
+     "y": 43,
+     "w": 95,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Zoom to 100%",
+     "disabled": false,
+     "kind": "button",
+     "x": 293,
+     "y": 43,
+     "w": 120,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Spell Check",
+     "disabled": false,
+     "kind": "button",
+     "x": 430,
+     "y": 43,
+     "w": 32,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Ruler",
+     "disabled": false,
+     "kind": "button",
+     "x": 550,
+     "y": 43,
+     "w": 32,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Gridlines",
+     "disabled": false,
+     "kind": "button",
+     "x": 628,
+     "y": 43,
+     "w": 32,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Headings",
+     "disabled": false,
+     "kind": "button",
+     "x": 729,
+     "y": 43,
+     "w": 32,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Dark Document",
+     "disabled": false,
+     "kind": "button",
+     "x": 833,
+     "y": 43,
+     "w": 32,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Interface Theme",
+     "disabled": false,
+     "kind": "select",
+     "x": 991,
+     "y": 47,
+     "w": 86,
+     "h": 22,
+     "row": 0
+    },
+    {
+     "label": "Macros",
+     "disabled": false,
+     "kind": "button",
+     "x": 1094,
+     "y": 43,
+     "w": 81,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Record Macro",
+     "disabled": false,
+     "kind": "button",
+     "x": 1176,
+     "y": 43,
+     "w": 117,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Pause Recording",
+     "disabled": false,
+     "kind": "button",
+     "x": 1295,
+     "y": 43,
+     "w": 134,
+     "h": 32,
+     "row": 0
+    }
+   ]
+  },
+  "Plugins": {
+   "rows": 2,
+   "groups": [
+    {
+     "row": 0,
+     "x": 44,
+     "right": 176,
+     "n": 2
+    },
+    {
+     "row": 0,
+     "x": 249,
+     "right": 862,
+     "n": 7
+    },
+    {
+     "row": 0,
+     "x": 951,
+     "right": 1222,
+     "n": 2
+    },
+    {
+     "row": 0,
+     "x": 1301,
+     "right": 1565,
+     "n": 3
+    },
+    {
+     "row": 1,
+     "x": 38,
+     "right": 182,
+     "n": 2
+    },
+    {
+     "row": 1,
+     "x": 369,
+     "right": 743,
+     "n": 5
+    },
+    {
+     "row": 1,
+     "x": 959,
+     "right": 991,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 1094,
+     "right": 1214,
+     "n": 1
+    },
+    {
+     "row": 1,
+     "x": 1344,
+     "right": 1522,
+     "n": 2
+    }
+   ],
+   "ribbon": [
+    {
+     "label": "Cut",
+     "disabled": false,
+     "kind": "button",
+     "x": 44,
+     "y": 43,
+     "w": 61,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Copy",
+     "disabled": false,
+     "kind": "button",
+     "x": 106,
+     "y": 43,
+     "w": 70,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "PluginManager",
+     "disabled": false,
+     "kind": "button",
+     "x": 249,
+     "y": 43,
+     "w": 123,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Backgroundplugins",
+     "disabled": false,
+     "kind": "button",
+     "x": 373,
+     "y": 43,
+     "w": 144,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "PhotoEditor",
+     "disabled": false,
+     "kind": "button",
+     "x": 518,
+     "y": 43,
+     "w": 105,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "YouTube",
+     "disabled": false,
+     "kind": "button",
+     "x": 624,
+     "y": 43,
+     "w": 61,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "OCR",
+     "disabled": false,
+     "kind": "button",
+     "x": 686,
+     "y": 43,
+     "w": 41,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Translator",
+     "disabled": false,
+     "kind": "button",
+     "x": 727,
+     "y": 43,
+     "w": 68,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Mendeley",
+     "disabled": false,
+     "kind": "button",
+     "x": 796,
+     "y": 43,
+     "w": 66,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Word count",
+     "disabled": false,
+     "kind": "button",
+     "x": 951,
+     "y": 43,
+     "w": 103,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "English – United States",
+     "disabled": false,
+     "kind": "button",
+     "x": 1055,
+     "y": 43,
+     "w": 167,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Multiple pages",
+     "disabled": false,
+     "kind": "button",
+     "x": 1301,
+     "y": 43,
+     "w": 91,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Fit to page",
+     "disabled": false,
+     "kind": "button",
+     "x": 1394,
+     "y": 43,
+     "w": 99,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Fit to width",
+     "disabled": false,
+     "kind": "button",
+     "x": 1493,
+     "y": 43,
+     "w": 72,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Paste",
+     "disabled": false,
+     "kind": "button",
+     "x": 38,
+     "y": 76,
+     "w": 73,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Copy style",
+     "disabled": false,
+     "kind": "button",
+     "x": 112,
+     "y": 76,
+     "w": 70,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Thesaurus",
+     "disabled": false,
+     "kind": "button",
+     "x": 369,
+     "y": 76,
+     "w": 71,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Highlightcode",
+     "disabled": false,
+     "kind": "button",
+     "x": 441,
+     "y": 76,
+     "w": 115,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Zotero",
+     "disabled": false,
+     "kind": "button",
+     "x": 556,
+     "y": 76,
+     "w": 49,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Speech",
+     "disabled": false,
+     "kind": "button",
+     "x": 606,
+     "y": 76,
+     "w": 55,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Speechinput",
+     "disabled": false,
+     "kind": "button",
+     "x": 662,
+     "y": 76,
+     "w": 81,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Spell checking",
+     "disabled": false,
+     "kind": "button",
+     "x": 959,
+     "y": 76,
+     "w": 32,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Track changes",
+     "disabled": false,
+     "kind": "button",
+     "x": 1094,
+     "y": 76,
+     "w": 120,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Zoom out",
+     "disabled": false,
+     "kind": "button",
+     "x": 1344,
+     "y": 76,
+     "w": 93,
+     "h": 32,
+     "row": 1
+    },
+    {
+     "label": "Zoom in",
+     "disabled": false,
+     "kind": "button",
+     "x": 1437,
+     "y": 76,
+     "w": 85,
+     "h": 32,
+     "row": 1
+    }
+   ]
+  },
+  "AI": {
+   "rows": 1,
+   "groups": [
+    {
+     "row": 0,
+     "x": 16,
+     "right": 699,
+     "n": 6
+    }
+   ],
+   "ribbon": [
+    {
+     "label": "Settings",
+     "disabled": false,
+     "kind": "button",
+     "x": 16,
+     "y": 43,
+     "w": 85,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Chatbot",
+     "disabled": false,
+     "kind": "button",
+     "x": 102,
+     "y": 43,
+     "w": 84,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Summarization",
+     "disabled": false,
+     "kind": "button",
+     "x": 187,
+     "y": 43,
+     "w": 122,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Translation",
+     "disabled": false,
+     "kind": "button",
+     "x": 310,
+     "y": 43,
+     "w": 101,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Grammar &Spelling",
+     "disabled": false,
+     "kind": "button",
+     "x": 412,
+     "y": 43,
+     "w": 147,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Create AIassistant",
+     "disabled": false,
+     "kind": "button",
+     "x": 560,
+     "y": 43,
+     "w": 139,
+     "h": 32,
+     "row": 0
+    }
+   ]
+  },
+  "Chart Design": {
+   "rows": 1,
+   "groups": [
+    {
+     "row": 0,
+     "x": 16,
+     "right": 277,
+     "n": 3
+    },
+    {
+     "row": 0,
+     "x": 391,
+     "right": 531,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 624,
+     "right": 693,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 710,
+     "right": 850,
+     "n": 2
+    },
+    {
+     "row": 0,
+     "x": 533,
+     "right": 623,
+     "n": 1
+    },
+    {
+     "row": 0,
+     "x": 851,
+     "right": 1012,
+     "n": 2
+    }
+   ],
+   "ribbon": [
+    {
+     "label": "ChartElements",
+     "disabled": false,
+     "kind": "button",
+     "x": 16,
+     "y": 43,
+     "w": 121,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "EditData",
+     "disabled": false,
+     "kind": "button",
+     "x": 138,
+     "y": 43,
+     "w": 60,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "UpdateData",
+     "disabled": false,
+     "kind": "button",
+     "x": 199,
+     "y": 43,
+     "w": 78,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Chart type",
+     "disabled": false,
+     "kind": "select",
+     "x": 294,
+     "y": 47,
+     "w": 80,
+     "h": 22,
+     "row": 0
+    },
+    {
+     "label": "Advanced settings",
+     "disabled": false,
+     "kind": "button",
+     "x": 391,
+     "y": 43,
+     "w": 140,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Wrapping",
+     "disabled": false,
+     "kind": "select",
+     "x": 533,
+     "y": 48,
+     "w": 90,
+     "h": 22,
+     "row": 0
+    },
+    {
+     "label": "3Drotation",
+     "disabled": false,
+     "kind": "button",
+     "x": 624,
+     "y": 43,
+     "w": 69,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Advanced settings",
+     "disabled": false,
+     "kind": "button",
+     "x": 710,
+     "y": 43,
+     "w": 140,
+     "h": 32,
+     "row": 0
+    },
+    {
+     "label": "Width",
+     "disabled": false,
+     "kind": "select",
+     "x": 851,
+     "y": 48,
+     "w": 80,
+     "h": 22,
+     "row": 0
+    },
+    {
+     "label": "Height",
+     "disabled": false,
+     "kind": "select",
+     "x": 932,
+     "y": 48,
+     "w": 80,
+     "h": 22,
+     "row": 0
+    }
+   ]
+  }
  },
  "fileMenu": [
   {
