@@ -584,6 +584,25 @@ def run_chrome(server: Path, out: Path, mode: str = "rust") -> int:
     return subprocess.run(cmd, cwd=HERE).returncode
 
 
+# --- side-by-side (public compare page) --------------------------------------
+def run_side_by_side(out: Path) -> int:
+    """Live parity on the public compare page: the SAME .docx in OnlyOffice and the WO
+    editor side by side at the same width (census/side-by-side.cjs), scored by
+    side-by-side-diff.py (layout-diff.py's scorer + coverage + height + styles).
+    Needs the network; env DEMO_URL, SIDEBYSIDE_WIDTH (e.g. 1600), SIDEBYSIDE_LOCALE,
+    SIDEBYSIDE_GATE=1 (+ SIDEBYSIDE_MIN_COVERAGE=NN) to gate. Report + sheets go to
+    <out>/<tag>/report.md. Returns the capture's 2 (WO editor never shown) or the gate's rc."""
+    width, locale = os.environ.get("SIDEBYSIDE_WIDTH"), os.environ.get("SIDEBYSIDE_LOCALE", "de-DE")
+    cmd = ["node", "side-by-side.cjs", "--out", str(out), "--locale", locale] + (["--width", width] if width else [])
+    rc = subprocess.run(cmd, cwd=HERE, env={**os.environ, "DEMO_URL": os.environ.get("DEMO_URL", "https://world-office.graphwiz.ai/demo/")}).returncode
+    if rc != 0:
+        return rc
+    cmd = ["/usr/bin/python3", "side-by-side-diff.py", "--dir", str(out / f"{'wide' + width if width else 'demo827'}-{locale}")]
+    if os.environ.get("SIDEBYSIDE_GATE"):
+        cmd += ["--gate"] + (["--min-coverage", os.environ["SIDEBYSIDE_MIN_COVERAGE"]] if os.environ.get("SIDEBYSIDE_MIN_COVERAGE") else [])
+    return subprocess.run(cmd, cwd=HERE).returncode
+
+
 # --- visual (pixel) gate ---------------------------------------------------
 # docx stem -> committed OnlyOffice golden filename (goldens live in golden/docs/)
 VISUAL_GOLDEN = {"visual-gate": "visual-gate-oo.png", "image-gate": "image-gate-oo.png",
@@ -678,6 +697,9 @@ def main() -> int:
                     help="capture the geometry census + gate on drift/overlaps vs the committed golden")
     ap.add_argument("--visual", action="store_true",
                     help="pixel gate: render each golden doc and gate sheet 1 vs its OnlyOffice golden (visual-wo.cjs + pixel-diff.py)")
+    ap.add_argument("--side-by-side", action="store_true",
+                    help="live parity on the public compare page: OO vs WO with the same doc at the same width "
+                         "(side-by-side.cjs + side-by-side-diff.py; needs the network; SIDEBYSIDE_WIDTH/LOCALE/GATE env)")
     ap.add_argument("--chrome", action="store_true",
                     help="ribbon-chrome pixel gate: WO #toolbar vs OO rig #toolbar (chrome-wo.cjs + chrome-oo.cjs + chrome-diff.py; needs the OO rig)")
     ap.add_argument("--ai", action="store_true",
@@ -726,6 +748,10 @@ def main() -> int:
             report_deferred(ledger)
             print("[4/4] gate:", "PASS — ledger clear" if ok else "FAIL — decisions above remain")
             rc = 0 if ok else 1
+            if args.side_by_side:
+                print("      side-by-side: OO vs WO on the public compare page (same doc, same width)")
+                if run_side_by_side(tmp / "side-by-side") != 0:
+                    rc = 1
             if args.interactions:
                 print("      interactions: click-through census vs OO reference")
                 if run_interactions(server, tmp, mode=args.docserver) != 0:
@@ -829,6 +855,11 @@ def main() -> int:
         except SystemExit:
             chrome_rc = 1
 
+    sbs_rc = 0
+    if args.side_by_side:
+        print("      side-by-side: OO vs WO on the public compare page (side-by-side.cjs + side-by-side-diff.py)")
+        sbs_rc = run_side_by_side(HERE / "side-by-side")
+
     seed_rc = 0
     if args.seed_check:
         print("      seed: regenerate graph + drift gate")
@@ -836,7 +867,7 @@ def main() -> int:
         if seed_rc != 0:
             print("      seed --check FAILED (commit the regenerated graph.json)")
 
-    return 0 if (ok and seed_rc == 0 and interact_rc == 0 and fx_rc == 0 and geom_rc == 0 and visual_rc == 0 and chrome_rc == 0) else 1
+    return 0 if (ok and seed_rc == 0 and interact_rc == 0 and fx_rc == 0 and geom_rc == 0 and visual_rc == 0 and chrome_rc == 0 and sbs_rc == 0) else 1
 
 
 if __name__ == "__main__":

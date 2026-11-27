@@ -61,6 +61,13 @@ WO_SERVER_DIR=/path/to/server /usr/bin/python3 census/reconcile.py \
 # Unified self-test
 WO_SERVER_DIR=/path/to/server bash tf-test-harness/test-harness.sh --self-test
 
+# Live side-by-side parity on the public compare page (OnlyOffice vs WO, same doc, same width)
+node census/side-by-side.cjs                                   # demo-native 827 px, de-DE  → census/side-by-side/<tag>/
+/usr/bin/python3 census/side-by-side-diff.py --self-test       # offline scorer self-test
+/usr/bin/python3 census/side-by-side-diff.py --gate --min-coverage 80
+SIDEBYSIDE_WIDTH=1600 SIDEBYSIDE_LOCALE=en-US SIDEBYSIDE_GATE=1 \
+  /usr/bin/python3 census/reconcile.py --skip-capture --side-by-side
+
 # Cross-engine fidelity
 cd conformance && ./scripts/run-pipeline.sh <corpus-cases-dir>
 ```
@@ -68,6 +75,32 @@ cd conformance && ./scripts/run-pipeline.sh <corpus-cases-dir>
 Windows host: run the gate via PowerShell inside `opencloud-docserver`'s uv venv
 (`uv sync --frozen` once); browser builds come from the system Playwright cache
 (chromium-1228 = pin 1.61.1). See `AGENTS.md`.
+
+## Live side-by-side parity
+
+`census/side-by-side.cjs` opens the public compare page
+(<https://world-office.graphwiz.ai/demo/>) with one document, waits for BOTH editors
+(OnlyOffice 9.4 in `iframe[name=frameEditor]`, the WO editor in `#wo-frame`) at the same
+frame width — the demo-native 827 px, or `--width 1600` forced through a style tag — and
+clicks through every tab on both sides, recording from the DOM: tab bar (label, order,
+width), every ribbon control (label + box), group extents, computed styles, plus one
+screenshot strip per tab at the same height on both sides.
+
+`census/side-by-side-diff.py` scores that capture with the same scorer the React census
+uses (`layout-diff.py`: rows / groups / top-row placement) and adds: label coverage with a
+bilingual de→en normalisation, ribbon height (how much lower the document starts), style
+deltas, tabs missing / always shown, and a Localisation section (WO labels identical across
+two locales of the same width are not translated). It writes `report.md` and labelled
+`sheets-*.png` (OO above/next to WO) into the capture dir and prints the findings.
+`--gate` exits 1 on any layout finding or coverage below `--min-coverage` — the parity
+contract is red until the WO ribbon matches; the report is the honest baseline.
+
+Caveats: needs the network; several captures in parallel queue on the demo's OnlyOffice
+(`--oo-timeout`); OO's demo toolbar renders no group captions (two 24 px rows); OO
+collapses groups behind "Mehr" at 827 px while WO wraps — captured at both widths on
+purpose. Nothing here needs the local docserver, so `reconcile.py --side-by-side` runs
+without one (`SIDEBYSIDE_WIDTH`, `SIDEBYSIDE_LOCALE`, `SIDEBYSIDE_GATE`,
+`SIDEBYSIDE_MIN_COVERAGE`).
 
 ## Conformance
 
